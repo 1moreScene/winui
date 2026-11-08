@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests',testMatch:'menu-layout.spec.ts',workers:1,timeout:30000,use:{baseURL:process.env.WINUI_MENU_LAYOUT_URL??'http://127.0.0.1:5268',viewport:{width:1440,height:1000},trace:'retain-on-failure',screenshot:'only-on-failure'},projects:[{name:'edge',use:{browserName:'chromium',channel:'msedge'}},{name:'webkit',use:{browserName:'webkit'}}],reporter:[['list'],['json',{outputFile:'../out/menu-layout-browser-results.json'}]]});

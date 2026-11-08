@@ -1,0 +1,64 @@
+{
+  "description": "Represents icon controls that use different image types as its content.",
+  "bitmapDescription": "The ShowAsMonochrome property (true by default) will result in a solid block of the foreground color if the property is set to true and the icon is more than one color. This behavior can be ignored by setting the ShowAsMonochrome property to false.",
+  "samples": [
+    {
+      "title": "A BitmapIcon with a multicolor bitmap image",
+      "xaml": "<BitmapIcon x:Name=\"SlicesIcon\" UriSource=\"ms-appx:///Assets/SampleMedia/Slices.png\" Width=\"50\"/>"
+    },
+    {
+      "title": "A FontIcon using a glyph from a specific font family in a button",
+      "xaml": "<Button Name=\"ExampleButton1\">\n    <FontIcon FontFamily=\"Segoe MDL2 Assets\" Glyph=\"&#xE790;\"/>\n</Button>"
+    },
+    {
+      "title": "A ImageIcon using a bitmap image in a button",
+      "xaml": "<Button Name=\"ImageExample1\" Width=\"100\">\n    <ImageIcon Source=\"/Assets/SampleMedia/slices.png\"/>\n</Button>"
+    },
+    {
+      "title": "A ImageIcon using a SVG image in a button",
+      "xaml": "<Button Name=\"ImageExample2\">\n    <ImageIcon Source=\"https://raw.githubusercontent.com/DiemenDesign/LibreICONS/master/svg-color/libre-camera-panorama.svg\" Width=\"50\"/>\n</Button>"
+    },
+    {
+      "title": "A PathIcon in a button",
+      "xaml": "<Button Name=\"Example1Button\">\n    <PathIcon Data=\"F1 M 16,12 20,2L 20,16 1,16\" HorizontalAlignment=\"Center\"/>\n</Button>"
+    },
+    {
+      "title": "A SymbolIcon in a button",
+      "xaml": "<Button Name=\"AcceptButton\">\n    <StackPanel>\n        <SymbolIcon Symbol=\"Accept\"/>\n        <TextBlock Text=\"Accept\"/>\n    </StackPanel>\n</Button>"
+    }
+  ],
+  "sources": [
+    {
+      "path": "references/gallery-input/IconElement/IconElementBitmapiconMulticolorBitmapImage.txt",
+      "sha256": "20b6b3f3df8e3a52df8740d0a29bab5d93f0d04d7c4cb50856cf3afe94f6d33b"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementFonticonGlyphSpecificFont.txt",
+      "sha256": "5ca45e15e94d4a7756ab5b2e1493d7de7712ac1aa2c22815e86677929ed4f218"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementImageiconBitmapImageButton.txt",
+      "sha256": "3f705ec33f4c88e50355d2469b71f31e5cd53119d59a1b5ddbe84fd27c418d42"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementImageiconSvgImageButton.txt",
+      "sha256": "e3e2449bf978efec03f340d478cff042da1d9ac9a8931740ffa32228dd274457"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementPage.xaml",
+      "sha256": "b0243c3c917cda5218614fe2791f45cf78dc9043769c66d421855a475054f2ba"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementPage.xaml.cs",
+      "sha256": "28e6e3ee77ae90c56f6d7de1d7e9e7c4392f2eea7235b9171ca75a5eef47cc9b"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementPathiconButton.txt",
+      "sha256": "2de9d0be675699f986818ccb7d018429aa2da1e3b904be5bc9ebce900424de3e"
+    },
+    {
+      "path": "references/gallery-input/IconElement/IconElementSymboliconButton.txt",
+      "sha256": "01f516951a4df9d101e20bbff80d435ee859b96620a8934f408b7a021fb653a0"
+    }
+  ]
+}

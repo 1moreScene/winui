@@ -1,0 +1,3 @@
+import{collectionEvidencePrefix as evidencePrefix}from'./collection-validation-paths';
+import{defineConfig}from'@playwright/test';import base from'./playwright.compact-regression.config';
+export default defineConfig({...base,use:{...base.use,baseURL:process.env.WINUI_COLLECTION_TEST_URL??base.use?.baseURL},webServer:process.env.WINUI_COLLECTION_TEST_URL?undefined:base.webServer,testMatch:[...(base.testMatch as string[]),'**/compact-controls.spec.ts'],outputDir:`../out/${evidencePrefix}-regression-test-results`,reporter:[['list'],['json',{outputFile:`../out/${evidencePrefix}-regression-browser-results.json`}]]});

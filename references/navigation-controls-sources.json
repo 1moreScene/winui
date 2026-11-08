@@ -1,0 +1,575 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "files": [
+    {
+      "local": "references/winui/BreadcrumbBar.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar.cpp",
+      "gitBlobSha1": "2c84e298b228b8455143b3eaa84d847782ab99eb",
+      "sha256": "0dc09e3f1c8046fe0868574afb76bc865531fed16d369376c80398d5823986ed"
+    },
+    {
+      "local": "references/winui/BreadcrumbBar.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar.h",
+      "gitBlobSha1": "fa1653ac70e1e0bf78b255ef0167b4032d9b321a",
+      "sha256": "14e7ceb2006b9510065c070ccf9abc2d4b578f22868289fdaa1488d7ff0705ae"
+    },
+    {
+      "local": "references/winui/BreadcrumbBar.idl",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar.idl",
+      "gitBlobSha1": "3cf9f2d6b8119a94c057d97a5755541430885f8f",
+      "sha256": "2bbcac7057f05f5474b347d75f1a202e59dfe46c98c368ecb9a965e650d2140d"
+    },
+    {
+      "local": "references/winui/BreadcrumbBar.xaml",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar.xaml",
+      "gitBlobSha1": "d7d0b16aae852dc792122bcfc1d788237f784209",
+      "sha256": "01f6e508d33ad36ccb7a543ecef0423f5c7837c36cd4e7a58f30db3c708a8a32"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarAutomationPeer.idl",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarAutomationPeer.idl",
+      "gitBlobSha1": "f14470c96fea2b4bac8d4e4613aa1201d6ea6097",
+      "sha256": "59c6f15970b5e183282f051327a10bfc8c7575c63246a3c31d142b535409d50e"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarElementFactory.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarElementFactory.cpp",
+      "gitBlobSha1": "04a88235546743e6ff8a9157658240975bcfebbc",
+      "sha256": "c79ee5a8ebd64e6c5cec7d46d844e092bba24212a6d032b508855e0ba0775026"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarElementFactory.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarElementFactory.h",
+      "gitBlobSha1": "ba94d53773f818709fe61735871ea33b4e1fb939",
+      "sha256": "f734c24d6dfeb20bd8d1ced9dd9950b838aec4eb46f1e992461ad2cd86a1933d"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarItem.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarItem.cpp",
+      "gitBlobSha1": "eddccd5245273d209389a7039795d472d72f2777",
+      "sha256": "a86b2c9ac5a88b9ade45e28bdff43fdc89e786e993927ecd0686762fe9ccea08"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarItem.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarItem.h",
+      "gitBlobSha1": "7ce05ecb718e72923f171881bdbccbef81098509",
+      "sha256": "b005abb7cd73cc4142405db02149b992e5a90bcf6ac560c0e653f0e5a170d9fa"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarItemAutomationPeer.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarItemAutomationPeer.cpp",
+      "gitBlobSha1": "10e9f14396d84c7e5f59c38a7a57c5d97cec66a7",
+      "sha256": "62649a7f4bef7f0b49b666b53f1e5c3eb3acd57db07970fd310a17c2f3c9e9db"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarItemAutomationPeer.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarItemAutomationPeer.h",
+      "gitBlobSha1": "7f7da7cc21b84b3d239125b9fef10bb872bdbffb",
+      "sha256": "2133556c45bdd79f0a9118e8c2dc3f9f8d56ce2d274edee8c6c2a75c3c58e471"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarItemClickedEventArgs.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarItemClickedEventArgs.cpp",
+      "gitBlobSha1": "86f4460f3fce8f2906092116a6b66a350ef0c944",
+      "sha256": "16ab2d6f2cb567fd5b62807957a5e41c069ad5947af9f93072cca73241844fb6"
+    },
+    {
+      "local": "references/winui/BreadcrumbBarItemClickedEventArgs.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBarItemClickedEventArgs.h",
+      "gitBlobSha1": "0b417514a17e8b7192c337ecb8f3a8de80d2af2f",
+      "sha256": "bee50475f8636434227a9f03440c45c5902ccbce578832575754ab2dcc0c038d"
+    },
+    {
+      "local": "references/winui/BreadcrumbBar_perf2026.xaml",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar_perf2026.xaml",
+      "gitBlobSha1": "52e69acc2ba289e1a075b8fce343b6014b1c2eec",
+      "sha256": "038c4e1f7b02f187d3685b0b050872519c5249c03de7fdd0c3c60cf5aaf8bf09"
+    },
+    {
+      "local": "references/winui/BreadcrumbBar_themeresources.xaml",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar_themeresources.xaml",
+      "gitBlobSha1": "af094a1594bb76d73034e91d8c6e9677d7c67e15",
+      "sha256": "71f7aba29d9be59ab4d18746418ce43e118d9d1f42dedb233d55d74d51b17de0"
+    },
+    {
+      "local": "references/winui/BreadcrumbItem.properties.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbItem.properties.cpp",
+      "gitBlobSha1": "9fc629af8c1db15442bb95dc77f596a3395d2d4d",
+      "sha256": "ea314f10b0e6ad8cbbb931be6418510bb99ab70b14a9cba4bd1e035ca403431f"
+    },
+    {
+      "local": "references/winui/BreadcrumbItem.properties.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbItem.properties.h",
+      "gitBlobSha1": "6f70f09beec2219624baeca92e2cd7deaa104fb4",
+      "sha256": "b3adf106d95b8934f690943f2921308b90be5b766c4c8ba250c792de56400201"
+    },
+    {
+      "local": "references/winui/BreadcrumbIterable.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbIterable.cpp",
+      "gitBlobSha1": "f744f13e15b7f59f13d60d24d6bac04b2a08daf5",
+      "sha256": "9c93fb6ff2043bf66d4354c56c071119c563e8ec17e5925f3eaff5ec2c8b03a0"
+    },
+    {
+      "local": "references/winui/BreadcrumbIterable.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbIterable.h",
+      "gitBlobSha1": "b23ed7628d91f3df4af279538ac4821a96df01da",
+      "sha256": "d22e5b39c62980ec7f10f880b9491f6819cfbe2c4bd2d4d6c0746c14fbb0f48c"
+    },
+    {
+      "local": "references/winui/BreadcrumbIterator.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbIterator.cpp",
+      "gitBlobSha1": "7488aa20890cf34e3b727ec1252616db473f9e7d",
+      "sha256": "2dc64bce20f967fdeb79e1c121a8940565f197c512a6e5c0b03762c123de30df"
+    },
+    {
+      "local": "references/winui/BreadcrumbIterator.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbIterator.h",
+      "gitBlobSha1": "1f26a22d24669d796815c7f2f15b4b4d5619e2b5",
+      "sha256": "a70c77e746cf366331b2f377b34cf121d36222f5e66218e29d5724dc9a26088a"
+    },
+    {
+      "local": "references/winui/BreadcrumbLayout.cpp",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbLayout.cpp",
+      "gitBlobSha1": "e9bcb9f1fe7fe2e6f9e67e7bc3048de96237aa62",
+      "sha256": "c54dded615770a921f76d858c33e347ff0fbe6b9c58c6481d77fb31a4aec6845"
+    },
+    {
+      "local": "references/winui/BreadcrumbLayout.h",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbLayout.h",
+      "gitBlobSha1": "4e2496ea08312d5b333c7aca1a751307c3bf3d6f",
+      "sha256": "be4af0cfb9ebb916a2e6a0ae3f37c68689c47309c6f182f6e3ef7cadac5aac0d"
+    },
+    {
+      "local": "references/winui/FlipViewItem_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/FlipViewItem_themeresources.xaml",
+      "gitBlobSha1": "1ba7d04940b1da14bdd6533ddc3a0fe42b61df73",
+      "sha256": "07df31ca7a0ef4fafe595c3d834ba469160266ec2d7300bc6f2565c106134515"
+    },
+    {
+      "local": "references/winui/FlipView_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/FlipView_themeresources.xaml",
+      "gitBlobSha1": "c9aa9048d624eb962393451b2501e4f9c37c12fc",
+      "sha256": "21af9d36c9fa28b7e751c1cfa8a8ad2d037b6e515232235927b61b34036de93a"
+    },
+    {
+      "local": "references/winui/BreadcrumbBar.properties.cpp",
+      "upstream": "controls/dev/Generated/BreadcrumbBar.properties.cpp",
+      "gitBlobSha1": "294649ae3230e7e0f358490773df343f9079cbfe",
+      "sha256": "581e69f3bac75be6020cd4a216a3f8047565f7c852e62638ba7a5ebf3cf9f0e1"
+    },
+    {
+      "local": "references/winui/PipsPager.properties.cpp",
+      "upstream": "controls/dev/Generated/PipsPager.properties.cpp",
+      "gitBlobSha1": "5090b60912e843f01c9fe53c806d9f505eb5efdf",
+      "sha256": "f71fb5e90d0766b8ec876a8470e00e786cdd2e9ad6ddbb39eac641d09027392a"
+    },
+    {
+      "local": "references/winui/TabView.properties.cpp",
+      "upstream": "controls/dev/Generated/TabView.properties.cpp",
+      "gitBlobSha1": "e3646ffbf697c21b6385b307b8410207f38a2957",
+      "sha256": "8f257244dbc6360e8f594c6279403ce60fd9c88b53cafdfb296b7abbd62db663"
+    },
+    {
+      "local": "references/winui/TreeView.properties.cpp",
+      "upstream": "controls/dev/Generated/TreeView.properties.cpp",
+      "gitBlobSha1": "dd04b63292713963b992f2c499564fdee10e3045",
+      "sha256": "f638d492ca6638108ebf5e4506da3719992773dbc4a0362e568441587f21e8b5"
+    },
+    {
+      "local": "references/winui/TreeViewItem.properties.cpp",
+      "upstream": "controls/dev/Generated/TreeViewItem.properties.cpp",
+      "gitBlobSha1": "231d3ccb4e6a810ec61d30bc4d9fb2f40175bfeb",
+      "sha256": "13cb8d587dd5d89ec80085c583acd71eff57ac82c38f39da6a45ab75ccb06419"
+    },
+    {
+      "local": "references/winui/PipsPager.cpp",
+      "upstream": "controls/dev/PipsPager/PipsPager.cpp",
+      "gitBlobSha1": "2823093df993754fefa930f5b9456287208f3ba3",
+      "sha256": "1ed971f2e973d87936b3bb160aa957b3477e1f74011183bba4b6487b19a8fe15"
+    },
+    {
+      "local": "references/winui/PipsPager.h",
+      "upstream": "controls/dev/PipsPager/PipsPager.h",
+      "gitBlobSha1": "75653eead01cb374b275df0dddf9f44da53ace7c",
+      "sha256": "40e97446b0e505f295de9fd7da79182f58db86b102c04ac0f29842fa40b06dc2"
+    },
+    {
+      "local": "references/winui/PipsPager.idl",
+      "upstream": "controls/dev/PipsPager/PipsPager.idl",
+      "gitBlobSha1": "fa3192433f85a5fd1e23c0798d8e15ec06a2484d",
+      "sha256": "4d38fd3f37af920f897f5a36a4943910a3462ed98a8a7276e87655ddb8438ad1"
+    },
+    {
+      "local": "references/winui/PipsPager.xaml",
+      "upstream": "controls/dev/PipsPager/PipsPager.xaml",
+      "gitBlobSha1": "42c1ab313201354cb4d77897acfc36b8b867cc25",
+      "sha256": "1c7054b1502e5ebe33f32580ae0c07c7b551e94490ccda0d9ca317767008db64"
+    },
+    {
+      "local": "references/winui/PipsPagerAutomationPeer.cpp",
+      "upstream": "controls/dev/PipsPager/PipsPagerAutomationPeer.cpp",
+      "gitBlobSha1": "0e9ac250cbff4b1197aed0e38ddb50f62ef619ce",
+      "sha256": "f283f06f6eea58fc7a60ca6ca033d5480c33b378d4d32afca246cd87960820a6"
+    },
+    {
+      "local": "references/winui/PipsPagerAutomationPeer.h",
+      "upstream": "controls/dev/PipsPager/PipsPagerAutomationPeer.h",
+      "gitBlobSha1": "c4edb47b5403cc0c1da9e5d05dbe02f3f7ccdc49",
+      "sha256": "c4675da9f05fa6f545f1623cc44c481ec3f30c702dac19601baf02e201322e24"
+    },
+    {
+      "local": "references/winui/PipsPagerAutomationPeer.idl",
+      "upstream": "controls/dev/PipsPager/PipsPagerAutomationPeer.idl",
+      "gitBlobSha1": "50a99d567c63f85cd7bc4270dda48f7c5fb0e0c5",
+      "sha256": "0f5ac3922b2339a8b7b2a57018f265c2087760b29b0905bc828ec12eb2f5da40"
+    },
+    {
+      "local": "references/winui/PipsPagerSelectedIndexChangedEventArgs.h",
+      "upstream": "controls/dev/PipsPager/PipsPagerSelectedIndexChangedEventArgs.h",
+      "gitBlobSha1": "b2716092e221ef468fd4f7f5c414e9de796a898c",
+      "sha256": "49eb27f06baab94587a126c003b54aa22dcaddd18656e2c9baa00c982e8650a7"
+    },
+    {
+      "local": "references/winui/PipsPagerTemplateSettings.cpp",
+      "upstream": "controls/dev/PipsPager/PipsPagerTemplateSettings.cpp",
+      "gitBlobSha1": "d5972b5754bc2d2759d92ef42268c5cdb5ce0dad",
+      "sha256": "b50916e6c841aceb0abbbb8ad4d567f45959598b224f9d31617ac105e4f9d45d"
+    },
+    {
+      "local": "references/winui/PipsPagerTemplateSettings.h",
+      "upstream": "controls/dev/PipsPager/PipsPagerTemplateSettings.h",
+      "gitBlobSha1": "c739b8338153bd9b10bfb89bc6a707d9226a63f4",
+      "sha256": "2194b227d6f1da94076fbca419251603b25b6dda4531f3b38bcf443d85375346"
+    },
+    {
+      "local": "references/winui/PipsPager_themeresources.xaml",
+      "upstream": "controls/dev/PipsPager/PipsPager_themeresources.xaml",
+      "gitBlobSha1": "0d93a289b39a22b7e859a2ecea964575826e52f7",
+      "sha256": "526f0c0cad7c184e38febb02da63717c7c5f16f90ebc47fcc4822ff3dab85b1e"
+    },
+    {
+      "local": "references/winui/PipsPager_themeresources_perf2026.xaml",
+      "upstream": "controls/dev/PipsPager/PipsPager_themeresources_perf2026.xaml",
+      "gitBlobSha1": "bea3aa2c81349c6e2c3aea2b5b6a02c6c4c903c0",
+      "sha256": "1b331af7bc9c205f0c60470937fb576ff8e991f15c046ea5283d44fcc41325dd"
+    },
+    {
+      "local": "references/winui/TabView.cpp",
+      "upstream": "controls/dev/TabView/TabView.cpp",
+      "gitBlobSha1": "23dd10cb0617bd8bc2214f01981f95f06154959e",
+      "sha256": "f1569b296c517284f8bd3aad3a89eafeee9774e2dcb866c0a1cadffe6f3d5a60"
+    },
+    {
+      "local": "references/winui/TabView.h",
+      "upstream": "controls/dev/TabView/TabView.h",
+      "gitBlobSha1": "0ca96f28a0040e3ff7122714227e317de4bdd80a",
+      "sha256": "21686cfed25d7762c818d8ce55984157b7a32e8da5d554ba2888e7d70270e710"
+    },
+    {
+      "local": "references/winui/TabView.idl",
+      "upstream": "controls/dev/TabView/TabView.idl",
+      "gitBlobSha1": "cc528d5471727bb568211e989996ac29232058ea",
+      "sha256": "7cd35ea7bde479f14c6ba1d6e8310dba87c0da6e97f583c0bd418cee87ee4599"
+    },
+    {
+      "local": "references/winui/TabView.xaml",
+      "upstream": "controls/dev/TabView/TabView.xaml",
+      "gitBlobSha1": "c0e732a4604036f8cce7fee1aed757a9fc4bacdb",
+      "sha256": "770273e4d185cc74971149901549b403c22a15947cc5e90de0f8b332c7cfaec4"
+    },
+    {
+      "local": "references/winui/TabViewAutomationPeer.cpp",
+      "upstream": "controls/dev/TabView/TabViewAutomationPeer.cpp",
+      "gitBlobSha1": "4e2ab9d81ffd7fa9c839c63fc76e1d0e62b28f40",
+      "sha256": "6561cd5e7ddbecf8654c4433c28344b6904fb6d53fc4ea37c9c01d2e0b832ee5"
+    },
+    {
+      "local": "references/winui/TabViewAutomationPeer.h",
+      "upstream": "controls/dev/TabView/TabViewAutomationPeer.h",
+      "gitBlobSha1": "10c7c154cd69356c6b6214d6cbc6afe3077bc795",
+      "sha256": "66ac1661246bd65357b5c2eecac333b7bfbbc057919b70f9770605c3e40d7e35"
+    },
+    {
+      "local": "references/winui/TabViewItem.cpp",
+      "upstream": "controls/dev/TabView/TabViewItem.cpp",
+      "gitBlobSha1": "5c2479d2984739a3ce5e38e00ee2b5690ffe30ae",
+      "sha256": "3d1e6e8dbae2d3be13a771d395c491b5bc3c091fee0adad9698d43e9740e8a57"
+    },
+    {
+      "local": "references/winui/TabViewItem.h",
+      "upstream": "controls/dev/TabView/TabViewItem.h",
+      "gitBlobSha1": "13c6bf902295c1a3b48f34a32d4a82fe1056ecf3",
+      "sha256": "f6c257c765fbeab84ab83149c44b1deaac162c97117119b5dab980ddc870b36e"
+    },
+    {
+      "local": "references/winui/TabViewItemAutomationPeer.cpp",
+      "upstream": "controls/dev/TabView/TabViewItemAutomationPeer.cpp",
+      "gitBlobSha1": "e4cb1ea6ff2333769abf43a626c07642766cf4c1",
+      "sha256": "e742318c47efcceea640cc98f76d7a7f2f133eb051ecbb63c9bd4015ce0c5168"
+    },
+    {
+      "local": "references/winui/TabViewItemAutomationPeer.h",
+      "upstream": "controls/dev/TabView/TabViewItemAutomationPeer.h",
+      "gitBlobSha1": "4af3720cacbe51c536736fde484c69a2d43d9003",
+      "sha256": "1dc880769a121f733db92e2af4436e9290afe80bb57d213af9f209f1179c15ea"
+    },
+    {
+      "local": "references/winui/TabViewItemTemplateSettings.h",
+      "upstream": "controls/dev/TabView/TabViewItemTemplateSettings.h",
+      "gitBlobSha1": "b90d5e03f34c7064fea38a9c008b7b61775def42",
+      "sha256": "1069ac25dc94cfa353a823fa67006c54c598cc1f754a9640634cca64fc5d665d"
+    },
+    {
+      "local": "references/winui/TabViewListView.cpp",
+      "upstream": "controls/dev/TabView/TabViewListView.cpp",
+      "gitBlobSha1": "4ff0c810110204b5b47e39412d242cabafafba7f",
+      "sha256": "9ea97b95f04251cb2ae46af544274f4069ad442886d0fd1adc6b6ea266f3ce44"
+    },
+    {
+      "local": "references/winui/TabViewListView.h",
+      "upstream": "controls/dev/TabView/TabViewListView.h",
+      "gitBlobSha1": "9b89cfec5247dd68a650f2f2cbc56fe098965bdd",
+      "sha256": "bf6a95b3ee9d3f4abd16951a4a66b631e9275270454fa570a4946c3e479ad045"
+    },
+    {
+      "local": "references/winui/TabViewTrace.h",
+      "upstream": "controls/dev/TabView/TabViewTrace.h",
+      "gitBlobSha1": "c2d621fa222eebe3da1384e1eef1f93774630ab3",
+      "sha256": "ba163342a2372800f008d1ba09491c8fee5fb7deb1c5b5d804c3f1441aee6433"
+    },
+    {
+      "local": "references/winui/TabView_perf2026.xaml",
+      "upstream": "controls/dev/TabView/TabView_perf2026.xaml",
+      "gitBlobSha1": "e6916bc47d0ba173761f31c367d67b92f4067d31",
+      "sha256": "213ed98646741bc14ed46cf546b2f117d08b983433a2e695e6b4895ee1b82adf"
+    },
+    {
+      "local": "references/winui/TabView_themeresources.xaml",
+      "upstream": "controls/dev/TabView/TabView_themeresources.xaml",
+      "gitBlobSha1": "e4db61f8793560b59fa8390ade0a59cc9addeb13",
+      "sha256": "262106f9b1b533bd99904f1d7475b9e7233937936b78f1ad6bcb43e9cd41d5e8"
+    },
+    {
+      "local": "references/winui/TreeView.cpp",
+      "upstream": "controls/dev/TreeView/TreeView.cpp",
+      "gitBlobSha1": "c137852fc81c470e06827477aa0cf1d3cc4056ca",
+      "sha256": "c1d4979a310b7a38eb0846b7d5a6abef1196c63b49c3d00ecc39fcbe7d384352"
+    },
+    {
+      "local": "references/winui/TreeView.h",
+      "upstream": "controls/dev/TreeView/TreeView.h",
+      "gitBlobSha1": "df48843e7cc139e712cb8e82356ad1f9d4798603",
+      "sha256": "3ea5842a3f517f1057c893046a85f038af1925ed185fd1990d1872e4ade5f73e"
+    },
+    {
+      "local": "references/winui/TreeView.idl",
+      "upstream": "controls/dev/TreeView/TreeView.idl",
+      "gitBlobSha1": "fa587b923fdebe13b9889f272f3028a78a399f7f",
+      "sha256": "ad670e45d6c52fa3e21393fbe31fc06478bc0434942d0602094d0608950c2ab2"
+    },
+    {
+      "local": "references/winui/TreeView.xaml",
+      "upstream": "controls/dev/TreeView/TreeView.xaml",
+      "gitBlobSha1": "9f419035a19cc68910b97cec4fd5ce264cdfefde",
+      "sha256": "ea7677a3626091989c035091d36e0c65de538800c4d7b0dcf80545eca7d6c3ff"
+    },
+    {
+      "local": "references/winui/TreeViewAutomationPeers.idl",
+      "upstream": "controls/dev/TreeView/TreeViewAutomationPeers.idl",
+      "gitBlobSha1": "7e1be13ba0bf9f30737393420b0e77c8f249d7e2",
+      "sha256": "63265a6563ae2f715ae24e2ecbcdae99e1b7d4743a252ed5d21a241bb06fe507"
+    },
+    {
+      "local": "references/winui/TreeViewCollapsedEventArgs.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewCollapsedEventArgs.cpp",
+      "gitBlobSha1": "ba8ba380e22bc764c10303e5e8f4d5f077d875d1",
+      "sha256": "e91e444929a46c3f89b3e7e106fe87c52664ee991494ec3aad91833a1191d9c9"
+    },
+    {
+      "local": "references/winui/TreeViewCollapsedEventArgs.h",
+      "upstream": "controls/dev/TreeView/TreeViewCollapsedEventArgs.h",
+      "gitBlobSha1": "7f430edb97e57f8969d79b9a2c849c149dbe1214",
+      "sha256": "e7c656584cdaa46893c908dd013251920e20f298cd438bb6ab6970d13ba167d9"
+    },
+    {
+      "local": "references/winui/TreeViewDragItemsCompletedEventArgs.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewDragItemsCompletedEventArgs.cpp",
+      "gitBlobSha1": "3387f7cceec9f7b22b107e00570175c4f67730f5",
+      "sha256": "d4922549a96b129a8ccf0cc54c7c4f66fd74bfa7efc7928da50de037b29aad75"
+    },
+    {
+      "local": "references/winui/TreeViewDragItemsCompletedEventArgs.h",
+      "upstream": "controls/dev/TreeView/TreeViewDragItemsCompletedEventArgs.h",
+      "gitBlobSha1": "d0b34a24eef9718f72de25679478cda86aab057e",
+      "sha256": "1377f7ef032b199cb4ef5dc5466552b105120f58b15b26908e689b73e202d67f"
+    },
+    {
+      "local": "references/winui/TreeViewDragItemsStartingEventArgs.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewDragItemsStartingEventArgs.cpp",
+      "gitBlobSha1": "788f3c51eb4c7767e8fd1a6d4f2003a2ddf9122d",
+      "sha256": "50b262686598c5b768811daa353d0f4ef66330430ff11194ae49677eb9022f3c"
+    },
+    {
+      "local": "references/winui/TreeViewDragItemsStartingEventArgs.h",
+      "upstream": "controls/dev/TreeView/TreeViewDragItemsStartingEventArgs.h",
+      "gitBlobSha1": "02f9f26cc136c284e3509f926f1071451e4b3213",
+      "sha256": "43214ac5ed3ce51c6d1f10f0feca63f5d9a59273f5988cd0a7eb3cda83d730ee"
+    },
+    {
+      "local": "references/winui/TreeViewExpandingEventArgs.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewExpandingEventArgs.cpp",
+      "gitBlobSha1": "651f11be807691fc1d1375ed55355edefa1e5e19",
+      "sha256": "bed28c6d0eaca8bde38a8b8b419d4fc73df5ce8458be414f9c944502f51ffef8"
+    },
+    {
+      "local": "references/winui/TreeViewExpandingEventArgs.h",
+      "upstream": "controls/dev/TreeView/TreeViewExpandingEventArgs.h",
+      "gitBlobSha1": "f28a028339777b295e4b0b5480efdb84fe085f70",
+      "sha256": "0228a55a29dcf0d4dd83ebeb50a148ae6d6b9dd67cf14eb13fd4d12215da015a"
+    },
+    {
+      "local": "references/winui/TreeViewItem.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewItem.cpp",
+      "gitBlobSha1": "e7253e28cf18d76f1df112aa1bdff9ca4e890956",
+      "sha256": "1b933105593f21eb06169528c12cc973d7749de830b746c3dc9906a71e596d12"
+    },
+    {
+      "local": "references/winui/TreeViewItem.h",
+      "upstream": "controls/dev/TreeView/TreeViewItem.h",
+      "gitBlobSha1": "10773dd7a890a9fb4fe9f892b10f7f19d48fe7dd",
+      "sha256": "3a93cc271f03290b649d14fa13be5e20f633b9a3eecb6974018cb84213cbc53f"
+    },
+    {
+      "local": "references/winui/TreeViewItem.xaml",
+      "upstream": "controls/dev/TreeView/TreeViewItem.xaml",
+      "gitBlobSha1": "e6655da4feacad75dd68395ec2ddb231e6ad5cfb",
+      "sha256": "8ea8f12771cd2e23b39def9156513919c22e3da0b8b97b5ada99ae93edb492f0"
+    },
+    {
+      "local": "references/winui/TreeViewItemAutomationPeer.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewItemAutomationPeer.cpp",
+      "gitBlobSha1": "3e1b29af33080d63e436ef13948a4a9c2df0fb4f",
+      "sha256": "07b48ef34e94902c2de3e6d96e55ac352f2a20586d04f23717edcc87511f04f5"
+    },
+    {
+      "local": "references/winui/TreeViewItemAutomationPeer.h",
+      "upstream": "controls/dev/TreeView/TreeViewItemAutomationPeer.h",
+      "gitBlobSha1": "2d97cb9c0179341383e4345692acdfa4211d3791",
+      "sha256": "e40c29557d4fc9e0630fc84570c906b12c777f37f574992cc0f146a5624fed8e"
+    },
+    {
+      "local": "references/winui/TreeViewItemDataAutomationPeer.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewItemDataAutomationPeer.cpp",
+      "gitBlobSha1": "3c827732a7e4a0db9c15b576c15e4f0cb6e7360c",
+      "sha256": "7122620768616b0533a8326f816363dd41cc265cb6db036ce2466a5020af0295"
+    },
+    {
+      "local": "references/winui/TreeViewItemDataAutomationPeer.h",
+      "upstream": "controls/dev/TreeView/TreeViewItemDataAutomationPeer.h",
+      "gitBlobSha1": "ed06c53578916eec620e63f73873c4893bc3d90b",
+      "sha256": "a9ef74dcdc7ebc2ea4d77b37caedea05fd55b80a69083f48a62eefbefe6001e6"
+    },
+    {
+      "local": "references/winui/TreeViewItemInvokedEventArgs.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewItemInvokedEventArgs.cpp",
+      "gitBlobSha1": "e92fceee09654df6035c047165c4859c8cd81d0d",
+      "sha256": "f1cc7be1746a1f834f321d74e330855e32e0fda9d469d265b32da5111775c60d"
+    },
+    {
+      "local": "references/winui/TreeViewItemInvokedEventArgs.h",
+      "upstream": "controls/dev/TreeView/TreeViewItemInvokedEventArgs.h",
+      "gitBlobSha1": "d3b28261997c4a3aed476834147c9b5f94077cbe",
+      "sha256": "67bec445037be7d629b482cc5e2048e97c5a571827ce65598f4ba026d894a52a"
+    },
+    {
+      "local": "references/winui/TreeViewItemTemplateSettings.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewItemTemplateSettings.cpp",
+      "gitBlobSha1": "eae3d7d394bf13b9dd9a215cc99982529655633c",
+      "sha256": "2bc6c6326fb4d45f513fbf7c2bddb2ab2603b29539732ea365fe1da5efe39165"
+    },
+    {
+      "local": "references/winui/TreeViewItemTemplateSettings.h",
+      "upstream": "controls/dev/TreeView/TreeViewItemTemplateSettings.h",
+      "gitBlobSha1": "624a3d41d37ef071a033663d66ce8cb181972cd5",
+      "sha256": "eac24b929b865007ce425df03096405316f5466d8e78ac6cc97d44f6a1fce306"
+    },
+    {
+      "local": "references/winui/TreeViewList.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewList.cpp",
+      "gitBlobSha1": "2b02fbf673940c5162f49028b955d0663dc6a3dd",
+      "sha256": "d62a711676e6323142cf7d2897b8d0f5b9712f007b61ea87d7325e700a2fa398"
+    },
+    {
+      "local": "references/winui/TreeViewList.h",
+      "upstream": "controls/dev/TreeView/TreeViewList.h",
+      "gitBlobSha1": "c41bd143f768e9786b879dc893a29b550aebecfb",
+      "sha256": "f34700744a644224d39cf2636d27e3955dea679d85e650c9d9e3c838f9d70b9f"
+    },
+    {
+      "local": "references/winui/TreeViewListAutomationPeer.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewListAutomationPeer.cpp",
+      "gitBlobSha1": "4d9633fd43ca254e567a1230982ca38b0a096833",
+      "sha256": "957e2b511dbd3717c3680854c66f21a397960fe4ec5b073ac5d04ee39cf9910c"
+    },
+    {
+      "local": "references/winui/TreeViewListAutomationPeer.h",
+      "upstream": "controls/dev/TreeView/TreeViewListAutomationPeer.h",
+      "gitBlobSha1": "7fa73df83efc02169d32f7b47b3593ff212c3e3f",
+      "sha256": "f97350dc2155e1a8f272a554e0dcfda6c8e3b313b5ae397bcd8bcc19e06efa20"
+    },
+    {
+      "local": "references/winui/TreeViewNode.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewNode.cpp",
+      "gitBlobSha1": "bd19c75b5b6fe88753488f8a4b4c6c193a32bc59",
+      "sha256": "92d067f207f80dc629e2d155c5d254464625b83af4315239204c0522f1e70ecb"
+    },
+    {
+      "local": "references/winui/TreeViewNode.h",
+      "upstream": "controls/dev/TreeView/TreeViewNode.h",
+      "gitBlobSha1": "f08a58d7e862813b630e7ad432ebfcbc5e5bbd82",
+      "sha256": "13bc924da4f6105c91e21035cbac327718a6b957eb3235a43f5c3e102c8656d1"
+    },
+    {
+      "local": "references/winui/TreeViewSelectionChangedEventArgs.cpp",
+      "upstream": "controls/dev/TreeView/TreeViewSelectionChangedEventArgs.cpp",
+      "gitBlobSha1": "4c7fa761860a8e93d8d32ca716bafc47fbde3cd5",
+      "sha256": "73558894a717b9010f8d6f5dd2f7d940c1af8e95e071010b06352f2f1e2fa978"
+    },
+    {
+      "local": "references/winui/TreeViewSelectionChangedEventArgs.h",
+      "upstream": "controls/dev/TreeView/TreeViewSelectionChangedEventArgs.h",
+      "gitBlobSha1": "109c74fcbe909aa3b6d80d767e133ac09ac9771a",
+      "sha256": "d74be0b1c079455f5866e4a5c0824b84fc29f3ad966352cb5b42d2eca072ed5a"
+    },
+    {
+      "local": "references/winui/TreeView_themeresources.xaml",
+      "upstream": "controls/dev/TreeView/TreeView_themeresources.xaml",
+      "gitBlobSha1": "8e7a107255310706dda5e4e5ca6edf99b6b14eb9",
+      "sha256": "594c6aaef90d4c5de900ea8119ccc78d2431dfe115143b0613cba00df89937e8"
+    },
+    {
+      "local": "references/winui/ViewModel.cpp",
+      "upstream": "controls/dev/TreeView/ViewModel.cpp",
+      "gitBlobSha1": "943a528dc4d15d7b71404a1fbaa0c33043516996",
+      "sha256": "36aa9ef827af3f64676dff6d09f998d1a46dea945a864c19a533fb76f75c500b"
+    },
+    {
+      "local": "references/winui/ViewModel.h",
+      "upstream": "controls/dev/TreeView/ViewModel.h",
+      "gitBlobSha1": "b53842a2920745a2b34063d8ee7d6a80a8e547eb",
+      "sha256": "50a9a1b4aad179232623a5629e2f9ffd9254db6a731bd4b53c0564186f998e9f"
+    },
+    {
+      "local": "references/winui/FlipView_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/FlipView_Partial.cpp",
+      "gitBlobSha1": "40fe4a90dbbb7ad4b5b58faafde416a4df985224",
+      "sha256": "2ac424ee564ee4b5bef1b8ee9fd933dc903d7abdb10b6966eb2360b43d526775"
+    },
+    {
+      "local": "references/winui/FlipView_Partial.h",
+      "upstream": "dxaml/xcp/dxaml/lib/FlipView_Partial.h",
+      "gitBlobSha1": "198bbf52d40bce6699c91eb493e297ce968f438f",
+      "sha256": "a280f59b63a806740074767c2fd99c441bf83725254c71c0c1abdd8ce71f9201"
+    }
+  ]
+}

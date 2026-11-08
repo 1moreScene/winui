@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-09",
+  "controls": [
+    "ItemsView",
+    "AnnotatedScrollBar",
+    "PagerControl",
+    "LayoutPanel",
+    "RichTextBlock"
+  ],
+  "ownership": {
+    "Rust": [
+      "control tree",
+      "layout and line breaking",
+      "bidi order",
+      "UTF-16 selection",
+      "highlighting",
+      "overflow chains",
+      "item packing and realization",
+      "commands and paging",
+      "scroll coordination",
+      "label collision and templates",
+      "tooltip and repeat scheduling",
+      "hit testing",
+      "painting",
+      "lifetime"
+    ],
+    "TypeScript": [
+      "typed handles",
+      "business objects",
+      "callbacks",
+      "clipboard and input host adaptation",
+      "accessibility projection"
+    ],
+    "React": "same SDK factories and business templates"
+  },
+  "rust": {
+    "passed": 88,
+    "suites": {
+      "basic_next": 9,
+      "collections": 16,
+      "reading_advanced": 14,
+      "reading_controls": 9,
+      "repeater_refresh": 21,
+      "view_commands": 19
+    }
+  },
+  "browser": {
+    "startTime": "2026-11-08T17:38:32.720Z",
+    "duration": 53119.799,
+    "expected": 18,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "nativeStates": 38,
+  "browserNativeStates": 76,
+  "legacyNativeStates": 18,
+  "wasm": {
+    "tested": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1",
+    "current": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1",
+    "matchesCurrentBinary": true,
+    "matrixMatchesTestedBinary": true,
+    "bytes": 7948063
+  },
+  "sourceFiles": 174,
+  "sourceFingerprints": {
+    "src/scene/reading_controls.rs": "31870385ca450d0af83312ab5349265c842cd0ad60d463494ef15948dfab57c4",
+    "src/scene/reading_controls/advanced.rs": "2cdea856dee70cf65d0477aa110bd27202e93a1274015377814b5f34ab3c5747",
+    "src/scene/reading_controls/rich.rs": "f5abddcc686bad9d2b3369d2c8fe5e57be01c223abe4e4bb4d8de18918d1d32a",
+    "src/scene/repeater.rs": "d8f958830c6d209b6696160e45e3978a926ca01a32c1d1e852d7522a912d06cb",
+    "src/scene/collections.rs": "8054777474bd9cf14718447f03ddc9f548233908953ad614df8e2b2c13696547",
+    "src/scene/layout.rs": "3f6ef4db137d126b56f56da1fd0fd66b1c3e572e8ca8565fe974b3ed3255f8f2",
+    "src/scene/input.rs": "f242a5f0663dd965b159d8fabc0d3946c57a0d34a029056a391272d49a2413e4",
+    "gallery/src/scene.ts": "d88a0d0b76c2dfb6a09d19b7a49988aca884ac190d4b87c009034566006e8671",
+    "gallery/src/react.tsx": "083fb33a7cb90162dafae54ac80fd215eadc30677237e4950a7f314b5231622b",
+    "gallery/src/reading-controls-types.ts": "b3d3a706972b1bcf50517ff5626ebcda8d603e6a5ab5aeb7d32f6b88ad2e6bf5",
+    "gallery/src/ReadingControlsPage.tsx": "6afa35e6a5cf46310ef959d68dfd52b47c5970f3e4d867d847dfa2861aed9684",
+    "references/reading-controls-template.json": "4cd74625d3532ed7c01fe054046a4757c6d60d49da470d518f64311d67c56143",
+    "tools/record-reading-refinement.py": "ea22069b3efd58ae3a9cc26b376a64c0b8d93b4810a565598b0c783fbde9cde6",
+    "gallery/tests/reading-controls.spec.ts": "ab642f9e1e18573a4e4cc761dbd8d263d9e6e473eb07fde7a684b1b5f22f19e9",
+    "gallery/tests/reading-gallery-fixture.ts": "773162fbb4e9fe8b67346660dcf9e3ef0146a387cc0c4b68e855bdee724e41a5"
+  },
+  "validationArtifacts": [
+    "references/validation/reading-gallery-native.json",
+    "references/validation/reading-gallery-browser.json",
+    "references/validation/reading-gallery-release-audit.json",
+    "out/reading-production-results.json",
+    "out/reading-rust-validation.log"
+  ],
+  "limits": [
+    "Store package and probe DLL hashes match. Five sample interactions were observed directly in the Store window; controlled-width/theme comparisons use the native probe.",
+    "Visible Gallery layouts and sample interactions are validated. The full native LinedFlowLayout frozen-line/cache optimizer and every arbitrary data source are not proven equivalent.",
+    "Browser font shaping/rasterization follows Rust bidi/layout. This is not DirectWrite pixel equivalence or a complete Windows UIA text provider.",
+    "Rich native ActualWidth/Height and SDK allocated scene rectangles have different semantics; their differences remain explicitly recorded.",
+    "Static captures and mean image errors do not establish Composition, AnimatedIcon or transition-frame equivalence.",
+    "Button Style supports typed SDK property overrides, not general arbitrary XAML ControlTemplates.",
+    "User-requested suppression of focus outlines is an explicit native appearance exception."
+  ]
+}

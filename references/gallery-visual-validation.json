@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-08",
+  "baseline": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "sources": [
+      {
+        "path": "../WinUI-Gallery/WinUIGallery/MainWindow.xaml",
+        "sha256": "a8833625f5acc9cc05db50a04945e6a788420f4d0448d47b782bafc9f32d035a"
+      },
+      {
+        "path": "../WinUI-Gallery/WinUIGallery/Styles/ItemTemplates.xaml",
+        "sha256": "808a01b33b1cdc72a0d3aedd92d240901e36fa4b084081ab104851e45ff7392b"
+      },
+      {
+        "path": "../WinUI-Gallery/WinUIGallery/Controls/PageHeader.xaml",
+        "sha256": "dfb1db54fe7614ebb8f62dcf2295ce09689b7dc1639d37f71327e4f39675b4df"
+      }
+    ],
+    "selectorBarResources": {
+      "path": "references/winui/SelectorBar_themeresources.xaml",
+      "sha256": "b7aeab0036d8ff978cde0ae5bb98ad334867d9ec2d81a47956e58399c6b0356b"
+    }
+  },
+  "rootCause": {
+    "layer": "Rust SDK",
+    "path": "src/scene/paint.rs",
+    "sha256": "177eaf55db14819b16064dcc38a7ce5f26237e27fce23723f3bbb1a7444751a9",
+    "before": "A scene without a root background brush received an implicit full-viewport theme fill.",
+    "after": "A null root background is transparent. Explicit root brushes and individual control template fills remain effective."
+  },
+  "callerCorrections": [
+    "Use existing AutoSuggestBox with QueryIcon and pinned 580 DIP maximum width.",
+    "Remove favorite action absent from official ControlItemTemplate; keep page-header ToggleButton.",
+    "Give SDK icon buttons their actual width, height, minimum size, padding and centered Rust content.",
+    "Use official theme icon Button; retain full theme choice in Settings.",
+    "Remove zero-width renderer Expander wrappers and obsolete details/input styles."
+  ],
+  "validation": {
+    "visual": {
+      "path": "out/gallery-visual-results.json",
+      "passed": 7,
+      "failed": 0,
+      "cases": [
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "Pinned Gallery search is one AutoSuggestBox and control cards have no invented favorite action",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "All icon actions fit their actual Rust canvas and center their glyphs at desktop and narrow widths",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "Canvas2D SDK scene defaults to transparent in every theme and preserves explicit root brushes",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "WebGL2 SDK scene defaults to transparent in every theme and preserves explicit root brushes",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "Home SelectorBar caller has no background override and unused pixels are transparent",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "All implemented pages keep embedded Rust control roots inside their host viewport",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "125 percent DPR keeps search and icon action content inside the native hit region",
+          "status": "expected"
+        }
+      ]
+    },
+    "controls": {
+      "path": "out/gallery-controls-results.json",
+      "passed": 5,
+      "failed": 0,
+      "cases": [
+        {
+          "file": "gallery-controls.spec.ts",
+          "title": "Gallery options use real CheckBox and ComboBox with pointer and keyboard",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-controls.spec.ts",
+          "title": "Source content is inside one Rust Expander and follows its layout and clip",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-controls.spec.ts",
+          "title": "Code horizontal and vertical scrollbars use the shared Rust ScrollViewer in all themes",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-controls.spec.ts",
+          "title": "Every implemented Gallery page mounts existing SDK controls and no HTML substitutes",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-controls.spec.ts",
+          "title": "Home SelectorBar, search AutoSuggestBox, lifecycle and narrow source layout remain usable",
+          "status": "expected"
+        }
+      ]
+    },
+    "regression": {
+      "baseline": {
+        "path": "out/gallery-visual-regression-baseline-results.json",
+        "passed": 16,
+        "failed": 1,
+        "cases": [
+          {
+            "file": "global-scrollbars.spec.ts",
+            "title": "application hook keeps native scrolling, content events and Rust thumb/keyboard behavior",
+            "status": "expected"
+          },
+          {
+            "file": "global-scrollbars.spec.ts",
+            "title": "dynamic containers, shadow DOM, clipping, RTL and resize synchronize without steady polling",
+            "status": "expected"
+          },
+          {
+            "file": "global-scrollbars.spec.ts",
+            "title": "runtime leases share one renderer, subtree disposal restores original DOM chrome and IDs",
+            "status": "expected"
+          },
+          {
+            "file": "global-scrollbars.spec.ts",
+            "title": "hidden/opted-out/transformed surfaces keep native chrome, nested scroll and clipping stay bounded",
+            "status": "expected"
+          },
+          {
+            "file": "global-scrollbars.spec.ts",
+            "title": "document/source/sidebars are automatic, policy changes and repeated unmount stay clean",
+            "status": "expected"
+          },
+          {
+            "file": "global-scrollbars.spec.ts",
+            "title": "native touch scrolling remains native and touching a Rust bar drags its thumb",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "real WASM selection, source and canvas pixels",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "focus keeps keyboard semantics without CSS or Canvas black frames",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "rapid real pointer reversals keep indicator within the clicked-item span",
+            "status": "unexpected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "adaptive thresholds and five public modes",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "synchronous PaneClosing cancellation and reverse timeline",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "keyboard focus and hierarchy invoke real Rust state",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "theme changes, high contrast and reduced motion",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "top overflow and footer selection",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "React remount releases surfaces and event callbacks",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "batch rollback, callback cancellation and destruction during dispatch",
+            "status": "expected"
+          },
+          {
+            "file": "navigation.spec.ts",
+            "title": "record startup, frame diagnostics and screenshots",
+            "status": "expected"
+          }
+        ]
+      },
+      "recheck": {
+        "path": "out/gallery-visual-regression-results.json",
+        "passed": 1,
+        "failed": 0,
+        "cases": [
+          {
+            "file": "navigation.spec.ts",
+            "title": "rapid real pointer reversals keep indicator within the clicked-item span",
+            "status": "expected"
+          }
+        ]
+      },
+      "unresolved": 0,
+      "note": "The 140-click indicator stress test hit its 30-second test budget during concurrent browser suites. The unchanged test passed when rerun by itself; this is not a navigation latency benchmark."
+    },
+    "uniqueBrowserChecks": 29,
+    "rust": {
+      "command": "cargo test --locked",
+      "log": "out/gallery-visual-full-rust.log",
+      "passed": 237,
+      "failed": 0
+    },
+    "geometry": {
+      "pages": 57,
+      "path": "out/gallery-visual/page-geometry.json"
+    },
+    "iconGeometry": "out/gallery-visual/icons.json",
+    "remainingHtmlSubstitutes": 0
+  },
+  "testedBuild": {
+    "wasm": {
+      "path": "out/gallery-visual-final-preview/assets/winui_bg-B94ziHpv.wasm",
+      "sha256": "ea8de43414350e5c7fda697a20bc5ffa3659ce7b8f2e718a8be7700841e75b65",
+      "matchesCurrentBinary": false
+    },
+    "sources": [
+      {
+        "path": "out/gallery-visual-final-dev/src/HomePage.tsx",
+        "sha256": "8afc45159c77ff35606cdb0eb6124f212230a87fa063a5af7f3748603a5eb558",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/GalleryControls.tsx",
+        "sha256": "105de66892b7a75aa47de097259fb19906997b5d8011469db1adce61e78a9f12",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/GalleryPageHeader.tsx",
+        "sha256": "ccd6030cf672db4494397e99f78a5d7bf8746e7672314d7c8c1ab7e5ccc78f0b",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/gallery-controls.css",
+        "sha256": "6bd688ddc2e3e3abb57166fc6527f83ea23e226f242ef1be944238d2e66c8298",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/home.css",
+        "sha256": "25ba437dfa7f546eef97a68befd39ad0dd713cf53acb6b2678c9df5990570f9f",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/style.css",
+        "sha256": "4c21cc3effd7aed428912678f1478b53d5a65540e6bf64c07dbef271a6177f59",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/CollectionsPage.tsx",
+        "sha256": "a566f0c50f31c96238eaa6bcc33a21abcaf1f5774df0d9780903ab58b88ca8fe",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/CommandControlsPage.tsx",
+        "sha256": "a42950c9b265602a797eb116d540329c15e2eee02bbc3eb8a4ad3e2bf4ec39d4",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-visual-final-dev/src/NavigationControlsPage.tsx",
+        "sha256": "7bbad999eb6c4dcb9e28addd305e932c3e622859690a04e93579c0b2e62cbfb4",
+        "matchesCurrentSource": true
+      }
+    ]
+  },
+  "currentBuildVerification": {
+    "result": {
+      "path": "out/gallery-visual-current-results.json",
+      "passed": 6,
+      "failed": 0,
+      "cases": [
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "Pinned Gallery search is one AutoSuggestBox and control cards have no invented favorite action",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "All icon actions fit their actual Rust canvas and center their glyphs at desktop and narrow widths",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "Canvas2D SDK scene defaults to transparent in every theme and preserves explicit root brushes",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "WebGL2 SDK scene defaults to transparent in every theme and preserves explicit root brushes",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "Home SelectorBar caller has no background override and unused pixels are transparent",
+          "status": "expected"
+        },
+        {
+          "file": "gallery-visual.spec.ts",
+          "title": "125 percent DPR keeps search and icon action content inside the native hit region",
+          "status": "expected"
+        }
+      ]
+    },
+    "build": {
+      "wasm": {
+        "path": "out/gallery-visual-current-preview/assets/winui_bg-rXzyUp2o.wasm",
+        "sha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+        "matchesCurrentBinary": true
+      },
+      "sources": [
+        {
+          "path": "out/gallery-visual-current-dev/src/HomePage.tsx",
+          "sha256": "8afc45159c77ff35606cdb0eb6124f212230a87fa063a5af7f3748603a5eb558",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/GalleryControls.tsx",
+          "sha256": "105de66892b7a75aa47de097259fb19906997b5d8011469db1adce61e78a9f12",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/GalleryPageHeader.tsx",
+          "sha256": "ccd6030cf672db4494397e99f78a5d7bf8746e7672314d7c8c1ab7e5ccc78f0b",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/gallery-controls.css",
+          "sha256": "6bd688ddc2e3e3abb57166fc6527f83ea23e226f242ef1be944238d2e66c8298",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/home.css",
+          "sha256": "25ba437dfa7f546eef97a68befd39ad0dd713cf53acb6b2678c9df5990570f9f",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/style.css",
+          "sha256": "4c21cc3effd7aed428912678f1478b53d5a65540e6bf64c07dbef271a6177f59",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/CollectionsPage.tsx",
+          "sha256": "a566f0c50f31c96238eaa6bcc33a21abcaf1f5774df0d9780903ab58b88ca8fe",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/CommandControlsPage.tsx",
+          "sha256": "a42950c9b265602a797eb116d540329c15e2eee02bbc3eb8a4ad3e2bf4ec39d4",
+          "matchesCurrentSource": true
+        },
+        {
+          "path": "out/gallery-visual-current-dev/src/NavigationControlsPage.tsx",
+          "sha256": "7bbad999eb6c4dcb9e28addd305e932c3e622859690a04e93579c0b2e62cbfb4",
+          "matchesCurrentSource": true
+        }
+      ]
+    },
+    "scope": "Six focused checks repeat search/card/icon behavior, both-backend three-theme alpha and explicit brushes, Home SelectorBar alpha and 125% DPR on a later WASM build."
+  },
+  "screenshots": [
+    "out/gallery-visual-home.png",
+    "out/gallery-visual-category.png",
+    "out/gallery-visual-header-1440.png",
+    "out/gallery-visual-header-390.png",
+    "out/gallery-visual-125pct.png"
+  ],
+  "limits": [
+    "Frozen sources and binaries were tested; equality flags report subsequent concurrent workspace changes.",
+    "Full native screenshot and Composition frame-by-frame parity is not certified by geometry, source and alpha checks.",
+    "PageHeader documentation/source menu content and API icon foreground still require further native comparison."
+  ]
+}

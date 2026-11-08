@@ -1,0 +1,1266 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "aliases": {
+    "Light": {
+      "RadioButtonForeground": "TextFillColorPrimaryBrush",
+      "RadioButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "RadioButtonForegroundPressed": "TextFillColorPrimaryBrush",
+      "RadioButtonForegroundDisabled": "TextFillColorDisabledBrush",
+      "RadioButtonBackground": "ControlFillColorTransparentBrush",
+      "RadioButtonBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "RadioButtonBackgroundPressed": "ControlFillColorTransparentBrush",
+      "RadioButtonBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrush": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrushPointerOver": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrushPressed": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrushDisabled": "ControlFillColorTransparentBrush",
+      "RadioButtonOuterEllipseStroke": "ControlStrongStrokeColorDefaultBrush",
+      "RadioButtonOuterEllipseStrokePointerOver": "ControlStrongStrokeColorDefaultBrush",
+      "RadioButtonOuterEllipseStrokePressed": "ControlStrongStrokeColorDisabledBrush",
+      "RadioButtonOuterEllipseStrokeDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "RadioButtonOuterEllipseFill": "ControlAltFillColorSecondaryBrush",
+      "RadioButtonOuterEllipseFillPointerOver": "ControlAltFillColorTertiaryBrush",
+      "RadioButtonOuterEllipseFillPressed": "ControlAltFillColorQuarternaryBrush",
+      "RadioButtonOuterEllipseFillDisabled": "ControlAltFillColorDisabledBrush",
+      "RadioButtonOuterEllipseCheckedStroke": "AccentFillColorDefaultBrush",
+      "RadioButtonOuterEllipseCheckedStrokePointerOver": "AccentFillColorSecondaryBrush",
+      "RadioButtonOuterEllipseCheckedStrokePressed": "AccentFillColorTertiaryBrush",
+      "RadioButtonOuterEllipseCheckedStrokeDisabled": "AccentFillColorDisabledBrush",
+      "RadioButtonOuterEllipseCheckedFill": "AccentFillColorDefaultBrush",
+      "RadioButtonOuterEllipseCheckedFillPointerOver": "AccentFillColorSecondaryBrush",
+      "RadioButtonOuterEllipseCheckedFillPressed": "AccentFillColorTertiaryBrush",
+      "RadioButtonOuterEllipseCheckedFillDisabled": "AccentFillColorDisabledBrush",
+      "RadioButtonCheckGlyphFill": "TextOnAccentFillColorPrimaryBrush",
+      "RadioButtonCheckGlyphFillPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "RadioButtonCheckGlyphFillPressed": "TextOnAccentFillColorPrimaryBrush",
+      "RadioButtonCheckGlyphFillDisabled": "TextOnAccentFillColorPrimary",
+      "RadioButtonCheckGlyphStroke": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokePointerOver": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokePressed": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeDisabled": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeChecked": "AccentControlElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeCheckedPointerOver": "AccentControlElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeCheckedPressed": "AccentControlElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeCheckedDisabled": "ControlElevationBorderBrush",
+      "ToggleSwitchContentForeground": "TextFillColorPrimaryBrush",
+      "ToggleSwitchContentForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleSwitchHeaderForeground": "TextFillColorPrimaryBrush",
+      "ToggleSwitchHeaderForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleSwitchContainerBackground": "SubtleFillColorTransparentBrush",
+      "ToggleSwitchContainerBackgroundPointerOver": "SubtleFillColorTransparent",
+      "ToggleSwitchContainerBackgroundPressed": "SubtleFillColorTransparent",
+      "ToggleSwitchContainerBackgroundDisabled": "SubtleFillColorTransparent",
+      "ToggleSwitchFillOff": "ControlAltFillColorSecondaryBrush",
+      "ToggleSwitchFillOffPointerOver": "ControlAltFillColorTertiary",
+      "ToggleSwitchFillOffPressed": "ControlAltFillColorQuarternary",
+      "ToggleSwitchFillOffDisabled": "ControlAltFillColorDisabled",
+      "ToggleSwitchStrokeOff": "ControlStrongStrokeColorDefaultBrush",
+      "ToggleSwitchStrokeOffPointerOver": "ControlStrongStrokeColorDefault",
+      "ToggleSwitchStrokeOffPressed": "ControlStrongStrokeColorDefault",
+      "ToggleSwitchStrokeOffDisabled": "ControlStrongStrokeColorDisabled",
+      "ToggleSwitchFillOn": "AccentFillColorDefaultBrush",
+      "ToggleSwitchFillOnPointerOver": "AccentFillColorSecondaryBrush",
+      "ToggleSwitchFillOnPressed": "AccentFillColorTertiaryBrush",
+      "ToggleSwitchFillOnDisabled": "AccentFillColorDisabledBrush",
+      "ToggleSwitchStrokeOn": "AccentFillColorDefaultBrush",
+      "ToggleSwitchStrokeOnPointerOver": "AccentFillColorSecondaryBrush",
+      "ToggleSwitchStrokeOnPressed": "AccentFillColorTertiaryBrush",
+      "ToggleSwitchStrokeOnDisabled": "AccentFillColorDisabledBrush",
+      "ToggleSwitchKnobFillOff": "TextFillColorSecondaryBrush",
+      "ToggleSwitchKnobFillOffPointerOver": "TextFillColorSecondaryBrush",
+      "ToggleSwitchKnobFillOffPressed": "TextFillColorSecondaryBrush",
+      "ToggleSwitchKnobFillOffDisabled": "TextFillColorDisabledBrush",
+      "ToggleSwitchKnobFillOn": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleSwitchKnobFillOnPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleSwitchKnobFillOnPressed": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleSwitchKnobFillOnDisabled": "TextOnAccentFillColorDisabledBrush",
+      "ToggleSwitchKnobStrokeOn": "CircleElevationBorderBrush"
+    },
+    "Dark": {
+      "RadioButtonForeground": "TextFillColorPrimaryBrush",
+      "RadioButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "RadioButtonForegroundPressed": "TextFillColorPrimaryBrush",
+      "RadioButtonForegroundDisabled": "TextFillColorDisabledBrush",
+      "RadioButtonBackground": "ControlFillColorTransparentBrush",
+      "RadioButtonBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "RadioButtonBackgroundPressed": "ControlFillColorTransparentBrush",
+      "RadioButtonBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrush": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrushPointerOver": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrushPressed": "ControlFillColorTransparentBrush",
+      "RadioButtonBorderBrushDisabled": "ControlFillColorTransparentBrush",
+      "RadioButtonOuterEllipseStroke": "ControlStrongStrokeColorDefaultBrush",
+      "RadioButtonOuterEllipseStrokePointerOver": "ControlStrongStrokeColorDefaultBrush",
+      "RadioButtonOuterEllipseStrokePressed": "ControlStrongStrokeColorDisabledBrush",
+      "RadioButtonOuterEllipseStrokeDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "RadioButtonOuterEllipseFill": "ControlAltFillColorSecondaryBrush",
+      "RadioButtonOuterEllipseFillPointerOver": "ControlAltFillColorTertiaryBrush",
+      "RadioButtonOuterEllipseFillPressed": "ControlAltFillColorQuarternaryBrush",
+      "RadioButtonOuterEllipseFillDisabled": "ControlAltFillColorDisabledBrush",
+      "RadioButtonOuterEllipseCheckedStroke": "AccentFillColorDefaultBrush",
+      "RadioButtonOuterEllipseCheckedStrokePointerOver": "AccentFillColorSecondaryBrush",
+      "RadioButtonOuterEllipseCheckedStrokePressed": "AccentFillColorTertiaryBrush",
+      "RadioButtonOuterEllipseCheckedStrokeDisabled": "AccentFillColorDisabledBrush",
+      "RadioButtonOuterEllipseCheckedFill": "AccentFillColorDefaultBrush",
+      "RadioButtonOuterEllipseCheckedFillPointerOver": "AccentFillColorSecondaryBrush",
+      "RadioButtonOuterEllipseCheckedFillPressed": "AccentFillColorTertiaryBrush",
+      "RadioButtonOuterEllipseCheckedFillDisabled": "AccentFillColorDisabledBrush",
+      "RadioButtonCheckGlyphFill": "TextOnAccentFillColorPrimaryBrush",
+      "RadioButtonCheckGlyphFillPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "RadioButtonCheckGlyphFillPressed": "TextOnAccentFillColorPrimaryBrush",
+      "RadioButtonCheckGlyphFillDisabled": "TextOnAccentFillColorPrimary",
+      "RadioButtonCheckGlyphStroke": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokePointerOver": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokePressed": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeDisabled": "CircleElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeChecked": "AccentControlElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeCheckedPointerOver": "AccentControlElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeCheckedPressed": "AccentControlElevationBorderBrush",
+      "RadioButtonCheckGlyphStrokeCheckedDisabled": "ControlElevationBorderBrush",
+      "ToggleSwitchContentForeground": "TextFillColorPrimaryBrush",
+      "ToggleSwitchContentForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleSwitchHeaderForeground": "TextFillColorPrimaryBrush",
+      "ToggleSwitchHeaderForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleSwitchContainerBackground": "SubtleFillColorTransparentBrush",
+      "ToggleSwitchContainerBackgroundPointerOver": "SubtleFillColorTransparent",
+      "ToggleSwitchContainerBackgroundPressed": "SubtleFillColorTransparent",
+      "ToggleSwitchContainerBackgroundDisabled": "SubtleFillColorTransparent",
+      "ToggleSwitchFillOff": "ControlAltFillColorSecondaryBrush",
+      "ToggleSwitchFillOffPointerOver": "ControlAltFillColorTertiary",
+      "ToggleSwitchFillOffPressed": "ControlAltFillColorQuarternary",
+      "ToggleSwitchFillOffDisabled": "ControlAltFillColorDisabled",
+      "ToggleSwitchStrokeOff": "ControlStrongStrokeColorDefaultBrush",
+      "ToggleSwitchStrokeOffPointerOver": "ControlStrongStrokeColorDefault",
+      "ToggleSwitchStrokeOffPressed": "ControlStrongStrokeColorDefault",
+      "ToggleSwitchStrokeOffDisabled": "ControlStrongStrokeColorDisabled",
+      "ToggleSwitchFillOn": "AccentFillColorDefaultBrush",
+      "ToggleSwitchFillOnPointerOver": "AccentFillColorSecondaryBrush",
+      "ToggleSwitchFillOnPressed": "AccentFillColorTertiaryBrush",
+      "ToggleSwitchFillOnDisabled": "AccentFillColorDisabledBrush",
+      "ToggleSwitchStrokeOn": "AccentFillColorDefaultBrush",
+      "ToggleSwitchStrokeOnPointerOver": "AccentFillColorSecondaryBrush",
+      "ToggleSwitchStrokeOnPressed": "AccentFillColorTertiaryBrush",
+      "ToggleSwitchStrokeOnDisabled": "AccentFillColorDisabledBrush",
+      "ToggleSwitchKnobFillOff": "TextFillColorSecondaryBrush",
+      "ToggleSwitchKnobFillOffPointerOver": "TextFillColorSecondaryBrush",
+      "ToggleSwitchKnobFillOffPressed": "TextFillColorSecondaryBrush",
+      "ToggleSwitchKnobFillOffDisabled": "TextFillColorDisabledBrush",
+      "ToggleSwitchKnobFillOn": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleSwitchKnobFillOnPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleSwitchKnobFillOnPressed": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleSwitchKnobFillOnDisabled": "TextOnAccentFillColorDisabledBrush",
+      "ToggleSwitchKnobStrokeOn": "CircleElevationBorderBrush"
+    },
+    "HighContrast": {
+      "RadioButtonForeground": "SystemColorButtonTextColorBrush",
+      "RadioButtonForegroundPointerOver": "SystemColorButtonTextColorBrush",
+      "RadioButtonForegroundPressed": "SystemColorButtonTextColorBrush",
+      "RadioButtonForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "RadioButtonBackground": "SystemControlTransparentBrush",
+      "RadioButtonBackgroundPointerOver": "SystemControlTransparentBrush",
+      "RadioButtonBackgroundPressed": "SystemControlTransparentBrush",
+      "RadioButtonBackgroundDisabled": "SystemControlTransparentBrush",
+      "RadioButtonBorderBrush": "SystemControlTransparentBrush",
+      "RadioButtonBorderBrushPointerOver": "SystemControlTransparentBrush",
+      "RadioButtonBorderBrushPressed": "SystemControlTransparentBrush",
+      "RadioButtonBorderBrushDisabled": "SystemControlTransparentBrush",
+      "RadioButtonOuterEllipseStroke": "SystemColorButtonTextColorBrush",
+      "RadioButtonOuterEllipseStrokePointerOver": "SystemColorHighlightColorBrush",
+      "RadioButtonOuterEllipseStrokePressed": "SystemColorHighlightTextColorBrush",
+      "RadioButtonOuterEllipseFill": "SystemColorButtonFaceColorBrush",
+      "RadioButtonOuterEllipseFillPointerOver": "SystemColorHighlightTextColorBrush",
+      "RadioButtonOuterEllipseFillPressed": "SystemColorHighlightTextColorBrush",
+      "RadioButtonOuterEllipseFillDisabled": "SystemColorWindowColorBrush",
+      "RadioButtonOuterEllipseCheckedStroke": "SystemColorHighlightColorBrush",
+      "RadioButtonOuterEllipseCheckedStrokePointerOver": "SystemColorButtonTextColorBrush",
+      "RadioButtonOuterEllipseCheckedStrokePressed": "SystemColorButtonFaceColorBrush",
+      "RadioButtonOuterEllipseCheckedFill": "SystemColorHighlightTextColorBrush",
+      "RadioButtonOuterEllipseCheckedFillPointerOver": "SystemColorButtonFaceColorBrush",
+      "RadioButtonOuterEllipseCheckedFillPressed": "SystemColorButtonFaceColorBrush",
+      "RadioButtonOuterEllipseCheckedFillDisabled": "SystemColorWindowColorBrush",
+      "RadioButtonCheckGlyphFill": "SystemColorHighlightColorBrush",
+      "RadioButtonCheckGlyphFillPointerOver": "SystemColorButtonTextColorBrush",
+      "RadioButtonCheckGlyphFillPressed": "SystemColorButtonTextColorBrush",
+      "RadioButtonCheckGlyphFillDisabled": "SystemColorGrayTextColorBrush",
+      "RadioButtonCheckGlyphStroke": "SystemControlTransparentBrush",
+      "RadioButtonCheckGlyphStrokePointerOver": "SystemControlTransparentBrush",
+      "RadioButtonCheckGlyphStrokePressed": "SystemControlTransparentBrush",
+      "RadioButtonCheckGlyphStrokeDisabled": "SystemColorGrayTextColorBrush",
+      "RadioButtonCheckGlyphStrokeChecked": "SystemControlTransparentBrush",
+      "RadioButtonCheckGlyphStrokeCheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "RadioButtonCheckGlyphStrokeCheckedPressed": "SystemColorHighlightTextColorBrush",
+      "RadioButtonCheckGlyphStrokeCheckedDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleSwitchContentForeground": "SystemColorWindowTextColorBrush",
+      "ToggleSwitchContentForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleSwitchHeaderForeground": "SystemColorWindowTextColorBrush",
+      "ToggleSwitchHeaderForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleSwitchContainerBackground": "SystemControlTransparentBrush",
+      "ToggleSwitchContainerBackgroundPointerOver": "SystemControlTransparentColor",
+      "ToggleSwitchContainerBackgroundPressed": "SystemControlTransparentColor",
+      "ToggleSwitchContainerBackgroundDisabled": "SystemControlTransparentColor",
+      "ToggleSwitchFillOff": "SystemColorButtonFaceColorBrush",
+      "ToggleSwitchFillOffPointerOver": "SystemColorHighlightTextColor",
+      "ToggleSwitchFillOffPressed": "SystemColorHighlightTextColor",
+      "ToggleSwitchFillOffDisabled": "SystemColorWindowColor",
+      "ToggleSwitchStrokeOff": "SystemColorButtonTextColorBrush",
+      "ToggleSwitchStrokeOffPointerOver": "SystemColorHighlightColor",
+      "ToggleSwitchStrokeOffPressed": "SystemColorHighlightColor",
+      "ToggleSwitchStrokeOffDisabled": "SystemColorGrayTextColor",
+      "ToggleSwitchKnobFillOff": "SystemColorButtonTextColorBrush",
+      "ToggleSwitchKnobFillOffPointerOver": "SystemColorHighlightColorBrush",
+      "ToggleSwitchKnobFillOffPressed": "SystemColorHighlightColorBrush",
+      "ToggleSwitchKnobFillOffDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleSwitchFillOn": "SystemColorHighlightColorBrush",
+      "ToggleSwitchFillOnPointerOver": "SystemColorButtonFaceColorBrush",
+      "ToggleSwitchFillOnPressed": "SystemColorButtonFaceColorBrush",
+      "ToggleSwitchFillOnDisabled": "SystemColorWindowColorBrush",
+      "ToggleSwitchStrokeOn": "SystemColorHighlightColorBrush",
+      "ToggleSwitchStrokeOnPointerOver": "SystemColorButtonTextColorBrush",
+      "ToggleSwitchStrokeOnPressed": "SystemColorButtonTextColorBrush",
+      "ToggleSwitchStrokeOnDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleSwitchKnobFillOn": "SystemColorHighlightTextColorBrush",
+      "ToggleSwitchKnobFillOnPointerOver": "SystemColorButtonTextColorBrush",
+      "ToggleSwitchKnobFillOnPressed": "SystemColorButtonTextColorBrush",
+      "ToggleSwitchKnobFillOnDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleSwitchKnobStrokeOn": "SystemControlTransparentBrush"
+    }
+  },
+  "styles": {
+    "RadioButton": {
+      "defaults": {
+        "Background": "{ThemeResource RadioButtonBackground}",
+        "Foreground": "{ThemeResource RadioButtonForeground}",
+        "BorderBrush": "{ThemeResource RadioButtonBorderBrush}",
+        "Padding": "8,6,0,0",
+        "HorizontalAlignment": "Left",
+        "VerticalAlignment": "Center",
+        "HorizontalContentAlignment": "Left",
+        "VerticalContentAlignment": "Top",
+        "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+        "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+        "MinWidth": "120",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+        "FocusVisualMargin": "-7,-3,-7,-3",
+        "CornerRadius": "{StaticResource ControlCornerRadius}"
+      },
+      "scalars": {
+        "RadioButtonCheckGlyphSize": 12.0,
+        "RadioButtonCheckGlyphPointerOverSize": 14.0,
+        "RadioButtonCheckGlyphPressedOverSize": 10.0
+      },
+      "states": {
+        "Normal": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStroke",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFill",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStroke",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFill",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFill",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStroke",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFill",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackground",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrush",
+          "ContentPresenter.Foreground": "RadioButtonForeground"
+        },
+        "PointerOver": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStrokePointerOver",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFillPointerOver",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStrokePointerOver",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFillPointerOver",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFillPointerOver",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStrokePointerOver",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFill",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackgroundPointerOver",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrushPointerOver",
+          "ContentPresenter.Foreground": "RadioButtonForegroundPointerOver"
+        },
+        "Pressed": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStrokePressed",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFillPressed",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStrokePressed",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFillPressed",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFillPressed",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStrokePressed",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFill",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackgroundPressed",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrushPressed",
+          "ContentPresenter.Foreground": "RadioButtonForegroundPressed"
+        },
+        "Disabled": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStrokeDisabled",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFillDisabled",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStrokeDisabled",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFillDisabled",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFillDisabled",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStrokeDisabled",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFill",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackgroundDisabled",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrushDisabled",
+          "ContentPresenter.Foreground": "RadioButtonForegroundDisabled"
+        },
+        "Checked": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStroke",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFill",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStroke",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFill",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFill",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStrokeChecked",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFillPressed",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackground",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrush",
+          "ContentPresenter.Foreground": "RadioButtonForeground"
+        },
+        "Unchecked": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStroke",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFill",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStroke",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFill",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFill",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStroke",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFill",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackground",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrush",
+          "ContentPresenter.Foreground": "RadioButtonForeground"
+        },
+        "Indeterminate": {
+          "OuterEllipse.Stroke": "RadioButtonOuterEllipseStroke",
+          "OuterEllipse.Fill": "RadioButtonOuterEllipseFill",
+          "OuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckOuterEllipse.Stroke": "RadioButtonOuterEllipseCheckedStroke",
+          "CheckOuterEllipse.Fill": "RadioButtonOuterEllipseCheckedFill",
+          "CheckOuterEllipse.StrokeThickness": "RadioButtonBorderThemeThickness",
+          "CheckGlyph.Width": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Height": "RadioButtonCheckGlyphSize",
+          "CheckGlyph.Fill": "RadioButtonCheckGlyphFill",
+          "CheckGlyph.Stroke": "RadioButtonCheckGlyphStroke",
+          "PressedCheckGlyph.Background": "RadioButtonCheckGlyphFill",
+          "PressedCheckGlyph.BorderBrush": "RadioButtonCheckGlyphStroke",
+          "RootGrid.Background": "RadioButtonBackground",
+          "RootGrid.BorderBrush": "RadioButtonBorderBrush",
+          "ContentPresenter.Foreground": "RadioButtonForeground"
+        }
+      },
+      "tracks": {
+        "Normal": {},
+        "PointerOver": {
+          "CheckGlyph.Width": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "CheckGlyph.Height": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "Pressed": {
+          "CheckGlyph.Width": {
+            "value": 10.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "CheckGlyph.Height": {
+            "value": 10.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "PressedCheckGlyph.Opacity": {
+            "value": 1.0,
+            "duration": "0",
+            "spline": null
+          },
+          "PressedCheckGlyph.Width": {
+            "value": 10.0,
+            "duration": "{StaticResource ControlFastAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "PressedCheckGlyph.Height": {
+            "value": 10.0,
+            "duration": "{StaticResource ControlFastAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "Disabled": {
+          "CheckGlyph.Width": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFastAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "CheckGlyph.Height": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFastAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "Checked": {},
+        "Unchecked": {},
+        "Indeterminate": {}
+      }
+    },
+    "ToggleSwitch": {
+      "defaults": {
+        "Foreground": "{ThemeResource ToggleSwitchContentForeground}",
+        "HorizontalAlignment": "Left",
+        "VerticalAlignment": "Center",
+        "HorizontalContentAlignment": "Left",
+        "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+        "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+        "ManipulationMode": "System,TranslateX",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+        "MinWidth": "{StaticResource ToggleSwitchThemeMinWidth}",
+        "FocusVisualMargin": "-7,-3,-7,-3",
+        "CornerRadius": "{StaticResource ControlCornerRadius}"
+      },
+      "scalars": {
+        "ToggleSwitchPreContentMargin": 10.0,
+        "ToggleSwitchPostContentMargin": 10.0,
+        "ToggleSwitchThemeMinWidth": 154.0
+      },
+      "states": {
+        "Normal": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackground",
+          "OuterBorder.Fill": "ToggleSwitchFillOff",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOff",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOn",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOn",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOn",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOff",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "PointerOver": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackgroundPointerOver",
+          "OuterBorder.Fill": "ToggleSwitchFillOffPointerOver",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOffPointerOver",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOnPointerOver",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOnPointerOver",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOnPointerOver",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOffPointerOver",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "Pressed": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackgroundPressed",
+          "OuterBorder.Fill": "ToggleSwitchFillOffPressed",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOffPressed",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOnPressed",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOnPressed",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOnPressed",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOffPressed",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "Disabled": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForegroundDisabled",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackgroundDisabled",
+          "OuterBorder.Fill": "ToggleSwitchFillOffDisabled",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOffDisabled",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOnDisabled",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOnDisabled",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOnDisabled",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOffDisabled",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForegroundDisabled",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForegroundDisabled"
+        },
+        "Dragging": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackground",
+          "OuterBorder.Fill": "ToggleSwitchFillOff",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOff",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOn",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOn",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOn",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOff",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "Off": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackground",
+          "OuterBorder.Fill": "ToggleSwitchFillOff",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOff",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOn",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOn",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOn",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOff",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "On": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackground",
+          "OuterBorder.Fill": "ToggleSwitchFillOff",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOff",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOn",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOn",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOn",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOff",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "OffContent": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackground",
+          "OuterBorder.Fill": "ToggleSwitchFillOff",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOff",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOn",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOn",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOn",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOff",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        },
+        "OnContent": {
+          "HeaderContentPresenter.Foreground": "ToggleSwitchHeaderForeground",
+          "HeaderContentPresenter.Margin": "ToggleSwitchTopHeaderMargin",
+          "SwitchAreaGrid.Background": "ToggleSwitchContainerBackground",
+          "OuterBorder.Fill": "ToggleSwitchFillOff",
+          "OuterBorder.Stroke": "ToggleSwitchStrokeOff",
+          "OuterBorder.StrokeThickness": "ToggleSwitchOuterBorderStrokeThickness",
+          "SwitchKnobBounds.Fill": "ToggleSwitchFillOn",
+          "SwitchKnobBounds.Stroke": "ToggleSwitchStrokeOn",
+          "SwitchKnobBounds.StrokeThickness": "ToggleSwitchOnStrokeThickness",
+          "SwitchKnobOn.Background": "ToggleSwitchKnobFillOn",
+          "SwitchKnobOn.BorderBrush": "ToggleSwitchKnobStrokeOn",
+          "SwitchKnobOff.Fill": "ToggleSwitchKnobFillOff",
+          "OffContentPresenter.Foreground": "ToggleSwitchContentForeground",
+          "OnContentPresenter.Foreground": "ToggleSwitchContentForeground"
+        }
+      },
+      "tracks": {
+        "Normal": {
+          "SwitchKnobOn.Width": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOn.Height": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Width": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Height": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "PointerOver": {
+          "SwitchKnobOn.Width": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOn.Height": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Width": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Height": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "Pressed": {
+          "SwitchKnobOn.Width": {
+            "value": 17.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOn.Height": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Width": {
+            "value": 17.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Height": {
+            "value": 14.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "Disabled": {
+          "SwitchKnobOn.Width": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOn.Height": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Width": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          },
+          "SwitchKnobOff.Height": {
+            "value": 12.0,
+            "duration": "{StaticResource ControlNormalAnimationDuration}",
+            "spline": "{StaticResource ControlFastOutSlowInKeySpline}"
+          }
+        },
+        "Dragging": {},
+        "Off": {},
+        "On": {
+          "SwitchKnobBounds.Opacity": {
+            "value": 1.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": null
+          },
+          "OuterBorder.Opacity": {
+            "value": 0.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": null
+          },
+          "SwitchKnobOn.Opacity": {
+            "value": 1.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": null
+          },
+          "SwitchKnobOff.Opacity": {
+            "value": 0.0,
+            "duration": "{StaticResource ControlFasterAnimationDuration}",
+            "spline": null
+          }
+        },
+        "OffContent": {},
+        "OnContent": {}
+      }
+    }
+  },
+  "primitives": {
+    "Light": {
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "ControlFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "ControlAltFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ControlAltFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ControlAltFillColorQuarternaryBrush": {
+        "kind": "solid",
+        "color": "#00000018",
+        "opacity": 1
+      },
+      "ControlAltFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "AccentFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "AccentFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "AccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorPrimary": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "CircleElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "RelativeToBoundingBox",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#0000000F"
+          },
+          {
+            "offset": 0.699999988079071,
+            "color": "#00000029"
+          }
+        ],
+        "opacity": 1
+      },
+      "AccentControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000066"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF14"
+          }
+        ],
+        "opacity": 1
+      },
+      "ControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000029"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SubtleFillColorTransparent": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlAltFillColorTertiary": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ControlAltFillColorQuarternary": {
+        "kind": "solid",
+        "color": "#00000018",
+        "opacity": 1
+      },
+      "ControlAltFillColorDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefault": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDisabled": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "ControlFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "ControlAltFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ControlAltFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1
+      },
+      "ControlAltFillColorQuarternaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "ControlAltFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "AccentFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "AccentFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "AccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorPrimary": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "CircleElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "RelativeToBoundingBox",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          1
+        ],
+        "stops": [
+          {
+            "offset": 0.699999988079071,
+            "color": "#FFFFFF18"
+          },
+          {
+            "offset": 0.5,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "AccentControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000023"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF14"
+          }
+        ],
+        "opacity": 1
+      },
+      "ControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#FFFFFF18"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SubtleFillColorTransparent": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlAltFillColorTertiary": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1
+      },
+      "ControlAltFillColorQuarternary": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "ControlAltFillColorDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefault": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "SystemColorButtonTextColorBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "SystemColorGrayTextColorBrush": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SystemControlTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "SystemColorHighlightColorBrush": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "SystemColorHighlightTextColorBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SystemColorButtonFaceColorBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SystemColorWindowColorBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SystemColorWindowTextColorBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "SystemControlTransparentColor": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "SystemColorHighlightTextColor": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SystemColorWindowColor": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SystemColorHighlightColor": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "SystemColorGrayTextColor": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      }
+    }
+  }
+}

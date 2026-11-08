@@ -1,0 +1,4007 @@
+{
+  "PaneDisplayMode": {
+    "rust": "PaneDisplayMode",
+    "description": "Pane placement and adaptive behavior. Default: Auto.",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Choose Minimal below 641 DIP, Compact below 1008 DIP, otherwise Expanded."
+      ],
+      "Left": [
+        "Left",
+        "Always use an expanded left pane."
+      ],
+      "Top": [
+        "Top",
+        "Place navigation horizontally above content, with overflow."
+      ],
+      "LeftCompact": [
+        "LeftCompact",
+        "Use a compact left rail; opening overlays the content."
+      ],
+      "LeftMinimal": [
+        "LeftMinimal",
+        "Hide the left rail; opening overlays the content."
+      ]
+    },
+    "default": "Auto"
+  },
+  "ThemeMode": {
+    "rust": "Theme",
+    "description": "Explicit control palette. Default: Light; system preference is resolved by the host.",
+    "members": {
+      "Light": [
+        "Light",
+        "Light surfaces, dark foreground, blue default accent."
+      ],
+      "Dark": [
+        "Dark",
+        "Dark surfaces with light foreground."
+      ],
+      "HighContrast": [
+        "HighContrast",
+        "Deterministic black/white/yellow contrast palette; custom OS colors are a host gap."
+      ]
+    },
+    "default": "Light"
+  },
+  "ItemKind": {
+    "rust": "ItemKind",
+    "description": "Navigation node template. Default: Item.",
+    "members": {
+      "Item": [
+        "Item",
+        "Focusable and invokable navigation item."
+      ],
+      "Header": [
+        "Header",
+        "Noninteractive group heading."
+      ],
+      "Separator": [
+        "Separator",
+        "Noninteractive visual divider."
+      ]
+    },
+    "default": "Item"
+  },
+  "DisplayMode": {
+    "rust": "DisplayMode",
+    "description": "Read-only effective layout computed by Rust from pane mode and available width.",
+    "members": {
+      "Minimal": [
+        "Minimal",
+        "No persistent rail; also the effective display mode for Top."
+      ],
+      "Compact": [
+        "Compact",
+        "Persistent compact icon rail."
+      ],
+      "Expanded": [
+        "Expanded",
+        "Pane and content are arranged side by side."
+      ]
+    }
+  },
+  "EventKind": {
+    "rust": "EventKind",
+    "description": "Control events. PaneClosing alone permits synchronous cancellation.",
+    "members": {
+      "SelectionChanged": [
+        "selectionChanged",
+        "Notification after the selected item changes."
+      ],
+      "ItemInvoked": [
+        "itemInvoked",
+        "Notification on invocation, including re-invoking the selected item."
+      ],
+      "BackRequested": [
+        "backRequested",
+        "Navigation request; the application owns its navigation history."
+      ],
+      "DisplayModeChanged": [
+        "DisplayModeChanged",
+        "DisplayMode value changed."
+      ],
+      "PaneOpening": [
+        "paneOpening",
+        "Notification when the pane begins opening."
+      ],
+      "PaneOpened": [
+        "paneOpened",
+        "Notification after the opening timeline completes."
+      ],
+      "PaneClosing": [
+        "paneClosing",
+        "Set cancel=true during this callback to keep the pane open."
+      ],
+      "PaneClosed": [
+        "paneClosed",
+        "Notification after the closing timeline completes."
+      ],
+      "ItemExpanding": [
+        "itemExpanding",
+        "Notification when a branch is expanded."
+      ],
+      "ItemCollapsed": [
+        "itemCollapsed",
+        "Notification when a branch is collapsed."
+      ],
+      "Click": [
+        "click",
+        "Button invocation notification; cannot be cancelled."
+      ],
+      "GotFocus": [
+        "gotFocus",
+        "Scene node received real browser focus."
+      ],
+      "LostFocus": [
+        "lostFocus",
+        "Scene node lost focus; pending activation is cancelled."
+      ],
+      "TextChanged": [
+        "textChanged",
+        "Committed editor text changed; composition drafts are separate."
+      ],
+      "Checked": [
+        "checked",
+        "The nullable checked state changed to true, before Click."
+      ],
+      "Unchecked": [
+        "unchecked",
+        "The nullable checked state changed to false, before Click."
+      ],
+      "Indeterminate": [
+        "indeterminate",
+        "The nullable checked state changed to null, before Click."
+      ],
+      "Toggled": [
+        "toggled",
+        "ToggleSwitch isOn changed; program updates also notify before returning to idle."
+      ],
+      "PasswordChanged": [
+        "passwordChanged",
+        "Password value changed; read the controller properties."
+      ],
+      "ViewChanged": [
+        "viewChanged",
+        "Scroll/zoom presentation changed, including intermediate frames."
+      ],
+      "ValueChanged": [
+        "valueChanged",
+        "ProgressBar range value changed; notification after coercion."
+      ],
+      "Expanding": [
+        "Expanding",
+        "Expander state notification; captures isExpanded."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Expander state notification; captures isExpanded."
+      ],
+      "PointerEntered": [
+        "PointerEntered",
+        "Pointer entered the control; delivered when explicitly subscribed."
+      ],
+      "PointerExited": [
+        "PointerExited",
+        "Pointer exited the control; delivered when explicitly subscribed."
+      ],
+      "Opening": [
+        "opening",
+        "Floating surface is opening."
+      ],
+      "Opened": [
+        "opened",
+        "Floating surface is open."
+      ],
+      "Closing": [
+        "closing",
+        "Synchronous cancellable close request."
+      ],
+      "Closed": [
+        "closed",
+        "Floating surface has closed."
+      ],
+      "MenuItemInvoked": [
+        "menuItemInvoked",
+        "Menu command or toggle was invoked."
+      ],
+      "CloseButtonClick": [
+        "CloseButtonClick",
+        "InfoBar close button invoked before its cancellable Closing event."
+      ],
+      "IsCheckedChanged": [
+        "IsCheckedChanged",
+        "ToggleSplitButton checked state changed before Click."
+      ],
+      "ItemClick": [
+        "ItemClick",
+        "Collection item primary invocation; fires before user selection updates."
+      ],
+      "RealizationChanged": [
+        "RealizationChanged",
+        "Realized container set changed; used by host templates."
+      ],
+      "QuerySubmitted": [
+        "querySubmitted",
+        "AutoSuggestBox query submitted."
+      ],
+      "SuggestionChosen": [
+        "suggestionChosen",
+        "AutoSuggestBox suggestion chosen."
+      ],
+      "TextSubmitted": [
+        "textSubmitted",
+        "Editable ComboBox text committed."
+      ],
+      "PrimaryButtonClick": [
+        "primaryButtonClick",
+        "Cancellable dialog primary action."
+      ],
+      "SecondaryButtonClick": [
+        "secondaryButtonClick",
+        "Cancellable dialog secondary action."
+      ],
+      "ActionButtonClick": [
+        "actionButtonClick",
+        "TeachingTip action invoked."
+      ],
+      "ItemsChanged": [
+        "ItemsChanged",
+        "Collection source order or membership changed."
+      ],
+      "DragItemsStarting": [
+        "DragItemsStarting",
+        "Cancelable notification before an item drag starts."
+      ],
+      "DragOver": [
+        "DragOver",
+        "Cancelable drop-target negotiation."
+      ],
+      "Drop": [
+        "Drop",
+        "Cancelable notification before committing a drop."
+      ],
+      "DragItemsCompleted": [
+        "DragItemsCompleted",
+        "Drag session ended or was canceled."
+      ],
+      "IncrementalLoadRequested": [
+        "IncrementalLoadRequested",
+        "The virtual viewport requests additional data."
+      ],
+      "ContextRequested": [
+        "ContextRequested",
+        "An item requests its context menu."
+      ],
+      "SelectedIndexChanged": [
+        "SelectedIndexChanged",
+        "Pager index changed after Rust coercion."
+      ],
+      "TabCloseRequested": [
+        "TabCloseRequested",
+        "Request to close a tab; the application owns removing its item."
+      ],
+      "AddTabButtonClick": [
+        "AddTabButtonClick",
+        "The TabView add button was invoked."
+      ],
+      "TabDroppedOutside": [
+        "TabDroppedOutside",
+        "A dragged tab was dropped outside the SDK tab strip."
+      ],
+      "DateChanged": [
+        "DateChanged",
+        "Committed picker date changed."
+      ],
+      "SelectedDateChanged": [
+        "SelectedDateChanged",
+        "Nullable picker date changed."
+      ],
+      "TimeChanged": [
+        "TimeChanged",
+        "Committed picker time changed."
+      ],
+      "SelectedTimeChanged": [
+        "SelectedTimeChanged",
+        "Nullable picker time changed."
+      ],
+      "SelectedDatesChanged": [
+        "SelectedDatesChanged",
+        "Calendar selection changed."
+      ],
+      "ColorChanged": [
+        "ColorChanged",
+        "Picker color changed."
+      ],
+      "CalendarDayItemChanging": [
+        "CalendarDayItemChanging",
+        "A calendar day container was prepared."
+      ],
+      "ExecuteRequested": [
+        "executeRequested",
+        "ExecuteRequested notification from Rust."
+      ],
+      "CanExecuteRequested": [
+        "canExecuteRequested",
+        "CanExecuteRequested notification from Rust."
+      ],
+      "CanExecuteChanged": [
+        "canExecuteChanged",
+        "CanExecuteChanged notification from Rust."
+      ],
+      "ViewChangeStarted": [
+        "viewChangeStarted",
+        "ViewChangeStarted notification from Rust."
+      ],
+      "ViewChangeCompleted": [
+        "viewChangeCompleted",
+        "ViewChangeCompleted notification from Rust."
+      ],
+      "ElementPrepared": [
+        "ElementPrepared",
+        "Rust-owned ElementPrepared notification."
+      ],
+      "ElementClearing": [
+        "ElementClearing",
+        "Rust-owned ElementClearing notification."
+      ],
+      "ElementIndexChanged": [
+        "ElementIndexChanged",
+        "Rust-owned ElementIndexChanged notification."
+      ],
+      "RefreshRequested": [
+        "RefreshRequested",
+        "Rust-owned RefreshRequested notification."
+      ],
+      "RefreshStateChanged": [
+        "RefreshStateChanged",
+        "Rust-owned RefreshStateChanged notification."
+      ],
+      "Scrolling": [
+        "Scrolling",
+        "Cancelable annotated scrollbar seek request."
+      ],
+      "HyperlinkClick": [
+        "HyperlinkClick",
+        "Rich text hyperlink invoked."
+      ],
+      "FrameNavigating": [
+        "frameNavigating",
+        "Synchronous cancellable scene Frame navigation."
+      ],
+      "FrameNavigated": [
+        "frameNavigated",
+        "Scene Frame navigation committed."
+      ],
+      "FrameNavigationStopped": [
+        "frameNavigationStopped",
+        "Scene Frame navigation cancelled without changing its journal."
+      ],
+      "DetailLabelRequested": [
+        "DetailLabelRequested",
+        "Requests business data for an annotated scrollbar preview."
+      ],
+      "TextSelectionChanged": [
+        "TextSelectionChanged",
+        "Rich text selection changed; UTF-16 offsets are supplied by Rust."
+      ],
+      "CopyRequested": [
+        "CopyRequested",
+        "The host may copy the Rust-selected text to the clipboard."
+      ],
+      "DragStarted": [
+        "thumbDragStarted",
+        "DragStarted notification from a Rust scrolling primitive."
+      ],
+      "DragDelta": [
+        "thumbDragDelta",
+        "DragDelta notification from a Rust scrolling primitive."
+      ],
+      "DragCompleted": [
+        "thumbDragCompleted",
+        "DragCompleted notification from a Rust scrolling primitive."
+      ],
+      "Scroll": [
+        "scroll",
+        "Scroll notification from a Rust scrolling primitive."
+      ]
+    }
+  },
+  "ContentKind": {
+    "members": {
+      "Grid": [
+        "Grid",
+        "Grid layout with pixel, auto and star tracks."
+      ],
+      "StackPanel": [
+        "StackPanel",
+        "Sequential layout in the requested orientation."
+      ],
+      "TextBlock": [
+        "TextBlock",
+        "Text measured and wrapped by the Rust layout engine."
+      ],
+      "Ellipse": [
+        "Ellipse",
+        "Filled ellipse arranged in its grid cell."
+      ],
+      "ScrollViewer": [
+        "ScrollViewer",
+        "Scrollable content viewport; scroll state belongs to Rust."
+      ]
+    },
+    "description": "Rust-rendered content node template.",
+    "rust": "ContentKind",
+    "default": "Grid"
+  },
+  "GridUnit": {
+    "members": {
+      "Pixel": [
+        "Pixel",
+        "Fixed logical pixels."
+      ],
+      "Auto": [
+        "Auto",
+        "Desired size measured from children."
+      ],
+      "Star": [
+        "Star",
+        "Proportional share of remaining space."
+      ]
+    },
+    "description": "Grid track sizing unit. Default: Star.",
+    "rust": "GridUnit",
+    "default": "Star"
+  },
+  "HorizontalAlignment": {
+    "members": {
+      "Stretch": [
+        "Stretch",
+        "Fill the available width."
+      ],
+      "Left": [
+        "Left",
+        "Align to the left."
+      ],
+      "Center": [
+        "Center",
+        "Center horizontally."
+      ],
+      "Right": [
+        "Right",
+        "Align to the right."
+      ]
+    },
+    "description": "Horizontal alignment inside the allocated slot. Default: Stretch.",
+    "rust": "HorizontalAlignment",
+    "default": "Stretch"
+  },
+  "VerticalAlignment": {
+    "members": {
+      "Stretch": [
+        "Stretch",
+        "Fill the available height."
+      ],
+      "Top": [
+        "Top",
+        "Align to the top."
+      ],
+      "Center": [
+        "Center",
+        "Center vertically."
+      ],
+      "Bottom": [
+        "Bottom",
+        "Align to the bottom."
+      ]
+    },
+    "description": "Vertical alignment inside the allocated slot. Default: Stretch.",
+    "rust": "VerticalAlignment",
+    "default": "Stretch"
+  },
+  "Orientation": {
+    "members": {
+      "Vertical": [
+        "Vertical",
+        "Arrange children from top to bottom."
+      ],
+      "Horizontal": [
+        "Horizontal",
+        "Arrange children from left to right."
+      ]
+    },
+    "description": "Stack direction. Default: Vertical.",
+    "rust": "Orientation",
+    "default": "Vertical"
+  },
+  "ButtonVariant": {
+    "rust": "ButtonVariant",
+    "description": "Source-traced Button style. Default: Standard.",
+    "members": {
+      "Standard": [
+        "Standard",
+        "DefaultButtonStyle with elevation border."
+      ],
+      "Accent": [
+        "Accent",
+        "AccentButtonStyle with accent fill."
+      ],
+      "Subtle": [
+        "Subtle",
+        "SubtleButtonStyle with transparent resting fill."
+      ]
+    },
+    "default": "Standard"
+  },
+  "ClickMode": {
+    "rust": "ClickMode",
+    "description": "When Button raises Click. Default: Release.",
+    "members": {
+      "Release": [
+        "Release",
+        "Click once on matching pointer/key release inside the control."
+      ],
+      "Press": [
+        "Press",
+        "Click once on initial pointer/key press."
+      ],
+      "Hover": [
+        "Hover",
+        "Click on pointer entry; keyboard/pointer press does not invoke."
+      ]
+    },
+    "default": "Release"
+  },
+  "ControlState": {
+    "rust": "ControlState",
+    "description": "Read-only common visual state; disabled takes precedence.",
+    "members": {
+      "Normal": [
+        "Normal",
+        "Enabled and resting."
+      ],
+      "PointerOver": [
+        "PointerOver",
+        "Pointer is inside the enabled control."
+      ],
+      "Pressed": [
+        "Pressed",
+        "A captured pointer or activation key is held."
+      ],
+      "Disabled": [
+        "Disabled",
+        "Control or ancestor is disabled."
+      ]
+    },
+    "default": "Normal"
+  },
+  "NodeKind": {
+    "rust": "NodeKind",
+    "description": "Runtime node template. Use typed parent factory methods.",
+    "members": {
+      "Grid": [
+        "Grid",
+        "Pixel/Auto/Star layout container."
+      ],
+      "StackPanel": [
+        "StackPanel",
+        "Sequential layout container."
+      ],
+      "TextBlock": [
+        "TextBlock",
+        "Source-shaped and measured text."
+      ],
+      "Button": [
+        "Button",
+        "Focusable source-traced button with arbitrary child content."
+      ],
+      "NavigationView": [
+        "NavigationView",
+        "Existing NavigationView in the shared root surface."
+      ],
+      "Image": [
+        "Image",
+        "Decoded image resource drawn by the selected backend."
+      ],
+      "Ellipse": [
+        "Ellipse",
+        "Noninteractive ellipse geometry using the shared scene layout and brush renderer."
+      ],
+      "ToggleButton": [
+        "ToggleButton",
+        "Button-derived checked control; owns nullable checked state in Rust."
+      ],
+      "CheckBox": [
+        "CheckBox",
+        "Two/three-state checkbox; Space toggles, Enter is ignored by default."
+      ],
+      "RadioButton": [
+        "RadioButton",
+        "Exclusive selection item; unnamed groups use siblings, named groups use the scene root."
+      ],
+      "RadioButtons": [
+        "RadioButtons",
+        "Column-major group of exclusive options with one Tab entry."
+      ],
+      "ToggleSwitch": [
+        "ToggleSwitch",
+        "Immediate two-state switch with pointer drag and Space activation."
+      ],
+      "ScrollViewer": [
+        "ScrollViewer",
+        "Clipped scroll and zoom container with Rust-owned offsets."
+      ],
+      "TextBox": [
+        "TextBox",
+        "Single-line or multiline editor."
+      ],
+      "PasswordBox": [
+        "PasswordBox",
+        "Masked password editor with independent reveal policy."
+      ],
+      "ProgressBar": [
+        "ProgressBar",
+        "Read-only range indicator with running, paused and error visuals."
+      ],
+      "ProgressRing": [
+        "ProgressRing",
+        "Active determinate or indeterminate progress visual."
+      ],
+      "RepeatButton": [
+        "RepeatButton",
+        "Button with a Rust timer while held; default Press."
+      ],
+      "Viewbox": [
+        "Viewbox",
+        "Single child measured at natural size and scaled by source layout rules."
+      ],
+      "Border": [
+        "Border",
+        "Single-child border and padding decorator."
+      ],
+      "Canvas": [
+        "Canvas",
+        "Absolute position panel with attached offsets and Z order."
+      ],
+      "HyperlinkButton": [
+        "HyperlinkButton",
+        "Focusable link with Click and external navigation."
+      ],
+      "Expander": [
+        "Expander",
+        "Expandable header and clipped content."
+      ],
+      "InfoBadge": [
+        "InfoBadge",
+        "Dot, numeric or icon notification badge."
+      ],
+      "FontIcon": [
+        "FontIcon",
+        "Native FontIcon icon element; noninteractive and usable as control content."
+      ],
+      "SymbolIcon": [
+        "SymbolIcon",
+        "Native SymbolIcon icon element; noninteractive and usable as control content."
+      ],
+      "PathIcon": [
+        "PathIcon",
+        "Native PathIcon icon element; noninteractive and usable as control content."
+      ],
+      "BitmapIcon": [
+        "BitmapIcon",
+        "Native BitmapIcon icon element; noninteractive and usable as control content."
+      ],
+      "ImageIcon": [
+        "ImageIcon",
+        "Native ImageIcon icon element; noninteractive and usable as control content."
+      ],
+      "AnimatedIcon": [
+        "AnimatedIcon",
+        "Native AnimatedIcon element in the shared Rust scene."
+      ],
+      "IconSourceElement": [
+        "IconSourceElement",
+        "Native IconSourceElement element in the shared Rust scene."
+      ],
+      "Rectangle": [
+        "Rectangle",
+        "Native Rectangle element in the shared Rust scene."
+      ],
+      "Line": [
+        "Line",
+        "Native Line element in the shared Rust scene."
+      ],
+      "Path": [
+        "Path",
+        "Native Path element in the shared Rust scene."
+      ],
+      "Polygon": [
+        "Polygon",
+        "Native Polygon element in the shared Rust scene."
+      ],
+      "Polyline": [
+        "Polyline",
+        "Native Polyline element in the shared Rust scene."
+      ],
+      "Popup": [
+        "Popup",
+        "Rust-owned Popup control."
+      ],
+      "ToolTip": [
+        "ToolTip",
+        "Rust-owned ToolTip control."
+      ],
+      "Flyout": [
+        "Flyout",
+        "Rust-owned Flyout control."
+      ],
+      "MenuFlyout": [
+        "MenuFlyout",
+        "Rust-owned MenuFlyout control."
+      ],
+      "Slider": [
+        "Slider",
+        "Rust-owned Slider control."
+      ],
+      "InfoBar": [
+        "InfoBar",
+        "Inline notification with cancellable close and action/content slots."
+      ],
+      "PersonPicture": [
+        "PersonPicture",
+        "Circular profile picture, initials/group fallback and badge."
+      ],
+      "RatingControl": [
+        "RatingControl",
+        "Interactive nullable rating with placeholder, caption and pointer/keyboard input."
+      ],
+      "SplitButton": [
+        "SplitButton",
+        "Primary action with a separate flyout button."
+      ],
+      "ToggleSplitButton": [
+        "ToggleSplitButton",
+        "Checked primary action with a separate flyout button."
+      ],
+      "ItemsStackPanel": [
+        "ItemsStackPanel",
+        "Native ItemsStackPanel layout/control slice."
+      ],
+      "ItemsWrapGrid": [
+        "ItemsWrapGrid",
+        "Native ItemsWrapGrid layout/control slice."
+      ],
+      "VariableSizedWrapGrid": [
+        "VariableSizedWrapGrid",
+        "Native VariableSizedWrapGrid layout/control slice."
+      ],
+      "ListView": [
+        "ListView",
+        "Native ListView layout/control slice."
+      ],
+      "GridView": [
+        "GridView",
+        "Native GridView layout/control slice."
+      ],
+      "CollectionItem": [
+        "CollectionItem",
+        "Rust-owned realized item container; lifecycle belongs to its collection."
+      ],
+      "AutoSuggestBox": [
+        "AutoSuggestBox",
+        "Rust-owned AutoSuggestBox with a shared composition template."
+      ],
+      "NumberBox": [
+        "NumberBox",
+        "Rust-owned NumberBox with a shared composition template."
+      ],
+      "ComboBox": [
+        "ComboBox",
+        "Rust-owned ComboBox with a shared composition template."
+      ],
+      "ContentDialog": [
+        "ContentDialog",
+        "Rust-owned ContentDialog with a shared composition template."
+      ],
+      "TeachingTip": [
+        "TeachingTip",
+        "Rust-owned TeachingTip with a shared composition template."
+      ],
+      "CollectionHeader": [
+        "CollectionHeader",
+        "Collection-owned group header; generated and recycled by ListView/GridView."
+      ],
+      "FlipView": [
+        "FlipView",
+        "Native FlipView control."
+      ],
+      "PipsPager": [
+        "PipsPager",
+        "Native PipsPager control."
+      ],
+      "BreadcrumbBar": [
+        "BreadcrumbBar",
+        "Native BreadcrumbBar control."
+      ],
+      "TreeView": [
+        "TreeView",
+        "Native TreeView control."
+      ],
+      "TabView": [
+        "TabView",
+        "Native TabView control."
+      ],
+      "AppBarButton": [
+        "AppBarButton",
+        "Command button with icon and optional label."
+      ],
+      "AppBarToggleButton": [
+        "AppBarToggleButton",
+        "Two/three-state command toggle with icon and label."
+      ],
+      "DropDownButton": [
+        "DropDownButton",
+        "Button with animated chevron and owned flyout."
+      ],
+      "SelectorBar": [
+        "SelectorBar",
+        "Single-selection horizontal navigation surface."
+      ],
+      "CommandBar": [
+        "CommandBar",
+        "Adaptive command collection with dynamic overflow."
+      ],
+      "CalendarView": [
+        "CalendarView",
+        "Calendar grid with month, year and decade navigation."
+      ],
+      "CalendarDatePicker": [
+        "CalendarDatePicker",
+        "Nullable date field with a calendar popup."
+      ],
+      "DatePicker": [
+        "DatePicker",
+        "Locale-ordered date fields and confirmable wheel popup."
+      ],
+      "TimePicker": [
+        "TimePicker",
+        "12/24-hour fields and confirmable wheel popup."
+      ],
+      "ColorPicker": [
+        "ColorPicker",
+        "HSV spectrum, preview, sliders and channel editors."
+      ],
+      "AppBarSeparator": [
+        "AppBarSeparator",
+        "Noninteractive separator shared by AppBar and command overflow templates."
+      ],
+      "MenuBar": [
+        "MenuBar",
+        "Rust-owned MenuBar control."
+      ],
+      "MenuBarItem": [
+        "MenuBarItem",
+        "Rust-owned MenuBarItem control."
+      ],
+      "CommandBarFlyout": [
+        "CommandBarFlyout",
+        "Rust-owned CommandBarFlyout control."
+      ],
+      "RelativePanel": [
+        "RelativePanel",
+        "Rust-owned RelativePanel control."
+      ],
+      "WrapPanel": [
+        "WrapPanel",
+        "Rust-owned WrapPanel control."
+      ],
+      "SplitView": [
+        "SplitView",
+        "Rust-owned SplitView implementation."
+      ],
+      "SemanticZoom": [
+        "SemanticZoom",
+        "Rust-owned SemanticZoom implementation."
+      ],
+      "ParallaxView": [
+        "ParallaxView",
+        "Rust-owned ParallaxView implementation."
+      ],
+      "UICommand": [
+        "UICommand",
+        "Rust-owned UICommand implementation."
+      ],
+      "StandardCommand": [
+        "StandardCommand",
+        "Rust-owned StandardCommand implementation."
+      ],
+      "ItemsRepeater": [
+        "ItemsRepeater",
+        "Rust-owned ItemsRepeater node."
+      ],
+      "RefreshContainer": [
+        "RefreshContainer",
+        "Rust-owned RefreshContainer node."
+      ],
+      "RefreshVisualizer": [
+        "RefreshVisualizer",
+        "Rust-owned RefreshVisualizer node."
+      ],
+      "ScrollView": [
+        "ScrollView",
+        "Rust-owned modern scrolling host, sharing platform-neutral scroll mechanics."
+      ],
+      "SwipeControl": [
+        "SwipeControl",
+        "Rust-owned content swipe and command execution."
+      ],
+      "ItemsView": [
+        "ItemsView",
+        "Rust SDK ItemsView control."
+      ],
+      "AnnotatedScrollBar": [
+        "AnnotatedScrollBar",
+        "Rust SDK AnnotatedScrollBar control."
+      ],
+      "PagerControl": [
+        "PagerControl",
+        "Rust SDK PagerControl control."
+      ],
+      "LayoutPanel": [
+        "LayoutPanel",
+        "Rust SDK LayoutPanel control."
+      ],
+      "RichTextBlock": [
+        "RichTextBlock",
+        "Rust SDK RichTextBlock control."
+      ],
+      "ContentControl": [
+        "ContentControl",
+        "Single content host with native content alignment."
+      ],
+      "ContentPresenter": [
+        "ContentPresenter",
+        "Template content presenter with padding and border layout."
+      ],
+      "UserControl": [
+        "UserControl",
+        "Reusable single-root control composition."
+      ],
+      "Page": [
+        "Page",
+        "Navigable single-root content page."
+      ],
+      "Frame": [
+        "Frame",
+        "Rust scene page journal, cache and navigation compositor."
+      ],
+      "MenuFlyoutItem": [
+        "MenuFlyoutItem",
+        "Independently owned command menu item."
+      ],
+      "ToggleMenuFlyoutItem": [
+        "ToggleMenuFlyoutItem",
+        "Two-state menu item with Rust-owned checked state."
+      ],
+      "RadioMenuFlyoutItem": [
+        "RadioMenuFlyoutItem",
+        "Mutually exclusive menu item, grouped in the Rust scene."
+      ],
+      "MenuFlyoutSubItem": [
+        "MenuFlyoutSubItem",
+        "Nested menu owner using the shared Rust presenter."
+      ],
+      "MenuFlyoutSeparator": [
+        "MenuFlyoutSeparator",
+        "Noninteractive menu separator."
+      ],
+      "RichTextBlockOverflow": [
+        "RichTextBlockOverflow",
+        "Linked overflow container; its text content is supplied by the Rust flow engine."
+      ],
+      "ScrollBar": [
+        "ScrollBar",
+        "Standalone Rust range scroll bar with linked scrolling support."
+      ],
+      "Thumb": [
+        "Thumb",
+        "Pointer capture and original-coordinate drag events."
+      ],
+      "TickBar": [
+        "TickBar",
+        "Slider-linked pixel-aligned tick presenter."
+      ],
+      "ScrollContentPresenter": [
+        "ScrollContentPresenter",
+        "Scrollable single content presenter using the Rust scrolling core."
+      ],
+      "ItemsPresenter": [
+        "ItemsPresenter",
+        "Header, items panel and footer presenter."
+      ]
+    },
+    "default": "Grid"
+  },
+  "RendererBackend": {
+    "rust": "RendererBackend",
+    "description": "Scene drawing backend. Default: Canvas2D.",
+    "members": {
+      "Canvas2D": [
+        "Canvas2D",
+        "Rust Canvas reference renderer with full existing NavigationView support."
+      ],
+      "WebGL2": [
+        "WebGL2",
+        "Rust GPU renderer for shapes, text textures, clips and isolated layers; unsupported effects report errors."
+      ]
+    },
+    "default": "Canvas2D"
+  },
+  "TextTrimming": {
+    "rust": "TextTrimming",
+    "description": "Text overflow policy. Default: None.",
+    "members": {
+      "Clip": [
+        "Clip",
+        "Clip overflowing text using native LineServices metrics and layout-rounding compensation."
+      ],
+      "CharacterEllipsis": [
+        "CharacterEllipsis",
+        "Trim at a grapheme boundary and append an ellipsis."
+      ],
+      "WordEllipsis": [
+        "WordEllipsis",
+        "Trim at a whole-word boundary and append an ellipsis."
+      ],
+      "None": [
+        "None",
+        "Render text normally without ellipsis; default native TextBlock fast layout path."
+      ]
+    },
+    "default": "None"
+  },
+  "ImageStretch": {
+    "rust": "ImageStretch",
+    "description": "Shared Image/Viewbox content scaling. The public Stretch name is an alias of ImageStretch.",
+    "members": {
+      "Uniform": [
+        "Uniform",
+        "Preserve aspect ratio and fit inside the slot."
+      ],
+      "Fill": [
+        "Fill",
+        "Fill the slot with independent horizontal and vertical scaling."
+      ],
+      "None": [
+        "None",
+        "Use intrinsic image dimensions in logical pixels."
+      ],
+      "UniformToFill": [
+        "UniformToFill",
+        "Preserve aspect ratio, fill the destination and clip excess around its center."
+      ]
+    },
+    "default": "Uniform"
+  },
+  "AnimationEasing": {
+    "rust": "AnimationEasing",
+    "description": "Scalar animation easing. Default: EaseOut, from NavigationView indicator motion.",
+    "default": "EaseOut",
+    "members": {
+      "Linear": [
+        "Linear",
+        "Uniform interpolation."
+      ],
+      "EaseOut": [
+        "EaseOut",
+        "WinUI NavigationView cubic (0.1, 0.9, 0.2, 1)."
+      ],
+      "EaseIn": [
+        "EaseIn",
+        "WinUI NavigationView cubic (0.9, 0.1, 1, 0.2)."
+      ],
+      "Material": [
+        "Material",
+        "Acrylic fallback cubic (0.5, 0, 0, 0.9)."
+      ],
+      "Discrete": [
+        "Discrete",
+        "Hold the preceding value until the target keyframe boundary."
+      ]
+    }
+  },
+  "AnimationResult": {
+    "rust": "AnimationResult",
+    "description": "Exactly one terminal result for a public animation.",
+    "members": {
+      "Completed": [
+        "Completed",
+        "Reached all logical target values."
+      ],
+      "Cancelled": [
+        "Cancelled",
+        "Explicit cancellation; presentation freezes at its current value."
+      ],
+      "Interrupted": [
+        "Interrupted",
+        "A new animation or property update replaced this group."
+      ],
+      "Disposed": [
+        "Disposed",
+        "The target subtree or scene was destroyed."
+      ]
+    }
+  },
+  "EasingFunction": {
+    "rust": "EasingFunction",
+    "description": "Fixed-source WinUI XAML easing function family.",
+    "members": {
+      "Back": [
+        "Back",
+        "WinUI Back interpolator; evaluated by Rust."
+      ],
+      "Bounce": [
+        "Bounce",
+        "WinUI Bounce interpolator; evaluated by Rust."
+      ],
+      "Circle": [
+        "Circle",
+        "WinUI Circle interpolator; evaluated by Rust."
+      ],
+      "Cubic": [
+        "Cubic",
+        "WinUI Cubic interpolator; evaluated by Rust."
+      ],
+      "Elastic": [
+        "Elastic",
+        "WinUI Elastic interpolator; evaluated by Rust."
+      ],
+      "Exponential": [
+        "Exponential",
+        "WinUI Exponential interpolator; evaluated by Rust."
+      ],
+      "Power": [
+        "Power",
+        "WinUI Power interpolator; evaluated by Rust."
+      ],
+      "Quadratic": [
+        "Quadratic",
+        "WinUI Quadratic interpolator; evaluated by Rust."
+      ],
+      "Quartic": [
+        "Quartic",
+        "WinUI Quartic interpolator; evaluated by Rust."
+      ],
+      "Quintic": [
+        "Quintic",
+        "WinUI Quintic interpolator; evaluated by Rust."
+      ],
+      "Sine": [
+        "Sine",
+        "WinUI Sine interpolator; evaluated by Rust."
+      ]
+    }
+  },
+  "EasingMode": {
+    "rust": "EasingMode",
+    "description": "How a XAML easing function applies its base curve. Default: EaseOut.",
+    "default": "EaseOut",
+    "members": {
+      "EaseIn": [
+        "EaseIn",
+        "Apply the base ease-in curve."
+      ],
+      "EaseOut": [
+        "EaseOut",
+        "Reverse the base curve for deceleration."
+      ],
+      "EaseInOut": [
+        "EaseInOut",
+        "Apply the base curve to both half intervals."
+      ]
+    }
+  },
+  "GradientKind": {
+    "rust": "GradientKind",
+    "description": "Geometry of a panel background gradient; default geometry is explicit.",
+    "members": {
+      "Linear": [
+        "linearGradient",
+        "Interpolate colors along from/to endpoints; defaults to [0,0] endpoints (last stop)."
+      ],
+      "Radial": [
+        "radialGradient",
+        "Elliptical focal gradient; default center, origin and radii are [0.5,0.5]."
+      ]
+    }
+  },
+  "BrushMappingMode": {
+    "rust": "BrushMappingMode",
+    "description": "Coordinate space for gradient geometry. Default: RelativeToBoundingBox.",
+    "members": {
+      "RelativeToBoundingBox": [
+        "RelativeToBoundingBox",
+        "Coordinates are fractions of the arranged width/height."
+      ],
+      "Absolute": [
+        "Absolute",
+        "Coordinates are local device-independent pixels."
+      ]
+    },
+    "default": "RelativeToBoundingBox"
+  },
+  "GradientSpread": {
+    "rust": "GradientSpread",
+    "description": "Behavior beyond the first gradient interval. Default: Pad.",
+    "members": {
+      "Pad": [
+        "Pad",
+        "Extend the first and last stop colors."
+      ],
+      "Reflect": [
+        "Reflect",
+        "Mirror the gradient in alternating intervals."
+      ],
+      "Repeat": [
+        "Repeat",
+        "Repeat the same gradient in every interval."
+      ]
+    },
+    "default": "Pad"
+  },
+  "FontStyle": {
+    "rust": "FontStyle",
+    "description": "Style of a text run; default Normal.",
+    "default": "Normal",
+    "members": {
+      "Normal": [
+        "Normal",
+        "Upright glyphs."
+      ],
+      "Italic": [
+        "Italic",
+        "Use the italic face or browser font synthesis."
+      ],
+      "Oblique": [
+        "Oblique",
+        "Use the oblique face or browser font synthesis."
+      ]
+    }
+  },
+  "ScrollMode": {
+    "rust": "ScrollMode",
+    "description": "ScrollMode policy. Default: Auto.",
+    "members": {
+      "Disabled": [
+        "Disabled",
+        "Disable this scrolling axis."
+      ],
+      "Auto": [
+        "Auto",
+        "Enable when content exceeds the viewport."
+      ],
+      "Enabled": [
+        "Enabled",
+        "Enable the scrolling axis."
+      ]
+    },
+    "default": "Auto"
+  },
+  "ScrollBarVisibility": {
+    "rust": "ScrollBarVisibility",
+    "description": "ScrollBarVisibility policy. Default: Disabled.",
+    "members": {
+      "Disabled": [
+        "Disabled",
+        "Disable scrolling and hide the bar."
+      ],
+      "Auto": [
+        "Auto",
+        "Show when content exceeds the viewport."
+      ],
+      "Hidden": [
+        "Hidden",
+        "Allow scrolling without a bar."
+      ],
+      "Visible": [
+        "Visible",
+        "Always show the scrollbar when the axis is enabled."
+      ]
+    },
+    "default": "Disabled"
+  },
+  "ZoomMode": {
+    "rust": "ZoomMode",
+    "description": "ZoomMode policy. Default: Disabled.",
+    "members": {
+      "Disabled": [
+        "Disabled",
+        "Disallow interactive zoom."
+      ],
+      "Enabled": [
+        "Enabled",
+        "Allow interactive zoom and pinch."
+      ]
+    },
+    "default": "Disabled"
+  },
+  "PasswordRevealMode": {
+    "rust": "PasswordRevealMode",
+    "description": "PasswordRevealMode policy. Default: Peek.",
+    "members": {
+      "Peek": [
+        "Peek",
+        "Reveal while the reveal button is held, after user editing."
+      ],
+      "Hidden": [
+        "Hidden",
+        "Never offer the reveal button."
+      ],
+      "Visible": [
+        "Visible",
+        "Display the password as normal text."
+      ]
+    },
+    "default": "Peek"
+  },
+  "StretchDirection": {
+    "rust": "StretchDirection",
+    "description": "Permitted Viewbox scaling direction. Default Both.",
+    "members": {
+      "UpOnly": [
+        "UpOnly",
+        "Scale up when needed; never shrink content."
+      ],
+      "DownOnly": [
+        "DownOnly",
+        "Scale down when needed; never enlarge content."
+      ],
+      "Both": [
+        "Both",
+        "Allow either enlargement or reduction."
+      ]
+    },
+    "default": "Both"
+  },
+  "ExpandDirection": {
+    "rust": "ExpandDirection",
+    "description": "Expander content direction. Default Down.",
+    "members": {
+      "Down": [
+        "Down",
+        "Content below the header."
+      ],
+      "Up": [
+        "Up",
+        "Content above the header."
+      ]
+    },
+    "default": "Down"
+  },
+  "InfoBadgeStyle": {
+    "rust": "InfoBadgeStyle",
+    "description": "Source-defined badge palette. Default Default.",
+    "members": {
+      "Default": [
+        "Default",
+        "Default InfoBadge resource style."
+      ],
+      "Attention": [
+        "Attention",
+        "Attention InfoBadge resource style."
+      ],
+      "Informational": [
+        "Informational",
+        "Informational InfoBadge resource style."
+      ],
+      "Success": [
+        "Success",
+        "Success InfoBadge resource style."
+      ],
+      "Caution": [
+        "Caution",
+        "Caution InfoBadge resource style."
+      ],
+      "Critical": [
+        "Critical",
+        "Critical InfoBadge resource style."
+      ]
+    },
+    "default": "Default"
+  },
+  "Symbol": {
+    "rust": "Symbol",
+    "description": "Built-in WinUI symbol; legacy values map to the pinned Fluent glyphs. Default Emoji.",
+    "members": {
+      "Previous": [
+        "Previous",
+        "Built-in Previous symbol."
+      ],
+      "Next": [
+        "Next",
+        "Built-in Next symbol."
+      ],
+      "Play": [
+        "Play",
+        "Built-in Play symbol."
+      ],
+      "Pause": [
+        "Pause",
+        "Built-in Pause symbol."
+      ],
+      "Edit": [
+        "Edit",
+        "Built-in Edit symbol."
+      ],
+      "Save": [
+        "Save",
+        "Built-in Save symbol."
+      ],
+      "Clear": [
+        "Clear",
+        "Built-in Clear symbol."
+      ],
+      "Delete": [
+        "Delete",
+        "Built-in Delete symbol."
+      ],
+      "Remove": [
+        "Remove",
+        "Built-in Remove symbol."
+      ],
+      "Add": [
+        "Add",
+        "Built-in Add symbol."
+      ],
+      "Cancel": [
+        "Cancel",
+        "Built-in Cancel symbol."
+      ],
+      "Accept": [
+        "Accept",
+        "Built-in Accept symbol."
+      ],
+      "More": [
+        "More",
+        "Built-in More symbol."
+      ],
+      "Redo": [
+        "Redo",
+        "Built-in Redo symbol."
+      ],
+      "Undo": [
+        "Undo",
+        "Built-in Undo symbol."
+      ],
+      "Home": [
+        "Home",
+        "Built-in Home symbol."
+      ],
+      "Up": [
+        "Up",
+        "Built-in Up symbol."
+      ],
+      "Forward": [
+        "Forward",
+        "Built-in Forward symbol."
+      ],
+      "Back": [
+        "Back",
+        "Built-in Back symbol."
+      ],
+      "Favorite": [
+        "Favorite",
+        "Built-in Favorite symbol."
+      ],
+      "Camera": [
+        "Camera",
+        "Built-in Camera symbol."
+      ],
+      "Setting": [
+        "Setting",
+        "Built-in Setting symbol."
+      ],
+      "Video": [
+        "Video",
+        "Built-in Video symbol."
+      ],
+      "Sync": [
+        "Sync",
+        "Built-in Sync symbol."
+      ],
+      "Download": [
+        "Download",
+        "Built-in Download symbol."
+      ],
+      "Mail": [
+        "Mail",
+        "Built-in Mail symbol."
+      ],
+      "Find": [
+        "Find",
+        "Built-in Find symbol."
+      ],
+      "Help": [
+        "Help",
+        "Built-in Help symbol."
+      ],
+      "Upload": [
+        "Upload",
+        "Built-in Upload symbol."
+      ],
+      "Emoji": [
+        "Emoji",
+        "Built-in Emoji symbol."
+      ],
+      "TwoPage": [
+        "TwoPage",
+        "Built-in TwoPage symbol."
+      ],
+      "LeaveChat": [
+        "LeaveChat",
+        "Built-in LeaveChat symbol."
+      ],
+      "MailForward": [
+        "MailForward",
+        "Built-in MailForward symbol."
+      ],
+      "Clock": [
+        "Clock",
+        "Built-in Clock symbol."
+      ],
+      "Send": [
+        "Send",
+        "Built-in Send symbol."
+      ],
+      "Crop": [
+        "Crop",
+        "Built-in Crop symbol."
+      ],
+      "RotateCamera": [
+        "RotateCamera",
+        "Built-in RotateCamera symbol."
+      ],
+      "People": [
+        "People",
+        "Built-in People symbol."
+      ],
+      "OpenPane": [
+        "OpenPane",
+        "Built-in OpenPane symbol."
+      ],
+      "ClosePane": [
+        "ClosePane",
+        "Built-in ClosePane symbol."
+      ],
+      "World": [
+        "World",
+        "Built-in World symbol."
+      ],
+      "Flag": [
+        "Flag",
+        "Built-in Flag symbol."
+      ],
+      "PreviewLink": [
+        "PreviewLink",
+        "Built-in PreviewLink symbol."
+      ],
+      "Globe": [
+        "Globe",
+        "Built-in Globe symbol."
+      ],
+      "Trim": [
+        "Trim",
+        "Built-in Trim symbol."
+      ],
+      "AttachCamera": [
+        "AttachCamera",
+        "Built-in AttachCamera symbol."
+      ],
+      "ZoomIn": [
+        "ZoomIn",
+        "Built-in ZoomIn symbol."
+      ],
+      "Bookmarks": [
+        "Bookmarks",
+        "Built-in Bookmarks symbol."
+      ],
+      "Document": [
+        "Document",
+        "Built-in Document symbol."
+      ],
+      "ProtectedDocument": [
+        "ProtectedDocument",
+        "Built-in ProtectedDocument symbol."
+      ],
+      "Page": [
+        "Page",
+        "Built-in Page symbol."
+      ],
+      "Bullets": [
+        "Bullets",
+        "Built-in Bullets symbol."
+      ],
+      "Comment": [
+        "Comment",
+        "Built-in Comment symbol."
+      ],
+      "MailFilled": [
+        "MailFilled",
+        "Built-in MailFilled symbol."
+      ],
+      "ContactInfo": [
+        "ContactInfo",
+        "Built-in ContactInfo symbol."
+      ],
+      "HangUp": [
+        "HangUp",
+        "Built-in HangUp symbol."
+      ],
+      "ViewAll": [
+        "ViewAll",
+        "Built-in ViewAll symbol."
+      ],
+      "MapPin": [
+        "MapPin",
+        "Built-in MapPin symbol."
+      ],
+      "Phone": [
+        "Phone",
+        "Built-in Phone symbol."
+      ],
+      "VideoChat": [
+        "VideoChat",
+        "Built-in VideoChat symbol."
+      ],
+      "Switch": [
+        "Switch",
+        "Built-in Switch symbol."
+      ],
+      "Contact": [
+        "Contact",
+        "Built-in Contact symbol."
+      ],
+      "Rename": [
+        "Rename",
+        "Built-in Rename symbol."
+      ],
+      "Pin": [
+        "Pin",
+        "Built-in Pin symbol."
+      ],
+      "MusicInfo": [
+        "MusicInfo",
+        "Built-in MusicInfo symbol."
+      ],
+      "Go": [
+        "Go",
+        "Built-in Go symbol."
+      ],
+      "Keyboard": [
+        "Keyboard",
+        "Built-in Keyboard symbol."
+      ],
+      "DockLeft": [
+        "DockLeft",
+        "Built-in DockLeft symbol."
+      ],
+      "DockRight": [
+        "DockRight",
+        "Built-in DockRight symbol."
+      ],
+      "DockBottom": [
+        "DockBottom",
+        "Built-in DockBottom symbol."
+      ],
+      "Remote": [
+        "Remote",
+        "Built-in Remote symbol."
+      ],
+      "Refresh": [
+        "Refresh",
+        "Built-in Refresh symbol."
+      ],
+      "Rotate": [
+        "Rotate",
+        "Built-in Rotate symbol."
+      ],
+      "Shuffle": [
+        "Shuffle",
+        "Built-in Shuffle symbol."
+      ],
+      "List": [
+        "List",
+        "Built-in List symbol."
+      ],
+      "Shop": [
+        "Shop",
+        "Built-in Shop symbol."
+      ],
+      "SelectAll": [
+        "SelectAll",
+        "Built-in SelectAll symbol."
+      ],
+      "Orientation": [
+        "Orientation",
+        "Built-in Orientation symbol."
+      ],
+      "Import": [
+        "Import",
+        "Built-in Import symbol."
+      ],
+      "ImportAll": [
+        "ImportAll",
+        "Built-in ImportAll symbol."
+      ],
+      "BrowsePhotos": [
+        "BrowsePhotos",
+        "Built-in BrowsePhotos symbol."
+      ],
+      "WebCam": [
+        "WebCam",
+        "Built-in WebCam symbol."
+      ],
+      "Pictures": [
+        "Pictures",
+        "Built-in Pictures symbol."
+      ],
+      "SaveLocal": [
+        "SaveLocal",
+        "Built-in SaveLocal symbol."
+      ],
+      "Caption": [
+        "Caption",
+        "Built-in Caption symbol."
+      ],
+      "Stop": [
+        "Stop",
+        "Built-in Stop symbol."
+      ],
+      "ShowResults": [
+        "ShowResults",
+        "Built-in ShowResults symbol."
+      ],
+      "Volume": [
+        "Volume",
+        "Built-in Volume symbol."
+      ],
+      "Repair": [
+        "Repair",
+        "Built-in Repair symbol."
+      ],
+      "Message": [
+        "Message",
+        "Built-in Message symbol."
+      ],
+      "Page2": [
+        "Page2",
+        "Built-in Page2 symbol."
+      ],
+      "CalendarDay": [
+        "CalendarDay",
+        "Built-in CalendarDay symbol."
+      ],
+      "CalendarWeek": [
+        "CalendarWeek",
+        "Built-in CalendarWeek symbol."
+      ],
+      "Calendar": [
+        "Calendar",
+        "Built-in Calendar symbol."
+      ],
+      "Character": [
+        "Character",
+        "Built-in Character symbol."
+      ],
+      "MailReplyAll": [
+        "MailReplyAll",
+        "Built-in MailReplyAll symbol."
+      ],
+      "Read": [
+        "Read",
+        "Built-in Read symbol."
+      ],
+      "Link": [
+        "Link",
+        "Built-in Link symbol."
+      ],
+      "Account": [
+        "Account",
+        "Built-in Account symbol."
+      ],
+      "ShowBcc": [
+        "ShowBcc",
+        "Built-in ShowBcc symbol."
+      ],
+      "HideBcc": [
+        "HideBcc",
+        "Built-in HideBcc symbol."
+      ],
+      "Cut": [
+        "Cut",
+        "Built-in Cut symbol."
+      ],
+      "Attach": [
+        "Attach",
+        "Built-in Attach symbol."
+      ],
+      "Paste": [
+        "Paste",
+        "Built-in Paste symbol."
+      ],
+      "Filter": [
+        "Filter",
+        "Built-in Filter symbol."
+      ],
+      "Copy": [
+        "Copy",
+        "Built-in Copy symbol."
+      ],
+      "Emoji2": [
+        "Emoji2",
+        "Built-in Emoji2 symbol."
+      ],
+      "Important": [
+        "Important",
+        "Built-in Important symbol."
+      ],
+      "MailReply": [
+        "MailReply",
+        "Built-in MailReply symbol."
+      ],
+      "SlideShow": [
+        "SlideShow",
+        "Built-in SlideShow symbol."
+      ],
+      "Sort": [
+        "Sort",
+        "Built-in Sort symbol."
+      ],
+      "Manage": [
+        "Manage",
+        "Built-in Manage symbol."
+      ],
+      "AllApps": [
+        "AllApps",
+        "Built-in AllApps symbol."
+      ],
+      "DisconnectDrive": [
+        "DisconnectDrive",
+        "Built-in DisconnectDrive symbol."
+      ],
+      "MapDrive": [
+        "MapDrive",
+        "Built-in MapDrive symbol."
+      ],
+      "NewWindow": [
+        "NewWindow",
+        "Built-in NewWindow symbol."
+      ],
+      "OpenWith": [
+        "OpenWith",
+        "Built-in OpenWith symbol."
+      ],
+      "ContactPresence": [
+        "ContactPresence",
+        "Built-in ContactPresence symbol."
+      ],
+      "Priority": [
+        "Priority",
+        "Built-in Priority symbol."
+      ],
+      "GoToToday": [
+        "GoToToday",
+        "Built-in GoToToday symbol."
+      ],
+      "Font": [
+        "Font",
+        "Built-in Font symbol."
+      ],
+      "FontColor": [
+        "FontColor",
+        "Built-in FontColor symbol."
+      ],
+      "Contact2": [
+        "Contact2",
+        "Built-in Contact2 symbol."
+      ],
+      "Folder": [
+        "Folder",
+        "Built-in Folder symbol."
+      ],
+      "Audio": [
+        "Audio",
+        "Built-in Audio symbol."
+      ],
+      "Placeholder": [
+        "Placeholder",
+        "Built-in Placeholder symbol."
+      ],
+      "View": [
+        "View",
+        "Built-in View symbol."
+      ],
+      "SetLockScreen": [
+        "SetLockScreen",
+        "Built-in SetLockScreen symbol."
+      ],
+      "SetTile": [
+        "SetTile",
+        "Built-in SetTile symbol."
+      ],
+      "ClosedCaption": [
+        "ClosedCaption",
+        "Built-in ClosedCaption symbol."
+      ],
+      "StopSlideShow": [
+        "StopSlideShow",
+        "Built-in StopSlideShow symbol."
+      ],
+      "Permissions": [
+        "Permissions",
+        "Built-in Permissions symbol."
+      ],
+      "Highlight": [
+        "Highlight",
+        "Built-in Highlight symbol."
+      ],
+      "DisableUpdates": [
+        "DisableUpdates",
+        "Built-in DisableUpdates symbol."
+      ],
+      "UnFavorite": [
+        "UnFavorite",
+        "Built-in UnFavorite symbol."
+      ],
+      "UnPin": [
+        "UnPin",
+        "Built-in UnPin symbol."
+      ],
+      "OpenLocal": [
+        "OpenLocal",
+        "Built-in OpenLocal symbol."
+      ],
+      "Mute": [
+        "Mute",
+        "Built-in Mute symbol."
+      ],
+      "Italic": [
+        "Italic",
+        "Built-in Italic symbol."
+      ],
+      "Underline": [
+        "Underline",
+        "Built-in Underline symbol."
+      ],
+      "Bold": [
+        "Bold",
+        "Built-in Bold symbol."
+      ],
+      "MoveToFolder": [
+        "MoveToFolder",
+        "Built-in MoveToFolder symbol."
+      ],
+      "LikeDislike": [
+        "LikeDislike",
+        "Built-in LikeDislike symbol."
+      ],
+      "Dislike": [
+        "Dislike",
+        "Built-in Dislike symbol."
+      ],
+      "Like": [
+        "Like",
+        "Built-in Like symbol."
+      ],
+      "AlignRight": [
+        "AlignRight",
+        "Built-in AlignRight symbol."
+      ],
+      "AlignCenter": [
+        "AlignCenter",
+        "Built-in AlignCenter symbol."
+      ],
+      "AlignLeft": [
+        "AlignLeft",
+        "Built-in AlignLeft symbol."
+      ],
+      "Zoom": [
+        "Zoom",
+        "Built-in Zoom symbol."
+      ],
+      "ZoomOut": [
+        "ZoomOut",
+        "Built-in ZoomOut symbol."
+      ],
+      "OpenFile": [
+        "OpenFile",
+        "Built-in OpenFile symbol."
+      ],
+      "OtherUser": [
+        "OtherUser",
+        "Built-in OtherUser symbol."
+      ],
+      "Admin": [
+        "Admin",
+        "Built-in Admin symbol."
+      ],
+      "Street": [
+        "Street",
+        "Built-in Street symbol."
+      ],
+      "Map": [
+        "Map",
+        "Built-in Map symbol."
+      ],
+      "ClearSelection": [
+        "ClearSelection",
+        "Built-in ClearSelection symbol."
+      ],
+      "FontDecrease": [
+        "FontDecrease",
+        "Built-in FontDecrease symbol."
+      ],
+      "FontIncrease": [
+        "FontIncrease",
+        "Built-in FontIncrease symbol."
+      ],
+      "FontSize": [
+        "FontSize",
+        "Built-in FontSize symbol."
+      ],
+      "CellPhone": [
+        "CellPhone",
+        "Built-in CellPhone symbol."
+      ],
+      "ReShare": [
+        "ReShare",
+        "Built-in ReShare symbol."
+      ],
+      "Tag": [
+        "Tag",
+        "Built-in Tag symbol."
+      ],
+      "RepeatOne": [
+        "RepeatOne",
+        "Built-in RepeatOne symbol."
+      ],
+      "RepeatAll": [
+        "RepeatAll",
+        "Built-in RepeatAll symbol."
+      ],
+      "OutlineStar": [
+        "OutlineStar",
+        "Built-in OutlineStar symbol."
+      ],
+      "SolidStar": [
+        "SolidStar",
+        "Built-in SolidStar symbol."
+      ],
+      "Calculator": [
+        "Calculator",
+        "Built-in Calculator symbol."
+      ],
+      "Directions": [
+        "Directions",
+        "Built-in Directions symbol."
+      ],
+      "Target": [
+        "Target",
+        "Built-in Target symbol."
+      ],
+      "Library": [
+        "Library",
+        "Built-in Library symbol."
+      ],
+      "PhoneBook": [
+        "PhoneBook",
+        "Built-in PhoneBook symbol."
+      ],
+      "Memo": [
+        "Memo",
+        "Built-in Memo symbol."
+      ],
+      "Microphone": [
+        "Microphone",
+        "Built-in Microphone symbol."
+      ],
+      "PostUpdate": [
+        "PostUpdate",
+        "Built-in PostUpdate symbol."
+      ],
+      "BackToWindow": [
+        "BackToWindow",
+        "Built-in BackToWindow symbol."
+      ],
+      "FullScreen": [
+        "FullScreen",
+        "Built-in FullScreen symbol."
+      ],
+      "NewFolder": [
+        "NewFolder",
+        "Built-in NewFolder symbol."
+      ],
+      "CalendarReply": [
+        "CalendarReply",
+        "Built-in CalendarReply symbol."
+      ],
+      "UnSyncFolder": [
+        "UnSyncFolder",
+        "Built-in UnSyncFolder symbol."
+      ],
+      "ReportHacked": [
+        "ReportHacked",
+        "Built-in ReportHacked symbol."
+      ],
+      "SyncFolder": [
+        "SyncFolder",
+        "Built-in SyncFolder symbol."
+      ],
+      "BlockContact": [
+        "BlockContact",
+        "Built-in BlockContact symbol."
+      ],
+      "SwitchApps": [
+        "SwitchApps",
+        "Built-in SwitchApps symbol."
+      ],
+      "AddFriend": [
+        "AddFriend",
+        "Built-in AddFriend symbol."
+      ],
+      "TouchPointer": [
+        "TouchPointer",
+        "Built-in TouchPointer symbol."
+      ],
+      "GoToStart": [
+        "GoToStart",
+        "Built-in GoToStart symbol."
+      ],
+      "ZeroBars": [
+        "ZeroBars",
+        "Built-in ZeroBars symbol."
+      ],
+      "OneBar": [
+        "OneBar",
+        "Built-in OneBar symbol."
+      ],
+      "TwoBars": [
+        "TwoBars",
+        "Built-in TwoBars symbol."
+      ],
+      "ThreeBars": [
+        "ThreeBars",
+        "Built-in ThreeBars symbol."
+      ],
+      "FourBars": [
+        "FourBars",
+        "Built-in FourBars symbol."
+      ],
+      "Scan": [
+        "Scan",
+        "Built-in Scan symbol."
+      ],
+      "Preview": [
+        "Preview",
+        "Built-in Preview symbol."
+      ],
+      "GlobalNavigationButton": [
+        "GlobalNavigationButton",
+        "Built-in GlobalNavigationButton symbol."
+      ],
+      "Share": [
+        "Share",
+        "Built-in Share symbol."
+      ],
+      "Print": [
+        "Print",
+        "Built-in Print symbol."
+      ],
+      "XboxOneConsole": [
+        "XboxOneConsole",
+        "Built-in XboxOneConsole symbol."
+      ]
+    },
+    "default": "Emoji"
+  },
+  "FlowDirection": {
+    "rust": "FlowDirection",
+    "description": "Direction of icon content; local icon scope, not complete application RTL layout.",
+    "members": {
+      "LeftToRight": [
+        "LeftToRight",
+        "Left-to-right icon layout, default."
+      ],
+      "RightToLeft": [
+        "RightToLeft",
+        "Right-to-left icon layout; mirroring follows the native icon policy."
+      ]
+    },
+    "default": "LeftToRight"
+  },
+  "IconSourceKind": {
+    "rust": "IconSourceKind",
+    "description": "Discriminator of a reusable typed icon source.",
+    "members": {
+      "Font": [
+        "Font",
+        "Create a Font icon source."
+      ],
+      "Symbol": [
+        "Symbol",
+        "Create a Symbol icon source."
+      ],
+      "Path": [
+        "Path",
+        "Create a Path icon source."
+      ],
+      "Bitmap": [
+        "Bitmap",
+        "Create a Bitmap icon source."
+      ],
+      "Image": [
+        "Image",
+        "Create a Image icon source."
+      ]
+    },
+    "default": "Symbol"
+  },
+  "AnimatedIconSource": {
+    "rust": "AnimatedIconSource",
+    "description": "Pinned built-in animated visual; None displays the fallback icon.",
+    "members": {
+      "Back": [
+        "Back",
+        "Pinned AnimatedBackVisualSource."
+      ],
+      "ChevronDownSmall": [
+        "ChevronDownSmall",
+        "Pinned AnimatedChevronDownSmallVisualSource."
+      ],
+      "ChevronRightDownSmall": [
+        "ChevronRightDownSmall",
+        "Pinned AnimatedChevronRightDownSmallVisualSource."
+      ],
+      "ChevronUpDownSmall": [
+        "ChevronUpDownSmall",
+        "Pinned AnimatedChevronUpDownSmallVisualSource."
+      ],
+      "Find": [
+        "Find",
+        "Pinned AnimatedFindVisualSource."
+      ],
+      "GlobalNavigationButton": [
+        "GlobalNavigationButton",
+        "Pinned AnimatedGlobalNavigationButtonVisualSource."
+      ],
+      "Settings": [
+        "Settings",
+        "Pinned AnimatedSettingsVisualSource."
+      ],
+      "None": [
+        "",
+        "No primary source; show fallback icon source."
+      ]
+    },
+    "default": "None"
+  },
+  "FillRule": {
+    "rust": "FillRule",
+    "description": "Rule for interior geometry; default EvenOdd.",
+    "members": {
+      "EvenOdd": [
+        "EvenOdd",
+        "Rule for interior geometry: EvenOdd."
+      ],
+      "Nonzero": [
+        "Nonzero",
+        "Rule for interior geometry: Nonzero."
+      ]
+    },
+    "default": "EvenOdd"
+  },
+  "PenLineCap": {
+    "rust": "PenLineCap",
+    "description": "Shape stroke endpoint and dash cap. Default Flat.",
+    "members": {
+      "Flat": [
+        "Flat",
+        "Shape stroke endpoint and dash cap. Default Flat.: Flat."
+      ],
+      "Square": [
+        "Square",
+        "Shape stroke endpoint and dash cap. Default Flat.: Square."
+      ],
+      "Round": [
+        "Round",
+        "Shape stroke endpoint and dash cap. Default Flat.: Round."
+      ],
+      "Triangle": [
+        "Triangle",
+        "Shape stroke endpoint and dash cap. Default Flat.: Triangle."
+      ]
+    },
+    "default": "Flat"
+  },
+  "PenLineJoin": {
+    "rust": "PenLineJoin",
+    "description": "Shape stroke join; default Miter.",
+    "members": {
+      "Miter": [
+        "Miter",
+        "Shape stroke join: Miter."
+      ],
+      "Bevel": [
+        "Bevel",
+        "Shape stroke join: Bevel."
+      ],
+      "Round": [
+        "Round",
+        "Shape stroke join: Round."
+      ]
+    },
+    "default": "Miter"
+  },
+  "OverlayPlacement": {
+    "rust": "OverlayPlacement",
+    "description": "Preferred side of an anchored floating surface; flips and shifts within its Scene root. Default Auto.",
+    "default": "Auto",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Choose the first available side, starting above the target."
+      ],
+      "Top": [
+        "Top",
+        "Center above the target."
+      ],
+      "Bottom": [
+        "Bottom",
+        "Center below the target."
+      ],
+      "BottomEdgeAlignedLeft": [
+        "BottomEdgeAlignedLeft",
+        "Align left edges below the target; flip above and shift at the root boundary. Native SplitButton ShowAt default."
+      ],
+      "Left": [
+        "Left",
+        "Center to the left of the target."
+      ],
+      "Right": [
+        "Right",
+        "Center to the right of the target."
+      ],
+      "BottomEdgeAlignedRight": [
+        "BottomEdgeAlignedRight",
+        "Bottom placement aligned with the anchor right edge."
+      ],
+      "RightEdgeAlignedTop": [
+        "RightEdgeAlignedTop",
+        "Place to the right aligned with the target top; flip or constrain at viewport edges."
+      ],
+      "LeftEdgeAlignedTop": [
+        "LeftEdgeAlignedTop",
+        "Place to the left aligned with the target top; flip or constrain at viewport edges."
+      ]
+    }
+  },
+  "MenuEntryKind": {
+    "rust": "MenuEntryKind",
+    "description": "Menu entry behavior. Default Command.",
+    "default": "Command",
+    "members": {
+      "Command": [
+        "Command",
+        "Invoke an enabled command and dismiss the menu."
+      ],
+      "Toggle": [
+        "Toggle",
+        "Toggle checked state, invoke, and dismiss."
+      ],
+      "Separator": [
+        "Separator",
+        "Noninteractive separator."
+      ],
+      "Submenu": [
+        "Submenu",
+        "Open a nested Rust MenuFlyout without executing."
+      ],
+      "Radio": [
+        "Radio",
+        "Select one entry in its named group and dismiss."
+      ]
+    }
+  },
+  "InfoBarSeverity": {
+    "rust": "InfoBarSeverity",
+    "description": "Notification color and icon. Default Informational.",
+    "members": {
+      "Informational": [
+        "Informational",
+        "Informational Notification color and icon. Default Informational."
+      ],
+      "Success": [
+        "Success",
+        "Success Notification color and icon. Default Informational."
+      ],
+      "Warning": [
+        "Warning",
+        "Warning Notification color and icon. Default Informational."
+      ],
+      "Error": [
+        "Error",
+        "Error Notification color and icon. Default Informational."
+      ]
+    },
+    "default": "Informational"
+  },
+  "InfoBarCloseReason": {
+    "rust": "InfoBarCloseReason",
+    "description": "Cause of a notification close request.",
+    "members": {
+      "CloseButton": [
+        "CloseButton",
+        "CloseButton Cause of a notification close request."
+      ],
+      "Programmatic": [
+        "Programmatic",
+        "Programmatic Cause of a notification close request."
+      ]
+    },
+    "default": "CloseButton"
+  },
+  "RatingItemKind": {
+    "rust": "RatingItemKind",
+    "description": "Rating item descriptor type. Default Font.",
+    "members": {
+      "Font": [
+        "Font",
+        "Font Rating item descriptor type. Default Font."
+      ],
+      "Image": [
+        "Image",
+        "Image Rating item descriptor type. Default Font."
+      ]
+    },
+    "default": "Font"
+  },
+  "ListViewSelectionMode": {
+    "rust": "ListViewSelectionMode",
+    "description": "Collection selection policy. Default Single.",
+    "default": "Single",
+    "members": {
+      "None": [
+        "None",
+        "Focus and optional ItemClick, without selection."
+      ],
+      "Single": [
+        "Single",
+        "Keep at most one selected item."
+      ],
+      "Multiple": [
+        "Multiple",
+        "Toggle independent items."
+      ],
+      "Extended": [
+        "Extended",
+        "Support Ctrl toggles and Shift range selection."
+      ]
+    }
+  },
+  "OpticalMarginAlignment": {
+    "rust": "OpticalMarginAlignment",
+    "description": "TextBlock optical alignment of glyph ink to its layout edge. Default: None.",
+    "members": {
+      "None": [
+        "None",
+        "Preserve the font side bearings; the native TextBlock default."
+      ],
+      "TrimSideBearings": [
+        "TrimSideBearings",
+        "Align leading/trailing glyph ink with the text layout edge; used by native Title/Subtitle styles."
+      ]
+    },
+    "default": "None"
+  },
+  "NumberBoxSpinButtonPlacementMode": {
+    "rust": "NumberBoxSpinButtonPlacementMode",
+    "description": "NumberBox spin-button layout; default Hidden.",
+    "members": {
+      "Hidden": [
+        "Hidden",
+        "No spin buttons."
+      ],
+      "Compact": [
+        "Compact",
+        "Show spin buttons in a focus popup."
+      ],
+      "Inline": [
+        "Inline",
+        "Show adjacent spin buttons."
+      ]
+    },
+    "default": "Hidden"
+  },
+  "NumberBoxValidationMode": {
+    "rust": "NumberBoxValidationMode",
+    "description": "NumberBox validation policy.",
+    "members": {
+      "InvalidInputOverwritten": [
+        "InvalidInputOverwritten",
+        "Restore the last valid value for invalid text."
+      ],
+      "Disabled": [
+        "Disabled",
+        "Retain invalid input and permit out-of-range values."
+      ]
+    },
+    "default": "InvalidInputOverwritten"
+  },
+  "AutoSuggestionBoxTextChangeReason": {
+    "rust": "AutoSuggestionBoxTextChangeReason",
+    "description": "Origin of an AutoSuggestBox TextChanged notification.",
+    "members": {
+      "UserInput": [
+        "UserInput",
+        "Text edited by the user."
+      ],
+      "ProgrammaticChange": [
+        "ProgrammaticChange",
+        "Text set by the application."
+      ],
+      "SuggestionChosen": [
+        "SuggestionChosen",
+        "Text changed by choosing a suggestion."
+      ]
+    },
+    "default": "UserInput"
+  },
+  "ContentDialogResult": {
+    "rust": "ContentDialogResult",
+    "description": "ContentDialog completion result.",
+    "members": {
+      "None": [
+        "None",
+        "Dismissed or close button."
+      ],
+      "Primary": [
+        "Primary",
+        "Primary action accepted."
+      ],
+      "Secondary": [
+        "Secondary",
+        "Secondary action accepted."
+      ]
+    },
+    "default": "None"
+  },
+  "ContentDialogButton": {
+    "rust": "ContentDialogButton",
+    "description": "Default dialog button.",
+    "members": {
+      "None": [
+        "None",
+        "No default button."
+      ],
+      "Primary": [
+        "Primary",
+        "Primary button is default."
+      ],
+      "Secondary": [
+        "Secondary",
+        "Secondary button is default."
+      ],
+      "Close": [
+        "Close",
+        "Close button is default."
+      ]
+    },
+    "default": "None"
+  },
+  "TeachingTipCloseReason": {
+    "rust": "TeachingTipCloseReason",
+    "description": "Why a TeachingTip closes.",
+    "members": {
+      "CloseButton": [
+        "CloseButton",
+        "Close button invoked."
+      ],
+      "LightDismiss": [
+        "LightDismiss",
+        "Dismissed by external interaction."
+      ],
+      "Programmatic": [
+        "Programmatic",
+        "Closed by the application."
+      ]
+    },
+    "default": "Programmatic"
+  },
+  "DataPackageOperation": {
+    "rust": "DataPackageOperation",
+    "description": "Accepted collection drag/drop operation.",
+    "members": {
+      "None": [
+        "None",
+        "Reject the operation."
+      ],
+      "Copy": [
+        "Copy",
+        "Insert copies and preserve the source."
+      ],
+      "Move": [
+        "Move",
+        "Move items, preserving their stable identities."
+      ],
+      "Link": [
+        "Link",
+        "Host-defined link operation; requires a drop handler."
+      ]
+    },
+    "default": "None"
+  },
+  "CollectionChangeReason": {
+    "rust": "CollectionChangeReason",
+    "description": "Reason a collection source was changed.",
+    "members": {
+      "Reorder": [
+        "Reorder",
+        "Reordered within the same view."
+      ],
+      "Move": [
+        "Move",
+        "Moved between views."
+      ],
+      "Copy": [
+        "Copy",
+        "Copied from another view."
+      ],
+      "Insert": [
+        "Insert",
+        "Inserted business items."
+      ],
+      "Remove": [
+        "Remove",
+        "Removed business items."
+      ]
+    },
+    "default": "Insert"
+  },
+  "TeachingTipPlacementMode": {
+    "rust": "TeachingTipPlacementMode",
+    "description": "TeachingTipPlacementMode source-defined choices.",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Auto behavior."
+      ],
+      "Top": [
+        "Top",
+        "Top behavior."
+      ],
+      "Bottom": [
+        "Bottom",
+        "Bottom behavior."
+      ],
+      "Left": [
+        "Left",
+        "Left behavior."
+      ],
+      "Right": [
+        "Right",
+        "Right behavior."
+      ],
+      "TopRight": [
+        "TopRight",
+        "TopRight behavior."
+      ],
+      "TopLeft": [
+        "TopLeft",
+        "TopLeft behavior."
+      ],
+      "BottomRight": [
+        "BottomRight",
+        "BottomRight behavior."
+      ],
+      "BottomLeft": [
+        "BottomLeft",
+        "BottomLeft behavior."
+      ],
+      "LeftTop": [
+        "LeftTop",
+        "LeftTop behavior."
+      ],
+      "LeftBottom": [
+        "LeftBottom",
+        "LeftBottom behavior."
+      ],
+      "RightTop": [
+        "RightTop",
+        "RightTop behavior."
+      ],
+      "RightBottom": [
+        "RightBottom",
+        "RightBottom behavior."
+      ],
+      "Center": [
+        "Center",
+        "Center behavior."
+      ]
+    },
+    "default": "Auto"
+  },
+  "TeachingTipTailVisibility": {
+    "rust": "TeachingTipTailVisibility",
+    "description": "TeachingTipTailVisibility source-defined choices.",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Auto behavior."
+      ],
+      "Visible": [
+        "Visible",
+        "Visible behavior."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Collapsed behavior."
+      ]
+    },
+    "default": "Auto"
+  },
+  "TeachingTipHeroContentPlacementMode": {
+    "rust": "TeachingTipHeroContentPlacementMode",
+    "description": "TeachingTipHeroContentPlacementMode source-defined choices.",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Auto behavior."
+      ],
+      "Top": [
+        "Top",
+        "Top behavior."
+      ],
+      "Bottom": [
+        "Bottom",
+        "Bottom behavior."
+      ]
+    },
+    "default": "Auto"
+  },
+  "ItemsUpdatingScrollMode": {
+    "rust": "ItemsUpdatingScrollMode",
+    "description": "Scroll anchoring when an ItemsStackPanel source changes.",
+    "members": {
+      "KeepItemsInView": [
+        "KeepItemsInView",
+        "Default. Preserve the first visible stable item and its viewport offset."
+      ],
+      "KeepScrollOffset": [
+        "KeepScrollOffset",
+        "Preserve the current pixel scroll offset."
+      ],
+      "KeepLastItemInView": [
+        "KeepLastItemInView",
+        "Preserve the last visible item; continue following appended items when at the end."
+      ]
+    },
+    "default": "KeepItemsInView"
+  },
+  "PipsPagerButtonVisibility": {
+    "rust": "PipsPagerButtonVisibility",
+    "description": "PipsPager navigation button policy. Default: Collapsed.",
+    "default": "Collapsed",
+    "members": {
+      "Visible": [
+        "Visible",
+        "Keep the button space and show it when navigation is possible."
+      ],
+      "VisibleOnPointerOver": [
+        "VisibleOnPointerOver",
+        "Show during pointer hover or keyboard focus."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Remove the button and its layout space."
+      ]
+    }
+  },
+  "PipsPagerWrapMode": {
+    "rust": "PipsPagerWrapMode",
+    "description": "PipsPager finite-page navigation. Default: None.",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "Stop at the first and last finite page."
+      ],
+      "Wrap": [
+        "Wrap",
+        "Wrap between the first and last finite pages."
+      ]
+    }
+  },
+  "TreeViewSelectionMode": {
+    "rust": "TreeViewSelectionMode",
+    "description": "TreeView selection policy. Default: Single.",
+    "default": "Single",
+    "members": {
+      "None": [
+        "None",
+        "Disable node selection."
+      ],
+      "Single": [
+        "Single",
+        "Select one node."
+      ],
+      "Multiple": [
+        "Multiple",
+        "Use hierarchical checkboxes with partial parent states."
+      ]
+    }
+  },
+  "TabViewWidthMode": {
+    "rust": "TabViewWidthMode",
+    "description": "TabView header sizing. Default: Equal.",
+    "default": "Equal",
+    "members": {
+      "Equal": [
+        "Equal",
+        "Share strip width within native minimum and maximum tab sizes."
+      ],
+      "SizeToContent": [
+        "SizeToContent",
+        "Use each header natural width."
+      ],
+      "Compact": [
+        "Compact",
+        "Show only the icon for unselected tabs."
+      ]
+    }
+  },
+  "TabViewCloseButtonOverlayMode": {
+    "rust": "TabViewCloseButtonOverlayMode",
+    "description": "TabView close button visibility. Default: Auto.",
+    "default": "Auto",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Show selected close buttons, and unselected buttons during hover."
+      ],
+      "OnPointerOver": [
+        "OnPointerOver",
+        "Show close buttons during pointer hover."
+      ],
+      "Always": [
+        "Always",
+        "Keep all closable tab buttons visible."
+      ]
+    }
+  },
+  "CommandBarLabelPosition": {
+    "rust": "CommandBarLabelPosition",
+    "description": "Per-command label visibility. Default: Default.",
+    "members": {
+      "Default": [
+        "Default",
+        "Use the bar default, or Bottom when standalone."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Hide this command label."
+      ]
+    },
+    "default": "Default"
+  },
+  "CommandBarDefaultLabelPosition": {
+    "rust": "CommandBarDefaultLabelPosition",
+    "description": "Position of primary command labels. Default: Bottom.",
+    "members": {
+      "Bottom": [
+        "Bottom",
+        "Place labels below icons when expanded."
+      ],
+      "Right": [
+        "Right",
+        "Place labels to the right of icons."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Keep labels hidden."
+      ]
+    },
+    "default": "Bottom"
+  },
+  "CommandBarClosedDisplayMode": {
+    "rust": "CommandBarClosedDisplayMode",
+    "description": "Closed bar presentation. Default: Compact.",
+    "members": {
+      "Compact": [
+        "Compact",
+        "Keep the compact command row visible."
+      ],
+      "Minimal": [
+        "Minimal",
+        "Show a minimal strip and overflow button."
+      ],
+      "Hidden": [
+        "Hidden",
+        "Hide the command row until opened."
+      ]
+    },
+    "default": "Compact"
+  },
+  "CommandBarOverflowButtonVisibility": {
+    "rust": "CommandBarOverflowButtonVisibility",
+    "description": "Overflow button policy. Default: Auto.",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Show when secondary or dynamically overflowed commands exist."
+      ],
+      "Visible": [
+        "Visible",
+        "Always show the overflow button."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Hide the overflow button."
+      ]
+    },
+    "default": "Auto"
+  },
+  "CommandBarItemKind": {
+    "rust": "CommandBarItemKind",
+    "description": "Command descriptor template. Default: Button.",
+    "members": {
+      "Button": [
+        "Button",
+        "Invokable command."
+      ],
+      "Toggle": [
+        "Toggle",
+        "Checked command."
+      ],
+      "Separator": [
+        "Separator",
+        "Noninteractive command separator."
+      ]
+    },
+    "default": "Button"
+  },
+  "KeyboardAcceleratorModifier": {
+    "rust": "KeyboardAcceleratorModifier",
+    "description": "Modifier in a typed accelerator combination.",
+    "members": {
+      "Control": [
+        "Control",
+        "Control key."
+      ],
+      "Shift": [
+        "Shift",
+        "Shift key."
+      ],
+      "Alt": [
+        "Alt",
+        "Alt key."
+      ]
+    },
+    "default": "Control"
+  },
+  "NavigationCacheMode": {
+    "rust": "NavigationCacheMode",
+    "description": "Page instance cache policy. Default Disabled; cache keys identify page types, independently of navigation parameters.",
+    "default": "Disabled",
+    "members": {
+      "Disabled": [
+        "Disabled",
+        "Create a new instance on each navigation."
+      ],
+      "Enabled": [
+        "Enabled",
+        "Reuse instances in the Frame CacheSize bounded least recently used cache."
+      ],
+      "Required": [
+        "Required",
+        "Keep the page in the permanent cache, outside the transient cache budget. Pinned native source requires CacheSize >= 1 when first loading."
+      ]
+    }
+  },
+  "NavigationMode": {
+    "rust": "NavigationMode",
+    "description": "Reason for a Frame page lifecycle notification.",
+    "members": {
+      "New": [
+        "New",
+        "A new journal entry, clearing the forward stack."
+      ],
+      "Back": [
+        "Back",
+        "Return to an earlier journal entry."
+      ],
+      "Forward": [
+        "Forward",
+        "Return to a forward journal entry."
+      ],
+      "Refresh": [
+        "Refresh",
+        "Notify the current page again without adding history."
+      ]
+    }
+  },
+  "NavigationTransition": {
+    "rust": "NavigationTransition",
+    "description": "Frame transition recipe from pinned WinUI ThemeTransitions.cpp. Default Entrance.",
+    "default": "Entrance",
+    "members": {
+      "Entrance": [
+        "Entrance",
+        "150 ms outgoing phase and 300 ms incoming phase, with 140 DIP vertical entrance."
+      ],
+      "SlideFromLeft": [
+        "SlideFromLeft",
+        "Horizontal navigation entering from the left; reverse on back navigation."
+      ],
+      "SlideFromRight": [
+        "SlideFromRight",
+        "Horizontal navigation entering from the right; reverse on back navigation."
+      ],
+      "Suppress": [
+        "Suppress",
+        "Commit immediately with no page animation."
+      ]
+    }
+  },
+  "CalendarViewDisplayMode": {
+    "rust": "CalendarViewDisplayMode",
+    "description": "Calendar zoom level. Default: Month.",
+    "members": {
+      "Month": [
+        "Month",
+        "Day cells in a month."
+      ],
+      "Year": [
+        "Year",
+        "Month cells in a year."
+      ],
+      "Decade": [
+        "Decade",
+        "Year cells in a decade."
+      ]
+    },
+    "default": "Month"
+  },
+  "CalendarViewSelectionMode": {
+    "rust": "CalendarViewSelectionMode",
+    "description": "Calendar day selection policy. Default: Single.",
+    "members": {
+      "None": [
+        "None",
+        "Selection is disabled."
+      ],
+      "Single": [
+        "Single",
+        "One selected day."
+      ],
+      "Multiple": [
+        "Multiple",
+        "Independent selected days."
+      ]
+    },
+    "default": "Single"
+  },
+  "DayOfWeek": {
+    "rust": "DayOfWeek",
+    "description": "First day of a calendar week. Default: Sunday.",
+    "members": {
+      "Sunday": [
+        "Sunday",
+        "Sunday."
+      ],
+      "Monday": [
+        "Monday",
+        "Monday."
+      ],
+      "Tuesday": [
+        "Tuesday",
+        "Tuesday."
+      ],
+      "Wednesday": [
+        "Wednesday",
+        "Wednesday."
+      ],
+      "Thursday": [
+        "Thursday",
+        "Thursday."
+      ],
+      "Friday": [
+        "Friday",
+        "Friday."
+      ],
+      "Saturday": [
+        "Saturday",
+        "Saturday."
+      ]
+    },
+    "default": "Sunday"
+  },
+  "ClockIdentifier": {
+    "rust": "ClockIdentifier",
+    "description": "Time-picker clock convention. Default: host locale.",
+    "members": {
+      "TwelveHour": [
+        "12HourClock",
+        "Hour, minute and day period."
+      ],
+      "TwentyFourHour": [
+        "24HourClock",
+        "24-hour hour and minute fields."
+      ]
+    },
+    "default": "TwelveHour"
+  },
+  "ColorSpectrumShape": {
+    "rust": "ColorSpectrumShape",
+    "description": "Color spectrum geometry. Default: Box.",
+    "members": {
+      "Box": [
+        "Box",
+        "Rectangular spectrum."
+      ],
+      "Ring": [
+        "Ring",
+        "Circular spectrum."
+      ]
+    },
+    "default": "Box"
+  },
+  "ColorSpectrumComponents": {
+    "rust": "ColorSpectrumComponents",
+    "description": "Axes represented by the spectrum. Default: HueSaturation.",
+    "members": {
+      "HueSaturation": [
+        "HueSaturation",
+        "Horizontal/angular hue, vertical/radial saturation."
+      ],
+      "HueValue": [
+        "HueValue",
+        "Horizontal/angular hue, vertical/radial value."
+      ],
+      "SaturationHue": [
+        "SaturationHue",
+        "Horizontal/angular saturation, vertical/radial hue."
+      ],
+      "SaturationValue": [
+        "SaturationValue",
+        "Horizontal/angular saturation, vertical/radial value."
+      ],
+      "ValueHue": [
+        "ValueHue",
+        "Horizontal/angular value, vertical/radial hue."
+      ],
+      "ValueSaturation": [
+        "ValueSaturation",
+        "Horizontal/angular value, vertical/radial saturation."
+      ]
+    },
+    "default": "HueSaturation"
+  },
+  "ColorRepresentation": {
+    "rust": "ColorRepresentation",
+    "description": "Color-channel editor representation. Default: Rgb.",
+    "members": {
+      "Rgb": [
+        "Rgb",
+        "Red, green and blue editors."
+      ],
+      "Hsv": [
+        "Hsv",
+        "Hue, saturation and value editors."
+      ]
+    },
+    "default": "Rgb"
+  },
+  "CalendarIdentifier": {
+    "rust": "CalendarIdentifier",
+    "description": "Calendar system used by calendar selectors. Default: Gregorian.",
+    "members": {
+      "Gregorian": [
+        "GregorianCalendar",
+        "Gregorian civil calendar."
+      ],
+      "Japanese": [
+        "JapaneseCalendar",
+        "Japanese eras with Gregorian months."
+      ],
+      "Julian": [
+        "JulianCalendar",
+        "Julian civil calendar."
+      ],
+      "Korean": [
+        "KoreanCalendar",
+        "Korean Dangun year numbering."
+      ],
+      "Taiwan": [
+        "TaiwanCalendar",
+        "Taiwan Republic year numbering."
+      ],
+      "Thai": [
+        "ThaiCalendar",
+        "Thai Buddhist year numbering."
+      ],
+      "Hebrew": [
+        "HebrewCalendar",
+        "Hebrew lunisolar calendar."
+      ],
+      "Hijri": [
+        "HijriCalendar",
+        "Hijri calendar."
+      ],
+      "UmAlQura": [
+        "UmAlQuraCalendar",
+        "Um Al Qura calendar."
+      ],
+      "Persian": [
+        "PersianCalendar",
+        "Persian solar calendar."
+      ]
+    },
+    "default": "Gregorian"
+  },
+  "WrapPanelItemsStretch": {
+    "rust": "WrapPanelItemsStretch",
+    "description": "WrapPanel final source item sizing. Default None.",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "Keep every item at its desired size."
+      ],
+      "Last": [
+        "Last",
+        "Stretch the final source child into the remaining main-axis space."
+      ]
+    }
+  },
+  "FlyoutShowMode": {
+    "rust": "FlyoutShowMode",
+    "description": "CommandBarFlyout presentation. Default Standard.",
+    "default": "Standard",
+    "members": {
+      "Standard": [
+        "Standard",
+        "Show primary and secondary commands with keyboard focus."
+      ],
+      "Transient": [
+        "Transient",
+        "Initially show the primary row; More reveals secondary commands."
+      ]
+    }
+  },
+  "SplitViewDisplayMode": {
+    "rust": "SplitViewDisplayMode",
+    "description": "SplitView pane layout; default Overlay.",
+    "default": "Overlay",
+    "members": {
+      "Overlay": [
+        "Overlay",
+        "The open pane covers content."
+      ],
+      "Inline": [
+        "Inline",
+        "The open pane reserves content width."
+      ],
+      "CompactOverlay": [
+        "CompactOverlay",
+        "A compact rail remains while the open pane overlays content."
+      ],
+      "CompactInline": [
+        "CompactInline",
+        "A compact rail remains and opening reserves content width."
+      ]
+    }
+  },
+  "SplitViewPanePlacement": {
+    "rust": "SplitViewPanePlacement",
+    "description": "SplitView pane side; default Left.",
+    "default": "Left",
+    "members": {
+      "Left": [
+        "Left",
+        "Place pane on the physical left."
+      ],
+      "Right": [
+        "Right",
+        "Place pane on the physical right."
+      ]
+    }
+  },
+  "LightDismissOverlayMode": {
+    "rust": "LightDismissOverlayMode",
+    "description": "SplitView light dismiss tint; default Auto.",
+    "default": "Auto",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Use the platform default, without an overlay tint."
+      ],
+      "On": [
+        "On",
+        "Tint the content while an overlay pane is open."
+      ],
+      "Off": [
+        "Off",
+        "Do not tint content."
+      ]
+    }
+  },
+  "ParallaxSourceOffsetKind": {
+    "rust": "ParallaxSourceOffsetKind",
+    "description": "Parallax offset interpretation; default Relative.",
+    "default": "Relative",
+    "members": {
+      "Relative": [
+        "Relative",
+        "Offsets relative to the source viewport/content."
+      ],
+      "Absolute": [
+        "Absolute",
+        "Offsets are source scroll positions."
+      ]
+    }
+  },
+  "StandardCommandKind": {
+    "rust": "StandardCommandKind",
+    "description": "Implements WinUI StandardUICommandKind for StandardCommand. None has no preset.",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "None standard command metadata; execution remains application-owned."
+      ],
+      "Cut": [
+        "Cut",
+        "Cut standard command metadata; execution remains application-owned."
+      ],
+      "Copy": [
+        "Copy",
+        "Copy standard command metadata; execution remains application-owned."
+      ],
+      "Paste": [
+        "Paste",
+        "Paste standard command metadata; execution remains application-owned."
+      ],
+      "SelectAll": [
+        "SelectAll",
+        "SelectAll standard command metadata; execution remains application-owned."
+      ],
+      "Delete": [
+        "Delete",
+        "Delete standard command metadata; execution remains application-owned."
+      ],
+      "Share": [
+        "Share",
+        "Share standard command metadata; execution remains application-owned."
+      ],
+      "Save": [
+        "Save",
+        "Save standard command metadata; execution remains application-owned."
+      ],
+      "Open": [
+        "Open",
+        "Open standard command metadata; execution remains application-owned."
+      ],
+      "Close": [
+        "Close",
+        "Close standard command metadata; execution remains application-owned."
+      ],
+      "Pause": [
+        "Pause",
+        "Pause standard command metadata; execution remains application-owned."
+      ],
+      "Play": [
+        "Play",
+        "Play standard command metadata; execution remains application-owned."
+      ],
+      "Stop": [
+        "Stop",
+        "Stop standard command metadata; execution remains application-owned."
+      ],
+      "Forward": [
+        "Forward",
+        "Forward standard command metadata; execution remains application-owned."
+      ],
+      "Backward": [
+        "Backward",
+        "Backward standard command metadata; execution remains application-owned."
+      ],
+      "Undo": [
+        "Undo",
+        "Undo standard command metadata; execution remains application-owned."
+      ],
+      "Redo": [
+        "Redo",
+        "Redo standard command metadata; execution remains application-owned."
+      ]
+    }
+  },
+  "ViewControlSlot": {
+    "rust": "ViewControlSlot",
+    "description": "Rust layout slot for composed view controls.",
+    "default": "Content",
+    "members": {
+      "Content": [
+        "Content",
+        "Content content slot."
+      ],
+      "Pane": [
+        "Pane",
+        "Pane content slot."
+      ],
+      "ZoomedIn": [
+        "ZoomedIn",
+        "ZoomedIn content slot."
+      ],
+      "ZoomedOut": [
+        "ZoomedOut",
+        "ZoomedOut content slot."
+      ],
+      "ZoomButton": [
+        "ZoomButton",
+        "ZoomButton content slot."
+      ],
+      "SwipeAction": [
+        "SwipeAction",
+        "Rust-owned swipe action template."
+      ]
+    }
+  },
+  "RepeaterLayoutKind": {
+    "rust": "RepeaterLayoutKind",
+    "description": "RepeaterLayoutKind finite native values. Default: StackLayout.",
+    "default": "StackLayout",
+    "members": {
+      "StackLayout": [
+        "StackLayout",
+        "Sequential variable-size virtualizing layout."
+      ],
+      "UniformGridLayout": [
+        "UniformGridLayout",
+        "Uniform cells in wrapping rows or columns."
+      ],
+      "FlowLayout": [
+        "FlowLayout",
+        "Rust layout required by the pinned Gallery ItemsRepeater samples."
+      ],
+      "ActivityFeedLayout": [
+        "ActivityFeedLayout",
+        "Rust layout required by the pinned Gallery ItemsRepeater samples."
+      ],
+      "VariedImageSizeLayout": [
+        "VariedImageSizeLayout",
+        "Rust layout required by the pinned Gallery ItemsRepeater samples."
+      ],
+      "LinedFlowLayout": [
+        "LinedFlowLayout",
+        "Line-oriented aspect-ratio-aware layout, executed in Rust."
+      ]
+    }
+  },
+  "UniformGridLayoutItemsStretch": {
+    "rust": "UniformGridLayoutItemsStretch",
+    "description": "UniformGridLayoutItemsStretch finite native values. Default: None.",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "Keep the measured cell dimensions."
+      ],
+      "Fill": [
+        "Fill",
+        "Fill the available minor-axis space."
+      ],
+      "Uniform": [
+        "Uniform",
+        "Expand minor and major axes with a shared scale."
+      ]
+    }
+  },
+  "UniformGridLayoutItemsJustification": {
+    "rust": "UniformGridLayoutItemsJustification",
+    "description": "UniformGridLayoutItemsJustification finite native values. Default: Start.",
+    "default": "Start",
+    "members": {
+      "Start": [
+        "Start",
+        "Align each line at its start."
+      ],
+      "Center": [
+        "Center",
+        "Center each line."
+      ],
+      "End": [
+        "End",
+        "Align each line at its end."
+      ],
+      "SpaceAround": [
+        "SpaceAround",
+        "Distribute remaining space around items."
+      ],
+      "SpaceBetween": [
+        "SpaceBetween",
+        "Distribute remaining space between items."
+      ],
+      "SpaceEvenly": [
+        "SpaceEvenly",
+        "Distribute equal spaces at edges and between items."
+      ]
+    }
+  },
+  "RefreshPullDirection": {
+    "rust": "RefreshPullDirection",
+    "description": "RefreshPullDirection finite native values. Default: TopToBottom.",
+    "default": "TopToBottom",
+    "members": {
+      "TopToBottom": [
+        "TopToBottom",
+        "Pull down from the top edge."
+      ],
+      "BottomToTop": [
+        "BottomToTop",
+        "Pull up from the bottom edge."
+      ],
+      "LeftToRight": [
+        "LeftToRight",
+        "Pull right from the left edge."
+      ],
+      "RightToLeft": [
+        "RightToLeft",
+        "Pull left from the right edge."
+      ]
+    }
+  },
+  "RefreshVisualizerOrientation": {
+    "rust": "RefreshVisualizerOrientation",
+    "description": "RefreshVisualizerOrientation finite native values. Default: Auto.",
+    "default": "Auto",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Orient from the container pull direction."
+      ],
+      "Normal": [
+        "Normal",
+        "No initial rotation."
+      ],
+      "Rotate90DegreesCounterclockwise": [
+        "Rotate90DegreesCounterclockwise",
+        "Rotate counterclockwise 90 degrees."
+      ],
+      "Rotate270DegreesCounterclockwise": [
+        "Rotate270DegreesCounterclockwise",
+        "Rotate counterclockwise 270 degrees."
+      ]
+    }
+  },
+  "RefreshVisualizerState": {
+    "rust": "RefreshVisualizerState",
+    "description": "RefreshVisualizerState finite native values. Default: Idle.",
+    "default": "Idle",
+    "members": {
+      "Idle": [
+        "Idle",
+        "No interaction or work."
+      ],
+      "Peeking": [
+        "Peeking",
+        "Overpan that cannot trigger a refresh."
+      ],
+      "Interacting": [
+        "Interacting",
+        "Eligible pull below the execution threshold."
+      ],
+      "Pending": [
+        "Pending",
+        "Pull exceeded the threshold; release requests refresh."
+      ],
+      "Refreshing": [
+        "Refreshing",
+        "Refresh work is pending completion."
+      ]
+    }
+  },
+  "FlowLayoutLineAlignment": {
+    "rust": "FlowLayoutLineAlignment",
+    "description": "Alignment of FlowLayout lines. Default Start.",
+    "default": "Start",
+    "members": {
+      "Start": [
+        "Start",
+        "Align at the line start."
+      ],
+      "Center": [
+        "Center",
+        "Center each line."
+      ],
+      "End": [
+        "End",
+        "Align at the line end."
+      ],
+      "SpaceAround": [
+        "SpaceAround",
+        "Share space around each item."
+      ],
+      "SpaceBetween": [
+        "SpaceBetween",
+        "Share space between items."
+      ],
+      "SpaceEvenly": [
+        "SpaceEvenly",
+        "Share space at edges and between items."
+      ]
+    }
+  },
+  "SwipeMode": {
+    "rust": "SwipeMode",
+    "description": "Swipe action behavior; default Reveal.",
+    "default": "Reveal",
+    "members": {
+      "Reveal": [
+        "Reveal",
+        "Expose actions until clicked or dismissed."
+      ],
+      "Execute": [
+        "Execute",
+        "Invoke the single action after passing the source threshold."
+      ]
+    }
+  },
+  "PagerControlDisplayMode": {
+    "rust": "PagerControlDisplayMode",
+    "description": "PagerControlDisplayMode. Default: Auto.",
+    "default": "Auto",
+    "members": {
+      "Auto": [
+        "Auto",
+        "Use ComboBox below 10 pages; NumberBox otherwise."
+      ],
+      "ComboBox": [
+        "ComboBox",
+        "Select from a page list."
+      ],
+      "NumberBox": [
+        "NumberBox",
+        "Enter a one-based page number."
+      ],
+      "ButtonPanel": [
+        "ButtonPanel",
+        "Use numbered page buttons with ellipses."
+      ]
+    }
+  },
+  "PagerControlButtonVisibility": {
+    "rust": "PagerControlButtonVisibility",
+    "description": "PagerControlButtonVisibility. Default: Visible.",
+    "default": "Visible",
+    "members": {
+      "Visible": [
+        "Visible",
+        "Keep the button visible; disable it at its edge."
+      ],
+      "HiddenOnEdge": [
+        "HiddenOnEdge",
+        "Reserve space and hide the button at its edge."
+      ],
+      "Hidden": [
+        "Hidden",
+        "Remove the button from layout."
+      ]
+    }
+  },
+  "AnnotatedScrollBarScrollingEventKind": {
+    "rust": "AnnotatedScrollBarScrollingEventKind",
+    "description": "AnnotatedScrollBarScrollingEventKind. Default: Click.",
+    "default": "Click",
+    "members": {
+      "Click": [
+        "Click",
+        "Seek by clicking the rail."
+      ],
+      "Drag": [
+        "Drag",
+        "Seek while dragging the rail."
+      ],
+      "IncrementButton": [
+        "IncrementButton",
+        "Scroll toward the end."
+      ],
+      "DecrementButton": [
+        "DecrementButton",
+        "Scroll toward the beginning."
+      ]
+    }
+  },
+  "TextAlignment": {
+    "rust": "TextAlignment",
+    "description": "TextAlignment. Default: Left.",
+    "default": "Left",
+    "members": {
+      "Left": [
+        "Left",
+        "Align to the left."
+      ],
+      "Center": [
+        "Center",
+        "Center each line."
+      ],
+      "Right": [
+        "Right",
+        "Align to the right."
+      ],
+      "Justify": [
+        "Justify",
+        "Expand spaces on nonfinal lines."
+      ],
+      "DetectFromContent": [
+        "DetectFromContent",
+        "Use the Unicode paragraph direction."
+      ]
+    }
+  },
+  "LinedFlowLayoutItemsStretch": {
+    "rust": "LinedFlowLayoutItemsStretch",
+    "description": "LinedFlowLayoutItemsStretch. Default: Fill.",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "Preserve item aspect ratios without filling leftover line space."
+      ],
+      "Fill": [
+        "Fill",
+        "Distribute a line to the available width."
+      ]
+    }
+  },
+  "LinedFlowLayoutItemsJustification": {
+    "rust": "LinedFlowLayoutItemsJustification",
+    "description": "LinedFlowLayoutItemsJustification. Default: SpaceBetween.",
+    "default": "Start",
+    "members": {
+      "Start": [
+        "Start",
+        "Align at line start."
+      ],
+      "Center": [
+        "Center",
+        "Center items."
+      ],
+      "End": [
+        "End",
+        "Align at line end."
+      ],
+      "SpaceAround": [
+        "SpaceAround",
+        "Distribute space around items."
+      ],
+      "SpaceBetween": [
+        "SpaceBetween",
+        "Distribute space between items."
+      ],
+      "SpaceEvenly": [
+        "SpaceEvenly",
+        "Distribute equal gaps."
+      ]
+    }
+  },
+  "ScrollingIndicatorMode": {
+    "rust": "ScrollingIndicatorMode",
+    "description": "ScrollingIndicatorMode.",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "Automatic pointer indicator."
+      ],
+      "TouchIndicator": [
+        "TouchIndicator",
+        "Thin panning indicator."
+      ],
+      "MouseIndicator": [
+        "MouseIndicator",
+        "Expanded pointer scrollbar."
+      ]
+    }
+  },
+  "ScrollEventType": {
+    "rust": "ScrollEventType",
+    "description": "ScrollEventType.",
+    "default": "EndScroll",
+    "members": {
+      "EndScroll": [
+        "EndScroll",
+        "Scroll gesture completed."
+      ],
+      "First": [
+        "First",
+        "Move to minimum."
+      ],
+      "Last": [
+        "Last",
+        "Move to maximum."
+      ],
+      "LargeDecrement": [
+        "LargeDecrement",
+        "Decrease by LargeChange."
+      ],
+      "LargeIncrement": [
+        "LargeIncrement",
+        "Increase by LargeChange."
+      ],
+      "SmallDecrement": [
+        "SmallDecrement",
+        "Decrease by SmallChange."
+      ],
+      "SmallIncrement": [
+        "SmallIncrement",
+        "Increase by SmallChange."
+      ],
+      "ThumbPosition": [
+        "ThumbPosition",
+        "Programmatic thumb position."
+      ],
+      "ThumbTrack": [
+        "ThumbTrack",
+        "Thumb drag position."
+      ]
+    }
+  },
+  "ThemeTransition": {
+    "rust": "ThemeTransition",
+    "description": "Rust layout transition recipe; attach to a node or its children.",
+    "members": {
+      "Entrance": [
+        "Entrance",
+        "Translate and fade newly loaded content; staggering enabled by default."
+      ],
+      "Reposition": [
+        "Reposition",
+        "Animate layout offset changes without changing layout."
+      ],
+      "Content": [
+        "Content",
+        "Animate incoming content on load and text refresh."
+      ],
+      "AddDelete": [
+        "AddDelete",
+        "Animate additions, removals and the positions of remaining nodes."
+      ],
+      "Popup": [
+        "Popup",
+        "Animate content opening and closing."
+      ]
+    }
+  },
+  "ConnectedAnimationConfiguration": {
+    "rust": "ConnectedAnimationConfiguration",
+    "description": "Connected animation path. Gravity is the default.",
+    "members": {
+      "Gravity": [
+        "Gravity",
+        "Curved connection with a vertical lift."
+      ],
+      "Direct": [
+        "Direct",
+        "Direct connection between source and target."
+      ],
+      "Basic": [
+        "Basic",
+        "Fixed 300ms connection without gravity."
+      ]
+    },
+    "default": "Gravity"
+  },
+  "AnimatedProperty": {
+    "rust": "AnimatedProperty",
+    "description": "Scalar visual properties accepted by Rust animation and implicit transitions.",
+    "members": {
+      "TranslationX": [
+        "translationX",
+        "TranslationX presentation channel."
+      ],
+      "TranslationY": [
+        "translationY",
+        "TranslationY presentation channel."
+      ],
+      "ScaleX": [
+        "scaleX",
+        "ScaleX presentation channel."
+      ],
+      "ScaleY": [
+        "scaleY",
+        "ScaleY presentation channel."
+      ],
+      "Rotation": [
+        "rotation",
+        "Rotation presentation channel."
+      ],
+      "Opacity": [
+        "opacity",
+        "Opacity presentation channel."
+      ]
+    }
+  },
+  "ExpressionProperty": {
+    "rust": "ExpressionProperty",
+    "description": "Source channel read by a Rust expression binding.",
+    "members": {
+      "ScaleX": [
+        "scaleX",
+        "Current presented horizontal scale."
+      ],
+      "ScaleY": [
+        "scaleY",
+        "Current presented vertical scale."
+      ],
+      "TranslationX": [
+        "translationX",
+        "Current presented horizontal translation."
+      ],
+      "TranslationY": [
+        "translationY",
+        "Current presented vertical translation."
+      ],
+      "Opacity": [
+        "opacity",
+        "Current presented opacity."
+      ],
+      "Rotation": [
+        "rotation",
+        "Current presented rotation in degrees."
+      ],
+      "ActualWidth": [
+        "actualWidth",
+        "Arranged width in DIP."
+      ],
+      "ActualHeight": [
+        "actualHeight",
+        "Arranged height in DIP."
+      ],
+      "ActualOffsetX": [
+        "actualOffsetX",
+        "Arranged horizontal offset relative to the parent."
+      ],
+      "ActualOffsetY": [
+        "actualOffsetY",
+        "Arranged vertical offset relative to the parent."
+      ]
+    }
+  },
+  "ExpressionOperation": {
+    "rust": "ExpressionOperation",
+    "description": "Binary operation in a Rust expression tree.",
+    "members": {
+      "Add": [
+        "add",
+        "Add operands."
+      ],
+      "Subtract": [
+        "subtract",
+        "Subtract the right operand."
+      ],
+      "Multiply": [
+        "multiply",
+        "Multiply operands."
+      ],
+      "Divide": [
+        "divide",
+        "Divide; nonfinite frames retain the previous presentation."
+      ],
+      "Modulo": [
+        "modulo",
+        "Remainder; nonfinite frames retain the previous presentation."
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-11-08T10:19:55.407794+00:00",
+  "controls": [
+    "SelectorBar",
+    "DropDownButton",
+    "AppBarButton",
+    "AppBarToggleButton",
+    "CommandBar"
+  ],
+  "excluded": [
+    "Pivot"
+  ],
+  "gallerySamples": 16,
+  "native": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "winui": "2.3.10-experimental",
+    "states": 52,
+    "dpi": 1.25,
+    "sources": 47,
+    "styles": 36,
+    "brushes": 169,
+    "missingBrushes": [],
+    "capture": "Own client PrintWindow flags 3; no screen capture. Windowed Popup pixels are excluded; Popup visual-tree geometry is compared."
+  },
+  "validation": {
+    "rustTests": 228,
+    "hostClippyWarningsDenied": true,
+    "wasmClippyWarningsDenied": true,
+    "typescriptStrict": true,
+    "viteProductionBuild": true,
+    "sdkDeclarations": true,
+    "browser": "Microsoft Edge / Playwright",
+    "browserTests": 11,
+    "rendererComparisons": 104,
+    "maximumRootErrorDIP": 1.2207031261368684e-05,
+    "maximumPartErrorDIP": 1.831054687784217e-05,
+    "maximumPopupErrorDIP": 6.103515630684342e-06,
+    "meanImageError": 3.311160153050758,
+    "maximumImageError": 8.480155045614655
+  },
+  "runtime": {
+    "url": null,
+    "sha256": "8a7af76c9c72bf05a6af5b0d2fd6497e15d6db8cc7cbe0c17627665888ca8adc",
+    "matchesCurrentBinary": false,
+    "frozenRuntime": null,
+    "frozenApplication": null,
+    "applicationFilesChangedSinceFreeze": [
+      "enums.ts",
+      "frame.ts",
+      "GalleryControls.tsx",
+      "GalleryNavigation.tsx",
+      "global-scrollbars.ts",
+      "HomePage.tsx",
+      "NavigationFrameExample.tsx",
+      "react.tsx",
+      "sample-pages.css",
+      "scene.ts",
+      "sdk.ts"
+    ],
+    "note": "Historical initial validation. The 5197 snapshot directories were replaced during refinement delivery; the initial runtime/application snapshot is no longer retained. Initial matrix images and measurements remain in command-controls-visual.json and out/command-controls-Canvas2D,WebGL2."
+  },
+  "scope": {
+    "sameSdkStaticAndBrowserAcceptance": true,
+    "fullStoreGalleryFrameByFrameParity": false,
+    "remaining": [
+      "Browser font rasterization versus native ClearType",
+      "Acrylic detail and complete popup clip/shadow composition timelines",
+      "Full UIA, AccessKey, touch and custom-template combination coverage"
+    ]
+  }
+}

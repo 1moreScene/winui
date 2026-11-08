@@ -1,0 +1,1398 @@
+{
+  "nativeEnvironment": {
+    "sdk": "Microsoft.WindowsAppSDK 2.5.4-experimental / WinUI 2.3.10-experimental",
+    "dpr": 1.25,
+    "width": 600,
+    "height": 400,
+    "font": "Segoe UI"
+  },
+  "staticResults": [
+    {
+      "theme": "Light",
+      "offset": 0,
+      "screenForeground": true,
+      "width": 750,
+      "height": 500,
+      "mean": 0.17400497026946146,
+      "max": 3
+    },
+    {
+      "theme": "Light",
+      "offset": -180,
+      "screenForeground": true,
+      "width": 750,
+      "height": 500,
+      "mean": 0.28235554341179075,
+      "max": 7
+    },
+    {
+      "theme": "Dark",
+      "offset": 0,
+      "screenForeground": true,
+      "width": 750,
+      "height": 500,
+      "mean": 0.17400497026946146,
+      "max": 3
+    },
+    {
+      "theme": "Dark",
+      "offset": -180,
+      "screenForeground": true,
+      "width": 750,
+      "height": 500,
+      "mean": 0.28235554341179075,
+      "max": 7
+    }
+  ],
+  "frameCount": 84,
+  "xErrorP95": 2.746955819508365,
+  "xErrorMax": 5.535071034395401,
+  "opacityErrorMax": 0.018450265391547482,
+  "frames": [
+    {
+      "name": "frame-000",
+      "timeMs": 10.0934,
+      "captureEndMs": 13.3663,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-001",
+      "timeMs": 16.5582,
+      "captureEndMs": 25.7014,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-002",
+      "timeMs": 28.7482,
+      "captureEndMs": 37.4093,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-003",
+      "timeMs": 40.9757,
+      "captureEndMs": 50.005,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-004",
+      "timeMs": 53.0258,
+      "captureEndMs": 61.9591,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-005",
+      "timeMs": 65.2098,
+      "captureEndMs": 73.8414,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-006",
+      "timeMs": 77.2569,
+      "captureEndMs": 85.7594,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-007",
+      "timeMs": 89.3649,
+      "captureEndMs": 98.0523,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 4.3621984507940255,
+      "xError": 4.3621984507940255,
+      "nativeOpacity": 1,
+      "browserOpacity": 0.9854593384973532,
+      "opacityError": 0.014540661502646768,
+      "pixels": {
+        "mean": 2.262086638194021,
+        "max": 126
+      }
+    },
+    {
+      "name": "frame-008",
+      "timeMs": 101.5023,
+      "captureEndMs": 110.7038,
+      "screenForeground": true,
+      "nativeX": 18.549522399902344,
+      "browserX": 24.084593434297744,
+      "xError": 5.535071034395401,
+      "nativeOpacity": 0.9381682872772217,
+      "browserOpacity": 0.9197180218856742,
+      "opacityError": 0.018450265391547482,
+      "pixels": {
+        "mean": 7.815786048403498,
+        "max": 117
+      }
+    },
+    {
+      "name": "frame-009",
+      "timeMs": 113.6232,
+      "captureEndMs": 122.6265,
+      "screenForeground": true,
+      "nativeX": 36.435302734375,
+      "browserX": 40.38094486422489,
+      "xError": 3.9456421298498867,
+      "nativeOpacity": 0.8785490393638611,
+      "browserOpacity": 0.8653968504525837,
+      "opacityError": 0.01315218891127734,
+      "pixels": {
+        "mean": 6.342082570673175,
+        "max": 109
+      }
+    },
+    {
+      "name": "frame-010",
+      "timeMs": 125.7895,
+      "captureEndMs": 134.6352,
+      "screenForeground": true,
+      "nativeX": 50.108612060546875,
+      "browserX": 53.49231194044621,
+      "xError": 3.383699879899332,
+      "nativeOpacity": 0.8329713344573975,
+      "browserOpacity": 0.821692293531846,
+      "opacityError": 0.011279040925551431,
+      "pixels": {
+        "mean": 5.059121415497255,
+        "max": 104
+      }
+    },
+    {
+      "name": "frame-011",
+      "timeMs": 137.8409,
+      "captureEndMs": 146.9571,
+      "screenForeground": true,
+      "nativeX": 61.08441925048828,
+      "browserX": 63.831375069996646,
+      "xError": 2.746955819508365,
+      "nativeOpacity": 0.7963852882385254,
+      "browserOpacity": 0.7872287497666779,
+      "opacityError": 0.009156538471847497,
+      "pixels": {
+        "mean": 4.621659548505186,
+        "max": 138
+      }
+    },
+    {
+      "name": "frame-012",
+      "timeMs": 150.0416,
+      "captureEndMs": 159.2862,
+      "screenForeground": true,
+      "nativeX": 70.10903930664062,
+      "browserX": 72.21325717303512,
+      "xError": 2.1042178663944924,
+      "nativeOpacity": 0.7663031816482544,
+      "browserOpacity": 0.7592891427565496,
+      "opacityError": 0.007014038891704821,
+      "pixels": {
+        "mean": 4.11483831604637,
+        "max": 138
+      }
+    },
+    {
+      "name": "frame-013",
+      "timeMs": 162.1211,
+      "captureEndMs": 171.2353,
+      "screenForeground": true,
+      "nativeX": 77.34825134277344,
+      "browserX": 78.9382457671778,
+      "xError": 1.5899944244043667,
+      "nativeOpacity": 0.7421724796295166,
+      "browserOpacity": 0.7368725141094072,
+      "opacityError": 0.005299965520109362,
+      "pixels": {
+        "mean": 3.581651413463494,
+        "max": 142
+      }
+    },
+    {
+      "name": "frame-014",
+      "timeMs": 174.2513,
+      "captureEndMs": 183.3125,
+      "screenForeground": true,
+      "nativeX": 83.09062194824219,
+      "browserX": 84.48660397963084,
+      "xError": 1.3959820313886553,
+      "nativeOpacity": 0.7230312824249268,
+      "browserOpacity": 0.7183779867345639,
+      "opacityError": 0.00465329569036288,
+      "pixels": {
+        "mean": 2.5803131991051456,
+        "max": 120
+      }
+    },
+    {
+      "name": "frame-015",
+      "timeMs": 186.4026,
+      "captureEndMs": 195.4859,
+      "screenForeground": true,
+      "nativeX": 87.91903686523438,
+      "browserX": 89.10952335963853,
+      "xError": 1.1904864944041549,
+      "nativeOpacity": 0.7069365978240967,
+      "browserOpacity": 0.7029682554678716,
+      "opacityError": 0.0039683423562251186,
+      "pixels": {
+        "mean": 1.8248322147651006,
+        "max": 89
+      }
+    },
+    {
+      "name": "frame-016",
+      "timeMs": 198.5156,
+      "captureEndMs": 207.5055,
+      "screenForeground": true,
+      "nativeX": 92.0023193359375,
+      "browserX": 92.98750792700088,
+      "xError": 0.9851885910633769,
+      "nativeOpacity": 0.6933256387710571,
+      "browserOpacity": 0.6900416402433305,
+      "opacityError": 0.0032839985277266504,
+      "pixels": {
+        "mean": 1.7109456985967053,
+        "max": 87
+      }
+    },
+    {
+      "name": "frame-017",
+      "timeMs": 210.627,
+      "captureEndMs": 219.7889,
+      "screenForeground": true,
+      "nativeX": 95.41975402832031,
+      "browserX": 96.2841070482393,
+      "xError": 0.8643530199189939,
+      "nativeOpacity": 0.681934118270874,
+      "browserOpacity": 0.679052976505869,
+      "opacityError": 0.0028811417650049798,
+      "pixels": {
+        "mean": 1.3895790115924345,
+        "max": 86
+      }
+    },
+    {
+      "name": "frame-018",
+      "timeMs": 222.732,
+      "captureEndMs": 231.6739,
+      "screenForeground": true,
+      "nativeX": 98.51494598388672,
+      "browserX": 99.10986970773331,
+      "xError": 0.5949237238465912,
+      "nativeOpacity": 0.6716168522834778,
+      "browserOpacity": 0.669633767640889,
+      "opacityError": 0.001983084642588784,
+      "pixels": {
+        "mean": 1.5028716697173072,
+        "max": 84
+      }
+    },
+    {
+      "name": "frame-019",
+      "timeMs": 234.8383,
+      "captureEndMs": 243.9295,
+      "screenForeground": true,
+      "nativeX": 100.97621154785156,
+      "browserX": 101.55162901776944,
+      "xError": 0.5754174699178805,
+      "nativeOpacity": 0.6634126305580139,
+      "browserOpacity": 0.6614945699407685,
+      "opacityError": 0.0019180606172454207,
+      "pixels": {
+        "mean": 1.1715314215985357,
+        "max": 84
+      }
+    },
+    {
+      "name": "frame-020",
+      "timeMs": 247.0144,
+      "captureEndMs": 255.8789,
+      "screenForeground": true,
+      "nativeX": 103.19007873535156,
+      "browserX": 103.6866101826193,
+      "xError": 0.496531447267742,
+      "nativeOpacity": 0.6560330986976624,
+      "browserOpacity": 0.6543779660579356,
+      "opacityError": 0.0016551326397267196,
+      "pixels": {
+        "mean": 1.265979255643685,
+        "max": 82
+      }
+    },
+    {
+      "name": "frame-021",
+      "timeMs": 259.05,
+      "captureEndMs": 268.1971,
+      "screenForeground": true,
+      "nativeX": 105.07948303222656,
+      "browserX": 105.53216055390843,
+      "xError": 0.4526775216818635,
+      "nativeOpacity": 0.6497350931167603,
+      "browserOpacity": 0.648226131486972,
+      "opacityError": 0.001508961629788308,
+      "pixels": {
+        "mean": 1.0205491153142159,
+        "max": 82
+      }
+    },
+    {
+      "name": "frame-022",
+      "timeMs": 271.1818,
+      "captureEndMs": 280.0887,
+      "screenForeground": true,
+      "nativeX": 106.79119110107422,
+      "browserX": 107.16664623680774,
+      "xError": 0.3754551357335174,
+      "nativeOpacity": 0.6440293788909912,
+      "browserOpacity": 0.6427778458773075,
+      "opacityError": 0.0012515330136837477,
+      "pixels": {
+        "mean": 0.9280577587960138,
+        "max": 81
+      }
+    },
+    {
+      "name": "frame-023",
+      "timeMs": 283.2804,
+      "captureEndMs": 292.3585,
+      "screenForeground": true,
+      "nativeX": 88.59901428222656,
+      "browserX": 90.28488954337335,
+      "xError": 1.6858752611467906,
+      "nativeOpacity": 0.7046699523925781,
+      "browserOpacity": 0.6990503681887554,
+      "opacityError": 0.005619584203822692,
+      "pixels": {
+        "mean": 5.921138905836893,
+        "max": 82
+      }
+    },
+    {
+      "name": "frame-024",
+      "timeMs": 295.4447,
+      "captureEndMs": 304.4341,
+      "screenForeground": true,
+      "nativeX": 73.65156555175781,
+      "browserX": 74.82381345441496,
+      "xError": 1.1722479026571477,
+      "nativeOpacity": 0.7544947862625122,
+      "browserOpacity": 0.7505872884852834,
+      "opacityError": 0.003907497777228763,
+      "pixels": {
+        "mean": 6.0341346349400045,
+        "max": 135
+      }
+    },
+    {
+      "name": "frame-025",
+      "timeMs": 307.5309,
+      "captureEndMs": 316.6793,
+      "screenForeground": true,
+      "nativeX": 61.4554557800293,
+      "browserX": 62.43277330156053,
+      "xError": 0.9773175215312335,
+      "nativeOpacity": 0.795148491859436,
+      "browserOpacity": 0.7918907556614649,
+      "opacityError": 0.003257736197971095,
+      "pixels": {
+        "mean": 6.03919869839333,
+        "max": 142
+      }
+    },
+    {
+      "name": "frame-026",
+      "timeMs": 319.7285,
+      "captureEndMs": 328.7353,
+      "screenForeground": true,
+      "nativeX": 51.686500549316406,
+      "browserX": 52.48118705393952,
+      "xError": 0.7946865046231153,
+      "nativeOpacity": 0.8277117013931274,
+      "browserOpacity": 0.8250627098202016,
+      "opacityError": 0.002648991572925863,
+      "pixels": {
+        "mean": 4.177144600366077,
+        "max": 147
+      }
+    },
+    {
+      "name": "frame-027",
+      "timeMs": 331.7882,
+      "captureEndMs": 340.941,
+      "screenForeground": true,
+      "nativeX": 43.97297286987305,
+      "browserX": 44.62312016869178,
+      "xError": 0.6501472988187302,
+      "nativeOpacity": 0.8534234166145325,
+      "browserOpacity": 0.8512562661043608,
+      "opacityError": 0.0021671505101716892,
+      "pixels": {
+        "mean": 3.4009558673988205,
+        "max": 104
+      }
+    },
+    {
+      "name": "frame-028",
+      "timeMs": 343.9885,
+      "captureEndMs": 353.0243,
+      "screenForeground": true,
+      "nativeX": 37.666473388671875,
+      "browserX": 38.20258389684797,
+      "xError": 0.536110508176094,
+      "nativeOpacity": 0.8744450807571411,
+      "browserOpacity": 0.8726580536771734,
+      "opacityError": 0.0017870270799676957,
+      "pixels": {
+        "mean": 2.893565182021558,
+        "max": 106
+      }
+    },
+    {
+      "name": "frame-029",
+      "timeMs": 356.007,
+      "captureEndMs": 365.1627,
+      "screenForeground": true,
+      "nativeX": 32.54648208618164,
+      "browserX": 33.02535863833509,
+      "xError": 0.4788765521534515,
+      "nativeOpacity": 0.8915117383003235,
+      "browserOpacity": 0.8899154712055497,
+      "opacityError": 0.0015962670947737845,
+      "pixels": {
+        "mean": 2.6202318486882246,
+        "max": 110
+      }
+    },
+    {
+      "name": "frame-030",
+      "timeMs": 368.1588,
+      "captureEndMs": 377.2445,
+      "screenForeground": true,
+      "nativeX": 28.282318115234375,
+      "browserX": 28.68193040804681,
+      "xError": 0.39961229281243504,
+      "nativeOpacity": 0.9057255983352661,
+      "browserOpacity": 0.9043935653065106,
+      "opacityError": 0.0013320330287555082,
+      "pixels": {
+        "mean": 2.0492617449664428,
+        "max": 112
+      }
+    },
+    {
+      "name": "frame-031",
+      "timeMs": 380.3028,
+      "captureEndMs": 389.3218,
+      "screenForeground": true,
+      "nativeX": 24.716798782348633,
+      "browserX": 25.04097579291927,
+      "xError": 0.3241770105706365,
+      "nativeOpacity": 0.9176106452941895,
+      "browserOpacity": 0.9165300806902691,
+      "opacityError": 0.0010805646039203642,
+      "pixels": {
+        "mean": 1.9254830181004678,
+        "max": 114
+      }
+    },
+    {
+      "name": "frame-032",
+      "timeMs": 392.4876,
+      "captureEndMs": 401.4621,
+      "screenForeground": true,
+      "nativeX": 21.691694259643555,
+      "browserX": 21.945788234186992,
+      "xError": 0.2540939745434372,
+      "nativeOpacity": 0.9276943802833557,
+      "browserOpacity": 0.92684737255271,
+      "opacityError": 0.0008470077306457213,
+      "pixels": {
+        "mean": 1.9135285743339434,
+        "max": 116
+      }
+    },
+    {
+      "name": "frame-033",
+      "timeMs": 404.5985,
+      "captureEndMs": 413.4796,
+      "screenForeground": true,
+      "nativeX": 18.999095916748047,
+      "browserX": 19.31449845395862,
+      "xError": 0.31540253721057354,
+      "nativeOpacity": 0.9366697072982788,
+      "browserOpacity": 0.9356183384868046,
+      "opacityError": 0.0010513688114741626,
+      "pixels": {
+        "mean": 1.5775432174089892,
+        "max": 117
+      }
+    },
+    {
+      "name": "frame-034",
+      "timeMs": 416.6047,
+      "captureEndMs": 425.6804,
+      "screenForeground": true,
+      "nativeX": 16.800691604614258,
+      "browserX": 17.063389454755836,
+      "xError": 0.26269785014157776,
+      "nativeOpacity": 0.9439976811408997,
+      "browserOpacity": 0.9431220351508138,
+      "opacityError": 0.0008756459900858271,
+      "pixels": {
+        "mean": 1.5099410209477324,
+        "max": 118
+      }
+    },
+    {
+      "name": "frame-035",
+      "timeMs": 428.76,
+      "captureEndMs": 437.8263,
+      "screenForeground": true,
+      "nativeX": 14.850232124328613,
+      "browserX": 15.0842195689022,
+      "xError": 0.2339874445735859,
+      "nativeOpacity": 0.9504992365837097,
+      "browserOpacity": 0.9497192681036593,
+      "opacityError": 0.0007799684800504636,
+      "pixels": {
+        "mean": 1.4629977628635347,
+        "max": 119
+      }
+    },
+    {
+      "name": "frame-036",
+      "timeMs": 440.8859,
+      "captureEndMs": 449.6399,
+      "screenForeground": true,
+      "nativeX": 13.155369758605957,
+      "browserX": 13.360726945699355,
+      "xError": 0.2053571870933979,
+      "nativeOpacity": 0.9561487436294556,
+      "browserOpacity": 0.9554642435143355,
+      "opacityError": 0.0006845001151201124,
+      "pixels": {
+        "mean": 1.186597518812284,
+        "max": 121
+      }
+    },
+    {
+      "name": "frame-037",
+      "timeMs": 452.9669,
+      "captureEndMs": 461.8091,
+      "screenForeground": true,
+      "nativeX": 11.70909595489502,
+      "browserX": 11.85421894562964,
+      "xError": 0.14512299073462032,
+      "nativeOpacity": 0.9609696865081787,
+      "browserOpacity": 0.9604859368479013,
+      "opacityError": 0.0004837496602774216,
+      "pixels": {
+        "mean": 1.0995159650193207,
+        "max": 122
+      }
+    },
+    {
+      "name": "frame-038",
+      "timeMs": 465.1222,
+      "captureEndMs": 474.4017,
+      "screenForeground": true,
+      "nativeX": 10.38794994354248,
+      "browserX": 10.518364062887088,
+      "xError": 0.13041411934460712,
+      "nativeOpacity": 0.9653735160827637,
+      "browserOpacity": 0.9649387864570431,
+      "opacityError": 0.0004347296257205535,
+      "pixels": {
+        "mean": 1.2245271507016473,
+        "max": 123
+      }
+    },
+    {
+      "name": "frame-039",
+      "timeMs": 477.3106,
+      "captureEndMs": 486.4608,
+      "screenForeground": true,
+      "nativeX": 9.18198299407959,
+      "browserX": 9.334475251728051,
+      "xError": 0.1524922576484613,
+      "nativeOpacity": 0.9693933725357056,
+      "browserOpacity": 0.9688850824942399,
+      "opacityError": 0.0005082900414656866,
+      "pixels": {
+        "mean": 1.0219768151311774,
+        "max": 123
+      }
+    },
+    {
+      "name": "frame-040",
+      "timeMs": 489.3452,
+      "captureEndMs": 498.6974,
+      "screenForeground": true,
+      "nativeX": 8.1636381149292,
+      "browserX": 8.297544997555363,
+      "xError": 0.1339068826261638,
+      "nativeOpacity": 0.9727878570556641,
+      "browserOpacity": 0.9723415166748155,
+      "opacityError": 0.0004463403808485644,
+      "pixels": {
+        "mean": 1.072841163310962,
+        "max": 124
+      }
+    },
+    {
+      "name": "frame-041",
+      "timeMs": 501.4996,
+      "captureEndMs": 510.6343,
+      "screenForeground": true,
+      "nativeX": 7.241491317749023,
+      "browserX": 7.365874742641694,
+      "xError": 0.12438342489267029,
+      "nativeOpacity": 0.975861668586731,
+      "browserOpacity": 0.9754470841911944,
+      "opacityError": 0.0004145843955365436,
+      "pixels": {
+        "mean": 1.0216229408175717,
+        "max": 125
+      }
+    },
+    {
+      "name": "frame-042",
+      "timeMs": 513.5627,
+      "captureEndMs": 522.4471,
+      "screenForeground": true,
+      "nativeX": 6.439883708953857,
+      "browserX": 6.5415567409693836,
+      "xError": 0.10167303201552613,
+      "nativeOpacity": 0.9785337448120117,
+      "browserOpacity": 0.9781948108634354,
+      "opacityError": 0.0003389339485763143,
+      "pixels": {
+        "mean": 0.9310921293471629,
+        "max": 126
+      }
+    },
+    {
+      "name": "frame-043",
+      "timeMs": 525.7712,
+      "captureEndMs": 534.7432,
+      "screenForeground": true,
+      "nativeX": 5.7294769287109375,
+      "browserX": 5.7967618893451345,
+      "xError": 0.06728496063419698,
+      "nativeOpacity": 0.9809017181396484,
+      "browserOpacity": 0.9806774603688495,
+      "opacityError": 0.00022425777079893017,
+      "pixels": {
+        "mean": 1.0304209884075657,
+        "max": 126
+      }
+    },
+    {
+      "name": "frame-044",
+      "timeMs": 537.8499,
+      "captureEndMs": 546.6702,
+      "screenForeground": true,
+      "nativeX": 5.066459655761719,
+      "browserX": 5.137777167006604,
+      "xError": 0.07131751124488517,
+      "nativeOpacity": 0.9831117987632751,
+      "browserOpacity": 0.982874076109978,
+      "opacityError": 0.00023772265329713438,
+      "pixels": {
+        "mean": 0.9270164734594265,
+        "max": 126
+      }
+    },
+    {
+      "name": "frame-045",
+      "timeMs": 549.9761,
+      "captureEndMs": 558.8605,
+      "screenForeground": true,
+      "nativeX": 4.492148399353027,
+      "browserX": 4.545567706598604,
+      "xError": 0.05341930724557642,
+      "nativeOpacity": 0.9850261807441711,
+      "browserOpacity": 0.9848481076446713,
+      "opacityError": 0.0001780730994997981,
+      "pixels": {
+        "mean": 0.6436200935529794,
+        "max": 65
+      }
+    },
+    {
+      "name": "frame-046",
+      "timeMs": 562.0712,
+      "captureEndMs": 570.8838,
+      "screenForeground": true,
+      "nativeX": 3.964214563369751,
+      "browserX": 4.01607128405189,
+      "xError": 0.05185672068213876,
+      "nativeOpacity": 0.9867859482765198,
+      "browserOpacity": 0.986613095719827,
+      "opacityError": 0.00017285255669274857,
+      "pixels": {
+        "mean": 0.664681716493797,
+        "max": 98
+      }
+    },
+    {
+      "name": "frame-047",
+      "timeMs": 574.2661,
+      "captureEndMs": 583.1779,
+      "screenForeground": true,
+      "nativeX": 3.4984183311462402,
+      "browserX": 3.5376186591079914,
+      "xError": 0.039200327961751213,
+      "nativeOpacity": 0.9883385896682739,
+      "browserOpacity": 0.9882079378029733,
+      "opacityError": 0.00013065186530059059,
+      "pixels": {
+        "mean": 0.7101159243441123,
+        "max": 129
+      }
+    },
+    {
+      "name": "frame-048",
+      "timeMs": 586.3498,
+      "captureEndMs": 595.3652,
+      "screenForeground": true,
+      "nativeX": 3.070584297180176,
+      "browserX": 3.112584637980035,
+      "xError": 0.04200034079985926,
+      "nativeOpacity": 0.9897646903991699,
+      "browserOpacity": 0.9896247178733999,
+      "opacityError": 0.00013997252577002683,
+      "pixels": {
+        "mean": 0.7042261541590401,
+        "max": 65
+      }
+    },
+    {
+      "name": "frame-049",
+      "timeMs": 598.4437,
+      "captureEndMs": 607.3732,
+      "screenForeground": true,
+      "nativeX": 2.691234588623047,
+      "browserX": 2.7310400714566327,
+      "xError": 0.03980548283358587,
+      "nativeOpacity": 0.9910292029380798,
+      "browserOpacity": 0.9908965330951445,
+      "opacityError": 0.00013266984293536233,
+      "pixels": {
+        "mean": 0.6725808419768151,
+        "max": 126
+      }
+    },
+    {
+      "name": "frame-050",
+      "timeMs": 610.5773,
+      "captureEndMs": 619.8567,
+      "screenForeground": true,
+      "nativeX": 2.356123208999634,
+      "browserX": 2.3878516750100403,
+      "xError": 0.031728466010406464,
+      "nativeOpacity": 0.9921462535858154,
+      "browserOpacity": 0.9920404944166332,
+      "opacityError": 0.00010575916918220685,
+      "pixels": {
+        "mean": 0.4947773032336791,
+        "max": 62
+      }
+    },
+    {
+      "name": "frame-051",
+      "timeMs": 622.5976,
+      "captureEndMs": 631.6199,
+      "screenForeground": true,
+      "nativeX": 2.0441112518310547,
+      "browserX": 2.083209750844702,
+      "xError": 0.03909849901364737,
+      "nativeOpacity": 0.9931862950325012,
+      "browserOpacity": 0.9930559674971844,
+      "opacityError": 0.00013032753531683205,
+      "pixels": {
+        "mean": 0.4163880414887126,
+        "max": 8
+      }
+    },
+    {
+      "name": "frame-052",
+      "timeMs": 634.785,
+      "captureEndMs": 645.2787,
+      "screenForeground": true,
+      "nativeX": 1.7802461385726929,
+      "browserX": 1.8067417348160717,
+      "xError": 0.026495596243378827,
+      "nativeOpacity": 0.9940658211708069,
+      "browserOpacity": 0.9939775275506131,
+      "opacityError": 0.00008829362019380227,
+      "pixels": {
+        "mean": 0.7665080333536709,
+        "max": 87
+      }
+    },
+    {
+      "name": "frame-053",
+      "timeMs": 646.9894,
+      "captureEndMs": 656.873,
+      "screenForeground": true,
+      "nativeX": 1.508901834487915,
+      "browserX": 1.559471599200407,
+      "xError": 0.05056976471249186,
+      "nativeOpacity": 0.9949703216552734,
+      "browserOpacity": 0.9948017613359986,
+      "opacityError": 0.00016856031927481308,
+      "pixels": {
+        "mean": 0.545230831808013,
+        "max": 41
+      }
+    },
+    {
+      "name": "frame-054",
+      "timeMs": 659.1692,
+      "captureEndMs": 668.2,
+      "screenForeground": true,
+      "nativeX": 1.3054684400558472,
+      "browserX": 1.339419415404791,
+      "xError": 0.03395097534894376,
+      "nativeOpacity": 0.9956484436988831,
+      "browserOpacity": 0.9955352686153174,
+      "opacityError": 0.0001131750835656753,
+      "pixels": {
+        "mean": 0.29301199918649584,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-055",
+      "timeMs": 671.1629,
+      "captureEndMs": 680.1805,
+      "screenForeground": true,
+      "nativeX": 1.1263312101364136,
+      "browserX": 1.1463984425467544,
+      "xError": 0.020067232410340807,
+      "nativeOpacity": 0.9962455630302429,
+      "browserOpacity": 0.9961786718581775,
+      "opacityError": 0.00006689117206537532,
+      "pixels": {
+        "mean": 0.4938092332723205,
+        "max": 95
+      }
+    },
+    {
+      "name": "frame-056",
+      "timeMs": 683.3229,
+      "captureEndMs": 692.2868,
+      "screenForeground": true,
+      "nativeX": 0.9572001099586487,
+      "browserX": 0.9725197181720233,
+      "xError": 0.015319608213374636,
+      "nativeOpacity": 0.9968093037605286,
+      "browserOpacity": 0.9967582676060933,
+      "opacityError": 0.00005103615443524667,
+      "pixels": {
+        "mean": 0.39463900752491354,
+        "max": 63
+      }
+    },
+    {
+      "name": "frame-057",
+      "timeMs": 695.3891,
+      "captureEndMs": 704.4608,
+      "screenForeground": true,
+      "nativeX": 0.8059935569763184,
+      "browserX": 0.8197205023551959,
+      "xError": 0.01372694537887753,
+      "nativeOpacity": 0.997313380241394,
+      "browserOpacity": 0.9972675983254826,
+      "opacityError": 0.000045781915911424775,
+      "pixels": {
+        "mean": 0.32874923733984135,
+        "max": 35
+      }
+    },
+    {
+      "name": "frame-058",
+      "timeMs": 707.5094,
+      "captureEndMs": 716.7922,
+      "screenForeground": true,
+      "nativeX": 0.6717249155044556,
+      "browserX": 0.6842420983023061,
+      "xError": 0.012517182797850523,
+      "nativeOpacity": 0.9977608919143677,
+      "browserOpacity": 0.997719193005659,
+      "opacityError": 0.00004169890870864279,
+      "pixels": {
+        "mean": 0.3955582672361196,
+        "max": 9
+      }
+    },
+    {
+      "name": "frame-059",
+      "timeMs": 719.617,
+      "captureEndMs": 728.4926,
+      "screenForeground": true,
+      "nativeX": 0.5524846911430359,
+      "browserX": 0.5653719166256082,
+      "xError": 0.012887225482572262,
+      "nativeOpacity": 0.9981583952903748,
+      "browserOpacity": 0.9981154269445813,
+      "opacityError": 0.00004296834579342601,
+      "pixels": {
+        "mean": 0.5130486068741102,
+        "max": 12
+      }
+    },
+    {
+      "name": "frame-060",
+      "timeMs": 731.7356,
+      "captureEndMs": 740.8655,
+      "screenForeground": true,
+      "nativeX": 0.4537278115749359,
+      "browserX": 0.46134279739328576,
+      "xError": 0.007614985818349851,
+      "nativeOpacity": 0.9984875917434692,
+      "browserOpacity": 0.9984621906753557,
+      "opacityError": 0.000025401068113550807,
+      "pixels": {
+        "mean": 0.4711653447223917,
+        "max": 31
+      }
+    },
+    {
+      "name": "frame-061",
+      "timeMs": 743.8772,
+      "captureEndMs": 752.7544,
+      "screenForeground": true,
+      "nativeX": 0.3627365529537201,
+      "browserX": 0.3708683518870117,
+      "xError": 0.008131798933291634,
+      "nativeOpacity": 0.9987908601760864,
+      "browserOpacity": 0.9987637721603766,
+      "opacityError": 0.00002708801570983077,
+      "pixels": {
+        "mean": 0.3906650396583283,
+        "max": 80
+      }
+    },
+    {
+      "name": "frame-062",
+      "timeMs": 755.9899,
+      "captureEndMs": 765.0272,
+      "screenForeground": true,
+      "nativeX": 0.28762659430503845,
+      "browserX": 0.29308480365021694,
+      "xError": 0.0054582093451784885,
+      "nativeOpacity": 0.9990412592887878,
+      "browserOpacity": 0.9990230506544993,
+      "opacityError": 0.000018208634288585657,
+      "pixels": {
+        "mean": 0.34754525116941226,
+        "max": 64
+      }
+    },
+    {
+      "name": "frame-063",
+      "timeMs": 768.1626,
+      "captureEndMs": 776.7432,
+      "screenForeground": true,
+      "nativeX": 0.2213643342256546,
+      "browserX": 0.22636997737676268,
+      "xError": 0.0050056431511080746,
+      "nativeOpacity": 0.9992620944976807,
+      "browserOpacity": 0.9992454334087442,
+      "opacityError": 0.000016661088936498203,
+      "pixels": {
+        "mean": 0.31513524506813095,
+        "max": 52
+      }
+    },
+    {
+      "name": "frame-064",
+      "timeMs": 780.2681,
+      "captureEndMs": 789.0292,
+      "screenForeground": true,
+      "nativeX": 0.16796624660491943,
+      "browserX": 0.17041415636263935,
+      "xError": 0.0024479097577199127,
+      "nativeOpacity": 0.9994401335716248,
+      "browserOpacity": 0.9994319528121245,
+      "opacityError": 0.000008180759500264756,
+      "pixels": {
+        "mean": 0.2883302826926988,
+        "max": 41
+      }
+    },
+    {
+      "name": "frame-065",
+      "timeMs": 792.4722,
+      "captureEndMs": 801.3553,
+      "screenForeground": true,
+      "nativeX": 0.12126439809799194,
+      "browserX": 0.12354727245109132,
+      "xError": 0.0022828743530993734,
+      "nativeOpacity": 0.9995957612991333,
+      "browserOpacity": 0.9995881757584963,
+      "opacityError": 0.000007585540636956267,
+      "pixels": {
+        "mean": 0.26286353467561524,
+        "max": 31
+      }
+    },
+    {
+      "name": "frame-066",
+      "timeMs": 804.4854,
+      "captureEndMs": 813.347,
+      "screenForeground": true,
+      "nativeX": 0.08333386480808258,
+      "browserX": 0.08596772621224602,
+      "xError": 0.00263386140416344,
+      "nativeOpacity": 0.9997222423553467,
+      "browserOpacity": 0.9997134409126258,
+      "opacityError": 0.000008801442720862696,
+      "pixels": {
+        "mean": 0.24187919463087248,
+        "max": 22
+      }
+    },
+    {
+      "name": "frame-067",
+      "timeMs": 816.6291,
+      "captureEndMs": 825.2919,
+      "screenForeground": true,
+      "nativeX": 0.054174650460481644,
+      "browserX": 0.05581314115673308,
+      "xError": 0.0016384906962514378,
+      "nativeOpacity": 0.9998193979263306,
+      "browserOpacity": 0.9998139561961442,
+      "opacityError": 0.000005441730186350746,
+      "pixels": {
+        "mean": 0.23039251576164327,
+        "max": 16
+      }
+    },
+    {
+      "name": "frame-068",
+      "timeMs": 828.7621,
+      "captureEndMs": 837.392,
+      "screenForeground": true,
+      "nativeX": 0.032010845839977264,
+      "browserX": 0.03286924366730659,
+      "xError": 0.0008583978273293269,
+      "nativeOpacity": 0.999893307685852,
+      "browserOpacity": 0.9998904358544423,
+      "opacityError": 0.000002871831409789749,
+      "pixels": {
+        "mean": 0.21464714256660566,
+        "max": 10
+      }
+    },
+    {
+      "name": "frame-069",
+      "timeMs": 840.8259,
+      "captureEndMs": 849.9102,
+      "screenForeground": true,
+      "nativeX": 0.015894031152129173,
+      "browserX": 0.0165056466156841,
+      "xError": 0.0006116154635549265,
+      "nativeOpacity": 0.9999470114707947,
+      "browserOpacity": 0.9999449811779477,
+      "opacityError": 0.0000020302928469551063,
+      "pixels": {
+        "mean": 0.20627618466544642,
+        "max": 6
+      }
+    },
+    {
+      "name": "frame-070",
+      "timeMs": 852.9418,
+      "captureEndMs": 861.5433,
+      "screenForeground": true,
+      "nativeX": 0.005378636997193098,
+      "browserX": 0.005965304252441683,
+      "xError": 0.0005866672552485852,
+      "nativeOpacity": 0.9999820590019226,
+      "browserOpacity": 0.9999801156524919,
+      "opacityError": 0.000001943349430710839,
+      "pixels": {
+        "mean": 0.19806792759812894,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-071",
+      "timeMs": 865.0918,
+      "captureEndMs": 873.8847,
+      "screenForeground": true,
+      "nativeX": 0.0006747166044078767,
+      "browserX": 0.0007596380602734598,
+      "xError": 0.00008492145586558308,
+      "nativeOpacity": 0.9999977350234985,
+      "browserOpacity": 0.9999974678731325,
+      "opacityError": 2.6715036605118314e-7,
+      "pixels": {
+        "mean": 0.19229204799674599,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-072",
+      "timeMs": 877.1831,
+      "captureEndMs": 886.161,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.19049420378279439,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-073",
+      "timeMs": 889.3437,
+      "captureEndMs": 897.6998,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-074",
+      "timeMs": 901.4303,
+      "captureEndMs": 909.9072,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-075",
+      "timeMs": 913.4714,
+      "captureEndMs": 922.5461,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-076",
+      "timeMs": 925.6001,
+      "captureEndMs": 934.1413,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-077",
+      "timeMs": 937.6997,
+      "captureEndMs": 946.244,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-078",
+      "timeMs": 949.9104,
+      "captureEndMs": 958.4356,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-079",
+      "timeMs": 962.0075,
+      "captureEndMs": 970.5543,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-080",
+      "timeMs": 974.1349,
+      "captureEndMs": 982.6507,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-081",
+      "timeMs": 986.2712,
+      "captureEndMs": 994.3684,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-082",
+      "timeMs": 998.3268,
+      "captureEndMs": 1006.8388,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    },
+    {
+      "name": "frame-083",
+      "timeMs": 1010.5345,
+      "captureEndMs": 1018.6962,
+      "screenForeground": true,
+      "nativeX": 0,
+      "browserX": 0,
+      "xError": 0,
+      "nativeOpacity": 1,
+      "browserOpacity": 1,
+      "opacityError": 0,
+      "pixels": {
+        "mean": 0.18926988000813505,
+        "max": 4
+      }
+    }
+  ],
+  "boundary": "UI Rendering callbacks and GDI capture brackets are measured separately. Screenshot may reflect a previous compositor frame. Browser replay uses native wall-clock action times; no clock fitting or native from-value injection. Pixel and exact present-time equivalence are not accepted."
+}

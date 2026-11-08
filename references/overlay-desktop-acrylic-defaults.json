@@ -1,0 +1,48 @@
+{
+  "Light": {
+    "tint": {
+      "A": 255,
+      "R": 252,
+      "G": 252,
+      "B": 252
+    },
+    "tintOpacity": 0,
+    "luminosityOpacity": 0.85,
+    "fallback": {
+      "A": 255,
+      "R": 249,
+      "G": 249,
+      "B": 249
+    },
+    "brushType": "CompositionEffectBrush",
+    "comment": "",
+    "scalars": {},
+    "colors": {},
+    "sources": {
+      "HostBackdrop": "CompositionBackdropBrush"
+    }
+  },
+  "Dark": {
+    "tint": {
+      "A": 255,
+      "R": 44,
+      "G": 44,
+      "B": 44
+    },
+    "tintOpacity": 0.15,
+    "luminosityOpacity": 0.96,
+    "fallback": {
+      "A": 255,
+      "R": 44,
+      "G": 44,
+      "B": 44
+    },
+    "brushType": "CompositionEffectBrush",
+    "comment": "",
+    "scalars": {},
+    "colors": {},
+    "sources": {
+      "HostBackdrop": "CompositionBackdropBrush"
+    }
+  }
+}

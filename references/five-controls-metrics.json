@@ -1,0 +1,3012 @@
+{
+  "environment": {
+    "dpi": 1
+  },
+  "matrix": [
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 0,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cornerRadius": 0,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 1,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 2,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "cornerRadius": 0,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 3,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 4,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "cornerRadius": 0,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 109,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 5,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 109,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Border",
+      "index": 6,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 109,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Canvas",
+      "index": 0,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "HyperlinkButton",
+      "index": 0,
+      "props": {
+        "text": "Hyperlink",
+        "state": "Normal"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 36,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "HyperlinkButton",
+      "index": 1,
+      "props": {
+        "text": "Hyperlink",
+        "state": "PointerOver"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 276,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "HyperlinkButton",
+      "index": 2,
+      "props": {
+        "text": "Hyperlink",
+        "state": "Pressed"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 516,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "HyperlinkButton",
+      "index": 3,
+      "props": {
+        "text": "Hyperlink",
+        "state": "Disabled"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 756,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 0,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": false,
+        "expandDirection": "Down"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 24,
+          "y": 24,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 24,
+              "y": 72,
+              "width": 200,
+              "height": 0
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 24,
+              "y": 72,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 1,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": true,
+        "expandDirection": "Down"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 200,
+        "height": 111
+      },
+      "desired": [
+        200,
+        111
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 264,
+          "y": 24,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 264,
+              "y": 72,
+              "width": 200,
+              "height": 63
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 264,
+              "y": 35.78445816040039,
+              "width": 200,
+              "height": 63
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 2,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": false,
+        "expandDirection": "Up"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 504,
+          "y": 24,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 504,
+              "y": 24,
+              "width": 200,
+              "height": 0
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 504,
+              "y": 24,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 3,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": true,
+        "expandDirection": "Up"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 200,
+        "height": 111
+      },
+      "desired": [
+        200,
+        111
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 744,
+          "y": 87,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 744,
+              "y": 24,
+              "width": 200,
+              "height": 63
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 744,
+              "y": 60.214317321777344,
+              "width": 200,
+              "height": 63
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 4,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "state": "PointerOver",
+        "enabled": true
+      },
+      "bounds": {
+        "x": 24,
+        "y": 184,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 5,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "state": "Pressed",
+        "enabled": true
+      },
+      "bounds": {
+        "x": 264,
+        "y": 184,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "Expander",
+      "index": 6,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "state": "Disabled",
+        "enabled": false
+      },
+      "bounds": {
+        "x": 504,
+        "y": 184,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 0,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Default"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 1,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Default"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 269,
+          "y": 24,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 2,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Default"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 508,
+          "y": 24,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 3,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Attention"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 4,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Attention"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 109,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 29,
+          "y": 109,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 5,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Attention"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 109,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 268,
+          "y": 109,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 6,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Informational"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 109,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 7,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Informational"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 109,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 749,
+          "y": 109,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 8,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Informational"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 194,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 28,
+          "y": 194,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 9,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Success"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 194,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 10,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Success"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 194,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 509,
+          "y": 194,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 11,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Success"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 194,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 748,
+          "y": 194,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 12,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Caution"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 279,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 13,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Caution"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 279,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 269,
+          "y": 279,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 14,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Caution"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 279,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 508,
+          "y": 279,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 15,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Critical"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 279,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 16,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Critical"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 364,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 29,
+          "y": 364,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 17,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Critical"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 364,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 268,
+          "y": 364,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "InfoBadge",
+      "index": 18,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Default",
+        "glyph": "\uEA38"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 364,
+        "width": 22,
+        "height": 16
+      },
+      "desired": [
+        22,
+        16
+      ],
+      "extra": {
+        "icons": [
+          {
+            "bounds": {
+              "x": 508,
+              "y": 364,
+              "width": 20,
+              "height": 20
+            },
+            "fontSize": 20
+          }
+        ],
+        "presenters": [
+          {
+            "x": 508,
+            "y": 364,
+            "width": 14,
+            "height": 14
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 0,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cornerRadius": 0,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 1,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 2,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "cornerRadius": 0,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 3,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 4,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "cornerRadius": 0,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 109,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 5,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          6,
+          6,
+          6,
+          6
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 109,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Border",
+      "index": 6,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "padding": [
+          8,
+          8,
+          8,
+          8
+        ],
+        "borderThickness": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "cornerRadius": 12,
+        "borderBrush": "#0067c0",
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 109,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Canvas",
+      "index": 0,
+      "props": {
+        "width": 180,
+        "height": 65,
+        "background": "#ffffff"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 65
+      },
+      "desired": [
+        180,
+        65
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "HyperlinkButton",
+      "index": 0,
+      "props": {
+        "text": "Hyperlink",
+        "state": "Normal"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 36,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "HyperlinkButton",
+      "index": 1,
+      "props": {
+        "text": "Hyperlink",
+        "state": "PointerOver"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 276,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "HyperlinkButton",
+      "index": 2,
+      "props": {
+        "text": "Hyperlink",
+        "state": "Pressed"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 516,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "HyperlinkButton",
+      "index": 3,
+      "props": {
+        "text": "Hyperlink",
+        "state": "Disabled"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 83,
+        "height": 32
+      },
+      "desired": [
+        83,
+        32
+      ],
+      "extra": {
+        "padding": {
+          "Left": 11,
+          "Top": 5,
+          "Right": 11,
+          "Bottom": 6
+        },
+        "minWidth": 0,
+        "minHeight": 0,
+        "radius": {
+          "TopLeft": 4,
+          "TopRight": 4,
+          "BottomRight": 4,
+          "BottomLeft": 4
+        },
+        "textBounds": {
+          "x": 756,
+          "y": 30,
+          "width": 58.7958984375,
+          "height": 18.62109375
+        },
+        "underline": "None"
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 0,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": false,
+        "expandDirection": "Down"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 24,
+          "y": 24,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 24,
+              "y": 72,
+              "width": 200,
+              "height": 0
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 24,
+              "y": 72,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 1,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": true,
+        "expandDirection": "Down"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 200,
+        "height": 111
+      },
+      "desired": [
+        200,
+        111
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 264,
+          "y": 24,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 264,
+              "y": 72,
+              "width": 200,
+              "height": 63
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 264,
+              "y": 32.78639602661133,
+              "width": 200,
+              "height": 63
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 2,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": false,
+        "expandDirection": "Up"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 504,
+          "y": 24,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 504,
+              "y": 24,
+              "width": 200,
+              "height": 0
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 504,
+              "y": 24,
+              "width": 0,
+              "height": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 3,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "isExpanded": true,
+        "expandDirection": "Up"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 200,
+        "height": 111
+      },
+      "desired": [
+        200,
+        111
+      ],
+      "extra": {
+        "minWidth": 96,
+        "minHeight": 48,
+        "padding": {
+          "Left": 16,
+          "Top": 16,
+          "Right": 16,
+          "Bottom": 16
+        },
+        "header": {
+          "x": 744,
+          "y": 87,
+          "width": 200,
+          "height": 48
+        },
+        "parts": [
+          {
+            "name": "ExpanderContentClip",
+            "bounds": {
+              "x": 744,
+              "y": 24,
+              "width": 200,
+              "height": 63
+            }
+          },
+          {
+            "name": "ExpanderContent",
+            "bounds": {
+              "x": 744,
+              "y": 63.16693115234375,
+              "width": 200,
+              "height": 63
+            }
+          }
+        ]
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 4,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "state": "PointerOver",
+        "enabled": true
+      },
+      "bounds": {
+        "x": 24,
+        "y": 184,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 5,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "state": "Pressed",
+        "enabled": true
+      },
+      "bounds": {
+        "x": 264,
+        "y": 184,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "Expander",
+      "index": 6,
+      "props": {
+        "width": 200,
+        "header": "Header",
+        "state": "Disabled",
+        "enabled": false
+      },
+      "bounds": {
+        "x": 504,
+        "y": 184,
+        "width": 200,
+        "height": 48
+      },
+      "desired": [
+        200,
+        48
+      ],
+      "extra": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 0,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Default"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 1,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Default"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 269,
+          "y": 24,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 2,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Default"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 508,
+          "y": 24,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 3,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Attention"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 4,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Attention"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 109,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 29,
+          "y": 109,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 5,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Attention"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 109,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 268,
+          "y": 109,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 6,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Informational"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 109,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 7,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Informational"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 109,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 749,
+          "y": 109,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 8,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Informational"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 194,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 28,
+          "y": 194,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 9,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Success"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 194,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 10,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Success"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 194,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 509,
+          "y": 194,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 11,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Success"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 194,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 748,
+          "y": 194,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 12,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Caution"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 279,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 13,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Caution"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 279,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 269,
+          "y": 279,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 14,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Caution"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 279,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 508,
+          "y": 279,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 15,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Critical"
+      },
+      "bounds": {
+        "x": 744,
+        "y": 279,
+        "width": 4,
+        "height": 4
+      },
+      "desired": [
+        4,
+        4
+      ],
+      "extra": {
+        "textBounds": null
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 16,
+      "props": {
+        "value": 5,
+        "badgeStyle": "Critical"
+      },
+      "bounds": {
+        "x": 24,
+        "y": 364,
+        "width": 16,
+        "height": 16
+      },
+      "desired": [
+        16,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 29,
+          "y": 364,
+          "width": 5.9296875,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 17,
+      "props": {
+        "value": 123,
+        "badgeStyle": "Critical"
+      },
+      "bounds": {
+        "x": 264,
+        "y": 364,
+        "width": 26,
+        "height": 16
+      },
+      "desired": [
+        26,
+        16
+      ],
+      "extra": {
+        "textBounds": {
+          "x": 268,
+          "y": 364,
+          "width": 17.7890625,
+          "height": 14.630859375
+        }
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "InfoBadge",
+      "index": 18,
+      "props": {
+        "value": -1,
+        "badgeStyle": "Default",
+        "glyph": "\uEA38"
+      },
+      "bounds": {
+        "x": 504,
+        "y": 364,
+        "width": 22,
+        "height": 16
+      },
+      "desired": [
+        22,
+        16
+      ],
+      "extra": {
+        "icons": [
+          {
+            "bounds": {
+              "x": 508,
+              "y": 364,
+              "width": 20,
+              "height": 20
+            },
+            "fontSize": 20
+          }
+        ],
+        "presenters": [
+          {
+            "x": 508,
+            "y": 364,
+            "width": 14,
+            "height": 14
+          }
+        ]
+      }
+    }
+  ],
+  "galleryBadges": [
+    {
+      "theme": "Light",
+      "style": "Attention",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 2
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "FontIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "style": "Informational",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 2
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "FontIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "style": "Success",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "SymbolIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "style": "Critical",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "SymbolIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "style": "Attention",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 2
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "FontIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "style": "Informational",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 2
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "FontIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "style": "Success",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "SymbolIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "style": "Critical",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 80,
+        "height": 16
+      },
+      "nodes": [
+        {
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 16,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            16,
+            16
+          ],
+          "iconSource": "SymbolIconSource"
+        },
+        {
+          "bounds": {
+            "x": 60,
+            "y": 24,
+            "width": 20,
+            "height": 16
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            20,
+            16
+          ],
+          "iconSource": null
+        },
+        {
+          "bounds": {
+            "x": 100,
+            "y": 30,
+            "width": 4,
+            "height": 4
+          },
+          "padding": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "desired": [
+            4,
+            4
+          ],
+          "iconSource": null
+        }
+      ]
+    }
+  ],
+  "reference": "Own matching-SDK probe; forced states and RTB do not establish Store present-time parity"
+}

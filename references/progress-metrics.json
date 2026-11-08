@@ -1,0 +1,1997 @@
+{
+  "environment": {
+    "sdk": "Microsoft.WindowsAppSDK 2.5.4-experimental / WinUI 2.3.10-experimental",
+    "os": "Microsoft Windows NT 10.0.26300.0",
+    "rasterizationScale": 1.25,
+    "rootWidth": 1000,
+    "rootHeight": 500,
+    "dllSha256": "1A1171B21F8367E14F302965D7CD3346D8BCFFE191C67288C6CAD1D084B7AF3C"
+  },
+  "matrix": [
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 0,
+      "state": "Running",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 24,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 0,
+      "state": "Paused",
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 264,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 0,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 0,
+      "state": "Error",
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 504,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 0,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 25,
+      "state": "Running",
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 744,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 711.4000244140625,
+            "y": 24,
+            "width": 32.79999923706055,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 25,
+      "state": "Paused",
+      "bounds": {
+        "x": 24,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 24,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 24,
+            "y": 56,
+            "width": 32.79999923706055,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 25,
+      "state": "Error",
+      "bounds": {
+        "x": 264,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 264,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 231.39999389648438,
+            "y": 56,
+            "width": 32.79999923706055,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 50,
+      "state": "Running",
+      "bounds": {
+        "x": 504,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 504,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 438.79998779296875,
+            "y": 56,
+            "width": 64.80000305175781,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 50,
+      "state": "Paused",
+      "bounds": {
+        "x": 744,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 744,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 744,
+            "y": 56,
+            "width": 64.80000305175781,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 50,
+      "state": "Error",
+      "bounds": {
+        "x": 24,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 24,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": -41.19999694824219,
+            "y": 88,
+            "width": 64.80000305175781,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 100,
+      "state": "Running",
+      "bounds": {
+        "x": 264,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 264,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 133.60000610351562,
+            "y": 88,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 100,
+      "state": "Paused",
+      "bounds": {
+        "x": 504,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 504,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 504,
+            "y": 88,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "value": 100,
+      "state": "Error",
+      "bounds": {
+        "x": 744,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 744,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 613.5999755859375,
+            "y": 88,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0,
+      "bounds": {
+        "x": 24,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 24,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0.25,
+      "bounds": {
+        "x": 204,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 204,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0.5,
+      "bounds": {
+        "x": 384,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 384,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0.75,
+      "bounds": {
+        "x": 564,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 564,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 1,
+      "bounds": {
+        "x": 744,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 744,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0,
+      "bounds": {
+        "x": 24,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 24,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0.25,
+      "bounds": {
+        "x": 204,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 204,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0.5,
+      "bounds": {
+        "x": 384,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 384,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0.75,
+      "bounds": {
+        "x": 564,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 564,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 1,
+      "bounds": {
+        "x": 744,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 744,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 0,
+      "state": "Running",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 24,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 0,
+      "state": "Paused",
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 264,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 0,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 0,
+      "state": "Error",
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 504,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 0,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 25,
+      "state": "Running",
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 744,
+            "y": 25.600000381469727,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 711.4000244140625,
+            "y": 24,
+            "width": 32.79999923706055,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 25,
+      "state": "Paused",
+      "bounds": {
+        "x": 24,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 24,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 24,
+            "y": 56,
+            "width": 32.79999923706055,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 25,
+      "state": "Error",
+      "bounds": {
+        "x": 264,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 264,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 231.39999389648438,
+            "y": 56,
+            "width": 32.79999923706055,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 50,
+      "state": "Running",
+      "bounds": {
+        "x": 504,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 504,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 438.79998779296875,
+            "y": 56,
+            "width": 64.80000305175781,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 50,
+      "state": "Paused",
+      "bounds": {
+        "x": 744,
+        "y": 56,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 744,
+            "y": 57.599998474121094,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 744,
+            "y": 56,
+            "width": 64.80000305175781,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 50,
+      "state": "Error",
+      "bounds": {
+        "x": 24,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 24,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": -41.19999694824219,
+            "y": 88,
+            "width": 64.80000305175781,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 100,
+      "state": "Running",
+      "bounds": {
+        "x": 264,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 264,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 152.0262451171875,
+            "y": 88,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 100,
+      "state": "Paused",
+      "bounds": {
+        "x": 504,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 504,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 504,
+            "y": 88,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "value": 100,
+      "state": "Error",
+      "bounds": {
+        "x": 744,
+        "y": 88,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "minHeight": 3,
+      "radius": {
+        "TopLeft": 1.5,
+        "TopRight": 1.5,
+        "BottomRight": 1.5,
+        "BottomLeft": 1.5
+      },
+      "parts": [
+        {
+          "name": "ProgressBarTrack",
+          "bounds": {
+            "x": 744,
+            "y": 89.5999984741211,
+            "width": 130.39999389648438,
+            "height": 0.800000011920929
+          }
+        },
+        {
+          "name": "DeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 640.224365234375,
+            "y": 88,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0,
+      "bounds": {
+        "x": 24,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 24,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0.25,
+      "bounds": {
+        "x": 204,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 204,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0.5,
+      "bounds": {
+        "x": 384,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 384,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 0.75,
+      "bounds": {
+        "x": 564,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 564,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Determinate",
+      "value": 1,
+      "bounds": {
+        "x": 744,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 744,
+        "y": 150,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0,
+      "bounds": {
+        "x": 24,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 24,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0.25,
+      "bounds": {
+        "x": 204,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 204,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0.5,
+      "bounds": {
+        "x": 384,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 384,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 0.75,
+      "bounds": {
+        "x": 564,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 564,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressRing",
+      "mode": "Indeterminate",
+      "value": 1,
+      "bounds": {
+        "x": 744,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "player": {
+        "x": 744,
+        "y": 250,
+        "width": 60,
+        "height": 60
+      },
+      "duration": 2000,
+      "isActive": true
+    }
+  ],
+  "animations": [
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 0,
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": -28.159996032714844,
+            "y": 24,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": -93.35999298095703,
+            "y": 24,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 375,
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 240.0320281982422,
+            "y": 24,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 146.6400146484375,
+            "y": 24,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 750,
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 556.00048828125,
+            "y": 24,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 386.6400146484375,
+            "y": 24,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 1125,
+      "bounds": {
+        "x": 24,
+        "y": 64,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 152.25111389160156,
+            "y": 64,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": -45.449462890625,
+            "y": 64,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 1500,
+      "bounds": {
+        "x": 264,
+        "y": 64,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 420.47998046875,
+            "y": 64,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 310.7873229980469,
+            "y": 64,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 1750,
+      "bounds": {
+        "x": 504,
+        "y": 64,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 660.47998046875,
+            "y": 64,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 612.4964599609375,
+            "y": 64,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Paused",
+      "time": 2500,
+      "bounds": {
+        "x": 24,
+        "y": 104,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 24,
+            "y": 104,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 24,
+            "y": 104,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ProgressBar",
+      "state": "Error",
+      "time": 2500,
+      "bounds": {
+        "x": 264,
+        "y": 104,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 264,
+            "y": 104,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 264,
+            "y": 104,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 0,
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": -28.159996032714844,
+            "y": 24,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": -93.35999298095703,
+            "y": 24,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 375,
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 240.0320281982422,
+            "y": 24,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 146.6400146484375,
+            "y": 24,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 750,
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 556.00048828125,
+            "y": 24,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 386.6400146484375,
+            "y": 24,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 1125,
+      "bounds": {
+        "x": 24,
+        "y": 64,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 152.25111389160156,
+            "y": 64,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": -45.449462890625,
+            "y": 64,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 1500,
+      "bounds": {
+        "x": 264,
+        "y": 64,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 420.47998046875,
+            "y": 64,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 310.7873229980469,
+            "y": 64,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Running",
+      "time": 1750,
+      "bounds": {
+        "x": 504,
+        "y": 64,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 660.47998046875,
+            "y": 64,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 612.4964599609375,
+            "y": 64,
+            "width": 78.4000015258789,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Paused",
+      "time": 2500,
+      "bounds": {
+        "x": 24,
+        "y": 104,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 24,
+            "y": 104,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 24,
+            "y": 104,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ProgressBar",
+      "state": "Error",
+      "time": 2500,
+      "bounds": {
+        "x": 264,
+        "y": 104,
+        "width": 130.39999389648438,
+        "height": 3.200000047683716
+      },
+      "parts": [
+        {
+          "name": "IndeterminateProgressBarIndicator",
+          "bounds": {
+            "x": 264,
+            "y": 104,
+            "width": 52,
+            "height": 3.200000047683716
+          }
+        },
+        {
+          "name": "IndeterminateProgressBarIndicator2",
+          "bounds": {
+            "x": 264,
+            "y": 104,
+            "width": 130.39999389648438,
+            "height": 3.200000047683716
+          }
+        }
+      ]
+    }
+  ],
+  "timing": [
+    {
+      "theme": "Light",
+      "requestedMs": 0,
+      "actualMs": 0.3609,
+      "indicator": {
+        "x": 336.6000061035156,
+        "y": 248,
+        "width": 0,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Light",
+      "requestedMs": 40,
+      "actualMs": 42.618,
+      "indicator": {
+        "x": 393.5355529785156,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Light",
+      "requestedMs": 100,
+      "actualMs": 113.1567,
+      "indicator": {
+        "x": 422.1883239746094,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Light",
+      "requestedMs": 200,
+      "actualMs": 206.2374,
+      "indicator": {
+        "x": 431.9268493652344,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Light",
+      "requestedMs": 367,
+      "actualMs": 369.6911,
+      "indicator": {
+        "x": 434.3995361328125,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Light",
+      "requestedMs": 450,
+      "actualMs": 454.1108,
+      "indicator": {
+        "x": 434.3999938964844,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Dark",
+      "requestedMs": 0,
+      "actualMs": 0.3347,
+      "indicator": {
+        "x": 336.6000061035156,
+        "y": 248,
+        "width": 0,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Dark",
+      "requestedMs": 40,
+      "actualMs": 42.5921,
+      "indicator": {
+        "x": 393.58984375,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Dark",
+      "requestedMs": 100,
+      "actualMs": 108.3441,
+      "indicator": {
+        "x": 420.9270935058594,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Dark",
+      "requestedMs": 200,
+      "actualMs": 200.9839,
+      "indicator": {
+        "x": 431.6461486816406,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Dark",
+      "requestedMs": 367,
+      "actualMs": 369.8058,
+      "indicator": {
+        "x": 434.3995666503906,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    },
+    {
+      "theme": "Dark",
+      "requestedMs": 450,
+      "actualMs": 454.5838,
+      "indicator": {
+        "x": 434.3999938964844,
+        "y": 248,
+        "width": 97.5999984741211,
+        "height": 3.200000047683716
+      }
+    }
+  ],
+  "reference": "Own matching-SDK probe. Frozen player progress and PrintWindow/RTB are not Store release present-time animation acceptance."
+}

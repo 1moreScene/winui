@@ -1,0 +1,81 @@
+{
+  "validationDate": "2026-11-09",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "wasm": {
+    "sha256": "bd116eb64b758e780bc9b045e04222fe8d4f4be8a127619fa8e85e7a7a445939",
+    "matchesCurrentBinary": true,
+    "productionAsset": "winui_bg-Bx-MYkYt.wasm"
+  },
+  "rust": {
+    "passed": 400,
+    "failed": 0,
+    "suites": 46,
+    "log": "out/motion-rust-regression.log",
+    "motionSpecificTests": 11,
+    "existingAnimationAndKeyframeTests": 5
+  },
+  "browser": {
+    "passed": 8,
+    "failed": 0,
+    "backends": [
+      "Canvas2D",
+      "WebGL2"
+    ],
+    "host": "Vite development host with release WASM",
+    "results": "out/motion-browser-results.json",
+    "screenshots": "out/motion/"
+  },
+  "typecheck": true,
+  "enumGenerationCheck": true,
+  "wasmReleaseBuild": true,
+  "viteProductionBuild": true,
+  "sdkDeclarations": true,
+  "clippy": {
+    "passed": false,
+    "command": "cargo clippy --locked --lib -- -D warnings",
+    "log": "out/motion-clippy.log",
+    "note": "Strict lint remains blocked by diagnostics in other ongoing control modules; see the log."
+  },
+  "nativeEvidence": {
+    "kind": "Pinned WinUI source plus captured Windows UxTheme records and resolved SDK brushes",
+    "fullNativeVisualAcceptance": false,
+    "uxThemeOS": "Windows-11-10.0.26300-SP0"
+  },
+  "inputs": [
+    {
+      "path": "src/scene/motion_effects.rs",
+      "sha256": "66d0f0741f8fedae693fe8de1cd2930dbcc74ba1a40d923a41e1384ade99250d"
+    },
+    {
+      "path": "src/scene/motion.rs",
+      "sha256": "2104f474035ff49704ff959c97290d1d519cb55f3691ad21104df583d19f729e"
+    },
+    {
+      "path": "gallery/src/motion.ts",
+      "sha256": "9aaac407b89d579921763b4dca2b51ad0b7bdff5013d695ea350e01b140cb5b3"
+    },
+    {
+      "path": "gallery/src/MotionPages.tsx",
+      "sha256": "20f76a13866469a741e5d133b83bf67b915aa18a3129ad980bfcc4f1df4b17d3"
+    },
+    {
+      "path": "references/gallery-motion-native.json",
+      "sha256": "de853e24f64cde4c1e43cc7b9f5e70005e148eb993162fff4c266e7c9093c9af"
+    },
+    {
+      "path": "references/motion-resources.json",
+      "sha256": "da2818156f3ad2ada8c0d661004fa9e915d4fd62e91299be723ce03b76b0836e"
+    },
+    {
+      "path": "references/motion-sources.json",
+      "sha256": "cd07353b7f52122b87302d896feb4335cc3ec2302977c56f3fa1c1575ce48808"
+    }
+  ],
+  "limitations": [
+    "Two-dimensional affine scene; Z/projection and Gravity ThemeShadow are not implemented.",
+    "Typed scalar expression tree; no arbitrary Composition expression string parser.",
+    "Connected animation operates within one Scene; exact transparent-surface crossfade and native clip morphing remain incomplete.",
+    "Functional SDK examples are not a claim of full Gallery page or native frame-by-frame parity."
+  ]
+}

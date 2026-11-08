@@ -1,0 +1,2069 @@
+{
+  "cases": [
+    {
+      "id": "Light-Pager-Auto",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.4000000059604645,
+        "frameP95Ms": 9.5,
+        "frames": 3,
+        "averageFrameMs": 4.166666666666667,
+        "maxFrameMs": 9.5,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-ComboBox",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.5,
+        "frameP95Ms": 5.9000000059604645,
+        "frames": 3,
+        "averageFrameMs": 3.066666672627131,
+        "maxFrameMs": 5.9000000059604645,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "ComboBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 17,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 18,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 19,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 20,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-NumberBox",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 3,
+        "frameP95Ms": 6.800000011920929,
+        "frames": 3,
+        "averageFrameMs": 3.466666668653488,
+        "maxFrameMs": 6.800000011920929,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-ButtonPanel",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 410,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.5999999940395355,
+        "frameP95Ms": 4.5,
+        "frames": 3,
+        "averageFrameMs": 2.23333332935969,
+        "maxFrameMs": 4.5,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "ButtonPanel",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": 0,
+            "role": "page:0"
+          },
+          {
+            "id": 7,
+            "index": 1,
+            "role": "page:1"
+          },
+          {
+            "id": 8,
+            "index": 2,
+            "role": "page:2"
+          },
+          {
+            "id": 9,
+            "index": 3,
+            "role": "page:3"
+          },
+          {
+            "id": 10,
+            "index": 4,
+            "role": "page:4"
+          },
+          {
+            "id": 11,
+            "index": -1,
+            "role": "page:5"
+          },
+          {
+            "id": 12,
+            "index": 11,
+            "role": "page:6"
+          },
+          {
+            "id": 13,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 14,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Rich-140",
+      "renderer": "Canvas2D",
+      "dx": 2.4033355712890625,
+      "dy": 0.4566650390625,
+      "rect": {
+        "height": 51,
+        "width": 140,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.7999999821186066,
+        "frameP95Ms": 7.9000000059604645,
+        "frames": 3,
+        "averageFrameMs": 3.0999999940395355,
+        "maxFrameMs": 7.9000000059604645,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Rich-400",
+      "renderer": "Canvas2D",
+      "dx": 236.9066619873047,
+      "dy": 0.07666587829589844,
+      "rect": {
+        "height": 32,
+        "width": 400,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.699999988079071,
+        "frameP95Ms": 1.699999988079071,
+        "frames": 3,
+        "averageFrameMs": 0.9999999900658926,
+        "maxFrameMs": 1.699999988079071,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-LayoutPanel",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 74,
+        "width": 300,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.7000000178813934,
+        "frameP95Ms": 1.5999999940395355,
+        "frames": 3,
+        "averageFrameMs": 0.9666666686534882,
+        "maxFrameMs": 1.5999999940395355,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": null,
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-ItemsView",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 160,
+        "width": 240,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.5999999940395355,
+        "frameP95Ms": 11.300000011920929,
+        "frames": 3,
+        "averageFrameMs": 4.833333333333333,
+        "maxFrameMs": 11.300000011920929,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "slots": []
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Annotated",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 300,
+        "width": 60,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.9000000059604645,
+        "frameP95Ms": 2.800000011920929,
+        "frames": 3,
+        "averageFrameMs": 1.4666666686534882,
+        "maxFrameMs": 2.800000011920929,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "detailSlot": 8,
+        "hoverOffset": null,
+        "labelSlots": [],
+        "labels": [
+          [
+            "A",
+            {
+              "height": 19,
+              "width": 9.0302734375,
+              "x": 50.9697265625,
+              "y": 14
+            }
+          ],
+          [
+            "M",
+            {
+              "height": 19,
+              "width": 12.5712890625,
+              "x": 47.4287109375,
+              "y": 131.72727272727272
+            }
+          ],
+          [
+            "Z",
+            {
+              "height": 19,
+              "width": 7.984375,
+              "x": 52.015625,
+              "y": 249.45454545454544
+            }
+          ]
+        ],
+        "rail": {
+          "height": 262,
+          "width": 60,
+          "x": 0,
+          "y": 19
+        },
+        "thumb": {
+          "height": 3,
+          "width": 30,
+          "x": 30,
+          "y": 113.18181818181817
+        }
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-Auto",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.800000011920929,
+        "frameP95Ms": 6.300000011920929,
+        "frames": 3,
+        "averageFrameMs": 3.233333339293798,
+        "maxFrameMs": 6.300000011920929,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-ComboBox",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.300000011920929,
+        "frameP95Ms": 5.4000000059604645,
+        "frames": 3,
+        "averageFrameMs": 2.800000011920929,
+        "maxFrameMs": 5.4000000059604645,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "ComboBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 17,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 18,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 19,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 20,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-NumberBox",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.199999988079071,
+        "frameP95Ms": 5.9000000059604645,
+        "frames": 3,
+        "averageFrameMs": 2.9333333373069763,
+        "maxFrameMs": 5.9000000059604645,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-ButtonPanel",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 410,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.5,
+        "frameP95Ms": 3.399999976158142,
+        "frames": 3,
+        "averageFrameMs": 1.833333323399226,
+        "maxFrameMs": 3.399999976158142,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "displayMode": "ButtonPanel",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": 0,
+            "role": "page:0"
+          },
+          {
+            "id": 7,
+            "index": 1,
+            "role": "page:1"
+          },
+          {
+            "id": 8,
+            "index": 2,
+            "role": "page:2"
+          },
+          {
+            "id": 9,
+            "index": 3,
+            "role": "page:3"
+          },
+          {
+            "id": 10,
+            "index": 4,
+            "role": "page:4"
+          },
+          {
+            "id": 11,
+            "index": -1,
+            "role": "page:5"
+          },
+          {
+            "id": 12,
+            "index": 11,
+            "role": "page:6"
+          },
+          {
+            "id": 13,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 14,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Rich-140",
+      "renderer": "Canvas2D",
+      "dx": 2.4033355712890625,
+      "dy": 0.4566650390625,
+      "rect": {
+        "height": 51,
+        "width": 140,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.800000011920929,
+        "frameP95Ms": 1.800000011920929,
+        "frames": 3,
+        "averageFrameMs": 1.100000003973643,
+        "maxFrameMs": 1.800000011920929,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Rich-400",
+      "renderer": "Canvas2D",
+      "dx": 236.9066619873047,
+      "dy": 0.07666587829589844,
+      "rect": {
+        "height": 32,
+        "width": 400,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.7000000178813934,
+        "frameP95Ms": 1.4000000059604645,
+        "frames": 3,
+        "averageFrameMs": 0.9000000158945719,
+        "maxFrameMs": 1.4000000059604645,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-LayoutPanel",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 74,
+        "width": 300,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.7999999821186066,
+        "frameP95Ms": 1.399999976158142,
+        "frames": 3,
+        "averageFrameMs": 0.9333333273728689,
+        "maxFrameMs": 1.399999976158142,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": null,
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-ItemsView",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 160,
+        "width": 240,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.699999988079071,
+        "frameP95Ms": 7.200000017881393,
+        "frames": 3,
+        "averageFrameMs": 3.5,
+        "maxFrameMs": 7.200000017881393,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "slots": []
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Annotated",
+      "renderer": "Canvas2D",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 300,
+        "width": 60,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 0.9000000059604645,
+        "frameP95Ms": 2,
+        "frames": 3,
+        "averageFrameMs": 1.1999999980131786,
+        "maxFrameMs": 2,
+        "basePaints": 2,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "reading": {
+        "detailSlot": 8,
+        "hoverOffset": null,
+        "labelSlots": [],
+        "labels": [
+          [
+            "A",
+            {
+              "height": 19,
+              "width": 9.0302734375,
+              "x": 50.9697265625,
+              "y": 14
+            }
+          ],
+          [
+            "M",
+            {
+              "height": 19,
+              "width": 12.5712890625,
+              "x": 47.4287109375,
+              "y": 131.72727272727272
+            }
+          ],
+          [
+            "Z",
+            {
+              "height": 19,
+              "width": 7.984375,
+              "x": 52.015625,
+              "y": 249.45454545454544
+            }
+          ]
+        ],
+        "rail": {
+          "height": 262,
+          "width": 60,
+          "x": 0,
+          "y": 19
+        },
+        "thumb": {
+          "height": 3,
+          "width": 30,
+          "x": 30,
+          "y": 113.18181818181817
+        }
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-Auto",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 4.5999999940395355,
+        "frameP95Ms": 9.699999988079071,
+        "frames": 3,
+        "averageFrameMs": 6.0999999940395355,
+        "maxFrameMs": 9.699999988079071,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 2,
+        "draws": 205,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 8
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-ComboBox",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 3.9000000059604645,
+        "frameP95Ms": 9.299999982118607,
+        "frames": 3,
+        "averageFrameMs": 5.033333321412404,
+        "maxFrameMs": 9.299999982118607,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 2,
+        "draws": 253,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 10
+      },
+      "reading": {
+        "displayMode": "ComboBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 17,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 18,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 19,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 20,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-NumberBox",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 3,
+        "frameP95Ms": 8.299999982118607,
+        "frames": 3,
+        "averageFrameMs": 4.366666654745738,
+        "maxFrameMs": 8.299999982118607,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 2,
+        "draws": 205,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 8
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Pager-ButtonPanel",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 410,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.2999999821186066,
+        "frameP95Ms": 5.699999988079071,
+        "frames": 3,
+        "averageFrameMs": 3.166666656732559,
+        "maxFrameMs": 5.699999988079071,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 275,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 11
+      },
+      "reading": {
+        "displayMode": "ButtonPanel",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": 0,
+            "role": "page:0"
+          },
+          {
+            "id": 7,
+            "index": 1,
+            "role": "page:1"
+          },
+          {
+            "id": 8,
+            "index": 2,
+            "role": "page:2"
+          },
+          {
+            "id": 9,
+            "index": 3,
+            "role": "page:3"
+          },
+          {
+            "id": 10,
+            "index": 4,
+            "role": "page:4"
+          },
+          {
+            "id": 11,
+            "index": -1,
+            "role": "page:5"
+          },
+          {
+            "id": 12,
+            "index": 11,
+            "role": "page:6"
+          },
+          {
+            "id": 13,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 14,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Rich-140",
+      "renderer": "WebGL2",
+      "dx": 2.4033355712890625,
+      "dy": 0.4566650390625,
+      "rect": {
+        "height": 51,
+        "width": 140,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.699999988079071,
+        "frameP95Ms": 2.7000000178813934,
+        "frames": 3,
+        "averageFrameMs": 1.9333333373069763,
+        "maxFrameMs": 2.7000000178813934,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 67,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 4
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Rich-400",
+      "renderer": "WebGL2",
+      "dx": 236.9066619873047,
+      "dy": 0.07666587829589844,
+      "rect": {
+        "height": 32,
+        "width": 400,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.699999988079071,
+        "frameP95Ms": 2.800000011920929,
+        "frames": 3,
+        "averageFrameMs": 1.8666666746139526,
+        "maxFrameMs": 2.800000011920929,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 55,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 3
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-LayoutPanel",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 74,
+        "width": 300,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.800000011920929,
+        "frameP95Ms": 2.300000011920929,
+        "frames": 3,
+        "averageFrameMs": 1.700000007947286,
+        "maxFrameMs": 2.300000011920929,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 59,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 3
+      },
+      "reading": null,
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-ItemsView",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 160,
+        "width": 240,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 6.0999999940395355,
+        "frameP95Ms": 13.299999982118607,
+        "frames": 3,
+        "averageFrameMs": 7.033333321412404,
+        "maxFrameMs": 13.299999982118607,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 1167,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 27
+      },
+      "reading": {
+        "slots": []
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Light-Annotated",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 300,
+        "width": 60,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.0999999940395355,
+        "frameP95Ms": 3.5999999940395355,
+        "frames": 3,
+        "averageFrameMs": 2.533333331346512,
+        "maxFrameMs": 3.5999999940395355,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 85,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 5
+      },
+      "reading": {
+        "detailSlot": 8,
+        "hoverOffset": null,
+        "labelSlots": [],
+        "labels": [
+          [
+            "A",
+            {
+              "height": 19,
+              "width": 9.0302734375,
+              "x": 50.9697265625,
+              "y": 14
+            }
+          ],
+          [
+            "M",
+            {
+              "height": 19,
+              "width": 12.5712890625,
+              "x": 47.4287109375,
+              "y": 131.72727272727272
+            }
+          ],
+          [
+            "Z",
+            {
+              "height": 19,
+              "width": 7.984375,
+              "x": 52.015625,
+              "y": 249.45454545454544
+            }
+          ]
+        ],
+        "rail": {
+          "height": 262,
+          "width": 60,
+          "x": 0,
+          "y": 19
+        },
+        "thumb": {
+          "height": 3,
+          "width": 30,
+          "x": 30,
+          "y": 113.18181818181817
+        }
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-Auto",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 3.7999999821186066,
+        "frameP95Ms": 8.300000011920929,
+        "frames": 3,
+        "averageFrameMs": 4.666666666666667,
+        "maxFrameMs": 8.300000011920929,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 2,
+        "draws": 205,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 8
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-ComboBox",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 3.300000011920929,
+        "frameP95Ms": 8.199999988079071,
+        "frames": 3,
+        "averageFrameMs": 4.399999996026357,
+        "maxFrameMs": 8.199999988079071,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 2,
+        "draws": 253,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 10
+      },
+      "reading": {
+        "displayMode": "ComboBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 17,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 18,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 19,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 20,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-NumberBox",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 309,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 3.2999999821186066,
+        "frameP95Ms": 8.800000011920929,
+        "frames": 3,
+        "averageFrameMs": 4.666666666666667,
+        "maxFrameMs": 8.800000011920929,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 2,
+        "draws": 205,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 8
+      },
+      "reading": {
+        "displayMode": "NumberBox",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": -1,
+            "role": "prefix"
+          },
+          {
+            "id": 7,
+            "index": -1,
+            "role": "input"
+          },
+          {
+            "id": 20,
+            "index": -1,
+            "role": "suffix"
+          },
+          {
+            "id": 21,
+            "index": -1,
+            "role": "total"
+          },
+          {
+            "id": 22,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 23,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Pager-ButtonPanel",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 40,
+        "width": 410,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 2.4000000059604645,
+        "frameP95Ms": 5.9000000059604645,
+        "frames": 3,
+        "averageFrameMs": 3.333333343267441,
+        "maxFrameMs": 5.9000000059604645,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 275,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 11
+      },
+      "reading": {
+        "displayMode": "ButtonPanel",
+        "parts": [
+          {
+            "id": 4,
+            "index": 0,
+            "role": "first"
+          },
+          {
+            "id": 5,
+            "index": 1,
+            "role": "previous"
+          },
+          {
+            "id": 6,
+            "index": 0,
+            "role": "page:0"
+          },
+          {
+            "id": 7,
+            "index": 1,
+            "role": "page:1"
+          },
+          {
+            "id": 8,
+            "index": 2,
+            "role": "page:2"
+          },
+          {
+            "id": 9,
+            "index": 3,
+            "role": "page:3"
+          },
+          {
+            "id": 10,
+            "index": 4,
+            "role": "page:4"
+          },
+          {
+            "id": 11,
+            "index": -1,
+            "role": "page:5"
+          },
+          {
+            "id": 12,
+            "index": 11,
+            "role": "page:6"
+          },
+          {
+            "id": 13,
+            "index": 3,
+            "role": "next"
+          },
+          {
+            "id": 14,
+            "index": 11,
+            "role": "last"
+          }
+        ],
+        "selectedPageIndex": 2,
+        "templateError": null
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Rich-140",
+      "renderer": "WebGL2",
+      "dx": 2.4033355712890625,
+      "dy": 0.4566650390625,
+      "rect": {
+        "height": 51,
+        "width": 140,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.9000000059604645,
+        "frameP95Ms": 3.699999988079071,
+        "frames": 3,
+        "averageFrameMs": 2.466666668653488,
+        "maxFrameMs": 3.699999988079071,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 67,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 4
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Rich-400",
+      "renderer": "WebGL2",
+      "dx": 236.9066619873047,
+      "dy": 0.07666587829589844,
+      "rect": {
+        "height": 32,
+        "width": 400,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.5,
+        "frameP95Ms": 2.5,
+        "frames": 3,
+        "averageFrameMs": 1.6999999980131786,
+        "maxFrameMs": 2.5,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 55,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 3
+      },
+      "reading": {
+        "end": 19,
+        "hasOverflowContent": false,
+        "links": [],
+        "selectedText": "",
+        "selectionLength": 0,
+        "selectionStart": 0,
+        "start": 0,
+        "text": "Hello World 中文 link"
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-LayoutPanel",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 74,
+        "width": 300,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.9000000059604645,
+        "frameP95Ms": 3.5999999940395355,
+        "frames": 3,
+        "averageFrameMs": 2.266666660706202,
+        "maxFrameMs": 3.5999999940395355,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 59,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 3
+      },
+      "reading": null,
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-ItemsView",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 160,
+        "width": 240,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 5.5999999940395355,
+        "frameP95Ms": 14.599999994039536,
+        "frames": 3,
+        "averageFrameMs": 7.233333329359691,
+        "maxFrameMs": 14.599999994039536,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 1167,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 27
+      },
+      "reading": {
+        "slots": []
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    },
+    {
+      "id": "Dark-Annotated",
+      "renderer": "WebGL2",
+      "dx": 0,
+      "dy": 0,
+      "rect": {
+        "height": 300,
+        "width": 60,
+        "x": 24,
+        "y": 24
+      },
+      "backend": {
+        "frameP50Ms": 1.899999976158142,
+        "frameP95Ms": 3.5999999940395355,
+        "frames": 3,
+        "averageFrameMs": 2.3666666547457376,
+        "maxFrameMs": 3.5999999940395355,
+        "basePaints": 3,
+        "baseReuses": 0,
+        "cachedSurfaces": 1,
+        "draws": 85,
+        "effectPasses": 0,
+        "generation": 1,
+        "kind": "WebGL2",
+        "lost": false,
+        "uploads": 5
+      },
+      "reading": {
+        "detailSlot": 8,
+        "hoverOffset": null,
+        "labelSlots": [],
+        "labels": [
+          [
+            "A",
+            {
+              "height": 19,
+              "width": 9.0302734375,
+              "x": 50.9697265625,
+              "y": 14
+            }
+          ],
+          [
+            "M",
+            {
+              "height": 19,
+              "width": 12.5712890625,
+              "x": 47.4287109375,
+              "y": 131.72727272727272
+            }
+          ],
+          [
+            "Z",
+            {
+              "height": 19,
+              "width": 7.984375,
+              "x": 52.015625,
+              "y": 249.45454545454544
+            }
+          ]
+        ],
+        "rail": {
+          "height": 262,
+          "width": 60,
+          "x": 0,
+          "y": 19
+        },
+        "thumb": {
+          "height": 3,
+          "width": 30,
+          "x": 30,
+          "y": 113.18181818181817
+        }
+      },
+      "wasmSha256": "c2b05a3b6281b766612cb72c7f5d55d4d4791efa1c115f9c0f69cb61be4b24a1"
+    }
+  ],
+  "limits": "Static geometry only; rich text and pager differences are recorded without a parity assertion."
+}

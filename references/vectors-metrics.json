@@ -1,0 +1,3038 @@
+{
+  "dpi": 1.25,
+  "defaults": {
+    "lineStretch": "None",
+    "pathStretch": "None",
+    "polygonStretch": "None",
+    "polylineStretch": "None",
+    "rectangleStretch": "Fill"
+  },
+  "rows": [
+    {
+      "theme": "Light",
+      "kind": "Rectangle",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 0,
+            "radiusY": 0,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 12,
+            "radiusY": 12,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 20,
+            "radiusY": 5,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 0,
+            "radiusY": 24,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "Line",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Flat",
+            "strokeEndLineCap": "Flat",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Round",
+            "strokeEndLineCap": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Square",
+            "strokeEndLineCap": "Square",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Triangle",
+            "strokeEndLineCap": "Triangle",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeDashArray": [
+              2,
+              2
+            ],
+            "strokeDashOffset": 1,
+            "strokeDashCap": "Flat",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeDashArray": [
+              2,
+              2
+            ],
+            "strokeDashOffset": 1,
+            "strokeDashCap": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeDashArray": [
+              2,
+              2
+            ],
+            "strokeDashOffset": 1,
+            "strokeDashCap": "Square",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "Path",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "None"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "Fill"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "Uniform"
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "UniformToFill"
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "data": "F0 M0 0 L90 0 90 60 0 60Z M20 15 L70 15 70 45 20 45Z",
+            "fill": "#4682b4",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "data": "F1 M0 0 L90 0 90 60 0 60Z M20 15 L70 15 70 45 20 45Z",
+            "fill": "#4682b4",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "Polygon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "Polyline",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "FontIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "LeftToRight",
+            "mirroredWhenRightToLeft": false,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "LeftToRight",
+            "mirroredWhenRightToLeft": true,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "RightToLeft",
+            "mirroredWhenRightToLeft": false,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 544,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "RightToLeft",
+            "mirroredWhenRightToLeft": true,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "PathIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 20,
+            "height": 40,
+            "data": "F1 M16,12 20,2 L20,16 1,16",
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 20,
+            "height": 40
+          },
+          "desired": [
+            20,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "data": "F1 M16,12 20,2 L20,16 1,16",
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 80,
+            "height": 40,
+            "data": "F1 M16,12 20,2 L20,16 1,16",
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 80,
+            "height": 40
+          },
+          "desired": [
+            80,
+            40
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "BitmapIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 50,
+            "height": null,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 50.400001525878906
+          },
+          "desired": [
+            50.400001525878906,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 50,
+            "height": 120,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 120
+          },
+          "desired": [
+            50.400001525878906,
+            120
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 180,
+            "height": null,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 180
+          },
+          "desired": [
+            180,
+            180
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 180,
+            "height": 120,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 120
+          },
+          "desired": [
+            180,
+            120
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "ImageIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 50,
+            "height": null,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 50.400001525878906
+          },
+          "desired": [
+            50.400001525878906,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 50,
+            "height": 120,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 120
+          },
+          "desired": [
+            50.400001525878906,
+            120
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 180,
+            "height": null,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 180
+          },
+          "desired": [
+            180,
+            180
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 180,
+            "height": 120,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 120
+          },
+          "desired": [
+            180,
+            120
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "IconSourceElement",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Font",
+              "glyph": "\uE790",
+              "fontFamily": "Segoe MDL2 Assets",
+              "foreground": "#c00000"
+            }
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Symbol",
+              "symbol": "Accept"
+            }
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Path",
+              "data": "M0 0L20 0 20 20 0 20Z"
+            }
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Bitmap",
+              "uriSource": "/official/Slices.png"
+            }
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Light",
+      "kind": "AnimatedIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Font",
+              "glyph": "\uE790",
+              "fontFamily": "Segoe MDL2 Assets",
+              "foreground": "#c00000"
+            }
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Symbol",
+              "symbol": "Accept"
+            }
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Path",
+              "data": "M0 0L20 0 20 20 0 20Z"
+            }
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Bitmap",
+              "uriSource": "/official/Slices.png"
+            }
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Image",
+              "source": "/official/Slices.png"
+            }
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "Rectangle",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 0,
+            "radiusY": 0,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 12,
+            "radiusY": 12,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 20,
+            "radiusY": 5,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "radiusX": 0,
+            "radiusY": 24,
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "Line",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Flat",
+            "strokeEndLineCap": "Flat",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Round",
+            "strokeEndLineCap": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Square",
+            "strokeEndLineCap": "Square",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeStartLineCap": "Triangle",
+            "strokeEndLineCap": "Triangle",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeDashArray": [
+              2,
+              2
+            ],
+            "strokeDashOffset": 1,
+            "strokeDashCap": "Flat",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeDashArray": [
+              2,
+              2
+            ],
+            "strokeDashOffset": 1,
+            "strokeDashCap": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 6,
+          "props": {
+            "x1": 4,
+            "y1": 6,
+            "x2": 140,
+            "y2": 44,
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "strokeDashArray": [
+              2,
+              2
+            ],
+            "strokeDashOffset": 1,
+            "strokeDashCap": "Square",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "Path",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "None"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "Fill"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "Uniform"
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 120,
+            "height": 56,
+            "data": "F1 M10 6 L60 6 40 26 Z",
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "stretch": "UniformToFill"
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 120,
+            "height": 56
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "data": "F0 M0 0 L90 0 90 60 0 60Z M20 15 L70 15 70 45 20 45Z",
+            "fill": "#4682b4",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "data": "F1 M0 0 L90 0 90 60 0 60Z M20 15 L70 15 70 45 20 45Z",
+            "fill": "#4682b4",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "Polygon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "Polyline",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "EvenOdd",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Miter",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Bevel",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        },
+        {
+          "index": 5,
+          "props": {
+            "points": [
+              [
+                5,
+                5
+              ],
+              [
+                140,
+                5
+              ],
+              [
+                5,
+                45
+              ],
+              [
+                75,
+                0
+              ],
+              [
+                140,
+                45
+              ]
+            ],
+            "fill": "#4682b4",
+            "stroke": "#000000",
+            "strokeThickness": 4,
+            "fillRule": "Nonzero",
+            "strokeLineJoin": "Round",
+            "width": 180,
+            "height": 64
+          },
+          "bounds": {
+            "x": 264,
+            "y": 124,
+            "width": 180,
+            "height": 64
+          },
+          "desired": [
+            0,
+            0
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "FontIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "LeftToRight",
+            "mirroredWhenRightToLeft": false,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "LeftToRight",
+            "mirroredWhenRightToLeft": true,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "RightToLeft",
+            "mirroredWhenRightToLeft": false,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 544,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "glyph": "\uE72B",
+            "fontFamily": "Segoe MDL2 Assets",
+            "flowDirection": "RightToLeft",
+            "mirroredWhenRightToLeft": true,
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "PathIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 20,
+            "height": 40,
+            "data": "F1 M16,12 20,2 L20,16 1,16",
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 20,
+            "height": 40
+          },
+          "desired": [
+            20,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 40,
+            "height": 40,
+            "data": "F1 M16,12 20,2 L20,16 1,16",
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 40,
+            "height": 40
+          },
+          "desired": [
+            40,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 80,
+            "height": 40,
+            "data": "F1 M16,12 20,2 L20,16 1,16",
+            "foreground": "#0067c0"
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 80,
+            "height": 40
+          },
+          "desired": [
+            80,
+            40
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "BitmapIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 50,
+            "height": null,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 50.400001525878906
+          },
+          "desired": [
+            50.400001525878906,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 50,
+            "height": 120,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 120
+          },
+          "desired": [
+            50.400001525878906,
+            120
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 180,
+            "height": null,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 180
+          },
+          "desired": [
+            180,
+            180
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 180,
+            "height": 120,
+            "uriSource": "/official/Slices.png",
+            "showAsMonochrome": false
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 120
+          },
+          "desired": [
+            180,
+            120
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "ImageIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 50,
+            "height": null,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 50.400001525878906
+          },
+          "desired": [
+            50.400001525878906,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 50,
+            "height": 120,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 50.400001525878906,
+            "height": 120
+          },
+          "desired": [
+            50.400001525878906,
+            120
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 180,
+            "height": null,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 180,
+            "height": 180
+          },
+          "desired": [
+            180,
+            180
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 180,
+            "height": 120,
+            "source": "/official/Slices.png"
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 180,
+            "height": 120
+          },
+          "desired": [
+            180,
+            120
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "IconSourceElement",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Font",
+              "glyph": "\uE790",
+              "fontFamily": "Segoe MDL2 Assets",
+              "foreground": "#c00000"
+            }
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Symbol",
+              "symbol": "Accept"
+            }
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Path",
+              "data": "M0 0L20 0 20 20 0 20Z"
+            }
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "iconSource": {
+              "kind": "Bitmap",
+              "uriSource": "/official/Slices.png"
+            }
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    },
+    {
+      "theme": "Dark",
+      "kind": "AnimatedIcon",
+      "nodes": [
+        {
+          "index": 0,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Font",
+              "glyph": "\uE790",
+              "fontFamily": "Segoe MDL2 Assets",
+              "foreground": "#c00000"
+            }
+          },
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 1,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Symbol",
+              "symbol": "Accept"
+            }
+          },
+          "bounds": {
+            "x": 264,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 2,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Path",
+              "data": "M0 0L20 0 20 20 0 20Z"
+            }
+          },
+          "bounds": {
+            "x": 504,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 3,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Bitmap",
+              "uriSource": "/official/Slices.png"
+            }
+          },
+          "bounds": {
+            "x": 744,
+            "y": 24,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        },
+        {
+          "index": 4,
+          "props": {
+            "width": 48,
+            "height": 48,
+            "foreground": "#0067c0",
+            "fallbackIconSource": {
+              "kind": "Image",
+              "source": "/official/Slices.png"
+            }
+          },
+          "bounds": {
+            "x": 24,
+            "y": 124,
+            "width": 48,
+            "height": 48
+          },
+          "desired": [
+            48,
+            48
+          ]
+        }
+      ],
+      "pixelWidth": 1250,
+      "pixelHeight": 625
+    }
+  ],
+  "unsupported": [],
+  "reference": "Own per-monitor matching-SDK RTB natural/explicit vector and icon-source matrix, not release-window pixel acceptance"
+}

@@ -1,0 +1,553 @@
+{
+  "Light": {
+    "TextFillColorPrimaryBrush": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "TextFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "ControlFillColorTransparentBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDefaultBrush": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "ControlAltFillColorSecondaryBrush": {
+      "kind": "solid",
+      "color": "#00000006",
+      "opacity": 1
+    },
+    "ControlAltFillColorTertiaryBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "ControlAltFillColorQuarternaryBrush": {
+      "kind": "solid",
+      "color": "#00000018",
+      "opacity": 1
+    },
+    "ControlAltFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AccentFillColorDefaultBrush": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "AccentFillColorSecondaryBrush": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.8999999761581421
+    },
+    "AccentFillColorTertiaryBrush": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.800000011920929
+    },
+    "AccentFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "TextOnAccentFillColorPrimaryBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "TextOnAccentFillColorPrimary": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "CircleElevationBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "RelativeToBoundingBox",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        1
+      ],
+      "stops": [
+        {
+          "offset": 0.5,
+          "color": "#0000000F"
+        },
+        {
+          "offset": 0.699999988079071,
+          "color": "#00000029"
+        }
+      ],
+      "opacity": 1
+    },
+    "AccentControlElevationBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000066"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF14"
+        }
+      ],
+      "opacity": 1
+    },
+    "ControlElevationBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "SubtleFillColorTransparentBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SubtleFillColorTransparent": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "ControlAltFillColorTertiary": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "ControlAltFillColorQuarternary": {
+      "kind": "solid",
+      "color": "#00000018",
+      "opacity": 1
+    },
+    "ControlAltFillColorDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDefault": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDisabled": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "TextFillColorSecondaryBrush": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "TextOnAccentFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    }
+  },
+  "Dark": {
+    "TextFillColorPrimaryBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "TextFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "ControlFillColorTransparentBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDefaultBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF8B",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF28",
+      "opacity": 1
+    },
+    "ControlAltFillColorSecondaryBrush": {
+      "kind": "solid",
+      "color": "#00000019",
+      "opacity": 1
+    },
+    "ControlAltFillColorTertiaryBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "ControlAltFillColorQuarternaryBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "ControlAltFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AccentFillColorDefaultBrush": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "AccentFillColorSecondaryBrush": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.8999999761581421
+    },
+    "AccentFillColorTertiaryBrush": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.800000011920929
+    },
+    "AccentFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF28",
+      "opacity": 1
+    },
+    "TextOnAccentFillColorPrimaryBrush": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "TextOnAccentFillColorPrimary": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "CircleElevationBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "RelativeToBoundingBox",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        1
+      ],
+      "stops": [
+        {
+          "offset": 0.699999988079071,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 0.5,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "AccentControlElevationBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000023"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF14"
+        }
+      ],
+      "opacity": 1
+    },
+    "ControlElevationBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "SubtleFillColorTransparentBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SubtleFillColorTransparent": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "ControlAltFillColorTertiary": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "ControlAltFillColorQuarternary": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "ControlAltFillColorDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDefault": {
+      "kind": "solid",
+      "color": "#FFFFFF8B",
+      "opacity": 1
+    },
+    "ControlStrongStrokeColorDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF28",
+      "opacity": 1
+    },
+    "TextFillColorSecondaryBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "TextOnAccentFillColorDisabledBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF87",
+      "opacity": 1
+    }
+  },
+  "HighContrast": {
+    "SystemColorButtonTextColorBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF",
+      "opacity": 1
+    },
+    "SystemColorGrayTextColorBrush": {
+      "kind": "solid",
+      "color": "#808080",
+      "opacity": 1
+    },
+    "SystemControlTransparentBrush": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    },
+    "SystemColorHighlightColorBrush": {
+      "kind": "solid",
+      "color": "#FFFF00",
+      "opacity": 1
+    },
+    "SystemColorHighlightTextColorBrush": {
+      "kind": "solid",
+      "color": "#000000",
+      "opacity": 1
+    },
+    "SystemColorButtonFaceColorBrush": {
+      "kind": "solid",
+      "color": "#000000",
+      "opacity": 1
+    },
+    "SystemColorWindowColorBrush": {
+      "kind": "solid",
+      "color": "#000000",
+      "opacity": 1
+    },
+    "SystemColorWindowTextColorBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF",
+      "opacity": 1
+    },
+    "SystemControlTransparentColor": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    },
+    "SystemColorHighlightTextColor": {
+      "kind": "solid",
+      "color": "#000000",
+      "opacity": 1
+    },
+    "SystemColorWindowColor": {
+      "kind": "solid",
+      "color": "#000000",
+      "opacity": 1
+    },
+    "SystemColorHighlightColor": {
+      "kind": "solid",
+      "color": "#FFFF00",
+      "opacity": 1
+    },
+    "SystemColorGrayTextColor": {
+      "kind": "solid",
+      "color": "#808080",
+      "opacity": 1
+    }
+  }
+}

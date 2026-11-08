@@ -1,0 +1,35 @@
+{
+  "source": "NavigationView_themeresources.xaml",
+  "genericXamlRuntime": false,
+  "extracted": {
+    "compactPaneLength": "NavigationViewCompactPaneLength",
+    "itemHeight": "NavigationViewItemOnLeftMinHeight",
+    "indicatorWidth": "NavigationViewSelectionIndicatorWidth",
+    "indicatorHeight": "NavigationViewSelectionIndicatorHeight",
+    "indicatorRadius": "NavigationViewSelectionIndicatorRadius",
+    "topPaneHeight": "NavigationViewTopPaneHeight",
+    "headerRowHeight": "NavigationViewPaneHeaderRowMinHeight",
+    "overflowWidth": "TopNavigationViewOverflowButtonWidth"
+  },
+  "supported": [
+    "Required scalar/Thickness/header font resources (build.rs)",
+    "Required ThemeResource aliases and native SDK palette leaves",
+    "Acrylic tint/luminosity/noise recipe via Canvas effects",
+    "600ms bounded indicator stretch/opacity with continuous retarget",
+    "Gallery SamplePage1..7 and SampleSettingsPage: Grid/StackPanel/ScrollViewer/TextBlock/Ellipse, selected styles/resources, spans and alignment"
+  ],
+  "extractionContract": "build.rs and tools/extract_content.rs fail on unsupported required nodes/attributes/styles; no general template executor",
+  "deferred": [
+    "Full bindings/converters and general XAML VisualState execution",
+    "Arbitrary AnimatedVisual sources and full present-time acceptance",
+    "AutoSuggestBox",
+    "PaneCustomContent/PaneFooter arbitrary content",
+    "Frame content transitions",
+    "Complete overflow recovery/flyout focus policy",
+    "Full UIA semantics",
+    "Direct2D/Composition exact effect equivalence"
+  ],
+  "userExceptions": [
+    "No browser CSS or Rust Canvas focus black frame; preserve focus/keyboard semantics"
+  ]
+}

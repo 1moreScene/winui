@@ -1,0 +1,107 @@
+{
+  "id": "button",
+  "name": "Button",
+  "description": "A control that responds to user input and raises a Click event.",
+  "details": "The Button control provides a Click event to respond to user input from a touch, mouse, keyboard, stylus, or other input device. You can put different kinds of content in a button, such as text or an image, or you can restyle a button to give it a new look.",
+  "apiNamespace": "Microsoft.UI.Xaml.Controls",
+  "relatedControls": [
+    "ToggleButton",
+    "RepeatButton",
+    "HyperlinkButton",
+    "AppBarButton"
+  ],
+  "usings": [
+    "Microsoft.UI.Xaml",
+    "Microsoft.UI.Xaml.Controls"
+  ],
+  "keywords": [
+    "Object",
+    "DependencyObject",
+    "UIElement",
+    "FrameworkElement",
+    "Control",
+    "ContentControl",
+    "ButtonBase"
+  ],
+  "curatedKeywords": [
+    "click",
+    "push button",
+    "command",
+    "cta",
+    "call to action"
+  ],
+  "docs": [
+    {
+      "title": "Button - API",
+      "uri": "https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button"
+    },
+    {
+      "title": "Guidelines",
+      "uri": "https://learn.microsoft.com/windows/apps/design/controls/buttons"
+    }
+  ],
+  "gallery": {
+    "uniqueId": "Button",
+    "group": {
+      "id": "BasicInput",
+      "title": "Basic input"
+    },
+    "page": "WinUIGallery/Samples/Button/ButtonPage.xaml",
+    "codeBehind": "WinUIGallery/Samples/Button/ButtonPage.xaml.cs",
+    "baseClasses": [
+      "Object",
+      "DependencyObject",
+      "UIElement",
+      "FrameworkElement",
+      "Control",
+      "ContentControl",
+      "ButtonBase"
+    ],
+    "relatedSamples": [
+      "microsoft/WinUI-Gallery#AppBarButton",
+      "microsoft/WinUI-Gallery#HyperlinkButton",
+      "microsoft/WinUI-Gallery#RepeatButton",
+      "microsoft/WinUI-Gallery#ToggleButton"
+    ]
+  },
+  "samples": [
+    {
+      "header": "A simple Button with text content.",
+      "xaml": "<Button Content=\"Standard XAML button\" Click=\"Button_Click\" />",
+      "code": "private void Button_Click(object sender, RoutedEventArgs e)\n{\n    // Handle button click\n}",
+      "language": "csharp",
+      "gallery": {
+        "snippet": "ButtonSimple.txt",
+        "source": "WinUIGallery/Samples/Button/ButtonSimple.txt",
+        "name": "Simple"
+      }
+    },
+    {
+      "header": "A Button with graphical content.",
+      "xaml": "<Button Content=\"Button\" Click=\"Button_Click\" AutomationProperties.Name=\"Pie\">\n    <Image Source=\"/Assets/SampleMedia/Slices.png\" AutomationProperties.Name=\"Slice\"/>\n</Button>",
+      "gallery": {
+        "snippet": "ButtonWithImage.txt",
+        "source": "WinUIGallery/Samples/Button/ButtonWithImage.txt",
+        "name": "With Image"
+      }
+    },
+    {
+      "header": "Built-in styles applied to Button.",
+      "xaml": "<Button Style=\"{StaticResource AccentButtonStyle}\" Content=\"Accent style button\"/>\n<Button Style=\"{StaticResource SubtleButtonStyle}\" Content=\"Subtle style button\"/>",
+      "gallery": {
+        "snippet": "ButtonBuiltInStyles.txt",
+        "source": "WinUIGallery/Samples/Button/ButtonBuiltInStyles.txt",
+        "name": "Built In Styles"
+      }
+    },
+    {
+      "header": "Wrapping Buttons with large content",
+      "xaml": "<StackPanel>\n    <TextBlock Text=\"The following buttons' content may get clipped if we don't pay careful attention to their layout containers.\" Margin=\"0,0,0,8\" TextWrapping=\"Wrap\"/>\n    <TextBlock Text=\"One option to mitigate clipped content is to place Buttons underneath each other, allowing for more space to grow horizontally:\" Margin=\"0,0,0,8\" TextWrapping=\"Wrap\"/>\n    <Button HorizontalAlignment=\"Stretch\" Margin=\"0,0,0,5\">This is some text that is too long and will get cut off</Button>\n    <Button HorizontalAlignment=\"Stretch\">This is another text that would result in being cut off</Button>\n\n    <TextBlock Text=\"Another option is to explicitly wrap the Button's content\" Margin=\"0,8,0,8\"/>\n    <StackPanel Orientation=\"Horizontal\" HorizontalAlignment=\"Center\">\n        <Button MaxWidth=\"240\" Margin=\"0,0,8,0\">\n            <TextBlock Text=\"This is some text that is too long and will get cut off\" TextWrapping=\"WrapWholeWords\"/>\n        </Button>\n        <Button MaxWidth=\"240\">\n            <TextBlock Text=\"This is another text that would result in being cut off\" TextWrapping=\"WrapWholeWords\"/>\n        </Button>\n    </StackPanel>\n</StackPanel>",
+      "gallery": {
+        "snippet": "ButtonWrapping.txt",
+        "source": "WinUIGallery/Samples/Button/ButtonWrapping.txt",
+        "name": "Wrapping"
+      }
+    }
+  ]
+}

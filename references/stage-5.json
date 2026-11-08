@@ -1,0 +1,196 @@
+{
+  "date": "2026-11-07",
+  "generatedAtUtc": "2026-11-07T03:26:20.943Z",
+  "stage": 5,
+  "status": "implemented and validated within the recorded scope",
+  "scope": "Reusable presentation/keyframe/easing tracks, application-local Acrylic, three official Acrylic examples, four easing examples, four 2D property transitions and gradient pages; remaining families are explicit below.",
+  "pages": {
+    "acrylic": "http://127.0.0.1:5173/#acrylic",
+    "easing": "http://127.0.0.1:5173/#easing",
+    "transitions": "http://127.0.0.1:5173/#transitions",
+    "gradients": "http://127.0.0.1:5173/#gradients",
+    "diagnostics": "http://127.0.0.1:5173/#effects-lab"
+  },
+  "validation": {
+    "rust": {
+      "passed": 38,
+      "navigation": 19,
+      "scene": 13,
+      "animation": 3,
+      "easing": 1,
+      "keyframes": 2,
+      "command": "cargo test --locked"
+    },
+    "browser": {
+      "passed": 33,
+      "total": 33,
+      "channel": "chrome",
+      "followup": "After the full 33-test suite, targeted 5-test material verification covered easing-priority/cache updates; a further property/gradient interaction check covered the final preview-height/CSS adjustment. Full-suite startup metrics retain their original sampled WASM size."
+    },
+    "checks": [
+      "cargo fmt --all -- --check",
+      "cargo clippy --all-targets --locked -- -D warnings",
+      "cargo clippy --target wasm32-unknown-unknown --locked -- -D warnings",
+      "node tools/generate-enums.mjs --check",
+      "node tools/verify-baseline.mjs",
+      "npm run build (WASM, strict TypeScript including negative API cases, Vite, SDK declarations)"
+    ],
+    "alignment": "references/stage-5-alignment.json",
+    "nativeMotionFrames": 84
+  },
+  "remaining": [
+    "Native exact pixel and compositor present-time equivalence remain unaccepted. Wall-clock color replay differs from fixed-progress effect sampling.",
+    "Blur downsampling/kernel, 8-bit color-curve quantization, font/edge rasterization and untested native layer matrices remain quality/coverage limits.",
+    "Property-transition page uses public animate calls for the first four scalar/2D vector samples; implicit property attachment, Z, background/local-theme BrushTransition and the last two examples remain pending.",
+    "Theme/entrance/reposition/content/page/connected/spring/expression animation families remain pending, with phase-6/7 control and navigation dependencies; ElasticEase is not a spring solver.",
+    "Mica/Desktop Acrylic require a Windows host; browser backdrop excludes desktop, other windows and external DOM.",
+    "Native gradient comparisons cover opaque two-stop radial samples; 2..32-stop API support is not exhaustive native acceptance.",
+    "Canvas reference caches radial/repeated brush pixels (8 entries, max 1MP each); GPU evaluates the gradient analytically. Whole-scene rendering is not rasterized through Canvas."
+  ],
+  "evidence": [
+    "docs/stage-5.md",
+    "references/stage-5-alignment.json",
+    "references/validation/results.json",
+    "references/validation/effects-performance.json",
+    "out/materials-native/materials.json",
+    "out/materials/"
+  ],
+  "files": [
+    {
+      "path": "src/animation.rs",
+      "sha256": "87e5d2594ce524a7ebda8506cc8682822e15238f1a0559fa564913abde757fe2"
+    },
+    {
+      "path": "src/easing.rs",
+      "sha256": "3ff5091b05a85eef1c5e3f385841cf3581fb243dc7852fe88a28158cec5fa5ae"
+    },
+    {
+      "path": "src/scene/motion.rs",
+      "sha256": "21a55515822a56871ff954d8037c792d548bb5d9c1334aa0062aa8bc322a4f9f"
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "sha256": "fe12e165fe34f1f3047122777379e61645a26ae39bb55f8fdbedde479d55dbfc"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "9a8cfd8eab0d9ea4cd49f5a74d0208063c2dfff7236dd5c91c391b28b1a66315"
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "sha256": "4197fb9fe4c7445ed3f59c50fc4c08c7772d50ee76a7541a638fb5b292a0b0f6"
+    },
+    {
+      "path": "src/material.rs",
+      "sha256": "8a8f6b0028e1b37994c69a0365f5b8f375439cba4e3aa09231f26c904db04c91"
+    },
+    {
+      "path": "src/resources.rs",
+      "sha256": "c923f8e7820eee3484112a01baa1ce9b31ab0a49496b0cc0ac803c348dc539d7"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "1d210f21a7b9fc8facbf0f81e234df061a239939f16c2f9d2bed48f4dd5b1f5a"
+    },
+    {
+      "path": "src/gpu.rs",
+      "sha256": "e9394357dd4cbfa1686d3a20560c2967740070e2ab55731c30845fe56a165c7f"
+    },
+    {
+      "path": "src/acrylic.glsl",
+      "sha256": "3adb7408ff1f70a500ff59f598b9c5ad0d672f9ca84959b8bacae2c6a8b8c26e"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "04061e400d6fc0620972fcbc3690e5bc2d6d2ebac65806eb76706acce0ef1fec"
+    },
+    {
+      "path": "gallery/src/index.ts",
+      "sha256": "0455d879e0d8b95e99a2585a351bb6a81cfd19697e74bb4647e06ecf7e62b3a9"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "0f77df4c129f665c0ca34bd366c1eec328b745b2978971e683ddcaa4924dcc3f"
+    },
+    {
+      "path": "gallery/src/style.css",
+      "sha256": "1aead867ff96d76e903e0b75fd38887b16a12835a1bef260871d7d0955a87000"
+    },
+    {
+      "path": "gallery/src/App.tsx",
+      "sha256": "b48ae6caada00227673250b515aae43ab794fb9d28e458584b6d2d89152a6b7c"
+    },
+    {
+      "path": "gallery/src/ButtonPage.tsx",
+      "sha256": "5ebbb9d830ac6d768ecef053d9f7e3259e1b3c966be5f49efb3f310c02de697f"
+    },
+    {
+      "path": "gallery/src/MaterialsPage.tsx",
+      "sha256": "fd82ae253d9bf2bb186f486205dc4bfdcc3eb109eb9847c4806c85ff3c160a2d"
+    },
+    {
+      "path": "gallery/src/EffectsPage.tsx",
+      "sha256": "f56a7f561a1c234e09647da5d292b7bee3ce8d6f874af6f731295911499fa315"
+    },
+    {
+      "path": "gallery/src/official-motion.json",
+      "sha256": "511657254e001a71a84b58cfa88825d111b2a4be65c858f28b361d86fd081193"
+    },
+    {
+      "path": "gallery/src/enums.ts",
+      "sha256": "61b0f01d4ab35cc2a261d1c241dc4650bbc7dbd6a24a40efe5d00ef492a4f6ae"
+    },
+    {
+      "path": "references/api-enums.json",
+      "sha256": "e49a74c149a563b03f65cd9c6bb583d85ebc5670fc3e65cb93442c21609cfac2"
+    },
+    {
+      "path": "references/composition-color-profile.json",
+      "sha256": "37b97f44601531c9b6f5c92406eca8c6a8710e813e128afed546907ba806c50a"
+    },
+    {
+      "path": "references/motion-native-defaults.json",
+      "sha256": "aa4877831ef28fd00fbaf1ef719169f6b1fa2b94285b678e4b4072c87bd9779c"
+    },
+    {
+      "path": "tools/extract-gallery-motion.py",
+      "sha256": "9f81904da6ed698e183f0dbd5e6d2b234b12c1c632e74fc16090c9546dbf3625"
+    },
+    {
+      "path": "tools/extract-native-motion.mjs",
+      "sha256": "a3be99e67813c3632a496f5d86c5bdff67ed53ddcf105bf0713de4255f1fd70a"
+    },
+    {
+      "path": "tools/record-stage-5.mjs",
+      "sha256": "73a8f7e6e225a85f3ae3cd56afda359e75541cf439fdec5258495b23a860cda2"
+    },
+    {
+      "path": "tools/native-navigation/MaterialsProbe.cs",
+      "sha256": "94eef4581595c4cacc3d097a33de97ad4fdec79badb8584ffd20400ec7ed7377"
+    },
+    {
+      "path": "out/materials-native/materials.json",
+      "sha256": "24faec626d15e2b9a8a66dbfdb7b5ae7e073605228ecff461b6b1102fd5eccc7"
+    },
+    {
+      "path": "gallery/tests/materials.spec.ts",
+      "sha256": "e82ad55310ed14cbb90a62325aac621505749a096dcc3f32e6244bb67519b307"
+    },
+    {
+      "path": "gallery/tests/effects.spec.ts",
+      "sha256": "a3a356600c079788daf7ebf79a80eb59b541571f0fc531e525eeddbd449ebe77"
+    },
+    {
+      "path": "tests/easing.rs",
+      "sha256": "98ac99dc6bf893b2d37d83ae0ccc1732a189d5166f56da9982093894fa7f096b"
+    },
+    {
+      "path": "tests/keyframes.rs",
+      "sha256": "0eefc38355ecbce7be35e031d248aa3096296308f1c3e6d95071a92d2d3d193e"
+    },
+    {
+      "path": "tests/scene.rs",
+      "sha256": "e73073454035291378c9e1ad8a3f0b4c3c736e5f6dbb1d441af505f6852f8d90"
+    }
+  ]
+}

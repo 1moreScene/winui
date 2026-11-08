@@ -1,0 +1,452 @@
+{
+  "date": "2026-11-08",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "officialSamples": 126,
+  "implementedNavigationItemsClicked": 57,
+  "pendingSamples": 63,
+  "explicitlyExcludedSamples": 6,
+  "implementedRoutes": [
+    {
+      "id": "AppBarButton",
+      "route": "#app-bar-button"
+    },
+    {
+      "id": "AppBarToggleButton",
+      "route": "#app-bar-toggle-button"
+    },
+    {
+      "id": "DropDownButton",
+      "route": "#drop-down-button"
+    },
+    {
+      "id": "SelectorBar",
+      "route": "#selector-bar"
+    },
+    {
+      "id": "CommandBar",
+      "route": "#command-bar"
+    },
+    {
+      "id": "Button",
+      "route": "#button"
+    },
+    {
+      "id": "HyperlinkButton",
+      "route": "#hyperlink-button"
+    },
+    {
+      "id": "RepeatButton",
+      "route": "#repeat-button"
+    },
+    {
+      "id": "ToggleButton",
+      "route": "#toggle-button"
+    },
+    {
+      "id": "SplitButton",
+      "route": "#split-button"
+    },
+    {
+      "id": "ToggleSplitButton",
+      "route": "#toggle-split-button"
+    },
+    {
+      "id": "CheckBox",
+      "route": "#checkbox"
+    },
+    {
+      "id": "ComboBox",
+      "route": "#combo-box"
+    },
+    {
+      "id": "RadioButton",
+      "route": "#radio-button"
+    },
+    {
+      "id": "RatingControl",
+      "route": "#rating-control"
+    },
+    {
+      "id": "Slider",
+      "route": "#slider"
+    },
+    {
+      "id": "ToggleSwitch",
+      "route": "#toggle-switch"
+    },
+    {
+      "id": "InfoBadge",
+      "route": "#info-badge"
+    },
+    {
+      "id": "InfoBar",
+      "route": "#info-bar"
+    },
+    {
+      "id": "ProgressBar",
+      "route": "#progress-bar"
+    },
+    {
+      "id": "ProgressRing",
+      "route": "#progress-ring"
+    },
+    {
+      "id": "ToolTip",
+      "route": "#tool-tip"
+    },
+    {
+      "id": "ContentDialog",
+      "route": "#content-dialog"
+    },
+    {
+      "id": "Flyout",
+      "route": "#flyout"
+    },
+    {
+      "id": "Popup",
+      "route": "#popup"
+    },
+    {
+      "id": "TeachingTip",
+      "route": "#teaching-tip"
+    },
+    {
+      "id": "MenuFlyout",
+      "route": "#menu-flyout"
+    },
+    {
+      "id": "FlipView",
+      "route": "#flip-view"
+    },
+    {
+      "id": "GridView",
+      "route": "#grid-view"
+    },
+    {
+      "id": "ListView",
+      "route": "#list-view"
+    },
+    {
+      "id": "TreeView",
+      "route": "#tree-view"
+    },
+    {
+      "id": "PipsPager",
+      "route": "#pips-pager"
+    },
+    {
+      "id": "ScrollViewer",
+      "route": "#scroll-viewer"
+    },
+    {
+      "id": "Border",
+      "route": "#border"
+    },
+    {
+      "id": "Canvas",
+      "route": "#canvas"
+    },
+    {
+      "id": "Expander",
+      "route": "#expander"
+    },
+    {
+      "id": "VariableSizedWrapGrid",
+      "route": "#variable-sized-wrap-grid"
+    },
+    {
+      "id": "Viewbox",
+      "route": "#viewbox"
+    },
+    {
+      "id": "BreadcrumbBar",
+      "route": "#breadcrumb-bar"
+    },
+    {
+      "id": "NavigationView",
+      "route": "#navigation-view"
+    },
+    {
+      "id": "TabView",
+      "route": "#tab-view"
+    },
+    {
+      "id": "Image",
+      "route": "#image"
+    },
+    {
+      "id": "PersonPicture",
+      "route": "#person-picture"
+    },
+    {
+      "id": "Acrylic",
+      "route": "#acrylic"
+    },
+    {
+      "id": "AnimatedIcon",
+      "route": "#animated-icon"
+    },
+    {
+      "id": "IconElement",
+      "route": "#icon-element"
+    },
+    {
+      "id": "Line",
+      "route": "#line"
+    },
+    {
+      "id": "Shape",
+      "route": "#shapes"
+    },
+    {
+      "id": "RadialGradientBrush",
+      "route": "#gradients"
+    },
+    {
+      "id": "SystemBackdrops",
+      "route": "#system-backdrops"
+    },
+    {
+      "id": "AutoSuggestBox",
+      "route": "#auto-suggest-box"
+    },
+    {
+      "id": "NumberBox",
+      "route": "#number-box"
+    },
+    {
+      "id": "PasswordBox",
+      "route": "#password-box"
+    },
+    {
+      "id": "TextBlock",
+      "route": "#textblock"
+    },
+    {
+      "id": "TextBox",
+      "route": "#text-box"
+    },
+    {
+      "id": "EasingFunction",
+      "route": "#easing"
+    },
+    {
+      "id": "ImplicitTransition",
+      "route": "#transitions"
+    }
+  ],
+  "samples": {
+    "mode": "isolated Vite production build",
+    "passed": 14,
+    "failed": 0,
+    "config": "gallery/playwright.sample-pages.config.ts",
+    "results": "out/sample-page-results.json"
+  },
+  "navigation": {
+    "implementation": "existing Rust NavigationView via React NavigationView",
+    "mode": "isolated source snapshot, HMR disabled",
+    "passed": 11,
+    "failed": 0,
+    "config": "gallery/playwright.home-regression.config.ts",
+    "results": "out/home-navigation-regression-results.json",
+    "wasmSha256": "0e35f72b1b7fbb9326db586b5386f75ff0d54f715051efa6791c7f4672bef023"
+  },
+  "checks": [
+    "npm run typecheck",
+    "npm run declarations",
+    "node tools/prepare-gallery-page-validation.mjs",
+    "npx vite build"
+  ],
+  "productionWasm": {
+    "path": "out/gallery-page-preview/assets/winui_bg-BUyb2q7O.wasm",
+    "sha256": "0e35f72b1b7fbb9326db586b5386f75ff0d54f715051efa6791c7f4672bef023",
+    "matchesCurrentBinary": true
+  },
+  "productionFiles": [
+    {
+      "path": "out/gallery-page-preview/assets/AnimatedIconPage-B1cz9u8Z.js",
+      "sha256": "0325c3410e90729aba8e5b34b64442cad8454bf3b184b7b113e8c029da4e7a66",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/BasicNextPage-BbpCoz4J.js",
+      "sha256": "27d3f47004a543ed11e1d6770ecad716447b4deff66141353706676be22ac299",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/ButtonPage-BuEOLOio.css",
+      "sha256": "468c8a6e0f66d2308c4ab2ac45eb9325efbc39c3fe08b9f07e4f73591624ecb4",
+      "matchesGalleryDist": true
+    },
+    {
+      "path": "out/gallery-page-preview/assets/ButtonPage-EiYPxtA1.js",
+      "sha256": "24bcc4f244deb9131171fb8a36e7602f8f8168dda367486587ddf0f4dd559fce",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/CollectionsPage-DkUs6znO.js",
+      "sha256": "56b33be2cab0a6445b846cce861991482957aa43b7681ddda9fd974ae9517558",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/CommandControlsPage-DNOZdBeK.js",
+      "sha256": "ecfe1974e65bd4de38e8eddf6835056060472509907bfc5e0e22ce4f6c748c5a",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/CompactControlsPage-L5SXy-5A.js",
+      "sha256": "f3d93d56d7701caf83f71bc5fb304ac632ba5206fb35ccb62ffc3f730659531c",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/ComposedControlsPage-Dz7d-cL0.js",
+      "sha256": "9cdcbf4a1a1ee26bbd0a32c3efdc10f692215360c36fc7e3aef49eacc24445cb",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/FiveControlsPage-BD6nSIrw.js",
+      "sha256": "c1f14082f41cfcae577179aa9a2c7181a3b1b0ca7a84dc9fe0e7dbb6f1901e63",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/IconsPage-D18DuH5f.js",
+      "sha256": "706db001bcadd722a9003f9db7c99d0f5b0f6ec85815b79c19ba20bfbc61d9ba",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/index-B-9IUnqP.js",
+      "sha256": "c2de16e039e4e01062237d2c9ce767be5c204e4e369f93963059cca5b3363012",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/index-Dh-IiLBf.css",
+      "sha256": "ab359544233ee7f20996be35cacd51f03e63546d5b162ec11fbc4513b70d8e7d",
+      "matchesGalleryDist": true
+    },
+    {
+      "path": "out/gallery-page-preview/assets/InputControlsPage-C5OiaBdU.js",
+      "sha256": "9ecd13070d084b4b3955981524cff153f6f1f28e8cfb376fc28ca971283d2a41",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/NavigationControlsPage-CzyqHcgt.js",
+      "sha256": "7196e0d5b6910e4db1098db652d9a9f2004150e6f79607623adc4d241cdb25a7",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/NavigationControlsPage-KVgu4SRz.js",
+      "sha256": "ab8e2dc7114376b9c9cd49761bce10dc6379d41e7fb7e6e75f3d3df1ed365386",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/OverlaysPage-BDCMVSJ0.js",
+      "sha256": "42f9d05094de7c91b256bc71ba9d8ce44de051e30546ac4d9ca71ef6a9639fd4",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/ProgressPage-ytQmripS.js",
+      "sha256": "104be8804277d5babe1725738de0f133aa721f133cdbe8f983011a3e0e193113",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/ShapesPage-DjfXMX7E.js",
+      "sha256": "e016cd6cd7a1ddabfab28d1b4ef85564eb86a0e83f6fd8f34e3a26cda8bb10b6",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/TextScrollPage-C_LzR3Ik.js",
+      "sha256": "8675cb6ef9c8608f822cb86860a71662d5475e6d624b76ca0bdfeba191bc0024",
+      "matchesGalleryDist": false
+    },
+    {
+      "path": "out/gallery-page-preview/assets/winui_bg-BUyb2q7O.wasm",
+      "sha256": "0e35f72b1b7fbb9326db586b5386f75ff0d54f715051efa6791c7f4672bef023",
+      "matchesGalleryDist": true
+    }
+  ],
+  "sourceSnapshot": [
+    {
+      "path": "out/gallery-page-dev/src/sdk.ts",
+      "sha256": "23b648cd95651aaa7c64c5a93d2759cf1fe5420dfb1eaeb60bd35aaf755ad395",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/react.tsx",
+      "sha256": "6fbaf49d2279f2359f2137a4ba02f264dfc3752abd93bbe022415a5fc023bb87",
+      "matchesCurrentSource": false
+    },
+    {
+      "path": "out/gallery-page-dev/src/App.tsx",
+      "sha256": "f27465e42d557826d03a56bb166594381ecced7f10ee66f4b432b73a734ac605",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/HomePage.tsx",
+      "sha256": "d36316e6295c4b1f486cd88c88b94a73cd1ab37815e8325a7631a8292b98af19",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/GalleryNavigation.tsx",
+      "sha256": "b8ab4b8c31e972dbbc8e5c6fa0b79c0fd1aaa0678711bc8686d17a56dd898025",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/GalleryPageHeader.tsx",
+      "sha256": "209c69fef518d0e38c3f2acb3cb32251794d879b12db3cade8a28583d8d44cbd",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/sample-pages.css",
+      "sha256": "ca6f4ba610ce61b1fa47b44791ceedbe89963d3149f8f3d1e5af92c241061ac3",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/ButtonPage.tsx",
+      "sha256": "36d913292cc52c9e88987f35e55e020b58f35faca4c7e3ad898ad884e130ee85",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/ShapesPage.tsx",
+      "sha256": "f16a9e4a68e98c7761be5b1c80b00c56bb011131b5c9652c54ca13c0ec8eb973",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/OverlaysPage.tsx",
+      "sha256": "936e656615b4728bc2ed2663aa318d4752792b4e809560afd67128845a2d2954",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/CommandControlsPage.tsx",
+      "sha256": "74fe005364fd03e59eab9fd7417d8aaa46691f53f1e10ad5109992fea6e31937",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/gallery-catalog.ts",
+      "sha256": "f154a516957314eba470b7554ad937a10e5e145d5814a909ee5af2f3f448428a",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-page-dev/src/official-home.json",
+      "sha256": "7dada2dd888dc2f890b320b2ac9c89504aba4fc9871faa48bff40bbf839833bf",
+      "matchesCurrentSource": true
+    }
+  ],
+  "sourceNotes": [
+    "The tested production bundle and source snapshot are preserved separately; per-file comparisons below identify any subsequent workspace changes.",
+    "Concurrent react.tsx changes after this snapshot add CommandBar TypeScript generics only; the reviewed diff does not alter NavigationView or runtime statements. Current workspace typecheck and declarations passed separately."
+  ],
+  "screenshots": [
+    "out/sample-page-button-Light.png",
+    "out/sample-page-button-Dark.png",
+    "out/sample-page-button-HighContrast.png",
+    "out/sample-page-button-scrolled.png",
+    "out/sample-page-textbox-1440.png",
+    "out/sample-page-textbox-900.png",
+    "out/sample-page-textbox-390.png"
+  ],
+  "limits": [
+    "No same-condition native release-window pixel comparison.",
+    "Page shell uses DOM; navigation, demo controls and shared scrollbars use the existing Rust implementations.",
+    "Existing route availability does not establish complete original-client control parity."
+  ]
+}

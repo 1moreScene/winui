@@ -1,0 +1,324 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "controls": [
+    "ItemsRepeater",
+    "StackLayout",
+    "UniformGridLayout",
+    "RefreshContainer",
+    "RefreshVisualizer"
+  ],
+  "files": [
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.cpp",
+      "local": "references/repeater-refresh/RefreshContainer.cpp",
+      "gitBlobSha1": "697c8c2c06c975043db37f35f9d43c312a92fd89",
+      "sha256": "8e4c4c0e866d3ab8a490b339304a81c91ab5b9b22bda64808c9f5ef689018181"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.h",
+      "local": "references/repeater-refresh/RefreshContainer.h",
+      "gitBlobSha1": "894e9b9fd3b58f0543cab1ebb2dd47af48081ff7",
+      "sha256": "7f7228cee7fb8d0bf4a9d21907141349b602de21dcfdcc868af0f3b66dff9577"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.idl",
+      "local": "references/repeater-refresh/RefreshContainer.idl",
+      "gitBlobSha1": "20f3758c2db383979216cdc7a2a8e5a59385167b",
+      "sha256": "b12f4ec042cc913915b373366e139942eef61b19bf7ecbd189753556c4b11a7c"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.xaml",
+      "local": "references/repeater-refresh/RefreshContainer.xaml",
+      "gitBlobSha1": "cab438fd6fb387c1bc271f223d97be4793a4e38d",
+      "sha256": "b7266b6169bc07ae0f242b335c48a9c6c18778ae9e64187a088ca54046d1c07f"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainerPrivate.idl",
+      "local": "references/repeater-refresh/RefreshContainerPrivate.idl",
+      "gitBlobSha1": "ea700f531aa136d4c936def632a89e8ab9098926",
+      "sha256": "35a01730f13843cf3a6d925e2e1c59c6bcacf8815607772afa894ecd0b448d3e"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer_themeresources.xaml",
+      "local": "references/repeater-refresh/RefreshContainer_themeresources.xaml",
+      "gitBlobSha1": "ddb712d13fc2f2903d63fcec5c26468f841debe4",
+      "sha256": "2338362e7cbd5c44f9b183f1b4d08dadf8c07650992c9420d97b80186c183b06"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshInteractionRatioChangedEventArgs.cpp",
+      "local": "references/repeater-refresh/RefreshInteractionRatioChangedEventArgs.cpp",
+      "gitBlobSha1": "2b1b1f4e1d79fd016bf6d9f7cb6c2210bd6a7af3",
+      "sha256": "6d38cca82da207b5b151f51e42ea268c012c27829d10886be16b40b965d88557"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshInteractionRatioChangedEventArgs.h",
+      "local": "references/repeater-refresh/RefreshInteractionRatioChangedEventArgs.h",
+      "gitBlobSha1": "d0937043df72ef05b0bba2dd0033b22f14133f5c",
+      "sha256": "819029e926db10f02a6b7c85f55b8a221b7c3bddb91b661e7fcad99fb3ef53e6"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.cpp",
+      "local": "references/repeater-refresh/RefreshVisualizer.cpp",
+      "gitBlobSha1": "5138e3f0df84d33c40904595a80c35c4a2382a2e",
+      "sha256": "7527d01aa3f1be63e65dc42e996d5613ab71f3e23039af87ffb67a2d08d486ff"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.h",
+      "local": "references/repeater-refresh/RefreshVisualizer.h",
+      "gitBlobSha1": "1643309757064c9a96656c5f6e2a2eda93e12674",
+      "sha256": "e919e869d2d5d07d3c4cf012fa912553254713f6d192b0426f7fd4153082be35"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.idl",
+      "local": "references/repeater-refresh/RefreshVisualizer.idl",
+      "gitBlobSha1": "80f3ba56f70c8ac378e6ece61c7a261ab35da6da",
+      "sha256": "5e6fc9fac3f6746a073001014eeef117f7e6c35c2f0741a485524e9262338749"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.xaml",
+      "local": "references/repeater-refresh/RefreshVisualizer.xaml",
+      "gitBlobSha1": "4cabb426e157000e3cac4f36eda325d59b311a65",
+      "sha256": "14b9a50e2454bc2854ec97a955ee5131edd101a320f6bbb43a22f30e17d76745"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizerEventArgs.cpp",
+      "local": "references/repeater-refresh/RefreshVisualizerEventArgs.cpp",
+      "gitBlobSha1": "e7ce8080f6d83a5d2d47fd578969ba4d7c3cf700",
+      "sha256": "45901572b9788915d14a93fae6e9e3432b9c872e99cd87c8613e2b5ba1d4cae5"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizerEventArgs.h",
+      "local": "references/repeater-refresh/RefreshVisualizerEventArgs.h",
+      "gitBlobSha1": "de29d203ef62547439d7d25266f2cdc710b79ebb",
+      "sha256": "70edd524e7ae141722aea2310440142b2a896115cfe93795c343458326cd5527"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizerPrivate.idl",
+      "local": "references/repeater-refresh/RefreshVisualizerPrivate.idl",
+      "gitBlobSha1": "893a8688d52615f3820740102d499d3e13c861a8",
+      "sha256": "5267de735031520d13a6d1d7fb5375b3e787eaa87ddbe77102e6da65e27f6036"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer_themeresources.xaml",
+      "local": "references/repeater-refresh/RefreshVisualizer_themeresources.xaml",
+      "gitBlobSha1": "d0911158cf863b43cf7ed5b3220e86bb050dda80",
+      "sha256": "bd7ca91e5b0eb57284146cde66bf0d71136be003b22395cfba1d8cc37e3a5571"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/ScrollViewerIRefreshInfoProviderAdapter/RefreshInfoProviderImpl.cpp",
+      "local": "references/repeater-refresh/RefreshInfoProviderImpl.cpp",
+      "gitBlobSha1": "72a5a2fd5c80c978eb35aa964b2e92a9078c4555",
+      "sha256": "5738d1c1d6dd5248450d769df803d06f2daeebd7f5aa2e6653b1ddd3ec886ae0"
+    },
+    {
+      "upstream": "controls/dev/PullToRefresh/ScrollViewerIRefreshInfoProviderAdapter/RefreshInfoProviderImpl.h",
+      "local": "references/repeater-refresh/RefreshInfoProviderImpl.h",
+      "gitBlobSha1": "0c54571ac316756a2b169372f5341123251217c0",
+      "sha256": "ce9d036cf5db9fb0b0acd1b95c90878256e1b646a403411993370437db14ab19"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ElementManager.cpp",
+      "local": "references/repeater-refresh/ElementManager.cpp",
+      "gitBlobSha1": "94e3a2006f1b9078f5256483c309a087150925b8",
+      "sha256": "13da9bd83605ee0ed8130a46be05f5c61cf14269bcbca64f4cf864fe921900a9"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ElementManager.h",
+      "local": "references/repeater-refresh/ElementManager.h",
+      "gitBlobSha1": "d2e20f1002c3f030ca431d22517a6040e44a331a",
+      "sha256": "aecfad88621a440f89e1c1e6035777570928fddf7a4902626281429ccbcaea5b"
+    },
+    {
+      "upstream": "controls/dev/Repeater/FlowLayout.cpp",
+      "local": "references/repeater-refresh/FlowLayout.cpp",
+      "gitBlobSha1": "915e1a81e6ae380fcdb56ee197226c5cf3fead9f",
+      "sha256": "1319c7055ad21c01874ecc8f0b74a8e45fb9bb32639972af85a203dc6cd55937"
+    },
+    {
+      "upstream": "controls/dev/Repeater/FlowLayout.h",
+      "local": "references/repeater-refresh/FlowLayout.h",
+      "gitBlobSha1": "542c1ded0b5ec98685807b9bd3a6eadb95759c63",
+      "sha256": "a71b7c60dfe196623d7600c9091fd47c5e3bcbf5dd7ea950281af6ec566e9f44"
+    },
+    {
+      "upstream": "controls/dev/Repeater/FlowLayoutAlgorithm.cpp",
+      "local": "references/repeater-refresh/FlowLayoutAlgorithm.cpp",
+      "gitBlobSha1": "a4e2f5666b07dcb1e1b1ced35c75718853977465",
+      "sha256": "b3dd316b82ccb4811c5356317684959f1d68e0dc4b42f802c164e0f97786c814"
+    },
+    {
+      "upstream": "controls/dev/Repeater/FlowLayoutAlgorithm.h",
+      "local": "references/repeater-refresh/FlowLayoutAlgorithm.h",
+      "gitBlobSha1": "87432ffb75cb91ce196d48bb31a42d84d139d8bb",
+      "sha256": "6d0893f0bc16d8735670b460fc6a8d5342931baf8491e8b56a93b780b51b3d8a"
+    },
+    {
+      "upstream": "controls/dev/Repeater/FlowLayoutState.cpp",
+      "local": "references/repeater-refresh/FlowLayoutState.cpp",
+      "gitBlobSha1": "dca0b15f820c601c618bf8423b8151f9cd50f6cc",
+      "sha256": "40d8a18cef6847c6d41931dd6c263dd7fc83ae5c924b9052f6630bc4e5577b8c"
+    },
+    {
+      "upstream": "controls/dev/Repeater/FlowLayoutState.h",
+      "local": "references/repeater-refresh/FlowLayoutState.h",
+      "gitBlobSha1": "3f738ab29dc06f7098186c0d155db7f051331a92",
+      "sha256": "baa0b02ad11fd142aa671234088a484a3bc10d788d808d189ecbf32b3b0413f3"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeater.common.cpp",
+      "local": "references/repeater-refresh/ItemsRepeater.common.cpp",
+      "gitBlobSha1": "b692957f2293a03aa67abbf630ed2d57ffdc3efb",
+      "sha256": "0b02603b0ed2115c02c2fe0250c223f66dc230bff538d4a09444bd331a55d312"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeater.common.h",
+      "local": "references/repeater-refresh/ItemsRepeater.common.h",
+      "gitBlobSha1": "e05a8f28a874afd6eaf57a9f1bfac6b9b7a860b5",
+      "sha256": "60c6158feb7245136b58359fc69be324f412b626676263d1354d8a75b46f5dd9"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeater.cpp",
+      "local": "references/repeater-refresh/ItemsRepeater.cpp",
+      "gitBlobSha1": "792c35888d49fbfe5b27d97ef4206f71103dcc9e",
+      "sha256": "b4d32583d4b29a0a3bc096ed752f0ff7cb34a398c0f093ba2edf7b975b0bc6e0"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeater.h",
+      "local": "references/repeater-refresh/ItemsRepeater.h",
+      "gitBlobSha1": "dbafec36e1fbc2bf60ab8f317fc3525de24f8414",
+      "sha256": "719a2fbfeaaa7767ed2182dc0401202502ff308a8238bb44916e3b2a47a72116"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeater.idl",
+      "local": "references/repeater-refresh/ItemsRepeater.idl",
+      "gitBlobSha1": "22e70d759e8b93cf2581515f1efdb1d91f183bff",
+      "sha256": "8a4ffff3fba061cec15196aa9f47868b6f8e526e6b7b5d0ffcea7e78aecc1b3b"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterElementClearingEventArgs.cpp",
+      "local": "references/repeater-refresh/ItemsRepeaterElementClearingEventArgs.cpp",
+      "gitBlobSha1": "cf24a4c5020835bddc241fa051b2256977f9be8a",
+      "sha256": "010a368b28116cadd59c30b8c92d143994ba9799edc270e73f19432f5aea15d0"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterElementClearingEventArgs.h",
+      "local": "references/repeater-refresh/ItemsRepeaterElementClearingEventArgs.h",
+      "gitBlobSha1": "a9fe75299ca78faa404b17414cde8c776482cddf",
+      "sha256": "49b43049a07bfd44dee650f6c8785b738ad72191029630e20a3f7187e7c269fe"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterElementIndexChangedEventArgs.cpp",
+      "local": "references/repeater-refresh/ItemsRepeaterElementIndexChangedEventArgs.cpp",
+      "gitBlobSha1": "157ce9c87e9a3d56fddad755e9c71a04fc23b96a",
+      "sha256": "9f1a4c9a5a66e4dc83d53c41de20c729887a436d3f14d3412f45a6c6eeb514fd"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterElementIndexChangedEventArgs.h",
+      "local": "references/repeater-refresh/ItemsRepeaterElementIndexChangedEventArgs.h",
+      "gitBlobSha1": "ddcbcb5bbc3bb41d5431fec2e485470cb4ff19d8",
+      "sha256": "52551c67e5a8ca55d8cb7de77f3ed1dce43f5e7a07f3720052fd6dfbab57256d"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterElementPreparedEventArgs.cpp",
+      "local": "references/repeater-refresh/ItemsRepeaterElementPreparedEventArgs.cpp",
+      "gitBlobSha1": "c9441a52da024697bf92ffb7d1a4145e548bc1ec",
+      "sha256": "fead3c011fe9e3a15a1682a3f18142be3f95168a2056f77bfc1f18d871328f4c"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterElementPreparedEventArgs.h",
+      "local": "references/repeater-refresh/ItemsRepeaterElementPreparedEventArgs.h",
+      "gitBlobSha1": "5fcca8eea6bbe865f32a7a618c59d6ce59822388",
+      "sha256": "122b818847839a444cd224a38493e885c73b744790ce936e67310584a3944f23"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterScrollHost.cpp",
+      "local": "references/repeater-refresh/ItemsRepeaterScrollHost.cpp",
+      "gitBlobSha1": "fdd2b26086742f271e9e872ada409faa6befc800",
+      "sha256": "648d104ed43bdd5b3a82c0f11ddee0324d7814dfae2456394b66a2d98c6aaa9f"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterScrollHost.h",
+      "local": "references/repeater-refresh/ItemsRepeaterScrollHost.h",
+      "gitBlobSha1": "c3fcaba0f931b2093ae129a2cf1131c68a5ac1d5",
+      "sha256": "07c242a26e7a0a0f64b57eccf6c3676d9cfe98855f0bfdf4727d773621b887c2"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ItemsRepeaterTrace.h",
+      "local": "references/repeater-refresh/ItemsRepeaterTrace.h",
+      "gitBlobSha1": "ade5423632e111df5cc5388a4cd852798fba8405",
+      "sha256": "33f6181dbbcf325515c594f45b70c1b81a420eb2c73f4d9b5a1ef2e1923acf95"
+    },
+    {
+      "upstream": "controls/dev/Repeater/StackLayout.cpp",
+      "local": "references/repeater-refresh/StackLayout.cpp",
+      "gitBlobSha1": "6a28140bc291a13e84580a944e5e73e6c65511d0",
+      "sha256": "f436f10a49e13b0f01691ee2f91803e335f00b9f6b81c20ec1c0969a241d37e8"
+    },
+    {
+      "upstream": "controls/dev/Repeater/StackLayout.h",
+      "local": "references/repeater-refresh/StackLayout.h",
+      "gitBlobSha1": "ceee8a3975ec587a940d29361850f6294a3b56bd",
+      "sha256": "e85c46111a6f746ffc7a58e57541913c8be9627b1083e2c0c02a6521f9c62484"
+    },
+    {
+      "upstream": "controls/dev/Repeater/StackLayoutState.cpp",
+      "local": "references/repeater-refresh/StackLayoutState.cpp",
+      "gitBlobSha1": "314300705388a01f4cd0e326234399e5d6c26e72",
+      "sha256": "6696ea0d438e94adffef0aa1be120756066f8d2f488485491e2d3dbc10001f03"
+    },
+    {
+      "upstream": "controls/dev/Repeater/StackLayoutState.h",
+      "local": "references/repeater-refresh/StackLayoutState.h",
+      "gitBlobSha1": "9a40f4b480cb5d35c8d743a5fcd13a374aed7d9b",
+      "sha256": "de525d21ecffa7f4ad7be5d29c014970accc973f2edc438ceac3a21b911d584b"
+    },
+    {
+      "upstream": "controls/dev/Repeater/UniformGridLayout.cpp",
+      "local": "references/repeater-refresh/UniformGridLayout.cpp",
+      "gitBlobSha1": "f52dc50df137855a8670b2c2bbe3cd21f7671e65",
+      "sha256": "bf563f81c189657c9286f54c89a99d2f581482959ca428fa31a643d9615846fc"
+    },
+    {
+      "upstream": "controls/dev/Repeater/UniformGridLayout.h",
+      "local": "references/repeater-refresh/UniformGridLayout.h",
+      "gitBlobSha1": "d7c846256eb37d7bf5f463d13daa45949ed0aee4",
+      "sha256": "cf63413671e8601189ebff89e8e5702cf3566be5a631c4ff3c18bc27b768aead"
+    },
+    {
+      "upstream": "controls/dev/Repeater/UniformGridLayoutState.cpp",
+      "local": "references/repeater-refresh/UniformGridLayoutState.cpp",
+      "gitBlobSha1": "7e8ac4943b8a6d571b907dd3f5ea907e19359964",
+      "sha256": "bbcc9f0c90387e9e0bb4a3c5eb124d4059b3b40f2997cd28ad6c13c3e4a83a54"
+    },
+    {
+      "upstream": "controls/dev/Repeater/UniformGridLayoutState.h",
+      "local": "references/repeater-refresh/UniformGridLayoutState.h",
+      "gitBlobSha1": "a0013d992b5bb0a7dc526a7bb17cb587e8280a28",
+      "sha256": "7106d4e058be093dabd9e78f632470c5686798fbf2636ee39761622ed8f68a73"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ViewManager.cpp",
+      "local": "references/repeater-refresh/ViewManager.cpp",
+      "gitBlobSha1": "92610984f150c1301539a7c7b441c11ba2ae6a11",
+      "sha256": "395fe476c04c93b91cbc88d8168f61a026fef2830da53118caea841b22bbee11"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ViewManager.h",
+      "local": "references/repeater-refresh/ViewManager.h",
+      "gitBlobSha1": "049d4776548e1b704d56150129d8920d6a28aaf2",
+      "sha256": "62012550e93b487485a6e72e481bd2a404099471f90c4865f4793fe9e12db8fa"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ViewportManager.cpp",
+      "local": "references/repeater-refresh/ViewportManager.cpp",
+      "gitBlobSha1": "c57ed88e9fc7b5a9132b2bfe5d4f9254c8fa6ad7",
+      "sha256": "faf6992903f840bd4f9a0c3ed185b7852e58c283f7b6e80c5a0f57b2e5659240"
+    },
+    {
+      "upstream": "controls/dev/Repeater/ViewportManager.h",
+      "local": "references/repeater-refresh/ViewportManager.h",
+      "gitBlobSha1": "74cb4488dd4ce944792c38adfed88cba51015aa9",
+      "sha256": "4cfc9e09ffd7a6cf7dbde547f900d3bfd9aaed57a3e21d11a57d96d673ba5810"
+    }
+  ]
+}

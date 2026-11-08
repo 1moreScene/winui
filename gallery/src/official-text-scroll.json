@@ -1,0 +1,132 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "PasswordBox": {
+      "description": "A user can enter a single line of non-wrapping text in a PasswordBox control. The text is masked by characters that you can specify by using the PasswordChar property, and you can specify the maximum number of characters that the user can enter by setting the MaxLength property.",
+      "samples": [
+        {
+          "title": "A simple PasswordBox.",
+          "file": "SimplePasswordbox.txt",
+          "xaml": "<PasswordBox Width=\"300\" AutomationProperties.Name=\"Simple PasswordBox\"/>"
+        },
+        {
+          "title": "A PasswordBox with header, placeholder text and custom character.",
+          "file": "PasswordboxHeaderPlaceholderText.txt",
+          "xaml": "<PasswordBox Width=\"300\" Header=\"Password\" PlaceholderText=\"Enter your password\" PasswordChar=\"#\" />"
+        },
+        {
+          "title": "A PasswordBox with reveal mode.",
+          "file": "PasswordboxRevealMode.txt",
+          "xaml": "<PasswordBox Name=\"passworBoxWithRevealmode\" Width=\"250\" Margin=\"0,0,8,0\"\n    PasswordRevealMode=\"Hidden\" AutomationProperties.Name=\"Sample password box\"/>\n<CheckBox Name=\"revealModeCheckBox\" Content=\"Show password\" IsChecked=\"False\"\n    Checked=\"RevealModeCheckbox_Changed\" Unchecked=\"RevealModeCheckbox_Changed\"/>"
+        }
+      ]
+    },
+    "ScrollViewer": {
+      "description": "A ScrollViewer lets a user scroll, pan, and zoom to see content that's larger than the viewable area. Many content controls, like ListView, have ScrollViewers built into their control templates to provide automatic scrolling.",
+      "samples": [
+        {
+          "title": "Content inside of a ScrollViewer.",
+          "file": "ContentInsideScrollviewer.txt",
+          "xaml": "<ScrollViewer Height=\"266\" Width=\"400\" ZoomMode=\"Enabled\"\n            IsTabStop=\"True\" IsVerticalScrollChainingEnabled=\"True\"\n            HorizontalAlignment=\"Left\" VerticalAlignment=\"Top\"\n            ViewChanged=\"ScrollViewerControl_ViewChanged\"\n            HorizontalScrollMode=\"Enabled\" HorizontalScrollBarVisibility=\"Auto\"\n            VerticalScrollMode=\"Enabled\" VerticalScrollBarVisibility=\"Auto\">\n    <Image Source=\"ms-appx:///Assets/SampleMedia/cliff.jpg\" AutomationProperties.Name=\"cliff\" Stretch=\"None\"\n           HorizontalAlignment=\"Left\" VerticalAlignment=\"Top\"/>\n</ScrollViewer>"
+        }
+      ]
+    },
+    "TextBox": {
+      "description": "Use a TextBox to let a user enter simple text input in your app. You can add a header and placeholder text to let the user know what the TextBox is for, and you can customize it in other ways.",
+      "samples": [
+        {
+          "title": "A simple TextBox.",
+          "file": "SimpleTextbox.txt",
+          "xaml": "<TextBox AutomationProperties.Name=\"simple TextBox\"/>"
+        },
+        {
+          "title": "A TextBox with a header and placeholder text.",
+          "file": "TextboxHeaderPlaceholderText.txt",
+          "xaml": "<TextBox Header=\"Enter your name:\" PlaceholderText=\"Name\" />"
+        },
+        {
+          "title": "A read-only TextBox with various properties set.",
+          "file": "ReadOnlyTextboxVarious.txt",
+          "xaml": "<TextBox Text=\"I am super excited to be here!\"\n    AutomationProperties.Name=\"customized TextBox\" IsReadOnly=\"True\"\n    FontFamily=\"Arial\" FontSize=\"24\" FontStyle=\"Italic\"\n    CharacterSpacing=\"200\" Foreground=\"#5178BE\" />"
+        },
+        {
+          "title": "A multi-line TextBox with spell checking and custom selection highlight color.",
+          "file": "MultiLineTextboxSpell.txt",
+          "xaml": "<TextBox AutomationProperties.Name=\"multi-line TextBox\"\n    TextWrapping=\"Wrap\" AcceptsReturn=\"True\" IsSpellCheckEnabled=\"True\"\n    SelectionHighlightColor=\"Green\" MinWidth=\"400\" />"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "references/gallery-input/PasswordBox/PasswordboxHeaderPlaceholderText.txt",
+      "source": "WinUIGallery/Samples/PasswordBox/PasswordboxHeaderPlaceholderText.txt",
+      "sha256": "db60d4a11f2de336b97f89c8b7faccc6d138aa2b2841c8d5c4dc87d1042ca71a"
+    },
+    {
+      "path": "references/gallery-input/PasswordBox/PasswordBoxPage.xaml",
+      "source": "WinUIGallery/Samples/PasswordBox/PasswordBoxPage.xaml",
+      "sha256": "7e8552adbdfe71683deb7664af2a913016e857efe9c7bdc99bc9271e2c465ec8"
+    },
+    {
+      "path": "references/gallery-input/PasswordBox/PasswordBoxPage.xaml.cs",
+      "source": "WinUIGallery/Samples/PasswordBox/PasswordBoxPage.xaml.cs",
+      "sha256": "848cb36f11051324d6627557f2b4bc24c3b8807d927c500b66c712cf1ac82c7f"
+    },
+    {
+      "path": "references/gallery-input/PasswordBox/PasswordboxRevealMode.txt",
+      "source": "WinUIGallery/Samples/PasswordBox/PasswordboxRevealMode.txt",
+      "sha256": "e4bfc299645cb356a809738a9559cdbe013002f480c1155dbefbd2e59d12848b"
+    },
+    {
+      "path": "references/gallery-input/PasswordBox/SimplePasswordbox.txt",
+      "source": "WinUIGallery/Samples/PasswordBox/SimplePasswordbox.txt",
+      "sha256": "88a917ce6b993fee4a59317f65187c407e2add6fd156b31cc021124b5dc73dda"
+    },
+    {
+      "path": "references/gallery-input/ScrollViewer/ContentInsideScrollviewer.txt",
+      "source": "WinUIGallery/Samples/ScrollViewer/ContentInsideScrollviewer.txt",
+      "sha256": "3547f553556263c89ef16335a8c489b4d109eeca6f852bb587fd625551000300"
+    },
+    {
+      "path": "references/gallery-input/ScrollViewer/ScrollViewerPage.xaml",
+      "source": "WinUIGallery/Samples/ScrollViewer/ScrollViewerPage.xaml",
+      "sha256": "edd713c839b8016bcbeb5fb5a798f62ec06953b962e6500fbc626b8c4962c4c5"
+    },
+    {
+      "path": "references/gallery-input/ScrollViewer/ScrollViewerPage.xaml.cs",
+      "source": "WinUIGallery/Samples/ScrollViewer/ScrollViewerPage.xaml.cs",
+      "sha256": "3655acb92d659249ea4f79b1d59337ca692d423000f65b5bf540b2365ae7f6df"
+    },
+    {
+      "path": "references/gallery-input/TextBox/MultiLineTextboxSpell.txt",
+      "source": "WinUIGallery/Samples/TextBox/MultiLineTextboxSpell.txt",
+      "sha256": "084a3416a1f8350d2bb33b18d03dfa6c33c08441b23d174012a7b17ebb9b1260"
+    },
+    {
+      "path": "references/gallery-input/TextBox/ReadOnlyTextboxVarious.txt",
+      "source": "WinUIGallery/Samples/TextBox/ReadOnlyTextboxVarious.txt",
+      "sha256": "226ba594c0b2ba4febf92c53551778982c05e82870d6632ae33a67cb1e8c901a"
+    },
+    {
+      "path": "references/gallery-input/TextBox/SimpleTextbox.txt",
+      "source": "WinUIGallery/Samples/TextBox/SimpleTextbox.txt",
+      "sha256": "e58365e32ef0121db7a57c3716b42a4048fd14a559a5a2214fa1a7d1a82f2e96"
+    },
+    {
+      "path": "references/gallery-input/TextBox/TextboxHeaderPlaceholderText.txt",
+      "source": "WinUIGallery/Samples/TextBox/TextboxHeaderPlaceholderText.txt",
+      "sha256": "0158a237ccc7ae3d8eeda6cbac9f8821d71c61cb5a3039c50c734a848f7765d9"
+    },
+    {
+      "path": "references/gallery-input/TextBox/TextBoxPage.xaml",
+      "source": "WinUIGallery/Samples/TextBox/TextBoxPage.xaml",
+      "sha256": "8a4374e00f8c8af2566278d69cd5126aafe31cfade61b1554115d86e3270bc04"
+    },
+    {
+      "path": "references/gallery-input/TextBox/TextBoxPage.xaml.cs",
+      "source": "WinUIGallery/Samples/TextBox/TextBoxPage.xaml.cs",
+      "sha256": "d09b7e4352a57a73e6e3f02c5a54bacf75691159851cd8c05fadcf015e9c5fa8"
+    }
+  ]
+}

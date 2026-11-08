@@ -1,0 +1,3502 @@
+{
+  "rows": [
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-Different-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.1403495592948718,
+      "materialMAE": 0.031599736668861095,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-Different-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 6.086688701923077,
+      "materialMAE": 6,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-LargeTopLeft-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.028670873397435896,
+      "materialMAE": 0.031599736668861095,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            248,
+            248,
+            248
+          ],
+          "browser": [
+            248,
+            248,
+            248
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-LargeTopLeft-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.002879607371794872,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-SquareAndRound-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.12397335737179487,
+      "materialMAE": 0.031599736668861095,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-SquareAndRound-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.11015124198717949,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-Normalized-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.9999749599358975,
+      "materialMAE": 0.031599736668861095,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Light-Normalized-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 1.0160506810897436,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-Different-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.10914963942307693,
+      "materialMAE": 0.01184990125082291,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-Different-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.09467648237179487,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-LargeTopLeft-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.014122596153846154,
+      "materialMAE": 0.01184990125082291,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            46,
+            46,
+            46
+          ],
+          "browser": [
+            46,
+            46,
+            46
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            45,
+            45,
+            45
+          ],
+          "browser": [
+            45,
+            45,
+            45
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            46,
+            46,
+            46
+          ],
+          "browser": [
+            46,
+            46,
+            46
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-LargeTopLeft-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.004632411858974359,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            44,
+            44,
+            44
+          ],
+          "browser": [
+            44,
+            44,
+            44
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            44,
+            44,
+            44
+          ],
+          "browser": [
+            44,
+            44,
+            44
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            44,
+            44,
+            44
+          ],
+          "browser": [
+            44,
+            44,
+            44
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-SquareAndRound-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.1044921875,
+      "materialMAE": 0.01184990125082291,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-SquareAndRound-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.09072015224358974,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-Normalized-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.9132361778846154,
+      "materialMAE": 0.01184990125082291,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "Canvas2D",
+      "name": "PopupCorners-Dark-Normalized-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.8541416266025641,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-Different-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.1310096153846154,
+      "materialMAE": 0.0032916392363396972,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-Different-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.13303786057692307,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-LargeTopLeft-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.0107421875,
+      "materialMAE": 0.0032916392363396972,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            248,
+            248,
+            248
+          ],
+          "browser": [
+            248,
+            248,
+            248
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-LargeTopLeft-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.007737379807692308,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            249,
+            249,
+            249
+          ],
+          "browser": [
+            249,
+            249,
+            249
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-SquareAndRound-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.07992788461538461,
+      "materialMAE": 0.0032916392363396972,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-SquareAndRound-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.07622195512820513,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            229,
+            229,
+            229
+          ],
+          "browser": [
+            229,
+            229,
+            229
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-Normalized-False",
+      "theme": "Light",
+      "fallback": false,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.9963441506410257,
+      "materialMAE": 0.0032916392363396972,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Light-Normalized-True",
+      "theme": "Light",
+      "fallback": true,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 1.0324018429487178,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            243,
+            243,
+            243
+          ],
+          "browser": [
+            243,
+            243,
+            243
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-Different-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.12204527243589744,
+      "materialMAE": 0.0013166556945358788,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-Different-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        24,
+        8,
+        20,
+        4
+      ],
+      "stroke": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.11478365384615384,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-LargeTopLeft-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.016952123397435896,
+      "materialMAE": 0.0013166556945358788,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            46,
+            46,
+            46
+          ],
+          "browser": [
+            46,
+            46,
+            46
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            45,
+            45,
+            45
+          ],
+          "browser": [
+            45,
+            45,
+            45
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            46,
+            46,
+            46
+          ],
+          "browser": [
+            46,
+            46,
+            46
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-LargeTopLeft-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        80,
+        0,
+        0,
+        0
+      ],
+      "stroke": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.014798677884615384,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            44,
+            44,
+            44
+          ],
+          "browser": [
+            44,
+            44,
+            44
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            44,
+            44,
+            44
+          ],
+          "browser": [
+            44,
+            44,
+            44
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            44,
+            44,
+            44
+          ],
+          "browser": [
+            44,
+            44,
+            44
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            65
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-SquareAndRound-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.044921875,
+      "materialMAE": 0.0013166556945358788,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-SquareAndRound-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        0,
+        24,
+        0,
+        40
+      ],
+      "stroke": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.043544671474358976,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            26,
+            26,
+            26
+          ],
+          "browser": [
+            26,
+            26,
+            26
+          ],
+          "mustBeBackground": false
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-Normalized-False",
+      "theme": "Dark",
+      "fallback": false,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.9597355769230769,
+      "materialMAE": 0.0013166556945358788,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    },
+    {
+      "backend": "WebGL2",
+      "name": "PopupCorners-Dark-Normalized-True",
+      "theme": "Dark",
+      "fallback": true,
+      "radii": [
+        160,
+        120,
+        80,
+        40
+      ],
+      "stroke": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "native": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "browser": {
+        "x": 40,
+        "y": 40,
+        "width": 200,
+        "height": 120
+      },
+      "geometryError": 0,
+      "mean": 0.9029447115384616,
+      "materialMAE": 0,
+      "points": [
+        {
+          "local": [
+            0.25,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            0.25
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            199.75,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        },
+        {
+          "local": [
+            0.25,
+            119.75
+          ],
+          "native": [
+            32,
+            32,
+            32
+          ],
+          "browser": [
+            32,
+            32,
+            32
+          ],
+          "mustBeBackground": true
+        }
+      ],
+      "cornerBackgroundError": 0,
+      "nativeCornerBackgroundError": 0
+    }
+  ],
+  "errors": [],
+  "boundary": "Real Popup containing Border with asymmetric/large/zero/normalized corners and asymmetric border thickness. Same SDK own foreground client; both browser renderers, light/dark, Acrylic/fallback. Whole-region RGB diagnostics retain border AA and sampling residuals."
+}

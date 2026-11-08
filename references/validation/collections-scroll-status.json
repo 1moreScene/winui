@@ -1,0 +1,512 @@
+{
+  "recordedAt": "2026-11-08T04:20:40.182Z",
+  "scope": "Collection scrolling: presented-viewport virtualization, layout measurement reuse, font metrics caching, capture-frame coalescing, stable accessible labels",
+  "testedRuntime": {
+    "url": "http://127.0.0.1:5195/#list-view",
+    "wasmSha256": "1ef8c8789d0635054f5b791773635f06f2038ab000aff1b33769028fbec4e2ca",
+    "runtime": "out/collections-5195-test-runtime",
+    "manifestPath": "out/collections-5195-app-runtime/manifest.json",
+    "matchesCurrentBinary": true,
+    "matchesDistBinary": true,
+    "changedApplicationFiles": []
+  },
+  "rustPassed": 178,
+  "rustLog": {
+    "path": "out/collection-scroll-rust.log",
+    "sha256": "d077e1be9e810df0178e8d4080062e9f8a6f16ffee77f53c24dba41d75428b30"
+  },
+  "browserPassed": 42,
+  "reports": [
+    {
+      "path": "out/collections-5195-scroll-msedge-results.json",
+      "sha256": "eb4f2c51a36c78529f5e59019346a85e48ea33df154467e7c4cce95d9112d2e3",
+      "passed": 3
+    },
+    {
+      "path": "out/collections-5195-scroll-chrome-results.json",
+      "sha256": "cf04c08d3d52fb2421ae690740e159084aefe8b8d456fd2768f3bc6001f1356c",
+      "passed": 3
+    },
+    {
+      "path": "out/collections-5195-scroll-regression-results.json",
+      "sha256": "25d0047d635fa695d4058cff2501cb477377f2d93946e49fdaba19c2019fb389",
+      "passed": 21
+    },
+    {
+      "path": "out/collections-5195-scroll-host-results.json",
+      "sha256": "5061d37636b931f0ef9cdbc3b9f69edcf3795804bb24817987e8d171a68e9028",
+      "passed": 15
+    }
+  ],
+  "windows": [
+    {
+      "channel": "msedge",
+      "path": "references/validation/collections-5195-scroll-window-msedge.json",
+      "sha256": "e2feca25aee00124adcc231f4b7cff5c1191b2f2edee8331618343fb4efa443c",
+      "cases": [
+        {
+          "mode": "plain",
+          "maxContainers": 37,
+          "sampledFrames": 38
+        },
+        {
+          "mode": "template",
+          "maxContainers": 37,
+          "sampledFrames": 38
+        },
+        {
+          "mode": "grouped",
+          "maxContainers": 37,
+          "sampledFrames": 44
+        }
+      ]
+    },
+    {
+      "channel": "chrome",
+      "path": "references/validation/collections-5195-scroll-window-chrome.json",
+      "sha256": "0566484f58cba1cd571ce67af827b5ae8e41fb4e947a02c94fca8a349d0b162c",
+      "cases": [
+        {
+          "mode": "plain",
+          "maxContainers": 37,
+          "sampledFrames": 38
+        },
+        {
+          "mode": "template",
+          "maxContainers": 37,
+          "sampledFrames": 38
+        },
+        {
+          "mode": "grouped",
+          "maxContainers": 37,
+          "sampledFrames": 45
+        }
+      ]
+    }
+  ],
+  "matrices": [
+    {
+      "backend": "Canvas2D",
+      "path": "references/validation/collections-5195-Canvas2D.json",
+      "sha256": "f0041dc5df3c322329b6becfca4900ae6ecbeeef3999504ecf7e0972109dad08"
+    },
+    {
+      "backend": "WebGL2",
+      "path": "references/validation/collections-5195-WebGL2.json",
+      "sha256": "ec85d4860b345af43ee58d2dee43823d275727eae66cbaf822774d9c61795738"
+    }
+  ],
+  "logs": [
+    {
+      "path": "out/collection-scroll-build.log",
+      "sha256": "81d3a067c14aa1ebaf67f919e3813d6c1bbd510013188291be76ea5efcc5de79"
+    },
+    {
+      "path": "out/collection-scroll-production.log",
+      "sha256": "428b95c50d79bb8a01a271c52dc0346f7f098758dc84693081c8e5e4d8076c1d"
+    },
+    {
+      "path": "out/collection-scroll-types.log",
+      "sha256": "1da5581bb3eb6cf8f73efefc01fa4d231745e7172530f9d4a8856addf5b2dd43"
+    },
+    {
+      "path": "out/collection-scroll-clippy.log",
+      "sha256": "0cd5a3a252df052f7d0224f781559cb721ba90e2152fbbb106bd156c704d27f1"
+    },
+    {
+      "path": "out/collection-scroll-wasm-clippy.log",
+      "sha256": "c988053059e32445ffe9ec142dd0b4fd25dc717e33402d453326a01cf9edabaa"
+    }
+  ],
+  "profiles": [
+    {
+      "label": "before",
+      "path": "out/collection-scroll-before.json",
+      "sha256": "cee3fa1f37c80ea7b111d40c984db15d8b63fd1ed10af62892b2862396942a1d",
+      "wasmSha256": "3d50653d18f2c496a569129b5dd4d4063ca7eed16025145faef22837b735b4ba",
+      "channel": "msedge",
+      "results": [
+        {
+          "mode": "plain",
+          "count": 200,
+          "summary": {
+            "frame": {
+              "count": 202,
+              "p50": 3.8999999910593033,
+              "p95": 4.600000008940697,
+              "max": 5.700000002980232,
+              "total": 762.8999998867512
+            },
+            "project": {
+              "count": 202,
+              "p50": 0.6000000089406967,
+              "p95": 0.8999999910593033,
+              "max": 1.2999999970197678,
+              "total": 128.09999994933605
+            },
+            "present": {
+              "count": 202,
+              "p50": 0,
+              "p95": 0,
+              "max": 0.10000000894069672,
+              "total": 0.9999999850988388
+            },
+            "wheel": {
+              "count": 203,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.5,
+              "total": 6.299999922513962
+            },
+            "raf": {
+              "count": 203,
+              "p50": 6.5999999940395355,
+              "p95": 10.900000005960464,
+              "max": 15.399999991059303,
+              "total": 1400.5999999940395
+            }
+          },
+          "nodes": 46
+        },
+        {
+          "mode": "template",
+          "count": 200,
+          "summary": {
+            "frame": {
+              "count": 130,
+              "p50": 6.100000008940697,
+              "p95": 7.399999991059303,
+              "max": 7.700000002980232,
+              "total": 768.1999999880791
+            },
+            "project": {
+              "count": 130,
+              "p50": 0.7999999970197678,
+              "p95": 1.1000000089406967,
+              "max": 1.5999999940395355,
+              "total": 105.19999992847443
+            },
+            "present": {
+              "count": 130,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.10000000894069672,
+              "total": 1.6000000089406967
+            },
+            "wheel": {
+              "count": 131,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.20000000298023224,
+              "total": 5.600000023841858
+            },
+            "raf": {
+              "count": 131,
+              "p50": 10.400000005960464,
+              "p95": 15,
+              "max": 17.69999998807907,
+              "total": 1405.2000000029802
+            }
+          },
+          "nodes": 85
+        },
+        {
+          "mode": "grouped",
+          "count": 200,
+          "summary": {
+            "frame": {
+              "count": 212,
+              "p50": 3.7999999970197678,
+              "p95": 4.399999991059303,
+              "max": 13.099999994039536,
+              "total": 795.0999999791384
+            },
+            "project": {
+              "count": 212,
+              "p50": 0.5999999940395355,
+              "p95": 0.7999999970197678,
+              "max": 1,
+              "total": 122.20000000298023
+            },
+            "present": {
+              "count": 212,
+              "p50": 0,
+              "p95": 0,
+              "max": 0.10000000894069672,
+              "total": 0.4000000059604645
+            },
+            "wheel": {
+              "count": 213,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.10000000894069672,
+              "total": 5.600000023841858
+            },
+            "raf": {
+              "count": 213,
+              "p50": 6.4000000059604645,
+              "p95": 8.5,
+              "max": 18.599999994039536,
+              "total": 1404.5
+            }
+          },
+          "nodes": 46
+        },
+        {
+          "mode": "large",
+          "count": 100000,
+          "summary": {
+            "frame": {
+              "count": 212,
+              "p50": 3.9000000059604645,
+              "p95": 4.600000008940697,
+              "max": 5.299999997019768,
+              "total": 799.8000001758337
+            },
+            "project": {
+              "count": 212,
+              "p50": 0.6000000089406967,
+              "p95": 0.800000011920929,
+              "max": 1,
+              "total": 129.30000001192093
+            },
+            "present": {
+              "count": 212,
+              "p50": 0,
+              "p95": 0,
+              "max": 0.10000000894069672,
+              "total": 0.699999988079071
+            },
+            "wheel": {
+              "count": 213,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.19999998807907104,
+              "total": 5.899999886751175
+            },
+            "raf": {
+              "count": 213,
+              "p50": 6.5,
+              "p95": 7.700000002980232,
+              "max": 11.299999997019768,
+              "total": 1400
+            }
+          },
+          "nodes": 47
+        }
+      ]
+    },
+    {
+      "label": "after",
+      "path": "out/collection-scroll-after.json",
+      "sha256": "1cbe25f7f72933a19dcfe229b5974a34e4d330f6061235da96770fbc55b67285",
+      "wasmSha256": "1ef8c8789d0635054f5b791773635f06f2038ab000aff1b33769028fbec4e2ca",
+      "channel": "msedge",
+      "results": [
+        {
+          "mode": "plain",
+          "count": 200,
+          "summary": {
+            "frame": {
+              "count": 222,
+              "p50": 3.2000000029802322,
+              "p95": 3.8999999910593033,
+              "max": 4.5,
+              "total": 700.6999999880791
+            },
+            "project": {
+              "count": 222,
+              "p50": 0.5,
+              "p95": 0.7999999970197678,
+              "max": 1.4000000059604645,
+              "total": 122.40000008046627
+            },
+            "present": {
+              "count": 222,
+              "p50": 0,
+              "p95": 0.09999999403953552,
+              "max": 0.10000000894069672,
+              "total": 1.4000000059604645
+            },
+            "wheel": {
+              "count": 223,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.29999999701976776,
+              "total": 5.700000077486038
+            },
+            "raf": {
+              "count": 223,
+              "p50": 6,
+              "p95": 9.299999997019768,
+              "max": 17.599999994039536,
+              "total": 1404.5
+            }
+          },
+          "nodes": 39
+        },
+        {
+          "mode": "template",
+          "count": 200,
+          "summary": {
+            "frame": {
+              "count": 153,
+              "p50": 5.200000002980232,
+              "p95": 5.9000000059604645,
+              "max": 6.600000008940697,
+              "total": 745.6000000536442
+            },
+            "project": {
+              "count": 153,
+              "p50": 0.7000000029802322,
+              "p95": 0.9000000059604645,
+              "max": 1.1000000089406967,
+              "total": 103.7999999821186
+            },
+            "present": {
+              "count": 153,
+              "p50": 0,
+              "p95": 0.09999999403953552,
+              "max": 0.10000000894069672,
+              "total": 1.1999999731779099
+            },
+            "wheel": {
+              "count": 154,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.20000000298023224,
+              "total": 5.500000029802322
+            },
+            "raf": {
+              "count": 154,
+              "p50": 8.900000005960464,
+              "p95": 12.600000008940697,
+              "max": 14.600000008940697,
+              "total": 1406.5999999940395
+            }
+          },
+          "nodes": 75
+        },
+        {
+          "mode": "grouped",
+          "count": 200,
+          "summary": {
+            "frame": {
+              "count": 228,
+              "p50": 3.0999999940395355,
+              "p95": 3.7000000029802322,
+              "max": 4.300000011920929,
+              "total": 693.3000000566244
+            },
+            "project": {
+              "count": 228,
+              "p50": 0.5,
+              "p95": 0.699999988079071,
+              "max": 0.7000000029802322,
+              "total": 111.09999994933605
+            },
+            "present": {
+              "count": 228,
+              "p50": 0,
+              "p95": 0.09999999403953552,
+              "max": 0.10000000894069672,
+              "total": 1.5000000149011612
+            },
+            "wheel": {
+              "count": 229,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.20000000298023224,
+              "total": 6.299999997019768
+            },
+            "raf": {
+              "count": 229,
+              "p50": 6,
+              "p95": 7.200000002980232,
+              "max": 16.19999998807907,
+              "total": 1405.2999999970198
+            }
+          },
+          "nodes": 40
+        },
+        {
+          "mode": "large",
+          "count": 100000,
+          "summary": {
+            "frame": {
+              "count": 231,
+              "p50": 3.2000000029802322,
+              "p95": 3.7000000029802322,
+              "max": 3.9000000059604645,
+              "total": 709.9000001400709
+            },
+            "project": {
+              "count": 231,
+              "p50": 0.5,
+              "p95": 0.7000000029802322,
+              "max": 0.8999999910593033,
+              "total": 116.7999999821186
+            },
+            "present": {
+              "count": 231,
+              "p50": 0,
+              "p95": 0,
+              "max": 0.10000000894069672,
+              "total": 1.0000000149011612
+            },
+            "wheel": {
+              "count": 232,
+              "p50": 0,
+              "p95": 0.10000000894069672,
+              "max": 0.10000000894069672,
+              "total": 6.000000059604645
+            },
+            "raf": {
+              "count": 232,
+              "p50": 6,
+              "p95": 6.799999997019768,
+              "max": 9.900000005960464,
+              "total": 1402.7000000029802
+            }
+          },
+          "nodes": 39
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "src/scene/collections.rs",
+      "sha256": "5dc8274e4953780b967d66567560e4ae16ad867728e4ade1649fa0bc0752692e"
+    },
+    {
+      "path": "src/scene/collections/adaptive.rs",
+      "sha256": "03ba8c3f11d979a3569b438c4f86fb4e61dfc9ad56e4dff8d729cf1675e824cc"
+    },
+    {
+      "path": "src/scene/scroll.rs",
+      "sha256": "0487a8880279c7fe285a768e70aa632468da436ebb05b29995b11313e069e796"
+    },
+    {
+      "path": "src/typography.rs",
+      "sha256": "5d19e5ebec4ac1d479fd2faffb2a6b787e40e2e3a40aad24557f720cd900765b"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "168f1091561be60c9d1d0d79bccc838115634023f733ec8e23b58da44b44304f"
+    },
+    {
+      "path": "tests/collection_scroll.rs",
+      "sha256": "f5c5f25e3560c0efa8b246147c9cbf563a90fa91b35559938565569d18fccd35"
+    },
+    {
+      "path": "gallery/tests/collection-scroll.spec.ts",
+      "sha256": "4d2bf8fbc8479053a88164362c003c08afb448e0570ed2d06bce45868a3523a7"
+    }
+  ],
+  "limits": [
+    "Timing includes diagnostic profiler overhead and local browser scheduling; it is not a cross-device frame-rate guarantee.",
+    "Coalescing repeated sampled offsets reconstructs a continuous curve; it does not establish full Windows inertia/compositor parity.",
+    "The earlier full collection status remains a separate checkpoint; this record covers the subsequent scrolling fix."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "recordedAt": "2026-11-07T15:06:26.317Z",
+  "controls": [
+    "InfoBar",
+    "PersonPicture",
+    "RatingControl",
+    "SplitButton",
+    "ToggleSplitButton"
+  ],
+  "gallerySamples": 9,
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "sourceFiles": 25,
+  "nativeCases": 128,
+  "dpi": 1.25,
+  "themes": [
+    "Light",
+    "Dark"
+  ],
+  "browserChannel": "installed Chrome via PW_CHANNEL=chrome (bundled Chromium launch failed spawn UNKNOWN)",
+  "browser": [
+    {
+      "path": "out/compact-controls-browser-results.json",
+      "stats": {
+        "startTime": "2026-11-07T15:04:20.941Z",
+        "duration": 67759.961,
+        "expected": 11,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/compact-regression-browser-results.json",
+      "stats": {
+        "startTime": "2026-11-07T15:04:20.941Z",
+        "duration": 76122.734,
+        "expected": 34,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "rustPassed": 120,
+  "images": [
+    {
+      "backend": "Canvas2D",
+      "path": "references/validation/compact-controls-Canvas2D.json",
+      "sha256": "aacac89a80b40d372a08cba13c29b62e15a55673a68d0666e56bf54ebdd56c5d",
+      "rows": 128,
+      "maxMean": 6.030864197530864,
+      "maxRatingItemMean": 9.4675,
+      "maxCloseButtonMean": 4.3881715951686795,
+      "maxGeometryError": 0.8000015258789119
+    },
+    {
+      "backend": "WebGL2",
+      "path": "references/validation/compact-controls-WebGL2.json",
+      "sha256": "18416e6ad4c8894fe57d81ddb98c9c0664ba71b86f961207988c1b5c050d20b4",
+      "rows": 128,
+      "maxMean": 5.886831275720165,
+      "maxRatingItemMean": 3.6525,
+      "maxCloseButtonMean": 4.164931278633903,
+      "maxGeometryError": 0.8000015258789119
+    }
+  ],
+  "acceptedPixelParity": false,
+  "acceptedStorePresentTimeParity": false,
+  "sourceBinaryDifference": {
+    "ratingPlaceholderMinimum": 1,
+    "evidence": "compact-controls-metrics.json: input placeholderValue=0; observed actual DP",
+    "sourceDifference": "Pinned C++ permits 0..1; resolved SDK binary coerces them to 1. SDK probe governs this slice."
+  },
+  "limitations": "docs/compact-controls.md",
+  "evidence": [
+    {
+      "path": "out/split-rust-all.log",
+      "sha256": "245fba65ad85148654e5c9b6a1d32775d184e00c950ba7a3f2a4738c0af4c348"
+    },
+    {
+      "path": "out/split-clippy.log",
+      "sha256": "9788ce1159c216c75c0bbec5f490d5c716323e4ae960b8f4d13b9b9c5f6af99c"
+    },
+    {
+      "path": "out/split-production-build.log",
+      "sha256": "82c8abd5e38b27e45b1b7292917cdac4c740c01b448cd511f27e5066a3425fc8"
+    },
+    {
+      "path": "out/compact-controls-browser-results.json",
+      "sha256": "81fbb0e77f8bb5fa9079933aea60141e25faca62746447d22067753e2a64534b"
+    },
+    {
+      "path": "out/compact-regression-browser-results.json",
+      "sha256": "4756b543900d317a942aa187e11ed645f65a3834b4486a51d8beeac8a7544238"
+    },
+    {
+      "path": "gallery/src/wasm/build-stamp.json",
+      "sha256": "bd97421044497dbe31beeefb04f1aa28cbf9d2446315f9760d9f39f2861f46c8"
+    },
+    {
+      "path": "gallery/src/wasm/winui_bg.wasm",
+      "sha256": "fdf39cf9a48cb3b94d2f92ebb74be015b720f2a491520bc9653b8bca2f1195b8"
+    },
+    {
+      "path": "references/compact-controls-template.json",
+      "sha256": "3d3d48fa950a898afb08366859c5eb317c7fe9832ce7c63aedbf92c8e483d2cc"
+    },
+    {
+      "path": "references/compact-controls-metrics.json",
+      "sha256": "f899409f2210538e09e67873352faee823f6b7714d0eb23d89a6b80e6961e4a3"
+    },
+    {
+      "path": "out/compact-details-native/compact-controls-metrics.json",
+      "sha256": "6d5694499a4bc0b5ca147d9d23da5be75da5d3d63e4b9160c5d32e9729f72058"
+    },
+    {
+      "path": "references/compact-controls-sources.json",
+      "sha256": "2069a7d44f5404ab799ebae8bfead7c9fd2c8d1bc47751aba3591dc3853cc355"
+    },
+    {
+      "path": "references/compact-controls-assets.json",
+      "sha256": "86b1cb6a5da1932bfc3c0ca498911fa042f61632dc2152f2f02c4be09b0d8090"
+    },
+    {
+      "path": "src/scene/compact_controls.rs",
+      "sha256": "ce33bda2063b6ba3c940aae56e157dd91a0d83b796df629080daf5e311fa1aa2"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "cae205d3ae66323301dbd933e5a707daef86c52e8dfb161db33189b8ef21f839"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "7fc8ecf8dfa1a4b3bc22a9eca7cc7bbcbe8263e9b0188145fd86203c9d4688d0"
+    },
+    {
+      "path": "gallery/src/CompactControlsPage.tsx",
+      "sha256": "96f9874d3e54d347c99a590c4cb2aa4e40db3884ff5e92264602303163dc3dac"
+    }
+  ]
+}

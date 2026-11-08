@@ -1,0 +1,70 @@
+{
+  "controls": [
+    "ItemsRepeater",
+    "StackLayout",
+    "UniformGridLayout",
+    "RefreshContainer",
+    "RefreshVisualizer"
+  ],
+  "phase": "Repeater layout/virtualization performance, native Button states and shared Gallery presentation corrected",
+  "fullyMatchesNative": false,
+  "latestValidation": "references/repeater-performance-validation.json",
+  "previousValidation": "references/repeater-gallery-alignment.json",
+  "recordedAtUtc": "2026-11-08T15:03:43.295363+00:00",
+  "checks": {
+    "rust": {
+      "passed": 333,
+      "log": "out/repeater-perf-rust-delivery.log",
+      "scope": "All frozen cargo test --locked targets, no exclusions"
+    },
+    "performance": {
+      "path": "out/repeater-performance-delivery/out/repeater-performance-results.json",
+      "sha256": "23133e8536f2c8d66aeda8ab11c7a7f5e4d0138011f9a275a79d714146e58d63",
+      "startTime": "2026-11-08T14:59:40.547Z",
+      "duration": 12782.679,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "regression": {
+      "path": "out/repeater-performance-delivery/out/repeater-refresh-browser-results.json",
+      "sha256": "117f253516d897051bdc600e007e329d1c635ac54bf59a56b879fdbb3da31370",
+      "startTime": "2026-11-08T14:56:28.962Z",
+      "duration": 51505.838,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "path": "out/repeater-performance-delivery/out/repeater-performance-production-results.json",
+      "sha256": "ed0c97a9c466aa8a85137d99a568e2e5a284c5637778db90c1ba1b6b1f4517e2",
+      "startTime": "2026-11-08T14:59:30.359Z",
+      "duration": 44592.591,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "currentBinary": {
+      "path": "out/repeater-performance-results.json",
+      "sha256": "4e142b9a9c62c28eb797c25b0bf321bc91d83d825a2f00b042fc0a8629f09734",
+      "startTime": "2026-11-08T15:02:44.076Z",
+      "duration": 14619.774,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "typescript": true,
+    "productionBuild": true,
+    "declarations": true
+  },
+  "wasm": {
+    "frozenSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+    "currentSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+    "matchesCurrentBinary": true,
+    "currentRun": "out/repeater-performance-current-runtime.json"
+  }
+}

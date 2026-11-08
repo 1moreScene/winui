@@ -1,0 +1,328 @@
+{
+  "Light": {
+    "RepeatButtonBackground": {
+      "kind": "solid",
+      "color": "#FFFFFFB3",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#F9F9F980",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#F9F9F94D",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#F9F9F94D",
+      "opacity": 1
+    },
+    "RepeatButtonForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushPointerOver": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    }
+  },
+  "Dark": {
+    "RepeatButtonBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF15",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF08",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "RepeatButtonForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushPointerOver": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    }
+  },
+  "HighContrast": {
+    "RepeatButtonBackground": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#808080FF",
+      "opacity": 1
+    },
+    "RepeatButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "RepeatButtonForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RepeatButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#808080FF",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrush": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#808080FF",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    },
+    "RepeatButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    }
+  }
+}

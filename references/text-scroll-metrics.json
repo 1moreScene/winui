@@ -1,0 +1,2038 @@
+{
+  "matrix": [
+    {
+      "kind": "TextBox",
+      "theme": "Light",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Light",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 474,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Light",
+      "state": "Focused",
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 2
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Light",
+      "state": "Disabled",
+      "bounds": {
+        "x": 474,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Light",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Light",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 474,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Light",
+      "state": "Focused",
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 2
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Light",
+      "state": "Disabled",
+      "bounds": {
+        "x": 474,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Dark",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Dark",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 474,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Dark",
+      "state": "Focused",
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 2
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "TextBox",
+      "theme": "Dark",
+      "state": "Disabled",
+      "bounds": {
+        "x": 474,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 64,
+      "minHeight": 32,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "DeleteButton",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Dark",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Dark",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 474,
+        "y": 24,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 51,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 52,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 474,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Dark",
+      "state": "Focused",
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 24,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 2
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 25,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 24,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    },
+    {
+      "kind": "PasswordBox",
+      "theme": "Dark",
+      "state": "Disabled",
+      "bounds": {
+        "x": 474,
+        "y": 174,
+        "width": 250,
+        "height": 59
+      },
+      "body": {
+        "x": 474,
+        "y": 201,
+        "width": 250,
+        "height": 32
+      },
+      "padding": {
+        "Left": 10,
+        "Top": 5,
+        "Right": 6,
+        "Bottom": 6
+      },
+      "minWidth": 0,
+      "minHeight": 0,
+      "fontSize": 14,
+      "borderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "parts": [
+        {
+          "name": "HeaderContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 250,
+            "height": 19
+          }
+        },
+        {
+          "name": "ContentElement",
+          "bounds": {
+            "x": 475,
+            "y": 202,
+            "width": 248,
+            "height": 30
+          }
+        },
+        {
+          "name": "PlaceholderTextContentPresenter",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        },
+        {
+          "name": "RevealButton",
+          "bounds": {
+            "x": 474,
+            "y": 174,
+            "width": 0,
+            "height": 0
+          }
+        }
+      ]
+    }
+  ],
+  "scroll": {
+    "width": 400,
+    "height": 266,
+    "extentWidth": 1000,
+    "extentHeight": 800,
+    "viewportWidth": 400,
+    "viewportHeight": 266,
+    "minZoom": 0.1,
+    "maxZoom": 10,
+    "smallChange": 0.1,
+    "largeChange": 1,
+    "scrollBarWidth": 12
+  },
+  "zoomed": {
+    "zoomFactor": 2,
+    "extentWidth": 2000,
+    "extentHeight": 1600,
+    "viewportWidth": 400,
+    "viewportHeight": 266,
+    "scrollableWidth": 1600,
+    "scrollableHeight": 1334
+  },
+  "barParts": [
+    {
+      "expanded": false,
+      "bounds": {
+        "x": 387,
+        "y": 1,
+        "width": 12,
+        "height": 250
+      },
+      "parts": [
+        {
+          "name": "VerticalTrackRect",
+          "bounds": {
+            "x": 387,
+            "y": 1,
+            "width": 12,
+            "height": 250
+          },
+          "opacity": 0
+        },
+        {
+          "name": "VerticalSmallDecrease",
+          "bounds": {
+            "x": 387,
+            "y": 1,
+            "width": 12,
+            "height": 12
+          },
+          "opacity": 0
+        },
+        {
+          "name": "VerticalThumb",
+          "bounds": {
+            "x": 391,
+            "y": 13,
+            "width": 8,
+            "height": 75
+          },
+          "opacity": 1
+        },
+        {
+          "name": "ThumbVisual",
+          "bounds": {
+            "x": 391,
+            "y": 13,
+            "width": 8,
+            "height": 75
+          },
+          "opacity": 1
+        },
+        {
+          "name": "VerticalSmallIncrease",
+          "bounds": {
+            "x": 387,
+            "y": 239,
+            "width": 12,
+            "height": 12
+          },
+          "opacity": 0
+        }
+      ]
+    },
+    {
+      "expanded": true,
+      "bounds": {
+        "x": 387,
+        "y": 1,
+        "width": 12,
+        "height": 250
+      },
+      "parts": [
+        {
+          "name": "VerticalTrackRect",
+          "bounds": {
+            "x": 387,
+            "y": 1,
+            "width": 12,
+            "height": 250
+          },
+          "opacity": 1
+        },
+        {
+          "name": "VerticalSmallDecrease",
+          "bounds": {
+            "x": 387,
+            "y": 1,
+            "width": 12,
+            "height": 12
+          },
+          "opacity": 1
+        },
+        {
+          "name": "VerticalThumb",
+          "bounds": {
+            "x": 387,
+            "y": 13,
+            "width": 12,
+            "height": 75
+          },
+          "opacity": 1
+        },
+        {
+          "name": "ThumbVisual",
+          "bounds": {
+            "x": 387,
+            "y": 13,
+            "width": 12,
+            "height": 75
+          },
+          "opacity": 1
+        },
+        {
+          "name": "VerticalSmallIncrease",
+          "bounds": {
+            "x": 387,
+            "y": 239,
+            "width": 12,
+            "height": 12
+          },
+          "opacity": 1
+        }
+      ]
+    }
+  ],
+  "caretBlinkMs": 530,
+  "scrollAnimation": [
+    {
+      "time": 4.1571,
+      "offset": 0
+    },
+    {
+      "time": 9.9693,
+      "offset": 12.195158004760742
+    },
+    {
+      "time": 15.9231,
+      "offset": 26.83544158935547
+    },
+    {
+      "time": 21.1397,
+      "offset": 37.48081588745117
+    },
+    {
+      "time": 27.2496,
+      "offset": 50.72624588012695
+    },
+    {
+      "time": 33.1318,
+      "offset": 66.55130004882812
+    },
+    {
+      "time": 39.1016,
+      "offset": 84.45217895507812
+    },
+    {
+      "time": 45.1286,
+      "offset": 103.46674346923828
+    },
+    {
+      "time": 51.0277,
+      "offset": 103.46674346923828
+    },
+    {
+      "time": 57.2359,
+      "offset": 140.8008575439453
+    },
+    {
+      "time": 63.1587,
+      "offset": 140.8008575439453
+    },
+    {
+      "time": 69.5675,
+      "offset": 173.6317901611328
+    },
+    {
+      "time": 75.2297,
+      "offset": 173.6317901611328
+    },
+    {
+      "time": 81.6784,
+      "offset": 201.3274383544922
+    },
+    {
+      "time": 87.4218,
+      "offset": 201.3274383544922
+    },
+    {
+      "time": 93.7563,
+      "offset": 226.48516845703125
+    },
+    {
+      "time": 99.6724,
+      "offset": 236.70980834960938
+    },
+    {
+      "time": 105.7645,
+      "offset": 246.19207763671875
+    },
+    {
+      "time": 111.9219,
+      "offset": 255.0144805908203
+    },
+    {
+      "time": 117.9708,
+      "offset": 263.2455139160156
+    },
+    {
+      "time": 123.765,
+      "offset": 263.2455139160156
+    },
+    {
+      "time": 130.1135,
+      "offset": 278.1630859375
+    },
+    {
+      "time": 135.947,
+      "offset": 278.1630859375
+    },
+    {
+      "time": 142.3894,
+      "offset": 291.3290100097656
+    },
+    {
+      "time": 148.4364,
+      "offset": 297.34844970703125
+    },
+    {
+      "time": 154.44,
+      "offset": 303.0328369140625
+    },
+    {
+      "time": 160.4802,
+      "offset": 308.4079895019531
+    },
+    {
+      "time": 166.6171,
+      "offset": 313.4969177246094
+    },
+    {
+      "time": 172.7059,
+      "offset": 318.3199462890625
+    },
+    {
+      "time": 178.3532,
+      "offset": 318.3199462890625
+    },
+    {
+      "time": 184.6843,
+      "offset": 327.2392883300781
+    },
+    {
+      "time": 190.679,
+      "offset": 332.03460693359375
+    },
+    {
+      "time": 196.5655,
+      "offset": 332.03460693359375
+    },
+    {
+      "time": 202.8152,
+      "offset": 339.62725830078125
+    },
+    {
+      "time": 208.8188,
+      "offset": 343.15020751953125
+    },
+    {
+      "time": 214.8904,
+      "offset": 346.50421142578125
+    },
+    {
+      "time": 220.6843,
+      "offset": 346.50421142578125
+    },
+    {
+      "time": 226.9624,
+      "offset": 352.74066162109375
+    },
+    {
+      "time": 233.1981,
+      "offset": 355.6388854980469
+    },
+    {
+      "time": 239.3314,
+      "offset": 358.3999938964844
+    },
+    {
+      "time": 245.3334,
+      "offset": 361.0304260253906
+    },
+    {
+      "time": 251.6854,
+      "offset": 363.53619384765625
+    },
+    {
+      "time": 258.0849,
+      "offset": 365.9228210449219
+    },
+    {
+      "time": 263.5828,
+      "offset": 368.1954650878906
+    },
+    {
+      "time": 269.4166,
+      "offset": 370.3589782714844
+    },
+    {
+      "time": 275.4584,
+      "offset": 372.4178161621094
+    },
+    {
+      "time": 281.574,
+      "offset": 374.3763122558594
+    },
+    {
+      "time": 287.5503,
+      "offset": 376.5393371582031
+    },
+    {
+      "time": 293.5688,
+      "offset": 378.2932434082031
+    },
+    {
+      "time": 299.7855,
+      "offset": 379.9583435058594
+    },
+    {
+      "time": 305.7927,
+      "offset": 381.5378723144531
+    },
+    {
+      "time": 311.8235,
+      "offset": 383.0348815917969
+    },
+    {
+      "time": 317.8357,
+      "offset": 384.45220947265625
+    },
+    {
+      "time": 323.9883,
+      "offset": 385.7926025390625
+    },
+    {
+      "time": 330.0008,
+      "offset": 387.0586242675781
+    },
+    {
+      "time": 336.1674,
+      "offset": 388.252685546875
+    },
+    {
+      "time": 342.1552,
+      "offset": 389.3770751953125
+    },
+    {
+      "time": 348.4692,
+      "offset": 390.4339904785156
+    },
+    {
+      "time": 354.354,
+      "offset": 391.4255065917969
+    },
+    {
+      "time": 360.2873,
+      "offset": 392.3536071777344
+    },
+    {
+      "time": 366.5188,
+      "offset": 393.22015380859375
+    },
+    {
+      "time": 372.6154,
+      "offset": 394.0269470214844
+    },
+    {
+      "time": 378.6159,
+      "offset": 394.7756652832031
+    },
+    {
+      "time": 384.6592,
+      "offset": 395.5780334472656
+    },
+    {
+      "time": 390.5418,
+      "offset": 396.2064208984375
+    },
+    {
+      "time": 396.6227,
+      "offset": 396.78167724609375
+    },
+    {
+      "time": 402.9213,
+      "offset": 397.30517578125
+    },
+    {
+      "time": 408.8097,
+      "offset": 397.7782897949219
+    },
+    {
+      "time": 414.9589,
+      "offset": 398.20233154296875
+    },
+    {
+      "time": 421.4875,
+      "offset": 398.5784912109375
+    },
+    {
+      "time": 427.1343,
+      "offset": 398.907958984375
+    },
+    {
+      "time": 433.175,
+      "offset": 399.19189453125
+    },
+    {
+      "time": 439.1173,
+      "offset": 399.4314270019531
+    },
+    {
+      "time": 445.0991,
+      "offset": 399.6275329589844
+    },
+    {
+      "time": 451.5686,
+      "offset": 399.7812805175781
+    },
+    {
+      "time": 457.7058,
+      "offset": 399.8936462402344
+    },
+    {
+      "time": 463.5778,
+      "offset": 399.96551513671875
+    },
+    {
+      "time": 469.5071,
+      "offset": 399.99786376953125
+    },
+    {
+      "time": 475.492,
+      "offset": 400
+    },
+    {
+      "time": 481.3564,
+      "offset": 400
+    },
+    {
+      "time": 487.5072,
+      "offset": 400
+    },
+    {
+      "time": 493.4406,
+      "offset": 400
+    },
+    {
+      "time": 499.5196,
+      "offset": 400
+    },
+    {
+      "time": 505.7416,
+      "offset": 400
+    },
+    {
+      "time": 511.8971,
+      "offset": 400
+    },
+    {
+      "time": 517.7818,
+      "offset": 400
+    },
+    {
+      "time": 523.8012,
+      "offset": 400
+    },
+    {
+      "time": 529.943,
+      "offset": 400
+    },
+    {
+      "time": 535.9797,
+      "offset": 400
+    },
+    {
+      "time": 541.9724,
+      "offset": 400
+    },
+    {
+      "time": 547.9317,
+      "offset": 400
+    },
+    {
+      "time": 554.1302,
+      "offset": 400
+    },
+    {
+      "time": 561.5937,
+      "offset": 400
+    },
+    {
+      "time": 568.0678,
+      "offset": 400
+    },
+    {
+      "time": 572.4032,
+      "offset": 400
+    },
+    {
+      "time": 579.4021,
+      "offset": 400
+    },
+    {
+      "time": 587.3117,
+      "offset": 400
+    },
+    {
+      "time": 590.6367,
+      "offset": 400
+    },
+    {
+      "time": 596.5028,
+      "offset": 400
+    },
+    {
+      "time": 602.6751,
+      "offset": 400
+    },
+    {
+      "time": 608.7182,
+      "offset": 400
+    },
+    {
+      "time": 615.9739,
+      "offset": 400
+    },
+    {
+      "time": 620.8229,
+      "offset": 400
+    },
+    {
+      "time": 626.7224,
+      "offset": 400
+    },
+    {
+      "time": 632.9522,
+      "offset": 400
+    },
+    {
+      "time": 638.9708,
+      "offset": 400
+    },
+    {
+      "time": 644.998,
+      "offset": 400
+    },
+    {
+      "time": 651.0826,
+      "offset": 400
+    },
+    {
+      "time": 657.1612,
+      "offset": 400
+    },
+    {
+      "time": 663.1716,
+      "offset": 400
+    },
+    {
+      "time": 669.2756,
+      "offset": 400
+    },
+    {
+      "time": 675.4618,
+      "offset": 400
+    },
+    {
+      "time": 681.3449,
+      "offset": 400
+    },
+    {
+      "time": 687.581,
+      "offset": 400
+    },
+    {
+      "time": 693.5365,
+      "offset": 400
+    },
+    {
+      "time": 699.6382,
+      "offset": 400
+    },
+    {
+      "time": 705.5469,
+      "offset": 400
+    },
+    {
+      "time": 711.6677,
+      "offset": 400
+    },
+    {
+      "time": 717.6926,
+      "offset": 400
+    },
+    {
+      "time": 723.7464,
+      "offset": 400
+    },
+    {
+      "time": 729.6704,
+      "offset": 400
+    },
+    {
+      "time": 735.86,
+      "offset": 400
+    },
+    {
+      "time": 741.9372,
+      "offset": 400
+    },
+    {
+      "time": 748.0085,
+      "offset": 400
+    },
+    {
+      "time": 754.242,
+      "offset": 400
+    },
+    {
+      "time": 760.108,
+      "offset": 400
+    },
+    {
+      "time": 766.0677,
+      "offset": 400
+    },
+    {
+      "time": 772.2302,
+      "offset": 400
+    },
+    {
+      "time": 778.3269,
+      "offset": 400
+    },
+    {
+      "time": 784.3558,
+      "offset": 400
+    },
+    {
+      "time": 790.4092,
+      "offset": 400
+    },
+    {
+      "time": 796.7353,
+      "offset": 400
+    },
+    {
+      "time": 802.7997,
+      "offset": 400
+    },
+    {
+      "time": 808.8232,
+      "offset": 400
+    },
+    {
+      "time": 814.8593,
+      "offset": 400
+    },
+    {
+      "time": 820.6752,
+      "offset": 400
+    },
+    {
+      "time": 826.8696,
+      "offset": 400
+    },
+    {
+      "time": 832.8705,
+      "offset": 400
+    },
+    {
+      "time": 838.8344,
+      "offset": 400
+    },
+    {
+      "time": 844.9871,
+      "offset": 400
+    },
+    {
+      "time": 850.8899,
+      "offset": 400
+    },
+    {
+      "time": 857.0531,
+      "offset": 400
+    },
+    {
+      "time": 863.1307,
+      "offset": 400
+    },
+    {
+      "time": 869.2126,
+      "offset": 400
+    },
+    {
+      "time": 875.368,
+      "offset": 400
+    },
+    {
+      "time": 881.2069,
+      "offset": 400
+    },
+    {
+      "time": 887.2421,
+      "offset": 400
+    },
+    {
+      "time": 893.3774,
+      "offset": 400
+    },
+    {
+      "time": 899.4969,
+      "offset": 400
+    },
+    {
+      "time": 905.5816,
+      "offset": 400
+    },
+    {
+      "time": 911.5628,
+      "offset": 400
+    },
+    {
+      "time": 917.6398,
+      "offset": 400
+    },
+    {
+      "time": 924.1827,
+      "offset": 400
+    },
+    {
+      "time": 929.9968,
+      "offset": 400
+    },
+    {
+      "time": 936.0661,
+      "offset": 400
+    },
+    {
+      "time": 943.986,
+      "offset": 400
+    },
+    {
+      "time": 948.4805,
+      "offset": 400
+    },
+    {
+      "time": 954.24,
+      "offset": 400
+    },
+    {
+      "time": 960.3552,
+      "offset": 400
+    },
+    {
+      "time": 966.511,
+      "offset": 400
+    },
+    {
+      "time": 972.666,
+      "offset": 400
+    },
+    {
+      "time": 981.5908,
+      "offset": 400
+    },
+    {
+      "time": 985.0741,
+      "offset": 400
+    },
+    {
+      "time": 990.7849,
+      "offset": 400
+    },
+    {
+      "time": 997.0106,
+      "offset": 400
+    },
+    {
+      "time": 1002.8962,
+      "offset": 400
+    },
+    {
+      "time": 1008.8386,
+      "offset": 400
+    }
+  ],
+  "reference": "Own fixed-SDK forced-state probe; not a Store release or present-time acceptance"
+}

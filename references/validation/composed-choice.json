@@ -1,0 +1,1584 @@
+{
+  "recordedAt": "2026-11-08T11:12:00.253727+00:00",
+  "nativeRun": {
+    "binaries": {
+      "Microsoft.UI.Xaml.dll": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "NavigationProbe.exe": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704",
+      "NavigationProbe.dll": "b97a134e4d360c1045469544c68ac3f1aa3d5072303e95299476b32c98a8f208"
+    },
+    "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+    "sources": {
+      "ChoiceInteractionProbe.cs": "694571e9edf7a36f50cbfa74e527f2aeede648226fb59203a6910d9e2bd3aefe",
+      "EffectsProbe.cs": "fa203abf5825c9ff91f9dbbcdf5bc703a8df9f9b545216a9eae2f6a0ace43533",
+      "CompactControlsProbe.cs": "d481aade677b8097b8638ba7fcedbdd984a88297734455c877acaad4e214a9e4",
+      "Program.cs": "565847bb04ff5ccf68eb4f9fc00ac9aaba2eb875f1de589838006e80b73c6cbe"
+    },
+    "startedAt": "2026-11-08T08:01:46.1370967Z",
+    "completedAt": "2026-11-08T08:01:56.3866460Z",
+    "mode": "--choice-interaction",
+    "states": 48
+  },
+  "wasmSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+  "editorHostSha256": "46ab8c2d1c8500b33ef954a3f44b7a8c85856fa976e4692fe49e8d3fd4d86877",
+  "scope": "Real Win32 pointer open and selection/close without a selected-index setter. Raw pointer hover observations are retained. States ending Template explicitly force SDK VSM for matched visual comparison and do not establish real-pointer frame parity.",
+  "fullNativePixelMatch": false,
+  "backends": {
+    "Canvas2D": {
+      "rows": [
+        {
+          "name": "Light-ReadOnly-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.09627118644067796,
+              "nativeMean": [
+                240.0786440677966,
+                240.0786440677966,
+                240.0786440677966
+              ],
+              "browserMean": [
+                240.08,
+                240.08,
+                240.08
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.09627118644067796,
+              "nativeMean": [
+                249.10237288135593,
+                249.10237288135593,
+                249.10237288135593
+              ],
+              "browserMean": [
+                249.1579661016949,
+                249.1579661016949,
+                249.1579661016949
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.0888135593220339,
+              "nativeMean": [
+                240.0569491525424,
+                240.0569491525424,
+                240.0569491525424
+              ],
+              "browserMean": [
+                240.10915254237287,
+                240.10915254237287,
+                240.10915254237287
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Light-ReadOnly-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.09355932203389832,
+              "nativeMean": [
+                249.0786440677966,
+                249.0786440677966,
+                249.0786440677966
+              ],
+              "browserMean": [
+                249.09084745762712,
+                249.09084745762712,
+                249.09084745762712
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.09627118644067796,
+              "nativeMean": [
+                249.10237288135593,
+                249.10237288135593,
+                249.10237288135593
+              ],
+              "browserMean": [
+                249.1579661016949,
+                249.1579661016949,
+                249.1579661016949
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.0894915254237288,
+              "nativeMean": [
+                243.0569491525424,
+                243.0569491525424,
+                243.0569491525424
+              ],
+              "browserMean": [
+                243.10983050847457,
+                243.10983050847457,
+                243.10983050847457
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Light-Editable-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.18237288135593221,
+              "nativeMean": [
+                240.07728813559322,
+                240.07728813559322,
+                240.07728813559322
+              ],
+              "browserMean": [
+                240.0657627118644,
+                240.0657627118644,
+                240.0657627118644
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.1376271186440678,
+              "nativeMean": [
+                249.0949152542373,
+                249.0949152542373,
+                249.0949152542373
+              ],
+              "browserMean": [
+                249.1457627118644,
+                249.1457627118644,
+                249.1457627118644
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.09627118644067796,
+              "nativeMean": [
+                240.0549152542373,
+                240.0549152542373,
+                240.0549152542373
+              ],
+              "browserMean": [
+                240.10101694915255,
+                240.10101694915255,
+                240.10101694915255
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Light-Editable-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.19389830508474573,
+              "nativeMean": [
+                249.07728813559322,
+                249.07728813559322,
+                249.07728813559322
+              ],
+              "browserMean": [
+                249.09627118644067,
+                249.09627118644067,
+                249.09627118644067
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.1376271186440678,
+              "nativeMean": [
+                249.0949152542373,
+                249.0949152542373,
+                249.0949152542373
+              ],
+              "browserMean": [
+                249.1457627118644,
+                249.1457627118644,
+                249.1457627118644
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.09423728813559322,
+              "nativeMean": [
+                243.0549152542373,
+                243.0549152542373,
+                243.0549152542373
+              ],
+              "browserMean": [
+                243.10305084745764,
+                243.10305084745764,
+                243.10305084745764
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-ReadOnly-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.10372881355932202,
+              "nativeMean": [
+                57.644067796610166,
+                57.644067796610166,
+                57.644067796610166
+              ],
+              "browserMean": [
+                57.6393220338983,
+                57.6393220338983,
+                57.6393220338983
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.05627118644067797,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.73152542372881,
+                45.73152542372881,
+                45.73152542372881
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.06033898305084746,
+              "nativeMean": [
+                57.688813559322035,
+                57.688813559322035,
+                57.688813559322035
+              ],
+              "browserMean": [
+                57.68542372881356,
+                57.68542372881356,
+                57.68542372881356
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-ReadOnly-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.10033898305084747,
+              "nativeMean": [
+                45.644067796610166,
+                45.644067796610166,
+                45.644067796610166
+              ],
+              "browserMean": [
+                45.64949152542373,
+                45.64949152542373,
+                45.64949152542373
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.05627118644067797,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.73152542372881,
+                45.73152542372881,
+                45.73152542372881
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.05898305084745762,
+              "nativeMean": [
+                53.688813559322035,
+                53.688813559322035,
+                53.688813559322035
+              ],
+              "browserMean": [
+                53.68135593220339,
+                53.68135593220339,
+                53.68135593220339
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-Editable-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.2264406779661017,
+              "nativeMean": [
+                57.64610169491525,
+                57.64610169491525,
+                57.64610169491525
+              ],
+              "browserMean": [
+                57.63389830508475,
+                57.63389830508475,
+                57.63389830508475
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.12135593220338985,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.716610169491524,
+                45.716610169491524,
+                45.716610169491524
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.0671186440677966,
+              "nativeMean": [
+                57.68406779661017,
+                57.68406779661017,
+                57.68406779661017
+              ],
+              "browserMean": [
+                57.6806779661017,
+                57.6806779661017,
+                57.6806779661017
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-Editable-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.2311864406779661,
+              "nativeMean": [
+                45.64610169491525,
+                45.64610169491525,
+                45.64610169491525
+              ],
+              "browserMean": [
+                45.64542372881356,
+                45.64542372881356,
+                45.64542372881356
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.12135593220338985,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.716610169491524,
+                45.716610169491524,
+                45.716610169491524
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.06915254237288136,
+              "nativeMean": [
+                53.68406779661017,
+                53.68406779661017,
+                53.68406779661017
+              ],
+              "browserMean": [
+                53.67593220338983,
+                53.67593220338983,
+                53.67593220338983
+              ]
+            }
+          ]
+        }
+      ],
+      "maxMaterialPatchRgbMae": 0.1376271186440678
+    },
+    "WebGL2": {
+      "rows": [
+        {
+          "name": "Light-ReadOnly-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.08135593220338982,
+              "nativeMean": [
+                240.0786440677966,
+                240.0786440677966,
+                240.0786440677966
+              ],
+              "browserMean": [
+                240.0650847457627,
+                240.0650847457627,
+                240.0650847457627
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.08135593220338982,
+              "nativeMean": [
+                249.10237288135593,
+                249.10237288135593,
+                249.10237288135593
+              ],
+              "browserMean": [
+                249.14033898305084,
+                249.14033898305084,
+                249.14033898305084
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.06915254237288136,
+              "nativeMean": [
+                240.0569491525424,
+                240.0569491525424,
+                240.0569491525424
+              ],
+              "browserMean": [
+                240.08677966101695,
+                240.08677966101695,
+                240.08677966101695
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Light-ReadOnly-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.08,
+              "nativeMean": [
+                249.0786440677966,
+                249.0786440677966,
+                249.0786440677966
+              ],
+              "browserMean": [
+                249.07728813559322,
+                249.07728813559322,
+                249.07728813559322
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.08135593220338982,
+              "nativeMean": [
+                249.10237288135593,
+                249.10237288135593,
+                249.10237288135593
+              ],
+              "browserMean": [
+                249.14033898305084,
+                249.14033898305084,
+                249.14033898305084
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.06983050847457627,
+              "nativeMean": [
+                243.0569491525424,
+                243.0569491525424,
+                243.0569491525424
+              ],
+              "browserMean": [
+                243.08745762711865,
+                243.08745762711865,
+                243.08745762711865
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Light-Editable-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.17559322033898306,
+              "nativeMean": [
+                240.07728813559322,
+                240.07728813559322,
+                240.07728813559322
+              ],
+              "browserMean": [
+                240.04949152542372,
+                240.04949152542372,
+                240.04949152542372
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.12338983050847457,
+              "nativeMean": [
+                249.0949152542373,
+                249.0949152542373,
+                249.0949152542373
+              ],
+              "browserMean": [
+                249.12881355932203,
+                249.12881355932203,
+                249.12881355932203
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.07457627118644068,
+              "nativeMean": [
+                240.0549152542373,
+                240.0549152542373,
+                240.0549152542373
+              ],
+              "browserMean": [
+                240.07796610169493,
+                240.07796610169493,
+                240.07796610169493
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Light-Editable-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.18644067796610173,
+              "nativeMean": [
+                249.07728813559322,
+                249.07728813559322,
+                249.07728813559322
+              ],
+              "browserMean": [
+                249.07796610169493,
+                249.07796610169493,
+                249.07796610169493
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.12338983050847457,
+              "nativeMean": [
+                249.0949152542373,
+                249.0949152542373,
+                249.0949152542373
+              ],
+              "browserMean": [
+                249.12881355932203,
+                249.12881355932203,
+                249.12881355932203
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.07186440677966102,
+              "nativeMean": [
+                243.0549152542373,
+                243.0549152542373,
+                243.0549152542373
+              ],
+              "browserMean": [
+                243.0793220338983,
+                243.0793220338983,
+                243.0793220338983
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-ReadOnly-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.09830508474576272,
+              "nativeMean": [
+                57.644067796610166,
+                57.644067796610166,
+                57.644067796610166
+              ],
+              "browserMean": [
+                57.63389830508475,
+                57.63389830508475,
+                57.63389830508475
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.05288135593220339,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.72135593220339,
+                45.72135593220339,
+                45.72135593220339
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.05559322033898304,
+              "nativeMean": [
+                57.688813559322035,
+                57.688813559322035,
+                57.688813559322035
+              ],
+              "browserMean": [
+                57.67796610169491,
+                57.67796610169491,
+                57.67796610169491
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-ReadOnly-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                90,
+                299,
+                115
+              ],
+              "rgbMae": 0.09491525423728814,
+              "nativeMean": [
+                45.644067796610166,
+                45.644067796610166,
+                45.644067796610166
+              ],
+              "browserMean": [
+                45.644067796610166,
+                45.644067796610166,
+                45.644067796610166
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                136,
+                299,
+                161
+              ],
+              "rgbMae": 0.05288135593220339,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.72135593220339,
+                45.72135593220339,
+                45.72135593220339
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                183,
+                299,
+                208
+              ],
+              "rgbMae": 0.05423728813559322,
+              "nativeMean": [
+                53.688813559322035,
+                53.688813559322035,
+                53.688813559322035
+              ],
+              "browserMean": [
+                53.67389830508475,
+                53.67389830508475,
+                53.67389830508475
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-Editable-Hover",
+          "nativeFixture": "HoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "PointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "Selected",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.22440677966101694,
+              "nativeMean": [
+                57.64610169491525,
+                57.64610169491525,
+                57.64610169491525
+              ],
+              "browserMean": [
+                57.62779661016949,
+                57.62779661016949,
+                57.62779661016949
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.11661016949152542,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.709152542372884,
+                45.709152542372884,
+                45.709152542372884
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.0623728813559322,
+              "nativeMean": [
+                57.68406779661017,
+                57.68406779661017,
+                57.68406779661017
+              ],
+              "browserMean": [
+                57.67322033898305,
+                57.67322033898305,
+                57.67322033898305
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Dark-Editable-SelectedHover",
+          "nativeFixture": "SelectedHoverTemplate",
+          "nativeStates": [
+            {
+              "index": 0,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 1,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 2,
+              "states": [
+                "SelectedPointerOver",
+                "InputModeDefault"
+              ]
+            },
+            {
+              "index": 3,
+              "states": [
+                "Normal",
+                "InputModeDefault"
+              ]
+            }
+          ],
+          "patches": [
+            {
+              "name": "hoveredItem",
+              "region": [
+                240,
+                232,
+                299,
+                257
+              ],
+              "rgbMae": 0.2271186440677966,
+              "nativeMean": [
+                45.64610169491525,
+                45.64610169491525,
+                45.64610169491525
+              ],
+              "browserMean": [
+                45.63864406779661,
+                45.63864406779661,
+                45.63864406779661
+              ]
+            },
+            {
+              "name": "acrylicBody",
+              "region": [
+                240,
+                278,
+                299,
+                303
+              ],
+              "rgbMae": 0.11661016949152542,
+              "nativeMean": [
+                45.72406779661017,
+                45.72406779661017,
+                45.72406779661017
+              ],
+              "browserMean": [
+                45.709152542372884,
+                45.709152542372884,
+                45.709152542372884
+              ]
+            },
+            {
+              "name": "selectedItem",
+              "region": [
+                240,
+                323,
+                299,
+                348
+              ],
+              "rgbMae": 0.06440677966101695,
+              "nativeMean": [
+                53.68406779661017,
+                53.68406779661017,
+                53.68406779661017
+              ],
+              "browserMean": [
+                53.66847457627119,
+                53.66847457627119,
+                53.66847457627119
+              ]
+            }
+          ]
+        }
+      ],
+      "maxMaterialPatchRgbMae": 0.12338983050847457
+    }
+  },
+  "nativePointerClose": {
+    "observations": 28,
+    "allSelectedFirstAndClosed": true
+  },
+  "notes": [
+    "NumberBox clear is deliberately based on current nonempty editable content and focus, independent of input history.",
+    "Unchanged Rust selection no longer overwrites a pending browser selection before select/selectionchange arrives.",
+    "Windowed popup shadows are outside the Acrylic sampling surface.",
+    "Hover visual comparisons use explicitly marked native VSM fixtures; real native pointer observations remain separately recorded.",
+    "Raw glyph coverage, noise phase, desktop backdrop and Store distribution animation parity remain outside this acceptance."
+  ]
+}

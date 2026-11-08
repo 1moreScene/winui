@@ -1,0 +1,285 @@
+Window: "WinUI Gallery", App: WinUIGallery.exe.
+	0 窗口 WinUI Gallery Secondary Actions: Raise
+		1 窗格 Non Client Input Sink Window
+		2 窗格 AppWindow Custom Title Bar
+			3 按钮 Minimize ID: Minimize
+			4 按钮 Maximize ID: Maximize
+			5 按钮 Close ID: Close
+		6 窗格
+			7 窗格
+				8 标题栏 WinUI Gallery ID: titleBar
+					224 按钮 返回 ID: PART_BackButton
+					9 按钮 切换导航 ID: PART_PaneToggleButton
+					10 图像
+					11 文本 WinUI Gallery ID: PART_TitleText
+					12 组 ID: controlsSearchBox
+						13 编辑 (settable, string) Search controls and samples... ID: TextBox
+							14 文本 Search controls and samples...
+				15 文本
+				16 按钮
+				17 按钮
+				18 按钮
+				19 复选框
+				20 编辑 (settable, string)
+				21 编辑 (settable, string)
+				22 复选框
+				23 按钮
+				24 复选框
+				25 编辑 (settable, string)
+				26 复选框 TestContentLoadedCheckbox
+				27 自定义 ID: NavigationViewControl
+					28 窗口 Secondary Actions: Raise ID: PaneRoot
+						29 窗格 ID: MenuItemsScrollViewer
+							30 组 ID: MenuItemsHost
+								31 列表项目 (selectable) Home ID: Home
+								32 列表项目 (selectable) Fundamentals ID: FundamentalsItem
+								33 列表项目 (selectable) Design ID: DesignItem
+								34 列表项目 (selectable) Accessibility ID: AccessibilityItem
+								35 文本 Controls ID: HeaderText
+								36 列表项目 (selectable) All ID: AllControlsItem
+								37 列表项目 (selectable) Basic input ID: BasicInput
+								38 列表项目 (selectable) Collections ID: Collections
+								39 列表项目 (selectable) Date & time ID: DateAndTime
+								40 列表项目 (selectable) Dialogs & flyouts ID: DialogsAndFlyouts
+								41 列表项目 (selectable) Layout ID: Layout
+								42 列表项目 (selectable) Media ID: Media
+								43 列表项目 (selectable) Menus & toolbars ID: MenusAndToolbars
+								44 列表项目 (selectable) Motion ID: Motion
+								45 列表项目 (selectable) Navigation ID: Navigation
+									225 列表项目 (selectable) BreadcrumbBar ID: BreadcrumbBar
+										226 文本 BreadcrumbBar
+									227 列表项目 (selectable) NavigationView ID: NavigationView
+										228 文本 NavigationView
+									229 列表项目 (selectable) Pivot ID: Pivot
+										230 文本 Pivot
+									231 列表项目 (selectable) SelectorBar ID: SelectorBar
+										232 文本 SelectorBar
+									233 列表项目 (selectable) TabView ID: TabView
+										234 文本 TabView
+								46 列表项目 (selectable) Scrolling ID: Scrolling
+								47 列表项目 (selectable) Shell ID: Shell
+								48 列表项目 (selectable) Status & info ID: StatusAndInfo
+								49 列表项目 (selectable) Styles ID: Styles
+								50 列表项目 (selectable) System ID: System
+								51 列表项目 (selectable) Text ID: Text
+								52 列表项目 (selectable) Windowing ID: MultipleWindows
+							53 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						54 窗格 ID: FooterItemsScrollViewer
+							55 组 ID: FooterMenuItemsHost
+								56 列表项目 (selectable) 设置 ID: SettingsItem
+					261 文本 NavigationView ID: PageHeader
+					262 按钮 API details ID: APIDetailsBtn
+					263 按钮 Documentation
+						264 文本 Documentation
+					265 按钮 Source code
+						266 文本 Source
+					267 按钮 Toggle theme ID: ThemeButton
+					268 按钮 Copy link ID: CopyLinkButton
+					269 按钮 Favorite sample ID: FavoriteButton
+					270 窗格 ID: svPanel
+						271 文本 The NavigationView control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu. ID: descriptionText
+						272 文本 NavigationView with default PaneDisplayMode ID: HeaderTextPresenter
+						273 文本 If you have five or more equally important navigation categories that should prominently appear on larger window widths, consider using a left navigation pane.
+						274 自定义 ID: nvSample5
+							275 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							276 按钮 关闭导航 ID: TogglePaneButton
+								277 文本 ID: PaneTitleTextBlock
+							278 窗口 Secondary Actions: Raise ID: PaneRoot
+								279 窗格 ID: MenuItemsScrollViewer
+									280 组 ID: MenuItemsHost
+										281 列表项目 (selectable) Menu Item1
+										282 列表项目 (selectable) Menu Item2
+										283 列表项目 (selectable) Menu Item3
+										284 列表项目 (selectable) Menu Item4
+								285 窗格 ID: FooterItemsScrollViewer
+									286 组 ID: FooterMenuItemsHost
+										287 列表项目 (selectable) 设置 ID: SettingsItem
+							288 文本 Sample Page 2
+							468 窗格
+								469 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit
+								470 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								471 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+									484 按钮 垂直小幅下降 ID: VerticalSmallDecrease
+									485 按钮 垂直大幅下降 ID: VerticalLargeDecrease
+									486 按钮 垂直大幅增长 ID: VerticalLargeIncrease
+									487 按钮 垂直小幅增长 ID: VerticalSmallIncrease
+						292 按钮 Source code
+							293 文本 Source code
+						294 文本 NavigationView with PaneDisplayMode set to Top ID: HeaderTextPresenter
+						295 文本 If you have equally important navigation categories that should be de-emphasized relative to the content of your app, consider using a top navigation pane.
+						296 自定义 ID: nvSample6
+							297 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							298 窗格
+								299 组 ID: TopNavMenuItemsHost
+									300 选项卡项目 (selectable) Menu Item1
+									301 选项卡项目 (selectable) Menu Item2
+									302 选项卡项目 (selectable) Menu Item3
+									303 选项卡项目 (selectable) Menu Item4
+							304 组 ID: TopFooterMenuItemsHost
+								305 选项卡项目 (selectable) 设置 ID: SettingsItem
+							306 文本 This is Header Text
+							307 窗格
+								308 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								309 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						310 按钮 Source code
+							311 文本 Source code
+						312 文本 NavigationView that switches pane orientation based on window width ID: HeaderTextPresenter
+						313 文本 If you have equally important navigation categories and limited app content space, consider using a top navigation pane on larger window widths and a minimal left navigation pane on smaller window widths.
+						314 自定义 ID: nvSample2
+							315 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							316 窗格
+								317 组 ID: TopNavMenuItemsHost
+									318 选项卡项目 (selectable) Menu Item1
+									319 选项卡项目 (selectable) Menu Item2
+									320 选项卡项目 (selectable) Menu Item3
+									321 选项卡项目 (selectable) Menu Item4
+							322 组 ID: TopFooterMenuItemsHost
+								323 选项卡项目 (selectable) 设置 ID: SettingsItem
+							325 窗格
+								326 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								327 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						329 按钮 Source code
+							330 文本 Source code
+						331 文本 Tying selection and focus - Tabs ID: HeaderTextPresenter
+						332 文本 For the tabs pattern, ensure that you unify selection and focus by setting the SelectionFollowsFocus property to Enabled. If using a Frame to swap out content, then navigating between items shouldn't be recorded into the Frame's navigation stack. Please see the C# in the sample below to understand how to do this.
+						333 自定义 ID: nvSample7
+							334 窗格
+								335 组 ID: TopNavMenuItemsHost
+									336 选项卡项目 (selectable) Item1
+									337 选项卡项目 (selectable) Item2
+									338 选项卡项目 (selectable) Item3
+									339 选项卡项目 (selectable) Item4
+							340 组 ID: TopFooterMenuItemsHost
+								341 选项卡项目 (selectable) 设置 ID: SettingsItem
+							342 窗格
+								343 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								344 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						345 按钮 Source code
+							346 文本 Source code
+						347 文本 Data binding ID: HeaderTextPresenter
+						348 文本 When data binding, use the MenuItemsSource property to bind to an observable collection of items, and do not set the MenuItems property. In addition, set the MenuItemTemplate property and use a NavigationViewItem as the data template. If you wish to bind to the header content as well, use data template selectors via the MenuItemTemplateSelector property.
+						349 自定义 ID: nvSample4
+							350 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							351 按钮 关闭导航 ID: TogglePaneButton
+								352 文本 ID: PaneTitleTextBlock
+							353 窗口 Secondary Actions: Raise ID: PaneRoot
+								354 窗格 ID: MenuItemsScrollViewer
+									355 组 ID: MenuItemsHost
+										356 列表项目 (selectable) Category 1
+										357 列表项目 (selectable) Category 2
+										358 文本 More categories ID: HeaderText
+										359 列表项目 (selectable) Category 3
+										360 列表项目 (selectable) Category 4
+								361 窗格 ID: FooterItemsScrollViewer
+									362 组 ID: FooterMenuItemsHost
+										363 列表项目 (selectable) 设置 ID: SettingsItem
+							364 文本 Sample Page 1
+							365 窗格
+								366 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								367 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						368 按钮 Source code
+							369 文本 Source code
+						370 文本 NavigationView with Footer Menu Items ID: HeaderTextPresenter
+						371 文本 You can add clickable menu items to the footer of your NavigationView that participate in the same selection model as items in the main menu. In Top PaneDisplayMode, these items will appear aligned to the right of the NavigationView. In Left PaneDisplayMode, these items will appear aligned to the bottom of the NavigationView.
+						372 自定义 ID: nvSample9
+							373 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							374 按钮 关闭导航 ID: TogglePaneButton
+								375 文本 ID: PaneTitleTextBlock
+							376 窗口 Secondary Actions: Raise ID: PaneRoot
+								377 窗格 ID: MenuItemsScrollViewer
+									378 组 ID: MenuItemsHost
+										379 列表项目 (selectable) Browse
+										380 列表项目 (selectable) Track an Order
+										381 列表项目 (selectable) Order History
+								382 窗格 ID: FooterItemsScrollViewer
+									383 组 ID: FooterMenuItemsHost
+										384 列表项目 (selectable) Account
+										385 列表项目 (selectable) Your Cart
+										386 列表项目 (selectable) Help
+							387 文本 This is Header Text
+							388 窗格
+								389 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								390 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						391 组 Pane position:
+							392 文本 Pane position:
+							393 单选按钮 (selectable) Left mode ID: nvSample9Left
+							394 单选按钮 (selectable) Top mode ID: nvSample9Top
+						395 按钮 Source code
+							396 文本 Source code
+						397 文本 Hierarchical NavigationView ID: HeaderTextPresenter
+						398 文本
+						399 文本 NavigationView supports hierarchy in Left, LeftCompact, and Top display modes. In the example below, the "Account" tab navigates to its own page while "Document options" only opens up its subtree of items. This is done by setting the SelectsOnInvoked property to false on the Document options NavigationView Item. In both Top and Left modes, clicking the arrows on NavigationViewItems will expand or collapse the subtree. Clicking or tapping elsewhere on the NavigationViewItem will collapse or expand the subtree. Switch between the three pane display modes on the right.
+						400 自定义 ID: nvSample8
+							401 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							402 按钮 关闭导航 ID: TogglePaneButton
+								403 文本 ID: PaneTitleTextBlock
+							404 窗口 Secondary Actions: Raise ID: PaneRoot
+								405 窗格 ID: MenuItemsScrollViewer
+									406 组 ID: MenuItemsHost
+										407 列表项目 (selectable) Home
+										408 列表项目 (selectable) Account
+										409 列表项目 (selectable) Document options
+								410 窗格 ID: FooterItemsScrollViewer
+									411 组 ID: FooterMenuItemsHost
+										412 列表项目 (selectable) 设置 ID: SettingsItem
+							413 文本 Sample Page 1
+							414 窗格
+								415 文本 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								416 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+						417 文本 PanePosition:
+						418 单选按钮 (selectable) Left mode ID: nvSample8Left
+						419 单选按钮 (selectable) Top mode ID: nvSample8Top
+						420 单选按钮 (selectable) LeftCompact mode ID: nvSample8LeftCompact
+						421 按钮 Source code
+							422 文本 Source code
+						423 文本 API in action ID: HeaderTextPresenter
+						424 自定义 ID: nvSample
+							425 按钮 (disabled) 返回 ID: NavigationViewBackButton
+							426 按钮 关闭导航 ID: TogglePaneButton
+								427 文本 Pane Title ID: PaneTitleTextBlock
+							428 窗口 Secondary Actions: Raise ID: PaneRoot
+								429 组 Search
+									430 编辑 (settable, string) Search ID: TextBox
+								431 窗格 ID: MenuItemsScrollViewer
+									432 组 ID: MenuItemsHost
+										433 列表项目 (selectable) Menu Item1 ID: SamplePage1Item
+										434 文本 Actions ID: HeaderText
+										435 列表项目 (selectable) Menu Item2 ID: SamplePage2Item
+										436 列表项目 (selectable) Menu Item3 ID: SamplePage3Item
+								437 窗格 ID: FooterItemsScrollViewer
+									438 组 ID: FooterMenuItemsHost
+										439 列表项目 (selectable) 设置 ID: SettingsItem
+							440 文本 Header
+						441 复选框 Settings item visible ID: settingsCheck
+						442 复选框 Back button visible ID: visibleCheck
+						443 复选框 Back button enabled ID: enableCheck
+						444 复选框 AutoSuggestBox visible ID: autoSuggestCheck
+						445 文本 Header:
+						446 编辑 (settable, string) Header property Value: Header ID: headerText
+						447 复选框 Always show header ID: headerCheck
+						448 文本 PaneTitle:
+						449 编辑 (settable, string) PaneTitle property Value: Pane Title ID: paneText
+						450 复选框 PaneCustomContent visible ID: panemc_Check
+						451 复选框 PaneFooter visible ID: paneFooterCheck
+						452 文本 PanePosition:
+						453 单选按钮 (selectable) Left ID: nvSampleLeft
+						454 单选按钮 (selectable) Top ID: nvSampleTop
+						455 复选框 Keyboard SelectionFollowsFocus ID: sffCheck
+						456 复选框 Selection of Menu Item2 suppressed ID: suppressselectionCheck_Checked
+						457 按钮 Source code
+							458 文本 Source code
+						459 滚动条 (settable, float) 垂直 Value: 0 ID: VerticalScrollBar
+							480 按钮 垂直小幅下降 ID: VerticalSmallDecrease
+							481 按钮 垂直大幅下降 ID: VerticalLargeDecrease
+							482 按钮 垂直大幅增长 ID: VerticalLargeIncrease
+							483 按钮 垂直小幅增长 ID: VerticalSmallIncrease
+		206 标题栏 (settable, string) Value: WinUI Gallery
+			207 菜单栏 系统 ID: MenuBar
+				489 菜单项 系统
+			209 按钮 最小化
+			210 按钮 最大化
+			211 按钮 关闭
+
+Document text: ```
+Pane Title
+```

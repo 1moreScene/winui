@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-11-08T14:09:56.331511+00:00",
+  "controls": [
+    "MenuBar",
+    "MenuBarItem",
+    "CommandBarFlyout",
+    "RelativePanel",
+    "WrapPanel"
+  ],
+  "ownership": "Rust owns material recipes, control state, input, layout, transitions, scroll offsets and frame scheduling. TS adapts host events and typed handles; React supplies bindings and Gallery business callbacks.",
+  "baselines": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+    "native": "references/menu-layout-probe-run.json",
+    "cascading": "references/cascading-menu-sources.json"
+  },
+  "source": {
+    "snapshot": "out/menu-layout-refinement-source-v4",
+    "manifestSha256": "045d52a6cab642ca7371d6e6070b4612d4011a39f1df2222b4d06d43f99bc30f",
+    "excluded": [],
+    "batchMatchesCurrent": {
+      "src/scene/command_menus.rs": true,
+      "src/scene/menu_entries.rs": true,
+      "src/scene/layout_panels.rs": true,
+      "tests/menu_layout.rs": true,
+      "tests/animated_icon.rs": true
+    },
+    "currentDrift": [
+      "src/scene/collections.rs",
+      "src/scene/mod.rs",
+      "src/scene/view_controls.rs"
+    ]
+  },
+  "runtime": {
+    "folder": "out/menu-layout-refinement-runtime-v4",
+    "sha256": "4dffe71b7112988085bda324dd04e7901535136675f8d8b57076811f331b451a",
+    "bytes": 6995326,
+    "gzipBytes": 1594739
+  },
+  "gallerySource": {
+    "snapshot": "out/menu-layout-refinement-app-verified",
+    "manifestSha256": "f685345dc694d7b1dd8c0eb200ae977d9d98aeebe80e461cb5c6614bd74eaa24",
+    "matchesCurrentPage": true,
+    "referenceCapture": "A temporary in-progress repeater reference JSON was replaced in the final snapshot by its completed repository example data; the menu/layout page and SDK binding source remain frozen."
+  },
+  "validation": {
+    "fullRust": {
+      "passed": 317,
+      "log": "out/menu-refinement-final-v4-full-rust.log"
+    },
+    "menuLayoutTests": 23,
+    "animatedIconTests": 8,
+    "browser": {
+      "passed": 32,
+      "log": "out/menu-refinement-v4-browser.log"
+    },
+    "production": {
+      "passed": 24,
+      "log": "out/menu-refinement-v4-production-browser.log"
+    },
+    "typecheck": {
+      "snapshot": "out/menu-layout-refinement-sdk-check",
+      "log": "out/menu-refinement-frozen-types.log"
+    },
+    "declarations": "out/menu-refinement-frozen-declarations.log",
+    "productionBuild": "out/menu-refinement-v4-production-build.log"
+  },
+  "animatedIcon": {
+    "historicalRustFailure": "Not reproduced at the beginning of this refinement; original test plus removal at six transition times pass in the final frozen full run.",
+    "browserFailure": "Stale HTML details locator replaced with actual Rust Expander header interaction.",
+    "scheduler": "Scope picker/command/view/repeater/refresh activity to owning control kinds; preserve generated More-button motion."
+  },
+  "remaining": [
+    "Store Gallery Composition material/shadow/frame-by-frame acceptance is not established by the independent static same-SDK probe.",
+    "WrapPanel explicit-size Last overflow and vertical Last edge geometry remain recorded native differences.",
+    "Full diagonal submenu grace-area boundaries and touch inertia/scrollbar template differential coverage remain incomplete.",
+    "Extreme RelativePanel constraint combinations and full native UIA Provider behavior are not exhaustively compared."
+  ]
+}

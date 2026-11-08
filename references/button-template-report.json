@@ -1,0 +1,21 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sdk": "Microsoft.WindowsAppSDK.WinUI 2.3.10-experimental",
+  "source": "controls/dev/CommonStyles/Button_themeresources.xaml",
+  "requiredExtraction": [
+    "Theme dictionaries and all Button brush aliases",
+    "DefaultButtonStyle/AccentButtonStyle/SubtleButtonStyle CommonStates Background/Foreground/BorderBrush keys",
+    "ButtonPadding and ContentPresenter part",
+    "83ms BrushTransition",
+    "Native resolved gradient mapping/relative transform/stops and font/border/corner defaults"
+  ],
+  "runtime": "Rust executes the selected template/state contract; not a general XAML template engine",
+  "unsupportedReported": [
+    "AnimatedIcon child visual paths/state playback (no AnimatedIcon node in this batch)",
+    "Arbitrary ContentTemplate/TemplateBinding expressions outside the supported node/property schema",
+    "General ContentTransitions and Flyout template execution",
+    "Windows automation peers/ICommand system object integration"
+  ],
+  "focusException": "No CSS or Canvas black focus frame; real focus and keyboard semantics retained",
+  "failurePolicy": "Missing required nodes/resources, unknown content nodes/styles/attributes, unsupported brush kinds/gradient mapping/spread/stops, invalid node properties fail explicitly"
+}

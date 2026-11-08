@@ -1,0 +1,59 @@
+{
+  "recordedAt": "2026-11-08T14:55:23.820203+00:00",
+  "controls": [
+    "CalendarView",
+    "CalendarDatePicker",
+    "DatePicker",
+    "TimePicker",
+    "ColorPicker"
+  ],
+  "implementedControlKinds": [
+    "CalendarView",
+    "CalendarDatePicker",
+    "DatePicker",
+    "TimePicker",
+    "ColorPicker"
+  ],
+  "phase": "Rust controls, TS/React APIs and Gallery implemented; measured parity coverage and remaining limitations recorded separately",
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sourceFiles": 98,
+  "sdkStyles": 23,
+  "nativeStates": 66,
+  "rustTests": {
+    "passed": 326,
+    "failed": false,
+    "log": "out/picker-shared-final-rust.log"
+  },
+  "checks": {
+    "Chromium": {
+      "startTime": "2026-11-08T14:50:56.919Z",
+      "duration": 90772.722,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "WebKit": {
+      "startTime": "2026-11-08T14:52:28.907Z",
+      "duration": 154442.91,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "validation": "references/validation/picker-controls.json",
+  "remaining": [
+    "Windows non-Gregorian calendars are rejected explicitly.",
+    "Arbitrary WinRT DateTimeFormatter patterns, timezone/100ns DateTime semantics and OS named-color Ctrl+arrow steps are not implemented.",
+    "CalendarView continuous virtualized month scrolling, Shift-range semantics and all automation patterns are not accepted as native equivalents.",
+    "Calendar zoom uses fixed SDK tracks; independent native frame-by-frame motion and packaged Store Gallery/DWM acceptance remain outstanding.",
+    "Browser font rasterization, ClearType, fallback fonts, material edge coverage and whole-control image equality remain unaccepted."
+  ],
+  "galleryDisplay": {
+    "commit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "sourceFiles": 19,
+    "examples": 8,
+    "validation": "references/validation/picker-gallery.json"
+  }
+}

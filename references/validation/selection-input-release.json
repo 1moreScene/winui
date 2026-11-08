@@ -1,0 +1,42 @@
+{
+  "capturedAtUtc": "2026-11-07T05:53:01.620729+00:00",
+  "package": {
+    "name": "Microsoft.WinUI3ControlsGallery",
+    "fullName": "Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe",
+    "version": "3.0.4.0",
+    "publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "signatureKind": "Store",
+    "isDevelopmentMode": false,
+    "location": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe"
+  },
+  "dllIdentityAudit": "references/validation/release-audit.json",
+  "observedWindowApp": "Microsoft.WinUI3ControlsGallery_8wekyb3d8bbwe!App",
+  "capture": "computer-use sky / Windows.Graphics.Capture; pre-existing Store-signed release window",
+  "pages": [
+    "RadioButton",
+    "ToggleSwitch"
+  ],
+  "observations": [
+    "RadioButton is a circular 20-DIP ring, with vertical item spacing and separate column-major examples.",
+    "Store radio string example initially shows Green with Gold border; output follows the group natural width.",
+    "ToggleSwitch is a 40x20 capsule with circular knob; second sample also contains an unimplemented ProgressRing."
+  ],
+  "screenshots": [
+    {
+      "path": "out/release-audit/store-radio-default.png",
+      "sha256": "80bdeba4c8aada56168a35aa1952812d4c006475fd2928a4265a4fc4c11033ce"
+    },
+    {
+      "path": "out/release-audit/store-toggle-switch.png",
+      "sha256": "c6931aed836fe78c703eaab26ded03840b4ddf0cd78dd66d6ef05629639fa4d2"
+    }
+  ],
+  "corrections": [
+    "Canvas2D now uses actual circular arcs rather than quadratic corner approximations.",
+    "Fill geometry respects the stroke centerline to avoid inflated contours and an oversized white center.",
+    "Group item minimum width, row/column/header spacing and example output extent match the native SDK metrics."
+  ],
+  "acceptedPixelParity": false,
+  "acceptedAnimationParity": false,
+  "boundary": "Live release inspection is separate from own forced-VSM RenderTargetBitmap matrices. Screenshots document observed shape and sample structure, not a present-time or pixel-equivalence acceptance."
+}

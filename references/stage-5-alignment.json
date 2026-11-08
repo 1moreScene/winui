@@ -1,0 +1,68 @@
+{
+  "generatedAtUtc": "2026-11-07T03:26:20.942Z",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "sourceCount": 50,
+  "nativeDpr": 1.25,
+  "acrylic": {
+    "examples": 3,
+    "comparisons": 12,
+    "meanChannelErrorRange": [
+      0.13913906546225047,
+      1.3351791135397693
+    ],
+    "region": "Full 400/652 x 252 DIP preview excluding 5 physical pixels at OS window edges"
+  },
+  "easing": {
+    "examples": 4,
+    "families": 11,
+    "directions": 3,
+    "nativeScalarSamples": 8481,
+    "absoluteTolerance": 0.0001
+  },
+  "propertyTransitions": {
+    "examples": 4,
+    "source": "SharedTransitionAnimations.cpp",
+    "duration": 300,
+    "cubic": [
+      0.8,
+      0,
+      0.2,
+      1
+    ],
+    "acceptance": "source parameters and browser interactions; not native present-time equivalence"
+  },
+  "gradients": {
+    "nativeCases": 6,
+    "backends": 2,
+    "comparisons": 12,
+    "meanChannelErrorRange": [
+      0.01017361111111111,
+      0.06479166666666666
+    ]
+  },
+  "tint": {
+    "durationMs": 500,
+    "observedAutoColorSpace": "Hsl",
+    "profileSamples": 129,
+    "fixedProgress": {
+      "frames": 34,
+      "p95MeanChannelError": 0.4198186241981862,
+      "maxMeanChannelError": 0.4606466121064661
+    },
+    "wallClock": {
+      "frames": 75,
+      "p95MeanChannelError": 18.49944702499447,
+      "maxMeanChannelError": 20.4725013429393,
+      "boundary": "UI and compositor captures have different present latency; no clock fitting applied."
+    }
+  },
+  "remaining": [
+    "Native exact pixel and compositor present-time equivalence remain unaccepted. Wall-clock color replay differs from fixed-progress effect sampling.",
+    "Blur downsampling/kernel, 8-bit color-curve quantization, font/edge rasterization and untested native layer matrices remain quality/coverage limits.",
+    "Property-transition page uses public animate calls for the first four scalar/2D vector samples; implicit property attachment, Z, background/local-theme BrushTransition and the last two examples remain pending.",
+    "Theme/entrance/reposition/content/page/connected/spring/expression animation families remain pending, with phase-6/7 control and navigation dependencies; ElasticEase is not a spring solver.",
+    "Mica/Desktop Acrylic require a Windows host; browser backdrop excludes desktop, other windows and external DOM.",
+    "Native gradient comparisons cover opaque two-stop radial samples; 2..32-stop API support is not exhaustive native acceptance.",
+    "Canvas reference caches radial/repeated brush pixels (8 entries, max 1MP each); GPU evaluates the gradient analytically. Whole-scene rendering is not rasterized through Canvas."
+  ]
+}

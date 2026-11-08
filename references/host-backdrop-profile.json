@@ -1,0 +1,43 @@
+{
+  "nativeDllSha256": "227c6def332586c0514e537c80dacc10db1fb3398b5e2d1b0a4c770e509f22cc",
+  "effectGraphEvidence": "overlay-desktop-graph-evidence.json",
+  "nativeGraphProcedure": "0x180036c40",
+  "nativeGraph": [
+    "HostBackdrop",
+    "Blend COLOR (22) with opacity-controlled luminosity color",
+    "Blend LUMINOSITY (23) with opacity-controlled tint color"
+  ],
+  "additionalTextureNoise": false,
+  "samplingBoundary": "Popup panel rectangle, with edge extension before blur; external siblings beyond the popup are excluded",
+  "hostBlurSigmaPixels": 30,
+  "observedSigmaPixels": 30.360270854940758,
+  "dpr": 1.25,
+  "profile": {
+    "sampleY": 300,
+    "sampleX": [
+      420,
+      820
+    ],
+    "periodPixels": 100,
+    "amplitude": 22.601929015609006,
+    "mean": 145.535
+  },
+  "palettes": {
+    "Light": {
+      "kind": "acrylic",
+      "tint": "#FCFCFC",
+      "tintOpacity": 0,
+      "luminosityOpacity": 0.85,
+      "fallback": "#F9F9F9"
+    },
+    "Dark": {
+      "kind": "acrylic",
+      "tint": "#2C2C2C",
+      "tintOpacity": 0.15,
+      "luminosityOpacity": 0.96,
+      "fallback": "#2C2C2C"
+    }
+  },
+  "boundary": "Raw HostBackdrop probes establish popup-bounded sampling. Both browser backends use the same 30 physical-pixel Gaussian adaptation. This value is inferred from pixels, not a recovered native blur constant; the DWM kernel and external desktop sampling are not reproduced.",
+  "canvasGaussianExecutor": "Bounded popup tile, quarter-DIP source, separable 49-tap Gaussian with RGBA8 intermediate and bilinear sampling, matching acrylic.glsl"
+}

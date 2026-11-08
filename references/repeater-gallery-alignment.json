@@ -1,0 +1,189 @@
+{
+  "recordedAtUtc": "2026-11-08T14:28:54.142040+00:00",
+  "controls": [
+    "ItemsRepeater",
+    "StackLayout",
+    "UniformGridLayout",
+    "RefreshContainer",
+    "RefreshVisualizer"
+  ],
+  "phase": "Official Gallery runtime cases aligned, with Rust layout and input dependencies",
+  "fullyMatchesNative": false,
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "galleryFiles": 17,
+  "sourceFiles": 52,
+  "officialSamples": {
+    "ItemsRepeater": [
+      "ItemsRepeaterBasicNonInteractiveItems",
+      "ItemsRepeaterVirtualizingScrollableListItems",
+      "FlowLayoutVirtualization",
+      "ItemsrepeaterMixedTypeCollection",
+      "LayingOutNestedItemsrepeaters",
+      "ItemsRepeaterAnimatedScrollingContentDisplay",
+      "ItemsRepeaterVirtualizedContentHeavyLayout"
+    ],
+    "PullToRefresh": [
+      "BasicPulltorefresh",
+      "CustomIconPulltorefresh"
+    ]
+  },
+  "nativeStates": 48,
+  "defaultBackend": "Canvas2D",
+  "optionalBackend": "WebGL2",
+  "checks": {
+    "rust": {
+      "passed": 319,
+      "log": "out/repeater-gallery-rust.log",
+      "scope": "All targets of frozen cargo test --locked; no exclusions."
+    },
+    "browser": {
+      "path": "out/repeater-gallery-final/out/repeater-refresh-browser-results.json",
+      "sha256": "c2a6536cbe36921035513416ccbef4612afbcb5f3beb9ad2d40704f7c456dc41",
+      "startTime": "2026-11-08T14:25:15.133Z",
+      "duration": 78073.582,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "path": "out/repeater-gallery-final/out/repeater-refresh-production-results.json",
+      "sha256": "0836b5df3b16a258c120c7e3041ac419da3317cb95dbc7179cdc0552c49af2ef",
+      "startTime": "2026-11-08T14:26:35.102Z",
+      "duration": 34472.316000000006,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "currentBinaryBrowser": {
+      "path": "out/repeater-refresh-browser-results.json",
+      "sha256": "0851cfa5edc4663f458161c5ef627d7bce5870611795a0ba63f95e86ce9bb96e",
+      "startTime": "2026-11-08T14:26:54.834Z",
+      "duration": 92320.836,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "typescript": true,
+    "productionBuild": true,
+    "declarations": true,
+    "buildLogs": [
+      "out/repeater-gallery-final/out/repeater-gallery-typecheck.log",
+      "out/repeater-gallery-final/out/repeater-gallery-vite.log",
+      "out/repeater-gallery-final/out/repeater-gallery-declarations.log"
+    ]
+  },
+  "geometry": {
+    "Canvas2D": {
+      "path": "out/repeater-gallery-final/out/repeater-refresh-geometry/Canvas2D.json",
+      "states": 24,
+      "maxDip": 0.8000015258789048
+    },
+    "WebGL2": {
+      "path": "out/repeater-gallery-final/out/repeater-refresh-geometry/WebGL2.json",
+      "states": 24,
+      "maxDip": 0.8000015258789048
+    },
+    "gallery-dependencies": {
+      "path": "out/repeater-gallery-final/out/repeater-refresh-geometry/gallery-dependencies.json",
+      "states": 10,
+      "maxDip": 0.8000061035156136
+    }
+  },
+  "wasm": {
+    "frozenSha256": "0e903e99506cf3002087d2b0d2e601112aa8bf0390a74ecababee18627d3e26a",
+    "currentSha256": "0d70ad2ab7b73ce10b1ce7f669f0c3a91aae57ebcff60261c07d2038e6587539",
+    "matchesCurrentBinary": false,
+    "frozenBinaryScope": "319 Rust tests; Chromium Canvas2D/WebGL2; production Chromium/WebKit Canvas2D; native geometry.",
+    "currentBinaryScope": "Independent Chromium rerun with current workspace binary. Other sessions continue editing shared SDK files.",
+    "currentRun": "out/repeater-gallery-current-runtime.json"
+  },
+  "evidence": {
+    "documentation": "docs/repeater-gallery-alignment.md",
+    "native": "references/repeater-refresh-native.json",
+    "nativeRun": "references/repeater-refresh-native-run.json",
+    "sourceSnapshot": "out/repeater-gallery-final/snapshot.json",
+    "screenshots": "out/repeater-gallery-final/out/repeater-refresh-presentation",
+    "refreshNaturalSize": "references/repeater-gallery-refresh-measures.json",
+    "nativeSha256": "3c49e44f5058313b5eb364e0ea676c0c6ffe1c7bf7b265369c19d3a740b57ff0",
+    "refreshNaturalSizeSha256": "9eb99226638a8752969f4bf4f606d7820172be7dca3999a5eb6c0fe489846aa9"
+  },
+  "files": [
+    {
+      "path": "src/scene/repeater.rs",
+      "sha256": "b68cbc1618330513f7817b51057218f6f3a8152cec3252e17099a3895e062a33"
+    },
+    {
+      "path": "src/scene/refresh.rs",
+      "sha256": "e033d9bd7397abacd051bfa2122ef5655489ec79c15944b00aa7ed3237d264ac"
+    },
+    {
+      "path": "src/scene/collections.rs",
+      "sha256": "9d145e7cd41d72993e46e67e2615ce5d018a2ac63d122fcd3f08646fb0519661"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "1102dccfba6d42dd096a4926935f9f92c91e28029ebf1cf5b72460abd157caae"
+    },
+    {
+      "path": "gallery/src/RepeaterRefreshPage.tsx",
+      "sha256": "3be001f0c2c596e6203bacb425e653f00e197c81e97a8f0931050f4e27c82837"
+    },
+    {
+      "path": "gallery/src/repeater-gallery-data.ts",
+      "sha256": "9d8e7ca79e5e5fc53a7e5891c7c35ece6805fc74e3b50392a74555a0de6e8356"
+    },
+    {
+      "path": "gallery/src/repeater-gallery.css",
+      "sha256": "05d4f70161c5a9eb557194126cc419baf06a97bb1dcb239189818c77bd157ae0"
+    },
+    {
+      "path": "gallery/src/repeater-refresh-types.ts",
+      "sha256": "c93e8ae932c8da79b98b01b336cc293a74792ad481e2aaa4ef4b5f582cf1aaac"
+    },
+    {
+      "path": "gallery/src/GalleryControls.tsx",
+      "sha256": "37efc5a9874dc4e539350d401c0c681b19508f16f6a5286e78153f1351326d1e"
+    },
+    {
+      "path": "gallery/src/official-repeater-refresh.json",
+      "sha256": "b949cf523cdd2df6d3a39499894ff240a9ab92cc31e3140d29e9364ff9595346"
+    },
+    {
+      "path": "gallery/tests/repeater-gallery.spec.ts",
+      "sha256": "343bce82c7289bbef6d6542c897257a6293c5ae4f35d4dbd934040ca3ba4f362"
+    },
+    {
+      "path": "gallery/tests/repeater-refresh.spec.ts",
+      "sha256": "41da22af284be75345ab477e84f78d6b91b480869a7d86573bb11b26c98d57f2"
+    },
+    {
+      "path": "gallery/tests/repeater-refresh-production.spec.ts",
+      "sha256": "dc2d52fd6890b172b046f27137ad14e2900d7c9d01406700cccda5120d9d3e49"
+    },
+    {
+      "path": "gallery/tests/repeater-refresh-types.tsx",
+      "sha256": "d6422c6e1e216cb23db69a6e571c26c5e74b1d4957ae319f8b598744d04b9111"
+    },
+    {
+      "path": "references/repeater-gallery-resources.json",
+      "sha256": "aa6c767a3073ad685529c49d9b44a3d4d8bcb06719355d83f8f21d19a51417c1"
+    },
+    {
+      "path": "tests/repeater_refresh.rs",
+      "sha256": "07da11a69d8821f9604049322d38d27355cee18575af759bfab93d8e38a10ce6"
+    }
+  ],
+  "remaining": [
+    "Windows DirectManipulation inertia, damping, elastic rebound and Composition frame-by-frame parity remain unaccepted.",
+    "Complete native UIA/XYFocus and Store-distribution pixel acceptance remain.",
+    "Arbitrary custom VirtualizingLayout/IElementFactory and RecyclePool contracts are not implemented.",
+    "Unknown item size estimation, exact scroll anchoring and complete ItemsSourceView semantics remain.",
+    "Random recipe data follows the source rules, not an identical cross-language random sequence.",
+    "Gallery custom layouts use safe tail and unknown-size handling instead of preserving original C# boundary/cache defects."
+  ],
+  "previousValidation": "references/repeater-refresh-initial-status.json"
+}

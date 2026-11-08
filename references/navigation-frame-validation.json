@@ -1,0 +1,281 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T10:23:02.402Z",
+  "baseline": {
+    "commit": "7b12709347527238494ca28cb9fed326d513e779",
+    "files": [
+      {
+        "local": "references\\winui\\NavigateTransitionHelper.h",
+        "upstream": "dxaml/phone/lib/NavigateTransitionHelper.h",
+        "sha256": "5c861e5ad85e90b4f4ee6971b53c1a8e40f3d55acf60ea429df63494b8569704"
+      },
+      {
+        "local": "references\\winui\\Frame_Partial.cpp",
+        "upstream": "dxaml/xcp/dxaml/lib/Frame_Partial.cpp",
+        "sha256": "e369df4b1d30a082a7687cb913a304ba6879a369824ba67e0533ad63f4f1402a"
+      },
+      {
+        "local": "references\\winui\\Frame_Partial.h",
+        "upstream": "dxaml/xcp/dxaml/lib/Frame_Partial.h",
+        "sha256": "bf8b4a2d977384383185d7f88adbfd5af21783270e8b2c02895d3a9042a53513"
+      },
+      {
+        "local": "references\\winui\\NavigationCache.cpp",
+        "upstream": "dxaml/xcp/dxaml/lib/NavigationCache.cpp",
+        "sha256": "95aa6b27f114c98e5b09a27c9585598e43363b607025bb66555046c19476fef4"
+      },
+      {
+        "local": "references\\winui\\NavigationCache.h",
+        "upstream": "dxaml/xcp/dxaml/lib/NavigationCache.h",
+        "sha256": "e56239eeec5d646e52a8ef29d6607d465a9228200366b910914cf4d6eeef5880"
+      },
+      {
+        "local": "references\\winui\\Page_Partial.cpp",
+        "upstream": "dxaml/xcp/dxaml/lib/Page_Partial.cpp",
+        "sha256": "e5f1038f9edbfab9c8f5d400c42b242490c0a3b0fcbf3bba9695f4ccea2e2a19"
+      },
+      {
+        "local": "references\\winui\\ThemeTransitions.cpp",
+        "upstream": "dxaml/phone/lib/ThemeTransitions.cpp",
+        "sha256": "ba05371a399f0787766a424f45344062b659637918369a1efec942eada669c95"
+      },
+      {
+        "local": "references\\winui\\NavigationView.cpp",
+        "upstream": "controls/dev/NavigationView/NavigationView.cpp",
+        "sha256": "2f1fe5e6df95423010b02010a5f0c1c6c8f35c745e4fc13442ac389a7af41d15"
+      }
+    ]
+  },
+  "artifact": "out/navigation-frame-final-preview",
+  "wasmSha256": "4f66adda8462329ea8ab92d526867ae605b5964f9bdb187728853d97db567511",
+  "matchesCurrentWasm": true,
+  "builds": [
+    "npm run build (Rust/WASM, TypeScript strict, Vite production, SDK declarations)",
+    "tsc --noEmit + vite build + npm run declarations after final TS changes"
+  ],
+  "rust": {
+    "full": {
+      "passed": 228,
+      "log": "out/frame-rust-tests.log"
+    },
+    "finalNavigation": {
+      "passed": 30,
+      "log": "out/frame-final-rust-targeted.log"
+    }
+  },
+  "browsers": {
+    "chrome": {
+      "stats": {
+        "startTime": "2026-11-08T10:20:20.005Z",
+        "duration": 124428.603,
+        "expected": 15,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "result": "out/frame-chrome-results.json"
+    },
+    "edge": {
+      "stats": {
+        "startTime": "2026-11-08T10:22:25.588Z",
+        "duration": 16332.094000000001,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "result": "out/frame-edge-results.json"
+    }
+  },
+  "screenshots": [
+    "out/frame-home-button.png",
+    "out/frame-home-dark.png",
+    "out/frame-navigation-sample.png",
+    "out/home-mobile.png"
+  ],
+  "checks": [
+    "generated Rust/TS enums match references/api-enums.json",
+    "strict enum positive/negative type checks",
+    "control origin audit"
+  ],
+  "coverage": [
+    "Frame history and browser traversal",
+    "cache identity, LRU, Required and Disabled",
+    "lifecycle, cancellation, navigation stopped, parameters and idempotent disposal",
+    "rapid transitions and reduced motion",
+    "React page state and scroll restoration",
+    "cached ProgressRing stops scheduling",
+    "all implemented Gallery entries retain the shared shell",
+    "light/dark/high contrast and narrow layout",
+    "fallback draw cost and NavigationView indicator geometry"
+  ],
+  "limits": [
+    "DOM content uses source brush fallback: no cross-DOM Acrylic sampling",
+    "No Store Composition frame-by-frame or pixel-perfect acceptance in this batch",
+    "Shared workspace may continue to change; immutable preview assets and their hashes identify this acceptance run"
+  ],
+  "sources": [
+    {
+      "path": "src/frame.rs",
+      "sha256": "835eff90e14e5937ec3828f8dc8d832d34e893c25a7125896a3370688add6f1e"
+    },
+    {
+      "path": "src/navigation.rs",
+      "sha256": "09bab24fb2c1c95c2b77236c86a74e0f0770910607f5aba2afef9ebd92a9c793"
+    },
+    {
+      "path": "src/model.rs",
+      "sha256": "6913c5022d14df827d8d22b0d497e05a38ddc28f41fe4a496305ae198535eaa2"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "14f317d87b3c0d53c9b575fd41d8a3fb2caa8e25b733e106b46a25a89d0f7171"
+    },
+    {
+      "path": "src/wasm.rs",
+      "sha256": "1463c891c4bb704998071ef264e49726048aea571872216d784f2709ac6d4067"
+    },
+    {
+      "path": "src/lib.rs",
+      "sha256": "61cd9d41757942cc51189a8aa6a3816421a52eebeffee5257099dd5f9746b0c7"
+    },
+    {
+      "path": "references/api-enums.json",
+      "sha256": "da0bd9af1a25b93c39d6b928f41afd7aef230d456fa72c62c9060ba6da067027"
+    },
+    {
+      "path": "gallery/src/frame.ts",
+      "sha256": "7fcb9f048c52c9dd92f905fd97455953410c2a0f08418226611f93e641d8bf39"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "d38ba6dfda3f67246d2b9dd1cecc12a8f284cf6f64c8e246321ef377daaf6dd3"
+    },
+    {
+      "path": "gallery/src/sdk.ts",
+      "sha256": "296c444f5b7dd9e5988f6f549e8f2a34a2a0891fd570f840265346685db74814"
+    },
+    {
+      "path": "gallery/src/index.ts",
+      "sha256": "035e7bf64f2f2c503223b6470133c5766a96d3aed357c6d00a2046df329a4878"
+    },
+    {
+      "path": "gallery/src/HomePage.tsx",
+      "sha256": "e2e33c8406e5351baab7cfb83c13898bb5193ea13afaec66b9d315eb593cb552"
+    },
+    {
+      "path": "gallery/src/App.tsx",
+      "sha256": "051b81be7a4da23280dd1cdf5247d6f16f0dad70662732e867285b33df31e8ab"
+    },
+    {
+      "path": "gallery/src/GalleryNavigation.tsx",
+      "sha256": "bc4d13df1b6cfa748d94e8302de15005a7ff9b64a012573c266bbcb1f64c5edd"
+    },
+    {
+      "path": "gallery/src/NavigationFrameExample.tsx",
+      "sha256": "3c79e6bd84bd94b41b184efe2e59fba9127322fedad2367ddec6398ee7668e94"
+    },
+    {
+      "path": "gallery/src/GalleryControls.tsx",
+      "sha256": "a53b4e5b4f2e3907df86f2377aa7f1f6ebfd1c4b9bb87a3c4b9f06d7570301df"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "de030a05134d4cd9511febd087788a71610ff2423d6461bf31d679befcb05733"
+    },
+    {
+      "path": "gallery/src/sample-pages.css",
+      "sha256": "94bf0ccfbd57204ba3fd0db49595bdd29545d20c146bba6a3e2dd2278d6cd3f1"
+    },
+    {
+      "path": "gallery/src/gallery-controls.css",
+      "sha256": "b5ef73a34a035484ae88cbc86dcf8a14d4edd5d45a1332133329f2fce74f38ea"
+    }
+  ],
+  "assets": [
+    {
+      "path": "out/navigation-frame-final-preview/assets/AnimatedIconPage-U3LB6-Lf.js",
+      "sha256": "2050742fc1a66cbb734150921e0df43f955bc168ada5831f01a61a21f5cdf9b2"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/BasicNextPage-6Lvm-okB.js",
+      "sha256": "f7d661bb05c070c6c9bbc0e81707a9e4c835ff72376c480d54cb6bfa3b860ab5"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/ButtonPage-CcBGUBnx.css",
+      "sha256": "325a776e76cda6c05720ba1ad1afd88e7ae5b99554ecc109fadcc1ac785e85bd"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/ButtonPage-D7p-5YC3.js",
+      "sha256": "130c7dc8add6a078c4e23ed1445428a3e4c38c21ca2ed86e991f12d202db70aa"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/CollectionsPage-HYWYeuNG.js",
+      "sha256": "156b1a4520f5779630c9d2710df57ccb679737a9c9190c8e3924cd7a5d95e75c"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/CommandControlsPage-D6tmQGEq.js",
+      "sha256": "5ee82d38ca04cffc09936707ad3f10bde3a7d395fafef28bdf8b87628911b667"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/CompactControlsPage-CPDhAG_H.js",
+      "sha256": "4089d4820503f18ee0a65e647aee7a6b799a74ea8572058be442cc0bd02e429a"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/ComposedControlsPage-BxrUHnRC.js",
+      "sha256": "479c048b9dd7d6c945d19743841204e4f98394618f07f1dde62b318f049cea90"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/FiveControlsPage-BHlh2Zvy.js",
+      "sha256": "174ff307afbb559006695366e895ec92939da934987f7f437d233c7fbf89c116"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/IconsPage-iqj8IFME.js",
+      "sha256": "58f20679d5ea329beb91b2478a9f64d485288f7c965b2339c4d95feac24e875e"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/index-ezm1le1W.css",
+      "sha256": "caa3f4cefd7fe6c06bbea8e9826a801232725b08d265b278529e14c90b1b65fb"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/index-wcMSlzHe.js",
+      "sha256": "8d72ca8a623372d9b2f4b96c0ca09d39279e79af9ac4f030df2ee6292df9daf9"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/InputControlsPage-BibUDbTV.js",
+      "sha256": "defd970ccc022d8642d8b69100ea34ca27d7fc360d9dadae2774c5365f1e72ed"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/NavigationControlsPage-Bli7Vad7.js",
+      "sha256": "7e041ccab562bbeac7e4f83bee65f71949a69bb676e8b907d9dc576da3656597"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/NavigationControlsPage-D95ECwiv.js",
+      "sha256": "c053cd90511d4f4ffb4120abc62deddbf9e3500a466059c1cf1f7b6530431ef0"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/OverlaysPage-UxjoIaQg.js",
+      "sha256": "bc8685a817ca04fd57f4e3574d99c90a6dc995fc66e56d50335444a6368228ac"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/ProgressPage-DxcGcbIP.js",
+      "sha256": "d3a38d25e3f2cc6c47bb140e3ec030b30b04291301e668b7cf948e58b45fe035"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/ShapesPage-D2rPAYN3.js",
+      "sha256": "21f770efab5028ee287b4f72064e87e81d424cd6af0e41749ded1b3265d6616c"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/TextScrollPage-CcdV_yZr.js",
+      "sha256": "e4c36577c1e96f646dd20414c17bf2460f4c87e925d81e1550510449059890e9"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/assets/winui_bg-DIVOMALe.wasm",
+      "sha256": "4f66adda8462329ea8ab92d526867ae605b5964f9bdb187728853d97db567511"
+    },
+    {
+      "path": "out/navigation-frame-final-preview/index.html",
+      "sha256": "e2754027db16aa0aaad1bb8f30937ea95471857c3debbefdf10b99afe18f27bd"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "capturedAtUtc": "2026-11-07T04:31:08.5072884Z",
+  "package": {
+    "name": "Microsoft.WinUI3ControlsGallery",
+    "fullName": "Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe",
+    "version": "3.0.4.0",
+    "publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "signatureKind": "Store",
+    "isDevelopmentMode": false,
+    "location": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe"
+  },
+  "installedDependencies": [
+    "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.AI/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Base/2.0.5-experimental2",
+    "Microsoft.WindowsAppSDK.DWrite/2.1.1-experimental",
+    "Microsoft.WindowsAppSDK.Foundation/2.3.13-experimental",
+    "Microsoft.WindowsAppSDK.InteractiveExperiences/2.1.10-experimental",
+    "Microsoft.WindowsAppSDK.ML/2.3.5-experimental",
+    "Microsoft.WindowsAppSDK.Runtime/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Search/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Widgets/2.0.6-experimental",
+    "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental"
+  ],
+  "depsSha256": "be8ee82927b283a4a34ae45ca831f313e5e369b9ab9665490e55f0033964192a",
+  "binaries": [
+    {
+      "name": "Microsoft.ui.xaml.dll",
+      "installed": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe\\Microsoft.ui.xaml.dll",
+      "installedSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "probe": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\bin\\x64\\Release\\net10.0-windows10.0.22621.0\\win-x64\\Microsoft.ui.xaml.dll",
+      "probeSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "identical": true
+    },
+    {
+      "name": "Microsoft.UI.Xaml.Controls.dll",
+      "installed": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe\\Microsoft.UI.Xaml.Controls.dll",
+      "installedSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013",
+      "probe": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\bin\\x64\\Release\\net10.0-windows10.0.22621.0\\win-x64\\Microsoft.UI.Xaml.Controls.dll",
+      "probeSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013",
+      "identical": true
+    }
+  ],
+  "observedWindow": {
+    "app": "Microsoft.WinUI3ControlsGallery_8wekyb3d8bbwe!App",
+    "title": "WinUI Gallery",
+    "page": "CheckBox",
+    "capture": "Computer Use sky / Windows.Graphics.Capture",
+    "actions": [
+      "Basic input",
+      "CheckBox",
+      "Two-state CheckBox click"
+    ],
+    "screenshot": "out/release-audit/store-checkbox-checked.png",
+    "sha256": "0c9d9d0489e6300e1df848527b642c3e34026278ea6e03fb9d5017bac45f34e5"
+  },
+  "conclusions": [
+    "The installed Microsoft Gallery is Store-signed and uses the same experimental SDK labels as the probe. Binary identity is recorded separately for both WinUI DLLs.",
+    "The prior image is a custom forced-state RenderTargetBitmap matrix, not an official Gallery release screenshot.",
+    "Live inspection confirms the official example structure and state feedback; it does not establish browser pixel or animation parity.",
+    "Browser CheckBox previously used only FontIcon fallback, omitting the template AnimatedAcceptVisualSource path.",
+    "The new source-derived vector and marker playback still require native multi-frame validation and native AnimatedIcon interruption/queue parity. Full material/control parity is not accepted."
+  ]
+}

@@ -1,0 +1,1473 @@
+{
+  "sdkSource": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\lib\\native\\Microsoft.UI\\Themes\\generic.xaml",
+  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "styles": {
+    "ListView": {
+      "key": "",
+      "setters": {
+        "IsTabStop": "False",
+        "TabNavigation": "Once",
+        "IsSwipeEnabled": "True",
+        "ScrollViewer.HorizontalScrollBarVisibility": "Disabled",
+        "ScrollViewer.VerticalScrollBarVisibility": "Auto",
+        "ScrollViewer.HorizontalScrollMode": "Disabled",
+        "ScrollViewer.IsHorizontalRailEnabled": "False",
+        "ScrollViewer.VerticalScrollMode": "Enabled",
+        "ScrollViewer.IsVerticalRailEnabled": "True",
+        "ScrollViewer.ZoomMode": "Disabled",
+        "ScrollViewer.IsDeferredScrollingEnabled": "False",
+        "ScrollViewer.BringIntoViewOnFocusChange": "True",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}"
+      }
+    },
+    "GridView": {
+      "key": "",
+      "setters": {
+        "Padding": "0,0,0,10",
+        "IsTabStop": "False",
+        "TabNavigation": "Once",
+        "ScrollViewer.HorizontalScrollBarVisibility": "Disabled",
+        "ScrollViewer.VerticalScrollBarVisibility": "Auto",
+        "ScrollViewer.HorizontalScrollMode": "Disabled",
+        "ScrollViewer.IsHorizontalRailEnabled": "False",
+        "ScrollViewer.VerticalScrollMode": "Enabled",
+        "ScrollViewer.IsVerticalRailEnabled": "True",
+        "ScrollViewer.ZoomMode": "Disabled",
+        "ScrollViewer.IsDeferredScrollingEnabled": "False",
+        "ScrollViewer.BringIntoViewOnFocusChange": "True",
+        "IsSwipeEnabled": "True",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+        "FocusVisualMargin": "-2"
+      }
+    },
+    "ListViewItem": {
+      "key": "DefaultListViewItemStyle",
+      "setters": {
+        "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+        "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+        "Background": "{ThemeResource ListViewItemBackground}",
+        "Foreground": "{ThemeResource ListViewItemForeground}",
+        "TabNavigation": "Local",
+        "IsHoldingEnabled": "True",
+        "Padding": "16,0,12,0",
+        "HorizontalContentAlignment": "Stretch",
+        "VerticalContentAlignment": "Center",
+        "MinWidth": "{ThemeResource ListViewItemMinWidth}",
+        "MinHeight": "{ThemeResource ListViewItemMinHeight}",
+        "AllowDrop": "False",
+        "UseSystemFocusVisuals": "True",
+        "FocusVisualMargin": "1",
+        "FocusVisualPrimaryBrush": "{ThemeResource ListViewItemFocusVisualPrimaryBrush}",
+        "FocusVisualPrimaryThickness": "2",
+        "FocusVisualSecondaryBrush": "{ThemeResource ListViewItemFocusVisualSecondaryBrush}",
+        "FocusVisualSecondaryThickness": "1"
+      }
+    },
+    "GridViewItem": {
+      "key": "DefaultGridViewItemStyle",
+      "setters": {
+        "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+        "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+        "Background": "{ThemeResource GridViewItemBackground}",
+        "Foreground": "{ThemeResource GridViewItemForeground}",
+        "TabNavigation": "Local",
+        "IsHoldingEnabled": "True",
+        "HorizontalContentAlignment": "Center",
+        "VerticalContentAlignment": "Center",
+        "Margin": "0,0,4,4",
+        "MinWidth": "{ThemeResource GridViewItemMinWidth}",
+        "MinHeight": "{ThemeResource GridViewItemMinHeight}",
+        "AllowDrop": "True",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+        "FocusVisualMargin": "-3",
+        "FocusVisualPrimaryBrush": "{ThemeResource GridViewItemFocusVisualPrimaryBrush}",
+        "FocusVisualPrimaryThickness": "2",
+        "FocusVisualSecondaryBrush": "{ThemeResource GridViewItemFocusVisualSecondaryBrush}",
+        "FocusVisualSecondaryThickness": "1"
+      }
+    }
+  },
+  "metrics": {
+    "GridViewItemSelectedBorderThemeThickness": {
+      "type": "Double",
+      "value": "4"
+    },
+    "GridViewItemReorderHintThemeOffset": {
+      "type": "Double",
+      "value": "16.0"
+    },
+    "ListViewHeaderItemMinHeight": {
+      "type": "Double",
+      "value": "44"
+    },
+    "GridViewHeaderItemMinHeight": {
+      "type": "Double",
+      "value": "44"
+    },
+    "ListViewHeaderItemThemeFontSize": {
+      "type": "Double",
+      "value": "20"
+    },
+    "GridViewHeaderItemThemeFontSize": {
+      "type": "Double",
+      "value": "20"
+    },
+    "GridViewItemMinWidth": {
+      "type": "Double",
+      "value": "44"
+    },
+    "GridViewItemMinHeight": {
+      "type": "Double",
+      "value": "44"
+    },
+    "GridViewItemCompactSelectedBorderThemeThickness": {
+      "type": "Thickness",
+      "value": "4"
+    },
+    "GridViewItemMultiselectBorderThickness": {
+      "type": "Thickness",
+      "value": "2.5"
+    },
+    "ListViewItemRevealBorderThemeThickness": {
+      "type": "Thickness",
+      "value": "1"
+    },
+    "GridViewItemRevealBorderThemeThickness": {
+      "type": "Thickness",
+      "value": "1"
+    },
+    "ListViewItemContentOffsetX": {
+      "type": "Double",
+      "value": "-40.5"
+    },
+    "ListViewItemDisabledThemeOpacity": {
+      "type": "Double",
+      "value": "0.3"
+    },
+    "ListViewItemDragThemeOpacity": {
+      "type": "Double",
+      "value": "0.80"
+    },
+    "ListViewItemReorderThemeOpacity": {
+      "type": "Double",
+      "value": "0.80"
+    },
+    "ListViewItemReorderTargetThemeOpacity": {
+      "type": "Double",
+      "value": "0.50"
+    },
+    "ListViewItemReorderTargetThemeScale": {
+      "type": "Double",
+      "value": "0.95"
+    },
+    "ListViewItemReorderHintThemeOffset": {
+      "type": "Double",
+      "value": "10.0"
+    },
+    "ListViewItemSelectedBorderThemeThickness": {
+      "type": "Double",
+      "value": "4"
+    },
+    "ListViewItemMinWidth": {
+      "type": "Double",
+      "value": "88"
+    },
+    "ListViewItemMinHeight": {
+      "type": "Double",
+      "value": "40"
+    },
+    "ListViewItemCompactSelectedBorderThemeThickness": {
+      "type": "Thickness",
+      "value": "4"
+    },
+    "GridViewItemCornerRadius": {
+      "type": "CornerRadius",
+      "value": "4"
+    },
+    "GridViewItemCheckBoxCornerRadius": {
+      "type": "CornerRadius",
+      "value": "3"
+    },
+    "GridViewItemSelectedBorderThickness": {
+      "type": "Thickness",
+      "value": "2"
+    },
+    "ListViewItemCornerRadius": {
+      "type": "CornerRadius",
+      "value": "4"
+    },
+    "ListViewItemCheckBoxCornerRadius": {
+      "type": "CornerRadius",
+      "value": "3"
+    },
+    "ListViewItemSelectionIndicatorCornerRadius": {
+      "type": "CornerRadius",
+      "value": "1.5"
+    }
+  },
+  "brushes": [
+    "ControlStrongFillColorDefaultBrush",
+    "ControlStrongStrokeColorDefaultBrush",
+    "GridViewItemBackgroundPointerOver",
+    "GridViewItemBackgroundPressed",
+    "GridViewItemBackgroundSelected",
+    "GridViewItemBackgroundSelectedDisabled",
+    "GridViewItemBackgroundSelectedPointerOver",
+    "GridViewItemBackgroundSelectedPressed",
+    "GridViewItemCheckBoxBorderBrush",
+    "GridViewItemCheckBoxBrush",
+    "GridViewItemCheckBoxDisabledBorderBrush",
+    "GridViewItemCheckBoxDisabledBrush",
+    "GridViewItemCheckBoxPointerOverBorderBrush",
+    "GridViewItemCheckBoxPointerOverBrush",
+    "GridViewItemCheckBoxPressedBorderBrush",
+    "GridViewItemCheckBoxPressedBrush",
+    "GridViewItemCheckBoxSelectedBrush",
+    "GridViewItemCheckBoxSelectedDisabledBrush",
+    "GridViewItemCheckBoxSelectedPointerOverBrush",
+    "GridViewItemCheckBoxSelectedPressedBrush",
+    "GridViewItemCheckBrush",
+    "GridViewItemCheckDisabledBrush",
+    "GridViewItemCheckPressedBrush",
+    "GridViewItemDragBackground",
+    "GridViewItemDragForeground",
+    "GridViewItemFocusBorderBrush",
+    "GridViewItemForegroundPointerOver",
+    "GridViewItemForegroundSelected",
+    "GridViewItemPlaceholderBackground",
+    "GridViewItemPointerOverBorderBrush",
+    "GridViewItemSelectedBorderBrush",
+    "GridViewItemSelectedDisabledBorderBrush",
+    "GridViewItemSelectedInnerBorderBrush",
+    "GridViewItemSelectedPointerOverBorderBrush",
+    "GridViewItemSelectedPressedBorderBrush",
+    "ListViewItemBackgroundPointerOver",
+    "ListViewItemBackgroundPressed",
+    "ListViewItemBackgroundSelected",
+    "ListViewItemBackgroundSelectedDisabled",
+    "ListViewItemBackgroundSelectedPointerOver",
+    "ListViewItemBackgroundSelectedPressed",
+    "ListViewItemCheckBoxBorderBrush",
+    "ListViewItemCheckBoxBrush",
+    "ListViewItemCheckBoxDisabledBorderBrush",
+    "ListViewItemCheckBoxDisabledBrush",
+    "ListViewItemCheckBoxPointerOverBorderBrush",
+    "ListViewItemCheckBoxPointerOverBrush",
+    "ListViewItemCheckBoxPressedBorderBrush",
+    "ListViewItemCheckBoxPressedBrush",
+    "ListViewItemCheckBoxSelectedBrush",
+    "ListViewItemCheckBoxSelectedDisabledBrush",
+    "ListViewItemCheckBoxSelectedPointerOverBrush",
+    "ListViewItemCheckBoxSelectedPressedBrush",
+    "ListViewItemCheckBrush",
+    "ListViewItemCheckDisabledBrush",
+    "ListViewItemCheckPressedBrush",
+    "ListViewItemDragBackground",
+    "ListViewItemDragForeground",
+    "ListViewItemFocusBorderBrush",
+    "ListViewItemFocusSecondaryBorderBrush",
+    "ListViewItemForegroundPointerOver",
+    "ListViewItemForegroundSelected",
+    "ListViewItemPlaceholderBackground",
+    "ListViewItemSelectionIndicatorBrush",
+    "ListViewItemSelectionIndicatorDisabledBrush",
+    "ListViewItemSelectionIndicatorPointerOverBrush",
+    "ListViewItemSelectionIndicatorPressedBrush",
+    "SystemControlBackgroundBaseMediumBrush",
+    "SystemControlForegroundAltHighBrush"
+  ],
+  "presenters": {
+    "GridViewItem": {
+      "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Root",
+      "ContentTransitions": "{TemplateBinding ContentTransitions}",
+      "Control.IsTemplateFocusTarget": "True",
+      "FocusVisualMargin": "{TemplateBinding FocusVisualMargin}",
+      "FocusVisualPrimaryBrush": "{TemplateBinding FocusVisualPrimaryBrush}",
+      "FocusVisualPrimaryThickness": "{TemplateBinding FocusVisualPrimaryThickness}",
+      "FocusVisualSecondaryBrush": "{TemplateBinding FocusVisualSecondaryBrush}",
+      "FocusVisualSecondaryThickness": "{TemplateBinding FocusVisualSecondaryThickness}",
+      "SelectionCheckMarkVisualEnabled": "{ThemeResource GridViewItemSelectionCheckMarkVisualEnabled}",
+      "CheckBrush": "{ThemeResource GridViewItemCheckBrush}",
+      "CheckBoxBrush": "{ThemeResource GridViewItemCheckBoxBrush}",
+      "DragBackground": "{ThemeResource GridViewItemDragBackground}",
+      "DragForeground": "{ThemeResource GridViewItemDragForeground}",
+      "FocusBorderBrush": "{ThemeResource GridViewItemFocusBorderBrush}",
+      "PlaceholderBackground": "{ThemeResource GridViewItemPlaceholderBackground}",
+      "PointerOverBackground": "{ThemeResource GridViewItemBackgroundPointerOver}",
+      "PointerOverForeground": "{ThemeResource GridViewItemForegroundPointerOver}",
+      "SelectedBackground": "{ThemeResource GridViewItemBackgroundSelected}",
+      "SelectedForeground": "{ThemeResource GridViewItemForegroundSelected}",
+      "SelectedPointerOverBackground": "{ThemeResource GridViewItemBackgroundSelectedPointerOver}",
+      "PressedBackground": "{ThemeResource GridViewItemBackgroundPressed}",
+      "SelectedPressedBackground": "{ThemeResource GridViewItemBackgroundSelectedPressed}",
+      "DisabledOpacity": "{ThemeResource ListViewItemDisabledThemeOpacity}",
+      "DragOpacity": "{ThemeResource ListViewItemDragThemeOpacity}",
+      "ReorderHintOffset": "{ThemeResource GridViewItemReorderHintThemeOffset}",
+      "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
+      "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
+      "ContentMargin": "{TemplateBinding Padding}",
+      "CheckMode": "{ThemeResource GridViewItemCheckMode}",
+      "SelectedBorderThickness": "{ThemeResource GridViewItemSelectedBorderThickness}",
+      "SelectedPointerOverBorderBrush": "{ThemeResource GridViewItemSelectedPointerOverBorderBrush}",
+      "CornerRadius": "{ThemeResource GridViewItemCornerRadius}",
+      "CheckBoxCornerRadius": "{ThemeResource GridViewItemCheckBoxCornerRadius}",
+      "CheckPressedBrush": "{ThemeResource GridViewItemCheckPressedBrush}",
+      "CheckDisabledBrush": "{ThemeResource GridViewItemCheckDisabledBrush}",
+      "CheckBoxPointerOverBrush": "{ThemeResource GridViewItemCheckBoxPointerOverBrush}",
+      "CheckBoxPressedBrush": "{ThemeResource GridViewItemCheckBoxPressedBrush}",
+      "CheckBoxDisabledBrush": "{ThemeResource GridViewItemCheckBoxDisabledBrush}",
+      "CheckBoxSelectedBrush": "{ThemeResource GridViewItemCheckBoxSelectedBrush}",
+      "CheckBoxSelectedPointerOverBrush": "{ThemeResource GridViewItemCheckBoxSelectedPointerOverBrush}",
+      "CheckBoxSelectedPressedBrush": "{ThemeResource GridViewItemCheckBoxSelectedPressedBrush}",
+      "CheckBoxSelectedDisabledBrush": "{ThemeResource GridViewItemCheckBoxSelectedDisabledBrush}",
+      "CheckBoxBorderBrush": "{ThemeResource GridViewItemCheckBoxBorderBrush}",
+      "CheckBoxPointerOverBorderBrush": "{ThemeResource GridViewItemCheckBoxPointerOverBorderBrush}",
+      "CheckBoxPressedBorderBrush": "{ThemeResource GridViewItemCheckBoxPressedBorderBrush}",
+      "CheckBoxDisabledBorderBrush": "{ThemeResource GridViewItemCheckBoxDisabledBorderBrush}",
+      "PointerOverBorderBrush": "{ThemeResource GridViewItemPointerOverBorderBrush}",
+      "SelectedDisabledBackground": "{ThemeResource GridViewItemBackgroundSelectedDisabled}",
+      "SelectedBorderBrush": "{ThemeResource GridViewItemSelectedBorderBrush}",
+      "SelectedPressedBorderBrush": "{ThemeResource GridViewItemSelectedPressedBorderBrush}",
+      "SelectedDisabledBorderBrush": "{ThemeResource GridViewItemSelectedDisabledBorderBrush}",
+      "SelectedInnerBorderBrush": "{ThemeResource GridViewItemSelectedInnerBorderBrush}"
+    },
+    "ListViewItem": {
+      "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Root",
+      "ContentTransitions": "{TemplateBinding ContentTransitions}",
+      "Control.IsTemplateFocusTarget": "True",
+      "FocusVisualMargin": "{TemplateBinding FocusVisualMargin}",
+      "FocusVisualPrimaryBrush": "{TemplateBinding FocusVisualPrimaryBrush}",
+      "FocusVisualPrimaryThickness": "{TemplateBinding FocusVisualPrimaryThickness}",
+      "FocusVisualSecondaryBrush": "{TemplateBinding FocusVisualSecondaryBrush}",
+      "FocusVisualSecondaryThickness": "{TemplateBinding FocusVisualSecondaryThickness}",
+      "SelectionCheckMarkVisualEnabled": "{ThemeResource ListViewItemSelectionCheckMarkVisualEnabled}",
+      "CheckBrush": "{ThemeResource ListViewItemCheckBrush}",
+      "CheckBoxBrush": "{ThemeResource ListViewItemCheckBoxBrush}",
+      "DragBackground": "{ThemeResource ListViewItemDragBackground}",
+      "DragForeground": "{ThemeResource ListViewItemDragForeground}",
+      "FocusBorderBrush": "{ThemeResource ListViewItemFocusBorderBrush}",
+      "FocusSecondaryBorderBrush": "{ThemeResource ListViewItemFocusSecondaryBorderBrush}",
+      "PlaceholderBackground": "{ThemeResource ListViewItemPlaceholderBackground}",
+      "PointerOverBackground": "{ThemeResource ListViewItemBackgroundPointerOver}",
+      "PointerOverForeground": "{ThemeResource ListViewItemForegroundPointerOver}",
+      "SelectedBackground": "{ThemeResource ListViewItemBackgroundSelected}",
+      "SelectedForeground": "{ThemeResource ListViewItemForegroundSelected}",
+      "SelectedPointerOverBackground": "{ThemeResource ListViewItemBackgroundSelectedPointerOver}",
+      "PressedBackground": "{ThemeResource ListViewItemBackgroundPressed}",
+      "SelectedPressedBackground": "{ThemeResource ListViewItemBackgroundSelectedPressed}",
+      "DisabledOpacity": "{ThemeResource ListViewItemDisabledThemeOpacity}",
+      "DragOpacity": "{ThemeResource ListViewItemDragThemeOpacity}",
+      "ReorderHintOffset": "{ThemeResource ListViewItemReorderHintThemeOffset}",
+      "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
+      "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
+      "ContentMargin": "{TemplateBinding Padding}",
+      "CheckMode": "{ThemeResource ListViewItemCheckMode}",
+      "CornerRadius": "{ThemeResource ListViewItemCornerRadius}",
+      "CheckPressedBrush": "{ThemeResource ListViewItemCheckPressedBrush}",
+      "CheckDisabledBrush": "{ThemeResource ListViewItemCheckDisabledBrush}",
+      "CheckBoxPointerOverBrush": "{ThemeResource ListViewItemCheckBoxPointerOverBrush}",
+      "CheckBoxPressedBrush": "{ThemeResource ListViewItemCheckBoxPressedBrush}",
+      "CheckBoxDisabledBrush": "{ThemeResource ListViewItemCheckBoxDisabledBrush}",
+      "CheckBoxSelectedBrush": "{ThemeResource ListViewItemCheckBoxSelectedBrush}",
+      "CheckBoxSelectedPointerOverBrush": "{ThemeResource ListViewItemCheckBoxSelectedPointerOverBrush}",
+      "CheckBoxSelectedPressedBrush": "{ThemeResource ListViewItemCheckBoxSelectedPressedBrush}",
+      "CheckBoxSelectedDisabledBrush": "{ThemeResource ListViewItemCheckBoxSelectedDisabledBrush}",
+      "CheckBoxBorderBrush": "{ThemeResource ListViewItemCheckBoxBorderBrush}",
+      "CheckBoxPointerOverBorderBrush": "{ThemeResource ListViewItemCheckBoxPointerOverBorderBrush}",
+      "CheckBoxPressedBorderBrush": "{ThemeResource ListViewItemCheckBoxPressedBorderBrush}",
+      "CheckBoxDisabledBorderBrush": "{ThemeResource ListViewItemCheckBoxDisabledBorderBrush}",
+      "CheckBoxCornerRadius": "{ThemeResource ListViewItemCheckBoxCornerRadius}",
+      "SelectionIndicatorCornerRadius": "{ThemeResource ListViewItemSelectionIndicatorCornerRadius}",
+      "SelectionIndicatorVisualEnabled": "{ThemeResource ListViewItemSelectionIndicatorVisualEnabled}",
+      "SelectionIndicatorBrush": "{ThemeResource ListViewItemSelectionIndicatorBrush}",
+      "SelectionIndicatorPointerOverBrush": "{ThemeResource ListViewItemSelectionIndicatorPointerOverBrush}",
+      "SelectionIndicatorPressedBrush": "{ThemeResource ListViewItemSelectionIndicatorPressedBrush}",
+      "SelectionIndicatorDisabledBrush": "{ThemeResource ListViewItemSelectionIndicatorDisabledBrush}",
+      "SelectedDisabledBackground": "{ThemeResource ListViewItemBackgroundSelectedDisabled}"
+    }
+  },
+  "sourceFiles": [
+    {
+      "local": "references/winui/GridViewItem_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/GridViewItem_themeresources.xaml",
+      "gitBlobSha1": "a4ca9accccc27d9f0e7fdcfbddc2a5b8e306360d",
+      "sha256": "92888f819c9b48e848b6794bfe2b6d07d910ef4dc0d9e92fb50c1c464ff5de4c"
+    },
+    {
+      "local": "references/winui/ListViewItem_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ListViewItem_themeresources.xaml",
+      "gitBlobSha1": "b292e8fa9aa1f6024d16b8a5eb452e4427d45bda",
+      "sha256": "0758f65bc447b9af7b12a0d779f644f7541d5e2dd39540a9c206f35222b0478c"
+    },
+    {
+      "local": "references/winui/StackingLayoutStrategyImpl.h",
+      "upstream": "dxaml/xcp/components/moco/inc/StackingLayoutStrategyImpl.h",
+      "gitBlobSha1": "770b8a2f98791d1baae8f196ef168997eb70a2ba",
+      "sha256": "7db1027f70ea89048228411a3830e7490785aa34f5896bae542c46f1bc88bf8d"
+    },
+    {
+      "local": "references/winui/WrappingLayoutStrategyImpl.h",
+      "upstream": "dxaml/xcp/components/moco/inc/WrappingLayoutStrategyImpl.h",
+      "gitBlobSha1": "fe6f99262d98b6354dd6a3677c342346abee4f51",
+      "sha256": "f737b260108e1d1a3958291845b6b62d0e5996b00b7173e6e79d3ba3126e055a"
+    },
+    {
+      "local": "references/winui/LayoutStrategyBase.cpp",
+      "upstream": "dxaml/xcp/components/moco/lib/LayoutStrategyBase.cpp",
+      "gitBlobSha1": "8394fd5890514a2bb36c1d934df818368df449d8",
+      "sha256": "5f43f00d0a1ae406718a4b47f318193682193d0947f8a64e65a14a838a9715e6"
+    },
+    {
+      "local": "references/winui/StackingLayoutStrategyImpl.cpp",
+      "upstream": "dxaml/xcp/components/moco/lib/StackingLayoutStrategyImpl.cpp",
+      "gitBlobSha1": "3ee1b142c89d9b29bccbce8db2b407e579a01b08",
+      "sha256": "8c547575691fc08fa7bca00d2aba68b1f4d3b3aa064a0cfc6d12dc6f14b52f80"
+    },
+    {
+      "local": "references/winui/WrappingLayoutStrategyImpl.cpp",
+      "upstream": "dxaml/xcp/components/moco/lib/WrappingLayoutStrategyImpl.cpp",
+      "gitBlobSha1": "c9fccb79123073a648a46ff30c92dd99a785bf2c",
+      "sha256": "e98eaaeac608104267cb15d42ae92a1dea02e0b8f01c71e4ecd5a3ab88e558cb"
+    },
+    {
+      "local": "references/winui/ItemsStackPanel.cpp",
+      "upstream": "dxaml/xcp/core/core/elements/ItemsStackPanel.cpp",
+      "gitBlobSha1": "25c91e807bd4d2f55f0992e172d04af0add41422",
+      "sha256": "985b470e1f18ec20aa15327dd4ccec5e4094f41031d5f4d16a7b1d6f8aafef15"
+    },
+    {
+      "local": "references/winui/ListViewBaseItemChrome.cpp",
+      "upstream": "dxaml/xcp/core/core/elements/ListViewBaseItemChrome.cpp",
+      "gitBlobSha1": "944c4ef6d3ecb98ccf30135d6bc8a1c7fe05efaf",
+      "sha256": "b9499a2d2e8032a9160403722d923a4a531405c2277d79130eac960d3a97271e"
+    },
+    {
+      "local": "references/winui/GridViewItemChrome.h",
+      "upstream": "dxaml/xcp/core/inc/GridViewItemChrome.h",
+      "gitBlobSha1": "4e8f80a36dce64a3ec97dde05cf1ac7031e91410",
+      "sha256": "752a597dbddcccfb474a83f64dfe19715a2f48c66cd0fda5ab223ef8d5bd778c"
+    },
+    {
+      "local": "references/winui/ListViewBaseItemChrome.h",
+      "upstream": "dxaml/xcp/core/inc/ListViewBaseItemChrome.h",
+      "gitBlobSha1": "19c8968a35c13d95bfd37f642f6507f0aef2c341",
+      "sha256": "4235c56d51a44179d126089ee164a9535967e0ad1e370b8c2f2de7e390baa62c"
+    },
+    {
+      "local": "references/winui/ListViewItemChrome.h",
+      "upstream": "dxaml/xcp/core/inc/ListViewItemChrome.h",
+      "gitBlobSha1": "edc05d0ccf31270cd70775ab82dc6e56f7ad7ac8",
+      "sha256": "c6d8010512694394b510f3b8218f2245b124a071944ea650afd7818200733f81"
+    },
+    {
+      "local": "references/winui/GridViewItemPresenter_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/GridViewItemPresenter_Partial.cpp",
+      "gitBlobSha1": "241cd448f2b63351d0ecad5b4f7962bdb73370e0",
+      "sha256": "a97c1192a91c4165572d0c7969431171933e8fa4e8dcbabd68cae314311ee924"
+    },
+    {
+      "local": "references/winui/GridView_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/GridView_Partial.cpp",
+      "gitBlobSha1": "4fa7b9a5e9747439f5922fc46ce48028cafe15e1",
+      "sha256": "260611abd06eed3e5b3a43bec7a5f6c131939ba7875c8082f42d1f4c50c4f15b"
+    },
+    {
+      "local": "references/winui/ItemsStackPanel_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ItemsStackPanel_Partial.cpp",
+      "gitBlobSha1": "62ff045bd95ff0ebbc0380bd24e105ebd0f2b785",
+      "sha256": "e833a7cd4c40a61abe668ea46bd5c2e1bc6c02c8d3857027c1a1a858216dcc12"
+    },
+    {
+      "local": "references/winui/ItemsWrapGrid_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ItemsWrapGrid_Partial.cpp",
+      "gitBlobSha1": "6e3be4f2d11754b7f8b05c427109c4b4a2530a09",
+      "sha256": "a52396568afa6bf842e41c1c58c32451dcff5231cdbb342dfda849523ca14c92"
+    },
+    {
+      "local": "references/winui/ListViewBaseItemPresenter_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBaseItemPresenter_Partial.cpp",
+      "gitBlobSha1": "20308c367b9cfd26a5581e4e788ac0acb7331005",
+      "sha256": "1893baa7ab67999949dcc8fb92227b55da667b9aa498738cdefe0abea9c915d1"
+    },
+    {
+      "local": "references/winui/ListViewBase_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBase_Partial.cpp",
+      "gitBlobSha1": "d96d7d4a6bdcca2d50910387c600820754a8245b",
+      "sha256": "dfbd4b70170bf75986e78f2b0e946308df2957d995e55b0a7823faded6fa910d"
+    },
+    {
+      "local": "references/winui/ListViewBase_Partial_DataVirtualization.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_DataVirtualization.cpp",
+      "gitBlobSha1": "1d22af1f0738a92557e7be8bb498c309b0fac250",
+      "sha256": "68fda78bd08469aa6e1d75523b801ee2d19df5b07865c96cc39b1776a002d71f"
+    },
+    {
+      "local": "references/winui/ListViewBase_Partial_Interaction.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_Interaction.cpp",
+      "gitBlobSha1": "1f0315d195b68954f1833ba7f13d2471ecce85b1",
+      "sha256": "876600981187cfde71f2ae8ee37e97f901b1bae75b58f8e85f58681e8c31273f"
+    },
+    {
+      "local": "references/winui/ListViewBase_Partial_Selection.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_Selection.cpp",
+      "gitBlobSha1": "b2e5f0725b175a1b5f6485a6ae053480bc0e86f5",
+      "sha256": "9b580a04b54a1e50770049703b9c75f35c4f35636e79ed068f5b6699e19fc4d6"
+    },
+    {
+      "local": "references/winui/ListViewItemPresenter_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewItemPresenter_Partial.cpp",
+      "gitBlobSha1": "c94f87ea76f5b1f4c11bef4f1641ff70ea9b4e71",
+      "sha256": "245c62081adbcf4c9d9234606beb5740c51e8f7db98f5673fe258600bf55556a"
+    },
+    {
+      "local": "references/winui/ListView_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListView_Partial.cpp",
+      "gitBlobSha1": "a51b3eb2694dedd5c641f226f280229ab692907b",
+      "sha256": "4c34d0963e4dc1a31ac1451648d497082cf2b4d96ff61927b118b3741b22e1bd"
+    },
+    {
+      "local": "references/winui/OrientedVirtualizingPanel_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/OrientedVirtualizingPanel_Partial.cpp",
+      "gitBlobSha1": "6558c01b11b697a4c2147e241ab7d13685327e0e",
+      "sha256": "473fa1adc6b8943a13c4db06b7521346498a1b59bcc191cebfb5678e626f9a5c"
+    },
+    {
+      "local": "references/winui/VariableSizedWrapGrid_OccupancyMap.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/VariableSizedWrapGrid_OccupancyMap.cpp",
+      "gitBlobSha1": "420130ae5500d902656caac9c09801f4570e1e84",
+      "sha256": "fe743f8d417d14c694f5f0e6491b7a21905a80d567e7208a0bd873c470ac5b42"
+    },
+    {
+      "local": "references/winui/VariableSizedWrapGrid_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/VariableSizedWrapGrid_Partial.cpp",
+      "gitBlobSha1": "ef4a8c6e956c6b94e77ba7fa8dc86295a8031d21",
+      "sha256": "31513aec665ed1758d739756f2fc2e58d83a374b6debf0684d4b338671e0f929"
+    },
+    {
+      "local": "references/winui/image.cpp",
+      "upstream": "dxaml/xcp/core/native/elements/image.cpp",
+      "gitBlobSha1": "156aa229d3627f63214703a6added79dfcd16939",
+      "sha256": "cea73805583c7192de8b8c6c9d4985846a0d97dea88d70e4d9606420eefa7f9c"
+    },
+    {
+      "local": "references/winui/mediabase.cpp",
+      "upstream": "dxaml/xcp/core/core/elements/mediabase.cpp",
+      "gitBlobSha1": "53e19efd9014a407f4f876eb9fd95dc49402f4f5",
+      "sha256": "eece6064e6926803b32ab6fa22316b20b07ce785c73e276732ff5703e082e41f"
+    },
+    {
+      "local": "references/winui/ListViewBase_Partial_Reorder.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_Reorder.cpp",
+      "gitBlobSha1": "0e5bb139918d083151c9a2322906f48b31c6e7af",
+      "sha256": "849ac3d9649dbd197e8386e1fa49f2dfa5f174adb977cac7e521219ee35dbee3"
+    },
+    {
+      "local": "references/winui/ListViewBaseItem_Partial.cpp",
+      "upstream": "dxaml/xcp/dxaml/lib/ListViewBaseItem_Partial.cpp",
+      "gitBlobSha1": "cd6a9ccaba8743906324cbf237bf82086bdb49b4",
+      "sha256": "acf16ee01028d8b968d55eeb0fbccdd5f0c65380d8fef73a36b1da9dbe3d3276"
+    }
+  ],
+  "headerStyles": {
+    "GridViewHeaderItem": {
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontSize": "{ThemeResource GridViewHeaderItemThemeFontSize}",
+      "Background": "{ThemeResource GridViewHeaderItemBackground}",
+      "Margin": "0,0,0,4",
+      "Padding": "12,8,12,0",
+      "HorizontalContentAlignment": "Left",
+      "VerticalContentAlignment": "Top",
+      "MinHeight": "{ThemeResource GridViewHeaderItemMinHeight}",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}"
+    },
+    "ListViewHeaderItem": {
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontSize": "{ThemeResource ListViewHeaderItemThemeFontSize}",
+      "Background": "{ThemeResource ListViewHeaderItemBackground}",
+      "Margin": "0,0,0,4",
+      "Padding": "12,8,12,0",
+      "HorizontalContentAlignment": "Left",
+      "VerticalContentAlignment": "Top",
+      "MinHeight": "{ThemeResource ListViewHeaderItemMinHeight}",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}"
+    }
+  },
+  "textStyles": {
+    "BaseTextBlockStyle": {
+      "FontFamily": "XamlAutoFontFamily",
+      "FontSize": "{StaticResource BodyTextBlockFontSize}",
+      "FontWeight": "SemiBold",
+      "TextTrimming": "CharacterEllipsis",
+      "TextWrapping": "Wrap",
+      "LineStackingStrategy": "MaxHeight",
+      "TextLineBounds": "Full"
+    },
+    "TitleTextBlockStyle": {
+      "FontSize": "{StaticResource TitleTextBlockFontSize}",
+      "OpticalMarginAlignment": "TrimSideBearings"
+    },
+    "SubtitleTextBlockStyle": {
+      "FontSize": "{StaticResource SubtitleTextBlockFontSize}",
+      "OpticalMarginAlignment": "TrimSideBearings"
+    },
+    "BodyTextBlockStyle": {
+      "FontWeight": "Normal"
+    },
+    "CaptionTextBlockStyle": {
+      "FontSize": "{StaticResource CaptionTextBlockFontSize}",
+      "FontWeight": "Normal"
+    }
+  },
+  "sampleTemplates": {
+    "ContactListViewTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n            <Grid>\n                <Grid.RowDefinitions>\n                    <RowDefinition Height=\"*\" />\n                    <RowDefinition Height=\"*\" />\n                </Grid.RowDefinitions>\n                <Grid.ColumnDefinitions>\n                    <ColumnDefinition Width=\"Auto\" />\n                    <ColumnDefinition Width=\"*\" />\n                </Grid.ColumnDefinitions>\n                <Ellipse x:Name=\"Ellipse\" Grid.RowSpan=\"2\" Width=\"32\" Height=\"32\" Margin=\"6\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\" Fill=\"{ThemeResource ControlStrongFillColorDefaultBrush}\" />\n                <TextBlock Grid.Column=\"1\" Margin=\"12,6,0,0\" Style=\"{ThemeResource BaseTextBlockStyle}\" Text=\"{Binding Name}\" />\n                <TextBlock Grid.Row=\"1\" Grid.Column=\"1\" Margin=\"12,0,0,6\" Style=\"{ThemeResource BodyTextBlockStyle}\" Text=\"{Binding Company}\" />\n            </Grid>\n        </DataTemplate>",
+    "BasicListViewTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n            <TextBlock Margin=\"0,5,0,5\" Text=\"{Binding Name}\" />\n        </DataTemplate>",
+    "ImageTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n            <Image Width=\"190\" Height=\"130\" AutomationProperties.AccessibilityView=\"Raw\" AutomationProperties.Name=\"{Binding Title}\" Source=\"{Binding ImageLocation}\" Stretch=\"UniformToFill\" />\n        </DataTemplate>",
+    "IconTextTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n            <RelativePanel Width=\"280\" MinHeight=\"160\" AutomationProperties.Name=\"{Binding Title}\">\n                <Image x:Name=\"image\" Width=\"18\" Margin=\"0,4,0,0\" RelativePanel.AlignLeftWithPanel=\"True\" RelativePanel.AlignTopWithPanel=\"True\" Source=\"{Binding ImageLocation}\" Stretch=\"Uniform\" />\n                <TextBlock x:Name=\"title\" Margin=\"8,0,0,0\" RelativePanel.AlignTopWithPanel=\"True\" RelativePanel.RightOf=\"image\" Style=\"{StaticResource BaseTextBlockStyle}\" Text=\"{Binding Title}\" />\n                <TextBlock Margin=\"0,4,8,0\" RelativePanel.Below=\"title\" Style=\"{StaticResource CaptionTextBlockStyle}\" Text=\"{Binding Description}\" TextTrimming=\"WordEllipsis\" TextWrapping=\"Wrap\" />\n            </RelativePanel>\n        </DataTemplate>",
+    "ImageTextTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n            <Grid Width=\"280\" AutomationProperties.Name=\"{Binding Title}\">\n                <Grid.ColumnDefinitions>\n                    <ColumnDefinition Width=\"Auto\" />\n                    <ColumnDefinition Width=\"*\" />\n                </Grid.ColumnDefinitions>\n                <Image Height=\"100\" VerticalAlignment=\"Top\" Source=\"{Binding ImageLocation}\" Stretch=\"Fill\" />\n                <StackPanel Grid.Column=\"1\" Margin=\"8,0,0,8\">\n                    <TextBlock Margin=\"0,0,0,8\" Style=\"{ThemeResource SubtitleTextBlockStyle}\" Text=\"{Binding Title}\" />\n                    <StackPanel Orientation=\"Horizontal\">\n                        <TextBlock Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\"{Binding Views}\" />\n                        <TextBlock Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\" Views \" />\n                    </StackPanel>\n                    <StackPanel Orientation=\"Horizontal\">\n                        <TextBlock Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\"{Binding Likes}\" />\n                        <TextBlock Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\" Likes\" />\n                    </StackPanel>\n                </StackPanel>\n            </Grid>\n        </DataTemplate>",
+    "TextTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n            <StackPanel Width=\"240\" Orientation=\"Horizontal\">\n                <TextBlock Margin=\"8,0,0,0\" Style=\"{StaticResource TitleTextBlockStyle}\" Text=\"{Binding Title}\" />\n            </StackPanel>\n        </DataTemplate>",
+    "ImageOverlayTemplate": "<DataTemplate xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n            <Grid Width=\"100\" AutomationProperties.Name=\"{Binding Title}\">\n                <Image Source=\"{Binding ImageLocation}\" Stretch=\"UniformToFill\" />\n                <StackPanel Height=\"40\" Padding=\"5,1,5,1\" VerticalAlignment=\"Bottom\" Background=\"{ThemeResource SystemControlBackgroundBaseMediumBrush}\" Opacity=\".75\" Orientation=\"Vertical\">\n                    <TextBlock Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\" Text=\"{Binding Title}\" />\n                    <StackPanel Orientation=\"Horizontal\">\n                        <TextBlock Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\"{Binding Likes}\" />\n                        <TextBlock Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\" Likes\" />\n                    </StackPanel>\n                </StackPanel>\n            </Grid>\n        </DataTemplate>"
+  },
+  "chrome": {
+    "s_selectionIndicatorSize": [
+      3.0,
+      16.0
+    ],
+    "s_selectionIndicatorMargin": [
+      4.0,
+      20.0,
+      0.0,
+      20.0
+    ],
+    "s_backplateMargin": [
+      4.0,
+      2.0,
+      4.0,
+      2.0
+    ],
+    "s_multiSelectSquareSize": [
+      20.0,
+      20.0
+    ],
+    "s_multiSelectRoundedSquareInlineMargin": [
+      14.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "s_multiSelectSquareOverlayMargin": [
+      0.0,
+      2.0,
+      2.0,
+      0.0
+    ]
+  },
+  "animations": {
+    "indicatorOpacityMs": 83,
+    "indicatorScaleMs": 167,
+    "indicatorScaleCurve": [
+      0.167,
+      0.167,
+      0,
+      1
+    ],
+    "source": "ListViewBaseItemPresenter_Partial.cpp::VisitAnimationCommand(SelectionIndicatorVisibility)",
+    "dragPlaceholderFadeMs": 167,
+    "dragPlaceholderCurve": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "repositionMs": 367,
+    "repositionCurve": [
+      0.10000000149011612,
+      0.8999999761581421,
+      0.20000000298023224,
+      1
+    ],
+    "listAddedDelayMs": 240,
+    "listAddedMs": 120,
+    "listAddedInitialScale": 0.85,
+    "listAffectedMs": 400,
+    "listRemainingDelayMs": 60
+  },
+  "palettes": {
+    "Light": {
+      "ControlStrongFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelectedDisabled": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelectedPointerOver": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelectedPressed": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxBorderBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFC9",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPointerOverBrush": {
+        "kind": "solid",
+        "color": "#F3F3F3FF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPressedBorderBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPressedBrush": {
+        "kind": "solid",
+        "color": "#EBEBEBFF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxSelectedBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxSelectedDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxSelectedPointerOverBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "GridViewItemCheckBoxSelectedPressedBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "GridViewItemCheckBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemCheckDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemCheckPressedBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "GridViewItemDragBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "GridViewItemDragForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemFocusBorderBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "GridViewItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "GridViewItemForegroundSelected": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "GridViewItemPlaceholderBackground": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1
+      },
+      "GridViewItemPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "GridViewItemSelectedBorderBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "GridViewItemSelectedDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "GridViewItemSelectedInnerBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemSelectedPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "GridViewItemSelectedPressedBorderBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "ListViewItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelectedDisabled": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelectedPointerOver": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelectedPressed": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxBorderBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPointerOverBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPressedBorderBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPressedBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxSelectedBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxSelectedDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxSelectedPointerOverBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "ListViewItemCheckBoxSelectedPressedBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "ListViewItemCheckBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemCheckDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemCheckPressedBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "ListViewItemDragBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ListViewItemDragForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemFocusBorderBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ListViewItemFocusSecondaryBorderBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ListViewItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ListViewItemForegroundSelected": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ListViewItemPlaceholderBackground": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorPointerOverBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorPressedBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundBaseMediumBrush": {
+        "kind": "solid",
+        "color": "#00000099",
+        "opacity": 1
+      },
+      "SystemControlForegroundAltHighBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ListViewItemForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "GridViewItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "GridViewItemForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ListViewHeaderItemDividerStroke": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "GridViewHeaderItemDividerStroke": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "ControlStrongFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelectedDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelectedPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "GridViewItemBackgroundSelectedPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxBrush": {
+        "kind": "solid",
+        "color": "#1C1C1CB3",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxDisabledBrush": {
+        "kind": "solid",
+        "color": "#1E1E1EFF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPointerOverBrush": {
+        "kind": "solid",
+        "color": "#1A1A1AFF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPressedBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxPressedBrush": {
+        "kind": "solid",
+        "color": "#131313FF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxSelectedBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxSelectedDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "GridViewItemCheckBoxSelectedPointerOverBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "GridViewItemCheckBoxSelectedPressedBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "GridViewItemCheckBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "GridViewItemCheckDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      },
+      "GridViewItemCheckPressedBrush": {
+        "kind": "solid",
+        "color": "#00000080",
+        "opacity": 1
+      },
+      "GridViewItemDragBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "GridViewItemDragForeground": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "GridViewItemFocusBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "GridViewItemForegroundSelected": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemPlaceholderBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1
+      },
+      "GridViewItemPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "GridViewItemSelectedBorderBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "GridViewItemSelectedDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "GridViewItemSelectedInnerBorderBrush": {
+        "kind": "solid",
+        "color": "#454545FF",
+        "opacity": 1
+      },
+      "GridViewItemSelectedPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "GridViewItemSelectedPressedBorderBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "ListViewItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelectedDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelectedPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "ListViewItemBackgroundSelectedPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPointerOverBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPointerOverBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPressedBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxPressedBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxSelectedBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxSelectedDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "ListViewItemCheckBoxSelectedPointerOverBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "ListViewItemCheckBoxSelectedPressedBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "ListViewItemCheckBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "ListViewItemCheckDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      },
+      "ListViewItemCheckPressedBrush": {
+        "kind": "solid",
+        "color": "#00000080",
+        "opacity": 1
+      },
+      "ListViewItemDragBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ListViewItemDragForeground": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "ListViewItemFocusBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemFocusSecondaryBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemForegroundSelected": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewItemPlaceholderBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorPointerOverBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "ListViewItemSelectionIndicatorPressedBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundBaseMediumBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF99",
+        "opacity": 1
+      },
+      "SystemControlForegroundAltHighBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "ListViewItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ListViewItemForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "GridViewItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "GridViewItemForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ListViewHeaderItemDividerStroke": {
+        "kind": "solid",
+        "color": "#FFFFFF33",
+        "opacity": 1
+      },
+      "GridViewHeaderItemDividerStroke": {
+        "kind": "solid",
+        "color": "#FFFFFF33",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ControlStrongFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundBaseMediumBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "SystemControlForegroundAltHighBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      }
+    }
+  },
+  "highContrastSource": "Shared black/white high-contrast fixture; not an arbitrary Windows system palette acceptance."
+}

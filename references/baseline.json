@@ -1,0 +1,2811 @@
+{
+  "capturedOn": "2026-11-07",
+  "gallery": {
+    "repository": "https://github.com/microsoft/WinUI-Gallery",
+    "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery",
+    "commit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "dirty": [],
+    "license": "MIT"
+  },
+  "resolvedNuget": [
+    "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.AI/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Base/2.0.5-experimental2",
+    "Microsoft.WindowsAppSDK.DWrite/2.1.1-experimental",
+    "Microsoft.WindowsAppSDK.Foundation/2.3.13-experimental",
+    "Microsoft.WindowsAppSDK.InteractiveExperiences/2.1.10-experimental",
+    "Microsoft.WindowsAppSDK.ML/2.3.5-experimental",
+    "Microsoft.WindowsAppSDK.Runtime/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Search/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Widgets/2.0.6-experimental",
+    "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental"
+  ],
+  "targetFramework": "net9.0-windows10.0.22621.0",
+  "winui": {
+    "repository": "https://github.com/microsoft/microsoft-ui-xaml",
+    "tag": "winui3/release/2.5.4-experimental",
+    "commit": "7b12709347527238494ca28cb9fed326d513e779",
+    "license": "MIT",
+    "correspondence": "Same release label as the resolved umbrella package. Binary-to-source commit equivalence has not been established; NuGet nuspec does not provide a repository commit."
+  },
+  "referenceFiles": [
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\LICENSE",
+      "sha256": "dea9265341829002e2c23a7372393eb2ed6e26085fb623f38a4ba0af833f30a6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\Directory.Build.props",
+      "sha256": "05af58e2d39b1a51c6d3f99de3533b23f30c08dd6e636f92f4d7cdc777184745"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\standalone.props",
+      "sha256": "287fabac50d84d6e84b279d8ac7c7d21951c3ab0c0a92f5593b0cc217395ebf3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\WinUIGallery.csproj",
+      "sha256": "f7512bd1b6ca3ad35a9c9c85fdadd27b1402f07c53942bea7d84f531de23d70f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Directory.Build.props",
+      "sha256": "97c0a12a482e3f13eaab409c87a5ba8ab5828a9b28ca1bcab33345242b701cb5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Directory.Build.targets",
+      "sha256": "d9866160a934fdf6b423e326249fdf470da3b8fe02fbab7d061f01b48ade56c0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\catalog\\windows-samples.json",
+      "sha256": "e981378200c07246c909b4e0702922b5b39c28a968f5fe4764cd0edb31df5d8a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Samples\\NavigationView\\NavigationViewPage.xaml",
+      "sha256": "a2309d5a1d019c23c6ab3061be18767917ec322af65d070f311b48f424fcd18e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Samples\\NavigationView\\NavigationViewPage.xaml.cs",
+      "sha256": "1acae75e38f64e4d227bf0f8d4c4cb96fff35cddaf8b4f1585664eb83adafb4c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\obj\\WinUIGallery\\project.assets.json",
+      "sha256": "a8a3f1298c97f8ef3bd109bc814579500265b97a90d80a01ec1bf52b2b8ed87d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\compact-controls-sources.json",
+      "sha256": "2069a7d44f5404ab799ebae8bfead7c9fd2c8d1bc47751aba3591dc3853cc355"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\compact-controls-template.json",
+      "sha256": "3d3d48fa950a898afb08366859c5eb317c7fe9832ce7c63aedbf92c8e483d2cc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\compact-controls-palettes.json",
+      "sha256": "cf4a8ea7552173d8f7488b859fd8fbc16d0be376d07d1e9bd1a6d12efd360245"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\compact-controls-metrics.json",
+      "sha256": "f899409f2210538e09e67873352faee823f6b7714d0eb23d89a6b80e6961e4a3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\compact-controls-assets.json",
+      "sha256": "86b1cb6a5da1932bfc3c0ca498911fa042f61632dc2152f2f02c4be09b0d8090"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\sdk\\compact-controls.xaml",
+      "sha256": "2feec37a21dcccf56822affe9ccec245568cbba3fe38ef089f88e31c5237f7b6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\fetch-compact-controls.py",
+      "sha256": "310d0964b5ae406f7a27e284f03e6abc61e833a114960b9015ffd0de4cece5bf"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-compact-controls.py",
+      "sha256": "887226a05498469671a9d2017e857837064f0e8571ab55052ca241038f258530"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\CompactControlsProbe.cs",
+      "sha256": "d481aade677b8097b8638ba7fcedbdd984a88297734455c877acaad4e214a9e4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\person-profile.png",
+      "sha256": "2c298c50266e66f9153fe453e981e2e0a0c1caf8d21f1ca69b3fe5f356c12b67"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\src\\official-compact-controls.json",
+      "sha256": "df19d970153ee9d042f1565469d6fbe3da6235793433460edf636b196f9297e6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\overlay-sources.json",
+      "sha256": "77c00187cccea8aa8eb9403d9b9705604b1552e196930e29ac8d729f3603729c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\overlay-template.json",
+      "sha256": "6edbd8adc7a5f935bbaa487bb01905af37bced8c11f6b8756f712937f1aa70c7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\overlay-palettes.json",
+      "sha256": "ece9f5a97cdaa19c39a4a9151285504a126ee8673447094e57b8e6b089c8c6f2"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\overlay-controls-metrics.json",
+      "sha256": "034fe75248f29bdeb543edba9483adf542a21ca9758bf91061f9e847be6a4c22"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\host-backdrop-profile.json",
+      "sha256": "85c9acc46eb724287f964122b54ff11bb45061b72fc35162c99c2f37570fb015"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\overlay-desktop-graph-evidence.json",
+      "sha256": "fb208070904fecb4eb07902951ed1064c9b376540669af498ae3b53f4d996f53"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\OverlayControlsProbe.cs",
+      "sha256": "b473e4dd5db8c24408b48fe9bfeffface64607f72f2e4deb4159231d869ddbbf"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\TooltipControlsProbe.cs",
+      "sha256": "e1438051cb0956e791edc8ec134a1d63ad6e32738f3b15852bb3b93d66cdc919"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\RawHostBackdropProbe.cs",
+      "sha256": "4191ad585c1a65f5aec18979d61d3af6510d74484727cbaf9a8c25dd9bb5b4eb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\AcrylicKernelProbe.cs",
+      "sha256": "35553bc5193c377f4f61a29d56ef2b686f1cbb7af0cc40412d6b86a793456487"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-overlays.py",
+      "sha256": "0c4785cc3e6dfe8448c971cd35670e4d4526f530df1e59a37fff8ae96dd76186"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\composed-controls-sources.json",
+      "sha256": "cdd9272f7bd4d0f9a47e7570e4db60be50744bde55b4d25639db784cb50a1a1d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\composed-controls-template.json",
+      "sha256": "41ef506014de59e8d15a455dcdb348bb2eb4ad34b2b50156fdca772d155bb5fc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\sdk\\composed-controls.xaml",
+      "sha256": "b020de829ba088399c55743f82809b6c46ad70c863ded605ef324a9db4ef00d7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\src\\official-composed-controls.json",
+      "sha256": "7fafc6e13085b08d0015f3c4fcf5cc1d77151b43ea973265079b88e018e6de95"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\fetch-composed-controls.py",
+      "sha256": "afa9cf2c3f2085528d4be7d6aed56a70a2bcbcab5408c7e50e002a45b6ea1409"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-composed-controls.py",
+      "sha256": "0e8635ff2c516c59a5750af4638fb5bb159dbc6fae0d59f9903bfa1c44ea3e37"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage1.xaml",
+      "sha256": "608c1e313a34ff596e2bd797aaf3aa2fff39a3d9e4b54809c251f2fcddbc0ea3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage2.xaml",
+      "sha256": "137d5ae4d485566cbaf1e4fca58dd679a6aaabbdeab070bb2a163eb7d0c3a162"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage3.xaml",
+      "sha256": "3c3a546795c8b82ff5465d97a06a384256def85cf12f28e9ff21a5903aa43ed9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage4.xaml",
+      "sha256": "987a57cab283803876ef3ad8fc759ff0c84aea25232047cd9db819d11546edd0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage5.xaml",
+      "sha256": "aec076bf74f70fe8a14ec815e70beb2688d779f15dedd06c56acd90b19886003"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage6.xaml",
+      "sha256": "32a100c681df68b8054e51b2aa2ccda987ef0ae7b621f5000d3c997b928f61cf"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SamplePage7.xaml",
+      "sha256": "81a19c8f9e59df1dbdb0266b94a91b5ea564af4cba07990fa68628cbb9427b5f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-pages\\SampleSettingsPage.xaml",
+      "sha256": "82374b85a50178e1842f9cdc4c1ebd8c53e1e70a3e5f6aee048782a7db949103"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\Acrylic\\AcrylicPage.xaml",
+      "sha256": "241b12dc6db7bb0f0d47a89bd7049e013623d1a1d672f7f245163807634eecdd"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\Acrylic\\AcrylicPage.xaml.cs",
+      "sha256": "763a4cd8534cb056873a2fa4a23804befeec04045df98babd3177fc74268da25"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\Acrylic\\CustomAcrylicAppBrush.txt",
+      "sha256": "a2d4d13f24dc3ea131ceade6e7f50f0c769d4e02c8154b035cf5f8cbb6cdb4b4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\Acrylic\\DefaultAppAcrylicBrush.txt",
+      "sha256": "70d134780f4b3752729caaa3411de98fe549a12494bab8993901943215292ac4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\Acrylic\\LuminosityAppAcrylic.txt",
+      "sha256": "fcd6e47489bf5d519a24e99cf77d8507008f6d74b7807c0ddc89a24e8cc9392d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ConnectedAnimation\\ConnectedAnimationElementsSame.txt",
+      "sha256": "cc616b61d7c1bd8ebf4489791fd9480b59ea6f52330424c445fd3d128ad68058"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ConnectedAnimation\\ConnectedAnimationItemsrepeater.txt",
+      "sha256": "5e5785d4437f1c28fdf47807e519b5382bf1018c24f067854e0dc1556c2894f6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ConnectedAnimation\\ConnectedAnimationListPage.txt",
+      "sha256": "c9e077774c022a27054f700198aeeb15f92867688ce37abaef8ce95112a6c393"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ConnectedAnimation\\ConnectedAnimationPage.xaml",
+      "sha256": "b2da8ac2414052e0e940ad2e1754bc02d68978bf6473855b94a016f35e3aa75b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ConnectedAnimation\\ConnectedAnimationPage.xaml.cs",
+      "sha256": "cbeb72f4baa36f9c213d07c4ea88aa2fa53a9d0f0d255a9547972f0a0482d5ea"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ConnectedAnimation\\SimpleConnectedAnimation.txt",
+      "sha256": "9663d07f5652469fbd5812d4a015aabd6fcb5c41d9ba676aeab890a6b06a8ec6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\EasingFunction\\AccelerateEasingFunction.txt",
+      "sha256": "ee1b1f23403f5ab8a5098e931a5edb105996b7798fcc17d4d7dbe2129dd06288"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\EasingFunction\\DecelerateEasingFunction.txt",
+      "sha256": "277f80e248c7e290f09237217c888dd1d778d8396928bbbd9941bda31a3ef615"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\EasingFunction\\EasingFunctionPage.xaml",
+      "sha256": "11464e3de6c9b39814122bcb848a295bb31c6e3b07f603b80186dd52f98d0ee8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\EasingFunction\\EasingFunctionPage.xaml.cs",
+      "sha256": "fbb4bb03f8293e408884eda8cae8a6c2d68950cff9a1ba85b89874a38f5fe12e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\EasingFunction\\OtherXamlEasingFunctions.txt",
+      "sha256": "37064a97a2c4acfff81b0ba9bc12134360354a022793aebadafc0cefa0d2751e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\EasingFunction\\StandardEasingFunction.txt",
+      "sha256": "58724e48a1f97896538ab52ced408586345482b056989fe8130d88f801c8f304"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionAutomaticallyAnimateChangesOpacity.txt",
+      "sha256": "7506c2380f61b88ce1bd7ac237eed2e7dd0e4064b568ff6aab8e50540b3fcb90"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionAutomaticallyAnimateChangesRotation.txt",
+      "sha256": "67937fe74391b1514ce61c42dec114d2c443e70bd8930e804eed216e1e36dba1"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionAutomaticallyAnimateChangesScale.txt",
+      "sha256": "0c1012d7a2257f5c4865194f6ccf23b191c6174ded291fe3c454076aa748dc4b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionAutomaticallyAnimateChangesTranslation.txt",
+      "sha256": "088989e2fe7435e9cf7431c42abd275a9af875e01a87b5c1c048bec9be1480b3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionImplicitlyAnimateBackgroundChanges.txt",
+      "sha256": "9eb7cfd49fae33cecf85be8ba910d6c11d0ddef64078308d3bd29fbf82057f35"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionImplicitlyAnimateGridTheme.txt",
+      "sha256": "87fb70ec0e83f7d35294c7ec4c0ba76d1813675933616c48c1549b95ffb5a319"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionPage.xaml",
+      "sha256": "e4248f98f1a83164bc97bedc9cd9c7988b6ace790a5053b0abb1f225cec43337"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ImplicitTransition\\ImplicitTransitionPage.xaml.cs",
+      "sha256": "11ec874341f16d9b9d2c5440996de90a41e7258a76f00eb32dac0e1fa9b842cb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\PageTransition\\PageTransitionPage.xaml",
+      "sha256": "c876ec84168c5b301ce69d98d61b09d14521240ec0e7ec89af52ea15797e11b3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\PageTransition\\PageTransitionPage.xaml.cs",
+      "sha256": "3d743e07be5f5002060e70e33f6b9c0996083ccd317495d223ad5c3cb767682b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\PageTransition\\PageTransitions.txt",
+      "sha256": "529577acd017afb86f7722980ba89a7bb75a912546dab8f1a1c6c5d870d58596"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\RadialGradientBrush\\RadialGradientBrushPage.xaml",
+      "sha256": "2f13b215a71103612dd20fb7f08dce5520374ce7c93453e74d04cc422f70879f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\RadialGradientBrush\\RadialGradientBrushPage.xaml.cs",
+      "sha256": "4c3ecef1dea51bb9f9beeae0d6086a7b026545b8e72858451dd03a403331ce48"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\RadialGradientBrush\\RadialgradientbrushSample.txt",
+      "sha256": "2b219608efd7355f458c6c560e966aeed9127e379be20afe11840e6bd119eafc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\SystemBackdrops\\SystemBackdropsBackdropTypes.txt",
+      "sha256": "10cdc66c6ef0300c7eb685db16c804dc04cbe65313916ba76b23783dc41a8dd0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\SystemBackdrops\\SystemBackdropsDesktopacryliccontroller.txt",
+      "sha256": "c9213c2bd2e78cc47aee909019c56f8b6c31a5b3f1dfcb52e5a99a39391917ef"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\SystemBackdrops\\SystemBackdropsMicacontroller.txt",
+      "sha256": "a4ef3959729f3ace7dcba43c81fa2a6f3f83c58b2d6aa1412f87170295c94f3a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\SystemBackdrops\\SystemBackdropsPage.xaml",
+      "sha256": "eeb2cc8d9fafc61a520372fef19be82aa618729a84f067da9bef2034623da690"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\SystemBackdrops\\SystemBackdropsPage.xaml.cs",
+      "sha256": "89301f0d70e2bd8e36380151b511e6b4e9c4e804b8a9a7bb9006ef91d14e4986"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\AdddeletethemetransitionAnimateAddingRemoving.txt",
+      "sha256": "b595cc606c53031b8e0817542066490149f125fa402b0980cb55e3866ef0ba01"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\ContentthemetransitionAnimateContentRefreshes.txt",
+      "sha256": "ceef8361a172f0375c783cd2f67407916e51302f1c676f9d77df8e2d46353cc0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\EntrancethemetransitionAddingItemsYour.txt",
+      "sha256": "6e8520cec6b874fd2456bf9e033e65858b69f6832c79d80689661281a53ddfc2"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\PopupthemetransitionAnimateOpeningClosing.txt",
+      "sha256": "a9550cb9c8e088a3474fc65c59156fd14999884838a6f75ed382fcecbff68996"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\RepositionthemetransitionReactLayoutChanges.txt",
+      "sha256": "93d384a107eaacc5a730f93d0ae223b9cbac15b9c85491640f3c0e9cd8ae8bc9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\ThemeTransitionPage.xaml",
+      "sha256": "d6eba122d9908b8b0e8ea875b764a3db3e08e6fdccb3cdd4aa611c13ce24e9aa"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\ThemeTransition\\ThemeTransitionPage.xaml.cs",
+      "sha256": "5b582e6c2e5ba591a11be78fdc19cae5e78c8a7d821bb78beefa10b7111b7ef2"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropDrivingSeveralRelatedAnimations.txt",
+      "sha256": "30df35c43d57eb05d4990fc6c7ea76b77d12a36affa8dda7aae5045e394b64d9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropExpressionanimationEllipseElement.txt",
+      "sha256": "7a916c7e3a6f8c47ef0e89a0271c3dbf34ee9bb78bf6ff5802d9d2684fdf8d3c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropNaturalMotionCompositionAnimation.txt",
+      "sha256": "cb59f91c6296f31b9e3b2b88b28bac4913c22358b6dec597a324f2a15f32cc60"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropPage.xaml",
+      "sha256": "6e5784c38b63f061484052eb4a31a882514e0b57c1393fe4c0251ba81dc812a9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropPage.xaml.cs",
+      "sha256": "b5bf0b0c1e50fe9acaaa3f758bdadd371ff042533401c65845d107ab869f8f7c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropReferenceActualoffsetActualsizeExpressionanimations.txt",
+      "sha256": "ce2c125d9125203364c9fb21bf3dcda27c883093dd07b1220790c46cdff4421b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-motion\\XamlCompInterop\\XamlCompInteropReferenceActualsizeExpressionanimationsMake.txt",
+      "sha256": "ba1fed52e3f8481ce1536d9cbacb658f5c29be7892a9aac3c80fd6ae2cdd1e75"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\CheckBox\\CheckBoxPage.xaml",
+      "sha256": "18f8d1becf4bf01af1070e9d68204f33abb49aca2b849fbeca0baeba324ee36c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\CheckBox\\CheckBoxPage.xaml.cs",
+      "sha256": "6d9422e276dc73d5f6a20505ed22ce5dbbceec91b433f68414dff405f672ab78"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\CheckBox\\CheckBoxSelectAll.txt",
+      "sha256": "49151e331a2f44f61474f8975304bbc3d510894f41b605590777078ffe2c6c3e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\CheckBox\\CheckBoxThreeState.txt",
+      "sha256": "396c1db0163eafc630ed8cab26a509f15eefa0167b8653bfd4e486fc741fe0fb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\CheckBox\\CheckBoxTwoState.txt",
+      "sha256": "05b9e8cd42a8805527ff4e60c59f122fc455fab949b844ea5bd9bd6a214ebb0e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\AnimatedGif.txt",
+      "sha256": "0041a94938a0716d2a420be5c0612cb146aa0b3f13287bc3d7b9697a37aa2c22"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\BasicImageLocalFile.txt",
+      "sha256": "9d1e5b8781e53413b0bd22c75bc5c6686d775019f1e9de989c60a33cb8f70c4b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\ImageDecodedRenderingSize.txt",
+      "sha256": "169c000c56533213f6e43538d8c924b65add762905d0adf2389d56a1afe7617d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\ImagePage.xaml",
+      "sha256": "d0997a310e862aae57c19c8c09fea11c54ea9f91c45003cd84a9fe868d317b0f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\ImagePage.xaml.cs",
+      "sha256": "e215e8d6e6ee7ba37f2f6b7a41b86a32bad1e4e680bd07b2d5f6c1824e93fe00"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\ImageStretching.txt",
+      "sha256": "0d2c4371c2a5fc094bf0ab632a658103fcb4dc593bf302b3bb57657e0fdca45a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\NineGridImages.txt",
+      "sha256": "a7b8f09f85315fb242d6e647798fd6f6821889cc2a971931032d8a1e765de0a5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\Image\\SvgImage.txt",
+      "sha256": "db60168af9cb6fc84ac39c26e9b31280cb20726dfab6c7716beeece7ea9ab4cc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\SelectableTextblock.txt",
+      "sha256": "dcc0774bfe64c2aefbf3617e97aea237a4b67fe63f0c1c9cad3984022b384c8a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\SimpleTextblock.txt",
+      "sha256": "6e1d6f392af0e726b353eecbd25f0e687af01b088be0e5d1853bf6d974ee6306"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\TextblockInlineTextElements.txt",
+      "sha256": "12d65819f7d80a56baab026e98c7c0ba73243b14586257bca9ef19541ef989f5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\TextBlockPage.xaml",
+      "sha256": "a2d1f5b91363fd29c2b6f6e66d2063ebfe4df9fa0398f1a75761b5423c7cc032"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\TextBlockPage.xaml.cs",
+      "sha256": "d5bf11f3c91861c65715029276d44a84905d471a67e40501a0ee3521a06dc00a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\TextblockStyleApplied.txt",
+      "sha256": "408c4de2046fe652c0d1dc953aa611700642fe4ff876b4800f6c12454623f61c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\TextBlock\\TextblockVariousProperties.txt",
+      "sha256": "1fb09552d1a0e714d827cf37fe4518401a5590579bf1023a3c301b2dca074858"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\ToggleButton\\ToggleButtonPage.xaml",
+      "sha256": "5fc247cef8469f01cd3fb038798c3874d583d58c64080aab01d58f2a1f54bccd"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\ToggleButton\\ToggleButtonPage.xaml.cs",
+      "sha256": "3aac9e88f31c495a42af0e552ec206178dd4c5c583a22e38d58119a9d166614b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-foundation\\ToggleButton\\ToggleButtonSimple.txt",
+      "sha256": "a96191f42e81e4c5fe21d1839d8f3176eba74a8e1d9df38a893818e31111ca80"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AnimatedIcon\\AddingAnimatediconButton.txt",
+      "sha256": "5273e8d669d5c7b3a7d8f03bc1b28978d04a2a8cc64399414efce12278d6b3cc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AnimatedIcon\\AddingAnimatediconNavigationview.txt",
+      "sha256": "e3aa58bc4c003cbb52aa091f9f601c14a0e4c53f3c53a6a70905b45f796bce9b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AnimatedIcon\\AnimatedIconPage.xaml",
+      "sha256": "ddd2a4815f9b9b3f479fe9e7847c6ff5bf3628b4af3fe72e9c1ac7c05c172684"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AnimatedIcon\\AnimatedIconPage.xaml.cs",
+      "sha256": "181dfecb86f7d5cd3a82d10de3d2766e2b18eeec1b922ced0a1a39c43b53acaa"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AutoSuggestBox\\AutoSuggestBoxPage.xaml",
+      "sha256": "2c561c62cae2c08308269c697b37439f87fb98c5ec9aabba0de202dc63041fc7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AutoSuggestBox\\AutoSuggestBoxPage.xaml.cs",
+      "sha256": "5e9561cb29096ef5e19535f8134c06ab236f990e974680a5832af25bfa2d736d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AutoSuggestBox\\AutosuggestboxProvidesSearchboxExperience.txt",
+      "sha256": "aa1ced60555382b19cc755355dabaff20f94da0dabe8dc3284f8cd3509b92191"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\AutoSuggestBox\\BasicAutosuggestBox.txt",
+      "sha256": "a80bbfa5022bbf4b2af3ba5e5fd3af979716401f142c25ca87d7f429066b4b3f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Border\\BorderAroundTextblock.txt",
+      "sha256": "6dfbaf2c3045c28194c490ec4a8acc815affaeeff2be7514d498fbf1fa95fafe"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Border\\BorderPage.xaml",
+      "sha256": "d9da8df2b2e7ac0e715648090087220ea60d5db92315ce27a17f85ac33de70e8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Border\\BorderPage.xaml.cs",
+      "sha256": "24cda5ecf7ab1663730eeec6afb282a50aded6e292528ca3edf91ff6bc35a4a1"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Canvas\\CanvasControl.txt",
+      "sha256": "0debb2c2f1a589603eb91896e36efea7e4e6e3a86186ffe393ec818119f7c3b7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Canvas\\CanvasPage.xaml",
+      "sha256": "81d71026a92029bec14f744228f1547c0c7845482700de8bbfe80730c7425b4d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Canvas\\CanvasPage.xaml.cs",
+      "sha256": "cfa9d7c8e4208f5d05f166500d7c4aeb8d2b95d5b9d69b46ea631ac63c281042"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ComboBox\\ComboBoxEditable.txt",
+      "sha256": "1a1bff6c142f8027116dbd874ed6cee55ebfaa7e94700aeeb8f0ea7a5f546f6c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ComboBox\\ComboBoxInline.txt",
+      "sha256": "beb8dc6b1a84cb44b5f47911ac501996182b05b1d1abca0c376451013c11f235"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ComboBox\\ComboBoxItemsSource.txt",
+      "sha256": "f5a0f0c5923c6348c2fea550f7946e2c135ce5b83c494a265efbd80d9c9217fb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ComboBox\\ComboBoxPage.xaml",
+      "sha256": "32943b27f88e42c04d8015209cee6d63fa3adc20213d8faaecade203c5d1d26d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ComboBox\\ComboBoxPage.xaml.cs",
+      "sha256": "6c65e36fd8dcd5e56ef0889dd6beb091bc706d692b532f5031c8732ac34570ac"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\BasicContentDialogContent.txt",
+      "sha256": "b67bd213ff6ddf51b80fc4ad090e59e4f0e632f2b4f48935f81f6605e6eaac40"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogContent.xaml",
+      "sha256": "7c3859a576fbfe8ae57f47d7084e6ec9603bc1e09bc5d01666d729e83f61ee39"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogContent.xaml.cs",
+      "sha256": "8fbb1a4225732fc0baf9f2cade7e1a1b3be474c2b7f04f02c2b36190674c0c1a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogExample.xaml",
+      "sha256": "fdb851c2f791fb23ada1479575496eb0fc4945e8f719839ba9d8fe5a6875ad62"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogExample.xaml.cs",
+      "sha256": "bdd4e47918dc6c2828574c70a84d6cbd6b29b7e961bf362ff200c5c26778a431"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogPage.xaml",
+      "sha256": "61ed29eb271302c58d46bb08095129bea874f301f854f3123ab198b102d85f15"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogPage.xaml.cs",
+      "sha256": "036751109b55bd2067b95224d37cff3cc9aa339f0b28c21c85e00f589c2711c9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ContentDialog\\ContentDialogWithoutDefault.txt",
+      "sha256": "c7c84cb3445d71cebfc9bb6f4fd6b734dff3ed547b44df6ccc46b44bc6c97b5c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Expander\\ExpanderPage.xaml",
+      "sha256": "3b778344b284724b7e568050410a0614db5ba19857574f50965bd8da765bf989"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Expander\\ExpanderPage.xaml.cs",
+      "sha256": "38ca4aa95d58ad9554d78157906ba5d50eb6092f975ab01750223c4c9b441f96"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Expander\\ExpanderTextHeaderContent.txt",
+      "sha256": "7edf892afb91281598b816c97d34979072d1acfaf20e868f5ca47f4c3bb587ce"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Expander\\ModifyingExpandersContentAlignment.txt",
+      "sha256": "23b119bfc029793a9f21c1b09f7e90e04f71e8c7a437b9d3b56bd6d12440609f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\GridView\\BasicGridviewSimpleDatatemplate.txt",
+      "sha256": "3ca56dd7f5ab4673a0c69599acbbfd373331c821816c8b693b337dd872d302ff"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\GridView\\ContentInsideGridview.txt",
+      "sha256": "abb6c2fd1131538b3814af49a5a3c301e97993d0abd73db9f191d069311b77d2"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\GridView\\GridviewLayoutCustomization.txt",
+      "sha256": "4361c4743b7bc0e6dc72667d09fde35ec40f42d8445dff6da7b93f38a28a3abc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\GridView\\GridViewPage.xaml",
+      "sha256": "5a9aa728def6a5afa2fcb49d1275cb84b5a00de4a5ccd973729bfd69ca1eefdc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\GridView\\GridViewPage.xaml.cs",
+      "sha256": "1b6bf9017650c7461e8e4fb16e618d745d51639d325ba0c8eecb9f19827248ad"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\HyperlinkButton\\HyperlinkButtonClick.txt",
+      "sha256": "ff4c2f546491b23742641ca24f79d6d7ec3cecc42aa7c4a410c88453b708e232"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\HyperlinkButton\\HyperlinkButtonNavigate.txt",
+      "sha256": "7bef9b1a2478fd7255a7c52564b13b09380b7b4b5c9cc1332d74295bb2ba5e71"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\HyperlinkButton\\HyperlinkButtonPage.xaml",
+      "sha256": "fecf6772c6bb98235aa622b951b03eb528bb7073e7549c9bef911b5521980885"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\HyperlinkButton\\HyperlinkButtonPage.xaml.cs",
+      "sha256": "e4f1695170db4ef7442246c44748a1e2c5e84c01b33f22786be6d49d1282ce5d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementBitmapiconMulticolorBitmapImage.txt",
+      "sha256": "20b6b3f3df8e3a52df8740d0a29bab5d93f0d04d7c4cb50856cf3afe94f6d33b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementFonticonGlyphSpecificFont.txt",
+      "sha256": "5ca45e15e94d4a7756ab5b2e1493d7de7712ac1aa2c22815e86677929ed4f218"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementImageiconBitmapImageButton.txt",
+      "sha256": "3f705ec33f4c88e50355d2469b71f31e5cd53119d59a1b5ddbe84fd27c418d42"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementImageiconSvgImageButton.txt",
+      "sha256": "e3e2449bf978efec03f340d478cff042da1d9ac9a8931740ffa32228dd274457"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementPage.xaml",
+      "sha256": "b0243c3c917cda5218614fe2791f45cf78dc9043769c66d421855a475054f2ba"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementPage.xaml.cs",
+      "sha256": "28e6e3ee77ae90c56f6d7de1d7e9e7c4392f2eea7235b9171ca75a5eef47cc9b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementPathiconButton.txt",
+      "sha256": "2de9d0be675699f986818ccb7d018429aa2da1e3b904be5bc9ebce900424de3e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\IconElement\\IconElementSymboliconButton.txt",
+      "sha256": "01f516951a4df9d101e20bbff80d435ee859b96620a8934f408b7a021fb653a0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBadge\\DifferentInfobadgeStyles.txt",
+      "sha256": "4291c4161073249dd2f59fa879fc8d1e2ccd4769daaf477077375872ed2cdd1c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBadge\\InfobadgeDynamicValue.txt",
+      "sha256": "3058d49f6ba26e6a0f61ca8177f3795e944f256dea01ae44ad3141496e0cadc5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBadge\\InfobadgeEmbeddedNavigationview.txt",
+      "sha256": "522611df549a876ea1f4869f4f7ef6c3cee68ca12006433f6080b86afd86df5d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBadge\\InfoBadgePage.xaml",
+      "sha256": "034b189efd776da542ce2acb36429332a9260e2099e51714ecbd7916dd370873"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBadge\\InfoBadgePage.xaml.cs",
+      "sha256": "664b2e236a87e0c0a6904eb203298acacda40a3b24169f9c3a85006a72c9d33b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBadge\\PlacingInfobadgeInsideAnother.txt",
+      "sha256": "c9cd9db7786cb06c37271caf0e242738eb0fb5c5942b2d0499614d0cb0ac2a93"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBar\\ClosableInfobarLongShort.txt",
+      "sha256": "5e0e1ae31d7bb8bc597058321f5be398158a682d67103858a6c25803f5b7d555"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBar\\ClosableInfobarOptionsChange.txt",
+      "sha256": "f1791a728ee2488a59eff6194c3275bf035a6b9e3bb5eae2b4577140ba8a1d0d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBar\\ClosableInfobarOptionsDisplay.txt",
+      "sha256": "9f633733b14f47160068481fcc8c9aee81b0d9bc800ad53ca1dad53441021aaa"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBar\\InfoBarPage.xaml",
+      "sha256": "c9d1bc6e6e53d60827bac3bb53c1048f0ee0fd597e4519c30745c36d4d89c498"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\InfoBar\\InfoBarPage.xaml.cs",
+      "sha256": "8e7d11a20c0d91fef538ce16eb9c9adf5682995d74287996810fac3f8a58f1cc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Line\\Line.txt",
+      "sha256": "9a2ee5fcf48aed1ca91ed07c8f0e33c139c43d01a12f510e78bbb49dd5a75339"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Line\\LineGeometrygroup.txt",
+      "sha256": "87f5a261fda6d9223e2d483b413d613497e4d2312de5aeb22a0eb9b8a1f4f9d7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Line\\LinePage.xaml",
+      "sha256": "2627a4fc18e022534699dc85cb4bd015049a432d64a2bce867b9cf405a5ca161"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Line\\LinePage.xaml.cs",
+      "sha256": "880afd9a1d5cf7566e01e7eb1092ce8d74cc725a4b47b3b92ca168d7a3d18ca0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Line\\LinePath.txt",
+      "sha256": "1ce52012593f7105174df7951d055bd0a2f72b1284e7253ffce92f10fd4502e7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Line\\Polyline.txt",
+      "sha256": "541dc8432ae9e1fa306c8dbf6b1c7bf110d24cbc4a825d8dd57f34202e46f166"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\BasicListviewSimpleDatatemplate.txt",
+      "sha256": "01ac951dcbe4a5bfbaccc708372b2ff194a54ff41aa1b61ed6547aa5335679b2"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewContextMenus.txt",
+      "sha256": "981e5945ab38a5577722f9daea8ad833764e3d44d8c64a3fa007d5dfc720f5b3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewFiltering.txt",
+      "sha256": "f34ebab1f2f7f91840f74ad8e98ae1461b1a35efcbeeef51c0a718b1810aa2dc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewGroupedHeaders.txt",
+      "sha256": "e6a1b966eedb158d6df6c6706145c6470d5bac3ff8c422e3c9a6b52baca5d791"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewImages.txt",
+      "sha256": "75364459641254f64d3e9c6e2527a89f90450c47c37e9612d21712410bfd8a36"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewMessagingDataLogging.txt",
+      "sha256": "87753e0309e40470c743140e0ea6fab811cc502a4e55f908cb315119247e550d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListViewPage.xaml",
+      "sha256": "cbbed9b811c6fd0e399a3408b3d59e2d4ab61a7bd5bed3f1b28fbf2dd4e44a96"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListViewPage.xaml.cs",
+      "sha256": "3714fe5dd46e9504d830b9f831fbcbb8a1025bde11e47b5070980294afea317f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewRestoreScrollPosition.txt",
+      "sha256": "58fbf5affa8456545093fa2905cfe59f101a4b8f2da0e839f1ec5ee6e187abdc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewScrollIntoView.txt",
+      "sha256": "69f631b1313402949a6077f4a36cf7dc44b9a5999f40c9ced865afa58c972694"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewsDragDropReordering.txt",
+      "sha256": "f88232c2bd4066c4a4c1edd766b435a33b505d4a9a6c394d881d12bd66019a70"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ListView\\ListviewSelectionSupport.txt",
+      "sha256": "85eaf9666895b07cc8200123588489cef8b5ab304a8b1ef721293a739b137e82"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\NumberBox\\FormattedNumberboxRoundsNearest.txt",
+      "sha256": "6d5d037bc7af3678a317a08eb561781f9098cbcedc6252f3e0921f89b1a88095"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\NumberBox\\NumberboxEvaluatesExpressions.txt",
+      "sha256": "a4442235f90b5ebeed8708558e32ed5aa19ab670264154a010afc9e6d2b7c07f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\NumberBox\\NumberBoxPage.xaml",
+      "sha256": "95bc0ffe24e4dadd91d54f8f8b299392d3526d5f9d579b14a00c6daac94f5b2a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\NumberBox\\NumberBoxPage.xaml.cs",
+      "sha256": "7f34794757a5d7b09b19b24912c8a2b9144593a0a0771e56eb082086e33d3717"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\NumberBox\\NumberboxSpinButton.txt",
+      "sha256": "1a427665439d0e321388c0e4d3e202f848c3994f95b84fe6e63f112e098a1a76"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PasswordBox\\PasswordboxHeaderPlaceholderText.txt",
+      "sha256": "db60d4a11f2de336b97f89c8b7faccc6d138aa2b2841c8d5c4dc87d1042ca71a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PasswordBox\\PasswordBoxPage.xaml",
+      "sha256": "7e8552adbdfe71683deb7664af2a913016e857efe9c7bdc99bc9271e2c465ec8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PasswordBox\\PasswordBoxPage.xaml.cs",
+      "sha256": "848cb36f11051324d6627557f2b4bc24c3b8807d927c500b66c712cf1ac82c7f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PasswordBox\\PasswordboxRevealMode.txt",
+      "sha256": "e4bfc299645cb356a809738a9559cdbe013002f480c1155dbefbd2e59d12848b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PasswordBox\\SimplePasswordbox.txt",
+      "sha256": "88a917ce6b993fee4a59317f65187c407e2add6fd156b31cc021124b5dc73dda"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PersonPicture\\PersonPicturePage.xaml",
+      "sha256": "61d30ce158c192af13bf9fd6c8dd4ef56274730a7b02403cf974ecba85107ead"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PersonPicture\\PersonPicturePage.xaml.cs",
+      "sha256": "3dd0d68aaa0536a0b23b14d9d88266160823a35fde09250d9cd13924dd40c7d8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\PersonPicture\\PersonPictureSelectDifferentLooksPerson.txt",
+      "sha256": "eb01d7d2ea323b2d9ecc76583c323c5bd3238461f14343cd062acd6ece5b76fc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressBar\\DeterminateProgressBar.txt",
+      "sha256": "8fb6ca689d99f926a5fd15365827ad93c51e53102a9bb46aee155cbd8cc57dec"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressBar\\IndeterminateProgressBar.txt",
+      "sha256": "97943ced609d2b2b39e6bd48f9f82fd3b046d0d9c1169cbc9164b38d41e0bc88"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressBar\\ProgressBarPage.xaml",
+      "sha256": "ced3307341a830f5a960c6a6ac990a8e3b9035a3814271f445e4785b62d458ab"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressBar\\ProgressBarPage.xaml.cs",
+      "sha256": "f6f8b3b36e8e903a2de01e2ae90819799e93bc83b908c1a93ad5599ef068ba70"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressRing\\DeterminateProgressRing.txt",
+      "sha256": "853eaf9110054fdbe686d8042d684ab2e991ec60a6780b2a16ea1a889ff80608"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressRing\\IndeterminateProgressRing.txt",
+      "sha256": "9c4f1fd055773c4edf613c6a92e62151c16c8202521fa0f1871904755484aca4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressRing\\ProgressRingPage.xaml",
+      "sha256": "e8de449dddb972f7c43681c51168b34908543eb41e73aeba0c59e4e5f2a54ac7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ProgressRing\\ProgressRingPage.xaml.cs",
+      "sha256": "833ac910bf048b9c156e5094f61085ba31141c81f3dfa7daa1c7ef90113e81d4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RadioButton\\RadioButtonGroup.txt",
+      "sha256": "92e27d2a8db875ceb0f13389edc5f4309af5c3c835c59624ca1a0262beaea8fb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RadioButton\\RadioButtonPage.xaml",
+      "sha256": "1273eb2b6408c958e3e6d3598fc178caf45fd2bf77967f5372ba27ebd89297d4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RadioButton\\RadioButtonPage.xaml.cs",
+      "sha256": "e526e7153aa2257ec81e8590b444ff0b55dd1ce3d00348b14a2624bbae0acb0f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RadioButton\\RadioButtonStrings.txt",
+      "sha256": "4a2dfdda37e152f9e73f992ec326bfcb11e9e267a21fd33e77305ef417360b58"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RatingControl\\RatingControlPage.xaml",
+      "sha256": "6a582d462fd2e24a3a552c7438a9df872775f9078975645e06ea606b9541cdb4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RatingControl\\RatingControlPage.xaml.cs",
+      "sha256": "9d784c1127ed78756948cf4a5aea0108385ad78cc229bf02d4cb118d3c11c475"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RatingControl\\RatingControlPlaceholder.txt",
+      "sha256": "2a926ef530e0631cdca5fdde702a31ebbcec58ffd738a8d606154469019b4ef7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RatingControl\\RatingControlSimple.txt",
+      "sha256": "121aa29378ffda8cbd99d90ae4d46d69471266db3cded637088f6e2e9f51f43d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RepeatButton\\RepeatButtonPage.xaml",
+      "sha256": "3c03177d0034bae69a9b44dfde13e236318fbef8730c2b7ebc1b9c3674a05fcc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RepeatButton\\RepeatButtonPage.xaml.cs",
+      "sha256": "c67783a3feb2215dbcc5eae99eb4f003535fe0723ff05ffe9876917112905e06"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\RepeatButton\\RepeatButtonSimple.txt",
+      "sha256": "f9912b72eedbd9bbe0a799f22c95758c792af5b8ab4c404382b89452aff77d3e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ScrollViewer\\ContentInsideScrollviewer.txt",
+      "sha256": "3547f553556263c89ef16335a8c489b4d109eeca6f852bb587fd625551000300"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ScrollViewer\\ScrollViewerPage.xaml",
+      "sha256": "edd713c839b8016bcbeb5fb5a798f62ec06953b962e6500fbc626b8c4962c4c5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ScrollViewer\\ScrollViewerPage.xaml.cs",
+      "sha256": "3655acb92d659249ea4f79b1d59337ca692d423000f65b5bf540b2365ae7f6df"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Shape\\ShapeEllipse.txt",
+      "sha256": "31ccf8a3e47aaccf9312593539ab04897fc81e0973bd231faa869e8b133d3023"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Shape\\ShapePage.xaml",
+      "sha256": "4c50313a1b8165a91ebfb9ac8d0ec29f7ebae007ca664e53b532d5d415ac6c10"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Shape\\ShapePage.xaml.cs",
+      "sha256": "243369108a4422145cc9c4656b37d7078a44eb2790b3f3d52b725249f67c188f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Shape\\ShapePolygon.txt",
+      "sha256": "9f95681a37980ff40457bf44bcd7f8dcdf760eacf0d0d7884063a1ff2cd0a684"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Shape\\ShapeRectangle.txt",
+      "sha256": "de90d7720533572d390e2a75b840a23dc856b26722d085ff94e69b86619c4fde"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\SplitButton\\SplitButtonColorPicker.txt",
+      "sha256": "bdfd6e6375c47c02b582282723b521ad74303f9999340b93da361cc92f6b786f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\SplitButton\\SplitButtonPage.xaml",
+      "sha256": "8eafa9e734e087bba35b378da6b68c3a026d8b41132077e5e4e838454def4cfa"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\SplitButton\\SplitButtonPage.xaml.cs",
+      "sha256": "328c41fb93933fb8d36977b54207d6a1eb2e91a6940dc59ba250aef2b42eccdf"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\SplitButton\\SplitButtonText.txt",
+      "sha256": "fef6433d5e83f82dbed37e0c1e3353ee0d2d14cc78163efc2adcccb178f36ccc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TeachingTip\\ShowNonTargetedTeachingtip.txt",
+      "sha256": "08f78eb79879f2d67fb03f8814acee69f3d22270be186fac821b0bdb8e351bd1"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TeachingTip\\ShowTargetedTeachingtipButton.txt",
+      "sha256": "506ec7fcf9c5d008709b141cab51b7209acdfba406edeac05283bd2a4ab19406"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TeachingTip\\ShowTargetedTeachingtipHero.txt",
+      "sha256": "bcd78df71d420e3e081d816f6687a9dd083e27ae152ce65bd0c07f9f2052069b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TeachingTip\\TeachingTipPage.xaml",
+      "sha256": "3e9be72b5c10777988341e9be651f2238343b8573c90d86d8dbaf26f6601f7db"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TeachingTip\\TeachingTipPage.xaml.cs",
+      "sha256": "81e46124a22a7a0f89c72c086409a4f36c6c2e692a18095cecad755a8625f20c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TextBox\\MultiLineTextboxSpell.txt",
+      "sha256": "084a3416a1f8350d2bb33b18d03dfa6c33c08441b23d174012a7b17ebb9b1260"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TextBox\\ReadOnlyTextboxVarious.txt",
+      "sha256": "226ba594c0b2ba4febf92c53551778982c05e82870d6632ae33a67cb1e8c901a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TextBox\\SimpleTextbox.txt",
+      "sha256": "e58365e32ef0121db7a57c3716b42a4048fd14a559a5a2214fa1a7d1a82f2e96"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TextBox\\TextboxHeaderPlaceholderText.txt",
+      "sha256": "0158a237ccc7ae3d8eeda6cbac9f8821d71c61cb5a3039c50c734a848f7765d9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TextBox\\TextBoxPage.xaml",
+      "sha256": "8a4374e00f8c8af2566278d69cd5126aafe31cfade61b1554115d86e3270bc04"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\TextBox\\TextBoxPage.xaml.cs",
+      "sha256": "d09b7e4352a57a73e6e3f02c5a54bacf75691159851cd8c05fadcf015e9c5fa8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSplitButton\\ToggleSplitButtonBulletList.txt",
+      "sha256": "36a8738c0e767093e0ec832110aa8dc202063b27540395e0a745473168a14fd7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSplitButton\\ToggleSplitButtonPage.xaml",
+      "sha256": "da8a5af9d36a8a87987d9e3e5be7fc4826c861d0a4d817bbe1d80895f010ab01"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSplitButton\\ToggleSplitButtonPage.xaml.cs",
+      "sha256": "6062289a984f3e0a0329bddec1700f5b186f501745df012cbd4a41fb858fce9f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSwitch\\ToggleSwitchCustom.txt",
+      "sha256": "defa1b28ec6c8596b613117516fa20425f64473a6c55296c3956177007b72cc4"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSwitch\\ToggleSwitchPage.xaml",
+      "sha256": "f89baa31af063a52eb35d099cb4812a96c98d5d45c52f2f84f4e1a70cb252df5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSwitch\\ToggleSwitchPage.xaml.cs",
+      "sha256": "d4a64cac7140bb230c07cebfe3bd62ef1c1ffb73b0ba7c03b1e1f492ffec8840"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\ToggleSwitch\\ToggleSwitchSimple.txt",
+      "sha256": "3d95d9bed4ba1e66c063fff1cb809bd91af12fcf36c11289ddc6a06f35d4b248"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\VariableSizedWrapGrid\\VariablesizedwrapgridControl.txt",
+      "sha256": "50c9ba8db050223f7a4e33f436cccf24925cbdaaf6cf9c5aa6b473c1036f562a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\VariableSizedWrapGrid\\VariableSizedWrapGridPage.xaml",
+      "sha256": "2c52246975dda230ae1495655bc1773cdc19a26aba53c11c65b9fee15d4b114a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\VariableSizedWrapGrid\\VariableSizedWrapGridPage.xaml.cs",
+      "sha256": "8ad0cc58f01942234b6c534b67b0879f4d6b777cb641cc2ad6d88c9e58552be1"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Viewbox\\ContentInsideViewbox.txt",
+      "sha256": "316081d2a2e933b6d829921014812dcbefafce45215d0fe3a90cc379a6b806db"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Viewbox\\ViewboxPage.xaml",
+      "sha256": "a5818d45423e9cdfd0f2a8840337bbadbb113bbdf82781178bcabe6f330d18ed"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-input\\Viewbox\\ViewboxPage.xaml.cs",
+      "sha256": "c16fee838ac31f27ffe7bf9ce9da6464cc43799d6451bbca75e88361c879a754"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\selection-input-template.json",
+      "sha256": "29a5f307c966cab55f1783b3c90b2d67b03b342d9c34c2ab720b5b33719a59ef"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\input-palettes.json",
+      "sha256": "bb04b3bac5e40300a867f852bd8be6561275fe95b037bb01aeb5ff4ea0ac6bca"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\input-timing.json",
+      "sha256": "95baa1aeed608951f84a0c3af37762f265d59230e3424e1498075b07890a88e5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\input-easing.json",
+      "sha256": "4a09c971672901816cf9043fd2d02e6bf4657585be4be39027eabad7e7e11752"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\input-reposition.json",
+      "sha256": "436aa62cd45725e0b469fd5b98a45bb3f5ae80b0309a8f1c5695a5b2a0b64f74"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\radio-group-metrics.json",
+      "sha256": "b228330947593ae5d84927553da9d0929e80ab194aee6263e229e87746361696"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\SelectionInputProbe.cs",
+      "sha256": "d4731bb6c680223d2ab3bc250c461b67be1115835f19a611292655fa9e8c511e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-shared\\ControlExample.xaml",
+      "sha256": "828414b0e75fa96ce10a995c058de8cabf409c92b111394e00feb21d34ee18f2"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\gallery-shared\\Grid.xaml",
+      "sha256": "e54248ffe6e5d8a7afb630c75bde83dbb50e389b37fd37d6b710ee3ecd251c95"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\foundation-palettes.json",
+      "sha256": "ea3b4c6c52e3f2fad04cf259a0dfba70f8f5721766116d9a282e4c54695d64c6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\selection-template.json",
+      "sha256": "eca1a418612247d822bb1fb28933961c34d13cf6d946e4c1fbb02a594ea6fb35"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\FoundationProbe.cs",
+      "sha256": "4dededde6a5cb0e7cf697fc34383466e458d937672741ed36a077f62bd65de19"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\AcceptTimingProbe.cs",
+      "sha256": "0bb1d6f194e67cc0a590adec1e78e9c0d923be53b1cc5cb84edd0f655beb0c7d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\animated-accept.json",
+      "sha256": "cfbeb2621d246d5c3e34ff8a32c2ba74d81d6d49b19d7659eeccea103275a287"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\validation\\native-accept-timing.json",
+      "sha256": "1b1d2b0f91ac5e8c53ddbacb65e982687ad76e97a68a3aa0ce05e12b447679bf"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\treetops.jpg",
+      "sha256": "c81ff5da7162cc0e80400859207b7a7f08e6322e02ca835e7ed327b1e1b6a0f0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\valley.jpg",
+      "sha256": "4ad3c0819ccaa45322319a085c3a3d314c683d26dd53e1378c5210dacbe7432e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\text-scroll-template.json",
+      "sha256": "6ed0e85ceaa72e896dfdfd6436b2d9b91adb1f435e24b2a7fe23f2b3aa3d24ba"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\text-scroll-metrics.json",
+      "sha256": "e107e5a932c588411eec3709d1d0d5f149bf9ef381afd307e8a7bdd718a51786"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\text-scroll-palettes.json",
+      "sha256": "8cbb76bed71d0d54b97941e21cac14121ed9c0e1ef3313a5606341f5db289be6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\text-helper-metrics.json",
+      "sha256": "7836987b32a09980b27fd2a9bcfd28667b60267f6d08eb43788042c347850a1d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\TextScrollProbe.cs",
+      "sha256": "ac0d2817d87770b4fc5380add90e20a84d0b23128c276353447c403f878f444a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\cliff.jpg",
+      "sha256": "89a8ebd17bba8842568bb2647943c3f10a703ecb46cc9046f4165932d5a1139a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\progress-template.json",
+      "sha256": "6a3e3184f2cd9968fc7db7feb2f5310fbc68056e3e6a4364cd0977bfb41ba6af"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\progress-palettes.json",
+      "sha256": "063ee762bbf05d9d1f82a5ff46ab4c54c81520ce97df3d3725a47cd02b0c5a58"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\progress-metrics.json",
+      "sha256": "16abb387d59f89764dee2a1d751398e9f4a88d8f5ee4ae501f8b3e367af5e2b0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-progress.py",
+      "sha256": "5596b868f011e167f89aa5fa7835ed3c02a57ffcc18af8b119a9f09ab8623d9f"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\ProgressProbe.cs",
+      "sha256": "03bfe8dba6060b48d1c131530259136f0cf90103ca1b299067123b98baf9357c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\basic-next-template.json",
+      "sha256": "3b972212d73dd0d459780f7d12addebd2d85da5cb2436e8323b590622c65b58b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\basic-next-defaults.json",
+      "sha256": "9b163da08be294fefb1562e77229cd95c0439f1517adf9b8428de940063f189a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\basic-next-palettes.json",
+      "sha256": "0124e822b782a92959f6a230cd76d08093acdd4e3b0c61d4e0ee3ac1df28a39b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\basic-next-metrics.json",
+      "sha256": "d344602aab4dda33bbab00c88a17716e07a8f708448ad3b13bf032499e2862f7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\basic-next-metrics-125.json",
+      "sha256": "97dbe31995a9a3a26f03ea915a777a87e96edc9587322b7d71ef3e48afed6a34"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-basic-next.py",
+      "sha256": "0c2339def4ffd17eeab1b01f6d86a85f1fa420f9a7c4438a9ffa5bb5f83d862b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\BasicNextProbe.cs",
+      "sha256": "ba330a33753506720d4e04270c2c0dad81807036f1d28522b0088598bb606348"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\five-controls-template.json",
+      "sha256": "6bd314c130ccf786a5ecb4140203a2f05e684a1597d8a27b3ca48e3d65a7d1e6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\five-controls-metrics.json",
+      "sha256": "aa6c0130c5d07afa99b15fbd4b116fb21cd85c9c3570cc7064a5a30e3d5c1eac"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\five-controls-palettes.json",
+      "sha256": "9b851591fec7e6d39e9f8f10b1ddaef047add2cfd09ec4d53efa0e41b9370055"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-five-controls.py",
+      "sha256": "eceab7318945c0ef8cfc95f5d5a9e91fbb8c5d648ccbfa81b2911b6ccd1511be"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\FiveControlsProbe.cs",
+      "sha256": "4045e07036caa79dd06e56acc44cd9d407e72245774252f89675c4ba31ea0aaf"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\NavigationProbe.csproj",
+      "sha256": "3e4736d86707efbf6f25771222b1e629cd6db86454ead9bc09c88fc575e629de"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\collections-template.json",
+      "sha256": "b106590c93167b61322154b23c2ce927d7812256a9a757a7cae78e271c3b1c18"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\collections-palettes.json",
+      "sha256": "94d9b736f52f47a87337862134427125ddac7e9f0c2a7e2f775d525cdfd90245"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\collections-metrics.json",
+      "sha256": "4e8b937dc9584f2801c62f4ababb1e46248516bb615fd5fe8ce02c542ba99405"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\collections-sources.json",
+      "sha256": "2e93ac6c46540993ad289fa7ea0269ea89312a3b0b5ff4a58cc0a488afa5268d"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\collections-assets.json",
+      "sha256": "2fb8a3ef7e15ddb5e0f8fb69ceb8e00222bbb001685ba806d99a80bb4d31154c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-collections.py",
+      "sha256": "6d5fff0b408ebaaf2970d6c6a1532a644db830fc00ed43afc4ed6ca99f740739"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\CollectionsProbe.cs",
+      "sha256": "0c2e365f0623bd0248c2d3aad9e3c4e4844a16872f05e110ae8110f44ca768f7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\out\\collections-probe-bin\\NavigationProbe.exe",
+      "sha256": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\out\\collections-probe-bin\\Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage1.jpg",
+      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage2.jpg",
+      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage3.jpg",
+      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage4.jpg",
+      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage5.jpg",
+      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage6.jpg",
+      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage7.jpg",
+      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LandscapeImage8.jpg",
+      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Assets\\SampleMedia\\Contacts.txt",
+      "sha256": "d44dc3761461fdc2570fe4c98acb6d99154fbeb7fe508a26c84452bb1ad482bb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\src\\collections-data.json",
+      "sha256": "d213589d2bd23f713a4fd82bea97368008e061313fced0024caaab7a5d22c766"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\src\\official-collections.json",
+      "sha256": "9892e3734d338242d6cee0469345fc36e98c2a59a448ce781e7e0b9d29701061"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\sdk\\collections.xaml",
+      "sha256": "30dff1fcfa77674bc0c19b0afd01ff5224a6eaae042cc6161cf978445f303734"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\icons-template.json",
+      "sha256": "8363094ac7fef2e456b436fa11d39d12be369b1923642ee59968aa0c813f8e8b"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\icons-metrics.json",
+      "sha256": "d394358f1d8c00e92fd244a23c3410d35b56624acede99be4745a7c61f35f54e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\sdk-symbols.json",
+      "sha256": "7db1ae7f389f17363d7b11cb7a7fefd383064742dc014c6ec3b7a9b857fdce21"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\icon-defaults.json",
+      "sha256": "79d10fd9699692c39919809d74c296ccaf48114b2c16aa1d290d0a41e1afe10e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-icons.py",
+      "sha256": "489d83c5126433ac396fda98faa80417e67f7a8226e7f8d7480b93777211faa0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\IconsProbe.cs",
+      "sha256": "bd8f5fa0d5a00393d117caeeed249e84f37ea6ac06a5ed43637bdfacef7ca0d8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\MirrorPCConsent.svg",
+      "sha256": "71da75af744e6cde054f92053917ba3bbfcf8d4e2905ec86d2d1b8ba77a848d5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Assets\\SampleMedia\\MirrorPCConsent.svg",
+      "sha256": "71da75af744e6cde054f92053917ba3bbfcf8d4e2905ec86d2d1b8ba77a848d5"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\extended-source-map.json",
+      "sha256": "b1d4e10c52c9235cdb71946c45717d1ac394ad74cd893d7445c9053920c5c034"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\animated-icons.json",
+      "sha256": "e3702a761f9c2d5c3e1b5c2ec8499ecb86c81e83c8775c9a232da89382002ce1"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\animated-icons-metrics.json",
+      "sha256": "0c21175437c49cabfc04e624c2b077e85c25a3ec823d1e82aa2521414faa05c9"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\vectors-template.json",
+      "sha256": "9747e4a70e5391e94ad2c3afaced540c4bc68df27ed31b0670ae30183f407edd"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\vectors-metrics.json",
+      "sha256": "08760efff12fd9c5b2f75c581144ffcd8decd3d843f4d6b19010e9e1f172f7d6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\external-icons.json",
+      "sha256": "118b6c957b3689c47b27694af772ec2c6cca9a84354b9de9ad4491d7baa9e281"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-animated-icons.py",
+      "sha256": "178f8374732243ca6b29f18f02986ae4b44c792423fb0af5ef7cad75a1b31386"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\extract-vectors.py",
+      "sha256": "238cf3d1171c4e7a204a7f51ddd9255a44b9a440acaf65f4dd09d269ec6009f7"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\AnimatedIconsProbe.cs",
+      "sha256": "d1d71b9b6cd44691c3fa67401aa78000d577777a7adab299d12345426f057820"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\VectorsProbe.cs",
+      "sha256": "38ffc9c945dd7549874588f6abaa7138c7e020ec6c9ba6bd2e5977c9ea3cd2b3"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\libre-camera-panorama.svg",
+      "sha256": "7168458bc216dea0854f76febb66b8d828f4e3db56f77ab50c484e04eae67d53"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\LibreICONS-LICENSE.txt",
+      "sha256": "2067de1829c54e851615e8d2081f3f750b2e87041a526ab1a85e07c6c39f569c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\ButtonProbe.cs",
+      "sha256": "1008bc989616350c704b8736a999534845fda0070db0f88627dcfa5a148d7854"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\Program.cs",
+      "sha256": "b00c26c050100aca3755b4366638f4aeca5caab349e77e6d9547afd9ecc3ab76"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\EffectsProbe.cs",
+      "sha256": "8631af3b85838138a61441902a5c0f046632973c5194dc46c648b775535bf67e"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\MaterialsProbe.cs",
+      "sha256": "94eef4581595c4cacc3d097a33de97ad4fdec79badb8584ffd20400ec7ed7377"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\composition-color-profile.json",
+      "sha256": "37b97f44601531c9b6f5c92406eca8c6a8710e813e128afed546907ba806c50a"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\motion-native-defaults.json",
+      "sha256": "aa4877831ef28fd00fbaf1ef719169f6b1fa2b94285b678e4b4072c87bd9779c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\validation\\native-easing-functions.json",
+      "sha256": "6f5bb24b164e276494ff4a77070f14dea6e3be98292cf07ef9a920dbdcedda90"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\button-palettes.json",
+      "sha256": "f7010639641168fcfcd5f4c2e04a3a1d9e73d4764fe5ed7b3cc8ef23058067c6"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\button-native-metrics.json",
+      "sha256": "3b37f03e348057a9db131bb27466b28c318de68a741ffccc40b3912dea264656"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\gallery\\public\\official\\Slices.png",
+      "sha256": "dac97fd49097b9dc7518b6c3e68a5497c33074951bc8375d8cb98c3e537896fc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Samples\\Button\\ButtonPage.xaml",
+      "sha256": "e0aa3b548dcdff72b5a08005313eaec0356b91ee08dc03185ef51154bba69dc1"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Samples\\Button\\ButtonPage.xaml.cs",
+      "sha256": "6204fc575b6600c457d789a16988e9cfef745f277d375c6f9e56ff32dd1b3006"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\WinUI-Gallery\\WinUIGallery\\Assets\\SampleMedia\\Slices.png",
+      "sha256": "dac97fd49097b9dc7518b6c3e68a5497c33074951bc8375d8cb98c3e537896fc"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\out\\native-buttons-bin\\NavigationProbe.exe",
+      "sha256": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\out\\native-buttons-bin\\Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\obj\\project.assets.json",
+      "sha256": "ed4b850956c36d8e334d085a2078e568db47227f1e2e4727092f5378a3b6c2d0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\out\\native-probe-bin\\NavigationProbe.exe",
+      "sha256": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\out\\native-probe-bin\\Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\bin\\x64\\Release\\net10.0-windows10.0.22621.0\\win-x64\\NavigationProbe.exe",
+      "sha256": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\bin\\x64\\Release\\net10.0-windows10.0.22621.0\\win-x64\\Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+    },
+    {
+      "path": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\microsoft.windowsappsdk.winui.nuspec",
+      "sha256": "6a73640dba78bb29152096ca1f1dfa4bd4383eeb4b59b1cc42da3ccdbac6dd27"
+    },
+    {
+      "path": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\license.txt",
+      "sha256": "c2f1d9efba5864366335c007d51cab1d5b07005e9f1a67d7ca90b7b2a01fd615"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\overlay-desktop-acrylic-defaults.json",
+      "sha256": "bf64205e7fef99c0df128c37a08e2ab6892232f35895426cee467eed651893d0"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\popup-corner-materials-native.json",
+      "sha256": "2d6ea21d85e58681aa2d7c8840550fd5cf58280ead0d55199d04de719159ba66"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\PopupCornersProbe.cs",
+      "sha256": "6cd0ad107d4878c18349ab6b341e2c58aff608f4bdb7a52f930e727048229c10"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\text-raster-sources.json",
+      "sha256": "c9fb88ddf6ecb8e371d26ceb41d6f82f571dfe131aeceb210f1c2244107683a8"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\text-coverage-native.json",
+      "sha256": "6e91afd895855ed0a5c611f09a9182e118accc4d2799ef7100eb100109d22bfb"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\tools\\native-navigation\\TextCoverageProbe.cs",
+      "sha256": "492d7964d3a76627c12d4e9f15fc44976809a242b5d7d431775ad54a0b8dfabe"
+    }
+  ],
+  "winuiFiles": [
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AcrylicBrush.cpp",
+      "sha256": "ee30c9c216bb8011159d1771c8659a95c0f2cf9a367bcf04e09117c1173103f1",
+      "sourcePath": "controls/dev/Materials/Acrylic/AcrylicBrush.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AcrylicBrush.h",
+      "sha256": "bc242bc4c2d40912f06a7f6accb562ce449b8da146c01a222d204f07b9b984c1",
+      "sourcePath": "controls/dev/Materials/Acrylic/AcrylicBrush.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedAcceptVisualSource.cpp",
+      "sha256": "3568eee3be6edd333f315fde77c75a87001fd24f93e819fe56f055418fb20d85",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedAcceptVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedBackVisualSource.cpp",
+      "sha256": "9412be265bce5d3ce6a1652c3f07e0a3b5c653ea06c7d30ec58ce06aa18c3fa6",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedBackVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedChevronDownSmallVisualSource.cpp",
+      "sha256": "d0e203b755f69a1b093594048516a7556a23fd8de15beb74ddb59066fa506563",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedChevronDownSmallVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedChevronRightDownSmallVisualSource.cpp",
+      "sha256": "1bc879c80f882e50f2b8c08c3195cd848f2b63ae759c7b4a784271e5df871e9b",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedChevronRightDownSmallVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedChevronUpDownSmallVisualSource.cpp",
+      "sha256": "ee5fce9af0a8c48959e16367622aa326685f580f3819ce6b3331203c3210a41a",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedChevronUpDownSmallVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedFindVisualSource.cpp",
+      "sha256": "6bd04f78c7bf3745d7563d71f33106108f3078b05097a0345d27de911c40f379",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedFindVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedGlobalNavigationButtonVisualSource.cpp",
+      "sha256": "ce90d1b900bd0f8bb072fdf5a4044d12ec8f75b857c3943f349f9c64c310c751",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedGlobalNavigationButtonVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedIcon.cpp",
+      "sha256": "d2f140b6778d3a6f4510563323ff2d7acbe65a7e4b54f21ac3263b037709a02d",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedIcon.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedIcon.h",
+      "sha256": "401f578a5b5cf6099d71f629745029ef2a00bb8bc4b27ef6e18e7ecc33c87d9d",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedIcon.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AnimatedSettingsVisualSource.cpp",
+      "sha256": "cc4c9c8953eb51c2d66074faa57ea952e87b6288ceda268be623edf2ff94da17",
+      "sourcePath": "controls/dev/AnimatedIcon/AnimatedVisuals/AnimatedSettingsVisualSource.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBox.cs",
+      "sha256": "21ef442364d3a3a60162e159c760e65c451922369e96b5315fbee3b453670d12",
+      "sourcePath": "dxaml/xcp/tools/XCPTypesAutoGen/Modules/AutoSuggestBox/AutoSuggestBox.cs"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBoxHelper.cpp",
+      "sha256": "bacba030028e13c20329729b9985b7541a725425d12229e049c8e0bbb26cf9ee",
+      "sourcePath": "controls/dev/AutoSuggestBox/AutoSuggestBoxHelper.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBoxHelper.h",
+      "sha256": "0cc3c2ddf415a4a4b74f21742830281b7056ff6fe80a05d7a747255dbd0cd867",
+      "sourcePath": "controls/dev/AutoSuggestBox/AutoSuggestBoxHelper.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBoxHelper.idl",
+      "sha256": "78f9789456a4b545160d70c53db7c235859ee9d82ce55d03380915c2b0c21db9",
+      "sourcePath": "controls/dev/AutoSuggestBox/AutoSuggestBoxHelper.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBox_Partial.cpp",
+      "sha256": "231ace0c545a19f1f5bfa60b8decc0a25f5b31bfe3508290b5300305f99cdfac",
+      "sourcePath": "dxaml/xcp/dxaml/lib/AutoSuggestBox_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBox_Partial.h",
+      "sha256": "407cc793abbc32c31f6153e716ff13f12100e68071f10d6076d5260cf051c859",
+      "sourcePath": "dxaml/xcp/dxaml/lib/AutoSuggestBox_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\AutoSuggestBox_themeresources.xaml",
+      "sha256": "84c5e4e056df5c2cc07757cf73215c495f4e58c9ab6f7b2862087bd3d208bfed",
+      "sourcePath": "controls/dev/AutoSuggestBox/AutoSuggestBox_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\BitmapIconSource_Partial.cpp",
+      "sha256": "c4377921ff608db0da674d93fdc53896a7dafa6a1eeece00949a2b80db6c49c8",
+      "sourcePath": "dxaml/xcp/dxaml/lib/BitmapIconSource_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Border.cpp",
+      "sha256": "983982fd714659f3d81f7daa9937e7980f3585a2fadfcb384bfaa96523e19318",
+      "sourcePath": "dxaml/xcp/core/core/elements/Border.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\BrushTransition_Partial.cpp",
+      "sha256": "2a45e2a31e8f5f325498f6043885c20857d7c8e44786ea2762baa2eef25c5ff7",
+      "sourcePath": "dxaml/xcp/dxaml/lib/BrushTransition_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Button.cpp",
+      "sha256": "a7871beb489eb59934c816fcb39cdd091098039508ea7cfc91b2dbc7d4d120c9",
+      "sourcePath": "dxaml/xcp/core/core/elements/Button.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ButtonBaseKeyProcess.h",
+      "sha256": "2e2e6654a6ca9e9e79fe599228015def45d795f1a3913b79e1757ed16549c47c",
+      "sourcePath": "dxaml/xcp/components/controls/KeyDownUp/inc/ButtonBaseKeyProcess.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ButtonBase_Partial.cpp",
+      "sha256": "1d15602d0acea2b2fe2a320ca078efa2aba65f53720c738c1fee721b4a75ab23",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ButtonBase_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Button_Partial.cpp",
+      "sha256": "f8e26e840129d58466a67b483c3d24d7b5225d978a9db63f219503de2f9a7c4e",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Button_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Button_themeresources.xaml",
+      "sha256": "897f3e3f336077489925b77d31695363d3af97875cdacc7443a60b77b1fdcb6e",
+      "sourcePath": "controls/dev/CommonStyles/Button_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\CheckBox_Partial.cpp",
+      "sha256": "748b230c8f601466a86a478a654411e1f1222f7e8fb42f984183f64141a54ea6",
+      "sourcePath": "dxaml/xcp/dxaml/lib/CheckBox_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\CheckBox_themeresources.xaml",
+      "sha256": "d278a1df7ddc3e8516e3c8022a42f5eb1dd834686018e574dc85b2de41140017",
+      "sourcePath": "controls/dev/CommonStyles/CheckBox_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ColumnMajorUniformToLargestGridLayout.cpp",
+      "sha256": "b7ec47cc34376bff4ea6944d631f3b743233433671a5747b0324efbfae6da816",
+      "sourcePath": "controls/dev/RadioButtons/ColumnMajorUniformToLargestGridLayout.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ComboBoxHelper.cpp",
+      "sha256": "51b74e6bba54a1f42c974231c4eda6e80af1a44bb01b24342679581cdd320420",
+      "sourcePath": "controls/dev/ComboBox/ComboBoxHelper.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ComboBoxHelper.h",
+      "sha256": "1644b37d3ce274a0b284cc89c48a22ff79c69dcbebbcf2a98d17861b223f034d",
+      "sourcePath": "controls/dev/ComboBox/ComboBoxHelper.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ComboBoxHelper.idl",
+      "sha256": "1d1c747c2ec5be7a9dc63ad68a525ebbff70e1b6897e82bfd3bc9c2143011f90",
+      "sourcePath": "controls/dev/ComboBox/ComboBoxHelper.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ComboBox_Partial.cpp",
+      "sha256": "eeb618385663ec22bc2bad487ff11e7962216377d5eb7b90b1b5f7693b6082a3",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ComboBox_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ComboBox_Partial.h",
+      "sha256": "4099b8c1681b35f9aa68304d333c2e302dc55e0d062b15e97becc931762b31be",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ComboBox_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ComboBox_themeresources.xaml",
+      "sha256": "c821a016f2e670b6a31017ee563784a90262f20e9c26367b39bc7aebb90c520d",
+      "sourcePath": "controls/dev/ComboBox/ComboBox_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\CompositeFontFamily.cpp",
+      "sha256": "66d3866fcd25ab993a358f5b4433f1dc30cb7bdb5331398e4f0f4b64c6d9da9d",
+      "sourcePath": "dxaml/xcp/core/text/Fonts/CompositeFontFamily.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ContentDialog_Partial.cpp",
+      "sha256": "bccba3b2dab738faecadd9fac28c99e4e77b0f74db4ba79c6ba16f9df9001d38",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ContentDialog_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ContentDialog_Partial.h",
+      "sha256": "679ed29479191a47524dfa463f704c31bb25b4bbc28efdf0be01a0e671a3feda",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ContentDialog_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ContentDialog_themeresources.xaml",
+      "sha256": "31d2146701fa9ee8da16acf5b876861cac9959ae715830100bd791f7688a6ff3",
+      "sourcePath": "controls/dev/CommonStyles/ContentDialog_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Control_Partial.cpp",
+      "sha256": "2a1e820e598ae1d2e6e19096a9b22a077bd37d7de9744e0809bf7a5a3be1f3da",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Control_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\D2DAcceleratedRT.cpp",
+      "sha256": "a403306712ace7bdbd90d7decaa9bd985397d31bf8ad85e2e8e4ba4f2ee29fa3",
+      "sourcePath": "dxaml/xcp/plat/win/desktop/D2DAcceleratedRT.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\D2DTextDrawingContext.cpp",
+      "sha256": "d7b9035f7b8bc6c751463dcbbbe8bf03b1c7274469dadb2ad718a970c08b2478",
+      "sourcePath": "dxaml/xcp/core/native/text/Common/D2DTextDrawingContext.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\DWriteFontAndScriptServices.cpp",
+      "sha256": "d3f84e251372e718655b7e626a04e3ded7aad493bfa54507385ab3f8dc6174ad",
+      "sourcePath": "dxaml/xcp/pal/win/DWriteFontAndScriptServices.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\DWriteTextRenderer.cpp",
+      "sha256": "5a5f4dcae0c7749b19e3b01ec5ca8223d6670a55f444cceb9f83ccac6d43cad1",
+      "sourcePath": "dxaml/xcp/core/text/TextBlock/DWriteTextRenderer.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\DesktopAcrylicBackdrop.cpp",
+      "sha256": "c8dc89f1995f2a33479b2142f1768c0b2ab86a2a249e88aeb0bca7ee485d5843",
+      "sourcePath": "controls/dev/Materials/DesktopAcrylicBackdrop/DesktopAcrylicBackdrop.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\DesktopAcrylicBackdrop_Partial.cpp",
+      "sha256": "9a3cb4a3c36e5a29d580da21bac3160a8f9d1ffc545bcc1071cfa79dbb7c625c",
+      "sourcePath": "dxaml/xcp/dxaml/lib/DesktopAcrylicBackdrop_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\DropShadowRecipe.h",
+      "sha256": "0311c308b1178eac7f9c512c03a08aec0c1c7c23ed15537241bb93509bc9dbee",
+      "sourcePath": "dxaml/xcp/components/graphics/inc/DropShadowRecipe.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\EasingFunctions.cpp",
+      "sha256": "ce0d229a8bc49fa4de0874c8c0c4cbebf5347f4b6891d3c105f332ac6d4dad97",
+      "sourcePath": "dxaml/xcp/components/animation/EasingFunctions.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\EasingFunctions.h",
+      "sha256": "a4c5797c04830bd531f2caf1a7b1c12ea6d0c3ff3ad53d79db83571bb86840a7",
+      "sourcePath": "dxaml/xcp/core/inc/EasingFunctions.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Expander.cpp",
+      "sha256": "6bde3613c03b0eea9c2c9318776ba5b5f1fe1fd3199b5a3c748912fe7015be97",
+      "sourcePath": "controls/dev/Expander/Expander.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Expander.h",
+      "sha256": "bcdf7eb9fa9bba0ec7c9663fa6b39157cfe4926d140bfea510c92878663916a7",
+      "sourcePath": "controls/dev/Expander/Expander.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Expander.xaml",
+      "sha256": "94db0f1f33d759af4a1a261e9f50abbb6e902c70fc069113d8135a8fae423e6d",
+      "sourcePath": "controls/dev/Expander/Expander.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Expander_themeresources.xaml",
+      "sha256": "1bfb318e58ba01dc12c9035c21a2fa85c309b78be2b2d82f376bd01dd8fa1a95",
+      "sourcePath": "controls/dev/Expander/Expander_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\FlyoutBase_partial.cpp",
+      "sha256": "28d891aba3a0d684e8825088f8aef442fdd66421cce9a21dfcd1b2b68f487402",
+      "sourcePath": "dxaml/xcp/dxaml/lib/FlyoutBase_partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\FlyoutPresenter_partial.cpp",
+      "sha256": "a1ee58eb1807e1bf11ef6b1333576883a9aa3ff77c80873554c268239d4ad9df",
+      "sourcePath": "dxaml/xcp/dxaml/lib/FlyoutPresenter_partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\FlyoutPresenter_themeresources.xaml",
+      "sha256": "c672e5a34069778113d37aea762dcfbf6f4ce3708aee719552dc844bbf231645",
+      "sourcePath": "controls/dev/CommonStyles/FlyoutPresenter_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Flyout_partial.cpp",
+      "sha256": "b18dd93afd43000aa650797acd77368aec6dc682f282b344e9a2123b4a2a26fe",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Flyout_partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\FontIconSource_Partial.cpp",
+      "sha256": "e590782105b5f49cd63011bc72454d4bba23ce74b0f33b0a3e77c043b752e971",
+      "sourcePath": "dxaml/xcp/dxaml/lib/FontIconSource_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\GridViewItemChrome.h",
+      "sha256": "752a597dbddcccfb474a83f64dfe19715a2f48c66cd0fda5ab223ef8d5bd778c",
+      "sourcePath": "dxaml/xcp/core/inc/GridViewItemChrome.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\GridViewItemPresenter_Partial.cpp",
+      "sha256": "a97c1192a91c4165572d0c7969431171933e8fa4e8dcbabd68cae314311ee924",
+      "sourcePath": "dxaml/xcp/dxaml/lib/GridViewItemPresenter_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\GridViewItem_themeresources.xaml",
+      "sha256": "92888f819c9b48e848b6794bfe2b6d07d910ef4dc0d9e92fb50c1c464ff5de4c",
+      "sourcePath": "controls/dev/CommonStyles/GridViewItem_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\GridView_Partial.cpp",
+      "sha256": "260611abd06eed3e5b3a43bec7a5f6c131939ba7875c8082f42d1f4c50c4f15b",
+      "sourcePath": "dxaml/xcp/dxaml/lib/GridView_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\HWCompNodeWinRT.cpp",
+      "sha256": "f15bf49f1ca03f61f37290f9039f3faeadd43e19953f77cdd6d2f59d8ccb20c1",
+      "sourcePath": "dxaml/xcp/components/comptree/HWCompNodeWinRT.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\HyperLinkButton_Partial.cpp",
+      "sha256": "15592f085e52a0c04755c5724fb0d147c2fffb32c0398f7d6d73633500cdb79b",
+      "sourcePath": "dxaml/xcp/dxaml/lib/HyperLinkButton_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\HyperLinkButton_Partial.h",
+      "sha256": "453800823f55827882278ad8e6d61a31e636f2529862d67a5b32e72351ae5a01",
+      "sourcePath": "dxaml/xcp/dxaml/lib/HyperLinkButton_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\HyperlinkButton_themeresources.xaml",
+      "sha256": "6fe9f6492589a0b9870b0102e77e5e0c95abc996f4c1090502b3e85abe9dd57d",
+      "sourcePath": "controls/dev/CommonStyles/HyperlinkButton_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\IconSource.cs",
+      "sha256": "25ebee9c77f40daf463dc7f1d859948846d138b5df559ec6392e55514352bd59",
+      "sourcePath": "dxaml/xcp/tools/XCPTypesAutoGen/Modules/Controls/IconSource.cs"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ImageIcon.cpp",
+      "sha256": "8c3ed271768b46f6f0e86fe2552c012530c4fb902167f52351aa995a55c8fe45",
+      "sourcePath": "controls/dev/ImageIcon/ImageIcon.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ImageIcon.h",
+      "sha256": "27c9c550d6ecc029c0d240d2f146ad97389d8098a1c78605e30a3cede99fa74d",
+      "sourcePath": "controls/dev/ImageIcon/ImageIcon.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ImageIcon.xaml",
+      "sha256": "922d1277550ef86829f4ea6d7c924e34a0abfcdb1929cceb9b0a0bd0cc4b8421",
+      "sourcePath": "controls/dev/ImageIcon/ImageIcon.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBadge.cpp",
+      "sha256": "5875fc28dcf24ad9597fd0ce4f1dc8b50c35bc42e7a8bd3ca604612e2b7bdb90",
+      "sourcePath": "controls/dev/InfoBadge/InfoBadge.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBadge.h",
+      "sha256": "92aa9d859fb41f52acc1b1e7c71aa039b1aeb1a58985f1db4e1186e81e2b7314",
+      "sourcePath": "controls/dev/InfoBadge/InfoBadge.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBadge.xaml",
+      "sha256": "9086886491838f8b4edb16de33bead7628f2b177c3f09715a38b3c815e5d686a",
+      "sourcePath": "controls/dev/InfoBadge/InfoBadge.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBadge_themeresources.xaml",
+      "sha256": "5f2605df42ec21f305055814b3f8f502c47c165d6792df8b4d07f93ad62a690d",
+      "sourcePath": "controls/dev/InfoBadge/InfoBadge_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBar.cpp",
+      "sha256": "8e136c736014e6172e5d5ba159a445e701124d05e3ee5f1dbe0e3fdd3ebeb2ed",
+      "sourcePath": "controls/dev/InfoBar/InfoBar.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBar.h",
+      "sha256": "cf617bc4d0774d96dc049a3f301e750c171f9daf5c205524377a9acdcb3d3088",
+      "sourcePath": "controls/dev/InfoBar/InfoBar.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBar.idl",
+      "sha256": "f613cd1e5be8bdb5f1cc860248f33cf49c5063f57fe9b0976ba255491d687474",
+      "sourcePath": "controls/dev/InfoBar/InfoBar.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBar.xaml",
+      "sha256": "aa8fe57ceaed73d12502b923517cc153f3b302dc160be331571be216be0ad602",
+      "sourcePath": "controls/dev/InfoBar/InfoBar.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBarClosingEventArgs.cpp",
+      "sha256": "3f4c15d5a72081879ba0dc8c492a16a4f9eb5c77b2e317c88f7824039437149d",
+      "sourcePath": "controls/dev/InfoBar/InfoBarClosingEventArgs.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBarPanel.cpp",
+      "sha256": "aa6b894817a007494cd36b7e9ce868a1e514749f1fc7d3f959be55e548706afb",
+      "sourcePath": "controls/dev/InfoBar/InfoBarPanel.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InfoBar_themeresources.xaml",
+      "sha256": "45ee915557f6351abc5b47b693a5547ff4b37d2890f23915be7efd1db60b7cfe",
+      "sourcePath": "controls/dev/InfoBar/InfoBar_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\InitialsGenerator.cpp",
+      "sha256": "b398bab00c1bd43b7284c9efb2ad4b04738a5ed365824420ebfa33e02d5a066d",
+      "sourcePath": "controls/dev/PersonPicture/InitialsGenerator.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ItemsStackPanel.cpp",
+      "sha256": "985b470e1f18ec20aa15327dd4ccec5e4094f41031d5f4d16a7b1d6f8aafef15",
+      "sourcePath": "dxaml/xcp/core/core/elements/ItemsStackPanel.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ItemsStackPanel_Partial.cpp",
+      "sha256": "e833a7cd4c40a61abe668ea46bd5c2e1bc6c02c8d3857027c1a1a858216dcc12",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ItemsStackPanel_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ItemsWrapGrid_Partial.cpp",
+      "sha256": "a52396568afa6bf842e41c1c58c32451dcff5231cdbb342dfda849523ca14c92",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ItemsWrapGrid_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LICENSE",
+      "sha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+      "sourcePath": "LICENSE"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LayoutStrategyBase.cpp",
+      "sha256": "5f43f00d0a1ae406718a4b47f318193682193d0947f8a64e65a14a838a9715e6",
+      "sourcePath": "dxaml/xcp/components/moco/lib/LayoutStrategyBase.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LayoutTransition.cpp",
+      "sha256": "bc51f83b9a564406240068c1468bc429fb8ffa82bd4b710b3e30cfb362e69492",
+      "sourcePath": "dxaml/xcp/core/core/elements/LayoutTransition.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LayoutTransitionElementUtilities.cpp",
+      "sha256": "453e1d6c2e2181cdee1de5181289ac0eae19c209a03973d53233626379ef9c15",
+      "sourcePath": "dxaml/xcp/dxaml/lib/LayoutTransitionElementUtilities.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LayoutTransition_partial.cpp",
+      "sha256": "30f3a15a4c5b7cb30f76bbc44aa413ee8068d6fa5108b18c072a02822bddf49a",
+      "sourcePath": "dxaml/xcp/dxaml/lib/LayoutTransition_partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBaseItemChrome.cpp",
+      "sha256": "b9499a2d2e8032a9160403722d923a4a531405c2277d79130eac960d3a97271e",
+      "sourcePath": "dxaml/xcp/core/core/elements/ListViewBaseItemChrome.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBaseItemChrome.h",
+      "sha256": "4235c56d51a44179d126089ee164a9535967e0ad1e370b8c2f2de7e390baa62c",
+      "sourcePath": "dxaml/xcp/core/inc/ListViewBaseItemChrome.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBaseItemPresenter_Partial.cpp",
+      "sha256": "1893baa7ab67999949dcc8fb92227b55da667b9aa498738cdefe0abea9c915d1",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListViewBaseItemPresenter_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBase_Partial.cpp",
+      "sha256": "dfbd4b70170bf75986e78f2b0e946308df2957d995e55b0a7823faded6fa910d",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListViewBase_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBase_Partial_DataVirtualization.cpp",
+      "sha256": "68fda78bd08469aa6e1d75523b801ee2d19df5b07865c96cc39b1776a002d71f",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_DataVirtualization.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBase_Partial_Interaction.cpp",
+      "sha256": "876600981187cfde71f2ae8ee37e97f901b1bae75b58f8e85f58681e8c31273f",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_Interaction.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewBase_Partial_Selection.cpp",
+      "sha256": "9b580a04b54a1e50770049703b9c75f35c4f35636e79ed068f5b6699e19fc4d6",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListViewBase_Partial_Selection.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewItemChrome.h",
+      "sha256": "c6d8010512694394b510f3b8218f2245b124a071944ea650afd7818200733f81",
+      "sourcePath": "dxaml/xcp/core/inc/ListViewItemChrome.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewItemPresenter_Partial.cpp",
+      "sha256": "245c62081adbcf4c9d9234606beb5740c51e8f7db98f5673fe258600bf55556a",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListViewItemPresenter_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListViewItem_themeresources.xaml",
+      "sha256": "0758f65bc447b9af7b12a0d779f644f7541d5e2dd39540a9c206f35222b0478c",
+      "sourcePath": "controls/dev/CommonStyles/ListViewItem_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ListView_Partial.cpp",
+      "sha256": "4c34d0963e4dc1a31ac1451648d497082cf2b4d96ff61927b118b3741b22e1bd",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ListView_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LsParagraphSpan.cpp",
+      "sha256": "027435d39e8c13e0924bd858f1993c231dee19ae851e253c783bc6b56b5417e1",
+      "sourcePath": "dxaml/xcp/core/text/RichTextServices/TextFormatter/LsParagraphSpan.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\LsTextLine.cpp",
+      "sha256": "e518e918754d43d5605b118d1b507744bdcd58aa89af402151ec216cad994380",
+      "sourcePath": "dxaml/xcp/core/text/RichTextServices/TextFormatter/LsTextLine.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuFlyoutItemBase_Partial.cpp",
+      "sha256": "48f19a6e59dfe0a6300ad6e66cff01994ef8e00d5eb93bd7d27be004c6b1b413",
+      "sourcePath": "dxaml/xcp/dxaml/lib/MenuFlyoutItemBase_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuFlyoutItem_Partial.cpp",
+      "sha256": "1ee6987ce8db9c0813ecb4338af742bf1615f8bb8d4e02887c0af50ecef25365",
+      "sourcePath": "dxaml/xcp/dxaml/lib/MenuFlyoutItem_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuFlyoutPresenter_Partial.cpp",
+      "sha256": "1f19f5edbbabf441d234a2cbf41f3c30685a3790318cfded7668ff94397331ec",
+      "sourcePath": "dxaml/xcp/dxaml/lib/MenuFlyoutPresenter_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuFlyoutSubItem_Partial.cpp",
+      "sha256": "4425c583f4875cc60c41e9b218ee1f5d8b6b9e4a8000ff7609d884e1a129450a",
+      "sourcePath": "dxaml/xcp/dxaml/lib/MenuFlyoutSubItem_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuFlyout_Partial.cpp",
+      "sha256": "4b325125f0137a748549c5ac62eeb271d1fbb6563f4faf15e98e97fe3ef8fba3",
+      "sourcePath": "dxaml/xcp/dxaml/lib/MenuFlyout_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuFlyout_themeresources.xaml",
+      "sha256": "df415aea23e56a4af583f1a1875898a9965a9e48141b4af12fae1e3a6337e68f",
+      "sourcePath": "controls/dev/CommonStyles/MenuFlyout_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\MenuPopupThemeTransition_Partial.h",
+      "sha256": "35c269a5a3eb839a514ee38eba8d28693df2b2d62f6e7e19bb11a2912555dca5",
+      "sourcePath": "dxaml/xcp/dxaml/lib/MenuPopupThemeTransition_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationBackButton.xaml",
+      "sha256": "31459b28cd88ad96b1b7769232fe4c47cb185aceb53b1817775e6e67be316dda",
+      "sourcePath": "controls/dev/NavigationView/NavigationBackButton.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationBackButton_themeresources.xaml",
+      "sha256": "754c3c847dbf2ddae0e139ee992af19cbc91f7430f1a488786e1eed6b04600a0",
+      "sourcePath": "controls/dev/NavigationView/NavigationBackButton_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationView.cpp",
+      "sha256": "2f1fe5e6df95423010b02010a5f0c1c6c8f35c745e4fc13442ac389a7af41d15",
+      "sourcePath": "controls/dev/NavigationView/NavigationView.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationView.h",
+      "sha256": "1019ec7436b82de99ca7dd27d6310da3578e5c3759f054954de822150850988e",
+      "sourcePath": "controls/dev/NavigationView/NavigationView.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationView.idl",
+      "sha256": "83e7bd34a3698a0c8925c515208cab187bf2c16837453dba11aaa5d6c06acfb0",
+      "sourcePath": "controls/dev/NavigationView/NavigationView.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationView.properties.cpp",
+      "sha256": "c4e4b0a44c1a4118606cdb2a269772b3e73e7c01b78b6395f2f17a20411af6d3",
+      "sourcePath": "controls/dev/Generated/NavigationView.properties.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationView.xaml",
+      "sha256": "f5a2784add9fda34ec64fd312a7877047a53b2c8cecb111af93efaace1ee4e7a",
+      "sourcePath": "controls/dev/NavigationView/NavigationView.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationViewItem.cpp",
+      "sha256": "72ed2771a5bf9897d58f3ab373421a696745febaa89c6b49f74516aa2697599c",
+      "sourcePath": "controls/dev/NavigationView/NavigationViewItem.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationViewItemPresenter.cpp",
+      "sha256": "00e31e083691cf7bb2628aa2f3a09a02df148207ca7160d6e1839bfccca39516",
+      "sourcePath": "controls/dev/NavigationView/NavigationViewItemPresenter.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NavigationView_themeresources.xaml",
+      "sha256": "200cd9d5527c51d9d2db497ba3580847260d2601179d4c5042516648962fd1a4",
+      "sourcePath": "controls/dev/NavigationView/NavigationView_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NoiseAsset_256X256_PNG.png",
+      "sha256": "4f2aa94a2e345a32dae689176b86c644bef87081ff9daef8c77417731862031b",
+      "sourcePath": "controls/dev/Materials/Acrylic/Assets/NoiseAsset_256X256_PNG.png"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBox.cpp",
+      "sha256": "eb4e4bbace5561b52cab4255a7f2575a1814ddca0e1c4ccdca304c81e3647e75",
+      "sourcePath": "controls/dev/NumberBox/NumberBox.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBox.h",
+      "sha256": "55c5fa620bd1e7ade929f791b9da189eea8970aaee1d7619294fd1dd1693a0d6",
+      "sourcePath": "controls/dev/NumberBox/NumberBox.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBox.idl",
+      "sha256": "9d033b0e1883ac5c4f5b8180942c27ccd7914ced1e397c763818aca8a62c159d",
+      "sourcePath": "controls/dev/NumberBox/NumberBox.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBox.xaml",
+      "sha256": "ad6c46ae67dc95cc476b240b0854d2a52fd5086e85f07c8386dae73ca8bae034",
+      "sourcePath": "controls/dev/NumberBox/NumberBox.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBoxAutomationPeer.cpp",
+      "sha256": "d7755f5099d1e26497a1866a5b6444c6af544aa9497d873ab3fb02c8fbe827aa",
+      "sourcePath": "controls/dev/NumberBox/NumberBoxAutomationPeer.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBoxAutomationPeer.h",
+      "sha256": "0f2bc3a6a367774dcd96c1aeb67040d6c7a9ca5cde23eb8d60f0ba477e7bc719",
+      "sourcePath": "controls/dev/NumberBox/NumberBoxAutomationPeer.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBoxParser.cpp",
+      "sha256": "a162b846a4b1f29af922e3c6fdb0a70117fd6e1ec4aa1c4e2d6d49e28fb33326",
+      "sourcePath": "controls/dev/NumberBox/NumberBoxParser.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBoxParser.h",
+      "sha256": "505cd42e20c49079288217d51c61c9d61a87179c68e0515acabb419c36321a09",
+      "sourcePath": "controls/dev/NumberBox/NumberBoxParser.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\NumberBox_themeresources.xaml",
+      "sha256": "190da0817f6a22716dd9626d63f510360e35cdfb7876acbae2257e5fa87a8473",
+      "sourcePath": "controls/dev/NumberBox/NumberBox_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\OrientedVirtualizingPanel_Partial.cpp",
+      "sha256": "473fa1adc6b8943a13c4db06b7521346498a1b59bcc191cebfb5678e626f9a5c",
+      "sourcePath": "dxaml/xcp/dxaml/lib/OrientedVirtualizingPanel_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ParagraphNode.cpp",
+      "sha256": "c26d81c9ea85941eedb1f43aaa010ddcc2b406d74be8fc1453e2539ce85dde13",
+      "sourcePath": "dxaml/xcp/core/text/BlockLayout/ParagraphNode.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PasswordBox.cs",
+      "sha256": "e6c0f85e5d14fedafb2486ba92274a0790f590ca0ad4ec97e434f93ef060ba9e",
+      "sourcePath": "dxaml/xcp/tools/XCPTypesAutoGen/Modules/Controls/PasswordBox.cs"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PasswordBox_Partial.cpp",
+      "sha256": "7f6c3bf2e2c9c2608bf0de45da81000914a5b51f2462eea7b07e2c0b6f0cbd75",
+      "sourcePath": "dxaml/xcp/dxaml/lib/PasswordBox_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PasswordBox_themeresources.xaml",
+      "sha256": "f26fe45f0137fe5a5b432ddda090349ad2718e4cf29a9531132ca6a149e53b2b",
+      "sourcePath": "controls/dev/CommonStyles/PasswordBox_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PathIconSource_Partial.cpp",
+      "sha256": "47164f2f7ec1ebd00ea643406fb4bcfbdea0c1c850d5e0cb4dbb4bc896255cda",
+      "sourcePath": "dxaml/xcp/dxaml/lib/PathIconSource_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PersonPicture.cpp",
+      "sha256": "854a1b23e437a93819608f0f1acd3eb261e6d4599d450bd472ec60a2d1e6111e",
+      "sourcePath": "controls/dev/PersonPicture/PersonPicture.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PersonPicture.h",
+      "sha256": "a3a8159ac2be32b7d478f76b2e2f9d57936831712f00f1a0fe02fdbe4538e031",
+      "sourcePath": "controls/dev/PersonPicture/PersonPicture.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PersonPicture.idl",
+      "sha256": "244ad1d99de6884d1ed09ae3f83bee0994be0add90a0c9bce44c4209fe720c51",
+      "sourcePath": "controls/dev/PersonPicture/PersonPicture.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PersonPicture.xaml",
+      "sha256": "9fd335b8aa76d8710dcb9ac7a9ab2d6c2c75b779e99a03615ac74bb82ac1fb27",
+      "sourcePath": "controls/dev/PersonPicture/PersonPicture.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PersonPicture_themeresources.xaml",
+      "sha256": "664158bca909222901ec8eb5689d5b6192ab9330a2e2fcaee9ec8a16ed6d84c7",
+      "sourcePath": "controls/dev/PersonPicture/PersonPicture_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Popup.cpp",
+      "sha256": "1b8f69ef48c08888b0eb3f97cd035f449ed98971db7e1d6c2409c87ca70eccfb",
+      "sourcePath": "dxaml/xcp/core/core/elements/Popup.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\PopupThemeTransition_Partial.h",
+      "sha256": "76163a19f89a55b7aeaea5b9be82dff8c8403b592f67635c3bf32a0dc000da91",
+      "sourcePath": "dxaml/xcp/dxaml/lib/PopupThemeTransition_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressBar.cpp",
+      "sha256": "f88c9c6573fd6e101d5ff7c104cac2bbbc252d66b0918c02e6cf7bbc26abd01b",
+      "sourcePath": "controls/dev/ProgressBar/ProgressBar.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressBar.idl",
+      "sha256": "5291a472593e4fac25921b1fb3161fcdb62c52122844448b20cf5a16fa970606",
+      "sourcePath": "controls/dev/ProgressBar/ProgressBar.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressBar.xaml",
+      "sha256": "d6c125752b8b1d64934af820712c936b6fa64501859b9ab8429e812e67f8cf53",
+      "sourcePath": "controls/dev/ProgressBar/ProgressBar.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressBar_themeresources.xaml",
+      "sha256": "ead8e05c4c4d9f1f6a55feef65260d2fd8b02d159a381bdf10dd1364b566e7cd",
+      "sourcePath": "controls/dev/ProgressBar/ProgressBar_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressRing.cpp",
+      "sha256": "fea8368d1dc78b89c6bfa4a6ec6fdbba42c9b47930cace5ce62944c135c2f8ea",
+      "sourcePath": "controls/dev/ProgressRing/ProgressRing.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressRing.idl",
+      "sha256": "b76b6eba464a0e14319b9ef5fc8ba787de781edd5552d3783c22a11e9bc67d5e",
+      "sourcePath": "controls/dev/ProgressRing/ProgressRing.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressRing.xaml",
+      "sha256": "bb7466602953dc71606a8b80cb112dde4d5f844d9f9c847b5c564b4b8be28c85",
+      "sourcePath": "controls/dev/ProgressRing/ProgressRing.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressRingDeterminate.cpp",
+      "sha256": "d92882ad3070eb58acbf93586f9af3ff52d8995aba3920fbd9b275c0ba97351a",
+      "sourcePath": "controls/dev/ProgressRing/AnimatedVisuals/ProgressRingDeterminate.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressRingIndeterminate.cpp",
+      "sha256": "c6ce62c751c427cafd22d7fa6bea54a116e8210fcb25e822a63a3d050d61af00",
+      "sourcePath": "controls/dev/ProgressRing/AnimatedVisuals/ProgressRingIndeterminate.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ProgressRing_themeresources.xaml",
+      "sha256": "d4bbf6aa665a55faf2866d928398b16b7e409f2fa2895260462e9bf0cfa3b820",
+      "sourcePath": "controls/dev/ProgressRing/ProgressRing_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RadioButton_Partial.cpp",
+      "sha256": "c05a5a89b5b0b1c8bce1714fa2db923c960287d03ab7c2ac9f8f0add093a6ad5",
+      "sourcePath": "dxaml/xcp/dxaml/lib/RadioButton_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RadioButton_themeresources.xaml",
+      "sha256": "e81b287331445235b8b3c95bb57929383745c002808f4d8c457306da3825f11a",
+      "sourcePath": "controls/dev/CommonStyles/RadioButton_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RadioButtons.cpp",
+      "sha256": "85da2357d1708a04242af267ac91ef913bb6c912349161781fef4070cc37696b",
+      "sourcePath": "controls/dev/RadioButtons/RadioButtons.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RadioButtons.xaml",
+      "sha256": "96c230153af9df80ddee485924550b7e5b952245ee52c8131f58156296279a61",
+      "sourcePath": "controls/dev/RadioButtons/RadioButtons.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RadioButtonsElementFactory.cpp",
+      "sha256": "d67d57492d0ddd3d84dc04e5fb04ecde37ecf4870d6da53b4bcb7212072bf4ed",
+      "sourcePath": "controls/dev/RadioButtons/RadioButtonsElementFactory.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RatingControl.cpp",
+      "sha256": "f81a71a22ae077260445728a6838d6de0f8f9abb0d5eeb0454f7a6f045b16ac9",
+      "sourcePath": "controls/dev/RatingControl/RatingControl.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RatingControl.h",
+      "sha256": "158e9328ff43d38d5c9f78762a57ea986b9796c13111397dc8d39dadcae5da6f",
+      "sourcePath": "controls/dev/RatingControl/RatingControl.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RatingControl.idl",
+      "sha256": "c9134f454ccf0b8f1983f62af7d1678a510e066cd96ac42a3681e749c537d5e7",
+      "sourcePath": "controls/dev/RatingControl/RatingControl.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RatingControl.xaml",
+      "sha256": "10c9cefe04458ad377e7062c812d369f72af4db71875799e49fc3c6137db77bd",
+      "sourcePath": "controls/dev/RatingControl/RatingControl.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RatingControl_themeresources.xaml",
+      "sha256": "a0df3c386c2bb8734a4454ef75a842ca0d5971e6b38d61a73f2cd63b7cc1b51a",
+      "sourcePath": "controls/dev/RatingControl/RatingControl_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RepeatButtonAutomationPeer_Partial.cpp",
+      "sha256": "1084b1f1b57e6b632823d57e7b8ebc1ae8aac4b25cb808ff44f3bfe795b85ab0",
+      "sourcePath": "dxaml/xcp/dxaml/lib/RepeatButtonAutomationPeer_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RepeatButton_Partial.cpp",
+      "sha256": "ace90c47728ca5f0a7d07174e3f27614c7cf1943a4b436e8501aacbe4461d426",
+      "sourcePath": "dxaml/xcp/dxaml/lib/RepeatButton_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RepeatButton_Partial.h",
+      "sha256": "6452cb8b292a19fde2a4c854cec14ad0c24aa4d05ea858e8ff208d0dce9b3bd7",
+      "sourcePath": "dxaml/xcp/dxaml/lib/RepeatButton_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\RepeatButton_themeresources.xaml",
+      "sha256": "71c4261539124ed938633bf69043a528e26ac7f198b519b198b4aded39dab83c",
+      "sourcePath": "controls/dev/CommonStyles/RepeatButton_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ScalarTransition_Partial.cpp",
+      "sha256": "8ab96010362fe5dc5dbfffcb6ae15abff4c32c01e2cd032e464c59aa941603ca",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ScalarTransition_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ScrollBar_Partial.cpp",
+      "sha256": "b3eb75d4dfc57288f4b0708a12fb7425dfccdcf442799b83e0218fe1c9a36a5b",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ScrollBar_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ScrollBar_themeresources.xaml",
+      "sha256": "1d236b6eef68d35722056d10173d7ea170a468c8c3033cae8859ce8576dfe756",
+      "sourcePath": "controls/dev/CommonStyles/ScrollBar_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ScrollViewer_Partial.cpp",
+      "sha256": "dc78d30b376bdcf4670668c4da88b30e526b13df40e97965e7290339659cb8b0",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ScrollViewer_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ScrollViewer_themeresources.xaml",
+      "sha256": "de35b23ecbcae9053e54aaba84dbd0448181f0f1ef4596ca7948483e0eb205e3",
+      "sourcePath": "controls/dev/CommonStyles/ScrollViewer_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SharedTransitionAnimations.cpp",
+      "sha256": "56eb7cf14211db7cde52cec248c3a2b8d30a47e08f6613cb5a001e4a01fb4e8f",
+      "sourcePath": "dxaml/xcp/components/comptree/SharedTransitionAnimations.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SliderKeyProcess.h",
+      "sha256": "7f26c2537adeeaed2290b82257bb09da7ee249463a6386d707571d6298e14ba8",
+      "sourcePath": "dxaml/xcp/components/controls/KeyDownUp/inc/SliderKeyProcess.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Slider_Partial.cpp",
+      "sha256": "616215931e6af78767a344140089603da006470074d89941fc76a3a701562da4",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Slider_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Slider_Partial.h",
+      "sha256": "a4a019ab2fe550dac3b0636ea7290ccb88a3695e5d4a595a8c1629ddc58e77c9",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Slider_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Slider_themeresources.xaml",
+      "sha256": "e4f9a29fa4cbdaa73838bbc9730487c54e83198860464ef10ca8197a7e3cc920",
+      "sourcePath": "controls/dev/CommonStyles/Slider_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SplitButton.cpp",
+      "sha256": "82ffe2e8d2938d2665617ed5c3360653a7a17fc943f7510e34868f9fd946a632",
+      "sourcePath": "controls/dev/SplitButton/SplitButton.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SplitButton.h",
+      "sha256": "ba7c14c4ac5c95d8142fa09034d25003e4eff9be2d0d73f928b679e35e75657b",
+      "sourcePath": "controls/dev/SplitButton/SplitButton.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SplitButton.idl",
+      "sha256": "fa663758010fcdc70775b44ee93e7e71e643eb1ec3a407acf2bbd079ea9ad8ae",
+      "sourcePath": "controls/dev/SplitButton/SplitButton.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SplitButton.xaml",
+      "sha256": "c2d6029afb1dc5b3a1779377afcefc8596fb21ef6f22bcb7c7ccb8ba00f3fb54",
+      "sourcePath": "controls/dev/SplitButton/SplitButton.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SplitButton_themeresources.xaml",
+      "sha256": "366afbdf06fd0070a45d101246fe2a311279118cf055897780a06dbfdb2fb8da",
+      "sourcePath": "controls/dev/SplitButton/SplitButton_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SplitView_themeresources.xaml",
+      "sha256": "b97b256f454f9b2f6d2f2d7131fbed87227b3858042c003212bc7d44d7862743",
+      "sourcePath": "controls/dev/SplitView/SplitView_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\StackingLayoutStrategyImpl.cpp",
+      "sha256": "8c547575691fc08fa7bca00d2aba68b1f4d3b3aa064a0cfc6d12dc6f14b52f80",
+      "sourcePath": "dxaml/xcp/components/moco/lib/StackingLayoutStrategyImpl.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\StackingLayoutStrategyImpl.h",
+      "sha256": "7db1027f70ea89048228411a3830e7490785aa34f5896bae542c46f1bc88bf8d",
+      "sourcePath": "dxaml/xcp/components/moco/inc/StackingLayoutStrategyImpl.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\SymbolIcon_Partial.cpp",
+      "sha256": "447a10e1f42a21b7edc52f8399ca67693ad606cb615f96432f9bacadc5078a69",
+      "sourcePath": "dxaml/xcp/dxaml/lib/SymbolIcon_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTip.cpp",
+      "sha256": "047c9fba26b236287331f4ac3878eb138ca7f43c3be9576a436cbc1b9b306e35",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTip.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTip.h",
+      "sha256": "84db0b9e77cdcd2fcde58c2598b078d1acb3f64706e077df29bccf18220c0c1e",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTip.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTip.idl",
+      "sha256": "0551c438e10d4cb2cfc61dfb94a2182e390375a78915d7bfba722e8bcd9f31c9",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTip.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTip.xaml",
+      "sha256": "648cf4df25deca67a0ca9f3d432290c38d693410775db6578802e2892c34d0a7",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTip.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipAutomationPeer.cpp",
+      "sha256": "1c5044a1f2a901c95c8911c7eb547a65193f49b8850d099d009b7259e3c96ebc",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipAutomationPeer.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipAutomationPeer.h",
+      "sha256": "10942de25efd5cfb36889514f30cc1a9009d5d88c79bfb0f87761b9a546245ea",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipAutomationPeer.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipAutomationPeer.idl",
+      "sha256": "07833bd0efc36973ec1e1e9ac0798e2dfe16131940bbd1c040ff64d2348ba755",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipAutomationPeer.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipClosedEventArgs.cpp",
+      "sha256": "bdf9595a11dca5107ad0ea4daafd4d594892d8c35c33f79458f908852ce8df43",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipClosedEventArgs.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipClosedEventArgs.h",
+      "sha256": "6445ae78b41268f099ea86b4939bd6e58d56682e98edc3681778423ff392ceb9",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipClosedEventArgs.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipClosingEventArgs.cpp",
+      "sha256": "4b3261ae38f60c1a332540d97959d31e73f95cdf2ada5ddf5dfa02b465a5fbed",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipClosingEventArgs.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipClosingEventArgs.h",
+      "sha256": "43b49055699ffd3724897a391393c3aacaee972b40a5f1fcf423919933b40087",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipClosingEventArgs.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipOpenedEventArgs.cpp",
+      "sha256": "97bd9b9a2691dadd2c2a9b449b6e8802639d533cdf873be6550c8381867bbebb",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipOpenedEventArgs.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipOpenedEventArgs.h",
+      "sha256": "3e79bf4a2ae6da8419f5c47cfec4b9ee67215b3e936cd7ef8a254d12a167e9e7",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipOpenedEventArgs.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipTemplateSettings.cpp",
+      "sha256": "211c375cc3356755a9d203abc8d84cc05ce8deddcd7f8d56dd8008c64f7da2a5",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipTemplateSettings.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipTemplateSettings.h",
+      "sha256": "8e642e21053a509bf851cbb94468cb8dddb0f4c8fd7ef6b8b816cd34965d7096",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipTemplateSettings.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipTestHooks.cpp",
+      "sha256": "592c70866c540a774c10d4d6b433ca980984c19e3728fc5d52aea68a8be09fcf",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipTestHooks.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipTestHooks.h",
+      "sha256": "7100ec8d17b243962b3910a651d5e74be568932d4bc1a8d17ac222e0974e5825",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipTestHooks.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTipTestHooks.idl",
+      "sha256": "fbb0c659c2969080033514f3a61fa53a879429821bd39deb6cc0bb272bfd610b",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTipTestHooks.idl"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TeachingTip_themeresources.xaml",
+      "sha256": "edf193bc2e21ac136b4707caf38ccc90294e9143c103ddc0f62f0ded6632bade",
+      "sourcePath": "controls/dev/TeachingTip/TeachingTip_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextBlock.cpp",
+      "sha256": "a0e733469e507f5fc3c1ee3e3880956a0d4fbf561aae2873b113562adc0009f9",
+      "sourcePath": "dxaml/xcp/core/text/TextBlock/TextBlock.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextBlock_themeresources.xaml",
+      "sha256": "d2914b149fb384215b8996041c420d4b9769995e1b111d5e8b11e4ac3f85df5d",
+      "sourcePath": "controls/dev/CommonStyles/TextBlock_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextBox.cs",
+      "sha256": "73fa6d650d1739b86cf25aea881db1f8503f8f5679382bb7cd3d7f264b6be1c6",
+      "sourcePath": "dxaml/xcp/tools/XCPTypesAutoGen/Modules/Controls/TextBox.cs"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextBoxBase.cpp",
+      "sha256": "ee01beef6b26ac476057172cb5b63200fc3d0bea22cb45596f94b10793a5c072",
+      "sourcePath": "dxaml/xcp/core/native/text/Controls/TextBoxBase.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextBox_Partial.cpp",
+      "sha256": "3764ec4f9ca1717465b2afdaf7a89de08ad6f526736623fe846b2452e0923f39",
+      "sourcePath": "dxaml/xcp/dxaml/lib/TextBox_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextBox_themeresources.xaml",
+      "sha256": "4d5eb20ee3f049c10345502b43f47e04bc59a5801727a970ab3bd6dc8f281b17",
+      "sourcePath": "controls/dev/CommonStyles/TextBox_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\TextLine.cpp",
+      "sha256": "27b27323f98cf25471ee1cba33f76caa161901dfd41835708e1abcfd967cd97f",
+      "sourcePath": "dxaml/xcp/core/text/RichTextServices/TextFormatter/TextLine.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ThemeAnimations.cpp",
+      "sha256": "7500d19ff245a63983d2faac10d38adfc45e71e0bba65bf527fd5d63b22111c7",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ThemeAnimations.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ThemeAnimationsHelper.cpp",
+      "sha256": "3bdccdd4e8c53611c207435a3d3f30a255ca568c5f5fec0eb33ac2ec1b1191e0",
+      "sourcePath": "dxaml/xcp/components/themeanimationshelper/lib/ThemeAnimationsHelper.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ThemeGenerator.cpp",
+      "sha256": "b321ed953d02f9f1951bf5d4530bf2a1997381d629b3460e26ea8e8ecf9a94a5",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ThemeGenerator.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ThemeShadow.cpp",
+      "sha256": "3767d3025785d3132cda1d2131540e4892761baf886ee0f7b3c8da93cc7469fa",
+      "sourcePath": "dxaml/xcp/components/graphics/ThemeShadow.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ThemeShadow.h",
+      "sha256": "d7909ac19ccbfa7c0cd1a7ec225948cd1e813f13c524941cb7553e442040cd01",
+      "sourcePath": "dxaml/xcp/core/inc/ThemeShadow.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleButton_Partial.cpp",
+      "sha256": "c5aa1811ab20b3368f85fafeca2f9c140165b2ba2bde2f5b617bb7b3031bf68f",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToggleButton_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleButton_themeresources.xaml",
+      "sha256": "dde10f54c59fe9a6af9ec22b9b4723e2990b5498846155e9ee8097def46e69ce",
+      "sourcePath": "controls/dev/CommonStyles/ToggleButton_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleMenuFlyoutItem_Partial.cpp",
+      "sha256": "9e8749b9cfe89880bd0cf395a0090eecfb0f3afa1acc93a112cd14678fba3f90",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToggleMenuFlyoutItem_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleSplitButton.cpp",
+      "sha256": "b4221146ce4cac0b17cd9dac198233fa0ea53aa725d6267167982077b47dd6e8",
+      "sourcePath": "controls/dev/SplitButton/ToggleSplitButton.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleSplitButton.h",
+      "sha256": "da2d5b3be3250a37a2f7a9fec9c4d9c2ae5cd03a5cbd034f2a03824c4751e7d4",
+      "sourcePath": "controls/dev/SplitButton/ToggleSplitButton.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleSwitch_Partial.cpp",
+      "sha256": "cced609a1b0c1da75a8adb72fbb26edbbd8830511052ecaecbacd3e96bdc89b6",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToggleSwitch_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToggleSwitch_themeresources.xaml",
+      "sha256": "2f475fdddbe8d89022e69163cdf07afb0760487afdd78baec01c9d7468d040ae",
+      "sourcePath": "controls/dev/CommonStyles/ToggleSwitch_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToolTipService_Partial.cpp",
+      "sha256": "3a704c8cf4c5e6d44e0a89d72b17b420e6d7bdebddc08bd6d61013825d1810b8",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToolTipService_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToolTipService_Partial.h",
+      "sha256": "46bd8773c9a05706520e1ad3bc346cfe51cf073b7bdba2b110af35d36bf041be",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToolTipService_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToolTip_Partial.cpp",
+      "sha256": "2fae2b3a51e8fa6204968f70f15b8ffdeffac992f20d9e7c897b37b46b76a237",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToolTip_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToolTip_Partial.h",
+      "sha256": "298174e3866724419b2f5ae4e83ded3005136d49ff25e93d69e91fc56b8047cd",
+      "sourcePath": "dxaml/xcp/dxaml/lib/ToolTip_Partial.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\ToolTip_themeresources.xaml",
+      "sha256": "6d8eebbc00d9cf2ffba4a11465ae9d99a06736fb5317fd0d362246304e61b572",
+      "sourcePath": "controls/dev/CommonStyles/ToolTip_themeresources.xaml"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Transition_Partial.cpp",
+      "sha256": "aef78d0c188b280d38edd63755254de91c9ce104398437f982c112121a4a54bc",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Transition_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\UIElement_Partial.cpp",
+      "sha256": "ffb1af4174cf5f9da69c29cbb6c490ded02fe02e6892b53485b340e4faab0560",
+      "sourcePath": "dxaml/xcp/dxaml/lib/UIElement_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\VariableSizedWrapGrid_OccupancyMap.cpp",
+      "sha256": "fe743f8d417d14c694f5f0e6491b7a21905a80d567e7208a0bd873c470ac5b42",
+      "sourcePath": "dxaml/xcp/dxaml/lib/VariableSizedWrapGrid_OccupancyMap.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\VariableSizedWrapGrid_Partial.cpp",
+      "sha256": "31513aec665ed1758d739756f2fc2e58d83a374b6debf0684d4b338671e0f929",
+      "sourcePath": "dxaml/xcp/dxaml/lib/VariableSizedWrapGrid_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Vector3Transition_Partial.cpp",
+      "sha256": "15ff0f67c653a8ed4c5baf01aefd0c5f41be2903247340f762e64fa16e4a63d4",
+      "sourcePath": "dxaml/xcp/dxaml/lib/Vector3Transition_Partial.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Viewbox.cpp",
+      "sha256": "1100040077aee7d4b6dffcd0ed796be64e5ad09f9c9e07f7057b39a7a8a119e4",
+      "sourcePath": "dxaml/xcp/core/core/elements/Viewbox.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\Viewbox.h",
+      "sha256": "063fd574ebc6490cfc95a05c66aaa4bd4b6e0aa367dc22bf35960832f8e33722",
+      "sourcePath": "dxaml/xcp/core/inc/Viewbox.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\WinTextCore.cpp",
+      "sha256": "f6e0c55a6e558f8b4781cf9ca03423114426373b987c9b59c3a9fac199c938b1",
+      "sourcePath": "dxaml/xcp/core/native/text/Common/WinTextCore.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\WindowsGraphicsDeviceManager.cpp",
+      "sha256": "c170e6878ca1fe2aebb465fe2c766220137926df8270cba72808118fe1b31fc4",
+      "sourcePath": "dxaml/xcp/components/graphics/WindowsGraphicsDeviceManager.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\WrappingLayoutStrategyImpl.cpp",
+      "sha256": "e98eaaeac608104267cb15d42ae92a1dea02e0b8f01c71e4ecd5a3ab88e558cb",
+      "sourcePath": "dxaml/xcp/components/moco/lib/WrappingLayoutStrategyImpl.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\WrappingLayoutStrategyImpl.h",
+      "sha256": "f737b260108e1d1a3958291845b6b62d0e5996b00b7173e6e79d3ba3126e055a",
+      "sourcePath": "dxaml/xcp/components/moco/inc/WrappingLayoutStrategyImpl.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\canvas.cpp",
+      "sha256": "e4214da93e4f5fcc982681fb43d86fcbffa63345ca595a21ab1b1c3f30d5f83c",
+      "sourcePath": "dxaml/xcp/core/core/elements/canvas.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\icon.cpp",
+      "sha256": "c43da2839f95a8181169164752d0e46a4efe217499ca9f77c0c05ec66a263172",
+      "sourcePath": "dxaml/xcp/core/core/elements/icon.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\icon.h",
+      "sha256": "198c5c4e2db72807cdcae4a63479d57deeefdacad03f051e496a00715f26b3fd",
+      "sourcePath": "dxaml/xcp/core/inc/icon.h"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\image.cpp",
+      "sha256": "cea73805583c7192de8b8c6c9d4985846a0d97dea88d70e4d9606420eefa7f9c",
+      "sourcePath": "dxaml/xcp/core/native/elements/image.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\imagebase.cpp",
+      "sha256": "5a964e32d3a7b9e41f4cfb29702a9300e88a3b5c32e302657d767fa450e52e62",
+      "sourcePath": "dxaml/xcp/core/core/elements/imagebase.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\imagebrush.cpp",
+      "sha256": "431c34a48b7f1db362cfabf1daae1e4a5c64f954d6aa6646ec0ddacd48f340f9",
+      "sourcePath": "dxaml/xcp/core/core/elements/imagebrush.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\line.cpp",
+      "sha256": "82cc0d3bf7bd59a991dc0ac9aa699f5d3ff406c1a226432b9e23ccdc7bebf9d1",
+      "sourcePath": "dxaml/xcp/core/core/elements/line.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\lineservicescallbacks.cpp",
+      "sha256": "ee5eaf598e3c7c1a7c8a0b09bd09ebe286f4bc04efea68d20dddf912ed7a0c82",
+      "sourcePath": "dxaml/xcp/core/text/RichTextServices/TextFormatter/lineservicescallbacks.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\mediabase.cpp",
+      "sha256": "eece6064e6926803b32ab6fa22316b20b07ce785c73e276732ff5703e082e41f",
+      "sourcePath": "dxaml/xcp/core/core/elements/mediabase.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\path.cpp",
+      "sha256": "abcf3465a373e605b0fe606c5cb1ec3850bd200ae8dab891c9c8581d42b5aaad",
+      "sourcePath": "dxaml/xcp/core/core/elements/path.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\polygon.cpp",
+      "sha256": "3657ca4a8b1bd42708c03cede69bd32f9ac74a71783c719016ca74bbd9c56561",
+      "sourcePath": "dxaml/xcp/core/core/elements/polygon.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\polyline.cpp",
+      "sha256": "89e303e8509a08028beb5dc97687574ffe22090b23a873b331489f99583bb36b",
+      "sourcePath": "dxaml/xcp/core/core/elements/polyline.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\rectangle.cpp",
+      "sha256": "9f1deb9a0179f272f2502cd2f21cf7ee77ae6d131d28651e416abffeb5539c33",
+      "sourcePath": "dxaml/xcp/core/core/elements/rectangle.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\shape.cpp",
+      "sha256": "c83e32eca50d0f390d64a790d4d10433e140dd527548fbbda7780a5dcfd50cad",
+      "sourcePath": "dxaml/xcp/core/core/elements/shape.cpp"
+    },
+    {
+      "path": "C:\\Users\\11156\\source\\repos\\winui\\references\\winui\\shape.h",
+      "sha256": "b8822aa9273b5f3ca475f8d24fa857635285742abb476dace1339a6fb838cda3",
+      "sourcePath": "dxaml/xcp/core/inc/shape.h"
+    }
+  ]
+}

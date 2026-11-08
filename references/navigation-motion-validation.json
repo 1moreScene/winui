@@ -1,0 +1,711 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T11:00:22.215Z",
+  "baseline": {
+    "commit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "Microsoft.WindowsAppSDK 2.5.4-experimental / WinUI 2.3.10-experimental",
+    "dpi": 1.25,
+    "probeDll": {
+      "path": "out/navigation-motion-probe-bin/Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+    },
+    "nativeData": {
+      "path": "references/navigation-motion-native.json",
+      "sha256": "17ed03dacf8ee543a74f76c70f6d9ccf1ea31b32f4cda53c69741afdb6b83429"
+    }
+  },
+  "sourceRecipe": {
+    "durationMs": 200,
+    "curve": [
+      0,
+      0.35,
+      0.15,
+      1
+    ]
+  },
+  "chevronSource": "ChevronUpDownSmall",
+  "nativeCases": [
+    {
+      "theme": "Light",
+      "action": "expand",
+      "frames": 19,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ],
+      "markerDeltaDip": 80,
+      "intermediatePositions": 10
+    },
+    {
+      "theme": "Light",
+      "action": "collapse",
+      "frames": 20,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ],
+      "markerDeltaDip": -80,
+      "intermediatePositions": 12
+    },
+    {
+      "theme": "Light",
+      "action": "reverse",
+      "frames": 22,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    },
+    {
+      "theme": "Dark",
+      "action": "expand",
+      "frames": 17,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ],
+      "markerDeltaDip": 80,
+      "intermediatePositions": 7
+    },
+    {
+      "theme": "Dark",
+      "action": "collapse",
+      "frames": 18,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ],
+      "markerDeltaDip": -80,
+      "intermediatePositions": 9
+    },
+    {
+      "theme": "Dark",
+      "action": "reverse",
+      "frames": 21,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    },
+    {
+      "theme": "Light",
+      "action": "page-Entrance",
+      "frames": 38,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    },
+    {
+      "theme": "Light",
+      "action": "page-SlideFromLeft",
+      "frames": 34,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    },
+    {
+      "theme": "Light",
+      "action": "page-SlideFromRight",
+      "frames": 36,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    },
+    {
+      "theme": "Light",
+      "action": "page-EntranceBack",
+      "frames": 36,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    },
+    {
+      "theme": "Light",
+      "action": "page-RapidEntrance",
+      "frames": 34,
+      "allForeground": true,
+      "captureModes": [
+        "foreground-client"
+      ]
+    }
+  ],
+  "nativePixels": [
+    {
+      "path": "out/navigation-motion-native-final/Material-Light-expanded.png",
+      "scale": 1.25,
+      "pixel": [
+        66,
+        103,
+        134,
+        255
+      ],
+      "expected": [
+        66,
+        103,
+        134,
+        255
+      ]
+    },
+    {
+      "path": "out/navigation-motion-native-final/Material-Light-fallback.png",
+      "scale": 1.25,
+      "pixel": [
+        249,
+        249,
+        249,
+        255
+      ],
+      "expected": [
+        249,
+        249,
+        249,
+        255
+      ]
+    },
+    {
+      "path": "out/navigation-motion-native-final/Material-Dark-expanded.png",
+      "scale": 1.25,
+      "pixel": [
+        66,
+        103,
+        134,
+        255
+      ],
+      "expected": [
+        66,
+        103,
+        134,
+        255
+      ]
+    },
+    {
+      "path": "out/navigation-motion-native-final/Material-Dark-fallback.png",
+      "scale": 1.25,
+      "pixel": [
+        44,
+        44,
+        44,
+        255
+      ],
+      "expected": [
+        44,
+        44,
+        44,
+        255
+      ]
+    }
+  ],
+  "nativeRapidOverlap": true,
+  "rust": {
+    "passed": 243,
+    "log": "out/navigation-motion-rust.log"
+  },
+  "browser": {
+    "chrome": {
+      "path": "out/navigation-motion-chrome-results.json",
+      "stats": {
+        "startTime": "2026-11-08T10:57:09.664Z",
+        "duration": 28133.818000000003,
+        "expected": 13,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "msedge": {
+      "path": "out/navigation-motion-msedge-results.json",
+      "stats": {
+        "startTime": "2026-11-08T10:57:38.933Z",
+        "duration": 22791.108,
+        "expected": 13,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  },
+  "materialChecks": {
+    "recipes": [
+      {
+        "theme": "Light",
+        "material": {
+          "recipe": {
+            "tintColor": "#FCFCFC",
+            "tintOpacity": 0,
+            "luminosityOpacity": 0.85,
+            "fallbackColor": "#F9F9F9"
+          },
+          "colors": {
+            "tint": "#fcfcfc00",
+            "luminosity": "#fcfcfcd9",
+            "fallback": "#f9f9f9ff"
+          },
+          "weight": 1,
+          "backdropAvailable": true
+        }
+      },
+      {
+        "theme": "Dark",
+        "material": {
+          "recipe": {
+            "tintColor": "#2C2C2C",
+            "tintOpacity": 0.15000000596046448,
+            "luminosityOpacity": 0.96,
+            "fallbackColor": "#2C2C2C"
+          },
+          "colors": {
+            "tint": "#2c2c2c26",
+            "luminosity": "#2c2c2cf5",
+            "fallback": "#2c2c2cff"
+          },
+          "weight": 1,
+          "backdropAvailable": true
+        }
+      }
+    ],
+    "before": {
+      "recipe": {
+        "tintColor": "#ffffff",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#f2f2f2"
+      },
+      "colors": {
+        "tint": "#ffffff45",
+        "luminosity": "#f6f6f6ad",
+        "fallback": "#f2f2f2ff"
+      },
+      "weight": 1,
+      "backdropAvailable": true
+    },
+    "start": {
+      "recipe": {
+        "tintColor": "#2055ee",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#dadada"
+      },
+      "colors": {
+        "tint": "#ffffff45",
+        "luminosity": "#f6f6f6ad",
+        "fallback": "#f2f2f2ff"
+      },
+      "weight": 1,
+      "backdropAvailable": true
+    },
+    "middle": {
+      "recipe": {
+        "tintColor": "#2055ee",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#dadada"
+      },
+      "colors": {
+        "tint": "#3f45e783",
+        "luminosity": "#3d43e6ad",
+        "fallback": "#dcdcdcff"
+      },
+      "weight": 1,
+      "backdropAvailable": true
+    },
+    "end": {
+      "recipe": {
+        "tintColor": "#2055ee",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#dadada"
+      },
+      "colors": {
+        "tint": "#2055ee8a",
+        "luminosity": "#2055eead",
+        "fallback": "#dadadaff"
+      },
+      "weight": 1,
+      "backdropAvailable": true
+    },
+    "fallback": {
+      "recipe": {
+        "tintColor": "#2055ee",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#dadada"
+      },
+      "colors": {
+        "tint": "#2055ee8a",
+        "luminosity": "#2055eead",
+        "fallback": "#dadadaff"
+      },
+      "weight": 0,
+      "backdropAvailable": false
+    },
+    "restoring": {
+      "recipe": {
+        "tintColor": "#2055ee",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#dadada"
+      },
+      "colors": {
+        "tint": "#2055ee8a",
+        "luminosity": "#2055eead",
+        "fallback": "#dadadaff"
+      },
+      "weight": 0,
+      "backdropAvailable": true
+    },
+    "restored": {
+      "recipe": {
+        "tintColor": "#2055ee",
+        "tintOpacity": 0.6,
+        "luminosityOpacity": null,
+        "fallbackColor": "#dadada"
+      },
+      "colors": {
+        "tint": "#2055ee8a",
+        "luminosity": "#2055eead",
+        "fallback": "#dadadaff"
+      },
+      "weight": 0.7883800936876735,
+      "backdropAvailable": true
+    }
+  },
+  "fallbackPixelChecks": [
+    {
+      "backend": "Canvas2D",
+      "theme": "Light",
+      "pixel": [
+        249,
+        249,
+        249,
+        255
+      ],
+      "material": {
+        "backdropAvailable": false,
+        "colors": {
+          "fallback": "#f9f9f9ff",
+          "luminosity": "#fcfcfcd9",
+          "tint": "#fcfcfc00"
+        },
+        "recipe": {
+          "fallbackColor": "#F9F9F9",
+          "luminosityOpacity": 0.85,
+          "tintColor": "#FCFCFC",
+          "tintOpacity": 0
+        },
+        "weight": 0
+      }
+    },
+    {
+      "backend": "Canvas2D",
+      "theme": "Dark",
+      "pixel": [
+        44,
+        44,
+        44,
+        255
+      ],
+      "material": {
+        "backdropAvailable": false,
+        "colors": {
+          "fallback": "#2c2c2cff",
+          "luminosity": "#2c2c2cf5",
+          "tint": "#2c2c2c26"
+        },
+        "recipe": {
+          "fallbackColor": "#2C2C2C",
+          "luminosityOpacity": 0.96,
+          "tintColor": "#2C2C2C",
+          "tintOpacity": 0.15000000596046448
+        },
+        "weight": 0
+      }
+    },
+    {
+      "backend": "WebGL2",
+      "theme": "Light",
+      "pixel": [
+        249,
+        249,
+        249,
+        255
+      ],
+      "material": {
+        "backdropAvailable": false,
+        "colors": {
+          "fallback": "#f9f9f9ff",
+          "luminosity": "#fcfcfcd9",
+          "tint": "#fcfcfc00"
+        },
+        "recipe": {
+          "fallbackColor": "#F9F9F9",
+          "luminosityOpacity": 0.85,
+          "tintColor": "#FCFCFC",
+          "tintOpacity": 0
+        },
+        "weight": 0
+      }
+    },
+    {
+      "backend": "WebGL2",
+      "theme": "Dark",
+      "pixel": [
+        44,
+        44,
+        44,
+        255
+      ],
+      "material": {
+        "backdropAvailable": false,
+        "colors": {
+          "fallback": "#2c2c2cff",
+          "luminosity": "#2c2c2cf5",
+          "tint": "#2c2c2c26"
+        },
+        "recipe": {
+          "fallbackColor": "#2C2C2C",
+          "luminosityOpacity": 0.96,
+          "tintColor": "#2C2C2C",
+          "tintOpacity": 0.15000000596046448
+        },
+        "weight": 0
+      }
+    }
+  ],
+  "artifact": "out/navigation-motion-preview",
+  "wasmSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+  "matchesCurrentWasm": true,
+  "sources": [
+    {
+      "path": "src/navigation.rs",
+      "sha256": "e68b518fa4aac747d442a48cf6534ae0efd4a4c2fe383b06f8285a37b444eca3"
+    },
+    {
+      "path": "src/navigation_motion.rs",
+      "sha256": "f437043b5a9211ff70426bc2d6e375b3b64413f55b72aad4a9ff1aab455c8ea4"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "3f3ce5b98b40cfea68c5ad65e5b0676defff1b6b061fd68586d7c01dcb6c6c8c"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "177eaf55db14819b16064dcc38a7ce5f26237e27fce23723f3bbb1a7444751a9"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "582d7766c0d1a0c08db1f6eab47bbcd2934ff5610e106dcdb2493d80dd974f4c"
+    },
+    {
+      "path": "src/frame.rs",
+      "sha256": "3b218306b0b9b3d7cb8ab0a750deda8fdbe6dc11018869180a6cffec148fa9ba"
+    },
+    {
+      "path": "src/lib.rs",
+      "sha256": "4821b77914eaa889a23a222185673290dc78b9321e58e9ee5ddd6d894b3d70fc"
+    },
+    {
+      "path": "gallery/src/sdk.ts",
+      "sha256": "970db25c1ce78ab6634d86c8450499bc4cc048fe8fc4ba44c4391128cc2a92d9"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "d38ba6dfda3f67246d2b9dd1cecc12a8f284cf6f64c8e246321ef377daaf6dd3"
+    },
+    {
+      "path": "tools/native-navigation/NavigationMotionProbe.cs",
+      "sha256": "8b99d9cb41de274db65f46c96a0acf2b3cc1816f08bf890e244b1f8d1267d9e5"
+    },
+    {
+      "path": "tools/native-navigation/Program.cs",
+      "sha256": "fba00ffb5d89fad16cd9f85b415524702f13a02bc5609413bdba6fbcd6bba2ce"
+    },
+    {
+      "path": "tools/native-navigation/NavigationProbe.csproj",
+      "sha256": "8379487e4a5a12b23a622683f0602e8dfc8001e21ec1d77d35d680c4e9456993"
+    },
+    {
+      "path": "tools/native-navigation/NativeMotionRedPage.xaml",
+      "sha256": "d853131e2a8c1008fba65654c61a379be4d83e032e3ca32c1671ec25b74d63d9"
+    },
+    {
+      "path": "tools/native-navigation/NativeMotionBluePage.xaml",
+      "sha256": "babbaa5e4efca6dddc6efe182391189c34480e784bd6d9e3357560ee5abb0be3"
+    },
+    {
+      "path": "tools/extract-navigation-motion.mjs",
+      "sha256": "134acdf448a35557eb0979517f516d857a1e01985dd86cec60acd4e3d6587abb"
+    },
+    {
+      "path": "references/navigation-motion-contract.json",
+      "sha256": "3f7fdbfb94ae96554e891aa43ab6d66b37f59d4eea09a765db830a943f0ba24c"
+    }
+  ],
+  "assets": [
+    {
+      "path": "out/navigation-motion-preview/assets/AnimatedIconPage-CRW-l2Qi.js",
+      "sha256": "a6dd7e1ebd37e60dd9f57b1720e177ebbec595030b6a927febbdec03cb510046"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/AnimatedIconPage-DU2vFpf2.js",
+      "sha256": "9b7615ae20cae0662b0665ed37ba904fd099fa519bf9b28869bb543017c37666"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/BasicNextPage-CcgwTgKb.js",
+      "sha256": "2cc9dab06e5653e4255638a086612bb2fe324be89a0e5c9136ad18f975182adf"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/BasicNextPage-Dz_PgU7M.js",
+      "sha256": "2ad8f5458c2616815eed446e0c9ad455d6a5676978355e6be17c31fefc97a159"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ButtonPage-BBPsQH7I.js",
+      "sha256": "7c92aebedb4576b0c3d745394630137ec4a51d31b12232d245847bf93047bc15"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ButtonPage-ByO6WRrv.css",
+      "sha256": "0d618976bfb3c869f9143b0c667a9431520b82444d6208a4a80c35ac933a5b27"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ButtonPage-Dr4NgRa7.js",
+      "sha256": "e0aae05ec1701d8eaa06a91a37e9c271a2c1df50ac0e698da0c68c6b3d0bd4a4"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/CollectionsPage-B-BVxvgW.js",
+      "sha256": "b8d5cc3b171778417cbc6aaf0b2567442777d86d5daaa26d2d6fa2c0a45f7174"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/CollectionsPage-CsnSM96o.js",
+      "sha256": "bf06bb4c24a3b04d9a63ac52d6ebadae6466cae9ea95912a10dc6973193d9327"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/CommandControlsPage-Ch5oa0-e.js",
+      "sha256": "3c6471ba3308adaf6a31a577c857d9f79673f5b0c08390cf9d8941cabed62298"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/CommandControlsPage-WVdP4bKc.js",
+      "sha256": "a064735373fd89dcee403137f8eff282c0808d82807a5a938af2850c222e9b2c"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/CompactControlsPage-BcA7kq10.js",
+      "sha256": "7dbd5b91a9694cd9a101b998950efc03fd8c148911393c4a1f64c92a3d8b0670"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/CompactControlsPage-LWcBPyOo.js",
+      "sha256": "a5428bfc00738adeceecb4494895c50c2825043615b7e5ff7d8caa32a662e0c1"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ComposedControlsPage-C0u32LL8.js",
+      "sha256": "eb2df34a5134e5c86872d8c02de511941ee4618c334dd0fe6b9855020aa9d10e"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ComposedControlsPage-f4_HPEsG.js",
+      "sha256": "453d18e9f9d6dc9b78afc0138203e26b1766d98e5e71296da4ee11ff25722e07"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/FiveControlsPage-CQ8TR4so.js",
+      "sha256": "9ffa58e404663c73afc11006a3c15adce86bdfb38c0b15e26495962d29e62d55"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/FiveControlsPage-Cv2ReIwA.js",
+      "sha256": "93d0770431077c2a4c7aebaa2b132ffa30ee6ae17f6a697766003cf301bcfd5f"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/IconsPage-BOfRzj0E.js",
+      "sha256": "716b05229b0ff39eacb6972c4bad09ae6b23277b409173d2249a7aef26dd109a"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/IconsPage-BqoDRbJh.js",
+      "sha256": "dbb56dfad4ee27a470c44fe4db001bd70ffb57af3514e74431cede5a93e11f50"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/index-Benqjzy0.js",
+      "sha256": "528e163904264df0d8b308289d3abfd7da8bac9e08deb0293f24b6e533b08328"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/index-BeZiu7N1.css",
+      "sha256": "391f9ebee6a8de6a9baff49099b71a35c50919aca6cd0236cf4113a330f0c954"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/index-DL467DJ3.js",
+      "sha256": "7bc828dd0fdd7896a6ab64e48229e9d0e96825598fb2dc016dfea87a22fef6fc"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/InputControlsPage-BuuEjwbi.js",
+      "sha256": "c3f763cce979d1a614742ea90cfeec5a7e536106f9966e212d4229746b7cda4d"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/InputControlsPage-Cdege1jL.js",
+      "sha256": "110ff77efb50289c7529a6166a9af1d1b12eb9eeebd967efc4a891a23ee0d88c"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/NavigationControlsPage-C0tH3wO7.js",
+      "sha256": "d78113a642e88b27b33eb27dfae7010987f4c176d8427b27d1770c765449a17a"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/NavigationControlsPage-CQ3f0g2B.js",
+      "sha256": "7ceaef55ced4c96dbb25c5e59dbe7f84a36611ab9c5702d5a8038f72f1990876"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/NavigationControlsPage-DDNnVUrK.js",
+      "sha256": "93b2105a2af4f254fe3275fe8f24a56e547eef17b9fe1e67e351cf468c53560e"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/NavigationControlsPage-DWCc5H7X.js",
+      "sha256": "daeb66fb25df4dd5ad91824d802bfaa70f3a9a2e37617188e2ec919f537c9ee9"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/OverlaysPage-B5R4sVAb.js",
+      "sha256": "1949e29e27e085480af64959744573363991234eda872e3fded9e1345bf992c6"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/OverlaysPage-DCh5_mT3.js",
+      "sha256": "1c0035da6397cc706bcff393e2d913a83957953c12b44926f85c8849b3e92440"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ProgressPage-BWSbEeA7.js",
+      "sha256": "f2f4278ebddca3ff577ad0e89cd39257726104da070748372f24c74f6155dc0f"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ProgressPage-DHEFcFoR.js",
+      "sha256": "c4f5c582a77f000e652eb28d3325d800256526ec55bf608249fa0be3a88f299f"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ShapesPage-BoceXCn_.js",
+      "sha256": "a8f94b0ad3564d5d366abf7b4ed0989a4948d22f4cd7ce6ae96edfd37e346efb"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/ShapesPage-CyWKlLif.js",
+      "sha256": "643c38af07909bbc7352dc9b3bcb5097547a4c324802797b3fff6c8823685931"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/TextScrollPage-BxslKcv3.js",
+      "sha256": "5f3b1fffd6f740ae158e3de203bc7e70e1ea759de5e1ae4c05fe173ef3d9f760"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/TextScrollPage-DsZ7Rq6A.js",
+      "sha256": "a318b7d88e5575772a6736d0ccf79632b181faef0dae95d8da836b342c06846e"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/winui_bg-B94ziHpv.wasm",
+      "sha256": "ea8de43414350e5c7fda697a20bc5ffa3659ce7b8f2e718a8be7700841e75b65"
+    },
+    {
+      "path": "out/navigation-motion-preview/assets/winui_bg-rXzyUp2o.wasm",
+      "sha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db"
+    },
+    {
+      "path": "out/navigation-motion-preview/index.html",
+      "sha256": "cc0e8b15ba4b122b751306b7b4a84bff9f0efc0ee0f93512ee699bf8754e27d7"
+    }
+  ],
+  "limits": [
+    "Live same-SDK standalone probe, not the Store release window.",
+    "UI Rendering time brackets plus own-window GDI pixels; no exact compositor present timestamps.",
+    "Cross-DOM Acrylic remains the explicit native resource fallback.",
+    "No claim of complete font rasterization, GPU pixel or frame-present equivalence."
+  ]
+}

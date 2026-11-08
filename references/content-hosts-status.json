@@ -1,0 +1,180 @@
+{
+  "verifiedOn": "2026-11-09",
+  "controls": [
+    "ContentControl",
+    "ContentPresenter",
+    "UserControl",
+    "Page",
+    "Frame (SceneFrame)"
+  ],
+  "architecture": "Rust Scene owns control layout/state/templates/journal/cache/input and drawing; TS/React only bind public API and business callbacks.",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "validation": {
+    "rust": {
+      "passed": 355,
+      "path": "out/content-hosts-rust.log",
+      "sha256": "b3f9be4da65273fd00afe9d317f90e8685e1cbc28d53316e85f9d096ddb10c4f",
+      "newIntegrationTests": 11
+    },
+    "browser": [
+      {
+        "path": "out/content-hosts-browser-results.json",
+        "sha256": "344b6a11cd912825e5ced17b8b5ee79c52d9c33207ea0e05908884c8ff26e75c",
+        "passed": 11
+      },
+      {
+        "path": "out/content-hosts-production-browser-results.json",
+        "sha256": "ebd032c8db38bbe759872c9e9547b5442f630d15c63e946736a592f370a0eefc",
+        "passed": 8
+      },
+      {
+        "path": "out/content-hosts-integration-results.json",
+        "sha256": "6db2e9734dc35faed8e96698aea5478219d93565385e7bdecca88443fa2e8bc7",
+        "passed": 8
+      }
+    ],
+    "native": {
+      "path": "references/content-hosts-native.json",
+      "sha256": "de26cc3a4b8f2349a5769b5cc7ede36c0639f0fa7a91a488e8c73c450f37259b",
+      "capturedStates": 50,
+      "comparedHostStates": 40,
+      "dpr": 1.25,
+      "maximumGeometryErrorDip": 0.8000030517578125,
+      "scope": "40 static same-SDK host geometry states; 10 native arbitrary-Frame-content states retained for reference, not counted as accepted. Not Store Gallery Composition or pixel parity."
+    },
+    "typescript": "strict typecheck and negative enum cases passed",
+    "production": {
+      "wasm": [
+        "out/content-hosts-production/assets/winui_bg-BVCFN9AH.wasm"
+      ],
+      "wasmSha256": "9a5c89b8f0ea090a065f8ca543a86676d0f640c855971cea47d58e9ff10e30a2",
+      "matchesTestedBinary": true,
+      "matchesCurrentBinary": true,
+      "sourceSnapshot": {
+        "path": "out/content-hosts-test-snapshot/snapshot-manifest.json",
+        "sha256": "f2b2a360ca907b49aa28f75f23e4ea3624d58e880b4710709630aed5d7ad826b"
+      },
+      "indexSha256": "4cdf39865ead559ffff92076a076b9e046d36e0a159c2a89979bb7b00e1357d6",
+      "sdkDeclarations": "gallery/dist/sdk-types/content-host-types.d.ts"
+    },
+    "screenshots": "out/content-hosts-visual/"
+  },
+  "sourceFingerprints": [
+    {
+      "path": "src/scene/content_hosts.rs",
+      "testedPath": "src/scene/content_hosts.rs",
+      "sha256": "a1406f856e487abb53f60676754cdd3e8fbe4087c6942bea4a8ea714505b624b",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/frame.rs",
+      "testedPath": "src/frame.rs",
+      "sha256": "5a556e55e2d3fdd61c5ad1ba04b56be94414f470913245f062cc60b56b1c3853",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "testedPath": "src/scene/mod.rs",
+      "sha256": "5cebc890aa51fc58d354ade7bbc82a705db4de093abc2349ea02399bbf8fde3f",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "testedPath": "src/scene/layout.rs",
+      "sha256": "2e040aa5df4befbfc356de4f832515830399b714c3f3c3c6c93285310fea4882",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/input.rs",
+      "testedPath": "src/scene/input.rs",
+      "sha256": "2df25695739676ea54e169de6cec3c7fd0dc69e4ae307506cc68d52b6282da4b",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "testedPath": "src/scene/paint.rs",
+      "sha256": "5f683c338ce30c280601660d74446dbf6b2e5d8d6d2cb78596f332136c27dae3",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "testedPath": "src/scene/properties.rs",
+      "sha256": "b404c556047a953fe1e91327852252092efcabe8320e199529c44c825347847c",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/five_controls.rs",
+      "testedPath": "src/scene/five_controls.rs",
+      "sha256": "892a732bc6e64a52c24537189fad6a485676763557b6e3c76763d3e140bfacbf",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/wasm.rs",
+      "testedPath": "src/wasm.rs",
+      "sha256": "c8cd334b99fbe19c0f27b7e56c2d384958d6ece7adeecf77af483a60dc6ca614",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "references/api-enums.json",
+      "testedPath": "references/api-enums.json",
+      "sha256": "8841a7ff8d018607ba07adaf39812bea99e3f4929b33fa81c2d8eed68cb00744",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/content-host-types.ts",
+      "testedPath": "out/content-hosts-test-snapshot/src/content-host-types.ts",
+      "sha256": "7fe385fa81f21acdc06d28f48c9370a76c0232a0d59562e22ad5be5eb21e084b",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "testedPath": "out/content-hosts-test-snapshot/src/scene.ts",
+      "sha256": "14fdae9b7bf674a62aef07e5481949359034a2051f91b6d22b22de760d2b88fe",
+      "matchesLiveWorkspace": false
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "testedPath": "out/content-hosts-test-snapshot/src/react.tsx",
+      "sha256": "38e3728f27417a015b91e294d9cd15e19aff039b68269e2e65556543c8fbc48c",
+      "matchesLiveWorkspace": false
+    },
+    {
+      "path": "gallery/src/index.ts",
+      "testedPath": "out/content-hosts-test-snapshot/src/index.ts",
+      "sha256": "7a0dc3f3affdeb1a516be8f5c7f6f7368ddecf3fe5e571f3103df46c0dc357bb",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/ContentHostsPage.tsx",
+      "testedPath": "out/content-hosts-test-snapshot/src/ContentHostsPage.tsx",
+      "sha256": "48e1166898080f3ff8408cfac0217ad8d41b013cf6f204d94806b09a44428f97",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "tests/content_hosts.rs",
+      "testedPath": "tests/content_hosts.rs",
+      "sha256": "051ab5016ca70ea4bb9e68bd48c33101c59e4d9d6b67d84e0c9b6996d907a9a7",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/tests/content-hosts.spec.ts",
+      "testedPath": "gallery/tests/content-hosts.spec.ts",
+      "sha256": "35fb7f02b3d24912fa6da0bf9231dd5d81bf443bc2ae050d773a143f835adef1",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/tests/types-content-hosts.tsx",
+      "testedPath": "gallery/tests/types-content-hosts.tsx",
+      "sha256": "6aea852382e77eb14a376f791f9d9e7f678258d078de69faea65bf5c4497202e",
+      "matchesLiveWorkspace": true
+    }
+  ],
+  "remaining": [
+    "Full XAML/DataTemplate runtime and data-template selectors",
+    "Page virtual lifecycle and navigation serialization projection",
+    "Automatic cross-page focus restoration",
+    "Complete UIA and Store Composition frame/pixel equivalence"
+  ],
+  "docs": "docs/content-hosts.md"
+}

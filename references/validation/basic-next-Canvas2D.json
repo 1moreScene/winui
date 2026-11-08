@@ -1,0 +1,6391 @@
+{
+  "reference": "Own fixed-SDK forced states and 100%/125% Viewbox matrices; not Store release present-time acceptance",
+  "acceptedPixelParity": false,
+  "cases": 156,
+  "rows": [
+    {
+      "theme": "Light",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 36,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 2.457310267857143,
+      "glyphMean": 4.486243386243387,
+      "chromeMean": 0.1936245572609209
+    },
+    {
+      "theme": "Light",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 244,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 256,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 2.4148995535714284,
+      "glyphMean": 4.412698412698413,
+      "chromeMean": 0.1859504132231405
+    },
+    {
+      "theme": "Light",
+      "state": "Pressed",
+      "bounds": {
+        "x": 464,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 476,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 1.6481584821428572,
+      "glyphMean": 3.005820105820106,
+      "chromeMean": 0.1334120425029516
+    },
+    {
+      "theme": "Light",
+      "state": "Disabled",
+      "bounds": {
+        "x": 684,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 696,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0.986328125,
+      "glyphMean": 1.7507936507936508,
+      "chromeMean": 0.1334120425029516
+    },
+    {
+      "theme": "Dark",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 36,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 4.020926339285714,
+      "glyphMean": 7.487301587301587,
+      "chromeMean": 0.15348288075560804
+    },
+    {
+      "theme": "Dark",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 244,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 256,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 3.9637276785714284,
+      "glyphMean": 7.373544973544973,
+      "chromeMean": 0.15938606847697756
+    },
+    {
+      "theme": "Dark",
+      "state": "Pressed",
+      "bounds": {
+        "x": 464,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 476,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 3.2084263392857144,
+      "glyphMean": 5.9677248677248675,
+      "chromeMean": 0.12987012987012986
+    },
+    {
+      "theme": "Dark",
+      "state": "Disabled",
+      "bounds": {
+        "x": 684,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 696,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 1.5404575892857142,
+      "glyphMean": 2.8079365079365077,
+      "chromeMean": 0.12632821723730814
+    },
+    {
+      "theme": "HighContrast",
+      "state": "Normal",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 36,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 4.823102678571429,
+      "glyphMean": 9.146031746031746,
+      "chromeMean": 0
+    },
+    {
+      "theme": "HighContrast",
+      "state": "PointerOver",
+      "bounds": {
+        "x": 244,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 256,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 5.266183035714286,
+      "glyphMean": 9.146031746031746,
+      "chromeMean": 0.9374262101534829
+    },
+    {
+      "theme": "HighContrast",
+      "state": "Pressed",
+      "bounds": {
+        "x": 464,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 476,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 2.5220424107142856,
+      "glyphMean": 4.577248677248678,
+      "chromeMean": 0.22904368358913813
+    },
+    {
+      "theme": "HighContrast",
+      "state": "Disabled",
+      "bounds": {
+        "x": 684,
+        "y": 24,
+        "width": 112,
+        "height": 32
+      },
+      "padding": {
+        "Left": 11,
+        "Top": 5,
+        "Right": 11,
+        "Bottom": 6
+      },
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "textBounds": {
+        "x": 696,
+        "y": 30,
+        "width": 87.595703125,
+        "height": 18.62109375
+      },
+      "radius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "delay": 500,
+      "interval": 33,
+      "clickMode": "Press",
+      "kind": "RepeatButton",
+      "image": "RepeatButton",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 1.4852120535714286,
+      "glyphMean": 2.8164021164021165,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 64,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 304,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 304,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 544,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 64,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 504,
+        "y": 179,
+        "width": 180,
+        "height": 90
+      },
+      "child": {
+        "x": 504,
+        "y": 179,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        90
+      ],
+      "scale": [
+        1.8,
+        1.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 784,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 784,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 24,
+        "y": 329,
+        "width": 180,
+        "height": 90
+      },
+      "child": {
+        "x": 24,
+        "y": 329,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        90
+      ],
+      "scale": [
+        1.8,
+        1.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 200,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        2,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 349,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 544,
+        "y": 349,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 200,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        2,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 24,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 179,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 744,
+        "y": 179,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        30
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 329,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 24,
+        "y": 329,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        30
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 324,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 504,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 84,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 324,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 564,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 804,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 204,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 84,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 204,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 324,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 564,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 209,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 804,
+        "y": 209,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 359,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 84,
+        "y": 359,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 324,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 354,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 564,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 354,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 804,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 64,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 304,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 304,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 544,
+        "y": 49,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 64,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 504,
+        "y": 179,
+        "width": 180,
+        "height": 90
+      },
+      "child": {
+        "x": 504,
+        "y": 179,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        90
+      ],
+      "scale": [
+        1.8,
+        1.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 784,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 784,
+        "y": 199,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 24,
+        "y": 329,
+        "width": 180,
+        "height": 90
+      },
+      "child": {
+        "x": 24,
+        "y": 329,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        90
+      ],
+      "scale": [
+        1.8,
+        1.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 200,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        2,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 349,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 544,
+        "y": 349,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        100,
+        50
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 200,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        2,
+        2
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 24,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 179,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 744,
+        "y": 179,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        30
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 329,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 24,
+        "y": 329,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        30
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 324,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 504,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 84,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 324,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 564,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 804,
+        "y": 54,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 204,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 84,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 204,
+        "width": 60.000003814697266,
+        "height": 40
+      },
+      "child": {
+        "x": 324,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 564,
+        "y": 204,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 209,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 804,
+        "y": 209,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 359,
+        "width": 60.000003814697266,
+        "height": 30.000001907348633
+      },
+      "child": {
+        "x": 84,
+        "y": 359,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "child": {
+        "x": 324,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 354,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 564,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 354,
+        "width": 80,
+        "height": 40
+      },
+      "child": {
+        "x": 804,
+        "y": 354,
+        "width": 100,
+        "height": 50
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.8,
+        0.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 64,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1.0000000762939454
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 304,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 304,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1.0000000762939454
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 544,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1.0000000762939454
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        1.9841268920898438
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 64,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        1.984127197265625
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 504,
+        "y": 178.8000030517578,
+        "width": 180,
+        "height": 90.4000015258789
+      },
+      "child": {
+        "x": 504,
+        "y": 178.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        90.4000015258789
+      ],
+      "scale": [
+        1.8,
+        1.7999996948242187
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 784,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 784,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 180,
+        "height": 90.4000015258789
+      },
+      "child": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        90.4000015258789
+      ],
+      "scale": [
+        1.8,
+        1.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 198.39999389648438,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.9841268920898438,
+        1.984127197265625
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 348.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 544,
+        "y": 348.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 198.39999389648438,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.984127197265625,
+        1.984127197265625
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 24,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 1.2684967320261438,
+      "glyphMean": null,
+      "chromeMean": 1.2684967320261438
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 178.8000030517578,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 744,
+        "y": 178.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        30.399999618530273
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        30.399999618530273
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 324,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 504,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 84,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 324,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 564,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 804,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 204.39999389648438,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 84,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 204.39999389648438,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 324,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 564,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0.1711463844797178,
+      "glyphMean": null,
+      "chromeMean": 0.1711463844797178
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 208.39999389648438,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 804,
+        "y": 208.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 358.3999938964844,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 84,
+        "y": 358.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 324,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 354.3999938964844,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 564,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Light",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 354.3999938964844,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 804,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 64,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1.0000000762939454
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 304,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 304,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1.0000000762939454
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 544,
+        "y": 48.79999923706055,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1.0000000762939454
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        1.9841268920898438
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 64,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 64,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.8,
+        1.984127197265625
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 504,
+        "y": 178.8000030517578,
+        "width": 180,
+        "height": 90.4000015258789
+      },
+      "child": {
+        "x": 504,
+        "y": 178.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        90.4000015258789
+      ],
+      "scale": [
+        1.8,
+        1.7999996948242187
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 784,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 784,
+        "y": 198.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 180,
+        "height": 90.4000015258789
+      },
+      "child": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        90.4000015258789
+      ],
+      "scale": [
+        1.8,
+        1.8
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 198.39999389648438,
+        "height": 100
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.9841268920898438,
+        1.984127197265625
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 544,
+        "y": 348.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 544,
+        "y": 348.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        100,
+        50.400001525878906
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Large",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 198.39999389648438,
+        "height": 100
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        180,
+        100
+      ],
+      "scale": [
+        1.984127197265625,
+        1.984127197265625
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Large",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 24,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 264,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 504,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 744,
+        "y": 24,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 24,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 264,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 504,
+        "y": 174,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 2.1048366013071895,
+      "glyphMean": null,
+      "chromeMean": 2.1048366013071895
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 178.8000030517578,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 744,
+        "y": 178.8000030517578,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        30.399999618530273
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 24,
+        "y": 328.79998779296875,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        30.399999618530273
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 264,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 504,
+        "y": 324,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 504,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "Small",
+      "explicitWidth": null,
+      "explicitHeight": null,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 60,
+        "height": 40
+      },
+      "bounds": {
+        "x": 744,
+        "y": 324,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 744,
+        "y": 324,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-Small",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 24,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 84,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 264,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 324,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "None",
+      "direction": "Both",
+      "slot": {
+        "x": 504,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 564,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 744,
+        "y": 24,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 804,
+        "y": 54.400001525878906,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 24,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 204.39999389648438,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 84,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Fill",
+      "direction": "Both",
+      "slot": {
+        "x": 264,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 204.39999389648438,
+        "width": 60,
+        "height": 40
+      },
+      "child": {
+        "x": 324,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.7936508178710937
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 504,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 564,
+        "y": 204.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0.2839858906525573,
+      "glyphMean": null,
+      "chromeMean": 0.2839858906525573
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 744,
+        "y": 174,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 208.39999389648438,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 804,
+        "y": 208.39999389648438,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "Uniform",
+      "direction": "Both",
+      "slot": {
+        "x": 24,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 84,
+        "y": 358.3999938964844,
+        "width": 60,
+        "height": 30.399999618530273
+      },
+      "child": {
+        "x": 84,
+        "y": 358.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.6,
+        0.6
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "UpOnly",
+      "slot": {
+        "x": 264,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 324,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "child": {
+        "x": 324,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        1,
+        1
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "DownOnly",
+      "slot": {
+        "x": 504,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 564,
+        "y": 354.3999938964844,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 564,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    },
+    {
+      "theme": "Dark",
+      "size": "SmallExplicit",
+      "explicitWidth": 60,
+      "explicitHeight": 40,
+      "stretch": "UniformToFill",
+      "direction": "Both",
+      "slot": {
+        "x": 744,
+        "y": 324,
+        "width": 180,
+        "height": 100
+      },
+      "bounds": {
+        "x": 804,
+        "y": 354.3999938964844,
+        "width": 79.19999694824219,
+        "height": 40
+      },
+      "child": {
+        "x": 804,
+        "y": 354.3999938964844,
+        "width": 100,
+        "height": 50.400001525878906
+      },
+      "desired": [
+        60,
+        40
+      ],
+      "scale": [
+        0.7936505126953125,
+        0.7936505126953125
+      ],
+      "kind": "Viewbox",
+      "image": "Viewbox-SmallExplicit",
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "mean": 0,
+      "glyphMean": null,
+      "chromeMean": 0
+    }
+  ]
+}

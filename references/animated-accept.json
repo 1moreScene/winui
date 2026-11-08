@@ -1,0 +1,295 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sourceSha256": "3568eee3be6edd333f315fde77c75a87001fd24f93e819fe56f055418fb20d85",
+  "durationMs": 2666.6666,
+  "size": 48.0,
+  "scale": 1.04999995,
+  "shapeScale": 0.699999988,
+  "stroke": 4.0,
+  "geometries": [
+    [
+      [
+        -11.75,
+        -0.125
+      ],
+      [
+        11.875,
+        -0.125
+      ]
+    ],
+    [
+      [
+        -15.1719999,
+        0.0160000008
+      ],
+      [
+        -5.0,
+        10.1879997
+      ],
+      [
+        15.3369999,
+        -10.3369999
+      ]
+    ],
+    [
+      [
+        -15.1719999,
+        0.0160000008
+      ],
+      [
+        -5.0,
+        10.1879997
+      ],
+      [
+        15.3369999,
+        -10.2810001
+      ]
+    ]
+  ],
+  "markers": {
+    "NormalOnToNormalOff_Start": 0.0,
+    "NormalOnToNormalOff_End": 0.0253125,
+    "NormalOnToPointerOverOn_Start": 0.0315625,
+    "NormalOnToPointerOverOn_End": 0.0565625,
+    "NormalOnToPressedOn_Start": 0.0628125,
+    "NormalOnToPressedOn_End": 0.0878125,
+    "NormalOffToNormalOn_Start": 0.0940625,
+    "NormalOffToNormalOn_End": 0.2128125,
+    "NormalOffToPointerOverOff_Start": 0.2190625,
+    "NormalOffToPointerOverOff_End": 0.2440625,
+    "NormalOffToPressedOff_Start": 0.2503125,
+    "NormalOffToPressedOff_End": 0.2753125,
+    "PointerOverOnToPointerOverOff_Start": 0.2815625,
+    "PointerOverOnToPointerOverOff_End": 0.3065625,
+    "PointerOverOnToNormalOn_Start": 0.3128125,
+    "PointerOverOnToNormalOn_End": 0.3378125,
+    "PointerOverOnToPressedOn_Start": 0.3440625,
+    "PointerOverOnToPressedOn_End": 0.3690625,
+    "PointerOverOffToPointerOverOn_Start": 0.3753125,
+    "PointerOverOffToPointerOverOn_End": 0.4940625,
+    "PointerOverOffToNormalOff_Start": 0.5003125,
+    "PointerOverOffToNormalOff_End": 0.5253125,
+    "PointerOverOffToPressedOff_Start": 0.5315625,
+    "PointerOverOffToPressedOff_End": 0.5565625,
+    "PressedOnToPressedOff_Start": 0.5628125,
+    "PressedOnToPressedOff_End": 0.5878125,
+    "PressedOnToPointerOverOff_Start": 0.5940625,
+    "PressedOnToPointerOverOff_End": 0.6190625,
+    "PressedOnToNormalOff_Start": 0.6253125,
+    "PressedOnToNormalOff_End": 0.6503125,
+    "PressedOffToPressedOn_Start": 0.6565625,
+    "PressedOffToPressedOn_End": 0.7128125,
+    "PressedOffToPointerOverOn_Start": 0.7190625,
+    "PressedOffToPointerOverOn_End": 0.8378125,
+    "PressedOffToNormalOn_Start": 0.8440625,
+    "PressedOffToNormalOn_End": 0.9628125,
+    "NormalIndeterminate": 0.9690625,
+    "PointerOverIndeterminate": 0.9815625,
+    "PressedIndeterminate": 0.9940625
+  },
+  "segments": {
+    "Indeterminate": {
+      "geometry": 0
+    },
+    "PressedOffToNormalOn": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimEnd",
+        "start": 0.84375,
+        "end": 0.962499976,
+        "curve": [
+          0.550000012,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "start": 0.8440625,
+      "end": 0.9628125
+    },
+    "PressedOffToPointerOverOn": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimEnd",
+        "start": 0.71875,
+        "end": 0.837499976,
+        "curve": [
+          0.550000012,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "start": 0.7190625,
+      "end": 0.8378125
+    },
+    "PressedOffToPressedOn": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimEnd",
+        "start": 0.65625,
+        "end": 0.712499976,
+        "curve": [
+          0.550000012,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "start": 0.6565625,
+      "end": 0.7128125
+    },
+    "PressedOnToNormalOff": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimStart",
+        "start": 0.625,
+        "end": 0.649999976,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.833000004,
+          0.833000004
+        ]
+      },
+      "start": 0.6253125,
+      "end": 0.6503125
+    },
+    "PressedOnToPointerOverOff": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimStart",
+        "start": 0.59375,
+        "end": 0.618749976,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.833000004,
+          0.833000004
+        ]
+      },
+      "start": 0.5940625,
+      "end": 0.6190625
+    },
+    "PressedOnToPressedOff": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimStart",
+        "start": 0.5625,
+        "end": 0.587499976,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.833000004,
+          0.833000004
+        ]
+      },
+      "start": 0.5628125,
+      "end": 0.5878125
+    },
+    "PointerOverOffToPointerOverOn": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimEnd",
+        "start": 0.375,
+        "end": 0.493750006,
+        "curve": [
+          0.550000012,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "start": 0.3753125,
+      "end": 0.4940625
+    },
+    "PointerOverOnToPressedOn": {
+      "geometry": 2,
+      "start": 0.3440625,
+      "end": 0.3690625
+    },
+    "PointerOverOnToNormalOn": {
+      "geometry": 1,
+      "start": 0.3128125,
+      "end": 0.3378125
+    },
+    "PointerOverOnToPointerOverOff": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimStart",
+        "start": 0.28125,
+        "end": 0.306250006,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.833000004,
+          0.833000004
+        ]
+      },
+      "start": 0.2815625,
+      "end": 0.3065625
+    },
+    "NormalOffToNormalOn": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimEnd",
+        "start": 0.09375,
+        "end": 0.212500006,
+        "curve": [
+          0.550000012,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "start": 0.0940625,
+      "end": 0.2128125
+    },
+    "NormalOnToPressedOn": {
+      "geometry": 1,
+      "start": 0.0628125,
+      "end": 0.0878125
+    },
+    "NormalOnToPointerOverOn": {
+      "geometry": 1,
+      "start": 0.0315625,
+      "end": 0.0565625
+    },
+    "NormalOnToNormalOff": {
+      "geometry": 1,
+      "trim": {
+        "property": "TrimStart",
+        "start": 0.0,
+        "end": 0.0250000004,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.833000004,
+          0.833000004
+        ]
+      },
+      "start": 0.0,
+      "end": 0.0253125
+    },
+    "NormalOffToPointerOverOff": {
+      "geometry": null,
+      "start": 0.2190625,
+      "end": 0.2440625
+    },
+    "NormalOffToPressedOff": {
+      "geometry": null,
+      "start": 0.2503125,
+      "end": 0.2753125
+    },
+    "PointerOverOffToNormalOff": {
+      "geometry": null,
+      "start": 0.5003125,
+      "end": 0.5253125
+    },
+    "PointerOverOffToPressedOff": {
+      "geometry": null,
+      "start": 0.5315625,
+      "end": 0.5565625
+    }
+  }
+}

@@ -1,0 +1,279 @@
+{
+  "recordedAtUtc": "2026-11-08T11:14:01.657902+00:00",
+  "status": "Implemented and verified against same-SDK fixtures; complete native pixel parity not accepted",
+  "controls": [
+    "AutoSuggestBox",
+    "NumberBox",
+    "ComboBox",
+    "ContentDialog",
+    "TeachingTip"
+  ],
+  "implementation": {
+    "rust": "src/scene/composed.rs",
+    "numberParser": "src/number_box.rs",
+    "typescript": "gallery/src/scene.ts",
+    "types": "gallery/src/composed-types.ts",
+    "react": "gallery/src/react.tsx",
+    "gallery": "gallery/src/ComposedControlsPage.tsx",
+    "officialSamples": 13,
+    "defaultBackend": "Canvas2D",
+    "optionalBackend": "WebGL2"
+  },
+  "evidence": {
+    "documentation": "docs/composed-controls.md",
+    "validation": "references/validation/composed-controls.json",
+    "nativeRun": "references/composed-controls-run.json",
+    "nativeStates": 100,
+    "nativeNumberFormatCases": 30,
+    "sourceManifest": "references/composed-controls-sources.json",
+    "template": "references/composed-controls-template.json",
+    "resources": "references/composed-controls-resources.json",
+    "browserReview": "out/composed-visual/index.html",
+    "nativeMotionFrames": 368,
+    "browserStatesPerBackend": 100,
+    "motion": "references/validation/composed-controls-motion.json",
+    "motionReview": "out/composed-motion/index.html",
+    "presentation": "out/composed-presentation",
+    "webkit": "out/composed-webkit",
+    "choiceInteraction": "references/validation/composed-choice.json",
+    "choiceNativeRun": "references/choice-interaction-run.json",
+    "choiceNativePointerObservations": 40,
+    "choiceNativeTemplateStates": 8,
+    "closedComboBox": "references/validation/combobox-faceplate.json",
+    "closedComboBoxNativeStates": 28,
+    "closedComboBoxNativeRun": "references/combo-faceplate-run.json",
+    "comboCorrection": "references/validation/combo-correction.json",
+    "fractionalDpiScales": 12,
+    "nextBatch": "references/validation/picker-foundation.json"
+  },
+  "fullyMatchesNative": false,
+  "remaining": [
+    "Native DWrite glyph coverage/phase versus browser font rasterization.",
+    "Desktop HostBackdrop and DWM composition differ from a browser-backed popup island.",
+    "Live same-SDK motion is recorded and replayed; Store distribution frame-by-frame pixel acceptance remains separate.",
+    "Arbitrary WinRT formatter implementations, editable rich selection-box templates, InPlace ContentDialog and full UIA parity are outside this slice.",
+    "Native windowed ComboBox fixtures can extend above the client top; the browser popup is constrained to its viewport. Raw placement differences remain in geometryMaxDip and windowEdgeCases; withinClientGeometryMaxDip excludes only those explicit client-top constraint cases."
+  ],
+  "validationPending": [],
+  "wasm": {
+    "frozenSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "currentSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "matchesCurrentBinary": true,
+    "allMatricesMatchFrozenBinary": true
+  },
+  "checks": {
+    "rustTests": 242,
+    "concurrentFullRustRun": {
+      "log": "out/combo-hover-rust-all.log",
+      "recordedAtUtc": "2026-11-08T09:05:37.806364+00:00",
+      "passed": false,
+      "scope": "Historical full-run attempt includes command_controls tests being implemented concurrently; the scoped run above verifies this change and existing suites."
+    },
+    "browser": {
+      "startTime": "2026-11-08T11:02:54.273Z",
+      "duration": 133152.225,
+      "expected": 35,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "startTime": "2026-11-08T11:02:54.243Z",
+      "duration": 210917.447,
+      "expected": 35,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "motion": {
+      "startTime": "2026-11-08T11:10:47.164Z",
+      "duration": 81452.325,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "regression": {
+      "startTime": "2026-11-08T11:02:54.273Z",
+      "duration": 137961.491,
+      "expected": 26,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "geometryMaxDip": {
+    "Canvas2D": 56.80000305175781,
+    "WebGL2": 56.80000305175781
+  },
+  "intentionalException": "The project suppresses focus rings while retaining real focus, highlight fill and accent selection pills. Native ring pixels remain in the raw difference images.",
+  "fixes": [
+    "NumberBox clear visibility uses current nonempty editable content and focus, including initial/programmatic values and refocus.",
+    "Native windowed ComboBox immediate close, stable opening anchor, pointer/keyboard states and item chrome.",
+    "Shared Rust popup island escapes ancestor clips, with isolated materials and native shadow depths.",
+    "Editable ComboBox arrow/clear separation and source resource names.",
+    "ContentDialog natural button widths; TeachingTip tail geometry, clip and material.",
+    "Fractional-DPI editor viewport rounding.",
+    "Windowed popup shadows are outside the Acrylic content sampling surface.",
+    "ComboBox SelectedUnfocused maps the native inactive selection palette.",
+    "Unchanged Rust selection preserves pending native browser selection before asynchronous input notifications.",
+    "Closed ComboBox common hover and keyboard focus groups are independent; native absolute gradient transforms and physical border/background sizing are retained.",
+    "Editable ComboBox focused TextBox overlays the native faceplate background.",
+    "Physical-width canonicalization preserves variable-font template measurement and removes false overflow.",
+    "Shared ScrollState max removes machine-roundoff overflow at fractional DPR without masking real subpixel overflow.",
+    "Editable ComboBox arrow explicitly stretches to the editor height; native internal hover margin is retained.",
+    "Rust popup input scope consumes background scroll and list-edge chaining; document adapter projects it to DOM input.",
+    "Inactive cached Scene hosts suspend document scroll input scope and restore it on reactivation.",
+    "Tight popup surfaces, bounded frame snapshots and stable isolated-window Acrylic tiles reduce dropdown scroll rendering cost."
+  ],
+  "withinClientGeometryMaxDip": {
+    "Canvas2D": 0.8000061035156136,
+    "WebGL2": 0.8000061035156136
+  },
+  "windowEdgeCases": {
+    "Canvas2D": [
+      {
+        "name": "Light-ComboBox-Open",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      },
+      {
+        "name": "Light-ComboBox-OpenSelected",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      },
+      {
+        "name": "Dark-ComboBox-Open",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      },
+      {
+        "name": "Dark-ComboBox-OpenSelected",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      }
+    ],
+    "WebGL2": [
+      {
+        "name": "Light-ComboBox-Open",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      },
+      {
+        "name": "Light-ComboBox-OpenSelected",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      },
+      {
+        "name": "Dark-ComboBox-Open",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      },
+      {
+        "name": "Dark-ComboBox-OpenSelected",
+        "part": "popupWindow",
+        "native": {
+          "x": 24,
+          "y": -56.80000305175781,
+          "width": 240,
+          "height": 156.8000030517578
+        },
+        "actual": {
+          "x": 24,
+          "y": 0,
+          "width": 240,
+          "height": 156.8
+        },
+        "maxDip": 56.80000305175781
+      }
+    ]
+  },
+  "backendVerified": {
+    "Canvas2D": true,
+    "WebGL2": true
+  }
+}

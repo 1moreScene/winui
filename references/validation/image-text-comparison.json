@@ -1,0 +1,67 @@
+{
+  "nativeDpr": 1,
+  "acceptedPixelParity": false,
+  "remaining": "Scaled JPEG decode/filter differences and italic glyph rasterization; baseline and width are checked against native within 0.02 DIP.",
+  "results": [
+    {
+      "backend": "Canvas2D",
+      "sample": "None",
+      "mean": 0.04393333333333333
+    },
+    {
+      "backend": "Canvas2D",
+      "sample": "Fill",
+      "mean": 2.2430333333333334
+    },
+    {
+      "backend": "Canvas2D",
+      "sample": "Uniform",
+      "mean": 1.5251333333333332
+    },
+    {
+      "backend": "Canvas2D",
+      "sample": "UniformToFill",
+      "mean": 1.5261
+    },
+    {
+      "backend": "Canvas2D",
+      "sample": "Normal",
+      "mean": 0.8455555555555555
+    },
+    {
+      "backend": "Canvas2D",
+      "sample": "Italic",
+      "mean": 1.3867777777777779
+    },
+    {
+      "backend": "WebGL2",
+      "sample": "None",
+      "mean": 0.04393333333333333
+    },
+    {
+      "backend": "WebGL2",
+      "sample": "Fill",
+      "mean": 5.655466666666666
+    },
+    {
+      "backend": "WebGL2",
+      "sample": "Uniform",
+      "mean": 7.1917
+    },
+    {
+      "backend": "WebGL2",
+      "sample": "UniformToFill",
+      "mean": 5.9556
+    },
+    {
+      "backend": "WebGL2",
+      "sample": "Normal",
+      "mean": 0.8455555555555555
+    },
+    {
+      "backend": "WebGL2",
+      "sample": "Italic",
+      "mean": 1.3867777777777779
+    }
+  ]
+}

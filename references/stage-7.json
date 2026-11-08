@@ -1,0 +1,2471 @@
+{
+  "stage": "7 first floating-controls slice",
+  "date": "2026-11-07",
+  "generatedAtUtc": "2026-11-07T15:10:40.105Z",
+  "controls": [
+    "Popup",
+    "ToolTip",
+    "Flyout",
+    "MenuFlyout",
+    "Slider"
+  ],
+  "route": "http://127.0.0.1:5173/#overlays",
+  "scope": "docs/overlays.md",
+  "rust": {
+    "generatedAtUtc": "2026-11-07T15:08:38.0605053Z",
+    "passed": 120,
+    "exitCode": 0,
+    "command": "cargo test --locked",
+    "log": "out/lint/rust-tests.log"
+  },
+  "integrationChecks": {
+    "checks": [
+      {
+        "log": "out/lint/overlays-fmt.log",
+        "exitCode": 0,
+        "command": "cargo fmt --all -- --check"
+      },
+      {
+        "log": "out/lint/overlays-clippy-host.log",
+        "exitCode": 0,
+        "command": "cargo clippy --all-targets --locked -- -D warnings"
+      },
+      {
+        "log": "out/lint/overlays-clippy-wasm.log",
+        "exitCode": 0,
+        "command": "cargo clippy --target wasm32-unknown-unknown --locked -- -D warnings"
+      },
+      {
+        "log": "out/lint/overlays-enums.log",
+        "exitCode": 0,
+        "command": "node tools/generate-enums.mjs --check"
+      },
+      {
+        "log": "out/lint/overlays-baseline.log",
+        "exitCode": 0,
+        "command": "node tools/verify-baseline.mjs --local"
+      },
+      {
+        "log": "out/lint/overlays-strict-ts.log",
+        "exitCode": 0,
+        "command": "npm.cmd --prefix gallery run typecheck"
+      }
+    ],
+    "generatedAtUtc": "2026-11-07T15:07:51.9709270Z"
+  },
+  "themeSmoke": {
+    "rows": [
+      {
+        "backend": "Canvas2D",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "backend": "Canvas2D",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "backend": "Canvas2D",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "backend": "WebGL2",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "backend": "WebGL2",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "backend": "WebGL2",
+        "theme": "HighContrast",
+        "passed": true
+      }
+    ],
+    "errors": [],
+    "boundary": "Browser themes only; deterministic HighContrast resources, without changing Windows settings."
+  },
+  "rustAnalyzer": {
+    "generatedAtUtc": "2026-11-07T15:08:37.6367405Z",
+    "analyzer": "rust-analyzer 0.3.3073-standalone (65ac641199 2026-10-04)",
+    "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+    "exitCode": 0,
+    "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\rust-analyzer-fixed.log",
+    "command": "rust-analyzer diagnostics . --severity error",
+    "boundary": "Uses the installed VS Code server, rather than treating cargo check as editor-diagnostic verification. Editor restart may be required to reload its old process."
+  },
+  "navigationSmoke": {
+    "rows": [
+      {
+        "name": "Popup",
+        "hash": "#popup",
+        "top": 64.390625
+      },
+      {
+        "name": "ToolTip",
+        "hash": "#tool-tip",
+        "top": 64.390625
+      },
+      {
+        "name": "Flyout",
+        "hash": "#flyout",
+        "top": 64.390625
+      },
+      {
+        "name": "MenuFlyout",
+        "hash": "#menu-flyout",
+        "top": 64.390625
+      },
+      {
+        "name": "Slider",
+        "hash": "#slider",
+        "top": 494.390625
+      }
+    ],
+    "errors": []
+  },
+  "validatedWasm": {
+    "sha256": "be8d69eabd22c49ca1c1ac5cf6062735b00f56b6ab18043eb07fc1b51245a2d1",
+    "completedAt": 1794063399362
+  },
+  "actualControls": {
+    "scope": "Actual same-SDK Flyout and MenuFlyout visual follow-up",
+    "nativeScenes": 16,
+    "nativeMotionFrames": 52,
+    "browserScenes": 32,
+    "browserMotionFrames": 104,
+    "maximumGeometryErrorDIP": 3.0517578011313162e-06,
+    "maximumMenuRowErrorDIP": 1.2207031261368684e-05,
+    "runtimeErrors": [],
+    "materialMAEByKind": {
+      "-Flyout-": {
+        "minimum": 0.5810533515731874,
+        "maximum": 1.60687414500684
+      },
+      "-MenuFlyout-": {
+        "minimum": 0.6262265834076717,
+        "maximum": 8.324957874913272
+      }
+    },
+    "rust": {
+      "generatedAtUtc": "2026-11-07T15:08:38.0605053Z",
+      "passed": 120,
+      "exitCode": 0,
+      "command": "cargo test --locked",
+      "log": "out/lint/rust-tests.log"
+    },
+    "density": {
+      "startTime": "2026-11-07T14:49:19.880Z",
+      "duration": 4383.248,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "validatedWasm": {
+      "sha256": "be8d69eabd22c49ca1c1ac5cf6062735b00f56b6ab18043eb07fc1b51245a2d1",
+      "completedAt": 1794063399362
+    },
+    "review": "out/overlay-controls-review/index.html",
+    "boundary": [
+      "Actual native SDK geometry and live screen pixels; not a Store Gallery claim.",
+      "Menu SystemBackdrop retains measured noise/blur differences; full pixel equivalence is not asserted.",
+      "Wall-clock animation sampling does not prove compositor present-time synchronization.",
+      "Concurrent compact-control edits were preserved. Final global source/local fingerprint checks passed; full browser and final overlay checkpoints identify separate WASM snapshots."
+    ],
+    "files": [
+      {
+        "path": "src\\scene\\overlays.rs",
+        "sha256": "efeb4bcdcef3d5a26a11b6aae65671a0e4be5e42ad1a4c1ead45cf5ca65841c5"
+      },
+      {
+        "path": "src\\scene\\overlay_visual.rs",
+        "sha256": "32f15c2cc9cfadeeacb9e14814fdaf42ca7772b64fdaa30fc43e41f5a390beb8"
+      },
+      {
+        "path": "src\\scene\\layout.rs",
+        "sha256": "bd1afb0b0fe145beab5abb6f6d1aebaefa09138864e04e34b0ad9ea2fb308b28"
+      },
+      {
+        "path": "src\\scene\\paint.rs",
+        "sha256": "d0bd479f51e246c2244967a492893884e62c4e2819c1568db1252602c1d9e7b5"
+      },
+      {
+        "path": "src\\scene\\input.rs",
+        "sha256": "7bdaa4a4904124e2344fbfc727ab39bc876e088fed0ccea2cd3d18d0fff477be"
+      },
+      {
+        "path": "gallery\\src\\scene.ts",
+        "sha256": "cae205d3ae66323301dbd933e5a707daef86c52e8dfb161db33189b8ef21f839"
+      },
+      {
+        "path": "tools\\native-navigation\\OverlayControlsProbe.cs",
+        "sha256": "8ad155d47b4bc8d7e852d6c6f36a7759ce2be5e33aafc17982beebdb90d61ceb"
+      },
+      {
+        "path": "references\\overlay-controls-metrics.json",
+        "sha256": "773977890c3f72f29a674cb4f997d14023fe11b71104290f34bb1a5d0bfbef70"
+      },
+      {
+        "path": "references\\overlay-template.json",
+        "sha256": "ce8522812665f9d3878b9ef2bb5f328a208fd2b721d432ba38c4c0c1d4d95491"
+      }
+    ],
+    "fullBrowserRegression": {
+      "stats": {
+        "startTime": "2026-11-07T14:45:10.328Z",
+        "duration": 170560.22199999998,
+        "expected": 119,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "validatedWasm": {
+        "sha256": "c7e3b069e23c69df6f4e54ae3b028f6c9d7092796af572761e94188411cb73d0",
+        "completedAt": 1794062680027
+      }
+    },
+    "finalOverlayRegression": {
+      "stats": {
+        "startTime": "2026-11-07T15:06:33.581Z",
+        "duration": 21957.79,
+        "expected": 13,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "validatedWasm": {
+        "sha256": "be8d69eabd22c49ca1c1ac5cf6062735b00f56b6ab18043eb07fc1b51245a2d1",
+        "completedAt": 1794063399362
+      }
+    },
+    "integrationChecks": {
+      "checks": [
+        {
+          "log": "out/lint/overlays-fmt.log",
+          "exitCode": 0,
+          "command": "cargo fmt --all -- --check"
+        },
+        {
+          "log": "out/lint/overlays-clippy-host.log",
+          "exitCode": 0,
+          "command": "cargo clippy --all-targets --locked -- -D warnings"
+        },
+        {
+          "log": "out/lint/overlays-clippy-wasm.log",
+          "exitCode": 0,
+          "command": "cargo clippy --target wasm32-unknown-unknown --locked -- -D warnings"
+        },
+        {
+          "log": "out/lint/overlays-enums.log",
+          "exitCode": 0,
+          "command": "node tools/generate-enums.mjs --check"
+        },
+        {
+          "log": "out/lint/overlays-baseline.log",
+          "exitCode": 0,
+          "command": "node tools/verify-baseline.mjs --local"
+        },
+        {
+          "log": "out/lint/overlays-strict-ts.log",
+          "exitCode": 0,
+          "command": "npm.cmd --prefix gallery run typecheck"
+        }
+      ],
+      "generatedAtUtc": "2026-11-07T15:07:51.9709270Z"
+    },
+    "maximumOuterEdgeMAE": 1.959016393442623,
+    "rustAnalyzer": {
+      "generatedAtUtc": "2026-11-07T15:08:37.6367405Z",
+      "analyzer": "rust-analyzer 0.3.3073-standalone (65ac641199 2026-10-04)",
+      "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "exitCode": 0,
+      "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\rust-analyzer-fixed.log",
+      "command": "rust-analyzer diagnostics . --severity error",
+      "boundary": "Uses the installed VS Code server, rather than treating cargo check as editor-diagnostic verification. Editor restart may be required to reload its old process."
+    }
+  },
+  "presentation": {
+    "canvas": {
+      "backend": "Canvas2D",
+      "rows": [
+        {
+          "kind": "Flyout",
+          "shadowDelta": 2.705952380952381,
+          "activeRange": 6,
+          "fallbackRange": 0,
+          "initial": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -52
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              50
+            ],
+            "opacity": 0,
+            "order": 34,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "middle": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -8.570770967932866
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              6.570770967932865
+            ],
+            "opacity": 0.2048181425720401,
+            "order": 34,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "settled": {
+            "active": false,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -2
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 1,
+            "order": 34,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          }
+        },
+        {
+          "kind": "MenuFlyout",
+          "shadowDelta": 2.705952380952381,
+          "activeRange": 6,
+          "fallbackRange": 0,
+          "initial": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -62
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              60
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 3
+              },
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 43
+              }
+            ],
+            "selectedIndex": null
+          },
+          "middle": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -12.280926025102666
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              10.280926025102666
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 3
+              },
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 43
+              }
+            ],
+            "selectedIndex": null
+          },
+          "settled": {
+            "active": false,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -2
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 3
+              },
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 43
+              }
+            ],
+            "selectedIndex": null
+          }
+        },
+        {
+          "kind": "ToolTip",
+          "shadowDelta": 0.8095238095238095,
+          "activeRange": 5,
+          "fallbackRange": 0,
+          "initial": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 129,
+              "width": 248,
+              "x": -4,
+              "y": -1
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 0,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "middle": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 129,
+              "width": 248,
+              "x": -4,
+              "y": -1
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 0.5988016567252357,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "settled": {
+            "active": false,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 129,
+              "width": 248,
+              "x": -4,
+              "y": -1
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          }
+        }
+      ],
+      "errors": [],
+      "boundary": "Browser pixels prove shadow/material/motion behavior; source parameters and native timing records are pinned, but full live native compositor parity is not asserted."
+    },
+    "gpu": {
+      "backend": "WebGL2",
+      "rows": [
+        {
+          "kind": "Flyout",
+          "shadowDelta": 2.705952380952381,
+          "activeRange": 5,
+          "fallbackRange": 0,
+          "initial": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -52
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              50
+            ],
+            "opacity": 0,
+            "order": 34,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "middle": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -8.570770967932866
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              6.570770967932865
+            ],
+            "opacity": 0.2048181425720401,
+            "order": 34,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "settled": {
+            "active": false,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -2
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 1,
+            "order": 34,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          }
+        },
+        {
+          "kind": "MenuFlyout",
+          "shadowDelta": 2.705952380952381,
+          "activeRange": 5,
+          "fallbackRange": 0,
+          "initial": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -62
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              60
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 3
+              },
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 43
+              }
+            ],
+            "selectedIndex": null
+          },
+          "middle": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -12.280926025102666
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              10.280926025102666
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 3
+              },
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 43
+              }
+            ],
+            "selectedIndex": null
+          },
+          "settled": {
+            "active": false,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 140,
+              "width": 260,
+              "x": -10,
+              "y": -2
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 3
+              },
+              {
+                "height": 40,
+                "width": 238,
+                "x": 1,
+                "y": 43
+              }
+            ],
+            "selectedIndex": null
+          }
+        },
+        {
+          "kind": "ToolTip",
+          "shadowDelta": 0.8095238095238095,
+          "activeRange": 5,
+          "fallbackRange": 0,
+          "initial": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 129,
+              "width": 248,
+              "x": -4,
+              "y": -1
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 0,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "middle": {
+            "active": true,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 129,
+              "width": 248,
+              "x": -4,
+              "y": -1
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 0.5988016567252357,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          },
+          "settled": {
+            "active": false,
+            "actualPlacement": "Top",
+            "clip": {
+              "height": 129,
+              "width": 248,
+              "x": -4,
+              "y": -1
+            },
+            "isOpen": true,
+            "offset": [
+              0,
+              0
+            ],
+            "opacity": 1,
+            "order": 33,
+            "pendingClose": null,
+            "rows": [],
+            "selectedIndex": null
+          }
+        }
+      ],
+      "errors": [],
+      "boundary": "Browser pixels prove shadow/material/motion behavior; source parameters and native timing records are pinned, but full live native compositor parity is not asserted."
+    },
+    "menuCanvas": {
+      "backend": "Canvas2D",
+      "rows": [
+        {
+          "side": "Top",
+          "time": 1000,
+          "offset": [
+            0,
+            60
+          ],
+          "expectedTop": 157,
+          "expectedBottom": 234,
+          "minY": 157,
+          "maxY": 233
+        },
+        {
+          "side": "Top",
+          "time": 1100,
+          "offset": [
+            0,
+            10.280926025102666
+          ],
+          "expectedTop": 107.28092602510267,
+          "expectedBottom": 225.28092602510267,
+          "minY": 108,
+          "maxY": 224
+        },
+        {
+          "side": "Top",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 97,
+          "expectedBottom": 215,
+          "minY": 97,
+          "maxY": 214
+        },
+        {
+          "side": "Bottom",
+          "time": 1000,
+          "offset": [
+            0,
+            -60
+          ],
+          "expectedTop": 254,
+          "expectedBottom": 315,
+          "minY": 254,
+          "maxY": 314
+        },
+        {
+          "side": "Bottom",
+          "time": 1100,
+          "offset": [
+            0,
+            -10.280926025102666
+          ],
+          "expectedTop": 254,
+          "expectedBottom": 364.71907397489736,
+          "minY": 254,
+          "maxY": 363
+        },
+        {
+          "side": "Bottom",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 257,
+          "expectedBottom": 375,
+          "minY": 257,
+          "maxY": 374
+        },
+        {
+          "side": "Left",
+          "time": 1000,
+          "offset": [
+            0,
+            -60
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 235,
+          "minY": 174,
+          "maxY": 234
+        },
+        {
+          "side": "Left",
+          "time": 1100,
+          "offset": [
+            0,
+            -10.280926025102666
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 284.71907397489736,
+          "minY": 174,
+          "maxY": 283
+        },
+        {
+          "side": "Left",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 177,
+          "expectedBottom": 295,
+          "minY": 177,
+          "maxY": 294
+        },
+        {
+          "side": "Right",
+          "time": 1000,
+          "offset": [
+            0,
+            -60
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 235,
+          "minY": 174,
+          "maxY": 234
+        },
+        {
+          "side": "Right",
+          "time": 1100,
+          "offset": [
+            0,
+            -10.280926025102666
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 284.71907397489736,
+          "minY": 174,
+          "maxY": 283
+        },
+        {
+          "side": "Right",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 177,
+          "expectedBottom": 295,
+          "minY": 177,
+          "maxY": 294
+        }
+      ]
+    },
+    "menuGpu": {
+      "backend": "WebGL2",
+      "rows": [
+        {
+          "side": "Top",
+          "time": 1000,
+          "offset": [
+            0,
+            60
+          ],
+          "expectedTop": 157,
+          "expectedBottom": 234,
+          "minY": 157,
+          "maxY": 233
+        },
+        {
+          "side": "Top",
+          "time": 1100,
+          "offset": [
+            0,
+            10.280926025102666
+          ],
+          "expectedTop": 107.28092602510267,
+          "expectedBottom": 225.28092602510267,
+          "minY": 107,
+          "maxY": 224
+        },
+        {
+          "side": "Top",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 97,
+          "expectedBottom": 215,
+          "minY": 97,
+          "maxY": 214
+        },
+        {
+          "side": "Bottom",
+          "time": 1000,
+          "offset": [
+            0,
+            -60
+          ],
+          "expectedTop": 254,
+          "expectedBottom": 315,
+          "minY": 254,
+          "maxY": 314
+        },
+        {
+          "side": "Bottom",
+          "time": 1100,
+          "offset": [
+            0,
+            -10.280926025102666
+          ],
+          "expectedTop": 254,
+          "expectedBottom": 364.71907397489736,
+          "minY": 254,
+          "maxY": 364
+        },
+        {
+          "side": "Bottom",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 257,
+          "expectedBottom": 375,
+          "minY": 257,
+          "maxY": 374
+        },
+        {
+          "side": "Left",
+          "time": 1000,
+          "offset": [
+            0,
+            -60
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 235,
+          "minY": 174,
+          "maxY": 234
+        },
+        {
+          "side": "Left",
+          "time": 1100,
+          "offset": [
+            0,
+            -10.280926025102666
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 284.71907397489736,
+          "minY": 174,
+          "maxY": 284
+        },
+        {
+          "side": "Left",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 177,
+          "expectedBottom": 295,
+          "minY": 177,
+          "maxY": 294
+        },
+        {
+          "side": "Right",
+          "time": 1000,
+          "offset": [
+            0,
+            -60
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 235,
+          "minY": 174,
+          "maxY": 234
+        },
+        {
+          "side": "Right",
+          "time": 1100,
+          "offset": [
+            0,
+            -10.280926025102666
+          ],
+          "expectedTop": 174,
+          "expectedBottom": 284.71907397489736,
+          "minY": 174,
+          "maxY": 284
+        },
+        {
+          "side": "Right",
+          "time": 1500,
+          "offset": [
+            0,
+            0
+          ],
+          "expectedTop": 177,
+          "expectedBottom": 295,
+          "minY": 177,
+          "maxY": 294
+        }
+      ]
+    },
+    "shadowCanvas": {
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "rows": [
+        {
+          "theme": "Light",
+          "translationZ": 16,
+          "externalShadowMAE": 0.09647619557650083,
+          "maximumCornerDarkening": 5,
+          "top": 0,
+          "bottom": 17
+        },
+        {
+          "theme": "Light",
+          "translationZ": 32,
+          "externalShadowMAE": 0.17680608365019013,
+          "maximumCornerDarkening": 3,
+          "top": 1,
+          "bottom": 26
+        },
+        {
+          "theme": "Dark",
+          "translationZ": 16,
+          "externalShadowMAE": 0.01057676859636909,
+          "maximumCornerDarkening": 1,
+          "top": 0,
+          "bottom": 4
+        },
+        {
+          "theme": "Dark",
+          "translationZ": 32,
+          "externalShadowMAE": 0.04043271033042361,
+          "maximumCornerDarkening": 1,
+          "top": 0,
+          "bottom": 6
+        }
+      ],
+      "boundary": "Compares live native ThemeShadow own-window captures at Z 16/32; this verifies shadow profiles and rounded exterior pixels, not full control pixel equivalence."
+    },
+    "shadowGpu": {
+      "backend": "WebGL2",
+      "dpr": 1.25,
+      "rows": [
+        {
+          "theme": "Light",
+          "translationZ": 16,
+          "externalShadowMAE": 0.08812188721683714,
+          "maximumCornerDarkening": 3,
+          "top": 0,
+          "bottom": 17
+        },
+        {
+          "theme": "Light",
+          "translationZ": 32,
+          "externalShadowMAE": 0.12459165640229208,
+          "maximumCornerDarkening": 2,
+          "top": 1,
+          "bottom": 25
+        },
+        {
+          "theme": "Dark",
+          "translationZ": 16,
+          "externalShadowMAE": 0.0032935254110212607,
+          "maximumCornerDarkening": 1,
+          "top": 0,
+          "bottom": 4
+        },
+        {
+          "theme": "Dark",
+          "translationZ": 32,
+          "externalShadowMAE": 0.020751887752369733,
+          "maximumCornerDarkening": 1,
+          "top": 0,
+          "bottom": 6
+        }
+      ],
+      "boundary": "Compares live native ThemeShadow own-window captures at Z 16/32; this verifies shadow profiles and rounded exterior pixels, not full control pixel equivalence."
+    }
+  },
+  "fingerprintBoundary": "Browser report covers the frozen SDK/WASM presentation follow-up at the identified validatedWasm; other controls are edited concurrently. Rust and lint reports carry their own check timestamps.",
+  "browser": {
+    "report": "out/overlays-browser/results.json",
+    "passed": 119,
+    "total": 119,
+    "tests": [
+      {
+        "name": "Canvas2D seven animated sources match frozen native Composition frames",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 seven animated sources match frozen native Composition frames",
+        "status": "expected"
+      },
+      {
+        "name": "AnimatedIcon Gallery pointer states, fallbacks, sources and remounts use the real SDK",
+        "status": "expected"
+      },
+      {
+        "name": "sample the Rust indicator using native capture timestamps",
+        "status": "expected"
+      },
+      {
+        "name": "fractional Scene and NavigationView surfaces map backing pixels without stretching",
+        "status": "expected"
+      },
+      {
+        "name": "idle surfaces repaint on display scale and viewport changes and release listeners",
+        "status": "expected"
+      },
+      {
+        "name": "circle and toggle-thumb edge coverage meets an independent numerical reference",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D official composed InfoBadge styles match native icon/value/dot geometry",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 official composed InfoBadge styles match native icon/value/dot geometry",
+        "status": "expected"
+      },
+      {
+        "name": "SDK fetches the content-versioned WASM binary used by the Gallery",
+        "status": "expected"
+      },
+      {
+        "name": "official selection examples: three-state, select all, keyboard and disable",
+        "status": "expected"
+      },
+      {
+        "name": "TextBlock style and all image stretch options render through both backends",
+        "status": "expected"
+      },
+      {
+        "name": "selection forced-state probe crops are measured on Canvas and GPU",
+        "status": "expected"
+      },
+      {
+        "name": "native image crops and styled text match both renderers",
+        "status": "expected"
+      },
+      {
+        "name": "Gallery defaults to Canvas2D and shows direct React properties",
+        "status": "expected"
+      },
+      {
+        "name": "source vector CheckBox draws progressively on both backends and settles under reduced motion",
+        "status": "expected"
+      },
+      {
+        "name": "RepeatButton Gallery uses native defaults, hold/release, Space, Enter and disable",
+        "status": "expected"
+      },
+      {
+        "name": "RepeatButton SDK clock, live interval, atomic failure, cancel and disposal",
+        "status": "expected"
+      },
+      {
+        "name": "Viewbox Gallery exposes all Stretch and StretchDirection choices through Rust",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D RepeatButton and Viewbox match native state, scale and clipping matrices",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 RepeatButton and Viewbox match native state, scale and clipping matrices",
+        "status": "expected"
+      },
+      {
+        "name": "Viewbox child-space DOM, pointer/keyboard clipping, single-child validation and fractional DPR",
+        "status": "expected"
+      },
+      {
+        "name": "Button native matrix: 3 palettes × 3 variants × 4 real input states",
+        "status": "expected"
+      },
+      {
+        "name": "Button source panels show only their running sample",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D compact controls compare with actual SDK templates",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 compact controls compare with actual SDK templates",
+        "status": "expected"
+      },
+      {
+        "name": "InfoBar Gallery closes with cancellation, reopens and projects severity semantics",
+        "status": "expected"
+      },
+      {
+        "name": "PersonPicture uses decoded image, generated initials, group and capped badge",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D RatingControl Gallery pointer, keyboard, clear and readonly",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 RatingControl Gallery pointer, keyboard, clear and readonly",
+        "status": "expected"
+      },
+      {
+        "name": "SplitButton Gallery secondary opens a real Flyout and keyboard restores primary focus",
+        "status": "expected"
+      },
+      {
+        "name": "ToggleSplitButton primary toggles, secondary keeps checked and MenuFlyout selects",
+        "status": "expected"
+      },
+      {
+        "name": "compact public SDK validates foreign Flyouts and releases nested handles on unmount",
+        "status": "expected"
+      },
+      {
+        "name": "editor helper hit region, inner hover/pressed mask and glyph match native parts at two heights",
+        "status": "expected"
+      },
+      {
+        "name": "multiline Light TextBox retains pixel-rounded accent band as it grows at fractional DPR",
+        "status": "expected"
+      },
+      {
+        "name": "Gallery exposes working GPU Acrylic, reversal and Canvas fallback",
+        "status": "expected"
+      },
+      {
+        "name": "presentation tracks preserve delayed targets, reverse continuously and settle on disposal",
+        "status": "expected"
+      },
+      {
+        "name": "Acrylic samples moving backgrounds and agrees across backends at two DPIs",
+        "status": "expected"
+      },
+      {
+        "name": "nested translucent clips sample lower layers, policies and cache survive context loss",
+        "status": "expected"
+      },
+      {
+        "name": "host motion policy, high contrast and completion reentry remain deterministic",
+        "status": "expected"
+      },
+      {
+        "name": "fixed native Acrylic and frame-by-frame interruption retain measured differences",
+        "status": "expected"
+      },
+      {
+        "name": "five Gallery pages use public controls, real input, options and sample-only source",
+        "status": "expected"
+      },
+      {
+        "name": "nested five-control content keeps editor coordinates, focus restoration and lifetime at fractional DPR",
+        "status": "expected"
+      },
+      {
+        "name": "HyperlinkButton invokes once before opening the requested URI",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D five controls match fixed native state and layout regions",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 five controls match fixed native state and layout regions",
+        "status": "expected"
+      },
+      {
+        "name": "ProgressBar cap coverage stays curved at default and larger heights across fractional DPR",
+        "status": "expected"
+      },
+      {
+        "name": "application hook keeps native scrolling, content events and Rust thumb/keyboard behavior",
+        "status": "expected"
+      },
+      {
+        "name": "dynamic containers, shadow DOM, clipping, RTL and resize synchronize without steady polling",
+        "status": "expected"
+      },
+      {
+        "name": "runtime leases share one renderer, subtree disposal restores original DOM chrome and IDs",
+        "status": "expected"
+      },
+      {
+        "name": "hidden/opted-out/transformed surfaces keep native chrome, nested scroll and clipping stay bounded",
+        "status": "expected"
+      },
+      {
+        "name": "document/source/sidebars are automatic, policy changes and repeated unmount stay clean",
+        "status": "expected"
+      },
+      {
+        "name": "native touch scrolling remains native and touching a Rust bar drags its thumb",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D five icon controls match native size and isolated crops",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 five icon controls match native size and isolated crops",
+        "status": "expected"
+      },
+      {
+        "name": "IconElement React samples expose flat props, bitmap options, SVG and real button input",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D icon updates, shared image ownership and fractional-DPR path coverage",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 icon updates, shared image ownership and fractional-DPR path coverage",
+        "status": "expected"
+      },
+      {
+        "name": "official Acrylic and Easing pages expose the actual examples",
+        "status": "expected"
+      },
+      {
+        "name": "500ms tint updates follow native HSL path through interruption",
+        "status": "expected"
+      },
+      {
+        "name": "property transitions, gradient options and focus policies remain interactive",
+        "status": "expected"
+      },
+      {
+        "name": "matched official Acrylic geometry, themes and recipes compare with native",
+        "status": "expected"
+      },
+      {
+        "name": "radial gradient spread and outside focal point match native on both backends",
+        "status": "expected"
+      },
+      {
+        "name": "real WASM selection, source and canvas pixels",
+        "status": "expected"
+      },
+      {
+        "name": "focus keeps keyboard semantics without CSS or Canvas black frames",
+        "status": "expected"
+      },
+      {
+        "name": "rapid real pointer reversals keep indicator within the clicked-item span",
+        "status": "expected"
+      },
+      {
+        "name": "adaptive thresholds and five public modes",
+        "status": "expected"
+      },
+      {
+        "name": "synchronous PaneClosing cancellation and reverse timeline",
+        "status": "expected"
+      },
+      {
+        "name": "keyboard focus and hierarchy invoke real Rust state",
+        "status": "expected"
+      },
+      {
+        "name": "theme changes, high contrast and reduced motion",
+        "status": "expected"
+      },
+      {
+        "name": "top overflow and footer selection",
+        "status": "expected"
+      },
+      {
+        "name": "React remount releases surfaces and event callbacks",
+        "status": "expected"
+      },
+      {
+        "name": "batch rollback, callback cancellation and destruction during dispatch",
+        "status": "expected"
+      },
+      {
+        "name": "record startup, frame diagnostics and screenshots",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D menu translates at full size inside native window insets",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 menu translates at full size inside native window insets",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D shared floating presentation animates, casts hollow shadows and samples Acrylic",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 shared floating presentation animates, casts hollow shadows and samples Acrylic",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D hollow shadow corners and downward projection match native Composition",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 hollow shadow corners and downward projection match native Composition",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D Slider native static matrix at fractional DPR",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 Slider native static matrix at fractional DPR",
+        "status": "expected"
+      },
+      {
+        "name": "Popup and Flyout close, cancel, escape clipping and restore real keyboard focus",
+        "status": "expected"
+      },
+      {
+        "name": "ToolTip has hover delay, accessible description and no black focus outline",
+        "status": "expected"
+      },
+      {
+        "name": "MenuFlyout arrows skip disabled/separators and invoke toggle with focus recovery",
+        "status": "expected"
+      },
+      {
+        "name": "Slider uses Rust value, drag capture, keyboard, reverse and shared ToolTip on both backends",
+        "status": "expected"
+      },
+      {
+        "name": "floating SDK validates ownership and releases detached layers across repeated Gallery remounts",
+        "status": "expected"
+      },
+      {
+        "name": "capture matched native-probe inputs at 1000x500 DIP and DPR 1",
+        "status": "expected"
+      },
+      {
+        "name": "ProgressBar Gallery options and direct React value update",
+        "status": "expected"
+      },
+      {
+        "name": "ProgressRing Gallery active/background/value and ToggleSwitch dependency",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D progress geometry and colors match fixed SDK frozen matrices at 125% DPI",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 progress geometry and colors match fixed SDK frozen matrices at 125% DPI",
+        "status": "expected"
+      },
+      {
+        "name": "Progress SDK ranges, notifications, animation interruption and lifetime",
+        "status": "expected"
+      },
+      {
+        "name": "Progress policies freeze loops without idle frames and resume from inactive",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas and GPU text/affine clips/layer opacity agree at DPR 1, 1.25, 1.5 and 2",
+        "status": "expected"
+      },
+      {
+        "name": "RadioButtons group selection, arrow navigation, Tab entry and source use the shared SDK",
+        "status": "expected"
+      },
+      {
+        "name": "ToggleSwitch pointer, Space, drag, theme and reduced-motion policies remain Rust-owned",
+        "status": "expected"
+      },
+      {
+        "name": "named radio groups span containers and preserve selection",
+        "status": "expected"
+      },
+      {
+        "name": "RadioButton and ToggleSwitch settled templates compare with the matched SDK matrix",
+        "status": "expected"
+      },
+      {
+        "name": "shared root batches, reparenting, events and subtree lifetime",
+        "status": "expected"
+      },
+      {
+        "name": "Button pointer capture, keyboard release, repeats and disabled switch",
+        "status": "expected"
+      },
+      {
+        "name": "Rust WebGL2 path draws text, restores a lost context and keeps model identity",
+        "status": "expected"
+      },
+      {
+        "name": "React Button uses the same SDK, image content and StrictMode lifetime",
+        "status": "expected"
+      },
+      {
+        "name": "real browser composition preserves draft, commit, name and anchor geometry",
+        "status": "expected"
+      },
+      {
+        "name": "unsubscribe and disposal during dispatch cancel pending property batches",
+        "status": "expected"
+      },
+      {
+        "name": "TextBox Gallery edits, clears, grows multiline and displays actual simple source",
+        "status": "expected"
+      },
+      {
+        "name": "TextBox keyboard history, UTF-16 backward selection, paste and readonly property reset",
+        "status": "expected"
+      },
+      {
+        "name": "Chinese IME commits once and property replacement cancels stale composition",
+        "status": "expected"
+      },
+      {
+        "name": "PasswordBox Peek is press-and-hold and Gallery checkbox uses Hidden/Visible",
+        "status": "expected"
+      },
+      {
+        "name": "ScrollViewer Gallery wheel, keyboard, controlled zoom/modes and thumb drag",
+        "status": "expected"
+      },
+      {
+        "name": "Text templates compare border geometry with matched native SDK states",
+        "status": "expected"
+      },
+      {
+        "name": "Text editing survives fractional DPR, both renderers, themes and disposal during notifications",
+        "status": "expected"
+      },
+      {
+        "name": "ScrollViewer touch pan/pinch, ARIA ranges and focus bring-into-view share scene transforms",
+        "status": "expected"
+      },
+      {
+        "name": "Natural text stays within measured bounds across nested layouts, DPR and larger fonts",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D shapes and advanced icon sources match the native vector matrix",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 shapes and advanced icon sources match the native vector matrix",
+        "status": "expected"
+      },
+      {
+        "name": "five Shape Gallery examples update Rust geometry and show the matching source",
+        "status": "expected"
+      },
+      {
+        "name": "Canvas2D gradient Shape preserves transparent corners and smooth fractional-DPR coverage",
+        "status": "expected"
+      },
+      {
+        "name": "WebGL2 gradient Shape preserves transparent corners and smooth fractional-DPR coverage",
+        "status": "expected"
+      }
+    ]
+  },
+  "native": {
+    "contract": "references/overlay-template.json",
+    "metrics": "references/overlay-metrics.json",
+    "canvas": {
+      "backend": "Canvas2D",
+      "dpr": 1.25,
+      "rows": [
+        {
+          "theme": "Light",
+          "index": 0,
+          "activeMAE": 1.5945669934640523,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 1,
+          "activeMAE": 2.235294117647059,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 2,
+          "activeMAE": 1.5678104575163399,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 3,
+          "activeMAE": 4.618727050183598,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 4,
+          "activeMAE": 2.3261802575107295,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 5,
+          "activeMAE": 3.2466789290823628,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 6,
+          "activeMAE": 2.362967504598406,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 7,
+          "activeMAE": 5.17085119412125,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 8,
+          "activeMAE": 2.110086100861009,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 9,
+          "activeMAE": 3.3439934399343993,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 10,
+          "activeMAE": 2.250512505125051,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 11,
+          "activeMAE": 5.016605166051661,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 12,
+          "activeMAE": 2.3285543608124253,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 13,
+          "activeMAE": 3.074551971326165,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 14,
+          "activeMAE": 2.293667861409797,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 15,
+          "activeMAE": 5.7448028673835125,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 16,
+          "activeMAE": 2.570980959267293,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 17,
+          "activeMAE": 3.574355266329236,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 18,
+          "activeMAE": 2.6035189202217404,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 19,
+          "activeMAE": 5.936370209689081,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 20,
+          "activeMAE": 1.9224470134874758,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 21,
+          "activeMAE": 3.203275529865125,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 22,
+          "activeMAE": 2.05009633911368,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 23,
+          "activeMAE": 5.469653179190751,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 0,
+          "activeMAE": 2.989952718676123,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 1,
+          "activeMAE": 3.399330181245075,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 2,
+          "activeMAE": 3.0015760441292354,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 3,
+          "activeMAE": 4.41548463356974,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 4,
+          "activeMAE": 3.0632081097197377,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 5,
+          "activeMAE": 3.4533889882727093,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 6,
+          "activeMAE": 3.137348439674021,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 7,
+          "activeMAE": 4.173524150268336,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 8,
+          "activeMAE": 3.55220646178093,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 9,
+          "activeMAE": 3.93892828999212,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 10,
+          "activeMAE": 3.7249802994483847,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 11,
+          "activeMAE": 4.735224586288416,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 12,
+          "activeMAE": 4.003698566805363,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 13,
+          "activeMAE": 4.4801202034211745,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 14,
+          "activeMAE": 4.017105871474803,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 15,
+          "activeMAE": 5.424410540915395,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 16,
+          "activeMAE": 3.532819434711516,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 17,
+          "activeMAE": 4.002803083391731,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 18,
+          "activeMAE": 3.608969866853539,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 19,
+          "activeMAE": 4.821303433777155,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 20,
+          "activeMAE": 3.6486361534905223,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 21,
+          "activeMAE": 4.117198335644938,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 22,
+          "activeMAE": 3.8118354137771613,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 23,
+          "activeMAE": 5.27253814147018,
+          "geometryError": 1.5258789076710855e-06
+        }
+      ],
+      "maximumGeometryError": 6.103515630684342e-06,
+      "maximumActiveMAE": 5.936370209689081,
+      "scope": "Forced-state static probe. Active-pixel error is diagnostic; native Composition timing, shadows and full pixel equivalence are not accepted."
+    },
+    "gpu": {
+      "backend": "WebGL2",
+      "dpr": 1.25,
+      "rows": [
+        {
+          "theme": "Light",
+          "index": 0,
+          "activeMAE": 1.632686084142395,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 1,
+          "activeMAE": 2.0622977346278315,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 2,
+          "activeMAE": 1.5768608414239482,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 3,
+          "activeMAE": 4.723300970873787,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 4,
+          "activeMAE": 2.3564476885644767,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 5,
+          "activeMAE": 3.0699513381995134,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 6,
+          "activeMAE": 2.3704379562043796,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 7,
+          "activeMAE": 5.283890577507599,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 8,
+          "activeMAE": 2.112864077669903,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 9,
+          "activeMAE": 3.1260113268608416,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 10,
+          "activeMAE": 2.2249190938511325,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 11,
+          "activeMAE": 5.10200364298725,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 12,
+          "activeMAE": 2.3015421115065244,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 13,
+          "activeMAE": 2.8080664294187425,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 14,
+          "activeMAE": 2.2377224199288257,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 15,
+          "activeMAE": 5.805693950177936,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Light",
+          "index": 16,
+          "activeMAE": 2.5139985642498206,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 17,
+          "activeMAE": 3.2778176597272073,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 18,
+          "activeMAE": 2.5273988992581957,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 19,
+          "activeMAE": 5.998563218390805,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Light",
+          "index": 20,
+          "activeMAE": 1.8161659513590844,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 21,
+          "activeMAE": 2.8526466380543636,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 22,
+          "activeMAE": 1.9237005245588936,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Light",
+          "index": 23,
+          "activeMAE": 5.486757337151038,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 0,
+          "activeMAE": 3.08201213544725,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 1,
+          "activeMAE": 3.3607359561558034,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 2,
+          "activeMAE": 3.063026032491681,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 3,
+          "activeMAE": 4.513211978860834,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 4,
+          "activeMAE": 3.1518737672583828,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 5,
+          "activeMAE": 3.4128205128205127,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 6,
+          "activeMAE": 3.2072978303747535,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 7,
+          "activeMAE": 4.275310834813499,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 8,
+          "activeMAE": 3.609674892283588,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 9,
+          "activeMAE": 3.8674108891500194,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 10,
+          "activeMAE": 3.756560908734822,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 11,
+          "activeMAE": 4.839506172839506,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 12,
+          "activeMAE": 4.093828859830237,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 13,
+          "activeMAE": 4.415232851571461,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 14,
+          "activeMAE": 4.07478779536591,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 15,
+          "activeMAE": 5.516861665519615,
+          "geometryError": 6.103515630684342e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 16,
+          "activeMAE": 3.6104166666666666,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 17,
+          "activeMAE": 3.925462962962963,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 18,
+          "activeMAE": 3.661111111111111,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 19,
+          "activeMAE": 4.9207783182765805,
+          "geometryError": 3.051757815342171e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 20,
+          "activeMAE": 3.690082644628099,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 21,
+          "activeMAE": 4.005968778696052,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 22,
+          "activeMAE": 3.8275941230486685,
+          "geometryError": 1.5258789076710855e-06
+        },
+        {
+          "theme": "Dark",
+          "index": 23,
+          "activeMAE": 5.381805651274982,
+          "geometryError": 1.5258789076710855e-06
+        }
+      ],
+      "maximumGeometryError": 6.103515630684342e-06,
+      "maximumActiveMAE": 5.998563218390805,
+      "scope": "Forced-state static probe. Active-pixel error is diagnostic; native Composition timing, shadows and full pixel equivalence are not accepted."
+    }
+  },
+  "limitations": [
+    "Initial slices, not the complete WinUI feature surfaces.",
+    "Nested menu items, advanced presenter templates and automatic flyout scrolling remain pending.",
+    "Menu system backdrop samples the same browser scene rather than the external desktop. Native shadow profiles are checked, while complete floating-control pixel equivalence remains unproven.",
+    "Slider ticks, tick snapping, custom value converters and engagement are pending.",
+    "ToolTip uses source fallback timings, without reading Windows system settings or implementing the full reshow/safe-zone service.",
+    "Static Slider active-pixel errors are diagnostics, not a declaration of native pixel equivalence.",
+    "New production performance and screen-reader acceptance have not been established."
+  ],
+  "files": [
+    {
+      "path": "src/scene/overlay_visual.rs",
+      "sha256": "32f15c2cc9cfadeeacb9e14814fdaf42ca7772b64fdaa30fc43e41f5a390beb8"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "06cacfa205e1776c2d29a79ab301152829d8a0497ec2d391ad5c262074c8c4c6"
+    },
+    {
+      "path": "src/gpu.rs",
+      "sha256": "854dc65174b19b4148d0d4052532110a315702fa1a1893a53739a5cd0b64dd80"
+    },
+    {
+      "path": "src/scene/overlays.rs",
+      "sha256": "efeb4bcdcef3d5a26a11b6aae65671a0e4be5e42ad1a4c1ead45cf5ca65841c5"
+    },
+    {
+      "path": "src/scene/slider.rs",
+      "sha256": "49a2f0063e2715564127f87b4aa792c87858bfadebb21fa08fb9e4a882b2b490"
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "sha256": "b50d382292d1cdcf526cef317e9ec015d09fa87e72202daa3eac32cf6150cda9"
+    },
+    {
+      "path": "src/scene/input.rs",
+      "sha256": "7bdaa4a4904124e2344fbfc727ab39bc876e088fed0ccea2cd3d18d0fff477be"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "bd1afb0b0fe145beab5abb6f6d1aebaefa09138864e04e34b0ad9ea2fb308b28"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "d0bd479f51e246c2244967a492893884e62c4e2819c1568db1252602c1d9e7b5"
+    },
+    {
+      "path": "src/scene/scroll.rs",
+      "sha256": "6e1edf2d95f6d47e756a86e4398c3f262cbbf0e16f862e8e1a7245b8f9c22c47"
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "sha256": "ba850f89d3697abb05ce26649420e5a8de3d0f2d0bb68b4136f8b5c224d637e2"
+    },
+    {
+      "path": "src/resources.rs",
+      "sha256": "44a399d79d0f4ef119f089a982b4e98b452549277bea012d98505f52127aa1c1"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "cae205d3ae66323301dbd933e5a707daef86c52e8dfb161db33189b8ef21f839"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "7fc8ecf8dfa1a4b3bc22a9eca7cc7bbcbe8263e9b0188145fd86203c9d4688d0"
+    },
+    {
+      "path": "gallery/src/OverlaysPage.tsx",
+      "sha256": "2a4eb6da5a6c8f03ef5888cdf77c87437f59b86247056261ebdac13bdaa6214c"
+    },
+    {
+      "path": "gallery/src/App.tsx",
+      "sha256": "33f47068e851d572dbc1d2e78f3bbe4002ea3f4f05e9f3c0c124985a6bb580b5"
+    },
+    {
+      "path": "gallery/src/ButtonPage.tsx",
+      "sha256": "f8c63e3b6bb83ee3e04eefebbaf6d747e88928d0e3b26794f97d3657efdcad57"
+    },
+    {
+      "path": "gallery/src/index.ts",
+      "sha256": "1646b30bb45d736d4e32110afb17fb154c188e49d75f58601df5f9f4eaa45027"
+    },
+    {
+      "path": "references/api-enums.json",
+      "sha256": "91d40cdcd566fe6b051ca76360692518c83e530b15c1f829cd7b0e1fe7423c9a"
+    },
+    {
+      "path": "references/overlay-template.json",
+      "sha256": "ce8522812665f9d3878b9ef2bb5f328a208fd2b721d432ba38c4c0c1d4d95491"
+    },
+    {
+      "path": "references/overlay-palettes.json",
+      "sha256": "ece9f5a97cdaa19c39a4a9151285504a126ee8673447094e57b8e6b089c8c6f2"
+    },
+    {
+      "path": "references/overlay-metrics.json",
+      "sha256": "5498910273cbccddaeb8780d7ac0a472f1a1a183b2bd5d29eda9e53000f66b7d"
+    },
+    {
+      "path": "tests/overlays.rs",
+      "sha256": "26c0b988166b658fc317cb2443b8cc5c78f032b9c15adc7b58ac65c6dded6927"
+    },
+    {
+      "path": "gallery/tests/overlays.spec.ts",
+      "sha256": "ddbef0b351eefda28ded5f0118ca6f92956c4075a9ea80355a773fcebeb2f6ec"
+    },
+    {
+      "path": "gallery/tests/overlays-parity.spec.ts",
+      "sha256": "4b864032d749b1aa7058f6f7bf2f77cfca7f9a28e20a3a82d4e1a30ad2241629"
+    },
+    {
+      "path": "tools/extract-overlays.py",
+      "sha256": "bf3ff92c1847c29026a266cb21b04db1e46afb30861ad18aba46c2282c1e23e3"
+    },
+    {
+      "path": "tools/native-navigation/OverlaysProbe.cs",
+      "sha256": "24de967005b3214143fd5e08bd88fd56cf84421a76546da6920dcb2bbb30bb7b"
+    },
+    {
+      "path": "tools/verify-overlays-themes.mjs",
+      "sha256": "16587c88adc43be09248899f183217e68d8082f650d55bde61348dfa430fa138"
+    },
+    {
+      "path": "tools/check-overlays.ps1",
+      "sha256": "a5c9998e9e9452f3468ee4b19f1f9ba0cf0fac405b17d5a284ee97d03bdcb426"
+    },
+    {
+      "path": "gallery/tests/overlay-presentation.spec.ts",
+      "sha256": "6fa708f8184d091a38825894e06597d2c2cc059bfe8d49c5cf6c00c0f83e4c97"
+    },
+    {
+      "path": "gallery/tests/overlay-shadow.spec.ts",
+      "sha256": "86723853a1d65d09a3d7afa40591688d12987a35aa516a0f9089ecf350eac290"
+    },
+    {
+      "path": "gallery/tests/overlay-menu-motion.spec.ts",
+      "sha256": "290059b2318bffe3d4a0d81b7978b3444250086e83900611d4ec4f3ef88414ea"
+    },
+    {
+      "path": "references/overlay-native-motion.json",
+      "sha256": "671109fa90f777b3623a5fa65add845b2264ab635398d05cf5ed72f8abd9511f"
+    },
+    {
+      "path": "tools/capture-overlay-motion.py",
+      "sha256": "fa5b5c2315c51e58845e7bca6f003cf93dc2b25f49495a2431b106e273b360ca"
+    },
+    {
+      "path": "tools/native-navigation/OverlayPresentationProbe.cs",
+      "sha256": "b574baeb7073279d60a4d99db63b577cf5be164ef538c8d861c9e1fd91c6b286"
+    },
+    {
+      "path": "tools/run-overlay-presentation-probe.ps1",
+      "sha256": "dcdfe6d1046b9e1fe828a5f0f5bf23aa0fc35b903bbed460846c4ab60f0de367"
+    },
+    {
+      "path": "tools/prepare-overlay-validation.ps1",
+      "sha256": "242a6aa33f861c142495bf1ad9f439e876e9e20ea03578e9de28f584ebf3fbc8"
+    },
+    {
+      "path": "docs/overlays.md",
+      "sha256": "67f949f35a70c98fd66e407154b397ebe35cf227e7b0b7c5290e4a54a97a4669"
+    }
+  ],
+  "popupMaterialFollowup": {
+    "report": "references/validation/overlay-popup-material-followup.json",
+    "browser": {
+      "report": "out/overlay-material-followup.json",
+      "stats": {
+        "startTime": "2026-11-07T15:49:31.313Z",
+        "duration": 28873.943,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "wasm": {
+        "sha256": "59fc9ad76bb962ef4daeb47975c4933e120835beeee5646c448594a27819ced7",
+        "completedAt": 1794066526109
+      }
+    },
+    "rust": {
+      "passed": 128,
+      "log": "out/overlay-followup-rust.log"
+    },
+    "maximumMenuMaterialMAE": 1.1922390722569134
+  },
+  "refinement": {
+    "report": "references/validation/overlay-refinement.json",
+    "acceptedPixelEquality": false,
+    "latestTargetedBrowser": {
+      "startTime": "2026-11-07T20:36:59.377Z",
+      "duration": 205384.922,
+      "expected": 61,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "latestFullBrowser": {
+      "startTime": "2026-11-07T20:22:33.571Z",
+      "duration": 674431.4839999999,
+      "expected": 147,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "latestFullBoundary": "Before SVG upload fix; one unhandled GPU error is retained in the linked report.",
+    "historicalFullBrowser": {
+      "startTime": "2026-11-07T19:17:58.207Z",
+      "duration": 772572.507,
+      "expected": 140,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "rust": 151,
+    "nativeScenes": 24
+  },
+  "textRenderingFollowup": {
+    "report": "references/validation/overlay-text-render-followup.json",
+    "acceptedPixelEquality": false,
+    "browser": {
+      "startTime": "2026-11-07T21:10:06.516Z",
+      "duration": 697871.142,
+      "expected": 149,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "rust": 154,
+    "wasm": "1e529285a802ff632e03dec467d6821f4dad829c20088898c5ef60840e3f0356"
+  }
+}

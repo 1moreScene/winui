@@ -1,0 +1,345 @@
+{
+  "scope": "Same-SDK Button VSM and template geometry, without Composition scaling acceptance",
+  "rows": [
+    {
+      "theme": "Light",
+      "state": "Normal",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#0000FFFF",
+      "foreground": "#FFFFFFFF",
+      "border": "LinearGradientBrush"
+    },
+    {
+      "theme": "Light",
+      "state": "PointerOver",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#F9F9F980",
+      "foreground": "#000000E4",
+      "border": "LinearGradientBrush"
+    },
+    {
+      "theme": "Light",
+      "state": "Pressed",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#F9F9F94D",
+      "foreground": "#0000009E",
+      "border": "#0000000F"
+    },
+    {
+      "theme": "Light",
+      "state": "Disabled",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#F9F9F94D",
+      "foreground": "#0000005C",
+      "border": "#0000000F"
+    },
+    {
+      "theme": "Light",
+      "state": "AnimatedTemplate",
+      "items": [
+        {
+          "index": 0,
+          "kind": "Button",
+          "rect": [
+            0,
+            0,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 1,
+          "kind": "Button",
+          "rect": [
+            0,
+            32,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "Button",
+          "rect": [
+            0,
+            64,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 3,
+          "kind": "Button",
+          "rect": [
+            0,
+            96,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 4,
+          "kind": "Button",
+          "rect": [
+            0,
+            128,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 5,
+          "kind": "Button",
+          "rect": [
+            0,
+            160,
+            250.39999389648438,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "state": "Normal",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#0000FFFF",
+      "foreground": "#000000E4",
+      "border": "LinearGradientBrush"
+    },
+    {
+      "theme": "Dark",
+      "state": "PointerOver",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#FFFFFF15",
+      "foreground": "#FFFFFFFF",
+      "border": "LinearGradientBrush"
+    },
+    {
+      "theme": "Dark",
+      "state": "Pressed",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#FFFFFF08",
+      "foreground": "#FFFFFFC5",
+      "border": "#FFFFFF12"
+    },
+    {
+      "theme": "Dark",
+      "state": "Disabled",
+      "dpr": 1.25,
+      "size": [
+        250.39999389648438,
+        32
+      ],
+      "desired": [
+        250.39999389648438,
+        32
+      ],
+      "padding": [
+        11,
+        5,
+        11,
+        6
+      ],
+      "fontSize": 14,
+      "fontFamily": "Segoe UI",
+      "borderThickness": 1,
+      "cornerRadius": 4,
+      "background": "#FFFFFF0B",
+      "foreground": "#FFFFFF5D",
+      "border": "#FFFFFF12"
+    },
+    {
+      "theme": "Dark",
+      "state": "AnimatedTemplate",
+      "items": [
+        {
+          "index": 0,
+          "kind": "Button",
+          "rect": [
+            0,
+            0,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 1,
+          "kind": "Button",
+          "rect": [
+            0,
+            32,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 2,
+          "kind": "Button",
+          "rect": [
+            0,
+            64,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 3,
+          "kind": "Button",
+          "rect": [
+            0,
+            96,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 4,
+          "kind": "Button",
+          "rect": [
+            0,
+            128,
+            250.39999389648438,
+            32
+          ]
+        },
+        {
+          "index": 5,
+          "kind": "Button",
+          "rect": [
+            0,
+            160,
+            250.39999389648438,
+            32
+          ]
+        }
+      ]
+    }
+  ]
+}

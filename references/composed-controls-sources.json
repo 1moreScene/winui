@@ -1,0 +1,294 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "controls": [
+    "AutoSuggestBox",
+    "NumberBox",
+    "ComboBox",
+    "ContentDialog",
+    "TeachingTip"
+  ],
+  "files": [
+    {
+      "upstream": "controls/dev/AutoSuggestBox/AutoSuggestBoxHelper.cpp",
+      "local": "references/winui/AutoSuggestBoxHelper.cpp",
+      "gitBlobSha1": "ee0e163b3d815a149db9190d668c216c1aad64a3",
+      "sha256": "bacba030028e13c20329729b9985b7541a725425d12229e049c8e0bbb26cf9ee"
+    },
+    {
+      "upstream": "controls/dev/AutoSuggestBox/AutoSuggestBoxHelper.h",
+      "local": "references/winui/AutoSuggestBoxHelper.h",
+      "gitBlobSha1": "7f03ba398ca7ee1bb25bd989bffd93741f725af6",
+      "sha256": "0cc3c2ddf415a4a4b74f21742830281b7056ff6fe80a05d7a747255dbd0cd867"
+    },
+    {
+      "upstream": "controls/dev/AutoSuggestBox/AutoSuggestBoxHelper.idl",
+      "local": "references/winui/AutoSuggestBoxHelper.idl",
+      "gitBlobSha1": "4ba18910a118263a40a65bc9e709500d962bfb1d",
+      "sha256": "78f9789456a4b545160d70c53db7c235859ee9d82ce55d03380915c2b0c21db9"
+    },
+    {
+      "upstream": "controls/dev/AutoSuggestBox/AutoSuggestBox_themeresources.xaml",
+      "local": "references/winui/AutoSuggestBox_themeresources.xaml",
+      "gitBlobSha1": "7cd762ebf3f870d238c428a8ca551d3cd311ee4a",
+      "sha256": "84c5e4e056df5c2cc07757cf73215c495f4e58c9ab6f7b2862087bd3d208bfed"
+    },
+    {
+      "upstream": "controls/dev/ComboBox/ComboBoxHelper.cpp",
+      "local": "references/winui/ComboBoxHelper.cpp",
+      "gitBlobSha1": "05433d1a612416b5d6012426659602e61299eece",
+      "sha256": "51b74e6bba54a1f42c974231c4eda6e80af1a44bb01b24342679581cdd320420"
+    },
+    {
+      "upstream": "controls/dev/ComboBox/ComboBoxHelper.h",
+      "local": "references/winui/ComboBoxHelper.h",
+      "gitBlobSha1": "bb47f2750efdbfdbe37631ce628a03ee84f8a016",
+      "sha256": "1644b37d3ce274a0b284cc89c48a22ff79c69dcbebbcf2a98d17861b223f034d"
+    },
+    {
+      "upstream": "controls/dev/ComboBox/ComboBoxHelper.idl",
+      "local": "references/winui/ComboBoxHelper.idl",
+      "gitBlobSha1": "b94cf14fd1804a5c39b21dcdea6928170fdf706f",
+      "sha256": "1d1c747c2ec5be7a9dc63ad68a525ebbff70e1b6897e82bfd3bc9c2143011f90"
+    },
+    {
+      "upstream": "controls/dev/ComboBox/ComboBox_themeresources.xaml",
+      "local": "references/winui/ComboBox_themeresources.xaml",
+      "gitBlobSha1": "4578f4c9b2e32fc701ca803aba51c032f9c23ead",
+      "sha256": "c821a016f2e670b6a31017ee563784a90262f20e9c26367b39bc7aebb90c520d"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/ContentDialog_themeresources.xaml",
+      "local": "references/winui/ContentDialog_themeresources.xaml",
+      "gitBlobSha1": "9cd8150fff8c216319e2d5515b538cfab5b397d5",
+      "sha256": "31d2146701fa9ee8da16acf5b876861cac9959ae715830100bd791f7688a6ff3"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBox.cpp",
+      "local": "references/winui/NumberBox.cpp",
+      "gitBlobSha1": "4bf79c2f673991f328230e60b218df60b3cabddb",
+      "sha256": "eb4e4bbace5561b52cab4255a7f2575a1814ddca0e1c4ccdca304c81e3647e75"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBox.h",
+      "local": "references/winui/NumberBox.h",
+      "gitBlobSha1": "34086e68af28d2bf220c0787395f87b18815bc68",
+      "sha256": "55c5fa620bd1e7ade929f791b9da189eea8970aaee1d7619294fd1dd1693a0d6"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBox.idl",
+      "local": "references/winui/NumberBox.idl",
+      "gitBlobSha1": "41a8067e45121eaa0856088bbbbee77138f10816",
+      "sha256": "9d033b0e1883ac5c4f5b8180942c27ccd7914ced1e397c763818aca8a62c159d"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBox.xaml",
+      "local": "references/winui/NumberBox.xaml",
+      "gitBlobSha1": "d70025ee3655bbb03c2580470d596a31b3e07bcc",
+      "sha256": "ad6c46ae67dc95cc476b240b0854d2a52fd5086e85f07c8386dae73ca8bae034"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBoxAutomationPeer.cpp",
+      "local": "references/winui/NumberBoxAutomationPeer.cpp",
+      "gitBlobSha1": "41e8febeaa1015777756586a05e0bef45ce21b59",
+      "sha256": "d7755f5099d1e26497a1866a5b6444c6af544aa9497d873ab3fb02c8fbe827aa"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBoxAutomationPeer.h",
+      "local": "references/winui/NumberBoxAutomationPeer.h",
+      "gitBlobSha1": "d5cd65d6ce8e2cd48c9e92da9a96d2f962620637",
+      "sha256": "0f2bc3a6a367774dcd96c1aeb67040d6c7a9ca5cde23eb8d60f0ba477e7bc719"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBoxParser.cpp",
+      "local": "references/winui/NumberBoxParser.cpp",
+      "gitBlobSha1": "9158e28b1bbbb736c57d00f468b4af87b8dfdb3e",
+      "sha256": "a162b846a4b1f29af922e3c6fdb0a70117fd6e1ec4aa1c4e2d6d49e28fb33326"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBoxParser.h",
+      "local": "references/winui/NumberBoxParser.h",
+      "gitBlobSha1": "4520885ff3473a3b4fa7f955880a0cea37864206",
+      "sha256": "505cd42e20c49079288217d51c61c9d61a87179c68e0515acabb419c36321a09"
+    },
+    {
+      "upstream": "controls/dev/NumberBox/NumberBox_themeresources.xaml",
+      "local": "references/winui/NumberBox_themeresources.xaml",
+      "gitBlobSha1": "3b532d4b76b2ac9f2d06c8c0d473fa7d8f9a32b2",
+      "sha256": "190da0817f6a22716dd9626d63f510360e35cdfb7876acbae2257e5fa87a8473"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTip.cpp",
+      "local": "references/winui/TeachingTip.cpp",
+      "gitBlobSha1": "a17ccc4285b39567bca862467849e080723c9cf6",
+      "sha256": "047c9fba26b236287331f4ac3878eb138ca7f43c3be9576a436cbc1b9b306e35"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTip.h",
+      "local": "references/winui/TeachingTip.h",
+      "gitBlobSha1": "b499a6436b2720c34735d660963bfa8dd5fd9ebd",
+      "sha256": "84db0b9e77cdcd2fcde58c2598b078d1acb3f64706e077df29bccf18220c0c1e"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTip.idl",
+      "local": "references/winui/TeachingTip.idl",
+      "gitBlobSha1": "a5849bbb3b900cfef09feb9b1d427a94515a51e3",
+      "sha256": "0551c438e10d4cb2cfc61dfb94a2182e390375a78915d7bfba722e8bcd9f31c9"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTip.xaml",
+      "local": "references/winui/TeachingTip.xaml",
+      "gitBlobSha1": "edcd4dba11ce2e28e2538724d42c9172749843ba",
+      "sha256": "648cf4df25deca67a0ca9f3d432290c38d693410775db6578802e2892c34d0a7"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipAutomationPeer.cpp",
+      "local": "references/winui/TeachingTipAutomationPeer.cpp",
+      "gitBlobSha1": "8a7d0e616286ced5b2b7c7d8177c1e03df97641e",
+      "sha256": "1c5044a1f2a901c95c8911c7eb547a65193f49b8850d099d009b7259e3c96ebc"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipAutomationPeer.h",
+      "local": "references/winui/TeachingTipAutomationPeer.h",
+      "gitBlobSha1": "6ed463a862eb63c30e7645a285cc9cdaae8fda23",
+      "sha256": "10942de25efd5cfb36889514f30cc1a9009d5d88c79bfb0f87761b9a546245ea"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipAutomationPeer.idl",
+      "local": "references/winui/TeachingTipAutomationPeer.idl",
+      "gitBlobSha1": "601ba2fcb2e63f2862131511047698e4585b8fd7",
+      "sha256": "07833bd0efc36973ec1e1e9ac0798e2dfe16131940bbd1c040ff64d2348ba755"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipClosedEventArgs.cpp",
+      "local": "references/winui/TeachingTipClosedEventArgs.cpp",
+      "gitBlobSha1": "2a402e4f1d5c05ab41efbc1601a5ae35bedddfa6",
+      "sha256": "bdf9595a11dca5107ad0ea4daafd4d594892d8c35c33f79458f908852ce8df43"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipClosedEventArgs.h",
+      "local": "references/winui/TeachingTipClosedEventArgs.h",
+      "gitBlobSha1": "855f2b9b2703a9c4c63edfdd24ac7a5c555d918c",
+      "sha256": "6445ae78b41268f099ea86b4939bd6e58d56682e98edc3681778423ff392ceb9"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipClosingEventArgs.cpp",
+      "local": "references/winui/TeachingTipClosingEventArgs.cpp",
+      "gitBlobSha1": "e515bdb42260f86091467fd6f2f2d5491a3676f8",
+      "sha256": "4b3261ae38f60c1a332540d97959d31e73f95cdf2ada5ddf5dfa02b465a5fbed"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipClosingEventArgs.h",
+      "local": "references/winui/TeachingTipClosingEventArgs.h",
+      "gitBlobSha1": "fc99cb22c7e365842499bd3c32b6be1d79a5851e",
+      "sha256": "43b49055699ffd3724897a391393c3aacaee972b40a5f1fcf423919933b40087"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipOpenedEventArgs.cpp",
+      "local": "references/winui/TeachingTipOpenedEventArgs.cpp",
+      "gitBlobSha1": "3abbcdf171370d2ea79f35ccc86df046e05ab412",
+      "sha256": "97bd9b9a2691dadd2c2a9b449b6e8802639d533cdf873be6550c8381867bbebb"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipOpenedEventArgs.h",
+      "local": "references/winui/TeachingTipOpenedEventArgs.h",
+      "gitBlobSha1": "4ed9e7cce1642ce5beae2abd89a0d406955c2688",
+      "sha256": "3e79bf4a2ae6da8419f5c47cfec4b9ee67215b3e936cd7ef8a254d12a167e9e7"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipTemplateSettings.cpp",
+      "local": "references/winui/TeachingTipTemplateSettings.cpp",
+      "gitBlobSha1": "b333a10e373279b71f8fb86f1b40f07bb0c327da",
+      "sha256": "211c375cc3356755a9d203abc8d84cc05ce8deddcd7f8d56dd8008c64f7da2a5"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipTemplateSettings.h",
+      "local": "references/winui/TeachingTipTemplateSettings.h",
+      "gitBlobSha1": "5750ab3cade4d9a4b2a9554d66c18e189d1c59d6",
+      "sha256": "8e642e21053a509bf851cbb94468cb8dddb0f4c8fd7ef6b8b816cd34965d7096"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipTestHooks.cpp",
+      "local": "references/winui/TeachingTipTestHooks.cpp",
+      "gitBlobSha1": "400c2bcc1c9de23c6b6c67e0a69c56d2ac3efc56",
+      "sha256": "592c70866c540a774c10d4d6b433ca980984c19e3728fc5d52aea68a8be09fcf"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipTestHooks.h",
+      "local": "references/winui/TeachingTipTestHooks.h",
+      "gitBlobSha1": "2c1374b6f33348026b903d99f161789cbed9af43",
+      "sha256": "7100ec8d17b243962b3910a651d5e74be568932d4bc1a8d17ac222e0974e5825"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTipTestHooks.idl",
+      "local": "references/winui/TeachingTipTestHooks.idl",
+      "gitBlobSha1": "a9257946e71c619d6065c3a446f68cc080628be1",
+      "sha256": "fbb0c659c2969080033514f3a61fa53a879429821bd39deb6cc0bb272bfd610b"
+    },
+    {
+      "upstream": "controls/dev/TeachingTip/TeachingTip_themeresources.xaml",
+      "local": "references/winui/TeachingTip_themeresources.xaml",
+      "gitBlobSha1": "50cc6d2d6cb7648df90e21faa0cc9e6aa816a9bd",
+      "sha256": "edf193bc2e21ac136b4707caf38ccc90294e9143c103ddc0f62f0ded6632bade"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/AutoSuggestBox_Partial.cpp",
+      "local": "references/winui/AutoSuggestBox_Partial.cpp",
+      "gitBlobSha1": "8a1b9281a2e52b95894c1abf62ccc94de2e5efc8",
+      "sha256": "231ace0c545a19f1f5bfa60b8decc0a25f5b31bfe3508290b5300305f99cdfac"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/AutoSuggestBox_Partial.h",
+      "local": "references/winui/AutoSuggestBox_Partial.h",
+      "gitBlobSha1": "1221f9e6023ee0be194629b706e00700c5eadfed",
+      "sha256": "407cc793abbc32c31f6153e716ff13f12100e68071f10d6076d5260cf051c859"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ComboBox_Partial.cpp",
+      "local": "references/winui/ComboBox_Partial.cpp",
+      "gitBlobSha1": "e4e567effa784a215ab71edf94041c88d0c71ab8",
+      "sha256": "eeb618385663ec22bc2bad487ff11e7962216377d5eb7b90b1b5f7693b6082a3"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ComboBox_Partial.h",
+      "local": "references/winui/ComboBox_Partial.h",
+      "gitBlobSha1": "73b7bf50de849f90bb37584c58887499581e9c17",
+      "sha256": "4099b8c1681b35f9aa68304d333c2e302dc55e0d062b15e97becc931762b31be"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ContentDialog_Partial.cpp",
+      "local": "references/winui/ContentDialog_Partial.cpp",
+      "gitBlobSha1": "a42b69a40ffca4c801cf83216c35a286436328d1",
+      "sha256": "bccba3b2dab738faecadd9fac28c99e4e77b0f74db4ba79c6ba16f9df9001d38"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ContentDialog_Partial.h",
+      "local": "references/winui/ContentDialog_Partial.h",
+      "gitBlobSha1": "ca739c36569bf14cea23ec3e3a7a6691d086e725",
+      "sha256": "679ed29479191a47524dfa463f704c31bb25b4bbc28efdf0be01a0e671a3feda"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/SplitOpenThemeAnimation_Partial.h",
+      "local": "references/winui/SplitOpenThemeAnimation_Partial.h",
+      "sha256": "3ce451bd2759feeb2df2f8f25492a19e228afd5ebe1e70905297973bec286833",
+      "gitBlobSha1": "84651f4e084e429040b270d1002c11c10b69e34b"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/SplitCloseThemeAnimation_Partial.h",
+      "local": "references/winui/SplitCloseThemeAnimation_Partial.h",
+      "sha256": "7836ae2587d4c1b4fcc28f45cb1acdc99710adca214f15979be944e6ad91aebc",
+      "gitBlobSha1": "734b397142a06015f526ce643f0f6e432d538c17"
+    },
+    {
+      "local": "references/winui/HWCompNodeWinRT.cpp",
+      "upstream": "dxaml/xcp/components/comptree/HWCompNodeWinRT.cpp",
+      "sha256": "f15bf49f1ca03f61f37290f9039f3faeadd43e19953f77cdd6d2f59d8ccb20c1",
+      "gitBlobSha1": "66af14d4481afeb4edb65d06f76bee78e3b70f16"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ComboBoxItem_Partial.cpp",
+      "local": "references/winui/ComboBoxItem_Partial.cpp",
+      "sha256": "1237b5654c3c41225fc1117a11162f6abb58d80253ee839f56b27dd854b2918b",
+      "gitBlobSha1": "c15dfc9b288907dc9fdd3903b78e952abbf42449"
+    }
+  ]
+}

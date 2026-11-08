@@ -1,0 +1,432 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T11:40:57.080Z",
+  "problem": "Cached exit acquired host opacity=1 after the old sparse Rust track disappeared, before React committed hidden state.",
+  "fix": "Rust emits a total retained-page presentation frame including visibility, opacity, interactivity and paint order. Hosts project it synchronously and after layout commits.",
+  "baseline": {
+    "path": "out/frame-flicker/baseline-chromium-trace.json",
+    "sha256": "464b63fa5548c6df9a3ebf1a333dc74397914cdf0eedcc9e069383acdfad0115",
+    "frames": 338,
+    "leakingFrames": 5,
+    "leaks": 5
+  },
+  "fixed": [
+    {
+      "browser": "chromium",
+      "trace": {
+        "path": "out/frame-flicker/fixed-chromium-trace.json",
+        "sha256": "0138359445fa689b7ddd96bd7b64635c9334145b9a9dfebb52ece8069eac9a23",
+        "frames": 328,
+        "leakingFrames": 0,
+        "leaks": 0
+      },
+      "result": {
+        "path": "out/frame-flicker-fixed-chromium-results.json",
+        "sha256": "2d92602c003b112969e2d586cd0119cc4dd36aad826053b4ec4568f01ad7cfe1",
+        "stats": {
+          "startTime": "2026-11-08T11:34:45.392Z",
+          "duration": 31254.870000000003,
+          "expected": 3,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      }
+    },
+    {
+      "browser": "msedge",
+      "trace": {
+        "path": "out/frame-flicker/fixed-msedge-trace.json",
+        "sha256": "9871537e673e40d11c14c48ccabe714667a980474b340ae96b21fd17d91068e6",
+        "frames": 314,
+        "leakingFrames": 0,
+        "leaks": 0
+      },
+      "result": {
+        "path": "out/frame-flicker-fixed-msedge-results.json",
+        "sha256": "afb8d3f9537300762c7b52d36a753730bee94fd215d2b89d2cc00147ab57b457",
+        "stats": {
+          "startTime": "2026-11-08T11:35:22.667Z",
+          "duration": 30941.058,
+          "expected": 3,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      }
+    },
+    {
+      "browser": "webkit",
+      "trace": {
+        "path": "out/frame-flicker/fixed-webkit-trace.json",
+        "sha256": "0aca5ef8dc0686f5f24471e0c011a159303e814ecc25662558965160fb9befaa",
+        "frames": 51,
+        "leakingFrames": 0,
+        "leaks": 0
+      },
+      "result": {
+        "path": "out/frame-flicker-fixed-webkit-results.json",
+        "sha256": "1455ef328fbb286aa0c52c7a9e2141f195281b1ef0825228ce8e23a1df156a76",
+        "stats": {
+          "startTime": "2026-11-08T11:35:22.636Z",
+          "duration": 35871.566,
+          "expected": 3,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        }
+      }
+    }
+  ],
+  "navigationRegression": {
+    "path": "out/navigation-motion-chrome-results.json",
+    "sha256": "eca9c5f60c3397059c1c18d6f245240c281016841b53fd36fd6dfaf00bb26450",
+    "stats": {
+      "startTime": "2026-11-08T11:36:57.597Z",
+      "duration": 20756.539,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "installedEntry": {
+    "result": {
+      "path": "out/frame-flicker-installed-chromium-results.json",
+      "sha256": "048444e6b0690b0822978f8e591258342527e5560f1344b3b7964f81479631c8",
+      "stats": {
+        "startTime": "2026-11-08T11:38:46.791Z",
+        "duration": 6411.009,
+        "expected": 1,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    "trace": {
+      "path": "out/frame-flicker/installed-chromium-trace.json",
+      "sha256": "8011a1f649db9e486d52c486665873df5cc7739b10b454f719010db93aad0e1e",
+      "frames": 340,
+      "leakingFrames": 0,
+      "leaks": 0
+    }
+  },
+  "rust": {
+    "command": "cargo test --locked --manifest-path out/frame-flicker-source/Cargo.toml --target-dir out/frame-flicker-build",
+    "observedExitCode": 0,
+    "passed": 249,
+    "frameTests": 11,
+    "newPresentationTests": 4,
+    "sourceSnapshot": "out/frame-flicker-source",
+    "excluded": [
+      "Unfinished picker_controls scene module, properties, initialization and event hook; working tree untouched. Pure picker_value/picker_spectrum remain."
+    ],
+    "rustFiles": [
+      {
+        "path": "out/frame-flicker-source/src/accept.rs",
+        "sha256": "08f7b88497af9e3e698dda9745dc348e940aff8d6b8ccd9c0aa97b041d4d9bac"
+      },
+      {
+        "path": "out/frame-flicker-source/src/animated_icon.rs",
+        "sha256": "53da89b1feebada73da39f503883f941b07c9dc6ac0023fcf5b50828cd90c834"
+      },
+      {
+        "path": "out/frame-flicker-source/src/animation.rs",
+        "sha256": "88a8c28d69b9960880b2dc5145f89ed73f4e8b57cfcf00501f88fd1be66099fb"
+      },
+      {
+        "path": "out/frame-flicker-source/src/button.rs",
+        "sha256": "408dad8574f07a50bad51904f4e33eb90e664b237091079a5c5597336f2605f1"
+      },
+      {
+        "path": "out/frame-flicker-source/src/content.rs",
+        "sha256": "1972a7d103df4ab42e8d26ae51adffc8ebb5e4f7b0e1939064b6c1dd2695743e"
+      },
+      {
+        "path": "out/frame-flicker-source/src/easing.rs",
+        "sha256": "3ff5091b05a85eef1c5e3f385841cf3581fb243dc7852fe88a28158cec5fa5ae"
+      },
+      {
+        "path": "out/frame-flicker-source/src/enums.rs",
+        "sha256": "5c825aab9273a88e53135db41c71211b500c69db3716d5e16ac32aa0542f0692"
+      },
+      {
+        "path": "out/frame-flicker-source/src/frame.rs",
+        "sha256": "baddf30cbfa67aec6a6e9ded54493c5a66d241e4ecc2897befabf8af6d24273b"
+      },
+      {
+        "path": "out/frame-flicker-source/src/gpu.rs",
+        "sha256": "a8cad9b6ff6c97cb26da93436fb606ebe710dbb2fec31e52ad5c879f49b41579"
+      },
+      {
+        "path": "out/frame-flicker-source/src/icons.rs",
+        "sha256": "07520e7b483b31e2a8ab2a89603619a17123a1217a5f1368dae51cc53be5643f"
+      },
+      {
+        "path": "out/frame-flicker-source/src/icon_source.rs",
+        "sha256": "046267ba83aa60ffcc6022b1527ce08d9c134ce95a3ed6d682f6c0a31471c528"
+      },
+      {
+        "path": "out/frame-flicker-source/src/layout.rs",
+        "sha256": "be3998bbb210a0b8a7d8b47e8305e5b2adb0117e6980da9daed3044f9a3ad59d"
+      },
+      {
+        "path": "out/frame-flicker-source/src/lib.rs",
+        "sha256": "4821b77914eaa889a23a222185673290dc78b9321e58e9ee5ddd6d894b3d70fc"
+      },
+      {
+        "path": "out/frame-flicker-source/src/material.rs",
+        "sha256": "8d3974519b8835054d5d3cded9253ca6f0c73acd97c10747eb25988e854bd64a"
+      },
+      {
+        "path": "out/frame-flicker-source/src/material_blur.rs",
+        "sha256": "eabac8503cc9f38b8f6cabb3ffb54631754e237b4908cf4ab6835f036ebbbc51"
+      },
+      {
+        "path": "out/frame-flicker-source/src/model.rs",
+        "sha256": "6913c5022d14df827d8d22b0d497e05a38ddc28f41fe4a496305ae198535eaa2"
+      },
+      {
+        "path": "out/frame-flicker-source/src/navigation.rs",
+        "sha256": "e68b518fa4aac747d442a48cf6534ae0efd4a4c2fe383b06f8285a37b444eca3"
+      },
+      {
+        "path": "out/frame-flicker-source/src/navigation_motion.rs",
+        "sha256": "f437043b5a9211ff70426bc2d6e375b3b64413f55b72aad4a9ff1aab455c8ea4"
+      },
+      {
+        "path": "out/frame-flicker-source/src/number_box.rs",
+        "sha256": "7aa31a3261f6bdc1eecc8b7a2d292f564c080a59c257c6ec298a1864009155ae"
+      },
+      {
+        "path": "out/frame-flicker-source/src/picker_spectrum.rs",
+        "sha256": "afe73e6b59badbe7d6dc6ee7f9dc496df39a373737c5659c84baad5887d31e43"
+      },
+      {
+        "path": "out/frame-flicker-source/src/picker_value.rs",
+        "sha256": "4168554d441037b15efd189a3801930705639baa77412a08ca146a43f86f60b0"
+      },
+      {
+        "path": "out/frame-flicker-source/src/render.rs",
+        "sha256": "e68bb1d6f076dadf23081dd793a6729493089305bcecfd2fa31982902c1ffe9e"
+      },
+      {
+        "path": "out/frame-flicker-source/src/resources.rs",
+        "sha256": "b5584480138edd991fa298222e9dbac746e01837b35d10273c8b34b95de65135"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/basic_next.rs",
+        "sha256": "2ab71ce9b587ed5c8fba63afda8cced91c18618ebd6d8f27dfa521092b7a1c52"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/collections/adaptive.rs",
+        "sha256": "03ba8c3f11d979a3569b438c4f86fb4e61dfc9ad56e4dff8d729cf1675e824cc"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/collections/interaction.rs",
+        "sha256": "b1ed43eac5f75c01212d1f14bee4fe6f7a123facbf896ec4a318ebe5ea119079"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/collections/transitions.rs",
+        "sha256": "8325bfd80fe906ab32dcf8f76c6474d29af8c86420e3cd158b3233571080997c"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/collections.rs",
+        "sha256": "0f97e96d5d299217a8be9c08b06194b03c69d4bb487f76425e573f5700ea703f"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/command_controls/input.rs",
+        "sha256": "60ff14e495d31e94fab1bbc53afb867acf7fbf90ad706ea9d540b1b43380db35"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/command_controls/layout.rs",
+        "sha256": "98e1756bf3f16aad7b00da40d9c145634274856cf507dc8f59bc4449afe7d4ec"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/command_controls/paint.rs",
+        "sha256": "685020ecf057e0f1082b0aa976c0061763468efa448567fa8fdfd58c4f0c5c0f"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/command_controls.rs",
+        "sha256": "9665903dc1c7cd188b70efc5cb14905f0fde8026de837db8774e489d07f50585"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/compact_controls.rs",
+        "sha256": "ce33bda2063b6ba3c940aae56e157dd91a0d83b796df629080daf5e311fa1aa2"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/composed.rs",
+        "sha256": "75c5b71157f7e783d137965006ed3ccdf83c3c000c21224853218f360a064dae"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/five_controls.rs",
+        "sha256": "129a72e2f1845888c92a74bc7c4dc4097070ae25d5bb900e0ba765a319019dae"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/input.rs",
+        "sha256": "1d3117d25729fb7062baae849c935a2d2aa96b8f983a9755dece2c1eaa3cf364"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/layout.rs",
+        "sha256": "582d7766c0d1a0c08db1f6eab47bbcd2934ff5610e106dcdb2493d80dd974f4c"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/mod.rs",
+        "sha256": "1987bf5558a49d5c99cae43b3676ecca646823d6c62557178c20fb62b4bc384f"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/motion.rs",
+        "sha256": "9be544a42fa8b41739a7f8f1341ab563485f20319e9be1f762ad79daebef281f"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls/input.rs",
+        "sha256": "286d727e9d1f50db860efa1c3f52e9a8c3337ae560a487019bdd3b6392b209f6"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls/layout.rs",
+        "sha256": "0133109146b6bd9df335cfef741843bc2d3610fa99b0a906fcfaac8f1da8eed5"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls/paint.rs",
+        "sha256": "fc19fb8c6017ae4ed066f68db382e9e39bd280a8c0341734d920d23bcdc812a0"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls/selector.rs",
+        "sha256": "8e426cc7cf2ff3610bf6d6ceef5612700506e19ad3758df2d304d05ead0719e2"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls/transitions.rs",
+        "sha256": "4fb1b2304e663eea5994bab916d2b119e47620688d60872f9dbb16935881083a"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls/tree.rs",
+        "sha256": "f79c50c3cff46eb6eb792b38e6671412e6e5af233b625c97831d941b36926dc1"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/navigation_controls.rs",
+        "sha256": "d8ccc9d0cee9ca4c0a8fd01b5bd1ff762418400082adf61b81b533f1d75ceab4"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/overlays.rs",
+        "sha256": "c6e9bd74d22b39493e5a9bcdb2750d25f6dab46590caac3f2ee05788d3fd1a7e"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/overlay_visual.rs",
+        "sha256": "482e40e95915e8ca1837275474e6b043420e03ce89b0d89e5cd7cc5b7f21e752"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/paint.rs",
+        "sha256": "177eaf55db14819b16064dcc38a7ce5f26237e27fce23723f3bbb1a7444751a9"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/picker_controls.rs",
+        "sha256": "4e17d1047d0f779982090c007745b0798dbfd419778308410b8041633bc3658e"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/progress.rs",
+        "sha256": "8bb7bf1d779dcdac4bc28724b6e1f2c8e63369445dd05f22d7997d74cd437e93"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/properties.rs",
+        "sha256": "ee5999bb3afde003b373fb42cb7c3bcba80a6c31674ba65cad076303d8b45168"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/scroll.rs",
+        "sha256": "558548eeaaa40f31e216b88fcc03251b708ab693d1438745946e923e1b019d98"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/selection_input.rs",
+        "sha256": "99524d2dfa278b2fef774c46cfc3ae2d8d52139c57f3491e5600eae049384a8c"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/slider.rs",
+        "sha256": "49a2f0063e2715564127f87b4aa792c87858bfadebb21fa08fb9e4a882b2b490"
+      },
+      {
+        "path": "out/frame-flicker-source/src/scene/text_edit.rs",
+        "sha256": "037e31d5bfa610f05fdf7358a3b4ab2c2c51c2dd6eb5952f60ad397a7f9d8404"
+      },
+      {
+        "path": "out/frame-flicker-source/src/selection.rs",
+        "sha256": "11162d1f1458869d4d5ab14fff1aad40740c72ce646ef03ea3ad6de6902b34cb"
+      },
+      {
+        "path": "out/frame-flicker-source/src/shapes.rs",
+        "sha256": "5b40727ae94ce3e19251cca0235b8e574f4c64ec424746cd7df26eb44f660e80"
+      },
+      {
+        "path": "out/frame-flicker-source/src/typography.rs",
+        "sha256": "5d19e5ebec4ac1d479fd2faffb2a6b787e40e2e3a40aad24557f720cd900765b"
+      },
+      {
+        "path": "out/frame-flicker-source/src/wasm.rs",
+        "sha256": "cb25611e0c8025b5c3e702b1d9923aca00017d04da6e259ff3033f7d40c42438"
+      }
+    ]
+  },
+  "currentSources": [
+    {
+      "path": "src/frame.rs",
+      "sha256": "baddf30cbfa67aec6a6e9ded54493c5a66d241e4ecc2897befabf8af6d24273b"
+    },
+    {
+      "path": "gallery/src/frame.ts",
+      "sha256": "09c5e59415487fd09bc7bd0295dc8a3488bf4105ea4f9174ab843dee314f2f99"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "40da6a019aaaeae51c7b6e7cea9f262b7644c6a61e52c2f2dc886de135f83ea4"
+    },
+    {
+      "path": "tests/frame_presentation.rs",
+      "sha256": "ca0f8240e85dd662d5dfd4fa642709fe74204c40c36a5e6948fe0a91bc989a27"
+    },
+    {
+      "path": "gallery/tests/frame-flicker.spec.ts",
+      "sha256": "e13c580f535b332fdc15083a301280182417dfda652fb16e68c731a72aa7a0de"
+    },
+    {
+      "path": "gallery/tests/fixtures/frame-flicker.tsx",
+      "sha256": "92ea4aeb4184f56002427f244a490eb3533a535f542d14f70fccacc9e3a4c060"
+    }
+  ],
+  "sourceCapture": "Fingerprints captured after validation. Rust Frame is checked against the frozen build source. Unrelated concurrent TS edits may differ from the isolated preview; the installed default production entry was checked separately.",
+  "wasm": {
+    "path": "out/frame-flicker-sdk/winui_bg.wasm",
+    "sha256": "57a22c91caa4a060039373c29bcf843d5323d0e8a09f7666f956e633ca436313",
+    "preview": {
+      "path": "out/frame-flicker-preview/assets/winui_bg-KxQun1P5.wasm",
+      "sha256": "57a22c91caa4a060039373c29bcf843d5323d0e8a09f7666f956e633ca436313"
+    },
+    "installed": {
+      "path": "gallery/src/wasm/winui_bg.wasm",
+      "sha256": "57a22c91caa4a060039373c29bcf843d5323d0e8a09f7666f956e633ca436313"
+    },
+    "matchesInstalled": true
+  },
+  "checks": {
+    "typescript": "npm run typecheck: passed",
+    "productionBuild": "vite.frame-flicker.config.ts and default Vite build: passed",
+    "nativeWorkspace": "Blocked by concurrent unfinished picker_controls paint/input modules and methods; see out/frame-flicker-workspace-check.log"
+  },
+  "limits": {
+    "os": "Windows only; macOS and Linux not exercised",
+    "firefox": {
+      "status": "launch blocked: spawn UNKNOWN after installing required browser",
+      "result": {
+        "path": "out/frame-flicker-fixed-firefox-results.json",
+        "sha256": "1e70a100f14236f2e3bf0eb857c9fadef93baaf92c392fee35349386d65872cb",
+        "stats": {
+          "startTime": "2026-11-08T11:38:11.769Z",
+          "duration": 2556.8830000000003,
+          "expected": 0,
+          "skipped": 0,
+          "unexpected": 3,
+          "flaky": 0
+        }
+      }
+    },
+    "pixelScope": "Cached React SceneView solid-color page pixels on Canvas2D/WebGL2; not a complete native WinUI image/animation parity claim"
+  },
+  "preview": "http://127.0.0.1:62145/#home"
+}

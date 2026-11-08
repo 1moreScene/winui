@@ -1,0 +1,162 @@
+{
+  "controls": {
+    "InfoBar": {
+      "description": "Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow.",
+      "samples": [
+        {
+          "title": "A closable InfoBar with options to change its Severity.",
+          "xaml": "<InfoBar \n    IsOpen=\"{x:Bind TestInfoBar1.IsOpen, Mode=TwoWay}\"\n    Title=\"Title\"\n    Message=\"Essential app message for your users to be informed of, acknowledge, or take action on.\" />"
+        },
+        {
+          "title": "A closable InfoBar with a long or short message and various buttons",
+          "xaml": "<InfoBar \n    IsOpen=\"{x:Bind TestInfoBar2.IsOpen, Mode=TwoWay}\"\n    Title=\"Title\"\n    Message=\"\" >\n    \n</InfoBar>"
+        },
+        {
+          "title": "A closable InfoBar with options to display the close button and icon",
+          "xaml": "<InfoBar \n    IsOpen=\"{x:Bind TestInfoBar3.IsOpen, Mode=TwoWay}\"\n    IsIconVisible=\"{x:Bind TestInfoBar3.IsIconVisible, Mode=TwoWay}\"                    \n    IsClosable=\"{x:Bind TestInfoBar3.IsClosable, Mode=TwoWay}\"\n    Title=\"Title\"\n    Message=\"Essential app message for your users to be informed of, acknowledge, or take action on.\" />"
+        }
+      ]
+    },
+    "PersonPicture": {
+      "description": "Displays the picture of a person/contact.",
+      "samples": [
+        {
+          "title": "Select different looks for the person picture.",
+          "xaml": "<PersonPicture ProfilePicture=\"https://learn.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png\" />"
+        }
+      ]
+    },
+    "RatingControl": {
+      "description": "Rate something 1 to 5 stars.",
+      "samples": [
+        {
+          "title": "A simple RatingControl",
+          "xaml": "<RatingControl AutomationProperties.Name=\"Simple RatingControl\" Caption=\"312 ratings\"/>"
+        },
+        {
+          "title": "PlaceholderValue of RatingControl",
+          "xaml": "<RatingControl AutomationProperties.Name=\"RatingControl with placeholder\" />"
+        }
+      ]
+    },
+    "SplitButton": {
+      "description": "The SplitButton is a dropdown button, but with an addition execution hit target.",
+      "samples": [
+        {
+          "title": "A SplitButton controlling text color in a RichEditBox",
+          "xaml": "<SplitButton x:Name=\"myColorButton\" Click=\"myColorButton_Click\">\n    <Border x:Name=\"CurrentColor\" Width=\"32\" Height=\"32\" Background=\"Green\" CornerRadius=\"4,0,0,4\"/>\n    <SplitButton.Flyout>\n        <Flyout Placement=\"Bottom\">\n            <!-- flyout content -->\n        </Flyout>\n    </SplitButton.Flyout>\n</SplitButton>"
+        },
+        {
+          "title": "A SplitButton with text",
+          "xaml": "<SplitButton x:Name=\"myColorButton\">\n    Choose color\n    <SplitButton.Flyout>\n        <Flyout Placement=\"Bottom\">\n            <!-- flyout content -->\n        </Flyout>\n    </SplitButton.Flyout>\n</SplitButton>"
+        }
+      ]
+    },
+    "ToggleSplitButton": {
+      "description": "A version of the SplitButton where the activation target toggles on/off.",
+      "samples": [
+        {
+          "title": "Using ToggleSplitButton to control bulleted list functionality in RichEditBox",
+          "xaml": "<ToggleSplitButton x:Name=\"myListButton\" VerticalAlignment=\"Top\" Click=\"myListButton_Click\">\n    <SymbolIcon x:Name=\"mySymbolIcon\" Symbol=\"List\"/>\n    <ToggleSplitButton.Flyout>\n        <Flyout Placement=\"Bottom\">\n            <!-- flyout content -->\n        </Flyout>\n    </ToggleSplitButton.Flyout>\n</ToggleSplitButton>"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "local": "references\\gallery-input\\InfoBar\\ClosableInfobarLongShort.txt",
+      "upstream": "WinUIGallery\\Samples\\InfoBar\\ClosableInfobarLongShort.txt",
+      "sha256": "5e0e1ae31d7bb8bc597058321f5be398158a682d67103858a6c25803f5b7d555"
+    },
+    {
+      "local": "references\\gallery-input\\InfoBar\\ClosableInfobarOptionsChange.txt",
+      "upstream": "WinUIGallery\\Samples\\InfoBar\\ClosableInfobarOptionsChange.txt",
+      "sha256": "f1791a728ee2488a59eff6194c3275bf035a6b9e3bb5eae2b4577140ba8a1d0d"
+    },
+    {
+      "local": "references\\gallery-input\\InfoBar\\ClosableInfobarOptionsDisplay.txt",
+      "upstream": "WinUIGallery\\Samples\\InfoBar\\ClosableInfobarOptionsDisplay.txt",
+      "sha256": "9f633733b14f47160068481fcc8c9aee81b0d9bc800ad53ca1dad53441021aaa"
+    },
+    {
+      "local": "references\\gallery-input\\InfoBar\\InfoBarPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\InfoBar\\InfoBarPage.xaml",
+      "sha256": "c9d1bc6e6e53d60827bac3bb53c1048f0ee0fd597e4519c30745c36d4d89c498"
+    },
+    {
+      "local": "references\\gallery-input\\InfoBar\\InfoBarPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\InfoBar\\InfoBarPage.xaml.cs",
+      "sha256": "8e7d11a20c0d91fef538ce16eb9c9adf5682995d74287996810fac3f8a58f1cc"
+    },
+    {
+      "local": "references\\gallery-input\\PersonPicture\\PersonPicturePage.xaml",
+      "upstream": "WinUIGallery\\Samples\\PersonPicture\\PersonPicturePage.xaml",
+      "sha256": "61d30ce158c192af13bf9fd6c8dd4ef56274730a7b02403cf974ecba85107ead"
+    },
+    {
+      "local": "references\\gallery-input\\PersonPicture\\PersonPicturePage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\PersonPicture\\PersonPicturePage.xaml.cs",
+      "sha256": "3dd0d68aaa0536a0b23b14d9d88266160823a35fde09250d9cd13924dd40c7d8"
+    },
+    {
+      "local": "references\\gallery-input\\PersonPicture\\PersonPictureSelectDifferentLooksPerson.txt",
+      "upstream": "WinUIGallery\\Samples\\PersonPicture\\PersonPictureSelectDifferentLooksPerson.txt",
+      "sha256": "eb01d7d2ea323b2d9ecc76583c323c5bd3238461f14343cd062acd6ece5b76fc"
+    },
+    {
+      "local": "references\\gallery-input\\RatingControl\\RatingControlPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\RatingControl\\RatingControlPage.xaml",
+      "sha256": "6a582d462fd2e24a3a552c7438a9df872775f9078975645e06ea606b9541cdb4"
+    },
+    {
+      "local": "references\\gallery-input\\RatingControl\\RatingControlPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\RatingControl\\RatingControlPage.xaml.cs",
+      "sha256": "9d784c1127ed78756948cf4a5aea0108385ad78cc229bf02d4cb118d3c11c475"
+    },
+    {
+      "local": "references\\gallery-input\\RatingControl\\RatingControlPlaceholder.txt",
+      "upstream": "WinUIGallery\\Samples\\RatingControl\\RatingControlPlaceholder.txt",
+      "sha256": "2a926ef530e0631cdca5fdde702a31ebbcec58ffd738a8d606154469019b4ef7"
+    },
+    {
+      "local": "references\\gallery-input\\RatingControl\\RatingControlSimple.txt",
+      "upstream": "WinUIGallery\\Samples\\RatingControl\\RatingControlSimple.txt",
+      "sha256": "121aa29378ffda8cbd99d90ae4d46d69471266db3cded637088f6e2e9f51f43d"
+    },
+    {
+      "local": "references\\gallery-input\\SplitButton\\SplitButtonColorPicker.txt",
+      "upstream": "WinUIGallery\\Samples\\SplitButton\\SplitButtonColorPicker.txt",
+      "sha256": "bdfd6e6375c47c02b582282723b521ad74303f9999340b93da361cc92f6b786f"
+    },
+    {
+      "local": "references\\gallery-input\\SplitButton\\SplitButtonPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\SplitButton\\SplitButtonPage.xaml",
+      "sha256": "8eafa9e734e087bba35b378da6b68c3a026d8b41132077e5e4e838454def4cfa"
+    },
+    {
+      "local": "references\\gallery-input\\SplitButton\\SplitButtonPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\SplitButton\\SplitButtonPage.xaml.cs",
+      "sha256": "328c41fb93933fb8d36977b54207d6a1eb2e91a6940dc59ba250aef2b42eccdf"
+    },
+    {
+      "local": "references\\gallery-input\\SplitButton\\SplitButtonText.txt",
+      "upstream": "WinUIGallery\\Samples\\SplitButton\\SplitButtonText.txt",
+      "sha256": "fef6433d5e83f82dbed37e0c1e3353ee0d2d14cc78163efc2adcccb178f36ccc"
+    },
+    {
+      "local": "references\\gallery-input\\ToggleSplitButton\\ToggleSplitButtonBulletList.txt",
+      "upstream": "WinUIGallery\\Samples\\ToggleSplitButton\\ToggleSplitButtonBulletList.txt",
+      "sha256": "36a8738c0e767093e0ec832110aa8dc202063b27540395e0a745473168a14fd7"
+    },
+    {
+      "local": "references\\gallery-input\\ToggleSplitButton\\ToggleSplitButtonPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\ToggleSplitButton\\ToggleSplitButtonPage.xaml",
+      "sha256": "da8a5af9d36a8a87987d9e3e5be7fc4826c861d0a4d817bbe1d80895f010ab01"
+    },
+    {
+      "local": "references\\gallery-input\\ToggleSplitButton\\ToggleSplitButtonPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\ToggleSplitButton\\ToggleSplitButtonPage.xaml.cs",
+      "sha256": "6062289a984f3e0a0329bddec1700f5b186f501745df012cbd4a41fb858fce9f"
+    }
+  ]
+}

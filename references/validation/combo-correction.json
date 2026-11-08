@@ -1,0 +1,514 @@
+{
+  "recordedAtUtc": "2026-11-08T11:15:19.194121+00:00",
+  "status": "Verified reported ComboBox regressions; complete native control parity remains unaccepted",
+  "fixes": [
+    {
+      "problem": "Short font list displayed a scrollbar at fractional DPR",
+      "owner": "src/scene/scroll.rs",
+      "cause": "Positive machine-roundoff residue from extent minus viewport",
+      "before": {
+        "dpr": 1.375,
+        "extent": 147.63636363636365,
+        "viewport": 147.63636363636363,
+        "overflowDip": 2.842170943040401e-14,
+        "log": "out/combo-roundoff-before.log"
+      },
+      "correction": "Zero only relative machine-roundoff; genuine 0.001 DIP overflow remains scrollable."
+    },
+    {
+      "problem": "Editable dropdown hover collapsed to a thin bar",
+      "owner": "src/scene/composed.rs",
+      "cause": "Auto-height Button retained default centered vertical alignment",
+      "correction": "Explicit Stretch fills editor height; the native hover margin remains separate from the hit area."
+    },
+    {
+      "problem": "Current Gallery help icons failed to mount after a fresh build",
+      "owner": "src/resources.rs",
+      "correction": "Export shared StaticResource brush dependencies from same-SDK measured compact-control palettes and SDK theme XML; validate Light, Dark and HighContrast."
+    },
+    {
+      "problem": "An inactive cached Frame page retained its ComboBox document input lock",
+      "owner": "gallery/src/scene.ts",
+      "correction": "Platform adapter excludes inactive/disconnected hosts while Rust retains popup state; reactivation restores the scope."
+    }
+  ],
+  "preview": {
+    "url": "http://127.0.0.1:5173/#combo-box",
+    "browser": "Independent headless Microsoft Edge; existing user browser not automated",
+    "servedWasmSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "currentFileSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "frozenSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "matchesFrozen": true,
+    "fractionalDpiResults": [
+      {
+        "dpr": 1,
+        "rect": {
+          "height": 147,
+          "width": 198,
+          "x": 1,
+          "y": 5
+        },
+        "scroll": {
+          "extentHeight": 147,
+          "extentWidth": 198,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 147,
+          "viewportWidth": 198,
+          "visibleRegions": [
+            {
+              "height": 147,
+              "width": 198,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.1,
+        "rect": {
+          "height": 149.99999674883762,
+          "width": 198.18181388634304,
+          "x": 0.9090908893868948,
+          "y": 4.545454446934474
+        },
+        "scroll": {
+          "extentHeight": 149.99999674883762,
+          "extentWidth": 198.18181388634304,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 149.99999674883762,
+          "viewportWidth": 198.18181388634304,
+          "visibleRegions": [
+            {
+              "height": 149.99999674883762,
+              "width": 198.18181388634304,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.2,
+        "rect": {
+          "height": 149.16666073931611,
+          "width": 198.33332545227506,
+          "x": 0.8333333002196431,
+          "y": 4.999999801317859
+        },
+        "scroll": {
+          "extentHeight": 149.16666073931611,
+          "extentWidth": 198.33332545227506,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 149.16666073931611,
+          "viewportWidth": 198.33332545227506,
+          "visibleRegions": [
+            {
+              "height": 149.16666073931611,
+              "width": 198.33332545227506,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.25,
+        "rect": {
+          "height": 146.39999999999998,
+          "width": 198.39999999999998,
+          "x": 0.8,
+          "y": 4.8
+        },
+        "scroll": {
+          "extentHeight": 146.39999999999998,
+          "extentWidth": 198.39999999999998,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 146.39999999999998,
+          "viewportWidth": 198.39999999999998,
+          "visibleRegions": [
+            {
+              "height": 146.39999999999998,
+              "width": 198.39999999999998,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.3333333333333,
+        "rect": {
+          "height": 149.99999552965178,
+          "width": 198.7499940767886,
+          "x": 0.7499999776482589,
+          "y": 4.499999865889553
+        },
+        "scroll": {
+          "extentHeight": 149.99999552965178,
+          "extentWidth": 198.7499940767886,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 149.99999552965178,
+          "viewportWidth": 198.7499940767886,
+          "visibleRegions": [
+            {
+              "height": 149.99999552965178,
+              "width": 198.7499940767886,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.375,
+        "rect": {
+          "height": 147.63636363636363,
+          "width": 198.54545454545456,
+          "x": 0.7272727272727273,
+          "y": 5.090909090909091
+        },
+        "scroll": {
+          "extentHeight": 147.63636363636365,
+          "extentWidth": 198.54545454545456,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 147.63636363636363,
+          "viewportWidth": 198.54545454545456,
+          "visibleRegions": [
+            {
+              "height": 147.63636363636363,
+              "width": 198.54545454545456,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.5,
+        "rect": {
+          "height": 148,
+          "width": 198,
+          "x": 1.3333333333333333,
+          "y": 5.333333333333333
+        },
+        "scroll": {
+          "extentHeight": 147.99999999999997,
+          "extentWidth": 198,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 148,
+          "viewportWidth": 198,
+          "visibleRegions": [
+            {
+              "height": 148,
+              "width": 198,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.5625,
+        "rect": {
+          "height": 150.4,
+          "width": 197.12,
+          "x": 1.28,
+          "y": 5.12
+        },
+        "scroll": {
+          "extentHeight": 150.4,
+          "extentWidth": 197.12,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 150.4,
+          "viewportWidth": 197.12,
+          "visibleRegions": [
+            {
+              "height": 150.4,
+              "width": 197.12,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.6666666667,
+        "rect": {
+          "height": 148.20000353336343,
+          "width": 197.40000470638287,
+          "x": 1.2000000286102301,
+          "y": 5.4000001287460355
+        },
+        "scroll": {
+          "extentHeight": 148.20000353336343,
+          "extentWidth": 197.40000470638287,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 148.20000353336343,
+          "viewportWidth": 197.40000470638287,
+          "visibleRegions": [
+            {
+              "height": 148.20000353336343,
+              "width": 197.40000470638287,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 1.75,
+        "rect": {
+          "height": 147.42857142857144,
+          "width": 197.71428571428572,
+          "x": 1.1428571428571428,
+          "y": 5.142857142857143
+        },
+        "scroll": {
+          "extentHeight": 147.42857142857144,
+          "extentWidth": 197.71428571428572,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 147.42857142857144,
+          "viewportWidth": 197.71428571428572,
+          "visibleRegions": [
+            {
+              "height": 147.42857142857144,
+              "width": 197.71428571428572,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 2,
+        "rect": {
+          "height": 147,
+          "width": 198,
+          "x": 1,
+          "y": 5
+        },
+        "scroll": {
+          "extentHeight": 147,
+          "extentWidth": 198,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 147,
+          "viewportWidth": 198,
+          "visibleRegions": [
+            {
+              "height": 147,
+              "width": 198,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      },
+      {
+        "dpr": 2.25,
+        "rect": {
+          "height": 145.77777777777777,
+          "width": 198.22222222222223,
+          "x": 0.8888888888888888,
+          "y": 4.888888888888889
+        },
+        "scroll": {
+          "extentHeight": 145.77777777777777,
+          "extentWidth": 198.22222222222223,
+          "horizontalOffset": 0,
+          "horizontalThumb": null,
+          "hosted": false,
+          "isIntermediate": false,
+          "scrollableHeight": 0,
+          "scrollableWidth": 0,
+          "verticalOffset": 0,
+          "verticalThumb": null,
+          "viewportHeight": 145.77777777777777,
+          "viewportWidth": 198.22222222222223,
+          "visibleRegions": [
+            {
+              "height": 145.77777777777777,
+              "width": 198.22222222222223,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "zoomFactor": 1
+        }
+      }
+    ],
+    "log": "out/combo-delivered-edge.log"
+  },
+  "checks": {
+    "rust": {
+      "passed": 242,
+      "failed": false,
+      "scope": "Full Rust test run, including command controls and picker foundations",
+      "log": "out/picker-foundation-rust-full.log"
+    },
+    "chromium": {
+      "startTime": "2026-11-08T11:02:54.273Z",
+      "duration": 133152.225,
+      "expected": 35,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "webkit": {
+      "startTime": "2026-11-08T11:02:54.243Z",
+      "duration": 210917.447,
+      "expected": 35,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "motion": {
+      "startTime": "2026-11-08T11:10:47.164Z",
+      "duration": 81452.325,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "regression": {
+      "startTime": "2026-11-08T11:02:54.273Z",
+      "duration": 137961.491,
+      "expected": 26,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "browserCheckScope": "Composed suites include actual painted scrollbar tracks at DPR 1.25, 1.375 and 1.5625 on both renderers, editor refocus, 28 closed-faceplate states, background scroll confinement, templates and lifetime. Separate native matrix and motion reports retain their raw differences.",
+  "testFixtureCorrections": [
+    "Explicit Light/Dark Rust-root backdrop and native-host background for transparent SDK scenes.",
+    "Await projected Rust checkbox state after real pointer clicks.",
+    "Count visible examples when Frame retains cached pages.",
+    "Scope renderer assertion to the sample preview; use current explicit Gallery routes and commit NumberBox edits with Enter."
+  ],
+  "historicalFixtureFailures": [
+    "out/combo-gallery-fixture-before-browser-results.json",
+    "out/combo-gallery-fixture-before-webkit-results.json",
+    "out/combo-gallery-fixture-before-regression-results.json"
+  ],
+  "nativeFaceplate": "references/validation/combobox-faceplate.json",
+  "nextBatch": "references/validation/picker-foundation.json",
+  "remaining": [
+    "Glyph coverage, rounded-edge rasterization, desktop DWM/HostBackdrop and Store Gallery frame acceptance are not established by these patches.",
+    "Next-batch five control UIs are not yet implemented; shared Rust foundation and native fixtures are recorded separately."
+  ],
+  "nativeFixtureVerification": {
+    "chromium": {
+      "passed": 8,
+      "log": "out/combo-final-native-fixtures-chromium.log",
+      "includes": "Explicit Rust backdrop, all 100 actual backend kind/loss assertions and 28 faceplate states per backend"
+    },
+    "webkit": {
+      "passed": 8,
+      "log": "out/combo-final-native-fixtures-webkit.log",
+      "includes": "Explicit Rust backdrop, all 100 actual backend kind/loss assertions and 28 faceplate states per backend"
+    }
+  },
+  "sources": {
+    "src/scene/scroll.rs": "558548eeaaa40f31e216b88fcc03251b708ab693d1438745946e923e1b019d98",
+    "src/scene/composed.rs": "dc780f1db1897a424fd3cbdf418da4f34d83f684024d59dcdbb94206818d4e59",
+    "src/resources.rs": "b5584480138edd991fa298222e9dbac746e01837b35d10273c8b34b95de65135",
+    "tools/extract-compact-controls.py": "13c5807f23a045562a13eeecf17d69a8ad82cc0a6f4e7a2c93d979f1b554db66",
+    "references/compact-shared-resources.json": "650902f0ee65d6ae5a250ef6175f33a372b3381800dc1fd93e1d9ccc8febc5a9",
+    "gallery/src/scene.ts": "b107932e97d2bd9b8afc7537105fa7091b9a0ce29fae4900ff52d4df65e20939",
+    "gallery/src/scroll-input-scope.ts": "6fb04b2c0f7b5b3a1d8042738188ec88f209c6328419be4e7a9c19f622bafa56",
+    "gallery/tests/composed-scroll-scope.spec.ts": "bda3caac03c90d2458b71f72871e319200904a583e73ffc37c735d6a99478083",
+    "gallery/tests/composed-fractional-scroll.spec.ts": "8fb2c1dee8c4f93a4ae80928d2ea7a2fa0b2dc900e753ed697d4555b5ba1f8e5",
+    "tests/collection_scroll.rs": "a985b1802aa3756f4d8382676a6519533af2186570108adca2ca3013137b6ef1",
+    "tests/composed.rs": "94d732ae5d6c6ef97ee9e024829349651d9d35d77bfc49f4a7a344a59ac4f4d0",
+    "tests/shared_resources.rs": "13cdd289435a0d52b0afabd59437b78646c87e628deaa71548cc58a9230dd606"
+  }
+}

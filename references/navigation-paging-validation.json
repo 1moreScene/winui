@@ -1,0 +1,1519 @@
+{
+  "nativeCapture": "PrintWindow own client only; no foreground manipulation",
+  "advancedEffects": true,
+  "dpr": 1.25,
+  "cases": [
+    {
+      "id": "Light-FlipView-Horizontal-Flat-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 0.7903439153439153,
+      "maxColorError": 51,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Flat-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 2.6805555555555554,
+      "maxColorError": 51,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Flat-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 2.9080687830687832,
+      "maxColorError": 106,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-ButtonIsland-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 1.1421957671957672,
+      "maxColorError": 51,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-ButtonIsland-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.0277777777777777,
+      "maxColorError": 51,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-ButtonIsland-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.2546296296296298,
+      "maxColorError": 106,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 1.9107142857142858,
+      "maxColorError": 55,
+      "faceActual": [
+        236,
+        221,
+        228
+      ],
+      "faceNative": [
+        234,
+        221,
+        229
+      ],
+      "faceError": 2
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.79728835978836,
+      "maxColorError": 55,
+      "faceActual": [
+        236,
+        221,
+        228
+      ],
+      "faceNative": [
+        234,
+        221,
+        229
+      ],
+      "faceError": 2
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 4.0396825396825395,
+      "maxColorError": 107,
+      "faceActual": [
+        236,
+        221,
+        228
+      ],
+      "faceNative": [
+        234,
+        221,
+        229
+      ],
+      "faceError": 2
+    },
+    {
+      "id": "Light-FlipView-Vertical-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 2.8681567865241333,
+      "maxColorError": 70,
+      "faceActual": [
+        240,
+        221,
+        224
+      ],
+      "faceNative": [
+        236,
+        221,
+        227
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Light-FlipView-Vertical-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 4.6873987690314225,
+      "maxColorError": 70,
+      "faceActual": [
+        240,
+        221,
+        224
+      ],
+      "faceNative": [
+        236,
+        221,
+        227
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Light-FlipView-Vertical-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 4.608681567865242,
+      "maxColorError": 98,
+      "faceActual": [
+        240,
+        221,
+        224
+      ],
+      "faceNative": [
+        236,
+        221,
+        227
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Flat-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.07481481481481482,
+      "maxColorError": 4,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Flat-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.08296296296296296,
+      "maxColorError": 6,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Flat-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.4262962962962963,
+      "maxColorError": 42,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.07481481481481482,
+      "maxColorError": 4,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.08296296296296296,
+      "maxColorError": 6,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.4262962962962963,
+      "maxColorError": 42,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Vertical-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.1262962962962963,
+      "maxColorError": 18,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Vertical-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.16296296296296298,
+      "maxColorError": 25,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Vertical-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.4318518518518519,
+      "maxColorError": 57,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Flat-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 0.6183862433862434,
+      "maxColorError": 34,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        12,
+        52,
+        119
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Flat-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.111111111111111,
+      "maxColorError": 55,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        12,
+        52,
+        119
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Flat-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 2.6607142857142856,
+      "maxColorError": 133,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        12,
+        52,
+        119
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-ButtonIsland-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 2.924272486772487,
+      "maxColorError": 46,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        16,
+        51,
+        116
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-ButtonIsland-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 5.396494708994709,
+      "maxColorError": 54,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        16,
+        51,
+        116
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-ButtonIsland-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 4.967261904761905,
+      "maxColorError": 135,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        16,
+        51,
+        116
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 6.9371693121693125,
+      "maxColorError": 39,
+      "faceActual": [
+        88,
+        27,
+        53
+      ],
+      "faceNative": [
+        78,
+        30,
+        61
+      ],
+      "faceError": 10
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 9.346560846560847,
+      "maxColorError": 51,
+      "faceActual": [
+        88,
+        27,
+        53
+      ],
+      "faceNative": [
+        78,
+        30,
+        61
+      ],
+      "faceError": 10
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 8.995039682539682,
+      "maxColorError": 127,
+      "faceActual": [
+        88,
+        27,
+        53
+      ],
+      "faceNative": [
+        78,
+        30,
+        61
+      ],
+      "faceError": 10
+    },
+    {
+      "id": "Dark-FlipView-Vertical-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 10.983803045027535,
+      "maxColorError": 47,
+      "faceActual": [
+        107,
+        20,
+        36
+      ],
+      "faceNative": [
+        89,
+        27,
+        52
+      ],
+      "faceError": 18
+    },
+    {
+      "id": "Dark-FlipView-Vertical-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 13.367022999676061,
+      "maxColorError": 66,
+      "faceActual": [
+        107,
+        20,
+        36
+      ],
+      "faceNative": [
+        89,
+        27,
+        52
+      ],
+      "faceError": 18
+    },
+    {
+      "id": "Dark-FlipView-Vertical-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 12.825072886297376,
+      "maxColorError": 103,
+      "faceActual": [
+        107,
+        20,
+        36
+      ],
+      "faceNative": [
+        89,
+        27,
+        52
+      ],
+      "faceError": 18
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Flat-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.4137037037037037,
+      "maxColorError": 31,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Flat-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.5892592592592593,
+      "maxColorError": 45,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Flat-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 1.0348148148148149,
+      "maxColorError": 78,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.4137037037037037,
+      "maxColorError": 31,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.5892592592592593,
+      "maxColorError": 45,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 1.0348148148148149,
+      "maxColorError": 78,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Vertical-Stripes-Normal",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.3466666666666667,
+      "maxColorError": 44,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Vertical-Stripes-PointerOver",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.47074074074074074,
+      "maxColorError": 63,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Vertical-Stripes-Pressed",
+      "backend": "Canvas2D",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.9855555555555555,
+      "maxColorError": 131,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Flat-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 1.4183201058201058,
+      "maxColorError": 140,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Flat-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.311177248677249,
+      "maxColorError": 140,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Flat-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.0869708994708995,
+      "maxColorError": 140,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-ButtonIsland-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 1.7612433862433863,
+      "maxColorError": 140,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-ButtonIsland-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.6507936507936507,
+      "maxColorError": 140,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-ButtonIsland-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.425925925925926,
+      "maxColorError": 140,
+      "faceActual": [
+        217,
+        225,
+        239
+      ],
+      "faceNative": [
+        217,
+        225,
+        239
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 2.5274470899470898,
+      "maxColorError": 147,
+      "faceActual": [
+        236,
+        221,
+        227
+      ],
+      "faceNative": [
+        234,
+        221,
+        229
+      ],
+      "faceError": 2
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 4.421296296296297,
+      "maxColorError": 147,
+      "faceActual": [
+        236,
+        221,
+        227
+      ],
+      "faceNative": [
+        234,
+        221,
+        229
+      ],
+      "faceError": 2
+    },
+    {
+      "id": "Light-FlipView-Horizontal-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 4.2023809523809526,
+      "maxColorError": 147,
+      "faceActual": [
+        236,
+        221,
+        227
+      ],
+      "faceNative": [
+        234,
+        221,
+        229
+      ],
+      "faceError": 2
+    },
+    {
+      "id": "Light-FlipView-Vertical-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 3.4661483641075477,
+      "maxColorError": 159,
+      "faceActual": [
+        240,
+        221,
+        224
+      ],
+      "faceNative": [
+        236,
+        221,
+        227
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Light-FlipView-Vertical-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 5.281503077421445,
+      "maxColorError": 159,
+      "faceActual": [
+        240,
+        221,
+        224
+      ],
+      "faceNative": [
+        236,
+        221,
+        227
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Light-FlipView-Vertical-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 4.954972465176547,
+      "maxColorError": 159,
+      "faceActual": [
+        240,
+        221,
+        224
+      ],
+      "faceNative": [
+        236,
+        221,
+        227
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Flat-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.24481481481481482,
+      "maxColorError": 27,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Flat-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.34814814814814815,
+      "maxColorError": 37,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Flat-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.26222222222222225,
+      "maxColorError": 46,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.24481481481481482,
+      "maxColorError": 27,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.34814814814814815,
+      "maxColorError": 37,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Horizontal-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.26222222222222225,
+      "maxColorError": 46,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Vertical-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.1111111111111111,
+      "maxColorError": 18,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Vertical-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.15666666666666668,
+      "maxColorError": 25,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Light-PipsPager-Vertical-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.30962962962962964,
+      "maxColorError": 34,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Flat-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 0.7208994708994709,
+      "maxColorError": 35,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        12,
+        52,
+        119
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Flat-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.248346560846561,
+      "maxColorError": 56,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        12,
+        52,
+        119
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Flat-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 2.4077380952380953,
+      "maxColorError": 133,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        12,
+        52,
+        119
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-ButtonIsland-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 3.082010582010582,
+      "maxColorError": 93,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        16,
+        51,
+        116
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-ButtonIsland-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 5.56712962962963,
+      "maxColorError": 93,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        16,
+        51,
+        116
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-ButtonIsland-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 4.7423941798941796,
+      "maxColorError": 135,
+      "faceActual": [
+        12,
+        52,
+        119
+      ],
+      "faceNative": [
+        16,
+        51,
+        116
+      ],
+      "faceError": 4
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 7.130621693121693,
+      "maxColorError": 104,
+      "faceActual": [
+        88,
+        27,
+        53
+      ],
+      "faceNative": [
+        78,
+        30,
+        61
+      ],
+      "faceError": 10
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 9.56712962962963,
+      "maxColorError": 104,
+      "faceActual": [
+        88,
+        27,
+        53
+      ],
+      "faceNative": [
+        78,
+        30,
+        61
+      ],
+      "faceError": 10
+    },
+    {
+      "id": "Dark-FlipView-Horizontal-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.0000061035156235789145,
+      "meanAbsoluteColorError": 8.838955026455027,
+      "maxColorError": 127,
+      "faceActual": [
+        88,
+        27,
+        53
+      ],
+      "faceNative": [
+        78,
+        30,
+        61
+      ],
+      "faceError": 10
+    },
+    {
+      "id": "Dark-FlipView-Vertical-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 11.151927437641723,
+      "maxColorError": 94,
+      "faceActual": [
+        107,
+        20,
+        36
+      ],
+      "faceNative": [
+        89,
+        27,
+        52
+      ],
+      "faceError": 18
+    },
+    {
+      "id": "Dark-FlipView-Vertical-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 13.56268221574344,
+      "maxColorError": 94,
+      "faceActual": [
+        107,
+        20,
+        36
+      ],
+      "faceNative": [
+        89,
+        27,
+        52
+      ],
+      "faceError": 18
+    },
+    {
+      "id": "Dark-FlipView-Vertical-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0.000012207031204525265,
+      "meanAbsoluteColorError": 12.68804664723032,
+      "maxColorError": 128,
+      "faceActual": [
+        107,
+        20,
+        36
+      ],
+      "faceNative": [
+        89,
+        27,
+        52
+      ],
+      "faceError": 18
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Flat-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.7622222222222222,
+      "maxColorError": 58,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Flat-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 1.0707407407407408,
+      "maxColorError": 82,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Flat-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.932962962962963,
+      "maxColorError": 103,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.7622222222222222,
+      "maxColorError": 58,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 1.0707407407407408,
+      "maxColorError": 82,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Horizontal-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.932962962962963,
+      "maxColorError": 103,
+      "faceActual": [
+        32,
+        80,
+        160
+      ],
+      "faceNative": [
+        32,
+        80,
+        160
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Vertical-Stripes-Normal",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.34185185185185185,
+      "maxColorError": 45,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Vertical-Stripes-PointerOver",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.4803703703703704,
+      "maxColorError": 63,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    },
+    {
+      "id": "Dark-PipsPager-Vertical-Stripes-Pressed",
+      "backend": "WebGL2",
+      "geometryErrorDIP": 0,
+      "meanAbsoluteColorError": 0.6366666666666667,
+      "maxColorError": 102,
+      "faceActual": [
+        240,
+        48,
+        32
+      ],
+      "faceNative": [
+        240,
+        48,
+        32
+      ],
+      "faceError": 0
+    }
+  ]
+}

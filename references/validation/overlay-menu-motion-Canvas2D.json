@@ -1,0 +1,149 @@
+{
+  "backend": "Canvas2D",
+  "rows": [
+    {
+      "side": "Top",
+      "time": 1000,
+      "offset": [
+        0,
+        60
+      ],
+      "expectedTop": 157,
+      "expectedBottom": 234,
+      "minY": 157,
+      "maxY": 233
+    },
+    {
+      "side": "Top",
+      "time": 1100,
+      "offset": [
+        0,
+        10.280926025102666
+      ],
+      "expectedTop": 107.28092602510267,
+      "expectedBottom": 225.28092602510267,
+      "minY": 108,
+      "maxY": 224
+    },
+    {
+      "side": "Top",
+      "time": 1500,
+      "offset": [
+        0,
+        0
+      ],
+      "expectedTop": 97,
+      "expectedBottom": 215,
+      "minY": 97,
+      "maxY": 214
+    },
+    {
+      "side": "Bottom",
+      "time": 1000,
+      "offset": [
+        0,
+        -60
+      ],
+      "expectedTop": 254,
+      "expectedBottom": 315,
+      "minY": 254,
+      "maxY": 314
+    },
+    {
+      "side": "Bottom",
+      "time": 1100,
+      "offset": [
+        0,
+        -10.280926025102666
+      ],
+      "expectedTop": 254,
+      "expectedBottom": 364.71907397489736,
+      "minY": 254,
+      "maxY": 363
+    },
+    {
+      "side": "Bottom",
+      "time": 1500,
+      "offset": [
+        0,
+        0
+      ],
+      "expectedTop": 257,
+      "expectedBottom": 375,
+      "minY": 257,
+      "maxY": 374
+    },
+    {
+      "side": "Left",
+      "time": 1000,
+      "offset": [
+        0,
+        -60
+      ],
+      "expectedTop": 174,
+      "expectedBottom": 235,
+      "minY": 174,
+      "maxY": 234
+    },
+    {
+      "side": "Left",
+      "time": 1100,
+      "offset": [
+        0,
+        -10.280926025102666
+      ],
+      "expectedTop": 174,
+      "expectedBottom": 284.71907397489736,
+      "minY": 174,
+      "maxY": 283
+    },
+    {
+      "side": "Left",
+      "time": 1500,
+      "offset": [
+        0,
+        0
+      ],
+      "expectedTop": 177,
+      "expectedBottom": 295,
+      "minY": 177,
+      "maxY": 294
+    },
+    {
+      "side": "Right",
+      "time": 1000,
+      "offset": [
+        0,
+        -60
+      ],
+      "expectedTop": 174,
+      "expectedBottom": 235,
+      "minY": 174,
+      "maxY": 234
+    },
+    {
+      "side": "Right",
+      "time": 1100,
+      "offset": [
+        0,
+        -10.280926025102666
+      ],
+      "expectedTop": 174,
+      "expectedBottom": 284.71907397489736,
+      "minY": 174,
+      "maxY": 283
+    },
+    {
+      "side": "Right",
+      "time": 1500,
+      "offset": [
+        0,
+        0
+      ],
+      "expectedTop": 177,
+      "expectedBottom": 295,
+      "minY": 177,
+      "maxY": 294
+    }
+  ]
+}

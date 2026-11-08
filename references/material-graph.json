@@ -1,0 +1,26 @@
+{
+  "blurRadius": 30.0,
+  "noiseOpacity": 0.02,
+  "operations": [
+    "opaque-fallback",
+    "backdrop-source-over",
+    "gaussian-hard-border",
+    "luminosity",
+    "color",
+    "wrapped-noise-source-over",
+    "fallback-crossfade"
+  ],
+  "sources": [
+    "references/winui/AcrylicBrush.h",
+    "references/winui/AcrylicBrush.cpp",
+    "references/winui/NoiseAsset_256X256_PNG.png"
+  ],
+  "switchCurve": [
+    0.5,
+    0.0,
+    0.0,
+    0.9
+  ],
+  "switchDuration": 167.0,
+  "tintTransitionDuration": 500.0
+}

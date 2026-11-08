@@ -1,0 +1,28 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "files": [
+    {
+      "local": "references/winui/DWriteTextRenderer.cpp",
+      "upstream": "dxaml/xcp/core/text/TextBlock/DWriteTextRenderer.cpp",
+      "gitBlobSha1": "23ff711615bd2b407e9e973da3c0247db44cf05d",
+      "sha256": "5a5f4dcae0c7749b19e3b01ec5ca8223d6670a55f444cceb9f83ccac6d43cad1"
+    },
+    {
+      "local": "references/winui/D2DTextDrawingContext.cpp",
+      "upstream": "dxaml/xcp/core/native/text/Common/D2DTextDrawingContext.cpp",
+      "gitBlobSha1": "56dd5fb6ba13147535aba0a597f2b6b7af189933",
+      "sha256": "d7b9035f7b8bc6c751463dcbbbe8bf03b1c7274469dadb2ad718a970c08b2478"
+    },
+    {
+      "local": "references/winui/TextBlock.cpp",
+      "upstream": "dxaml/xcp/core/text/TextBlock/TextBlock.cpp",
+      "gitBlobSha1": "9c17a3ca8aa9e3e58fb3ad2a8ee81be5671deca9",
+      "sha256": "a0e733469e507f5fc3c1ee3e3880956a0d4fbf561aae2873b113562adc0009f9"
+    }
+  ],
+  "claims": [
+    "DWriteTextRenderer delegates snapping to XAML glyph realization.",
+    "D2DTextDrawingContext realizes all glyph runs with baseline snapping.",
+    "TextBlock adds m_layoutRoundingHeightAdjustment during rendering on the DWriteLayout path; its public BaselineOffset stays unadjusted."
+  ]
+}

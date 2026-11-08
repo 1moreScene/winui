@@ -1,0 +1,600 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "controls": [
+    "CalendarView",
+    "CalendarDatePicker",
+    "DatePicker",
+    "TimePicker",
+    "ColorPicker"
+  ],
+  "files": [
+    {
+      "upstream": "controls/dev/ColorPicker/ColorChangedEventArgs.cpp",
+      "local": "references/pickers/ColorChangedEventArgs.cpp",
+      "gitBlobSha1": "78d7ee8137e3dc1625027af05ca22894931d7350",
+      "sha256": "44390f978f5a5d32c145791eaf7cd9466cbf4123e6c059a87863f6e1356caf15"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorChangedEventArgs.h",
+      "local": "references/pickers/ColorChangedEventArgs.h",
+      "gitBlobSha1": "edd898e3a3736436b1f36e16d35f7a2fa1c84b44",
+      "sha256": "11aef28b0bb2fa28f91f90d49255549365e91a2fd31b534d616ad38789d17fa3"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorHelpers.cpp",
+      "local": "references/pickers/ColorHelpers.cpp",
+      "gitBlobSha1": "41b8508d774a1e7bb55d61fd859a7314240837bc",
+      "sha256": "4af50d3fd910b9d8815d3c336c97eaed2060a105c8ca489a0cec31092efe9808"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorHelpers.h",
+      "local": "references/pickers/ColorHelpers.h",
+      "gitBlobSha1": "aeae049cba5a834e4b918095d9a8777d1f431b69",
+      "sha256": "0d508dcf5325839cf79acd822614b6eecc8fab265b033af4ac026d8f245002d0"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPicker.cpp",
+      "local": "references/pickers/ColorPicker.cpp",
+      "gitBlobSha1": "886a769b57c3b8c41ddc841df4040b1967fce778",
+      "sha256": "35f8b59e4393fcc6a2420692209d3b511a4d3b37f32169b8d7e68391aba8f9b4"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPicker.h",
+      "local": "references/pickers/ColorPicker.h",
+      "gitBlobSha1": "e18c2003d39ac255c688a31121de2ddd42a6e9bd",
+      "sha256": "6bf4b443427f690d15ffca6e811bdf4cd1b9818e34175c0bd6ae35c569c39534"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPicker.idl",
+      "local": "references/pickers/ColorPicker.idl",
+      "gitBlobSha1": "25c6a3a43577ab8f33df4998aac0726ef987b022",
+      "sha256": "8f0e5d81fdd385049545857c330b5aae165ff6f0737749b064788cf2c079a3d8"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPicker.xaml",
+      "local": "references/pickers/ColorPicker.xaml",
+      "gitBlobSha1": "68f539f2388355850077999d1657b8cecdcbf6cb",
+      "sha256": "ed05efc9e934cd7364744cff16fe45cc801e455cb89ff5c7ae784565c5862488"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPickerSlider.cpp",
+      "local": "references/pickers/ColorPickerSlider.cpp",
+      "gitBlobSha1": "cf25e64606ef7b3e2bfe4a242bd4dc1a21467d9e",
+      "sha256": "9b61749268ea49c6ef039463dd2193f984af524cc2de404e4357ba3ee55392bb"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPickerSlider.h",
+      "local": "references/pickers/ColorPickerSlider.h",
+      "gitBlobSha1": "bf5fb1b212a2409cf6a6aae7b46ed5064c1b6585",
+      "sha256": "74452ac316f77dfddff51fbd6287c994c52f5b22e7abcf71e6e7645f3ac9cfca"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPickerSlider.idl",
+      "local": "references/pickers/ColorPickerSlider.idl",
+      "gitBlobSha1": "5a252e5d97baacfd07378e1faf5b0ae66d1432ef",
+      "sha256": "ff8109e6c35eeb2da81953919869f0e3ce24a4325fe01b42d216d111c4e48a9e"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorPicker_themeresources.xaml",
+      "local": "references/pickers/ColorPicker_themeresources.xaml",
+      "gitBlobSha1": "ff69cb7eb766097830b201c4b0785041027fa499",
+      "sha256": "76a0caeceb10757926650211d39d38dda508a9df76528b31c72540ed699b8e49"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorSpectrum.cpp",
+      "local": "references/pickers/ColorSpectrum.cpp",
+      "gitBlobSha1": "79e667cdd62edc25bfbae110302f79c61cd39b42",
+      "sha256": "4b5e3a49ef47438fe7b201993cc25cc9b673fb312003b6f0d1c1f2e336bfd5da"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorSpectrum.h",
+      "local": "references/pickers/ColorSpectrum.h",
+      "gitBlobSha1": "7ed5769f9a1b0c5a259b7ed51b47106015658f0e",
+      "sha256": "9c949722872cdc4040bc06f30ffea69726848a2cdd46ebdf17a38d6ff997e9dc"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorSpectrum.idl",
+      "local": "references/pickers/ColorSpectrum.idl",
+      "gitBlobSha1": "329977d0543af09ab461806376f7f30b0e322e86",
+      "sha256": "89047e2a071aca7ac9ab0b60d530607db341599f2a764fa51ae014434fa9acbf"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/ColorSpectrum.xaml",
+      "local": "references/pickers/ColorSpectrum.xaml",
+      "gitBlobSha1": "fb5f7bd1a83acafccc63e43c0451d8775d82afcd",
+      "sha256": "9896e225eee1bec6dc837bc633bb6acbf248e0c69e0c62ca1de9e962ba2dd6c9"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/Common.idl",
+      "local": "references/pickers/Common.idl",
+      "gitBlobSha1": "7affa9c71ebb3354f4ef3d76a26b0e77a6fb690f",
+      "sha256": "3006cd8a76c62e61b18528299ed0750fb420ecd7c65437974bb0eaa4caaf4ebc"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/SpectrumBrush.cpp",
+      "local": "references/pickers/SpectrumBrush.cpp",
+      "gitBlobSha1": "d1f04b2c3d3bf59749b91fa5d0b997bfcdaf7280",
+      "sha256": "b969f49d77e9bc4c9fd21a65f57c8e6bbaf3e1c1ec471b733769612f96e14d76"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/SpectrumBrush.h",
+      "local": "references/pickers/SpectrumBrush.h",
+      "gitBlobSha1": "e51e050e6ce23d6eb9e28003a5d88c69fd74b065",
+      "sha256": "484a8e98ee90f1825a6e76d34f5307c1208e0cafb79c25ef63f8f76c2a441027"
+    },
+    {
+      "upstream": "controls/dev/ColorPicker/SpectrumBrush.idl",
+      "local": "references/pickers/SpectrumBrush.idl",
+      "gitBlobSha1": "77b615ef7787a09c086ac3317d1bdd8bb9b332df",
+      "sha256": "1d7ff1562e4d568378627aeacafbbee9f3a971169db8cc0c146e4c96ff04d7bd"
+    },
+    {
+      "upstream": "controls/dev/Common/ColorConversion.cpp",
+      "local": "references/pickers/ColorConversion.cpp",
+      "gitBlobSha1": "518d5336c8e32e23b5eb4bc69614a41086f5b8d8",
+      "sha256": "2bc5452887d70ab30cfef4b12abb1587a8683b17f2e2bb42bf6051e2edbf27ab"
+    },
+    {
+      "upstream": "controls/dev/Common/ColorConversion.h",
+      "local": "references/pickers/ColorConversion.h",
+      "gitBlobSha1": "7b8f3e3a8714e5e322d7f35f21bb548138120e39",
+      "sha256": "02e6a20b0c4a41c89af09aecab6c3f3894704e7d7d5ab244662e00f3aceee26a"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/CalendarDatePicker_themeresources.xaml",
+      "local": "references/pickers/CalendarDatePicker_themeresources.xaml",
+      "gitBlobSha1": "37b0f815e83b11bbf3602486874015f505966373",
+      "sha256": "3a710808f2d631c8475719242ec362a9da881d6fe710f28151f7bb9be46244ee"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/CalendarView_themeresources.xaml",
+      "local": "references/pickers/CalendarView_themeresources.xaml",
+      "gitBlobSha1": "237f442197d73a203e59a2d6ba8c16f04f294a64",
+      "sha256": "3f7a2414ae445cc506298ecf3ffc0c5b5e11f1532f1c3462e101d6e89f65cde1"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/DatePicker_themeresources.xaml",
+      "local": "references/pickers/DatePicker_themeresources.xaml",
+      "gitBlobSha1": "8d19f3001019aa7f14ab05ea9a182d201420294b",
+      "sha256": "d61e8bb651a59a0c705e4e28dc735581105f8b2ffcc5c6df38589ba73f18769e"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/DateTimePickerFlyout_themeresources.xaml",
+      "local": "references/pickers/DateTimePickerFlyout_themeresources.xaml",
+      "gitBlobSha1": "78caa8f6766e699493eaeadb72e5cf27bfe943e5",
+      "sha256": "0da5b09dd4eb703477c2501a72bad427cbc31e0501769c96c66943ae37ae66f7"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/TimePicker_themeresources.xaml",
+      "local": "references/pickers/TimePicker_themeresources.xaml",
+      "gitBlobSha1": "2cfb8a7df11925a858a9c877c0886c2ccc3231bf",
+      "sha256": "d7588154602a2572419a6e359f77adc8f0f1aa2643eec57a938b94dab329173b"
+    },
+    {
+      "upstream": "controls/dev/Generated/ColorPicker.properties.cpp",
+      "local": "references/pickers/ColorPicker.properties.cpp",
+      "gitBlobSha1": "0456d777629a5ea78a45fbfe4a9bad256fc0fc45",
+      "sha256": "c473fcae6b6fbca343db64d6598130782a0a839bc4b62b3060976ce271247d2b"
+    },
+    {
+      "upstream": "controls/dev/Generated/ColorPicker.properties.h",
+      "local": "references/pickers/ColorPicker.properties.h",
+      "gitBlobSha1": "5bb0162f827026c195bcda6da0b46c20a5279fdd",
+      "sha256": "5ee52204aeb5d3043c4445637e7e2951e0fbcccc04bff2eb51c3589a5099b0f4"
+    },
+    {
+      "upstream": "controls/dev/Generated/ColorPickerSlider.properties.cpp",
+      "local": "references/pickers/ColorPickerSlider.properties.cpp",
+      "gitBlobSha1": "db1a732dc7db7f06e25d7882d5337962dd091275",
+      "sha256": "1c5e45480ed79956491cce06e1e445df95dd164fb1a288c15ab516f43771d80e"
+    },
+    {
+      "upstream": "controls/dev/Generated/ColorPickerSlider.properties.h",
+      "local": "references/pickers/ColorPickerSlider.properties.h",
+      "gitBlobSha1": "f7b4f6d53b462058be2e80bf373acaa38e897640",
+      "sha256": "8d3c6d2e480134a2794bfe233d653cbea9ded784b0f46662c3a8d17cb727791a"
+    },
+    {
+      "upstream": "controls/dev/dll/DensityStyles/CompactDatePickerTimePickerFlyout.xaml",
+      "local": "references/pickers/CompactDatePickerTimePickerFlyout.xaml",
+      "gitBlobSha1": "633966575d7ec00b82dc656c903789b350916bb5",
+      "sha256": "277478c41d313b4a55752d41b4f98ad0a4a8a15f22eeda5c32035f70d22c40e9"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DatePickerFlyoutItem_Partial.cpp",
+      "local": "references/pickers/DatePickerFlyoutItem_Partial.cpp",
+      "gitBlobSha1": "6f9bf6782a20b0d3ccb1696a59ce765920661929",
+      "sha256": "39d1c8410a5ddf485ba0d5865abe0caf1fe1b7d3bcafb30d59827f64e10c96c1"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DatePickerFlyoutItem_Partial.h",
+      "local": "references/pickers/DatePickerFlyoutItem_Partial.h",
+      "gitBlobSha1": "3dbe38a95c6621778ba4171084849a4a5806cda8",
+      "sha256": "3620863edee3955c102d1547941900931e66e05e003b36cfa10262a835b99542"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DatePickerFlyoutPresenter_Partial.cpp",
+      "local": "references/pickers/DatePickerFlyoutPresenter_Partial.cpp",
+      "gitBlobSha1": "6e368e2efc139d0d87c1a4e8dba2e18aef67f669",
+      "sha256": "fe760d165e8b7066f307c2a31882950524ae048e00246b769c5bd538bf2a78f0"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DatePickerFlyoutPresenter_Partial.h",
+      "local": "references/pickers/DatePickerFlyoutPresenter_Partial.h",
+      "gitBlobSha1": "9deacd060cb9ae29087e9e38f2f2cebe40a1207d",
+      "sha256": "bdfa93c3eb277e144e8cea4495f05319826024027427d5013fc96ee79041bd70"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DatePickerFlyout_Partial.cpp",
+      "local": "references/pickers/DatePickerFlyout_Partial.cpp",
+      "gitBlobSha1": "40199a98564b53f2be9d9a9ec1958dee85956a7d",
+      "sha256": "be87ac49450c48b87235ca4a6190ed38c5dbf63f4642f81e30962bec4a90d375"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DatePickerFlyout_Partial.h",
+      "local": "references/pickers/DatePickerFlyout_Partial.h",
+      "gitBlobSha1": "8434893ac3f6629f433d3f03553a93743a9f0f77",
+      "sha256": "5e9d89b7ced5aa6a2bcd25839a4fb4124f7329a8cd4b7e2c0c79c465a6291809"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DateTimePickerFlyoutHelper.cpp",
+      "local": "references/pickers/DateTimePickerFlyoutHelper.cpp",
+      "gitBlobSha1": "55d846e70ea45b9e7bb4535239f09814d6a54be1",
+      "sha256": "45b18ca00ab593fd677e41b2ee2f0c209b0f1d0440f01a4e025fb8b5d6bf863d"
+    },
+    {
+      "upstream": "dxaml/phone/lib/DateTimePickerFlyoutHelper.h",
+      "local": "references/pickers/DateTimePickerFlyoutHelper.h",
+      "gitBlobSha1": "c95081a395f7638a3cb2c56f87b60e9ba5c0fa2b",
+      "sha256": "27a1abde265f1ce6838cf1d6f73ee2b0e34a13b8b1b6f1f71e760588a0e8a5bc"
+    },
+    {
+      "upstream": "dxaml/phone/lib/LoopingSelectorItem_Partial.cpp",
+      "local": "references/pickers/LoopingSelectorItem_Partial.cpp",
+      "gitBlobSha1": "067bbe4a0b331bf722aa1861a60b2a22f5bfc488",
+      "sha256": "e2170f365b9a81a8bd17b58b960658608ba2714322119e93d994bde5ab8ab55d"
+    },
+    {
+      "upstream": "dxaml/phone/lib/LoopingSelectorItem_Partial.h",
+      "local": "references/pickers/LoopingSelectorItem_Partial.h",
+      "gitBlobSha1": "f9022dd2cfbbdc44a8ac2555b78e325254397c12",
+      "sha256": "62d6e73ebcde3845df34d3e21aa2a9f7972e3af4d97914690becc8bb8c3ec9a4"
+    },
+    {
+      "upstream": "dxaml/phone/lib/LoopingSelectorPanel_Partial.cpp",
+      "local": "references/pickers/LoopingSelectorPanel_Partial.cpp",
+      "gitBlobSha1": "caacbdbce73b499b141dd14aabd0b60cd705454b",
+      "sha256": "d61208e421b176ab7f85e18e707786145216ab49e01880f2d312827c90ae7565"
+    },
+    {
+      "upstream": "dxaml/phone/lib/LoopingSelectorPanel_Partial.h",
+      "local": "references/pickers/LoopingSelectorPanel_Partial.h",
+      "gitBlobSha1": "0122800b19a233ce5f9ff247d499a5affc8902b5",
+      "sha256": "373a9ffd082a6d0a575607d30789982a1b215249a288e53bdcef64fb0072d8e5"
+    },
+    {
+      "upstream": "dxaml/phone/lib/LoopingSelector_Partial.cpp",
+      "local": "references/pickers/LoopingSelector_Partial.cpp",
+      "gitBlobSha1": "431dcba44801ff87045124a26135d76fb839af54",
+      "sha256": "b2a08847470f2fa36dde90ce2cc510d3ec0f2ca0f2c5bb136fed0e78ce53126e"
+    },
+    {
+      "upstream": "dxaml/phone/lib/LoopingSelector_Partial.h",
+      "local": "references/pickers/LoopingSelector_Partial.h",
+      "gitBlobSha1": "d5263b3879c827de9ce50972d95b22d22ea3671c",
+      "sha256": "af95ede34068c4eb2e361c8cb7f56a012cb26b2a99baf3c47eebfe55689ec70d"
+    },
+    {
+      "upstream": "dxaml/phone/lib/TimePickerFlyoutPresenter_Partial.cpp",
+      "local": "references/pickers/TimePickerFlyoutPresenter_Partial.cpp",
+      "gitBlobSha1": "dfa763828ae36228594968e4f60e2ad4cbe19ed3",
+      "sha256": "4e02eb644c87f685aa7a23a5a8c883c2e83d7fe8a7531b64ca1345ca65f86f98"
+    },
+    {
+      "upstream": "dxaml/phone/lib/TimePickerFlyoutPresenter_Partial.h",
+      "local": "references/pickers/TimePickerFlyoutPresenter_Partial.h",
+      "gitBlobSha1": "98198cfd0218c6bdefc34d4fe7ffc4b0add0d2ec",
+      "sha256": "31b0a46dceb51668538807d4ebcbd1155981e98f654d5a578f3d763eb6610b42"
+    },
+    {
+      "upstream": "dxaml/phone/lib/TimePickerFlyout_Partial.cpp",
+      "local": "references/pickers/TimePickerFlyout_Partial.cpp",
+      "gitBlobSha1": "59ca2cdb06e3b9c1dd29ee0b63d1d9ade3a3c335",
+      "sha256": "24935185104148cc31cd9e812fed8f26d622476ecfba891da1302fa359296ee2"
+    },
+    {
+      "upstream": "dxaml/phone/lib/TimePickerFlyout_Partial.h",
+      "local": "references/pickers/TimePickerFlyout_Partial.h",
+      "gitBlobSha1": "e04859ce8a58f81b8ce2ff1c1c29ccf152dba340",
+      "sha256": "d3fe5575598db0d7bcd88636fd13248adfd12a04b6e533d5ffcc364fd330e7c4"
+    },
+    {
+      "upstream": "dxaml/xcp/components/moco/inc/CalendarLayoutStrategyImpl.h",
+      "local": "references/pickers/CalendarLayoutStrategyImpl.h",
+      "gitBlobSha1": "34ef6b3bd7482135d4ef5c7f96ad6c1366549332",
+      "sha256": "19de0600a00bd405dae7b01fade922d0bff6176237cb1d2a64aa436e255fe950"
+    },
+    {
+      "upstream": "dxaml/xcp/components/moco/lib/CalendarLayoutStrategyImpl.cpp",
+      "local": "references/pickers/CalendarLayoutStrategyImpl.cpp",
+      "gitBlobSha1": "03b72ee8c2b5e6bfa9cb319633021a4a10316283",
+      "sha256": "aae94d5e592133dac9dfe2ed1888db08bf357a79ca89085d7fe616f0e365ec71"
+    },
+    {
+      "upstream": "dxaml/xcp/components/moco/unittests/CalendarLayoutStrategyUnitTests.cpp",
+      "local": "references/pickers/CalendarLayoutStrategyUnitTests.cpp",
+      "gitBlobSha1": "9b2f71990f8cffe7579498c60d911820f52bc093",
+      "sha256": "fbd840c5bb3efbe362704d87034ad73cb7d7c6fc6369f6b950e13ab1217330d3"
+    },
+    {
+      "upstream": "dxaml/xcp/components/moco/unittests/CalendarLayoutStrategyUnitTests.h",
+      "local": "references/pickers/CalendarLayoutStrategyUnitTests.h",
+      "gitBlobSha1": "e7c7120e98ee20716c954462a49ef64702143dc3",
+      "sha256": "e7be955507fcfd20e4a9b949e64273e036f2a8271e1b11c08a235e281205b21a"
+    },
+    {
+      "upstream": "dxaml/xcp/core/controls/generated/CCalendarDatePicker.g.h",
+      "local": "references/pickers/CCalendarDatePicker.g.h",
+      "gitBlobSha1": "e896c0f4c1b38b0950c5a25f62da45f59b85f6e5",
+      "sha256": "488cbbf8c2e5c20e678607738ec8b23a4aeb3c487862e7fdef47d790fa800e78"
+    },
+    {
+      "upstream": "dxaml/xcp/core/controls/generated/CCalendarViewTemplateSettings.g.h",
+      "local": "references/pickers/CCalendarViewTemplateSettings.g.h",
+      "gitBlobSha1": "b721d40ef05034ac6388171680b5ba30f8b9ad6d",
+      "sha256": "9e817a948d9ce043b0db4c0b3c6bb4d96903d592574afd4e558e2e62eebab307"
+    },
+    {
+      "upstream": "dxaml/xcp/core/controls/generated/CDatePicker.g.h",
+      "local": "references/pickers/CDatePicker.g.h",
+      "gitBlobSha1": "bfc10192a1ad0be9bc5b8ffb8823328edd043a0c",
+      "sha256": "969d4ab2dafc39220885040acc9b10b6830cb516b147bc4f7da53490cea43b63"
+    },
+    {
+      "upstream": "dxaml/xcp/core/controls/generated/CTimePicker.g.h",
+      "local": "references/pickers/CTimePicker.g.h",
+      "gitBlobSha1": "8dbef5bc4e160e55f6caa2663b008fc374a4c3e4",
+      "sha256": "46982cc11152d2a36be90fe6b1e7b4c7ec5144b91ce3989af5d0c5f0002d41d3"
+    },
+    {
+      "upstream": "dxaml/xcp/core/core/elements/CalendarView.cpp",
+      "local": "references/pickers/CalendarView.cpp",
+      "gitBlobSha1": "d58d8717af6fe8c4a268db0c79d4858a76985991",
+      "sha256": "690afcd35f16a94c36a2c452da91c15ff106338923016874ab1f0b81200164ed"
+    },
+    {
+      "upstream": "dxaml/xcp/core/core/elements/CalendarViewBaseItemChrome.cpp",
+      "local": "references/pickers/CalendarViewBaseItemChrome.cpp",
+      "gitBlobSha1": "fa4f4e200c7f995739784ece79b2aca7d6be67c3",
+      "sha256": "ba0c8dcaa0bde49ae2a50780feb4cdf9471daf0a39e19ffddb56559b91d60360"
+    },
+    {
+      "upstream": "dxaml/xcp/core/inc/CalendarView.h",
+      "local": "references/pickers/CalendarView.h",
+      "gitBlobSha1": "0e4b20e8f8a33f4510328ab84efeae62f750ac0d",
+      "sha256": "f5d6ac006e2d8e98cdd2acffbd32eadd998ac7f9364a3fe501e1636bff648161"
+    },
+    {
+      "upstream": "dxaml/xcp/core/inc/CalendarViewBaseItemChrome.h",
+      "local": "references/pickers/CalendarViewBaseItemChrome.h",
+      "gitBlobSha1": "539b3a3c3f5bf058e077b07c182f4756fed2ff54",
+      "sha256": "acb203ba1bc515dec3eff28db82c1d540df81b6cf8d043b807a873d8d76cf14d"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarDatePickerDateChangedEventArgs_Partial.cpp",
+      "local": "references/pickers/CalendarDatePickerDateChangedEventArgs_Partial.cpp",
+      "gitBlobSha1": "7120ef73a67080e107f619675381aecb48cabfd4",
+      "sha256": "18ee31c43b97671c7c7f2813fc17bcc32f87f3e902a8e51a0fadac2abba3fbc9"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarDatePickerDateChangedEventArgs_Partial.h",
+      "local": "references/pickers/CalendarDatePickerDateChangedEventArgs_Partial.h",
+      "gitBlobSha1": "59980bc84f5372ddf995750aa3885587f6d9f367",
+      "sha256": "c2dee6230ae0cf3bbaa484a33217ea1af664e6d5d55ba8c1e44b00101c8c1e06"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarLayoutStrategy_Partial.cpp",
+      "local": "references/pickers/CalendarLayoutStrategy_Partial.cpp",
+      "gitBlobSha1": "6d688b54c342eadd6807ee3ba66c8dc019c858e7",
+      "sha256": "409266b88f6161c19ca31d42f1bcc15b43cd599fc250b2f841bbe02d1e7aee78"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarLayoutStrategy_Partial.h",
+      "local": "references/pickers/CalendarLayoutStrategy_Partial.h",
+      "gitBlobSha1": "dcacfc2986eb4fe14ecd9bcfb53e9acc653eec3f",
+      "sha256": "f540256560d0cdec73a562c90f5d8a5195dac65adea3e4028a31e31e4f29b7be"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarPanel_Partial.cpp",
+      "local": "references/pickers/CalendarPanel_Partial.cpp",
+      "gitBlobSha1": "12ef5fc66f519fb08135ec6afdff100ec7b67cf1",
+      "sha256": "0321063dc1c308f2a2582c786c19abc1e8d52996eb8a1fc212a72d60fd37c57c"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarPanel_Partial.h",
+      "local": "references/pickers/CalendarPanel_Partial.h",
+      "gitBlobSha1": "3457b09a5d8512328e35993c052e9a1edb66e4de",
+      "sha256": "c425cf3dc4293e16f220f77c0fc99066d622c5f64738528e367050eb26934963"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewBaseItem_Partial.cpp",
+      "local": "references/pickers/CalendarViewBaseItem_Partial.cpp",
+      "gitBlobSha1": "a207282f4d2d0b5a9aa72ed4b1481bced1852103",
+      "sha256": "1846e66f51a8cf224b9d3b4562bbbefdcefb5a0079c7ffc2aee2c369a59b3864"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewBaseItem_Partial.h",
+      "local": "references/pickers/CalendarViewBaseItem_Partial.h",
+      "gitBlobSha1": "6b822cf0959361b2d8f98a673b426d336f386b99",
+      "sha256": "47bdba6e637ebf242980488dace068dac96ba8a8628692ec2d00245d8d122cac"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewDayItemChangingEventArgs_Partial.cpp",
+      "local": "references/pickers/CalendarViewDayItemChangingEventArgs_Partial.cpp",
+      "gitBlobSha1": "06f4519091e1adbf7837ff96b9a6712e19ac961e",
+      "sha256": "656424ca1c066c297ae88f6f317c315788f84583770c5796ac8e4dc08352fe78"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewDayItemChangingEventArgs_Partial.h",
+      "local": "references/pickers/CalendarViewDayItemChangingEventArgs_Partial.h",
+      "gitBlobSha1": "1bf6381d7ccfc14874889d457acd972d717a4b41",
+      "sha256": "1b3d534d94aa359462a16c17c03510660bbf97c4d1656468373f5467b720fcd7"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewDayItem_Partial.cpp",
+      "local": "references/pickers/CalendarViewDayItem_Partial.cpp",
+      "gitBlobSha1": "570a2e8ba751d9629906510273ef1a9abb19bb99",
+      "sha256": "865da9b12e6a955feea8340289681ce2b3c7bb2e78354729f10a03b41520a4d6"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewDayItem_Partial.h",
+      "local": "references/pickers/CalendarViewDayItem_Partial.h",
+      "gitBlobSha1": "6c009d66b72f8a11d0e31bf183664d185a935eb5",
+      "sha256": "9ca54b0471fa9f90b86342b6c8845fefc986514f201f855d8bbc63134677d1c6"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorDecadeViewHost.cpp",
+      "local": "references/pickers/CalendarViewGeneratorDecadeViewHost.cpp",
+      "gitBlobSha1": "974368573200432fbcbddee48f710f7f5c8a8ce5",
+      "sha256": "2ae1473ec91d7935a40f6724cfdb5687d522a42f8f5ed086e7f463aaa9ce332a"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorDecadeViewHost.h",
+      "local": "references/pickers/CalendarViewGeneratorDecadeViewHost.h",
+      "gitBlobSha1": "cfaebe2b65167eeb881f6b2c03b4fe05c29dc49d",
+      "sha256": "e73fc0177fbb47359e02b8be86866ad84686b25296aafad14581fcc0c27e0169"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorHost.cpp",
+      "local": "references/pickers/CalendarViewGeneratorHost.cpp",
+      "gitBlobSha1": "55cf10c8ceb9ce35edca4b70092ea6b5adadc80f",
+      "sha256": "2e077558236a2d624b17b57ea74ce8d1142e07d93c7dd8bce66c8d2ef8061741"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorHost.h",
+      "local": "references/pickers/CalendarViewGeneratorHost.h",
+      "gitBlobSha1": "d072b1aad81804fa3f519ed0a4387dacacbd0eec",
+      "sha256": "197bd62e52a7e51c5952fde485272f4d2dddc6f10af290ce77edff2795bea7e0"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorHost_DataVirtualization.cpp",
+      "local": "references/pickers/CalendarViewGeneratorHost_DataVirtualization.cpp",
+      "gitBlobSha1": "f341c52c402f7cb2d24359570db1aacd294ad937",
+      "sha256": "808a9c5c948651a847015377fa31907c2bebd1053dc8bd6dbc02b72456d6fcd0"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorMonthViewHost.cpp",
+      "local": "references/pickers/CalendarViewGeneratorMonthViewHost.cpp",
+      "gitBlobSha1": "8b84e80887c1816abbe25accfdcd7a064ba4a22b",
+      "sha256": "768e7ad211259b3870a98481d4a0cd2826ca12dbaba17580ee3338ed908628d9"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorMonthViewHost.h",
+      "local": "references/pickers/CalendarViewGeneratorMonthViewHost.h",
+      "gitBlobSha1": "dc0f5f06ca57b3015bd513d51e9754b5f06ac24b",
+      "sha256": "c4e72cfb263e3e0a496d14b2e10afa8629700c6ee8b01c596480ad519fc3116c"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorMonthViewHost_ContainerPhase.cpp",
+      "local": "references/pickers/CalendarViewGeneratorMonthViewHost_ContainerPhase.cpp",
+      "gitBlobSha1": "d57e683afa03b354f1154624c549fc3fa806b2f7",
+      "sha256": "1c27a5cb1c999242c034968be5c4f85e22e619758f55e73e17724888d30af238"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorYearViewHost.cpp",
+      "local": "references/pickers/CalendarViewGeneratorYearViewHost.cpp",
+      "gitBlobSha1": "b9f020ae86135d06b7acda3868af3fda83720abc",
+      "sha256": "8c328adaa9173d305c4f3e7aec9c722cc46efa37a750dcf7050c01e29c55cbda"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarViewGeneratorYearViewHost.h",
+      "local": "references/pickers/CalendarViewGeneratorYearViewHost.h",
+      "gitBlobSha1": "68df48d2d546a8aee7265db3b9fd39de513e437c",
+      "sha256": "46daa912185de627f272c0a3a30b5fee3a7e394567ed912a83441ff6d1dd8a39"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarView_Partial.cpp",
+      "local": "references/pickers/CalendarView_Partial.cpp",
+      "gitBlobSha1": "2294d27014d3886282c4256b99276a033ce96990",
+      "sha256": "5a4ac2c6ba5a1e67466db014b117e6b4f1ac71d3ae71939e89463a8bde9e0f4d"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarView_Partial.h",
+      "local": "references/pickers/CalendarView_Partial.h",
+      "gitBlobSha1": "685f45e34e30ed40db110a6ef75007d76025bf89",
+      "sha256": "50fae32aa539fe5bf9707fb3c64eb984754c08bdddd3ef947efcedd9b69e854b"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarView_Partial_Interaction.cpp",
+      "local": "references/pickers/CalendarView_Partial_Interaction.cpp",
+      "gitBlobSha1": "735cf8aa45b373d8efd6065503306f8e57e57c1c",
+      "sha256": "e6791e973a0bec6d551e7bb430cd90c5d0c08195f64e286b8423da7494959278"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarView_Partial_Selection.cpp",
+      "local": "references/pickers/CalendarView_Partial_Selection.cpp",
+      "gitBlobSha1": "cb7d4700aceb84a6cf2d3517ce6b41ce13c7b4d9",
+      "sha256": "0b2f6abbc0141d88bf0f7bbc921a17fe42d3070d9ee30da7308893863b0ead01"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/CalendarView_Partial_TimeZone.cpp",
+      "local": "references/pickers/CalendarView_Partial_TimeZone.cpp",
+      "gitBlobSha1": "133114eba4c939ee08599ba4677f7aa74c3fa089",
+      "sha256": "96191409a353b375aa44b10f1edb9de27e249cd7b752a72605f45c454aa60233"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/DatePickerValueChangedEventArgs_Partial.h",
+      "local": "references/pickers/DatePickerValueChangedEventArgs_Partial.h",
+      "gitBlobSha1": "cd153fe04c8e7c42524e1bdd2c22f969a5761b19",
+      "sha256": "94ff9ee5a1025a8339a439eb5dba66159b548331e3d40034063303f467322df8"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/DatePicker_Partial.cpp",
+      "local": "references/pickers/DatePicker_Partial.cpp",
+      "gitBlobSha1": "abdd28904b5fff8168d02ac0b8f0559e66e95f92",
+      "sha256": "c554618c3de8cdfdbe0ac846cfb0346c1754c4713628c93b15a5fb1c3db7f2c3"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/DatePicker_Partial.h",
+      "local": "references/pickers/DatePicker_Partial.h",
+      "gitBlobSha1": "ffa8088fb5f5a9bc8f139da1e692437f4c351e31",
+      "sha256": "da6e7ed707d2d35fb7d43473bab3077626ecca2fa43a7778a660db5b9988b32b"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/TimePicker_Partial.cpp",
+      "local": "references/pickers/TimePicker_Partial.cpp",
+      "gitBlobSha1": "cfe4eca2cba02bd9c12549425ec080ecf50a3d2d",
+      "sha256": "e39fab2d1c37ab1717a86def13397cedc41859a2c7e4c2c7b2a5072f70d668da"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/TimePicker_Partial.h",
+      "local": "references/pickers/TimePicker_Partial.h",
+      "gitBlobSha1": "788034e244aa4d871e21297be58e2f4834062d0a",
+      "sha256": "9d5a03025cea3817491bbbd206703f62721d26e0cfbe8fbfab34a39916f6715e"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/calendardatepicker_partial.cpp",
+      "local": "references/pickers/calendardatepicker_partial.cpp",
+      "gitBlobSha1": "d7a0967758746abb0a4d06cc639d1840709cdf23",
+      "sha256": "995387bb642a65b308e1fd5d18cefd488f5f6dfa03d39c825057e41df4034fbb"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/calendardatepicker_partial.h",
+      "local": "references/pickers/calendardatepicker_partial.h",
+      "gitBlobSha1": "c77901fb79a861745855b0d2e5f2b3548fd77b6d",
+      "sha256": "2d80c07d75aceb2945adea772973d4d9c6bffa8fbf2eee8556f3c44da91baa15"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/calendarviewitem_partial.cpp",
+      "local": "references/pickers/calendarviewitem_partial.cpp",
+      "gitBlobSha1": "08ce02ecb660c8fa00011107a4ed1e3352e7ab19",
+      "sha256": "3ad7ea543d04017a8aa919c4c70fec1da29672ca93ae6548d3f1911129a7a234"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/calendarviewitem_partial.h",
+      "local": "references/pickers/calendarviewitem_partial.h",
+      "gitBlobSha1": "7c10ade4c87ea0a77f2cf002ea73563e9d554e27",
+      "sha256": "1a1245076f819a7e621297822d09238e6f51a1c3eebf925ee7dc0fb8c5a60cc6"
+    }
+  ]
+}

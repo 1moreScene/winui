@@ -1,0 +1,894 @@
+{
+  "Light": {
+    "FlyoutPresenterBackground": {
+      "kind": "acrylic",
+      "tint": "#FCFCFC",
+      "tintOpacity": 0,
+      "luminosityOpacity": 0.85,
+      "fallback": "#F9F9F9"
+    },
+    "FlyoutBorderThemeBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "MenuFlyoutSeparatorBackground": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#00000009",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundPressed": {
+      "kind": "solid",
+      "color": "#00000006",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForegroundPressed": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#00000009",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundPressed": {
+      "kind": "solid",
+      "color": "#00000006",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundSubMenuOpened": {
+      "kind": "solid",
+      "color": "#00000009",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundPressed": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundSubMenuOpened": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevron": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronPointerOver": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronPressed": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronSubMenuOpened": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForeground": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "MenuFlyoutPresenterBackground": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    },
+    "MenuFlyoutPresenterBorderBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "MenuFlyoutLightDismissOverlayBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF99",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#00000019",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackgroundPressed": {
+      "kind": "solid",
+      "color": "#00000033",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#00000019",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundPressed": {
+      "kind": "solid",
+      "color": "#0078D4FF",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": {
+      "kind": "solid",
+      "color": "#00000019",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderThumbBackground": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "SliderThumbBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.8999999761581421
+    },
+    "SliderThumbBackgroundPressed": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.800000011920929
+    },
+    "SliderThumbBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "SliderThumbBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "SliderOuterThumbBackground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "SliderTrackFill": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "SliderTrackFillPointerOver": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "SliderTrackFillPressed": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "SliderTrackFillDisabled": {
+      "kind": "solid",
+      "color": "#00000051",
+      "opacity": 1
+    },
+    "SliderTrackValueFill": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "SliderTrackValueFillPointerOver": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.8999999761581421
+    },
+    "SliderTrackValueFillPressed": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.800000011920929
+    },
+    "SliderTrackValueFillDisabled": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "SliderHeaderForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "SliderHeaderForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "SliderTickBarFill": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    },
+    "SliderTickBarFillDisabled": {
+      "kind": "solid",
+      "color": "#00000051",
+      "opacity": 1
+    },
+    "SliderInlineTickBarFill": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "ToolTipForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "ToolTipBackground": {
+      "kind": "solid",
+      "color": "#F2F2F2FF",
+      "opacity": 1
+    },
+    "ToolTipBorderBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "ToolTipForegroundBrush": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "ToolTipBackgroundBrush": {
+      "kind": "acrylic",
+      "tint": "#FCFCFC",
+      "tintOpacity": 0,
+      "luminosityOpacity": 0.85,
+      "fallback": "#F9F9F9"
+    }
+  },
+  "Dark": {
+    "FlyoutPresenterBackground": {
+      "kind": "acrylic",
+      "tint": "#2C2C2C",
+      "tintOpacity": 0.15000000596046448,
+      "luminosityOpacity": 0.96,
+      "fallback": "#2C2C2C"
+    },
+    "FlyoutBorderThemeBrush": {
+      "kind": "solid",
+      "color": "#00000033",
+      "opacity": 1
+    },
+    "MenuFlyoutSeparatorBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF15",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF0A",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutItemForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF0A",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundSubMenuOpened": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundSubMenuOpened": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevron": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF87",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronSubMenuOpened": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemChevronDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "MenuFlyoutPresenterBackground": {
+      "kind": "solid",
+      "color": "#00000000",
+      "opacity": 1
+    },
+    "MenuFlyoutPresenterBorderBrush": {
+      "kind": "solid",
+      "color": "#00000033",
+      "opacity": 1
+    },
+    "MenuFlyoutLightDismissOverlayBackground": {
+      "kind": "solid",
+      "color": "#00000099",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF19",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF33",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutItemRevealBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF19",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundPressed": {
+      "kind": "solid",
+      "color": "#0078D4FF",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": {
+      "kind": "solid",
+      "color": "#FFFFFF19",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "MenuFlyoutSubItemRevealBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderContainerBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SliderThumbBackground": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "SliderThumbBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.8999999761581421
+    },
+    "SliderThumbBackgroundPressed": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.800000011920929
+    },
+    "SliderThumbBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF28",
+      "opacity": 1
+    },
+    "SliderThumbBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "SliderOuterThumbBackground": {
+      "kind": "solid",
+      "color": "#454545FF",
+      "opacity": 1
+    },
+    "SliderTrackFill": {
+      "kind": "solid",
+      "color": "#FFFFFF8B",
+      "opacity": 1
+    },
+    "SliderTrackFillPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF8B",
+      "opacity": 1
+    },
+    "SliderTrackFillPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF8B",
+      "opacity": 1
+    },
+    "SliderTrackFillDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF3F",
+      "opacity": 1
+    },
+    "SliderTrackValueFill": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "SliderTrackValueFillPointerOver": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.8999999761581421
+    },
+    "SliderTrackValueFillPressed": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.800000011920929
+    },
+    "SliderTrackValueFillDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF28",
+      "opacity": 1
+    },
+    "SliderHeaderForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "SliderHeaderForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "SliderTickBarFill": {
+      "kind": "solid",
+      "color": "#FFFFFF8B",
+      "opacity": 1
+    },
+    "SliderTickBarFillDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF3F",
+      "opacity": 1
+    },
+    "SliderInlineTickBarFill": {
+      "kind": "solid",
+      "color": "#1E1E1EB3",
+      "opacity": 1
+    },
+    "ToolTipForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "ToolTipBackground": {
+      "kind": "solid",
+      "color": "#2B2B2BFF",
+      "opacity": 1
+    },
+    "ToolTipBorderBrush": {
+      "kind": "solid",
+      "color": "#00000033",
+      "opacity": 1
+    },
+    "ToolTipForegroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "ToolTipBackgroundBrush": {
+      "kind": "acrylic",
+      "tint": "#2C2C2C",
+      "tintOpacity": 0.15000000596046448,
+      "luminosityOpacity": 0.96,
+      "fallback": "#2C2C2C"
+    }
+  }
+}

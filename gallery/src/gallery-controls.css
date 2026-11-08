@@ -1,0 +1,24 @@
+.gallery-control{position:relative;display:inline-block;vertical-align:middle;min-width:0;padding:0!important;border:0!important;background:transparent!important;color:inherit;line-height:normal;max-width:100%}
+.gallery-control[hidden],.gallery-expander-content[hidden]{display:none!important}
+.gallery-control>.winui-scene,.gallery-control>div{width:100%;min-width:0}
+.gallery-checkbox,.gallery-radiobutton{width:24px;flex:none}
+.gallery-labelled{width:max-content;max-width:100%}
+.gallery-combobox,.gallery-numberbox,.gallery-textbox,.gallery-slider{width:200px}
+.gallery-button,.gallery-togglebutton{width:max-content;min-width:80px}
+.gallery-button>div,.gallery-togglebutton>div{min-width:inherit}
+.gallery-icon-action{min-width:0!important;flex:none}
+.gallery-expander{display:block;width:100%}
+.options label:has(>.gallery-checkbox),.options label:has(>.gallery-radiobutton),label:has(>.gallery-checkbox),label:has(>.gallery-radiobutton){display:flex;align-items:center;gap:8px;min-height:32px}
+.options label:has(>.gallery-combobox),.options label:has(>.gallery-numberbox),.options label:has(>.gallery-textbox),.options label:has(>.gallery-slider){display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.options label>.gallery-combobox,.options label>.gallery-numberbox,.options label>.gallery-textbox,.options label>.gallery-slider{width:100%}
+.source-tabs>.gallery-control{min-width:160px}
+.gallery-page-actions>.gallery-control{min-width:36px;width:36px}
+.gallery-page-actions>.gallery-combobox{width:132px}
+.gallery-dropdownbutton{min-width:80px;width:max-content}
+.gallery-page-title>.gallery-api{width:24px;min-width:24px;align-self:flex-end;margin-bottom:3px}
+.home-titlebar>.gallery-control.home-pane-toggle{width:40px;min-width:40px;height:32px;flex:none}
+.home-titlebar>.gallery-control.home-history-back,.home-titlebar>.gallery-control.home-history-forward{width:32px;min-width:32px;height:32px;flex:none}
+.home-search{border:0!important;background:transparent!important;overflow:visible!important}
+.home-search>.gallery-autosuggestbox{display:block;width:100%;flex:1}
+.home-search>.gallery-button{width:32px;min-width:32px}
+.home-tabs>.gallery-control{width:128px;min-width:128px}

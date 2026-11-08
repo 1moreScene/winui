@@ -1,0 +1,294 @@
+{
+  "os": "Windows-11-10.0.26300-SP0",
+  "source": "Pinned ThemeGenerator.cpp + LayoutTransition_partial.cpp; Windows UxTheme / vsanimation.h",
+  "records": {
+    "entrance": {
+      "tracks": [
+        {
+          "kind": 0,
+          "delayMs": 0,
+          "durationMs": 667,
+          "flags": 1,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "kind": 2,
+          "delayMs": 0,
+          "durationMs": 667,
+          "flags": 2,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 35,
+      "staggerDelayCap": 333,
+      "staggerFactor": 1.0
+    },
+    "reposition": {
+      "tracks": [
+        {
+          "kind": 0,
+          "delayMs": 0,
+          "durationMs": 367,
+          "flags": 1,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 33,
+      "staggerDelayCap": 250,
+      "staggerFactor": 1.0
+    },
+    "content": {
+      "tracks": [
+        {
+          "kind": 0,
+          "delayMs": 0,
+          "durationMs": 500,
+          "flags": 1,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "kind": 2,
+          "delayMs": 50,
+          "durationMs": 170,
+          "flags": 2,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 0,
+      "staggerDelayCap": 10000,
+      "staggerFactor": 1.0
+    },
+    "contentOut": {
+      "tracks": [
+        {
+          "kind": 2,
+          "delayMs": 0,
+          "durationMs": 50,
+          "flags": 0,
+          "curve": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 0,
+      "staggerDelayCap": 10000,
+      "staggerFactor": 1.0
+    },
+    "add": {
+      "tracks": [
+        {
+          "kind": 1,
+          "delayMs": 166,
+          "durationMs": 333,
+          "flags": 6,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            1.0,
+            1.0,
+            0.8999999761581421,
+            0.8999999761581421,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": 2,
+          "delayMs": 166,
+          "durationMs": 333,
+          "flags": 2,
+          "curve": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "values": [
+            1.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 0,
+      "staggerDelayCap": 10000,
+      "staggerFactor": 1.0
+    },
+    "delete": {
+      "tracks": [
+        {
+          "kind": 1,
+          "delayMs": 0,
+          "durationMs": 100,
+          "flags": 4,
+          "curve": [
+            0.10999999940395355,
+            0.5,
+            0.23999999463558197,
+            0.9599999785423279
+          ],
+          "values": [
+            0.8999999761581421,
+            0.8999999761581421,
+            0.0,
+            0.0,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "kind": 2,
+          "delayMs": 0,
+          "durationMs": 100,
+          "flags": 0,
+          "curve": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 0,
+      "staggerDelayCap": 10000,
+      "staggerFactor": 1.0
+    },
+    "popup": {
+      "tracks": [
+        {
+          "kind": 2,
+          "delayMs": 83,
+          "durationMs": 83,
+          "flags": 2,
+          "curve": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "values": [
+            1.0,
+            0.0
+          ]
+        },
+        {
+          "kind": 0,
+          "delayMs": 0,
+          "durationMs": 367,
+          "flags": 1,
+          "curve": [
+            0.10000000149011612,
+            0.8999999761581421,
+            0.20000000298023224,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 0,
+      "staggerDelayCap": 10000,
+      "staggerFactor": 1.0
+    },
+    "popupOut": {
+      "tracks": [
+        {
+          "kind": 2,
+          "delayMs": 0,
+          "durationMs": 83,
+          "flags": 0,
+          "curve": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "values": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "staggerDelay": 0,
+      "staggerDelayCap": 10000,
+      "staggerFactor": 1.0
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-11-08T10:40:46.843685+00:00",
+  "controls": [
+    "SelectorBar",
+    "DropDownButton",
+    "AppBarButton",
+    "AppBarToggleButton",
+    "CommandBar"
+  ],
+  "excluded": [
+    "Pivot"
+  ],
+  "gallerySamples": 16,
+  "native": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "winui": "2.3.10-experimental",
+    "states": 52,
+    "dpi": 1.25,
+    "sources": 47,
+    "styles": 36,
+    "brushes": 169,
+    "missingBrushes": [],
+    "capture": "Own client PrintWindow flags 3; no screen capture. Windowed Popup pixels are excluded; Popup visual-tree geometry is compared."
+  },
+  "validation": {
+    "rustTests": 236,
+    "hostClippyWarningsDenied": true,
+    "wasmClippyWarningsDenied": true,
+    "typescriptStrict": true,
+    "viteProductionBuild": true,
+    "sdkDeclarations": true,
+    "browser": "Microsoft Edge / Playwright",
+    "browserTests": 13,
+    "rendererComparisons": 104,
+    "maximumRootErrorDIP": 1.2207031261368684e-05,
+    "maximumPartErrorDIP": 1.831054687784217e-05,
+    "maximumPopupErrorDIP": 6.103515630684342e-06,
+    "meanImageError": 3.1584704772770094,
+    "maximumImageError": 8.48568186172643,
+    "deployedSmokeTests": 2,
+    "normalBorderDPR": [
+      1,
+      1.25,
+      1.5,
+      2
+    ],
+    "productionWasmMatchesTested": true
+  },
+  "runtime": {
+    "url": "http://127.0.0.1:5197/#command-bar",
+    "sha256": "0b321097650bda09bdda4fc91cec69ed80c3033fc6bad2898c1dee3955797b18",
+    "matchesCurrentBinary": false,
+    "frozenRuntime": "out/collections-5199-test-runtime",
+    "frozenApplication": "out/collections-5199-app-runtime",
+    "servedRuntime": "out/collections-5197-test-runtime",
+    "applicationFilesChangedSinceFreeze": [],
+    "note": "5197 serves the exact runtime and application tested on 5199. Later shared workspace edits are excluded."
+  },
+  "scope": {
+    "sameSdkStaticAndBrowserAcceptance": true,
+    "fullStoreGalleryFrameByFrameParity": false,
+    "remaining": [
+      "Browser font rasterization versus native ClearType",
+      "Acrylic detail and complete popup clip/shadow composition timelines",
+      "Full UIA, AccessKey, touch and custom-template combination coverage"
+    ]
+  },
+  "refinement": {
+    "fixed": [
+      "Partial commandControls updates merge fields and retain unchanged primary/secondary source identity.",
+      "Internal AppBar template context survives unrelated property updates.",
+      "DropDownButton uses InnerBorderEdge background and an entirely inset border.",
+      "SelectorBar pill uses the native scaled elliptical corners, with balanced renderer clip state."
+    ],
+    "regression": "Four add/remove cycles, open-popup source replacement, stable primary node IDs and dimensions, command clicks; fractional-DPR normal border pixel containment; interrupted selection clip balance.",
+    "visualRecord": "references/command-controls-refinement-visual.json",
+    "releaseAudit": "references/command-controls-refinement-release-audit.json",
+    "storeAcceptance": "Not completed: physical Escape stopped desktop automation before usable Store visual evidence. Native screenshots are reused same-SDK probe evidence, not new Store captures.",
+    "commandBarAnimationSource": "CommandBar_Partial.cpp hooks OverflowContentTransform above popup content, shadow and system backdrop; the whole-popup translation is intentional."
+  }
+}

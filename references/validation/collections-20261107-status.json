@@ -1,0 +1,308 @@
+{
+  "recordedAt": "2026-11-07T19:04:17.797Z",
+  "controls": [
+    "ItemsStackPanel",
+    "ItemsWrapGrid",
+    "VariableSizedWrapGrid",
+    "ListView",
+    "GridView"
+  ],
+  "scope": "Uniform virtualized views; original Gallery contact/photo templates; rounded item borders and media layout clips; advanced features and parity limits in docs/collections.md",
+  "gallerySamples": 10,
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sourceFiles": 28,
+  "nativeCases": 94,
+  "themes": [
+    "Light",
+    "Dark"
+  ],
+  "dpi": 1.25,
+  "rustPassed": 148,
+  "rustCommand": "cargo test --locked --target-dir target/collections-validation",
+  "browser": [
+    {
+      "path": "out/collections-browser-results.json",
+      "sha256": "873360f1b4d1c67ec1886bf3bbba788492d272794148958e63173519f9ee1cdb",
+      "logPath": "out/collections-parity-browser.log",
+      "logSha256": "c1091a9b9ee7615f472a9c0df1b778413c4c69a39d8f40c89f70aacbdafd3eae",
+      "stats": {
+        "startTime": "2026-11-07T18:56:56.272Z",
+        "duration": 106512.461,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/collections-regression-browser-results.json",
+      "sha256": "3de98de27a758b788f8d3cf69daa36acba14b1ee1f583e17dda2c3ceabb22d77",
+      "logPath": "out/collections-parity-regression.log",
+      "logSha256": "9856fe2335c60c8ddf5dffecefff49768c418af55e03ef3c618bb9e16fb0c00c",
+      "stats": {
+        "startTime": "2026-11-07T18:59:26.740Z",
+        "duration": 227255.64200000002,
+        "expected": 46,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "images": [
+    {
+      "backend": "Canvas2D",
+      "path": "references/validation/collections-Canvas2D.json",
+      "sha256": "b92a989114b519d62d6e67b977d8abfb6624cd121171790ea30af936296fb356",
+      "wasmSha256": "0bfd79feb2aa35b4cfa413504eb4d76db7ea0069c63769aab2e78cdcf7c6e976",
+      "cases": 94,
+      "maxMean": 6.465138666666666,
+      "maxContainerGeometryErrorDip": 0.8000061035156243,
+      "maxBorderMean": 8.59023709902371,
+      "maxIndicatorMean": 1.7708333333333333,
+      "maxGeometryErrorDip": 0.8000061035156136
+    },
+    {
+      "backend": "WebGL2",
+      "path": "references/validation/collections-WebGL2.json",
+      "sha256": "ff709d03076aa97605e270aeccc7a67a7f46df48f43cfad9a9175dc6f71e625d",
+      "wasmSha256": "0bfd79feb2aa35b4cfa413504eb4d76db7ea0069c63769aab2e78cdcf7c6e976",
+      "cases": 94,
+      "maxMean": 6.431594666666666,
+      "maxContainerGeometryErrorDip": 0.8000061035156243,
+      "maxBorderMean": 8.591073919107393,
+      "maxIndicatorMean": 3.3375,
+      "maxGeometryErrorDip": 0.8000061035156136
+    }
+  ],
+  "motions": [
+    {
+      "path": "out/collections-native/Light-collection-indicator-motion.json",
+      "sha256": "abf3da2da82931eaf84a8c3fceebfe91bb9e69f48ea956c7f6559fe6d12c30b3",
+      "samples": 23,
+      "minHeight": 10.400001525878906,
+      "maxHeight": 16,
+      "boundary": "Same-SDK VSM input and UI-thread animated geometry; not Store compositor present timestamps"
+    },
+    {
+      "path": "out/collections-native/Dark-collection-indicator-motion.json",
+      "sha256": "7cbeae65fff4df055773fed93cdf11c5e235b8a814309b55384ac79a3450cbd8",
+      "samples": 23,
+      "minHeight": 10.400001525878906,
+      "maxHeight": 16,
+      "boundary": "Same-SDK VSM input and UI-thread animated geometry; not Store compositor present timestamps"
+    }
+  ],
+  "capacity": {
+    "createdMs": 237.09999999403954,
+    "realized": 13,
+    "nodes": 28,
+    "frameBytes": 129796,
+    "firstDisposed": true,
+    "lastVisible": true,
+    "errors": null,
+    "released": true,
+    "environment": "Local installed Chrome; diagnostic timing only, not a cross-device latency guarantee"
+  },
+  "testedRuntime": {
+    "sha256": "0bfd79feb2aa35b4cfa413504eb4d76db7ea0069c63769aab2e78cdcf7c6e976",
+    "files": [
+      {
+        "path": "out/collections-test-runtime/winui_bg.wasm",
+        "sha256": "0bfd79feb2aa35b4cfa413504eb4d76db7ea0069c63769aab2e78cdcf7c6e976"
+      },
+      {
+        "path": "out/collections-test-runtime/winui.js",
+        "sha256": "4cc4d785404ddec1eabd80c41df5f3a6632e6a173192dbbde24f12549be956eb"
+      },
+      {
+        "path": "out/collections-test-runtime/build-stamp.json",
+        "sha256": "8c681f1dd793dce5acdd3cfba2ec31878ee78f1d7c72a19d6c76c61b8178f733"
+      }
+    ],
+    "matchesCurrentBinary": false
+  },
+  "acceptedPixelParity": false,
+  "acceptedStorePresentTimeParity": false,
+  "browserChannel": "installed Chrome; PW_CHANNEL=chrome",
+  "limitations": "docs/collections.md",
+  "evidence": [
+    {
+      "path": "out/collections-parity-rust.log",
+      "sha256": "45834acd9743320489efb1b4d0e3c602763776487d9f7cc05607156b7c502a75"
+    },
+    {
+      "path": "out/collections-parity-clippy.log",
+      "sha256": "e55c402c7083e4c1bdbd5d67fed03457eb686e0206bc288719647e35f30823d2"
+    },
+    {
+      "path": "out/collections-parity-wasm-clippy.log",
+      "sha256": "401b093961acde4be08e7a59277a9f6c918a72bd51bbd3671265ece249d50c05"
+    },
+    {
+      "path": "out/collections-parity-build.log",
+      "sha256": "5b74f89eb12ddb0eb820547790f33818438ade3deb898fe27c33d610ed711087"
+    },
+    {
+      "path": "out/collections-parity-types.log",
+      "sha256": "1da5581bb3eb6cf8f73efefc01fa4d231745e7172530f9d4a8856addf5b2dd43"
+    },
+    {
+      "path": "out/collections-parity-frontend-build.log",
+      "sha256": "73ff049c4cb13239f3f3ff3f6e225970be8deecc08d7d34c107a751af5add2ce"
+    },
+    {
+      "path": "out/collections-parity-declarations.log",
+      "sha256": "aa0d78539e5ff0928d03f2338e6902f6b9040cfdde73a29e89f26b642087e47d"
+    },
+    {
+      "path": "out/collections-parity-baseline-verify.log",
+      "sha256": "37860a68c2a502002927adfe2f86956ce496a1ad9bc906f82e089fc5719dc93f"
+    },
+    {
+      "path": "references/collections-template.json",
+      "sha256": "b106590c93167b61322154b23c2ce927d7812256a9a757a7cae78e271c3b1c18"
+    },
+    {
+      "path": "references/collections-metrics.json",
+      "sha256": "4e8b937dc9584f2801c62f4ababb1e46248516bb615fd5fe8ce02c542ba99405"
+    },
+    {
+      "path": "references/collections-palettes.json",
+      "sha256": "94d9b736f52f47a87337862134427125ddac7e9f0c2a7e2f775d525cdfd90245"
+    },
+    {
+      "path": "references/collections-sources.json",
+      "sha256": "2e93ac6c46540993ad289fa7ea0269ea89312a3b0b5ff4a58cc0a488afa5268d"
+    },
+    {
+      "path": "references/collections-assets.json",
+      "sha256": "2fb8a3ef7e15ddb5e0f8fb69ceb8e00222bbb001685ba806d99a80bb4d31154c"
+    },
+    {
+      "path": "references/validation/collections-capacity.json",
+      "sha256": "f19ce03376e5856917f4f7c3c299a8264f8fb4faf34764eba5d7020181376426"
+    },
+    {
+      "path": "references/validation/collections-release-audit.json",
+      "sha256": "9664dfbc1edbd4924574e47e3dc3aff852519ac8a9c6e0048548e1c8f0dbc70d"
+    },
+    {
+      "path": "out/collections-test-runtime/winui_bg.wasm",
+      "sha256": "0bfd79feb2aa35b4cfa413504eb4d76db7ea0069c63769aab2e78cdcf7c6e976"
+    },
+    {
+      "path": "out/collections-test-runtime/winui.js",
+      "sha256": "4cc4d785404ddec1eabd80c41df5f3a6632e6a173192dbbde24f12549be956eb"
+    },
+    {
+      "path": "out/collections-test-runtime/build-stamp.json",
+      "sha256": "8c681f1dd793dce5acdd3cfba2ec31878ee78f1d7c72a19d6c76c61b8178f733"
+    },
+    {
+      "path": "src/scene/collections.rs",
+      "sha256": "a353a526860d26c86a249bd8fcb6fca4c7a696f0b58a679a93ad4e39b1bd8249"
+    },
+    {
+      "path": "src/scene/input.rs",
+      "sha256": "b2df67441890bcede994ec605409d3ebfcec995ffae55a46708e3bb4b2e2591d"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "5f75ae225502f809253318b587496f95797dbf74af62f223030d3bf83c310616"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "01b1f12a0207bcfb7ae57392bed7697a870c2c2e8372b41c336651b0e39df569"
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "sha256": "66e80c03820aaf37a7d6c088fab06bc7cc99f7bbe56e7cbb6b15f83135d2112b"
+    },
+    {
+      "path": "src/typography.rs",
+      "sha256": "257740382bc868a51bc27bad41312f0bfed58fb5a6e0b7f9081d08fff589b9e7"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "c22b187fcac5aba354daf5b7e579ef191d2ce69f67642e770ad8e4dae58c3a24"
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "sha256": "19ec4d2758e59cb6d2917e5182321043166965eb4148ef1fc58e6d0d4d2ac764"
+    },
+    {
+      "path": "references/api-enums.json",
+      "sha256": "f5c6a8a92a1b6b5214573a694a7f08e8249e55c2cacc3c9b860f94308abf6346"
+    },
+    {
+      "path": "src/enums.rs",
+      "sha256": "3bfd315eac0bfa993880907a181a3bd9b18d102bc99a7fb05ee0d64aeebd005d"
+    },
+    {
+      "path": "gallery/src/enums.ts",
+      "sha256": "94bb2b9f4c78946d0fd75a25a238ecbc4ad315433b59c491b1e65bb5c5e69695"
+    },
+    {
+      "path": "gallery/src/index.ts",
+      "sha256": "218c58bddfa2e2221633aaf0da0a9e54328466880ffc676820ecc5b0f6107c18"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "7ad20c6520600b393bdea25eb672b6371f4200bb0013ae7974186ba1a4c9b009"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "fc73fb1a188b9590e28e4551c95515ec6f6890700c8235cb987d8050c843788d"
+    },
+    {
+      "path": "gallery/src/CollectionsPage.tsx",
+      "sha256": "bb140a040b1d1cfd1c511c64b9e777e6f291653dbd91fcd4b3b8da3e197c81b1"
+    },
+    {
+      "path": "gallery/src/CollectionTemplates.tsx",
+      "sha256": "af18e323e2f0a415b833c22f6ad8825d228ed1ea3ce71ef3f0703b98e79508e1"
+    },
+    {
+      "path": "gallery/src/style.css",
+      "sha256": "d3d001ccc9adbdbf3c1d385698980d6a774df3343cd77c9525c0f5d994a34af3"
+    },
+    {
+      "path": "tests/collections.rs",
+      "sha256": "72bc32346625e488da788e2a9066b83ca87bd7893667651e1a6640668e2459e9"
+    },
+    {
+      "path": "gallery/tests/collections.spec.ts",
+      "sha256": "c9c13436de8d86ce724452ad2708718a1923b64c02d691cb3673155ad470bfa9"
+    },
+    {
+      "path": "gallery/tests/collections-fixture.tsx",
+      "sha256": "3ddba187c69802c5dfd2233444ce7ceb9c096965341b196890ab01a7151ec9c4"
+    },
+    {
+      "path": "gallery/vite.collections-test.config.ts",
+      "sha256": "aaacdb2c10d33863eaec42aa03f3228c5fb2122046eea707b96ed0082fc35f66"
+    },
+    {
+      "path": "tools/native-navigation/CollectionsProbe.cs",
+      "sha256": "0c2e365f0623bd0248c2d3aad9e3c4e4844a16872f05e110ae8110f44ca768f7"
+    },
+    {
+      "path": "tools/native-navigation/NavigationProbe.csproj",
+      "sha256": "3e4736d86707efbf6f25771222b1e629cd6db86454ead9bc09c88fc575e629de"
+    },
+    {
+      "path": "tools/extract-collections.py",
+      "sha256": "6d5fff0b408ebaaf2970d6c6a1532a644db830fc00ed43afc4ed6ca99f740739"
+    },
+    {
+      "path": "out/collections-probe-bin/NavigationProbe.exe",
+      "sha256": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704"
+    },
+    {
+      "path": "out/collections-probe-bin/Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+    }
+  ]
+}

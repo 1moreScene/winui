@@ -1,0 +1,389 @@
+{
+  "rows": [
+    {
+      "precision": 8,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0043,
+      "different": 43
+    },
+    {
+      "precision": null,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.005,
+      "different": 50
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.005,
+      "different": 50
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0052,
+      "different": 52
+    },
+    {
+      "precision": null,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0059,
+      "different": 59
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0059,
+      "different": 59
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0059,
+      "different": 59
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0066,
+      "different": 66
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0069,
+      "different": 69
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0069,
+      "different": 69
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.007,
+      "different": 70
+    },
+    {
+      "precision": null,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0072,
+      "different": 72
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0082,
+      "different": 82
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0084,
+      "different": 84
+    },
+    {
+      "precision": null,
+      "filteredRounding": "floor",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0086,
+      "different": 86
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "nearest",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0087,
+      "different": 87
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0143,
+      "different": 143
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0143,
+      "different": 143
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0143,
+      "different": 143
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0143,
+      "different": 143
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0154,
+      "different": 154
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0154,
+      "different": 154
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0168,
+      "different": 168
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0168,
+      "different": 168
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0168,
+      "different": 168
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0168,
+      "different": 168
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0171,
+      "different": 171
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0171,
+      "different": 171
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.021,
+      "different": 210
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.021,
+      "different": 210
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.021,
+      "different": 210
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.021,
+      "different": 210
+    },
+    {
+      "precision": null,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "lerp",
+      "mean": 0.0213,
+      "different": 213
+    },
+    {
+      "precision": null,
+      "filteredRounding": "none",
+      "arithmetic": "f64",
+      "blend": "over",
+      "mean": 0.0213,
+      "different": 213
+    },
+    {
+      "precision": null,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0213,
+      "different": 213
+    },
+    {
+      "precision": null,
+      "filteredRounding": "none",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0213,
+      "different": 213
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0213,
+      "different": 213
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0213,
+      "different": 213
+    },
+    {
+      "precision": null,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0216,
+      "different": 216
+    },
+    {
+      "precision": null,
+      "filteredRounding": "floor",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0216,
+      "different": 216
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0249,
+      "different": 249
+    },
+    {
+      "precision": 9,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0249,
+      "different": 249
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.025,
+      "different": 250
+    },
+    {
+      "precision": 8,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.025,
+      "different": 250
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0254,
+      "different": 254
+    },
+    {
+      "precision": 10,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0254,
+      "different": 254
+    },
+    {
+      "precision": null,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "lerp",
+      "mean": 0.0258,
+      "different": 258
+    },
+    {
+      "precision": null,
+      "filteredRounding": "nearest",
+      "arithmetic": "f32",
+      "blend": "over",
+      "mean": 0.0258,
+      "different": 258
+    }
+  ],
+  "boundary": "Diagnostic fixed-function precision candidates; one flat region, no production parameter fitting or claim of hardware-independent equivalence."
+}

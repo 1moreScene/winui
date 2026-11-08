@@ -1,0 +1,137 @@
+{
+  "commit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "CommandBarFlyout": {
+      "description": "A mini-toolbar which displays a set of proactive commands, as well as a secondary menu of commands if desired.",
+      "samples": [
+        {
+          "title": "CommandBarFlyout for commands on an in-app object",
+          "xaml": "<Page.Resources>\n    <CommandBarFlyout Placement=\"Right\" x:Name=\"CommandBarFlyout1\">\n        <AppBarButton Label=\"Share\" Icon=\"Share\" ToolTipService.ToolTip=\"Share\" Click=\"OnElementClicked\" />\n        <AppBarButton Label=\"Save\" Icon=\"Save\" ToolTipService.ToolTip=\"Save\" Click=\"OnElementClicked\" />\n        <AppBarButton Label=\"Delete\" Icon=\"Delete\" ToolTipService.ToolTip=\"Delete\" Click=\"OnElementClicked\" />\n        <CommandBarFlyout.SecondaryCommands>\n            <AppBarButton x:Name=\"ResizeButton1\" Label=\"Resize\" Click=\"OnElementClicked\" />\n            <AppBarButton x:Name=\"MoveButton1\" Label=\"Move\" Click=\"OnElementClicked\" />\n        </CommandBarFlyout.SecondaryCommands>\n    </CommandBarFlyout>\n</Page.Resources>\n\n<Button x:Name=\"myImageButton\" AutomationProperties.Name=\"mountain\" Padding=\"0\"\n    Click=\"MyImageButton_Click\" ContextRequested=\"MyImageButton_ContextRequested\" >\n    <Image x:Name=\"Image1\" Height=\"300\" Source=\"/Assets/SampleMedia/rainier.jpg\"/>\n</Button>",
+          "code": "private void ShowMenu(bool isTransient)\n{\n    FlyoutShowOptions myOption = new FlyoutShowOptions();\n    myOption.ShowMode = isTransient ? FlyoutShowMode.Transient : FlyoutShowMode.Standard;\n    CommandBarFlyout1.ShowAt(Image1, myOption);\n}\n\nprivate void MyImageButton_ContextRequested(Microsoft.UI.Xaml.UIElement sender, ContextRequestedEventArgs args)\n{\n    // Show a context menu in standard mode\n    // Focus will move to the menu\n    ShowMenu(false);\n}\n\nprivate void MyImageButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)\n{\n    // Show a context menu in transient mode\n    // Focus will not move to the menu\n    ShowMenu(true);\n}"
+        }
+      ]
+    },
+    "MenuBar": {
+      "description": "The Menubar simplifies the creation of basic applications by providing a set of menus at the top of the app or window.",
+      "samples": [
+        {
+          "title": "A simple MenuBar",
+          "xaml": "<MenuBar>\n    <MenuBarItem Title=\"File\">\n        <MenuFlyoutItem Text=\"New\"/>\n        <MenuFlyoutItem Text=\"Open...\"/>\n        <MenuFlyoutItem Text=\"Save\"/>\n        <MenuFlyoutItem Text=\"Exit\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"Edit\">\n        <MenuFlyoutItem Text=\"Undo\"/>\n        <MenuFlyoutItem Text=\"Cut\"/>\n        <MenuFlyoutItem Text=\"Copy\"/>\n        <MenuFlyoutItem Text=\"Paste\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"Help\">\n        <MenuFlyoutItem Text=\"About\"/>\n    </MenuBarItem>\n</MenuBar>",
+          "code": ""
+        },
+        {
+          "title": "MenuBar with keyboard accelerators",
+          "xaml": "<MenuBar>\n  <MenuBarItem Title=\"File\">\n    <MenuFlyoutItem Text=\"New\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"N\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Open...\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"O\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Save\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"S\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Exit\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"E\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n  </MenuBarItem>\n\n  <MenuBarItem Title=\"Edit\">\n    <MenuFlyoutItem Text=\"Undo\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"Z\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Cut\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"X\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Copy\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"C\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Paste\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"V\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n  </MenuBarItem>\n\n  <MenuBarItem Title=\"Help\">\n    <MenuFlyoutItem Text=\"About\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"I\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n  </MenuBarItem>\n</MenuBar>",
+          "code": ""
+        },
+        {
+          "title": "MenuBar with submenus, separators, and radio items",
+          "xaml": "<MenuBar>\n    <MenuBarItem Title=\"File\">\n        <MenuFlyoutSubItem Text=\"New\">\n            <MenuFlyoutItem Text=\"Plain Text Document\"/>\n            <MenuFlyoutItem Text=\"Rich Text Document\"/>\n            <MenuFlyoutItem Text=\"Other Formats...\"/>\n        </MenuFlyoutSubItem>\n        <MenuFlyoutItem Text=\"Open...\"/>\n        <MenuFlyoutItem Text=\"Save\"/>\n        <MenuFlyoutSeparator />\n        <MenuFlyoutItem Text=\"Exit\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"Edit\">\n        <MenuFlyoutItem Text=\"Undo\"/>\n        <MenuFlyoutItem Text=\"Cut\"/>\n        <MenuFlyoutItem Text=\"Copy\"/>\n        <MenuFlyoutItem Text=\"Paste\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"View\">\n        <MenuFlyoutItem Text=\"Output\"/>\n        <MenuFlyoutSeparator/>\n        <RadioMenuFlyoutItem Text=\"Landscape\" GroupName=\"OrientationGroup\"/>\n        <RadioMenuFlyoutItem Text=\"Portrait\" GroupName=\"OrientationGroup\" IsChecked=\"True\"/>\n        <MenuFlyoutSeparator/>\n        <RadioMenuFlyoutItem Text=\"Small icons\" GroupName=\"SizeGroup\"/>\n        <RadioMenuFlyoutItem Text=\"Medium icons\" IsChecked=\"True\" GroupName=\"SizeGroup\"/>\n        <RadioMenuFlyoutItem Text=\"Large icons\" GroupName=\"SizeGroup\"/>\n    </MenuBarItem>\n                    \n    <MenuBarItem Title=\"Help\">\n        <MenuFlyoutItem Text=\"About\"/>\n    </MenuBarItem>\n</MenuBar>",
+          "code": ""
+        }
+      ]
+    },
+    "RelativePanel": {
+      "description": "Use a RelativePanel to layout elements by defining the relationships between elements and in relation to the panel.",
+      "samples": [
+        {
+          "title": "A RelativePanel control.",
+          "xaml": "<RelativePanel  Width=\"300\">\n    <Rectangle x:Name=\"Rectangle1\" Fill=\"Red\" Height=\"50\" Width=\"50\"/>\n    <Rectangle x:Name=\"Rectangle2\" Fill=\"Blue\" Height=\"50\" Width=\"50\" RelativePanel.RightOf=\"Rectangle1\" Margin=\"8,0,0,0\"/>\n    <Rectangle x:Name=\"Rectangle3\" Fill=\"Green\" Height=\"50\" Width=\"50\" RelativePanel.AlignRightWithPanel=\"True\"/>\n    <Rectangle x:Name=\"Rectangle4\" Fill=\"Yellow\" Height=\"50\" Width=\"50\" RelativePanel.Below=\"Rectangle3\" RelativePanel.AlignHorizontalCenterWith=\"Rectangle3\" Margin=\"0,8,0,0\"/>\n</RelativePanel>",
+          "code": ""
+        }
+      ]
+    },
+    "WrapPanel": {
+      "description": "Use a WrapPanel to arrange child elements sequentially and move overflowing items to a new row or column. You can configure its orientation, spacing, padding, and whether the final item stretches to fill the remaining space.",
+      "samples": [
+        {
+          "title": "A WrapPanel that automatically wraps items when they reach the panel boundary.",
+          "xaml": "<WrapPanel\n    Width=\"360\"\n    Height=\"200\"\n    ItemSpacing=\"8\"\n    LineSpacing=\"8\"\n    Padding=\"12\">\n    <Border MinWidth=\"72\" Padding=\"12,8\">\n        <TextBlock Text=\"Alpha\"/>\n    </Border>\n    <Border MinWidth=\"112\" Padding=\"12,8\">\n        <TextBlock Text=\"Beta item\"/>\n    </Border>\n    <Border MinWidth=\"88\" Padding=\"12,8\">\n        <TextBlock Text=\"Gamma\"/>\n    </Border>\n    <Border MinWidth=\"128\" Padding=\"12,8\">\n        <TextBlock Text=\"Delta item\"/>\n    </Border>\n    <Border MinWidth=\"80\" Padding=\"12,8\">\n        <TextBlock Text=\"Epsilon\"/>\n    </Border>\n    <Border MinWidth=\"104\" Padding=\"12,8\">\n        <TextBlock Text=\"Zeta item\"/>\n    </Border>\n    <Border MinWidth=\"76\" Padding=\"12,8\">\n        <TextBlock Text=\"Eta\"/>\n    </Border>\n    <Border MinWidth=\"120\" Padding=\"12,8\">\n        <TextBlock Text=\"Theta item\"/>\n    </Border>\n    <Border MinWidth=\"92\" Padding=\"12,8\">\n        <TextBlock Text=\"Iota\"/>\n    </Border>\n    <Border MinWidth=\"132\" Padding=\"12,8\">\n        <TextBlock Text=\"Kappa item\"/>\n    </Border>\n</WrapPanel>",
+          "code": ""
+        },
+        {
+          "title": "A WrapPanel that can stretch its final item to fill the remaining space.",
+          "xaml": "<WrapPanel\n    Width=\"360\"\n    ItemSpacing=\"8\"\n    ItemsStretch=\"Last\"\n    Padding=\"12\">\n    <Border Width=\"72\" Padding=\"12,8\">\n        <TextBlock Text=\"One\"/>\n    </Border>\n    <Border Width=\"72\" Padding=\"12,8\">\n        <TextBlock Text=\"Two\"/>\n    </Border>\n    <Border Width=\"72\" Padding=\"12,8\">\n        <TextBlock Text=\"Three\"/>\n    </Border>\n    <Border Width=\"72\" Padding=\"12,8\">\n        <TextBlock Text=\"Four\"/>\n    </Border>\n    <Border Width=\"72\" Padding=\"12,8\">\n        <TextBlock Text=\"Five\"/>\n    </Border>\n    <Border Padding=\"12,8\">\n        <TextBlock Text=\"Final item\"/>\n    </Border>\n</WrapPanel>",
+          "code": ""
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "local": "references/gallery-input/CommandBarFlyout/CommandBarFlyoutPage.xaml",
+      "upstream": "WinUIGallery/Samples/CommandBarFlyout/CommandBarFlyoutPage.xaml",
+      "sha256": "f6828d1d9fcfc1a78498b217dde57b4690fb41cd6f4e5573f7d985363813ccc4"
+    },
+    {
+      "local": "references/gallery-input/CommandBarFlyout/CommandBarFlyoutPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/CommandBarFlyout/CommandBarFlyoutPage.xaml.cs",
+      "sha256": "955594f0512024c13a6952c6160823c856a3f6123d9b5296e87e97d25a211b8a"
+    },
+    {
+      "local": "references/gallery-input/CommandBarFlyout/CommandbarflyoutCommandsAppObject.txt",
+      "upstream": "WinUIGallery/Samples/CommandBarFlyout/CommandbarflyoutCommandsAppObject.txt",
+      "sha256": "f99a12c1e03ec99a228d0c91bae57d925218ec0b0c40f26416e78e20bf647051"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenuBarPage.xaml",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenuBarPage.xaml",
+      "sha256": "0b0567adfc658b3cedf5efa102e1f19ff01e10efd128b69563da030ffecb7407"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenuBarPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenuBarPage.xaml.cs",
+      "sha256": "5f5ae93d33a4c538abb938fc37c72a2fc643e05d1dd936e9d1574bf84610fb34"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenubarKeyboardAccelerators.txt",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenubarKeyboardAccelerators.txt",
+      "sha256": "6dcc471459081171b0cc5becd9d9dea9d0188d00724f2c2efe64887f9ea2b5b0"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenubarSubmenusSeparatorsRadio.txt",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenubarSubmenusSeparatorsRadio.txt",
+      "sha256": "a3dd0c5aa62dcae7148900072061a720b17d9b45dea7961be1ba0f24812cf1ae"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/SimpleMenubar.txt",
+      "upstream": "WinUIGallery/Samples/MenuBar/SimpleMenubar.txt",
+      "sha256": "ff2a186721a127947d22d967914617a3ce1c49ce215fdb0de4577cdaac69939e"
+    },
+    {
+      "local": "references/gallery-input/RelativePanel/RelativePanelPage.xaml",
+      "upstream": "WinUIGallery/Samples/RelativePanel/RelativePanelPage.xaml",
+      "sha256": "fc40cde99d2bb9be3d5594acc3045e34dd47f684334c8a40fdb75f5932787394"
+    },
+    {
+      "local": "references/gallery-input/RelativePanel/RelativePanelPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/RelativePanel/RelativePanelPage.xaml.cs",
+      "sha256": "2e67c80a21f60b92b5ea7593528ef7ce8c7bc78e4b71452030ec289078c0ce8a"
+    },
+    {
+      "local": "references/gallery-input/RelativePanel/RelativepanelControl.txt",
+      "upstream": "WinUIGallery/Samples/RelativePanel/RelativepanelControl.txt",
+      "sha256": "100f34191b06e5d1dd21014718f4bb0bc4757d5d60b855a980ce94f5fb8ba1b9"
+    },
+    {
+      "local": "references/gallery-input/WrapPanel/WrapPanelBasic.txt",
+      "upstream": "WinUIGallery/Samples/WrapPanel/WrapPanelBasic.txt",
+      "sha256": "47c012e1fa63301253b0ba6df8b7203a61e62c5acf2f2a0aa1331ffb90e24c01"
+    },
+    {
+      "local": "references/gallery-input/WrapPanel/WrapPanelItemsStretch.txt",
+      "upstream": "WinUIGallery/Samples/WrapPanel/WrapPanelItemsStretch.txt",
+      "sha256": "d30b4e017f6976ad319839507e6abd8d82c29ea2b799d783ac6899110546ef0b"
+    },
+    {
+      "local": "references/gallery-input/WrapPanel/WrapPanelPage.xaml",
+      "upstream": "WinUIGallery/Samples/WrapPanel/WrapPanelPage.xaml",
+      "sha256": "379e0791fdd6e950b556cfc6e696db7bc2731fe4be3b01b7f67ff1e37d4f0cef"
+    },
+    {
+      "local": "references/gallery-input/WrapPanel/WrapPanelPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/WrapPanel/WrapPanelPage.xaml.cs",
+      "sha256": "85818a966778e7990dfaa408984637d4ea2531666191af7db7f5d4fe1ee835ef"
+    }
+  ]
+}

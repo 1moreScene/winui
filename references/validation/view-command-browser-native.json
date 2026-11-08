@@ -1,0 +1,2181 @@
+{
+  "cases": [
+    {
+      "id": "Light-SplitView-Overlay-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.600000023841858,
+          "frameP95Ms": 3.0999999940395355,
+          "frames": 3,
+          "averageFrameMs": 1.8666666746139526,
+          "maxFrameMs": 3.0999999940395355,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.037120949074074074
+    },
+    {
+      "id": "Light-SplitView-Overlay-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.9000000059604645,
+          "frameP95Ms": 3.300000011920929,
+          "frames": 3,
+          "averageFrameMs": 2.26666667064031,
+          "maxFrameMs": 3.300000011920929,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.04443576388888889
+    },
+    {
+      "id": "Light-SplitView-Overlay-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.300000011920929,
+          "frameP95Ms": 1.7000000178813934,
+          "frames": 3,
+          "averageFrameMs": 1.2333333492279053,
+          "maxFrameMs": 1.7000000178813934,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.037120949074074074
+    },
+    {
+      "id": "Light-SplitView-Overlay-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.7999999821186066,
+          "frameP95Ms": 2.699999988079071,
+          "frames": 3,
+          "averageFrameMs": 1.833333323399226,
+          "maxFrameMs": 2.699999988079071,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.08155671296296296
+    },
+    {
+      "id": "Light-SplitView-Inline-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.4000000059604645,
+          "frameP95Ms": 2.100000023841858,
+          "frames": 3,
+          "averageFrameMs": 1.6000000139077504,
+          "maxFrameMs": 2.100000023841858,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.037120949074074074
+    },
+    {
+      "id": "Light-SplitView-Inline-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2,
+          "frameP95Ms": 3,
+          "frames": 3,
+          "averageFrameMs": 2.1666666666666665,
+          "maxFrameMs": 3,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10586226851851852
+    },
+    {
+      "id": "Light-SplitView-Inline-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.9000000059604645,
+          "frameP95Ms": 2.899999976158142,
+          "frames": 3,
+          "averageFrameMs": 2.23333332935969,
+          "maxFrameMs": 3,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.037120949074074074
+    },
+    {
+      "id": "Light-SplitView-Inline-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.5,
+          "frameP95Ms": 3.2999999821186066,
+          "frames": 3,
+          "averageFrameMs": 1.9666666686534882,
+          "maxFrameMs": 3.2999999821186066,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10586226851851852
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2,
+          "frameP95Ms": 3.2000000178813934,
+          "frames": 3,
+          "averageFrameMs": 2.233333339293798,
+          "maxFrameMs": 3.2000000178813934,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.05166956018518518
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.2000000178813934,
+          "frameP95Ms": 2.0999999940395355,
+          "frames": 3,
+          "averageFrameMs": 1.4000000059604645,
+          "maxFrameMs": 2.0999999940395355,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.04443576388888889
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1,
+          "frameP95Ms": 2.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 1.366666664679845,
+          "maxFrameMs": 2.199999988079071,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.08920428240740741
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.2000000178813934,
+          "frameP95Ms": 1.800000011920929,
+          "frames": 3,
+          "averageFrameMs": 1.3333333432674408,
+          "maxFrameMs": 1.800000011920929,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10586226851851852
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.699999988079071,
+          "frameP95Ms": 2.800000011920929,
+          "frames": 3,
+          "averageFrameMs": 1.9666666686534882,
+          "maxFrameMs": 2.800000011920929,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.05166956018518518
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.4000000059604645,
+          "frameP95Ms": 1.7999999821186066,
+          "frames": 3,
+          "averageFrameMs": 1.3666666547457378,
+          "maxFrameMs": 1.7999999821186066,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10586226851851852
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.699999988079071,
+          "frameP95Ms": 2.4000000059604645,
+          "frames": 3,
+          "averageFrameMs": 1.7666666607062023,
+          "maxFrameMs": 2.4000000059604645,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.08920428240740741
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.2999999821186066,
+          "frameP95Ms": 1.5,
+          "frames": 3,
+          "averageFrameMs": 1.1333333253860474,
+          "maxFrameMs": 1.5,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10586226851851852
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.100000023841858,
+          "frameP95Ms": 2.4000000059604645,
+          "frames": 3,
+          "averageFrameMs": 1.4666666785875957,
+          "maxFrameMs": 2.4000000059604645,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.007071759259259259
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.5,
+          "frameP95Ms": 2.600000023841858,
+          "frames": 3,
+          "averageFrameMs": 1.8000000019868214,
+          "maxFrameMs": 2.600000023841858,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.030729166666666665
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2.4000000059604645,
+          "frameP95Ms": 2.7999999821186066,
+          "frames": 3,
+          "averageFrameMs": 2.3666666646798453,
+          "maxFrameMs": 2.7999999821186066,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.007071759259259259
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2,
+          "frameP95Ms": 3.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 2.166666656732559,
+          "maxFrameMs": 3.199999988079071,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.037800925925925925
+    },
+    {
+      "id": "Dark-SplitView-Inline-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2.0999999940395355,
+          "frameP95Ms": 4.0999999940395355,
+          "frames": 3,
+          "averageFrameMs": 2.73333332935969,
+          "maxFrameMs": 4.0999999940395355,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.007071759259259259
+    },
+    {
+      "id": "Dark-SplitView-Inline-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.5999999940395355,
+          "frameP95Ms": 3.7000000178813934,
+          "frames": 3,
+          "averageFrameMs": 2.26666667064031,
+          "maxFrameMs": 3.7000000178813934,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.4225231481481482
+    },
+    {
+      "id": "Dark-SplitView-Inline-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.5,
+          "frameP95Ms": 2.5,
+          "frames": 3,
+          "averageFrameMs": 1.6666666666666667,
+          "maxFrameMs": 2.5,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.007071759259259259
+    },
+    {
+      "id": "Dark-SplitView-Inline-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2.300000011920929,
+          "frameP95Ms": 3.7999999821186066,
+          "frames": 3,
+          "averageFrameMs": 2.73333332935969,
+          "maxFrameMs": 3.7999999821186066,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.4225231481481482
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.9000000059604645,
+          "frameP95Ms": 2.899999976158142,
+          "frames": 3,
+          "averageFrameMs": 2.0999999940395355,
+          "maxFrameMs": 2.899999976158142,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.009554398148148149
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.2999999821186066,
+          "frameP95Ms": 2.899999976158142,
+          "frames": 3,
+          "averageFrameMs": 1.7333333194255829,
+          "maxFrameMs": 2.899999976158142,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.030729166666666665
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2,
+          "frameP95Ms": 3.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 2.1999999980131784,
+          "maxFrameMs": 3.199999988079071,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.41957175925925927
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.9000000059604645,
+          "frameP95Ms": 2.2000000178813934,
+          "frames": 3,
+          "averageFrameMs": 1.8666666746139526,
+          "maxFrameMs": 2.2000000178813934,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.4225231481481482
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Left-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2,
+          "frameP95Ms": 3,
+          "frames": 3,
+          "averageFrameMs": 2.100000003973643,
+          "maxFrameMs": 3,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.009554398148148149
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Left-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2.199999988079071,
+          "frameP95Ms": 2.4000000059604645,
+          "frames": 3,
+          "averageFrameMs": 2.0999999940395355,
+          "maxFrameMs": 2.4000000059604645,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.4225231481481482
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Right-False",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.7999999821186066,
+          "frameP95Ms": 3.2000000178813934,
+          "frames": 3,
+          "averageFrameMs": 2.1666666666666665,
+          "maxFrameMs": 3.2000000178813934,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.41957175925925927
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Right-True",
+      "backend": "Canvas2D",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 1.9000000059604645,
+          "frameP95Ms": 3.0999999940395355,
+          "frames": 3,
+          "averageFrameMs": 2.1333333353201547,
+          "maxFrameMs": 3.0999999940395355,
+          "basePaints": 2,
+          "baseReuses": 1,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.4225231481481482
+    },
+    {
+      "id": "Light-SplitView-Overlay-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 5.300000011920929,
+          "frameP95Ms": 8.599999994039536,
+          "frames": 3,
+          "averageFrameMs": 5.966666668653488,
+          "maxFrameMs": 8.599999994039536,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.03728877314814815
+    },
+    {
+      "id": "Light-SplitView-Overlay-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.9000000059604645,
+          "frameP95Ms": 5.200000017881393,
+          "frames": 3,
+          "averageFrameMs": 4.4000000059604645,
+          "maxFrameMs": 5.200000017881393,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.044603587962962966
+    },
+    {
+      "id": "Light-SplitView-Overlay-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.7999999821186066,
+          "frameP95Ms": 4,
+          "frames": 3,
+          "averageFrameMs": 3.8333333333333335,
+          "maxFrameMs": 4,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.03728877314814815
+    },
+    {
+      "id": "Light-SplitView-Overlay-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4,
+          "frameP95Ms": 5.5,
+          "frames": 3,
+          "averageFrameMs": 4.366666674613953,
+          "maxFrameMs": 5.5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.08155671296296296
+    },
+    {
+      "id": "Light-SplitView-Inline-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.199999988079071,
+          "frameP95Ms": 4.5,
+          "frames": 3,
+          "averageFrameMs": 3.933333327372869,
+          "maxFrameMs": 4.5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.03728877314814815
+    },
+    {
+      "id": "Light-SplitView-Inline-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.7999999821186066,
+          "frameP95Ms": 4.9000000059604645,
+          "frames": 3,
+          "averageFrameMs": 4.0999999940395355,
+          "maxFrameMs": 4.9000000059604645,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10599826388888889
+    },
+    {
+      "id": "Light-SplitView-Inline-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.300000011920929,
+          "frameP95Ms": 4.5,
+          "frames": 3,
+          "averageFrameMs": 4.133333335320155,
+          "maxFrameMs": 4.5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.03728877314814815
+    },
+    {
+      "id": "Light-SplitView-Inline-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.600000023841858,
+          "frameP95Ms": 4.5,
+          "frames": 3,
+          "averageFrameMs": 3.566666672627131,
+          "maxFrameMs": 4.5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10599826388888889
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.300000011920929,
+          "frameP95Ms": 5.300000011920929,
+          "frames": 3,
+          "averageFrameMs": 4.53333334128062,
+          "maxFrameMs": 5.300000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.051834490740740743
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.7000000178813934,
+          "frameP95Ms": 3.7000000178813934,
+          "frames": 3,
+          "averageFrameMs": 3.500000019868215,
+          "maxFrameMs": 3.7000000178813934,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.04460069444444444
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.800000011920929,
+          "frameP95Ms": 4.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 3.933333327372869,
+          "maxFrameMs": 4.199999988079071,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.08934027777777778
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.9000000059604645,
+          "frameP95Ms": 4.800000011920929,
+          "frames": 3,
+          "averageFrameMs": 3.8666666646798453,
+          "maxFrameMs": 4.800000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10583333333333333
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.9000000059604645,
+          "frameP95Ms": 4.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 3.8666666646798453,
+          "maxFrameMs": 4.199999988079071,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.051834490740740743
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.7000000178813934,
+          "frameP95Ms": 5.299999982118607,
+          "frames": 3,
+          "averageFrameMs": 4.199999998013179,
+          "maxFrameMs": 5.299999982118607,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10599826388888889
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 2.9000000059604645,
+          "frameP95Ms": 3.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 2.766666660706202,
+          "maxFrameMs": 3.199999988079071,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.08934027777777778
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.200000017881393,
+          "frameP95Ms": 4.5,
+          "frames": 3,
+          "averageFrameMs": 4.000000009934108,
+          "maxFrameMs": 4.5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.10599826388888889
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.9000000059604645,
+          "frameP95Ms": 5.300000011920929,
+          "frames": 3,
+          "averageFrameMs": 4.766666670640309,
+          "maxFrameMs": 5.300000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.008362268518518519
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 5.199999988079071,
+          "frameP95Ms": 5.700000017881393,
+          "frames": 3,
+          "averageFrameMs": 5.266666670640309,
+          "maxFrameMs": 5.700000017881393,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.032803819444444444
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.5999999940395355,
+          "frameP95Ms": 4.300000011920929,
+          "frames": 3,
+          "averageFrameMs": 3.600000003973643,
+          "maxFrameMs": 4.300000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.008362268518518519
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.5999999940395355,
+          "frameP95Ms": 4.5,
+          "frames": 3,
+          "averageFrameMs": 3.8333333333333335,
+          "maxFrameMs": 4.5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.038663194444444444
+    },
+    {
+      "id": "Dark-SplitView-Inline-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.799999982118607,
+          "frameP95Ms": 4.899999976158142,
+          "frames": 3,
+          "averageFrameMs": 4.366666654745738,
+          "maxFrameMs": 4.899999976158142,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.008362268518518519
+    },
+    {
+      "id": "Dark-SplitView-Inline-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.299999982118607,
+          "frameP95Ms": 4.699999988079071,
+          "frames": 3,
+          "averageFrameMs": 4.133333325386047,
+          "maxFrameMs": 4.699999988079071,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.42336805555555557
+    },
+    {
+      "id": "Dark-SplitView-Inline-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 480,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.5,
+          "frameP95Ms": 3.800000011920929,
+          "frames": 3,
+          "averageFrameMs": 3.3000000019868216,
+          "maxFrameMs": 3.800000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 63,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 1
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.008362268518518519
+    },
+    {
+      "id": "Dark-SplitView-Inline-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.200000017881393,
+          "frameP95Ms": 4.300000011920929,
+          "frames": 3,
+          "averageFrameMs": 3.833333343267441,
+          "maxFrameMs": 4.300000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.42336805555555557
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 5.100000023841858,
+          "frameP95Ms": 5.100000023841858,
+          "frames": 3,
+          "averageFrameMs": 4.500000009934108,
+          "maxFrameMs": 5.100000023841858,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.010847800925925926
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.699999988079071,
+          "frameP95Ms": 5.799999982118607,
+          "frames": 3,
+          "averageFrameMs": 4.833333323399226,
+          "maxFrameMs": 5.799999982118607,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.03280671296296296
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.5,
+          "frameP95Ms": 4,
+          "frames": 3,
+          "averageFrameMs": 3.5666666626930237,
+          "maxFrameMs": 4,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.42041666666666666
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 4.199999988079071,
+          "frameP95Ms": 5,
+          "frames": 3,
+          "averageFrameMs": 3.966666658719381,
+          "maxFrameMs": 5,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.4220746527777778
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Left-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 40,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.600000023841858,
+          "frameP95Ms": 4.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 3.700000007947286,
+          "maxFrameMs": 4.199999988079071,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.010847800925925926
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Left-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 160,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.4000000059604645,
+          "frameP95Ms": 4.199999988079071,
+          "frames": 3,
+          "averageFrameMs": 3.5666666626930237,
+          "maxFrameMs": 4.199999988079071,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.42336805555555557
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Right-False",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 440,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.300000011920929,
+          "frameP95Ms": 3.9000000059604645,
+          "frames": 3,
+          "averageFrameMs": 3.4333333373069763,
+          "maxFrameMs": 3.9000000059604645,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.42041666666666666
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Right-True",
+      "backend": "WebGL2",
+      "geometry": {
+        "rect": {
+          "height": 240,
+          "width": 480,
+          "x": 24,
+          "y": 24
+        },
+        "content": {
+          "height": 240,
+          "width": 320,
+          "x": 0,
+          "y": 0
+        },
+        "backend": {
+          "frameP50Ms": 3.7999999821186066,
+          "frameP95Ms": 4.200000017881393,
+          "frames": 3,
+          "averageFrameMs": 3.899999996026357,
+          "maxFrameMs": 4.300000011920929,
+          "basePaints": 3,
+          "baseReuses": 0,
+          "cachedSurfaces": 1,
+          "draws": 115,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        },
+        "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55"
+      },
+      "meanPixelError": 0.42336805555555557
+    }
+  ],
+  "native": "references/validation/view-command-native.json"
+}

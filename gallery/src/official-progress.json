@@ -1,0 +1,77 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "ProgressBar": {
+      "description": "The ProgressBar has two different visual representations:\nIndeterminate - shows that a task is ongoing, but doesn't block user interaction.\nDeterminate - shows how much progress has been made on a known amount of work.",
+      "samples": [
+        {
+          "title": "An indeterminate progress bar.",
+          "file": "IndeterminateProgressBar.txt",
+          "xaml": "<ProgressBar Width=\"130\" IsIndeterminate=\"True\" />"
+        },
+        {
+          "title": "A determinate progress bar.",
+          "file": "DeterminateProgressBar.txt",
+          "xaml": "<ProgressBar Width=\"130\" />"
+        }
+      ]
+    },
+    "ProgressRing": {
+      "description": "The ProgressRing has two different visual representations:\nIndeterminate - shows that a task is ongoing, but blocks user interaction.\nDeterminate - shows how much progress has been made on a known amount of work.",
+      "samples": [
+        {
+          "title": "An indeterminate progress ring.",
+          "file": "IndeterminateProgressRing.txt",
+          "xaml": "<ProgressRing IsActive=\"True\" Background=\"LightGray\"/>"
+        },
+        {
+          "title": "A determinate progress ring.",
+          "file": "DeterminateProgressRing.txt",
+          "xaml": "<ProgressRing Width=\"60\" Height=\"60\"\n              IsIndeterminate=\"False\"\n              Background=\"LightGray\"/>"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "references/gallery-input/ProgressBar/DeterminateProgressBar.txt",
+      "source": "WinUIGallery/Samples/ProgressBar/DeterminateProgressBar.txt",
+      "sha256": "8fb6ca689d99f926a5fd15365827ad93c51e53102a9bb46aee155cbd8cc57dec"
+    },
+    {
+      "path": "references/gallery-input/ProgressBar/IndeterminateProgressBar.txt",
+      "source": "WinUIGallery/Samples/ProgressBar/IndeterminateProgressBar.txt",
+      "sha256": "97943ced609d2b2b39e6bd48f9f82fd3b046d0d9c1169cbc9164b38d41e0bc88"
+    },
+    {
+      "path": "references/gallery-input/ProgressBar/ProgressBarPage.xaml",
+      "source": "WinUIGallery/Samples/ProgressBar/ProgressBarPage.xaml",
+      "sha256": "ced3307341a830f5a960c6a6ac990a8e3b9035a3814271f445e4785b62d458ab"
+    },
+    {
+      "path": "references/gallery-input/ProgressBar/ProgressBarPage.xaml.cs",
+      "source": "WinUIGallery/Samples/ProgressBar/ProgressBarPage.xaml.cs",
+      "sha256": "f6f8b3b36e8e903a2de01e2ae90819799e93bc83b908c1a93ad5599ef068ba70"
+    },
+    {
+      "path": "references/gallery-input/ProgressRing/DeterminateProgressRing.txt",
+      "source": "WinUIGallery/Samples/ProgressRing/DeterminateProgressRing.txt",
+      "sha256": "853eaf9110054fdbe686d8042d684ab2e991ec60a6780b2a16ea1a889ff80608"
+    },
+    {
+      "path": "references/gallery-input/ProgressRing/IndeterminateProgressRing.txt",
+      "source": "WinUIGallery/Samples/ProgressRing/IndeterminateProgressRing.txt",
+      "sha256": "9c4f1fd055773c4edf613c6a92e62151c16c8202521fa0f1871904755484aca4"
+    },
+    {
+      "path": "references/gallery-input/ProgressRing/ProgressRingPage.xaml",
+      "source": "WinUIGallery/Samples/ProgressRing/ProgressRingPage.xaml",
+      "sha256": "e8de449dddb972f7c43681c51168b34908543eb41e73aeba0c59e4e5f2a54ac7"
+    },
+    {
+      "path": "references/gallery-input/ProgressRing/ProgressRingPage.xaml.cs",
+      "source": "WinUIGallery/Samples/ProgressRing/ProgressRingPage.xaml.cs",
+      "sha256": "833ac910bf048b9c156e5094f61085ba31141c81f3dfa7daa1c7ef90113e81d4"
+    }
+  ]
+}

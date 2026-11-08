@@ -1,0 +1,1384 @@
+{
+  "recordedAtUtc": "2026-11-08T11:11:59.223050+00:00",
+  "scope": "Closed ComboBox at 1.25 DPR: 28 explicit same-SDK VSM fixtures, Light/Dark, editable/readonly. Flat background and straight edges exclude text, glyphs, rounded corners and the intentionally suppressed focus ring; this is not whole-control pixel acceptance.",
+  "nativeRun": {
+    "binaries": {
+      "Microsoft.UI.Xaml.dll": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "NavigationProbe.exe": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704",
+      "NavigationProbe.dll": "fce4b5a0a06b1f533427b4dfb58c79f5694c60351869605f4207018a40f64434"
+    },
+    "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+    "sources": {
+      "Program.cs": "e63100726e0fe0fd83ed51d5b6a198f49be5da97712905b9a5e8818c443980ae",
+      "EffectsProbe.cs": "fa203abf5825c9ff91f9dbbcdf5bc703a8df9f9b545216a9eae2f6a0ace43533",
+      "ComboFaceplateProbe.cs": "28db5ab87d7e48bba052c66e6459ccc35df217e7112378630e0a0a9679237dc2",
+      "CompactControlsProbe.cs": "d481aade677b8097b8638ba7fcedbdd984a88297734455c877acaad4e214a9e4"
+    },
+    "startedAt": "2026-11-08T09:33:03.8242488Z",
+    "completedAt": "2026-11-08T09:33:15.4329252Z",
+    "mode": "--combo-faceplate",
+    "states": 28
+  },
+  "backends": {
+    "Canvas2D": {
+      "rows": [
+        {
+          "name": "faceplate-Light-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        }
+      ],
+      "maxPatchRgbMae": 0.0
+    },
+    "WebGL2": {
+      "rows": [
+        {
+          "name": "faceplate-Light-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        }
+      ],
+      "maxPatchRgbMae": 0.0
+    }
+  },
+  "wasmSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+  "scrollScope": "Rust owns active popup root, hit routing and boundary consumption. The SDK document adapter projects that scope onto native DOM wheel, touch, keyboard and background pointer input. Closing/disposal releases it.",
+  "overflowFix": "Canonical physical cross constraint preserves adaptive template measurements. ScrollState discards relative floating-point roundoff in extent minus viewport, including the 2.84e-14 DIP residue at 1.375 DPR. The short font sample has zero scrollableHeight and no vertical thumb; true subpixel overflow remains scrollable.",
+  "performanceBefore": {
+    "scope": "Local headless Chrome, 120 real SDK wheel frames per case, 1400x700 DIP, DPR 1.25; not a cross-device frame-rate guarantee.",
+    "rows": [
+      {
+        "backend": "Canvas2D",
+        "count": 40,
+        "buildVersion": "95b3f49a7aca1896fdb85664af90def6faf08e47a812092d78d7bdc788a4a7e6",
+        "middleOffset": 1195.0308899064057,
+        "meanRenderMs": 30.39916666696469,
+        "p95FrameIntervalMs": 36.30000001192093,
+        "frames": 120,
+        "nodeCount": 35,
+        "snapshotBytes": 220980,
+        "floatingSurface": {
+          "backend": {
+            "generation": 1,
+            "kind": "Canvas2D",
+            "lost": false
+          },
+          "bounds": {
+            "height": 749.6,
+            "width": 1400,
+            "x": 0,
+            "y": -49.6
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 29.599999994039536,
+          "frameP95Ms": 35.5,
+          "frames": 147,
+          "averageFrameMs": 30.140816327260467,
+          "maxFrameMs": 73.19999998807907,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        }
+      },
+      {
+        "backend": "Canvas2D",
+        "count": 10000,
+        "buildVersion": "95b3f49a7aca1896fdb85664af90def6faf08e47a812092d78d7bdc788a4a7e6",
+        "middleOffset": 1358.960968541212,
+        "meanRenderMs": 39.69333333397905,
+        "p95FrameIntervalMs": 49.099999994039536,
+        "frames": 120,
+        "nodeCount": 38,
+        "snapshotBytes": 835805,
+        "floatingSurface": {
+          "backend": {
+            "generation": 1,
+            "kind": "Canvas2D",
+            "lost": false
+          },
+          "bounds": {
+            "height": 749.6,
+            "width": 1400,
+            "x": 0,
+            "y": -49.6
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 40.20000001788139,
+          "frameP95Ms": 48.5,
+          "frames": 140,
+          "averageFrameMs": 39.56857142959322,
+          "maxFrameMs": 64.39999997615814,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        }
+      },
+      {
+        "backend": "WebGL2",
+        "count": 40,
+        "buildVersion": "95b3f49a7aca1896fdb85664af90def6faf08e47a812092d78d7bdc788a4a7e6",
+        "middleOffset": 1078.4182983403784,
+        "meanRenderMs": 10.994999999552965,
+        "p95FrameIntervalMs": 16.69999998807907,
+        "frames": 120,
+        "nodeCount": 38,
+        "snapshotBytes": 239906,
+        "floatingSurface": {
+          "backend": {
+            "cachedSurfaces": 7,
+            "draws": 186351,
+            "effectPasses": 495,
+            "generation": 1,
+            "kind": "WebGL2",
+            "lost": false,
+            "uploads": 128
+          },
+          "bounds": {
+            "height": 749.6,
+            "width": 1400,
+            "x": 0,
+            "y": -49.6
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 10.200000017881393,
+          "frameP95Ms": 16.69999998807907,
+          "frames": 166,
+          "averageFrameMs": 12.128915661788849,
+          "maxFrameMs": 88.59999999403954,
+          "cachedSurfaces": 2,
+          "draws": 6603,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        }
+      },
+      {
+        "backend": "WebGL2",
+        "count": 10000,
+        "buildVersion": "95b3f49a7aca1896fdb85664af90def6faf08e47a812092d78d7bdc788a4a7e6",
+        "middleOffset": 1229.4026674688025,
+        "meanRenderMs": 18.59333333397905,
+        "p95FrameIntervalMs": 24.100000023841858,
+        "frames": 120,
+        "nodeCount": 41,
+        "snapshotBytes": 854702,
+        "floatingSurface": {
+          "backend": {
+            "cachedSurfaces": 7,
+            "draws": 204761,
+            "effectPasses": 489,
+            "generation": 1,
+            "kind": "WebGL2",
+            "lost": false,
+            "uploads": 147
+          },
+          "bounds": {
+            "height": 749.6,
+            "width": 1400,
+            "x": 0,
+            "y": -49.6
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 18.200000017881393,
+          "frameP95Ms": 22.80000001192093,
+          "frames": 164,
+          "averageFrameMs": 18.070121951764676,
+          "maxFrameMs": 46.19999998807907,
+          "cachedSurfaces": 2,
+          "draws": 6523,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        }
+      }
+    ]
+  },
+  "performanceAfter": {
+    "scope": "Local headless Chrome, 120 real SDK wheel frames per case, 1400x700 DIP, DPR 1.25; not a cross-device frame-rate guarantee.",
+    "rows": [
+      {
+        "backend": "Canvas2D",
+        "count": 40,
+        "buildVersion": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+        "middleOffset": 876.4431457993463,
+        "meanRenderMs": 5.523333332687616,
+        "p95FrameIntervalMs": 8.400000005960464,
+        "frames": 120,
+        "nodeCount": 43,
+        "snapshotBytes": 268596,
+        "floatingSurface": {
+          "backend": {
+            "generation": 1,
+            "kind": "Canvas2D",
+            "lost": false
+          },
+          "bounds": {
+            "height": 300.79999999999995,
+            "width": 260.79999999999995,
+            "x": 13.6,
+            "y": -2.4
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 4.699999988079071,
+          "frameP95Ms": 6.5,
+          "frames": 225,
+          "averageFrameMs": 5.198666666216321,
+          "maxFrameMs": 65,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        }
+      },
+      {
+        "backend": "Canvas2D",
+        "count": 10000,
+        "buildVersion": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+        "middleOffset": 946.4192780675421,
+        "meanRenderMs": 7.261666666219631,
+        "p95FrameIntervalMs": 10.800000011920929,
+        "frames": 120,
+        "nodeCount": 47,
+        "snapshotBytes": 294020,
+        "floatingSurface": {
+          "backend": {
+            "generation": 1,
+            "kind": "Canvas2D",
+            "lost": false
+          },
+          "bounds": {
+            "height": 300.79999999999995,
+            "width": 260.79999999999995,
+            "x": 13.6,
+            "y": -2.4
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 5.9000000059604645,
+          "frameP95Ms": 8.400000005960464,
+          "frames": 223,
+          "averageFrameMs": 6.5251121062601625,
+          "maxFrameMs": 53.39999997615814,
+          "generation": 1,
+          "kind": "Canvas2D",
+          "lost": false
+        }
+      },
+      {
+        "backend": "WebGL2",
+        "count": 40,
+        "buildVersion": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+        "middleOffset": 1083.9422051303727,
+        "meanRenderMs": 10.699166667213044,
+        "p95FrameIntervalMs": 15.400000005960464,
+        "frames": 120,
+        "nodeCount": 38,
+        "snapshotBytes": 236973,
+        "floatingSurface": {
+          "backend": {
+            "cachedSurfaces": 7,
+            "draws": 205770,
+            "effectPasses": 558,
+            "generation": 1,
+            "kind": "WebGL2",
+            "lost": false,
+            "uploads": 143
+          },
+          "bounds": {
+            "height": 300.79999999999995,
+            "width": 260.79999999999995,
+            "x": 13.6,
+            "y": -2.4
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 9.600000023841858,
+          "frameP95Ms": 13.099999994039536,
+          "frames": 187,
+          "averageFrameMs": 10.464705883500411,
+          "maxFrameMs": 55.900000005960464,
+          "cachedSurfaces": 2,
+          "draws": 7256,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        }
+      },
+      {
+        "backend": "WebGL2",
+        "count": 10000,
+        "buildVersion": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+        "middleOffset": 1224.1326234153983,
+        "meanRenderMs": 18.692500000447037,
+        "p95FrameIntervalMs": 32.10000002384186,
+        "frames": 120,
+        "nodeCount": 42,
+        "snapshotBytes": 262408,
+        "floatingSurface": {
+          "backend": {
+            "cachedSurfaces": 7,
+            "draws": 219816,
+            "effectPasses": 540,
+            "generation": 1,
+            "kind": "WebGL2",
+            "lost": false,
+            "uploads": 160
+          },
+          "bounds": {
+            "height": 300.79999999999995,
+            "width": 260.79999999999995,
+            "x": 13.6,
+            "y": -2.4
+          },
+          "visible": true
+        },
+        "diagnostics": {
+          "frameP50Ms": 14.100000023841858,
+          "frameP95Ms": 28.599999994039536,
+          "frames": 181,
+          "averageFrameMs": 16.03149171247667,
+          "maxFrameMs": 47.400000005960464,
+          "cachedSurfaces": 2,
+          "draws": 7022,
+          "effectPasses": 0,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 2
+        }
+      }
+    ]
+  },
+  "remaining": [
+    "DWrite/browser glyph coverage, rounded-edge rasterization, and desktop DWM versus browser composition remain separate from these patch comparisons.",
+    "Performance is a local headless Chrome benchmark, not a cross-device frame-rate guarantee."
+  ],
+  "webkitBackends": {
+    "Canvas2D": {
+      "rows": [
+        {
+          "name": "faceplate-Light-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        }
+      ],
+      "maxPatchRgbMae": 0.0
+    },
+    "WebGL2": {
+      "rows": [
+        {
+          "name": "faceplate-Light-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Light-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-ReadOnly-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Normal",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverText",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-HoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Keyboard",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHover",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-KeyboardHoverArrow",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        },
+        {
+          "name": "faceplate-Dark-Editable-Disabled",
+          "patchRgbMae": {
+            "body": 0.0,
+            "topEdge": 0.0,
+            "bottomEdge": 0.0,
+            "arrowUpper": 0.0
+          }
+        }
+      ],
+      "maxPatchRgbMae": 0.0
+    }
+  },
+  "performanceMatchesFrozenBinary": true
+}

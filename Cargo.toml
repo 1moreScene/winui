@@ -1,0 +1,33 @@
+[package]
+name = "winui-wasm"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Source-traced WinUI controls with a Rust-owned browser runtime"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+serde = { version = "1", features = ["derive", "rc"] }
+serde_json = "1"
+unicode-segmentation = "=1.12.0"
+unicode-linebreak = "=0.1.5"
+unicode-bidi = "=0.3.18"
+kurbo = "=0.13.1"
+
+[build-dependencies]
+roxmltree = "0.20"
+serde_json = "1"
+png = "0.17"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = "=0.2.104"
+web-sys = { version = "=0.3.81", features = ["HtmlElement", "CssStyleDeclaration", "DomRect", "CanvasWindingRule", "CanvasPattern", "CanvasRenderingContext2d", "HtmlCanvasElement", "TextMetrics", "Document", "Element", "Node", "ImageData", "DomMatrix", "CanvasGradient", "HtmlImageElement", "WebGl2RenderingContext", "WebGlProgram", "WebGlShader", "WebGlBuffer", "WebGlUniformLocation", "WebGlTexture", "WebGlFramebuffer", "WebGlRenderbuffer", "WebGlVertexArrayObject", "WebGlContextAttributes"] }
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

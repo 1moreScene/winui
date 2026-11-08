@@ -1,0 +1,3 @@
+import {defineConfig} from '@playwright/test';
+import base from './playwright.config';
+export default defineConfig({...base,testMatch:process.env.WINUI_CONTENT_HOSTS_REGRESSION==='1'?['**/frame.spec.ts','**/frame-flicker.spec.ts']:'**/content-hosts.spec.ts',webServer:undefined,use:{...base.use,channel:process.env.PW_CHANNEL??'chrome',baseURL:process.env.WINUI_CONTENT_HOSTS_URL??'http://127.0.0.1:5216',deviceScaleFactor:1.25},outputDir:'../out/content-hosts-browser',reporter:[['list'],['json',{outputFile:process.env.WINUI_CONTENT_HOSTS_REGRESSION==='1'?'../out/content-hosts-integration-results.json':process.env.WINUI_CONTENT_HOSTS_URL?.includes(':5217')?'../out/content-hosts-production-browser-results.json':'../out/content-hosts-browser-results.json'}]]});

@@ -1,0 +1,65 @@
+{
+  "dpi": 1.25,
+  "results": [
+    {
+      "name": "gradient-Pad-inside",
+      "backend": "Canvas2D",
+      "mean": 0.01017361111111111
+    },
+    {
+      "name": "gradient-Pad-inside",
+      "backend": "WebGL2",
+      "mean": 0.014016203703703704
+    },
+    {
+      "name": "gradient-Reflect-inside",
+      "backend": "Canvas2D",
+      "mean": 0.031747685185185184
+    },
+    {
+      "name": "gradient-Reflect-inside",
+      "backend": "WebGL2",
+      "mean": 0.030862268518518518
+    },
+    {
+      "name": "gradient-Repeat-inside",
+      "backend": "Canvas2D",
+      "mean": 0.06479166666666666
+    },
+    {
+      "name": "gradient-Repeat-inside",
+      "backend": "WebGL2",
+      "mean": 0.06388888888888888
+    },
+    {
+      "name": "gradient-Pad-outside",
+      "backend": "Canvas2D",
+      "mean": 0.011273148148148148
+    },
+    {
+      "name": "gradient-Pad-outside",
+      "backend": "WebGL2",
+      "mean": 0.015034722222222222
+    },
+    {
+      "name": "gradient-Reflect-outside",
+      "backend": "Canvas2D",
+      "mean": 0.0225
+    },
+    {
+      "name": "gradient-Reflect-outside",
+      "backend": "WebGL2",
+      "mean": 0.023449074074074074
+    },
+    {
+      "name": "gradient-Repeat-outside",
+      "backend": "Canvas2D",
+      "mean": 0.04383101851851852
+    },
+    {
+      "name": "gradient-Repeat-outside",
+      "backend": "WebGL2",
+      "mean": 0.04482638888888889
+    }
+  ]
+}

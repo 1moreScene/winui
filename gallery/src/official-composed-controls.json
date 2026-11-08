@@ -1,0 +1,218 @@
+{
+  "controls": {
+    "AutoSuggestBox": {
+      "description": "A text control that makes suggestions to users as they type. The app is notified when text has been changed by the user and is responsible for providing relevant suggestions for this control to display.",
+      "samples": [
+        {
+          "title": "A basic autosuggest box.",
+          "xaml": "<AutoSuggestBox TextChanged=\"AutoSuggestBox_TextChanged\"\n                SuggestionChosen=\"AutoSuggestBox_SuggestionChosen\"\n                Width=\"300\" AutomationProperties.Name=\"Basic AutoSuggestBox\"/>"
+        },
+        {
+          "title": "An AutoSuggestBox that provides a SearchBox experience",
+          "xaml": "<AutoSuggestBox PlaceholderText=\"Type a control name\"\n        TextChanged=\"Control2_TextChanged\"\n        QueryIcon=\"Find\"\n        QuerySubmitted=\"Control2_QuerySubmitted\"\n        SuggestionChosen=\"Control2_SuggestionChosen\"/>"
+        }
+      ]
+    },
+    "ComboBox": {
+      "description": "Use a ComboBox when you need to conserve on-screen space and when users select only one option at a time. A ComboBox shows only the currently selected item.",
+      "samples": [
+        {
+          "title": "A ComboBox with items defined inline and its width set.",
+          "xaml": "<ComboBox SelectionChanged=\"ColorComboBox_SelectionChanged\" Header=\"Colors\" PlaceholderText=\"Pick a color\" Width=\"200\">\n    <x:String>Blue</x:String>\n    <x:String>Green</x:String>\n    <x:String>Red</x:String>\n    <x:String>Yellow</x:String>\n</ComboBox>"
+        },
+        {
+          "title": "A ComboBox with its ItemsSource set.",
+          "xaml": "<ComboBox ItemsSource=\"{x:Bind Fonts}\" DisplayMemberPath=\"Item1\" SelectedValuePath=\"Item2\"\n          Header=\"Font\" Width=\"200\" Loaded=\"Combo2_Loaded\"/>"
+        },
+        {
+          "title": "An editable ComboBox.",
+          "xaml": "<ComboBox IsEditable=\"True\" ItemsSource=\"{x:Bind FontSizes}\" Width=\"200\" TextSubmitted=\"Combo3_TextSubmitted\"/>"
+        }
+      ]
+    },
+    "ContentDialog": {
+      "description": "Use a ContentDialog to show relevant information or to provide a modal dialog experience that can show any XAML content.",
+      "samples": [
+        {
+          "title": "A basic content dialog with content.",
+          "xaml": "<Page\n    x:Class=\"WinUIGallery.ControlPages.ContentDialogContent\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n\n    <StackPanel VerticalAlignment=\"Stretch\" HorizontalAlignment=\"Stretch\">\n        <!-- Content body -->\n        <TextBlock Text=\"Lorem ipsum dolor sit amet, adipisicing elit.\" TextWrapping=\"Wrap\" />\n        <CheckBox Content=\"Upload your content to the cloud.\"/>\n    </StackPanel>\n\n</Page>"
+        },
+        {
+          "title": "A content dialog without a default button.",
+          "xaml": "<Page\n    x:Class=\"WinUIGallery.ControlPages.ContentDialogContent\"\n    xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"\n    xmlns:x=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n\n    <StackPanel VerticalAlignment=\"Stretch\" HorizontalAlignment=\"Stretch\">\n        <!-- Content body -->\n        <TextBlock Text=\"Lorem ipsum dolor sit amet, adipisicing elit.\" TextWrapping=\"Wrap\" />\n        <CheckBox Content=\"Upload your content to the cloud.\"/>\n    </StackPanel>\n\n</Page>"
+        }
+      ]
+    },
+    "NumberBox": {
+      "description": "Use NumberBox to allow users to enter algebraic equations and numeric input in your app.",
+      "samples": [
+        {
+          "title": "A NumberBox that evaluates expressions.",
+          "xaml": "<NumberBox Header=\"Enter an expression:\" Value=\"NaN\" PlaceholderText=\"1 + 2^2\" AcceptsExpression=\"True\" />"
+        },
+        {
+          "title": "A NumberBox with a spin button.",
+          "xaml": "<NumberBox\n    x:Name=\"NumberBoxSpinButtonPlacementExample\"\n    Header=\"Enter an integer:\" \n    Value=\"1\" \n    SpinButtonPlacementMode=\"Inline\"\n    SmallChange=\"10\"\n    LargeChange=\"100\" />"
+        },
+        {
+          "title": "A formatted NumberBox that rounds to the nearest 0.25.",
+          "xaml": "<NumberBox x:Name=\"FormattedNumberBox\" Header=\"Enter an dollar amount:\" PlaceholderText=\"0.00\" />"
+        }
+      ]
+    },
+    "TeachingTip": {
+      "description": "The XAML TeachingTip Control provides a way for your app to guide and inform users in your application with a non-invasive and content rich notification. TeachingTip can be used for bringing focus to a new or important feature, teaching users how to perform a task, or enhancing the user workflow by providing contextually relevant information to their task at hand.",
+      "samples": [
+        {
+          "title": "Show a targeted TeachingTip on a button.",
+          "xaml": "<Button\n    x:Name=\"TestButton1\"\n    Click=\"TestButton1Click\"\n    Content=\"Show TeachingTip\" />\n<TeachingTip\n    x:Name=\"TestButton1TeachingTip\"\n    Title=\"This is the title\"\n    Subtitle=\"And this is the subtitle\"\n    Target=\"{x:Bind TestButton1}\">\n    <TeachingTip.IconSource>\n        <SymbolIconSource Symbol=\"Refresh\" />\n    </TeachingTip.IconSource>\n</TeachingTip>"
+        },
+        {
+          "title": "Show a non-targeted TeachingTip with buttons.",
+          "xaml": "<Button\n    Click=\"TestButton2Click\"\n    Content=\"Show TeachingTip\" />\n<TeachingTip\n    x:Name=\"TestButton2TeachingTip\"\n    Title=\"This is the title\"\n    ActionButtonContent=\"Action button\"\n    CloseButtonContent=\"Close button\"\n    IsLightDismissEnabled=\"True\"\n    PlacementMargin=\"20\"\n    PreferredPlacement=\"Auto\"\n    Subtitle=\"And this is the subtitle\" />"
+        },
+        {
+          "title": "Show a targeted TeachingTip with hero content on a button.",
+          "xaml": "<Button\n    x:Name=\"TestButton3\"\n    Click=\"TestButton3Click\"\n    Content=\"Show TeachingTip\" />\n<TeachingTip\n    x:Name=\"TestButton3TeachingTip\"\n    Title=\"This is the title\"\n    PreferredPlacement=\"Bottom\"\n    Subtitle=\"And this is the subtitle\"\n    Target=\"{x:Bind TestButton3}\">\n    <TeachingTip.HeroContent>\n        <Image\n            AutomationProperties.Name=\"Sunset\"\n            Source=\"/Assets/SampleMedia/sunset.jpg\" />\n    </TeachingTip.HeroContent>\n    <TeachingTip.Content>\n        <TextBlock\n            Margin=\"0,16,0,0\"\n            Text=\"Description can go here\"\n            TextWrapping=\"WrapWholeWords\" />\n    </TeachingTip.Content>\n</TeachingTip>"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "local": "references\\gallery-input\\AutoSuggestBox\\AutoSuggestBoxPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\AutoSuggestBox\\AutoSuggestBoxPage.xaml",
+      "sha256": "2c561c62cae2c08308269c697b37439f87fb98c5ec9aabba0de202dc63041fc7"
+    },
+    {
+      "local": "references\\gallery-input\\AutoSuggestBox\\AutoSuggestBoxPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\AutoSuggestBox\\AutoSuggestBoxPage.xaml.cs",
+      "sha256": "5e9561cb29096ef5e19535f8134c06ab236f990e974680a5832af25bfa2d736d"
+    },
+    {
+      "local": "references\\gallery-input\\AutoSuggestBox\\AutosuggestboxProvidesSearchboxExperience.txt",
+      "upstream": "WinUIGallery\\Samples\\AutoSuggestBox\\AutosuggestboxProvidesSearchboxExperience.txt",
+      "sha256": "aa1ced60555382b19cc755355dabaff20f94da0dabe8dc3284f8cd3509b92191"
+    },
+    {
+      "local": "references\\gallery-input\\AutoSuggestBox\\BasicAutosuggestBox.txt",
+      "upstream": "WinUIGallery\\Samples\\AutoSuggestBox\\BasicAutosuggestBox.txt",
+      "sha256": "a80bbfa5022bbf4b2af3ba5e5fd3af979716401f142c25ca87d7f429066b4b3f"
+    },
+    {
+      "local": "references\\gallery-input\\ComboBox\\ComboBoxEditable.txt",
+      "upstream": "WinUIGallery\\Samples\\ComboBox\\ComboBoxEditable.txt",
+      "sha256": "1a1bff6c142f8027116dbd874ed6cee55ebfaa7e94700aeeb8f0ea7a5f546f6c"
+    },
+    {
+      "local": "references\\gallery-input\\ComboBox\\ComboBoxInline.txt",
+      "upstream": "WinUIGallery\\Samples\\ComboBox\\ComboBoxInline.txt",
+      "sha256": "beb8dc6b1a84cb44b5f47911ac501996182b05b1d1abca0c376451013c11f235"
+    },
+    {
+      "local": "references\\gallery-input\\ComboBox\\ComboBoxItemsSource.txt",
+      "upstream": "WinUIGallery\\Samples\\ComboBox\\ComboBoxItemsSource.txt",
+      "sha256": "f5a0f0c5923c6348c2fea550f7946e2c135ce5b83c494a265efbd80d9c9217fb"
+    },
+    {
+      "local": "references\\gallery-input\\ComboBox\\ComboBoxPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\ComboBox\\ComboBoxPage.xaml",
+      "sha256": "32943b27f88e42c04d8015209cee6d63fa3adc20213d8faaecade203c5d1d26d"
+    },
+    {
+      "local": "references\\gallery-input\\ComboBox\\ComboBoxPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\ComboBox\\ComboBoxPage.xaml.cs",
+      "sha256": "6c65e36fd8dcd5e56ef0889dd6beb091bc706d692b532f5031c8732ac34570ac"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\BasicContentDialogContent.txt",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\BasicContentDialogContent.txt",
+      "sha256": "b67bd213ff6ddf51b80fc4ad090e59e4f0e632f2b4f48935f81f6605e6eaac40"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogContent.xaml",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogContent.xaml",
+      "sha256": "7c3859a576fbfe8ae57f47d7084e6ec9603bc1e09bc5d01666d729e83f61ee39"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogContent.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogContent.xaml.cs",
+      "sha256": "8fbb1a4225732fc0baf9f2cade7e1a1b3be474c2b7f04f02c2b36190674c0c1a"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogExample.xaml",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogExample.xaml",
+      "sha256": "fdb851c2f791fb23ada1479575496eb0fc4945e8f719839ba9d8fe5a6875ad62"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogExample.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogExample.xaml.cs",
+      "sha256": "bdd4e47918dc6c2828574c70a84d6cbd6b29b7e961bf362ff200c5c26778a431"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogPage.xaml",
+      "sha256": "61ed29eb271302c58d46bb08095129bea874f301f854f3123ab198b102d85f15"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogPage.xaml.cs",
+      "sha256": "036751109b55bd2067b95224d37cff3cc9aa339f0b28c21c85e00f589c2711c9"
+    },
+    {
+      "local": "references\\gallery-input\\ContentDialog\\ContentDialogWithoutDefault.txt",
+      "upstream": "WinUIGallery\\Samples\\ContentDialog\\ContentDialogWithoutDefault.txt",
+      "sha256": "c7c84cb3445d71cebfc9bb6f4fd6b734dff3ed547b44df6ccc46b44bc6c97b5c"
+    },
+    {
+      "local": "references\\gallery-input\\NumberBox\\FormattedNumberboxRoundsNearest.txt",
+      "upstream": "WinUIGallery\\Samples\\NumberBox\\FormattedNumberboxRoundsNearest.txt",
+      "sha256": "6d5d037bc7af3678a317a08eb561781f9098cbcedc6252f3e0921f89b1a88095"
+    },
+    {
+      "local": "references\\gallery-input\\NumberBox\\NumberboxEvaluatesExpressions.txt",
+      "upstream": "WinUIGallery\\Samples\\NumberBox\\NumberboxEvaluatesExpressions.txt",
+      "sha256": "a4442235f90b5ebeed8708558e32ed5aa19ab670264154a010afc9e6d2b7c07f"
+    },
+    {
+      "local": "references\\gallery-input\\NumberBox\\NumberBoxPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\NumberBox\\NumberBoxPage.xaml",
+      "sha256": "95bc0ffe24e4dadd91d54f8f8b299392d3526d5f9d579b14a00c6daac94f5b2a"
+    },
+    {
+      "local": "references\\gallery-input\\NumberBox\\NumberBoxPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\NumberBox\\NumberBoxPage.xaml.cs",
+      "sha256": "7f34794757a5d7b09b19b24912c8a2b9144593a0a0771e56eb082086e33d3717"
+    },
+    {
+      "local": "references\\gallery-input\\NumberBox\\NumberboxSpinButton.txt",
+      "upstream": "WinUIGallery\\Samples\\NumberBox\\NumberboxSpinButton.txt",
+      "sha256": "1a427665439d0e321388c0e4d3e202f848c3994f95b84fe6e63f112e098a1a76"
+    },
+    {
+      "local": "references\\gallery-input\\TeachingTip\\ShowNonTargetedTeachingtip.txt",
+      "upstream": "WinUIGallery\\Samples\\TeachingTip\\ShowNonTargetedTeachingtip.txt",
+      "sha256": "08f78eb79879f2d67fb03f8814acee69f3d22270be186fac821b0bdb8e351bd1"
+    },
+    {
+      "local": "references\\gallery-input\\TeachingTip\\ShowTargetedTeachingtipButton.txt",
+      "upstream": "WinUIGallery\\Samples\\TeachingTip\\ShowTargetedTeachingtipButton.txt",
+      "sha256": "506ec7fcf9c5d008709b141cab51b7209acdfba406edeac05283bd2a4ab19406"
+    },
+    {
+      "local": "references\\gallery-input\\TeachingTip\\ShowTargetedTeachingtipHero.txt",
+      "upstream": "WinUIGallery\\Samples\\TeachingTip\\ShowTargetedTeachingtipHero.txt",
+      "sha256": "bcd78df71d420e3e081d816f6687a9dd083e27ae152ce65bd0c07f9f2052069b"
+    },
+    {
+      "local": "references\\gallery-input\\TeachingTip\\TeachingTipPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\TeachingTip\\TeachingTipPage.xaml",
+      "sha256": "3e9be72b5c10777988341e9be651f2238343b8573c90d86d8dbaf26f6601f7db"
+    },
+    {
+      "local": "references\\gallery-input\\TeachingTip\\TeachingTipPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\TeachingTip\\TeachingTipPage.xaml.cs",
+      "sha256": "81e46124a22a7a0f89c72c086409a4f36c6c2e692a18095cecad755a8625f20c"
+    }
+  ]
+}

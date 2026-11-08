@@ -1,0 +1,3489 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controlCount": 126,
+  "controls": [
+    {
+      "id": "accessibilitycolorcontrast",
+      "name": "Color Contrast",
+      "category": "Accessibility",
+      "galleryPage": "WinUIGallery/Samples/AccessibilityColorContrast/AccessibilityColorContrastPage.xaml",
+      "samples": [],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "accessibilitykeyboard",
+      "name": "Keyboard Navigation",
+      "category": "Accessibility",
+      "galleryPage": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardPage.xaml",
+      "samples": [
+        {
+          "title": "Automatic Tab Order",
+          "source": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardAutomaticTabOrder.txt"
+        },
+        {
+          "title": "Manual Tab Order",
+          "source": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardManualTabOrder.txt"
+        },
+        {
+          "title": "Automatic Arrow Keys",
+          "source": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardAutomaticArrowKeys.txt"
+        },
+        {
+          "title": "Manual Arrow Keys",
+          "source": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardManualArrowKeys.txt"
+        },
+        {
+          "title": "Accelerators",
+          "source": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardAccelerators.txt"
+        },
+        {
+          "title": "Access Keys",
+          "source": "WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardAccessKeys.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "accessibilityscreenreader",
+      "name": "Screen Reader",
+      "category": "Accessibility",
+      "galleryPage": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderPage.xaml",
+      "samples": [
+        {
+          "title": "Name From Content",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderNameFromContent.txt"
+        },
+        {
+          "title": "Name From Header",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderNameFromHeader.txt"
+        },
+        {
+          "title": "Name On List View",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderNameOnListView.txt"
+        },
+        {
+          "title": "Name On Image",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderNameOnImage.txt"
+        },
+        {
+          "title": "Labeled By",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderLabeledBy.txt"
+        },
+        {
+          "title": "Description and help text: add descriptions and help text to controls",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderDescriptionHelpTextAdd.txt"
+        },
+        {
+          "title": "Position in set: indicate the position of an element within a set",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderPositionIndicatePositionElement.txt"
+        },
+        {
+          "title": "Remove a control from the content visual tree",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderRemoveControlContentVisual.txt"
+        },
+        {
+          "title": "Landmarks",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderLandmarks.txt"
+        },
+        {
+          "title": "Headings",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderHeadings.txt"
+        },
+        {
+          "title": "Control Groups",
+          "source": "WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderControlGroups.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "acrylic",
+      "name": "AcrylicBrush",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/Acrylic/AcrylicPage.xaml",
+      "samples": [
+        {
+          "title": "Default in-app acrylic brush.",
+          "source": "WinUIGallery/Samples/Acrylic/DefaultAppAcrylicBrush.txt"
+        },
+        {
+          "title": "Custom acrylic in-app brush.",
+          "source": "WinUIGallery/Samples/Acrylic/CustomAcrylicAppBrush.txt"
+        },
+        {
+          "title": "Luminosity with in-app Acrylic.",
+          "source": "WinUIGallery/Samples/Acrylic/LuminosityAppAcrylic.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Media",
+      "winuiSource": "controls/dev/Materials/Acrylic/AcrylicBrush.cpp + AcrylicBrush.h",
+      "requiredResources": [
+        "AcrylicBrush.cpp",
+        "AcrylicBrush.h",
+        "NoiseAsset_256X256_PNG.png",
+        "material-graph.json"
+      ],
+      "hostDependencies": [
+        "same-scene ordered backdrop",
+        "Canvas2D or WebGL2 render targets",
+        "requestAnimationFrame",
+        "reduced-motion / reduced-transparency policies"
+      ],
+      "implementation": "3 official Acrylic samples and options; theme/custom/luminosity, source graph and 500ms color interruption on Canvas2D/WebGL2; 12 native static + 34 fixed-progress captures",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "animatedicon",
+      "name": "AnimatedIcon",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/AnimatedIcon/AnimatedIconPage.xaml",
+      "samples": [
+        {
+          "title": "Adding AnimatedIcon to a button",
+          "source": "WinUIGallery/Samples/AnimatedIcon/AddingAnimatediconButton.txt"
+        },
+        {
+          "title": "Adding AnimatedIcon to a NavigationView",
+          "source": "WinUIGallery/Samples/AnimatedIcon/AddingAnimatediconNavigationview.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/AnimatedIcon/AnimatedIcon.cpp + AnimatedVisuals",
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.8 seven built-in sources, Rust QueueOne, fallback and NavigationView integration; 252 frozen Composition regions; arbitrary sources and Store present-time parity pending; docs/animated-icons-shapes.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "animatedvisualplayer",
+      "name": "AnimatedVisualPlayer",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/AnimatedVisualPlayer/AnimatedVisualPlayerPage.xaml",
+      "samples": [
+        {
+          "title": "Playback of a Lottie animation.",
+          "source": "WinUIGallery/Samples/AnimatedVisualPlayer/AnimatedVisualPlayerPlaybackLottieAnimation.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "annotatedscrollbar",
+      "name": "AnnotatedScrollBar",
+      "category": "Scrolling",
+      "galleryPage": "WinUIGallery/Samples/AnnotatedScrollBar/AnnotatedScrollBarPage.xaml",
+      "samples": [
+        {
+          "title": "AnnotatedScrollBar linked to a ScrollView.",
+          "source": "WinUIGallery/Samples/AnnotatedScrollBar/AnnotatedscrollbarLinkedScrollview.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "appbarbutton",
+      "name": "AppBarButton",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/AppBarButton/AppBarButtonPage.xaml",
+      "samples": [
+        {
+          "title": "An AppBarButton with a symbol icon.",
+          "source": "WinUIGallery/Samples/AppBarButton/AppbarbuttonSymbolIcon.txt"
+        },
+        {
+          "title": "An AppBarButton with a bitmap icon.",
+          "source": "WinUIGallery/Samples/AppBarButton/AppbarbuttonBitmapIcon.txt"
+        },
+        {
+          "title": "An AppBarButton with a font icon.",
+          "source": "WinUIGallery/Samples/AppBarButton/AppbarbuttonFontIcon.txt"
+        },
+        {
+          "title": "An AppBarButton with a path icon.",
+          "source": "WinUIGallery/Samples/AppBarButton/AppbarbuttonPathIcon.txt"
+        },
+        {
+          "title": "An AppBarButton with a KeyboardAccelerator",
+          "source": "WinUIGallery/Samples/AppBarButton/AppbarbuttonKeyboardaccelerator.txt"
+        },
+        {
+          "title": "An AppBarButton that opens a Flyout containing an input control.",
+          "source": "WinUIGallery/Samples/AppBarButton/AppbarbuttonOpensFlyoutContaining.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "appbarseparator",
+      "name": "AppBarSeparator",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/AppBarSeparator/AppBarSeparatorPage.xaml",
+      "samples": [
+        {
+          "title": "AppBarButtons separated by AppBarSeparators.",
+          "source": "WinUIGallery/Samples/AppBarSeparator/AppbarbuttonsSeparatedAppbarseparators.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "appbartogglebutton",
+      "name": "AppBarToggleButton",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/AppBarToggleButton/AppBarToggleButtonPage.xaml",
+      "samples": [
+        {
+          "title": "An AppBarToggleButton with a symbol icon.",
+          "source": "WinUIGallery/Samples/AppBarToggleButton/AppbartogglebuttonSymbolIcon.txt"
+        },
+        {
+          "title": "An AppBarToggleButton with a bitmap icon.",
+          "source": "WinUIGallery/Samples/AppBarToggleButton/AppbartogglebuttonBitmapIcon.txt"
+        },
+        {
+          "title": "An AppBarToggleButton with a font icon.",
+          "source": "WinUIGallery/Samples/AppBarToggleButton/AppbartogglebuttonFontIcon.txt"
+        },
+        {
+          "title": "A three-state AppBarToggleButton with a path icon.",
+          "source": "WinUIGallery/Samples/AppBarToggleButton/ThreeStateAppbartogglebuttonPath.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "appnotification",
+      "name": "App notifications",
+      "category": "Shell",
+      "galleryPage": "WinUIGallery/Samples/AppNotification/AppNotificationPage.xaml",
+      "samples": [
+        {
+          "title": "Basic notification",
+          "source": "WinUIGallery/Samples/AppNotification/AppNotificationBasicNotification.txt"
+        },
+        {
+          "title": "Informational notification with logo and custom audio",
+          "source": "WinUIGallery/Samples/AppNotification/AppNotificationInformationalNotificationLogoCustom.txt"
+        },
+        {
+          "title": "Visual notification with hero image and attribution",
+          "source": "WinUIGallery/Samples/AppNotification/AppNotificationVisualNotificationHeroImage.txt"
+        },
+        {
+          "title": "Notification with AppNotification controls",
+          "source": "WinUIGallery/Samples/AppNotification/NotificationAppnotificationControls.txt"
+        },
+        {
+          "title": "Notification with ProgressBar",
+          "source": "WinUIGallery/Samples/AppNotification/AppNotificationNotificationProgressbar.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.Windows.Notifications",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "appwindow",
+      "name": "AppWindow",
+      "category": "Windowing",
+      "galleryPage": "WinUIGallery/Samples/AppWindow/AppWindowPage.xaml",
+      "samples": [
+        {
+          "title": "Creating and customizing an AppWindow from a Window instance",
+          "source": "WinUIGallery/Samples/AppWindow/CreatingCustomizingAppwindowWindow.txt"
+        },
+        {
+          "title": "Centering AppWindow on the screen using the available display area",
+          "source": "WinUIGallery/Samples/AppWindow/CenteringAppwindowScreenAvailable.txt"
+        },
+        {
+          "title": "AppWindow with OverlapedPresenter",
+          "source": "WinUIGallery/Samples/AppWindow/AppwindowOverlapedpresenter.txt"
+        },
+        {
+          "title": "Setting the minimum and maximum width / height on an AppWindow using OverlappedPresenter",
+          "source": "WinUIGallery/Samples/AppWindow/AppWindowSettingMinimumMaximumWidth.txt"
+        },
+        {
+          "title": "Modal window with OverlappedPresenter using AppWindow",
+          "source": "WinUIGallery/Samples/AppWindow/ModalWindowOverlappedpresenterAppwindow.txt"
+        },
+        {
+          "title": "AppWindow with FullScreenPresenter",
+          "source": "WinUIGallery/Samples/AppWindow/AppwindowFullscreenpresenter.txt"
+        },
+        {
+          "title": "AppWindow with CompactOverlayPresenter",
+          "source": "WinUIGallery/Samples/AppWindow/AppwindowCompactoverlaypresenter.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Windowing",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "appwindowtitlebar",
+      "name": "AppWindowTitleBar",
+      "category": "Windowing",
+      "galleryPage": "WinUIGallery/Samples/AppWindowTitleBar/AppWindowTitleBarPage.xaml",
+      "samples": [
+        {
+          "title": "AppWindowTitleBar color customization",
+          "source": "WinUIGallery/Samples/AppWindowTitleBar/AppwindowtitlebarColorCustomization.txt"
+        },
+        {
+          "title": "Extending content into the AppWindowTitleBar area",
+          "source": "WinUIGallery/Samples/AppWindowTitleBar/ExtendingContentAppwindowtitlebarArea.txt"
+        },
+        {
+          "title": "AppWindowTitleBar preferred theme and height options",
+          "source": "WinUIGallery/Samples/AppWindowTitleBar/AppwindowtitlebarPreferredThemeHeight.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Windowing",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "autosuggestbox",
+      "name": "AutoSuggestBox",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/AutoSuggestBox/AutoSuggestBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A basic autosuggest box.",
+          "source": "WinUIGallery/Samples/AutoSuggestBox/BasicAutosuggestBox.txt"
+        },
+        {
+          "title": "An AutoSuggestBox that provides a SearchBox experience",
+          "source": "WinUIGallery/Samples/AutoSuggestBox/AutosuggestboxProvidesSearchboxExperience.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "deferred until stage 7 Popup infrastructure; composition, not TextBox inheritance; no partial API exported",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "badgenotificationmanager",
+      "name": "Badge notifications",
+      "category": "Shell",
+      "galleryPage": "WinUIGallery/Samples/BadgeNotificationManager/BadgeNotificationManagerPage.xaml",
+      "samples": [
+        {
+          "title": "Setting badge notifications with count",
+          "source": "WinUIGallery/Samples/BadgeNotificationManager/BadgeNotificationManagerSettingBadgeNotificationsCount.txt"
+        },
+        {
+          "title": "Setting badge notifications with Glyph",
+          "source": "WinUIGallery/Samples/BadgeNotificationManager/BadgeNotificationManagerSettingBadgeNotificationsGlyph.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.Windows.BadgeNotifications",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "binding",
+      "name": "Binding",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/Binding/BindingPage.xaml",
+      "samples": [
+        {
+          "title": "Binding between controls",
+          "source": "WinUIGallery/Samples/Binding/BindingControls.txt"
+        },
+        {
+          "title": "Binding to a property in code-behind",
+          "source": "WinUIGallery/Samples/Binding/BindingPropertyCodeBehind.txt"
+        },
+        {
+          "title": "Using a function in x:Bind",
+          "source": "WinUIGallery/Samples/Binding/BindingFunctionBind.txt"
+        },
+        {
+          "title": "Using a converter in Binding",
+          "source": "WinUIGallery/Samples/Binding/ConverterBinding.txt"
+        },
+        {
+          "title": "Binding to a view model",
+          "source": "WinUIGallery/Samples/Binding/BindingViewModel.txt"
+        },
+        {
+          "title": "Binding with TargetNullValue",
+          "source": "WinUIGallery/Samples/Binding/BindingTargetnullvalue.txt"
+        },
+        {
+          "title": "Binding a collection with data templates",
+          "source": "WinUIGallery/Samples/Binding/BindingCollectionDataTemplates.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "border",
+      "name": "Border",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/Border/BorderPage.xaml",
+      "samples": [
+        {
+          "title": "A Border around a TextBlock.",
+          "source": "WinUIGallery/Samples/Border/BorderAroundTextblock.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.6 source slice, public Rust/TS/React and native probes; scope and remaining gaps in docs/five-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "breadcrumbbar",
+      "name": "BreadcrumbBar",
+      "category": "Navigation",
+      "galleryPage": "WinUIGallery/Samples/BreadcrumbBar/BreadcrumbBarPage.xaml",
+      "samples": [
+        {
+          "title": "A BreadcrumbBar control",
+          "source": "WinUIGallery/Samples/BreadcrumbBar/BreadcrumbbarControl.txt"
+        },
+        {
+          "title": "BreadCrumbBar Control with Custom DataTemplate",
+          "source": "WinUIGallery/Samples/BreadcrumbBar/BreadcrumbbarControlCustomDatatemplate.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/Button/ButtonPage.xaml",
+      "samples": [
+        {
+          "title": "A simple Button with text content.",
+          "source": "WinUIGallery/Samples/Button/ButtonSimple.txt"
+        },
+        {
+          "title": "A Button with graphical content.",
+          "source": "WinUIGallery/Samples/Button/ButtonWithImage.txt"
+        },
+        {
+          "title": "Built-in styles applied to Button.",
+          "source": "WinUIGallery/Samples/Button/ButtonBuiltInStyles.txt"
+        },
+        {
+          "title": "Wrapping Buttons with large content",
+          "source": "WinUIGallery/Samples/Button/ButtonWrapping.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/CommonStyles/Button_themeresources.xaml + dxaml/xcp/dxaml/lib/ButtonBase_Partial.cpp",
+      "requiredResources": [
+        "Button_themeresources.xaml",
+        "button-palettes.json",
+        "button-native-metrics.json"
+      ],
+      "hostDependencies": [
+        "Canvas2D or WebGL2",
+        "pointer capture and keyboard",
+        "font metrics and glyph rasterization",
+        "DOM accessibility",
+        "image decode"
+      ],
+      "implementation": "stage 4: Standard/Accent/Subtle; shared scene, real input and 36 native fixture comparisons",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "calendardatepicker",
+      "name": "CalendarDatePicker",
+      "category": "Date & time",
+      "galleryPage": "WinUIGallery/Samples/CalendarDatePicker/CalendarDatePickerPage.xaml",
+      "samples": [
+        {
+          "title": "CalendarDatePicker with a header and placeholder text.",
+          "source": "WinUIGallery/Samples/CalendarDatePicker/CalendardatepickerHeaderPlaceholderText.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "calendarview",
+      "name": "CalendarView",
+      "category": "Date & time",
+      "galleryPage": "WinUIGallery/Samples/CalendarView/CalendarViewPage.xaml",
+      "samples": [
+        {
+          "title": "A basic calendar view.",
+          "source": "WinUIGallery/Samples/CalendarView/BasicCalendarView.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "canvas",
+      "name": "Canvas",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/Canvas/CanvasPage.xaml",
+      "samples": [
+        {
+          "title": "A Canvas control.",
+          "source": "WinUIGallery/Samples/Canvas/CanvasControl.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.6 source slice, public Rust/TS/React and native probes; scope and remaining gaps in docs/five-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "captureelementpreview",
+      "name": "Capture Element / Camera Preview",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/CaptureElementPreview/CaptureElementPreviewPage.xaml",
+      "samples": [
+        {
+          "title": "A MediaCapture preview displayed via a MediaPlayerElement.",
+          "source": "WinUIGallery/Samples/CaptureElementPreview/CaptureElementPreviewMediacapturePreviewDisplayedVia.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "chart",
+      "name": "Chart",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/Chart/ChartPage.xaml",
+      "samples": [
+        {
+          "title": "Create a line chart with axes and a legend",
+          "source": "WinUIGallery/Samples/Chart/BasicLineChart.txt"
+        },
+        {
+          "title": "Create a bar chart and sort its categories",
+          "source": "WinUIGallery/Samples/Chart/BarChart.txt"
+        },
+        {
+          "title": "Configure axes",
+          "source": "WinUIGallery/Samples/Chart/AxisOptions.txt"
+        },
+        {
+          "title": "Combine area, bar, and line series",
+          "source": "WinUIGallery/Samples/Chart/StyledSeries.txt"
+        },
+        {
+          "title": "Customize lines, markers, and data labels",
+          "source": "WinUIGallery/Samples/Chart/LinesAndMarkers.txt"
+        },
+        {
+          "title": "Plot a time series",
+          "source": "WinUIGallery/Samples/Chart/TimeSeries.txt"
+        },
+        {
+          "title": "Update a series data source",
+          "source": "WinUIGallery/Samples/Chart/LiveObservableSeries.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls.Charts",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "checkbox",
+      "name": "CheckBox",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/CheckBox/CheckBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A 2-state CheckBox.",
+          "source": "WinUIGallery/Samples/CheckBox/CheckBoxTwoState.txt"
+        },
+        {
+          "title": "A 3-state CheckBox.",
+          "source": "WinUIGallery/Samples/CheckBox/CheckBoxThreeState.txt"
+        },
+        {
+          "title": "Using a 3-state CheckBox.",
+          "source": "WinUIGallery/Samples/CheckBox/CheckBoxSelectAll.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/CommonStyles/CheckBox_themeresources.xaml + dxaml/xcp/dxaml/lib/ToggleButton_Partial.cpp + CheckBox_Partial.cpp",
+      "requiredResources": [
+        "selection-template.json",
+        "foundation-palettes.json",
+        "AnimatedAcceptVisualSource (pending)",
+        "FontIcon fallback"
+      ],
+      "hostDependencies": [
+        "shared Rust scene and capture/keyboard",
+        "DOM accessibility",
+        "Canvas2D or WebGL2",
+        "system Fluent Icons font"
+      ],
+      "implementation": "stage 6.1: 4 official examples, nullable checked state, notification-before-click and keyboard/input/lifecycle; 72 native settled states on two backends; AnimatedAcceptVisualSource paths/timing remain pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "clipboard",
+      "name": "Clipboard",
+      "category": "System",
+      "galleryPage": "WinUIGallery/Samples/Clipboard/ClipboardPage.xaml",
+      "samples": [
+        {
+          "title": "Copy text to the Clipboard",
+          "source": "WinUIGallery/Samples/Clipboard/CopyTextClipboard.txt"
+        },
+        {
+          "title": "Paste text from the Clipboard",
+          "source": "WinUIGallery/Samples/Clipboard/PasteTextClipboard.txt"
+        },
+        {
+          "title": "Copy and paste an image",
+          "source": "WinUIGallery/Samples/Clipboard/ClipboardCopyPasteImage.txt"
+        },
+        {
+          "title": "Copy and paste files",
+          "source": "WinUIGallery/Samples/Clipboard/ClipboardCopyPasteFiles.txt"
+        },
+        {
+          "title": "Clipboard history and roaming options",
+          "source": "WinUIGallery/Samples/Clipboard/ClipboardHistoryRoamingOptions.txt"
+        },
+        {
+          "title": "Other clipboard operations",
+          "source": "WinUIGallery/Samples/Clipboard/OtherClipboardOperations.txt"
+        }
+      ],
+      "nativeNamespace": "Windows.ApplicationModel.DataTransfer",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "color",
+      "name": "Color",
+      "category": "Design",
+      "galleryPage": "WinUIGallery/Samples/Color/ColorPage.xaml",
+      "samples": [],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "colorpicker",
+      "name": "ColorPicker",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/ColorPicker/ColorPickerPage.xaml",
+      "samples": [
+        {
+          "title": "ColorPicker Properties.",
+          "source": "WinUIGallery/Samples/ColorPicker/ColorPickerProperties.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "combobox",
+      "name": "ComboBox",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/ComboBox/ComboBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A ComboBox with items defined inline and its width set.",
+          "source": "WinUIGallery/Samples/ComboBox/ComboBoxInline.txt"
+        },
+        {
+          "title": "A ComboBox with its ItemsSource set.",
+          "source": "WinUIGallery/Samples/ComboBox/ComboBoxItemsSource.txt"
+        },
+        {
+          "title": "An editable ComboBox.",
+          "source": "WinUIGallery/Samples/ComboBox/ComboBoxEditable.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "commandbar",
+      "name": "CommandBar",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/CommandBar/CommandBarPage.xaml",
+      "samples": [
+        {
+          "title": "A command bar with labels on the side free floating in a page",
+          "source": "WinUIGallery/Samples/CommandBar/CommandBarLabelsSide.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "commandbarflyout",
+      "name": "CommandBarFlyout",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/CommandBarFlyout/CommandBarFlyoutPage.xaml",
+      "samples": [
+        {
+          "title": "CommandBarFlyout for commands on an in-app object",
+          "source": "WinUIGallery/Samples/CommandBarFlyout/CommandbarflyoutCommandsAppObject.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "references/command-menus-sources.json",
+      "requiredResources": "references/command-menu-template.json",
+      "hostDependencies": [
+        "Browser input and accessibility projection",
+        "Canvas2D or explicit WebGL2 renderer"
+      ],
+      "implementation": "Rust scene, typed TS and React slice; docs/menu-layout-controls.md",
+      "acceptance": "Same-SDK static geometry and browser behavior tested; complete Store Composition parity not accepted"
+    },
+    {
+      "id": "compactsizing",
+      "name": "Compact Sizing",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/CompactSizing/CompactSizingPage.xaml",
+      "samples": [
+        {
+          "title": "Compact Sizing for controls",
+          "source": "WinUIGallery/Samples/CompactSizing/CompactSizingControls.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "connectedanimation",
+      "name": "Connected Animation",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/ConnectedAnimation/ConnectedAnimationPage.xaml",
+      "samples": [
+        {
+          "title": "A connected animation between a list page and a detail page",
+          "source": "WinUIGallery/Samples/ConnectedAnimation/ConnectedAnimationListPage.txt"
+        },
+        {
+          "title": "A connected animation between elements on the same page",
+          "source": "WinUIGallery/Samples/ConnectedAnimation/ConnectedAnimationElementsSame.txt"
+        },
+        {
+          "title": "A simple connected animation",
+          "source": "WinUIGallery/Samples/ConnectedAnimation/SimpleConnectedAnimation.txt"
+        },
+        {
+          "title": "Connected animation with ItemsRepeater",
+          "source": "WinUIGallery/Samples/ConnectedAnimation/ConnectedAnimationItemsrepeater.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Media.Animation",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "contentdialog",
+      "name": "ContentDialog",
+      "category": "Dialogs & flyouts",
+      "galleryPage": "WinUIGallery/Samples/ContentDialog/ContentDialogPage.xaml",
+      "samples": [
+        {
+          "title": "A basic content dialog with content.",
+          "source": "WinUIGallery/Samples/ContentDialog/BasicContentDialogContent.txt"
+        },
+        {
+          "title": "A content dialog without a default button.",
+          "source": "WinUIGallery/Samples/ContentDialog/ContentDialogWithoutDefault.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "contentisland",
+      "name": "ContentIsland",
+      "category": "System",
+      "galleryPage": "WinUIGallery/Samples/ContentIsland/ContentIslandPage.xaml",
+      "samples": [],
+      "nativeNamespace": "Microsoft.UI.Content",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "customusercontrols",
+      "name": "Custom & User Controls",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/CustomUserControls/CustomUserControlsPage.xaml",
+      "samples": [
+        {
+          "title": "Counter Control with Increment/Decrement Mode",
+          "source": "WinUIGallery/Samples/CustomUserControls/CustomUserControlsCounterControlIncrementDecrement.txt"
+        },
+        {
+          "title": "Basic Custom Password Box with Validation",
+          "source": "WinUIGallery/Samples/CustomUserControls/CustomUserControlsBasicCustomPasswordBox.txt"
+        },
+        {
+          "title": "Temperature Converter UserControl example",
+          "source": "WinUIGallery/Samples/CustomUserControls/CustomUserControlsTemperatureConverterUsercontrolExample.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "customxamlconditionals",
+      "name": "XAML Conditions",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/CustomXamlConditionals/CustomXamlConditionalsPage.xaml",
+      "samples": [
+        {
+          "title": "Conditional elements",
+          "source": "WinUIGallery/Samples/CustomXamlConditionals/CustomXamlConditionalsConditionalElements.txt"
+        },
+        {
+          "title": "Conditional attributes",
+          "source": "WinUIGallery/Samples/CustomXamlConditionals/CustomXamlConditionalsConditionalAttributes.txt"
+        },
+        {
+          "title": "Conditional Setters in a Style",
+          "source": "WinUIGallery/Samples/CustomXamlConditionals/CustomXamlConditionalsConditionalSettersStyle.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Markup",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "datepicker",
+      "name": "DatePicker",
+      "category": "Date & time",
+      "galleryPage": "WinUIGallery/Samples/DatePicker/DatePickerPage.xaml",
+      "samples": [
+        {
+          "title": "A simple DatePicker with a header.",
+          "source": "WinUIGallery/Samples/DatePicker/SimpleDatepickerHeader.txt"
+        },
+        {
+          "title": "A DatePicker with day formatted and year hidden.",
+          "source": "WinUIGallery/Samples/DatePicker/DatepickerDayFormattedYear.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "dropdownbutton",
+      "name": "DropDownButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/DropDownButton/DropDownButtonPage.xaml",
+      "samples": [
+        {
+          "title": "Simple DropDownButton",
+          "source": "WinUIGallery/Samples/DropDownButton/DropDownButtonSimple.txt"
+        },
+        {
+          "title": "DropDownButton with Icons",
+          "source": "WinUIGallery/Samples/DropDownButton/DropDownButtonIcon.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "easingfunction",
+      "name": "Easing Functions",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/EasingFunction/EasingFunctionPage.xaml",
+      "samples": [
+        {
+          "title": "Standard Easing Function",
+          "source": "WinUIGallery/Samples/EasingFunction/StandardEasingFunction.txt"
+        },
+        {
+          "title": "Accelerate Easing Function",
+          "source": "WinUIGallery/Samples/EasingFunction/AccelerateEasingFunction.txt"
+        },
+        {
+          "title": "Decelerate Easing Function",
+          "source": "WinUIGallery/Samples/EasingFunction/DecelerateEasingFunction.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Media.Animation",
+      "winuiSource": "dxaml/xcp/components/animation/EasingFunctions.cpp + dxaml/xcp/core/inc/EasingFunctions.h",
+      "requiredResources": [
+        "EasingFunctions.cpp",
+        "EasingFunctions.h",
+        "native-easing-functions.json"
+      ],
+      "hostDependencies": [
+        "Rust clock / requestAnimationFrame",
+        "same-scene presentation matrix",
+        "reduced-motion policy"
+      ],
+      "implementation": "4 official examples; all 11 XAML easing families and 3 modes; 8481 native scalar samples verified",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "expander",
+      "name": "Expander",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/Expander/ExpanderPage.xaml",
+      "samples": [
+        {
+          "title": "An Expander with text in the header and content areas",
+          "source": "WinUIGallery/Samples/Expander/ExpanderTextHeaderContent.txt"
+        },
+        {
+          "title": "Modifying Expanders content alignment",
+          "source": "WinUIGallery/Samples/Expander/ModifyingExpandersContentAlignment.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.6 source slice, public Rust/TS/React and native probes; scope and remaining gaps in docs/five-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "flipview",
+      "name": "FlipView",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/FlipView/FlipViewPage.xaml",
+      "samples": [
+        {
+          "title": "A simple FlipView with items declared inline.",
+          "source": "WinUIGallery/Samples/FlipView/SimpleFlipviewItemsDeclared.txt"
+        },
+        {
+          "title": "Vertical FlipView",
+          "source": "WinUIGallery/Samples/FlipView/VerticalFlipview.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "flyout",
+      "name": "Flyout",
+      "category": "Dialogs & flyouts",
+      "galleryPage": "WinUIGallery/Samples/Flyout/FlyoutPage.xaml",
+      "samples": [
+        {
+          "title": "A button with a flyout",
+          "source": "WinUIGallery/Samples/Flyout/ButtonFlyout.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned source paths in overlay-sources.json; FlyoutBase/Popup and corresponding presenters are shared by SplitButton controls",
+      "requiredResources": [
+        "overlay-template.json",
+        "overlay-sources.json",
+        "overlay-palettes.json",
+        "overlay-metrics.json",
+        "overlay-native-motion.json"
+      ],
+      "hostDependencies": [
+        "shared Rust root overlay layout, input, clock and rendering",
+        "Scene DOM focus/ARIA projection; Canvas2D default, optional WebGL2"
+      ],
+      "implementation": "stage 7 running source slice; shared by SplitButton and ToggleSplitButton, not a separate overlay implementation; detailed capabilities and remaining limits in docs/overlays.md and references/stage-7.json; full native equivalence unaccepted",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "geometry",
+      "name": "Geometry",
+      "category": "Design",
+      "galleryPage": "WinUIGallery/Samples/Geometry/GeometryPage.xaml",
+      "samples": [
+        {
+          "title": "Geometry",
+          "source": "WinUIGallery/Samples/Geometry/Geometry.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "grid",
+      "name": "Grid",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/Grid/GridPage.xaml",
+      "samples": [
+        {
+          "title": "A 3x3 Grid control.",
+          "source": "WinUIGallery/Samples/Grid/3x3GridControl.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "gridview",
+      "name": "GridView",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/GridView/GridViewPage.xaml",
+      "samples": [
+        {
+          "title": "Basic GridView with Simple DataTemplate",
+          "source": "WinUIGallery/Samples/GridView/BasicGridviewSimpleDatatemplate.txt"
+        },
+        {
+          "title": "GridView with Layout Customization",
+          "source": "WinUIGallery/Samples/GridView/GridviewLayoutCustomization.txt"
+        },
+        {
+          "title": "Content inside of a GridView.",
+          "source": "WinUIGallery/Samples/GridView/ContentInsideGridview.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned paths in collections-sources.json; ListViewBase selection, item chrome and stacking/wrapping/occupancy layout",
+      "requiredResources": [
+        "collections-template.json",
+        "collections-palettes.json",
+        "collections-metrics.json",
+        "collections-sources.json",
+        "collections-assets.json"
+      ],
+      "hostDependencies": [
+        "Rust collection identity, selection, realization, scroll and indicator animation",
+        "TS business objects and normal SDK/React item templates",
+        "Segoe UI / Segoe Fluent Icons; browser image decode; Canvas2D default"
+      ],
+      "implementation": "collection slice: 5 controls, uniform virtualized views and 10 Gallery samples; original contact/photo templates and source-derived media clips/item borders; same-SDK static matrices and independent input/lifecycle/capacity checks; advanced collection features and Store present-time parity pending; docs/collections.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "hyperlinkbutton",
+      "name": "HyperlinkButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonPage.xaml",
+      "samples": [
+        {
+          "title": "A hyperlink button that navigates to a URI.",
+          "source": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonNavigate.txt"
+        },
+        {
+          "title": "A hyperlink button that handles a Click event.",
+          "source": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonClick.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.6 source slice, public Rust/TS/React and native probes; scope and remaining gaps in docs/five-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "iconelement",
+      "name": "IconElement",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/IconElement/IconElementPage.xaml",
+      "samples": [
+        {
+          "title": "A BitmapIcon with a multicolor bitmap image",
+          "source": "WinUIGallery/Samples/IconElement/IconElementBitmapiconMulticolorBitmapImage.txt"
+        },
+        {
+          "title": "A FontIcon using a glyph from a specific font family in a button",
+          "source": "WinUIGallery/Samples/IconElement/IconElementFonticonGlyphSpecificFont.txt"
+        },
+        {
+          "title": "A ImageIcon using a bitmap image in a button",
+          "source": "WinUIGallery/Samples/IconElement/IconElementImageiconBitmapImageButton.txt"
+        },
+        {
+          "title": "A ImageIcon using a SVG image in a button",
+          "source": "WinUIGallery/Samples/IconElement/IconElementImageiconSvgImageButton.txt"
+        },
+        {
+          "title": "A PathIcon in a button",
+          "source": "WinUIGallery/Samples/IconElement/IconElementPathiconButton.txt"
+        },
+        {
+          "title": "A SymbolIcon in a button",
+          "source": "WinUIGallery/Samples/IconElement/IconElementSymboliconButton.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "dxaml/xcp/core/core/elements/icon.cpp + controls/dev/ImageIcon",
+      "requiredResources": [
+        "icons-template.json",
+        "sdk-symbols.json",
+        "icon-defaults.json",
+        "icons-metrics.json",
+        "gallery-input/IconElement"
+      ],
+      "hostDependencies": [
+        "Segoe Fluent Icons/MDL2 font rasterization",
+        "browser PNG/JPEG/SVG decode with same-origin or CORS",
+        "shared Rust geometry/layout/foreground; Canvas2D default or optional WebGL2"
+      ],
+      "implementation": "stage 6.8 extends five icons with local direction/mirroring, typed source descriptors, source element, exact pinned camera asset and native image scaling tests; full RTL/system scaling/UIA/pixel parity pending; docs/animated-icons-shapes.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "iconography",
+      "name": "Iconography",
+      "category": "Design",
+      "galleryPage": "WinUIGallery/Samples/Iconography/IconographyPage.xaml",
+      "samples": [],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "image",
+      "name": "Image",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/Image/ImagePage.xaml",
+      "samples": [
+        {
+          "title": "A basic image from a local file.",
+          "source": "WinUIGallery/Samples/Image/BasicImageLocalFile.txt"
+        },
+        {
+          "title": "An image decoded to the rendering size",
+          "source": "WinUIGallery/Samples/Image/ImageDecodedRenderingSize.txt"
+        },
+        {
+          "title": "Image stretching.",
+          "source": "WinUIGallery/Samples/Image/ImageStretching.txt"
+        },
+        {
+          "title": "Nine grid images.",
+          "source": "WinUIGallery/Samples/Image/NineGridImages.txt"
+        },
+        {
+          "title": "An SVG image.",
+          "source": "WinUIGallery/Samples/Image/SvgImage.txt"
+        },
+        {
+          "title": "Animated GIF playback.",
+          "source": "WinUIGallery/Samples/Image/AnimatedGif.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "dxaml/xcp/core/core/elements/imagebase.cpp + imagebrush.cpp",
+      "requiredResources": [
+        "imagebase.cpp",
+        "imagebrush.cpp",
+        "treetops.jpg",
+        "valley.jpg"
+      ],
+      "hostDependencies": [
+        "browser image decoding",
+        "same-origin or CORS source",
+        "Canvas2D or GPU image texture"
+      ],
+      "implementation": "stage 6.1: official local-image and stretch examples, 4 stretch modes and native crops; decode-size API, NineGrid, SVG and animated playback pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "implicittransition",
+      "name": "Implicit Transitions",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionPage.xaml",
+      "samples": [
+        {
+          "title": "Automatically animate changes to Opacity",
+          "source": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesOpacity.txt"
+        },
+        {
+          "title": "Automatically animate changes to Rotation",
+          "source": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesRotation.txt"
+        },
+        {
+          "title": "Automatically animate changes to Scale",
+          "source": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesScale.txt"
+        },
+        {
+          "title": "Automatically animate changes to Translation",
+          "source": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesTranslation.txt"
+        },
+        {
+          "title": "Implicitly animate when the Background changes",
+          "source": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionImplicitlyAnimateBackgroundChanges.txt"
+        },
+        {
+          "title": "Implicitly animate when the Grid's theme changes",
+          "source": "WinUIGallery/Samples/ImplicitTransition/ImplicitTransitionImplicitlyAnimateGridTheme.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml",
+      "winuiSource": "dxaml/xcp/components/comptree/SharedTransitionAnimations.cpp",
+      "requiredResources": [
+        "SharedTransitionAnimations.cpp",
+        "motion-native-defaults.json"
+      ],
+      "hostDependencies": [
+        "Rust clock / requestAnimationFrame",
+        "same-scene presentation matrix",
+        "reduced-motion policy"
+      ],
+      "implementation": "4 scalar/2D vector examples via public animate API; source cubic and native default durations; implicit property attachment, Z, brush and local-theme examples pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "infobadge",
+      "name": "InfoBadge",
+      "category": "Status & info",
+      "galleryPage": "WinUIGallery/Samples/InfoBadge/InfoBadgePage.xaml",
+      "samples": [
+        {
+          "title": "InfoBadge embedded in NavigationView",
+          "source": "WinUIGallery/Samples/InfoBadge/InfobadgeEmbeddedNavigationview.txt"
+        },
+        {
+          "title": "Different InfoBadge Styles",
+          "source": "WinUIGallery/Samples/InfoBadge/DifferentInfobadgeStyles.txt"
+        },
+        {
+          "title": "Placing an InfoBadge Inside Another Control",
+          "source": "WinUIGallery/Samples/InfoBadge/PlacingInfobadgeInsideAnother.txt"
+        },
+        {
+          "title": "InfoBadge with Dynamic Value",
+          "source": "WinUIGallery/Samples/InfoBadge/InfobadgeDynamicValue.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.6 source slice, public Rust/TS/React and native probes; scope and remaining gaps in docs/five-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "infobar",
+      "name": "InfoBar",
+      "category": "Status & info",
+      "galleryPage": "WinUIGallery/Samples/InfoBar/InfoBarPage.xaml",
+      "samples": [
+        {
+          "title": "A closable InfoBar with options to change its Severity.",
+          "source": "WinUIGallery/Samples/InfoBar/ClosableInfobarOptionsChange.txt"
+        },
+        {
+          "title": "A closable InfoBar with a long or short message and various buttons",
+          "source": "WinUIGallery/Samples/InfoBar/ClosableInfobarLongShort.txt"
+        },
+        {
+          "title": "A closable InfoBar with options to display the close button and icon",
+          "source": "WinUIGallery/Samples/InfoBar/ClosableInfobarOptionsDisplay.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/InfoBar; exact paths in compact-controls-sources.json",
+      "requiredResources": [
+        "compact-controls-template.json",
+        "compact-controls-palettes.json",
+        "compact-controls-metrics.json",
+        "sdk/compact-controls.xaml",
+        "compact-controls-sources.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/clock and Canvas2D default",
+        "Segoe UI and Segoe Fluent Icons; browser image decode",
+        "SplitButton uses root-owned Flyout/MenuFlyout; DOM ARIA projection"
+      ],
+      "implementation": "compact batch: five Rust/TS/React slices and nine Gallery examples; SplitButton now shares real GridView/ItemsWrapGrid and VariableSizedWrapGrid; RichEditBox, full templates and Store present-time parity pending; docs/compact-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "inkcanvas",
+      "name": "InkCanvas / InkToolbar",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/InkCanvas/InkCanvasPage.xaml",
+      "samples": [
+        {
+          "title": "Draw and configure an InkCanvas.",
+          "source": "WinUIGallery/Samples/InkCanvas/InkCanvasDrawing.txt"
+        },
+        {
+          "title": "Choose which tools appear in an InkToolbar and select the active tool.",
+          "source": "WinUIGallery/Samples/InkCanvas/InkCanvasToolbar.txt"
+        },
+        {
+          "title": "Save, clear, and restore ink strokes.",
+          "source": "WinUIGallery/Samples/InkCanvas/InkCanvasStrokes.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "itemsrepeater",
+      "name": "ItemsRepeater",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterPage.xaml",
+      "samples": [
+        {
+          "title": "Basic, non-interactive items laid out by ItemsRepeater",
+          "source": "WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterBasicNonInteractiveItems.txt"
+        },
+        {
+          "title": "Virtualizing, scrollable list of items laid out by ItemsRepeater",
+          "source": "WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterVirtualizingScrollableListItems.txt"
+        },
+        {
+          "title": "Use FlowLayout with ItemsRepeater to wrap and virtualize a large collection.",
+          "source": "WinUIGallery/Samples/ItemsRepeater/FlowLayoutVirtualization.txt"
+        },
+        {
+          "title": "ItemsRepeater with mixed-type collection",
+          "source": "WinUIGallery/Samples/ItemsRepeater/ItemsrepeaterMixedTypeCollection.txt"
+        },
+        {
+          "title": "Animated Scrolling and Content Display",
+          "source": "WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterAnimatedScrollingContentDisplay.txt"
+        },
+        {
+          "title": "Virtualized, Content-Heavy Layout with Filtering and Sorting",
+          "source": "WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterVirtualizedContentHeavyLayout.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/Repeater/ItemsRepeater.cpp",
+      "requiredResources": null,
+      "hostDependencies": "ScrollViewer viewport and browser pointer/keyboard transport",
+      "implementation": "Rust implementation with typed TS/React SDK and Gallery; see docs/repeater-refresh.md",
+      "acceptance": "Scoped Rust/browser/native geometry validation; full native pixel and Composition parity not accepted",
+      "rustImplementation": "src/scene/repeater.rs"
+    },
+    {
+      "id": "itemsview",
+      "name": "ItemsView",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/ItemsView/ItemsViewPage.xaml",
+      "samples": [
+        {
+          "title": "Basic ItemsView",
+          "source": "WinUIGallery/Samples/ItemsView/BasicItemsview.txt"
+        },
+        {
+          "title": "ItemsView with swappable layouts",
+          "source": "WinUIGallery/Samples/ItemsView/ItemsviewSwappableLayouts.txt"
+        },
+        {
+          "title": "ItemsView item invocation and selection",
+          "source": "WinUIGallery/Samples/ItemsView/ItemsviewItemInvocationSelection.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "jumplist",
+      "name": "JumpList",
+      "category": "Shell",
+      "galleryPage": "WinUIGallery/Samples/JumpList/JumpListPage.xaml",
+      "samples": [
+        {
+          "title": "Adding tasks to the jump list",
+          "source": "WinUIGallery/Samples/JumpList/AddingTasksJumpList.txt"
+        },
+        {
+          "title": "Adding items to a custom group",
+          "source": "WinUIGallery/Samples/JumpList/JumpListAddingItemsCustomGroup.txt"
+        }
+      ],
+      "nativeNamespace": "Windows.UI.StartScreen",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "layoutpanel",
+      "name": "LayoutPanel",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/LayoutPanel/LayoutPanelPage.xaml",
+      "samples": [
+        {
+          "title": "LayoutPanel lets a custom Layout arrange ordinary panel children.",
+          "source": "WinUIGallery/Samples/LayoutPanel/LayoutPanelCustomLayout.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "line",
+      "name": "Line",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/Line/LinePage.xaml",
+      "samples": [
+        {
+          "title": "Line",
+          "source": "WinUIGallery/Samples/Line/Line.txt"
+        },
+        {
+          "title": "Polyline",
+          "source": "WinUIGallery/Samples/Line/Polyline.txt"
+        },
+        {
+          "title": "Path",
+          "source": "WinUIGallery/Samples/Line/LinePath.txt"
+        },
+        {
+          "title": "GeometryGroup",
+          "source": "WinUIGallery/Samples/Line/LineGeometrygroup.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Shapes",
+      "winuiSource": "dxaml/xcp/core/core/elements/shape.cpp + rectangle/line/path/polygon/polyline.cpp",
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.8 Rectangle/Line/Path/Polygon/Polyline slices; geometry, brushes, stroke, stretch and five examples; intrinsic Canvas size and full GeometryGroup parity pending; docs/animated-icons-shapes.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "listview",
+      "name": "ListView",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/ListView/ListViewPage.xaml",
+      "samples": [
+        {
+          "title": "Basic ListView with Simple DataTemplate",
+          "source": "WinUIGallery/Samples/ListView/BasicListviewSimpleDatatemplate.txt"
+        },
+        {
+          "title": "ListView with Selection Support",
+          "source": "WinUIGallery/Samples/ListView/ListviewSelectionSupport.txt"
+        },
+        {
+          "title": "ListViews with Drag, Drop, and Reordering Support",
+          "source": "WinUIGallery/Samples/ListView/ListviewsDragDropReordering.txt"
+        },
+        {
+          "title": "ListView with Grouped Headers",
+          "source": "WinUIGallery/Samples/ListView/ListviewGroupedHeaders.txt"
+        },
+        {
+          "title": "ListView with filtering",
+          "source": "WinUIGallery/Samples/ListView/ListviewFiltering.txt"
+        },
+        {
+          "title": "ListView for Messaging or Data Logging",
+          "source": "WinUIGallery/Samples/ListView/ListviewMessagingDataLogging.txt"
+        },
+        {
+          "title": "ListView with Images",
+          "source": "WinUIGallery/Samples/ListView/ListviewImages.txt"
+        },
+        {
+          "title": "ListView with context menus",
+          "source": "WinUIGallery/Samples/ListView/ListviewContextMenus.txt"
+        },
+        {
+          "title": "Save and restore the scroll position using ListViewPersistenceHelper.",
+          "source": "WinUIGallery/Samples/ListView/ListviewRestoreScrollPosition.txt"
+        },
+        {
+          "title": "Scroll a ListView programmatically with ScrollIntoView.",
+          "source": "WinUIGallery/Samples/ListView/ListviewScrollIntoView.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned paths in collections-sources.json; ListViewBase selection, item chrome and stacking/wrapping/occupancy layout",
+      "requiredResources": [
+        "collections-template.json",
+        "collections-palettes.json",
+        "collections-metrics.json",
+        "collections-sources.json",
+        "collections-assets.json"
+      ],
+      "hostDependencies": [
+        "Rust collection identity, selection, realization, scroll and indicator animation",
+        "TS business objects and normal SDK/React item templates",
+        "Segoe UI / Segoe Fluent Icons; browser image decode; Canvas2D default"
+      ],
+      "implementation": "collection slice: 5 controls, uniform virtualized views and 10 Gallery samples; original contact/photo templates and source-derived media clips/item borders; same-SDK static matrices and independent input/lifecycle/capacity checks; advanced collection features and Store present-time parity pending; docs/collections.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "mapcontrol",
+      "name": "MapControl",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/MapControl/MapControlPage.xaml",
+      "samples": [
+        {
+          "title": "Showing a pin on the map",
+          "source": "WinUIGallery/Samples/MapControl/MapControlShowingPinMap.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "mediaplayerelement",
+      "name": "MediaPlayerElement",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/MediaPlayerElement/MediaPlayerElementPage.xaml",
+      "samples": [
+        {
+          "title": "A MediaPlayerElement with transport controls.",
+          "source": "WinUIGallery/Samples/MediaPlayerElement/MediaplayerelementTransportControls.txt"
+        },
+        {
+          "title": "A MediaPlayerElement that autoplays the video.",
+          "source": "WinUIGallery/Samples/MediaPlayerElement/MediaplayerelementAutoplaysVideo.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "menubar",
+      "name": "MenuBar",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/MenuBar/MenuBarPage.xaml",
+      "samples": [
+        {
+          "title": "A simple MenuBar",
+          "source": "WinUIGallery/Samples/MenuBar/SimpleMenubar.txt"
+        },
+        {
+          "title": "MenuBar with keyboard accelerators",
+          "source": "WinUIGallery/Samples/MenuBar/MenubarKeyboardAccelerators.txt"
+        },
+        {
+          "title": "MenuBar with submenus, separators, and radio items",
+          "source": "WinUIGallery/Samples/MenuBar/MenubarSubmenusSeparatorsRadio.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "references/command-menus-sources.json",
+      "requiredResources": "references/command-menu-template.json",
+      "hostDependencies": [
+        "Browser input and accessibility projection",
+        "Canvas2D or explicit WebGL2 renderer"
+      ],
+      "implementation": "Rust scene, typed TS and React slice; docs/menu-layout-controls.md",
+      "acceptance": "Same-SDK static geometry and browser behavior tested; complete Store Composition parity not accepted"
+    },
+    {
+      "id": "menuflyout",
+      "name": "MenuFlyout",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/MenuFlyout/MenuFlyoutPage.xaml",
+      "samples": [
+        {
+          "title": "An AppBarButton with a MenuFlyout.",
+          "source": "WinUIGallery/Samples/MenuFlyout/AppbarbuttonMenuflyout.txt"
+        },
+        {
+          "title": "A MenuFlyout with ToggleMenuFlyoutItems and MenuFlyoutSeparator.",
+          "source": "WinUIGallery/Samples/MenuFlyout/MenuflyoutTogglemenuflyoutitemsMenuflyoutseparator.txt"
+        },
+        {
+          "title": "A MenuFlyout with cascading menus.",
+          "source": "WinUIGallery/Samples/MenuFlyout/MenuflyoutCascadingMenus.txt"
+        },
+        {
+          "title": "A MenuFlyout with SplitMenuFlyoutItems.",
+          "source": "WinUIGallery/Samples/MenuFlyout/MenuflyoutSplitmenuflyoutitems.txt"
+        },
+        {
+          "title": "A MenuFlyout with icons.",
+          "source": "WinUIGallery/Samples/MenuFlyout/MenuflyoutIcons.txt"
+        },
+        {
+          "title": "A MenuFlyout with icons and Keyboard Accelerators.",
+          "source": "WinUIGallery/Samples/MenuFlyout/MenuflyoutIconsKeyboardAccelerators.txt"
+        },
+        {
+          "title": "A MenuFlyout with RadioMenuFlyoutItems",
+          "source": "WinUIGallery/Samples/MenuFlyout/MenuflyoutRadiomenuflyoutitems.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned source paths in overlay-sources.json; FlyoutBase/Popup and corresponding presenters are shared by SplitButton controls",
+      "requiredResources": [
+        "overlay-template.json",
+        "overlay-sources.json",
+        "overlay-palettes.json",
+        "overlay-metrics.json",
+        "overlay-native-motion.json"
+      ],
+      "hostDependencies": [
+        "shared Rust root overlay layout, input, clock and rendering",
+        "Scene DOM focus/ARIA projection; Canvas2D default, optional WebGL2"
+      ],
+      "implementation": "stage 7 running source slice; shared by SplitButton and ToggleSplitButton, not a separate overlay implementation; detailed capabilities and remaining limits in docs/overlays.md and references/stage-7.json; full native equivalence unaccepted",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "navigationview",
+      "name": "NavigationView",
+      "category": "Navigation",
+      "galleryPage": "WinUIGallery/Samples/NavigationView/NavigationViewPage.xaml",
+      "samples": [
+        {
+          "title": "NavigationView with default PaneDisplayMode",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationviewDefaultPanedisplaymode.txt"
+        },
+        {
+          "title": "NavigationView with PaneDisplayMode set to Top",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationviewPanedisplaymodeTop.txt"
+        },
+        {
+          "title": "NavigationView that switches pane orientation based on window width",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationviewSwitchesPaneOrientation.txt"
+        },
+        {
+          "title": "Tying selection and focus - Tabs",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationViewTyingSelectionFocusTabs.txt"
+        },
+        {
+          "title": "Data binding",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationViewDataBinding.txt"
+        },
+        {
+          "title": "NavigationView with Footer Menu Items",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationviewFooterMenuItems.txt"
+        },
+        {
+          "title": "Hierarchical NavigationView",
+          "source": "WinUIGallery/Samples/NavigationView/HierarchicalNavigationview.txt"
+        },
+        {
+          "title": "API in action",
+          "source": "WinUIGallery/Samples/NavigationView/NavigationViewApiAction.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/NavigationView",
+      "requiredResources": [
+        "NavigationView.xaml",
+        "NavigationView_themeresources.xaml",
+        "SplitView_themeresources.xaml"
+      ],
+      "hostDependencies": [
+        "Canvas2D",
+        "pointer and keyboard events",
+        "ResizeObserver",
+        "requestAnimationFrame",
+        "DOM accessibility",
+        "Segoe UI and Fluent Icons fonts"
+      ],
+      "implementation": "vertical slice plus shared scene integration; advanced navigation gaps remain",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "numberbox",
+      "name": "NumberBox",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/NumberBox/NumberBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A NumberBox that evaluates expressions.",
+          "source": "WinUIGallery/Samples/NumberBox/NumberboxEvaluatesExpressions.txt"
+        },
+        {
+          "title": "A NumberBox with a spin button.",
+          "source": "WinUIGallery/Samples/NumberBox/NumberboxSpinButton.txt"
+        },
+        {
+          "title": "A formatted NumberBox that rounds to the nearest 0.25.",
+          "source": "WinUIGallery/Samples/NumberBox/FormattedNumberboxRoundsNearest.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "deferred until stage 7 Popup infrastructure; composition, not TextBox inheritance; no partial API exported",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "pagercontrol",
+      "name": "PagerControl",
+      "category": "Scrolling",
+      "galleryPage": "WinUIGallery/Samples/PagerControl/PagerControlPage.xaml",
+      "samples": [
+        {
+          "title": "A basic pager",
+          "source": "WinUIGallery/Samples/PagerControl/PagerControlBasic.txt"
+        },
+        {
+          "title": "Pager display modes",
+          "source": "WinUIGallery/Samples/PagerControl/PagerControlDisplayModes.txt"
+        },
+        {
+          "title": "Unbounded pagers",
+          "source": "WinUIGallery/Samples/PagerControl/PagerControlUnbounded.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "pagetransition",
+      "name": "Page Transitions",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/PageTransition/PageTransitionPage.xaml",
+      "samples": [
+        {
+          "title": "Page transitions",
+          "source": "WinUIGallery/Samples/PageTransition/PageTransitions.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Media.Animation",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "parallaxview",
+      "name": "ParallaxView",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/ParallaxView/ParallaxViewPage.xaml",
+      "samples": [
+        {
+          "title": "Parallax on a ListView",
+          "source": "WinUIGallery/Samples/ParallaxView/ParallaxViewParallaxListview.txt"
+        },
+        {
+          "title": "Parallax with a ScrollView",
+          "source": "WinUIGallery/Samples/ParallaxView/ParallaxViewParallaxScrollview.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "passwordbox",
+      "name": "PasswordBox",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/PasswordBox/PasswordBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A simple PasswordBox.",
+          "source": "WinUIGallery/Samples/PasswordBox/SimplePasswordbox.txt"
+        },
+        {
+          "title": "A PasswordBox with header, placeholder text and custom character.",
+          "source": "WinUIGallery/Samples/PasswordBox/PasswordboxHeaderPlaceholderText.txt"
+        },
+        {
+          "title": "A PasswordBox with reveal mode.",
+          "source": "WinUIGallery/Samples/PasswordBox/PasswordboxRevealMode.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/CommonStyles/PasswordBox_themeresources.xaml + dxaml/xcp/dxaml/lib/PasswordBox_Partial.cpp",
+      "requiredResources": [
+        "text-scroll-template.json",
+        "text-scroll-metrics.json",
+        "text-scroll-palettes.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/rendering",
+        "browser input/textarea IME and clipboard",
+        "Canvas2D default; optional WebGL2",
+        "DOM focus/selection and ARIA ranges"
+      ],
+      "implementation": "stage 6.3 implemented slice: text editing/password/scrolling and eight official examples; detailed parity gaps in docs/text-scroll.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "personpicture",
+      "name": "PersonPicture",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/PersonPicture/PersonPicturePage.xaml",
+      "samples": [
+        {
+          "title": "Select different looks for the person picture.",
+          "source": "WinUIGallery/Samples/PersonPicture/PersonPictureSelectDifferentLooksPerson.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/PersonPicture; exact paths in compact-controls-sources.json",
+      "requiredResources": [
+        "compact-controls-template.json",
+        "compact-controls-palettes.json",
+        "compact-controls-metrics.json",
+        "sdk/compact-controls.xaml",
+        "compact-controls-sources.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/clock and Canvas2D default",
+        "Segoe UI and Segoe Fluent Icons; browser image decode",
+        "SplitButton uses root-owned Flyout/MenuFlyout; DOM ARIA projection"
+      ],
+      "implementation": "compact batch: five Rust/TS/React slices and nine Gallery examples; SplitButton now shares real GridView/ItemsWrapGrid and VariableSizedWrapGrid; RichEditBox, full templates and Store present-time parity pending; docs/compact-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "pipspager",
+      "name": "PipsPager",
+      "category": "Scrolling",
+      "galleryPage": "WinUIGallery/Samples/PipsPager/PipsPagerPage.xaml",
+      "samples": [
+        {
+          "title": "PipsPager integrated with a FlipView",
+          "source": "WinUIGallery/Samples/PipsPager/PipspagerIntegratedFlipview.txt"
+        },
+        {
+          "title": "PipsPager with options to change its orientation, button visibility, and wrap mode.",
+          "source": "WinUIGallery/Samples/PipsPager/PipspagerOptionsChangeOrientation.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "pivot",
+      "name": "Pivot",
+      "category": "Navigation",
+      "galleryPage": "WinUIGallery/Samples/Pivot/PivotPage.xaml",
+      "samples": [
+        {
+          "title": "A basic pivot.",
+          "source": "WinUIGallery/Samples/Pivot/BasicPivot.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "popup",
+      "name": "Popup",
+      "category": "Dialogs & flyouts",
+      "galleryPage": "WinUIGallery/Samples/Popup/PopupPage.xaml",
+      "samples": [
+        {
+          "title": "Popup with Offset Positioning",
+          "source": "WinUIGallery/Samples/Popup/PopupOffsetPositioning.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls.Primitives",
+      "winuiSource": "Exact pinned source paths in overlay-sources.json; FlyoutBase/Popup and corresponding presenters are shared by SplitButton controls",
+      "requiredResources": [
+        "overlay-template.json",
+        "overlay-sources.json",
+        "overlay-palettes.json",
+        "overlay-metrics.json",
+        "overlay-native-motion.json"
+      ],
+      "hostDependencies": [
+        "shared Rust root overlay layout, input, clock and rendering",
+        "Scene DOM focus/ARIA projection; Canvas2D default, optional WebGL2"
+      ],
+      "implementation": "stage 7 running source slice; shared by SplitButton and ToggleSplitButton, not a separate overlay implementation; detailed capabilities and remaining limits in docs/overlays.md and references/stage-7.json; full native equivalence unaccepted",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "progressbar",
+      "name": "ProgressBar",
+      "category": "Status & info",
+      "galleryPage": "WinUIGallery/Samples/ProgressBar/ProgressBarPage.xaml",
+      "samples": [
+        {
+          "title": "An indeterminate progress bar.",
+          "source": "WinUIGallery/Samples/ProgressBar/IndeterminateProgressBar.txt"
+        },
+        {
+          "title": "A determinate progress bar.",
+          "source": "WinUIGallery/Samples/ProgressBar/DeterminateProgressBar.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/ProgressBar/ProgressBar.cpp + .xaml + _themeresources.xaml",
+      "requiredResources": [
+        "progress-template.json",
+        "progress-palettes.json",
+        "progress-metrics.json",
+        "input-reposition.json"
+      ],
+      "hostDependencies": [
+        "shared Rust scene/clock/layout/rendering",
+        "Canvas2D default; optional WebGL2",
+        "DOM progressbar ARIA; no pointer interception"
+      ],
+      "implementation": "stage 6.4: typed range/progress properties, source built-in visuals, four Gallery samples and ToggleSwitch ProgressRing dependency; host numeric editors replace deferred NumberBox; custom AnimatedVisual sources and Store present-time acceptance pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "progressring",
+      "name": "ProgressRing",
+      "category": "Status & info",
+      "galleryPage": "WinUIGallery/Samples/ProgressRing/ProgressRingPage.xaml",
+      "samples": [
+        {
+          "title": "An indeterminate progress ring.",
+          "source": "WinUIGallery/Samples/ProgressRing/IndeterminateProgressRing.txt"
+        },
+        {
+          "title": "A determinate progress ring.",
+          "source": "WinUIGallery/Samples/ProgressRing/DeterminateProgressRing.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/ProgressRing/ProgressRing.cpp + .xaml + _themeresources.xaml",
+      "requiredResources": [
+        "progress-template.json",
+        "progress-palettes.json",
+        "progress-metrics.json",
+        "input-reposition.json"
+      ],
+      "hostDependencies": [
+        "shared Rust scene/clock/layout/rendering",
+        "Canvas2D default; optional WebGL2",
+        "DOM progressbar ARIA; no pointer interception"
+      ],
+      "implementation": "stage 6.4: typed range/progress properties, source built-in visuals, four Gallery samples and ToggleSwitch ProgressRing dependency; host numeric editors replace deferred NumberBox; custom AnimatedVisual sources and Store present-time acceptance pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "pulltorefresh",
+      "name": "PullToRefresh",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/PullToRefresh/PullToRefreshPage.xaml",
+      "samples": [
+        {
+          "title": "Basic PullToRefresh",
+          "source": "WinUIGallery/Samples/PullToRefresh/BasicPulltorefresh.txt"
+        },
+        {
+          "title": "Custom Icon PullToRefresh",
+          "source": "WinUIGallery/Samples/PullToRefresh/CustomIconPulltorefresh.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.cpp",
+      "requiredResources": null,
+      "hostDependencies": "ScrollViewer viewport and browser pointer/keyboard transport",
+      "implementation": "Rust implementation with typed TS/React SDK and Gallery; see docs/repeater-refresh.md",
+      "acceptance": "Scoped Rust/browser/native geometry validation; full native pixel and Composition parity not accepted",
+      "rustImplementation": "src/scene/refresh.rs"
+    },
+    {
+      "id": "radialgradientbrush",
+      "name": "RadialGradientBrush",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/RadialGradientBrush/RadialGradientBrushPage.xaml",
+      "samples": [
+        {
+          "title": "RadialGradientBrush Sample",
+          "source": "WinUIGallery/Samples/RadialGradientBrush/RadialgradientbrushSample.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Media",
+      "winuiSource": null,
+      "requiredResources": [
+        "gallery-motion/RadialGradientBrush",
+        "official-motion.json",
+        "gradient-comparison.json"
+      ],
+      "hostDependencies": "Canvas2D local brush cache or WebGL2 analytic gradient",
+      "implementation": "official interactive sample, relative/absolute mapping and Pad/Repeat/Reflect; 12 dual-backend native comparisons",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "radiobutton",
+      "name": "RadioButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/RadioButton/RadioButtonPage.xaml",
+      "samples": [
+        {
+          "title": "A group of RadioButton controls in a RadioButtons group.",
+          "source": "WinUIGallery/Samples/RadioButton/RadioButtonGroup.txt"
+        },
+        {
+          "title": "Two RadioButtons controls with strings as options.",
+          "source": "WinUIGallery/Samples/RadioButton/RadioButtonStrings.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/RadioButtons + controls/dev/CommonStyles/RadioButton_themeresources.xaml + dxaml/xcp/dxaml/lib/RadioButton_Partial.cpp",
+      "requiredResources": [
+        "selection-input-template.json",
+        "input-palettes.json",
+        "input-timing.json",
+        "input-reposition.json",
+        "radio-group-metrics.json"
+      ],
+      "hostDependencies": [
+        "shared Rust state/input/layout",
+        "Canvas2D default or opt-in WebGL2",
+        "DOM radio/switch semantics"
+      ],
+      "implementation": "stage 6.2: exclusive groups, roving Tab/spatial arrows, switch drag and native-derived state/timing resources; four Gallery examples with ProgressRing dependency supplied in stage 6.4; Store page inspection plus 32 native states on two backends; full pixel/present-time parity unaccepted",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "ratingcontrol",
+      "name": "RatingControl",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/RatingControl/RatingControlPage.xaml",
+      "samples": [
+        {
+          "title": "A simple RatingControl",
+          "source": "WinUIGallery/Samples/RatingControl/RatingControlSimple.txt"
+        },
+        {
+          "title": "PlaceholderValue of RatingControl",
+          "source": "WinUIGallery/Samples/RatingControl/RatingControlPlaceholder.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/RatingControl; exact paths in compact-controls-sources.json",
+      "requiredResources": [
+        "compact-controls-template.json",
+        "compact-controls-palettes.json",
+        "compact-controls-metrics.json",
+        "sdk/compact-controls.xaml",
+        "compact-controls-sources.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/clock and Canvas2D default",
+        "Segoe UI and Segoe Fluent Icons; browser image decode",
+        "SplitButton uses root-owned Flyout/MenuFlyout; DOM ARIA projection"
+      ],
+      "implementation": "compact batch: five Rust/TS/React slices and nine Gallery examples; SplitButton now shares real GridView/ItemsWrapGrid and VariableSizedWrapGrid; RichEditBox, full templates and Store present-time parity pending; docs/compact-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "relativepanel",
+      "name": "RelativePanel",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/RelativePanel/RelativePanelPage.xaml",
+      "samples": [
+        {
+          "title": "A RelativePanel control.",
+          "source": "WinUIGallery/Samples/RelativePanel/RelativepanelControl.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "references/menu-layout-sources.json",
+      "requiredResources": "references/command-menu-template.json",
+      "hostDependencies": [
+        "Browser input and accessibility projection",
+        "Canvas2D or explicit WebGL2 renderer"
+      ],
+      "implementation": "Rust scene, typed TS and React slice; docs/menu-layout-controls.md",
+      "acceptance": "Same-SDK static geometry and browser behavior tested; complete Store Composition parity not accepted"
+    },
+    {
+      "id": "repeatbutton",
+      "name": "RepeatButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/RepeatButton/RepeatButtonPage.xaml",
+      "samples": [
+        {
+          "title": "A simple RepeatButton with text content.",
+          "source": "WinUIGallery/Samples/RepeatButton/RepeatButtonSimple.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls.Primitives",
+      "winuiSource": "controls/dev/CommonStyles/RepeatButton_themeresources.xaml + dxaml/xcp/dxaml/lib/RepeatButton_Partial.cpp",
+      "requiredResources": [
+        "basic-next-template.json",
+        "basic-next-defaults.json",
+        "basic-next-palettes.json",
+        "basic-next-metrics.json",
+        "basic-next-metrics-125.json"
+      ],
+      "hostDependencies": [
+        "shared Rust scene/layout/input and demand clock",
+        "Canvas2D default; optional WebGL2",
+        "DOM transformed child space and button semantics"
+      ],
+      "implementation": "stage 6.5: Rust RepeatButton timer/default states and Viewbox source scaling/clip/child ownership, two actual React examples; 100%/125% native profiles and own-window keyboard observations; full native pixel/present-time equivalence unaccepted, advanced template gaps in docs/repeat-viewbox.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "richeditbox",
+      "name": "RichEditBox",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/RichEditBox/RichEditBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A simple text editor using RichEditBox.",
+          "source": "WinUIGallery/Samples/RichEditBox/SimpleTextEditorRicheditbox.txt"
+        },
+        {
+          "title": "Customizing RichEditBox's CommandBarFlyout - Adding 'Share'",
+          "source": "WinUIGallery/Samples/RichEditBox/CustomizingRicheditboxCommandbarflyoutAdding.txt"
+        },
+        {
+          "title": "A custom editor with RichEditBox.",
+          "source": "WinUIGallery/Samples/RichEditBox/CustomEditorRicheditbox.txt"
+        },
+        {
+          "title": "Rich edit box in math mode",
+          "source": "WinUIGallery/Samples/RichEditBox/RichEditBoxMath.txt"
+        },
+        {
+          "title": "Working with MathML in RichEditBox",
+          "source": "WinUIGallery/Samples/RichEditBox/WorkingMathmlRicheditbox.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "richtextblock",
+      "name": "RichTextBlock",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/RichTextBlock/RichTextBlockPage.xaml",
+      "samples": [
+        {
+          "title": "A simple RichTextBlock.",
+          "source": "WinUIGallery/Samples/RichTextBlock/SimpleRichtextblock.txt"
+        },
+        {
+          "title": "A RichTextBlock with a custom selection highlight color.",
+          "source": "WinUIGallery/Samples/RichTextBlock/RichtextblockCustomSelectionHighlight.txt"
+        },
+        {
+          "title": "A RichTextBlock with overflow.",
+          "source": "WinUIGallery/Samples/RichTextBlock/RichtextblockOverflow.txt"
+        },
+        {
+          "title": "RichTextBlock with custom TextHighlighting",
+          "source": "WinUIGallery/Samples/RichTextBlock/RichtextblockCustomTexthighlighting.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "scratchpad",
+      "name": "Scratch Pad",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/ScratchPad/ScratchPadPage.xaml",
+      "samples": [],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "scrollview",
+      "name": "ScrollView",
+      "category": "Scrolling",
+      "galleryPage": "WinUIGallery/Samples/ScrollView/ScrollViewPage.xaml",
+      "samples": [
+        {
+          "title": "Content inside of a ScrollView.",
+          "source": "WinUIGallery/Samples/ScrollView/ContentInsideScrollview.txt"
+        },
+        {
+          "title": "Constant velocity scrolling.",
+          "source": "WinUIGallery/Samples/ScrollView/ScrollViewConstantVelocityScrolling.txt"
+        },
+        {
+          "title": "Programmatic scroll with custom animation.",
+          "source": "WinUIGallery/Samples/ScrollView/ScrollViewProgrammaticScrollCustomAnimation.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "scrollviewer",
+      "name": "ScrollViewer",
+      "category": "Scrolling",
+      "galleryPage": "WinUIGallery/Samples/ScrollViewer/ScrollViewerPage.xaml",
+      "samples": [
+        {
+          "title": "Content inside of a ScrollViewer.",
+          "source": "WinUIGallery/Samples/ScrollViewer/ContentInsideScrollviewer.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/CommonStyles/ScrollViewer_themeresources.xaml + dxaml/xcp/dxaml/lib/ScrollViewer_Partial.cpp",
+      "requiredResources": [
+        "text-scroll-template.json",
+        "text-scroll-metrics.json",
+        "text-scroll-palettes.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/rendering",
+        "browser input/textarea IME and clipboard",
+        "Canvas2D default; optional WebGL2",
+        "DOM focus/selection and ARIA ranges"
+      ],
+      "implementation": "stage 6.3 implemented slice: text editing/password/scrolling and eight official examples; detailed parity gaps in docs/text-scroll.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "selectorbar",
+      "name": "SelectorBar",
+      "category": "Navigation",
+      "galleryPage": "WinUIGallery/Samples/SelectorBar/SelectorBarPage.xaml",
+      "samples": [
+        {
+          "title": "A Basic SelectorBar",
+          "source": "WinUIGallery/Samples/SelectorBar/BasicSelectorbar.txt"
+        },
+        {
+          "title": "SelectorBar with Frame Slide Transitions",
+          "source": "WinUIGallery/Samples/SelectorBar/SelectorbarFrameSlideTransitions.txt"
+        },
+        {
+          "title": "SelectorBar Displaying Different Collections Using ItemsView",
+          "source": "WinUIGallery/Samples/SelectorBar/SelectorbarDisplayingDifferentCollections.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "semanticzoom",
+      "name": "SemanticZoom",
+      "category": "Scrolling",
+      "galleryPage": "WinUIGallery/Samples/SemanticZoom/SemanticZoomPage.xaml",
+      "samples": [
+        {
+          "title": "A simple SemanticZoom",
+          "source": "WinUIGallery/Samples/SemanticZoom/SimpleSemanticzoom.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "shape",
+      "name": "Shape",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/Shape/ShapePage.xaml",
+      "samples": [
+        {
+          "title": "Ellipse",
+          "source": "WinUIGallery/Samples/Shape/ShapeEllipse.txt"
+        },
+        {
+          "title": "Rectangle",
+          "source": "WinUIGallery/Samples/Shape/ShapeRectangle.txt"
+        },
+        {
+          "title": "Polygon",
+          "source": "WinUIGallery/Samples/Shape/ShapePolygon.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Shapes",
+      "winuiSource": "dxaml/xcp/core/core/elements/shape.cpp + rectangle/line/path/polygon/polyline.cpp",
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "stage 6.8 Rectangle/Line/Path/Polygon/Polyline slices; geometry, brushes, stroke, stretch and five examples; intrinsic Canvas size and full GeometryGroup parity pending; docs/animated-icons-shapes.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/Slider/SliderPage.xaml",
+      "samples": [
+        {
+          "title": "A simple Slider.",
+          "source": "WinUIGallery/Samples/Slider/SliderSimple.txt"
+        },
+        {
+          "title": "A Slider with range and steps specified.",
+          "source": "WinUIGallery/Samples/Slider/SliderRange.txt"
+        },
+        {
+          "title": "A Slider with tick marks.",
+          "source": "WinUIGallery/Samples/Slider/SliderTicks.txt"
+        },
+        {
+          "title": "A vertical slider with range and tick marks specified.",
+          "source": "WinUIGallery/Samples/Slider/SliderVertical.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned source paths in overlay-sources.json; FlyoutBase/Popup and corresponding presenters are shared by SplitButton controls",
+      "requiredResources": [
+        "overlay-template.json",
+        "overlay-sources.json",
+        "overlay-palettes.json",
+        "overlay-metrics.json",
+        "overlay-native-motion.json"
+      ],
+      "hostDependencies": [
+        "shared Rust root overlay layout, input, clock and rendering",
+        "Scene DOM focus/ARIA projection; Canvas2D default, optional WebGL2"
+      ],
+      "implementation": "stage 7 running source slice; shared by SplitButton and ToggleSplitButton, not a separate overlay implementation; detailed capabilities and remaining limits in docs/overlays.md and references/stage-7.json; full native equivalence unaccepted",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "sound",
+      "name": "Sound",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/Sound/SoundPage.xaml",
+      "samples": [
+        {
+          "title": "Toggling Sound",
+          "source": "WinUIGallery/Samples/Sound/TogglingSound.txt"
+        },
+        {
+          "title": "Toggling Spatial Audio",
+          "source": "WinUIGallery/Samples/Sound/SoundTogglingSpatialAudio.txt"
+        },
+        {
+          "title": "Play Specific System Sound",
+          "source": "WinUIGallery/Samples/Sound/PlaySpecificSystemSound.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "spacing",
+      "name": "Spacing",
+      "category": "Design",
+      "galleryPage": "WinUIGallery/Samples/Spacing/SpacingPage.xaml",
+      "samples": [],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "splitbutton",
+      "name": "SplitButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/SplitButton/SplitButtonPage.xaml",
+      "samples": [
+        {
+          "title": "A SplitButton controlling text color in a RichEditBox",
+          "source": "WinUIGallery/Samples/SplitButton/SplitButtonColorPicker.txt"
+        },
+        {
+          "title": "A SplitButton with text",
+          "source": "WinUIGallery/Samples/SplitButton/SplitButtonText.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/SplitButton; exact paths in compact-controls-sources.json",
+      "requiredResources": [
+        "compact-controls-template.json",
+        "compact-controls-palettes.json",
+        "compact-controls-metrics.json",
+        "sdk/compact-controls.xaml",
+        "compact-controls-sources.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/clock and Canvas2D default",
+        "Segoe UI and Segoe Fluent Icons; browser image decode",
+        "SplitButton uses root-owned Flyout/MenuFlyout; DOM ARIA projection"
+      ],
+      "implementation": "compact batch: five Rust/TS/React slices and nine Gallery examples; SplitButton now shares real GridView/ItemsWrapGrid and VariableSizedWrapGrid; RichEditBox, full templates and Store present-time parity pending; docs/compact-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "splitview",
+      "name": "SplitView",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/SplitView/SplitViewPage.xaml",
+      "samples": [
+        {
+          "title": "A basic SplitView.",
+          "source": "WinUIGallery/Samples/SplitView/BasicSplitview.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "stackpanel",
+      "name": "StackPanel",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/StackPanel/StackPanelPage.xaml",
+      "samples": [
+        {
+          "title": "A StackPanel control.",
+          "source": "WinUIGallery/Samples/StackPanel/StackpanelControl.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "standarduicommand",
+      "name": "StandardUICommand",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/StandardUICommand/StandardUICommandPage.xaml",
+      "samples": [
+        {
+          "title": "Exposing a command in multiple controls using StandardUICommand",
+          "source": "WinUIGallery/Samples/StandardUICommand/StandardUICommandExposingCommandMultipleControls.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Input",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "storagepickers",
+      "name": "Storage pickers",
+      "category": "System",
+      "galleryPage": "WinUIGallery/Samples/StoragePickers/StoragePickersPage.xaml",
+      "samples": [
+        {
+          "title": "Pick single file",
+          "source": "WinUIGallery/Samples/StoragePickers/StoragePickersPickSingleFile.txt"
+        },
+        {
+          "title": "Pick multiple files",
+          "source": "WinUIGallery/Samples/StoragePickers/StoragePickersPickMultipleFiles.txt"
+        },
+        {
+          "title": "Save file",
+          "source": "WinUIGallery/Samples/StoragePickers/StoragePickersSaveFile.txt"
+        },
+        {
+          "title": "Pick folder",
+          "source": "WinUIGallery/Samples/StoragePickers/StoragePickersPickFolder.txt"
+        },
+        {
+          "title": "Pick a file and display its thumbnail",
+          "source": "WinUIGallery/Samples/StoragePickers/StoragePickersFileThumbnail.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.Windows.Storage.Pickers",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "swipecontrol",
+      "name": "SwipeControl",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/SwipeControl/SwipeControlPage.xaml",
+      "samples": [
+        {
+          "title": "Swipe right to reveal actions",
+          "source": "WinUIGallery/Samples/SwipeControl/SwipeControlSwipeRightRevealActions.txt"
+        },
+        {
+          "title": "Swipe left to invoke an execute",
+          "source": "WinUIGallery/Samples/SwipeControl/SwipeControlSwipeLeftInvokeExecute.txt"
+        },
+        {
+          "title": "Custom Swipe in a ListView",
+          "source": "WinUIGallery/Samples/SwipeControl/SwipeControlCustomSwipeListview.txt"
+        },
+        {
+          "title": "Gradient Background",
+          "source": "WinUIGallery/Samples/SwipeControl/SwipeControlGradientBackground.txt"
+        },
+        {
+          "title": "Custom icons",
+          "source": "WinUIGallery/Samples/SwipeControl/SwipeControlCustomIcons.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "systembackdropelement",
+      "name": "SystemBackdropElement",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/SystemBackdropElement/SystemBackdropElementPage.xaml",
+      "samples": [],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "systembackdrops",
+      "name": "System Backdrops (Mica/Acrylic)",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/SystemBackdrops/SystemBackdropsPage.xaml",
+      "samples": [
+        {
+          "title": "Backdrop types",
+          "source": "WinUIGallery/Samples/SystemBackdrops/SystemBackdropsBackdropTypes.txt"
+        },
+        {
+          "title": "MicaController",
+          "source": "WinUIGallery/Samples/SystemBackdrops/SystemBackdropsMicacontroller.txt"
+        },
+        {
+          "title": "DesktopAcrylicController",
+          "source": "WinUIGallery/Samples/SystemBackdrops/SystemBackdropsDesktopacryliccontroller.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Composition.SystemBackdrops",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": "Windows compositor host: unavailable in current browser adapter",
+      "implementation": "documented Windows host boundary; no Mica/DesktopAcrylicController emulation",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "tableview",
+      "name": "TableView",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/TableView/TableViewPage.xaml",
+      "samples": [
+        {
+          "title": "A basic TableView",
+          "source": "WinUIGallery/Samples/TableView/BasicTable.txt"
+        },
+        {
+          "title": "Filtering and grouping rows",
+          "source": "WinUIGallery/Samples/TableView/FilteringGroupingTable.txt"
+        },
+        {
+          "title": "Customizing cells with data templates",
+          "source": "WinUIGallery/Samples/TableView/CustomColumnsTable.txt"
+        },
+        {
+          "title": "Editing cells and validating changes",
+          "source": "WinUIGallery/Samples/TableView/EditingCellsTable.txt"
+        },
+        {
+          "title": "An advanced TableView",
+          "source": "WinUIGallery/Samples/TableView/PresentationTable.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls.Tabular",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "tabview",
+      "name": "TabView",
+      "category": "Navigation",
+      "galleryPage": "WinUIGallery/Samples/TabView/TabViewPage.xaml",
+      "samples": [
+        {
+          "title": "A TabView with support for adding, closing, and rearranging tabs",
+          "source": "WinUIGallery/Samples/TabView/TabviewSupportAddingClosing.txt"
+        },
+        {
+          "title": "A TabView with TabViewItems defined in markup",
+          "source": "WinUIGallery/Samples/TabView/TabviewTabviewitemsDefinedMarkup.txt"
+        },
+        {
+          "title": "A TabView bound to a collection of MyData objects",
+          "source": "WinUIGallery/Samples/TabView/TabviewBoundCollectionMydata.txt"
+        },
+        {
+          "title": "A TabView with keyboarding support",
+          "source": "WinUIGallery/Samples/TabView/TabviewKeyboardingSupport.txt"
+        },
+        {
+          "title": "You can put custom content in TabStripHeader and TabStripFooter",
+          "source": "WinUIGallery/Samples/TabView/TabViewYouPutCustomContent.txt"
+        },
+        {
+          "title": "Tab widths can either be equally sized, sized to the content of the tab, or sized to only show the icon when unselected",
+          "source": "WinUIGallery/Samples/TabView/TabViewTabWidthsEitherBe.txt"
+        },
+        {
+          "title": "The close button can be persistent or only visible on hover",
+          "source": "WinUIGallery/Samples/TabView/TabViewCloseButtonBePersistent.txt"
+        },
+        {
+          "title": "TabView with color tab icons",
+          "source": "WinUIGallery/Samples/TabView/TabviewColorTabIcons.txt"
+        },
+        {
+          "title": "A TabView with accent colored TabStrip background",
+          "source": "WinUIGallery/Samples/TabView/TabviewAccentColoredTabstrip.txt"
+        },
+        {
+          "title": "Complete TabView windowing sample",
+          "source": "WinUIGallery/Samples/TabView/CompleteTabviewWindowingSample.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "teachingtip",
+      "name": "TeachingTip",
+      "category": "Dialogs & flyouts",
+      "galleryPage": "WinUIGallery/Samples/TeachingTip/TeachingTipPage.xaml",
+      "samples": [
+        {
+          "title": "Show a targeted TeachingTip on a button.",
+          "source": "WinUIGallery/Samples/TeachingTip/ShowTargetedTeachingtipButton.txt"
+        },
+        {
+          "title": "Show a non-targeted TeachingTip with buttons.",
+          "source": "WinUIGallery/Samples/TeachingTip/ShowNonTargetedTeachingtip.txt"
+        },
+        {
+          "title": "Show a targeted TeachingTip with hero content on a button.",
+          "source": "WinUIGallery/Samples/TeachingTip/ShowTargetedTeachingtipHero.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "templates",
+      "name": "Templates",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/Templates/TemplatesPage.xaml",
+      "samples": [
+        {
+          "title": "Customize the look of a TextBox with a ControlTemplate",
+          "source": "WinUIGallery/Samples/Templates/TemplatesCustomizeLookTextboxControltemplate.txt"
+        },
+        {
+          "title": "Customize a ComboBox's ItemTemplate using a DataTemplate",
+          "source": "WinUIGallery/Samples/Templates/TemplatesCustomizeComboboxItemtemplateDatatemplate.txt"
+        },
+        {
+          "title": "Create a DataTemplate in code (experimental)",
+          "source": "WinUIGallery/Samples/Templates/TemplatesCreateDatatemplateInCode.txt"
+        },
+        {
+          "title": "Customize an ItemsControl with an ItemsPanelTemplate",
+          "source": "WinUIGallery/Samples/Templates/TemplatesCustomizeItemscontrolItemspaneltemplate.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "textblock",
+      "name": "TextBlock",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/TextBlock/TextBlockPage.xaml",
+      "samples": [
+        {
+          "title": "A simple TextBlock.",
+          "source": "WinUIGallery/Samples/TextBlock/SimpleTextblock.txt"
+        },
+        {
+          "title": "A TextBlock with a style applied.",
+          "source": "WinUIGallery/Samples/TextBlock/TextblockStyleApplied.txt"
+        },
+        {
+          "title": "A TextBlock with various properties set.",
+          "source": "WinUIGallery/Samples/TextBlock/TextblockVariousProperties.txt"
+        },
+        {
+          "title": "A TextBlock with inline text elements.",
+          "source": "WinUIGallery/Samples/TextBlock/TextblockInlineTextElements.txt"
+        },
+        {
+          "title": "A selectable TextBlock",
+          "source": "WinUIGallery/Samples/TextBlock/SelectableTextblock.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "dxaml/xcp/core/text/TextBlock/TextBlock.cpp",
+      "requiredResources": [
+        "TextBlock.cpp",
+        "TextBlock_themeresources.xaml",
+        "native font metrics"
+      ],
+      "hostDependencies": [
+        "font measurement and fallback",
+        "Canvas2D or GPU glyph texture",
+        "DOM accessible text"
+      ],
+      "implementation": "stage 6.1: first 2 official examples and typed FontStyle, fractional baseline/width verification; character spacing, inlines and selection pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "textbox",
+      "name": "TextBox",
+      "category": "Text",
+      "galleryPage": "WinUIGallery/Samples/TextBox/TextBoxPage.xaml",
+      "samples": [
+        {
+          "title": "A simple TextBox.",
+          "source": "WinUIGallery/Samples/TextBox/SimpleTextbox.txt"
+        },
+        {
+          "title": "A TextBox with a header and placeholder text.",
+          "source": "WinUIGallery/Samples/TextBox/TextboxHeaderPlaceholderText.txt"
+        },
+        {
+          "title": "A read-only TextBox with various properties set.",
+          "source": "WinUIGallery/Samples/TextBox/ReadOnlyTextboxVarious.txt"
+        },
+        {
+          "title": "A multi-line TextBox with spell checking and custom selection highlight color.",
+          "source": "WinUIGallery/Samples/TextBox/MultiLineTextboxSpell.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/CommonStyles/TextBox_themeresources.xaml + dxaml/xcp/dxaml/lib/TextBox_Partial.cpp",
+      "requiredResources": [
+        "text-scroll-template.json",
+        "text-scroll-metrics.json",
+        "text-scroll-palettes.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/rendering",
+        "browser input/textarea IME and clipboard",
+        "Canvas2D default; optional WebGL2",
+        "DOM focus/selection and ARIA ranges"
+      ],
+      "implementation": "stage 6.3 implemented slice: text editing/password/scrolling and eight official examples; detailed parity gaps in docs/text-scroll.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "themeshadow",
+      "name": "ThemeShadow",
+      "category": "Styles",
+      "galleryPage": "WinUIGallery/Samples/ThemeShadow/ThemeShadowPage.xaml",
+      "samples": [
+        {
+          "title": "ThemeShadow applied to a Border",
+          "source": "WinUIGallery/Samples/ThemeShadow/ThemeshadowAppliedBorder.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Media",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "themetransition",
+      "name": "Theme Transitions",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/ThemeTransition/ThemeTransitionPage.xaml",
+      "samples": [
+        {
+          "title": "Use the EntranceThemeTransition when adding items to your page.",
+          "source": "WinUIGallery/Samples/ThemeTransition/EntrancethemetransitionAddingItemsYour.txt"
+        },
+        {
+          "title": "Use the RepositionThemeTransition to react to layout changes.",
+          "source": "WinUIGallery/Samples/ThemeTransition/RepositionthemetransitionReactLayoutChanges.txt"
+        },
+        {
+          "title": "Use ContentThemeTransition to animate content refreshes.",
+          "source": "WinUIGallery/Samples/ThemeTransition/ContentthemetransitionAnimateContentRefreshes.txt"
+        },
+        {
+          "title": "Use AddDeleteThemeTransition to animate adding and removing items from a collection.",
+          "source": "WinUIGallery/Samples/ThemeTransition/AdddeletethemetransitionAnimateAddingRemoving.txt"
+        },
+        {
+          "title": "Use PopupThemeTransition to animate opening and closing a popup.",
+          "source": "WinUIGallery/Samples/ThemeTransition/PopupthemetransitionAnimateOpeningClosing.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "timepicker",
+      "name": "TimePicker",
+      "category": "Date & time",
+      "galleryPage": "WinUIGallery/Samples/TimePicker/TimePickerPage.xaml",
+      "samples": [
+        {
+          "title": "A simple TimePicker that uses the clock format for the user's region.",
+          "source": "WinUIGallery/Samples/TimePicker/SimpleTimepicker.txt"
+        },
+        {
+          "title": "A TimePicker with a header and minute increments specified.",
+          "source": "WinUIGallery/Samples/TimePicker/TimepickerHeaderMinuteIncrements.txt"
+        },
+        {
+          "title": "Use ClockIdentifier to override the regional clock format.",
+          "source": "WinUIGallery/Samples/TimePicker/TimepickerClockIdentifiers.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "titlebar",
+      "name": "TitleBar",
+      "category": "Windowing",
+      "galleryPage": "WinUIGallery/Samples/TitleBar/TitleBarPage.xaml",
+      "samples": [
+        {
+          "title": "TitleBar configuration",
+          "source": "WinUIGallery/Samples/TitleBar/TitlebarConfiguration.txt"
+        },
+        {
+          "title": "TitleBar drag regions",
+          "source": "WinUIGallery/Samples/TitleBar/TitlebarDragRegions.txt"
+        },
+        {
+          "title": "End to end TitleBar sample",
+          "source": "WinUIGallery/Samples/TitleBar/EndEndTitlebarSample.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "togglebutton",
+      "name": "ToggleButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/ToggleButton/ToggleButtonPage.xaml",
+      "samples": [
+        {
+          "title": "A simple ToggleButton with text content.",
+          "source": "WinUIGallery/Samples/ToggleButton/ToggleButtonSimple.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls.Primitives",
+      "winuiSource": "controls/dev/CommonStyles/ToggleButton_themeresources.xaml + dxaml/xcp/dxaml/lib/ToggleButton_Partial.cpp + CheckBox_Partial.cpp",
+      "requiredResources": [
+        "selection-template.json",
+        "foundation-palettes.json",
+        "AnimatedAcceptVisualSource (pending)",
+        "FontIcon fallback"
+      ],
+      "hostDependencies": [
+        "shared Rust scene and capture/keyboard",
+        "DOM accessibility",
+        "Canvas2D or WebGL2",
+        "system Fluent Icons font"
+      ],
+      "implementation": "stage 6.1: 4 official examples, nullable checked state, notification-before-click and keyboard/input/lifecycle; 72 native settled states on two backends; AnimatedAcceptVisualSource paths/timing remain pending",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "togglesplitbutton",
+      "name": "ToggleSplitButton",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/ToggleSplitButton/ToggleSplitButtonPage.xaml",
+      "samples": [
+        {
+          "title": "Using ToggleSplitButton to control bulleted list functionality in RichEditBox",
+          "source": "WinUIGallery/Samples/ToggleSplitButton/ToggleSplitButtonBulletList.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/SplitButton; exact paths in compact-controls-sources.json",
+      "requiredResources": [
+        "compact-controls-template.json",
+        "compact-controls-palettes.json",
+        "compact-controls-metrics.json",
+        "sdk/compact-controls.xaml",
+        "compact-controls-sources.json"
+      ],
+      "hostDependencies": [
+        "shared Rust layout/input/clock and Canvas2D default",
+        "Segoe UI and Segoe Fluent Icons; browser image decode",
+        "SplitButton uses root-owned Flyout/MenuFlyout; DOM ARIA projection"
+      ],
+      "implementation": "compact batch: five Rust/TS/React slices and nine Gallery examples; SplitButton now shares real GridView/ItemsWrapGrid and VariableSizedWrapGrid; RichEditBox, full templates and Store present-time parity pending; docs/compact-controls.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "toggleswitch",
+      "name": "ToggleSwitch",
+      "category": "Basic input",
+      "galleryPage": "WinUIGallery/Samples/ToggleSwitch/ToggleSwitchPage.xaml",
+      "samples": [
+        {
+          "title": "A simple ToggleSwitch.",
+          "source": "WinUIGallery/Samples/ToggleSwitch/ToggleSwitchSimple.txt"
+        },
+        {
+          "title": "A ToggleSwitch with custom header and content.",
+          "source": "WinUIGallery/Samples/ToggleSwitch/ToggleSwitchCustom.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "controls/dev/CommonStyles/ToggleSwitch_themeresources.xaml + dxaml/xcp/dxaml/lib/ToggleSwitch_Partial.cpp",
+      "requiredResources": [
+        "selection-input-template.json",
+        "input-palettes.json",
+        "input-timing.json",
+        "input-reposition.json",
+        "radio-group-metrics.json"
+      ],
+      "hostDependencies": [
+        "shared Rust state/input/layout",
+        "Canvas2D default or opt-in WebGL2",
+        "DOM radio/switch semantics"
+      ],
+      "implementation": "stage 6.2: exclusive groups, roving Tab/spatial arrows, switch drag and native-derived state/timing resources; four Gallery examples with ProgressRing dependency supplied in stage 6.4; Store page inspection plus 32 native states on two backends; full pixel/present-time parity unaccepted; stage 6.4 supplies the second sample ProgressRing dependency",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "tooltip",
+      "name": "ToolTip",
+      "category": "Status & info",
+      "galleryPage": "WinUIGallery/Samples/ToolTip/ToolTipPage.xaml",
+      "samples": [
+        {
+          "title": "A button with a simple ToolTip.",
+          "source": "WinUIGallery/Samples/ToolTip/ButtonSimpleTooltip.txt"
+        },
+        {
+          "title": "A TextBlock with an offset ToolTip.",
+          "source": "WinUIGallery/Samples/ToolTip/TextblockOffsetTooltip.txt"
+        },
+        {
+          "title": "An Image with a ToolTip using PlacementRect.",
+          "source": "WinUIGallery/Samples/ToolTip/ImageTooltipPlacementrect.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned source paths in overlay-sources.json; FlyoutBase/Popup and corresponding presenters are shared by SplitButton controls",
+      "requiredResources": [
+        "overlay-template.json",
+        "overlay-sources.json",
+        "overlay-palettes.json",
+        "overlay-metrics.json",
+        "overlay-native-motion.json"
+      ],
+      "hostDependencies": [
+        "shared Rust root overlay layout, input, clock and rendering",
+        "Scene DOM focus/ARIA projection; Canvas2D default, optional WebGL2"
+      ],
+      "implementation": "stage 7 running source slice; shared by SplitButton and ToggleSplitButton, not a separate overlay implementation; detailed capabilities and remaining limits in docs/overlays.md and references/stage-7.json; full native equivalence unaccepted",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "treeview",
+      "name": "TreeView",
+      "category": "Collections",
+      "galleryPage": "WinUIGallery/Samples/TreeView/TreeViewPage.xaml",
+      "samples": [
+        {
+          "title": "A simple TreeView with drag and drop support",
+          "source": "WinUIGallery/Samples/TreeView/SimpleTreeviewDragDrop.txt"
+        },
+        {
+          "title": "A TreeView with Multi-selection enabled",
+          "source": "WinUIGallery/Samples/TreeView/TreeviewMultiSelectionEnabled.txt"
+        },
+        {
+          "title": "A TreeView with DataBinding Using ItemSource",
+          "source": "WinUIGallery/Samples/TreeView/TreeviewDatabindingItemsource.txt"
+        },
+        {
+          "title": "A TreeView with ItemTemplateSelector",
+          "source": "WinUIGallery/Samples/TreeView/TreeviewItemtemplateselector.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "typography",
+      "name": "Typography",
+      "category": "Design",
+      "galleryPage": "WinUIGallery/Samples/Typography/TypographyPage.xaml",
+      "samples": [
+        {
+          "title": "Type ramp",
+          "source": "WinUIGallery/Samples/Typography/TypographyTypeRamp.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "variablesizedwrapgrid",
+      "name": "VariableSizedWrapGrid",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/VariableSizedWrapGrid/VariableSizedWrapGridPage.xaml",
+      "samples": [
+        {
+          "title": "A VariableSizedWrapGrid control.",
+          "source": "WinUIGallery/Samples/VariableSizedWrapGrid/VariablesizedwrapgridControl.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "Exact pinned paths in collections-sources.json; ListViewBase selection, item chrome and stacking/wrapping/occupancy layout",
+      "requiredResources": [
+        "collections-template.json",
+        "collections-palettes.json",
+        "collections-metrics.json",
+        "collections-sources.json",
+        "collections-assets.json"
+      ],
+      "hostDependencies": [
+        "Rust collection identity, selection, realization, scroll and indicator animation",
+        "TS business objects and normal SDK/React item templates",
+        "Segoe UI / Segoe Fluent Icons; browser image decode; Canvas2D default"
+      ],
+      "implementation": "collection slice: 5 controls, uniform virtualized views and 10 Gallery samples; original contact/photo templates and source-derived media clips/item borders; same-SDK static matrices and independent input/lifecycle/capacity checks; advanced collection features and Store present-time parity pending; docs/collections.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "viewbox",
+      "name": "Viewbox",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/Viewbox/ViewboxPage.xaml",
+      "samples": [
+        {
+          "title": "Content inside of a Viewbox.",
+          "source": "WinUIGallery/Samples/Viewbox/ContentInsideViewbox.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "dxaml/xcp/core/core/elements/Viewbox.cpp",
+      "requiredResources": [
+        "basic-next-template.json",
+        "basic-next-defaults.json",
+        "basic-next-palettes.json",
+        "basic-next-metrics.json",
+        "basic-next-metrics-125.json"
+      ],
+      "hostDependencies": [
+        "shared Rust scene/layout/input and demand clock",
+        "Canvas2D default; optional WebGL2",
+        "DOM transformed child space and button semantics"
+      ],
+      "implementation": "stage 6.5: Rust RepeatButton timer/default states and Viewbox source scaling/clip/child ownership, two actual React examples; 100%/125% native profiles and own-window keyboard observations; full native pixel/present-time equivalence unaccepted, advanced template gaps in docs/repeat-viewbox.md",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "webview2",
+      "name": "WebView2",
+      "category": "Media",
+      "galleryPage": "WinUIGallery/Samples/WebView2/WebView2Page.xaml",
+      "samples": [
+        {
+          "title": "A simple WebView2",
+          "source": "WinUIGallery/Samples/WebView2/SimpleWebview2.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "windowing",
+      "name": "Window",
+      "category": "Windowing",
+      "galleryPage": "WinUIGallery/Samples/Windowing/WindowingPage.xaml",
+      "samples": [
+        {
+          "title": "Create a single-threaded top-level Window.",
+          "source": "WinUIGallery/Samples/Windowing/CreateMultipleWindows.txt"
+        },
+        {
+          "title": "Configure the client size and constraints",
+          "source": "WinUIGallery/Samples/Windowing/WindowSizing.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "wrappanel",
+      "name": "WrapPanel",
+      "category": "Layout",
+      "galleryPage": "WinUIGallery/Samples/WrapPanel/WrapPanelPage.xaml",
+      "samples": [
+        {
+          "title": "A WrapPanel that automatically wraps items when they reach the panel boundary.",
+          "source": "WinUIGallery/Samples/WrapPanel/WrapPanelBasic.txt"
+        },
+        {
+          "title": "A WrapPanel that can stretch its final item to fill the remaining space.",
+          "source": "WinUIGallery/Samples/WrapPanel/WrapPanelItemsStretch.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Controls",
+      "winuiSource": "references/menu-layout-sources.json",
+      "requiredResources": "references/command-menu-template.json",
+      "hostDependencies": [
+        "Browser input and accessibility projection",
+        "Canvas2D or explicit WebGL2 renderer"
+      ],
+      "implementation": "Rust scene, typed TS and React slice; docs/menu-layout-controls.md",
+      "acceptance": "Same-SDK static geometry and browser behavior tested; complete Store Composition parity not accepted"
+    },
+    {
+      "id": "xamlcompinterop",
+      "name": "Animation interop",
+      "category": "Motion",
+      "galleryPage": "WinUIGallery/Samples/XamlCompInterop/XamlCompInteropPage.xaml",
+      "samples": [
+        {
+          "title": "Use a natural motion composition animation on a UIElement",
+          "source": "WinUIGallery/Samples/XamlCompInterop/XamlCompInteropNaturalMotionCompositionAnimation.txt"
+        },
+        {
+          "title": "ExpressionAnimation on an Ellipse element",
+          "source": "WinUIGallery/Samples/XamlCompInterop/XamlCompInteropExpressionanimationEllipseElement.txt"
+        },
+        {
+          "title": "Driving several related animations together using ExpressionAnimation",
+          "source": "WinUIGallery/Samples/XamlCompInterop/XamlCompInteropDrivingSeveralRelatedAnimations.txt"
+        },
+        {
+          "title": "Reference ActualSize in ExpressionAnimations to make novel layouts based on size",
+          "source": "WinUIGallery/Samples/XamlCompInterop/XamlCompInteropReferenceActualsizeExpressionanimationsMake.txt"
+        },
+        {
+          "title": "Reference ActualOffset and ActualSize in ExpressionAnimations to position elements relative to each other",
+          "source": "WinUIGallery/Samples/XamlCompInterop/XamlCompInteropReferenceActualoffsetActualsizeExpressionanimations.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "xamlresources",
+      "name": "Resources",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/XamlResources/XamlResourcesPage.xaml",
+      "samples": [
+        {
+          "title": "XamlResources",
+          "source": "WinUIGallery/Samples/XamlResources/Xamlresources.txt"
+        },
+        {
+          "title": "StaticResource versus ThemeResource",
+          "source": "WinUIGallery/Samples/XamlResources/XamlResourcesStaticresourceVersusThemeresource.txt"
+        },
+        {
+          "title": "Define a new theme resource",
+          "source": "WinUIGallery/Samples/XamlResources/XamlResourcesDefineNewThemeResource.txt"
+        },
+        {
+          "title": "Set a ThemeResource from code",
+          "source": "WinUIGallery/Samples/XamlResources/XamlResourcesSetThemeResourceFromCode.txt"
+        }
+      ],
+      "nativeNamespace": null,
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "xamlstyles",
+      "name": "Style",
+      "category": "Fundamentals",
+      "galleryPage": "WinUIGallery/Samples/XamlStyles/XamlStylesPage.xaml",
+      "samples": [
+        {
+          "title": "Creating and applying a style",
+          "source": "WinUIGallery/Samples/XamlStyles/XamlStylesCreatingApplyingStyle.txt"
+        },
+        {
+          "title": "Style without a key (implicit style)",
+          "source": "WinUIGallery/Samples/XamlStyles/XamlStylesStyleWithoutKeyImplicit.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    },
+    {
+      "id": "xamluicommand",
+      "name": "XamlUICommand",
+      "category": "Menus & toolbars",
+      "galleryPage": "WinUIGallery/Samples/XamlUICommand/XamlUICommandPage.xaml",
+      "samples": [
+        {
+          "title": "Creating a reusable command with XamlUICommand",
+          "source": "WinUIGallery/Samples/XamlUICommand/CreatingReusableCommandXamluicommand.txt"
+        }
+      ],
+      "nativeNamespace": "Microsoft.UI.Xaml.Input",
+      "winuiSource": null,
+      "requiredResources": null,
+      "hostDependencies": null,
+      "implementation": "not started; source mapping not audited",
+      "acceptance": "native equivalence not accepted"
+    }
+  ],
+  "exclusions": [
+    "Charts: previous scope retained, no implementation in this batch",
+    "Community TableView: external dependency, no implementation in this batch",
+    "Unrelated Windows system APIs: host support required, not emulated"
+  ]
+}

@@ -1,0 +1,995 @@
+{
+  "generatedAtUtc": "2026-11-07T20:42:17.160183+00:00",
+  "scope": "Generic Popup/Flyout/MenuFlyout/ToolTip presentation, primary-font spacing and synchronous React host mounting",
+  "acceptedPixelEquality": false,
+  "visual": {
+    "report": "references/validation/overlay-controls-comparison.json",
+    "nativeStableScenes": 24,
+    "browserStableScenes": 48,
+    "nativeMotionTracks": 12,
+    "nativeMotionFrames": 156,
+    "browserMotionFrames": 312,
+    "maximumGeometryErrorDip": 3.051757857974735e-06,
+    "maximumMenuRowErrorDip": 1.2207031261368684e-05,
+    "maximumOuterEdgeMAE": 1.959016393442623,
+    "wasm": {
+      "sha256": "344dff48809200f52db7a052ba0a163e2ad73d69cd4b47b67a37b04520a003db",
+      "completedAt": 1794083816609
+    },
+    "materialROI": [
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Plain-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.07717569786535304
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Plain-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.07807308970099668
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Plain-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Plain-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Stripes-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.6272577996715928
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Stripes-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.6251384274640088
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Stripes-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.192090395480226
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Stripes-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.192090395480226
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Plain-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.016420361247947456
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Plain-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.016611295681063124
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Plain-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Plain-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Stripes-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 1.8139025725232623
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Stripes-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 1.8660022148394242
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Stripes-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.4293785310734463
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Stripes-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.4293785310734463
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Plain-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Plain-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Stripes-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Light-Stripes-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Plain-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Plain-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Stripes-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "Canvas2D",
+        "name": "Dark-Stripes-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Plain-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.07881773399014778
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Plain-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.07807308970099668
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Plain-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Plain-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Stripes-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.8045977011494253
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Stripes-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0.8194905869324474
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Stripes-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.1807909604519774
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Stripes-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.1807909604519774
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Plain-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Plain-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Plain-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Plain-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Stripes-Flyout-Top",
+        "materialBox": {
+          "x": 606,
+          "y": 205.8000030517578,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 2.293377120963328
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Stripes-Flyout-Bottom",
+        "materialBox": {
+          "x": 606,
+          "y": 141,
+          "width": 6,
+          "height": 70.19999694824219
+        },
+        "materialMAE": 2.320598006644518
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Stripes-MenuFlyout-Top",
+        "materialBox": {
+          "x": 530,
+          "y": 184.1999969482422,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.3898305084745763
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Stripes-MenuFlyout-Bottom",
+        "materialBox": {
+          "x": 530,
+          "y": 141,
+          "width": 48,
+          "height": 91.80000305175781
+        },
+        "materialMAE": 0.3898305084745763
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Plain-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Plain-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Stripes-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Light-Stripes-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0.041666666666666664
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Plain-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Plain-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Stripes-ToolTip-Top",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 274,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0
+      },
+      {
+        "backend": "WebGL2",
+        "name": "Dark-Stripes-ToolTip-Bottom",
+        "materialBox": {
+          "x": 553.1999969482422,
+          "y": 118,
+          "width": 2,
+          "height": 20
+        },
+        "materialMAE": 0
+      }
+    ]
+  },
+  "fontMetrics": {
+    "report": "references/validation/overlay-text-metrics.json",
+    "cases": 42,
+    "maximumBaselineErrorDip": 1.373291016903977e-06,
+    "maximumLineHeightErrorDip": 1.5258789076710855e-06,
+    "primaryLineMetricsAccepted": true,
+    "allWidthsAccepted": false,
+    "widthDifferences": [
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 8,
+        "trimming": "None",
+        "baseline": 8,
+        "height": 8,
+        "width": 20.799999237060547,
+        "lineHeight": 0,
+        "actualHeight": 8,
+        "actual": {
+          "baseline": 8,
+          "height": 8,
+          "width": 20,
+          "lineHeight": 8
+        },
+        "baselineError": 0,
+        "heightError": 0,
+        "widthError": -0.7999992370605469
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 11,
+        "trimming": "None",
+        "baseline": 11,
+        "height": 11.199999809265137,
+        "width": 28.799999237060547,
+        "lineHeight": 0,
+        "actualHeight": 11,
+        "actual": {
+          "baseline": 11,
+          "height": 11.2,
+          "width": 27.2,
+          "lineHeight": 11
+        },
+        "baselineError": 0,
+        "heightError": 1.9073486257070726e-07,
+        "widthError": -1.5999992370605476
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 12,
+        "trimming": "None",
+        "baseline": 12,
+        "height": 12,
+        "width": 31.200000762939453,
+        "lineHeight": 0,
+        "actualHeight": 12,
+        "actual": {
+          "baseline": 12,
+          "height": 12,
+          "width": 29.6,
+          "lineHeight": 12
+        },
+        "baselineError": 0,
+        "heightError": 0,
+        "widthError": -1.6000007629394517
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 14,
+        "trimming": "None",
+        "baseline": 14,
+        "height": 14.399999618530273,
+        "width": 36.79999923706055,
+        "lineHeight": 0,
+        "actualHeight": 14,
+        "actual": {
+          "baseline": 14,
+          "height": 14.4,
+          "width": 34.4,
+          "lineHeight": 14
+        },
+        "baselineError": 0,
+        "heightError": 3.8146972691777137e-07,
+        "widthError": -2.3999992370605483
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 16,
+        "trimming": "None",
+        "baseline": 16,
+        "height": 16,
+        "width": 41.599998474121094,
+        "lineHeight": 0,
+        "actualHeight": 16,
+        "actual": {
+          "baseline": 16,
+          "height": 16,
+          "width": 39.2,
+          "lineHeight": 16
+        },
+        "baselineError": 0,
+        "heightError": 0,
+        "widthError": -2.399998474121091
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 20,
+        "trimming": "None",
+        "baseline": 20,
+        "height": 20,
+        "width": 52,
+        "lineHeight": 0,
+        "actualHeight": 20,
+        "actual": {
+          "baseline": 20,
+          "height": 20,
+          "width": 48.8,
+          "lineHeight": 20
+        },
+        "baselineError": 0,
+        "heightError": 0,
+        "widthError": -3.200000000000003
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "fontSize": 28,
+        "trimming": "None",
+        "baseline": 28,
+        "height": 28,
+        "width": 72.80000305175781,
+        "lineHeight": 0,
+        "actualHeight": 28,
+        "actual": {
+          "baseline": 28,
+          "height": 28,
+          "width": 68.8,
+          "lineHeight": 28
+        },
+        "baselineError": 0,
+        "heightError": 0,
+        "widthError": -4.000003051757815
+      }
+    ]
+  },
+  "rust": {
+    "passed": 151,
+    "log": "out/overlay-svg-final-rust.log",
+    "separateTarget": "out/overlay-rust-check"
+  },
+  "browser": {
+    "report": "out/overlay-repaired-full-browser.json",
+    "stats": {
+      "startTime": "2026-11-07T19:17:58.207Z",
+      "duration": 772572.507,
+      "expected": 140,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "failures": [
+      {
+        "title": "Canvas2D seven animated sources match frozen native Composition frames",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('img', { name: 'Slices bitmap icon' })\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('img', { name: 'Slices bitmap icon' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('img', { name: 'Slices bitmap icon' })\u001b[22m\n\u001b[2m    - locator resolved to <span role=\"img\" aria-label=\"Slices bitmap icon\"></span>\u001b[22m\n\u001b[2m    - unexpected value \"hidden\"\u001b[22m\n"
+        ]
+      },
+      {
+        "title": "WebGL2 RepeatButton and Viewbox match native state, scale and clipping matrices",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Click and hold', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Click and hold', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Click and hold', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "title": "real Gallery photo templates, margin controls, natural resizing and filtering use Rust layout",
+        "status": "unexpected",
+        "errors": [
+          "Error: locator.check: Clicking the checkbox did not change its state\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'Image/Text', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button role=\"radio\" type=\"button\" tabindex=\"-1\" data-state=\"Normal\" data-control-id=\"10\" aria-checked=\"false\" aria-label=\"Image/Text\">Image/Text</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n\u001b[2m    - navigations have finished\u001b[22m\n"
+        ]
+      },
+      {
+        "title": "dynamic containers, shadow DOM, clipping, RTL and resize synchronize without steady polling",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeCloseTo\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m, \u001b[22mprecision\u001b[2m)\u001b[22m\n\nExpected: \u001b[32m717\u001b[39m\nReceived: \u001b[31m711.5864868164062\u001b[39m\n\nExpected precision:    0\nExpected difference: < \u001b[32m0.5\u001b[39m\nReceived difference:   \u001b[31m5.41351318359375\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+        ]
+      },
+      {
+        "title": "Canvas2D five icon controls match native size and isolated crops",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('img', { name: 'Slices bitmap icon' })\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('img', { name: 'Slices bitmap icon' }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('img', { name: 'Slices bitmap icon' })\u001b[22m\n\u001b[2m    - locator resolved to <span role=\"img\" aria-label=\"Slices bitmap icon\"></span>\u001b[22m\n\u001b[2m    - unexpected value \"hidden\"\u001b[22m\n"
+        ]
+      }
+    ],
+    "wasm": {
+      "sha256": "9ef3f3e1610f2138f53987f28c0fe819274c481e84625724adf869b84cccfba8",
+      "evidence": "Both native collection matrix tests asserted WinUI.buildVersion against the actual fetched WASM body and recorded this hash at 03:21/03:22 during the full run. Their reports are copied below."
+    },
+    "boundary": "Historical full run before the final asymmetric material clip repair; retain failures and separate subsequent checks."
+  },
+  "latestTargeted": {
+    "report": "out/overlay-svg-final-browser.json",
+    "stats": {
+      "startTime": "2026-11-07T20:36:59.377Z",
+      "duration": 205384.922,
+      "expected": 61,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "wasm": {
+      "sha256": "344dff48809200f52db7a052ba0a163e2ad73d69cd4b47b67a37b04520a003db",
+      "completedAt": 1794083816609
+    }
+  },
+  "svgUploadRepair": {
+    "before": "out/overlay-webgl-icon-diagnostics-before.json",
+    "after": "out/overlay-webgl-icon-diagnostics.json",
+    "beforeFailingRepeats": 10,
+    "afterFailingRepeats": 0,
+    "fix": "Resolve decoded images to a natural-size Canvas pixel surface before their first WebGL texture upload; no URL extension heuristic, covering SVG data and blob sources too."
+  },
+  "latestFull": {
+    "report": "out/overlay-corner-full-browser.json",
+    "stats": {
+      "startTime": "2026-11-07T20:22:33.571Z",
+      "duration": 674431.4839999999,
+      "expected": 147,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "failures": [],
+    "wasm": {
+      "sha256": "ea8f4026e755a6806a5d81a6d8275d250309fa1d9bd6f7f79b8ae41eba80c45f",
+      "completedAt": 1794082769734
+    },
+    "fetchedBinaryEvidence": [
+      "out/overlay-corner-full-collections-Canvas2D.json",
+      "out/overlay-corner-full-collections-WebGL2.json"
+    ],
+    "boundary": "147 assertions passed before the final shared SVG upload fix. One unhandled WebGL 1281 was observed despite the green assertions; retain that observation and validate the repair separately.",
+    "runtimeObservations": [
+      {
+        "error": "WebGL error: 1281",
+        "location": "IconElement Gallery SVG upload during Canvas2D to WebGL2 switch",
+        "reproduction": "out/overlay-webgl-icon-diagnostics-before.json"
+      }
+    ]
+  },
+  "sharedRecheck": {
+    "report": "out/overlay-shared-recheck.json",
+    "stats": {
+      "startTime": "2026-11-07T19:58:19.848Z",
+      "duration": 52449.222,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "failures": []
+  },
+  "cornerMaterials": {
+    "report": "references/validation/popup-corner-materials.json",
+    "browserScenes": 32,
+    "maximumCornerBackgroundError": 0
+  },
+  "earlierFullCheckpoint": {
+    "report": "out/overlay-final-full-browser.json",
+    "stats": {
+      "startTime": "2026-11-07T18:56:55.992Z",
+      "duration": 778563.949,
+      "expected": 133,
+      "skipped": 0,
+      "unexpected": 4,
+      "flaky": 0
+    },
+    "failures": [
+      {
+        "title": "native image crops and styled text match both renderers",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m8\u001b[39m\nReceived:   \u001b[31m32.85536666666667\u001b[39m"
+        ]
+      },
+      {
+        "title": "Canvas2D collection geometry and presenter states compare against the actual SDK",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m2\u001b[39m\nReceived:   \u001b[31m1\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+        ]
+      },
+      {
+        "title": "HyperlinkButton invokes once before opening the requested URI",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('link', { name: 'Microsoft home page', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('link', { name: 'Microsoft home page', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('link', { name: 'Microsoft home page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "title": "WebGL2 shapes and advanced icon sources match the native vector matrix",
+        "status": "unexpected",
+        "errors": [
+          "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m8\u001b[39m\nReceived: \u001b[31m1\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+        ]
+      }
+    ],
+    "wasm": {
+      "sha256": "0bfd79feb2aa35b4cfa413504eb4d76db7ea0069c63769aab2e78cdcf7c6e976",
+      "completedAt": 1794077719895
+    }
+  },
+  "reactMount": {
+    "report": "out/overlay-react-tests.json",
+    "stats": {
+      "startTime": "2026-11-07T19:08:56.957Z",
+      "duration": 5809.965,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "completeTreeMountCycles": 40,
+    "openingTargetCases": 12,
+    "scope": "Both renderers, ordinary and StrictMode; no first-frame partial tree, no retained font metric hosts after disposal"
+  },
+  "additionalEvidence": [
+    "references/validation/overlay-own-shadow-sampling.json",
+    "references/validation/overlay-app-backdrop-kernel.json",
+    "out/overlay-slider-repeat.json",
+    "out/overlay-clock-repeat.log",
+    "out/overlay-react-integration.json"
+  ],
+  "checks": {
+    "build": "out/overlay-svg-final-build.log",
+    "typecheck": "out/overlay-svg-final-build.log",
+    "clippyHost": "out/overlay-svg-final-clippy.log",
+    "clippyWasm": "out/overlay-svg-final-wasm-clippy.log",
+    "fmt": "out/overlay-svg-final-fmt.log",
+    "enums": "out/overlay-final-enums.log",
+    "sourceAndLocalFingerprints": "out/overlay-final-baseline.log"
+  },
+  "review": "out/overlay-controls-review/index.html",
+  "cornerReview": "out/popup-corner-materials/index.html",
+  "remaining": [
+    "Native DirectWrite glyph coverage differs from browser Canvas glyph rasterization.",
+    "In-app Gaussian and DWM HostBackdrop kernels retain measured residuals. HostBackdrop remains a scene-bounded browser adaptation, with no external desktop access.",
+    "Seven Segoe Fluent Icons/Latin/None cases retain native width differences; None/Clip primary baselines and line spacing pass all 42 cases.",
+    "Worker-thread screenshot brackets do not establish equal DWM/browser compositor presentation times.",
+    "The next composed-control batch has source/template baselines and NumberBox expression core; its five Scene controls are not implemented or accepted by this report."
+  ],
+  "boundary": [
+    "Material ROI now excludes glyphs and separators; old ROI numbers are not directly comparable.",
+    "Matching resolved SDK probes, not a claim of Store Gallery distribution or whole-surface pixel equality.",
+    "Current repository fingerprints are recorded separately from immutable tested WASM hashes; other collection work shares this checkout."
+  ],
+  "repositoryAtReportTime": [
+    {
+      "path": "src/scene/overlays.rs",
+      "sha256": "7abd68fa904d9e00de542909dffd87b702aece75871ef7821ee8437b7d8e25e7"
+    },
+    {
+      "path": "src/scene/overlay_visual.rs",
+      "sha256": "8ca4a676583047a7ad53a6c923147b815e7873ae474ee53df47c8ac4bd0caa64"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "0503076acf2fe8aed7279b16e9c08d9d234a238e66af03e9f12f792e131fc393"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "e245fd28b4a8904aff4512f14cacab08f0ea4b19e58e8bcc7503680bb7ff2cf7"
+    },
+    {
+      "path": "src/scene/text_edit.rs",
+      "sha256": "74ca79215b6a9e47f4cae6f628e155e907c720b1a5a4dd39967056f2ff1e70f1"
+    },
+    {
+      "path": "src/typography.rs",
+      "sha256": "257740382bc868a51bc27bad41312f0bfed58fb5a6e0b7f9081d08fff589b9e7"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "9587adc5307e96cc096774738d5de1128ff0ffa8331cdff1cd3319a2685e550b"
+    },
+    {
+      "path": "src/gpu.rs",
+      "sha256": "45b5f98fa6a2f13e96b7aa23c305229a33a49b8a76bce900d01d70e28783cba0"
+    },
+    {
+      "path": "src/acrylic.glsl",
+      "sha256": "e5ed429c387360bc8b78f8d92dab2010dae6109adce42162c8d3cfb48f0a59fd"
+    },
+    {
+      "path": "src/material.rs",
+      "sha256": "15e2cbcddfd1835cc28b49c7277da2fbafe13fd5412c27ba59d7b68b4f7944fe"
+    },
+    {
+      "path": "src/material_blur.rs",
+      "sha256": "f20a53d164939119a86ebc657c10915fe572803c05e099b5b61e1f8554433fdc"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "2f8297619f8f781428c43bd3eb61d1c773e9e8aadc2db7c04c47f206e8317db3"
+    },
+    {
+      "path": "tools/native-navigation/EffectsProbe.cs",
+      "sha256": "8631af3b85838138a61441902a5c0f046632973c5194dc46c648b775535bf67e"
+    },
+    {
+      "path": "tools/native-navigation/OverlayControlsProbe.cs",
+      "sha256": "b473e4dd5db8c24408b48fe9bfeffface64607f72f2e4deb4159231d869ddbbf"
+    },
+    {
+      "path": "tools/native-navigation/TooltipControlsProbe.cs",
+      "sha256": "e1438051cb0956e791edc8ec134a1d63ad6e32738f3b15852bb3b93d66cdc919"
+    },
+    {
+      "path": "tools/native-navigation/AcrylicKernelProbe.cs",
+      "sha256": "35553bc5193c377f4f61a29d56ef2b686f1cbb7af0cc40412d6b86a793456487"
+    },
+    {
+      "path": "gallery/tests/react-mount.spec.ts",
+      "sha256": "15117da1449d9a9401dc52b50b4b82038eda3b22fe57177f0579338af3ce3593"
+    },
+    {
+      "path": "gallery/tests/react-mount-fixture.tsx",
+      "sha256": "08ad4011227dcce688761995916c0c8959d37343faf68bf910985a3450712201"
+    },
+    {
+      "path": "tools/native-navigation/PopupCornersProbe.cs",
+      "sha256": "6cd0ad107d4878c18349ab6b341e2c58aff608f4bdb7a52f930e727048229c10"
+    },
+    {
+      "path": "gallery/tests/popup-corners.spec.ts",
+      "sha256": "d5880b6fc312157dcaf2192a1a1d3e04b05358611b529abdc65a5fd30cb83cbc"
+    },
+    {
+      "path": "gallery/tests/materials.spec.ts",
+      "sha256": "66617b0a89cf2d054dd1981589bdb3f7ec4a4a72bed7848e19421251baf471ab"
+    }
+  ],
+  "supersededBy": "references/validation/overlay-text-render-followup.json",
+  "sharedArtifactBoundary": "Shared comparison/image paths have been refreshed by the linked follow-up. Values and tested-binary hashes embedded in this historical checkpoint retain their original scope."
+}

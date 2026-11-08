@@ -1,0 +1,117 @@
+{
+  "build": "Vite production preview, Release WASM",
+  "date": "2026-11-06T18:53:07.353Z",
+  "conditions": {
+    "viewport": [
+      1440,
+      1000
+    ],
+    "dpr": 1,
+    "browser": "installed Chrome",
+    "cache": "fresh contexts and CDP browser cache disabled; OS/filesystem caches not flushed"
+  },
+  "runs": [
+    {
+      "startup": {
+        "wasmReadyMs": 11.700000001117587,
+        "sceneReadyFromNavigationMs": 256.59999999962747,
+        "jsHeapEstimateBytes": 3858073,
+        "resources": [
+          {
+            "duration": 5.099999999627471,
+            "transferSize": 1118912
+          }
+        ]
+      },
+      "inputToNotificationMs": 23.600000001490116,
+      "gpu": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Ti SUPER (0x00002705) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "timerQuerySupported": true,
+        "fenceCompletionUpperBoundMs": 2.900000000372529,
+        "fenceCompleted": true,
+        "diagnostics": {
+          "frameP50Ms": 1.800000000745058,
+          "frameP95Ms": 2.599999999627471,
+          "frames": 65,
+          "averageFrameMs": 1.9230769229622988,
+          "maxFrameMs": 5.400000000372529,
+          "draws": 9282,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 67
+        }
+      }
+    },
+    {
+      "startup": {
+        "wasmReadyMs": 10.799999998882413,
+        "sceneReadyFromNavigationMs": 119,
+        "jsHeapEstimateBytes": 3146613,
+        "resources": [
+          {
+            "duration": 6.099999999627471,
+            "transferSize": 1118912
+          }
+        ]
+      },
+      "inputToNotificationMs": 3.299999998882413,
+      "gpu": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Ti SUPER (0x00002705) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "timerQuerySupported": true,
+        "fenceCompletionUpperBoundMs": 4.700000001117587,
+        "fenceCompleted": true,
+        "diagnostics": {
+          "frameP50Ms": 2,
+          "frameP95Ms": 2.400000000372529,
+          "frames": 65,
+          "averageFrameMs": 1.9630769232144722,
+          "maxFrameMs": 4.800000000745058,
+          "draws": 9282,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 67
+        }
+      }
+    },
+    {
+      "startup": {
+        "wasmReadyMs": 10.300000000745058,
+        "sceneReadyFromNavigationMs": 122.59999999962747,
+        "jsHeapEstimateBytes": 3211031,
+        "resources": [
+          {
+            "duration": 3.599999999627471,
+            "transferSize": 1118912
+          }
+        ]
+      },
+      "inputToNotificationMs": 4,
+      "gpu": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4070 Ti SUPER (0x00002705) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "timerQuerySupported": true,
+        "fenceCompletionUpperBoundMs": 4.800000000745058,
+        "fenceCompleted": true,
+        "diagnostics": {
+          "frameP50Ms": 1.900000000372529,
+          "frameP95Ms": 2.5,
+          "frames": 65,
+          "averageFrameMs": 1.9307692307692308,
+          "maxFrameMs": 5.100000001490116,
+          "draws": 9282,
+          "generation": 1,
+          "kind": "WebGL2",
+          "lost": false,
+          "uploads": 67
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Frame percentiles cover synchronous WASM, submission and DOM projection; not GPU execution time.",
+    "Fence polling reports an upper bound to completion of queued GPU commands, not per-frame GPU execution. Timer-query capability is recorded but no GPU timing claim is made.",
+    "Chrome JS heap estimate omits GPU allocations and is not a process RSS/WASM memory inventory.",
+    "Three local trials are observational; not a hardware performance guarantee."
+  ]
+}

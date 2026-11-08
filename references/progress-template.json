@@ -1,0 +1,782 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "aliases": {},
+  "primitives": {
+    "Light": {
+      "ProgressBarForeground": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "ProgressBarBackground": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ProgressBarBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ProgressBarPausedForegroundColor": {
+        "kind": "solid",
+        "color": "#9D5D00FF",
+        "opacity": 1
+      },
+      "ProgressBarErrorForegroundColor": {
+        "kind": "solid",
+        "color": "#C42B1CFF",
+        "opacity": 1
+      },
+      "ProgressRingForegroundThemeBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "ProgressRingBackgroundThemeBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "ProgressBarForeground": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "ProgressBarBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ProgressBarBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "ProgressBarPausedForegroundColor": {
+        "kind": "solid",
+        "color": "#FCE100FF",
+        "opacity": 1
+      },
+      "ProgressBarErrorForegroundColor": {
+        "kind": "solid",
+        "color": "#FF99A4FF",
+        "opacity": 1
+      },
+      "ProgressRingForegroundThemeBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "ProgressRingBackgroundThemeBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "ProgressBarForeground": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "ProgressBarBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ProgressBarBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ProgressBarPausedForegroundColor": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ProgressBarErrorForegroundColor": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "ProgressRingForegroundThemeBrush": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "ProgressRingBackgroundThemeBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      }
+    }
+  },
+  "scalars": {
+    "ProgressBarMinHeight": 3.0,
+    "ProgressBarTrackHeight": 1.0,
+    "ProgressBarCornerRadius": 1.5,
+    "ProgressBarTrackCornerRadius": 0.5,
+    "ProgressRingStrokeThickness": 4.0
+  },
+  "styles": {
+    "ProgressBar": {
+      "defaults": {
+        "Foreground": "{ThemeResource ProgressBarForeground}",
+        "Background": "{ThemeResource ProgressBarBackground}",
+        "BorderThickness": "{ThemeResource ProgressBarBorderThemeThickness}",
+        "BorderBrush": "{ThemeResource ProgressBarBorderBrush}",
+        "MinHeight": "{StaticResource ProgressBarMinHeight}",
+        "Maximum": "100",
+        "IsTabStop": "False",
+        "VerticalAlignment": "Center",
+        "CornerRadius": "{StaticResource ProgressBarCornerRadius}"
+      },
+      "states": [
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "Updating",
+            "To": "Determinate"
+          },
+          "animations": [
+            {
+              "kind": "RepositionThemeAnimation",
+              "attributes": {
+                "TargetName": "DeterminateProgressBarIndicator",
+                "FromHorizontalOffset": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.IndicatorLengthDelta}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "UpdatingError",
+            "To": "Error"
+          },
+          "animations": [
+            {
+              "kind": "RepositionThemeAnimation",
+              "attributes": {
+                "TargetName": "DeterminateProgressBarIndicator",
+                "FromHorizontalOffset": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.IndicatorLengthDelta}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "Paused",
+            "To": "Determinate"
+          },
+          "animations": [
+            {
+              "kind": "ColorAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "DeterminateProgressBarIndicator",
+                "Storyboard.TargetProperty": "(Shape.Fill).(SolidColorBrush.Color)",
+                "To": "{TemplateBinding Foreground}",
+                "Duration": "0:0:0.167"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "Error",
+            "To": "Determinate"
+          },
+          "animations": [
+            {
+              "kind": "ColorAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "DeterminateProgressBarIndicator",
+                "Storyboard.TargetProperty": "(Shape.Fill).(SolidColorBrush.Color)",
+                "To": "{TemplateBinding Foreground}",
+                "Duration": "0:0:0.167"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "Indeterminate",
+            "To": "Determinate"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "IndeterminatePaused",
+            "To": "Indeterminate"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetProperty": "Opacity",
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator"
+              }
+            },
+            {
+              "kind": "DiscreteDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.333",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationEndPosition}",
+                "KeySpline": "1.0, 0.0, 1.0, 1.0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "ProgressBarTrack",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0",
+                "Value": "0",
+                "KeySpline": "1.0, 0.0, 1.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.5",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationEndPosition}",
+                "KeySpline": "1.0, 0.0, 1.0, 1.0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "IndeterminateError",
+            "To": "Indeterminate"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetProperty": "Opacity",
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator"
+              }
+            },
+            {
+              "kind": "DiscreteDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.333",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationEndPosition}",
+                "KeySpline": "1.0, 0.0, 1.0, 1.0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "ProgressBarTrack",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0",
+                "Value": "0",
+                "KeySpline": "1.0, 0.0, 1.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.5",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationEndPosition}",
+                "KeySpline": "1.0, 0.0, 1.0, 1.0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Determinate"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Updating"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "UpdatingError"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Error"
+          },
+          "animations": [
+            {
+              "kind": "ColorAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "DeterminateProgressBarIndicator",
+                "Storyboard.TargetProperty": "(Shape.Fill).(SolidColorBrush.Color)",
+                "To": "{ThemeResource ProgressBarErrorForegroundColor}",
+                "Duration": "0:0:0.167"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Paused"
+          },
+          "animations": [
+            {
+              "kind": "ColorAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "DeterminateProgressBarIndicator",
+                "Storyboard.TargetProperty": "(Shape.Fill).(SolidColorBrush.Color)",
+                "To": "{ThemeResource ProgressBarPausedForegroundColor}",
+                "Duration": "0:0:0.167"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Indeterminate"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "DiscreteDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationStartPosition}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:1.5",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationEndPosition}",
+                "KeySpline": "0.4, 0.0, 0.6, 1.0"
+              }
+            },
+            {
+              "kind": "DiscreteDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:2",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationEndPosition}"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "DiscreteDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationStartPosition}"
+              }
+            },
+            {
+              "kind": "DiscreteDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.75",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationStartPosition}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:2",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationEndPosition}",
+                "KeySpline": "0.4, 0.0, 0.6, 1.0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "IndeterminateError"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.167",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationEndPosition}",
+                "KeySpline": "1.0, 1.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.167",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationStartPosition}",
+                "KeySpline": "1.0, 1.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.75",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationMidPosition}",
+                "KeySpline": "0.0, 0.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "ColorAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(Shape.Fill).(SolidColorBrush.Color)",
+                "To": "{ThemeResource ProgressBarErrorForegroundColor}",
+                "Duration": "0:0:0.167"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "ProgressBarTrack",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationStartPosition}",
+                "KeySpline": "0.0, 0.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.75",
+                "Value": "0",
+                "KeySpline": "0.0, 0.0, 0.0, 1.0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "IndeterminatePaused"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.167",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationEndPosition}",
+                "KeySpline": "1.0, 1.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.167",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationStartPosition}",
+                "KeySpline": "1.0, 1.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.75",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContainerAnimationMidPosition}",
+                "KeySpline": "0.0, 0.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "ColorAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "IndeterminateProgressBarIndicator2",
+                "Storyboard.TargetProperty": "(Shape.Fill).(SolidColorBrush.Color)",
+                "To": "{ThemeResource ProgressBarPausedForegroundColor}",
+                "Duration": "0:0:0.167"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "ProgressBarTrack",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0",
+                "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Container2AnimationStartPosition}",
+                "KeySpline": "0.0, 0.0, 0.0, 1.0"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.75",
+                "Value": "0",
+                "KeySpline": "0.0, 0.0, 0.0, 1.0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ProgressRing": {
+      "defaults": {
+        "Foreground": "{ThemeResource ProgressRingForegroundThemeBrush}",
+        "Background": "{ThemeResource ProgressRingBackgroundThemeBrush}",
+        "IsHitTestVisible": "False",
+        "HorizontalAlignment": "Center",
+        "VerticalAlignment": "Center",
+        "MinHeight": "16",
+        "MinWidth": "16",
+        "IsTabStop": "False",
+        "Width": "32",
+        "Height": "32",
+        "Maximum": "100"
+      },
+      "states": [
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Inactive"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "DeterminateActive"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Active"
+          },
+          "animations": []
+        }
+      ]
+    }
+  },
+  "requiredBrushes": {
+    "ProgressBarForeground": {
+      "colorResource": false
+    },
+    "ProgressBarBackground": {
+      "colorResource": true
+    },
+    "ProgressBarBorderBrush": {
+      "colorResource": false
+    },
+    "ProgressBarPausedForegroundColor": {
+      "colorResource": true
+    },
+    "ProgressBarErrorForegroundColor": {
+      "colorResource": true
+    },
+    "ProgressRingForegroundThemeBrush": {
+      "colorResource": false
+    },
+    "ProgressRingBackgroundThemeBrush": {
+      "colorResource": false
+    }
+  },
+  "ringIndeterminate": {
+    "durationMs": 2000.0,
+    "size": 80,
+    "radius": 35,
+    "stroke": 7.5,
+    "rotation": 900,
+    "switchProgress": 0.5,
+    "minimumTrim": 0.0001
+  },
+  "ringDeterminate": {
+    "durationMs": 2000.0,
+    "size": 32,
+    "radius": 14.15999984,
+    "stroke": 2.65499997,
+    "visibleAfter": 0.00833333377,
+    "trimKeys": [
+      [
+        0.00833333377,
+        0.0001
+      ],
+      [
+        0.25,
+        0.25
+      ],
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.75,
+        0.75
+      ],
+      [
+        0.983333349,
+        0.96666666
+      ],
+      [
+        0.991666675,
+        1.0
+      ]
+    ]
+  },
+  "bar": {
+    "durationMs": 2000,
+    "firstDurationMs": 1500,
+    "secondDelayMs": 750,
+    "firstWidth": 0.4,
+    "secondWidth": 0.6,
+    "firstStart": -0.4,
+    "firstEnd": 1.2,
+    "secondStart": -0.9,
+    "secondEnd": 0.996,
+    "curve": [
+      0.4,
+      0,
+      0.6,
+      1
+    ],
+    "colorDurationMs": 167,
+    "settleResetMs": 167,
+    "settleMs": 750,
+    "settleCurve": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "resumeFirstMs": 333,
+    "resumeTrackMs": 500
+  },
+  "sources": [
+    {
+      "path": "references/winui/ProgressBar.cpp",
+      "sha256": "f88c9c6573fd6e101d5ff7c104cac2bbbc252d66b0918c02e6cf7bbc26abd01b"
+    },
+    {
+      "path": "references/winui/ProgressBar.idl",
+      "sha256": "5291a472593e4fac25921b1fb3161fcdb62c52122844448b20cf5a16fa970606"
+    },
+    {
+      "path": "references/winui/ProgressBar.xaml",
+      "sha256": "d6c125752b8b1d64934af820712c936b6fa64501859b9ab8429e812e67f8cf53"
+    },
+    {
+      "path": "references/winui/ProgressBar_themeresources.xaml",
+      "sha256": "ead8e05c4c4d9f1f6a55feef65260d2fd8b02d159a381bdf10dd1364b566e7cd"
+    },
+    {
+      "path": "references/winui/ProgressRing.cpp",
+      "sha256": "fea8368d1dc78b89c6bfa4a6ec6fdbba42c9b47930cace5ce62944c135c2f8ea"
+    },
+    {
+      "path": "references/winui/ProgressRing.idl",
+      "sha256": "b76b6eba464a0e14319b9ef5fc8ba787de781edd5552d3783c22a11e9bc67d5e"
+    },
+    {
+      "path": "references/winui/ProgressRing.xaml",
+      "sha256": "bb7466602953dc71606a8b80cb112dde4d5f844d9f9c847b5c564b4b8be28c85"
+    },
+    {
+      "path": "references/winui/ProgressRing_themeresources.xaml",
+      "sha256": "d4bbf6aa665a55faf2866d928398b16b7e409f2fa2895260462e9bf0cfa3b820"
+    },
+    {
+      "path": "references/winui/ProgressRingDeterminate.cpp",
+      "sha256": "d92882ad3070eb58acbf93586f9af3ff52d8995aba3920fbd9b275c0ba97351a"
+    },
+    {
+      "path": "references/winui/ProgressRingIndeterminate.cpp",
+      "sha256": "c6ce62c751c427cafd22d7fa6bea54a116e8210fcb25e822a63a3d050d61af00"
+    }
+  ]
+}

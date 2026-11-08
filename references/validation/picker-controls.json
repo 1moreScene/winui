@@ -1,0 +1,1536 @@
+{
+  "recordedAt": "2026-11-08T14:55:23.820203+00:00",
+  "controls": [
+    "CalendarView",
+    "CalendarDatePicker",
+    "DatePicker",
+    "TimePicker",
+    "ColorPicker"
+  ],
+  "nativeRun": "references/picker-controls-run.json",
+  "nativeStates": 66,
+  "browsers": {
+    "Chromium": [
+      {
+        "backend": "Canvas2D",
+        "states": 66,
+        "wasmSha256": "f8cc59c15c0b7b8c7d06ccb9a4fad0b8ed7d098439b4bd0eab392cd997a2ae0b",
+        "maxControlGeometryErrorDip": 2.4414062522737368e-05,
+        "maxPopupGeometryErrorDip": 6.103515659106051e-06,
+        "rows": [
+          {
+            "name": "picker-Light-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.5622320159566208
+          },
+          {
+            "name": "picker-Light-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.749853691162946
+          },
+          {
+            "name": "picker-Light-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.9643703146336704
+          },
+          {
+            "name": "picker-Light-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.3062512690052195
+          },
+          {
+            "name": "picker-Light-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.605961438166104
+          },
+          {
+            "name": "picker-Light-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.6299043319359345
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.666546762589926
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 11.058148148148149
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 6.42022022022022
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.9906474820143885
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 11.058148148148149,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.8162892622352076
+          },
+          {
+            "name": "picker-Light-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 8.107669831994157
+          },
+          {
+            "name": "picker-Light-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 4.793734643734644
+          },
+          {
+            "name": "picker-Light-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.1343316289262235
+          },
+          {
+            "name": "picker-Light-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.61073776479182,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.61073776479182,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.0794573643410852
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 12.108132456781107,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.0473421926910298,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.206404424226206
+          },
+          {
+            "name": "picker-Light-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.6194808670056196
+          },
+          {
+            "name": "picker-Light-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.4512532334314514
+          },
+          {
+            "name": "picker-Light-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.436743674367437
+          },
+          {
+            "name": "picker-Light-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.4864864864864864
+          },
+          {
+            "name": "picker-Light-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 10.378348645675379,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 10.378348645675379,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.4897674418604652
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 10.28144976659828,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.4602325581395348,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5672222908177965
+          },
+          {
+            "name": "picker-Light-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5974098311176963,
+            "spectrumInteriorRgbMae": 0.33056296007339503
+          },
+          {
+            "name": "picker-Light-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.9270882420882421
+          },
+          {
+            "name": "picker-Light-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.6337956675035327,
+            "spectrumInteriorRgbMae": 0.33958416762178306
+          },
+          {
+            "name": "picker-Light-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.6701906640368178
+          },
+          {
+            "name": "picker-Light-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.4800185997077189
+          },
+          {
+            "name": "picker-Light-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.3810113731462046
+          },
+          {
+            "name": "picker-Dark-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.769974639801577
+          },
+          {
+            "name": "picker-Dark-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.001365549145835
+          },
+          {
+            "name": "picker-Dark-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.196290722626313
+          },
+          {
+            "name": "picker-Dark-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.985223802755782
+          },
+          {
+            "name": "picker-Dark-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.291477062357424
+          },
+          {
+            "name": "picker-Dark-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.5811685597238645
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.47841726618705
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.983148148148148
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 9.78128128128128
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.754676258992806
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.983148148148148,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.821986851716582
+          },
+          {
+            "name": "picker-Dark-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 7.673703433162893
+          },
+          {
+            "name": "picker-Dark-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 5.9707207207207205
+          },
+          {
+            "name": "picker-Dark-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.0512783053323593
+          },
+          {
+            "name": "picker-Dark-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 15.972072072072073,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 15.972072072072073,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.7877906976744186
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.363671779887998,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.8114617940199335,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.364909463919365
+          },
+          {
+            "name": "picker-Dark-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.317991258585318
+          },
+          {
+            "name": "picker-Dark-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.195611453037196
+          },
+          {
+            "name": "picker-Dark-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 4.857285728572857
+          },
+          {
+            "name": "picker-Dark-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.286861118544287
+          },
+          {
+            "name": "picker-Dark-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.282222816876283,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.282222816876283,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.3465116279069766
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.197930603871198,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.3711627906976744,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5815477905365546
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.6362637362637362,
+            "spectrumInteriorRgbMae": 0.33056296007339503
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 1.0063201663201664
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.7266480086704806,
+            "spectrumInteriorRgbMae": 0.33958416762178306
+          },
+          {
+            "name": "picker-Dark-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.6518286841363764
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.5109749346795979
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.4149634385589442
+          }
+        ]
+      },
+      {
+        "backend": "WebGL2",
+        "states": 66,
+        "wasmSha256": "f8cc59c15c0b7b8c7d06ccb9a4fad0b8ed7d098439b4bd0eab392cd997a2ae0b",
+        "maxControlGeometryErrorDip": 2.4414062522737368e-05,
+        "maxPopupGeometryErrorDip": 6.103515659106051e-06,
+        "rows": [
+          {
+            "name": "picker-Light-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.577048025129289
+          },
+          {
+            "name": "picker-Light-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.762113774529124
+          },
+          {
+            "name": "picker-Light-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.9819472810443464
+          },
+          {
+            "name": "picker-Light-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.321529096547908
+          },
+          {
+            "name": "picker-Light-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.6240002229467985
+          },
+          {
+            "name": "picker-Light-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.647574856378468
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.67769784172662
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 11.08
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 6.432332332332332
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.998021582733813
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 11.08,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.84236669101534
+          },
+          {
+            "name": "picker-Light-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 8.133747260774287
+          },
+          {
+            "name": "picker-Light-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 4.809459459459459
+          },
+          {
+            "name": "picker-Light-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.1346968590211834
+          },
+          {
+            "name": "picker-Light-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.60399318237156,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.60399318237156,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.0286544850498338
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 12.101387874360848,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.9962624584717608,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.24029970564624
+          },
+          {
+            "name": "picker-Light-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.653376148425654
+          },
+          {
+            "name": "picker-Light-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.4849701186334854
+          },
+          {
+            "name": "picker-Light-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.4565456545654567
+          },
+          {
+            "name": "picker-Light-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.494514316296494
+          },
+          {
+            "name": "picker-Light-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 10.376356554574377,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 10.376356554574377,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.4679069767441861
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 10.27939821009128,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.4341860465116278,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5498607509843465
+          },
+          {
+            "name": "picker-Light-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5843039607084551,
+            "spectrumInteriorRgbMae": 0.33056296007339503
+          },
+          {
+            "name": "picker-Light-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.8928840378840378
+          },
+          {
+            "name": "picker-Light-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.7140785556515894,
+            "spectrumInteriorRgbMae": 0.33958416762178306
+          },
+          {
+            "name": "picker-Light-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.6751535643843335
+          },
+          {
+            "name": "picker-Light-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.4681845356715823
+          },
+          {
+            "name": "picker-Light-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.3792566983578219
+          },
+          {
+            "name": "picker-Dark-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.7845438150178556
+          },
+          {
+            "name": "picker-Dark-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.015660022055808
+          },
+          {
+            "name": "picker-Dark-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.215187454465107
+          },
+          {
+            "name": "picker-Dark-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.999323197216349
+          },
+          {
+            "name": "picker-Dark-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.309806474215804
+          },
+          {
+            "name": "picker-Dark-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.5981821873469728
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.486151079136691
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 11.001481481481482
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 9.79129129129129
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.761151079136691
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 11.001481481481482,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.819868517165814
+          },
+          {
+            "name": "picker-Dark-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 7.671585098612126
+          },
+          {
+            "name": "picker-Dark-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 5.984070434070435
+          },
+          {
+            "name": "picker-Dark-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.0487947406866325
+          },
+          {
+            "name": "picker-Dark-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 15.968054541027513,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 15.968054541027513,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.783499446290144
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.359654248843437,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.7945736434108527,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.3988047453394
+          },
+          {
+            "name": "picker-Dark-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.351886540005352
+          },
+          {
+            "name": "picker-Dark-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.2292391401302294
+          },
+          {
+            "name": "picker-Dark-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 4.875587558755876
+          },
+          {
+            "name": "picker-Dark-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.3203104094193203
+          },
+          {
+            "name": "picker-Dark-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.277257455475278,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.277257455475278,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.343953488372093
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.192905777064192,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.3625581395348838,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5786969584722393
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.6309832489607771,
+            "spectrumInteriorRgbMae": 0.33056296007339503
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.9795460845460845
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.810973919962684,
+            "spectrumInteriorRgbMae": 0.33958416762178306
+          },
+          {
+            "name": "picker-Dark-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.6587771203155819
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.5052079181612861
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.42396866554169926
+          }
+        ]
+      }
+    ],
+    "WebKit": [
+      {
+        "backend": "Canvas2D",
+        "states": 66,
+        "wasmSha256": "f8cc59c15c0b7b8c7d06ccb9a4fad0b8ed7d098439b4bd0eab392cd997a2ae0b",
+        "maxControlGeometryErrorDip": 2.4414062522737368e-05,
+        "maxPopupGeometryErrorDip": 6.103515659106051e-06,
+        "rows": [
+          {
+            "name": "picker-Light-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.5475891886727102
+          },
+          {
+            "name": "picker-Light-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.737044203184158
+          },
+          {
+            "name": "picker-Light-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.9518594161182574
+          },
+          {
+            "name": "picker-Light-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.234526098709695
+          },
+          {
+            "name": "picker-Light-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.541286960399074
+          },
+          {
+            "name": "picker-Light-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.6198418670201964
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.653237410071943
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.242777777777778
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 5.812012012012012
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.99136690647482
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.242777777777778,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.7920379839298755
+          },
+          {
+            "name": "picker-Light-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 7.965887509130752
+          },
+          {
+            "name": "picker-Light-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 4.655364455364455
+          },
+          {
+            "name": "picker-Light-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.099561723886048
+          },
+          {
+            "name": "picker-Light-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.076844411979549,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.076844411979549,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.0418050941306756
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.484465546627709,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.0182724252491695,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.096779948265097
+          },
+          {
+            "name": "picker-Light-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.655338506823656
+          },
+          {
+            "name": "picker-Light-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.41949870662742
+          },
+          {
+            "name": "picker-Light-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.3997399739974
+          },
+          {
+            "name": "picker-Light-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.4051378110784056
+          },
+          {
+            "name": "picker-Light-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 9.977343680313977,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 9.977343680313977,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.4327906976744187
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 9.860910415365861,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.4327906976744187,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.45692883895131087
+          },
+          {
+            "name": "picker-Light-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.4832777709182204,
+            "spectrumInteriorRgbMae": 0.3235413099856244
+          },
+          {
+            "name": "picker-Light-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.8269369369369368
+          },
+          {
+            "name": "picker-Light-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5094346352773319,
+            "spectrumInteriorRgbMae": 0.2977523693791973
+          },
+          {
+            "name": "picker-Light-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.666760589837513
+          },
+          {
+            "name": "picker-Light-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.388678535051592
+          },
+          {
+            "name": "picker-Light-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.32402628582403864
+          },
+          {
+            "name": "picker-Dark-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.4266883243557436
+          },
+          {
+            "name": "picker-Dark-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.657294938709536
+          },
+          {
+            "name": "picker-Dark-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.847705439503784
+          },
+          {
+            "name": "picker-Dark-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.828478268658856
+          },
+          {
+            "name": "picker-Dark-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 6.140804837945545
+          },
+          {
+            "name": "picker-Dark-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 2.281372794916813
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.610251798561151
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.177962962962964
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 9.35995995995996
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.80431654676259
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.177962962962964,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.805989773557341
+          },
+          {
+            "name": "picker-Dark-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 7.432067202337474
+          },
+          {
+            "name": "picker-Dark-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 5.841113841113841
+          },
+          {
+            "name": "picker-Dark-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.03754565376187
+          },
+          {
+            "name": "picker-Dark-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.02215729242756,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.02215729242756,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.7938815060908085
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.46325785244704,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.8232281284606865,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.297921684060298
+          },
+          {
+            "name": "picker-Dark-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.280617250914281
+          },
+          {
+            "name": "picker-Dark-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.127910088306128
+          },
+          {
+            "name": "picker-Dark-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 4.844534453445345
+          },
+          {
+            "name": "picker-Dark-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.245919186513246
+          },
+          {
+            "name": "picker-Dark-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.37924062676538,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.37924062676538,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.2820930232558139
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.251390003865252,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.308139534883721,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.49136244529502954
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5495164012017945,
+            "spectrumInteriorRgbMae": 0.3235413099856244
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.9052182952182952
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.6306471306471306,
+            "spectrumInteriorRgbMae": 0.2977523693791973
+          },
+          {
+            "name": "picker-Dark-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.6397069597069597
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.4428202913954209
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.37895076209682954
+          }
+        ]
+      },
+      {
+        "backend": "WebGL2",
+        "states": 66,
+        "wasmSha256": "f8cc59c15c0b7b8c7d06ccb9a4fad0b8ed7d098439b4bd0eab392cd997a2ae0b",
+        "maxControlGeometryErrorDip": 2.4414062522737368e-05,
+        "maxPopupGeometryErrorDip": 6.103515659106051e-06,
+        "rows": [
+          {
+            "name": "picker-Light-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.5729613306738965
+          },
+          {
+            "name": "picker-Light-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.7580270800737314
+          },
+          {
+            "name": "picker-Light-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.9775878748790716
+          },
+          {
+            "name": "picker-Light-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.257808114467257
+          },
+          {
+            "name": "picker-Light-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.570546737213404
+          },
+          {
+            "name": "picker-Light-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.6473120976506983
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.726258992805755
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.32537037037037
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 5.844644644644645
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 5.04568345323741
+          },
+          {
+            "name": "picker-Light-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.32537037037037,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.876625273922571
+          },
+          {
+            "name": "picker-Light-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 8.050474799123448
+          },
+          {
+            "name": "picker-Light-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 4.68923013923014
+          },
+          {
+            "name": "picker-Light-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.1571219868517164
+          },
+          {
+            "name": "picker-Light-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.083954224494766,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.083954224494766,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.9680232558139535
+          },
+          {
+            "name": "picker-Light-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 11.683077672266862,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.9633167220376523,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.19017036838819
+          },
+          {
+            "name": "picker-Light-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.748728926946749
+          },
+          {
+            "name": "picker-Light-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.512710730532513
+          },
+          {
+            "name": "picker-Light-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.4383438343834385
+          },
+          {
+            "name": "picker-Light-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.471322807956471
+          },
+          {
+            "name": "picker-Light-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 9.976421966520975,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 9.976421966520975,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.3662790697674418
+          },
+          {
+            "name": "picker-Light-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 9.85998870157286,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.3632558139534883,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Light-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5366410119219108
+          },
+          {
+            "name": "picker-Light-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5654045081011373,
+            "spectrumInteriorRgbMae": 0.33056296007339503
+          },
+          {
+            "name": "picker-Light-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.8927904827904828
+          },
+          {
+            "name": "picker-Light-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.6951791030442717,
+            "spectrumInteriorRgbMae": 0.33958416762178306
+          },
+          {
+            "name": "picker-Light-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.6850380388841928
+          },
+          {
+            "name": "picker-Light-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.45293277534210175
+          },
+          {
+            "name": "picker-Light-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.35268140099600775
+          },
+          {
+            "name": "picker-Dark-CalendarView-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.712952014682639
+          },
+          {
+            "name": "picker-Dark-CalendarView-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 3.944068221720592
+          },
+          {
+            "name": "picker-Dark-CalendarView-Multiple",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.143257252738065
+          },
+          {
+            "name": "picker-Dark-CalendarView-Year",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 4.913140325104208
+          },
+          {
+            "name": "picker-Dark-CalendarView-Decade",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 5.234647525091468
+          },
+          {
+            "name": "picker-Dark-CalendarView-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 1.566579478543361
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Normal",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 11.632913669064749
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Selected",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.207592592592592
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 9.377077077077077
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Disabled",
+            "geometryErrorDip": 3.051757815342171e-06,
+            "fullControlRgbMae": 4.825539568345324
+          },
+          {
+            "name": "picker-Dark-CalendarDatePicker-Open",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 10.207592592592592,
+            "popupGeometryErrorDip": 6.103515659106051e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-Normal",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 3.8099342585829077
+          },
+          {
+            "name": "picker-Dark-DatePicker-Selected",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 7.436011687363039
+          },
+          {
+            "name": "picker-Dark-DatePicker-Header",
+            "geometryErrorDip": 7.629394502828291e-07,
+            "fullControlRgbMae": 5.858108108108108
+          },
+          {
+            "name": "picker-Dark-DatePicker-Disabled",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 2.0403944485025565
+          },
+          {
+            "name": "picker-Dark-DatePicker-Open",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.020866812758705,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelHover",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.020866812758705,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.7905592469545958
+          },
+          {
+            "name": "picker-Dark-DatePicker-WheelPressed",
+            "geometryErrorDip": 3.8146972514141453e-07,
+            "fullControlRgbMae": 16.461967372778183,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 0.8136766334440754,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-TimePicker-Normal",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 6.33913121041834
+          },
+          {
+            "name": "picker-Dark-TimePicker-Selected",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 5.321826777272322
+          },
+          {
+            "name": "picker-Dark-TimePicker-TwentyFourHour",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.168852020337169
+          },
+          {
+            "name": "picker-Dark-TimePicker-Header",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 4.867286728672867
+          },
+          {
+            "name": "picker-Dark-TimePicker-Disabled",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 3.285879939345286
+          },
+          {
+            "name": "picker-Dark-TimePicker-Open",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.376118692950376,
+            "popupGeometryErrorDip": 6.1035156022626325e-06
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelHover",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.376118692950376,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.2804651162790697
+          },
+          {
+            "name": "picker-Dark-TimePicker-WheelPressed",
+            "geometryErrorDip": 6.103515630684342e-06,
+            "fullControlRgbMae": 14.24826807005025,
+            "popupGeometryErrorDip": 6.1035156022626325e-06,
+            "navigationButtonRgbMae": 1.301860465116279,
+            "pressedFixtureScope": "Native VSM-only pressed state; Rust pointer press also invokes a wheel step. Whole wheel content is not a pressed-state pixel comparison."
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Normal",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.5682841503066222
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Selected",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.6245873976211055,
+            "spectrumInteriorRgbMae": 0.33056296007339503
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Alpha",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.9602425502425502
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Ring",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.8045780686230124,
+            "spectrumInteriorRgbMae": 0.33958416762178306
+          },
+          {
+            "name": "picker-Dark-ColorPicker-More",
+            "geometryErrorDip": 0,
+            "fullControlRgbMae": 0.662654268808115
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Horizontal",
+            "geometryErrorDip": 2.4414062522737368e-05,
+            "fullControlRgbMae": 0.5000464992692972
+          },
+          {
+            "name": "picker-Dark-ColorPicker-Disabled",
+            "geometryErrorDip": 6.1035156022626325e-06,
+            "fullControlRgbMae": 0.4093413452964015
+          }
+        ]
+      }
+    ]
+  },
+  "scope": "Same-SDK explicit static fixtures, Gregorian civil dates, local-minute times, palette/spectrum and browser interactions. Full-image RGB error includes text and edges; it is not a pass criterion for pixel parity.",
+  "remaining": [
+    "Windows non-Gregorian calendars are rejected explicitly.",
+    "Arbitrary WinRT DateTimeFormatter patterns, timezone/100ns DateTime semantics and OS named-color Ctrl+arrow steps are not implemented.",
+    "CalendarView continuous virtualized month scrolling, Shift-range semantics and all automation patterns are not accepted as native equivalents.",
+    "Calendar zoom uses fixed SDK tracks; independent native frame-by-frame motion and packaged Store Gallery/DWM acceptance remain outstanding.",
+    "Browser font rasterization, ClearType, fallback fonts, material edge coverage and whole-control image equality remain unaccepted."
+  ],
+  "rust": {
+    "passed": 326,
+    "failed": false,
+    "log": "out/picker-shared-final-rust.log"
+  },
+  "checks": {
+    "Chromium": {
+      "startTime": "2026-11-08T14:50:56.919Z",
+      "duration": 90772.722,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "WebKit": {
+      "startTime": "2026-11-08T14:52:28.907Z",
+      "duration": 154442.91,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "sourceFiles": {
+    "src/wasm.rs": "d63fe3cac1f7d763009efa04640d1fd106d3c57ebf710acaacf1b93974d215f6",
+    "src/scene/picker_controls.rs": "af64215739a154c470d7c5726c7667b21c1f87d27530e28e71e822037da18bc2",
+    "src/scene/picker_controls/input.rs": "98c177a4598907ac030e3cee8eb3c15c1e2d379dd753e2a3a0c0c6aa96fc14d9",
+    "src/scene/picker_controls/layout.rs": "f6a6bc8481a1baef9cf2df2b408bbfe6e87975d66df6958a1c7e95e7966c597c",
+    "src/scene/picker_controls/paint.rs": "e7913d278d52476312411975e027d2c1bcabe8e716117a8c95761439fb51e1a9",
+    "src/scene/picker_controls/motion.rs": "fdec1578cccef7ea86fb2de4ba20c23e54ed4025c639711995125b42eae37b4f",
+    "gallery/src/picker-controls-types.ts": "95c044c235a371ee35f4709db57c98f3fa18f9c79265243be895d94bc0632ae1",
+    "gallery/src/PickerControlsPage.tsx": "678f4a6814634ae697a7d089966f316df6940b446767e9eb6325cdaf9552543a",
+    "references/picker-controls-template.json": "9c015afa7c0f4574123d5cdbfa8fabdb7edd5f69ea3b4907fdb8a23924d803e2"
+  }
+}

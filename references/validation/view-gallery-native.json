@@ -1,0 +1,6942 @@
+{
+  "cases": [
+    {
+      "id": "Light-SplitView-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 300
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "splitView",
+          "rect": {
+            "x": 144,
+            "y": 24,
+            "width": 400,
+            "height": 300
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "PaneHeader",
+          "rect": {
+            "x": 204,
+            "y": 36,
+            "width": 101.7255859375,
+            "height": 18.62109375
+          },
+          "text": "PANE CONTENT",
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "NavLinksList",
+          "rect": {
+            "x": 144,
+            "y": 67,
+            "width": 255,
+            "height": 257
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 77,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 78,
+            "width": 41.7880859375,
+            "height": 18.62109375
+          },
+          "text": "People",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 117,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 118,
+            "width": 36.75,
+            "height": 18.62109375
+          },
+          "text": "Globe",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 157,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 158,
+            "width": 54.4619140625,
+            "height": 18.62109375
+          },
+          "text": "Message",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 197,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 198,
+            "width": 26.4755859375,
+            "height": 18.62109375
+          },
+          "text": "Mail",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 398,
+            "y": 24,
+            "width": 1,
+            "height": 300
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 412,
+            "y": 36,
+            "width": 68.8583984375,
+            "height": 37.2421875
+          },
+          "text": "SPLITVIEW CONTENT",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "content",
+          "rect": {
+            "x": 412,
+            "y": 86,
+            "width": 0,
+            "height": 18.62109375
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 400,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Light-SplitView-0.png",
+      "screenshotSha256": "84b89b1a2131f41854679f295cd31f7462ba891bde0782dfa61cdb8a0434937b"
+    },
+    {
+      "id": "Light-SemanticZoom-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 500
+      },
+      "parts": [
+        {
+          "type": "SemanticZoom",
+          "name": "Control1",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 32,
+            "width": 127.40234375,
+            "height": 26.6015625
+          },
+          "text": "Fundamentals",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 67,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 591,
+            "width": 62.5390625,
+            "height": 26.6015625
+          },
+          "text": "Design",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 626,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1004,
+            "width": 110.44921875,
+            "height": 26.6015625
+          },
+          "text": "Accessibility",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1039,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1271,
+            "width": 161.005859375,
+            "height": 26.6015625
+          },
+          "text": "Menus & toolbars",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1306,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2049,
+            "width": 99.53125,
+            "height": 26.6015625
+          },
+          "text": "Collections",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2084,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 78,
+            "width": 63.46484375,
+            "height": 18.62109375
+          },
+          "text": "Resources",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 97,
+            "width": 294.5947265625,
+            "height": 37.2421875
+          },
+          "text": "Reusable definitions for shared values to ensure consistency and maintainability.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 151,
+            "width": 30.48828125,
+            "height": 18.62109375
+          },
+          "text": "Style",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 170,
+            "width": 290.431640625,
+            "height": 37.2421875
+          },
+          "text": "A XAML style is a Reusable property settings to define consistent UI design elements.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 224,
+            "width": 48.9794921875,
+            "height": 18.62109375
+          },
+          "text": "Binding",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 243,
+            "width": 282.5908203125,
+            "height": 37.2421875
+          },
+          "text": "Connecting UI elements to data for automatic synchronization and updates.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 297,
+            "width": 64.052734375,
+            "height": 18.62109375
+          },
+          "text": "Templates",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 316,
+            "width": 278.099609375,
+            "height": 37.2421875
+          },
+          "text": "Customize controls' visuals, item layouts, and data presentation in XAML.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 370,
+            "width": 152.0927734375,
+            "height": 18.62109375
+          },
+          "text": "Custom & User Controls",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 389,
+            "width": 273.205078125,
+            "height": 37.2421875
+          },
+          "text": "Create reusable UI components with custom functionality and appearance.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 443,
+            "width": 110.2978515625,
+            "height": 18.62109375
+          },
+          "text": "XAML Conditions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 462,
+            "width": 277.306640625,
+            "height": 37.2421875
+          },
+          "text": "Define custom XAML conditions evaluated at parse time using IXamlCondition.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 526,
+            "width": 73.732421875,
+            "height": 18.62109375
+          },
+          "text": "Scratch Pad",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 545,
+            "width": 275.337890625,
+            "height": 18.62109375
+          },
+          "text": "Scratch pad for testing simple XAML markup",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 637,
+            "width": 34.2548828125,
+            "height": 18.62109375
+          },
+          "text": "Color",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 656,
+            "width": 250.8173828125,
+            "height": 37.2421875
+          },
+          "text": "Balanced color design creates clarity and aesthetic harmony.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 710,
+            "width": 63.314453125,
+            "height": 18.62109375
+          },
+          "text": "Geometry",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 729,
+            "width": 299.7490234375,
+            "height": 37.2421875
+          },
+          "text": "Clear geometric design ensures visual coherence and structure.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 783,
+            "width": 80.1787109375,
+            "height": 18.62109375
+          },
+          "text": "Iconography",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 802,
+            "width": 283.8759765625,
+            "height": 55.86328125
+          },
+          "text": "Icons are a visual design language that can be used to communicate information quickly and effectively.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 856,
+            "width": 50.0458984375,
+            "height": 18.62109375
+          },
+          "text": "Spacing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 875,
+            "width": 294.2529296875,
+            "height": 37.2421875
+          },
+          "text": "Thoughtful spacing design enhances readability and flow.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 929,
+            "width": 75.55078125,
+            "height": 18.62109375
+          },
+          "text": "Typography",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 948,
+            "width": 252.6904296875,
+            "height": 37.2421875
+          },
+          "text": "Typography design guides attention with intuitive fonts and hierarchy.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1050,
+            "width": 91.970703125,
+            "height": 18.62109375
+          },
+          "text": "Color Contrast",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1069,
+            "width": 294.7451171875,
+            "height": 37.2421875
+          },
+          "text": "High contrast design ensures accessibility for all users.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1123,
+            "width": 134.0185546875,
+            "height": 18.62109375
+          },
+          "text": "Keyboard Navigation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1142,
+            "width": 265.4462890625,
+            "height": 37.2421875
+          },
+          "text": "Keyboard-friendly design enables seamless interactions.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1196,
+            "width": 90.302734375,
+            "height": 18.62109375
+          },
+          "text": "Screen Reader",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1215,
+            "width": 294.7177734375,
+            "height": 37.2421875
+          },
+          "text": "Inclusive design ensures meaningful content for assistive technologies.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1327,
+            "width": 90.4052734375,
+            "height": 18.62109375
+          },
+          "text": "AppBarButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1346,
+            "width": 295.9892578125,
+            "height": 18.62109375
+          },
+          "text": "A button that's styled for use in a CommandBar.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1390,
+            "width": 108.8623046875,
+            "height": 18.62109375
+          },
+          "text": "AppBarSeparator",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1409,
+            "width": 275.2900390625,
+            "height": 37.2421875
+          },
+          "text": "A vertical line that's used to visually separate groups of commands in an app bar.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1463,
+            "width": 133.095703125,
+            "height": 18.62109375
+          },
+          "text": "AppBarToggleButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1482,
+            "width": 287.177734375,
+            "height": 55.86328125
+          },
+          "text": "A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1536,
+            "width": 86.7138671875,
+            "height": 18.62109375
+          },
+          "text": "CommandBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1555,
+            "width": 284.8671875,
+            "height": 55.86328125
+          },
+          "text": "A toolbar for displaying application-specific commands that handles layout and resizing of its contents.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1609,
+            "width": 126.0068359375,
+            "height": 18.62109375
+          },
+          "text": "CommandBarFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1628,
+            "width": 292.25,
+            "height": 37.2421875
+          },
+          "text": "A mini-toolbar displaying proactive commands, and an optional menu of commands.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1682,
+            "width": 57.6611328125,
+            "height": 18.62109375
+          },
+          "text": "MenuBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1701,
+            "width": 252.9638671875,
+            "height": 37.2421875
+          },
+          "text": "A classic menu, allowing the display of MenuItems containing MenuFlyoutItems.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1755,
+            "width": 76.0087890625,
+            "height": 18.62109375
+          },
+          "text": "MenuFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1774,
+            "width": 289.32421875,
+            "height": 37.2421875
+          },
+          "text": "Shows a contextual list of simple commands or options.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1838,
+            "width": 84.9365234375,
+            "height": 18.62109375
+          },
+          "text": "SwipeControl",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1857,
+            "width": 291.7578125,
+            "height": 18.62109375
+          },
+          "text": "Touch gesture for quick menu actions on items.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1901,
+            "width": 136.6845703125,
+            "height": 18.62109375
+          },
+          "text": "StandardUICommand",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1920,
+            "width": 234.6572265625,
+            "height": 55.86328125
+          },
+          "text": "A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g. 'Save'.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1974,
+            "width": 111.7265625,
+            "height": 18.62109375
+          },
+          "text": "XamlUICommand",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1993,
+            "width": 285.9677734375,
+            "height": 37.2421875
+          },
+          "text": "An object which is used to define the look and feel of a given command.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2095,
+            "width": 53.4501953125,
+            "height": 18.62109375
+          },
+          "text": "FlipView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2114,
+            "width": 287.328125,
+            "height": 37.2421875
+          },
+          "text": "Presents a collection of items that the user can flip through, one item at a time.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2168,
+            "width": 57.7021484375,
+            "height": 18.62109375
+          },
+          "text": "GridView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2187,
+            "width": 284.306640625,
+            "height": 37.2421875
+          },
+          "text": "A control that presents a collection of items in rows and columns.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2241,
+            "width": 91.4921875,
+            "height": 18.62109375
+          },
+          "text": "ItemsRepeater",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2260,
+            "width": 261.7275390625,
+            "height": 37.2421875
+          },
+          "text": "A flexible, primitive control for data-driven layouts.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2314,
+            "width": 65.59765625,
+            "height": 18.62109375
+          },
+          "text": "ItemsView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2333,
+            "width": 269.158203125,
+            "height": 37.2421875
+          },
+          "text": "A control that presents a collection of items using various layouts.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2387,
+            "width": 52.2607421875,
+            "height": 18.62109375
+          },
+          "text": "ListView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2406,
+            "width": 295.2646484375,
+            "height": 37.2421875
+          },
+          "text": "A control that presents a collection of items in a vertical list.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2460,
+            "width": 85.681640625,
+            "height": 18.62109375
+          },
+          "text": "PullToRefresh",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2479,
+            "width": 295.4697265625,
+            "height": 55.86328125
+          },
+          "text": "Provides the ability to pull on a collection of items in a list/grid to refresh the contents of the collection.",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 12,
+            "height": 498
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 29,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 655,
+            "y": 37,
+            "width": 8,
+            "height": 30
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 511,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "",
+          "rect": {
+            "x": -296,
+            "y": -226,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": -212,
+            "width": 127.40234375,
+            "height": 26.6015625
+          },
+          "text": "Fundamentals",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": -132,
+            "width": 62.5390625,
+            "height": 26.6015625
+          },
+          "text": "Design",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": -52,
+            "width": 110.44921875,
+            "height": 26.6015625
+          },
+          "text": "Accessibility",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 28,
+            "width": 161.005859375,
+            "height": 26.6015625
+          },
+          "text": "Menus & toolbars",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 108,
+            "width": 99.53125,
+            "height": 26.6015625
+          },
+          "text": "Collections",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 188,
+            "width": 108.61328125,
+            "height": 26.6015625
+          },
+          "text": "Date & time",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 268,
+            "width": 99.111328125,
+            "height": 26.6015625
+          },
+          "text": "Basic input",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 348,
+            "width": 116.533203125,
+            "height": 26.6015625
+          },
+          "text": "Status & info",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 428,
+            "width": 154.755859375,
+            "height": 26.6015625
+          },
+          "text": "Dialogs & flyouts",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 508,
+            "width": 78.857421875,
+            "height": 26.6015625
+          },
+          "text": "Scrolling",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 588,
+            "width": 61.07421875,
+            "height": 26.6015625
+          },
+          "text": "Layout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 668,
+            "width": 99.70703125,
+            "height": 26.6015625
+          },
+          "text": "Navigation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 748,
+            "width": 56.826171875,
+            "height": 26.6015625
+          },
+          "text": "Media",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 828,
+            "width": 52.177734375,
+            "height": 26.6015625
+          },
+          "text": "Styles",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 908,
+            "width": 36.962890625,
+            "height": 26.6015625
+          },
+          "text": "Text",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 988,
+            "width": 66.494140625,
+            "height": 26.6015625
+          },
+          "text": "Motion",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 1068,
+            "width": 104.27734375,
+            "height": 26.6015625
+          },
+          "text": "Windowing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 1148,
+            "width": 64.6484375,
+            "height": 26.6015625
+          },
+          "text": "System",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 1228,
+            "width": 43.603515625,
+            "height": 26.6015625
+          },
+          "text": "Shell",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 958,
+            "y": -224,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 958,
+            "y": -224,
+            "width": 12,
+            "height": 498
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 958,
+            "y": -216,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 966,
+            "y": -200,
+            "width": 8,
+            "height": 312
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 958,
+            "y": 748,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 637,
+            "y": 497,
+            "width": 4,
+            "height": 4
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Light-SemanticZoom-0.png",
+      "screenshotSha256": "0b9fc6ada4e78391c03efa5192b1cd1372fd8706cbe6f48a314f169afab5e6cc"
+    },
+    {
+      "id": "Light-ParallaxView-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 600
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "parallaxView",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "listView",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 218,
+            "y": 24,
+            "width": 251.248046875,
+            "height": 74.484375
+          },
+          "text": "Scroll the list to see parallaxing of image",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 110,
+            "width": 75.0654296875,
+            "height": 18.62109375
+          },
+          "text": "AcrylicBrush",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 150,
+            "width": 86.1533203125,
+            "height": 18.62109375
+          },
+          "text": "AnimatedIcon",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 190,
+            "width": 133.615234375,
+            "height": 18.62109375
+          },
+          "text": "AnimatedVisualPlayer",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 230,
+            "width": 112.30078125,
+            "height": 18.62109375
+          },
+          "text": "Animation interop",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 270,
+            "width": 119.02734375,
+            "height": 18.62109375
+          },
+          "text": "AnnotatedScrollBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 310,
+            "width": 105.150390625,
+            "height": 18.62109375
+          },
+          "text": "App notifications",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 350,
+            "width": 87.0693359375,
+            "height": 18.62109375
+          },
+          "text": "AppBarButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 390,
+            "width": 105.423828125,
+            "height": 18.62109375
+          },
+          "text": "AppBarSeparator",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 430,
+            "width": 128.4404296875,
+            "height": 18.62109375
+          },
+          "text": "AppBarToggleButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 470,
+            "width": 76.4462890625,
+            "height": 18.62109375
+          },
+          "text": "AppWindow",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 510,
+            "width": 122.6435546875,
+            "height": 18.62109375
+          },
+          "text": "AppWindowTitleBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 550,
+            "width": 102.4091796875,
+            "height": 18.62109375
+          },
+          "text": "AutoSuggestBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 590,
+            "width": 118.6171875,
+            "height": 18.62109375
+          },
+          "text": "Badge notifications",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 630,
+            "width": 47.140625,
+            "height": 18.62109375
+          },
+          "text": "Binding",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 670,
+            "width": 41.5283203125,
+            "height": 18.62109375
+          },
+          "text": "Border",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 710,
+            "width": 95.142578125,
+            "height": 18.62109375
+          },
+          "text": "BreadcrumbBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 750,
+            "width": 41.5625,
+            "height": 18.62109375
+          },
+          "text": "Button",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 790,
+            "width": 120.5107421875,
+            "height": 18.62109375
+          },
+          "text": "CalendarDatePicker",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 830,
+            "width": 84.1845703125,
+            "height": 18.62109375
+          },
+          "text": "CalendarView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 870,
+            "width": 43.4833984375,
+            "height": 18.62109375
+          },
+          "text": "Canvas",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 910,
+            "width": 214.23828125,
+            "height": 18.62109375
+          },
+          "text": "Capture Element / Camera Preview",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 950,
+            "width": 33.3251953125,
+            "height": 18.62109375
+          },
+          "text": "Chart",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 990,
+            "width": 59.9921875,
+            "height": 18.62109375
+          },
+          "text": "CheckBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1030,
+            "width": 60.34765625,
+            "height": 18.62109375
+          },
+          "text": "Clipboard",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1070,
+            "width": 33.33203125,
+            "height": 18.62109375
+          },
+          "text": "Color",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1110,
+            "width": 89.3798828125,
+            "height": 18.62109375
+          },
+          "text": "Color Contrast",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1150,
+            "width": 70.177734375,
+            "height": 18.62109375
+          },
+          "text": "ColorPicker",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1190,
+            "width": 68.017578125,
+            "height": 18.62109375
+          },
+          "text": "ComboBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1230,
+            "width": 84.2939453125,
+            "height": 18.62109375
+          },
+          "text": "CommandBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1270,
+            "width": 122.1650390625,
+            "height": 18.62109375
+          },
+          "text": "CommandBarFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1310,
+            "width": 96.044921875,
+            "height": 18.62109375
+          },
+          "text": "Compact Sizing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1350,
+            "width": 134.435546875,
+            "height": 18.62109375
+          },
+          "text": "Connected Animation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1390,
+            "width": 89.6943359375,
+            "height": 18.62109375
+          },
+          "text": "ContentDialog",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1430,
+            "width": 85.873046875,
+            "height": 18.62109375
+          },
+          "text": "ContentIsland",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1470,
+            "width": 149.9326171875,
+            "height": 18.62109375
+          },
+          "text": "Custom & User Controls",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1510,
+            "width": 65.8505859375,
+            "height": 18.62109375
+          },
+          "text": "DatePicker",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1550,
+            "width": 108.7392578125,
+            "height": 18.62109375
+          },
+          "text": "DropDownButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1590,
+            "width": 102.8876953125,
+            "height": 18.62109375
+          },
+          "text": "Easing Functions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1630,
+            "width": 57.216796875,
+            "height": 18.62109375
+          },
+          "text": "Expander",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1670,
+            "width": 51.3720703125,
+            "height": 18.62109375
+          },
+          "text": "FlipView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1710,
+            "width": 37.87109375,
+            "height": 18.62109375
+          },
+          "text": "Flyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1750,
+            "width": 60.89453125,
+            "height": 18.62109375
+          },
+          "text": "Geometry",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1790,
+            "width": 26.1064453125,
+            "height": 18.62109375
+          },
+          "text": "Grid",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1830,
+            "width": 55.630859375,
+            "height": 18.62109375
+          },
+          "text": "GridView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1870,
+            "width": 100.3583984375,
+            "height": 18.62109375
+          },
+          "text": "HyperlinkButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1910,
+            "width": 76.1591796875,
+            "height": 18.62109375
+          },
+          "text": "IconElement",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1950,
+            "width": 77.68359375,
+            "height": 18.62109375
+          },
+          "text": "Iconography",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1990,
+            "width": 38.47265625,
+            "height": 18.62109375
+          },
+          "text": "Image",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2030,
+            "width": 114.7958984375,
+            "height": 18.62109375
+          },
+          "text": "Implicit Transitions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2070,
+            "width": 63.19140625,
+            "height": 18.62109375
+          },
+          "text": "InfoBadge",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2110,
+            "width": 44.2490234375,
+            "height": 18.62109375
+          },
+          "text": "InfoBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2150,
+            "width": 139.80859375,
+            "height": 18.62109375
+          },
+          "text": "InkCanvas / InkToolbar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2190,
+            "width": 88.6826171875,
+            "height": 18.62109375
+          },
+          "text": "ItemsRepeater",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2230,
+            "width": 63.314453125,
+            "height": 18.62109375
+          },
+          "text": "ItemsView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2270,
+            "width": 53.8740234375,
+            "height": 18.62109375
+          },
+          "text": "JumpList",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2310,
+            "width": 129.85546875,
+            "height": 18.62109375
+          },
+          "text": "Keyboard Navigation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2350,
+            "width": 74.4775390625,
+            "height": 18.62109375
+          },
+          "text": "LayoutPanel",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2390,
+            "width": 25.224609375,
+            "height": 18.62109375
+          },
+          "text": "Line",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2430,
+            "width": 50.189453125,
+            "height": 18.62109375
+          },
+          "text": "ListView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2470,
+            "width": 73.923828125,
+            "height": 18.62109375
+          },
+          "text": "MapControl",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2510,
+            "width": 125.80859375,
+            "height": 18.62109375
+          },
+          "text": "MediaPlayerElement",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2550,
+            "width": 55.75390625,
+            "height": 18.62109375
+          },
+          "text": "MenuBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2590,
+            "width": 73.609375,
+            "height": 18.62109375
+          },
+          "text": "MenuFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2630,
+            "width": 96.8447265625,
+            "height": 18.62109375
+          },
+          "text": "NavigationView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2670,
+            "width": 73.52734375,
+            "height": 18.62109375
+          },
+          "text": "NumberBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2710,
+            "width": 99.44921875,
+            "height": 18.62109375
+          },
+          "text": "Page Transitions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2750,
+            "width": 80.9169921875,
+            "height": 18.62109375
+          },
+          "text": "PagerControl",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2790,
+            "width": 76.330078125,
+            "height": 18.62109375
+          },
+          "text": "ParallaxView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2830,
+            "width": 80.4521484375,
+            "height": 18.62109375
+          },
+          "text": "PasswordBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2870,
+            "width": 84.1298828125,
+            "height": 18.62109375
+          },
+          "text": "PersonPicture",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2910,
+            "width": 60.3203125,
+            "height": 18.62109375
+          },
+          "text": "PipsPager",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2950,
+            "width": 30.884765625,
+            "height": 18.62109375
+          },
+          "text": "Pivot",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2990,
+            "width": 39.908203125,
+            "height": 18.62109375
+          },
+          "text": "Popup",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 3030,
+            "width": 73.240234375,
+            "height": 18.62109375
+          },
+          "text": "ProgressBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 3070,
+            "width": 81.15625,
+            "height": 18.62109375
+          },
+          "text": "ProgressRing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 3110,
+            "width": 82.4345703125,
+            "height": 18.62109375
+          },
+          "text": "PullToRefresh",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 12,
+            "height": 598
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 29,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 655,
+            "y": 37,
+            "width": 8,
+            "height": 67
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 611,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Light-ParallaxView-0.png",
+      "screenshotSha256": "60327303b50194a83cbe391a728bb6ebae07368145bda261128f25e1e867fea8"
+    },
+    {
+      "id": "Light-ParallaxView-1",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 600
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 219,
+            "y": 24,
+            "width": 249.703125,
+            "height": 111.7265625
+          },
+          "text": "Scroll the rectangles to see parallaxing of image",
+          "visible": "Visible"
+        },
+        {
+          "type": "ScrollView",
+          "name": "scrollView",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 150,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 174,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 324,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 474,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 624,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 774,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 924,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1074,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1224,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1374,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1524,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1674,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1824,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1974,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2124,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2274,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2424,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2574,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2724,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 161,
+            "y": 25,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 161,
+            "y": 25,
+            "width": 12,
+            "height": 598
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 161,
+            "y": 29,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 165,
+            "y": 37,
+            "width": 8,
+            "height": 121
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 161,
+            "y": 611,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Light-ParallaxView-1.png",
+      "screenshotSha256": "3ebd8d16cdaf09db394beb579d668e0758021e3600c3999328586894353e3e41"
+    },
+    {
+      "id": "Light-XamlUICommand-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 177
+      },
+      "parts": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 633.57666015625,
+            "height": 74.4800033569336
+          },
+          "text": "XamlUICommand allows the sharing of the UX associated with a command. In this instance we create a simple Custom Command with a label, icon, shortcut, and description. It's defined as a resource and could be used in many controls, like this AppBarButton. The button (and other controls) automatically gets all these UI properties, without the need to define the properties again.",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "CustomButton",
+          "rect": {
+            "x": 24,
+            "y": 111,
+            "width": 68,
+            "height": 90
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 50,
+            "y": 127,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "TextLabel",
+          "rect": {
+            "x": 26,
+            "y": 145,
+            "width": 62.66015625,
+            "height": 47.8828125
+          },
+          "text": "Custom XamlUICommand",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "OverflowTextLabel",
+          "rect": {
+            "x": 24,
+            "y": 111,
+            "width": 0,
+            "height": 0
+          },
+          "text": "Custom XamlUICommand",
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "KeyboardAcceleratorTextLabel",
+          "rect": {
+            "x": 24,
+            "y": 111,
+            "width": 0,
+            "height": 0
+          },
+          "text": "",
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "XamlUICommandOutput",
+          "rect": {
+            "x": 100,
+            "y": 148,
+            "width": 0,
+            "height": 16.80000114440918
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Light-XamlUICommand-0.png",
+      "screenshotSha256": "b97a613c7b5eaf53c284d4ae5d3d3f9254cc9ce6f46161539d11bed7df657f2f"
+    },
+    {
+      "id": "Light-StandardUICommand-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 608
+      },
+      "parts": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 628.5133056640625,
+            "height": 55.86000061035156
+          },
+          "text": "StandardUICommand allows the sharing of the UX associated with a command. In this instance we are using a StandardUICommand to quickly place the delete command in multiple controls. The StandardUICommand contains the icon, label, keyboard shortcut, and a description.",
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBar",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 92,
+            "width": 640,
+            "height": 40
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBarItem",
+          "name": "",
+          "rect": {
+            "x": 28,
+            "y": 96,
+            "width": 41,
+            "height": 32
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 38,
+            "y": 103,
+            "width": 20.9384765625,
+            "height": 18.62109375
+          },
+          "text": "File",
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBarItem",
+          "name": "",
+          "rect": {
+            "x": 77,
+            "y": 96,
+            "width": 44,
+            "height": 32
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 87,
+            "y": 103,
+            "width": 23.4609375,
+            "height": 18.62109375
+          },
+          "text": "Edit",
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBarItem",
+          "name": "",
+          "rect": {
+            "x": 129,
+            "y": 96,
+            "width": 49,
+            "height": 32
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 139,
+            "y": 103,
+            "width": 28.8818359375,
+            "height": 18.62109375
+          },
+          "text": "Help",
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "ListViewRight",
+          "rect": {
+            "x": 24,
+            "y": 132,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 150,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 0",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 140,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 210,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 1",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 200,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 270,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 2",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 260,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 330,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 3",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 320,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 390,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 4",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 380,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 450,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 5",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 440,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 510,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 6",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 500,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 570,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 7",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 560,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 630,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 8",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 620,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 690,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 9",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 680,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 750,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 10",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 740,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 810,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 11",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 800,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 870,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 12",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 860,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 930,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 13",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 920,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 990,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 14",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 980,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 133,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 133,
+            "width": 12,
+            "height": 498
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 137,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 655,
+            "y": 145,
+            "width": 8,
+            "height": 263
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 619,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Light-StandardUICommand-0.png",
+      "screenshotSha256": "6d9453bbc6958165946e2f9f4917d6478197c58aefcb2a26a5449eee57d44449"
+    },
+    {
+      "id": "Dark-SplitView-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 300
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "splitView",
+          "rect": {
+            "x": 144,
+            "y": 24,
+            "width": 400,
+            "height": 300
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "PaneHeader",
+          "rect": {
+            "x": 204,
+            "y": 36,
+            "width": 101.7255859375,
+            "height": 18.62109375
+          },
+          "text": "PANE CONTENT",
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "NavLinksList",
+          "rect": {
+            "x": 144,
+            "y": 67,
+            "width": 255,
+            "height": 257
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 77,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 78,
+            "width": 41.7880859375,
+            "height": 18.62109375
+          },
+          "text": "People",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 117,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 118,
+            "width": 36.75,
+            "height": 18.62109375
+          },
+          "text": "Globe",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 157,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 158,
+            "width": 54.4619140625,
+            "height": 18.62109375
+          },
+          "text": "Message",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 162,
+            "y": 197,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 206,
+            "y": 198,
+            "width": 26.4755859375,
+            "height": 18.62109375
+          },
+          "text": "Mail",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 398,
+            "y": 24,
+            "width": 1,
+            "height": 300
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 412,
+            "y": 36,
+            "width": 68.8583984375,
+            "height": 37.2421875
+          },
+          "text": "SPLITVIEW CONTENT",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "content",
+          "rect": {
+            "x": 412,
+            "y": 86,
+            "width": 0,
+            "height": 18.62109375
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 400,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Dark-SplitView-0.png",
+      "screenshotSha256": "db4f1c86f6ca297fe56fe1cedad914a37e924d27a62202df165ea51102b9c65c"
+    },
+    {
+      "id": "Dark-SemanticZoom-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 500
+      },
+      "parts": [
+        {
+          "type": "SemanticZoom",
+          "name": "Control1",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 32,
+            "width": 127.40234375,
+            "height": 26.6015625
+          },
+          "text": "Fundamentals",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 67,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 591,
+            "width": 62.5390625,
+            "height": 26.6015625
+          },
+          "text": "Design",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 626,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1004,
+            "width": 110.44921875,
+            "height": 26.6015625
+          },
+          "text": "Accessibility",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1039,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1271,
+            "width": 161.005859375,
+            "height": 26.6015625
+          },
+          "text": "Menus & toolbars",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1306,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2049,
+            "width": 99.53125,
+            "height": 26.6015625
+          },
+          "text": "Collections",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2084,
+            "width": 616,
+            "height": 1
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 78,
+            "width": 63.46484375,
+            "height": 18.62109375
+          },
+          "text": "Resources",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 97,
+            "width": 294.5947265625,
+            "height": 37.2421875
+          },
+          "text": "Reusable definitions for shared values to ensure consistency and maintainability.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 151,
+            "width": 30.48828125,
+            "height": 18.62109375
+          },
+          "text": "Style",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 170,
+            "width": 290.431640625,
+            "height": 37.2421875
+          },
+          "text": "A XAML style is a Reusable property settings to define consistent UI design elements.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 224,
+            "width": 48.9794921875,
+            "height": 18.62109375
+          },
+          "text": "Binding",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 243,
+            "width": 282.5908203125,
+            "height": 37.2421875
+          },
+          "text": "Connecting UI elements to data for automatic synchronization and updates.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 297,
+            "width": 64.052734375,
+            "height": 18.62109375
+          },
+          "text": "Templates",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 316,
+            "width": 278.099609375,
+            "height": 37.2421875
+          },
+          "text": "Customize controls' visuals, item layouts, and data presentation in XAML.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 370,
+            "width": 152.0927734375,
+            "height": 18.62109375
+          },
+          "text": "Custom & User Controls",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 389,
+            "width": 273.205078125,
+            "height": 37.2421875
+          },
+          "text": "Create reusable UI components with custom functionality and appearance.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 443,
+            "width": 110.2978515625,
+            "height": 18.62109375
+          },
+          "text": "XAML Conditions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 462,
+            "width": 277.306640625,
+            "height": 37.2421875
+          },
+          "text": "Define custom XAML conditions evaluated at parse time using IXamlCondition.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 526,
+            "width": 73.732421875,
+            "height": 18.62109375
+          },
+          "text": "Scratch Pad",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 545,
+            "width": 275.337890625,
+            "height": 18.62109375
+          },
+          "text": "Scratch pad for testing simple XAML markup",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 637,
+            "width": 34.2548828125,
+            "height": 18.62109375
+          },
+          "text": "Color",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 656,
+            "width": 250.8173828125,
+            "height": 37.2421875
+          },
+          "text": "Balanced color design creates clarity and aesthetic harmony.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 710,
+            "width": 63.314453125,
+            "height": 18.62109375
+          },
+          "text": "Geometry",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 729,
+            "width": 299.7490234375,
+            "height": 37.2421875
+          },
+          "text": "Clear geometric design ensures visual coherence and structure.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 783,
+            "width": 80.1787109375,
+            "height": 18.62109375
+          },
+          "text": "Iconography",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 802,
+            "width": 283.8759765625,
+            "height": 55.86328125
+          },
+          "text": "Icons are a visual design language that can be used to communicate information quickly and effectively.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 856,
+            "width": 50.0458984375,
+            "height": 18.62109375
+          },
+          "text": "Spacing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 875,
+            "width": 294.2529296875,
+            "height": 37.2421875
+          },
+          "text": "Thoughtful spacing design enhances readability and flow.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 929,
+            "width": 75.55078125,
+            "height": 18.62109375
+          },
+          "text": "Typography",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 948,
+            "width": 252.6904296875,
+            "height": 37.2421875
+          },
+          "text": "Typography design guides attention with intuitive fonts and hierarchy.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1050,
+            "width": 91.970703125,
+            "height": 18.62109375
+          },
+          "text": "Color Contrast",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1069,
+            "width": 294.7451171875,
+            "height": 37.2421875
+          },
+          "text": "High contrast design ensures accessibility for all users.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1123,
+            "width": 134.0185546875,
+            "height": 18.62109375
+          },
+          "text": "Keyboard Navigation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1142,
+            "width": 265.4462890625,
+            "height": 37.2421875
+          },
+          "text": "Keyboard-friendly design enables seamless interactions.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1196,
+            "width": 90.302734375,
+            "height": 18.62109375
+          },
+          "text": "Screen Reader",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1215,
+            "width": 294.7177734375,
+            "height": 37.2421875
+          },
+          "text": "Inclusive design ensures meaningful content for assistive technologies.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1327,
+            "width": 90.4052734375,
+            "height": 18.62109375
+          },
+          "text": "AppBarButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1346,
+            "width": 295.9892578125,
+            "height": 18.62109375
+          },
+          "text": "A button that's styled for use in a CommandBar.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1390,
+            "width": 108.8623046875,
+            "height": 18.62109375
+          },
+          "text": "AppBarSeparator",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1409,
+            "width": 275.2900390625,
+            "height": 37.2421875
+          },
+          "text": "A vertical line that's used to visually separate groups of commands in an app bar.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1463,
+            "width": 133.095703125,
+            "height": 18.62109375
+          },
+          "text": "AppBarToggleButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1482,
+            "width": 287.177734375,
+            "height": 55.86328125
+          },
+          "text": "A button that can be on, off, or indeterminate like a CheckBox, and is styled for use in an app bar or other specialized UI.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1536,
+            "width": 86.7138671875,
+            "height": 18.62109375
+          },
+          "text": "CommandBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1555,
+            "width": 284.8671875,
+            "height": 55.86328125
+          },
+          "text": "A toolbar for displaying application-specific commands that handles layout and resizing of its contents.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1609,
+            "width": 126.0068359375,
+            "height": 18.62109375
+          },
+          "text": "CommandBarFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1628,
+            "width": 292.25,
+            "height": 37.2421875
+          },
+          "text": "A mini-toolbar displaying proactive commands, and an optional menu of commands.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1682,
+            "width": 57.6611328125,
+            "height": 18.62109375
+          },
+          "text": "MenuBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1701,
+            "width": 252.9638671875,
+            "height": 37.2421875
+          },
+          "text": "A classic menu, allowing the display of MenuItems containing MenuFlyoutItems.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1755,
+            "width": 76.0087890625,
+            "height": 18.62109375
+          },
+          "text": "MenuFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1774,
+            "width": 289.32421875,
+            "height": 37.2421875
+          },
+          "text": "Shows a contextual list of simple commands or options.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1838,
+            "width": 84.9365234375,
+            "height": 18.62109375
+          },
+          "text": "SwipeControl",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1857,
+            "width": 291.7578125,
+            "height": 18.62109375
+          },
+          "text": "Touch gesture for quick menu actions on items.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1901,
+            "width": 136.6845703125,
+            "height": 18.62109375
+          },
+          "text": "StandardUICommand",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1920,
+            "width": 234.6572265625,
+            "height": 55.86328125
+          },
+          "text": "A StandardUICommand is a built-in 'XamlUICommand' which represents a commonly used command, e.g. 'Save'.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1974,
+            "width": 111.7265625,
+            "height": 18.62109375
+          },
+          "text": "XamlUICommand",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 1993,
+            "width": 285.9677734375,
+            "height": 37.2421875
+          },
+          "text": "An object which is used to define the look and feel of a given command.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2095,
+            "width": 53.4501953125,
+            "height": 18.62109375
+          },
+          "text": "FlipView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2114,
+            "width": 287.328125,
+            "height": 37.2421875
+          },
+          "text": "Presents a collection of items that the user can flip through, one item at a time.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2168,
+            "width": 57.7021484375,
+            "height": 18.62109375
+          },
+          "text": "GridView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2187,
+            "width": 284.306640625,
+            "height": 37.2421875
+          },
+          "text": "A control that presents a collection of items in rows and columns.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2241,
+            "width": 91.4921875,
+            "height": 18.62109375
+          },
+          "text": "ItemsRepeater",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2260,
+            "width": 261.7275390625,
+            "height": 37.2421875
+          },
+          "text": "A flexible, primitive control for data-driven layouts.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2314,
+            "width": 65.59765625,
+            "height": 18.62109375
+          },
+          "text": "ItemsView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2333,
+            "width": 269.158203125,
+            "height": 37.2421875
+          },
+          "text": "A control that presents a collection of items using various layouts.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2387,
+            "width": 52.2607421875,
+            "height": 18.62109375
+          },
+          "text": "ListView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2406,
+            "width": 295.2646484375,
+            "height": 37.2421875
+          },
+          "text": "A control that presents a collection of items in a vertical list.",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2460,
+            "width": 85.681640625,
+            "height": 18.62109375
+          },
+          "text": "PullToRefresh",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 2479,
+            "width": 295.4697265625,
+            "height": 55.86328125
+          },
+          "text": "Provides the ability to pull on a collection of items in a list/grid to refresh the contents of the collection.",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 12,
+            "height": 498
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 29,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 655,
+            "y": 37,
+            "width": 8,
+            "height": 30
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 511,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "",
+          "rect": {
+            "x": -296,
+            "y": -226,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": -212,
+            "width": 127.40234375,
+            "height": 26.6015625
+          },
+          "text": "Fundamentals",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": -132,
+            "width": 62.5390625,
+            "height": 26.6015625
+          },
+          "text": "Design",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": -52,
+            "width": 110.44921875,
+            "height": 26.6015625
+          },
+          "text": "Accessibility",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 28,
+            "width": 161.005859375,
+            "height": 26.6015625
+          },
+          "text": "Menus & toolbars",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 108,
+            "width": 99.53125,
+            "height": 26.6015625
+          },
+          "text": "Collections",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 188,
+            "width": 108.61328125,
+            "height": 26.6015625
+          },
+          "text": "Date & time",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 268,
+            "width": 99.111328125,
+            "height": 26.6015625
+          },
+          "text": "Basic input",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 348,
+            "width": 116.533203125,
+            "height": 26.6015625
+          },
+          "text": "Status & info",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 428,
+            "width": 154.755859375,
+            "height": 26.6015625
+          },
+          "text": "Dialogs & flyouts",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 508,
+            "width": 78.857421875,
+            "height": 26.6015625
+          },
+          "text": "Scrolling",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 588,
+            "width": 61.07421875,
+            "height": 26.6015625
+          },
+          "text": "Layout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 668,
+            "width": 99.70703125,
+            "height": 26.6015625
+          },
+          "text": "Navigation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 748,
+            "width": 56.826171875,
+            "height": 26.6015625
+          },
+          "text": "Media",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 828,
+            "width": 52.177734375,
+            "height": 26.6015625
+          },
+          "text": "Styles",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 908,
+            "width": 36.962890625,
+            "height": 26.6015625
+          },
+          "text": "Text",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 988,
+            "width": 66.494140625,
+            "height": 26.6015625
+          },
+          "text": "Motion",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 1068,
+            "width": 104.27734375,
+            "height": 26.6015625
+          },
+          "text": "Windowing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 1148,
+            "width": 64.6484375,
+            "height": 26.6015625
+          },
+          "text": "System",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -264,
+            "y": 1228,
+            "width": 43.603515625,
+            "height": 26.6015625
+          },
+          "text": "Shell",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 958,
+            "y": -224,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 958,
+            "y": -224,
+            "width": 12,
+            "height": 498
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 958,
+            "y": -216,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 966,
+            "y": -200,
+            "width": 8,
+            "height": 312
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 958,
+            "y": 748,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 637,
+            "y": 497,
+            "width": 4,
+            "height": 4
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Dark-SemanticZoom-0.png",
+      "screenshotSha256": "4504ca2815eae04beb7eed6f21ca9d8cb80e9ddece37f9ba32b06224479debc7"
+    },
+    {
+      "id": "Dark-ParallaxView-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 600
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "parallaxView",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "listView",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 218,
+            "y": 24,
+            "width": 251.248046875,
+            "height": 74.484375
+          },
+          "text": "Scroll the list to see parallaxing of image",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 110,
+            "width": 75.0654296875,
+            "height": 18.62109375
+          },
+          "text": "AcrylicBrush",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 150,
+            "width": 86.1533203125,
+            "height": 18.62109375
+          },
+          "text": "AnimatedIcon",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 190,
+            "width": 133.615234375,
+            "height": 18.62109375
+          },
+          "text": "AnimatedVisualPlayer",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 230,
+            "width": 112.30078125,
+            "height": 18.62109375
+          },
+          "text": "Animation interop",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 270,
+            "width": 119.02734375,
+            "height": 18.62109375
+          },
+          "text": "AnnotatedScrollBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 310,
+            "width": 105.150390625,
+            "height": 18.62109375
+          },
+          "text": "App notifications",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 350,
+            "width": 87.0693359375,
+            "height": 18.62109375
+          },
+          "text": "AppBarButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 390,
+            "width": 105.423828125,
+            "height": 18.62109375
+          },
+          "text": "AppBarSeparator",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 430,
+            "width": 128.4404296875,
+            "height": 18.62109375
+          },
+          "text": "AppBarToggleButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 470,
+            "width": 76.4462890625,
+            "height": 18.62109375
+          },
+          "text": "AppWindow",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 510,
+            "width": 122.6435546875,
+            "height": 18.62109375
+          },
+          "text": "AppWindowTitleBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 550,
+            "width": 102.4091796875,
+            "height": 18.62109375
+          },
+          "text": "AutoSuggestBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 590,
+            "width": 118.6171875,
+            "height": 18.62109375
+          },
+          "text": "Badge notifications",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 630,
+            "width": 47.140625,
+            "height": 18.62109375
+          },
+          "text": "Binding",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 670,
+            "width": 41.5283203125,
+            "height": 18.62109375
+          },
+          "text": "Border",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 710,
+            "width": 95.142578125,
+            "height": 18.62109375
+          },
+          "text": "BreadcrumbBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 750,
+            "width": 41.5625,
+            "height": 18.62109375
+          },
+          "text": "Button",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 790,
+            "width": 120.5107421875,
+            "height": 18.62109375
+          },
+          "text": "CalendarDatePicker",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 830,
+            "width": 84.1845703125,
+            "height": 18.62109375
+          },
+          "text": "CalendarView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 870,
+            "width": 43.4833984375,
+            "height": 18.62109375
+          },
+          "text": "Canvas",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 910,
+            "width": 214.23828125,
+            "height": 18.62109375
+          },
+          "text": "Capture Element / Camera Preview",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 950,
+            "width": 33.3251953125,
+            "height": 18.62109375
+          },
+          "text": "Chart",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 990,
+            "width": 59.9921875,
+            "height": 18.62109375
+          },
+          "text": "CheckBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1030,
+            "width": 60.34765625,
+            "height": 18.62109375
+          },
+          "text": "Clipboard",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1070,
+            "width": 33.33203125,
+            "height": 18.62109375
+          },
+          "text": "Color",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1110,
+            "width": 89.3798828125,
+            "height": 18.62109375
+          },
+          "text": "Color Contrast",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1150,
+            "width": 70.177734375,
+            "height": 18.62109375
+          },
+          "text": "ColorPicker",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1190,
+            "width": 68.017578125,
+            "height": 18.62109375
+          },
+          "text": "ComboBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1230,
+            "width": 84.2939453125,
+            "height": 18.62109375
+          },
+          "text": "CommandBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1270,
+            "width": 122.1650390625,
+            "height": 18.62109375
+          },
+          "text": "CommandBarFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1310,
+            "width": 96.044921875,
+            "height": 18.62109375
+          },
+          "text": "Compact Sizing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1350,
+            "width": 134.435546875,
+            "height": 18.62109375
+          },
+          "text": "Connected Animation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1390,
+            "width": 89.6943359375,
+            "height": 18.62109375
+          },
+          "text": "ContentDialog",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1430,
+            "width": 85.873046875,
+            "height": 18.62109375
+          },
+          "text": "ContentIsland",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1470,
+            "width": 149.9326171875,
+            "height": 18.62109375
+          },
+          "text": "Custom & User Controls",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1510,
+            "width": 65.8505859375,
+            "height": 18.62109375
+          },
+          "text": "DatePicker",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1550,
+            "width": 108.7392578125,
+            "height": 18.62109375
+          },
+          "text": "DropDownButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1590,
+            "width": 102.8876953125,
+            "height": 18.62109375
+          },
+          "text": "Easing Functions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1630,
+            "width": 57.216796875,
+            "height": 18.62109375
+          },
+          "text": "Expander",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1670,
+            "width": 51.3720703125,
+            "height": 18.62109375
+          },
+          "text": "FlipView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1710,
+            "width": 37.87109375,
+            "height": 18.62109375
+          },
+          "text": "Flyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1750,
+            "width": 60.89453125,
+            "height": 18.62109375
+          },
+          "text": "Geometry",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1790,
+            "width": 26.1064453125,
+            "height": 18.62109375
+          },
+          "text": "Grid",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1830,
+            "width": 55.630859375,
+            "height": 18.62109375
+          },
+          "text": "GridView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1870,
+            "width": 100.3583984375,
+            "height": 18.62109375
+          },
+          "text": "HyperlinkButton",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1910,
+            "width": 76.1591796875,
+            "height": 18.62109375
+          },
+          "text": "IconElement",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1950,
+            "width": 77.68359375,
+            "height": 18.62109375
+          },
+          "text": "Iconography",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 1990,
+            "width": 38.47265625,
+            "height": 18.62109375
+          },
+          "text": "Image",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2030,
+            "width": 114.7958984375,
+            "height": 18.62109375
+          },
+          "text": "Implicit Transitions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2070,
+            "width": 63.19140625,
+            "height": 18.62109375
+          },
+          "text": "InfoBadge",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2110,
+            "width": 44.2490234375,
+            "height": 18.62109375
+          },
+          "text": "InfoBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2150,
+            "width": 139.80859375,
+            "height": 18.62109375
+          },
+          "text": "InkCanvas / InkToolbar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2190,
+            "width": 88.6826171875,
+            "height": 18.62109375
+          },
+          "text": "ItemsRepeater",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2230,
+            "width": 63.314453125,
+            "height": 18.62109375
+          },
+          "text": "ItemsView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2270,
+            "width": 53.8740234375,
+            "height": 18.62109375
+          },
+          "text": "JumpList",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2310,
+            "width": 129.85546875,
+            "height": 18.62109375
+          },
+          "text": "Keyboard Navigation",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2350,
+            "width": 74.4775390625,
+            "height": 18.62109375
+          },
+          "text": "LayoutPanel",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2390,
+            "width": 25.224609375,
+            "height": 18.62109375
+          },
+          "text": "Line",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2430,
+            "width": 50.189453125,
+            "height": 18.62109375
+          },
+          "text": "ListView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2470,
+            "width": 73.923828125,
+            "height": 18.62109375
+          },
+          "text": "MapControl",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2510,
+            "width": 125.80859375,
+            "height": 18.62109375
+          },
+          "text": "MediaPlayerElement",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2550,
+            "width": 55.75390625,
+            "height": 18.62109375
+          },
+          "text": "MenuBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2590,
+            "width": 73.609375,
+            "height": 18.62109375
+          },
+          "text": "MenuFlyout",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2630,
+            "width": 96.8447265625,
+            "height": 18.62109375
+          },
+          "text": "NavigationView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2670,
+            "width": 73.52734375,
+            "height": 18.62109375
+          },
+          "text": "NumberBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2710,
+            "width": 99.44921875,
+            "height": 18.62109375
+          },
+          "text": "Page Transitions",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2750,
+            "width": 80.9169921875,
+            "height": 18.62109375
+          },
+          "text": "PagerControl",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2790,
+            "width": 76.330078125,
+            "height": 18.62109375
+          },
+          "text": "ParallaxView",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2830,
+            "width": 80.4521484375,
+            "height": 18.62109375
+          },
+          "text": "PasswordBox",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2870,
+            "width": 84.1298828125,
+            "height": 18.62109375
+          },
+          "text": "PersonPicture",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2910,
+            "width": 60.3203125,
+            "height": 18.62109375
+          },
+          "text": "PipsPager",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2950,
+            "width": 30.884765625,
+            "height": 18.62109375
+          },
+          "text": "Pivot",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 2990,
+            "width": 39.908203125,
+            "height": 18.62109375
+          },
+          "text": "Popup",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 3030,
+            "width": 73.240234375,
+            "height": 18.62109375
+          },
+          "text": "ProgressBar",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 3070,
+            "width": 81.15625,
+            "height": 18.62109375
+          },
+          "text": "ProgressRing",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 40,
+            "y": 3110,
+            "width": 82.4345703125,
+            "height": 18.62109375
+          },
+          "text": "PullToRefresh",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 25,
+            "width": 12,
+            "height": 598
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 29,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 655,
+            "y": 37,
+            "width": 8,
+            "height": 67
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 611,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Dark-ParallaxView-0.png",
+      "screenshotSha256": "d4e84589349e11a5749074f9bc07b5cce6faf043737066beed565af457174cc2"
+    },
+    {
+      "id": "Dark-ParallaxView-1",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 600
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 640,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 219,
+            "y": 24,
+            "width": 249.703125,
+            "height": 111.7265625
+          },
+          "text": "Scroll the rectangles to see parallaxing of image",
+          "visible": "Visible"
+        },
+        {
+          "type": "ScrollView",
+          "name": "scrollView",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 150,
+            "height": 600
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 174,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 324,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 474,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 624,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 774,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 924,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1074,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1224,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1374,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1524,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1674,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1824,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 1974,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2124,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2274,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2424,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2574,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 2724,
+            "width": 150,
+            "height": 150
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 161,
+            "y": 25,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 161,
+            "y": 25,
+            "width": 12,
+            "height": 598
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 161,
+            "y": 29,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 165,
+            "y": 37,
+            "width": 8,
+            "height": 121
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 161,
+            "y": 611,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Dark-ParallaxView-1.png",
+      "screenshotSha256": "10938e75e20d18b154a4730d9678dcf88f89fec9cb642ee69aab6d62a36ce9fe"
+    },
+    {
+      "id": "Dark-XamlUICommand-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 177
+      },
+      "parts": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 633.57666015625,
+            "height": 74.4800033569336
+          },
+          "text": "XamlUICommand allows the sharing of the UX associated with a command. In this instance we create a simple Custom Command with a label, icon, shortcut, and description. It's defined as a resource and could be used in many controls, like this AppBarButton. The button (and other controls) automatically gets all these UI properties, without the need to define the properties again.",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "CustomButton",
+          "rect": {
+            "x": 24,
+            "y": 111,
+            "width": 68,
+            "height": 90
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 50,
+            "y": 127,
+            "width": 20,
+            "height": 20
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "TextLabel",
+          "rect": {
+            "x": 26,
+            "y": 145,
+            "width": 62.66015625,
+            "height": 47.8828125
+          },
+          "text": "Custom XamlUICommand",
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "OverflowTextLabel",
+          "rect": {
+            "x": 24,
+            "y": 111,
+            "width": 0,
+            "height": 0
+          },
+          "text": "Custom XamlUICommand",
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "KeyboardAcceleratorTextLabel",
+          "rect": {
+            "x": 24,
+            "y": 111,
+            "width": 0,
+            "height": 0
+          },
+          "text": "",
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "XamlUICommandOutput",
+          "rect": {
+            "x": 100,
+            "y": 148,
+            "width": 0,
+            "height": 16.80000114440918
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Dark-XamlUICommand-0.png",
+      "screenshotSha256": "f88af8933a798b09a56142382203b8783f6c61be12a5b68cc14528f9bc3f0f69"
+    },
+    {
+      "id": "Dark-StandardUICommand-0",
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 640,
+        "height": 608
+      },
+      "parts": [
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 628.5133056640625,
+            "height": 55.86000061035156
+          },
+          "text": "StandardUICommand allows the sharing of the UX associated with a command. In this instance we are using a StandardUICommand to quickly place the delete command in multiple controls. The StandardUICommand contains the icon, label, keyboard shortcut, and a description.",
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBar",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 92,
+            "width": 640,
+            "height": 40
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBarItem",
+          "name": "",
+          "rect": {
+            "x": 28,
+            "y": 96,
+            "width": 41,
+            "height": 32
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 38,
+            "y": 103,
+            "width": 20.9384765625,
+            "height": 18.62109375
+          },
+          "text": "File",
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBarItem",
+          "name": "",
+          "rect": {
+            "x": 77,
+            "y": 96,
+            "width": 44,
+            "height": 32
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 87,
+            "y": 103,
+            "width": 23.4609375,
+            "height": 18.62109375
+          },
+          "text": "Edit",
+          "visible": "Visible"
+        },
+        {
+          "type": "MenuBarItem",
+          "name": "",
+          "rect": {
+            "x": 129,
+            "y": 96,
+            "width": 49,
+            "height": 32
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 139,
+            "y": 103,
+            "width": 28.8818359375,
+            "height": 18.62109375
+          },
+          "text": "Help",
+          "visible": "Visible"
+        },
+        {
+          "type": "ListView",
+          "name": "ListViewRight",
+          "rect": {
+            "x": 24,
+            "y": 132,
+            "width": 640,
+            "height": 500
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 150,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 0",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 140,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 210,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 1",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 200,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 270,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 2",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 260,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 330,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 3",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 320,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 390,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 4",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 380,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 450,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 5",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 440,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 510,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 6",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 500,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 570,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 7",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 560,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 630,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 8",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 620,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 690,
+            "width": 81.509765625,
+            "height": 23.94140625
+          },
+          "text": "List item 9",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 680,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 750,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 10",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 740,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 810,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 11",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 800,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 870,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 12",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 860,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 930,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 13",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 920,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 34,
+            "y": 990,
+            "width": 91.212890625,
+            "height": 23.94140625
+          },
+          "text": "List item 14",
+          "visible": "Visible"
+        },
+        {
+          "type": "AppBarButton",
+          "name": "HoverButton",
+          "rect": {
+            "x": 24,
+            "y": 980,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Collapsed"
+        },
+        {
+          "type": "Rectangle",
+          "name": "HorizontalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 133,
+            "width": 0,
+            "height": 0
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "VerticalTrackRect",
+          "rect": {
+            "x": 651,
+            "y": 133,
+            "width": 12,
+            "height": 498
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 137,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        },
+        {
+          "type": "Rectangle",
+          "name": "ThumbVisual",
+          "rect": {
+            "x": 655,
+            "y": 145,
+            "width": 8,
+            "height": 263
+          },
+          "text": null,
+          "visible": "Visible"
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 651,
+            "y": 619,
+            "width": 8,
+            "height": 8
+          },
+          "text": "",
+          "visible": "Visible"
+        }
+      ],
+      "screenshot": "out/view-gallery-native/Dark-StandardUICommand-0.png",
+      "screenshotSha256": "f4944923aae555eb2c2ec318297c560fd164610139b3ec4aa65507a48c069956"
+    }
+  ],
+  "sourceCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "runtime": "Microsoft.WinUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=de31ebe4ad15742b",
+  "recordedAt": "2026-11-08T14:31:00.728877+00:00",
+  "kind": "Independent WinUI SDK probe loading the fixed Gallery runtime XAML and data; not the Store application",
+  "viewport": {
+    "width": 640,
+    "parallaxHeight": 600,
+    "semanticHeight": 500,
+    "splitWidth": 400,
+    "splitHeight": 300
+  },
+  "catalogItems": 126,
+  "sourceSha256": "c9e30110aa015f8b8a4ef5c9eac9f6ab581dd97a3d7191662781223a02a4c70d",
+  "probeSha256": "bcf2b07b4aa8aa789a55fee4a0cadbf9e64b81eb6fbb58bd624bfe31efbbf673"
+}

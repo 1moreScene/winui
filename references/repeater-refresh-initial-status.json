@@ -1,0 +1,121 @@
+{
+  "recordedAtUtc": "2026-11-08T13:22:18.159387+00:00",
+  "controls": [
+    "ItemsRepeater",
+    "StackLayout",
+    "UniformGridLayout",
+    "RefreshContainer",
+    "RefreshVisualizer"
+  ],
+  "phase": "Rust controls, typed TS/React API, Gallery and scoped validation implemented",
+  "fullyMatchesNative": false,
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sourceFiles": 48,
+  "nativeStates": 42,
+  "defaultBackend": "Canvas2D",
+  "optionalBackend": "WebGL2",
+  "checks": {
+    "rust": {
+      "passed": 294,
+      "logs": [
+        "out/repeater-refresh-rust-final.log",
+        "out/repeater-refresh-menu-regression.log",
+        "out/repeater-refresh-unit-final.log"
+      ],
+      "scope": "Frozen source, all integration targets plus library tests; menu target run separately after the initial shared-workspace failure."
+    },
+    "browser": {
+      "path": "out/repeater-refresh-delivery/out/repeater-refresh-browser-results.json",
+      "startTime": "2026-11-08T13:19:05.972Z",
+      "duration": 39426.369999999995,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "path": "out/repeater-refresh-delivery/out/repeater-refresh-production-results.json",
+      "startTime": "2026-11-08T13:19:56.383Z",
+      "duration": 34551.886,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "currentBinaryBrowser": {
+      "path": "out/repeater-refresh-browser-results.json",
+      "startTime": "2026-11-08T13:21:10.451Z",
+      "duration": 38583.814,
+      "expected": 10,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "typescript": true,
+    "productionBuild": true,
+    "declarations": true
+  },
+  "geometry": {
+    "Canvas2D": {
+      "states": 24,
+      "maxDip": 0.8000015258789048,
+      "path": "out/repeater-refresh-delivery/out/repeater-refresh-geometry/Canvas2D.json"
+    },
+    "WebGL2": {
+      "states": 24,
+      "maxDip": 0.8000015258789048,
+      "path": "out/repeater-refresh-delivery/out/repeater-refresh-geometry/WebGL2.json"
+    }
+  },
+  "wasm": {
+    "frozenSha256": "0f78549a177671c04f36a2984867f86e4cd02b3b66a86d94c61f1536e12be62c",
+    "currentSha256": "773ab6158e8aad7f32d6f99319dc945e3ec4567ff7b85877fecdb4e1f70877c5",
+    "matchesCurrentBinary": false,
+    "frozenBinaryScope": "Native geometry matrix and Chromium Canvas2D/WebGL2; production Chromium and WebKit Canvas2D.",
+    "currentBinaryScope": "Independent Chromium Canvas2D/WebGL2 rerun. The current workspace includes other sessions changes after the frozen Rust snapshot."
+  },
+  "evidence": {
+    "documentation": "docs/repeater-refresh.md",
+    "native": "references/repeater-refresh-native.json",
+    "nativeRun": "references/repeater-refresh-native-run.json",
+    "sourceSnapshot": "out/repeater-refresh-delivery/snapshot.json",
+    "screenshots": "out/repeater-refresh-delivery/out/repeater-refresh-presentation"
+  },
+  "files": [
+    {
+      "path": "src/scene/repeater.rs",
+      "sha256": "d32b00dcaa22f887bd8ada86bac061ea5a223b4c10f784a37174bd1741696d86"
+    },
+    {
+      "path": "src/scene/refresh.rs",
+      "sha256": "1c6200fd7299f254566173793c4c8b1441d9552c2c706233a36803063da25a90"
+    },
+    {
+      "path": "gallery/src/repeater-refresh-types.ts",
+      "sha256": "dfcc272932fc05b1f21eb09e65059f1938809cf7c88af0a22e5f27e507020345"
+    },
+    {
+      "path": "gallery/src/RepeaterRefreshPage.tsx",
+      "sha256": "7b8a98638d9b3d039b3d6e342dc392f6875fe27df62233af702c250cd6f61e2c"
+    },
+    {
+      "path": "gallery/tests/repeater-refresh.spec.ts",
+      "sha256": "ebb7024492910229195b4b302684764088c1df220b52692c26e446b89d4a5029"
+    },
+    {
+      "path": "gallery/tests/repeater-refresh-types.tsx",
+      "sha256": "d3c6bdf165e461282d7b3d536a1f683fb4639cfd04510f8c42530988b95ccf5e"
+    },
+    {
+      "path": "gallery/src/official-repeater-refresh.json",
+      "sha256": "b5bda92ed82a3676aa9d9451332d8d3a9e9b04265f6e82deaf9dea6ceb1faf95"
+    }
+  ],
+  "remaining": [
+    "Arbitrary VirtualizingLayout/IElementFactory and native RecyclePool reuse are not implemented.",
+    "GetOrCreateElement forced realization and pinning, full ItemsSourceView mutation semantics and exact unknown-size scroll anchoring remain.",
+    "Windows DirectManipulation/InteractionTracker inertia, elastic rebound and Composition frame timing are not accepted as equivalent.",
+    "Complete native UIA/XYFocus and Store-distribution pixel acceptance remain.",
+    "Independent same-SDK RenderTargetBitmap cannot validate RefreshVisualizer Composition rotation."
+  ]
+}

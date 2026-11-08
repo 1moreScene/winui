@@ -1,0 +1,247 @@
+{
+  "backend": "Canvas2D",
+  "rows": [
+    {
+      "kind": "Flyout",
+      "shadowDelta": 2.705952380952381,
+      "activeRange": 27,
+      "fallbackRange": 0,
+      "chroma": 18,
+      "initial": {
+        "active": true,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 140,
+          "width": 260,
+          "x": -10,
+          "y": -52
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          50
+        ],
+        "opacity": 0,
+        "order": 16,
+        "pendingClose": null,
+        "rows": [],
+        "selectedIndex": null
+      },
+      "middle": {
+        "active": true,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 140,
+          "width": 260,
+          "x": -10,
+          "y": -8.570770967932866
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          6.570770967932865
+        ],
+        "opacity": 0.2048181425720401,
+        "order": 16,
+        "pendingClose": null,
+        "rows": [],
+        "selectedIndex": null
+      },
+      "settled": {
+        "active": false,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 140,
+          "width": 260,
+          "x": -10,
+          "y": -2
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          0
+        ],
+        "opacity": 1,
+        "order": 16,
+        "pendingClose": null,
+        "rows": [],
+        "selectedIndex": null
+      }
+    },
+    {
+      "kind": "MenuFlyout",
+      "shadowDelta": 2.705952380952381,
+      "activeRange": 25,
+      "fallbackRange": 0,
+      "chroma": 18,
+      "initial": {
+        "active": true,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 140,
+          "width": 260,
+          "x": -10,
+          "y": -62
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          60
+        ],
+        "opacity": 1,
+        "order": 15,
+        "pendingClose": null,
+        "rows": [
+          {
+            "height": 40,
+            "width": 238,
+            "x": 1,
+            "y": 3
+          },
+          {
+            "height": 40,
+            "width": 238,
+            "x": 1,
+            "y": 43
+          }
+        ],
+        "selectedIndex": null
+      },
+      "middle": {
+        "active": true,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 140,
+          "width": 260,
+          "x": -10,
+          "y": -12.280926025102666
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          10.280926025102666
+        ],
+        "opacity": 1,
+        "order": 15,
+        "pendingClose": null,
+        "rows": [
+          {
+            "height": 40,
+            "width": 238,
+            "x": 1,
+            "y": 3
+          },
+          {
+            "height": 40,
+            "width": 238,
+            "x": 1,
+            "y": 43
+          }
+        ],
+        "selectedIndex": null
+      },
+      "settled": {
+        "active": false,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 140,
+          "width": 260,
+          "x": -10,
+          "y": -2
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          0
+        ],
+        "opacity": 1,
+        "order": 15,
+        "pendingClose": null,
+        "rows": [
+          {
+            "height": 40,
+            "width": 238,
+            "x": 1,
+            "y": 3
+          },
+          {
+            "height": 40,
+            "width": 238,
+            "x": 1,
+            "y": 43
+          }
+        ],
+        "selectedIndex": null
+      }
+    },
+    {
+      "kind": "ToolTip",
+      "shadowDelta": 0.8095238095238095,
+      "activeRange": 5,
+      "fallbackRange": 0,
+      "chroma": 0,
+      "initial": {
+        "active": true,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 129,
+          "width": 248,
+          "x": -4,
+          "y": -1
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          0
+        ],
+        "opacity": 0,
+        "order": 15,
+        "pendingClose": null,
+        "rows": [],
+        "selectedIndex": null
+      },
+      "middle": {
+        "active": true,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 129,
+          "width": 248,
+          "x": -4,
+          "y": -1
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          0
+        ],
+        "opacity": 0.5988016567252357,
+        "order": 15,
+        "pendingClose": null,
+        "rows": [],
+        "selectedIndex": null
+      },
+      "settled": {
+        "active": false,
+        "actualPlacement": "Top",
+        "clip": {
+          "height": 129,
+          "width": 248,
+          "x": -4,
+          "y": -1
+        },
+        "isOpen": true,
+        "offset": [
+          0,
+          0
+        ],
+        "opacity": 1,
+        "order": 15,
+        "pendingClose": null,
+        "rows": [],
+        "selectedIndex": null
+      }
+    }
+  ],
+  "errors": [],
+  "boundary": "Browser pixels prove shadow/material/motion behavior; source parameters and native timing records are pinned, but full live native compositor parity is not asserted."
+}

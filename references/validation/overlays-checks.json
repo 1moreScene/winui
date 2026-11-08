@@ -1,0 +1,35 @@
+{
+  "checks": [
+    {
+      "exitCode": 0,
+      "command": "cargo fmt --all -- --check",
+      "log": "out/lint/overlays-fmt.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "cargo clippy --all-targets --locked -- -D warnings",
+      "log": "out/lint/overlays-clippy-host.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "cargo clippy --target wasm32-unknown-unknown --locked -- -D warnings",
+      "log": "out/lint/overlays-clippy-wasm.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "node tools/generate-enums.mjs --check",
+      "log": "out/lint/overlays-enums.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "node tools/verify-baseline.mjs --local",
+      "log": "out/lint/overlays-baseline.log"
+    },
+    {
+      "exitCode": 0,
+      "command": "npm.cmd --prefix gallery run typecheck",
+      "log": "out/lint/overlays-strict-ts.log"
+    }
+  ],
+  "generatedAtUtc": "2026-11-07T15:51:06.9640058Z"
+}

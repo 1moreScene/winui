@@ -1,0 +1,1419 @@
+{
+  "sdk": "Microsoft.WindowsAppSDK 2.5.4-experimental / WinUI 2.3.10-experimental",
+  "source": "Runtime CheckBox template AnimatedIcon / IAnimatedVisual.Duration / Markers",
+  "durationTicks": 26666666,
+  "durationMs": 2666.6666,
+  "markers": {
+    "NormalIndeterminate": 0.9690625,
+    "NormalOffToNormalOn_End": 0.2128125,
+    "NormalOffToNormalOn_Start": 0.0940625,
+    "NormalOffToPointerOverOff_End": 0.2440625,
+    "NormalOffToPointerOverOff_Start": 0.2190625,
+    "NormalOffToPressedOff_End": 0.2753125,
+    "NormalOffToPressedOff_Start": 0.2503125,
+    "NormalOnToNormalOff_End": 0.0253125,
+    "NormalOnToNormalOff_Start": 0,
+    "NormalOnToPointerOverOn_End": 0.0565625,
+    "NormalOnToPointerOverOn_Start": 0.0315625,
+    "NormalOnToPressedOn_End": 0.0878125,
+    "NormalOnToPressedOn_Start": 0.0628125,
+    "PointerOverIndeterminate": 0.9815625,
+    "PointerOverOffToNormalOff_End": 0.5253125,
+    "PointerOverOffToNormalOff_Start": 0.5003125,
+    "PointerOverOffToPointerOverOn_End": 0.4940625,
+    "PointerOverOffToPointerOverOn_Start": 0.3753125,
+    "PointerOverOffToPressedOff_End": 0.5565625,
+    "PointerOverOffToPressedOff_Start": 0.5315625,
+    "PointerOverOnToNormalOn_End": 0.3378125,
+    "PointerOverOnToNormalOn_Start": 0.3128125,
+    "PointerOverOnToPointerOverOff_End": 0.3065625,
+    "PointerOverOnToPointerOverOff_Start": 0.2815625,
+    "PointerOverOnToPressedOn_End": 0.3690625,
+    "PointerOverOnToPressedOn_Start": 0.3440625,
+    "PressedIndeterminate": 0.9940625,
+    "PressedOffToNormalOn_End": 0.9628125,
+    "PressedOffToNormalOn_Start": 0.8440625,
+    "PressedOffToPointerOverOn_End": 0.8378125,
+    "PressedOffToPointerOverOn_Start": 0.7190625,
+    "PressedOffToPressedOn_End": 0.7128125,
+    "PressedOffToPressedOn_Start": 0.6565625,
+    "PressedOnToNormalOff_End": 0.6503125,
+    "PressedOnToNormalOff_Start": 0.6253125,
+    "PressedOnToPointerOverOff_End": 0.6190625,
+    "PressedOnToPointerOverOff_Start": 0.5940625,
+    "PressedOnToPressedOff_End": 0.5878125,
+    "PressedOnToPressedOff_Start": 0.5628125
+  },
+  "segments": {
+    "NormalOffToNormalOn": {
+      "start": 0.0940625,
+      "end": 0.2128125,
+      "durationMs": 316.66665875
+    },
+    "NormalOffToPointerOverOff": {
+      "start": 0.2190625,
+      "end": 0.2440625,
+      "durationMs": 66.66666499999998
+    },
+    "NormalOffToPressedOff": {
+      "start": 0.2503125,
+      "end": 0.2753125,
+      "durationMs": 66.66666500000007
+    },
+    "NormalOnToNormalOff": {
+      "start": 0,
+      "end": 0.0253125,
+      "durationMs": 67.49999831250001
+    },
+    "NormalOnToPointerOverOn": {
+      "start": 0.0315625,
+      "end": 0.0565625,
+      "durationMs": 66.66666500000001
+    },
+    "NormalOnToPressedOn": {
+      "start": 0.0628125,
+      "end": 0.0878125,
+      "durationMs": 66.66666500000002
+    },
+    "PointerOverOffToNormalOff": {
+      "start": 0.5003125,
+      "end": 0.5253125,
+      "durationMs": 66.66666499999977
+    },
+    "PointerOverOffToPointerOverOn": {
+      "start": 0.3753125,
+      "end": 0.4940625,
+      "durationMs": 316.66665875000007
+    },
+    "PointerOverOffToPressedOff": {
+      "start": 0.5315625,
+      "end": 0.5565625,
+      "durationMs": 66.66666499999977
+    },
+    "PointerOverOnToNormalOn": {
+      "start": 0.3128125,
+      "end": 0.3378125,
+      "durationMs": 66.66666500000007
+    },
+    "PointerOverOnToPointerOverOff": {
+      "start": 0.2815625,
+      "end": 0.3065625,
+      "durationMs": 66.66666500000007
+    },
+    "PointerOverOnToPressedOn": {
+      "start": 0.3440625,
+      "end": 0.3690625,
+      "durationMs": 66.66666500000007
+    },
+    "PressedOffToNormalOn": {
+      "start": 0.8440625,
+      "end": 0.9628125,
+      "durationMs": 316.6666587499998
+    },
+    "PressedOffToPointerOverOn": {
+      "start": 0.7190625,
+      "end": 0.8378125,
+      "durationMs": 316.6666587499998
+    },
+    "PressedOffToPressedOn": {
+      "start": 0.6565625,
+      "end": 0.7128125,
+      "durationMs": 149.99999624999975
+    },
+    "PressedOnToNormalOff": {
+      "start": 0.6253125,
+      "end": 0.6503125,
+      "durationMs": 66.66666499999977
+    },
+    "PressedOnToPointerOverOff": {
+      "start": 0.5940625,
+      "end": 0.6190625,
+      "durationMs": 66.66666499999977
+    },
+    "PressedOnToPressedOff": {
+      "start": 0.5628125,
+      "end": 0.5878125,
+      "durationMs": 66.66666499999977
+    }
+  },
+  "animationsEnabled": true,
+  "glyphType": "Microsoft.UI.Xaml.Controls.AnimatedIcon",
+  "sourceType": "Microsoft.UI.Xaml.Controls.AnimatedVisuals.AnimatedAcceptVisualSource",
+  "xamlDpi": 1,
+  "cases": {
+    "normal": [
+      {
+        "name": "normal-000",
+        "startMs": 2.344,
+        "endMs": 11.9504,
+        "red": 94637,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-001",
+        "startMs": 13.3663,
+        "endMs": 16.2123,
+        "red": 94637,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-002",
+        "startMs": 21.6902,
+        "endMs": 28.5693,
+        "red": 532,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-003",
+        "startMs": 33.5882,
+        "endMs": 40.5554,
+        "red": 565,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-004",
+        "startMs": 46.0273,
+        "endMs": 52.674,
+        "red": 607,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-005",
+        "startMs": 57.8644,
+        "endMs": 64.8522,
+        "red": 544,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-006",
+        "startMs": 69.8982,
+        "endMs": 76.8568,
+        "red": 607,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-007",
+        "startMs": 81.9935,
+        "endMs": 89.1072,
+        "red": 1087,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-008",
+        "startMs": 93.8751,
+        "endMs": 101.1355,
+        "red": 1240,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-009",
+        "startMs": 106.303,
+        "endMs": 113.3451,
+        "red": 2004,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-010",
+        "startMs": 118.3991,
+        "endMs": 125.276,
+        "red": 3483,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-011",
+        "startMs": 130.5306,
+        "endMs": 137.5582,
+        "red": 4207,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-012",
+        "startMs": 142.3069,
+        "endMs": 150.0846,
+        "red": 4913,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-013",
+        "startMs": 154.88,
+        "endMs": 161.7138,
+        "red": 5629,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-014",
+        "startMs": 166.5033,
+        "endMs": 173.9265,
+        "red": 5717,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-015",
+        "startMs": 178.7025,
+        "endMs": 185.811,
+        "red": 6187,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-016",
+        "startMs": 190.7624,
+        "endMs": 197.8946,
+        "red": 6389,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-017",
+        "startMs": 202.8672,
+        "endMs": 210.1443,
+        "red": 6364,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-018",
+        "startMs": 214.9525,
+        "endMs": 222.1149,
+        "red": 6454,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-019",
+        "startMs": 227.0921,
+        "endMs": 234.3177,
+        "red": 6745,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-020",
+        "startMs": 239.2393,
+        "endMs": 246.3689,
+        "red": 6832,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-021",
+        "startMs": 251.3594,
+        "endMs": 258.4749,
+        "red": 6911,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-022",
+        "startMs": 263.4965,
+        "endMs": 271.2614,
+        "red": 6970,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-023",
+        "startMs": 275.9182,
+        "endMs": 282.7228,
+        "red": 7029,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-024",
+        "startMs": 288.0588,
+        "endMs": 294.8564,
+        "red": 7063,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-025",
+        "startMs": 300.0982,
+        "endMs": 307.0855,
+        "red": 7086,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-026",
+        "startMs": 312.2248,
+        "endMs": 319.1046,
+        "red": 6993,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-027",
+        "startMs": 324.3347,
+        "endMs": 331.1988,
+        "red": 7001,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-028",
+        "startMs": 336.4625,
+        "endMs": 343.2652,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-029",
+        "startMs": 348.3477,
+        "endMs": 355.3576,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-030",
+        "startMs": 360.8977,
+        "endMs": 367.6071,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-031",
+        "startMs": 372.8075,
+        "endMs": 379.3457,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-032",
+        "startMs": 384.7368,
+        "endMs": 391.4819,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-033",
+        "startMs": 396.8578,
+        "endMs": 403.5917,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-034",
+        "startMs": 408.9729,
+        "endMs": 415.6695,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-035",
+        "startMs": 421.049,
+        "endMs": 427.8326,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-036",
+        "startMs": 433.1856,
+        "endMs": 439.9224,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-037",
+        "startMs": 445.3231,
+        "endMs": 452.1227,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "normal-038",
+        "startMs": 457.3823,
+        "endMs": 464.1662,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      }
+    ],
+    "coalesced": [
+      {
+        "name": "coalesced-000",
+        "startMs": 0.7475,
+        "endMs": 2.5984,
+        "red": 94637,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-001",
+        "startMs": 8.6067,
+        "endMs": 15.8237,
+        "red": 27,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-002",
+        "startMs": 20.8668,
+        "endMs": 27.5673,
+        "red": 545,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-003",
+        "startMs": 31.906,
+        "endMs": 39.4576,
+        "red": 584,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-004",
+        "startMs": 44.5455,
+        "endMs": 51.6697,
+        "red": 638,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-005",
+        "startMs": 55.9111,
+        "endMs": 63.9394,
+        "red": 560,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-006",
+        "startMs": 68.2313,
+        "endMs": 75.9348,
+        "red": 919,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-007",
+        "startMs": 80.0127,
+        "endMs": 87.3765,
+        "red": 1227,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-008",
+        "startMs": 92.3731,
+        "endMs": 99.3084,
+        "red": 1742,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-009",
+        "startMs": 104.4744,
+        "endMs": 111.3957,
+        "red": 2794,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-010",
+        "startMs": 116.423,
+        "endMs": 123.5211,
+        "red": 3910,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-011",
+        "startMs": 128.5176,
+        "endMs": 135.5336,
+        "red": 4766,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-012",
+        "startMs": 140.5852,
+        "endMs": 147.5655,
+        "red": 5346,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-013",
+        "startMs": 152.9284,
+        "endMs": 159.7043,
+        "red": 5647,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-014",
+        "startMs": 165.0466,
+        "endMs": 171.8016,
+        "red": 6041,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-015",
+        "startMs": 177.233,
+        "endMs": 184.6481,
+        "red": 6263,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-016",
+        "startMs": 189.0795,
+        "endMs": 196.24,
+        "red": 6337,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-017",
+        "startMs": 201.1636,
+        "endMs": 208.5657,
+        "red": 6382,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-018",
+        "startMs": 213.3701,
+        "endMs": 220.4516,
+        "red": 6680,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-019",
+        "startMs": 225.4808,
+        "endMs": 232.531,
+        "red": 6782,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-020",
+        "startMs": 237.5393,
+        "endMs": 244.6206,
+        "red": 6872,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-021",
+        "startMs": 249.6954,
+        "endMs": 256.8471,
+        "red": 6924,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-022",
+        "startMs": 261.7051,
+        "endMs": 269.003,
+        "red": 6996,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-023",
+        "startMs": 273.9262,
+        "endMs": 281.0133,
+        "red": 7044,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-024",
+        "startMs": 286.7008,
+        "endMs": 293.2688,
+        "red": 7073,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-025",
+        "startMs": 298.1576,
+        "endMs": 305.119,
+        "red": 7091,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-026",
+        "startMs": 310.2939,
+        "endMs": 317.4312,
+        "red": 6999,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-027",
+        "startMs": 322.3916,
+        "endMs": 329.5996,
+        "red": 6998,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-028",
+        "startMs": 334.5294,
+        "endMs": 342.0305,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-029",
+        "startMs": 346.6377,
+        "endMs": 353.6343,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-030",
+        "startMs": 358.6928,
+        "endMs": 365.6589,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-031",
+        "startMs": 370.8622,
+        "endMs": 377.7201,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-032",
+        "startMs": 383.0391,
+        "endMs": 389.8468,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-033",
+        "startMs": 395.1204,
+        "endMs": 402.0811,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-034",
+        "startMs": 407.2723,
+        "endMs": 414.0328,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-035",
+        "startMs": 419.3381,
+        "endMs": 426.1504,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-036",
+        "startMs": 431.3743,
+        "endMs": 438.5189,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-037",
+        "startMs": 443.5016,
+        "endMs": 450.3012,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      },
+      {
+        "name": "coalesced-038",
+        "startMs": 455.6992,
+        "endMs": 462.8443,
+        "red": 7003,
+        "captureScale": 1.25,
+        "foreground": true,
+        "capture": "foreground-client",
+        "state": "NormalOn"
+      }
+    ]
+  },
+  "actions": {
+    "normal": [
+      "IsChecked=true"
+    ],
+    "coalesced": [
+      "PointerOverOff",
+      "PressedOff",
+      "IsChecked=true",
+      "PointerOverOn"
+    ]
+  },
+  "boundary": "Own-window runtime probe using the same WinUI DLLs as the Store Gallery. Coalesced case sets AnimatedIcon states synchronously, not OS pointer input. Foreground capture brackets include compositor latency; exact present-time/pixel parity is not accepted.",
+  "captureAnalysis": {
+    "normal": {
+      "captureScale": 1.25,
+      "maskPixels": 11,
+      "samples": [
+        {
+          "timeMs": 21.6902,
+          "endMs": 28.5693,
+          "whiteCoverage": 0.020054694621695533,
+          "backgroundRed": 0.39335180055401664
+        },
+        {
+          "timeMs": 33.5882,
+          "endMs": 40.5554,
+          "whiteCoverage": 0.02324521422060164,
+          "backgroundRed": 0.4099722991689751
+        },
+        {
+          "timeMs": 46.0273,
+          "endMs": 52.674,
+          "whiteCoverage": 0.02780309936189608,
+          "backgroundRed": 0.4376731301939058
+        },
+        {
+          "timeMs": 57.8644,
+          "endMs": 64.8522,
+          "whiteCoverage": 0.018687329079307202,
+          "backgroundRed": 0.4182825484764543
+        },
+        {
+          "timeMs": 69.8982,
+          "endMs": 76.8568,
+          "whiteCoverage": 0.02324521422060164,
+          "backgroundRed": 0.48753462603878117
+        },
+        {
+          "timeMs": 81.9935,
+          "endMs": 89.1072,
+          "whiteCoverage": 0.1048313582497721,
+          "backgroundRed": 0.6454293628808865
+        },
+        {
+          "timeMs": 93.8751,
+          "endMs": 101.1355,
+          "whiteCoverage": 0.1253418413855971,
+          "backgroundRed": 0.7368421052631579
+        },
+        {
+          "timeMs": 106.303,
+          "endMs": 113.3451,
+          "whiteCoverage": 0.25752051048313584,
+          "backgroundRed": 0.9113573407202216
+        },
+        {
+          "timeMs": 118.3991,
+          "endMs": 125.276,
+          "whiteCoverage": 0.49134001823154055,
+          "backgroundRed": 1.448753462603878
+        },
+        {
+          "timeMs": 130.5306,
+          "endMs": 137.5582,
+          "whiteCoverage": 0.6080218778486782,
+          "backgroundRed": 1.664819944598338
+        },
+        {
+          "timeMs": 142.3069,
+          "endMs": 150.0846,
+          "whiteCoverage": 0.7233363719234275,
+          "backgroundRed": 2.0138504155124655
+        },
+        {
+          "timeMs": 154.88,
+          "endMs": 161.7138,
+          "whiteCoverage": 0.8432087511394712,
+          "backgroundRed": 2.3545706371191137
+        },
+        {
+          "timeMs": 166.5033,
+          "endMs": 173.9265,
+          "whiteCoverage": 0.8505013673655424,
+          "backgroundRed": 2.4321329639889195
+        },
+        {
+          "timeMs": 178.7025,
+          "endMs": 185.811,
+          "whiteCoverage": 0.9247948951686418,
+          "backgroundRed": 2.6398891966759
+        },
+        {
+          "timeMs": 190.7624,
+          "endMs": 197.8946,
+          "whiteCoverage": 0.955788514129444,
+          "backgroundRed": 2.739612188365651
+        },
+        {
+          "timeMs": 202.8672,
+          "endMs": 210.1443,
+          "whiteCoverage": 0.9539653600729262,
+          "backgroundRed": 2.714681440443213
+        },
+        {
+          "timeMs": 214.9525,
+          "endMs": 222.1149,
+          "whiteCoverage": 0.9608021877848678,
+          "backgroundRed": 2.7534626038781163
+        },
+        {
+          "timeMs": 227.0921,
+          "endMs": 234.3177,
+          "whiteCoverage": 0.9840474020054695,
+          "backgroundRed": 2.919667590027701
+        },
+        {
+          "timeMs": 239.2393,
+          "endMs": 246.3689,
+          "whiteCoverage": 0.9913400182315406,
+          "backgroundRed": 2.914127423822715
+        },
+        {
+          "timeMs": 251.3594,
+          "endMs": 258.4749,
+          "whiteCoverage": 0.9972652689152234,
+          "backgroundRed": 2.9168975069252077
+        },
+        {
+          "timeMs": 263.4965,
+          "endMs": 271.2614,
+          "whiteCoverage": 0.9995442114858706,
+          "backgroundRed": 2.9806094182825484
+        },
+        {
+          "timeMs": 275.9182,
+          "endMs": 282.7228,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.0941828254847645
+        },
+        {
+          "timeMs": 288.0588,
+          "endMs": 294.8564,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.1662049861495847
+        },
+        {
+          "timeMs": 300.0982,
+          "endMs": 307.0855,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.2132963988919667
+        },
+        {
+          "timeMs": 312.2248,
+          "endMs": 319.1046,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.0193905817174516
+        },
+        {
+          "timeMs": 324.3347,
+          "endMs": 331.1988,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.0304709141274238
+        },
+        {
+          "timeMs": 336.4625,
+          "endMs": 343.2652,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 348.3477,
+          "endMs": 355.3576,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 360.8977,
+          "endMs": 367.6071,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 372.8075,
+          "endMs": 379.3457,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 384.7368,
+          "endMs": 391.4819,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 396.8578,
+          "endMs": 403.5917,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 408.9729,
+          "endMs": 415.6695,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 421.049,
+          "endMs": 427.8326,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 433.1856,
+          "endMs": 439.9224,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 445.3231,
+          "endMs": 452.1227,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 457.3823,
+          "endMs": 464.1662,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        }
+      ],
+      "first95Percent": {
+        "timeMs": 190.7624,
+        "endMs": 197.8946,
+        "whiteCoverage": 0.955788514129444,
+        "backgroundRed": 2.739612188365651
+      }
+    },
+    "coalesced": {
+      "captureScale": 1.25,
+      "maskPixels": 11,
+      "samples": [
+        {
+          "timeMs": 8.6067,
+          "endMs": 15.8237,
+          "whiteCoverage": 0,
+          "backgroundRed": 0.07479224376731301
+        },
+        {
+          "timeMs": 20.8668,
+          "endMs": 27.5673,
+          "whiteCoverage": 0.021422060164083864,
+          "backgroundRed": 0.3988919667590028
+        },
+        {
+          "timeMs": 31.906,
+          "endMs": 39.4576,
+          "whiteCoverage": 0.02552415679124886,
+          "backgroundRed": 0.42105263157894735
+        },
+        {
+          "timeMs": 44.5455,
+          "endMs": 51.6697,
+          "whiteCoverage": 0.0300820419325433,
+          "backgroundRed": 0.4709141274238227
+        },
+        {
+          "timeMs": 55.9111,
+          "endMs": 63.9394,
+          "whiteCoverage": 0.019143117593436645,
+          "backgroundRed": 0.4404432132963989
+        },
+        {
+          "timeMs": 68.2313,
+          "endMs": 75.9348,
+          "whiteCoverage": 0.0674567000911577,
+          "backgroundRed": 0.6454293628808865
+        },
+        {
+          "timeMs": 80.0127,
+          "endMs": 87.3765,
+          "whiteCoverage": 0.12898814949863263,
+          "backgroundRed": 0.6869806094182825
+        },
+        {
+          "timeMs": 92.3731,
+          "endMs": 99.3084,
+          "whiteCoverage": 0.21103008204193255,
+          "backgroundRed": 0.9085872576177285
+        },
+        {
+          "timeMs": 104.4744,
+          "endMs": 111.3957,
+          "whiteCoverage": 0.381950774840474,
+          "backgroundRed": 1.2853185595567866
+        },
+        {
+          "timeMs": 116.423,
+          "endMs": 123.5211,
+          "whiteCoverage": 0.5583409298085689,
+          "backgroundRed": 1.5429362880886426
+        },
+        {
+          "timeMs": 128.5176,
+          "endMs": 135.5336,
+          "whiteCoverage": 0.707383773928897,
+          "backgroundRed": 1.9085872576177285
+        },
+        {
+          "timeMs": 140.5852,
+          "endMs": 147.5655,
+          "whiteCoverage": 0.7812215132178669,
+          "backgroundRed": 2.2880886426592797
+        },
+        {
+          "timeMs": 152.9284,
+          "endMs": 159.7043,
+          "whiteCoverage": 0.845031905195989,
+          "backgroundRed": 2.3684210526315788
+        },
+        {
+          "timeMs": 165.0466,
+          "endMs": 171.8016,
+          "whiteCoverage": 0.8910665451230629,
+          "backgroundRed": 2.6398891966759
+        },
+        {
+          "timeMs": 177.233,
+          "endMs": 184.6481,
+          "whiteCoverage": 0.9425706472196901,
+          "backgroundRed": 2.6398891966759
+        },
+        {
+          "timeMs": 189.0795,
+          "endMs": 196.24,
+          "whiteCoverage": 0.9516864175022789,
+          "backgroundRed": 2.6897506925207755
+        },
+        {
+          "timeMs": 201.1636,
+          "endMs": 208.5657,
+          "whiteCoverage": 0.9553327256153145,
+          "backgroundRed": 2.731301939058172
+        },
+        {
+          "timeMs": 213.3701,
+          "endMs": 220.4516,
+          "whiteCoverage": 0.9790337283500455,
+          "backgroundRed": 2.9168975069252077
+        },
+        {
+          "timeMs": 225.4808,
+          "endMs": 232.531,
+          "whiteCoverage": 0.9872379216043756,
+          "backgroundRed": 2.914127423822715
+        },
+        {
+          "timeMs": 237.5393,
+          "endMs": 244.6206,
+          "whiteCoverage": 0.9940747493163172,
+          "backgroundRed": 2.919667590027701
+        },
+        {
+          "timeMs": 249.6954,
+          "endMs": 256.8471,
+          "whiteCoverage": 0.9981768459434822,
+          "backgroundRed": 2.9168975069252077
+        },
+        {
+          "timeMs": 261.7051,
+          "endMs": 269.003,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.0249307479224377
+        },
+        {
+          "timeMs": 273.9262,
+          "endMs": 281.0133,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.1246537396121883
+        },
+        {
+          "timeMs": 286.7008,
+          "endMs": 293.2688,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.188365650969529
+        },
+        {
+          "timeMs": 298.1576,
+          "endMs": 305.119,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.224376731301939
+        },
+        {
+          "timeMs": 310.2939,
+          "endMs": 317.4312,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.0304709141274238
+        },
+        {
+          "timeMs": 322.3916,
+          "endMs": 329.5996,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.027700831024931
+        },
+        {
+          "timeMs": 334.5294,
+          "endMs": 342.0305,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 346.6377,
+          "endMs": 353.6343,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 358.6928,
+          "endMs": 365.6589,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 370.8622,
+          "endMs": 377.7201,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 383.0391,
+          "endMs": 389.8468,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 395.1204,
+          "endMs": 402.0811,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 407.2723,
+          "endMs": 414.0328,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 419.3381,
+          "endMs": 426.1504,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 431.3743,
+          "endMs": 438.5189,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 443.5016,
+          "endMs": 450.3012,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        },
+        {
+          "timeMs": 455.6992,
+          "endMs": 462.8443,
+          "whiteCoverage": 1,
+          "backgroundRed": 3.03601108033241
+        }
+      ],
+      "first95Percent": {
+        "timeMs": 189.0795,
+        "endMs": 196.24,
+        "whiteCoverage": 0.9516864175022789,
+        "backgroundRed": 2.6897506925207755
+      }
+    }
+  },
+  "recordedAtUtc": "2026-11-07T05:01:05.511Z",
+  "dllSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013"
+}

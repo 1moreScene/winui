@@ -1,0 +1,16 @@
+/* ControlExample: 12 DIP preview padding; Options presenter padding 16.
+   Page XAML fixes the inner Calendar options to 220 and Color options to 250. */
+.picker-gallery .basic-live.with-options{grid-template-columns:minmax(0,1fr) auto auto}
+.picker-gallery .basic-live>.options{max-width:none;width:max-content}
+.picker-calendar-options{width:220px;display:flex;flex-direction:column;gap:0;margin-top:-5px}
+.picker-calendar-options>label{margin-top:10px}
+.picker-calendar-options>label>.gallery-combobox{width:220px}
+.picker-color-options{width:250px;display:flex;flex-direction:column;margin-top:-5px}
+.picker-gallery #picker-calendar .basic-preview{align-self:start}
+.picker-support-note{font-size:12px;line-height:16px;color:var(--secondary);margin:8px 0 0;max-width:220px}
+.picker-shape{display:flex;flex-direction:column;gap:0;margin-top:8px}
+.picker-shape>span{margin-bottom:8px}
+.picker-rectangle{display:flex;flex-direction:column;gap:12px;margin-top:12px}
+@media(max-width:640px){.picker-gallery .basic-live.with-options{grid-template-columns:minmax(0,1fr)}.picker-gallery .basic-live>.options{width:100%}}
+/* Native Options StackPanel gives its CheckBox children the full column width. */
+.picker-calendar-options>.gallery-checkbox,.picker-color-options>.gallery-checkbox{width:100%;align-self:stretch}

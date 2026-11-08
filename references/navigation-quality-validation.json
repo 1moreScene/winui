@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-08",
+  "implementation": "Existing Rust NavigationView, shared TypeScript/React adapters",
+  "baseline": {
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "source": "NavigationView.cpp::AnimateSelectionChanged / PlayIndicatorNonSameLevelAnimations"
+  },
+  "fixes": [
+    "Use the native resource fallback for the Gallery navigation because its Canvas cannot sample external DOM.",
+    "Preserve the indicator timeline when the same item scrolls or reflows.",
+    "Scale indicators locally across indentation levels; retain same-level stretch and rapid reversal behavior.",
+    "Clip each indicator to its owning menu or footer.",
+    "Retire InputProbe and its legacy input protocol; use the real TextBox for IME diagnostics."
+  ],
+  "performance": {
+    "before": {
+      "elapsedMs": 3531,
+      "before": {
+        "frames": 5,
+        "averageFrameMs": 112.1800000011921,
+        "maxFrameMs": 164.80000001192093
+      },
+      "after": {
+        "frames": 41,
+        "averageFrameMs": 97.30243902380873,
+        "maxFrameMs": 164.80000001192093
+      },
+      "averageNewFrameMs": 95.23611111028328
+    },
+    "after": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "moves": 35,
+      "elapsedMs": 384,
+      "before": {
+        "frames": 65,
+        "averageFrameMs": 0.9938461551299462,
+        "maxFrameMs": 6.4000000059604645
+      },
+      "after": {
+        "frames": 100,
+        "averageFrameMs": 0.8879999995231629,
+        "maxFrameMs": 6.4000000059604645
+      },
+      "averageNewFrameMs": 0.6914285676819938
+    },
+    "measurement": "Chrome, Canvas2D, 1440x1000, 35 pointer moves; SDK measured drawing time, not input-to-display latency or a cross-device FPS guarantee."
+  },
+  "suites": [
+    {
+      "result": "out/navigation-quality-results.json",
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "result": "out/home-navigation-regression-results.json",
+      "passed": 11,
+      "failed": 0
+    },
+    {
+      "result": "out/sample-page-results.json",
+      "passed": 14,
+      "failed": 0
+    }
+  ],
+  "rust": {
+    "scope": "navigation_indicator, navigation, text_scroll",
+    "passed": 33,
+    "failed": 0,
+    "log": "out/navigation-quality-rust-tests.log"
+  },
+  "fullRust": {
+    "passed": false,
+    "log": "out/navigation-quality-full-rust-tests.log",
+    "note": "Full run captured two failures in concurrently developed CommandBar tests: closed_secondary_accelerator_invokes_and_roving_tab_is_single and ordered_overflow_focus_and_close_do_not_reopen. Navigation and TextBox suites are validated separately."
+  },
+  "audit": "references/control-origins.json",
+  "screenshot": "out/navigation-performance/settled.png",
+  "productionWasm": {
+    "path": "out/gallery-page-preview/assets/winui_bg-BUyb2q7O.wasm",
+    "sha256": "0e35f72b1b7fbb9326db586b5386f75ff0d54f715051efa6791c7f4672bef023",
+    "matchesCurrentBinary": true
+  },
+  "sources": [
+    {
+      "path": "src/animation.rs",
+      "sha256": "88a8c28d69b9960880b2dc5145f89ed73f4e8b57cfcf00501f88fd1be66099fb"
+    },
+    {
+      "path": "src/navigation.rs",
+      "sha256": "6ef7f32ab0e6ebccd30aeb710e9b7a708984e531716265cd7729b0ca838de6ad"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "c1dd923af94d9568f19b4e43e8b7023faf854bca4239071c55ca5d30a57c80df"
+    },
+    {
+      "path": "tests/navigation_indicator.rs",
+      "sha256": "05de0ffb6dd9b498b64fe16827258f12886ac0cb6d280ae82ce91732224d804d"
+    },
+    {
+      "path": "gallery/src/GalleryNavigation.tsx",
+      "sha256": "b8ab4b8c31e972dbbc8e5c6fa0b79c0fd1aaa0678711bc8686d17a56dd898025"
+    },
+    {
+      "path": "gallery/tests/navigation-quality.spec.ts",
+      "sha256": "c483c8b4d2f0df8678fb369b9c63bbbced8a78da6b9c76aa9d20d785b2118596"
+    },
+    {
+      "path": "tools/check-control-origins.mjs",
+      "sha256": "ee4848f01baec7d0d4b1945c6a3f8edfd57c190f85c9fd0c9f6c6d7a043963d1"
+    }
+  ],
+  "limits": [
+    "No native release-window frame-by-frame Composition parity acceptance.",
+    "Control origin audit classifies public APIs; it does not certify implementation completeness.",
+    "The real browser IME test covers composition events and commit; OS candidate-window visuals are not captured."
+  ]
+}

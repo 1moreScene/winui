@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-08",
+  "baseline": "WinUI Gallery 7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "removedHtmlWidgets": {
+    "input": 66,
+    "select": 45,
+    "button": 64,
+    "details": 34,
+    "summary": 34,
+    "option": 47
+  },
+  "remainingHtmlSubstitutes": 0,
+  "implementedPagesAudited": 57,
+  "pageAudit": "out/gallery-controls/page-audit.json",
+  "implementation": "Existing Rust SDK controls through application mounting adapters. Source DOM is a child of the real Expander, with shared Rust ScrollViewer chrome.",
+  "suites": [
+    {
+      "path": "out/gallery-controls-results.json",
+      "passed": 5,
+      "failed": 0
+    },
+    {
+      "path": "out/gallery-controls-pages-results.json",
+      "passed": 14,
+      "failed": 0
+    },
+    {
+      "path": "out/gallery-controls-regression-results.json",
+      "passed": 17,
+      "failed": 0
+    }
+  ],
+  "browserChecks": 36,
+  "rust": {
+    "passed": 69,
+    "failed": 0,
+    "suites": [
+      "composed",
+      "overlays",
+      "navigation_indicator",
+      "navigation",
+      "text_scroll"
+    ],
+    "log": "out/gallery-controls-rust.log"
+  },
+  "productionWasm": {
+    "path": "out/gallery-controls-preview/assets/winui_bg-BC-TlQlX.wasm",
+    "sha256": "cc48613e1b8556858e224705687a3c3aa37e9182a30fc803486369633ce1e92b",
+    "matchesCurrentBinary": false
+  },
+  "sources": [
+    {
+      "path": "out/gallery-controls-dev/src/GalleryControls.tsx",
+      "sha256": "a53b4e5b4f2e3907df86f2377aa7f1f6ebfd1c4b9bb87a3c4b9f06d7570301df",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-controls-dev/src/gallery-controls.css",
+      "sha256": "b5ef73a34a035484ae88cbc86dcf8a14d4edd5d45a1332133329f2fce74f38ea",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-controls-dev/src/HomePage.tsx",
+      "sha256": "7e488dd9737ed09c3cb6b2cb933d79807edee4d35a5b53f27d243048a94936ef",
+      "matchesCurrentSource": false
+    },
+    {
+      "path": "out/gallery-controls-dev/src/GalleryPageHeader.tsx",
+      "sha256": "34b87da3db6e6aa13962e5b8b8c9869fe80fa6c774d1e4c2250d04d45691e1ab",
+      "matchesCurrentSource": true
+    },
+    {
+      "path": "out/gallery-controls-dev/src/react.tsx",
+      "sha256": "a872eafe874319ab1a30764a84c3696665bb0b0dd02a883953b6ad1cbbca429a",
+      "matchesCurrentSource": false
+    },
+    {
+      "path": "out/gallery-controls-dev/src/scene.ts",
+      "sha256": "15af0eb8d4d645fd4b338e421da47df78b84daa467c12c7105b7be5979c1871a",
+      "matchesCurrentSource": false
+    },
+    {
+      "path": "out/gallery-controls-dev/src/global-scrollbars.ts",
+      "sha256": "895e7781aa7223600fa4ea4a4a86a1932b081dcf450a11fdb10c8eebedd98341",
+      "matchesCurrentSource": true
+    }
+  ],
+  "finalBuildVerification": {
+    "result": "out/gallery-controls-final-results.json",
+    "passed": 4,
+    "failed": 0,
+    "scope": "Checkbox/ComboBox pointer and keyboard, real Expander child layout, code ScrollViewer in three themes, Home SelectorBar/search/narrow layout/cached lifecycle.",
+    "wasm": {
+      "path": "out/gallery-controls-final-preview/assets/winui_bg-DIVOMALe.wasm",
+      "sha256": "4f66adda8462329ea8ab92d526867ae605b5964f9bdb187728853d97db567511",
+      "matchesCurrentBinary": true
+    },
+    "sources": [
+      {
+        "path": "out/gallery-controls-final-dev/src/GalleryControls.tsx",
+        "sha256": "a53b4e5b4f2e3907df86f2377aa7f1f6ebfd1c4b9bb87a3c4b9f06d7570301df",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-controls-final-dev/src/gallery-controls.css",
+        "sha256": "b5ef73a34a035484ae88cbc86dcf8a14d4edd5d45a1332133329f2fce74f38ea",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-controls-final-dev/src/HomePage.tsx",
+        "sha256": "e2e33c8406e5351baab7cfb83c13898bb5193ea13afaec66b9d315eb593cb552",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-controls-final-dev/src/GalleryPageHeader.tsx",
+        "sha256": "34b87da3db6e6aa13962e5b8b8c9869fe80fa6c774d1e4c2250d04d45691e1ab",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-controls-final-dev/src/react.tsx",
+        "sha256": "d38ba6dfda3f67246d2b9dd1cecc12a8f284cf6f64c8e246321ef377daaf6dd3",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-controls-final-dev/src/scene.ts",
+        "sha256": "de030a05134d4cd9511febd087788a71610ff2423d6461bf31d679befcb05733",
+        "matchesCurrentSource": true
+      },
+      {
+        "path": "out/gallery-controls-final-dev/src/global-scrollbars.ts",
+        "sha256": "895e7781aa7223600fa4ea4a4a86a1932b081dcf450a11fdb10c8eebedd98341",
+        "matchesCurrentSource": true
+      }
+    ],
+    "notes": [
+      "After the complete baseline, concurrent Frame work changed a page DOM identifier, inert projection during navigation, navigation-stopped callbacks, and added Scene.isDisposed. The reviewed diffs do not change GalleryControls painting or input implementation. These four checks validate the current build separately."
+    ]
+  },
+  "screenshots": [
+    "out/gallery-controls-button.png",
+    "out/gallery-controls-source.png",
+    "out/gallery-controls-scroll-Light.png",
+    "out/gallery-controls-scroll-Dark.png",
+    "out/gallery-controls-scroll-HighContrast.png",
+    "out/gallery-controls-mobile.png"
+  ],
+  "limits": [
+    "The immutable source snapshot and build were tested; current-source/binary comparisons identify concurrent workspace changes.",
+    "Browser behavior and control origin checks do not certify complete native visual or Composition animation parity.",
+    "Newly added controls in concurrent SDK work are not certified by this Gallery audit unless their page appears in the recorded page list."
+  ]
+}

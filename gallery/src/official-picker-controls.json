@@ -1,0 +1,633 @@
+{
+  "commit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "CalendarDatePicker": {
+      "description": "A control that lets users pick a date value using a calendar.",
+      "samples": [
+        {
+          "title": "CalendarDatePicker with a header and placeholder text.",
+          "xaml": "<CalendarDatePicker PlaceholderText=\"Pick a date\" Header=\"Calendar\" />",
+          "code": "",
+          "options": []
+        }
+      ]
+    },
+    "CalendarView": {
+      "description": "CalendarView shows a larger view for showing and selecting dates.  DatePicker by contrast has a compact view with inline selection.",
+      "samples": [
+        {
+          "title": "A basic calendar view.",
+          "xaml": "<CalendarView \n    SelectionMode=\"$(SelectionMode)\" \n    IsGroupLabelVisible=\"$(IsGroupLabelVisible)\"\n    IsOutOfScopeEnabled=\"$(IsOutOfScopeEnabled)\"\n    Language=\"$(Language)\"\n    CalendarIdentifier=\"$(CalendarIdentifier)\" />",
+          "code": "",
+          "options": [
+            {
+              "kind": "CheckBox",
+              "name": "isGroupLabelVisible",
+              "label": "IsGroupLabelVisible",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "isOutOfScopeEnabled",
+              "label": "IsOutOfScopeEnabled",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "ComboBox",
+              "name": "selectionMode",
+              "label": "SelectionMode",
+              "checked": false,
+              "items": [
+                "None",
+                "Single",
+                "Multiple"
+              ]
+            },
+            {
+              "kind": "ComboBox",
+              "name": "calendarIdentifier",
+              "label": "CalendarIdentifier",
+              "checked": false,
+              "items": []
+            },
+            {
+              "kind": "ComboBox",
+              "name": "calendarLanguages",
+              "label": "Language",
+              "checked": false,
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    "ColorPicker": {
+      "description": "A selectable color spectrum.",
+      "samples": [
+        {
+          "title": "ColorPicker Properties.",
+          "xaml": "<ColorPicker\n      ColorSpectrumShape=\"$(ColorSpectrumShape)\"\n      IsMoreButtonVisible=\"$(IsMoreButtonVisible)\"\n      IsColorSliderVisible=\"$(IsColorSliderVisible)\"\n      IsColorChannelTextInputVisible=\"$(IsColorChannelTextInputVisible)\"\n      IsHexInputVisible=\"$(IsHexInputVisible)\"\n      IsAlphaEnabled=\"$(IsAlphaEnabled)\"\n      IsAlphaSliderVisible=\"$(IsAlphaSliderVisible)\"\n      IsAlphaTextInputVisible=\"$(IsAlphaTextInputVisible)\" />",
+          "code": "",
+          "options": [
+            {
+              "kind": "CheckBox",
+              "name": "moreBtn",
+              "label": "IsMoreButtonVisible",
+              "checked": false,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "colorSlider",
+              "label": "IsColorSliderVisible",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "colorChannelInput",
+              "label": "IsColorChannelTextInputVisible",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "hexInput",
+              "label": "IsHexInputVisible",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "alpha",
+              "label": "Alpha Enabled",
+              "checked": false,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "alphaSlider",
+              "label": "IsAlphaSliderVisible",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "CheckBox",
+              "name": "alphaTextInput",
+              "label": "IsAlphaTextInputVisible",
+              "checked": true,
+              "items": []
+            },
+            {
+              "kind": "RadioButtons",
+              "name": "ColorSpectrumShapeRadioButtons",
+              "label": "Colorspectrum shape",
+              "checked": false,
+              "items": [
+                "Box",
+                "Ring"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "DatePicker": {
+      "description": "Use a DatePicker to let users set a date in your app, for example to schedule an appointment. The DatePicker displays three controls for month, date, and year. These controls are easy to use with touch or mouse, and they can be styled and configured in several different ways.",
+      "samples": [
+        {
+          "title": "A simple DatePicker with a header.",
+          "xaml": "<DatePicker Header=\"Pick a date\" />",
+          "code": "",
+          "options": []
+        },
+        {
+          "title": "A DatePicker with day formatted and year hidden.",
+          "xaml": "<DatePicker DayFormat=\"{}{day.integer} ({dayofweek.abbreviated})\" YearVisible=\"False\" />",
+          "code": "",
+          "options": []
+        }
+      ]
+    },
+    "TimePicker": {
+      "description": "Use a TimePicker to let users set a time in your app, for example to set a reminder. The TimePicker displays three controls for hour, minute, and AM/PM. These controls are easy to use with touch or mouse, and they can be styled and configured in several different ways.",
+      "samples": [
+        {
+          "title": "A simple TimePicker that uses the clock format for the user's region.",
+          "xaml": "<TimePicker/>",
+          "code": "",
+          "options": []
+        },
+        {
+          "title": "A TimePicker with a header and minute increments specified.",
+          "xaml": "<TimePicker Header=\"Arrival time\" MinuteIncrement=\"15\" />",
+          "code": "",
+          "options": []
+        },
+        {
+          "title": "Use ClockIdentifier to override the regional clock format.",
+          "xaml": "<StackPanel xmlns:sys=\"using:System\" Spacing=\"8\">\n    <TimePicker ClockIdentifier=\"12HourClock\" Header=\"12-hour clock\" SelectedTime=\"{x:Bind sys:DateTime.Now.TimeOfDay}\" />\n    <TimePicker ClockIdentifier=\"24HourClock\" Header=\"24-hour clock\" SelectedTime=\"{x:Bind sys:DateTime.Now.TimeOfDay}\" />\n</StackPanel>",
+          "code": "",
+          "options": []
+        }
+      ]
+    }
+  },
+  "languages": [
+    {
+      "name": "English",
+      "code": "en"
+    },
+    {
+      "name": "Arabic",
+      "code": "ar"
+    },
+    {
+      "name": "Afrikaans",
+      "code": "af"
+    },
+    {
+      "name": "Albanian",
+      "code": "sq"
+    },
+    {
+      "name": "Amharic",
+      "code": "am"
+    },
+    {
+      "name": "Armenian",
+      "code": "hy"
+    },
+    {
+      "name": "Assamese",
+      "code": "as"
+    },
+    {
+      "name": "Azerbaijani",
+      "code": "az"
+    },
+    {
+      "name": "Basque ",
+      "code": "eu"
+    },
+    {
+      "name": "Belarusian",
+      "code": "be"
+    },
+    {
+      "name": "Bangla",
+      "code": "bn"
+    },
+    {
+      "name": "Bosnian",
+      "code": "bs"
+    },
+    {
+      "name": "Bulgarian",
+      "code": "bg"
+    },
+    {
+      "name": "Catalan",
+      "code": "ca"
+    },
+    {
+      "name": "Chinese (Simplified)",
+      "code": "zh"
+    },
+    {
+      "name": "Croatian",
+      "code": "hr"
+    },
+    {
+      "name": "Czech",
+      "code": "cs"
+    },
+    {
+      "name": "Danish",
+      "code": "da"
+    },
+    {
+      "name": "Dari",
+      "code": "prs"
+    },
+    {
+      "name": "Dutch",
+      "code": "nl"
+    },
+    {
+      "name": "Estonian",
+      "code": "et"
+    },
+    {
+      "name": "Filipino",
+      "code": "fil"
+    },
+    {
+      "name": "Finnish",
+      "code": "fi"
+    },
+    {
+      "name": "French ",
+      "code": "fr"
+    },
+    {
+      "name": "Galician",
+      "code": "gl"
+    },
+    {
+      "name": "Georgian",
+      "code": "ka"
+    },
+    {
+      "name": "German",
+      "code": "de"
+    },
+    {
+      "name": "Greek",
+      "code": "el"
+    },
+    {
+      "name": "Gujarati",
+      "code": "gu"
+    },
+    {
+      "name": "Hausa",
+      "code": "ha"
+    },
+    {
+      "name": "Hebrew",
+      "code": "he"
+    },
+    {
+      "name": "Hindi",
+      "code": "hi"
+    },
+    {
+      "name": "Hungarian",
+      "code": "hu"
+    },
+    {
+      "name": "Icelandic",
+      "code": "is"
+    },
+    {
+      "name": "Indonesian",
+      "code": "id"
+    },
+    {
+      "name": "Irish",
+      "code": "ga"
+    },
+    {
+      "name": "isiXhosa",
+      "code": "xh"
+    },
+    {
+      "name": "isiZulu",
+      "code": "zu"
+    },
+    {
+      "name": "Italian",
+      "code": "it"
+    },
+    {
+      "name": "Japanese ",
+      "code": "ja"
+    },
+    {
+      "name": "Kannada",
+      "code": "kn"
+    },
+    {
+      "name": "Kazakh",
+      "code": "kk"
+    },
+    {
+      "name": "Khmer",
+      "code": "km"
+    },
+    {
+      "name": "Kinyarwanda",
+      "code": "rw"
+    },
+    {
+      "name": "KiSwahili",
+      "code": "sw"
+    },
+    {
+      "name": "Konkani",
+      "code": "kok"
+    },
+    {
+      "name": "Korean",
+      "code": "ko"
+    },
+    {
+      "name": "Lao",
+      "code": "lo"
+    },
+    {
+      "name": "Latvian",
+      "code": "lv"
+    },
+    {
+      "name": "Lithuanian",
+      "code": "lt"
+    },
+    {
+      "name": "Luxembourgish",
+      "code": "lb"
+    },
+    {
+      "name": "Macedonian",
+      "code": "mk"
+    },
+    {
+      "name": "Malay",
+      "code": "ms"
+    },
+    {
+      "name": "Malayalam",
+      "code": "ml"
+    },
+    {
+      "name": "Maltese",
+      "code": "mt"
+    },
+    {
+      "name": "Maori ",
+      "code": "mi"
+    },
+    {
+      "name": "Marathi",
+      "code": "mr"
+    },
+    {
+      "name": "Nepali",
+      "code": "ne"
+    },
+    {
+      "name": "Norwegian",
+      "code": "nb"
+    },
+    {
+      "name": "Odia",
+      "code": "or"
+    },
+    {
+      "name": "Persian",
+      "code": "fa"
+    },
+    {
+      "name": "Polish",
+      "code": "pl"
+    },
+    {
+      "name": "Portuguese",
+      "code": "pt"
+    },
+    {
+      "name": "Punjabi",
+      "code": "pa"
+    },
+    {
+      "name": "Quechua",
+      "code": "quz"
+    },
+    {
+      "name": "Romanian",
+      "code": "ro"
+    },
+    {
+      "name": "Russian",
+      "code": "ru"
+    },
+    {
+      "name": "Serbian (Latin)",
+      "code": "sr"
+    },
+    {
+      "name": "Sesotho sa Leboa",
+      "code": "nso"
+    },
+    {
+      "name": "Setswana",
+      "code": "tn"
+    },
+    {
+      "name": "Sinhala",
+      "code": "si"
+    },
+    {
+      "name": "Slovak ",
+      "code": "sk"
+    },
+    {
+      "name": "Slovenian",
+      "code": "sl"
+    },
+    {
+      "name": "Spanish",
+      "code": "es"
+    },
+    {
+      "name": "Swedish",
+      "code": "sv"
+    },
+    {
+      "name": "Tamil",
+      "code": "ta"
+    },
+    {
+      "name": "Telugu",
+      "code": "te"
+    },
+    {
+      "name": "Thai",
+      "code": "th"
+    },
+    {
+      "name": "Tigrinya",
+      "code": "ti"
+    },
+    {
+      "name": "Turkish",
+      "code": "tr"
+    },
+    {
+      "name": "Ukrainian",
+      "code": "uk"
+    },
+    {
+      "name": "Urdu",
+      "code": "ur"
+    },
+    {
+      "name": "Uzbek (Latin)",
+      "code": "uz"
+    },
+    {
+      "name": "Vietnamese",
+      "code": "vi"
+    },
+    {
+      "name": "Welsh",
+      "code": "cy"
+    },
+    {
+      "name": "Wolof",
+      "code": "wo"
+    }
+  ],
+  "calendarIdentifiers": [
+    "GregorianCalendar",
+    "HebrewCalendar",
+    "HijriCalendar",
+    "JapaneseCalendar",
+    "JulianCalendar",
+    "KoreanCalendar",
+    "PersianCalendar",
+    "TaiwanCalendar",
+    "ThaiCalendar",
+    "UmAlQuraCalendar"
+  ],
+  "sources": [
+    {
+      "upstream": "WinUIGallery/Samples/CalendarDatePicker/CalendardatepickerHeaderPlaceholderText.txt",
+      "local": "references/gallery-input/CalendarDatePicker/CalendardatepickerHeaderPlaceholderText.txt",
+      "sha256": "e0a91f3debd6269134e3503f0806eedaada1350a4a422e301e41e778d3faa7c1"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/CalendarDatePicker/CalendarDatePickerPage.xaml",
+      "local": "references/gallery-input/CalendarDatePicker/CalendarDatePickerPage.xaml",
+      "sha256": "cbd45954020ba0380eacaf38fc1a33ca77724bff94de9b5c5ddbe70d92a1c456"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/CalendarDatePicker/CalendarDatePickerPage.xaml.cs",
+      "local": "references/gallery-input/CalendarDatePicker/CalendarDatePickerPage.xaml.cs",
+      "sha256": "50d29346046a409e66252002371d920e28fe3801826b16b52ba51c5019ba44ae"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/CalendarView/BasicCalendarView.txt",
+      "local": "references/gallery-input/CalendarView/BasicCalendarView.txt",
+      "sha256": "b1249af143e8a7ef76730474dd538cc88c4cfa54028e2fe73709374f8f080da8"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/CalendarView/CalendarViewPage.xaml",
+      "local": "references/gallery-input/CalendarView/CalendarViewPage.xaml",
+      "sha256": "57b351a743dafc9e781f62b59a6090bbc196d98671be7cb2b3c614d84c415bd2"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/CalendarView/CalendarViewPage.xaml.cs",
+      "local": "references/gallery-input/CalendarView/CalendarViewPage.xaml.cs",
+      "sha256": "0a65a567ccc1eb4bd28d18ada4aa0c9a97162844deb43ee26443cf36d39964c4"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/ColorPicker/ColorPickerPage.xaml",
+      "local": "references/gallery-input/ColorPicker/ColorPickerPage.xaml",
+      "sha256": "c54a47d38687419d48edad04450ac6e0aac92ccc1ec109aa98dd9f96bd04de5e"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/ColorPicker/ColorPickerPage.xaml.cs",
+      "local": "references/gallery-input/ColorPicker/ColorPickerPage.xaml.cs",
+      "sha256": "23ea3851cc7d010ba418b693f1df0caa6df95d38894bbf5d7ae13f6765871fbe"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/ColorPicker/ColorPickerProperties.txt",
+      "local": "references/gallery-input/ColorPicker/ColorPickerProperties.txt",
+      "sha256": "ab8569f648eb3d7f389e6e89f74e0189a6583cb85c8d10dd16d00adcb76dbaf7"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/DatePicker/DatepickerDayFormattedYear.txt",
+      "local": "references/gallery-input/DatePicker/DatepickerDayFormattedYear.txt",
+      "sha256": "3c85aac0f367754350fba9d5b02f68ccec66e21a1af5a94f7a558de7d7d4c7eb"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/DatePicker/DatePickerPage.xaml",
+      "local": "references/gallery-input/DatePicker/DatePickerPage.xaml",
+      "sha256": "c6d83b252cae6a342345d1287e37963b7a2b0ac0eba786c52908b72cc5db1968"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/DatePicker/DatePickerPage.xaml.cs",
+      "local": "references/gallery-input/DatePicker/DatePickerPage.xaml.cs",
+      "sha256": "019bc0673c276c7db0ef8297edd1d44429bd8f3e289a140e19994b32a7b4c537"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/DatePicker/SimpleDatepickerHeader.txt",
+      "local": "references/gallery-input/DatePicker/SimpleDatepickerHeader.txt",
+      "sha256": "87d68ef1aa5fa5507c93c69fa614f7f5ec2621395ada1b45bfefec131518ef63"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/TimePicker/SimpleTimepicker.txt",
+      "local": "references/gallery-input/TimePicker/SimpleTimepicker.txt",
+      "sha256": "d28d23dfb18e9db07c00b300e9f5a411ff546f06df187bc02ad578d4e8f476a2"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/TimePicker/TimepickerClockIdentifiers.txt",
+      "local": "references/gallery-input/TimePicker/TimepickerClockIdentifiers.txt",
+      "sha256": "819db4c29e8d1ab9555ae2bb4bd9a6bdb19340e024d8828072cba949156094d6"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/TimePicker/TimepickerHeaderMinuteIncrements.txt",
+      "local": "references/gallery-input/TimePicker/TimepickerHeaderMinuteIncrements.txt",
+      "sha256": "72bac73e50cc9afce4c3be3c243be0b36d67be6f1f6e366873b61d6acca8d23d"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/TimePicker/TimePickerPage.xaml",
+      "local": "references/gallery-input/TimePicker/TimePickerPage.xaml",
+      "sha256": "dcff552468b00a98f9d296eed2780c23bdd2afa07047fda2af03be50c8d4239a"
+    },
+    {
+      "upstream": "WinUIGallery/Samples/TimePicker/TimePickerPage.xaml.cs",
+      "local": "references/gallery-input/TimePicker/TimePickerPage.xaml.cs",
+      "sha256": "6a1465231f6fb48223d61ca2fc013dd29e1b7bb5ef3c271e12df8cf2c5780e2e"
+    },
+    {
+      "upstream": "WinUIGallery/Helpers/Language/LanguageList.cs",
+      "local": "references/gallery-input/CalendarView/LanguageList.cs",
+      "sha256": "d060c96e20db03418d916bad6edbcadacee252d5204f32f7556709ac6311f105"
+    }
+  ]
+}

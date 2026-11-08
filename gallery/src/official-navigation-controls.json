@@ -1,0 +1,306 @@
+{
+  "controls": {
+    "BreadcrumbBar": {
+      "description": "The BreadcrumbBar control provides a common horizontal layout to display the trail of navigation taken to the current location. Resize to see the nodes crumble, starting at the root.",
+      "samples": [
+        {
+          "title": "A BreadcrumbBar control",
+          "xaml": "<BreadcrumbBar x:Name=\"BreadcrumbBar1\"/>",
+          "code": "BreadcrumbBar1.ItemsSource = new string[] { \"Home\", \"Documents\", \"Design\", \"Northwind\", \"Images\", \"Folder1\", \"Folder2\", \"Folder3\" };"
+        },
+        {
+          "title": "BreadCrumbBar Control with Custom DataTemplate",
+          "xaml": "<BreadcrumbBar x:Name=\"BreadcrumbBar2\">\n    <BreadcrumbBar.ItemTemplate>\n        <DataTemplate x:DataType=\"l:Folder\">\n            <BreadcrumbBarItem Content=\"{Binding}\" AutomationProperties.Name=\"{Binding Name}\">\n                <BreadcrumbBarItem.ContentTemplate>\n                    <DataTemplate>\n                        <TextBlock Text=\"{Binding Name}\" />\n                    </DataTemplate>\n                </BreadcrumbBarItem.ContentTemplate>\n            </BreadcrumbBarItem>\n        </DataTemplate>\n    </BreadcrumbBar.ItemTemplate>\n</BreadcrumbBar>",
+          "code": "public class Folder\n{\n    public string Name { get; set; }\n}\n\nBreadcrumbBar2.ItemsSource = new ObservableCollection<Folder>{\n        new Folder { Name = \"Home\"},\n        new Folder { Name = \"Folder1\" },\n        new Folder { Name = \"Folder2\" },\n        new Folder { Name = \"Folder3\" },\n};\nBreadcrumbBar2.ItemClicked += BreadcrumbBar2_ItemClicked;\n\nprivate void BreadcrumbBar2_ItemClicked(BreadcrumbBar sender, BreadcrumbBarItemClickedEventArgs args)\n{\n    var items = BreadcrumbBar2.ItemsSource as ObservableCollection<Folder>;\n    for (int i = items.Count - 1; i >= args.Index + 1; i--)\n    {\n        items.RemoveAt(i);\n    }\n}"
+        }
+      ]
+    },
+    "FlipView": {
+      "description": "The FlipView lets you flip through a collection of items, one at a time. It's great for displaying images from a gallery, pages of a magazine, or similar items.",
+      "samples": [
+        {
+          "title": "A simple FlipView with items declared inline.",
+          "xaml": "<FlipView MaxWidth=\"400\" Height=\"270\"\n          AutomationProperties.AutomationControlType=\"List\"\n          AutomationProperties.LocalizedControlType=\"list\">\n    <Image Source=\"ms-appx:///Assets/SampleMedia/cliff.jpg\" AutomationProperties.Name=\"Cliff\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/grapes.jpg\" AutomationProperties.Name=\"Grapes\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/rainier.jpg\" AutomationProperties.Name=\"Rainier\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/sunset.jpg\" AutomationProperties.Name=\"Sunset\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/valley.jpg\" AutomationProperties.Name=\"Valley\"/>\n</FlipView>",
+          "code": ""
+        },
+        {
+          "title": "A FlipView showing bound data with a data template.",
+          "xaml": "<FlipView MaxWidth=\"400\" Height=\"180\" BorderBrush=\"Black\" BorderThickness=\"1\"\n          AutomationProperties.AutomationControlType=\"List\"\n          AutomationProperties.LocalizedControlType=\"list\"\n          ItemsSource=\"{x:Bind Items, Mode=OneWay}\">\n    <FlipView.ItemTemplate>\n        <DataTemplate x:DataType=\"data:ControlInfoDataItem\">\n            <Grid>\n                <Image Height=\"120\" Source=\"{x:Bind ImagePath}\" Stretch=\"Uniform\" VerticalAlignment=\"Top\"/>\n                <Border Background=\"#A5FFFFFF\" Height=\"60\" VerticalAlignment=\"Bottom\">\n                <TextBlock Text=\"{x:Bind Title}\" Foreground=\"#CCFFFFFF\" Padding=\"12,12\" Style=\"{StaticResource TitleTextBlockStyle}\" HorizontalAlignment=\"Center\"/>\n                </Border>\n            </Grid>\n        </DataTemplate>\n    </FlipView.ItemTemplate>\n</FlipView>",
+          "code": ""
+        },
+        {
+          "title": "Vertical FlipView",
+          "xaml": "<FlipView MaxWidth=\"400\" Height=\"270\"\n          AutomationProperties.AutomationControlType=\"List\"\n          AutomationProperties.LocalizedControlType=\"list\">\n    <Image Source=\"ms-appx:///Assets/SampleMedia/cliff.jpg\" AutomationProperties.Name=\"Cliff\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/grapes.jpg\" AutomationProperties.Name=\"Grapes\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/rainier.jpg\" AutomationProperties.Name=\"Rainier\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/sunset.jpg\" AutomationProperties.Name=\"Sunset\"/>\n    <Image Source=\"ms-appx:///Assets/SampleMedia/valley.jpg\" AutomationProperties.Name=\"Valley\"/>\n        <FlipView.ItemsPanel >\n            <ItemsPanelTemplate>\n                <VirtualizingStackPanel Orientation=\"Vertical\"/>\n            </ItemsPanelTemplate>\n        </FlipView.ItemsPanel>\n</FlipView>",
+          "code": ""
+        }
+      ]
+    },
+    "PipsPager": {
+      "description": "A PipsPager allows the user to navigate through a paginated collection and is independent of the content shown. Use this control when the content in the layout is not explicitly ordered by relevancy or you desire a glyph-based representation of numbered pages. PipsPagers are commonly used in photo viewers, app lists, carousels, and when display space is limited.",
+      "samples": [
+        {
+          "title": "PipsPager integrated with a FlipView",
+          "xaml": "<StackPanel>\n    <FlipView x:Name=\"Gallery\" MaxWidth=\"400\" Height=\"270\" ItemsSource=\"{x:Bind Pictures}\">\n        <FlipView.ItemTemplate>\n            <DataTemplate x:DataType=\"x:String\">\n                <Image Source=\"{x:Bind Mode=OneTime}\" />\n            </DataTemplate>\n        </FlipView.ItemTemplate>\n    </FlipView>\n    <PipsPager x:Name=\"FlipViewPipsPager\"\n        HorizontalAlignment=\"Center\"\n        Margin=\"0, 12, 0, 0\"\n        NumberOfPages=\"{x:Bind Pictures.Count}\"\n        SelectedPageIndex=\"{x:Bind Path=Gallery.SelectedIndex, Mode=TwoWay}\" />\n</StackPanel>",
+          "code": ""
+        },
+        {
+          "title": "PipsPager with options to change its orientation, button visibility, and wrap mode.",
+          "xaml": "<PipsPager />",
+          "code": ""
+        }
+      ]
+    },
+    "TabView": {
+      "description": "TabView provides the user with a collection of tabs that can be used to display several documents.",
+      "samples": [
+        {
+          "title": "A TabView with support for adding, closing, and rearranging tabs",
+          "xaml": "<TabView AddTabButtonClick=\"TabView_AddButtonClick\" TabCloseRequested=\"TabView_TabCloseRequested\" Loaded=\"TabView_Loaded\" />",
+          "code": "private void TabView_Loaded(object sender, RoutedEventArgs e)\n{\n    for (int i = 0; i < 3; i++)\n    {\n        (sender as TabView)?.TabItems.Add(CreateNewTab(i));\n    }\n}\n\nprivate void TabView_AddButtonClick(TabView sender, object args)\n{\n    sender.TabItems.Add(CreateNewTab(sender.TabItems.Count));\n}\n\nprivate void TabView_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)\n{\n    sender.TabItems.Remove(args.Tab);\n}\n\nprivate TabViewItem CreateNewTab(int index)\n{\n    TabViewItem newItem = new TabViewItem();\n\n    newItem.Header = $\"Document {index}\";\n    newItem.IconSource = new Microsoft.UI.Xaml.Controls.SymbolIconSource() { Symbol = Symbol.Document };\n\n    // The content of the tab is often a frame that contains a page, though it could be any UIElement.\n    Frame frame = new Frame();\n\n    switch (index % 3)\n    {\n        case 0:\n            frame.Navigate(typeof(SamplePage1));\n            break;\n        case 1:\n            frame.Navigate(typeof(SamplePage2));\n            break;\n        case 2:\n            frame.Navigate(typeof(SamplePage3));\n            break;\n    }\n\n    newItem.Content = frame;\n\n    return newItem;\n}"
+        },
+        {
+          "title": "A TabView with TabViewItems defined in markup",
+          "xaml": "<TabView AddTabButtonClick=\"TabView_AddButtonClick\" TabCloseRequested=\"TabView_TabCloseRequested\">\n    <TabView.TabItems>\n        <TabViewItem Header=\"Document 0\">\n            <TabViewItem.IconSource>\n                <SymbolIconSource Symbol=\"Placeholder\" />\n            </TabViewItem.IconSource>\n            <samplepages:SamplePage1 />\n        </TabViewItem>\n        <TabViewItem Header=\"Document 1\">\n            <TabViewItem.IconSource>\n                <SymbolIconSource Symbol=\"Placeholder\" />\n            </TabViewItem.IconSource>\n            <samplepages:SamplePage2 />\n        </TabViewItem>\n        <TabViewItem Header=\"Document 2\">\n            <TabViewItem.IconSource>\n                <SymbolIconSource Symbol=\"Placeholder\" />\n            </TabViewItem.IconSource>\n            <samplepages:SamplePage3 />\n        </TabViewItem>\n    </TabView.TabItems>\n</TabView>",
+          "code": ""
+        },
+        {
+          "title": "A TabView bound to a collection of MyData objects",
+          "xaml": "<TabView TabItemsSource=\"{x:Bind myDatas, Mode=OneWay}\" AddTabButtonClick=\"TabViewItemsSourceSample_AddTabButtonClick\" TabCloseRequested=\"TabViewItemsSourceSample_TabCloseRequested\" />",
+          "code": ""
+        },
+        {
+          "title": "A TabView with keyboarding support",
+          "xaml": "<TabView AddTabButtonClick=\"TabView_AddButtonClick\" TabCloseRequested=\"TabView_TabCloseRequested\" Loaded=\"TabView_Loaded\">\n    <TabView.KeyboardAccelerators>\n        <KeyboardAccelerator Key=\"T\" Modifiers=\"Control\" Invoked=\"NewTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"W\" Modifiers=\"Control\" Invoked=\"CloseSelectedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number1\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number2\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number3\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number4\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number5\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number6\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number7\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number8\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n        <KeyboardAccelerator Key=\"Number9\" Modifiers=\"Control\" Invoked=\"NavigateToNumberedTabKeyboardAccelerator_Invoked\" />\n    </TabView.KeyboardAccelerators>\n</TabView>",
+          "code": "private void NewTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)\n{\n    if (ars.Element is not TabView senderTabView)\n    {\n        return;\n    }\n\n    senderTabView.TabItems.Add(CreateNewTab(senderTabView.TabItems.Count));\n\n    args.Handled = true;\n}\n\nprivate void CloseSelectedTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)\n{\n    if (args.Element is not TabView invokedTabView)\n    {\n        return;\n    }\n\n    // Only close the selected tab if it is closeable\n    if ((invokedTabView.SelectedItem as TabViewItem)?.IsClosable is true)\n    {\n        invokedTabView.TabItems.Remove(invokedTabView.SelectedItem);\n    }\n\n    args.Handled = true;\n}\n\nprivate void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)\n{\n    if (args.Element is not TabView invokedTabView)\n    {\n        return;\n    }\n\n    int tabToSelect = 0;\n\n    switch (sender.Key)\n    {\n        case Windows.System.VirtualKey.Number1:\n            tabToSelect = 0;\n            break;\n        case Windows.System.VirtualKey.Number2:\n            tabToSelect = 1;\n            break;\n        case Windows.System.VirtualKey.Number3:\n            tabToSelect = 2;\n            break;\n        case Windows.System.VirtualKey.Number4:\n            tabToSelect = 3;\n            break;\n        case Windows.System.VirtualKey.Number5:\n            tabToSelect = 4;\n            break;\n        case Windows.System.VirtualKey.Number6:\n            tabToSelect = 5;\n            break;\n        case Windows.System.VirtualKey.Number7:\n            tabToSelect = 6;\n            break;\n        case Windows.System.VirtualKey.Number8:\n            tabToSelect = 7;\n            break;\n        case Windows.System.VirtualKey.Number9:\n            // Select the last tab\n            tabToSelect = invokedTabView.TabItems.Count - 1;\n            break;\n    }\n\n    // Only select the tab if it is in the list\n    if (tabToSelect < invokedTabView.TabItems.Count)\n    {\n        invokedTabView.SelectedIndex = tabToSelect;\n    }\n\n    args.Handled = true;\n}"
+        },
+        {
+          "title": "You can put custom content in TabStripHeader and TabStripFooter",
+          "xaml": "<TabView>\n    <TabView.TabStripHeader>\n        <TextBlock Text=\"TabStripHeader Content\" VerticalAlignment=\"Center\" Margin=\"8,6\" Style=\"{ThemeResource BaseTextBlockStyle}\" />\n    </TabView.TabStripHeader>\n    <TabView.TabStripFooter>\n        <TextBlock Text=\"TabStripFooter Content\" VerticalAlignment=\"Center\" HorizontalAlignment=\"Right\" Margin=\"6\" Style=\"{ThemeResource BaseTextBlockStyle}\" />\n    </TabView.TabStripFooter>\n</TabView>",
+          "code": ""
+        },
+        {
+          "title": "Tab widths can either be equally sized, sized to the content of the tab, or sized to only show the icon when unselected",
+          "xaml": "<TabView TabWidthMode=\"SizeToContent\" />",
+          "code": ""
+        },
+        {
+          "title": "The close button can be persistent or only visible on hover",
+          "xaml": "<TabView />",
+          "code": ""
+        },
+        {
+          "title": "TabView with color tab icons",
+          "xaml": "<TabView>\n    <TabView.TabItems>\n        <TabViewItem Header=\"CMD Prompt\">\n            <TabViewItem.IconSource>\n                <BitmapIconSource UriSource=\"/Assets/SampleMedia/cmd.png\" ShowAsMonochrome=\"False\" />\n            </TabViewItem.IconSource>\n        </TabViewItem>\n        <TabViewItem Header=\"PowerShell\">\n            <TabViewItem.IconSource>\n                <BitmapIconSource UriSource=\"/Assets/SampleMedia/powershell.png\" ShowAsMonochrome=\"False\" />\n            </TabViewItem.IconSource>\n        </TabViewItem>\n        <TabViewItem Header=\"Windows Subsystem for Linux\">\n            <TabViewItem.IconSource>\n                <BitmapIconSource UriSource=\"/Assets/SampleMedia/linux.png\" ShowAsMonochrome=\"False\" />\n            </TabViewItem.IconSource>\n        </TabViewItem>\n    </TabView.TabItems>\n</TabView>",
+          "code": ""
+        },
+        {
+          "title": "A TabView with accent colored TabStrip background",
+          "xaml": "<TabView>\n    <TabView.Resources>\n        <ResourceDictionary>\n            <ResourceDictionary.ThemeDictionaries>\n                <ResourceDictionary x:Key=\"Light\">\n                    <SolidColorBrush x:Key=\"TabViewBackground\" Color=\"{ThemeResource SystemAccentColorLight2}\"/>\n                </ResourceDictionary>\n                <ResourceDictionary x:Key=\"Dark\">\n                    <SolidColorBrush x:Key=\"TabViewBackground\" Color=\"{ThemeResource SystemAccentColorDark2}\"/>\n                </ResourceDictionary>\n            </ResourceDictionary.ThemeDictionaries>\n        </ResourceDictionary>\n    </TabView.Resources>\n</TabView>",
+          "code": ""
+        },
+        {
+          "title": "Complete TabView windowing sample",
+          "xaml": "Check out the TabViewWindowingSamplePage.xaml and *.cs files to see the complete code.",
+          "code": ""
+        }
+      ]
+    },
+    "TreeView": {
+      "description": "The TreeView control is a hierarchical list pattern with expanding and collapsing nodes that contain nested items. ",
+      "samples": [
+        {
+          "title": "A simple TreeView with drag and drop support",
+          "xaml": "<TreeView x:Name=\"sampleTreeView\" CanDragItems=\"True\"  AllowDrop=\"True\"/>",
+          "code": "private void InitializeSampleTreeView(TreeView sampleTreeView)\n{\n    // Create a root node with initial content and set it to be expanded.\n    TreeViewNode workNode = new TreeViewNode() { Content = \"Work Documents\" };\n    workNode.IsExpanded = true;\n\n    // Add child nodes with content related to the root node.\n    workNode.Children.Add(new TreeViewNode() { Content = \"XYZ Functional Spec\" });\n    workNode.Children.Add(new TreeViewNode() { Content = \"Feature Schedule\" });\n\n    // Create another node with initial content and set it to be expanded.\n    TreeViewNode remodelNode = new TreeViewNode() { Content = \"Home Remodel\" };\n    remodelNode.IsExpanded = true;\n\n    // Add child nodes with specific content under this node.\n    remodelNode.Children.Add(new TreeViewNode() { Content = \"Contractor Contact Info\" });\n    remodelNode.Children.Add(new TreeViewNode() { Content = \"Paint Color Scheme\" });\n\n    // Create a node with broader content that includes the previous node as a child.\n    TreeViewNode personalNode = new TreeViewNode() { Content = \"Personal Documents\" };\n    personalNode.IsExpanded = true;\n    personalNode.Children.Add(remodelNode);\n\n    // Add the main nodes to the TreeView's root.\n    sampleTreeView.RootNodes.Add(workNode);\n    sampleTreeView.RootNodes.Add(personalNode);\n}"
+        },
+        {
+          "title": "A TreeView with Multi-selection enabled",
+          "xaml": "<TreeView x:Name=\"sampleTreeView\" SelectionMode=\"Multiple\" />",
+          "code": "private void InitializeSampleTreeView(TreeView sampleTreeView)\n{\n    // Create a root node with initial content and set it to be expanded.\n    TreeViewNode workNode = new TreeViewNode() { Content = \"Work Documents\" };\n    workNode.IsExpanded = true;\n\n    // Add child nodes with content related to the root node.\n    workNode.Children.Add(new TreeViewNode() { Content = \"XYZ Functional Spec\" });\n    workNode.Children.Add(new TreeViewNode() { Content = \"Feature Schedule\" });\n\n    // Create another node with initial content and set it to be expanded.\n    TreeViewNode remodelNode = new TreeViewNode() { Content = \"Home Remodel\" };\n    remodelNode.IsExpanded = true;\n\n    // Add child nodes with specific content under this node.\n    remodelNode.Children.Add(new TreeViewNode() { Content = \"Contractor Contact Info\" });\n    remodelNode.Children.Add(new TreeViewNode() { Content = \"Paint Color Scheme\" });\n\n    // Create a node with broader content that includes the previous node as a child.\n    TreeViewNode personalNode = new TreeViewNode() { Content = \"Personal Documents\" };\n    personalNode.IsExpanded = true;\n    personalNode.Children.Add(remodelNode);\n\n    // Add the main nodes to the TreeView's root.\n    sampleTreeView.RootNodes.Add(workNode);\n    sampleTreeView.RootNodes.Add(personalNode);\n}"
+        },
+        {
+          "title": "A TreeView with DataBinding Using ItemSource",
+          "xaml": "<TreeView ItemsSource=\"{x:Bind DataSource}\">\n   <TreeView.ItemTemplate>\n      <DataTemplate x:DataType=\"local:ExplorerItem\">\n         <TreeViewItem ItemsSource=\"{x:Bind Children}\" Content=\"{x:Bind Name}\"/>\n      </DataTemplate>\n   </TreeView.ItemTemplate>\n</TreeView>",
+          "code": "using System.Collections.ObjectModel;\nusing Microsoft.UI.Xaml;\nusing Microsoft.UI.Xaml.Controls;\n\nnamespace YourNamespace\n{\n    public sealed partial class YourPage : Page\n    {\n        // DataSource is the data collection that will be bound to the TreeView's ItemsSource.\n        public ObservableCollection<ExplorerItem> DataSource { get; set; }\n\n        public YourPage()\n        {\n            this.InitializeComponent();\n\n            // Initialize the data source with sample data and set it as the context for data binding.\n            DataSource = GetData();\n            this.DataContext = this; // Bind the DataContext of the page to itself for XAML bindings.\n        }\n\n        // Method to provide sample data for the TreeView.\n        private ObservableCollection<ExplorerItem> GetData()\n        {\n            return new ObservableCollection<ExplorerItem>\n            {\n                // Root folder with child files.\n                new ExplorerItem\n                {\n                    Name = \"Documents\",\n                    Type = ExplorerItem.ExplorerItemType.Folder,\n                    Children =\n                    {\n                        new ExplorerItem\n                        {\n                            Name = \"ProjectProposal\",\n                            Type = ExplorerItem.ExplorerItemType.File,\n                        },\n                        new ExplorerItem\n                        {\n                            Name = \"BudgetReport\",\n                            Type = ExplorerItem.ExplorerItemType.File,\n                        },\n                    },\n                },\n                // Another root folder with one child file.\n                new ExplorerItem\n                {\n                    Name = \"Projects\",\n                    Type = ExplorerItem.ExplorerItemType.Folder,\n                    Children =\n                    {\n                        new ExplorerItem\n                        {\n                            Name = \"Project Plan\",\n                            Type = ExplorerItem.ExplorerItemType.File,\n                        },\n                    },\n                },\n            };\n        }\n    }\n\n    // Class to represent items in the TreeView.\n    public class ExplorerItem\n    {\n        // Enum to define the type of the item: Folder or File.\n        public enum ExplorerItemType\n        {\n            Folder,\n            File,\n        }\n\n        // Name of the item (displayed in the TreeView).\n        public string Name { get; set; } = string.Empty;\n\n        // Type of the item (Folder or File).\n        public ExplorerItemType Type { get; set; }\n\n        // Collection of child items. Used for nested nodes in the TreeView.\n        public ObservableCollection<ExplorerItem> Children { get; set; } = new ObservableCollection<ExplorerItem>();\n    }\n}"
+        },
+        {
+          "title": "A TreeView with ItemTemplateSelector",
+          "xaml": "",
+          "code": "using System.Collections.ObjectModel;\nusing Microsoft.UI.Xaml;\nusing Microsoft.UI.Xaml.Controls;\n\nnamespace YourNamespace\n{\n    public sealed partial class YourPage : Page\n    {\n        public ObservableCollection<ExplorerItem> DataSource { get; set; }\n\n        public YourPage()\n        {\n            this.InitializeComponent();\n            DataSource = GetData();\n            this.DataContext = this;\n        }\n\n        private ObservableCollection<ExplorerItem> GetData()\n        {\n            return new ObservableCollection<ExplorerItem>\n            {\n                new ExplorerItem\n                {\n                    Name = \"Documents\",\n                    Type = ExplorerItem.ExplorerItemType.Folder,\n                    Children =\n                    {\n                        new ExplorerItem\n                        {\n                            Name = \"ProjectProposal\",\n                            Type = ExplorerItem.ExplorerItemType.File,\n                        },\n                        new ExplorerItem\n                        {\n                            Name = \"BudgetReport\",\n                            Type = ExplorerItem.ExplorerItemType.File,\n                        },\n                    },\n                },\n                new ExplorerItem\n                {\n                    Name = \"Projects\",\n                    Type = ExplorerItem.ExplorerItemType.Folder,\n                    Children =\n                    {\n                        new ExplorerItem\n                        {\n                            Name = \"Project Plan\",\n                            Type = ExplorerItem.ExplorerItemType.File,\n                        },\n                    },\n                },\n            };\n        }\n    }\n\n    public class ExplorerItem\n    {\n        public enum ExplorerItemType\n        {\n            Folder,\n            File,\n        }\n\n        public string Name { get; set; } = string.Empty;\n        public ExplorerItemType Type { get; set; }\n        public ObservableCollection<ExplorerItem> Children { get; set; } = new ObservableCollection<ExplorerItem>();\n    }\n\n    class ExplorerItemTemplateSelector : DataTemplateSelector\n    {\n        // Template to use for folder items in the TreeView.\n        public DataTemplate? FolderTemplate { get; set; }\n\n        // Template to use for file items in the TreeView.\n        public DataTemplate? FileTemplate { get; set; }\n\n        // Determines which template to use for each item in the TreeView based on its type.\n        protected override DataTemplate? SelectTemplateCore(object item)\n        {\n            // Cast the item to the ExplorerItem type.\n            var explorerItem = (ExplorerItem)item;\n\n            // Return the appropriate template: FolderTemplate for folders, FileTemplate for files.\n            return explorerItem.Type == ExplorerItem.ExplorerItemType.Folder\n                ? FolderTemplate\n                : FileTemplate;\n        }\n    }\n}"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "local": "references\\gallery-input\\BreadcrumbBar\\BreadcrumbbarControl.txt",
+      "upstream": "WinUIGallery\\Samples\\BreadcrumbBar\\BreadcrumbbarControl.txt",
+      "sha256": "db8aa184e44db27312deea4bf788f9612a70b54054d99a7e3bd8477583aa70d2"
+    },
+    {
+      "local": "references\\gallery-input\\BreadcrumbBar\\BreadcrumbbarControlCustomDatatemplate.txt",
+      "upstream": "WinUIGallery\\Samples\\BreadcrumbBar\\BreadcrumbbarControlCustomDatatemplate.txt",
+      "sha256": "774b802b3a40596a7e2f2a6291de77dc5cf68529f1c174aee8a82ca848fe943a"
+    },
+    {
+      "local": "references\\gallery-input\\BreadcrumbBar\\BreadcrumbBarPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\BreadcrumbBar\\BreadcrumbBarPage.xaml",
+      "sha256": "73a50ecd557b9d0e141f664e1c90cf4873401140c91435e2ff27e0b69ddea6b3"
+    },
+    {
+      "local": "references\\gallery-input\\BreadcrumbBar\\BreadcrumbBarPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\BreadcrumbBar\\BreadcrumbBarPage.xaml.cs",
+      "sha256": "353e6e6cba62c202c7c7fffe0af31c6d4391fc4e00d449dde4875091bb50c8b6"
+    },
+    {
+      "local": "references\\gallery-input\\FlipView\\FlipViewPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\FlipView\\FlipViewPage.xaml",
+      "sha256": "117ade2f5948f410f369932a32422f1d109db3c0019fc68ba4f2c0e83c37b9c9"
+    },
+    {
+      "local": "references\\gallery-input\\FlipView\\FlipViewPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\FlipView\\FlipViewPage.xaml.cs",
+      "sha256": "2cd99be9e15d049170a8263ab4acdf6929b79bae77adf986927154fb108c7c3e"
+    },
+    {
+      "local": "references\\gallery-input\\FlipView\\FlipviewShowingBoundData.txt",
+      "upstream": "WinUIGallery\\Samples\\FlipView\\FlipviewShowingBoundData.txt",
+      "sha256": "b7c1079b013ed27b4841a9a82b0306da3b13ca364b18344fe86edbef457aaef8"
+    },
+    {
+      "local": "references\\gallery-input\\FlipView\\SimpleFlipviewItemsDeclared.txt",
+      "upstream": "WinUIGallery\\Samples\\FlipView\\SimpleFlipviewItemsDeclared.txt",
+      "sha256": "a26ae4f9a8674a27a52f8473397c4024e714bfa2a9b89be4e09d2702ba65ec92"
+    },
+    {
+      "local": "references\\gallery-input\\FlipView\\VerticalFlipview.txt",
+      "upstream": "WinUIGallery\\Samples\\FlipView\\VerticalFlipview.txt",
+      "sha256": "11c753d147cc1aa4ce0cd01cb32318ee9494e7c6067292ab8a0eda15764ba2fd"
+    },
+    {
+      "local": "references\\gallery-input\\PipsPager\\PipspagerIntegratedFlipview.txt",
+      "upstream": "WinUIGallery\\Samples\\PipsPager\\PipspagerIntegratedFlipview.txt",
+      "sha256": "624434670371db3d829212573824ab2b1346d47bf4895ccb25371b036bd50059"
+    },
+    {
+      "local": "references\\gallery-input\\PipsPager\\PipspagerOptionsChangeOrientation.txt",
+      "upstream": "WinUIGallery\\Samples\\PipsPager\\PipspagerOptionsChangeOrientation.txt",
+      "sha256": "6223447cddae3c8bb0872916bc1cbd19e3f544ca6e97cb538454aeaf1f0b9711"
+    },
+    {
+      "local": "references\\gallery-input\\PipsPager\\PipsPagerPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\PipsPager\\PipsPagerPage.xaml",
+      "sha256": "be9ba0c17520a7ecaca32d4d4b07e48df5f9d50d9f014be65b241103fdb46027"
+    },
+    {
+      "local": "references\\gallery-input\\PipsPager\\PipsPagerPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\PipsPager\\PipsPagerPage.xaml.cs",
+      "sha256": "7526ef475acde10977b26ddc894133bd97254cc663a28bf5f8c1487cdf4603f5"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\CompleteTabviewWindowingSample.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\CompleteTabviewWindowingSample.txt",
+      "sha256": "8343cf2eb81cb854f78d1eb53528d03067ba0c6c204c220308e34b89c19bb048"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabviewAccentColoredTabstrip.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabviewAccentColoredTabstrip.txt",
+      "sha256": "20cf571ad5047baf0090f67d20799297af12cece13281aac07128a413bb3c7cd"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabviewBoundCollectionMydata.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabviewBoundCollectionMydata.txt",
+      "sha256": "518320544c25b57a92acf14e9653c9c11599fb587fe7d70c92c69154233451c1"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabViewCloseButtonBePersistent.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabViewCloseButtonBePersistent.txt",
+      "sha256": "e4f6efa3778b46990c715c9dd79a7512679c95b8246c0ea9a171291b44a22fb2"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabviewColorTabIcons.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabviewColorTabIcons.txt",
+      "sha256": "0561952d6b310895167550b0e877deeba82a636a9e9936ccb8d0e04fb78dfc8d"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabviewKeyboardingSupport.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabviewKeyboardingSupport.txt",
+      "sha256": "0883345ba31207d0412f988f63a6937041f3567ced79eb29744d0d7a2d0f6d96"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabViewPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabViewPage.xaml",
+      "sha256": "3b3d0d2c622c7c2305373b154c243778a3ea6efeb687f3232de6f0f144e87bee"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabViewPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabViewPage.xaml.cs",
+      "sha256": "c3c7b4d806d5c50f08167dbb5ff7bc3fc6d97d9a0f21a17c85e231a78ca9fe49"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabviewSupportAddingClosing.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabviewSupportAddingClosing.txt",
+      "sha256": "30243cbded7419c7fb37cbd9128a0fa5b04ba283f5bde66209a3a855d2bd2e69"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabviewTabviewitemsDefinedMarkup.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabviewTabviewitemsDefinedMarkup.txt",
+      "sha256": "5190a0d7bc8df6d4bf634ddd1c6970ac4be15c3d7941d81489e2c4f58d96a027"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabViewTabWidthsEitherBe.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabViewTabWidthsEitherBe.txt",
+      "sha256": "c4554b978adb6ef46777c36a273e3af62cbe08ee0a44ea7f189cf7fbf008efde"
+    },
+    {
+      "local": "references\\gallery-input\\TabView\\TabViewYouPutCustomContent.txt",
+      "upstream": "WinUIGallery\\Samples\\TabView\\TabViewYouPutCustomContent.txt",
+      "sha256": "0bbbf4819596f98965a5742e5fb79c94226927904ad52c8223475dc7e6043530"
+    },
+    {
+      "local": "references\\gallery-input\\TreeView\\SimpleTreeviewDragDrop.txt",
+      "upstream": "WinUIGallery\\Samples\\TreeView\\SimpleTreeviewDragDrop.txt",
+      "sha256": "fe5ae988f60245cf40584875ffbd7a476e455ba8f38ef89d26299807dd27a238"
+    },
+    {
+      "local": "references\\gallery-input\\TreeView\\TreeviewDatabindingItemsource.txt",
+      "upstream": "WinUIGallery\\Samples\\TreeView\\TreeviewDatabindingItemsource.txt",
+      "sha256": "8da5019747fb02c9f3d5ef2b1e1cb4750635d990243cb52a87b0ec9575c695b0"
+    },
+    {
+      "local": "references\\gallery-input\\TreeView\\TreeviewItemtemplateselector.txt",
+      "upstream": "WinUIGallery\\Samples\\TreeView\\TreeviewItemtemplateselector.txt",
+      "sha256": "9d614b92209b1181c200b05d70bc3e82c129093de0580d7a8c4d2a67c7fb7031"
+    },
+    {
+      "local": "references\\gallery-input\\TreeView\\TreeviewMultiSelectionEnabled.txt",
+      "upstream": "WinUIGallery\\Samples\\TreeView\\TreeviewMultiSelectionEnabled.txt",
+      "sha256": "7e0ab484e26e58da2da5a8552575642c278187369b4721e4bc928ceda0687f36"
+    },
+    {
+      "local": "references\\gallery-input\\TreeView\\TreeViewPage.xaml",
+      "upstream": "WinUIGallery\\Samples\\TreeView\\TreeViewPage.xaml",
+      "sha256": "1a2c23c3380a111251564bd88aaf31ec18a49b77ce90d20bda7b5429f78250dd"
+    },
+    {
+      "local": "references\\gallery-input\\TreeView\\TreeViewPage.xaml.cs",
+      "upstream": "WinUIGallery\\Samples\\TreeView\\TreeViewPage.xaml.cs",
+      "sha256": "450716d7d4fffde8ec08315be7a9fdca5f7e2d4ebcaa4e2bd61ea59c7c921f89"
+    },
+    {
+      "local": "references/gallery-input/TabView/ContentSamplePage1.xaml",
+      "upstream": "WinUIGallery/SampleSupport/SamplePages/SamplePage1.xaml",
+      "sha256": "608c1e313a34ff596e2bd797aaf3aa2fff39a3d9e4b54809c251f2fcddbc0ea3"
+    },
+    {
+      "local": "references/gallery-input/TabView/ContentSamplePage2.xaml",
+      "upstream": "WinUIGallery/SampleSupport/SamplePages/SamplePage2.xaml",
+      "sha256": "137d5ae4d485566cbaf1e4fca58dd679a6aaabbdeab070bb2a163eb7d0c3a162"
+    },
+    {
+      "local": "references/gallery-input/TabView/ContentSamplePage3.xaml",
+      "upstream": "WinUIGallery/SampleSupport/SamplePages/SamplePage3.xaml",
+      "sha256": "3c3a546795c8b82ff5465d97a06a384256def85cf12f28e9ff21a5903aa43ed9"
+    }
+  ]
+}

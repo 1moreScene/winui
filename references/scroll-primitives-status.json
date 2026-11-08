@@ -1,0 +1,219 @@
+{
+  "verifiedOn": "2026-11-09",
+  "controls": [
+    "ScrollBar",
+    "Thumb",
+    "TickBar",
+    "ScrollContentPresenter",
+    "ItemsPresenter"
+  ],
+  "architecture": "Rust owns scene, validation, layout, scroll state, repeat timing, capture, drag coordinates, input and painting. TS/React bind public API, project host semantics and run business callbacks.",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "validation": {
+    "rust": {
+      "passed": 399,
+      "path": "out/scroll-primitives-rust-all.log",
+      "sha256": "718d9690a1981343a54b2a652490ba58351b9bf899d1fd9063af635788fcb4ca",
+      "newIntegrationTests": 11,
+      "targeted": {
+        "path": "out/scroll-primitives-rust-targeted.log",
+        "sha256": "475fef7faa4c65a78b46e556f094c0b3804e7b8fc5de5479349665134cdf90aa"
+      }
+    },
+    "browser": [
+      {
+        "path": "out/scroll-primitives-browser-results.json",
+        "sha256": "308c112ca64286652936ed1c520e3db598b8ec1bc0a3d08ef17f1fa8796523eb",
+        "passed": 12
+      },
+      {
+        "path": "out/scroll-primitives-production-results.json",
+        "sha256": "8d2619cdaa8934428ed4edf40555e2f1791701f4819cfbe1ed6c552d5e9dba3e",
+        "passed": 10
+      }
+    ],
+    "browserTest": {
+      "path": "gallery/tests/scroll-primitives.spec.ts",
+      "sha256": "c20e7ac74ac30fc1ef2e54bc9979b54fdc7ad94679236e59ccbdadacbee6dd34"
+    },
+    "native": {
+      "path": "references/scroll-primitives-native.json",
+      "sha256": "bd2b7202820992f07cff9414f7c6aa134743bbce1f74355f740ca35adae11e10",
+      "capturedStates": 48,
+      "probe": {
+        "path": "references/scroll-primitives-probe.json",
+        "sha256": "a3a6001f3eb4073d3e7b1aecaf56f7fa25014ba0c842b56c33df16b05a7c1ec6"
+      },
+      "dpr": 1.25,
+      "geometry": [
+        {
+          "kind": "TickBar",
+          "states": 12,
+          "maximumErrorDip": 0.000006103515630684342
+        },
+        {
+          "kind": "ScrollBar",
+          "states": 24,
+          "maximumErrorDip": 0.000003051757815342171
+        }
+      ],
+      "scope": "ScrollBar Thumb layout rectangles; TickBar algorithm supplied native bounds and Thumb size. Other captured primitives retained as reference. No pixel or Store Composition equivalence.",
+      "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+      "defaults": {
+        "path": "references/scroll-primitives-defaults.json",
+        "sha256": "75b1e4d2426315134b988261f5cf165b6bd12e609231e5900a82c4a091b63150"
+      }
+    },
+    "typescript": "Live strict project including negative enum/reference cases passed; frozen frontend strict and declaration generation passed.",
+    "production": {
+      "url": "http://127.0.0.1:5221/#scroll-bar",
+      "wasm": [
+        "out/scroll-primitives-production/assets/winui_bg-dnNKgLAo.wasm"
+      ],
+      "wasmSha256": "457f8b93ca8f51e8b73846153e4a492673cbc4d43392847afe2e37312015df17",
+      "matchesTestedBinary": true,
+      "matchesCurrentBinary": false,
+      "indexSha256": "6ccec1693e6240d293dd8b737420216d5f520c60fe4dd9701b7c2e0c875d278c",
+      "sourceSnapshot": {
+        "path": "out/scroll-primitives-snapshot/snapshot-manifest.json",
+        "sha256": "283540f27af131a6b41f7231cee6a1c134097afd1b1dc5da9d6895a073d40d5f"
+      },
+      "sdkDeclarations": "out/scroll-primitives-snapshot/gallery/dist/sdk-types/scroll-primitives-types.d.ts"
+    },
+    "screenshots": {
+      "path": "out/scroll-primitives-visual/results.json",
+      "sha256": "ad71c151fd111dce31fcc5778161cfbc2e2821ced69d4c52c16627a335ff0f7a"
+    }
+  },
+  "sourceFingerprints": [
+    {
+      "path": "src/scene/scroll_primitives.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/scroll_primitives.rs",
+      "sha256": "8bff8e7e1480b63a7a69ee50382acaf16289e11c1606a46e9ae2de3fe86e3abf",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/mod.rs",
+      "sha256": "a9ad9bd0c9797112195802b738da05898de0ae518a40102ff628e3355ce1e8d7",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/input.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/input.rs",
+      "sha256": "a2b18c9658d823a906efdeebb1cab82dc78c259e889008b280f511e656b557d5",
+      "matchesLiveWorkspace": false
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/layout.rs",
+      "sha256": "f4059f13e41d63fa95a55984df83d1d89beff0b92443e71763c92e556fc325d0",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/properties.rs",
+      "sha256": "852fa0a9cebf263044f23b83e3ed76854cd6a3a4ecaecaf5f01a562f574b7db9",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/paint.rs",
+      "sha256": "2fe5b5fd9d031758f1e4fb8dc27a51b8f72355df55835424a2d04fd8445e015f",
+      "matchesLiveWorkspace": false
+    },
+    {
+      "path": "src/scene/collections.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/collections.rs",
+      "sha256": "8054777474bd9cf14718447f03ddc9f548233908953ad614df8e2b2c13696547",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/resources.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/resources.rs",
+      "sha256": "dfdaf73035ff2840ef82c8b7d00d4af262a153c5da31a6c4baeb7e3c4245e8c2",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "src/scene/composed.rs",
+      "testedPath": "out/scroll-primitives-snapshot/src/scene/composed.rs",
+      "sha256": "95137d368075a1db449816a9fc8f97ecf9b3ee9de34c7df05c852fc3b320295d",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "references/api-enums.json",
+      "testedPath": "out/scroll-primitives-snapshot/references/api-enums.json",
+      "sha256": "bed840c76875445166f685d661273fb95ff29c43a6fbf9d65d3b74a4e1628796",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "references/scroll-primitives-template.json",
+      "testedPath": "out/scroll-primitives-snapshot/references/scroll-primitives-template.json",
+      "sha256": "e53dfa9670c89cc9a6a0806af5a4142689d677eb2b5a0133ad0b7a314801be3c",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/scroll-primitives-types.ts",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/scroll-primitives-types.ts",
+      "sha256": "df27bcfdb8aad145655d609bcdb81f4519887f4b4b3860026cd6b49ea231b93a",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/ScrollPrimitivesPage.tsx",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/ScrollPrimitivesPage.tsx",
+      "sha256": "52538830fb9d9f890ef3e63112e95ff6623dfcf69ccb5ea58dcb9d564feea0c0",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/scene.ts",
+      "sha256": "979647954395345b0f494b76414658478f675e4d1318b171ea02fc47a6035cf8",
+      "matchesLiveWorkspace": false
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/react.tsx",
+      "sha256": "944ced5003a514f088700570b5f1c2eb64bc47e196de08e2990defc45596a81c",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/index.ts",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/index.ts",
+      "sha256": "19daf55d604bc4be07322c66284ffa18389758642c0eb93354e4504578e741ee",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/enums.ts",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/enums.ts",
+      "sha256": "478c15c7cc7c808b215b6806b6de1e704859cf57a357f6cddbcbfeab41840b04",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/App.tsx",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/App.tsx",
+      "sha256": "a2da52e118f643cd31697c8e1b0fe42c7b39ce92032c51cd3c77d83c300ac933",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "gallery/src/gallery-catalog.ts",
+      "testedPath": "out/scroll-primitives-snapshot/gallery/src/gallery-catalog.ts",
+      "sha256": "047d9a6101271b1968d7e58c712f5708b344b5f53713ba2ab35ff3fdc2c4bab5",
+      "matchesLiveWorkspace": true
+    },
+    {
+      "path": "tests/scroll_primitives.rs",
+      "testedPath": "out/scroll-primitives-snapshot/tests/scroll_primitives.rs",
+      "sha256": "6b03df773b0d10bb22fd875e192ba802ae1b926e7cb33e2ec755b4a607303e86",
+      "matchesLiveWorkspace": true
+    }
+  ],
+  "remaining": [
+    "Automatic Slider TickPlacement template integration; explicit TickBar source supported",
+    "Complete ItemsControl generator/virtualized presenter lifecycle, snap points and sticky footer",
+    "Native DirectManipulation inertia and system input pane behavior",
+    "Full ScrollBar contraction/disabled fade VSM timeline",
+    "Complete UIA and Store Composition frame/pixel parity"
+  ],
+  "docs": "docs/scroll-primitives.md"
+}

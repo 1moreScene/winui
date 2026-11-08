@@ -1,0 +1,526 @@
+{
+  "recordedAt": "2026-11-08T15:47:37.482685+00:00",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "gallerySourceFiles": 19,
+  "exampleCounts": {
+    "CalendarDatePicker": 1,
+    "CalendarView": 1,
+    "ColorPicker": 1,
+    "DatePicker": 2,
+    "TimePicker": 3
+  },
+  "examples": {
+    "CalendarDatePicker": [
+      "CalendarDatePicker with a header and placeholder text."
+    ],
+    "CalendarView": [
+      "A basic calendar view."
+    ],
+    "ColorPicker": [
+      "ColorPicker Properties."
+    ],
+    "DatePicker": [
+      "A simple DatePicker with a header.",
+      "A DatePicker with day formatted and year hidden."
+    ],
+    "TimePicker": [
+      "A simple TimePicker that uses the clock format for the user's region.",
+      "A TimePicker with a header and minute increments specified.",
+      "Use ClockIdentifier to override the regional clock format."
+    ]
+  },
+  "calendarIdentifiersInSourceOrder": [
+    "GregorianCalendar",
+    "HebrewCalendar",
+    "HijriCalendar",
+    "JapaneseCalendar",
+    "JulianCalendar",
+    "KoreanCalendar",
+    "PersianCalendar",
+    "TaiwanCalendar",
+    "ThaiCalendar",
+    "UmAlQuraCalendar"
+  ],
+  "languagesInSourceOrder": [
+    {
+      "name": "English",
+      "code": "en"
+    },
+    {
+      "name": "Arabic",
+      "code": "ar"
+    },
+    {
+      "name": "Afrikaans",
+      "code": "af"
+    },
+    {
+      "name": "Albanian",
+      "code": "sq"
+    },
+    {
+      "name": "Amharic",
+      "code": "am"
+    },
+    {
+      "name": "Armenian",
+      "code": "hy"
+    },
+    {
+      "name": "Assamese",
+      "code": "as"
+    },
+    {
+      "name": "Azerbaijani",
+      "code": "az"
+    },
+    {
+      "name": "Basque ",
+      "code": "eu"
+    },
+    {
+      "name": "Belarusian",
+      "code": "be"
+    },
+    {
+      "name": "Bangla",
+      "code": "bn"
+    },
+    {
+      "name": "Bosnian",
+      "code": "bs"
+    },
+    {
+      "name": "Bulgarian",
+      "code": "bg"
+    },
+    {
+      "name": "Catalan",
+      "code": "ca"
+    },
+    {
+      "name": "Chinese (Simplified)",
+      "code": "zh"
+    },
+    {
+      "name": "Croatian",
+      "code": "hr"
+    },
+    {
+      "name": "Czech",
+      "code": "cs"
+    },
+    {
+      "name": "Danish",
+      "code": "da"
+    },
+    {
+      "name": "Dari",
+      "code": "prs"
+    },
+    {
+      "name": "Dutch",
+      "code": "nl"
+    },
+    {
+      "name": "Estonian",
+      "code": "et"
+    },
+    {
+      "name": "Filipino",
+      "code": "fil"
+    },
+    {
+      "name": "Finnish",
+      "code": "fi"
+    },
+    {
+      "name": "French ",
+      "code": "fr"
+    },
+    {
+      "name": "Galician",
+      "code": "gl"
+    },
+    {
+      "name": "Georgian",
+      "code": "ka"
+    },
+    {
+      "name": "German",
+      "code": "de"
+    },
+    {
+      "name": "Greek",
+      "code": "el"
+    },
+    {
+      "name": "Gujarati",
+      "code": "gu"
+    },
+    {
+      "name": "Hausa",
+      "code": "ha"
+    },
+    {
+      "name": "Hebrew",
+      "code": "he"
+    },
+    {
+      "name": "Hindi",
+      "code": "hi"
+    },
+    {
+      "name": "Hungarian",
+      "code": "hu"
+    },
+    {
+      "name": "Icelandic",
+      "code": "is"
+    },
+    {
+      "name": "Indonesian",
+      "code": "id"
+    },
+    {
+      "name": "Irish",
+      "code": "ga"
+    },
+    {
+      "name": "isiXhosa",
+      "code": "xh"
+    },
+    {
+      "name": "isiZulu",
+      "code": "zu"
+    },
+    {
+      "name": "Italian",
+      "code": "it"
+    },
+    {
+      "name": "Japanese ",
+      "code": "ja"
+    },
+    {
+      "name": "Kannada",
+      "code": "kn"
+    },
+    {
+      "name": "Kazakh",
+      "code": "kk"
+    },
+    {
+      "name": "Khmer",
+      "code": "km"
+    },
+    {
+      "name": "Kinyarwanda",
+      "code": "rw"
+    },
+    {
+      "name": "KiSwahili",
+      "code": "sw"
+    },
+    {
+      "name": "Konkani",
+      "code": "kok"
+    },
+    {
+      "name": "Korean",
+      "code": "ko"
+    },
+    {
+      "name": "Lao",
+      "code": "lo"
+    },
+    {
+      "name": "Latvian",
+      "code": "lv"
+    },
+    {
+      "name": "Lithuanian",
+      "code": "lt"
+    },
+    {
+      "name": "Luxembourgish",
+      "code": "lb"
+    },
+    {
+      "name": "Macedonian",
+      "code": "mk"
+    },
+    {
+      "name": "Malay",
+      "code": "ms"
+    },
+    {
+      "name": "Malayalam",
+      "code": "ml"
+    },
+    {
+      "name": "Maltese",
+      "code": "mt"
+    },
+    {
+      "name": "Maori ",
+      "code": "mi"
+    },
+    {
+      "name": "Marathi",
+      "code": "mr"
+    },
+    {
+      "name": "Nepali",
+      "code": "ne"
+    },
+    {
+      "name": "Norwegian",
+      "code": "nb"
+    },
+    {
+      "name": "Odia",
+      "code": "or"
+    },
+    {
+      "name": "Persian",
+      "code": "fa"
+    },
+    {
+      "name": "Polish",
+      "code": "pl"
+    },
+    {
+      "name": "Portuguese",
+      "code": "pt"
+    },
+    {
+      "name": "Punjabi",
+      "code": "pa"
+    },
+    {
+      "name": "Quechua",
+      "code": "quz"
+    },
+    {
+      "name": "Romanian",
+      "code": "ro"
+    },
+    {
+      "name": "Russian",
+      "code": "ru"
+    },
+    {
+      "name": "Serbian (Latin)",
+      "code": "sr"
+    },
+    {
+      "name": "Sesotho sa Leboa",
+      "code": "nso"
+    },
+    {
+      "name": "Setswana",
+      "code": "tn"
+    },
+    {
+      "name": "Sinhala",
+      "code": "si"
+    },
+    {
+      "name": "Slovak ",
+      "code": "sk"
+    },
+    {
+      "name": "Slovenian",
+      "code": "sl"
+    },
+    {
+      "name": "Spanish",
+      "code": "es"
+    },
+    {
+      "name": "Swedish",
+      "code": "sv"
+    },
+    {
+      "name": "Tamil",
+      "code": "ta"
+    },
+    {
+      "name": "Telugu",
+      "code": "te"
+    },
+    {
+      "name": "Thai",
+      "code": "th"
+    },
+    {
+      "name": "Tigrinya",
+      "code": "ti"
+    },
+    {
+      "name": "Turkish",
+      "code": "tr"
+    },
+    {
+      "name": "Ukrainian",
+      "code": "uk"
+    },
+    {
+      "name": "Urdu",
+      "code": "ur"
+    },
+    {
+      "name": "Uzbek (Latin)",
+      "code": "uz"
+    },
+    {
+      "name": "Vietnamese",
+      "code": "vi"
+    },
+    {
+      "name": "Welsh",
+      "code": "cy"
+    },
+    {
+      "name": "Wolof",
+      "code": "wo"
+    }
+  ],
+  "checks": {
+    "Chromium": {
+      "startTime": "2026-11-08T15:31:55.668Z",
+      "duration": 77156.89,
+      "expected": 26,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "WebKit": {
+      "startTime": "2026-11-08T15:33:13.397Z",
+      "duration": 122878.348,
+      "expected": 26,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "Live5173": {
+      "startTime": "2026-11-08T15:39:30.446Z",
+      "duration": 50609.93,
+      "expected": 16,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "rust": {
+    "out/picker-gallery-rust.log": 15,
+    "out/picker-gallery-core.log": 10
+  },
+  "typecheck": "passed",
+  "declarations": "out/picker-gallery-declarations.log",
+  "productionBuild": "out/picker-gallery-production.log",
+  "browserSuiteWasmSha256": "0019d62d5daf35985c9ee69882331154a7756ccdf36ff2d9042e433d19004252",
+  "liveBuildBeforeChecks": {
+    "sha256": "ac6d233444efcc9759cfb0fbc7168a0360f6fda2e3146117f335561990880f4f",
+    "completedAt": 1794152238654
+  },
+  "liveBuildAfterChecks": {
+    "sha256": "4413e9eabdb5519e9084aa603f02bda0197d11a89eaadd52bca9d29ec4047ed2",
+    "completedAt": 1794152386123
+  },
+  "sharedRuntimeStableDuringLiveChecks": false,
+  "liveRouteSweep": {
+    "recordedAt": "2026-11-08T15:45:10.675Z",
+    "url": "http://127.0.0.1:5173/",
+    "wasmResponseSha256": [
+      "74aad4f11cd3cb132c4bb98b3fb66a7729624108509c9f7fced9108d824482bf",
+      "dd394b150cfc92a47d39f9446c5bf99e1f4eb1c4f29c65a48217f07c80496a9e"
+    ],
+    "rows": [
+      {
+        "kind": "CalendarView",
+        "backend": "Canvas2D",
+        "examples": 1
+      },
+      {
+        "kind": "CalendarView",
+        "backend": "WebGL2",
+        "examples": 1
+      },
+      {
+        "kind": "CalendarDatePicker",
+        "backend": "Canvas2D",
+        "examples": 1
+      },
+      {
+        "kind": "CalendarDatePicker",
+        "backend": "WebGL2",
+        "examples": 1
+      },
+      {
+        "kind": "DatePicker",
+        "backend": "Canvas2D",
+        "examples": 2
+      },
+      {
+        "kind": "DatePicker",
+        "backend": "WebGL2",
+        "examples": 2
+      },
+      {
+        "kind": "TimePicker",
+        "backend": "Canvas2D",
+        "examples": 3
+      },
+      {
+        "kind": "TimePicker",
+        "backend": "WebGL2",
+        "examples": 3
+      },
+      {
+        "kind": "ColorPicker",
+        "backend": "Canvas2D",
+        "examples": 1
+      },
+      {
+        "kind": "ColorPicker",
+        "backend": "WebGL2",
+        "examples": 1
+      }
+    ],
+    "errors": [],
+    "scope": "One private QA page visits all five real routes on both backends. Vite websocket reloads are disabled only in this page; actual SDK requests still use the live server. Concurrent builds can produce multiple recorded response hashes; this does not certify each binary against the entire frozen browser suite."
+  },
+  "servedWasmSha256AtRecording": "fd5b2ec451966f5cb84e7e61732e5988dc9fd0995ec2790bc2f42688aa40fc69",
+  "liveChecksMatchServedAtRecording": false,
+  "liveRouteSweepIncludesServedRuntimeAtRecording": false,
+  "fullBrowserSuiteMatchesLiveBinary": false,
+  "versionScope": "Chromium/WebKit suites use the frozen WASM. Live5173 checks run the eight Gallery examples and the six layout/motion regressions on the shared preview. Before/after stamps expose concurrent rebuilds; the route sweep records actual response-body hashes. No full-suite certification is inferred for any later shared binary.",
+  "scope": [
+    "Pinned page XAML and SampleDefinition .txt files determine the eight example titles and their order.",
+    "CalendarView uses the original options and language/calendar lists; no invented event output.",
+    "DatePicker day/weekday pattern, two-month default and current-year through five-year range execute in the real SDK.",
+    "TimePicker shows both 12/24 hour clocks using the same current local time.",
+    "ColorPicker options drive real Rust state and the Shape rectangle preview, including the gradient border resource.",
+    "Both renderers cover selection, flyout commit/dismiss, text sizing and calendar motion regressions."
+  ],
+  "remaining": [
+    "Nine non-Gregorian calendars remain disabled; the SDK explicitly rejects them.",
+    "Languages lacking browser Intl data remain disabled; Windows language support is not simulated.",
+    "The supported DayFormat tokens do not implement arbitrary WinRT DateTimeFormatter patterns.",
+    "Gallery case coverage does not establish full Store Gallery/DWM or frame-by-frame pixel parity."
+  ],
+  "sourceFiles": {
+    "tools/extract-picker-controls.py": "f2003b37f097a4bfe2c61455a65b1eee68d22ad5463718cf8f479a46407a5861",
+    "gallery/src/official-picker-controls.json": "2c31e20f8697332bc5085233ec094a9db508b9c37f22320f994efe97381eb546",
+    "gallery/src/PickerControlsPage.tsx": "6e2a0a5c3528dd33ee791a85e58696b03b8f73692180df5fd7cf6f6f24704358",
+    "gallery/src/picker-gallery.css": "b9fbd4136df1e0313ccbed7bd3b8eafd0a356d4ca54662ca4bd86ad25fc65708",
+    "gallery/src/GalleryControls.tsx": "5ba36bcccebba001642b80a7ead7851a72229727f70d44b6b14e716ab626909b",
+    "gallery/src/picker-controls-types.ts": "0bfbec1be210d7557d7b9a57714b8cb485b5f3c888884459da8d6ff367a6b704",
+    "src/scene/picker_controls.rs": "6ed1ab36ebeb1de5248ab31f2c0a3c93feec9bef5deb8f3d4f563c9ece2e15a0",
+    "src/scene/picker_controls/input.rs": "f5c7b4982b54f14f299b48cec6679b38113342bf31f8642e00f5049cd3b48b49",
+    "src/scene/picker_controls/layout.rs": "152a4b7c4bb543aa5fbe8f7f988cff8c14ddd7d33f2baf56934cd20010e164e1",
+    "src/shapes.rs": "29794ea266917ff5713a8ce90af748ed500410531fae5afdc627a98d230c7911"
+  }
+}

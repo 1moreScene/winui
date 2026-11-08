@@ -1,0 +1,514 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "aliases": {},
+  "sourceAliases": {
+    "Light": {
+      "RepeatButtonBackground": "ControlFillColorDefaultBrush",
+      "RepeatButtonBackgroundPointerOver": "ControlFillColorSecondaryBrush",
+      "RepeatButtonBackgroundPressed": "ControlFillColorTertiaryBrush",
+      "RepeatButtonBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "RepeatButtonForeground": "TextFillColorPrimaryBrush",
+      "RepeatButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "RepeatButtonForegroundPressed": "TextFillColorSecondaryBrush",
+      "RepeatButtonForegroundDisabled": "TextFillColorDisabledBrush",
+      "RepeatButtonBorderBrush": "ControlElevationBorderBrush",
+      "RepeatButtonBorderBrushPointerOver": "ControlElevationBorderBrush",
+      "RepeatButtonBorderBrushPressed": "ControlStrokeColorDefaultBrush",
+      "RepeatButtonBorderBrushDisabled": "ControlStrokeColorDefaultBrush"
+    },
+    "Dark": {
+      "RepeatButtonBackground": "ControlFillColorDefaultBrush",
+      "RepeatButtonBackgroundPointerOver": "ControlFillColorSecondaryBrush",
+      "RepeatButtonBackgroundPressed": "ControlFillColorTertiaryBrush",
+      "RepeatButtonBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "RepeatButtonForeground": "TextFillColorPrimaryBrush",
+      "RepeatButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "RepeatButtonForegroundPressed": "TextFillColorSecondaryBrush",
+      "RepeatButtonForegroundDisabled": "TextFillColorDisabledBrush",
+      "RepeatButtonBorderBrush": "ControlElevationBorderBrush",
+      "RepeatButtonBorderBrushPointerOver": "ControlElevationBorderBrush",
+      "RepeatButtonBorderBrushPressed": "ControlStrokeColorDefaultBrush",
+      "RepeatButtonBorderBrushDisabled": "ControlStrokeColorDefaultBrush"
+    },
+    "HighContrast": {
+      "RepeatButtonBackground": "SystemControlBackgroundBaseLowBrush",
+      "RepeatButtonBackgroundPointerOver": "SystemControlBackgroundBaseLowBrush",
+      "RepeatButtonBackgroundPressed": "SystemControlBackgroundBaseMediumLowBrush",
+      "RepeatButtonBackgroundDisabled": "SystemControlBackgroundBaseLowBrush",
+      "RepeatButtonForeground": "SystemControlForegroundBaseHighBrush",
+      "RepeatButtonForegroundPointerOver": "SystemControlHighlightBaseHighBrush",
+      "RepeatButtonForegroundPressed": "SystemControlHighlightBaseHighBrush",
+      "RepeatButtonForegroundDisabled": "SystemControlDisabledBaseMediumLowBrush",
+      "RepeatButtonBorderBrush": "SystemControlForegroundTransparentBrush",
+      "RepeatButtonBorderBrushPointerOver": "SystemControlHighlightBaseMediumLowBrush",
+      "RepeatButtonBorderBrushPressed": "SystemControlHighlightTransparentBrush",
+      "RepeatButtonBorderBrushDisabled": "SystemControlDisabledTransparentBrush"
+    }
+  },
+  "primitives": {
+    "Light": {
+      "RepeatButtonBackground": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#F9F9F980",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#F9F9F94D",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#F9F9F94D",
+        "opacity": 1
+      },
+      "RepeatButtonForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000029"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushPointerOver": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000029"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "RepeatButtonBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF15",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF08",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1
+      },
+      "RepeatButtonForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#FFFFFF18"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushPointerOver": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#FFFFFF18"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "RepeatButtonBackground": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "RepeatButtonBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "RepeatButtonForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "RepeatButtonForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrush": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "RepeatButtonBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      }
+    }
+  },
+  "requiredBrushes": {
+    "RepeatButtonBackground": {
+      "colorResource": false
+    },
+    "RepeatButtonBackgroundPointerOver": {
+      "colorResource": false
+    },
+    "RepeatButtonBackgroundPressed": {
+      "colorResource": false
+    },
+    "RepeatButtonBackgroundDisabled": {
+      "colorResource": false
+    },
+    "RepeatButtonForeground": {
+      "colorResource": false
+    },
+    "RepeatButtonForegroundPointerOver": {
+      "colorResource": false
+    },
+    "RepeatButtonForegroundPressed": {
+      "colorResource": false
+    },
+    "RepeatButtonForegroundDisabled": {
+      "colorResource": false
+    },
+    "RepeatButtonBorderBrush": {
+      "colorResource": false
+    },
+    "RepeatButtonBorderBrushPointerOver": {
+      "colorResource": false
+    },
+    "RepeatButtonBorderBrushPressed": {
+      "colorResource": false
+    },
+    "RepeatButtonBorderBrushDisabled": {
+      "colorResource": false
+    }
+  },
+  "repeatStyle": {
+    "key": "DefaultRepeatButtonStyle",
+    "states": {
+      "Normal": {
+        "Background": "RepeatButtonBackground",
+        "BorderBrush": "RepeatButtonBorderBrush",
+        "Foreground": "RepeatButtonForeground"
+      },
+      "PointerOver": {
+        "Background": "RepeatButtonBackgroundPointerOver",
+        "BorderBrush": "RepeatButtonBorderBrushPointerOver",
+        "Foreground": "RepeatButtonForegroundPointerOver"
+      },
+      "Pressed": {
+        "Background": "RepeatButtonBackgroundPressed",
+        "BorderBrush": "RepeatButtonBorderBrushPressed",
+        "Foreground": "RepeatButtonForegroundPressed"
+      },
+      "Disabled": {
+        "Background": "RepeatButtonBackgroundDisabled",
+        "BorderBrush": "RepeatButtonBorderBrushDisabled",
+        "Foreground": "RepeatButtonForegroundDisabled"
+      }
+    },
+    "backgroundSizing": "InnerBorderEdge",
+    "backgroundTransitionMs": 83.0,
+    "part": "ContentPresenter"
+  },
+  "templateDefaults": {
+    "Background": "{ThemeResource RepeatButtonBackground}",
+    "BackgroundSizing": "InnerBorderEdge",
+    "Foreground": "{ThemeResource RepeatButtonForeground}",
+    "BorderBrush": "{ThemeResource RepeatButtonBorderBrush}",
+    "BorderThickness": "{ThemeResource ButtonBorderThemeThickness}",
+    "Padding": "{StaticResource ButtonPadding}",
+    "HorizontalAlignment": "Left",
+    "VerticalAlignment": "Center",
+    "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+    "FontWeight": "Normal",
+    "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+    "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+    "FocusVisualMargin": "-3",
+    "CornerRadius": "{ThemeResource ControlCornerRadius}"
+  },
+  "presenterAttributes": {
+    "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ContentPresenter",
+    "Background": "{TemplateBinding Background}",
+    "Foreground": "{TemplateBinding Foreground}",
+    "BackgroundSizing": "{TemplateBinding BackgroundSizing}",
+    "BorderBrush": "{TemplateBinding BorderBrush}",
+    "BorderThickness": "{TemplateBinding BorderThickness}",
+    "Content": "{TemplateBinding Content}",
+    "ContentTemplate": "{TemplateBinding ContentTemplate}",
+    "ContentTransitions": "{TemplateBinding ContentTransitions}",
+    "CornerRadius": "{TemplateBinding CornerRadius}",
+    "Padding": "{TemplateBinding Padding}",
+    "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
+    "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
+    "AutomationProperties.AccessibilityView": "Raw"
+  },
+  "unimplementedPublicCapabilities": [
+    "XAML ContentTemplate/ContentTransitions execution",
+    "Direct BorderBrush/BorderThickness/BackgroundSizing overrides",
+    "Direct HorizontalContentAlignment/VerticalContentAlignment overrides; use explicit child layout for customization"
+  ],
+  "nativeDefaults": {
+    "delay": 500,
+    "interval": 33,
+    "clickMode": "Press",
+    "horizontalContentAlignment": "Center",
+    "verticalContentAlignment": "Center",
+    "stretch": "Uniform",
+    "stretchDirection": "Both"
+  },
+  "sources": [
+    {
+      "path": "references/winui/RepeatButton_themeresources.xaml",
+      "sha256": "71c4261539124ed938633bf69043a528e26ac7f198b519b198b4aded39dab83c"
+    },
+    {
+      "path": "references/winui/RepeatButton_Partial.cpp",
+      "sha256": "ace90c47728ca5f0a7d07174e3f27614c7cf1943a4b436e8501aacbe4461d426"
+    },
+    {
+      "path": "references/winui/RepeatButton_Partial.h",
+      "sha256": "6452cb8b292a19fde2a4c854cec14ad0c24aa4d05ea858e8ff208d0dce9b3bd7"
+    },
+    {
+      "path": "references/winui/RepeatButtonAutomationPeer_Partial.cpp",
+      "sha256": "1084b1f1b57e6b632823d57e7b8ebc1ae8aac4b25cb808ff44f3bfe795b85ab0"
+    },
+    {
+      "path": "references/winui/Viewbox.cpp",
+      "sha256": "1100040077aee7d4b6dffcd0ed796be64e5ad09f9c9e07f7057b39a7a8a119e4"
+    },
+    {
+      "path": "references/winui/Viewbox.h",
+      "sha256": "063fd574ebc6490cfc95a05c66aaa4bd4b6e0aa367dc22bf35960832f8e33722"
+    }
+  ]
+}

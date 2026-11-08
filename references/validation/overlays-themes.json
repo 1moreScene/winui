@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "backend": "Canvas2D",
+      "theme": "Light",
+      "passed": true
+    },
+    {
+      "backend": "Canvas2D",
+      "theme": "Dark",
+      "passed": true
+    },
+    {
+      "backend": "Canvas2D",
+      "theme": "HighContrast",
+      "passed": true
+    },
+    {
+      "backend": "WebGL2",
+      "theme": "Light",
+      "passed": true
+    },
+    {
+      "backend": "WebGL2",
+      "theme": "Dark",
+      "passed": true
+    },
+    {
+      "backend": "WebGL2",
+      "theme": "HighContrast",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "boundary": "Browser themes only; deterministic HighContrast resources, without changing Windows settings."
+}

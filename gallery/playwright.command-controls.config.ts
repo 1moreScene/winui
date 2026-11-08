@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';import base from './playwright.config';
+export default defineConfig({...base,testMatch:'**/command-controls.spec.ts',webServer:undefined,use:{...base.use,baseURL:process.env.WINUI_COMMAND_TEST_URL??'http://127.0.0.1:5197',deviceScaleFactor:1.25},outputDir:'../out/command-controls-browser',reporter:[['list'],['json',{outputFile:'../out/command-controls-browser-results.json'}]]});

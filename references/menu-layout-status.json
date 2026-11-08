@@ -1,0 +1,116 @@
+{
+  "recordedAt": "2026-11-08T13:26:08.332806+00:00",
+  "controls": [
+    "MenuBar",
+    "MenuBarItem",
+    "CommandBarFlyout",
+    "RelativePanel",
+    "WrapPanel"
+  ],
+  "implementation": "Rust scene properties, measure/arrange, template children, input, checked/radio state, keyboard shortcuts, floating lifetime and rendering. TS maps typed parameters and browser semantics; React mounts the same API.",
+  "commandModels": "Deferred from this five-control batch by user choice.",
+  "samples": 8,
+  "baseline": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+    "nativeProbe": "references/menu-layout-probe-run.json",
+    "nativeStates": 24,
+    "binarySourceCommitEquivalenceEstablished": false
+  },
+  "validation": {
+    "rust": {
+      "passed": 105,
+      "newTests": 16,
+      "log": "out/menu-layout-frozen-final-rust.log",
+      "sourceManifest": "out/menu-layout-validation-source-v2/source-manifest.json"
+    },
+    "browser": {
+      "passed": 26,
+      "log": "out/menu-layout-browser-final.log"
+    },
+    "productionBrowser": {
+      "passed": 18,
+      "log": "out/menu-layout-production-browser.log"
+    },
+    "finalRightPlacement": {
+      "passed": 2,
+      "log": "out/menu-layout-final-placement.log"
+    },
+    "browserProjects": [
+      "Edge headless",
+      "WebKit headless"
+    ],
+    "renderers": [
+      "Canvas2D",
+      "WebGL2"
+    ],
+    "dpr": [
+      1,
+      1.25,
+      1.5,
+      2
+    ],
+    "relativePanelSameSdkMaxErrorDip": {
+      "edge": 0.8000015258789048,
+      "webkit": 0.8000015258789048
+    },
+    "typescript": "strict typecheck and declarations passed, including enum negative cases",
+    "galleryControlSourceAudit": "tools/gallery-control-source.mjs --check passed",
+    "productionBuildLog": "out/menu-layout-vite-build.log"
+  },
+  "runtime": {
+    "sha256": "72a5dfe4e06d76a005c56d93a72ccf453eb6361ecff75791f4a9498efa959484",
+    "bytes": 6807936,
+    "gzipBytes": 1547039,
+    "browserSourceManifest": "out/collections-5268-app-runtime/manifest.json",
+    "finalProductionSourceManifest": "out/collections-5270-app-runtime/manifest.json",
+    "productionDirectory": "out/menu-layout-gallery",
+    "productionUrl": "http://127.0.0.1:5270/#menu-bar",
+    "coreBatchModulesMatchFrozenRun": true,
+    "integrationFileFingerprintsMatchFrozenRun": {
+      "src/scene/command_menus.rs": true,
+      "src/scene/menu_entries.rs": true,
+      "src/scene/layout_panels.rs": true,
+      "src/scene/input.rs": true,
+      "src/scene/layout.rs": true,
+      "src/scene/properties.rs": true,
+      "src/scene/mod.rs": true,
+      "src/scene/paint.rs": false,
+      "src/scene/command_controls.rs": true,
+      "src/scene/command_controls/layout.rs": true,
+      "src/scene/command_controls/paint.rs": true,
+      "src/scene/command_controls/input.rs": true,
+      "src/scene/compact_controls.rs": true,
+      "src/scene/five_controls.rs": true,
+      "src/selection.rs": true,
+      "src/wasm.rs": true
+    },
+    "otherRustFilesChangedAfterSnapshot": [
+      "src/scene/paint.rs",
+      "src/scene/view_controls.rs",
+      "src/scene/picker_controls/input.rs",
+      "src/scene/picker_controls/layout.rs",
+      "src/scene/picker_controls/paint.rs"
+    ],
+    "note": "Independent frozen source/runtime; concurrent edits outside this batch are not validated by this binary."
+  },
+  "fullSuiteAttempt": {
+    "log": "out/menu-layout-all-rust.log",
+    "passed": false,
+    "failure": "animated_icon::scene_coalesces_state_updates_inherits_state_and_stops_hidden_or_reduced",
+    "note": "The broad attempt stopped in this separate animation test. This batch reports the independent 105-test relevant regression, not a full-suite pass."
+  },
+  "acceptedFullStorePixelParity": false,
+  "acceptedCompositionMotionParity": false,
+  "remaining": [
+    "Full Store Gallery Composition material and frame timing acceptance",
+    "Native submenu hover delay and diagonal pointer buffer",
+    "Very tall menus need their own scroll host",
+    "Systematic differential coverage of extreme RelativePanel constraints",
+    "Experimental SDK WrapPanel Last overflow/explicit-size edge cases",
+    "Complete native UIA provider behavior"
+  ],
+  "reviewImages": "out/menu-layout-review",
+  "documentation": "docs/menu-layout-controls.md"
+}

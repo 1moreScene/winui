@@ -1,0 +1,62 @@
+/* Pinned Gallery: ItemPage.xaml, PageHeader.xaml and ControlExample.xaml. */
+.home-gallery .gallery-navigation{position:fixed;inset:48px 0 0;z-index:25;display:block;padding:0;background:none;transform:none;box-shadow:none;transition:none;clip-path:inset(0 max(0px,calc(100% - var(--gallery-pane-width))) 0 0)}
+.home-gallery .home-main{inset:48px 0 0 var(--gallery-content-x);display:flex;flex-direction:column;overflow:hidden;transition:none}
+.gallery-scroll-content{flex:1;min-height:0;overflow:auto;scrollbar-width:thin}
+.home-gallery .home-pane-backdrop{display:block;position:fixed;inset:48px 0 0 var(--gallery-pane-width);border:0;border-radius:0;background:#0003;z-index:24}
+.home-gallery .home-pane-backdrop:hover{background:#0003}
+.gallery-page-header{flex-shrink:0;padding:24px 36px 0;background:var(--soft);z-index:8}
+.gallery-page-title{display:flex;align-items:center;gap:4px;min-width:0}
+.gallery-page-title h1{font-size:28px;line-height:36px;font-weight:600;margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gallery-page-commands{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:12px 0}
+.gallery-page-links,.gallery-page-actions{display:flex;align-items:center;gap:4px}
+.gallery-page-header button,.gallery-header-menu>summary,.gallery-theme-control{height:32px;min-width:32px;display:flex;align-items:center;justify-content:center;gap:8px;padding:4px 12px;line-height:20px;font-size:14px;border:1px solid var(--border);border-radius:4px;color:inherit;background:var(--surface);cursor:pointer;white-space:nowrap}
+.gallery-header-menu{position:relative}.gallery-header-menu>summary{list-style:none}.gallery-header-menu>summary::-webkit-details-marker{display:none}.gallery-header-menu>summary>.fluent:last-child{font-size:10px}
+.gallery-header-menu>summary:hover,.gallery-theme-control:hover{background:var(--hover)}
+.gallery-header-flyout{position:absolute;top:calc(100% + 4px);left:0;z-index:40;min-width:250px;max-width:min(420px,calc(100vw - 48px));padding:8px;background:var(--surface);border:1px solid var(--border);border-radius:8px;box-shadow:0 8px 24px #0002;font-size:14px;white-space:normal}
+.gallery-header-flyout>a{display:block;padding:8px;border-radius:4px;color:inherit}.gallery-header-flyout>a:hover{background:var(--hover);text-decoration:none}.gallery-header-flyout>small{display:block;color:var(--secondary);padding:8px;font-size:12px}.gallery-header-flyout>code{display:block;padding:0 8px;font-size:12px}.gallery-header-flyout p{padding:0 8px;line-height:24px}.gallery-header-flyout hr{border:0;border-top:1px solid var(--border);margin:12px 0}
+.gallery-api>summary{padding:4px;border:0;background:transparent;color:var(--accent);height:28px}.gallery-api>summary>.fluent:last-child{font-size:14px}
+.gallery-command-separator{height:20px;width:1px;background:var(--border);margin:0 4px}
+.gallery-theme-control{position:relative;width:40px;padding:4px}.gallery-theme-control>select{position:absolute;inset:0;width:100%;height:100%;opacity:0;padding:0;cursor:pointer}
+.gallery-page-actions>button{padding:4px 10px}.gallery-page-actions>button[aria-pressed=true]{color:var(--accent)}
+.gallery-page-description{max-width:1064px;margin:4px 60px 0 36px;font-size:14px;line-height:20px}
+.gallery-item-page .home-sample-page{padding:0 36px 36px;font-size:14px;line-height:20px}
+.gallery-item-page .home-sample-page main,.gallery-item-page .home-sample-page .collections-shell>.collections-gallery{margin:0;padding:0;min-height:0;border:0;border-radius:0;background:transparent}
+.gallery-item-page .example{margin:0 0 24px;scroll-margin-top:12px}
+.gallery-item-page .example>h2{font-size:14px;font-weight:600;line-height:20px;margin:12px 0}
+.gallery-item-page .example-card{border:1px solid var(--border);border-radius:8px;background:#f3f3f3;overflow:hidden}
+.gallery-item-page .example-live{min-height:0;grid-template-columns:minmax(0,1fr) auto}
+.gallery-item-page .options{padding:16px;max-width:320px;background:var(--surface);font-size:14px;line-height:20px;border-color:var(--border)}
+.gallery-item-page .options h3{font-size:14px;margin:0 0 12px}.gallery-item-page .field,.gallery-item-page .check-option{font-size:14px;line-height:20px}
+.gallery-item-page .source{background:var(--soft);border-color:var(--border);font-size:14px}
+.gallery-item-page .source>summary{display:flex;align-items:center;min-height:48px;padding:12px 16px;list-style:none;font-size:14px;line-height:20px;cursor:pointer}
+.gallery-item-page .source>summary::-webkit-details-marker{display:none}.gallery-item-page .source>summary:after{content:'\E70D';font:10px 'Segoe Fluent Icons';margin-left:auto}.gallery-item-page .source[open]>summary:after{content:'\E70E'}
+.gallery-item-page .source>summary>span{float:none;margin-left:auto;font-size:12px}
+.gallery-item-page .source-tabs{border-top:1px solid var(--border);padding:8px 16px 0;gap:8px}.gallery-item-page .source-tabs>button{font-size:14px;min-height:32px;padding:5px 12px}
+.gallery-item-page pre{font:13px/20px Consolas,monospace;padding:16px;background:var(--soft);max-height:480px}
+.gallery-item-page .source-hint{font-size:12px;line-height:18px;padding:12px 16px}
+.gallery-item-page .basic-live{background:#f3f3f3;grid-template-columns:minmax(0,1fr) auto auto}
+.gallery-item-page .basic-live.with-options{grid-template-columns:minmax(0,1fr) auto minmax(180px,244px)}
+.gallery-item-page .basic-live>.winui-scene{grid-column:1;min-width:0;align-self:center}
+.gallery-item-page .basic-output{grid-column:2;grid-row:1;font-size:14px;line-height:20px;margin:12px 12px 12px 0;padding:16px;border:0;border-radius:8px;background:#f3f3f3;min-height:0;max-width:320px;align-self:stretch}
+.gallery-item-page .basic-output code{font:14px/20px 'Segoe UI Variable','Segoe UI',sans-serif}
+.gallery-item-page .basic-output{justify-content:flex-start}
+.gallery-item-page .basic-live>.options{grid-column:3;grid-row:1}
+.gallery-item-page .collection-docs{height:auto;justify-content:flex-end;margin:8px 0}.gallery-item-page .collection-docs>a{display:none}
+.gallery-item-page .effects-options{justify-content:flex-end;gap:16px;padding:8px 0;background:transparent}
+.gallery-item-page .effects-options:empty{display:none}.gallery-item-page .page-toolbar{font-size:12px;margin:12px 0}.gallery-item-page .implementation-badge{display:none}
+.gallery-item-page .home-content{padding-top:12px}
+:root[data-theme=Dark] .gallery-item-page .example-card,:root[data-theme=Dark] .gallery-item-page .basic-live,:root[data-theme=Dark] .gallery-item-page .basic-output{background:#202020}
+:root[data-theme=HighContrast] .gallery-item-page .example-card,:root[data-theme=HighContrast] .gallery-item-page .basic-live,:root[data-theme=HighContrast] .gallery-item-page .basic-output{background:#000}
+@media(max-width:640px){.gallery-page-header{padding:12px 16px 0}.gallery-page-commands{gap:8px;flex-wrap:wrap}.gallery-page-links{gap:4px}.gallery-header-menu>summary{padding:4px 8px}.gallery-page-description{margin:4px 40px 0 16px}.gallery-item-page .home-sample-page{padding:0 16px 16px}.gallery-item-page .example-live,.gallery-item-page .basic-live,.gallery-item-page .basic-live.with-options{grid-template-columns:minmax(0,1fr)}.gallery-item-page .basic-live>.options,.gallery-item-page .basic-output{grid-column:1;grid-row:auto}.gallery-item-page .basic-output{margin:0 12px 12px;padding:12px}.gallery-item-page .options{border-left:0;border-top:1px solid var(--border);max-width:none}.gallery-page-actions{margin-left:auto}.gallery-page-title h1{font-size:28px}.gallery-item-page .source>summary>span{display:none}}
+
+/* Frame uses the same Rust-arranged content bounds as NavigationView. */
+.home-gallery .gallery-frame{position:fixed!important;inset:48px 0 0 var(--gallery-content-x);border-radius:8px 0 0;background:var(--soft)}
+.home-gallery .gallery-frame .home-main{position:relative;inset:auto;flex:1;min-height:0}
+.home-gallery .gallery-frame [data-frame-instance][hidden]{display:none}
+.home-history-back,.home-history-forward{width:32px;height:32px;flex-shrink:0;padding:0;display:grid;place-items:center;border:0;background:transparent}
+@media(min-width:641px){.home-titlebar .home-brand{width:184px}}
+.navigation-frame-preview{height:380px;min-width:0;position:relative;isolation:isolate;overflow:hidden;border-radius:8px;background:var(--soft)}
+.frame-sample-page{flex:1;min-height:0;overflow:auto;padding:24px}
+.frame-sample-page h3{font-size:24px;line-height:32px;margin:0 0 12px}
+.frame-sample-page .gallery-textbox{width:100%;max-width:360px}
+.frame-api-source{padding:16px;white-space:pre-wrap;font-size:12px}

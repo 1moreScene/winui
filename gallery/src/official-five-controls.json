@@ -1,0 +1,182 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "Border": {
+      "description": "Use a Border control to draw a boundary line, background, or both, around another object. A Border can contain only one child object.",
+      "samples": [
+        {
+          "title": "A Border around a TextBlock.",
+          "file": "BorderAroundTextblock.txt",
+          "xaml": "<Border>\n    <TextBlock Text=\"Text inside a border\" FontSize=\"18\" Foreground=\"Black\" />\n</Border>"
+        }
+      ]
+    },
+    "Canvas": {
+      "description": "The Canvas provides absolute positioning of controls or content. Content is positioned relative to the Canvas using the Canvas.Top and Canvas.Left attached properties.",
+      "samples": [
+        {
+          "title": "A Canvas control.",
+          "file": "CanvasControl.txt",
+          "xaml": "<Canvas Width=\"120\" Height=\"120\" Background=\"Gray\">\n    <Rectangle Fill=\"Red\" />\n    <Rectangle Fill=\"Blue\" Canvas.Left=\"20\" Canvas.Top=\"20\" Canvas.ZIndex=\"1\" />\n    <Rectangle Fill=\"Green\" Canvas.Left=\"40\" Canvas.Top=\"40\" Canvas.ZIndex=\"2\" />\n    <Rectangle Fill=\"Yellow\" Canvas.Left=\"60\" Canvas.Top=\"60\" Canvas.ZIndex=\"3\" />\n</Canvas>"
+        }
+      ]
+    },
+    "Expander": {
+      "description": "The Expander has a header and can expand to show a body with more content. Use an Expander when some content is only relevant some of the time (for example to read more information or access additional options for an item).",
+      "samples": [
+        {
+          "title": "An Expander with text in the header and content areas",
+          "file": "ExpanderTextHeaderContent.txt",
+          "xaml": "<Expander\n     IsExpanded=\"False\"\n     VerticalAlignment=\"Top\"\n     Header=\"This text is in the header\"\n     Content=\"This is in the content\"/>"
+        },
+        {
+          "title": "Modifying Expanders content alignment",
+          "file": "ModifyingExpandersContentAlignment.txt",
+          "xaml": "<Expander Width=\"500\" HorizontalContentAlignment=\"Left\" Padding=\"0\">\n    <Expander.Header>\n        <ToggleButton Content=\"This ToggleButton is centered\" HorizontalAlignment=\"Center\"/>\n    </Expander.Header>\n    <Expander.Content>\n        <Button Margin=\"4\" Content=\"This Button is left aligned\"/>\n    </Expander.Content>\n</Expander>"
+        }
+      ]
+    },
+    "HyperlinkButton": {
+      "description": "A HyperlinkButton appears as a text hyperlink. When a user clicks it, it opens the page you specify in the NavigateUri property in the default browser. Or you can handle its Click event, typically to navigate within your app.",
+      "samples": [
+        {
+          "title": "A hyperlink button that navigates to a URI.",
+          "file": "HyperlinkButtonNavigate.txt",
+          "xaml": "<HyperlinkButton Content=\"Microsoft home page\" NavigateUri=\"https://www.microsoft.com\" />"
+        },
+        {
+          "title": "A hyperlink button that handles a Click event.",
+          "file": "HyperlinkButtonClick.txt",
+          "xaml": "<HyperlinkButton Content=\"ToggleButton\" Click=\"HyperlinkButton_Click\"/>"
+        }
+      ]
+    },
+    "InfoBadge": {
+      "description": "Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert.",
+      "samples": [
+        {
+          "title": "InfoBadge embedded in NavigationView",
+          "file": "InfobadgeEmbeddedNavigationview.txt",
+          "xaml": "<NavigationViewItem x:Name=\"InboxPage\" Content=\"Inbox\" Icon=\"Mail\" AutomationProperties.Name=\"Inbox, 5 notifications\">\n    <NavigationViewItem.InfoBadge>\n        <InfoBadge x:Name=\"infoBadge1\" Value=\"5\" Opacity=\"{x:Bind InfoBadgeOpacity, Mode=OneWay}\"/>\n    </NavigationViewItem.InfoBadge>\n</NavigationViewItem>"
+        },
+        {
+          "title": "Different InfoBadge Styles",
+          "file": "DifferentInfobadgeStyles.txt",
+          "xaml": "<StackPanel Orientation=\"Horizontal\" Spacing=\"20\" HorizontalAlignment=\"Center\">\n    <InfoBadge x:Name=\"infoBadge2\" HorizontalAlignment=\"Right\"/>\n    <InfoBadge x:Name=\"infoBadge3\" HorizontalAlignment=\"Right\" Value=\"10\" />\n    <InfoBadge x:Name=\"infoBadge4\" VerticalAlignment=\"Center\"/>\n</StackPanel>"
+        },
+        {
+          "title": "Placing an InfoBadge Inside Another Control",
+          "file": "PlacingInfobadgeInsideAnother.txt",
+          "xaml": "<Button Padding=\"0\" Width=\"200\" Height=\"60\" ToolTipService.ToolTip=\"Refresh required\"\n        HorizontalAlignment=\"Center\" HorizontalContentAlignment=\"Stretch\" VerticalContentAlignment=\"Stretch\">\n    <Grid HorizontalAlignment=\"Stretch\" VerticalAlignment=\"Stretch\" Width=\"Auto\" Height=\"Auto\">\n        <SymbolIcon Symbol=\"Sync\" HorizontalAlignment=\"Center\"/>\n        <InfoBadge Background=\"#C42B1C\" HorizontalAlignment=\"Right\" VerticalAlignment=\"Top\">\n            <InfoBadge.IconSource>\n                <FontIconSource FontFamily=\"{StaticResource SymbolThemeFontFamily}\" Glyph=\"&#xF13C;\" />\n            </InfoBadge.IconSource>\n        </InfoBadge>\n    </Grid>\n</Button>"
+        },
+        {
+          "title": "InfoBadge with Dynamic Value",
+          "file": "InfobadgeDynamicValue.txt",
+          "xaml": "<InfoBadge Value=\"{Binding ElementName=ValueNumberBox, Path=Value, Mode=TwoWay}\" />\n<NumberBox x:Name=\"ValueNumberBox\" Header=\"InfoBadge Value\" Value=\"1\" Minimum=\"-1\"\n    SpinButtonPlacementMode=\"Inline\" ValueChanged=\"ValueNumberBox_ValueChanged\" />"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "references/gallery-input/Border/BorderAroundTextblock.txt",
+      "source": "WinUIGallery/Samples/Border/BorderAroundTextblock.txt",
+      "sha256": "6dfbaf2c3045c28194c490ec4a8acc815affaeeff2be7514d498fbf1fa95fafe"
+    },
+    {
+      "path": "references/gallery-input/Border/BorderPage.xaml",
+      "source": "WinUIGallery/Samples/Border/BorderPage.xaml",
+      "sha256": "d9da8df2b2e7ac0e715648090087220ea60d5db92315ce27a17f85ac33de70e8"
+    },
+    {
+      "path": "references/gallery-input/Border/BorderPage.xaml.cs",
+      "source": "WinUIGallery/Samples/Border/BorderPage.xaml.cs",
+      "sha256": "24cda5ecf7ab1663730eeec6afb282a50aded6e292528ca3edf91ff6bc35a4a1"
+    },
+    {
+      "path": "references/gallery-input/Canvas/CanvasControl.txt",
+      "source": "WinUIGallery/Samples/Canvas/CanvasControl.txt",
+      "sha256": "0debb2c2f1a589603eb91896e36efea7e4e6e3a86186ffe393ec818119f7c3b7"
+    },
+    {
+      "path": "references/gallery-input/Canvas/CanvasPage.xaml",
+      "source": "WinUIGallery/Samples/Canvas/CanvasPage.xaml",
+      "sha256": "81d71026a92029bec14f744228f1547c0c7845482700de8bbfe80730c7425b4d"
+    },
+    {
+      "path": "references/gallery-input/Canvas/CanvasPage.xaml.cs",
+      "source": "WinUIGallery/Samples/Canvas/CanvasPage.xaml.cs",
+      "sha256": "cfa9d7c8e4208f5d05f166500d7c4aeb8d2b95d5b9d69b46ea631ac63c281042"
+    },
+    {
+      "path": "references/gallery-input/Expander/ExpanderPage.xaml",
+      "source": "WinUIGallery/Samples/Expander/ExpanderPage.xaml",
+      "sha256": "3b778344b284724b7e568050410a0614db5ba19857574f50965bd8da765bf989"
+    },
+    {
+      "path": "references/gallery-input/Expander/ExpanderPage.xaml.cs",
+      "source": "WinUIGallery/Samples/Expander/ExpanderPage.xaml.cs",
+      "sha256": "38ca4aa95d58ad9554d78157906ba5d50eb6092f975ab01750223c4c9b441f96"
+    },
+    {
+      "path": "references/gallery-input/Expander/ExpanderTextHeaderContent.txt",
+      "source": "WinUIGallery/Samples/Expander/ExpanderTextHeaderContent.txt",
+      "sha256": "7edf892afb91281598b816c97d34979072d1acfaf20e868f5ca47f4c3bb587ce"
+    },
+    {
+      "path": "references/gallery-input/Expander/ModifyingExpandersContentAlignment.txt",
+      "source": "WinUIGallery/Samples/Expander/ModifyingExpandersContentAlignment.txt",
+      "sha256": "23b119bfc029793a9f21c1b09f7e90e04f71e8c7a437b9d3b56bd6d12440609f"
+    },
+    {
+      "path": "references/gallery-input/HyperlinkButton/HyperlinkButtonClick.txt",
+      "source": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonClick.txt",
+      "sha256": "ff4c2f546491b23742641ca24f79d6d7ec3cecc42aa7c4a410c88453b708e232"
+    },
+    {
+      "path": "references/gallery-input/HyperlinkButton/HyperlinkButtonNavigate.txt",
+      "source": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonNavigate.txt",
+      "sha256": "7bef9b1a2478fd7255a7c52564b13b09380b7b4b5c9cc1332d74295bb2ba5e71"
+    },
+    {
+      "path": "references/gallery-input/HyperlinkButton/HyperlinkButtonPage.xaml",
+      "source": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonPage.xaml",
+      "sha256": "fecf6772c6bb98235aa622b951b03eb528bb7073e7549c9bef911b5521980885"
+    },
+    {
+      "path": "references/gallery-input/HyperlinkButton/HyperlinkButtonPage.xaml.cs",
+      "source": "WinUIGallery/Samples/HyperlinkButton/HyperlinkButtonPage.xaml.cs",
+      "sha256": "e4f1695170db4ef7442246c44748a1e2c5e84c01b33f22786be6d49d1282ce5d"
+    },
+    {
+      "path": "references/gallery-input/InfoBadge/DifferentInfobadgeStyles.txt",
+      "source": "WinUIGallery/Samples/InfoBadge/DifferentInfobadgeStyles.txt",
+      "sha256": "4291c4161073249dd2f59fa879fc8d1e2ccd4769daaf477077375872ed2cdd1c"
+    },
+    {
+      "path": "references/gallery-input/InfoBadge/InfobadgeDynamicValue.txt",
+      "source": "WinUIGallery/Samples/InfoBadge/InfobadgeDynamicValue.txt",
+      "sha256": "3058d49f6ba26e6a0f61ca8177f3795e944f256dea01ae44ad3141496e0cadc5"
+    },
+    {
+      "path": "references/gallery-input/InfoBadge/InfobadgeEmbeddedNavigationview.txt",
+      "source": "WinUIGallery/Samples/InfoBadge/InfobadgeEmbeddedNavigationview.txt",
+      "sha256": "522611df549a876ea1f4869f4f7ef6c3cee68ca12006433f6080b86afd86df5d"
+    },
+    {
+      "path": "references/gallery-input/InfoBadge/InfoBadgePage.xaml",
+      "source": "WinUIGallery/Samples/InfoBadge/InfoBadgePage.xaml",
+      "sha256": "034b189efd776da542ce2acb36429332a9260e2099e51714ecbd7916dd370873"
+    },
+    {
+      "path": "references/gallery-input/InfoBadge/InfoBadgePage.xaml.cs",
+      "source": "WinUIGallery/Samples/InfoBadge/InfoBadgePage.xaml.cs",
+      "sha256": "664b2e236a87e0c0a6904eb203298acacda40a3b24169f9c3a85006a72c9d33b"
+    },
+    {
+      "path": "references/gallery-input/InfoBadge/PlacingInfobadgeInsideAnother.txt",
+      "source": "WinUIGallery/Samples/InfoBadge/PlacingInfobadgeInsideAnother.txt",
+      "sha256": "c9cd9db7786cb06c37271caf0e242738eb0fb5c5942b2d0499614d0cb0ac2a93"
+    }
+  ]
+}

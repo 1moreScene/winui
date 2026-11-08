@@ -1,0 +1,13 @@
+{
+  "description": "An element that displays and controls an icon that animates when the user interacts with the control.",
+  "samples": [
+    {
+      "title": "Adding AnimatedIcon to a button",
+      "xaml": "<Button PointerEntered=\"Button_PointerEntered\" PointerExited=\"Button_PointerExited\" Width=\"75\">\n    <AnimatedIcon x:Name=\"SearchAnimatedIcon\">\n        <AnimatedIcon.Source>\n            <animatedvisuals:AnimatedFindVisualSource/>\n        </AnimatedIcon.Source>\n        <AnimatedIcon.FallbackIconSource>\n            <SymbolIconSource Symbol=\"Find\"/>\n        </AnimatedIcon.FallbackIconSource>\n    </AnimatedIcon>\n</Button>"
+    },
+    {
+      "title": "Adding AnimatedIcon to a NavigationView",
+      "xaml": "<NavigationView>\n    <NavigationView.MenuItems>\n        <NavigationViewItem Content = \"Game Settings\">\n            <NavigationViewItem.Icon>\n                <AnimatedIcon x:Name='AnimatedIcon'>\n                    <AnimatedIcon.Source>\n                        <animatedvisuals:AnimatedSettingsVisualSource/>\n                    </AnimatedIcon.Source>\n                    <AnimatedIcon.FallbackIconSource>\n                        <FontIconSource Glyph=\"&#xE713;\"/>\n                    </AnimatedIcon.FallbackIconSource>\n                </AnimatedIcon>\n            </NavigationViewItem.Icon>\n        </NavigationViewItem>\n    </NavigationView.MenuItems>\n</NavigationView>"
+    }
+  ]
+}

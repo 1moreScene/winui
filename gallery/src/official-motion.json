@@ -1,0 +1,556 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "acrylic": [
+    {
+      "title": "Default in-app acrylic brush.",
+      "xaml": "<Rectangle Fill=\"{ThemeResource AcrylicInAppFillColorDefaultBrush}\" />",
+      "name": "Example1",
+      "minWidth": 320,
+      "baseHeight": 200,
+      "shapes": [
+        {
+          "kind": "Rectangle",
+          "width": 100,
+          "height": 200,
+          "horizontal": "Left",
+          "vertical": "Top",
+          "fill": "#00ffff"
+        },
+        {
+          "kind": "Ellipse",
+          "width": 152,
+          "height": 152,
+          "horizontal": "Center",
+          "vertical": "Center",
+          "fill": "#ff00ff"
+        },
+        {
+          "kind": "Rectangle",
+          "width": 80,
+          "height": 100,
+          "horizontal": "Right",
+          "vertical": "Bottom",
+          "fill": "#ffff00"
+        }
+      ],
+      "layouts": {
+        "WideLayout": {
+          "Width": 400.0,
+          "Height": 252.0
+        },
+        "WiderLayout": {
+          "Width": 400.0,
+          "Height": 252.0
+        }
+      },
+      "columns": []
+    },
+    {
+      "title": "Custom acrylic in-app brush.",
+      "xaml": "<Rectangle Fill=\"{ThemeResource CustomAcrylicInAppBrush}\" />\n\n<ResourceDictionary x:Key=\"Default\">\n    <media:AcrylicBrush x:Key=\"CustomAcrylicBrush\" \n            TintOpacity=\"$(OpacitySlider)\" TintColor=\"$(TintColor)\" FallbackColor=\"$(FallbackColor)\" />\n</ResourceDictionary>",
+      "name": "Example3",
+      "minWidth": 320,
+      "baseHeight": 200,
+      "shapes": [
+        {
+          "kind": "Rectangle",
+          "width": 100,
+          "height": 200,
+          "horizontal": "Left",
+          "vertical": "Top",
+          "fill": "#00ffff"
+        },
+        {
+          "kind": "Ellipse",
+          "width": 152,
+          "height": 152,
+          "horizontal": "Center",
+          "vertical": "Center",
+          "fill": "#ff00ff"
+        },
+        {
+          "kind": "Rectangle",
+          "width": 80,
+          "height": 100,
+          "horizontal": "Right",
+          "vertical": "Bottom",
+          "fill": "#ffff00"
+        }
+      ],
+      "layouts": {
+        "WideLayout": {
+          "Width": 500.0,
+          "MinHeight": 252.0
+        },
+        "WiderLayout": {
+          "Width": 652.0,
+          "MinHeight": 252.0
+        }
+      },
+      "columns": [
+        "*",
+        "252"
+      ]
+    },
+    {
+      "title": "Luminosity with in-app Acrylic.",
+      "xaml": "<Rectangle Fill=\"{ThemeResource CustomAcrylicInAppLuminosity}\" />\n\n<ResourceDictionary x:Key=\"Default\">\n    <media:AcrylicBrush x:Key=\"CustomAcrylicInAppLuminosity\" \n            TintOpacity=\"$(OpacitySlider)\" TintLuminosityOpacity=\"$(TintLuminositySlider)\" TintColor=\"SkyBlue\" FallbackColor=\"SkyBlue\" />\n</ResourceDictionary>",
+      "name": "Example4",
+      "minWidth": 652,
+      "baseHeight": 200,
+      "shapes": [
+        {
+          "kind": "Rectangle",
+          "width": 100,
+          "height": 200,
+          "horizontal": "Left",
+          "vertical": "Top",
+          "fill": "#00ffff"
+        },
+        {
+          "kind": "Ellipse",
+          "width": 152,
+          "height": 152,
+          "horizontal": "Center",
+          "vertical": "Center",
+          "fill": "#ff00ff"
+        },
+        {
+          "kind": "Rectangle",
+          "width": 80,
+          "height": 100,
+          "horizontal": "Right",
+          "vertical": "Bottom",
+          "fill": "#ffff00"
+        }
+      ],
+      "layouts": {
+        "WideLayout": {
+          "Width": 500.0,
+          "MinHeight": 252.0
+        },
+        "WiderLayout": {
+          "Width": 652.0,
+          "MinHeight": 252.0
+        }
+      },
+      "columns": [
+        "*",
+        "252"
+      ]
+    }
+  ],
+  "easing": [
+    {
+      "title": "Standard Easing Function",
+      "xaml": "<Storyboard x:Name=\"Storyboard1\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <CircleEase EasingMode=\"EaseInOut\" />\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>",
+      "duration": 500.0,
+      "easing": "CircleEase",
+      "mode": "EaseInOut",
+      "exponent": null
+    },
+    {
+      "title": "Accelerate Easing Function",
+      "xaml": "<Storyboard x:Name=\"Storyboard2\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <ExponentialEase Exponent=\"$(AccelerateEasingExponent)\" EasingMode=\"EaseIn\" />\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>",
+      "duration": 150.0,
+      "easing": "ExponentialEase",
+      "mode": "EaseIn",
+      "exponent": 4.5
+    },
+    {
+      "title": "Decelerate Easing Function",
+      "xaml": "<Storyboard x:Name=\"Storyboard3\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <ExponentialEase Exponent=\"$(DecelerateEasingExponent)\" EasingMode=\"EaseOut\" />\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>",
+      "duration": 300.0,
+      "easing": "ExponentialEase",
+      "mode": "EaseOut",
+      "exponent": 7.0
+    },
+    {
+      "title": "Other XAML Easing Functions",
+      "xaml": "<Storyboard x:Name=\"Storyboard3\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <$(EasingFunction)/>\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>",
+      "duration": 500.0,
+      "easing": null,
+      "mode": null,
+      "exponent": null
+    }
+  ],
+  "propertyTransition": {
+    "curve": [
+      0.8,
+      0.0,
+      0.2,
+      1.0
+    ],
+    "duration": 300,
+    "vectorDuration": 300
+  },
+  "catalog": [
+    {
+      "name": "Acrylic",
+      "samples": [
+        {
+          "title": "Custom acrylic in-app brush.",
+          "xaml": "<Rectangle Fill=\"{ThemeResource CustomAcrylicInAppBrush}\" />\n\n<ResourceDictionary x:Key=\"Default\">\n    <media:AcrylicBrush x:Key=\"CustomAcrylicBrush\" \n            TintOpacity=\"$(OpacitySlider)\" TintColor=\"$(TintColor)\" FallbackColor=\"$(FallbackColor)\" />\n</ResourceDictionary>"
+        },
+        {
+          "title": "Default in-app acrylic brush.",
+          "xaml": "<Rectangle Fill=\"{ThemeResource AcrylicInAppFillColorDefaultBrush}\" />"
+        },
+        {
+          "title": "Luminosity with in-app Acrylic.",
+          "xaml": "<Rectangle Fill=\"{ThemeResource CustomAcrylicInAppLuminosity}\" />\n\n<ResourceDictionary x:Key=\"Default\">\n    <media:AcrylicBrush x:Key=\"CustomAcrylicInAppLuminosity\" \n            TintOpacity=\"$(OpacitySlider)\" TintLuminosityOpacity=\"$(TintLuminositySlider)\" TintColor=\"SkyBlue\" FallbackColor=\"SkyBlue\" />\n</ResourceDictionary>"
+        }
+      ]
+    },
+    {
+      "name": "ConnectedAnimation",
+      "samples": [
+        {
+          "title": "A connected animation between a list page and a detail page",
+          "xaml": "<!-- COLLECTION PAGE BELOW-->\n<ListView x:Name=\"collection\"\n            IsItemClickEnabled=\"True\"\n            SelectionMode=\"None\"\n            Loaded=\"collection_Loaded\"\n            ItemClick=\"collection_ItemClick\"\n            Grid.Row=\"2\" >\n    <ListView.ItemTemplate>\n        <DataTemplate x:DataType=\"local:CustomDataObject\">\n            <Grid Margin=\"0,12,0,12\" AutomationProperties.Name=\"{x:Bind Title}\">\n                <Grid.ColumnDefinitions>\n                    <ColumnDefinition Width=\"Auto\" MinWidth=\"150\"/>\n                    <ColumnDefinition Width=\"*\" />\n                </Grid.ColumnDefinitions>\n\n                <!-- The image to connect between pages. -->\n                <Image x:Name=\"connectedElement\" Source=\"{x:Bind ImageLocation}\" MaxHeight=\"100\" Stretch=\"Fill\"/>\n\n                <StackPanel Margin=\"12,0,0,0\" Grid.Column=\"1\" >\n                    <TextBlock Text=\"{x:Bind Title}\" Style=\"{ThemeResource SubtitleTextBlockStyle}\" HorizontalAlignment=\"Left\" Margin=\"0,0,0,6\"/>\n                    <StackPanel Orientation=\"Horizontal\">\n                        <TextBlock Text=\"Views: \" Style=\"{ThemeResource CaptionTextBlockStyle}\" FontWeight=\"Bold\"/>\n                        <TextBlock Text=\"{x:Bind Views}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Margin=\"5,0,0,0\"/>\n                    </StackPanel>\n                    <StackPanel Orientation=\"Horizontal\">\n                        <TextBlock Text=\"Likes: \" Style=\"{ThemeResource CaptionTextBlockStyle}\" FontWeight=\"Bold\"/>\n                        <TextBlock Text=\"{x:Bind Likes}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Margin=\"5,0,0,0\"/>\n                    </StackPanel>\n                    <StackPanel Orientation=\"Horizontal\">\n                        <TextBlock Text=\"{x:Bind Description}\" Style=\"{ThemeResource BodyTextBlockStyle}\" FontStyle=\"Italic\" Margin=\"0,12,0,0\" TextTrimming=\"CharacterEllipsis\" MaxWidth=\"500\" MaxLines=\"1\"/>\n                    </StackPanel>\n\n                </StackPanel>\n            </Grid>\n        </DataTemplate>\n    </ListView.ItemTemplate>\n</ListView>\n\n<!-- DETAIL PAGE BELOW-->\n<Grid>\n    <Grid.RowDefinitions>\n        <RowDefinition Height=\"Auto\" />\n        <RowDefinition Height=\"*\" />\n    </Grid.RowDefinitions>\n\n    <Grid x:Name=\"headerBackground\" HorizontalAlignment=\"Stretch\" VerticalAlignment=\"Stretch\" Background=\"{ThemeResource SystemControlAcrylicElementBrush}\">\n        <Button x:Name=\"GoBackButton\" Content=\"Go Back\" HorizontalAlignment=\"Left\" VerticalAlignment=\"Top\" Background=\"{ThemeResource SystemAccentColor}\" Click=\"BackButton_Click\" />\n    </Grid>\n\n    <Grid x:Name=\"headerContent\" Margin=\"20,52,20,20\">\n        <Grid.ColumnDefinitions>\n            <ColumnDefinition Width=\"Auto\" />\n            <ColumnDefinition Width=\"*\" />\n        </Grid.ColumnDefinitions>\n\n        <!-- Connected image -->\n        <Image x:Name=\"detailedImage\" MaxHeight=\"400\" Source=\"{x:Bind DetailedObject.ImageLocation}\" VerticalAlignment=\"Top\" Stretch=\"Uniform\" />\n\n        <!-- Panel to be coordinated with connected animation -->\n        <StackPanel x:Name=\"coordinatedPanel\" Grid.Column=\"1\" VerticalAlignment=\"Top\" Margin=\"20,0\">\n            <TextBlock Text=\"{x:Bind DetailedObject.Title}\" Style=\"{ThemeResource SubheaderTextBlockStyle}\" Margin=\"0,0,0,10\"  />\n            <StackPanel Orientation=\"Horizontal\">\n                <TextBlock Text=\"Views: \" Style=\"{ThemeResource SubtitleTextBlockStyle}\" FontWeight=\"Bold\"/>\n                <TextBlock Text=\"{x:Bind DetailedObject.Views}\" Style=\"{ThemeResource SubtitleTextBlockStyle}\" Margin=\"5,0,0,0\"/>\n            </StackPanel>\n            <StackPanel Orientation=\"Horizontal\">\n                <TextBlock Text=\"Likes: \" Style=\"{ThemeResource SubtitleTextBlockStyle}\" FontWeight=\"Bold\" />\n                <TextBlock Text=\"{x:Bind DetailedObject.Likes}\" Style=\"{ThemeResource SubtitleTextBlockStyle}\"  Margin=\"5,0,0,0\"/>\n            </StackPanel>\n        </StackPanel>\n    </Grid>\n\n    <!-- Panel containing more info, to be shown after the connected animation. -->\n    <Grid x:Name=\"moreInfoPanel\" Grid.Row=\"1\" Margin=\"10\">\n        <TextBlock Text=\"{x:Bind DetailedObject.Description}\" Style=\"{ThemeResource SubtitleTextBlockStyle}\"  />\n    </Grid>\n</Grid>\n--- c#\n// To see the source code: \n// https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ConnectedAnimationPages/CollectionPage.xaml.cs\n// https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ConnectedAnimationPages/DetailedInfoPage.xaml.cs\n\n// COLLECTION PAGE\npublic sealed partial class CollectionPage : Page\n{\n    CustomDataObject? _storeditem;\n\n    public CollectionPage()\n    {\n        this.InitializeComponent();\n\n        // Ensure that the MainPage is only created once, and cached during navigation.\n        this.NavigationCacheMode = NavigationCacheMode.Enabled;\n\n        collection.ItemsSource = WinUIGallery.ControlPages.CustomDataObject.GetDataObjects();\n    }\n\n    private async void collection_Loaded(object sender, RoutedEventArgs e)\n    {\n        if (_storeditem != null)\n        {\n            // If the connected item appears outside the viewport, scroll it into view.\n            collection.ScrollIntoView(_storeditem, ScrollIntoViewAlignment.Default);\n            collection.UpdateLayout();\n\n            // Play the second connected animation. \n            ConnectedAnimation animation = ConnectedAnimationService.GetForCurrentView().GetAnimation(\"BackConnectedAnimation\");\n            if (animation != null)\n            {\n                // Setup the \"back\" configuration if the API is present. \n                if (ApiInformation.IsApiContractPresent(\"Windows.Foundation.UniversalApiContract\", 7))\n                {\n                    animation.Configuration = new DirectConnectedAnimationConfiguration();\n                }\n\n                await collection.TryStartConnectedAnimationAsync(animation, _storeditem, \"connectedElement\");\n            }\n\n            // Set focus on the list\n            collection.Focus(FocusState.Programmatic);\n        }\n    }\n\n    private void collection_ItemClick(object sender, ItemClickEventArgs e)\n    {\n        // Get the collection item corresponding to the clicked item.\n        if (collection.ContainerFromItem(e.ClickedItem) is ListViewItem container)\n        {\n            // Stash the clicked item for use later. We'll need it when we connect back from the detailpage.\n            _storeditem = container.Content as CustomDataObject;\n\n            // Prepare the connected animation.\n            // Notice that the stored item is passed in, as well as the name of the connected element. \n            // The animation will actually start on the Detailed info page.\n            collection.PrepareConnectedAnimation(\"ForwardConnectedAnimation\", _storeditem, \"connectedElement\");\n        }\n\n        // Navigate to the DetailedInfoPage.\n        // Note that we suppress the default animation. \n        Frame.Navigate(typeof(DetailedInfoPage), _storeditem, new SuppressNavigationTransitionInfo());\n    }\n}\n\n// DETAILED PAGE\npublic sealed partial class DetailedInfoPage : Page\n{\n    public CustomDataObject? DetailedObject { get; set; }\n\n    public DetailedInfoPage()\n    {\n        this.InitializeComponent();\n        GoBackButton.Loaded += GoBackButton_Loaded;\n    }\n\n    private void GoBackButton_Loaded(object sender, RoutedEventArgs e)\n    {\n        // When we land in page, put focus on the back button\n        GoBackButton.Focus(FocusState.Programmatic);\n\n        // Scroll the back button into view so keyboard focus is not left off-screen behind\n        // the surrounding scroll viewer (MAS 2.4.11 - Focus Not Obscured).\n        GoBackButton.StartBringIntoView();\n    }\n\n    protected override void OnNavigatedTo(NavigationEventArgs e)\n    {\n        base.OnNavigatedTo(e);\n\n        // Store the item to be used in binding to UI\n        DetailedObject = e.Parameter as CustomDataObject;\n\n        ConnectedAnimation imageAnimation = ConnectedAnimationService.GetForCurrentView().GetAnimation(\"ForwardConnectedAnimation\");\n        if (imageAnimation != null)\n        {\n            // Connected animation + coordinated animation\n            imageAnimation.TryStart(detailedImage, new UIElement[] { coordinatedPanel });\n\n        }\n    }\n\n    // Create connected animation back to collection page.\n    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)\n    {\n        base.OnNavigatingFrom(e);\n\n        ConnectedAnimationService.GetForCurrentView().PrepareToAnimate(\"BackConnectedAnimation\", detailedImage);\n    }\n\n    private void BackButton_Click(object sender, RoutedEventArgs e)\n    {\n        Frame.GoBack();\n    }\n}"
+        },
+        {
+          "title": "A connected animation between elements on the same page",
+          "xaml": "<GridView x:Name=\"collection\" IsItemClickEnabled=\"True\" ItemClick=\"TipsGrid_ItemClick\"\n          HorizontalAlignment=\"Center\" MaxWidth=\"1400\">\n    <GridView.ItemContainerStyle>\n        <Style BasedOn=\"{StaticResource GridViewItemRevealStyle}\" TargetType=\"GridViewItem\">\n            <Style.Setters>\n                <Setter Property=\"Margin\" Value=\"4\" />\n            </Style.Setters>\n        </Style>\n    </GridView.ItemContainerStyle>\n    <GridView.ItemTemplate>\n        <DataTemplate>\n            <Grid x:Name=\"connectedElement\" Width=\"150\" Height=\"110\"\n                  AutomationProperties.Name=\"{Binding Title}\" CornerRadius=\"4\">\n                <Image Source=\"{Binding ImageLocation}\" Stretch=\"UniformToFill\" />\n                <Border Padding=\"8,4\" VerticalAlignment=\"Bottom\"\n                        Background=\"{ThemeResource AcrylicBackgroundFillColorBaseBrush}\">\n                    <TextBlock Style=\"{ThemeResource CaptionTextBlockStyle}\" Text=\"{Binding Title}\" />\n                </Border>\n            </Grid>\n        </DataTemplate>\n    </GridView.ItemTemplate>\n</GridView>\n\n<Grid x:Name=\"SmokeGrid\" HorizontalAlignment=\"Stretch\" VerticalAlignment=\"Stretch\"\n      Background=\"{ThemeResource SmokeFillColorDefaultBrush}\" Visibility=\"Collapsed\">\n    <Grid x:Name=\"destinationElement\" Width=\"400\" Height=\"320\"\n          HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\"\n          BorderBrush=\"{ThemeResource CardStrokeColorDefaultBrush}\" BorderThickness=\"1\"\n          CornerRadius=\"8\">\n        <Grid.RowDefinitions>\n            <RowDefinition Height=\"*\" />\n            <RowDefinition Height=\"Auto\" />\n        </Grid.RowDefinitions>\n        <Image x:Name=\"detailImage\" Grid.Row=\"0\" Stretch=\"UniformToFill\" />\n        <Button Width=\"36\" Height=\"36\" Margin=\"8\"\n                HorizontalAlignment=\"Right\" VerticalAlignment=\"Top\"\n                AutomationProperties.Name=\"Close\" Click=\"BackButton_Click\"\n                ToolTipService.ToolTip=\"Close\">\n            <Button.Content>\n                <FontIcon FontSize=\"14\" Glyph=\"&#xE711;\" />\n            </Button.Content>\n        </Button>\n        <StackPanel Grid.Row=\"1\" Padding=\"16,12\"\n                    Background=\"{ThemeResource CardBackgroundFillColorDefaultBrush}\">\n            <TextBlock x:Name=\"detailTitle\" Style=\"{ThemeResource SubtitleTextBlockStyle}\" />\n            <TextBlock x:Name=\"detailDescription\" Margin=\"0,4,0,0\"\n                       Foreground=\"{ThemeResource TextFillColorSecondaryBrush}\"\n                       MaxLines=\"3\" Style=\"{ThemeResource BodyTextBlockStyle}\"\n                       TextWrapping=\"Wrap\" />\n        </StackPanel>\n    </Grid>\n</Grid>\n--- c#\npublic sealed partial class CardPage : Page\n{\n    CustomDataObject? _storedItem;\n\n    public CardPage()\n    {\n        this.InitializeComponent();\n        collection.ItemsSource = CustomDataObject.GetDataObjects(includeAllItems: true);\n    }\n\n    private async void BackButton_Click(object sender, RoutedEventArgs e)\n    {\n        ConnectedAnimation animation = ConnectedAnimationService.GetForCurrentView()\n            .PrepareToAnimate(\"backwardsAnimation\", destinationElement);\n        SmokeGrid.Children.Remove(destinationElement);\n\n        // Collapse the smoke when the animation completes.\n        animation.Completed += Animation_Completed;\n\n        // If the connected item appears outside the viewport, scroll it into view.\n        collection.ScrollIntoView(_storedItem, ScrollIntoViewAlignment.Default);\n        collection.UpdateLayout();\n\n        animation.Configuration = new DirectConnectedAnimationConfiguration();\n\n        // Play the connected animation back to the collection.\n        await collection.TryStartConnectedAnimationAsync(animation, _storedItem, \"connectedElement\");\n    }\n\n    private void Animation_Completed(ConnectedAnimation sender, object args)\n    {\n        SmokeGrid.Visibility = Visibility.Collapsed;\n        SmokeGrid.Children.Add(destinationElement);\n    }\n\n    private void TipsGrid_ItemClick(object sender, ItemClickEventArgs e)\n    {\n        ConnectedAnimation? animation = null;\n\n        if (collection.ContainerFromItem(e.ClickedItem) is GridViewItem container)\n        {\n            _storedItem = container.Content as CustomDataObject;\n            animation = collection.PrepareConnectedAnimation(\"forwardAnimation\", _storedItem, \"connectedElement\");\n        }\n\n        // Update the detail view with the clicked item's data.\n        if (_storedItem != null)\n        {\n            detailImage.Source = new BitmapImage(new Uri(\"ms-appx://\" + _storedItem.ImageLocation));\n            detailTitle.Text = _storedItem.Title;\n            detailDescription.Text = _storedItem.Description;\n        }\n\n        SmokeGrid.Visibility = Visibility.Visible;\n        animation?.TryStart(destinationElement);\n    }\n}"
+        },
+        {
+          "title": "A simple connected animation",
+          "xaml": "// Prepare animation on Source page\nprivate void NavigateButton_Click(object sender, RoutedEventArgs e)\n{\n    ConnectedAnimationService.GetForCurrentView().PrepareToAnimate(\"ForwardConnectedAnimation\", SourceElement);\n    Frame.Navigate(typeof(DestinationPage), null, new SuppressNavigationTransitionInfo());\n}\n\n// Start animation on Destination page\nprotected override void OnNavigatedTo(NavigationEventArgs e)\n{\n    base.OnNavigatedTo(e);\n\n    var anim = ConnectedAnimationService.GetForCurrentView().GetAnimation(\"ForwardConnectedAnimation\");\n    if (anim != null)\n    {\n        anim.TryStart(DestinationElement);\n    }\n}"
+        },
+        {
+          "title": "Connected animation with ItemsRepeater",
+          "xaml": "<!-- Unlike ListView/GridView, ItemsRepeater does not have built-in\n     ConnectedAnimation methods. Use ConnectedAnimationService directly. -->\n\n<!-- TabFocusNavigation=\"Once\" makes the repeater a single tab stop, so Tab enters the group\n     once instead of stepping through every item. Arrow keys move between items via the\n     ItemsRepeater's XYFocusKeyboardNavigation=\"Enabled\". -->\n<ScrollViewer\n    x:Name=\"scrollViewer\"\n    TabFocusNavigation=\"Once\">\n    <ItemsRepeater\n        x:Name=\"repeater\"\n        ItemsSource=\"{x:Bind Items}\"\n        XYFocusKeyboardNavigation=\"Enabled\">\n        <ItemsRepeater.Layout>\n            <UniformGridLayout\n                MinColumnSpacing=\"8\"\n                MinItemHeight=\"120\"\n                MinItemWidth=\"150\"\n                MinRowSpacing=\"8\" />\n        </ItemsRepeater.Layout>\n        <ItemsRepeater.ItemTemplate>\n            <DataTemplate x:DataType=\"local:CustomDataObject\">\n                <Grid AutomationProperties.Name=\"{x:Bind Title}\"\n                      CornerRadius=\"4\"\n                      IsTabStop=\"True\"\n                      UseSystemFocusVisuals=\"True\">\n                    <!-- The element named \"connectedElement\" will be animated -->\n                    <Image x:Name=\"connectedElement\"\n                           Source=\"{x:Bind ImageLocation}\"\n                           Stretch=\"UniformToFill\" />\n                    <Border VerticalAlignment=\"Bottom\"\n                            Background=\"{ThemeResource AcrylicBackgroundFillColorBaseBrush}\"\n                            Padding=\"8,4\">\n                        <TextBlock Text=\"{x:Bind Title}\"\n                                   Style=\"{ThemeResource CaptionTextBlockStyle}\" />\n                    </Border>\n                </Grid>\n            </DataTemplate>\n        </ItemsRepeater.ItemTemplate>\n    </ItemsRepeater>\n</ScrollViewer>\n--- c#\n// ItemsRepeater does not have PrepareConnectedAnimation() or\n// TryStartConnectedAnimationAsync() like ListView/GridView.\n// Use ConnectedAnimationService.PrepareToAnimate() directly instead.\n\nprivate CustomDataObject _storedItem;\nprivate double _persistedScrollPosition;\n\nprivate void Repeater_ElementPrepared(ItemsRepeater sender, ItemsRepeaterElementPreparedEventArgs args)\n{\n    args.Element.Tapped -= Item_Tapped;\n    args.Element.Tapped += Item_Tapped;\n    args.Element.KeyDown -= Item_KeyDown;\n    args.Element.KeyDown += Item_KeyDown;\n}\n\nprivate void Item_Tapped(object sender, TappedRoutedEventArgs e)\n{\n    NavigateToItem(sender as FrameworkElement);\n}\n\nprivate void Item_KeyDown(object sender, KeyRoutedEventArgs e)\n{\n    // Activate the focused item with Enter or Space, matching list-style keyboard behavior.\n    if (e.Key == VirtualKey.Enter || e.Key == VirtualKey.Space)\n    {\n        NavigateToItem(sender as FrameworkElement);\n        e.Handled = true;\n    }\n}\n\nprivate void NavigateToItem(FrameworkElement element)\n{\n    if (element == null) return;\n\n    _storedItem = repeater.ItemsSourceView.GetAt(\n        repeater.GetElementIndex(element)) as CustomDataObject;\n\n    // Find the named element in the DataTemplate and prepare the animation.\n    if (FindChildByName(element, \"connectedElement\") is UIElement source)\n    {\n        ConnectedAnimationService.GetForCurrentView()\n            .PrepareToAnimate(\"ForwardConnectedAnimation\", source);\n    }\n\n    // Save scroll position for back navigation.\n    _persistedScrollPosition = scrollViewer.VerticalOffset;\n\n    Frame.Navigate(typeof(DetailPage), _storedItem,\n        new SuppressNavigationTransitionInfo());\n}\n\nprotected override void OnNavigatedTo(NavigationEventArgs e)\n{\n    base.OnNavigatedTo(e);\n    if (_storedItem == null) return;\n\n    // Restore scroll position so the target element is visible.\n    scrollViewer.ChangeView(null, _persistedScrollPosition, null, true);\n    UpdateLayout();\n\n    int index = repeater.ItemsSourceView.IndexOf(_storedItem);\n    var container = repeater.TryGetElement(index) as FrameworkElement;\n\n    var animation = ConnectedAnimationService.GetForCurrentView()\n        .GetAnimation(\"BackConnectedAnimation\");\n    if (animation != null)\n    {\n        animation.Configuration = new DirectConnectedAnimationConfiguration();\n\n        if (container != null\n            && FindChildByName(container, \"connectedElement\") is UIElement target)\n        {\n            animation.TryStart(target);\n        }\n    }\n\n    // Return keyboard focus to the activated item for keyboard/Narrator users.\n    // Focus() is available because the Grid is a UIElement with IsTabStop set.\n    if (container != null)\n        container.Focus(FocusState.Programmatic);\n    else\n        repeater.Focus(FocusState.Programmatic);\n}\n\n// Helper to find a named element within a DataTemplate.\nprivate static UIElement FindChildByName(DependencyObject parent, string name)\n{\n    for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)\n    {\n        var child = VisualTreeHelper.GetChild(parent, i);\n        if (child is FrameworkElement fe && fe.Name == name)\n            return fe;\n        var result = FindChildByName(child, name);\n        if (result != null)\n            return result;\n    }\n    return null;\n}"
+        }
+      ]
+    },
+    {
+      "name": "EasingFunction",
+      "samples": [
+        {
+          "title": "Accelerate Easing Function",
+          "xaml": "<Storyboard x:Name=\"Storyboard2\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <ExponentialEase Exponent=\"$(AccelerateEasingExponent)\" EasingMode=\"EaseIn\" />\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>"
+        },
+        {
+          "title": "Decelerate Easing Function",
+          "xaml": "<Storyboard x:Name=\"Storyboard3\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <ExponentialEase Exponent=\"$(DecelerateEasingExponent)\" EasingMode=\"EaseOut\" />\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>"
+        },
+        {
+          "title": "Other XAML Easing Functions",
+          "xaml": "<Storyboard x:Name=\"Storyboard3\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <$(EasingFunction)/>\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>"
+        },
+        {
+          "title": "Standard Easing Function",
+          "xaml": "<Storyboard x:Name=\"Storyboard1\">\n    <DoubleAnimation Storyboard.TargetName=\"Translation\" Storyboard.TargetProperty=\"X\" From=\"0\" To=\"200\" >\n        <DoubleAnimation.EasingFunction>\n            <CircleEase EasingMode=\"EaseInOut\" />\n        </DoubleAnimation.EasingFunction>\n    </DoubleAnimation>\n</Storyboard>"
+        }
+      ]
+    },
+    {
+      "name": "ImplicitTransition",
+      "samples": [
+        {
+          "title": "Automatically animate changes to Opacity",
+          "xaml": "<!-- Automatically animate changes to Opacity -->\n<Rectangle x:Name=\"rectangle\" Width=\"50\" Height=\"50\" Opacity=\"0.5\">\n    <Rectangle.OpacityTransition>\n        <ScalarTransition />\n    </Rectangle.OpacityTransition>\n</Rectangle>\n--- c#\nprivate void button_Click(object sender, RoutedEventArgs e)\n{\n    rectangle.Opacity = $(Opacity);\n}"
+        },
+        {
+          "title": "Automatically animate changes to Rotation",
+          "xaml": "<!-- Automatically animate changes to Rotation -->\n<Rectangle x:Name=\"rectangle\" Width=\"50\" Height=\"50\" Rotation=\"0\" >\n    <Rectangle.RotationTransition>\n        <ScalarTransition />\n    </Rectangle.RotationTransition>\n</Rectangle>\n--- c#\nprivate void button_Click(object sender, RoutedEventArgs e)\n{\n    rectangle.Rotation = $(Rotation);  // Clockwise, in degrees\n}"
+        },
+        {
+          "title": "Automatically animate changes to Scale",
+          "xaml": "<!-- Automatically animate changes to Scale -->\n<Rectangle x:Name=\"rectangle\" Width=\"50\" Height=\"50\" Scale=\"1,1,1\" >\n    <Rectangle.ScaleTransition>\n        <Vector3Transition />\n    </Rectangle.ScaleTransition>\n</Rectangle>\n--- c#\nusing System.Numerics;\nprivate void button_Click(object sender, RoutedEventArgs e)\n{\n    rectangle.Scale = new Vector3($(Scale), $(Scale), $(Scale));\n}"
+        },
+        {
+          "title": "Automatically animate changes to Translation",
+          "xaml": "<!-- Automatically animate changes to Translation -->\n<Rectangle x:Name=\"rectangle\" Width=\"50\" Height=\"50\" Translation=\"0,0,0\" >\n    <Rectangle.TranslationTransition>\n        <Vector3Transition />\n    </Rectangle.TranslationTransition>\n</Rectangle>\n--- c#\nusing System.Numerics;\nprivate void button_Click(object sender, RoutedEventArgs e)\n{\n    rectangle.Translation = new Vector3($(Translation), $(Translation), $(Translation));\n}"
+        },
+        {
+          "title": "Implicitly animate when the Background changes",
+          "xaml": "<ContentPresenter x:Name=\"BrushPresenter\" Background=\"Blue\" Width=\"50\" Height=\"50\">\n    <ContentPresenter.BackgroundTransition>\n        <BrushTransition />\n    </ContentPresenter.BackgroundTransition>\n</ContentPresenter>\n--- c#\nprivate void button_Click(object sender, RoutedEventArgs e)\n{\n    // Note that this is a new brush instance, not a new color on the same brush.\n    if (HasBlueBackground(BrushPresenter))\n    {\n        BrushPresenter.Background = new SolidColorBrush(Yellow);\n    }\n    else\n    {\n        BrushPresenter.Background = new SolidColorBrush(Blue);\n    }\n}"
+        },
+        {
+          "title": "Implicitly animate when the Grid's theme changes",
+          "xaml": "<Grid x:Name=\"ThemeExampleGrid\" Background=\"{ThemeResource SolidBackgroundFillColorBaseBrush}\" >\n    <Grid.BackgroundTransition>\n        <BrushTransition />\n    </Grid.BackgroundTransition>\n    <StackPanel Margin=\"12\" Spacing=\"6\">\n        <TextBlock Text=\"Lorem Ipsum\" Style=\"{ThemeResource SubtitleTextBlockStyle}\" />\n        <TextBlock Text=\"The background of this grid animates when the theme changes.\" TextWrapping=\"WrapWholeWords\" />\n        <Button Content=\"Action\" />\n        <CheckBox Content=\"Option\" />\n    </StackPanel>\n</Grid>\n--- c#\nprivate void ThemeButton_Click(object sender, RoutedEventArgs e)\n{\n    ThemeExampleGrid.RequestedTheme = ThemeExampleGrid.RequestedTheme == ElementTheme.Dark ? ElementTheme.Light : ElementTheme.Dark;\n}"
+        }
+      ]
+    },
+    {
+      "name": "PageTransition",
+      "samples": [
+        {
+          "title": "Page transitions",
+          "xaml": "<Frame x:Name=\"ContentFrame\">\n    <Frame.ContentTransitions>\n        <TransitionCollection>\n            <NavigationThemeTransition  />\n        </TransitionCollection>\n    </Frame.ContentTransitions>\n</Frame>\n--- c#\nContentFrame.Navigate(typeof(SamplePage), null$(TransitionParameter));"
+        }
+      ]
+    },
+    {
+      "name": "RadialGradientBrush",
+      "samples": [
+        {
+          "title": "RadialGradientBrush Sample",
+          "xaml": "<Rectangle Width=\"200\" Height=\"200\">\n    <Rectangle.Fill>\n        <media:RadialGradientBrush\n                MappingMode=\"$(MappingMode)\"\n                Center=\"$(CenterX),$(CenterY)\"\n                RadiusX=\"$(RadiusX)\"\n                RadiusY=\"$(RadiusY)\"\n                GradientOrigin=\"$(OriginX),$(OriginY)\"\n                SpreadMethod=\"$(SpreadMethod)\">\n            <GradientStop Color=\"Yellow\" Offset=\"0.0\" />\n            <GradientStop Color=\"Blue\" Offset=\"1\" />\n        </media:RadialGradientBrush>\n    </Rectangle.Fill>\n</Rectangle>"
+        }
+      ]
+    },
+    {
+      "name": "SystemBackdrops",
+      "samples": [
+        {
+          "title": "Backdrop types",
+          "xaml": "<!-- Mica -->\n<Window.SystemBackdrop>\n    <MicaBackdrop/>\n</Window.SystemBackdrop>\n                    \n<!-- Mica Alt -->\n<Window.SystemBackdrop>\n    <MicaBackdrop Kind=\"BaseAlt\"/>\n</Window.SystemBackdrop>\n\n<!-- Acrylic -->\n<Window.SystemBackdrop>\n    <DesktopAcrylicBackdrop/>\n</Window.SystemBackdrop>\n--- c#\nbool TrySetMicaBackdrop(bool useMicaAlt)\n{\n    if (SystemBackdrops.MicaController.IsSupported())\n    {\n        MicaBackdrop micaBackdrop = new MicaBackdrop();\n        micaBackdrop.Kind = useMicaAlt ? MicaKind.BaseAlt : MicaKind.Base;\n        SystemBackdrop = micaBackdrop;\n\n        return true; // Succeeded.\n    }\n\n    return false; // Mica is not supported on this system.\n}\n\nbool TrySetDesktopAcrylicBackdrop()\n{\n    if (DesktopAcrylicController.IsSupported())\n    {\n        DesktopAcrylicBackdrop DesktopAcrylicBackdrop = new DesktopAcrylicBackdrop();\n        SystemBackdrop = DesktopAcrylicBackdrop;\n\n        return true; // Succeeded.\n    }\n\n    return false; // DesktopAcrylic is not supported on this system.\n}"
+        }
+      ]
+    },
+    {
+      "name": "ThemeTransition",
+      "samples": [
+        {
+          "title": "Use the EntranceThemeTransition when adding items to your page.",
+          "xaml": "<StackPanel x:Name=\"EntranceStackPanel\" Orientation=\"Horizontal\">\n    <StackPanel.ChildrenTransitions>\n        <TransitionCollection>\n            <EntranceThemeTransition IsStaggeringEnabled=\"True\" />\n        </TransitionCollection>\n    </StackPanel.ChildrenTransitions>\n    <Rectangle Width=\"50\" Height=\"50\" Margin=\"5\" Fill=\"LightBlue\" />\n    <Rectangle Width=\"50\" Height=\"50\" Margin=\"5\" Fill=\"LightBlue\" />\n    <Rectangle Width=\"50\" Height=\"50\" Margin=\"5\" Fill=\"LightBlue\" />\n    <Rectangle Width=\"50\" Height=\"50\" Margin=\"5\" Fill=\"LightBlue\" />\n    <Rectangle Width=\"50\" Height=\"50\" Margin=\"5\" Fill=\"LightBlue\" />\n</StackPanel>"
+        },
+        {
+          "title": "Use the RepositionThemeTransition to react to layout changes.",
+          "xaml": "<Rectangle x:Name=\"RightRectangle\" Fill=\"Blue\" >\n    <Rectangle.Transitions>\n        <TransitionCollection>\n            <RepositionThemeTransition />\n        </TransitionCollection>\n    </Rectangle.Transitions>\n</Rectangle>"
+        },
+        {
+          "title": "Use ContentThemeTransition to animate content refreshes.",
+          "xaml": "<ListView>\n    <ListView.ItemContainerTransitions>\n        <TransitionCollection>\n            <ContentThemeTransition />\n        </TransitionCollection>\n    </ListView.ItemContainerTransitions>\n</ListView>"
+        },
+        {
+          "title": "Use AddDeleteThemeTransition to animate adding and removing items from a collection.",
+          "xaml": "<ListView>\n    <ListView.ItemContainerTransitions>\n        <TransitionCollection>\n            <AddDeleteThemeTransition />\n        </TransitionCollection>\n    </ListView.ItemContainerTransitions>\n</ListView>"
+        },
+        {
+          "title": "Use PopupThemeTransition to animate opening and closing a popup.",
+          "xaml": "<Popup x:Name=\"ExamplePopup\">\n    <Popup.ChildTransitions>\n        <TransitionCollection>\n            <PopupThemeTransition />\n        </TransitionCollection>\n    </Popup.ChildTransitions>\n    <Border Background=\"{ThemeResource FlyoutBackgroundThemeBrush}\" BorderThickness=\"2\" BorderBrush=\"{ThemeResource SystemControlForegroundChromeGrayBrush}\">\n        <StackPanel Margin=\"10\">\n            <TextBlock Text=\"This is a popup using PopupThemeTransition\" />\n            <Button Content=\"Close Popup\" Click=\"ClosePopupButton_Click\" />\n        </StackPanel>\n    </Border>\n</Popup>"
+        }
+      ]
+    },
+    {
+      "name": "XamlCompInterop",
+      "samples": [
+        {
+          "title": "Use a natural motion composition animation on a UIElement",
+          "xaml": "Compositor _compositor = Microsoft.UI.Xaml.Media.CompositionTarget.GetCompositorForCurrentThread();\nSpringVector3NaturalMotionAnimation? _springAnimation;\n\nprivate void CreateOrUpdateSpringAnimation(float finalValue)\n{\n    if (_springAnimation == null)\n    {\n        _springAnimation = _compositor.CreateSpringVector3Animation();\n        _springAnimation.Target = \"Scale\";\n    }\n\n    _springAnimation.FinalValue = new Vector3(finalValue);\n}\n\nprivate void element_PointerEntered(object sender, PointerRoutedEventArgs e)\n{\n    // Scale up to 1.5\n    CreateOrUpdateSpringAnimation(1.5f);\n\n    (sender as UIElement)?.StartAnimation(_springAnimation);\n}\n\nprivate void element_PointerExited(object sender, PointerRoutedEventArgs e)\n{\n    // Scale back down to 1.0\n    CreateOrUpdateSpringAnimation(1.0f);\n\n    (sender as UIElement)?.StartAnimation(_springAnimation);\n}"
+        },
+        {
+          "title": "ExpressionAnimation on an Ellipse element",
+          "xaml": "<StackPanel Height=\"200\">\n    <Grid VerticalAlignment=\"Top\">\n        <Grid.ColumnDefinitions>\n            <ColumnDefinition Width=\"*\" />\n            <ColumnDefinition Width=\"*\" />\n        </Grid.ColumnDefinitions>\n        <Rectangle x:Name=\"rectangle\" Width=\"50\" Height=\"50\" Fill=\"{ThemeResource SystemAccentColor}\" PointerEntered=\"element_PointerEntered\" PointerExited=\"element_PointerExited\" />\n        <Ellipse x:Name=\"ellipse\" Grid.Column=\"1\" Width=\"50\" Height=\"50\" Margin=\"55,0\" Fill=\"{ThemeResource SystemAccentColor}\"/>\n    </Grid>\n</StackPanel>\n--- c#\n// NOTE: The rectangle scales up and down using the same element_PointerEntered/Exited events as the prior sample.\n\nCompositor _compositor = Microsoft.UI.Xaml.Media.CompositionTarget.GetCompositorForCurrentThread();\n\n// Set up the relationship between the rectangle and the ellipse.\nprivate void ExpressionSample_Loaded(object sender, RoutedEventArgs e)\n{\n    var expressionAnim = _compositor.CreateExpressionAnimation();\n\n    // The ellipse's scale is inversely proportional to the rectangle's scale\n    expressionAnim.Expression = \"Vector3(1/scaleElement.Scale.X, 1/scaleElement.Scale.Y, 1)\";\n    expressionAnim.Target = \"Scale\";\n\n    // Use SetExpressionReferenceParameter to alias a UIElement into the expression string\n    expressionAnim.SetExpressionReferenceParameter(\"scaleElement\", rectangle);\n\n    // Start the animation on the ellipse\n    ellipse.StartAnimation(expressionAnim);\n}"
+        },
+        {
+          "title": "Driving several related animations together using ExpressionAnimation",
+          "xaml": "// NOTE: Each of the buttons scale up and down using the same element_PointerEntered/Exited events as the prior samples.\n\nprivate void StackedButtonsExample_Loaded(object sender, RoutedEventArgs e)\n{\n    // Animate the translation of each button relative to the scale and translation of the button above.\n    var anim = _compositor.CreateExpressionAnimation();\n    anim.Expression = \"(above.Scale.Y - 1) * 50 + above.Translation.Y % (50 * index)\";\n    anim.Target = \"Translation.Y\";\n\n    // Animate the second button relative to the first.\n    anim.SetExpressionReferenceParameter(\"above\", ExpressionButton1);\n    anim.SetScalarParameter(\"index\", 1);\n    ExpressionButton2.StartAnimation(anim);\n\n    // Animate the third button relative to the second.\n    anim.SetExpressionReferenceParameter(\"above\", ExpressionButton2);\n    anim.SetScalarParameter(\"index\", 2);\n    ExpressionButton3.StartAnimation(anim);\n\n    // Animate the fourth button relative to the third.\n    anim.SetExpressionReferenceParameter(\"above\", ExpressionButton3);\n    anim.SetScalarParameter(\"index\", 3);\n    ExpressionButton4.StartAnimation(anim);\n}"
+        },
+        {
+          "title": "Reference ActualSize in ExpressionAnimations to make novel layouts based on size",
+          "xaml": "private void ActualSizeExample_Loaded(object sender, RoutedEventArgs e)\n{\n    // We will lay out some buttons in a circle.\n    // The formulas we will use are:\n    //   X = radius * cos(theta) + xOffset\n    //   Y = radius * sin(theta) + yOffset\n    //   radius = 1/2 the width and height of the parent container\n    //   theta = the angle for each element. The starting value of theta depends on both the number of elements and the relative index of each element.\n    //   xOffset = The starting horizontal offset for the element. \n    //   yOffset = The starting vertical offset for the element.\n\n    String radius = \"(source.ActualSize.X / 2)\"; // Since the layout is a circle, width and height are equivalent meaning we could use X or Y. We'll use X.\n    String theta = \".02 * \" + radius + \" + ((2 * Pi)/total)*index\"; // The first value is the rate of angular change based on radius. The last value spaces the buttons equally.\n    String xOffset = radius; // We offset x by radius because the buttons naturally layout along the left edge. We need to move them to center of the circle first.\n    String yOffset = \"0\"; // We don't need to offset y because the buttons naturally layout vertically centered.\n\n    // We combine X, Y, and Z subchannels into a single animation because we can only start a single animation on Translation.\n    String expression = String.Format(\"Vector3({0}*cos({1})+{2}, {0}*sin({1})+{3},0)\", radius, theta, xOffset, yOffset);\n\n    int totalElements = 8;\n    for (int i = 0; i < totalElements; i++)\n    {\n        Button element = new Button() { Content = \"Button\" + i };\n        LayoutPanel.Children.Add(element);\n\n        var anim = _compositor.CreateExpressionAnimation();\n\n        anim.Expression = expression;\n        anim.SetScalarParameter(\"index\", i + 1);\n        anim.SetScalarParameter(\"total\", totalElements);\n        anim.Target = \"Translation\";\n        anim.SetExpressionReferenceParameter(\"source\", LayoutPanel);\n\n        element.StartAnimation(anim);\n    }\n}"
+        },
+        {
+          "title": "Reference ActualOffset and ActualSize in ExpressionAnimations to position elements relative to each other",
+          "xaml": "<Grid HorizontalAlignment=\"Left\" Margin=\"0,12,0,0\">\n    <TextBlock x:Name=\"PopupTarget\" \n                Width=\"300\" \n                TextWrapping=\"WrapWholeWords\" \n                Margin=\"{x:Bind MarginSlider.Value, Converter={StaticResource doubleToThicknessConverter}, Mode=OneWay}\" \n                FontSize=\"{x:Bind FontSizeSlider.Value, Mode=OneWay}\" \n                Text=\"... lorem ipsum ...\" />\n\n    <!-- Notice that the popup is a sibling to the target, not an ancestor. -->\n    <Popup x:Name=\"Popup\" Margin=\"5\">\n        <Grid MinWidth=\"50\" MaxWidth=\"200\" MinHeight=\"50\" BorderBrush=\"LightGray\" BorderThickness=\"2\" Background=\"{ThemeResource FlyoutBackgroundThemeBrush}\">\n            <TextBlock Text=\"I am always right aligned center to the target.\" TextWrapping=\"WrapWholeWords\" Margin=\"6\" FontSize=\"12\" VerticalAlignment=\"Center\" />\n        </Grid>\n    </Popup>\n</Grid>\n--- c#\nprivate void ActualOffsetExample_Loaded(object sender, RoutedEventArgs e)\n{\n    // This sample positions a popup relative to a block of text that has variable layout size based on font size.\n    var anim = _compositor.CreateExpressionAnimation();\n\n    anim.Expression = \"Vector3(source.ActualOffset.X + source.ActualSize.X, source.ActualOffset.Y + source.ActualSize.Y / 2 - 25, 0)\";\n    anim.Target = \"Translation\";\n    anim.SetExpressionReferenceParameter(\"source\", PopupTarget);\n\n    Popup.StartAnimation(anim);\n\n    Popup.IsOpen = true;\n}"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "references/gallery-motion/Acrylic/AcrylicPage.xaml",
+      "sha256": "241b12dc6db7bb0f0d47a89bd7049e013623d1a1d672f7f245163807634eecdd"
+    },
+    {
+      "path": "references/gallery-motion/Acrylic/AcrylicPage.xaml.cs",
+      "sha256": "763a4cd8534cb056873a2fa4a23804befeec04045df98babd3177fc74268da25"
+    },
+    {
+      "path": "references/gallery-motion/Acrylic/CustomAcrylicAppBrush.txt",
+      "sha256": "a2d4d13f24dc3ea131ceade6e7f50f0c769d4e02c8154b035cf5f8cbb6cdb4b4"
+    },
+    {
+      "path": "references/gallery-motion/Acrylic/DefaultAppAcrylicBrush.txt",
+      "sha256": "70d134780f4b3752729caaa3411de98fe549a12494bab8993901943215292ac4"
+    },
+    {
+      "path": "references/gallery-motion/Acrylic/LuminosityAppAcrylic.txt",
+      "sha256": "fcd6e47489bf5d519a24e99cf77d8507008f6d74b7807c0ddc89a24e8cc9392d"
+    },
+    {
+      "path": "references/gallery-motion/ConnectedAnimation/ConnectedAnimationElementsSame.txt",
+      "sha256": "cc616b61d7c1bd8ebf4489791fd9480b59ea6f52330424c445fd3d128ad68058"
+    },
+    {
+      "path": "references/gallery-motion/ConnectedAnimation/ConnectedAnimationItemsrepeater.txt",
+      "sha256": "5e5785d4437f1c28fdf47807e519b5382bf1018c24f067854e0dc1556c2894f6"
+    },
+    {
+      "path": "references/gallery-motion/ConnectedAnimation/ConnectedAnimationListPage.txt",
+      "sha256": "c9e077774c022a27054f700198aeeb15f92867688ce37abaef8ce95112a6c393"
+    },
+    {
+      "path": "references/gallery-motion/ConnectedAnimation/ConnectedAnimationPage.xaml",
+      "sha256": "b2da8ac2414052e0e940ad2e1754bc02d68978bf6473855b94a016f35e3aa75b"
+    },
+    {
+      "path": "references/gallery-motion/ConnectedAnimation/ConnectedAnimationPage.xaml.cs",
+      "sha256": "cbeb72f4baa36f9c213d07c4ea88aa2fa53a9d0f0d255a9547972f0a0482d5ea"
+    },
+    {
+      "path": "references/gallery-motion/ConnectedAnimation/SimpleConnectedAnimation.txt",
+      "sha256": "9663d07f5652469fbd5812d4a015aabd6fcb5c41d9ba676aeab890a6b06a8ec6"
+    },
+    {
+      "path": "references/gallery-motion/EasingFunction/AccelerateEasingFunction.txt",
+      "sha256": "ee1b1f23403f5ab8a5098e931a5edb105996b7798fcc17d4d7dbe2129dd06288"
+    },
+    {
+      "path": "references/gallery-motion/EasingFunction/DecelerateEasingFunction.txt",
+      "sha256": "277f80e248c7e290f09237217c888dd1d778d8396928bbbd9941bda31a3ef615"
+    },
+    {
+      "path": "references/gallery-motion/EasingFunction/EasingFunctionPage.xaml",
+      "sha256": "11464e3de6c9b39814122bcb848a295bb31c6e3b07f603b80186dd52f98d0ee8"
+    },
+    {
+      "path": "references/gallery-motion/EasingFunction/EasingFunctionPage.xaml.cs",
+      "sha256": "fbb4bb03f8293e408884eda8cae8a6c2d68950cff9a1ba85b89874a38f5fe12e"
+    },
+    {
+      "path": "references/gallery-motion/EasingFunction/OtherXamlEasingFunctions.txt",
+      "sha256": "37064a97a2c4acfff81b0ba9bc12134360354a022793aebadafc0cefa0d2751e"
+    },
+    {
+      "path": "references/gallery-motion/EasingFunction/StandardEasingFunction.txt",
+      "sha256": "58724e48a1f97896538ab52ced408586345482b056989fe8130d88f801c8f304"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesOpacity.txt",
+      "sha256": "7506c2380f61b88ce1bd7ac237eed2e7dd0e4064b568ff6aab8e50540b3fcb90"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesRotation.txt",
+      "sha256": "67937fe74391b1514ce61c42dec114d2c443e70bd8930e804eed216e1e36dba1"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesScale.txt",
+      "sha256": "0c1012d7a2257f5c4865194f6ccf23b191c6174ded291fe3c454076aa748dc4b"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionAutomaticallyAnimateChangesTranslation.txt",
+      "sha256": "088989e2fe7435e9cf7431c42abd275a9af875e01a87b5c1c048bec9be1480b3"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionImplicitlyAnimateBackgroundChanges.txt",
+      "sha256": "9eb7cfd49fae33cecf85be8ba910d6c11d0ddef64078308d3bd29fbf82057f35"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionImplicitlyAnimateGridTheme.txt",
+      "sha256": "87fb70ec0e83f7d35294c7ec4c0ba76d1813675933616c48c1549b95ffb5a319"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionPage.xaml",
+      "sha256": "e4248f98f1a83164bc97bedc9cd9c7988b6ace790a5053b0abb1f225cec43337"
+    },
+    {
+      "path": "references/gallery-motion/ImplicitTransition/ImplicitTransitionPage.xaml.cs",
+      "sha256": "11ec874341f16d9b9d2c5440996de90a41e7258a76f00eb32dac0e1fa9b842cb"
+    },
+    {
+      "path": "references/gallery-motion/PageTransition/PageTransitionPage.xaml",
+      "sha256": "c876ec84168c5b301ce69d98d61b09d14521240ec0e7ec89af52ea15797e11b3"
+    },
+    {
+      "path": "references/gallery-motion/PageTransition/PageTransitionPage.xaml.cs",
+      "sha256": "3d743e07be5f5002060e70e33f6b9c0996083ccd317495d223ad5c3cb767682b"
+    },
+    {
+      "path": "references/gallery-motion/PageTransition/PageTransitions.txt",
+      "sha256": "529577acd017afb86f7722980ba89a7bb75a912546dab8f1a1c6c5d870d58596"
+    },
+    {
+      "path": "references/gallery-motion/RadialGradientBrush/RadialGradientBrushPage.xaml",
+      "sha256": "2f13b215a71103612dd20fb7f08dce5520374ce7c93453e74d04cc422f70879f"
+    },
+    {
+      "path": "references/gallery-motion/RadialGradientBrush/RadialGradientBrushPage.xaml.cs",
+      "sha256": "4c3ecef1dea51bb9f9beeae0d6086a7b026545b8e72858451dd03a403331ce48"
+    },
+    {
+      "path": "references/gallery-motion/RadialGradientBrush/RadialgradientbrushSample.txt",
+      "sha256": "2b219608efd7355f458c6c560e966aeed9127e379be20afe11840e6bd119eafc"
+    },
+    {
+      "path": "references/gallery-motion/SystemBackdrops/SystemBackdropsBackdropTypes.txt",
+      "sha256": "10cdc66c6ef0300c7eb685db16c804dc04cbe65313916ba76b23783dc41a8dd0"
+    },
+    {
+      "path": "references/gallery-motion/SystemBackdrops/SystemBackdropsDesktopacryliccontroller.txt",
+      "sha256": "c9213c2bd2e78cc47aee909019c56f8b6c31a5b3f1dfcb52e5a99a39391917ef"
+    },
+    {
+      "path": "references/gallery-motion/SystemBackdrops/SystemBackdropsMicacontroller.txt",
+      "sha256": "a4ef3959729f3ace7dcba43c81fa2a6f3f83c58b2d6aa1412f87170295c94f3a"
+    },
+    {
+      "path": "references/gallery-motion/SystemBackdrops/SystemBackdropsPage.xaml",
+      "sha256": "eeb2cc8d9fafc61a520372fef19be82aa618729a84f067da9bef2034623da690"
+    },
+    {
+      "path": "references/gallery-motion/SystemBackdrops/SystemBackdropsPage.xaml.cs",
+      "sha256": "89301f0d70e2bd8e36380151b511e6b4e9c4e804b8a9a7bb9006ef91d14e4986"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/AdddeletethemetransitionAnimateAddingRemoving.txt",
+      "sha256": "b595cc606c53031b8e0817542066490149f125fa402b0980cb55e3866ef0ba01"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/ContentthemetransitionAnimateContentRefreshes.txt",
+      "sha256": "ceef8361a172f0375c783cd2f67407916e51302f1c676f9d77df8e2d46353cc0"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/EntrancethemetransitionAddingItemsYour.txt",
+      "sha256": "6e8520cec6b874fd2456bf9e033e65858b69f6832c79d80689661281a53ddfc2"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/PopupthemetransitionAnimateOpeningClosing.txt",
+      "sha256": "a9550cb9c8e088a3474fc65c59156fd14999884838a6f75ed382fcecbff68996"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/RepositionthemetransitionReactLayoutChanges.txt",
+      "sha256": "93d384a107eaacc5a730f93d0ae223b9cbac15b9c85491640f3c0e9cd8ae8bc9"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/ThemeTransitionPage.xaml",
+      "sha256": "d6eba122d9908b8b0e8ea875b764a3db3e08e6fdccb3cdd4aa611c13ce24e9aa"
+    },
+    {
+      "path": "references/gallery-motion/ThemeTransition/ThemeTransitionPage.xaml.cs",
+      "sha256": "5b582e6c2e5ba591a11be78fdc19cae5e78c8a7d821bb78beefa10b7111b7ef2"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropDrivingSeveralRelatedAnimations.txt",
+      "sha256": "30df35c43d57eb05d4990fc6c7ea76b77d12a36affa8dda7aae5045e394b64d9"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropExpressionanimationEllipseElement.txt",
+      "sha256": "7a916c7e3a6f8c47ef0e89a0271c3dbf34ee9bb78bf6ff5802d9d2684fdf8d3c"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropNaturalMotionCompositionAnimation.txt",
+      "sha256": "cb59f91c6296f31b9e3b2b88b28bac4913c22358b6dec597a324f2a15f32cc60"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropPage.xaml",
+      "sha256": "6e5784c38b63f061484052eb4a31a882514e0b57c1393fe4c0251ba81dc812a9"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropPage.xaml.cs",
+      "sha256": "b5bf0b0c1e50fe9acaaa3f758bdadd371ff042533401c65845d107ab869f8f7c"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropReferenceActualoffsetActualsizeExpressionanimations.txt",
+      "sha256": "ce2c125d9125203364c9fb21bf3dcda27c883093dd07b1220790c46cdff4421b"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropReferenceActualsizeExpressionanimationsMake.txt",
+      "sha256": "ba1fed52e3f8481ce1536d9cbacb658f5c29be7892a9aac3c80fd6ae2cdd1e75"
+    }
+  ]
+}

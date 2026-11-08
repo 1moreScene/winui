@@ -1,0 +1,75 @@
+{
+  "capturedAtUtc": "2026-11-08T08:33:55.203655+00:00",
+  "changes": [
+    "FlipView native solid navigation triangles",
+    "FlipView no border in Light/Dark; border only in HighContrast",
+    "FlipView rounded fixed button/margin dimensions before fractional-DPI alignment",
+    "InApp Acrylic crop before downsampling and hard-border Gaussian, shared Canvas2D/WebGL2 executor"
+  ],
+  "baseline": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "nativeCapture": "PrintWindow own client only; no foreground manipulation",
+    "advancedEffects": true,
+    "nativeCases": 42,
+    "metrics": "references/navigation-controls-paging-buttons.json",
+    "sameSource": "For material comparison, the native owned pre-brush capture is supplied as the identical browser backdrop. No cross-app pixels are captured."
+  },
+  "runtime": {
+    "wasmSha256": "c6421d0f366b9d3a785a8bc794f31dcfc544b423fb34a48759068d7abee4227c",
+    "matchesCurrentBinary": false,
+    "matchesProductionBinary": false,
+    "matchesCurrentApplicationSources": false,
+    "changedApplicationSources": [
+      "App.tsx",
+      "home.css",
+      "scene.ts"
+    ],
+    "frozenApplicationManifest": "out/collections-5196-app-runtime/manifest.json",
+    "url": "http://127.0.0.1:5196/#flip-view"
+  },
+  "checks": {
+    "productionBuild": true,
+    "typecheck": true,
+    "declarations": true,
+    "hostClippyWarningsDenied": true,
+    "wasmClippyWarningsDenied": true,
+    "rustTests": 200,
+    "navigationBrowserTests": 18,
+    "materialRegressionTests": 5,
+    "pagingButtonMatrixStates": 84,
+    "logs": [
+      "out/navigation-paging-build.log",
+      "out/navigation-paging-rust-all.log",
+      "out/navigation-paging-clippy.log",
+      "out/navigation-paging-clippy-wasm.log",
+      "out/navigation-paging-browser-final.log",
+      "out/navigation-paging-interaction.log",
+      "out/navigation-paging-material-regression.log"
+    ]
+  },
+  "comparison": {
+    "FlipView": {
+      "cases": 48,
+      "meanColorError": 5.043009664183134,
+      "maxCaseMeanColorError": 13.56268221574344,
+      "maxFaceChannelError": 18,
+      "maxGeometryErrorDIP": 1.2207031204525265e-05
+    },
+    "PipsPager": {
+      "cases": 36,
+      "meanColorError": 0.4735082304526749,
+      "maxCaseMeanColorError": 1.0707407407407408,
+      "maxFaceChannelError": 0,
+      "maxGeometryErrorDIP": 0
+    }
+  },
+  "evidence": "references/navigation-paging-validation.json",
+  "fullPixelParityAccepted": false,
+  "remaining": [
+    "High-frequency stripe inputs retain native D2D Gaussian versus bounded browser kernel residuals (max case mean and face-channel errors recorded).",
+    "Native DirectWrite and browser font coverage differ.",
+    "This is same-SDK own-window compositor/template evidence, not a new Store Gallery full-window or frame-timing acceptance."
+  ]
+}

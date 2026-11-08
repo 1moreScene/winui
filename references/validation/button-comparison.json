@@ -1,0 +1,231 @@
+{
+  "conditions": {
+    "width": 1000,
+    "height": 500,
+    "dpr": 1,
+    "font": "Segoe UI",
+    "sdk": "2.3.10-experimental",
+    "highContrast": "Same deterministic resource fixture; not OS forced-colors",
+    "nativeStates": "VSM fixtures",
+    "browserStates": "Real pointer down/move and enabled properties"
+  },
+  "acceptedPixelParity": false,
+  "comparisons": [
+    {
+      "name": "Light-Standard-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.4056020733652312,
+      "pixelsAbove8Percent": 5.522328548644338
+    },
+    {
+      "name": "Light-Standard-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.3825757575757576,
+      "pixelsAbove8Percent": 5.741626794258373
+    },
+    {
+      "name": "Light-Standard-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.9461722488038278,
+      "pixelsAbove8Percent": 3.917464114832536
+    },
+    {
+      "name": "Light-Standard-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.5585127591706539,
+      "pixelsAbove8Percent": 3.100079744816587
+    },
+    {
+      "name": "Light-Accent-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.2701023391812865,
+      "pixelsAbove8Percent": 4.5554226475279105
+    },
+    {
+      "name": "Light-Accent-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.153143274853801,
+      "pixelsAbove8Percent": 4.316188197767145
+    },
+    {
+      "name": "Light-Accent-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.9925571504518873,
+      "pixelsAbove8Percent": 3.369218500797448
+    },
+    {
+      "name": "Light-Accent-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.5081738437001595,
+      "pixelsAbove8Percent": 2.1431419457735243
+    },
+    {
+      "name": "Light-Subtle-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.8894537480063796,
+      "pixelsAbove8Percent": 3.7181020733652312
+    },
+    {
+      "name": "Light-Subtle-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.8726076555023924,
+      "pixelsAbove8Percent": 3.7181020733652312
+    },
+    {
+      "name": "Light-Subtle-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.6161283891547049,
+      "pixelsAbove8Percent": 2.322567783094099
+    },
+    {
+      "name": "Light-Subtle-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.36313795853269537,
+      "pixelsAbove8Percent": 1.7743221690590112
+    },
+    {
+      "name": "Dark-Standard-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.9428827751196172,
+      "pixelsAbove8Percent": 5.143540669856459
+    },
+    {
+      "name": "Dark-Standard-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.9062998405103668,
+      "pixelsAbove8Percent": 5.143540669856459
+    },
+    {
+      "name": "Dark-Standard-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.5428628389154706,
+      "pixelsAbove8Percent": 4.565390749601276
+    },
+    {
+      "name": "Dark-Standard-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.738835725677831,
+      "pixelsAbove8Percent": 2.7910685805422646
+    },
+    {
+      "name": "Dark-Accent-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.0099016480595429,
+      "pixelsAbove8Percent": 5.073763955342903
+    },
+    {
+      "name": "Dark-Accent-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.9205542264752791,
+      "pixelsAbove8Percent": 4.944178628389154
+    },
+    {
+      "name": "Dark-Accent-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.7056087187666135,
+      "pixelsAbove8Percent": 3.020334928229665
+    },
+    {
+      "name": "Dark-Accent-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.7546850079744817,
+      "pixelsAbove8Percent": 2.7711323763955344
+    },
+    {
+      "name": "Dark-Subtle-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.4436802232854864,
+      "pixelsAbove8Percent": 4.057017543859649
+    },
+    {
+      "name": "Dark-Subtle-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.378189792663477,
+      "pixelsAbove8Percent": 4.136762360446571
+    },
+    {
+      "name": "Dark-Subtle-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.0838317384370015,
+      "pixelsAbove8Percent": 3.1399521531100474
+    },
+    {
+      "name": "Dark-Subtle-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.5289074960127592,
+      "pixelsAbove8Percent": 1.8540669856459329
+    },
+    {
+      "name": "HighContrast-Standard-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 2.3319377990430623,
+      "pixelsAbove8Percent": 5.631977671451356
+    },
+    {
+      "name": "HighContrast-Standard-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 2.5419324827219563,
+      "pixelsAbove8Percent": 6.070574162679425
+    },
+    {
+      "name": "HighContrast-Standard-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 2.3319377990430623,
+      "pixelsAbove8Percent": 5.631977671451356
+    },
+    {
+      "name": "HighContrast-Standard-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.8506778309409888,
+      "pixelsAbove8Percent": 4.675039872408294
+    },
+    {
+      "name": "HighContrast-Accent-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.041866028708134,
+      "pixelsAbove8Percent": 5.003987240829346
+    },
+    {
+      "name": "HighContrast-Accent-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.0520999468367889,
+      "pixelsAbove8Percent": 5.223285486443381
+    },
+    {
+      "name": "HighContrast-Accent-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.0293062200956937,
+      "pixelsAbove8Percent": 3.3293460925039877
+    },
+    {
+      "name": "HighContrast-Accent-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.6900917065390749,
+      "pixelsAbove8Percent": 3.698165869218501
+    },
+    {
+      "name": "HighContrast-Subtle-Normal",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.65829346092504,
+      "pixelsAbove8Percent": 4.405901116427432
+    },
+    {
+      "name": "HighContrast-Subtle-PointerOver",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.868288144603934,
+      "pixelsAbove8Percent": 4.844497607655502
+    },
+    {
+      "name": "HighContrast-Subtle-Pressed",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 1.65829346092504,
+      "pixelsAbove8Percent": 4.405901116427432
+    },
+    {
+      "name": "HighContrast-Subtle-Disabled",
+      "geometryErrorDip": 0,
+      "meanAbsoluteChannelError": 0.5838317384370016,
+      "pixelsAbove8Percent": 3.0103668261562997
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+import{defineConfig}from'@playwright/test';import base from'./playwright.navigation-controls.config';export default defineConfig({...base,testMatch:['**/navigation-controls.spec.ts','**/navigation-refinement.spec.ts'],outputDir:'../out/navigation-refinement-results',reporter:[['list'],['json',{outputFile:'../out/navigation-refinement-results.json'}]]});

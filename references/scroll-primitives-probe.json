@@ -1,0 +1,33 @@
+{
+  "origin": "Independent locally built unpackaged self-contained probe; not Store Gallery",
+  "project": "tools/native-scroll-primitives/ScrollPrimitivesProbe.csproj",
+  "target": "net10.0-windows10.0.22621.0/win-x64",
+  "resolvedPackages": [
+    "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental"
+  ],
+  "capturedResultsSha256": "bd2b7202820992f07cff9414f7c6aa134743bbce1f74355f740ca35adae11e10",
+  "files": [
+    {
+      "path": "out/scroll-primitives-probe-bin/ScrollPrimitivesProbe.exe",
+      "sha256": "ef95cb7cb36b6d8d32018977e8965c507c85c9acfc37f1b3312bd0a4a748cd1a",
+      "fileVersion": "1.0.0.0",
+      "signatureStatus": "NotSigned",
+      "signerSubject": null
+    },
+    {
+      "path": "out/scroll-primitives-probe-bin/ScrollPrimitivesProbe.dll",
+      "sha256": "5b7f08457b809fd56f1ae9b5dd183f794c25019d520ec8894ebd08c3f79f51d6",
+      "fileVersion": "1.0.0.0",
+      "signatureStatus": "NotSigned",
+      "signerSubject": null
+    },
+    {
+      "path": "out/scroll-primitives-probe-bin/Microsoft.ui.xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "fileVersion": "3.2.0.2511 (D98F5FF9B47F(ContainerAdministrator)-693f472aeaf89c6dff66256ee6fcd453e5d553b8)",
+      "signatureStatus": "Valid",
+      "signerSubject": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
+    }
+  ]
+}

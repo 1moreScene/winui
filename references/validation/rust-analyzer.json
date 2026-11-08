@@ -1,0 +1,9 @@
+{
+  "generatedAtUtc": "2026-11-07T15:08:37.6367405Z",
+  "analyzer": "rust-analyzer 0.3.3073-standalone (65ac641199 2026-10-04)",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+  "exitCode": 0,
+  "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\rust-analyzer-fixed.log",
+  "command": "rust-analyzer diagnostics . --severity error",
+  "boundary": "Uses the installed VS Code server, rather than treating cargo check as editor-diagnostic verification. Editor restart may be required to reload its old process."
+}

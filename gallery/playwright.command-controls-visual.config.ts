@@ -1,0 +1,1 @@
+import {defineConfig} from '@playwright/test';import base from './playwright.command-controls.config';export default defineConfig({...base,testMatch:'**/command-controls-visual.spec.ts',outputDir:'../out/command-controls-visual-results',reporter:[['list'],['json',{outputFile:'../out/command-controls-visual-results.json'}]]});

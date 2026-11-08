@@ -1,0 +1,8 @@
+.repeater-gallery-preview{min-width:0}
+.repeater-gallery-preview>p{margin:0 0 8px}
+.repeater-gallery-options{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+.repeater-gallery-options [role=group]{display:flex;flex-direction:column;gap:8px}
+.repeater-gallery-options p{margin:0 0 2px}
+.repeater-gallery-options>label{display:flex;flex-direction:column;gap:8px}
+.repeater-gallery-preview>output{display:block;margin-top:8px}
+.repeater-screenreader{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}

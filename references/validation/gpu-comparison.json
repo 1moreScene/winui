@@ -1,0 +1,45 @@
+{
+  "method": "Real Canvas reference and Rust WebGL2 rendering on same browser/font/DPR; compare actual screenshot pixels and Rust geometry",
+  "results": [
+    {
+      "dpr": 1,
+      "width": 600,
+      "height": 400,
+      "meanAbsoluteChannelError": 0.09869027777777778,
+      "pixelsAbove8Percent": 0.27291666666666664,
+      "geometryIdentical": true,
+      "isolatedOpacityVerified": true,
+      "colorGlyphAndImageVerified": true
+    },
+    {
+      "dpr": 1.25,
+      "width": 750,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.08095111111111111,
+      "pixelsAbove8Percent": 0.17520000000000002,
+      "geometryIdentical": true,
+      "isolatedOpacityVerified": true,
+      "colorGlyphAndImageVerified": true
+    },
+    {
+      "dpr": 1.5,
+      "width": 900,
+      "height": 600,
+      "meanAbsoluteChannelError": 0.06427098765432099,
+      "pixelsAbove8Percent": 0.1025925925925926,
+      "geometryIdentical": true,
+      "isolatedOpacityVerified": true,
+      "colorGlyphAndImageVerified": true
+    },
+    {
+      "dpr": 2,
+      "width": 1200,
+      "height": 800,
+      "meanAbsoluteChannelError": 0.05152534722222222,
+      "pixelsAbove8Percent": 0.07760416666666667,
+      "geometryIdentical": true,
+      "isolatedOpacityVerified": true,
+      "colorGlyphAndImageVerified": true
+    }
+  ]
+}

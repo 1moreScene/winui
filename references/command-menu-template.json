@@ -1,0 +1,434 @@
+{
+  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "styles": {
+    "CommandBarFlyoutAppBarButtonStyleBase": {
+      "Background": "{ThemeResource CommandBarFlyoutAppBarButtonBackground}",
+      "Foreground": "{ThemeResource CommandBarFlyoutAppBarButtonForeground}",
+      "BorderBrush": "{ThemeResource CommandBarFlyoutAppBarButtonBorderBrush}",
+      "BorderThickness": "0",
+      "HorizontalAlignment": "Stretch",
+      "VerticalAlignment": "Stretch",
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontWeight": "Normal",
+      "Width": "NaN",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "AllowFocusOnInteraction": "False",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}",
+      "primitives:CommandBarFlyoutCommandBarAutomationProperties.ControlType": "MenuItem"
+    },
+    "CommandBarFlyoutAppBarButtonStyle": {
+      "KeyboardAcceleratorPlacementMode": "Hidden"
+    },
+    "CommandBarFlyoutAppBarToggleButtonStyleBase": {
+      "Background": "{ThemeResource CommandBarFlyoutAppBarButtonBackground}",
+      "Foreground": "{ThemeResource CommandBarFlyoutAppBarButtonForeground}",
+      "BorderBrush": "{ThemeResource CommandBarFlyoutAppBarButtonBorderBrush}",
+      "HorizontalAlignment": "Stretch",
+      "VerticalAlignment": "Stretch",
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontWeight": "Normal",
+      "Width": "NaN",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "AllowFocusOnInteraction": "False",
+      "primitives:CommandBarFlyoutCommandBarAutomationProperties.ControlType": "MenuItem"
+    },
+    "CommandBarFlyoutAppBarToggleButtonStyle": {
+      "KeyboardAcceleratorPlacementMode": "Hidden"
+    },
+    "CommandBarFlyoutCommandBarOverflowPresenterStyle": {
+      "Background": "{ThemeResource CommandBarFlyoutButtonBackground}",
+      "BorderThickness": "0",
+      "MinWidth": "136",
+      "MaxWidth": "440",
+      "MaxHeight": "480",
+      "ScrollViewer.HorizontalScrollMode": "Disabled",
+      "ScrollViewer.HorizontalScrollBarVisibility": "Disabled",
+      "ScrollViewer.VerticalScrollMode": "Auto",
+      "ScrollViewer.VerticalScrollBarVisibility": "Auto",
+      "ScrollViewer.ZoomMode": "Disabled",
+      "AllowFocusOnInteraction": "False",
+      "TabNavigation": "Once"
+    },
+    "CommandBarFlyoutEllipsisButtonStyle": {
+      "Background": "{ThemeResource CommandBarFlyoutAppBarButtonBackground}",
+      "Foreground": "{ThemeResource CommandBarFlyoutAppBarButtonForeground}",
+      "BorderBrush": "{ThemeResource CommandBarFlyoutAppBarButtonBorderBrush}",
+      "Padding": "0",
+      "Width": "44",
+      "MinHeight": "40",
+      "HorizontalContentAlignment": "Center",
+      "HorizontalAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "VerticalAlignment": "Stretch",
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontWeight": "SemiBold",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "FocusVisualMargin": "0",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}"
+    },
+    "CommandBarFlyoutCommandBar": {},
+    "MenuBar": {},
+    "DefaultMenuBarStyle": {
+      "Background": "{ThemeResource MenuBarBackground}",
+      "IsTabStop": "False",
+      "MinHeight": "{StaticResource MenuBarHeight}",
+      "TabNavigation": "Once"
+    },
+    "MenuBarItem": {
+      "Foreground": "{ThemeResource MenuBarItemForeground}",
+      "Background": "{ThemeResource MenuBarItemBackground}",
+      "BorderThickness": "{ThemeResource MenuBarItemBorderThickness}",
+      "BorderBrush": "{ThemeResource MenuBarItemBorderBrush}",
+      "Margin": "{ThemeResource MenuBarItemMargin}",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}",
+      "Title": "Item",
+      "IsTabStop": "True",
+      "ExitDisplayModeOnAccessKeyInvoked": "False",
+      "UseSystemFocusVisuals": "True",
+      "FocusVisualMargin": "-3"
+    },
+    "DefaultCommandBarFlyoutCommandBarStyle": {
+      "SystemBackdrop": "{StaticResource CommandBarFlyoutSystemBackdrop}",
+      "Background": "{ThemeResource CommandBarFlyoutBackground}",
+      "Foreground": "{ThemeResource CommandBarFlyoutForeground}",
+      "BorderBrush": "{ThemeResource CommandBarFlyoutBorderBrush}",
+      "BorderThickness": "{ThemeResource CommandBarFlyoutBorderThemeThickness}",
+      "IsTabStop": "False",
+      "VerticalAlignment": "Top",
+      "HorizontalAlignment": "Left",
+      "HorizontalContentAlignment": "Left",
+      "VerticalContentAlignment": "Top",
+      "ClosedDisplayMode": "Compact",
+      "ExitDisplayModeOnAccessKeyInvoked": "False",
+      "DefaultLabelPosition": "Collapsed",
+      "MaxWidth": "440",
+      "IsDynamicOverflowEnabled": "True",
+      "CommandBarOverflowPresenterStyle": "{StaticResource CommandBarFlyoutCommandBarOverflowPresenterStyle}",
+      "CornerRadius": "{ThemeResource OverlayCornerRadius}",
+      "primitives:CommandBarFlyoutCommandBarAutomationProperties.ControlType": "Menu"
+    }
+  },
+  "metrics": {
+    "MenuBarHeight": "40",
+    "CommandBarFlyoutAppBarButtonInnerBorderMargin": "2",
+    "CommandBarFlyoutAppBarEllipsisButtonInnerBorderMargin": "2,2,6,2",
+    "MenuBarItemButtonPadding": "10,4,10,4",
+    "MenuBarItemMargin": "4,4,4,4"
+  },
+  "palettes": {
+    "Light": {
+      "MenuBarBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushSelected": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "MenuBarItemForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutBackground": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1.0
+      },
+      "CardBackgroundFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#F6F6F680",
+        "opacity": 1.0
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      }
+    },
+    "Default": {
+      "MenuBarBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushSelected": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1.0
+      },
+      "MenuBarItemForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutBackground": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      },
+      "CardBackgroundFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF08",
+        "opacity": 1.0
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1.0
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      }
+    },
+    "HighContrast": {
+      "MenuBarBackground": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackground": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "MenuBarItemBackgroundSelected": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1.0
+      },
+      "MenuBarItemBorderBrushSelected": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1.0
+      },
+      "MenuBarItemForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "CommandBarFlyoutForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "CardBackgroundFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      }
+    }
+  },
+  "motion": {
+    "opacityMs": 83.0,
+    "expandMs": 250.0,
+    "collapseMs": 167.0,
+    "expandCurve": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "storyboards": {
+      "OpeningOpacityStoryboard": {
+        "fillBehavior": "Stop",
+        "tracks": [
+          {
+            "Storyboard.TargetName": "LayoutRoot",
+            "Storyboard.TargetProperty": "Opacity",
+            "From": "0",
+            "To": "1",
+            "Duration": "{StaticResource ControlFasterAnimationDuration}"
+          },
+          {
+            "Storyboard.TargetName": "OverflowPopup",
+            "Storyboard.TargetProperty": "Opacity",
+            "From": "0",
+            "To": "1",
+            "Duration": "{StaticResource ControlFasterAnimationDuration}"
+          }
+        ]
+      },
+      "ClosingOpacityStoryboard": {
+        "fillBehavior": "HoldEnd",
+        "tracks": [
+          {
+            "Storyboard.TargetName": "LayoutRoot",
+            "Storyboard.TargetProperty": "Opacity",
+            "From": "1",
+            "To": "0",
+            "Duration": "{StaticResource ControlFasterAnimationDuration}"
+          },
+          {
+            "Storyboard.TargetName": "OverflowPopup",
+            "Storyboard.TargetProperty": "Opacity",
+            "From": "1",
+            "To": "0",
+            "Duration": "{StaticResource ControlFasterAnimationDuration}"
+          }
+        ]
+      }
+    },
+    "submenuDelayMs": 400,
+    "submenuDelaySource": "CascadingMenuHelper uses MenuShowDelay; portable host uses Windows default (400 ms)",
+    "helperSha256": "66e00de293c3a4d24080e23dd4f6590ff896b564d0b5447fc7e9eb09c9a644b6"
+  },
+  "flyoutGeometry": {
+    "source": "references/menu-layout-native.json",
+    "sha256": "5271901a53ba16031a41a2ffe828d7c87b02c23c602913ab6ee93b9a9411fc6c",
+    "primaryWidth": 60,
+    "rowHeight": 60,
+    "moreWidth": 44,
+    "primaryInset": 4,
+    "primaryVerticalInset": 4,
+    "iconY": 8.800000190734863,
+    "labelY": 31.200000762939453,
+    "actionHeight": 52
+  }
+}

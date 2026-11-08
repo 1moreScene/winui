@@ -1,0 +1,57 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "RepeatButton": {
+      "description": "The RepeatButton control is like a standard Button, except that the Click event occurs continuously while the user presses the RepeatButton.",
+      "samples": [
+        {
+          "title": "A simple RepeatButton with text content.",
+          "file": "RepeatButtonSimple.txt",
+          "xaml": "<RepeatButton Content=\"Click and hold\" Click=\"RepeatButton_Click\" />"
+        }
+      ]
+    },
+    "Viewbox": {
+      "description": "Use a Viewbox control scale content up or down to a specified size.",
+      "samples": [
+        {
+          "title": "Content inside of a Viewbox.",
+          "file": "ContentInsideViewbox.txt",
+          "xaml": "<Viewbox Height=\"200\" Width=\"200\" StretchDirection=\"Both\">\n    <Border BorderBrush=\"Gray\" BorderThickness=\"15\">\n        <StackPanel Background=\"DarkGray\">\n            <StackPanel Orientation=\"Horizontal\">\n                <Rectangle Fill=\"Blue\" Height=\"10\" Width=\"40\"/>\n                <Rectangle Fill=\"Green\" Height=\"10\" Width=\"40\"/>\n                <Rectangle Fill=\"Red\" Height=\"10\" Width=\"40\"/>\n                <Rectangle Fill=\"Yellow\" Height=\"10\" Width=\"40\"/>\n            </StackPanel>\n            <Image Source=\"ms-appx:///Assets/SampleMedia/Slices.png\"/>\n            <TextBlock Text=\"This is text.\" HorizontalAlignment=\"Center\"/>\n        </StackPanel>\n    </Border>\n</Viewbox>"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "path": "references/gallery-input/RepeatButton/RepeatButtonPage.xaml",
+      "source": "WinUIGallery/Samples/RepeatButton/RepeatButtonPage.xaml",
+      "sha256": "3c03177d0034bae69a9b44dfde13e236318fbef8730c2b7ebc1b9c3674a05fcc"
+    },
+    {
+      "path": "references/gallery-input/RepeatButton/RepeatButtonPage.xaml.cs",
+      "source": "WinUIGallery/Samples/RepeatButton/RepeatButtonPage.xaml.cs",
+      "sha256": "c67783a3feb2215dbcc5eae99eb4f003535fe0723ff05ffe9876917112905e06"
+    },
+    {
+      "path": "references/gallery-input/RepeatButton/RepeatButtonSimple.txt",
+      "source": "WinUIGallery/Samples/RepeatButton/RepeatButtonSimple.txt",
+      "sha256": "f9912b72eedbd9bbe0a799f22c95758c792af5b8ab4c404382b89452aff77d3e"
+    },
+    {
+      "path": "references/gallery-input/Viewbox/ContentInsideViewbox.txt",
+      "source": "WinUIGallery/Samples/Viewbox/ContentInsideViewbox.txt",
+      "sha256": "316081d2a2e933b6d829921014812dcbefafce45215d0fe3a90cc379a6b806db"
+    },
+    {
+      "path": "references/gallery-input/Viewbox/ViewboxPage.xaml",
+      "source": "WinUIGallery/Samples/Viewbox/ViewboxPage.xaml",
+      "sha256": "a5818d45423e9cdfd0f2a8840337bbadbb113bbdf82781178bcabe6f330d18ed"
+    },
+    {
+      "path": "references/gallery-input/Viewbox/ViewboxPage.xaml.cs",
+      "source": "WinUIGallery/Samples/Viewbox/ViewboxPage.xaml.cs",
+      "sha256": "c16fee838ac31f27ffe7bf9ce9da6464cc43799d6451bbca75e88361c879a754"
+    }
+  ]
+}

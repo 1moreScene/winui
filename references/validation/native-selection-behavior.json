@@ -1,0 +1,33 @@
+{
+  "sdk": "2.5.4-experimental / WinUI 2.3.10-experimental",
+  "sequence": [
+    {
+      "isChecked": true,
+      "events": [
+        "checked",
+        "click"
+      ]
+    },
+    {
+      "isChecked": null,
+      "events": [
+        "indeterminate",
+        "click"
+      ]
+    },
+    {
+      "isChecked": false,
+      "events": [
+        "unchecked",
+        "click"
+      ]
+    },
+    {
+      "isChecked": true,
+      "events": [
+        "checked",
+        "click"
+      ]
+    }
+  ]
+}

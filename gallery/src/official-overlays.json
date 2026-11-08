@@ -1,0 +1,104 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "Popup": {
+      "page": "WinUIGallery/Samples/Popup/PopupPage.xaml",
+      "sha256": "124a57bd99ceba9c140b345abfdbb869fd6c0b53d2396dc9afc6f41f42baea15",
+      "description": "The Popup Control allows your app to display temporary content above other UI elements. It can be used for lightweight interactions such as tooltips, notifications, or custom floating panels to enhance user workflows or highlight specific parts of the interface.",
+      "samples": [
+        {
+          "title": "Popup with Offset Positioning",
+          "xaml": "<Grid x:Name=\"Output\" HorizontalAlignment=\"Left\" VerticalAlignment=\"Top\" >\n    <Button Content=\"Show Popup (using Offset)\" Click=\"ShowPopupOffsetClicked\" />\n    <Popup x:Name=\"StandardPopup\" VerticalOffset=\"0\" HorizontalOffset=\"200\" IsLightDismissEnabled=\"True\">\n        <Border Padding=\"20\" CornerRadius=\"{StaticResource OverlayCornerRadius}\" Width=\"200\" Height=\"160\" BorderThickness=\"1\" BorderBrush=\"{ThemeResource SurfaceStrokeColorDefaultBrush}\"\n                Background=\"{ThemeResource AcrylicBackgroundFillColorDefaultBrush}\">\n            <StackPanel HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\" Spacing=\"8\">\n                <TextBlock Text=\"Simple Popup\" FontSize=\"16\" HorizontalAlignment=\"Center\" />\n                <Button Content=\"Close\" Click=\"ClosePopupClicked\" />\n            </StackPanel>\n        </Border>\n    </Popup>\n</Grid>"
+        }
+      ]
+    },
+    "ToolTip": {
+      "page": "WinUIGallery/Samples/ToolTip/ToolTipPage.xaml",
+      "sha256": "f1127a8ecdc0e6d783b87172ca86530e29d77b8a3dc9fbc6c532eabfddf6b312",
+      "description": "A ToolTip shows more information about a UI element. You might show information about what the element does, or what the user should do. The ToolTip is shown when a user hovers over or presses and holds the UI element.",
+      "samples": [
+        {
+          "title": "A button with a simple ToolTip.",
+          "xaml": "<Button Content=\"Show a simple ToolTip.\" ToolTipService.ToolTip=\"Simple ToolTip\"/>"
+        },
+        {
+          "title": "A TextBlock with an offset ToolTip.",
+          "xaml": "<TextBlock Text=\"TextBlock with an offset ToolTip.\">\n    <ToolTipService.ToolTip>\n        <ToolTip Content=\"Offset information.\" VerticalOffset=\"-80\"/>\n    </ToolTipService.ToolTip>\n</TextBlock>"
+        },
+        {
+          "title": "An Image with a ToolTip using PlacementRect.",
+          "xaml": "<Image Source=\"/Assets/SampleMedia/cliff.jpg\" Width=\"400\" Height=\"266\">\n    <ToolTipService.ToolTip>\n        <ToolTip Content=\"Non-occluding information.\" PlacementRect=\"0,0,400,266\"/>\n    </ToolTipService.ToolTip>\n</Image>"
+        }
+      ]
+    },
+    "Flyout": {
+      "page": "WinUIGallery/Samples/Flyout/FlyoutPage.xaml",
+      "sha256": "9fcfb479d484c4c9c36e942585e634d50e5052257ea09d84f495009ebc95f034",
+      "description": "A Flyout displays lightweight UI that is either information, or requires user interaction. Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it. Use it to collect input from the user, show more details about an item, or ask the user to confirm an action.",
+      "samples": [
+        {
+          "title": "A button with a flyout",
+          "xaml": "<Button Content=\"Empty cart\">\n    <Button.Flyout>\n        <Flyout>\n            <StackPanel>\n                <TextBlock Style=\"{ThemeResource BaseTextBlockStyle}\" Text=\"All items will be removed. Do you want to continue?\" Margin=\"0,0,0,12\" />\n                <Button Click=\"DeleteConfirmation_Click\" Content=\"Yes, empty my cart\" />\n            </StackPanel>\n        </Flyout>\n    </Button.Flyout>\n</Button>"
+        }
+      ]
+    },
+    "MenuFlyout": {
+      "page": "WinUIGallery/Samples/MenuFlyout/MenuFlyoutPage.xaml",
+      "sha256": "906736dfd409888f39384e3bd32609a10e220774ee8f5ae35ff67e3d86494e01",
+      "description": "A MenuFlyout displays lightweight UI that is light dismissed by clicking or tapping off of it. Use it to let the user choose from a contextual list of simple commands or options.",
+      "samples": [
+        {
+          "title": "An AppBarButton with a MenuFlyout.",
+          "xaml": "<AppBarButton Icon=\"Sort\" IsCompact=\"True\" ToolTipService.ToolTip=\"Sort\" AutomationProperties.Name=\"Sort\">\n    <AppBarButton.Flyout>\n        <MenuFlyout>\n            <MenuFlyoutItem Text=\"By rating\" Click=\"MenuFlyoutItem_Click\" Tag=\"rating\"/>\n            <MenuFlyoutItem Text=\"By match\" Click=\"MenuFlyoutItem_Click\" Tag=\"match\"/>\n            <MenuFlyoutItem Text=\"By distance\" Click=\"MenuFlyoutItem_Click\" Tag=\"distance\"/>\n        </MenuFlyout>\n    </AppBarButton.Flyout>\n</AppBarButton>"
+        },
+        {
+          "title": "A MenuFlyout with ToggleMenuFlyoutItems and MenuFlyoutSeparator.",
+          "xaml": "<Button Content=\"Options\">\n    <Button.Flyout>\n        <MenuFlyout>\n            <MenuFlyoutItem Text=\"Reset\"/>\n            <MenuFlyoutSeparator/>\n            <ToggleMenuFlyoutItem Text=\"Repeat\" IsChecked=\"True\"/>\n            <ToggleMenuFlyoutItem Text=\"Shuffle\" IsChecked=\"True\"/>\n        </MenuFlyout>\n    </Button.Flyout>\n</Button>"
+        },
+        {
+          "title": "A MenuFlyout with cascading menus.",
+          "xaml": "<Button Content=\"File Options\">\n    <Button.Flyout>\n        <MenuFlyout>\n            <MenuFlyoutItem Text=\"Open\"/>\n            <MenuFlyoutSubItem Text=\"Send to\">\n                <MenuFlyoutItem Text=\"Bluetooth\" />\n                <MenuFlyoutItem Text=\"Desktop (shortcut)\" />\n                <MenuFlyoutSubItem Text=\"Compressed file\">\n                    <MenuFlyoutItem Text=\"Compress and email\" />\n                    <MenuFlyoutItem Text=\"Compress to .7z\" />\n                    <MenuFlyoutItem Text=\"Compress to .zip\" />\n                </MenuFlyoutSubItem>\n            </MenuFlyoutSubItem>\n        </MenuFlyout>\n    </Button.Flyout>\n</Button>"
+        },
+        {
+          "title": "A MenuFlyout with SplitMenuFlyoutItems.",
+          "xaml": "<Button Content=\"File Options\">\n    <Button.Flyout>\n        <MenuFlyout>\n            <SplitMenuFlyoutItem Text=\"Save\" Click=\"SplitMenuFlyoutItem_Click\">\n                <SplitMenuFlyoutItem.Icon>\n                    <FontIcon Glyph=\"&#xE74E;\"/>\n                </SplitMenuFlyoutItem.Icon>\n                <MenuFlyoutItem Text=\"Save as .docx\" Click=\"SplitMenuFlyoutItem_Click\"/>\n                <MenuFlyoutItem Text=\"Save as .pdf\" Click=\"SplitMenuFlyoutItem_Click\"/>\n                <MenuFlyoutItem Text=\"Save as .txt\" Click=\"SplitMenuFlyoutItem_Click\"/>\n            </SplitMenuFlyoutItem>\n            <SplitMenuFlyoutItem Text=\"Share\" Icon=\"Share\" Click=\"SplitMenuFlyoutItem_Click\">\n                <MenuFlyoutItem Text=\"Share via email\" Click=\"SplitMenuFlyoutItem_Click\"/>\n                <MenuFlyoutItem Text=\"Share via link\" Click=\"SplitMenuFlyoutItem_Click\"/>\n            </SplitMenuFlyoutItem>\n        </MenuFlyout>\n    </Button.Flyout>\n</Button>"
+        },
+        {
+          "title": "A MenuFlyout with icons.",
+          "xaml": "<Button Content=\"Edit Options\">\n    <Button.Flyout>\n        <MenuFlyout>\n            <MenuFlyoutItem Text=\"Share\">\n                <MenuFlyoutItem.Icon>\n                    <FontIcon Glyph=\"&#xE72D;\"/>\n                </MenuFlyoutItem.Icon>\n            </MenuFlyoutItem>\n            <MenuFlyoutItem Text=\"Copy\" Icon=\"Copy\"/>\n            <MenuFlyoutItem Text=\"Delete\" Icon=\"Delete\"/>\n            <MenuFlyoutSeparator/>\n            <MenuFlyoutItem Text=\"Rename\"/>\n            <MenuFlyoutItem Text=\"Select\"/>\n        </MenuFlyout>\n    </Button.Flyout>\n</Button>"
+        },
+        {
+          "title": "A MenuFlyout with icons and Keyboard Accelerators.",
+          "xaml": "<Button Content=\"Edit Options\">\n    <Button.Flyout>\n        <MenuFlyout>\n            <MenuFlyoutItem Text=\"Share\">\n                <MenuFlyoutItem.Icon>\n                    <FontIcon Glyph=\"&#xE72D;\"/>\n                </MenuFlyoutItem.Icon>\n                <MenuFlyoutItem.KeyboardAccelerators>\n                    <KeyboardAccelerator Key=\"S\" Modifiers=\"Control\"/>\n                </MenuFlyoutItem.KeyboardAccelerators>\n            </MenuFlyoutItem>\n            <MenuFlyoutItem Text=\"Copy\" Icon=\"Copy\">\n                <MenuFlyoutItem.KeyboardAccelerators>\n                    <KeyboardAccelerator Key=\"C\" Modifiers=\"Control\"/>\n                </MenuFlyoutItem.KeyboardAccelerators>\n            </MenuFlyoutItem>\n            <MenuFlyoutItem Text=\"Delete\" Icon=\"Delete\">\n                <MenuFlyoutItem.KeyboardAccelerators>\n                    <KeyboardAccelerator Key=\"Delete\" />\n                </MenuFlyoutItem.KeyboardAccelerators>\n            </MenuFlyoutItem>\n            <MenuFlyoutSeparator/>\n            <MenuFlyoutItem Text=\"Rename\"/>\n            <MenuFlyoutItem Text=\"Select\"/>\n        </MenuFlyout>\n    </Button.Flyout>\n</Button>"
+        },
+        {
+          "title": "A MenuFlyout with RadioMenuFlyoutItems",
+          "xaml": "<Button Content=\"Options\">\n    <Button.Flyout>\n        <MenuFlyout>\n            <RadioMenuFlyoutItem Text=\"Landscape\" GroupName=\"OrientationGroup\"/>\n            <RadioMenuFlyoutItem Text=\"Portrait\" GroupName=\"OrientationGroup\" IsChecked=\"True\"/>\n            <MenuFlyoutSeparator/>\n            <RadioMenuFlyoutItem Text=\"Small icons\" GroupName=\"SizeGroup\"/>\n            <RadioMenuFlyoutItem Text=\"Medium icons\" IsChecked=\"True\" GroupName=\"SizeGroup\"/>\n            <RadioMenuFlyoutItem Text=\"Large icons\" GroupName=\"SizeGroup\"/>\n        </MenuFlyout>\n    </Button.Flyout>\n</Button>"
+        }
+      ]
+    },
+    "Slider": {
+      "page": "WinUIGallery/Samples/Slider/SliderPage.xaml",
+      "sha256": "b0d203b668290326ca57a793ec7f42ea3a928291f851c6f2850329712e9c39e4",
+      "description": "Use a Slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).",
+      "samples": [
+        {
+          "title": "A simple Slider.",
+          "xaml": "<Slider AutomationProperties.Name=\"Simple example\" Width=\"200\"/>"
+        },
+        {
+          "title": "A Slider with range and steps specified.",
+          "xaml": "<Slider Width=\"200\" Minimum=\"500\" Maximum=\"1000\" StepFrequency=\"10\"\n        SmallChange=\"10\" Value=\"800\" />"
+        },
+        {
+          "title": "A Slider with tick marks.",
+          "xaml": "<Slider\n     AutomationProperties.Name=\"Example with ticks\"\n     TickFrequency=\"20\"\n     TickPlacement=\"Outside\"\n     SnapsTo=\"StepValues\" />"
+        },
+        {
+          "title": "A vertical slider with range and tick marks specified.",
+          "xaml": "<Slider AutomationProperties.Name=\"Vertical example\" Width=\"100\" Orientation=\"Vertical\"\n    TickFrequency=\"10\" TickPlacement=\"Outside\" Maximum=\"50\" Minimum=\"-50\"/>"
+        }
+      ]
+    }
+  }
+}

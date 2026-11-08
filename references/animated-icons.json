@@ -1,0 +1,7304 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sources": [
+    {
+      "path": "references/winui/AnimatedBackVisualSource.cpp",
+      "sha256": "9412be265bce5d3ce6a1652c3f07e0a3b5c653ea06c7d30ec58ce06aa18c3fa6"
+    },
+    {
+      "path": "references/winui/AnimatedChevronDownSmallVisualSource.cpp",
+      "sha256": "d0e203b755f69a1b093594048516a7556a23fd8de15beb74ddb59066fa506563"
+    },
+    {
+      "path": "references/winui/AnimatedChevronRightDownSmallVisualSource.cpp",
+      "sha256": "1bc879c80f882e50f2b8c08c3195cd848f2b63ae759c7b4a784271e5df871e9b"
+    },
+    {
+      "path": "references/winui/AnimatedChevronUpDownSmallVisualSource.cpp",
+      "sha256": "ee5fce9af0a8c48959e16367622aa326685f580f3819ce6b3331203c3210a41a"
+    },
+    {
+      "path": "references/winui/AnimatedFindVisualSource.cpp",
+      "sha256": "6bd04f78c7bf3745d7563d71f33106108f3078b05097a0345d27de911c40f379"
+    },
+    {
+      "path": "references/winui/AnimatedGlobalNavigationButtonVisualSource.cpp",
+      "sha256": "ce90d1b900bd0f8bb072fdf5a4044d12ec8f75b857c3943f349f9c64c310c751"
+    },
+    {
+      "path": "references/winui/AnimatedSettingsVisualSource.cpp",
+      "sha256": "cc4c9c8953eb51c2d66074faa57ea952e87b6288ceda268be623edf2ff94da17"
+    }
+  ],
+  "visuals": {
+    "Back": {
+      "duration": 1333.3333,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalToPointerOver_Start": 0.0,
+        "NormalToPointerOver_End": 0.113125,
+        "NormalToPressed_Start": 0.125625,
+        "NormalToPressed_End": 0.238125,
+        "PointerOverToNormal_Start": 0.250625,
+        "PointerOverToNormal_End": 0.363125,
+        "PointerOverToPressed_Start": 0.375625,
+        "PointerOverToPressed_End": 0.488125,
+        "PressedToNormal_Start": 0.500625,
+        "PressedToNormal_End": 0.738125,
+        "PressedToPointerOver_Start": 0.750625,
+        "PressedToPointerOver_End": 0.988125
+      },
+      "animations": {
+        "IsVisibleBooleanAnimation_0": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.125,
+              "value": [
+                1.0
+              ]
+            }
+          ]
+        },
+        "IsVisibleBooleanAnimation_1": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.375,
+              "value": [
+                0.0
+              ]
+            }
+          ]
+        },
+        "OpacityScalarAnimation_1_to_1_0": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                1.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            }
+          ]
+        },
+        "OpacityScalarAnimation_1_to_1_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            }
+          ]
+        },
+        "ScaleXScalarAnimation_2p25_to_2p25": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                2.25
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                2.25
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                1.62211001
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                2.25
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                1.62211001
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                1.62211001
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.625,
+              "value": [
+                2.26947999
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                1.62211001
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.875,
+              "value": [
+                2.26947999
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "ScaleYScalarAnimation_2p25_to_2p25": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                2.25
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                2.25
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.166999996,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                2.25
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.166999996,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                2.25
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.625,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                2.25
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.875,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                2.25
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "t0ScalarAnimation_0_to_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.62500006,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.737499952,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.87500006,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.987499952,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation_0": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                24.9379997,
+                24.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                24.9379997,
+                24.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                24.9379997,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.625,
+              "value": [
+                20.25,
+                24.0
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737499952,
+              "value": {
+                "variable": "t0",
+                "points": [
+                  [
+                    20.25,
+                    24.0
+                  ],
+                  [
+                    20.094,
+                    24.0
+                  ],
+                  [
+                    23.375,
+                    24.0
+                  ],
+                  [
+                    24.0,
+                    24.0
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                24.9379997,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.875,
+              "value": [
+                20.25,
+                24.0
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987499952,
+              "value": {
+                "variable": "t0",
+                "points": [
+                  [
+                    20.25,
+                    24.0
+                  ],
+                  [
+                    20.094,
+                    24.0
+                  ],
+                  [
+                    23.375,
+                    24.0
+                  ],
+                  [
+                    24.0,
+                    24.0
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "start"
+            }
+          ]
+        },
+        "OffsetVector2Animation_1": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                33.0,
+                24.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                33.0,
+                24.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                33.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.625,
+              "value": [
+                19.9839993,
+                24.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                33.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.875,
+              "value": [
+                19.9839993,
+                24.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      "variables": {
+        "t0": "t0ScalarAnimation_0_to_1"
+      },
+      "geometries": {
+        "Geometry_0": {
+          "commands": [
+            {
+              "Move": [
+                7.5,
+                0.499000013
+              ]
+            },
+            {
+              "Cubic": [
+                7.77600002,
+                0.499000013,
+                8.0,
+                0.275000006,
+                8.0,
+                -0.00100000005
+              ]
+            },
+            {
+              "Cubic": [
+                8.0,
+                -0.27700001,
+                7.77600002,
+                -0.500999987,
+                7.5,
+                -0.500999987
+              ]
+            },
+            {
+              "Line": [
+                7.5,
+                0.499000013
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_1": {
+          "commands": [
+            {
+              "Move": [
+                -5.33400011,
+                0.495000005
+              ]
+            },
+            {
+              "Line": [
+                7.5,
+                0.499000013
+              ]
+            },
+            {
+              "Line": [
+                7.5,
+                -0.500999987
+              ]
+            },
+            {
+              "Line": [
+                -5.33099985,
+                -0.504999995
+              ]
+            },
+            {
+              "Line": [
+                -5.33400011,
+                0.495000005
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_2": {
+          "commands": [
+            {
+              "Move": [
+                -0.837000012,
+                6.86800003
+              ]
+            },
+            {
+              "Cubic": [
+                -0.633000016,
+                7.0539999,
+                -0.317000002,
+                7.03999996,
+                -0.130999997,
+                6.83599997
+              ]
+            },
+            {
+              "Cubic": [
+                0.0549999997,
+                6.63199997,
+                0.0410000011,
+                6.31500006,
+                -0.163000003,
+                6.12900019
+              ]
+            },
+            {
+              "Line": [
+                -6.33099985,
+                0.499000013
+              ]
+            },
+            {
+              "Line": [
+                -5.32800007,
+                0.488999993
+              ]
+            },
+            {
+              "Line": [
+                -5.32800007,
+                -0.510999978
+              ]
+            },
+            {
+              "Line": [
+                -6.32800007,
+                -0.500999987
+              ]
+            },
+            {
+              "Line": [
+                -0.163000003,
+                -6.12900019
+              ]
+            },
+            {
+              "Cubic": [
+                0.0410000011,
+                -6.31500006,
+                0.0549999997,
+                -6.63199997,
+                -0.130999997,
+                -6.83599997
+              ]
+            },
+            {
+              "Cubic": [
+                -0.317000002,
+                -7.03999996,
+                -0.633000016,
+                -7.0539999,
+                -0.837000012,
+                -6.86800003
+              ]
+            },
+            {
+              "Line": [
+                -7.75299978,
+                -0.55400002
+              ]
+            },
+            {
+              "Cubic": [
+                -7.89300013,
+                -0.425999999,
+                -7.97300005,
+                -0.257999986,
+                -7.99300003,
+                -0.0850000009
+              ]
+            },
+            {
+              "Cubic": [
+                -7.99800014,
+                -0.0579999983,
+                -8.0,
+                -0.0299999993,
+                -8.0,
+                -0.00100000005
+              ]
+            },
+            {
+              "Cubic": [
+                -8.0,
+                0.0260000005,
+                -7.99800014,
+                0.0520000011,
+                -7.99399996,
+                0.0780000016
+              ]
+            },
+            {
+              "Cubic": [
+                -7.97599983,
+                0.254000008,
+                -7.89499998,
+                0.423999995,
+                -7.75299978,
+                0.55400002
+              ]
+            },
+            {
+              "Line": [
+                -0.837000012,
+                6.86800003
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "IsVisible": [
+                0.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "Opacity": "OpacityScalarAnimation_1_to_1_0",
+              "IsVisible": "IsVisibleBooleanAnimation_0"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {},
+                    "geometry": null,
+                    "animations": {
+                      "Offset": "OffsetVector2Animation_0"
+                    },
+                    "children": [
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            2.25,
+                            0.0,
+                            0.0,
+                            2.25,
+                            0.0,
+                            0.0
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_0",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "CenterPoint": [
+                            7.5,
+                            -0.00300000003
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ],
+                          "Offset": [
+                            9.375,
+                            -0.00400000019
+                          ]
+                        },
+                        "geometry": "Geometry_1",
+                        "animations": {
+                          "Scale.X": "ScaleXScalarAnimation_2p25_to_2p25",
+                          "Scale.Y": "ScaleYScalarAnimation_2p25_to_2p25"
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Scale": [
+                        2.25,
+                        2.25
+                      ]
+                    },
+                    "geometry": "Geometry_2",
+                    "animations": {
+                      "Offset": "OffsetVector2Animation_1"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "Opacity": "OpacityScalarAnimation_1_to_1_1",
+              "IsVisible": "IsVisibleBooleanAnimation_1"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.25,
+                        0.0,
+                        0.0,
+                        2.25,
+                        24.0,
+                        24.0
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_0",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.25,
+                        0.0,
+                        0.0,
+                        2.25,
+                        24.0,
+                        23.9997501
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_1",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.25,
+                        0.0,
+                        0.0,
+                        2.25,
+                        24.0,
+                        24.0
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_2",
+                    "animations": {},
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ChevronDownSmall": {
+      "duration": 483.3333,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalToPointerOver_Start": 0.0,
+        "NormalToPointerOver_End": 0.0,
+        "NormalToPressed_Start": 0.0,
+        "NormalToPressed_End": 0.312068965517241,
+        "PointerOverToNormal_Start": 0.0,
+        "PointerOverToNormal_End": 0.0,
+        "PointerOverToPressed_Start": 0.0,
+        "PointerOverToPressed_End": 0.312068965517241,
+        "PressedToNormal_Start": 0.346551724137931,
+        "PressedToNormal_End": 0.967241379310345,
+        "PressedToPointerOver_Start": 0.346551724137931,
+        "PressedToPointerOver_End": 0.967241379310345
+      },
+      "animations": {
+        "IsVisibleBooleanAnimation_0": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.344827592,
+              "value": [
+                1.0
+              ]
+            }
+          ]
+        },
+        "IsVisibleBooleanAnimation_1": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.344827592,
+              "value": [
+                0.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation_0": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.344827592,
+              "value": [
+                24.0,
+                31.5
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.517241359,
+              "value": [
+                24.0,
+                21.0
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 1.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation_1": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.833000004,
+                0.833000004
+              ]
+            },
+            {
+              "progress": 0.310344815,
+              "value": [
+                24.0,
+                31.5
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.649999976,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      "variables": {},
+      "geometries": {
+        "Geometry": {
+          "commands": [
+            {
+              "Move": [
+                -3.85400009,
+                -2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                -3.65899992,
+                -2.29900002,
+                -3.34100008,
+                -2.29900002,
+                -3.14599991,
+                -2.10400009
+              ]
+            },
+            {
+              "Line": [
+                0.0,
+                1.04299998
+              ]
+            },
+            {
+              "Line": [
+                3.14599991,
+                -2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                3.34100008,
+                -2.29900002,
+                3.65899992,
+                -2.29900002,
+                3.85400009,
+                -2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                4.04899979,
+                -1.90900004,
+                4.04899979,
+                -1.59099996,
+                3.85400009,
+                -1.39600003
+              ]
+            },
+            {
+              "Line": [
+                0.354000002,
+                2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                0.158999994,
+                2.29900002,
+                -0.158999994,
+                2.29900002,
+                -0.354000002,
+                2.10400009
+              ]
+            },
+            {
+              "Line": [
+                -3.85400009,
+                -1.39600003
+              ]
+            },
+            {
+              "Cubic": [
+                -4.04899979,
+                -1.59099996,
+                -4.04899979,
+                -1.90900004,
+                -3.85400009,
+                -2.10400009
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "IsVisible": [
+                0.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "IsVisible": "IsVisibleBooleanAnimation_0"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Scale": [
+                        4.0,
+                        4.0
+                      ]
+                    },
+                    "geometry": "Geometry",
+                    "animations": {
+                      "Offset": "OffsetVector2Animation_0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "IsVisible": "IsVisibleBooleanAnimation_1"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Scale": [
+                        4.0,
+                        4.0
+                      ]
+                    },
+                    "geometry": "Geometry",
+                    "animations": {
+                      "Offset": "OffsetVector2Animation_1"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ChevronRightDownSmall": {
+      "duration": 3666.6666,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalOnToNormalOff_Start": 0.0,
+        "NormalOnToNormalOff_End": 0.0411363636363636,
+        "NormalOnToPointerOverOn_Start": 0.0456818181818182,
+        "NormalOnToPointerOverOn_End": 0.0865909090909091,
+        "NormalOnToPressedOn_Start": 0.0911363636363636,
+        "NormalOnToPressedOn_End": 0.132045454545455,
+        "NormalOffToNormalOn_Start": 0.136590909090909,
+        "NormalOffToNormalOn_End": 0.268409090909091,
+        "NormalOffToPointerOverOff_Start": 0.272954545454545,
+        "NormalOffToPointerOverOff_End": 0.313863636363636,
+        "NormalOffToPressedOff_Start": 0.318409090909091,
+        "NormalOffToPressedOff_End": 0.359318181818182,
+        "PointerOverOnToPointerOverOff_Start": 0.363863636363636,
+        "PointerOverOnToPointerOverOff_End": 0.404772727272727,
+        "PointerOverOnToNormalOn_Start": 0.409318181818182,
+        "PointerOverOnToNormalOn_End": 0.450227272727273,
+        "PointerOverOnToPressedOn_Start": 0.454772727272727,
+        "PointerOverOnToPressedOn_End": 0.495681818181818,
+        "PointerOverOffToPointerOverOn_Start": 0.500227272727273,
+        "PointerOverOffToPointerOverOn_End": 0.541136363636364,
+        "PointerOverOffToNormalOff_Start": 0.545681818181818,
+        "PointerOverOffToNormalOff_End": 0.586590909090909,
+        "PointerOverOffToPressedOff_Start": 0.591136363636364,
+        "PointerOverOffToPressedOff_End": 0.632045454545455,
+        "PressedOnToPressedOff_Start": 0.636590909090909,
+        "PressedOnToPressedOff_End": 0.6775,
+        "PressedOnToPointerOverOff_Start": 0.682045454545455,
+        "PressedOnToPointerOverOff_End": 0.722954545454546,
+        "PressedOnToNormalOff_Start": 0.7275,
+        "PressedOnToNormalOff_End": 0.768409090909091,
+        "PressedOffToPressedOn_Start": 0.772954545454546,
+        "PressedOffToPressedOn_End": 0.813863636363636,
+        "PressedOffToPointerOverOn_Start": 0.818409090909091,
+        "PressedOffToPointerOverOn_End": 0.904772727272727,
+        "PressedOffToNormalOn_Start": 0.909318181818182,
+        "PressedOffToNormalOn_End": 0.995681818181818
+      },
+      "animations": {
+        "RotationAngleInDegreesScalarAnimation_90_to_90": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.0409090891,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.0454545468,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.0909090936,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.131818175,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.13636364,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.181818187,
+              "value": [
+                90.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.272727281,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.318181813,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.359090894,
+              "value": [
+                90.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.363636374,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.404545456,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.409090906,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.454545468,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.49545455,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.540909111,
+              "value": [
+                90.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.545454562,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.590909064,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.631818175,
+              "value": [
+                90.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.636363626,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.677272737,
+              "value": [
+                90.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.681818187,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.727272749,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.772727251,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.813636363,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.818181813,
+              "value": [
+                90.0
+              ],
+              "step": "end"
+            }
+          ]
+        },
+        "OffsetVector2Animation": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.0454545468,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.13636364,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.181818187,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.204545453,
+              "value": [
+                24.0,
+                30.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.268181831,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.272727281,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.318181813,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.363636374,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.409090906,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.454545468,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.545454562,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.590909064,
+              "value": [
+                24.1709995,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.636363626,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.818181813,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.840909064,
+              "value": [
+                24.0,
+                30.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.904545426,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.909090936,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.931818187,
+              "value": [
+                24.0,
+                30.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.99545455,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      "variables": {},
+      "geometries": {
+        "Geometry": {
+          "commands": [
+            {
+              "Move": [
+                -3.85400009,
+                -2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                -3.65899992,
+                -2.29900002,
+                -3.34100008,
+                -2.29900002,
+                -3.14599991,
+                -2.10400009
+              ]
+            },
+            {
+              "Line": [
+                0.0,
+                1.04299998
+              ]
+            },
+            {
+              "Line": [
+                3.14599991,
+                -2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                3.34100008,
+                -2.29900002,
+                3.65899992,
+                -2.29900002,
+                3.85400009,
+                -2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                4.04899979,
+                -1.90900004,
+                4.04899979,
+                -1.59099996,
+                3.85400009,
+                -1.39600003
+              ]
+            },
+            {
+              "Line": [
+                0.354000002,
+                2.10400009
+              ]
+            },
+            {
+              "Cubic": [
+                0.158999994,
+                2.29900002,
+                -0.158999994,
+                2.29900002,
+                -0.354000002,
+                2.10400009
+              ]
+            },
+            {
+              "Line": [
+                -3.85400009,
+                -1.39600003
+              ]
+            },
+            {
+              "Cubic": [
+                -4.04899979,
+                -1.59099996,
+                -4.04899979,
+                -1.90900004,
+                -3.85400009,
+                -2.10400009
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {},
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "Scale": [
+                        4.0,
+                        4.0
+                      ]
+                    },
+                    "geometry": null,
+                    "animations": {
+                      "RotationAngleInDegrees": "RotationAngleInDegreesScalarAnimation_90_to_90",
+                      "Offset": "OffsetVector2Animation"
+                    },
+                    "children": [
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            0.0,
+                            -1.0,
+                            1.0,
+                            0.0,
+                            0.0,
+                            0.0
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry",
+                        "animations": {},
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ChevronUpDownSmall": {
+      "duration": 4333.3333,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalOnToNormalOff_Start": 0.0,
+        "NormalOnToNormalOff_End": 0.111730769230769,
+        "NormalOnToPointerOverOn_Start": 0.115576923076923,
+        "NormalOnToPointerOverOn_End": 0.150192307692308,
+        "NormalOnToPressedOn_Start": 0.154038461538462,
+        "NormalOnToPressedOn_End": 0.188653846153846,
+        "NormalOffToNormalOn_Start": 0.1925,
+        "NormalOffToNormalOn_End": 0.304038461538462,
+        "NormalOffToPointerOverOff_Start": 0.307884615384615,
+        "NormalOffToPointerOverOff_End": 0.3425,
+        "NormalOffToPressedOff_Start": 0.346346153846154,
+        "NormalOffToPressedOff_End": 0.380961538461538,
+        "PointerOverOnToPointerOverOff_Start": 0.384807692307692,
+        "PointerOverOnToPointerOverOff_End": 0.419423076923077,
+        "PointerOverOnToNormalOn_Start": 0.423269230769231,
+        "PointerOverOnToNormalOn_End": 0.457884615384615,
+        "PointerOverOnToPressedOn_Start": 0.461730769230769,
+        "PointerOverOnToPressedOn_End": 0.496346153846154,
+        "PointerOverOffToPointerOverOn_Start": 0.500192307692308,
+        "PointerOverOffToPointerOverOn_End": 0.534807692307692,
+        "PointerOverOffToNormalOff_Start": 0.538653846153846,
+        "PointerOverOffToNormalOff_End": 0.573269230769231,
+        "PointerOverOffToPressedOff_Start": 0.577115384615385,
+        "PointerOverOffToPressedOff_End": 0.611730769230769,
+        "PressedOnToPressedOff_Start": 0.615576923076923,
+        "PressedOnToPressedOff_End": 0.650192307692308,
+        "PressedOnToPointerOverOff_Start": 0.654038461538462,
+        "PressedOnToPointerOverOff_End": 0.727115384615385,
+        "PressedOnToNormalOff_Start": 0.730961538461539,
+        "PressedOnToNormalOff_End": 0.804038461538462,
+        "PressedOffToPressedOn_Start": 0.807884615384615,
+        "PressedOffToPressedOn_End": 0.8425,
+        "PressedOffToPointerOverOn_Start": 0.846346153846154,
+        "PressedOffToPointerOverOn_End": 0.919423076923077,
+        "PressedOffToNormalOn_Start": 0.923269230769231,
+        "PressedOffToNormalOn_End": 0.996346153846154
+      },
+      "animations": {
+        "RotationAngleInDegreesScalarAnimation_180_to_180": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                180.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.057692308,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.0961538479,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.115384616,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.15384616,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.192307696,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.288461536,
+              "value": [
+                180.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.307692319,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.346153855,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.384615391,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.419230759,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.423076928,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.461538464,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.534615397,
+              "value": [
+                180.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.538461566,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.576923072,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.615384638,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.649999976,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.653846145,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.673076928,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.711538434,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.730769217,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                180.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.788461566,
+              "value": [
+                0.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.807692289,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.842307687,
+              "value": [
+                180.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.846153855,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.865384638,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.903846145,
+              "value": [
+                180.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.923076928,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.942307711,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.980769217,
+              "value": [
+                180.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.0384615399,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.057692308,
+              "value": [
+                24.0,
+                18.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.111538462,
+              "value": [
+                24.1709995,
+                23.9230003
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.115384616,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.15384616,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.188461542,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.192307696,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.230769232,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                24.0,
+                30.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.449999988,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.303846151,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.346153855,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.380769223,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.384615391,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.461538464,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.496153831,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.576923072,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.61153847,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.615384638,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.649999976,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.653846145,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.673076928,
+              "value": [
+                24.0,
+                18.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.726923048,
+              "value": [
+                24.1709995,
+                23.9230003
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.730769217,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                24.0,
+                18.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.80384618,
+              "value": [
+                24.1709995,
+                23.9230003
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.807692289,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.842307687,
+              "value": [
+                24.0,
+                26.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.846153855,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.865384638,
+              "value": [
+                24.0,
+                30.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.449999988,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.919230759,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.923076928,
+              "value": [
+                24.0,
+                22.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.942307711,
+              "value": [
+                24.0,
+                30.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.449999988,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.996153831,
+              "value": [
+                24.0,
+                24.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      "variables": {},
+      "geometries": {
+        "Geometry": {
+          "commands": [
+            {
+              "Move": [
+                -3.54299998,
+                -1.79299998
+              ]
+            },
+            {
+              "Line": [
+                0.0199999996,
+                1.70700002
+              ]
+            },
+            {
+              "Line": [
+                3.48900008,
+                -1.71500003
+              ]
+            }
+          ],
+          "evenOdd": true
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {},
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "Scale": [
+                        4.0,
+                        4.0
+                      ],
+                      "StrokeBrush": [
+                        1.0
+                      ],
+                      "StrokeDashCap": [
+                        1.0
+                      ],
+                      "StrokeEndCap": [
+                        1.0
+                      ],
+                      "StrokeLineJoin": [
+                        1.0
+                      ],
+                      "StrokeMiterLimit": [
+                        2.0
+                      ],
+                      "StrokeStartCap": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry",
+                    "animations": {
+                      "RotationAngleInDegrees": "RotationAngleInDegreesScalarAnimation_180_to_180",
+                      "Offset": "OffsetVector2Animation"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Find": {
+      "duration": 1333.3333,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalToPointerOver_Start": 0.0,
+        "NormalToPointerOver_End": 0.113125,
+        "NormalToPressed_Start": 0.125625,
+        "NormalToPressed_End": 0.238125,
+        "PointerOverToNormal_Start": 0.250625,
+        "PointerOverToNormal_End": 0.363125,
+        "PointerOverToPressed_Start": 0.375625,
+        "PointerOverToPressed_End": 0.488125,
+        "PressedToNormal_Start": 0.500625,
+        "PressedToNormal_End": 0.738125,
+        "PressedToPointerOver_Start": 0.750625,
+        "PressedToPointerOver_End": 0.988125
+      },
+      "animations": {
+        "ScalarAnimation_1_to_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                0.800000012
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.449999988,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                0.800000012
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.449999988,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                0.800000012
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.5625,
+              "value": [
+                1.20000005
+              ],
+              "curve": [
+                0.449999988,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                0.800000012
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.8125,
+              "value": [
+                1.20000005
+              ],
+              "curve": [
+                0.449999988,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "StrokeThicknessScalarAnimation_2p5_to_2p5": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                2.5
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                2.5
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                3.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                2.5
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                2.5
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                3.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                3.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.5625,
+              "value": [
+                2.20000005
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                2.5
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                3.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.8125,
+              "value": [
+                2.20000005
+              ],
+              "curve": [
+                0.550000012,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                2.5
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "t0ScalarAnimation_0_to_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.125000015,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.237499982,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.449999988,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.37500003,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.487499982,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.449999988,
+                1.0
+              ]
+            }
+          ]
+        },
+        "t1ScalarAnimation_0_to_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.50000006,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.56249994,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.75,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5625,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.737499952,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "t2ScalarAnimation_0_to_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.75000006,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.81249994,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.75,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.8125,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.987499952,
+              "value": [
+                1.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                5.64699984,
+                -249.322998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                5.64699984,
+                -249.322998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499982,
+              "value": {
+                "variable": "t0",
+                "points": [
+                  [
+                    5.647,
+                    -249.323
+                  ],
+                  [
+                    5.939,
+                    -249.615
+                  ],
+                  [
+                    7.105,
+                    -250.781
+                  ],
+                  [
+                    7.397,
+                    -251.073
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                7.39699984,
+                -251.072998
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                5.64699984,
+                -249.322998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                5.64699984,
+                -249.322998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487499982,
+              "value": {
+                "variable": "t0",
+                "points": [
+                  [
+                    5.647,
+                    -249.323
+                  ],
+                  [
+                    5.939,
+                    -249.615
+                  ],
+                  [
+                    7.105,
+                    -250.781
+                  ],
+                  [
+                    7.397,
+                    -251.073
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                7.39699984,
+                -251.072998
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                7.39699984,
+                -251.072998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.56249994,
+              "value": {
+                "variable": "t1",
+                "points": [
+                  [
+                    7.397,
+                    -251.073
+                  ],
+                  [
+                    6.767,
+                    -250.443
+                  ],
+                  [
+                    3.616,
+                    -247.292
+                  ],
+                  [
+                    3.616,
+                    -247.292
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.737499952,
+              "value": {
+                "variable": "t1",
+                "points": [
+                  [
+                    3.616,
+                    -247.292
+                  ],
+                  [
+                    3.616,
+                    -247.292
+                  ],
+                  [
+                    5.308,
+                    -248.984
+                  ],
+                  [
+                    5.647,
+                    -249.323
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                5.64699984,
+                -249.322998
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                7.39699984,
+                -251.072998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.81249994,
+              "value": {
+                "variable": "t2",
+                "points": [
+                  [
+                    7.397,
+                    -251.073
+                  ],
+                  [
+                    6.767,
+                    -250.443
+                  ],
+                  [
+                    3.616,
+                    -247.292
+                  ],
+                  [
+                    3.616,
+                    -247.292
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.987499952,
+              "value": {
+                "variable": "t2",
+                "points": [
+                  [
+                    3.616,
+                    -247.292
+                  ],
+                  [
+                    3.616,
+                    -247.292
+                  ],
+                  [
+                    5.308,
+                    -248.984
+                  ],
+                  [
+                    5.647,
+                    -249.323
+                  ]
+                ]
+              },
+              "step": "start"
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                5.64699984,
+                -249.322998
+              ],
+              "step": "start"
+            }
+          ]
+        }
+      },
+      "variables": {
+        "t0": "t0ScalarAnimation_0_to_1",
+        "t1": "t1ScalarAnimation_0_to_1",
+        "t2": "t2ScalarAnimation_0_to_1"
+      },
+      "geometries": {
+        "Geometry": {
+          "commands": [
+            {
+              "Move": [
+                12.9329996,
+                278.140015
+              ]
+            },
+            {
+              "Line": [
+                9.42300034,
+                281.64801
+              ]
+            },
+            {
+              "Cubic": [
+                9.25599957,
+                281.815002,
+                9.25599957,
+                282.087006,
+                9.42300034,
+                282.253998
+              ]
+            },
+            {
+              "Cubic": [
+                9.57199955,
+                282.403015,
+                9.80300045,
+                282.419006,
+                9.97000027,
+                282.303009
+              ]
+            },
+            {
+              "Line": [
+                10.0290003,
+                282.253998
+              ]
+            },
+            {
+              "Line": [
+                13.5340004,
+                278.748993
+              ]
+            },
+            {
+              "Cubic": [
+                13.5340004,
+                278.748993,
+                13.3599997,
+                278.609985,
+                13.1879997,
+                278.432007
+              ]
+            },
+            {
+              "Cubic": [
+                13.0159998,
+                278.253998,
+                12.9329996,
+                278.140015,
+                12.9329996,
+                278.140015
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Ellipse_14p188": {
+          "ellipse": [
+            14.1875,
+            14.1875
+          ]
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {},
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        13.566,
+                        278.109985
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Scale": [
+                        3.0,
+                        3.0
+                      ]
+                    },
+                    "geometry": "Geometry",
+                    "animations": {
+                      "Offset": "OffsetVector2Animation"
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "properties": {
+                  "Opacity": [
+                    0.970000029
+                  ],
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        3.81299996,
+                        -3.93799996
+                      ],
+                      "Offset": [
+                        24.0,
+                        24.0
+                      ]
+                    },
+                    "geometry": null,
+                    "animations": {
+                      "Scale.X": "ScalarAnimation_1_to_1",
+                      "Scale.Y": "ScalarAnimation_1_to_1"
+                    },
+                    "children": [
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            0.922860026,
+                            0.0,
+                            0.0,
+                            0.922860026,
+                            3.81200004,
+                            -3.93799996
+                          ],
+                          "StrokeBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Ellipse_14p188",
+                        "animations": {
+                          "StrokeThickness": "StrokeThicknessScalarAnimation_2p5_to_2p5"
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "GlobalNavigationButton": {
+      "duration": 1333.3333,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalToPointerOver_Start": 0.0,
+        "NormalToPointerOver_End": 0.113125,
+        "NormalToPressed_Start": 0.125625,
+        "NormalToPressed_End": 0.238125,
+        "PointerOverToNormal_Start": 0.250625,
+        "PointerOverToNormal_End": 0.363125,
+        "PointerOverToPressed_Start": 0.375625,
+        "PointerOverToPressed_End": 0.488125,
+        "PressedToNormal_Start": 0.500625,
+        "PressedToNormal_End": 0.738125,
+        "PressedToPointerOver_Start": 0.750625,
+        "PressedToPointerOver_End": 0.988125
+      },
+      "animations": {
+        "IsVisibleBooleanAnimation_0": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.125,
+              "value": [
+                1.0
+              ]
+            }
+          ]
+        },
+        "IsVisibleBooleanAnimation_1": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.375,
+              "value": [
+                0.0
+              ]
+            }
+          ]
+        },
+        "OpacityScalarAnimation_1_to_1_0": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                1.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            }
+          ]
+        },
+        "OpacityScalarAnimation_1_to_1_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                1.0
+              ],
+              "step": "end"
+            }
+          ]
+        },
+        "ScaleXScalarAnimation_2p749_to_2p749": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                2.74900007
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                2.74900007
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                1.43256998
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                2.74900007
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                1.43256998
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                1.43256998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.600000024,
+              "value": [
+                2.88000011
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                2.74850011
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                1.43256998
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.850000024,
+              "value": [
+                2.88000011
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                2.74850011
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "ScaleYScalarAnimation_2p75_to_2p75": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                2.75
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                2.75
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                2.75
+              ],
+              "curve": [
+                0.166999996,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                2.75
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                2.75
+              ],
+              "curve": [
+                0.166999996,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                2.75
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.600000024,
+              "value": [
+                2.73294997
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                2.75
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                2.75
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.850000024,
+              "value": [
+                2.73294997
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                2.75
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation_0": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                37.5079994,
+                29.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                37.5079994,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                27.5079994,
+                29.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                37.5079994,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                27.5079994,
+                29.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                27.5079994,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.600000024,
+              "value": [
+                38.5040016,
+                29.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                37.5079994,
+                29.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                27.5079994,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.850000024,
+              "value": [
+                38.5040016,
+                29.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                37.5079994,
+                29.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "OffsetVector2Animation_1": {
+          "kind": "vector",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                10.5039997,
+                29.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.125,
+              "value": [
+                10.5039997,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.237499997,
+              "value": [
+                20.5079994,
+                29.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.375,
+              "value": [
+                10.5039997,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.487500012,
+              "value": [
+                20.5079994,
+                29.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.5,
+              "value": [
+                20.5079994,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.600000024,
+              "value": [
+                9.50800037,
+                29.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.737500012,
+              "value": [
+                10.5039997,
+                29.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.75,
+              "value": [
+                20.5079994,
+                29.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.850000024,
+              "value": [
+                9.50800037,
+                29.0
+              ],
+              "curve": [
+                0.850000024,
+                0.0,
+                0.75,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.987500012,
+              "value": [
+                10.5039997,
+                29.0
+              ],
+              "curve": [
+                0.349999994,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      "variables": {},
+      "geometries": {
+        "Geometry_00": {
+          "commands": [
+            {
+              "Move": [
+                7.5,
+                0.5
+              ]
+            },
+            {
+              "Cubic": [
+                7.63500023,
+                0.5,
+                7.75299978,
+                0.451000005,
+                7.85200024,
+                0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                7.95100021,
+                0.252999991,
+                8.0,
+                0.135000005,
+                8.0,
+                0.0
+              ]
+            },
+            {
+              "Cubic": [
+                8.0,
+                -0.135000005,
+                7.95100021,
+                -0.252999991,
+                7.85200024,
+                -0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                7.75299978,
+                -0.451000005,
+                7.63500023,
+                -0.5,
+                7.5,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                7.5,
+                0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_01": {
+          "commands": [
+            {
+              "Move": [
+                7.5,
+                -0.486999989
+              ]
+            },
+            {
+              "Line": [
+                7.5,
+                0.513000011
+              ]
+            },
+            {
+              "Cubic": [
+                7.63500023,
+                0.513000011,
+                7.75299978,
+                0.463,
+                7.85200024,
+                0.363999993
+              ]
+            },
+            {
+              "Cubic": [
+                7.95100021,
+                0.264999986,
+                8.0,
+                0.148000002,
+                8.0,
+                0.0130000003
+              ]
+            },
+            {
+              "Cubic": [
+                8.0,
+                -0.122000001,
+                7.95100021,
+                -0.239999995,
+                7.85200024,
+                -0.338999987
+              ]
+            },
+            {
+              "Cubic": [
+                7.75299978,
+                -0.437999994,
+                7.63500023,
+                -0.486999989,
+                7.5,
+                -0.486999989
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_02": {
+          "commands": [
+            {
+              "Move": [
+                7.5,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                7.5,
+                0.5
+              ]
+            },
+            {
+              "Cubic": [
+                7.63500023,
+                0.5,
+                7.75299978,
+                0.451000005,
+                7.85200024,
+                0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                7.95100021,
+                0.252999991,
+                8.0,
+                0.135000005,
+                8.0,
+                0.0
+              ]
+            },
+            {
+              "Cubic": [
+                8.0,
+                -0.135000005,
+                7.95100021,
+                -0.252999991,
+                7.85200024,
+                -0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                7.75299978,
+                -0.451000005,
+                7.63500023,
+                -0.5,
+                7.5,
+                -0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_03": {
+          "commands": [
+            {
+              "Move": [
+                -7.5,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.5,
+                -0.5
+              ]
+            },
+            {
+              "Cubic": [
+                -7.63500023,
+                -0.5,
+                -7.75299978,
+                -0.451000005,
+                -7.85200024,
+                -0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                -7.95100021,
+                -0.252999991,
+                -8.0,
+                -0.135000005,
+                -8.0,
+                0.0
+              ]
+            },
+            {
+              "Cubic": [
+                -8.0,
+                0.135000005,
+                -7.95100021,
+                0.252999991,
+                -7.85200024,
+                0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                -7.75299978,
+                0.451000005,
+                -7.63500023,
+                0.5,
+                -7.5,
+                0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_04": {
+          "commands": [
+            {
+              "Move": [
+                -7.5,
+                -0.486999989
+              ]
+            },
+            {
+              "Cubic": [
+                -7.63500023,
+                -0.486999989,
+                -7.75299978,
+                -0.437999994,
+                -7.85200024,
+                -0.338999987
+              ]
+            },
+            {
+              "Cubic": [
+                -7.95100021,
+                -0.239999995,
+                -8.0,
+                -0.122000001,
+                -8.0,
+                0.0130000003
+              ]
+            },
+            {
+              "Cubic": [
+                -8.0,
+                0.148000002,
+                -7.95100021,
+                0.264999986,
+                -7.85200024,
+                0.363999993
+              ]
+            },
+            {
+              "Cubic": [
+                -7.75299978,
+                0.463,
+                -7.63500023,
+                0.513000011,
+                -7.5,
+                0.513000011
+              ]
+            },
+            {
+              "Line": [
+                -7.5,
+                -0.486999989
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_05": {
+          "commands": [
+            {
+              "Move": [
+                -7.5,
+                -0.5
+              ]
+            },
+            {
+              "Cubic": [
+                -7.63500023,
+                -0.5,
+                -7.75299978,
+                -0.451000005,
+                -7.85200024,
+                -0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                -7.95100021,
+                -0.252999991,
+                -8.0,
+                -0.135000005,
+                -8.0,
+                0.0
+              ]
+            },
+            {
+              "Cubic": [
+                -8.0,
+                0.135000005,
+                -7.95100021,
+                0.252999991,
+                -7.85200024,
+                0.351999998
+              ]
+            },
+            {
+              "Cubic": [
+                -7.75299978,
+                0.451000005,
+                -7.63500023,
+                0.5,
+                -7.5,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.5,
+                -0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_06": {
+          "commands": [
+            {
+              "Move": [
+                -7.60599995,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.70100021,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.70100021,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.60599995,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.60599995,
+                0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_07": {
+          "commands": [
+            {
+              "Move": [
+                7.70100021,
+                -0.486999989
+              ]
+            },
+            {
+              "Line": [
+                -7.60599995,
+                -0.486999989
+              ]
+            },
+            {
+              "Line": [
+                -7.60599995,
+                0.513000011
+              ]
+            },
+            {
+              "Line": [
+                7.70100021,
+                0.513000011
+              ]
+            },
+            {
+              "Line": [
+                7.70100021,
+                -0.486999989
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_08": {
+          "commands": [
+            {
+              "Move": [
+                7.70100021,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.60500002,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.60500002,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.70100021,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.70100021,
+                -0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_09": {
+          "commands": [
+            {
+              "Move": [
+                -7.5999999,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.6960001,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.6960001,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.5999999,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.5999999,
+                0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_10": {
+          "commands": [
+            {
+              "Move": [
+                7.6960001,
+                -0.486999989
+              ]
+            },
+            {
+              "Line": [
+                -7.5999999,
+                -0.486999989
+              ]
+            },
+            {
+              "Line": [
+                -7.5999999,
+                0.513000011
+              ]
+            },
+            {
+              "Line": [
+                7.6960001,
+                0.513000011
+              ]
+            },
+            {
+              "Line": [
+                7.6960001,
+                -0.486999989
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_11": {
+          "commands": [
+            {
+              "Move": [
+                7.6960001,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.59899998,
+                -0.5
+              ]
+            },
+            {
+              "Line": [
+                -7.59899998,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.6960001,
+                0.5
+              ]
+            },
+            {
+              "Line": [
+                7.6960001,
+                -0.5
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "IsVisible": [
+                0.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "Opacity": "OpacityScalarAnimation_1_to_1_0",
+              "IsVisible": "IsVisibleBooleanAnimation_0"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        7.5,
+                        -5.0
+                      ],
+                      "Scale": [
+                        2.75,
+                        2.75
+                      ]
+                    },
+                    "geometry": null,
+                    "animations": {
+                      "Offset": "OffsetVector2Animation_0"
+                    },
+                    "children": [
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            -10.0
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_00",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            -4.8499999
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_01",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_02",
+                        "animations": {},
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        -7.5,
+                        -5.0
+                      ],
+                      "Scale": [
+                        2.75,
+                        2.75
+                      ]
+                    },
+                    "geometry": null,
+                    "animations": {
+                      "Offset": "OffsetVector2Animation_1"
+                    },
+                    "children": [
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            -10.0
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_03",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            -4.8499999
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_04",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_05",
+                        "animations": {},
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        0.0480000004,
+                        -5.0
+                      ],
+                      "Offset": [
+                        23.9559994,
+                        29.0
+                      ]
+                    },
+                    "geometry": null,
+                    "animations": {
+                      "Scale.X": "ScaleXScalarAnimation_2p749_to_2p749",
+                      "Scale.Y": "ScaleYScalarAnimation_2p75_to_2p75"
+                    },
+                    "children": [
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            -10.0
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_06",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "TransformMatrix": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            1.0,
+                            0.0,
+                            -4.8499999
+                          ],
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_07",
+                        "animations": {},
+                        "children": []
+                      },
+                      {
+                        "properties": {
+                          "FillBrush": [
+                            1.0
+                          ]
+                        },
+                        "geometry": "Geometry_08",
+                        "animations": {},
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "Opacity": "OpacityScalarAnimation_1_to_1_1",
+              "IsVisible": "IsVisibleBooleanAnimation_1"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.75,
+                        0.0,
+                        0.0,
+                        2.75,
+                        24.3829994,
+                        10.25
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_00",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.75,
+                        0.0,
+                        0.0,
+                        2.75,
+                        24.3829994,
+                        24.4125004
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_01",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.75,
+                        0.0,
+                        0.0,
+                        2.75,
+                        24.3829994,
+                        37.75
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_02",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.75,
+                        0.0,
+                        0.0,
+                        2.75,
+                        23.6289997,
+                        10.25
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_03",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.75,
+                        0.0,
+                        0.0,
+                        2.75,
+                        23.6289997,
+                        24.4125004
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_04",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.75,
+                        0.0,
+                        0.0,
+                        2.75,
+                        23.6289997,
+                        37.75
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_05",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.74900007,
+                        0.0,
+                        0.0,
+                        2.75,
+                        23.8720474,
+                        10.25
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_09",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.74900007,
+                        0.0,
+                        0.0,
+                        2.75,
+                        23.8720474,
+                        24.4125004
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_10",
+                    "animations": {},
+                    "children": []
+                  },
+                  {
+                    "properties": {
+                      "TransformMatrix": [
+                        2.74900007,
+                        0.0,
+                        0.0,
+                        2.75,
+                        23.8720474,
+                        37.75
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ]
+                    },
+                    "geometry": "Geometry_11",
+                    "animations": {},
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "Settings": {
+      "duration": 2000.0,
+      "size": [
+        48.0,
+        48.0
+      ],
+      "markers": {
+        "NormalToPointerOver_Start": 0.0,
+        "NormalToPointerOver_End": 0.0754166666666667,
+        "NormalToPressed_Start": 0.08375,
+        "NormalToPressed_End": 0.15875,
+        "PointerOverToNormal_Start": 0.167083333333333,
+        "PointerOverToNormal_End": 0.242083333333333,
+        "PointerOverToPressed_Start": 0.250416666666667,
+        "PointerOverToPressed_End": 0.325416666666667,
+        "PressedToNormal_Start": 0.33375,
+        "PressedToNormal_End": 0.65875,
+        "PressedToPointerOver_Start": 0.667083333333333,
+        "PressedToPointerOver_End": 0.992083333333333
+      },
+      "animations": {
+        "IsVisibleBooleanAnimation_0": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.666666687,
+              "value": [
+                1.0
+              ]
+            }
+          ]
+        },
+        "IsVisibleBooleanAnimation_1": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.333333343,
+              "value": [
+                1.0
+              ]
+            },
+            {
+              "progress": 0.666666687,
+              "value": [
+                0.0
+              ]
+            }
+          ]
+        },
+        "IsVisibleBooleanAnimation_2": {
+          "kind": "bool",
+          "keys": [
+            {
+              "progress": 0.333333343,
+              "value": [
+                0.0
+              ]
+            }
+          ]
+        },
+        "RotationAngleInDegreesScalarAnimation_0_to_360_0": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.583333313,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.666666687,
+              "value": [
+                -20.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.991666675,
+              "value": [
+                360.0
+              ],
+              "curve": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "RotationAngleInDegreesScalarAnimation_0_to_360_1": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                0.0
+              ],
+              "step": "start"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.333333343,
+              "value": [
+                -20.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.658333361,
+              "value": [
+                360.0
+              ],
+              "curve": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        },
+        "RotationAngleInDegreesScalarAnimation_0_to_m20": {
+          "kind": "scalar",
+          "keys": [
+            {
+              "progress": 0.0,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.0833333358,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.158333331,
+              "value": [
+                -20.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                1.0,
+                1.0
+              ]
+            },
+            {
+              "progress": 0.166666672,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.25,
+              "value": [
+                0.0
+              ],
+              "step": "end"
+            },
+            {
+              "progress": 0.324999988,
+              "value": [
+                -20.0
+              ],
+              "curve": [
+                0.166999996,
+                0.166999996,
+                1.0,
+                1.0
+              ]
+            }
+          ]
+        }
+      },
+      "variables": {},
+      "geometries": {
+        "Geometry_1": {
+          "commands": [
+            {
+              "Move": [
+                48.8800011,
+                30.9810009
+              ]
+            },
+            {
+              "Cubic": [
+                49.1990013,
+                29.9960003,
+                49.7229996,
+                29.0919991,
+                50.4160004,
+                28.3250008
+              ]
+            },
+            {
+              "Cubic": [
+                50.5330009,
+                28.1949997,
+                50.7169991,
+                28.1490002,
+                50.8810005,
+                28.2080002
+              ]
+            },
+            {
+              "Line": [
+                52.5359993,
+                28.7989998
+              ]
+            },
+            {
+              "Cubic": [
+                52.9850006,
+                28.9589996,
+                53.4790001,
+                28.7259998,
+                53.6389999,
+                28.2770004
+              ]
+            },
+            {
+              "Cubic": [
+                53.6549988,
+                28.2329998,
+                53.6669998,
+                28.1879997,
+                53.6749992,
+                28.1420002
+              ]
+            },
+            {
+              "Line": [
+                53.9900017,
+                26.4109993
+              ]
+            },
+            {
+              "Cubic": [
+                54.0209999,
+                26.2390003,
+                54.1539993,
+                26.1019993,
+                54.3250008,
+                26.066
+              ]
+            },
+            {
+              "Cubic": [
+                54.8260002,
+                25.9589996,
+                55.3390007,
+                25.9060001,
+                55.8590012,
+                25.9060001
+              ]
+            },
+            {
+              "Cubic": [
+                56.3790016,
+                25.9060001,
+                56.8919983,
+                25.9599991,
+                57.3919983,
+                26.066
+              ]
+            },
+            {
+              "Cubic": [
+                57.5629997,
+                26.1019993,
+                57.6949997,
+                26.2390003,
+                57.7260017,
+                26.4109993
+              ]
+            },
+            {
+              "Line": [
+                58.0419998,
+                28.1420002
+              ]
+            },
+            {
+              "Cubic": [
+                58.1279984,
+                28.6110001,
+                58.5769997,
+                28.9209995,
+                59.0460014,
+                28.8360004
+              ]
+            },
+            {
+              "Cubic": [
+                59.0919991,
+                28.8279991,
+                59.137001,
+                28.8150005,
+                59.1809998,
+                28.7989998
+              ]
+            },
+            {
+              "Line": [
+                60.8359985,
+                28.2080002
+              ]
+            },
+            {
+              "Cubic": [
+                61.0,
+                28.1490002,
+                61.1850014,
+                28.1949997,
+                61.3019981,
+                28.3250008
+              ]
+            },
+            {
+              "Cubic": [
+                61.9949989,
+                29.0919991,
+                62.519001,
+                29.9960003,
+                62.8380013,
+                30.9810009
+              ]
+            },
+            {
+              "Cubic": [
+                62.8919983,
+                31.1469994,
+                62.8390007,
+                31.3299999,
+                62.7060013,
+                31.4430008
+              ]
+            },
+            {
+              "Line": [
+                61.3650017,
+                32.5810013
+              ]
+            },
+            {
+              "Cubic": [
+                61.0019989,
+                32.8889999,
+                60.9580002,
+                33.4350014,
+                61.2659988,
+                33.7980003
+              ]
+            },
+            {
+              "Cubic": [
+                61.2960014,
+                33.8339996,
+                61.3289986,
+                33.8670006,
+                61.3650017,
+                33.8969994
+              ]
+            },
+            {
+              "Line": [
+                62.7060013,
+                35.0359993
+              ]
+            },
+            {
+              "Cubic": [
+                62.8390007,
+                35.1489983,
+                62.8919983,
+                35.3310013,
+                62.8380013,
+                35.4970016
+              ]
+            },
+            {
+              "Cubic": [
+                62.519001,
+                36.4819984,
+                61.9949989,
+                37.387001,
+                61.3019981,
+                38.1539993
+              ]
+            },
+            {
+              "Cubic": [
+                61.1850014,
+                38.2840004,
+                61.0,
+                38.3300018,
+                60.8359985,
+                38.2709999
+              ]
+            },
+            {
+              "Line": [
+                59.1809998,
+                37.6790009
+              ]
+            },
+            {
+              "Cubic": [
+                58.7319984,
+                37.519001,
+                58.2389984,
+                37.7519989,
+                58.0789986,
+                38.2010002
+              ]
+            },
+            {
+              "Cubic": [
+                58.0629997,
+                38.2449989,
+                58.0499992,
+                38.2910004,
+                58.0419998,
+                38.3370018
+              ]
+            },
+            {
+              "Line": [
+                57.7260017,
+                40.0680008
+              ]
+            },
+            {
+              "Cubic": [
+                57.6949997,
+                40.2400017,
+                57.5629997,
+                40.3759995,
+                57.3919983,
+                40.4119987
+              ]
+            },
+            {
+              "Cubic": [
+                56.8919983,
+                40.5180016,
+                56.3790016,
+                40.5730019,
+                55.8590012,
+                40.5730019
+              ]
+            },
+            {
+              "Cubic": [
+                55.3390007,
+                40.5730019,
+                54.8260002,
+                40.519001,
+                54.3250008,
+                40.4119987
+              ]
+            },
+            {
+              "Cubic": [
+                54.1539993,
+                40.3759995,
+                54.0209999,
+                40.2389984,
+                53.9900017,
+                40.0670013
+              ]
+            },
+            {
+              "Line": [
+                53.6749992,
+                38.3370018
+              ]
+            },
+            {
+              "Cubic": [
+                53.5900002,
+                37.868,
+                53.1409988,
+                37.5569992,
+                52.6720009,
+                37.6430016
+              ]
+            },
+            {
+              "Cubic": [
+                52.6259995,
+                37.651001,
+                52.5800018,
+                37.6629982,
+                52.5359993,
+                37.6790009
+              ]
+            },
+            {
+              "Line": [
+                50.8810005,
+                38.2709999
+              ]
+            },
+            {
+              "Cubic": [
+                50.7169991,
+                38.3300018,
+                50.5330009,
+                38.2840004,
+                50.4160004,
+                38.1539993
+              ]
+            },
+            {
+              "Cubic": [
+                49.7229996,
+                37.387001,
+                49.1990013,
+                36.4819984,
+                48.8800011,
+                35.4970016
+              ]
+            },
+            {
+              "Cubic": [
+                48.8260002,
+                35.3310013,
+                48.8779984,
+                35.1489983,
+                49.0110016,
+                35.0359993
+              ]
+            },
+            {
+              "Line": [
+                50.3520012,
+                33.8969994
+              ]
+            },
+            {
+              "Cubic": [
+                50.7150002,
+                33.5890007,
+                50.7599983,
+                33.0439987,
+                50.4519997,
+                32.6809998
+              ]
+            },
+            {
+              "Cubic": [
+                50.4220009,
+                32.6450005,
+                50.3880005,
+                32.6110001,
+                50.3520012,
+                32.5810013
+              ]
+            },
+            {
+              "Line": [
+                49.0110016,
+                31.4430008
+              ]
+            },
+            {
+              "Cubic": [
+                48.8779984,
+                31.3299999,
+                48.8260002,
+                31.1469994,
+                48.8800011,
+                30.9810009
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_2": {
+          "commands": [
+            {
+              "Move": [
+                49.7949982,
+                30.9759998
+              ]
+            },
+            {
+              "Line": [
+                50.9109993,
+                31.9239998
+              ]
+            },
+            {
+              "Cubic": [
+                50.9819984,
+                31.9850006,
+                51.0480003,
+                32.0509987,
+                51.1090012,
+                32.1220016
+              ]
+            },
+            {
+              "Cubic": [
+                51.7260017,
+                32.8479996,
+                51.637001,
+                33.9370003,
+                50.9109993,
+                34.5540009
+              ]
+            },
+            {
+              "Line": [
+                49.7949982,
+                35.5019989
+              ]
+            },
+            {
+              "Cubic": [
+                50.0470009,
+                36.1769981,
+                50.4099998,
+                36.8040009,
+                50.8689995,
+                37.3590012
+              ]
+            },
+            {
+              "Line": [
+                52.2459984,
+                36.8670006
+              ]
+            },
+            {
+              "Cubic": [
+                52.3339996,
+                36.8349991,
+                52.4249992,
+                36.8110008,
+                52.5169983,
+                36.7939987
+              ]
+            },
+            {
+              "Cubic": [
+                53.4550018,
+                36.6230011,
+                54.3530006,
+                37.2439995,
+                54.5239983,
+                38.1819992
+              ]
+            },
+            {
+              "Line": [
+                54.7859993,
+                39.6209984
+              ]
+            },
+            {
+              "Cubic": [
+                55.1380005,
+                39.6800003,
+                55.4970016,
+                39.7099991,
+                55.8590012,
+                39.7099991
+              ]
+            },
+            {
+              "Cubic": [
+                56.2210007,
+                39.7099991,
+                56.5789986,
+                39.6800003,
+                56.9309998,
+                39.6209984
+              ]
+            },
+            {
+              "Line": [
+                57.1940002,
+                38.1819992
+              ]
+            },
+            {
+              "Cubic": [
+                57.2109985,
+                38.0900002,
+                57.2340012,
+                37.9990005,
+                57.2659988,
+                37.9109993
+              ]
+            },
+            {
+              "Cubic": [
+                57.5870018,
+                37.0139999,
+                58.5740013,
+                36.5460014,
+                59.4720001,
+                36.8670006
+              ]
+            },
+            {
+              "Line": [
+                60.848999,
+                37.3590012
+              ]
+            },
+            {
+              "Cubic": [
+                61.3069992,
+                36.8040009,
+                61.6710014,
+                36.1769981,
+                61.9230003,
+                35.5019989
+              ]
+            },
+            {
+              "Line": [
+                60.8069992,
+                34.5540009
+              ]
+            },
+            {
+              "Cubic": [
+                60.7360001,
+                34.493,
+                60.6689987,
+                34.4269981,
+                60.6080017,
+                34.355999
+              ]
+            },
+            {
+              "Cubic": [
+                59.9910011,
+                33.6300011,
+                60.0810013,
+                32.5410004,
+                60.8069992,
+                31.9239998
+              ]
+            },
+            {
+              "Line": [
+                61.9230003,
+                30.9759998
+              ]
+            },
+            {
+              "Cubic": [
+                61.6710014,
+                30.3010006,
+                61.3069992,
+                29.6739998,
+                60.848999,
+                29.1189995
+              ]
+            },
+            {
+              "Line": [
+                59.4720001,
+                29.6119995
+              ]
+            },
+            {
+              "Cubic": [
+                59.3839989,
+                29.6439991,
+                59.2929993,
+                29.6669998,
+                59.2010002,
+                29.684
+              ]
+            },
+            {
+              "Cubic": [
+                58.2639999,
+                29.8549995,
+                57.3650017,
+                29.2339993,
+                57.1940002,
+                28.2970009
+              ]
+            },
+            {
+              "Line": [
+                56.9309998,
+                26.8570004
+              ]
+            },
+            {
+              "Cubic": [
+                56.5789986,
+                26.7980003,
+                56.2210007,
+                26.7679996,
+                55.8590012,
+                26.7679996
+              ]
+            },
+            {
+              "Cubic": [
+                55.4970016,
+                26.7679996,
+                55.1380005,
+                26.7980003,
+                54.7859993,
+                26.8570004
+              ]
+            },
+            {
+              "Line": [
+                54.5239983,
+                28.2959995
+              ]
+            },
+            {
+              "Cubic": [
+                54.507,
+                28.3880005,
+                54.4830017,
+                28.4799995,
+                54.4510002,
+                28.5680008
+              ]
+            },
+            {
+              "Cubic": [
+                54.1300011,
+                29.4650002,
+                53.1430016,
+                29.9330006,
+                52.2459984,
+                29.6119995
+              ]
+            },
+            {
+              "Line": [
+                50.8689995,
+                29.1189995
+              ]
+            },
+            {
+              "Cubic": [
+                50.4099998,
+                29.6739998,
+                50.0470009,
+                30.3010006,
+                49.7949982,
+                30.9759998
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_3": {
+          "commands": [
+            {
+              "Move": [
+                53.7019997,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                53.7019997,
+                32.0480003,
+                54.6679993,
+                31.0820007,
+                55.8590012,
+                31.0820007
+              ]
+            },
+            {
+              "Cubic": [
+                57.0499992,
+                31.0820007,
+                58.0159988,
+                32.0480003,
+                58.0159988,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                58.0159988,
+                34.4300003,
+                57.0499992,
+                35.3959999,
+                55.8590012,
+                35.3959999
+              ]
+            },
+            {
+              "Cubic": [
+                54.6679993,
+                35.3959999,
+                53.7019997,
+                34.4300003,
+                53.7019997,
+                33.2389984
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_4": {
+          "commands": [
+            {
+              "Move": [
+                54.5649986,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                54.5649986,
+                33.9539986,
+                55.144001,
+                34.5330009,
+                55.8590012,
+                34.5330009
+              ]
+            },
+            {
+              "Cubic": [
+                56.5740013,
+                34.5330009,
+                57.1529999,
+                33.9539986,
+                57.1529999,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                57.1529999,
+                32.5239983,
+                56.5740013,
+                31.9449997,
+                55.8590012,
+                31.9449997
+              ]
+            },
+            {
+              "Cubic": [
+                55.144001,
+                31.9449997,
+                54.5649986,
+                32.5239983,
+                54.5649986,
+                33.2389984
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        },
+        "Geometry_0": {
+          "commands": [
+            {
+              "Move": [
+                48.8800011,
+                30.9810009
+              ]
+            },
+            {
+              "Cubic": [
+                49.1990013,
+                29.9960003,
+                49.7229996,
+                29.0919991,
+                50.4160004,
+                28.3250008
+              ]
+            },
+            {
+              "Cubic": [
+                50.5330009,
+                28.1949997,
+                50.7169991,
+                28.1490002,
+                50.8810005,
+                28.2080002
+              ]
+            },
+            {
+              "Line": [
+                52.5359993,
+                28.7989998
+              ]
+            },
+            {
+              "Cubic": [
+                52.9850006,
+                28.9589996,
+                53.4790001,
+                28.7259998,
+                53.6389999,
+                28.2770004
+              ]
+            },
+            {
+              "Cubic": [
+                53.6549988,
+                28.2329998,
+                53.6669998,
+                28.1879997,
+                53.6749992,
+                28.1420002
+              ]
+            },
+            {
+              "Line": [
+                53.9900017,
+                26.4109993
+              ]
+            },
+            {
+              "Cubic": [
+                54.0209999,
+                26.2390003,
+                54.1539993,
+                26.1019993,
+                54.3250008,
+                26.066
+              ]
+            },
+            {
+              "Cubic": [
+                54.8260002,
+                25.9589996,
+                55.3390007,
+                25.9060001,
+                55.8590012,
+                25.9060001
+              ]
+            },
+            {
+              "Cubic": [
+                56.3790016,
+                25.9060001,
+                56.8919983,
+                25.9599991,
+                57.3919983,
+                26.066
+              ]
+            },
+            {
+              "Cubic": [
+                57.5629997,
+                26.1019993,
+                57.6949997,
+                26.2390003,
+                57.7260017,
+                26.4109993
+              ]
+            },
+            {
+              "Line": [
+                58.0419998,
+                28.1420002
+              ]
+            },
+            {
+              "Cubic": [
+                58.1279984,
+                28.6110001,
+                58.5769997,
+                28.9209995,
+                59.0460014,
+                28.8360004
+              ]
+            },
+            {
+              "Cubic": [
+                59.0919991,
+                28.8279991,
+                59.137001,
+                28.8150005,
+                59.1809998,
+                28.7989998
+              ]
+            },
+            {
+              "Line": [
+                60.8359985,
+                28.2080002
+              ]
+            },
+            {
+              "Cubic": [
+                61.0,
+                28.1490002,
+                61.1850014,
+                28.1949997,
+                61.3019981,
+                28.3250008
+              ]
+            },
+            {
+              "Cubic": [
+                61.9949989,
+                29.0919991,
+                62.519001,
+                29.9960003,
+                62.8380013,
+                30.9810009
+              ]
+            },
+            {
+              "Cubic": [
+                62.8919983,
+                31.1469994,
+                62.8390007,
+                31.3299999,
+                62.7060013,
+                31.4430008
+              ]
+            },
+            {
+              "Line": [
+                61.3650017,
+                32.5810013
+              ]
+            },
+            {
+              "Cubic": [
+                61.0019989,
+                32.8889999,
+                60.9580002,
+                33.4350014,
+                61.2659988,
+                33.7980003
+              ]
+            },
+            {
+              "Cubic": [
+                61.2960014,
+                33.8339996,
+                61.3289986,
+                33.8670006,
+                61.3650017,
+                33.8969994
+              ]
+            },
+            {
+              "Line": [
+                62.7060013,
+                35.0359993
+              ]
+            },
+            {
+              "Cubic": [
+                62.8390007,
+                35.1489983,
+                62.8919983,
+                35.3310013,
+                62.8380013,
+                35.4970016
+              ]
+            },
+            {
+              "Cubic": [
+                62.519001,
+                36.4819984,
+                61.9949989,
+                37.387001,
+                61.3019981,
+                38.1539993
+              ]
+            },
+            {
+              "Cubic": [
+                61.1850014,
+                38.2840004,
+                61.0,
+                38.3300018,
+                60.8359985,
+                38.2709999
+              ]
+            },
+            {
+              "Line": [
+                59.1809998,
+                37.6790009
+              ]
+            },
+            {
+              "Cubic": [
+                58.7319984,
+                37.519001,
+                58.2389984,
+                37.7519989,
+                58.0789986,
+                38.2010002
+              ]
+            },
+            {
+              "Cubic": [
+                58.0629997,
+                38.2449989,
+                58.0499992,
+                38.2910004,
+                58.0419998,
+                38.3370018
+              ]
+            },
+            {
+              "Line": [
+                57.7260017,
+                40.0680008
+              ]
+            },
+            {
+              "Cubic": [
+                57.6949997,
+                40.2400017,
+                57.5629997,
+                40.3759995,
+                57.3919983,
+                40.4119987
+              ]
+            },
+            {
+              "Cubic": [
+                56.8919983,
+                40.5180016,
+                56.3790016,
+                40.5730019,
+                55.8590012,
+                40.5730019
+              ]
+            },
+            {
+              "Cubic": [
+                55.3390007,
+                40.5730019,
+                54.8260002,
+                40.519001,
+                54.3250008,
+                40.4119987
+              ]
+            },
+            {
+              "Cubic": [
+                54.1539993,
+                40.3759995,
+                54.0209999,
+                40.2389984,
+                53.9900017,
+                40.0670013
+              ]
+            },
+            {
+              "Line": [
+                53.6749992,
+                38.3370018
+              ]
+            },
+            {
+              "Cubic": [
+                53.5900002,
+                37.868,
+                53.1409988,
+                37.5569992,
+                52.6720009,
+                37.6430016
+              ]
+            },
+            {
+              "Cubic": [
+                52.6259995,
+                37.651001,
+                52.5800018,
+                37.6629982,
+                52.5359993,
+                37.6790009
+              ]
+            },
+            {
+              "Line": [
+                50.8810005,
+                38.2709999
+              ]
+            },
+            {
+              "Cubic": [
+                50.7169991,
+                38.3300018,
+                50.5330009,
+                38.2840004,
+                50.4160004,
+                38.1539993
+              ]
+            },
+            {
+              "Cubic": [
+                49.7229996,
+                37.387001,
+                49.1990013,
+                36.4819984,
+                48.8800011,
+                35.4970016
+              ]
+            },
+            {
+              "Cubic": [
+                48.8260002,
+                35.3310013,
+                48.8779984,
+                35.1489983,
+                49.0110016,
+                35.0359993
+              ]
+            },
+            {
+              "Line": [
+                50.3520012,
+                33.8969994
+              ]
+            },
+            {
+              "Cubic": [
+                50.7150002,
+                33.5890007,
+                50.7599983,
+                33.0439987,
+                50.4519997,
+                32.6809998
+              ]
+            },
+            {
+              "Cubic": [
+                50.4220009,
+                32.6450005,
+                50.3880005,
+                32.6110001,
+                50.3520012,
+                32.5810013
+              ]
+            },
+            {
+              "Line": [
+                49.0110016,
+                31.4430008
+              ]
+            },
+            {
+              "Cubic": [
+                48.8779984,
+                31.3299999,
+                48.8260002,
+                31.1469994,
+                48.8800011,
+                30.9810009
+              ]
+            },
+            "Close",
+            {
+              "Move": [
+                49.7949982,
+                30.9759998
+              ]
+            },
+            {
+              "Line": [
+                50.9109993,
+                31.9239998
+              ]
+            },
+            {
+              "Cubic": [
+                50.9819984,
+                31.9850006,
+                51.0480003,
+                32.0509987,
+                51.1090012,
+                32.1220016
+              ]
+            },
+            {
+              "Cubic": [
+                51.7260017,
+                32.8479996,
+                51.637001,
+                33.9370003,
+                50.9109993,
+                34.5540009
+              ]
+            },
+            {
+              "Line": [
+                49.7949982,
+                35.5019989
+              ]
+            },
+            {
+              "Cubic": [
+                50.0470009,
+                36.1769981,
+                50.4099998,
+                36.8040009,
+                50.8689995,
+                37.3590012
+              ]
+            },
+            {
+              "Line": [
+                52.2459984,
+                36.8670006
+              ]
+            },
+            {
+              "Cubic": [
+                52.3339996,
+                36.8349991,
+                52.4249992,
+                36.8110008,
+                52.5169983,
+                36.7939987
+              ]
+            },
+            {
+              "Cubic": [
+                53.4550018,
+                36.6230011,
+                54.3530006,
+                37.2439995,
+                54.5239983,
+                38.1819992
+              ]
+            },
+            {
+              "Line": [
+                54.7859993,
+                39.6209984
+              ]
+            },
+            {
+              "Cubic": [
+                55.1380005,
+                39.6800003,
+                55.4970016,
+                39.7099991,
+                55.8590012,
+                39.7099991
+              ]
+            },
+            {
+              "Cubic": [
+                56.2210007,
+                39.7099991,
+                56.5789986,
+                39.6800003,
+                56.9309998,
+                39.6209984
+              ]
+            },
+            {
+              "Line": [
+                57.1940002,
+                38.1819992
+              ]
+            },
+            {
+              "Cubic": [
+                57.2109985,
+                38.0900002,
+                57.2340012,
+                37.9990005,
+                57.2659988,
+                37.9109993
+              ]
+            },
+            {
+              "Cubic": [
+                57.5870018,
+                37.0139999,
+                58.5740013,
+                36.5460014,
+                59.4720001,
+                36.8670006
+              ]
+            },
+            {
+              "Line": [
+                60.848999,
+                37.3590012
+              ]
+            },
+            {
+              "Cubic": [
+                61.3069992,
+                36.8040009,
+                61.6710014,
+                36.1769981,
+                61.9230003,
+                35.5019989
+              ]
+            },
+            {
+              "Line": [
+                60.8069992,
+                34.5540009
+              ]
+            },
+            {
+              "Cubic": [
+                60.7360001,
+                34.493,
+                60.6689987,
+                34.4269981,
+                60.6080017,
+                34.355999
+              ]
+            },
+            {
+              "Cubic": [
+                59.9910011,
+                33.6300011,
+                60.0810013,
+                32.5410004,
+                60.8069992,
+                31.9239998
+              ]
+            },
+            {
+              "Line": [
+                61.9230003,
+                30.9759998
+              ]
+            },
+            {
+              "Cubic": [
+                61.6710014,
+                30.3010006,
+                61.3069992,
+                29.6739998,
+                60.848999,
+                29.1189995
+              ]
+            },
+            {
+              "Line": [
+                59.4720001,
+                29.6119995
+              ]
+            },
+            {
+              "Cubic": [
+                59.3839989,
+                29.6439991,
+                59.2929993,
+                29.6669998,
+                59.2010002,
+                29.684
+              ]
+            },
+            {
+              "Cubic": [
+                58.2639999,
+                29.8549995,
+                57.3650017,
+                29.2339993,
+                57.1940002,
+                28.2970009
+              ]
+            },
+            {
+              "Line": [
+                56.9309998,
+                26.8570004
+              ]
+            },
+            {
+              "Cubic": [
+                56.5789986,
+                26.7980003,
+                56.2210007,
+                26.7679996,
+                55.8590012,
+                26.7679996
+              ]
+            },
+            {
+              "Cubic": [
+                55.4970016,
+                26.7679996,
+                55.1380005,
+                26.7980003,
+                54.7859993,
+                26.8570004
+              ]
+            },
+            {
+              "Line": [
+                54.5239983,
+                28.2959995
+              ]
+            },
+            {
+              "Cubic": [
+                54.507,
+                28.3880005,
+                54.4830017,
+                28.4799995,
+                54.4510002,
+                28.5680008
+              ]
+            },
+            {
+              "Cubic": [
+                54.1300011,
+                29.4650002,
+                53.1430016,
+                29.9330006,
+                52.2459984,
+                29.6119995
+              ]
+            },
+            {
+              "Line": [
+                50.8689995,
+                29.1189995
+              ]
+            },
+            {
+              "Cubic": [
+                50.4099998,
+                29.6739998,
+                50.0470009,
+                30.3010006,
+                49.7949982,
+                30.9759998
+              ]
+            },
+            "Close",
+            {
+              "Move": [
+                53.7019997,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                53.7019997,
+                32.0480003,
+                54.6679993,
+                31.0820007,
+                55.8590012,
+                31.0820007
+              ]
+            },
+            {
+              "Cubic": [
+                57.0499992,
+                31.0820007,
+                58.0159988,
+                32.0480003,
+                58.0159988,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                58.0159988,
+                34.4300003,
+                57.0499992,
+                35.3959999,
+                55.8590012,
+                35.3959999
+              ]
+            },
+            {
+              "Cubic": [
+                54.6679993,
+                35.3959999,
+                53.7019997,
+                34.4300003,
+                53.7019997,
+                33.2389984
+              ]
+            },
+            "Close",
+            {
+              "Move": [
+                54.5649986,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                54.5649986,
+                33.9539986,
+                55.144001,
+                34.5330009,
+                55.8590012,
+                34.5330009
+              ]
+            },
+            {
+              "Cubic": [
+                56.5740013,
+                34.5330009,
+                57.1529999,
+                33.9539986,
+                57.1529999,
+                33.2389984
+              ]
+            },
+            {
+              "Cubic": [
+                57.1529999,
+                32.5239983,
+                56.5740013,
+                31.9449997,
+                55.8590012,
+                31.9449997
+              ]
+            },
+            {
+              "Cubic": [
+                55.144001,
+                31.9449997,
+                54.5649986,
+                32.5239983,
+                54.5649986,
+                33.2389984
+              ]
+            },
+            "Close"
+          ],
+          "evenOdd": false
+        }
+      },
+      "root": {
+        "properties": {},
+        "geometry": null,
+        "animations": {},
+        "children": [
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "IsVisible": [
+                0.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "IsVisible": "IsVisibleBooleanAnimation_0"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        55.8590012,
+                        33.2389984
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Offset": [
+                        -31.8590012,
+                        -9.23899841
+                      ],
+                      "Scale": [
+                        3.0,
+                        3.0
+                      ]
+                    },
+                    "geometry": "Geometry_0",
+                    "animations": {
+                      "RotationAngleInDegrees": "RotationAngleInDegreesScalarAnimation_0_to_360_0"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "IsVisible": [
+                0.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "IsVisible": "IsVisibleBooleanAnimation_1"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        55.8590012,
+                        33.2389984
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Offset": [
+                        -31.8590012,
+                        -9.23899841
+                      ],
+                      "Scale": [
+                        3.0,
+                        3.0
+                      ]
+                    },
+                    "geometry": "Geometry_0",
+                    "animations": {
+                      "RotationAngleInDegrees": "RotationAngleInDegreesScalarAnimation_0_to_360_1"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "properties": {
+              "Clip": [
+                1.0
+              ],
+              "Size": [
+                48.0,
+                48.0
+              ],
+              "TransformMatrix": [
+                1.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ]
+            },
+            "geometry": null,
+            "animations": {
+              "IsVisible": "IsVisibleBooleanAnimation_2"
+            },
+            "children": [
+              {
+                "properties": {
+                  "Size": [
+                    48.0,
+                    48.0
+                  ]
+                },
+                "geometry": null,
+                "animations": {},
+                "children": [
+                  {
+                    "properties": {
+                      "CenterPoint": [
+                        55.8590012,
+                        33.2389984
+                      ],
+                      "FillBrush": [
+                        1.0
+                      ],
+                      "Offset": [
+                        -31.8590012,
+                        -9.23899841
+                      ],
+                      "Scale": [
+                        3.0,
+                        3.0
+                      ]
+                    },
+                    "geometry": "Geometry_0",
+                    "animations": {
+                      "RotationAngleInDegrees": "RotationAngleInDegreesScalarAnimation_0_to_m20"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

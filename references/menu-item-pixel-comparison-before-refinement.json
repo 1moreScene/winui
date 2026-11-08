@@ -1,0 +1,61 @@
+{
+  "scope": "Normal composed probe screenshots. Overlap only, no resize or alignment fitting. Numeric differences are diagnostic and do not accept pixel equivalence.",
+  "rows": [
+    {
+      "theme": "Light",
+      "backend": "Canvas2D",
+      "nativeSize": [
+        165,
+        311
+      ],
+      "browserSize": [
+        164,
+        310
+      ],
+      "overlapMeanAbsoluteRgbError": 6.947285601888278,
+      "pixelParityAccepted": false
+    },
+    {
+      "theme": "Light",
+      "backend": "WebGL2",
+      "nativeSize": [
+        165,
+        311
+      ],
+      "browserSize": [
+        164,
+        310
+      ],
+      "overlapMeanAbsoluteRgbError": 7.198190401258851,
+      "pixelParityAccepted": false
+    },
+    {
+      "theme": "Dark",
+      "backend": "Canvas2D",
+      "nativeSize": [
+        165,
+        311
+      ],
+      "browserSize": [
+        164,
+        310
+      ],
+      "overlapMeanAbsoluteRgbError": 9.09162077104642,
+      "pixelParityAccepted": false
+    },
+    {
+      "theme": "Dark",
+      "backend": "WebGL2",
+      "nativeSize": [
+        165,
+        311
+      ],
+      "browserSize": [
+        164,
+        310
+      ],
+      "overlapMeanAbsoluteRgbError": 9.1294256490952,
+      "pixelParityAccepted": false
+    }
+  ]
+}

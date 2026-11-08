@@ -1,0 +1,244 @@
+{
+  "Light": {
+    "AutoSuggestBoxSuggestionsListBackground": {
+      "kind": "acrylic",
+      "tint": "#FCFCFC",
+      "tintOpacity": 0,
+      "luminosityOpacity": 0.85,
+      "fallback": "#F9F9F9"
+    },
+    "AutoSuggestBoxSuggestionsListBorderBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "ComboBoxBackground": {
+      "kind": "solid",
+      "color": "#FFFFFFB3",
+      "opacity": 1
+    },
+    "ComboBoxBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#F9F9F980",
+      "opacity": 1
+    },
+    "ComboBoxBackgroundPressed": {
+      "kind": "solid",
+      "color": "#F9F9F94D",
+      "opacity": 1
+    },
+    "ComboBoxBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#F9F9F94D",
+      "opacity": 1
+    },
+    "ComboBoxBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "ComboBoxDropDownBackground": {
+      "kind": "acrylic",
+      "tint": "#FCFCFC",
+      "tintOpacity": 0,
+      "luminosityOpacity": 0.85,
+      "fallback": "#F9F9F9"
+    },
+    "ComboBoxDropDownBorderBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "ContentDialogBackground": {
+      "kind": "solid",
+      "color": "#F3F3F3FF",
+      "opacity": 1
+    },
+    "ContentDialogBorderBrush": {
+      "kind": "solid",
+      "color": "#75757566",
+      "opacity": 1
+    },
+    "ContentDialogSmokeFill": {
+      "kind": "solid",
+      "color": "#0000004D",
+      "opacity": 1
+    },
+    "ContentDialogTopOverlay": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "TeachingTipBackgroundBrush": {
+      "kind": "solid",
+      "color": "#F9F9F9FF",
+      "opacity": 1
+    },
+    "TeachingTipBorderBrush": {
+      "kind": "solid",
+      "color": "#75757566",
+      "opacity": 1
+    },
+    "TeachingTipForegroundBrush": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    }
+  },
+  "Dark": {
+    "AutoSuggestBoxSuggestionsListBackground": {
+      "kind": "acrylic",
+      "tint": "#2C2C2C",
+      "tintOpacity": 0.15000000596046448,
+      "luminosityOpacity": 0.96,
+      "fallback": "#2C2C2C"
+    },
+    "AutoSuggestBoxSuggestionsListBorderBrush": {
+      "kind": "solid",
+      "color": "#00000033",
+      "opacity": 1
+    },
+    "ComboBoxBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "ComboBoxBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF15",
+      "opacity": 1
+    },
+    "ComboBoxBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF08",
+      "opacity": 1
+    },
+    "ComboBoxBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "ComboBoxBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "ComboBoxDropDownBackground": {
+      "kind": "acrylic",
+      "tint": "#2C2C2C",
+      "tintOpacity": 0.15000000596046448,
+      "luminosityOpacity": 0.96,
+      "fallback": "#2C2C2C"
+    },
+    "ComboBoxDropDownBorderBrush": {
+      "kind": "solid",
+      "color": "#00000033",
+      "opacity": 1
+    },
+    "ContentDialogBackground": {
+      "kind": "solid",
+      "color": "#202020FF",
+      "opacity": 1
+    },
+    "ContentDialogBorderBrush": {
+      "kind": "solid",
+      "color": "#75757566",
+      "opacity": 1
+    },
+    "ContentDialogSmokeFill": {
+      "kind": "solid",
+      "color": "#0000004D",
+      "opacity": 1
+    },
+    "ContentDialogTopOverlay": {
+      "kind": "solid",
+      "color": "#FFFFFF0D",
+      "opacity": 1
+    },
+    "TeachingTipBackgroundBrush": {
+      "kind": "solid",
+      "color": "#282828FF",
+      "opacity": 1
+    },
+    "TeachingTipBorderBrush": {
+      "kind": "solid",
+      "color": "#75757566",
+      "opacity": 1
+    },
+    "TeachingTipForegroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    }
+  }
+}

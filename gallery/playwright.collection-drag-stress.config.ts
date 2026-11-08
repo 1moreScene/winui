@@ -1,0 +1,2 @@
+import{collectionEvidencePrefix as evidencePrefix}from'./collection-validation-paths';
+import{defineConfig}from'@playwright/test';import base from'./playwright.collections-advanced.config';export default defineConfig({...base,testMatch:'**/collection-drag-stress.spec.ts',outputDir:`../out/${evidencePrefix}-drag-stress-${process.env.PW_CHANNEL??'chrome'}`,reporter:[['list'],['json',{outputFile:`../out/${evidencePrefix}-drop-${process.env.PW_CHANNEL??'chrome'}-results.json`}]]});

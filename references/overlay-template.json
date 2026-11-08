@@ -1,0 +1,2401 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sources": [
+    {
+      "upstream": "controls/dev/CommonStyles/FlyoutPresenter_themeresources.xaml",
+      "local": "references/winui/FlyoutPresenter_themeresources.xaml",
+      "sha256": "c672e5a34069778113d37aea762dcfbf6f4ce3708aee719552dc844bbf231645"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/MenuFlyout_themeresources.xaml",
+      "local": "references/winui/MenuFlyout_themeresources.xaml",
+      "sha256": "df415aea23e56a4af583f1a1875898a9965a9e48141b4af12fae1e3a6337e68f"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/Slider_themeresources.xaml",
+      "local": "references/winui/Slider_themeresources.xaml",
+      "sha256": "e4f9a29fa4cbdaa73838bbc9730487c54e83198860464ef10ca8197a7e3cc920"
+    },
+    {
+      "upstream": "controls/dev/CommonStyles/ToolTip_themeresources.xaml",
+      "local": "references/winui/ToolTip_themeresources.xaml",
+      "sha256": "6d8eebbc00d9cf2ffba4a11465ae9d99a06736fb5317fd0d362246304e61b572"
+    },
+    {
+      "upstream": "dxaml/xcp/components/controls/KeyDownUp/inc/SliderKeyProcess.h",
+      "local": "references/winui/SliderKeyProcess.h",
+      "sha256": "7f26c2537adeeaed2290b82257bb09da7ee249463a6386d707571d6298e14ba8"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/FlyoutBase_partial.cpp",
+      "local": "references/winui/FlyoutBase_partial.cpp",
+      "sha256": "28d891aba3a0d684e8825088f8aef442fdd66421cce9a21dfcd1b2b68f487402"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/FlyoutPresenter_partial.cpp",
+      "local": "references/winui/FlyoutPresenter_partial.cpp",
+      "sha256": "a1ee58eb1807e1bf11ef6b1333576883a9aa3ff77c80873554c268239d4ad9df"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/Flyout_partial.cpp",
+      "local": "references/winui/Flyout_partial.cpp",
+      "sha256": "b18dd93afd43000aa650797acd77368aec6dc682f282b344e9a2123b4a2a26fe"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/MenuFlyoutItem_Partial.cpp",
+      "local": "references/winui/MenuFlyoutItem_Partial.cpp",
+      "sha256": "1ee6987ce8db9c0813ecb4338af742bf1615f8bb8d4e02887c0af50ecef25365"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/MenuFlyoutPresenter_Partial.cpp",
+      "local": "references/winui/MenuFlyoutPresenter_Partial.cpp",
+      "sha256": "1f19f5edbbabf441d234a2cbf41f3c30685a3790318cfded7668ff94397331ec"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/MenuFlyoutSubItem_Partial.cpp",
+      "local": "references/winui/MenuFlyoutSubItem_Partial.cpp",
+      "sha256": "4425c583f4875cc60c41e9b218ee1f5d8b6b9e4a8000ff7609d884e1a129450a"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/MenuFlyout_Partial.cpp",
+      "local": "references/winui/MenuFlyout_Partial.cpp",
+      "sha256": "4b325125f0137a748549c5ac62eeb271d1fbb6563f4faf15e98e97fe3ef8fba3"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/Slider_Partial.cpp",
+      "local": "references/winui/Slider_Partial.cpp",
+      "sha256": "616215931e6af78767a344140089603da006470074d89941fc76a3a701562da4"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/Slider_Partial.h",
+      "local": "references/winui/Slider_Partial.h",
+      "sha256": "a4a019ab2fe550dac3b0636ea7290ccb88a3695e5d4a595a8c1629ddc58e77c9"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ToggleMenuFlyoutItem_Partial.cpp",
+      "local": "references/winui/ToggleMenuFlyoutItem_Partial.cpp",
+      "sha256": "9e8749b9cfe89880bd0cf395a0090eecfb0f3afa1acc93a112cd14678fba3f90"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ToolTipService_Partial.cpp",
+      "local": "references/winui/ToolTipService_Partial.cpp",
+      "sha256": "3a704c8cf4c5e6d44e0a89d72b17b420e6d7bdebddc08bd6d61013825d1810b8"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ToolTipService_Partial.h",
+      "local": "references/winui/ToolTipService_Partial.h",
+      "sha256": "46bd8773c9a05706520e1ad3bc346cfe51cf073b7bdba2b110af35d36bf041be"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ToolTip_Partial.cpp",
+      "local": "references/winui/ToolTip_Partial.cpp",
+      "sha256": "2fae2b3a51e8fa6204968f70f15b8ffdeffac992f20d9e7c897b37b46b76a237"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ToolTip_Partial.h",
+      "local": "references/winui/ToolTip_Partial.h",
+      "sha256": "298174e3866724419b2f5ae4e83ded3005136d49ff25e93d69e91fc56b8047cd"
+    },
+    {
+      "upstream": "dxaml/xcp/core/core/elements/Popup.cpp",
+      "local": "references/winui/Popup.cpp",
+      "sha256": "1b8f69ef48c08888b0eb3f97cd035f449ed98971db7e1d6c2409c87ca70eccfb"
+    },
+    {
+      "upstream": "dxaml/xcp/components/graphics/ThemeShadow.cpp",
+      "local": "references/winui/ThemeShadow.cpp",
+      "sha256": "3767d3025785d3132cda1d2131540e4892761baf886ee0f7b3c8da93cc7469fa"
+    },
+    {
+      "upstream": "dxaml/xcp/components/graphics/inc/DropShadowRecipe.h",
+      "local": "references/winui/DropShadowRecipe.h",
+      "sha256": "0311c308b1178eac7f9c512c03a08aec0c1c7c23ed15537241bb93509bc9dbee"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/LayoutTransition_partial.cpp",
+      "local": "references/winui/LayoutTransition_partial.cpp",
+      "sha256": "30f3a15a4c5b7cb30f76bbc44aa413ee8068d6fa5108b18c072a02822bddf49a"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/MenuPopupThemeTransition_Partial.h",
+      "local": "references/winui/MenuPopupThemeTransition_Partial.h",
+      "sha256": "35c269a5a3eb839a514ee38eba8d28693df2b2d62f6e7e19bb11a2912555dca5"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/ThemeGenerator.cpp",
+      "local": "references/winui/ThemeGenerator.cpp",
+      "sha256": "b321ed953d02f9f1951bf5d4530bf2a1997381d629b3460e26ea8e8ecf9a94a5"
+    },
+    {
+      "upstream": "dxaml/xcp/components/comptree/HWCompNodeWinRT.cpp",
+      "local": "references/winui/HWCompNodeWinRT.cpp",
+      "sha256": "f15bf49f1ca03f61f37290f9039f3faeadd43e19953f77cdd6d2f59d8ccb20c1"
+    },
+    {
+      "upstream": "dxaml/xcp/dxaml/lib/MenuFlyoutItemBase_Partial.cpp",
+      "local": "references/winui/MenuFlyoutItemBase_Partial.cpp",
+      "sha256": "48f19a6e59dfe0a6300ad6e66cff01994ef8e00d5eb93bd7d27be004c6b1b413"
+    }
+  ],
+  "metrics": {
+    "Shared": {
+      "FlyoutContentPadding": "16,15,16,17",
+      "MenuFlyoutSeparatorHeight": "1",
+      "MenuFlyoutPresenterThemePadding": "0,2,0,2",
+      "MenuFlyoutThemeMinHeight": "32",
+      "MenuFlyoutItemChevronMargin": "24,0,0,-1",
+      "MenuFlyoutSeparatorThemePadding": "-4,1,-4,1",
+      "MenuFlyoutItemMargin": "4,2,4,2",
+      "MenuFlyoutItemThemePadding": "11,8,11,9",
+      "MenuFlyoutItemThemePaddingNarrow": "11,4,11,5",
+      "SplitMenuFlyoutItemSeparatorHeight": "18",
+      "SplitMenuFlyoutItemChevronButtonWidth": "38",
+      "SliderTopHeaderMargin": "0,0,0,4",
+      "SliderTrackCornerRadius": "2",
+      "SliderThumbCornerRadius": "10",
+      "SliderPreContentMargin": "14",
+      "SliderPostContentMargin": "14",
+      "SliderInnerThumbHeight": "12",
+      "SliderHorizontalHeight": "32",
+      "SliderVerticalWidth": "32",
+      "SliderHorizontalThumbWidth": "18",
+      "SliderHorizontalThumbHeight": "18",
+      "SliderVerticalThumbWidth": "18",
+      "SliderVerticalThumbHeight": "18",
+      "SliderInnerThumbWidth": "12",
+      "ToolTipBorderPadding": "9,6,9,8",
+      "ToolTipMaxWidth": "320"
+    },
+    "Default": {
+      "FlyoutBorderThemeThickness": "1",
+      "MenuFlyoutPresenterBorderThemeThickness": "1",
+      "MenuFlyoutItemBorderThickness": "0",
+      "MenuFlyoutSubItemBorderThickness": "0",
+      "MenuFlyoutItemPlaceholderThemeThickness": "28,0,0,0",
+      "MenuFlyoutItemDoublePlaceholderThemeThickness": "56,0,0,0",
+      "MenuFlyoutItemRevealBorderThickness": "1",
+      "ToggleMenuFlyoutItemRevealBorderThickness": "1",
+      "MenuFlyoutSubItemRevealBorderThickness": "1",
+      "SliderOutsideTickBarThemeHeight": "4",
+      "SliderTrackThemeHeight": "4",
+      "SliderBorderThemeThickness": "0",
+      "SliderHeaderThemeMargin": "0,0,0,4",
+      "ToolTipContentThemeFontSize": "12",
+      "ToolTipBorderThemeThickness": "1"
+    },
+    "HighContrast": {
+      "FlyoutBorderThemeThickness": "2",
+      "MenuFlyoutPresenterBorderThemeThickness": "2",
+      "MenuFlyoutItemBorderThickness": "0",
+      "MenuFlyoutSubItemBorderThickness": "0",
+      "MenuFlyoutItemPlaceholderThemeThickness": "28,0,0,0",
+      "MenuFlyoutItemDoublePlaceholderThemeThickness": "56,0,0,0",
+      "MenuFlyoutItemRevealBorderThickness": "1",
+      "ToggleMenuFlyoutItemRevealBorderThickness": "1",
+      "MenuFlyoutSubItemRevealBorderThickness": "1",
+      "SliderOutsideTickBarThemeHeight": "4",
+      "SliderTrackThemeHeight": "2",
+      "SliderBorderThemeThickness": "1",
+      "SliderHeaderThemeMargin": "0,0,0,4",
+      "ToolTipContentThemeFontSize": "12",
+      "ToolTipBorderThemeThickness": "1"
+    },
+    "Light": {
+      "FlyoutBorderThemeThickness": "1",
+      "MenuFlyoutPresenterBorderThemeThickness": "1",
+      "MenuFlyoutItemBorderThickness": "0",
+      "MenuFlyoutSubItemBorderThickness": "0",
+      "MenuFlyoutItemPlaceholderThemeThickness": "28,0,0,0",
+      "MenuFlyoutItemDoublePlaceholderThemeThickness": "56,0,0,0",
+      "MenuFlyoutItemRevealBorderThickness": "1",
+      "ToggleMenuFlyoutItemRevealBorderThickness": "1",
+      "MenuFlyoutSubItemRevealBorderThickness": "1",
+      "SliderOutsideTickBarThemeHeight": "4",
+      "SliderTrackThemeHeight": "4",
+      "SliderBorderThemeThickness": "0",
+      "SliderHeaderThemeMargin": "0,0,0,4",
+      "ToolTipContentThemeFontSize": "12",
+      "ToolTipBorderThemeThickness": "1"
+    }
+  },
+  "aliases": {
+    "Default": {
+      "FlyoutPresenterBackground": "AcrylicInAppFillColorDefaultBrush",
+      "FlyoutBorderThemeBrush": "SurfaceStrokeColorFlyoutBrush",
+      "MenuFlyoutSeparatorBackground": "DividerStrokeColorDefaultBrush",
+      "MenuFlyoutItemBackground": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "MenuFlyoutItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "MenuFlyoutItemBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemBackgroundBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemForeground": "TextFillColorPrimaryBrush",
+      "MenuFlyoutItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "MenuFlyoutItemForegroundPressed": "TextFillColorPrimaryBrush",
+      "MenuFlyoutItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutSubItemBackground": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "MenuFlyoutSubItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "MenuFlyoutSubItemBackgroundSubMenuOpened": "SubtleFillColorSecondaryBrush",
+      "MenuFlyoutSubItemBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemBackgroundBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemForeground": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundPressed": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundSubMenuOpened": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutSubItemChevron": "TextFillColorSecondaryBrush",
+      "MenuFlyoutSubItemChevronPointerOver": "TextFillColorSecondaryBrush",
+      "MenuFlyoutSubItemChevronPressed": "TextFillColorTertiaryBrush",
+      "MenuFlyoutSubItemChevronSubMenuOpened": "TextFillColorSecondaryBrush",
+      "MenuFlyoutSubItemChevronDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForeground": "TextFillColorSecondaryBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": "TextFillColorSecondaryBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForeground": "TextFillColorSecondaryBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": "TextFillColorSecondaryBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": "TextFillColorDisabledBrush",
+      "SplitMenuFlyoutItemButtonDividerBrush": "DividerStrokeColorDefaultBrush",
+      "MenuFlyoutPresenterBackground": "DesktopAcrylicTransparentBrush",
+      "MenuFlyoutPresenterBorderBrush": "SurfaceStrokeColorFlyoutBrush",
+      "MenuFlyoutLightDismissOverlayBackground": "SystemControlPageBackgroundMediumAltMediumBrush",
+      "MenuFlyoutItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundPressed": "SystemControlHighlightListMediumRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemRevealBorderBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutItemRevealBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundPressed": "SystemControlHighlightListMediumRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrush": "SubtleFillColorTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundPressed": "SystemControlHighlightAccentRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemRevealBorderBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "SliderContainerBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundPressed": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundDisabled": "ControlFillColorTransparent",
+      "SliderThumbBackground": "AccentFillColorDefaultBrush",
+      "SliderThumbBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderThumbBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SliderThumbBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "SliderThumbBorderBrush": "ControlElevationBorderBrush",
+      "SliderOuterThumbBackground": "ControlSolidFillColorDefaultBrush",
+      "SliderTrackFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPressed": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderTrackValueFill": "AccentFillColorDefaultBrush",
+      "SliderTrackValueFillPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderTrackValueFillPressed": "AccentFillColorTertiaryBrush",
+      "SliderTrackValueFillDisabled": "AccentFillColorDisabledBrush",
+      "SliderHeaderForeground": "TextFillColorPrimaryBrush",
+      "SliderHeaderForegroundDisabled": "TextFillColorDisabledBrush",
+      "SliderTickBarFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTickBarFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderInlineTickBarFill": "ControlFillColorInputActiveBrush",
+      "ToolTipForeground": "TextFillColorPrimaryBrush",
+      "ToolTipBackground": "SystemControlBackgroundChromeMediumLowBrush",
+      "ToolTipBorderBrush": "SurfaceStrokeColorFlyoutBrush",
+      "ToolTipForegroundBrush": "TextFillColorPrimaryBrush",
+      "ToolTipBackgroundBrush": "AcrylicInAppFillColorDefaultBrush"
+    },
+    "HighContrast": {
+      "FlyoutPresenterBackground": "SystemColorWindowColorBrush",
+      "FlyoutBorderThemeBrush": "SystemColorWindowTextColorBrush",
+      "MenuFlyoutSeparatorBackground": "SystemColorWindowTextColorBrush",
+      "MenuFlyoutItemBackground": "SystemControlTransparentBrush",
+      "MenuFlyoutItemBackgroundPointerOver": "SystemColorHighlightColorBrush",
+      "MenuFlyoutItemBackgroundPressed": "SystemColorHighlightColorBrush",
+      "MenuFlyoutItemBackgroundDisabled": "SystemControlTransparentBrush",
+      "MenuFlyoutItemBackgroundBrush": "SystemControlTransparentBrush",
+      "MenuFlyoutItemForeground": "SystemColorButtonTextColorBrush",
+      "MenuFlyoutItemForegroundPointerOver": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutItemForegroundPressed": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutItemForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "MenuFlyoutSubItemBackground": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemBackgroundPointerOver": "SystemColorHighlightColorBrush",
+      "MenuFlyoutSubItemBackgroundPressed": "SystemColorHighlightColorBrush",
+      "MenuFlyoutSubItemBackgroundSubMenuOpened": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemBackgroundDisabled": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemBackgroundBrush": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemForeground": "SystemColorButtonTextColorBrush",
+      "MenuFlyoutSubItemForegroundPointerOver": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutSubItemForegroundPressed": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutSubItemForegroundSubMenuOpened": "SystemColorHighlightColorBrush",
+      "MenuFlyoutSubItemForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "MenuFlyoutSubItemChevron": "SystemColorButtonTextColorBrush",
+      "MenuFlyoutSubItemChevronPointerOver": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutSubItemChevronPressed": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutSubItemChevronSubMenuOpened": "SystemColorHighlightColorBrush",
+      "MenuFlyoutSubItemChevronDisabled": "SystemColorGrayTextColorBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForeground": "SystemColorWindowTextColorBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": "SystemColorHighlightTextColorBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForeground": "SystemColorWindowTextColorBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": "SystemColorHighlightTextColorBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": "SystemColorHighlightTextColorBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": "SystemColorGrayTextColorBrush",
+      "SplitMenuFlyoutItemButtonDividerBrush": "SystemColorWindowTextColorBrush",
+      "MenuFlyoutPresenterBackground": "SystemColorWindowColorBrush",
+      "MenuFlyoutPresenterBorderBrush": "SystemColorWindowTextColorBrush",
+      "MenuFlyoutLightDismissOverlayBackground": "SystemControlPageBackgroundMediumAltMediumBrush",
+      "MenuFlyoutItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundPressed": "SystemControlHighlightListMediumRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundDisabled": "SystemControlTransparentBrush",
+      "MenuFlyoutItemRevealBorderBrush": "SystemControlTransparentBrush",
+      "MenuFlyoutItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutItemRevealBorderBrushDisabled": "SystemControlTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundPressed": "SystemControlHighlightListMediumRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundDisabled": "SystemControlTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrush": "SystemControlTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushDisabled": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundPressed": "SystemControlHighlightAccentRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundDisabled": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemRevealBorderBrush": "SystemControlTransparentBrush",
+      "MenuFlyoutSubItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushDisabled": "SystemControlTransparentBrush",
+      "SliderContainerBackground": "SystemControlTransparentBrush",
+      "SliderContainerBackgroundPointerOver": "SystemControlTransparentBrush",
+      "SliderContainerBackgroundPressed": "SystemControlTransparentBrush",
+      "SliderContainerBackgroundDisabled": "SystemControlTransparentBrush",
+      "SliderThumbBackground": "SystemControlForegroundAccentBrush",
+      "SliderThumbBackgroundPointerOver": "SystemColorHighlightColorBrush",
+      "SliderThumbBackgroundPressed": "SystemColorHotlightColorBrush",
+      "SliderThumbBackgroundDisabled": "SystemControlDisabledChromeDisabledHighBrush",
+      "SliderThumbBorderBrush": "SystemControlForegroundAccentBrush",
+      "SliderOuterThumbBackground": "SystemControlForegroundAccentBrush",
+      "SliderTrackFill": "SystemControlForegroundBaseMediumLowBrush",
+      "SliderTrackFillPointerOver": "SystemControlForegroundBaseMediumBrush",
+      "SliderTrackFillPressed": "SystemControlForegroundBaseMediumLowBrush",
+      "SliderTrackFillDisabled": "SystemControlDisabledChromeDisabledHighBrush",
+      "SliderTrackValueFill": "SystemControlHighlightAccentBrush",
+      "SliderTrackValueFillPointerOver": "SystemControlHighlightAccentBrush",
+      "SliderTrackValueFillPressed": "SystemControlHighlightAccentBrush",
+      "SliderTrackValueFillDisabled": "SystemControlDisabledChromeDisabledHighBrush",
+      "SliderHeaderForeground": "SystemControlForegroundBaseHighBrush",
+      "SliderHeaderForegroundDisabled": "SystemControlDisabledBaseMediumLowBrush",
+      "SliderTickBarFill": "SystemControlForegroundBaseMediumLowBrush",
+      "SliderInlineTickBarFill": "SystemControlBackgroundAltHighBrush",
+      "ToolTipForeground": "SystemControlForegroundBaseHighBrush",
+      "ToolTipBackground": "SystemControlBackgroundChromeMediumLowBrush",
+      "ToolTipBorderBrush": "SystemColorWindowTextColorBrush",
+      "ToolTipForegroundBrush": "SystemColorWindowTextColorBrush",
+      "ToolTipBackgroundBrush": "SystemColorWindowColorBrush"
+    },
+    "Light": {
+      "FlyoutPresenterBackground": "AcrylicInAppFillColorDefaultBrush",
+      "FlyoutBorderThemeBrush": "SurfaceStrokeColorFlyoutBrush",
+      "MenuFlyoutSeparatorBackground": "DividerStrokeColorDefaultBrush",
+      "MenuFlyoutItemBackground": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "MenuFlyoutItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "MenuFlyoutItemBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemBackgroundBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemForeground": "TextFillColorPrimaryBrush",
+      "MenuFlyoutItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "MenuFlyoutItemForegroundPressed": "TextFillColorPrimaryBrush",
+      "MenuFlyoutItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutSubItemBackground": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "MenuFlyoutSubItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "MenuFlyoutSubItemBackgroundSubMenuOpened": "SubtleFillColorSecondaryBrush",
+      "MenuFlyoutSubItemBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemBackgroundBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemForeground": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundPressed": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundSubMenuOpened": "TextFillColorPrimaryBrush",
+      "MenuFlyoutSubItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutSubItemChevron": "TextFillColorSecondaryBrush",
+      "MenuFlyoutSubItemChevronPointerOver": "TextFillColorSecondaryBrush",
+      "MenuFlyoutSubItemChevronPressed": "TextFillColorTertiaryBrush",
+      "MenuFlyoutSubItemChevronSubMenuOpened": "TextFillColorSecondaryBrush",
+      "MenuFlyoutSubItemChevronDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForeground": "TextFillColorSecondaryBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": "TextFillColorSecondaryBrush",
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": "TextFillColorDisabledBrush",
+      "SplitMenuFlyoutItemButtonDividerBrush": "DividerStrokeColorDefaultBrush",
+      "MenuFlyoutPresenterBackground": "DesktopAcrylicTransparentBrush",
+      "MenuFlyoutPresenterBorderBrush": "SurfaceStrokeColorFlyoutBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForeground": "TextFillColorSecondaryBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": "TextFillColorSecondaryBrush",
+      "ToggleMenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": "TextFillColorDisabledBrush",
+      "MenuFlyoutLightDismissOverlayBackground": "SystemControlPageBackgroundMediumAltMediumBrush",
+      "MenuFlyoutItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundPressed": "SystemControlHighlightListMediumRevealBackgroundBrush",
+      "MenuFlyoutItemRevealBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemRevealBorderBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutItemRevealBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundPressed": "SystemControlHighlightListMediumRevealBackgroundBrush",
+      "ToggleMenuFlyoutItemRevealBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrush": "SubtleFillColorTransparentBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "ToggleMenuFlyoutItemRevealBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemRevealBackground": "SystemControlTransparentRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundPointerOver": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundPressed": "SystemControlHighlightAccentRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": "SystemControlHighlightListLowRevealBackgroundBrush",
+      "MenuFlyoutSubItemRevealBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemRevealBorderBrush": "SubtleFillColorTransparentBrush",
+      "MenuFlyoutSubItemRevealBorderBrushPressed": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushPointerOver": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": "SystemControlTransparentRevealBorderBrush",
+      "MenuFlyoutSubItemRevealBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "SliderContainerBackground": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundPressed": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "SliderThumbBackground": "AccentFillColorDefaultBrush",
+      "SliderThumbBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderThumbBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SliderThumbBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "SliderThumbBorderBrush": "ControlElevationBorderBrush",
+      "SliderOuterThumbBackground": "ControlSolidFillColorDefaultBrush",
+      "SliderTrackFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPressed": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderTrackValueFill": "AccentFillColorDefaultBrush",
+      "SliderTrackValueFillPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderTrackValueFillPressed": "AccentFillColorTertiaryBrush",
+      "SliderTrackValueFillDisabled": "AccentFillColorDisabledBrush",
+      "SliderHeaderForeground": "TextFillColorPrimaryBrush",
+      "SliderHeaderForegroundDisabled": "TextFillColorDisabledBrush",
+      "SliderTickBarFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTickBarFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderInlineTickBarFill": "ControlFillColorInputActiveBrush",
+      "ToolTipForeground": "TextFillColorPrimaryBrush",
+      "ToolTipBackground": "SystemControlBackgroundChromeMediumLowBrush",
+      "ToolTipBorderBrush": "SurfaceStrokeColorFlyoutBrush",
+      "ToolTipForegroundBrush": "TextFillColorPrimaryBrush",
+      "ToolTipBackgroundBrush": "AcrylicInAppFillColorDefaultBrush"
+    },
+    "Shared": {
+      "MenuFlyoutSystemBackdrop": "AcrylicBackgroundFillColorDefaultBackdrop"
+    }
+  },
+  "styles": {
+    "DefaultFlyoutPresenterStyle": {
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Stretch",
+      "IsTabStop": "False",
+      "Background": "{ThemeResource FlyoutPresenterBackground}",
+      "BorderBrush": "{ThemeResource FlyoutBorderThemeBrush}",
+      "BorderThickness": "{ThemeResource FlyoutBorderThemeThickness}",
+      "Padding": "{StaticResource FlyoutContentPadding}",
+      "MinWidth": "{ThemeResource FlyoutThemeMinWidth}",
+      "MaxWidth": "{ThemeResource FlyoutThemeMaxWidth}",
+      "MinHeight": "{ThemeResource FlyoutThemeMinHeight}",
+      "MaxHeight": "{ThemeResource FlyoutThemeMaxHeight}",
+      "ScrollViewer.HorizontalScrollMode": "Auto",
+      "ScrollViewer.HorizontalScrollBarVisibility": "Auto",
+      "ScrollViewer.VerticalScrollMode": "Auto",
+      "ScrollViewer.VerticalScrollBarVisibility": "Auto",
+      "ScrollViewer.ZoomMode": "Disabled",
+      "CornerRadius": "{ThemeResource OverlayCornerRadius}"
+    },
+    "DefaultMenuFlyoutPresenterStyle": {
+      "SystemBackdrop": "{StaticResource MenuFlyoutSystemBackdrop}",
+      "Background": "{ThemeResource MenuFlyoutPresenterBackground}",
+      "BorderBrush": "{ThemeResource MenuFlyoutPresenterBorderBrush}",
+      "BorderThickness": "{ThemeResource MenuFlyoutPresenterBorderThemeThickness}",
+      "Padding": "{StaticResource MenuFlyoutPresenterThemePadding}",
+      "ScrollViewer.HorizontalScrollMode": "Disabled",
+      "ScrollViewer.HorizontalScrollBarVisibility": "Disabled",
+      "ScrollViewer.VerticalScrollMode": "Auto",
+      "ScrollViewer.VerticalScrollBarVisibility": "Auto",
+      "ScrollViewer.IsHorizontalRailEnabled": "False",
+      "ScrollViewer.IsVerticalRailEnabled": "False",
+      "ScrollViewer.ZoomMode": "Disabled",
+      "MinWidth": "{ThemeResource FlyoutThemeMinWidth}",
+      "MinHeight": "{StaticResource MenuFlyoutThemeMinHeight}",
+      "CornerRadius": "{ThemeResource OverlayCornerRadius}"
+    },
+    "DefaultMenuFlyoutItemStyle": {
+      "Background": "{ThemeResource MenuFlyoutItemBackground}",
+      "BorderBrush": "{ThemeResource MenuFlyoutItemBackgroundBrush}",
+      "BorderThickness": "{ThemeResource MenuFlyoutItemBorderThickness}",
+      "Foreground": "{ThemeResource MenuFlyoutItemForeground}",
+      "Padding": "{StaticResource MenuFlyoutItemThemePadding}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "KeyboardAcceleratorPlacementMode": "Hidden",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}"
+    },
+    "DefaultToggleMenuFlyoutItemStyle": {
+      "Background": "Transparent",
+      "BorderBrush": "{ThemeResource MenuFlyoutItemBackgroundBrush}",
+      "BorderThickness": "{ThemeResource MenuFlyoutItemBorderThickness}",
+      "Foreground": "{ThemeResource MenuFlyoutItemForeground}",
+      "Padding": "{StaticResource MenuFlyoutItemThemePadding}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "True",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}"
+    },
+    "DefaultSplitMenuFlyoutItemStyle": {
+      "UseSystemFocusVisuals": "False"
+    },
+    "DefaultMenuFlyoutSubItemStyle": {
+      "Background": "{ThemeResource MenuFlyoutSubItemBackground}",
+      "BorderBrush": "{ThemeResource MenuFlyoutSubItemBackgroundBrush}",
+      "BorderThickness": "{ThemeResource MenuFlyoutSubItemBorderThickness}",
+      "Foreground": "{ThemeResource MenuFlyoutSubItemForeground}",
+      "Padding": "{StaticResource MenuFlyoutItemThemePadding}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}"
+    },
+    "MenuFlyoutItemRevealStyle": {
+      "Background": "{ThemeResource MenuFlyoutItemRevealBackground}",
+      "BorderBrush": "{ThemeResource MenuFlyoutItemRevealBorderBrush}",
+      "BorderThickness": "{ThemeResource MenuFlyoutItemRevealBorderThickness}",
+      "Foreground": "{ThemeResource MenuFlyoutItemForeground}",
+      "Padding": "{StaticResource MenuFlyoutItemThemePadding}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "KeyboardAcceleratorPlacementMode": "Hidden"
+    },
+    "ToggleMenuFlyoutItemRevealStyle": {
+      "Background": "{ThemeResource ToggleMenuFlyoutItemRevealBackground}",
+      "BorderBrush": "{ThemeResource ToggleMenuFlyoutItemRevealBorderBrush}",
+      "BorderThickness": "{ThemeResource ToggleMenuFlyoutItemRevealBorderThickness}",
+      "Foreground": "{ThemeResource ToggleMenuFlyoutItemForeground}",
+      "Padding": "{StaticResource MenuFlyoutItemThemePadding}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}"
+    },
+    "MenuFlyoutSubItemRevealStyle": {
+      "Background": "{ThemeResource MenuFlyoutSubItemRevealBackground}",
+      "BorderBrush": "{ThemeResource MenuFlyoutSubItemRevealBorderBrush}",
+      "BorderThickness": "{ThemeResource MenuFlyoutSubItemRevealBorderThickness}",
+      "Foreground": "{ThemeResource MenuFlyoutSubItemForeground}",
+      "Padding": "{StaticResource MenuFlyoutItemThemePadding}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "HorizontalContentAlignment": "Stretch",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}"
+    },
+    "DefaultSliderStyle": {
+      "Background": "{ThemeResource SliderTrackFill}",
+      "BorderThickness": "{ThemeResource SliderBorderThemeThickness}",
+      "BorderBrush": "{ThemeResource SliderThumbBorderBrush}",
+      "Foreground": "{ThemeResource SliderTrackValueFill}",
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+      "ManipulationMode": "None",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "FocusVisualMargin": "-7,0,-7,0",
+      "IsFocusEngagementEnabled": "True",
+      "CornerRadius": "{ThemeResource SliderTrackCornerRadius}"
+    },
+    "DefaultToolTipStyle": {
+      "Foreground": "{ThemeResource ToolTipForegroundBrush}",
+      "Background": "{ThemeResource ToolTipBackgroundBrush}",
+      "BackgroundSizing": "InnerBorderEdge",
+      "BorderBrush": "{ThemeResource ToolTipBorderBrush}",
+      "BorderThickness": "{ThemeResource ToolTipBorderThemeThickness}",
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontSize": "{ThemeResource ToolTipContentThemeFontSize}",
+      "Padding": "{StaticResource ToolTipBorderPadding}",
+      "MaxWidth": "{StaticResource ToolTipMaxWidth}",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}"
+    }
+  },
+  "toolTipService": {
+    "BETWEEN_SHOW_DELAY_MS": 200,
+    "DEFAULT_SPI_GETMOUSEHOVERTIME": 400,
+    "DEFAULT_SHOW_DURATION_SECONDS": 5
+  },
+  "palettes": {
+    "Light": {
+      "FlyoutPresenterBackground": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "FlyoutBorderThemeBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "MenuFlyoutSeparatorBackground": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundPressed": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundPressed": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevron": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronPointerOver": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronPressed": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronSubMenuOpened": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForeground": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "MenuFlyoutPresenterBackground": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "MenuFlyoutPresenterBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "MenuFlyoutLightDismissOverlayBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF99",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundPressed": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderThumbBackground": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "SliderThumbBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "SliderThumbBackgroundPressed": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "SliderThumbBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "SliderThumbBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000029"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "SliderOuterThumbBackground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SliderTrackFill": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "SliderTrackFillPointerOver": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "SliderTrackFillPressed": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "SliderTrackFillDisabled": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1
+      },
+      "SliderTrackValueFill": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "SliderTrackValueFillPointerOver": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "SliderTrackValueFillPressed": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "SliderTrackValueFillDisabled": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "SliderHeaderForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "SliderHeaderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "SliderTickBarFill": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "SliderTickBarFillDisabled": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1
+      },
+      "SliderInlineTickBarFill": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ToolTipForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ToolTipBackground": {
+        "kind": "solid",
+        "color": "#F2F2F2FF",
+        "opacity": 1
+      },
+      "ToolTipBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ToolTipForegroundBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ToolTipBackgroundBrush": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      }
+    },
+    "Dark": {
+      "FlyoutPresenterBackground": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "FlyoutBorderThemeBrush": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "MenuFlyoutSeparatorBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF15",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevron": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronSubMenuOpened": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "MenuFlyoutPresenterBackground": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "MenuFlyoutPresenterBorderBrush": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "MenuFlyoutLightDismissOverlayBackground": {
+        "kind": "solid",
+        "color": "#00000099",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF19",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF33",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF19",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundPressed": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#FFFFFF19",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SliderThumbBackground": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "SliderThumbBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "SliderThumbBackgroundPressed": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "SliderThumbBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "SliderThumbBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#FFFFFF18"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "SliderOuterThumbBackground": {
+        "kind": "solid",
+        "color": "#454545FF",
+        "opacity": 1
+      },
+      "SliderTrackFill": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "SliderTrackFillPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "SliderTrackFillPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "SliderTrackFillDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1
+      },
+      "SliderTrackValueFill": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "SliderTrackValueFillPointerOver": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "SliderTrackValueFillPressed": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "SliderTrackValueFillDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "SliderHeaderForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SliderHeaderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "SliderTickBarFill": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "SliderTickBarFillDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1
+      },
+      "SliderInlineTickBarFill": {
+        "kind": "solid",
+        "color": "#1E1E1EB3",
+        "opacity": 1
+      },
+      "ToolTipForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ToolTipBackground": {
+        "kind": "solid",
+        "color": "#2B2B2BFF",
+        "opacity": 1
+      },
+      "ToolTipBorderBrush": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "ToolTipForegroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ToolTipBackgroundBrush": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      }
+    },
+    "HighContrast": {
+      "FlyoutPresenterBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "FlyoutBorderThemeBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSeparatorBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutItemBackgroundBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemBackgroundBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevron": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronSubMenuOpened": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemChevronDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemKeyboardAcceleratorTextForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutPresenterBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutPresenterBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutLightDismissOverlayBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutItemRevealBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundSubMenuOpened": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushSubMenuOpened": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "MenuFlyoutSubItemRevealBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderContainerBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundPressed": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderContainerBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderThumbBackground": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderThumbBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderThumbBackgroundPressed": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderThumbBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderThumbBorderBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderOuterThumbBackground": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderTrackFill": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderTrackFillPointerOver": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderTrackFillPressed": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderTrackFillDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderTrackValueFill": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderTrackValueFillPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderTrackValueFillPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SliderTrackValueFillDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderHeaderForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "SliderHeaderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderTickBarFill": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SliderTickBarFillDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "SliderInlineTickBarFill": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ToolTipForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ToolTipBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ToolTipBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ToolTipForegroundBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ToolTipBackgroundBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      }
+    }
+  },
+  "nativeMetrics": [
+    {
+      "theme": "Light",
+      "kind": "Popup",
+      "bounds": {
+        "x": 500,
+        "y": 240,
+        "width": 240,
+        "height": 90.4000015258789
+      },
+      "owner": {
+        "x": 300,
+        "y": 220,
+        "width": 120,
+        "height": 32
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "ToolTip",
+      "bounds": {
+        "x": 308.79998779296875,
+        "y": 188,
+        "width": 102.4000015258789,
+        "height": 32
+      },
+      "padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "fontSize": 12,
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "Flyout",
+      "bounds": {
+        "x": 298.3999938964844,
+        "y": 163.1999969482422,
+        "width": 123.19999694824219,
+        "height": 52.79999923706055
+      },
+      "padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "minWidth": 96,
+      "maxWidth": 456,
+      "cornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      }
+    },
+    {
+      "theme": "Light",
+      "kind": "MenuFlyout",
+      "bounds": {
+        "x": 304,
+        "y": 87.19999694824219,
+        "width": 112.80000305175781,
+        "height": 128.8000030517578
+      },
+      "padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "items": [
+        {
+          "kind": "MenuFlyoutItem",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 89.5999984741211,
+            "width": 111.19999694824219,
+            "height": 40
+          },
+          "desired": [
+            92.80000305175781,
+            40
+          ]
+        },
+        {
+          "kind": "ToggleMenuFlyoutItem",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 129.60000610351562,
+            "width": 111.19999694824219,
+            "height": 40
+          },
+          "desired": [
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "kind": "MenuFlyoutSeparator",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 169.60000610351562,
+            "width": 111.19999694824219,
+            "height": 3.200000047683716
+          },
+          "desired": [
+            0,
+            3.200000047683716
+          ]
+        },
+        {
+          "kind": "MenuFlyoutItem",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 172.79998779296875,
+            "width": 111.19999694824219,
+            "height": 40
+          },
+          "desired": [
+            111.19999694824219,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Popup",
+      "bounds": {
+        "x": 500,
+        "y": 240,
+        "width": 240,
+        "height": 90.4000015258789
+      },
+      "owner": {
+        "x": 300,
+        "y": 220,
+        "width": 120,
+        "height": 32
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "ToolTip",
+      "bounds": {
+        "x": 308.79998779296875,
+        "y": 188,
+        "width": 102.4000015258789,
+        "height": 32
+      },
+      "padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "fontSize": 12,
+      "cornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "Flyout",
+      "bounds": {
+        "x": 298.3999938964844,
+        "y": 163.1999969482422,
+        "width": 123.19999694824219,
+        "height": 52.79999923706055
+      },
+      "padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "minWidth": 96,
+      "maxWidth": 456,
+      "cornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      }
+    },
+    {
+      "theme": "Dark",
+      "kind": "MenuFlyout",
+      "bounds": {
+        "x": 304,
+        "y": 87.19999694824219,
+        "width": 112.80000305175781,
+        "height": 128.8000030517578
+      },
+      "padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "items": [
+        {
+          "kind": "MenuFlyoutItem",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 89.5999984741211,
+            "width": 111.19999694824219,
+            "height": 40
+          },
+          "desired": [
+            92.80000305175781,
+            40
+          ]
+        },
+        {
+          "kind": "ToggleMenuFlyoutItem",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 129.60000610351562,
+            "width": 111.19999694824219,
+            "height": 40
+          },
+          "desired": [
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "kind": "MenuFlyoutSeparator",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 169.60000610351562,
+            "width": 111.19999694824219,
+            "height": 3.200000047683716
+          },
+          "desired": [
+            0,
+            3.200000047683716
+          ]
+        },
+        {
+          "kind": "MenuFlyoutItem",
+          "bounds": {
+            "x": 304.79998779296875,
+            "y": 172.79998779296875,
+            "width": 111.19999694824219,
+            "height": 40
+          },
+          "desired": [
+            111.19999694824219,
+            40
+          ]
+        }
+      ]
+    }
+  ],
+  "toolTipPlacement": {
+    "DEFAULT_KEYBOARD_OFFSET": 12.0,
+    "DEFAULT_MOUSE_OFFSET": 20.0,
+    "DEFAULT_TOUCH_OFFSET": 44.0
+  },
+  "presentation": {
+    "nativeTiming": {
+      "os": "Windows-11-10.0.26300-SP0",
+      "source": "ThemeGenerator.cpp / vsanimation.h / UxTheme APIs",
+      "records": {
+        "flyoutOpen": [
+          {
+            "kind": 2,
+            "delayMs": 83,
+            "durationMs": 83,
+            "flags": 2,
+            "curve": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "values": [
+              1.0,
+              0.0
+            ]
+          },
+          {
+            "kind": 0,
+            "delayMs": 0,
+            "durationMs": 367,
+            "flags": 1,
+            "curve": [
+              0.10000000149011612,
+              0.8999999761581421,
+              0.20000000298023224,
+              1.0
+            ],
+            "values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "flyoutClose": [
+          {
+            "kind": 2,
+            "delayMs": 0,
+            "durationMs": 83,
+            "flags": 0,
+            "curve": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          }
+        ],
+        "toolTipOpen": [
+          {
+            "kind": 2,
+            "delayMs": 0,
+            "durationMs": 167,
+            "flags": 0,
+            "curve": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "values": [
+              1.0,
+              0.0
+            ]
+          }
+        ],
+        "toolTipClose": [
+          {
+            "kind": 2,
+            "delayMs": 0,
+            "durationMs": 167,
+            "flags": 0,
+            "curve": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "values": [
+              0.0,
+              0.0
+            ]
+          }
+        ]
+      }
+    },
+    "entranceOffset": 50.0,
+    "menuOpenMs": 250,
+    "menuCloseMs": 83,
+    "menuCurve": [
+      0,
+      0,
+      0,
+      1
+    ],
+    "menuClosedRatio": 0.5,
+    "shadow": {
+      "flyoutTranslationZ": 32,
+      "toolTipTranslationZ": 16
+    },
+    "menuSystemBackdrop": "AcrylicBackgroundFillColorDefaultBackdrop",
+    "browserSystemBackdropRecipe": "FlyoutPresenterBackground",
+    "windowInsets": {
+      "Flyout": [
+        10.0,
+        2.0,
+        10.0,
+        18.0
+      ],
+      "CommandBarFlyout": [
+        10.0,
+        2.0,
+        10.0,
+        18.0
+      ],
+      "MenuFlyout": [
+        10.0,
+        2.0,
+        10.0,
+        18.0
+      ],
+      "ToolTip": [
+        4.0,
+        1.0,
+        4.0,
+        8.0
+      ]
+    },
+    "menuBorderScaleEnabled": false
+  },
+  "menuLayout": {
+    "itemMargin": [
+      4.0,
+      2.0,
+      4.0,
+      2.0
+    ],
+    "padding": [
+      11.0,
+      8.0,
+      11.0,
+      9.0
+    ],
+    "narrowPadding": [
+      11.0,
+      4.0,
+      11.0,
+      5.0
+    ],
+    "placeholder": 28.0,
+    "separatorPadding": [
+      -4.0,
+      1.0,
+      -4.0,
+      1.0
+    ],
+    "separatorHeight": 1.0,
+    "checkGlyph": "",
+    "checkSize": 12.0
+  }
+}

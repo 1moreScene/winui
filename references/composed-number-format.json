@@ -1,0 +1,162 @@
+{
+  "values": [
+    {
+      "value": 0.30000000000000004,
+      "text": "0.3"
+    },
+    {
+      "value": 1.234567890123,
+      "text": "1.23456789"
+    },
+    {
+      "value": 1.2345678905,
+      "text": "1.234567891"
+    },
+    {
+      "value": -1.2345678905,
+      "text": "-1.23456789"
+    },
+    {
+      "value": 1.000000000001,
+      "text": "1"
+    },
+    {
+      "value": 9999999999.9,
+      "text": "10000000000"
+    },
+    {
+      "value": 1E-09,
+      "text": "0.000000001"
+    },
+    {
+      "value": 1000000000,
+      "text": "1000000000"
+    },
+    {
+      "value": 1E+100,
+      "text": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+      "value": 1.7976931348623157E+308,
+      "text": "\u221E"
+    }
+  ],
+  "inputs": [
+    {
+      "text": "2 \u002B 3 * 4",
+      "expression": false,
+      "value": 42,
+      "display": "42"
+    },
+    {
+      "text": "1e3",
+      "expression": false,
+      "value": 42,
+      "display": "42"
+    },
+    {
+      "text": "1,234.5",
+      "expression": false,
+      "value": 1234.5,
+      "display": "1234.5"
+    },
+    {
+      "text": ".5",
+      "expression": false,
+      "value": 0.5,
+      "display": "0.5"
+    },
+    {
+      "text": "1/0",
+      "expression": false,
+      "value": 42,
+      "display": "42"
+    },
+    {
+      "text": "bad",
+      "expression": false,
+      "value": 42,
+      "display": "42"
+    },
+    {
+      "text": "",
+      "expression": false,
+      "value": null,
+      "display": ""
+    },
+    {
+      "text": "1.234567890123",
+      "expression": false,
+      "value": 1.234567890123,
+      "display": "1.23456789"
+    },
+    {
+      "text": "2 \u002B 3 * 4",
+      "expression": true,
+      "value": 14,
+      "display": "14"
+    },
+    {
+      "text": "1e3",
+      "expression": true,
+      "value": 42,
+      "display": "42"
+    },
+    {
+      "text": "1,234.5",
+      "expression": true,
+      "value": 1234.5,
+      "display": "1234.5"
+    },
+    {
+      "text": ".5",
+      "expression": true,
+      "value": 0.5,
+      "display": "0.5"
+    },
+    {
+      "text": "1/0",
+      "expression": true,
+      "value": null,
+      "display": ""
+    },
+    {
+      "text": "bad",
+      "expression": true,
+      "value": 42,
+      "display": "42"
+    },
+    {
+      "text": "",
+      "expression": true,
+      "value": null,
+      "display": ""
+    },
+    {
+      "text": "1.234567890123",
+      "expression": true,
+      "value": 1.234567890123,
+      "display": "1.23456789"
+    }
+  ],
+  "increments": [
+    {
+      "value": 2.36,
+      "text": "2.25"
+    },
+    {
+      "value": 2.375,
+      "text": "2.50"
+    },
+    {
+      "value": -2.375,
+      "text": "-2.25"
+    },
+    {
+      "value": 2.1,
+      "text": "2.00"
+    }
+  ],
+  "formatter": "Windows.Globalization.NumberFormatting.DecimalFormatter",
+  "scope": "same-SDK public Value/Text setters; invariant probe locale inherited from Windows"
+}

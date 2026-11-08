@@ -1,0 +1,347 @@
+{
+  "recordedAt": "2026-11-08T04:03:43.722Z",
+  "controls": [
+    "ItemsStackPanel",
+    "ItemsWrapGrid",
+    "VariableSizedWrapGrid",
+    "ListView",
+    "GridView"
+  ],
+  "scope": "Grouped/variable-height collection hosts; application mouse drag/drop, selection, measured add/delete/reposition timelines, incremental loading, scroll anchoring and restored official examples. See documented platform/parity limits.",
+  "gallerySamples": 16,
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sourceFiles": 30,
+  "rustPassed": 174,
+  "browserPassed": 71,
+  "browser": [
+    {
+      "path": "out/collections-5194-browser-results.json",
+      "sha256": "920f0402b4af098b7ca7cb3af4bf830202f4dd79973bd9ab45df292012273f09",
+      "logPath": "out/collections-advanced-matrix.log",
+      "logSha256": "feb2975542546c170af628c412176cb04bf1d913861bb693bbe3c5c27f7c582d",
+      "stats": {
+        "startTime": "2026-11-08T03:59:40.139Z",
+        "duration": 83607.097,
+        "expected": 10,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/collections-5194-advanced-browser-results.json",
+      "sha256": "0a63aece1d5d90e2b57b8ba8d7da8ba2b5ff9d229671c0a38cebc9067687e204",
+      "logPath": "out/collections-advanced-browser.log",
+      "logSha256": "64b89402a0796e433a45629649d203d5dc6158a70f53e37f94b325be891d3fa4",
+      "stats": {
+        "startTime": "2026-11-08T03:59:21.347Z",
+        "duration": 17880.936999999998,
+        "expected": 7,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/collections-5194-regression-browser-results.json",
+      "sha256": "a2623d6ae5db270829a364c2091015526a55ac02050f7f7b9ed8722de0dacdb1",
+      "logPath": "out/collections-advanced-regression.log",
+      "logSha256": "42e124a82def500d99ab4215e46e9d5235717ca35f0f9cc127286554c33d6672",
+      "stats": {
+        "startTime": "2026-11-08T03:48:49.642Z",
+        "duration": 143397.704,
+        "expected": 46,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/collections-5194-drop-msedge-results.json",
+      "sha256": "e550be95a56b6709c71a5931bbedfdf179460912dc83ecf7637268b95601f8cd",
+      "logPath": "out/collections-drop-edge.log",
+      "logSha256": "a5368094e56809d9f305dabf17a1f4241dce40e3b62f0b2ab18d587b9717ffdf",
+      "stats": {
+        "startTime": "2026-11-08T03:53:12.078Z",
+        "duration": 40460.191999999995,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/collections-5194-drop-chrome-results.json",
+      "sha256": "e25e660748968b47d6ee8ad7e9ee620f18ae84eba7449fd8b303a047056f7de8",
+      "logPath": "out/collections-drop-chrome.log",
+      "logSha256": "78cbfb94d549b03d0e44bf561b6da7466707205337d6bbb24354fd2c34829923",
+      "stats": {
+        "startTime": "2026-11-08T03:52:31.147Z",
+        "duration": 39851.154,
+        "expected": 4,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "images": [
+    {
+      "backend": "Canvas2D",
+      "path": "references/validation/collections-5194-Canvas2D.json",
+      "sha256": "e2b5557bb8874c8a4e4a24e60e4aee1b08ca8c4fa27d1d6d78af716998a6aeb1",
+      "wasmSha256": "3d50653d18f2c496a569129b5dd4d4063ca7eed16025145faef22837b735b4ba",
+      "dpi": 1.25,
+      "cases": 94,
+      "maxMean": 7.928898461538462,
+      "maxContainerGeometryErrorDip": 0.8000061035156243,
+      "maxGeometryErrorDip": 0.8000061035156136
+    },
+    {
+      "backend": "WebGL2",
+      "path": "references/validation/collections-5194-WebGL2.json",
+      "sha256": "b4f2dc833c46cdd86f08fb7a5d36fe53ccfa73aa508b4c996de733921b287982",
+      "wasmSha256": "3d50653d18f2c496a569129b5dd4d4063ca7eed16025145faef22837b735b4ba",
+      "dpi": 1.25,
+      "cases": 94,
+      "maxMean": 7.929969230769231,
+      "maxContainerGeometryErrorDip": 0.8000061035156243,
+      "maxGeometryErrorDip": 0.8000061035156136
+    }
+  ],
+  "grouped": {
+    "path": "references/validation/collections-5194-advanced.json",
+    "sha256": "28ab222498f142b05b1073dc69493d5257cf17af2ac7ca11dca9c75850f74fdd",
+    "backend": "Canvas2D",
+    "dpi": 1,
+    "cases": 12,
+    "maxMean": 3.03573125,
+    "maxHeaderGeometryErrorDip": 0
+  },
+  "motions": [
+    {
+      "channel": "msedge",
+      "path": "references/validation/collections-5194-cross-drop-motion-msedge.json",
+      "sha256": "f085ae3c7f2e4da00e5b2c07693e8704fd7dbcc95324f8439d9e8f0ebc9c68f6",
+      "samples": 60,
+      "hoverDelta": 50,
+      "budgetPath": "references/validation/collections-5194-drag-frame-budget-msedge.json",
+      "budgetSha256": "cab064c38f65db84e015c46827f1e7e126d2125bbe93c737b36a8e6725d7a119",
+      "budget": {
+        "propertyReads": 0,
+        "frames": 4,
+        "nodes": 14,
+        "frameP95Ms": 22.599999994039536
+      }
+    },
+    {
+      "channel": "chrome",
+      "path": "references/validation/collections-5194-cross-drop-motion-chrome.json",
+      "sha256": "1ae418740cd3db3975dfedf62f7148d00d01ac623048c64ea82308d4bd9491ab",
+      "samples": 63,
+      "hoverDelta": 50,
+      "budgetPath": "references/validation/collections-5194-drag-frame-budget-chrome.json",
+      "budgetSha256": "6eccb5e8b44d3436092c8ab10e9c0c0bcd6ad931cabc83bc0b0fa940e61d3011",
+      "budget": {
+        "propertyReads": 0,
+        "frames": 4,
+        "nodes": 14,
+        "frameP95Ms": 21.899999991059303
+      }
+    }
+  ],
+  "releaseAudit": "references/validation/collections-advanced-release-audit.json",
+  "testedRuntime": {
+    "sha256": "3d50653d18f2c496a569129b5dd4d4063ca7eed16025145faef22837b735b4ba",
+    "url": "http://127.0.0.1:5194/#list-view",
+    "binaryFiles": [
+      {
+        "path": "out/collections-5194-test-runtime/winui_bg.wasm",
+        "sha256": "3d50653d18f2c496a569129b5dd4d4063ca7eed16025145faef22837b735b4ba"
+      },
+      {
+        "path": "out/collections-5194-test-runtime/winui.js",
+        "sha256": "5fbc5e40363f7a7ca6828daa0fc9cd662dcaaed1155dfd545d8f1105ebac292e"
+      },
+      {
+        "path": "out/collections-5194-test-runtime/build-stamp.json",
+        "sha256": "45724f8da2186a4d63d39c06d502589919b7aad0db7e5a831b102cb8c6b7fc53"
+      }
+    ],
+    "applicationManifest": "out/collections-5194-app-runtime/manifest.json",
+    "matchesCurrentBinary": false,
+    "matchesDistBinary": false,
+    "currentAppDifferences": [
+      "composed-types.ts",
+      "index.ts",
+      "react.tsx",
+      "scene.ts"
+    ]
+  },
+  "acceptedPixelParity": false,
+  "acceptedStorePresentTimeParity": false,
+  "limitations": "docs/collections.md",
+  "evidence": [
+    {
+      "path": "out/collections-advanced-rust.log",
+      "sha256": "bdab939f6131bab4c7aacf56fb1f88f131dee6496f3ac0e77a5a5e313a16fa04"
+    },
+    {
+      "path": "out/collections-advanced-build.log",
+      "sha256": "7b1c432aff62a1735d2650f74ab40c9110c81253b1b1cc6fb682724cd6473b5d"
+    },
+    {
+      "path": "out/collections-advanced-clippy.log",
+      "sha256": "b298c6d41bc5de97e0556aacc5979c10ee0c3d269bb80491082278858e063634"
+    },
+    {
+      "path": "out/collections-advanced-wasm-clippy.log",
+      "sha256": "9fd101e9e939fe997bbc68a9a421ae583122fed725da4bcbc72213e88c16acca"
+    },
+    {
+      "path": "references/collections-template.json",
+      "sha256": "d1d7a746b440e54331a9269f34c6f5357c54f4819cc0d7706e19d8e73722ef10"
+    },
+    {
+      "path": "references/collections-animation-metrics.json",
+      "sha256": "416c4d65c91c14dce07fb4df31d894fdb2f542955a870443d156fbc6f023b44d"
+    },
+    {
+      "path": "references/collections-sources.json",
+      "sha256": "995c3c2e8955e5f9bde5efb195d61b9ff196a66fa780e640003b776ab9850927"
+    },
+    {
+      "path": "references/validation/collections-advanced-release-audit.json",
+      "sha256": "9e021e14f3df8f34339ebcd0400ed297aa47c678d72d286d2a4c3413a65efbc9"
+    },
+    {
+      "path": "out/collections-advanced-native/collections-advanced-metrics.json",
+      "sha256": "e946f37b610bb3ab313b228bbc387fa83f243021fa28a41f1939c39db74f395a"
+    },
+    {
+      "path": "tools/native-navigation/CollectionsAdvancedProbe.cs",
+      "sha256": "20cd12e99428fd5a18ca3c6a672c234d3f3677d85e2f39c5c41d569779f0412a"
+    },
+    {
+      "path": "tools/run-collections-advanced-probe.ps1",
+      "sha256": "45d84872af016591f6bcac50328479c6396211c3908058bf1a67218fc6647def"
+    },
+    {
+      "path": "src/scene/collections.rs",
+      "sha256": "18ad27a83d012a375a2b24a982445823555694b3b7659a4cdcb7118b7f300211"
+    },
+    {
+      "path": "src/scene/collections/adaptive.rs",
+      "sha256": "42ee6d40a7611caada2024aa47da405db33ad7ef3bf73603fefe087d0280b5a5"
+    },
+    {
+      "path": "src/scene/collections/interaction.rs",
+      "sha256": "134f0ebd1ac2b969a2ced1a75c79347c3bc258cbac9b818c15e838064d0ade9a"
+    },
+    {
+      "path": "src/scene/collections/transitions.rs",
+      "sha256": "21b4d2c050ab117b0c554f97278eba6fd1f1ccbc2a367b9e47470a9e5a556f0a"
+    },
+    {
+      "path": "src/scene/input.rs",
+      "sha256": "6e75065e22530496ce5ebbec6878dbe0116b981cb442cef02ad22c92548c4bde"
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "sha256": "650e7ef6330403ffdb9539850a903a2c21da3502d59f38782f706b31b4c65a3b"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "923e21174dfe519b560717cc19e8f534aa2b8d704ec615e2adde99f6345bca06"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "5defb970476d2ba20d58c54868c33b37baf129762792f1c1808d976e0c44f89d"
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "sha256": "7ff81c719020f51f8dc52f8b4f792e3a86cef24538cecd3dd596a02af2cdda86"
+    },
+    {
+      "path": "src/wasm.rs",
+      "sha256": "783fb674743bf5b1cca2fd94f392921eefbc40b1c95a09b2b5cd758bec5438e8"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "58a9c857e1b109661c5ea7cf7b4f508fbf76d67f6e4fd5801fa98554be93819a"
+    },
+    {
+      "path": "references/api-enums.json",
+      "sha256": "5c6473f9f229cc06e245bcaee84386d50c57308a083590a10dbb3ea301e4d7de"
+    },
+    {
+      "path": "src/enums.rs",
+      "sha256": "931933f732f44e18290d0a6ce203e8691f9920c07ab8ce9efb4337f2cccdba21"
+    },
+    {
+      "path": "gallery/src/enums.ts",
+      "sha256": "7fd47b5bac14b8968dbaca598eb1faf8219cf2f32a6893bc4cd5660ae1b413c5"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "9304fe5fb11025d6b1f40ba0375b518a68df274d25ceabee2f4687d1299afca0"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "9b887b9f59508f3b17ce1ab0932b1facc373108fb2404f173cb2b07c45e771b9"
+    },
+    {
+      "path": "gallery/src/CollectionsPage.tsx",
+      "sha256": "e8154b6d771be4ed18356c9a23576fbd9e7a9a242ee87567ea8563898d0233bc"
+    },
+    {
+      "path": "tests/collections.rs",
+      "sha256": "b97288c03c987e7bbbd4beb19d0618d91cedb9e828a67de35972dd636a8e524b"
+    },
+    {
+      "path": "tests/collections_advanced.rs",
+      "sha256": "b375aa98a1161ed90f5e7d590c7f80595a7b63f8d4dca909f7e83b49a640a233"
+    },
+    {
+      "path": "gallery/tests/collections-advanced.spec.ts",
+      "sha256": "a7cf70b82c35991cf0995ed1ca7b55c43d1fedea44712eb50d82a8705661290e"
+    },
+    {
+      "path": "gallery/tests/collection-drag-stress.spec.ts",
+      "sha256": "982d0478d38038deae26d4c33561ef97d13d80f76cb9b5debdba70beebd05cbe"
+    },
+    {
+      "path": "gallery/tests/collections-types.tsx",
+      "sha256": "37f1e5c902a9504a000d3b49fdf65b34e97f3ea93749e881ab6fc76f5cc771b0"
+    },
+    {
+      "path": "gallery/vite.collections-test.config.ts",
+      "sha256": "c6af1c1508c64efa8f58b2309236243f7c409e2c72e689dc820b771a1859b828"
+    },
+    {
+      "path": "out/collections-5194-app-runtime/manifest.json",
+      "sha256": "93acdc71b567608419e489cfc94ff70a0bedd31202796f8aa5092d0412346937"
+    },
+    {
+      "path": "out/collections-5194-test-runtime/winui_bg.wasm",
+      "sha256": "3d50653d18f2c496a569129b5dd4d4063ca7eed16025145faef22837b735b4ba"
+    },
+    {
+      "path": "out/collections-5194-test-runtime/winui.js",
+      "sha256": "5fbc5e40363f7a7ca6828daa0fc9cd662dcaaed1155dfd545d8f1105ebac292e"
+    },
+    {
+      "path": "out/collections-5194-test-runtime/build-stamp.json",
+      "sha256": "45724f8da2186a4d63d39c06d502589919b7aad0db7e5a831b102cb8c6b7fc53"
+    },
+    {
+      "path": "out/collections-store-advanced/grouped-sticky-scrolled.jpg",
+      "sha256": "4f15d61c4424abb38709bb55542bf68b4fb9b66b1e3bc59cfd1c9958c2c5c957"
+    },
+    {
+      "path": "out/collections-store-advanced/keyboard-reorder.jpg",
+      "sha256": "87e7552b0ed19d6a3c035e17026e10bae2eb33f5fb881252740570fac8ee3b5f"
+    }
+  ]
+}

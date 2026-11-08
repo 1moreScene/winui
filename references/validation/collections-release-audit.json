@@ -1,0 +1,80 @@
+{
+  "recordedAtUtc": "2026-11-07T19:00:25.4677141Z",
+  "package": {
+    "name": "Microsoft.WinUI3ControlsGallery",
+    "fullName": "Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe",
+    "version": "3.0.4.0",
+    "publisher": "CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US",
+    "signatureKind": "Store",
+    "isDevelopmentMode": false,
+    "location": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe"
+  },
+  "installedDependencies": [
+    "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.AI/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Base/2.0.5-experimental2",
+    "Microsoft.WindowsAppSDK.DWrite/2.1.1-experimental",
+    "Microsoft.WindowsAppSDK.Foundation/2.3.13-experimental",
+    "Microsoft.WindowsAppSDK.InteractiveExperiences/2.1.10-experimental",
+    "Microsoft.WindowsAppSDK.ML/2.3.5-experimental",
+    "Microsoft.WindowsAppSDK.Runtime/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Search/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Widgets/2.0.6-experimental",
+    "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental"
+  ],
+  "depsSha256": "be8ee82927b283a4a34ae45ca831f313e5e369b9ab9665490e55f0033964192a",
+  "binaries": [
+    {
+      "name": "Microsoft.UI.Xaml.dll",
+      "installed": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe\\Microsoft.UI.Xaml.dll",
+      "installedSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "probe": "C:\\Users\\11156\\source\\repos\\winui\\out\\collections-probe-bin\\Microsoft.UI.Xaml.dll",
+      "probeSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "identical": true
+    },
+    {
+      "name": "Microsoft.UI.Xaml.Controls.dll",
+      "installed": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe\\Microsoft.UI.Xaml.Controls.dll",
+      "installedSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013",
+      "probe": "C:\\Users\\11156\\source\\repos\\winui\\out\\collections-probe-bin\\Microsoft.UI.Xaml.Controls.dll",
+      "probeSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013",
+      "identical": true
+    }
+  ],
+  "observedWindow": {
+    "app": "Microsoft.WinUI3ControlsGallery_8wekyb3d8bbwe!App",
+    "id": 94965600,
+    "title": "WinUI Gallery",
+    "capture": "Computer Use sky / Windows.Graphics.Capture",
+    "pages": [
+      "ListView",
+      "GridView"
+    ],
+    "screenshots": [
+      {
+        "path": "out/collections-release/list-selection.png",
+        "sha256": "27747a957a9f97320dd1bbe39440d157aabb8b4b6b6978944a7ce945453a40cc"
+      },
+      {
+        "path": "out/collections-release/grid-basic-layout.png",
+        "sha256": "e1f7da00db3de8b23a3e3cd9de52684ab4fd8799f2e0c3ce06861ece71783a47"
+      },
+      {
+        "path": "out/collections-release/grid-layout.png",
+        "sha256": "000976c372fe7672734da9606172595edc4536d2273dc1747cab74dace8fa696"
+      },
+      {
+        "path": "out/collections-release/grid-content.png",
+        "sha256": "6fe7af538bfeae2e6af640b4b199fbaae5069b46bdbb800e9e2ad9f08f3641f1"
+      }
+    ]
+  },
+  "findings": [
+    "Store ListView uses bordered 350/400 by 400 DIP examples and the original two-row contact template.",
+    "GridView uses 190 by 130 DIP images, natural collection height, a 100-DIP photo-overlay template and container margins for spacing.",
+    "Content customization exposes Image, Icon/Text, Image/Text and Text templates, Reverse FlowDirection, selection and drag/reorder properties.",
+    "These live screenshots establish example organization and observed appearance; they do not establish browser pixel or compositor present-time equivalence."
+  ],
+  "acceptedPixelParity": false,
+  "acceptedStorePresentTimeParity": false
+}

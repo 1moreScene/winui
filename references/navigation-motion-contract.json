@@ -1,0 +1,68 @@
+{
+  "commit": "7b12709347527238494ca28cb9fed326d513e779",
+  "reposition": {
+    "durationMs": 200,
+    "curve": [
+      0,
+      0.35,
+      0.15,
+      1
+    ]
+  },
+  "chevronSource": "ChevronUpDownSmall",
+  "materials": [
+    {
+      "theme": "Light",
+      "expanded": {
+        "kind": "solid",
+        "color": "#f3f3f300"
+      },
+      "overlay": {
+        "tintColor": "#fcfcfcff",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallbackColor": "#f9f9f9ff"
+      }
+    },
+    {
+      "theme": "Dark",
+      "expanded": {
+        "kind": "solid",
+        "color": "#20202000"
+      },
+      "overlay": {
+        "tintColor": "#2c2c2cff",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallbackColor": "#2c2c2cff"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "path": "references/winui/NavigationView.cpp",
+      "sha256": "2f1fe5e6df95423010b02010a5f0c1c6c8f35c745e4fc13442ac389a7af41d15"
+    },
+    {
+      "path": "references/winui/NavigationViewItem.cpp",
+      "sha256": "72ed2771a5bf9897d58f3ab373421a696745febaa89c6b49f74516aa2697599c"
+    },
+    {
+      "path": "references/winui/NavigationView_themeresources.xaml",
+      "sha256": "200cd9d5527c51d9d2db497ba3580847260d2601179d4c5042516648962fd1a4"
+    },
+    {
+      "path": "references/winui/ThemeTransitions.cpp",
+      "sha256": "ba05371a399f0787766a424f45344062b659637918369a1efec942eada669c95"
+    },
+    {
+      "path": "references/animated-icons.json",
+      "sha256": "e3702a761f9c2d5c3e1b5c2ec8499ecb86c81e83c8775c9a232da89382002ce1"
+    },
+    {
+      "path": "references/navigation-motion-native.json",
+      "sha256": "17ed03dacf8ee543a74f76c70f6d9ccf1ea31b32f4cda53c69741afdb6b83429"
+    }
+  ],
+  "boundary": "Source parameters plus live same-SDK own-window observations; not Store release Composition present-time acceptance."
+}

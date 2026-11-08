@@ -1,0 +1,986 @@
+{
+  "Light": {
+    "AppBarButtonBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#00000009",
+      "opacity": 1
+    },
+    "AppBarButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#00000006",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "AppBarButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "AppBarButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "AppBarButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "InfoBarBorderBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "InfoBarErrorSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FDE7E9FF",
+      "opacity": 1
+    },
+    "InfoBarErrorSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#C42B1CFF",
+      "opacity": 1
+    },
+    "InfoBarErrorSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "InfoBarHyperlinkButtonForeground": {
+      "kind": "solid",
+      "color": "#003E92FF",
+      "opacity": 1
+    },
+    "InfoBarInformationalSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#F6F6F680",
+      "opacity": 1
+    },
+    "InfoBarInformationalSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#0078D4FF",
+      "opacity": 1
+    },
+    "InfoBarInformationalSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "InfoBarMessageForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "InfoBarSuccessSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#DFF6DDFF",
+      "opacity": 1
+    },
+    "InfoBarSuccessSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#0F7B0FFF",
+      "opacity": 1
+    },
+    "InfoBarSuccessSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "InfoBarTitleForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "InfoBarWarningSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FFF4CEFF",
+      "opacity": 1
+    },
+    "InfoBarWarningSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#9D5D00FF",
+      "opacity": 1
+    },
+    "InfoBarWarningSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "PersonPictureEllipseBadgeFillThemeBrush": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "PersonPictureEllipseBadgeForegroundThemeBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "PersonPictureEllipseBadgeStrokeThemeBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "PersonPictureEllipseFillStrokeBrush": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "PersonPictureEllipseFillThemeBrush": {
+      "kind": "solid",
+      "color": "#00000018",
+      "opacity": 1
+    },
+    "PersonPictureForegroundThemeBrush": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "RatingControlCaptionForeground": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "RatingControlDisabledSelectedForeground": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "RatingControlPlaceholderForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "RatingControlPointerOverPlaceholderForeground": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "RatingControlPointerOverSelectedForeground": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "RatingControlPointerOverUnselectedForeground": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "RatingControlSelectedForeground": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "RatingControlUnselectedForeground": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "SplitButtonBackground": {
+      "kind": "solid",
+      "color": "#FFFFFFB3",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundChecked": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundCheckedDisabled": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundCheckedPointerOver": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.8999999761581421
+    },
+    "SplitButtonBackgroundCheckedPressed": {
+      "kind": "solid",
+      "color": "#0067C0FF",
+      "opacity": 0.800000011920929
+    },
+    "SplitButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#F9F9F94D",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#F9F9F980",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#F9F9F94D",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushChecked": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000066"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF14"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedDivider": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedPointerOver": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000066"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF14"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushDivider": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushPointerOver": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000029"
+        },
+        {
+          "offset": 1,
+          "color": "#0000000F"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#0000000F",
+      "opacity": 1
+    },
+    "SplitButtonForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "SplitButtonForegroundChecked": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "SplitButtonForegroundCheckedDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "SplitButtonForegroundCheckedPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "SplitButtonForegroundCheckedPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFB3",
+      "opacity": 1
+    },
+    "SplitButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#0000005C",
+      "opacity": 1
+    },
+    "SplitButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "SplitButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "SplitButtonForegroundSecondary": {
+      "kind": "solid",
+      "color": "#0000009E",
+      "opacity": 1
+    },
+    "SplitButtonForegroundSecondaryPressed": {
+      "kind": "solid",
+      "color": "#00000072",
+      "opacity": 1
+    }
+  },
+  "Dark": {
+    "AppBarButtonBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "AppBarButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF0A",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrushPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "AppBarButtonForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "AppBarButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "AppBarButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "AppBarButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "InfoBarBorderBrush": {
+      "kind": "solid",
+      "color": "#00000019",
+      "opacity": 1
+    },
+    "InfoBarErrorSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#442726FF",
+      "opacity": 1
+    },
+    "InfoBarErrorSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#FF99A4FF",
+      "opacity": 1
+    },
+    "InfoBarErrorSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "InfoBarHyperlinkButtonForeground": {
+      "kind": "solid",
+      "color": "#99EBFFFF",
+      "opacity": 1
+    },
+    "InfoBarInformationalSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF08",
+      "opacity": 1
+    },
+    "InfoBarInformationalSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "InfoBarInformationalSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "InfoBarMessageForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "InfoBarSuccessSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#393D1BFF",
+      "opacity": 1
+    },
+    "InfoBarSuccessSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#6CCB5FFF",
+      "opacity": 1
+    },
+    "InfoBarSuccessSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "InfoBarTitleForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "InfoBarWarningSeverityBackgroundBrush": {
+      "kind": "solid",
+      "color": "#433519FF",
+      "opacity": 1
+    },
+    "InfoBarWarningSeverityIconBackground": {
+      "kind": "solid",
+      "color": "#FCE100FF",
+      "opacity": 1
+    },
+    "InfoBarWarningSeverityIconForeground": {
+      "kind": "solid",
+      "color": "#000000E4",
+      "opacity": 1
+    },
+    "PersonPictureEllipseBadgeFillThemeBrush": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "PersonPictureEllipseBadgeForegroundThemeBrush": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "PersonPictureEllipseBadgeStrokeThemeBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "PersonPictureEllipseFillStrokeBrush": {
+      "kind": "solid",
+      "color": "#00000019",
+      "opacity": 1
+    },
+    "PersonPictureEllipseFillThemeBrush": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "PersonPictureForegroundThemeBrush": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RatingControlCaptionForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "RatingControlDisabledSelectedForeground": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "RatingControlPlaceholderForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "RatingControlPointerOverPlaceholderForeground": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "RatingControlPointerOverSelectedForeground": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "RatingControlPointerOverUnselectedForeground": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "RatingControlSelectedForeground": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "RatingControlUnselectedForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "SplitButtonBackground": {
+      "kind": "solid",
+      "color": "#FFFFFF0F",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundChecked": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundCheckedDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF28",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundCheckedPointerOver": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.8999999761581421
+    },
+    "SplitButtonBackgroundCheckedPressed": {
+      "kind": "solid",
+      "color": "#4CC2FFFF",
+      "opacity": 0.800000011920929
+    },
+    "SplitButtonBackgroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF0B",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFF15",
+      "opacity": 1
+    },
+    "SplitButtonBackgroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF08",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrush": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushChecked": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000023"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF14"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedDivider": {
+      "kind": "solid",
+      "color": "#00000037",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedPointerOver": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        -1,
+        0,
+        1
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#00000023"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF14"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushCheckedPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF00",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushDivider": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushPointerOver": {
+      "kind": "linearGradient",
+      "mappingMode": "Absolute",
+      "spreadMethod": "Pad",
+      "relativeTransform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "transform": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        3
+      ],
+      "stops": [
+        {
+          "offset": 0.33000001311302185,
+          "color": "#FFFFFF18"
+        },
+        {
+          "offset": 1,
+          "color": "#FFFFFF12"
+        }
+      ],
+      "opacity": 1
+    },
+    "SplitButtonBorderBrushPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF12",
+      "opacity": 1
+    },
+    "SplitButtonForeground": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "SplitButtonForegroundChecked": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "SplitButtonForegroundCheckedDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "SplitButtonForegroundCheckedPointerOver": {
+      "kind": "solid",
+      "color": "#000000FF",
+      "opacity": 1
+    },
+    "SplitButtonForegroundCheckedPressed": {
+      "kind": "solid",
+      "color": "#00000080",
+      "opacity": 1
+    },
+    "SplitButtonForegroundDisabled": {
+      "kind": "solid",
+      "color": "#FFFFFF5D",
+      "opacity": 1
+    },
+    "SplitButtonForegroundPointerOver": {
+      "kind": "solid",
+      "color": "#FFFFFFFF",
+      "opacity": 1
+    },
+    "SplitButtonForegroundPressed": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "SplitButtonForegroundSecondary": {
+      "kind": "solid",
+      "color": "#FFFFFFC5",
+      "opacity": 1
+    },
+    "SplitButtonForegroundSecondaryPressed": {
+      "kind": "solid",
+      "color": "#FFFFFF87",
+      "opacity": 1
+    }
+  }
+}

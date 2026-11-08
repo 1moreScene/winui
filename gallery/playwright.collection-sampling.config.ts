@@ -1,0 +1,1 @@
+import{defineConfig}from'@playwright/test';import base from'./playwright.config';export default defineConfig({...base,testMatch:'**/collection-image-sampling.spec.ts',outputDir:'../out/collection-sampling-test-results',reporter:[['list']]});

@@ -1,0 +1,530 @@
+{
+  "date": "2026-11-07",
+  "sdk": "2.5.4-experimental / WinUI 2.3.10-experimental",
+  "conditions": {
+    "width": 1000,
+    "height": 500,
+    "dpr": 1,
+    "theme": "per-case",
+    "font": "Segoe UI",
+    "staticAnimations": "settled",
+    "nativeCapture": "RenderTargetBitmap (WGC inspection tracked separately)"
+  },
+  "comparisons": [
+    {
+      "name": "Light-Left",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.948802,
+      "pixelsAbove8Percent": 0.8736,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-Top",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.606138,
+      "pixelsAbove8Percent": 0.9218000000000001,
+      "maxChannelError": 217,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-LeftCompact",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.337912,
+      "pixelsAbove8Percent": 0.475,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-LeftCompact-open",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.02937,
+      "pixelsAbove8Percent": 1.5184,
+      "maxChannelError": 225,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-LeftMinimal",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.138564,
+      "pixelsAbove8Percent": 0.4178,
+      "maxChannelError": 223,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": []
+    },
+    {
+      "name": "Light-LeftMinimal-open",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.073344,
+      "pixelsAbove8Percent": 1.5190000000000001,
+      "maxChannelError": 225,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Dark-Left",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.769594,
+      "pixelsAbove8Percent": 0.8768,
+      "maxChannelError": 224,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Dark-Top",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.7383153333333333,
+      "pixelsAbove8Percent": 0.8371999999999999,
+      "maxChannelError": 223,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Dark-LeftCompact",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.413226,
+      "pixelsAbove8Percent": 0.4798,
+      "maxChannelError": 224,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Dark-LeftCompact-open",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.738746,
+      "pixelsAbove8Percent": 0.5932,
+      "maxChannelError": 213,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Dark-LeftMinimal",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.169334,
+      "pixelsAbove8Percent": 0.318,
+      "maxChannelError": 216,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": []
+    },
+    {
+      "name": "Dark-LeftMinimal-open",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.693804,
+      "pixelsAbove8Percent": 0.6,
+      "maxChannelError": 213,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-footer-top",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.64856,
+      "pixelsAbove8Percent": 0.9672000000000001,
+      "maxChannelError": 217,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": []
+    },
+    {
+      "name": "Light-top-overflow",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 0.294114,
+      "pixelsAbove8Percent": 0.5874,
+      "maxChannelError": 217,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-hierarchy",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.038616,
+      "pixelsAbove8Percent": 0.9184,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": []
+    },
+    {
+      "name": "Light-content-1",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.383512,
+      "pixelsAbove8Percent": 2.6018,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-content-2",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 3.672344,
+      "pixelsAbove8Percent": 4.248600000000001,
+      "maxChannelError": 223,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-content-3",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.497164,
+      "pixelsAbove8Percent": 2.7946,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-content-4",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.583962,
+      "pixelsAbove8Percent": 2.7954,
+      "maxChannelError": 249,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-content-5",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.4158413333333333,
+      "pixelsAbove8Percent": 2.7492,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-content-6",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 1.41029,
+      "pixelsAbove8Percent": 2.7404,
+      "maxChannelError": 220,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    },
+    {
+      "name": "Light-content-7",
+      "width": 1000,
+      "height": 500,
+      "meanAbsoluteChannelError": 3.67198,
+      "pixelsAbove8Percent": 4.2492,
+      "maxChannelError": 223,
+      "contentBoundsErrorDip": 0,
+      "itemBounds": [
+        {
+          "item": "Menu Item1",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item2",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item3",
+          "errorDip": 0
+        },
+        {
+          "item": "Menu Item4",
+          "errorDip": 0
+        }
+      ]
+    }
+  ],
+  "acceptedPixelParity": false
+}

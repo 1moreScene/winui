@@ -1,0 +1,6399 @@
+{
+  "rows": [
+    {
+      "name": "Light-Plain-Flyout-Top",
+      "theme": "Light",
+      "backdrop": "Plain",
+      "kind": "Flyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 180.8000030517578,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 196.8000030517578,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 246.39999389648438,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 252,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Plain-Flyout-Bottom",
+      "theme": "Light",
+      "backdrop": "Plain",
+      "kind": "Flyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 116,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 132,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 181.60000610351562,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 187.1999969482422,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Plain-MenuFlyout-Top",
+      "theme": "Light",
+      "backdrop": "Plain",
+      "kind": "MenuFlyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 159.1999969482422,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 161.59999084472656,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 168,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 164,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 193.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 200,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 196,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 225.60000610351562,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 228.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 239.1999969482422,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 235.1999969482422,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 231.1999969482422,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 260.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 267.20001220703125,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 263.20001220703125,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Plain-MenuFlyout-Bottom",
+      "theme": "Light",
+      "backdrop": "Plain",
+      "kind": "MenuFlyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 116,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 118.4000015258789,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 124.80000305175781,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 120.80000305175781,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 150.39999389648438,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 156.8000030517578,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 152.8000030517578,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 182.39999389648438,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 185.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 196,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 192,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 188,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 217.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 224,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 220,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Stripes-Flyout-Top",
+      "theme": "Light",
+      "backdrop": "Stripes",
+      "kind": "Flyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 180.8000030517578,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 196.8000030517578,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 246.39999389648438,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 252,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Stripes-Flyout-Bottom",
+      "theme": "Light",
+      "backdrop": "Stripes",
+      "kind": "Flyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 116,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 132,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 181.60000610351562,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 187.1999969482422,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Stripes-MenuFlyout-Top",
+      "theme": "Light",
+      "backdrop": "Stripes",
+      "kind": "MenuFlyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 159.1999969482422,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 161.59999084472656,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 168,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 164,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 193.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 200,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 196,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 225.60000610351562,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 228.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 239.1999969482422,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 235.1999969482422,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 231.1999969482422,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 260.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 267.20001220703125,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 263.20001220703125,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Stripes-MenuFlyout-Bottom",
+      "theme": "Light",
+      "backdrop": "Stripes",
+      "kind": "MenuFlyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 116,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 118.4000015258789,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 124.80000305175781,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 120.80000305175781,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 150.39999389648438,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 156.8000030517578,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 152.8000030517578,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 182.39999389648438,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 185.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 196,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 192,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 188,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 217.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 224,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 220,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Plain-Flyout-Top",
+      "theme": "Dark",
+      "backdrop": "Plain",
+      "kind": "Flyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 180.8000030517578,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 196.8000030517578,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 246.39999389648438,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 252,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Plain-Flyout-Bottom",
+      "theme": "Dark",
+      "backdrop": "Plain",
+      "kind": "Flyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 116,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 132,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 181.60000610351562,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 187.1999969482422,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Plain-MenuFlyout-Top",
+      "theme": "Dark",
+      "backdrop": "Plain",
+      "kind": "MenuFlyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 159.1999969482422,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 161.59999084472656,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 168,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 164,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 193.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 200,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 196,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 225.60000610351562,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 228.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 239.1999969482422,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 235.1999969482422,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 231.1999969482422,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 260.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 267.20001220703125,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 263.20001220703125,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Plain-MenuFlyout-Bottom",
+      "theme": "Dark",
+      "backdrop": "Plain",
+      "kind": "MenuFlyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 116,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 118.4000015258789,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 124.80000305175781,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 120.80000305175781,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 150.39999389648438,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 156.8000030517578,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 152.8000030517578,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 182.39999389648438,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 185.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 196,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 192,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 188,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 217.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 224,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 220,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Stripes-Flyout-Top",
+      "theme": "Dark",
+      "backdrop": "Stripes",
+      "kind": "Flyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 180.8000030517578,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 196.8000030517578,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 246.39999389648438,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 252,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Stripes-Flyout-Bottom",
+      "theme": "Dark",
+      "backdrop": "Stripes",
+      "kind": "Flyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 360,
+        "y": 116,
+        "width": 260,
+        "height": 115.19999694824219
+      },
+      "Padding": {
+        "Left": 16,
+        "Top": 15,
+        "Right": 16,
+        "Bottom": 17
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "All items will be removed. Do you want to continue?",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 132,
+            "width": 206.7939453125,
+            "height": 37.2421875
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        },
+        {
+          "type": "Button",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 376.79998779296875,
+            "y": 181.60000610351562,
+            "width": 144,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 5,
+            "Right": 11,
+            "Bottom": 6
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "Confirm empty cart",
+          "bounds": {
+            "x": 388.79998779296875,
+            "y": 187.1999969482422,
+            "width": 119.4921875,
+            "height": 18.62109375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.107421875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Stripes-MenuFlyout-Top",
+      "theme": "Dark",
+      "backdrop": "Stripes",
+      "kind": "MenuFlyout",
+      "side": "Top",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 159.1999969482422,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 161.59999084472656,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 168,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 164,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 193.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 200,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 196,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 225.60000610351562,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 228.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 239.1999969482422,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 235.1999969482422,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 231.1999969482422,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 260.79998779296875,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 267.20001220703125,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 263.20001220703125,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Stripes-MenuFlyout-Bottom",
+      "theme": "Dark",
+      "backdrop": "Stripes",
+      "kind": "MenuFlyout",
+      "side": "Bottom",
+      "input": "own-window keyboard messages",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 380,
+        "y": 116,
+        "width": 220,
+        "height": 136.8000030517578
+      },
+      "Padding": {
+        "Left": 0,
+        "Top": 2,
+        "Right": 0,
+        "Bottom": 2
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 8,
+        "TopRight": 8,
+        "BottomRight": 8,
+        "BottomLeft": 8
+      },
+      "FontSize": 14,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 32,
+      "shadow": "ThemeShadow",
+      "parts": [
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Open",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 118.4000015258789,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Open",
+          "bounds": {
+            "x": 424,
+            "y": 124.80000305175781,
+            "width": 34.026668548583984,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 120.80000305175781,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Save",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 150.39999389648438,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Save",
+          "bounds": {
+            "x": 424,
+            "y": 156.8000030517578,
+            "width": 28.586666107177734,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 152.8000030517578,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutSeparator",
+          "Name": "",
+          "text": null,
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 182.39999389648438,
+            "width": 218.39999389648438,
+            "height": 3.200000047683716
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": -4,
+            "Top": 1,
+            "Right": -4,
+            "Bottom": 1
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "ToggleMenuFlyoutItem",
+          "Name": "",
+          "text": "Enable option",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 185.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "",
+          "bounds": {
+            "x": 396,
+            "y": 196,
+            "width": 12,
+            "height": 12
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Enable option",
+          "bounds": {
+            "x": 424,
+            "y": 192,
+            "width": 85.59666442871094,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 188,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        },
+        {
+          "type": "MenuFlyoutItem",
+          "Name": "",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 380.79998779296875,
+            "y": 217.60000610351562,
+            "width": 218.39999389648438,
+            "height": 32
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": {
+            "Left": 11,
+            "Top": 8,
+            "Right": 11,
+            "Bottom": 9
+          },
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": null
+        },
+        {
+          "type": "TextBlock",
+          "Name": "TextBlock",
+          "text": "Unavailable",
+          "bounds": {
+            "x": 424,
+            "y": 224,
+            "width": 71.336669921875,
+            "height": 18.6200008392334
+          },
+          "margin": {
+            "Left": 28,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 14,
+          "fontWeight": 400,
+          "baseline": 15.686666488647461
+        },
+        {
+          "type": "TextBlock",
+          "Name": "KeyboardAcceleratorTextBlock",
+          "text": "",
+          "bounds": {
+            "x": 384.79998779296875,
+            "y": 220,
+            "width": 0,
+            "height": 0
+          },
+          "margin": {
+            "Left": 24,
+            "Top": 4,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "padding": null,
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 0
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Plain-ToolTip-Top",
+      "theme": "Light",
+      "backdrop": "Plain",
+      "kind": "ToolTip",
+      "side": "Top",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 268,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 275.20001220703125,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Plain-ToolTip-Bottom",
+      "theme": "Light",
+      "backdrop": "Plain",
+      "kind": "ToolTip",
+      "side": "Bottom",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 112,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 119.19999694824219,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Stripes-ToolTip-Top",
+      "theme": "Light",
+      "backdrop": "Stripes",
+      "kind": "ToolTip",
+      "side": "Top",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 268,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 275.20001220703125,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Light-Stripes-ToolTip-Bottom",
+      "theme": "Light",
+      "backdrop": "Stripes",
+      "kind": "ToolTip",
+      "side": "Bottom",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 112,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 119.19999694824219,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Plain-ToolTip-Top",
+      "theme": "Dark",
+      "backdrop": "Plain",
+      "kind": "ToolTip",
+      "side": "Top",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 268,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 275.20001220703125,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Plain-ToolTip-Bottom",
+      "theme": "Dark",
+      "backdrop": "Plain",
+      "kind": "ToolTip",
+      "side": "Bottom",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 112,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 119.19999694824219,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Stripes-ToolTip-Top",
+      "theme": "Dark",
+      "backdrop": "Stripes",
+      "kind": "ToolTip",
+      "side": "Top",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 300,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 268,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 275.20001220703125,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    },
+    {
+      "name": "Dark-Stripes-ToolTip-Bottom",
+      "theme": "Dark",
+      "backdrop": "Stripes",
+      "kind": "ToolTip",
+      "side": "Bottom",
+      "input": "IsOpen on actual owned ToolTip",
+      "owner": {
+        "x": 440,
+        "y": 80,
+        "width": 100,
+        "height": 32
+      },
+      "bounds": {
+        "x": 420,
+        "y": 112,
+        "width": 139.1999969482422,
+        "height": 32
+      },
+      "Padding": {
+        "Left": 9,
+        "Top": 6,
+        "Right": 9,
+        "Bottom": 8
+      },
+      "BorderThickness": {
+        "Left": 1,
+        "Top": 1,
+        "Right": 1,
+        "Bottom": 1
+      },
+      "CornerRadius": {
+        "TopLeft": 4,
+        "TopRight": 4,
+        "BottomRight": 4,
+        "BottomLeft": 4
+      },
+      "FontSize": 12,
+      "font": "Segoe UI",
+      "background": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "border": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "translationZ": 0,
+      "shadow": null,
+      "parts": [
+        {
+          "type": "TextBlock",
+          "Name": "",
+          "text": "A ToolTip with content",
+          "bounds": {
+            "x": 429.6000061035156,
+            "y": 119.19999694824219,
+            "width": 118.93359375,
+            "height": 15.9609375
+          },
+          "margin": {
+            "Left": 0,
+            "Top": 0,
+            "Right": 0,
+            "Bottom": 0
+          },
+          "fontSize": 12,
+          "fontWeight": 400,
+          "baseline": 12.94921875
+        }
+      ],
+      "width": 1250,
+      "height": 625,
+      "dpi": 1.25,
+      "CaptureMode": "foreground-client"
+    }
+  ],
+  "motion": [
+    {
+      "name": "Light-Plain-Flyout-Top",
+      "frames": [
+        {
+          "name": "Light-Plain-Flyout-Top-0",
+          "requested": 0,
+          "captureStartMs": 3.8687,
+          "captureEndMs": 13.9767,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-16",
+          "requested": 16,
+          "captureStartMs": 21.6854,
+          "captureEndMs": 28.4509,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-33",
+          "requested": 33,
+          "captureStartMs": 36.6477,
+          "captureEndMs": 47.033,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-50",
+          "requested": 50,
+          "captureStartMs": 52.1103,
+          "captureEndMs": 58.4459,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-83",
+          "requested": 83,
+          "captureStartMs": 97.2518,
+          "captureEndMs": 107.2755,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-100",
+          "requested": 100,
+          "captureStartMs": 107.2911,
+          "captureEndMs": 113.0747,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-133",
+          "requested": 133,
+          "captureStartMs": 143.8438,
+          "captureEndMs": 149.3657,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-167",
+          "requested": 167,
+          "captureStartMs": 175.4493,
+          "captureEndMs": 186.0044,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-200",
+          "requested": 200,
+          "captureStartMs": 207.5815,
+          "captureEndMs": 216.3646,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-250",
+          "requested": 250,
+          "captureStartMs": 253.8264,
+          "captureEndMs": 264.6482,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-300",
+          "requested": 300,
+          "captureStartMs": 300.7919,
+          "captureEndMs": 306.6887,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-400",
+          "requested": 400,
+          "captureStartMs": 409.7794,
+          "captureEndMs": 415.9156,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-550",
+          "requested": 550,
+          "captureStartMs": 565.334,
+          "captureEndMs": 573.3769,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 1.515
+        },
+        {
+          "kind": "opened",
+          "time": 7.8221
+        },
+        {
+          "kind": "hide-request",
+          "time": 891.6801
+        },
+        {
+          "kind": "closing",
+          "time": 892.367
+        },
+        {
+          "kind": "closed",
+          "time": 1128.8739
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-Flyout-Top",
+      "phase": "close",
+      "requestedCloseAtMs": 891.6806,
+      "frames": [
+        {
+          "name": "Light-Plain-Flyout-Top-Close-0",
+          "requested": 0,
+          "captureStartMs": 1.8955,
+          "captureEndMs": 9.4587,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-16",
+          "requested": 16,
+          "captureStartMs": 15.9918,
+          "captureEndMs": 26.9465,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-33",
+          "requested": 33,
+          "captureStartMs": 46.8747,
+          "captureEndMs": 57.5803,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-50",
+          "requested": 50,
+          "captureStartMs": 57.589,
+          "captureEndMs": 65.3691,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-83",
+          "requested": 83,
+          "captureStartMs": 93.9495,
+          "captureEndMs": 100.6998,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-100",
+          "requested": 100,
+          "captureStartMs": 100.7122,
+          "captureEndMs": 105.5507,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-133",
+          "requested": 133,
+          "captureStartMs": 140.5146,
+          "captureEndMs": 148.4314,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-167",
+          "requested": 167,
+          "captureStartMs": 171.8695,
+          "captureEndMs": 178.7656,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-200",
+          "requested": 200,
+          "captureStartMs": 203.3341,
+          "captureEndMs": 209.2336,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-250",
+          "requested": 250,
+          "captureStartMs": 250.6275,
+          "captureEndMs": 257.3294,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-300",
+          "requested": 300,
+          "captureStartMs": 312.1382,
+          "captureEndMs": 317.8396,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-400",
+          "requested": 400,
+          "captureStartMs": 406.3928,
+          "captureEndMs": 415.0134,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Top-Close-550",
+          "requested": 550,
+          "captureStartMs": 561.7951,
+          "captureEndMs": 572.3836,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 1.515
+        },
+        {
+          "kind": "opened",
+          "time": 7.8221
+        },
+        {
+          "kind": "hide-request",
+          "time": 891.6801
+        },
+        {
+          "kind": "closing",
+          "time": 892.367
+        },
+        {
+          "kind": "closed",
+          "time": 1128.8739
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-Flyout-Bottom",
+      "frames": [
+        {
+          "name": "Light-Plain-Flyout-Bottom-0",
+          "requested": 0,
+          "captureStartMs": 0.6432,
+          "captureEndMs": 10.1847,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-16",
+          "requested": 16,
+          "captureStartMs": 25.7252,
+          "captureEndMs": 33.6844,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-33",
+          "requested": 33,
+          "captureStartMs": 33.6919,
+          "captureEndMs": 40.1281,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-50",
+          "requested": 50,
+          "captureStartMs": 56.9774,
+          "captureEndMs": 64.0961,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-83",
+          "requested": 83,
+          "captureStartMs": 88.598,
+          "captureEndMs": 95.5277,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-100",
+          "requested": 100,
+          "captureStartMs": 104.2666,
+          "captureEndMs": 112.5463,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-133",
+          "requested": 133,
+          "captureStartMs": 134.7451,
+          "captureEndMs": 142.6345,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-167",
+          "requested": 167,
+          "captureStartMs": 181.665,
+          "captureEndMs": 191.2141,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-200",
+          "requested": 200,
+          "captureStartMs": 213.2771,
+          "captureEndMs": 221.4936,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-250",
+          "requested": 250,
+          "captureStartMs": 260.5272,
+          "captureEndMs": 270.4734,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-300",
+          "requested": 300,
+          "captureStartMs": 306.0521,
+          "captureEndMs": 312.4087,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-400",
+          "requested": 400,
+          "captureStartMs": 400.1659,
+          "captureEndMs": 409.106,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-550",
+          "requested": 550,
+          "captureStartMs": 550.348,
+          "captureEndMs": 561.7387,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 0.3102
+        },
+        {
+          "kind": "opened",
+          "time": 11.5118
+        },
+        {
+          "kind": "hide-request",
+          "time": 790.3472
+        },
+        {
+          "kind": "closing",
+          "time": 790.3583
+        },
+        {
+          "kind": "closed",
+          "time": 1020.5831
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-Flyout-Bottom",
+      "phase": "close",
+      "requestedCloseAtMs": 790.3477,
+      "frames": [
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-0",
+          "requested": 0,
+          "captureStartMs": 0.5639,
+          "captureEndMs": 6.6743,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-16",
+          "requested": 16,
+          "captureStartMs": 25.2885,
+          "captureEndMs": 30.9494,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-33",
+          "requested": 33,
+          "captureStartMs": 40.8929,
+          "captureEndMs": 49.5571,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-50",
+          "requested": 50,
+          "captureStartMs": 49.5656,
+          "captureEndMs": 55.3372,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-83",
+          "requested": 83,
+          "captureStartMs": 87.7038,
+          "captureEndMs": 98.3775,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-100",
+          "requested": 100,
+          "captureStartMs": 103.5836,
+          "captureEndMs": 110.3734,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-133",
+          "requested": 133,
+          "captureStartMs": 135.1276,
+          "captureEndMs": 146.75,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-167",
+          "requested": 167,
+          "captureStartMs": 181.5788,
+          "captureEndMs": 188.94,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-200",
+          "requested": 200,
+          "captureStartMs": 212.4522,
+          "captureEndMs": 219.1919,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-250",
+          "requested": 250,
+          "captureStartMs": 258.5094,
+          "captureEndMs": 267.7394,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-300",
+          "requested": 300,
+          "captureStartMs": 305.6112,
+          "captureEndMs": 317.1008,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-400",
+          "requested": 400,
+          "captureStartMs": 399.306,
+          "captureEndMs": 406.9941,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-Flyout-Bottom-Close-550",
+          "requested": 550,
+          "captureStartMs": 556.069,
+          "captureEndMs": 564.6365,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 0.3102
+        },
+        {
+          "kind": "opened",
+          "time": 11.5118
+        },
+        {
+          "kind": "hide-request",
+          "time": 790.3472
+        },
+        {
+          "kind": "closing",
+          "time": 790.3583
+        },
+        {
+          "kind": "closed",
+          "time": 1020.5831
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-MenuFlyout-Top",
+      "frames": [
+        {
+          "name": "Light-Plain-MenuFlyout-Top-0",
+          "requested": 0,
+          "captureStartMs": 5.1675,
+          "captureEndMs": 13.9243,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-16",
+          "requested": 16,
+          "captureStartMs": 30.1352,
+          "captureEndMs": 38.9208,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-33",
+          "requested": 33,
+          "captureStartMs": 38.9285,
+          "captureEndMs": 49.7422,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-50",
+          "requested": 50,
+          "captureStartMs": 49.7502,
+          "captureEndMs": 56.0604,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-83",
+          "requested": 83,
+          "captureStartMs": 91.7637,
+          "captureEndMs": 98.6878,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-100",
+          "requested": 100,
+          "captureStartMs": 107.6078,
+          "captureEndMs": 116.9384,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-133",
+          "requested": 133,
+          "captureStartMs": 138.9557,
+          "captureEndMs": 147.2762,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-167",
+          "requested": 167,
+          "captureStartMs": 169.2034,
+          "captureEndMs": 177.5634,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-200",
+          "requested": 200,
+          "captureStartMs": 200.4929,
+          "captureEndMs": 207.8616,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-250",
+          "requested": 250,
+          "captureStartMs": 262.7547,
+          "captureEndMs": 274.4982,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-300",
+          "requested": 300,
+          "captureStartMs": 309.6111,
+          "captureEndMs": 317.9307,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-400",
+          "requested": 400,
+          "captureStartMs": 403.7086,
+          "captureEndMs": 415.5031,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-550",
+          "requested": 550,
+          "captureStartMs": 558.3516,
+          "captureEndMs": 565.3832,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 0.3953
+        },
+        {
+          "kind": "opened",
+          "time": 11.1437
+        },
+        {
+          "kind": "hide-request",
+          "time": 790.1227
+        },
+        {
+          "kind": "closing",
+          "time": 790.134
+        },
+        {
+          "kind": "closed",
+          "time": 794.4459
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-MenuFlyout-Top",
+      "phase": "close",
+      "requestedCloseAtMs": 790.1233,
+      "frames": [
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-0",
+          "requested": 0,
+          "captureStartMs": 2.0784,
+          "captureEndMs": 12.2163,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-16",
+          "requested": 16,
+          "captureStartMs": 16.2665,
+          "captureEndMs": 24.2062,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-33",
+          "requested": 33,
+          "captureStartMs": 31.8764,
+          "captureEndMs": 42.1994,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-50",
+          "requested": 50,
+          "captureStartMs": 63.1103,
+          "captureEndMs": 72.3643,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-83",
+          "requested": 83,
+          "captureStartMs": 93.8713,
+          "captureEndMs": 103.5641,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-100",
+          "requested": 100,
+          "captureStartMs": 103.5724,
+          "captureEndMs": 115.1,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-133",
+          "requested": 133,
+          "captureStartMs": 140.8589,
+          "captureEndMs": 151.842,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-167",
+          "requested": 167,
+          "captureStartMs": 171.8707,
+          "captureEndMs": 182.0372,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-200",
+          "requested": 200,
+          "captureStartMs": 202.8953,
+          "captureEndMs": 211.7772,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-250",
+          "requested": 250,
+          "captureStartMs": 250.1695,
+          "captureEndMs": 260.0176,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-300",
+          "requested": 300,
+          "captureStartMs": 307.8106,
+          "captureEndMs": 314.9709,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-400",
+          "requested": 400,
+          "captureStartMs": 400.2686,
+          "captureEndMs": 411.9774,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Top-Close-550",
+          "requested": 550,
+          "captureStartMs": 555.2817,
+          "captureEndMs": 564.1107,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 0.3953
+        },
+        {
+          "kind": "opened",
+          "time": 11.1437
+        },
+        {
+          "kind": "hide-request",
+          "time": 790.1227
+        },
+        {
+          "kind": "closing",
+          "time": 790.134
+        },
+        {
+          "kind": "closed",
+          "time": 794.4459
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-MenuFlyout-Bottom",
+      "frames": [
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-0",
+          "requested": 0,
+          "captureStartMs": 4.7009,
+          "captureEndMs": 18.0962,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-16",
+          "requested": 16,
+          "captureStartMs": 18.1047,
+          "captureEndMs": 29.7936,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-33",
+          "requested": 33,
+          "captureStartMs": 46.2185,
+          "captureEndMs": 57.318,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-50",
+          "requested": 50,
+          "captureStartMs": 57.3253,
+          "captureEndMs": 66.6256,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-83",
+          "requested": 83,
+          "captureStartMs": 92.7633,
+          "captureEndMs": 102.5825,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-100",
+          "requested": 100,
+          "captureStartMs": 102.5946,
+          "captureEndMs": 115.2507,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-133",
+          "requested": 133,
+          "captureStartMs": 139.1393,
+          "captureEndMs": 151.3606,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-167",
+          "requested": 167,
+          "captureStartMs": 170.7311,
+          "captureEndMs": 183.2499,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-200",
+          "requested": 200,
+          "captureStartMs": 201.7844,
+          "captureEndMs": 211.7834,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-250",
+          "requested": 250,
+          "captureStartMs": 264.4029,
+          "captureEndMs": 272.8615,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-300",
+          "requested": 300,
+          "captureStartMs": 310.9824,
+          "captureEndMs": 321.2857,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-400",
+          "requested": 400,
+          "captureStartMs": 404.185,
+          "captureEndMs": 411.6627,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-550",
+          "requested": 550,
+          "captureStartMs": 559.3972,
+          "captureEndMs": 570.4532,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 0.3499
+        },
+        {
+          "kind": "opened",
+          "time": 12.3782
+        },
+        {
+          "kind": "hide-request",
+          "time": 791.5872
+        },
+        {
+          "kind": "closing",
+          "time": 791.5978
+        },
+        {
+          "kind": "closed",
+          "time": 796.1158
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-MenuFlyout-Bottom",
+      "phase": "close",
+      "requestedCloseAtMs": 791.5879,
+      "frames": [
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-0",
+          "requested": 0,
+          "captureStartMs": 2.1302,
+          "captureEndMs": 13.886,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-16",
+          "requested": 16,
+          "captureStartMs": 17.0735,
+          "captureEndMs": 26.3321,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-33",
+          "requested": 33,
+          "captureStartMs": 32.7091,
+          "captureEndMs": 43.7067,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-50",
+          "requested": 50,
+          "captureStartMs": 63.6393,
+          "captureEndMs": 74.0136,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-83",
+          "requested": 83,
+          "captureStartMs": 94.6781,
+          "captureEndMs": 104.4988,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-100",
+          "requested": 100,
+          "captureStartMs": 104.5066,
+          "captureEndMs": 116.5742,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-133",
+          "requested": 133,
+          "captureStartMs": 141.1609,
+          "captureEndMs": 152.7582,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-167",
+          "requested": 167,
+          "captureStartMs": 172.2249,
+          "captureEndMs": 183.3266,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-200",
+          "requested": 200,
+          "captureStartMs": 203.3617,
+          "captureEndMs": 213.613,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-250",
+          "requested": 250,
+          "captureStartMs": 250.5135,
+          "captureEndMs": 261.9835,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-300",
+          "requested": 300,
+          "captureStartMs": 312.3225,
+          "captureEndMs": 323.0065,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-400",
+          "requested": 400,
+          "captureStartMs": 404.9707,
+          "captureEndMs": 413.6536,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-MenuFlyout-Bottom-Close-550",
+          "requested": 550,
+          "captureStartMs": 559.8053,
+          "captureEndMs": 571.7188,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opening",
+          "time": 0.3499
+        },
+        {
+          "kind": "opened",
+          "time": 12.3782
+        },
+        {
+          "kind": "hide-request",
+          "time": 791.5872
+        },
+        {
+          "kind": "closing",
+          "time": 791.5978
+        },
+        {
+          "kind": "closed",
+          "time": 796.1158
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-ToolTip-Top",
+      "phase": "open",
+      "requestedCloseAtMs": 0,
+      "frames": [
+        {
+          "name": "Light-Plain-ToolTip-Top-0",
+          "requested": 0,
+          "captureStartMs": 6.4391,
+          "captureEndMs": 14.9638,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-16",
+          "requested": 16,
+          "captureStartMs": 30.0224,
+          "captureEndMs": 39.2433,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-33",
+          "requested": 33,
+          "captureStartMs": 39.2467,
+          "captureEndMs": 55.1762,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-50",
+          "requested": 50,
+          "captureStartMs": 55.1825,
+          "captureEndMs": 64.4501,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-83",
+          "requested": 83,
+          "captureStartMs": 92.3799,
+          "captureEndMs": 100.0046,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-100",
+          "requested": 100,
+          "captureStartMs": 100.0098,
+          "captureEndMs": 111.8439,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-133",
+          "requested": 133,
+          "captureStartMs": 138.7413,
+          "captureEndMs": 148.5616,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-167",
+          "requested": 167,
+          "captureStartMs": 169.4626,
+          "captureEndMs": 178.4208,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-200",
+          "requested": 200,
+          "captureStartMs": 200.6003,
+          "captureEndMs": 208.8848,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-250",
+          "requested": 250,
+          "captureStartMs": 255.1307,
+          "captureEndMs": 263.5349,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-300",
+          "requested": 300,
+          "captureStartMs": 301.3416,
+          "captureEndMs": 311.8791,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-400",
+          "requested": 400,
+          "captureStartMs": 409.601,
+          "captureEndMs": 421.9634,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-550",
+          "requested": 550,
+          "captureStartMs": 560.5856,
+          "captureEndMs": 572.9247,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opened",
+          "time": 9.4328
+        },
+        {
+          "kind": "hide-request",
+          "time": 795.7547
+        },
+        {
+          "kind": "closed",
+          "time": 1093.2331
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-ToolTip-Top",
+      "phase": "close",
+      "requestedCloseAtMs": 795.7547,
+      "frames": [
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-0",
+          "requested": 0,
+          "captureStartMs": 0.1741,
+          "captureEndMs": 9.7783,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-16",
+          "requested": 16,
+          "captureStartMs": 25.2518,
+          "captureEndMs": 37.3283,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-33",
+          "requested": 33,
+          "captureStartMs": 37.3328,
+          "captureEndMs": 49.3726,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-50",
+          "requested": 50,
+          "captureStartMs": 49.3771,
+          "captureEndMs": 62.533,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-83",
+          "requested": 83,
+          "captureStartMs": 88.0159,
+          "captureEndMs": 97.8656,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-100",
+          "requested": 100,
+          "captureStartMs": 103.4189,
+          "captureEndMs": 110.1866,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-133",
+          "requested": 133,
+          "captureStartMs": 140.9937,
+          "captureEndMs": 153.0232,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-167",
+          "requested": 167,
+          "captureStartMs": 171.9112,
+          "captureEndMs": 183.0156,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-200",
+          "requested": 200,
+          "captureStartMs": 203.0531,
+          "captureEndMs": 213.2315,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-250",
+          "requested": 250,
+          "captureStartMs": 264.6145,
+          "captureEndMs": 273.8178,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-300",
+          "requested": 300,
+          "captureStartMs": 312.2287,
+          "captureEndMs": 322.7626,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-400",
+          "requested": 400,
+          "captureStartMs": 405.1004,
+          "captureEndMs": 413.335,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Top-Close-550",
+          "requested": 550,
+          "captureStartMs": 558.347,
+          "captureEndMs": 571.5903,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opened",
+          "time": 9.4328
+        },
+        {
+          "kind": "hide-request",
+          "time": 795.7547
+        },
+        {
+          "kind": "closed",
+          "time": 1093.2331
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-ToolTip-Bottom",
+      "phase": "open",
+      "requestedCloseAtMs": 0,
+      "frames": [
+        {
+          "name": "Light-Plain-ToolTip-Bottom-0",
+          "requested": 0,
+          "captureStartMs": 6.0767,
+          "captureEndMs": 21.2649,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-16",
+          "requested": 16,
+          "captureStartMs": 21.2692,
+          "captureEndMs": 30.7247,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-33",
+          "requested": 33,
+          "captureStartMs": 45.7818,
+          "captureEndMs": 54.3524,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-50",
+          "requested": 50,
+          "captureStartMs": 54.3564,
+          "captureEndMs": 66.702,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-83",
+          "requested": 83,
+          "captureStartMs": 92.7495,
+          "captureEndMs": 102.8459,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-100",
+          "requested": 100,
+          "captureStartMs": 102.8579,
+          "captureEndMs": 115.0677,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-133",
+          "requested": 133,
+          "captureStartMs": 138.504,
+          "captureEndMs": 145.4192,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-167",
+          "requested": 167,
+          "captureStartMs": 169.6132,
+          "captureEndMs": 182.0111,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-200",
+          "requested": 200,
+          "captureStartMs": 201.1767,
+          "captureEndMs": 213.2953,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-250",
+          "requested": 250,
+          "captureStartMs": 262.7795,
+          "captureEndMs": 273.0124,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-300",
+          "requested": 300,
+          "captureStartMs": 307.3857,
+          "captureEndMs": 315.2059,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-400",
+          "requested": 400,
+          "captureStartMs": 400.1782,
+          "captureEndMs": 412.0758,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-550",
+          "requested": 550,
+          "captureStartMs": 554.0624,
+          "captureEndMs": 563.2569,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opened",
+          "time": 9.0651
+        },
+        {
+          "kind": "hide-request",
+          "time": 786.424
+        },
+        {
+          "kind": "closed",
+          "time": 1097.4762
+        }
+      ]
+    },
+    {
+      "name": "Light-Plain-ToolTip-Bottom",
+      "phase": "close",
+      "requestedCloseAtMs": 786.424,
+      "frames": [
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-0",
+          "requested": 0,
+          "captureStartMs": 0.1744,
+          "captureEndMs": 7.1152,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-16",
+          "requested": 16,
+          "captureStartMs": 14.6904,
+          "captureEndMs": 24.8668,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-33",
+          "requested": 33,
+          "captureStartMs": 45.653,
+          "captureEndMs": 55.9416,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-50",
+          "requested": 50,
+          "captureStartMs": 55.9455,
+          "captureEndMs": 68.0155,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-83",
+          "requested": 83,
+          "captureStartMs": 91.7395,
+          "captureEndMs": 98.0994,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-100",
+          "requested": 100,
+          "captureStartMs": 107.1881,
+          "captureEndMs": 116.7191,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-133",
+          "requested": 133,
+          "captureStartMs": 138.6897,
+          "captureEndMs": 146.7562,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-167",
+          "requested": 167,
+          "captureStartMs": 169.5102,
+          "captureEndMs": 177.1012,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-200",
+          "requested": 200,
+          "captureStartMs": 200.5067,
+          "captureEndMs": 208.8243,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-250",
+          "requested": 250,
+          "captureStartMs": 262.6012,
+          "captureEndMs": 274.8025,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-300",
+          "requested": 300,
+          "captureStartMs": 311.5922,
+          "captureEndMs": 322.4984,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-400",
+          "requested": 400,
+          "captureStartMs": 403.1016,
+          "captureEndMs": 413.4805,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        },
+        {
+          "name": "Light-Plain-ToolTip-Bottom-Close-550",
+          "requested": 550,
+          "captureStartMs": 556.8004,
+          "captureEndMs": 564.9824,
+          "CaptureMode": "foreground-client",
+          "Foreground": true,
+          "samplingThread": "worker"
+        }
+      ],
+      "events": [
+        {
+          "kind": "opened",
+          "time": 9.0651
+        },
+        {
+          "kind": "hide-request",
+          "time": 786.424
+        },
+        {
+          "kind": "closed",
+          "time": 1097.4762
+        }
+      ]
+    }
+  ],
+  "boundary": "Live actual Flyout/MenuFlyout, own-window keyboard invocation and Composition screen pixels; capture brackets are wall-clock observations, not compositor presentation timestamps."
+}

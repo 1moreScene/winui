@@ -1,0 +1,120 @@
+{
+  "recordedAt": "2026-11-08T14:59:07.498361+00:00",
+  "controls": [
+    "SplitView",
+    "SemanticZoom",
+    "ParallaxView",
+    "UICommand",
+    "StandardCommand"
+  ],
+  "nativeTypeMapping": {
+    "UICommand": "XamlUICommand",
+    "StandardCommand": "StandardUICommand"
+  },
+  "implementation": "Rust scene controls and command model; typed TS/React calling adapters",
+  "wasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+  "matchesCurrentBinary": true,
+  "loadedComparisonWasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+  "rustTests": {
+    "passed": 332,
+    "suites": 39,
+    "log": "out/view-command-rust-tests.log"
+  },
+  "browser": {
+    "development": {
+      "startTime": "2026-11-08T14:55:46.320Z",
+      "duration": 67529.36200000001,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "startTime": "2026-11-08T14:58:21.645Z",
+      "duration": 45184.885,
+      "expected": 16,
+      "skipped": 2,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "strictModeDevelopment": true
+  },
+  "nativeStates": 42,
+  "browserNativeCases": 64,
+  "maxGeometryErrorDip": 0,
+  "worstMeanPixelError255": 0.42336805555555557,
+  "nativeEvidence": "references/validation/view-command-native.json",
+  "comparisonEvidence": "references/validation/view-command-browser-native.json",
+  "publicEnumTypeNegatives": true,
+  "typecheck": true,
+  "declarations": true,
+  "productionBuild": true,
+  "sourceSnapshotSha256": {
+    "src/scene/view_controls.rs": "c0fa24f4043b9e698e64ae40288c922c4e2c7bea61106c23ab8d744f0aabab33",
+    "src/scene/mod.rs": "1ac06ed89acff467c2d2525a40059df8800d1c3d63a1a2bca946e941dd4cc513",
+    "src/scene/input.rs": "e0d3e85bc9720b6985a1ece7f0977f8139a952ac3595c60f49703b9c3850834d",
+    "src/scene/layout.rs": "b5bc5a47942b811724a78d75787172f3b1bf3addc4f4bc7473363aae1e8804a3",
+    "src/scene/paint.rs": "e034f7774b98136a7b81073982e7bfa0541f68a15ebead23b662ab61e6329c64",
+    "src/scene/properties.rs": "e4e1584ab42458035ae32a1ee2b826a9a0c36df0af38dea564040754217865a2",
+    "src/scene/five_controls.rs": "c9c291069824b4ff36f1ee22d9cc955be2fd9bb806239fc7b664fc808b7ca86b",
+    "src/scene/scroll.rs": "acfc3585459e41d51f0f2f118e2d4d810acdc05d2781375cb71693aafeaf4c5c",
+    "src/wasm.rs": "d63fe3cac1f7d763009efa04640d1fd106d3c57ebf710acaacf1b93974d215f6",
+    "src/enums.rs": "79ad207abaac8f1558f00bafb069f0f721c07f455b0923b435144a36ecc9c271",
+    "gallery/src/view-controls-types.ts": "f7b1375231875caabed7367a1e95d25f387b3d19494ae8ef65a49ef8213525ce",
+    "gallery/src/scene.ts": "1a0c877b8235665e8c6f7aa162ce7f7aa287fa96efcafedd88e3dea1b29ccade",
+    "gallery/src/react.tsx": "dd8069c2b95b258e865bbad9dd1034c3323904c352ee754c4c15940ddd91c75e",
+    "gallery/src/index.ts": "e9ffb4ca71273cddc48a455d3597124f5ae67d32596b0588159f186840f1e551",
+    "gallery/src/ViewCommandPage.tsx": "1679184a2be33bec93309172d4dffdcf606a2c71b152d9e3194e886e03ff31dd",
+    "gallery/src/App.tsx": "31b255f28d89a8788a2a0bdeb8d30f0334607a439169d27460b015254395157c",
+    "gallery/src/gallery-catalog.ts": "aaab61829f86ec0676ab6800bc5f3ca1323e459b9f5fdc2ea43cfa66731a268e",
+    "gallery/src/RepeaterRefreshPage.tsx": "823a5f6b28ca0482af0f750d9b84c2da56b0d9040807bf0cf1396b1faf0b8c3e",
+    "gallery/tests/view-commands.spec.ts": "ab07afa5404f62a4ba3273c7826cf816a016c76d9d131bf432f58acaf5164637",
+    "tests/view_commands.rs": "3e81c56248619c6fe117f81b04763f52e9f753d3d2004ed4d0602d5a60a7daea",
+    "references/view-command-template.json": "1795eeee32133759cfc8f469e97d523058fae74c4cd148b44055a0d6d7f36422",
+    "src/typography.rs": "a6c7d933f9f8607952adcf0b80af7962207d30157de9b26231a0ce0736b40d34",
+    "src/resources.rs": "8fc5e4f5f20d6b99c702301c1ddb5a063eb072beaac6f20bee36beda0e5323a0",
+    "src/scene/command_menus.rs": "398356ec97bda4d239de3eb2dc1f83d84be3c4f71cd20e8eace7c3a07fb67a6d",
+    "src/scene/collections.rs": "9d145e7cd41d72993e46e67e2615ce5d018a2ac63d122fcd3f08646fb0519661",
+    "src/scene/collections/adaptive.rs": "f63a8f2baafb1bfb5634331bbaa8fae836734f44bd5020a1b118ff68f39e3368",
+    "src/scene/menu_entries.rs": "c157ff9577ade46b82f5c999f276b25d9d4494bddb11338e44f436531f35b680",
+    "src/scene/overlays.rs": "6ff8d7e06134009e538709dd4405e162222168c7bee96900e3dc1ef5fa641686",
+    "gallery/src/official-view-command.json": "c9e30110aa015f8b8a4ef5c9eac9f6ab581dd97a3d7191662781223a02a4c70d",
+    "gallery/tests/api-react-types.tsx": "d94d9bc6c4a36f8e2ef76b12b8e7767c7b76d37346bc9730d59e7b927a6897f0",
+    "tools/native-view-gallery/Program.cs": "bcf2b07b4aa8aa789a55fee4a0cadbf9e64b81eb6fbb58bd624bfe31efbbf673",
+    "tools/extract-view-command.py": "1070e545ec81dd53dd8d9a468faf466b5f507a4a59ad8baa7345ab5ff3b65b36"
+  },
+  "remaining": [
+    "Store Gallery Composition animation frame acceptance, full native pixel/font equivalence.",
+    "SemanticZoom arbitrary ISemanticZoomInformation and Windows Back integration; implemented pinch/button fade still need Store animation frame acceptance.",
+    "SplitView advanced nested focus constraints and complete custom template border/corner support.",
+    "Parallax DirectManipulation elastic overscroll and complex transformed ancestors.",
+    "ScrollView full ScrollPresenter inertia configuration and SwipeControl exact native damping, action template and settling trajectories.",
+    "Complete native command localization resources and synchronous parameter-dependent ICommand CanExecute querying."
+  ],
+  "galleryExamples": {
+    "count": 6,
+    "nativeStates": 12,
+    "browserStates": 12,
+    "catalogItems": 126,
+    "maxDimensionErrorDip": 0,
+    "nativeEvidence": "references/validation/view-gallery-native.json",
+    "browserEvidence": "references/validation/view-gallery-browser.json",
+    "runtimeSourceAndOriginalXamlVerified": true,
+    "sourceSha256": "c9e30110aa015f8b8a4ef5c9eac9f6ab581dd97a3d7191662781223a02a4c70d",
+    "controlledViewport": {
+      "width": 640,
+      "parallaxHeight": 600,
+      "semanticHeight": 500,
+      "splitWidth": 400,
+      "splitHeight": 300
+    }
+  },
+  "dependencies": [
+    "Rust ScrollView shared scrolling engine",
+    "Rust SwipeControl directional Reveal/Execute actions",
+    "Rust collection headers",
+    "MenuEntry command binding",
+    "Container pointer notifications",
+    "Shared grapheme fallback for TextWrapping.Wrap"
+  ]
+}

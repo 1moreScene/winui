@@ -1,0 +1,37 @@
+{
+  "generatedAtUtc": "2026-11-08T11:14:01.657902+00:00",
+  "status": "Implemented and verified against same-SDK fixtures; complete native pixel parity not accepted",
+  "controls": [
+    "AutoSuggestBox",
+    "NumberBox",
+    "ComboBox",
+    "ContentDialog",
+    "TeachingTip"
+  ],
+  "scope": "docs/composed-controls.md",
+  "currentStatus": "references/composed-controls-status.json",
+  "sources": "references/composed-controls-sources.json",
+  "templates": "references/composed-controls-template.json",
+  "gallery": "gallery/src/official-composed-controls.json",
+  "implementation": {
+    "rust": "src/scene/composed.rs",
+    "numberParser": "src/number_box.rs",
+    "typescript": "gallery/src/scene.ts",
+    "types": "gallery/src/composed-types.ts",
+    "react": "gallery/src/react.tsx",
+    "gallery": "gallery/src/ComposedControlsPage.tsx",
+    "officialSamples": 13,
+    "defaultBackend": "Canvas2D",
+    "optionalBackend": "WebGL2"
+  },
+  "validation": "references/validation/composed-controls.json",
+  "fullyMatchesNative": false,
+  "pending": [
+    "Native DWrite glyph coverage/phase versus browser font rasterization.",
+    "Desktop HostBackdrop and DWM composition differ from a browser-backed popup island.",
+    "Live same-SDK motion is recorded and replayed; Store distribution frame-by-frame pixel acceptance remains separate.",
+    "Arbitrary WinRT formatter implementations, editable rich selection-box templates, InPlace ContentDialog and full UIA parity are outside this slice.",
+    "Native windowed ComboBox fixtures can extend above the client top; the browser popup is constrained to its viewport. Raw placement differences remain in geometryMaxDip and windowEdgeCases; withinClientGeometryMaxDip excludes only those explicit client-top constraint cases."
+  ],
+  "validationPending": []
+}

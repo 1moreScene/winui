@@ -1,0 +1,177 @@
+{
+  "controls": {
+    "GridView": {
+      "description": "The GridView lets you show a collection of items arranged in rows and columns that scroll horizontally.",
+      "samples": [
+        {
+          "title": "Basic GridView with Simple DataTemplate",
+          "xaml": "<!-- XAML Code -->\n\n<GridView\n    x:Name=\"BasicGridView\"\n    ItemTemplate=\"{StaticResource ImageTemplate}\"\n    IsItemClickEnabled=\"True\"\n    ItemClick=\"BasicGridView_ItemClick\"\n    SelectionMode=\"Single\"/>\n                    \n<DataTemplate x:Key=\"ImageTemplate\" x:DataType=\"local:CustomDataObject\">\n     <Image Stretch=\"UniformToFill\" Source=\"{x:Bind ImageLocation}\" Width=\"190\" Height=\"130\"/>\n</DataTemplate>\n                    \n<!-- In this example, the GridView's ItemTemplate property is bound to a data template (shown above)\ncalled ImageTemplate, defined in the Page.Resources section of the XAML file. \n                    \nThe data template is defined to display an object of type CustomDataObject, which is created from a class\nthat's defined in the code-behind (see code below).\n                    \nThe ItemsSource for the GridView is an ObservableCollection<CustomDataObject> called Items and\nis defined in the C# code-behind. It is bound to the GridView's ItemsSource property in the code-behind.\n                    \nThe IsItemClickEnabled property allows items to be clicked, and a function called BasicGridView_ItemClick \nis called when an item is clicked. This function is defined in the C# code-behind and simply outputs \nthe title of the selected item into a TextBlock below the GridView. -->"
+        },
+        {
+          "title": "GridView with Layout Customization",
+          "xaml": "<!-- The GridView used for this example is shown below. Setter properties are used to customize \nsome parts of the GridViewItems (i.e. the margins). -->\n<GridView\n    x:Name=\"StyledGrid\"\n    ItemTemplate=\"{StaticResource ImageOverlayTemplate}\">\n\n    <GridView.ItemContainerStyle>\n        <Style TargetType=\"GridViewItem\" BasedOn=\"{StaticResource DefaultGridViewItemStyle}\">\n            <Setter Property=\"Margin\" Value=\"5, 5, 5, 5\"/>\n        </Style>\n    </GridView.ItemContainerStyle>\n                    \n    <!-- An extra property also needs to be added to the GridView's ItemsWrapGrid. \n    The following sets the maximum # of items to show before wrapping.-->\n    <GridView.ItemsPanel>\n        <ItemsPanelTemplate>\n            <ItemsWrapGrid x:Name=\"MaxItemsWrapGrid\" \n                           MaximumRowsOrColumns=\"3\" \n                           Orientation=\"Horizontal\"/>\n        </ItemsPanelTemplate>\n    </GridView.ItemsPanel>                  \n</GridView>      \n                    \n<!-- In this example, the GridView's ItemTemplate property is bound to a data template (shown below)\ncalled ImageOverlayTemplate, defined in the Page.Resources section of the XAML file. \n                    \nThe data template is defined to display a CustomDataObject object (same type as in above sample). -->\n                    \n<DataTemplate x:Name=\"ImageOverlayTemplate\" x:DataType=\"local:CustomDataObject\">\n    <Grid Width=\"100\">\n        <Image Source=\"{x:Bind ImageLocation}\" Stretch=\"UniformToFill\"/>\n        <StackPanel Orientation=\"Vertical\" Height=\"40\" VerticalAlignment=\"Bottom\" Padding=\"5,1,5,1\" \n                    Background=\"LightGray\" Opacity=\".75\">\n            <TextBlock Text=\"{x:Bind Title}\"/>\n            <StackPanel Orientation=\"Horizontal\">\n                <TextBlock Text=\"{x:Bind Likes}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" \n                           Foreground=\"{ThemeResource SystemControlPageTextBaseMediumBrush}\"/>\n                <TextBlock Text=\" Likes\" Style=\"{ThemeResource CaptionTextBlockStyle}\" \n                           Foreground=\"{ThemeResource SystemControlPageTextBaseMediumBrush}\"/>\n            </StackPanel>\n        </StackPanel>\n    </Grid>\n</DataTemplate>"
+        },
+        {
+          "title": "Content inside of a GridView.",
+          "xaml": "<!-- The GridView used for this sample is shown below, with all of the necessary added properties. -->\n<GridView \n    x:Name=\"ContentGridView\"\n    ItemsSource=\"{x:Bind Items}\"\n    ItemTemplate=\"{StaticResource ImageTemplate}\"\n    IsItemClickEnabled=\"{x:Bind ItemClickCheckBox.IsChecked.Value, Mode=OneWay}\"\n    CanDragItems=\"{x:Bind DragCheckBox.IsChecked.Value, Mode=OneWay}\"\n    AllowDrop=\"{x:Bind DropCheckBox.IsChecked.Value, Mode=OneWay}\"\n    CanReorderItems=\"{x:Bind ReorderCheckBox.IsChecked.Value, Mode=OneWay}\"\n    SelectionChanged=\"ContentGridView_SelectionChanged\"\n    ItemClick=\"ContentGridView_ItemClick\" \n    FlowDirection=\"LeftToRight\"/>\n\n<!-- ContentGridView_SelectionChanged and ContentGridView_ItemClick are functions defined in the code-behind\nto handle the events of when a selection changes on the GridView and when an item is clicked. -->\n                    \n<!-- The data template bound to this GridView's ItemTemplate property is based on which one you\nselect from the options on the right. The currently selected DataTemplate is: -->\n"
+        }
+      ]
+    },
+    "ListView": {
+      "description": "The ListView lets you show a collection of items in a list that scrolls vertically.",
+      "samples": [
+        {
+          "title": "Basic ListView with Simple DataTemplate",
+          "xaml": "<!-- XAML Code -->\n\n<ListView\n    x:Name=\"BaseExample\"\n    ItemTemplate=\"{StaticResource ContactListViewTemplate}\"\n    BorderThickness=\"1\"\n    BorderBrush=\"{ThemeResource SystemControlForegroundBaseMediumLowBrush}\"\n    Width=\"350\" \n    Height=\"400\"\n    HorizontalAlignment=\"Left\"/>\n                \n<!-- In this example, the ListView's ItemTemplate property is bound to a data template (shown below)\ncalled ContactListViewTemplate, defined in a Page.Resources section. -->\n    \n<DataTemplate x:Key=\"ContactListViewTemplate\" x:DataType=\"local:Contact\">\n     <TextBlock Text=\"{x:Bind Name}\" x:Phase=\"1\" Margin=\"0,5,0,5\"/>\n</DataTemplate>"
+        },
+        {
+          "title": "ListView with Selection Support",
+          "xaml": "<!-- To create this sample, add/change the following properties onto the code for the base example above: -->\n                        \n<ListView\n    ItemTemplate=\"{StaticResource ContactListViewTemplate}\"/>\n    \n<!-- DataTemplate used: -->\n\n<DataTemplate x:Key=\"ContactListViewTemplate\" x:DataType=\"local:Contact\">\n    <Grid>\n        <Grid.RowDefinitions>\n            <RowDefinition Height=\"*\"/>\n            <RowDefinition Height=\"*\"/>\n        </Grid.RowDefinitions>\n        <Grid.ColumnDefinitions>\n            <ColumnDefinition Width=\"Auto\"/>\n            <ColumnDefinition Width=\"*\"/>\n        </Grid.ColumnDefinitions>\n        <Ellipse x:Name=\"Ellipse\"\n                    Grid.RowSpan=\"2\"\n                    Width =\"32\"\n                    Height=\"32\"\n                    Margin=\"6\"\n                    VerticalAlignment=\"Center\"\n                    HorizontalAlignment=\"Center\"\n                    Fill=\"{ThemeResource SystemControlBackgroundBaseMediumBrush}\"/>\n        <TextBlock Grid.Column=\"1\"\n                    Text=\"{x:Bind Name}\"\n                    x:Phase=\"1\"\n                    Style=\"{ThemeResource BaseTextBlockStyle}\"\n                    Margin=\"12,6,0,0\"/>\n        <TextBlock  Grid.Column=\"1\"\n                    Grid.Row=\"1\"\n                    Text=\"{x:Bind Company}\"\n                    x:Phase=\"2\"\n                    Style=\"{ThemeResource BodyTextBlockStyle}\"\n                    Margin=\"12,0,0,6\"/>\n    </Grid>\n</DataTemplate>"
+        },
+        {
+          "title": "ListViews with Drag, Drop, and Reordering Support",
+          "xaml": "<!-- Full code to implement dragging and dropping between lists can be found in the \nsource code for the WinUI Gallery. -->\n\n<!-- The following properties should be added to the ListView definitions to build this sample. -->\n<ListView CanDragItems=\"True\" CanReorderItems=\"True\" AllowDrop=\"True\"\n    SelectionMode=\"Single\" />\n    \n<!-- DataTemplate used is the same as the above sample. -->"
+        },
+        {
+          "title": "ListView with Grouped Headers",
+          "xaml": "<!-- XAML Code -->\n\n<!-- ListViews with grouped items must be bound to a CollectionViewSource, as shown below.\nThis CollectionViewSource is defined in the XAML below, but is bound to an ItemsSource in the C#\ncode-behind. See the C# code below for more details on how to create/bind to a grouped list. -->\n\n<CollectionViewSource x:Name=\"ContactsCVS\" IsSourceGrouped=\"True\"/>\n                          \n<ListView ItemsSource=\"{x:Bind ContactsCVS.View, Mode=OneWay}\">\n    <ListView.ItemsPanel>\n        <ItemsPanelTemplate>\n            <ItemsStackPanel AreStickyGroupHeadersEnabled=\"False\"/>\n        </ItemsPanelTemplate>\n    </ListView.ItemsPanel>\n    <ListView.GroupStyle>\n        <GroupStyle >\n            <GroupStyle.HeaderTemplate>\n                <DataTemplate x:DataType=\"local:GroupInfoList\">\n                    <Border AutomationProperties.AccessibilityView=\"Raw\">\n                        <TextBlock Text=\"{x:Bind Key}\" Style=\"{ThemeResource TitleTextBlockStyle}\" AutomationProperties.AccessibilityView=\"Raw\"/>\n                    </Border>\n                </DataTemplate>\n            </GroupStyle.HeaderTemplate>\n        </GroupStyle>\n    </ListView.GroupStyle>\n</ListView>\n                    \n<!-- Data template used is same as above examples. -->"
+        },
+        {
+          "title": "ListView with filtering",
+          "xaml": "<!-- XAML Code -->\n\n<!-- The ListView's ItemsSource is an ObservableCollection<Contact> that is defined and bound\nin the code-behind, called contactsFiltered. This ListView uses the same DataTemplate as the\nsamples above it, called ContactListViewTemplate - you can see its definition above. -->\n\n<ListView \n    x:Name=\"FilteredListView\"\n    ItemTemplate=\"{StaticResource ContactListViewTemplate}\"\n    SelectionMode=\"Single\"\n    ShowsScrollingPlaceholders=\"True\"\n    Height=\"400\"\n    Width=\"400\"\n    BorderThickness=\"1\"\n    BorderBrush=\"{ThemeResource SystemControlForegroundBaseMediumLowBrush}\"/>\n\n<!-- The textboxes used for filtering are shown below: -->\n<StackPanel Width=\"200\">\n    <TextBlock Margin=\"8,8,8,4\" Style=\"{ThemeResource BaseTextBlockStyle}\">Filter by...</TextBlock>\n    <TextBox x:Name=\"FilterByFirstName\" Width=\"150\" Header=\"First name\" Margin=\"8\"\n\t     HorizontalAlignment=\"Left\" TextChanged=\"OnFilterChanged\"/>\n    <TextBox x:Name=\"FilterByLastName\" Width=\"150\" Header=\"Last name\" Margin=\"8\"\n\t     HorizontalAlignment=\"Left\" TextChanged=\"OnFilterChanged\"/>\n    <TextBox x:Name=\"FilterByCompany\" Width=\"150\" Header=\"Company\" Margin=\"8\" \n\t     HorizontalAlignment=\"Left\" TextChanged=\"OnFilterChanged\"/>\n</StackPanel>"
+        },
+        {
+          "title": "ListView for Messaging or Data Logging",
+          "xaml": "<ListView x:Name=\"InvertedListView\"\n             ItemTemplate=\"{StaticResource MessageViewTemplate}\">\n                    \n     <!-- The ItemsStackPanel must be edited to update the following two properties -->\n     <!-- These properties allow the list to grow from the bottom -->\n     <ListView.ItemsPanel>\n         <ItemsPanelTemplate>\n             <ItemsStackPanel ItemsUpdatingScrollMode=\"KeepLastItemInView\" \n                              VerticalAlignment=\"Bottom\"/>\n         </ItemsPanelTemplate>\n     </ListView.ItemsPanel>\n\n     <!-- This setter property is created so ListViewItems correctly align to the left or right. -->\n     <ListView.ItemContainerStyle>\n         <Style TargetType=\"ListViewItem\">\n             <Setter Property=\"HorizontalContentAlignment\" Value=\"Stretch\"/>\n         </Style>\n     </ListView.ItemContainerStyle>\n</ListView>\n\n<!-- Data template used: -->\n<!-- The data template is bound to a custom DataType called Message. -->\n<!-- Each Message object has a color and alignment assigned to it based on whether it was \nsent or received, and those values are bound in the DataTemplate.-->\n<DataTemplate x:Key=\"MessageViewTemplate\" x:DataType=\"local:Message\">\n    <Grid Height=\"Auto\" Margin=\"4\" HorizontalAlignment=\"{x:Bind MsgAlignment}\">\n        <StackPanel MinHeight=\"75\" Width=\"350\" Padding=\"10, 0, 0, 10\" Background=\"{ThemeResource SystemColorHighlightColor}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n            <TextBlock Text=\"{x:Bind MsgText}\" Padding=\"0, 10, 0, 0\" FontSize=\"20\" Foreground=\"{ThemeResource SystemColorHighlightTextColor}\"/>\n            <TextBlock Text=\"{x:Bind MsgDateTime}\" Padding=\"0, 0, 0, 10\" FontSize=\"15\" Foreground=\"{ThemeResource SystemColorHighlightTextColor}\"/>\n        </StackPanel>\n    </Grid>\n</DataTemplate>"
+        },
+        {
+          "title": "ListView with Images",
+          "xaml": "<ListView x:Name=\"Control4\"\n     Height=\"400\"\n     MinWidth=\"550\"\n     BorderThickness=\"1\"\n     BorderBrush=\"{ThemeResource ControlStrongStrokeColorDefaultBrush}\">\n                    \n<!-- Data Template Used: -->\n<!-- The data template is bound to a custom-created data type called CustomDataObject. -->\n<!-- The full code for the class can be found in this page's source code, but its attributes are referenced/bound below. -->\n\n<ListView.ItemTemplate>\n<DataTemplate x:DataType=\"local:CustomDataObject\">\n    <Grid Margin=\"0,12,0,12\" AutomationProperties.Name=\"{x:Bind Title}\">\n        <Grid.ColumnDefinitions>\n            <ColumnDefinition Width=\"Auto\" MinWidth=\"150\"/>\n            <ColumnDefinition Width=\"*\" />\n        </Grid.ColumnDefinitions>\n        <Image Source=\"{x:Bind ImageLocation}\" MaxHeight=\"100\" Stretch=\"Fill\"/>\n\n        <StackPanel Margin=\"12,0,0,0\" Grid.Column=\"1\" >\n            <TextBlock Text=\"{x:Bind Title}\" FontSize=\"14\" FontWeight=\"SemiBold\" Style=\"{ThemeResource BaseTextBlockStyle}\"\n                        HorizontalAlignment=\"Left\" Margin=\"0,0,0,6\" LineHeight=\"20\"/>\n            <TextBlock Text=\"{x:Bind Description}\" FontFamily=\"Segoe UI\" FontWeight=\"Normal\" Style=\"{ThemeResource BodyTextBlockStyle}\"\n                        TextTrimming=\"CharacterEllipsis\" Width=\"350\" MaxLines=\"1\"/>\n            <StackPanel Orientation=\"Horizontal\">\n                <TextBlock Text=\"{x:Bind Views}\" HorizontalAlignment=\"Left\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Margin=\"0,0,0,0\"/>\n                <TextBlock Text=\" Views \" HorizontalAlignment=\"Left\" Style=\"{ThemeResource CaptionTextBlockStyle}\"/>\n                <TextBlock Text=\" · \" Style=\"{ThemeResource CaptionTextBlockStyle}\" \n                            HorizontalAlignment=\"Left\"/>\n                <TextBlock Text=\"{x:Bind Likes}\" HorizontalAlignment=\"Left\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Margin=\"5,0,0,0\"/>\n                <TextBlock Text=\" Likes\" HorizontalAlignment=\"Left\" Style=\"{ThemeResource CaptionTextBlockStyle}\"/>\n            </StackPanel>\n        </StackPanel>\n    </Grid>\n</DataTemplate>\n</ListView.ItemTemplate>\n</ListView>"
+        },
+        {
+          "title": "ListView with context menus",
+          "xaml": "<ListView\n    ItemsSource=\"{x:Bind contacts, Mode=OneWay}\"\n    SelectionMode=\"Single\"\n    ShowsScrollingPlaceholders=\"True\"\n    Height=\"400\"\n    Width=\"400\"\n    BorderThickness=\"1\"\n    BorderBrush=\"{ThemeResource ControlStrongStrokeColorDefaultBrush}\"\n    HorizontalAlignment=\"Left\">\n    <ListView.ItemTemplate>\n        <DataTemplate x:DataType=\"local:Contact\">\n            <Grid>\n                <Grid.ContextFlyout>\n                    <MenuFlyout>\n                        <MenuFlyoutItem Text=\"Delete\" Click=\"ContactDeleteMenuItem_Click\"/>\n                    </MenuFlyout>\n                </Grid.ContextFlyout>\n             \n                <Grid.RowDefinitions>\n                    <RowDefinition Height=\"*\"/>\n                    <RowDefinition Height=\"*\"/>\n                </Grid.RowDefinitions>\n                <Grid.ColumnDefinitions>\n                    <ColumnDefinition Width=\"Auto\"/>\n                    <ColumnDefinition Width=\"*\"/>\n                </Grid.ColumnDefinitions>\n                <Ellipse x:Name=\"Ellipse\"\n                    Grid.RowSpan=\"2\"\n                    Width =\"32\"\n                    Height=\"32\"\n                    Margin=\"6\"\n                    VerticalAlignment=\"Center\"\n                    HorizontalAlignment=\"Center\"\n                    Fill=\"{ThemeResource ControlStrongFillColorDefaultBrush}\"/>\n                <TextBlock Grid.Column=\"1\"\n                    Text=\"{x:Bind Name}\"\n                    x:Phase=\"1\"\n                    Style=\"{ThemeResource BaseTextBlockStyle}\"\n                    Margin=\"12,6,0,0\"/>\n                <TextBlock Grid.Column=\"1\"\n                    Grid.Row=\"1\"\n                    Text=\"{x:Bind Company}\"\n                    x:Phase=\"2\"\n                    Style=\"{ThemeResource BodyTextBlockStyle}\"\n                    Margin=\"12,0,0,6\"/>\n            </Grid>\n        </DataTemplate>\n    </ListView.ItemTemplate>\n</ListView>"
+        },
+        {
+          "title": "Save and restore the scroll position using ListViewPersistenceHelper.",
+          "xaml": "<ListView x:Name=\"RestoreScrollListView\"\n          Height=\"220\" Width=\"400\" HorizontalAlignment=\"Left\"\n          BorderThickness=\"1\" BorderBrush=\"{ThemeResource ControlStrongStrokeColorDefaultBrush}\"\n          ItemsSource=\"{x:Bind contacts5}\">\n    <ListView.ItemTemplate>\n        <DataTemplate x:DataType=\"x:String\">\n            <TextBlock Text=\"{x:Bind}\" Margin=\"0,8,0,8\"/>\n        </DataTemplate>\n    </ListView.ItemTemplate>\n</ListView>"
+        },
+        {
+          "title": "Scroll a ListView programmatically with ScrollIntoView.",
+          "xaml": "<ListView x:Name=\"ScrollIntoViewListView\"\n          Height=\"220\" Width=\"400\" HorizontalAlignment=\"Left\"\n          BorderThickness=\"1\" BorderBrush=\"{ThemeResource ControlStrongStrokeColorDefaultBrush}\"\n          ItemsSource=\"{x:Bind contacts6}\">\n    <ListView.ItemTemplate>\n        <DataTemplate x:DataType=\"x:String\">\n            <TextBlock Text=\"{x:Bind}\" Margin=\"0,8,0,8\"/>\n        </DataTemplate>\n    </ListView.ItemTemplate>\n</ListView>"
+        }
+      ]
+    },
+    "VariableSizedWrapGrid": {
+      "description": "A VariableSizedWrapGrip is used to create grid layouts where content can span multiple rows and columns.",
+      "samples": [
+        {
+          "title": "A VariableSizedWrapGrid control.",
+          "xaml": "<VariableSizedWrapGrid MaximumRowsOrColumns=\"3\" ItemHeight=\"44\" ItemWidth=\"44\">\n    <Rectangle Fill=\"Red\"/>\n    <Rectangle Fill=\"Blue\" Height=\"80\" VariableSizedWrapGrid.RowSpan=\"2\"/>\n    <Rectangle Fill=\"Green\" Width=\"80\" VariableSizedWrapGrid.ColumnSpan=\"2\"/>\n    <Rectangle Fill=\"Yellow\" Height=\"80\" Width=\"80\" VariableSizedWrapGrid.RowSpan=\"2\" VariableSizedWrapGrid.ColumnSpan=\"2\"/>\n</VariableSizedWrapGrid>"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "local": "references/gallery-input/GridView/BasicGridviewSimpleDatatemplate.txt",
+      "upstream": "WinUIGallery/Samples/GridView/BasicGridviewSimpleDatatemplate.txt",
+      "sha256": "3ca56dd7f5ab4673a0c69599acbbfd373331c821816c8b693b337dd872d302ff"
+    },
+    {
+      "local": "references/gallery-input/GridView/ContentInsideGridview.txt",
+      "upstream": "WinUIGallery/Samples/GridView/ContentInsideGridview.txt",
+      "sha256": "abb6c2fd1131538b3814af49a5a3c301e97993d0abd73db9f191d069311b77d2"
+    },
+    {
+      "local": "references/gallery-input/GridView/GridviewLayoutCustomization.txt",
+      "upstream": "WinUIGallery/Samples/GridView/GridviewLayoutCustomization.txt",
+      "sha256": "4361c4743b7bc0e6dc72667d09fde35ec40f42d8445dff6da7b93f38a28a3abc"
+    },
+    {
+      "local": "references/gallery-input/GridView/GridViewPage.xaml",
+      "upstream": "WinUIGallery/Samples/GridView/GridViewPage.xaml",
+      "sha256": "5a9aa728def6a5afa2fcb49d1275cb84b5a00de4a5ccd973729bfd69ca1eefdc"
+    },
+    {
+      "local": "references/gallery-input/GridView/GridViewPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/GridView/GridViewPage.xaml.cs",
+      "sha256": "1b6bf9017650c7461e8e4fb16e618d745d51639d325ba0c8eecb9f19827248ad"
+    },
+    {
+      "local": "references/gallery-input/ListView/BasicListviewSimpleDatatemplate.txt",
+      "upstream": "WinUIGallery/Samples/ListView/BasicListviewSimpleDatatemplate.txt",
+      "sha256": "01ac951dcbe4a5bfbaccc708372b2ff194a54ff41aa1b61ed6547aa5335679b2"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewContextMenus.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewContextMenus.txt",
+      "sha256": "981e5945ab38a5577722f9daea8ad833764e3d44d8c64a3fa007d5dfc720f5b3"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewFiltering.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewFiltering.txt",
+      "sha256": "f34ebab1f2f7f91840f74ad8e98ae1461b1a35efcbeeef51c0a718b1810aa2dc"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewGroupedHeaders.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewGroupedHeaders.txt",
+      "sha256": "e6a1b966eedb158d6df6c6706145c6470d5bac3ff8c422e3c9a6b52baca5d791"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewImages.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewImages.txt",
+      "sha256": "75364459641254f64d3e9c6e2527a89f90450c47c37e9612d21712410bfd8a36"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewMessagingDataLogging.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewMessagingDataLogging.txt",
+      "sha256": "87753e0309e40470c743140e0ea6fab811cc502a4e55f908cb315119247e550d"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListViewPage.xaml",
+      "upstream": "WinUIGallery/Samples/ListView/ListViewPage.xaml",
+      "sha256": "cbbed9b811c6fd0e399a3408b3d59e2d4ab61a7bd5bed3f1b28fbf2dd4e44a96"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListViewPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/ListView/ListViewPage.xaml.cs",
+      "sha256": "3714fe5dd46e9504d830b9f831fbcbb8a1025bde11e47b5070980294afea317f"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewRestoreScrollPosition.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewRestoreScrollPosition.txt",
+      "sha256": "58fbf5affa8456545093fa2905cfe59f101a4b8f2da0e839f1ec5ee6e187abdc"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewScrollIntoView.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewScrollIntoView.txt",
+      "sha256": "69f631b1313402949a6077f4a36cf7dc44b9a5999f40c9ced865afa58c972694"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewsDragDropReordering.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewsDragDropReordering.txt",
+      "sha256": "f88232c2bd4066c4a4c1edd766b435a33b505d4a9a6c394d881d12bd66019a70"
+    },
+    {
+      "local": "references/gallery-input/ListView/ListviewSelectionSupport.txt",
+      "upstream": "WinUIGallery/Samples/ListView/ListviewSelectionSupport.txt",
+      "sha256": "85eaf9666895b07cc8200123588489cef8b5ab304a8b1ef721293a739b137e82"
+    },
+    {
+      "local": "references/gallery-input/VariableSizedWrapGrid/VariablesizedwrapgridControl.txt",
+      "upstream": "WinUIGallery/Samples/VariableSizedWrapGrid/VariablesizedwrapgridControl.txt",
+      "sha256": "50c9ba8db050223f7a4e33f436cccf24925cbdaaf6cf9c5aa6b473c1036f562a"
+    },
+    {
+      "local": "references/gallery-input/VariableSizedWrapGrid/VariableSizedWrapGridPage.xaml",
+      "upstream": "WinUIGallery/Samples/VariableSizedWrapGrid/VariableSizedWrapGridPage.xaml",
+      "sha256": "2c52246975dda230ae1495655bc1773cdc19a26aba53c11c65b9fee15d4b114a"
+    },
+    {
+      "local": "references/gallery-input/VariableSizedWrapGrid/VariableSizedWrapGridPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/VariableSizedWrapGrid/VariableSizedWrapGridPage.xaml.cs",
+      "sha256": "8ad0cc58f01942234b6c534b67b0879f4d6b777cb641cc2ad6d88c9e58552be1"
+    }
+  ]
+}

@@ -1,0 +1,1074 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "aliases": {
+    "Light": {
+      "ToggleButtonBackground": "ControlFillColorDefaultBrush",
+      "ToggleButtonBackgroundPointerOver": "ControlFillColorSecondaryBrush",
+      "ToggleButtonBackgroundPressed": "ControlFillColorTertiaryBrush",
+      "ToggleButtonBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "ToggleButtonBackgroundChecked": "AccentFillColorDefaultBrush",
+      "ToggleButtonBackgroundCheckedPointerOver": "AccentFillColorSecondaryBrush",
+      "ToggleButtonBackgroundCheckedPressed": "AccentFillColorTertiaryBrush",
+      "ToggleButtonBackgroundCheckedDisabled": "AccentFillColorDisabledBrush",
+      "ToggleButtonBackgroundIndeterminate": "ControlFillColorDefaultBrush",
+      "ToggleButtonBackgroundIndeterminatePointerOver": "ControlFillColorSecondaryBrush",
+      "ToggleButtonBackgroundIndeterminatePressed": "ControlFillColorTertiaryBrush",
+      "ToggleButtonBackgroundIndeterminateDisabled": "ControlFillColorDisabledBrush",
+      "ToggleButtonForeground": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundPressed": "TextFillColorSecondaryBrush",
+      "ToggleButtonForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleButtonForegroundChecked": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleButtonForegroundCheckedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleButtonForegroundCheckedPressed": "TextOnAccentFillColorSecondaryBrush",
+      "ToggleButtonForegroundCheckedDisabled": "TextOnAccentFillColorDisabled",
+      "ToggleButtonForegroundIndeterminate": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundIndeterminatePointerOver": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundIndeterminatePressed": "TextFillColorSecondaryBrush",
+      "ToggleButtonForegroundIndeterminateDisabled": "TextFillColorDisabledBrush",
+      "ToggleButtonBorderBrush": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushPointerOver": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushPressed": "ControlStrokeColorDefaultBrush",
+      "ToggleButtonBorderBrushDisabled": "ControlStrokeColorDefaultBrush",
+      "ToggleButtonBorderBrushChecked": "AccentControlElevationBorderBrush",
+      "ToggleButtonBorderBrushCheckedPointerOver": "AccentControlElevationBorderBrush",
+      "ToggleButtonBorderBrushCheckedPressed": "ControlFillColorTransparentBrush",
+      "ToggleButtonBorderBrushCheckedDisabled": "ControlFillColorTransparentBrush",
+      "ToggleButtonBorderBrushIndeterminate": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushIndeterminatePointerOver": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushIndeterminatePressed": "ControlStrokeColorDefaultBrush",
+      "ToggleButtonBorderBrushIndeterminateDisabled": "ControlStrokeColorDefaultBrush",
+      "CheckBoxForegroundUnchecked": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundUncheckedPointerOver": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundUncheckedPressed": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundUncheckedDisabled": "TextFillColorDisabledBrush",
+      "CheckBoxForegroundChecked": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundCheckedPointerOver": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundCheckedPressed": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundCheckedDisabled": "TextFillColorDisabledBrush",
+      "CheckBoxForegroundIndeterminate": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundIndeterminatePointerOver": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundIndeterminatePressed": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundIndeterminateDisabled": "TextFillColorDisabledBrush",
+      "CheckBoxBackgroundUnchecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundUncheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundUncheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundUncheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundChecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundCheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundCheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminate": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminatePointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminatePressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminateDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUnchecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUncheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUncheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUncheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushChecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushCheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushCheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminate": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminatePointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminatePressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminateDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxCheckBackgroundStrokeUnchecked": "ControlStrongStrokeColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedPointerOver": "ControlStrongStrokeColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedPressed": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundStrokeChecked": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedPointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedPressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminate": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminatePointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminatePressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminateDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundFillUnchecked": "ControlAltFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundFillUncheckedPointerOver": "ControlAltFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundFillUncheckedPressed": "ControlAltFillColorQuarternaryBrush",
+      "CheckBoxCheckBackgroundFillUncheckedDisabled": "ControlAltFillColorDisabledBrush",
+      "CheckBoxCheckBackgroundFillChecked": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundFillCheckedPointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundFillCheckedPressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundFillCheckedDisabled": "AccentFillColorDisabledBrush",
+      "CheckBoxCheckBackgroundFillIndeterminate": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundFillIndeterminatePointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundFillIndeterminatePressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundFillIndeterminateDisabled": "AccentFillColorDisabledBrush",
+      "CheckBoxCheckGlyphForegroundUnchecked": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedPressed": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedDisabled": "TextOnAccentFillColorDisabledBrush",
+      "CheckBoxCheckGlyphForegroundChecked": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundCheckedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundCheckedPressed": "TextOnAccentFillColorSecondaryBrush",
+      "CheckBoxCheckGlyphForegroundCheckedDisabled": "TextOnAccentFillColorDisabledBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminate": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminatePointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminatePressed": "TextOnAccentFillColorSecondaryBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminateDisabled": "TextOnAccentFillColorDisabledBrush"
+    },
+    "Dark": {
+      "ToggleButtonBackground": "ControlFillColorDefaultBrush",
+      "ToggleButtonBackgroundPointerOver": "ControlFillColorSecondaryBrush",
+      "ToggleButtonBackgroundPressed": "ControlFillColorTertiaryBrush",
+      "ToggleButtonBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "ToggleButtonBackgroundChecked": "AccentFillColorDefaultBrush",
+      "ToggleButtonBackgroundCheckedPointerOver": "AccentFillColorSecondaryBrush",
+      "ToggleButtonBackgroundCheckedPressed": "AccentFillColorTertiaryBrush",
+      "ToggleButtonBackgroundCheckedDisabled": "AccentFillColorDisabledBrush",
+      "ToggleButtonBackgroundIndeterminate": "ControlFillColorDefaultBrush",
+      "ToggleButtonBackgroundIndeterminatePointerOver": "ControlFillColorSecondaryBrush",
+      "ToggleButtonBackgroundIndeterminatePressed": "ControlFillColorTertiaryBrush",
+      "ToggleButtonBackgroundIndeterminateDisabled": "ControlFillColorDisabledBrush",
+      "ToggleButtonForeground": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundPressed": "TextFillColorSecondaryBrush",
+      "ToggleButtonForegroundDisabled": "TextFillColorDisabledBrush",
+      "ToggleButtonForegroundChecked": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleButtonForegroundCheckedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "ToggleButtonForegroundCheckedPressed": "TextOnAccentFillColorSecondaryBrush",
+      "ToggleButtonForegroundCheckedDisabled": "TextOnAccentFillColorDisabled",
+      "ToggleButtonForegroundIndeterminate": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundIndeterminatePointerOver": "TextFillColorPrimaryBrush",
+      "ToggleButtonForegroundIndeterminatePressed": "TextFillColorSecondaryBrush",
+      "ToggleButtonForegroundIndeterminateDisabled": "TextFillColorDisabledBrush",
+      "ToggleButtonBorderBrush": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushPointerOver": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushPressed": "ControlStrokeColorDefaultBrush",
+      "ToggleButtonBorderBrushDisabled": "ControlStrokeColorDefaultBrush",
+      "ToggleButtonBorderBrushChecked": "AccentControlElevationBorderBrush",
+      "ToggleButtonBorderBrushCheckedPointerOver": "AccentControlElevationBorderBrush",
+      "ToggleButtonBorderBrushCheckedPressed": "ControlFillColorTransparentBrush",
+      "ToggleButtonBorderBrushCheckedDisabled": "ControlFillColorTransparentBrush",
+      "ToggleButtonBorderBrushIndeterminate": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushIndeterminatePointerOver": "ControlElevationBorderBrush",
+      "ToggleButtonBorderBrushIndeterminatePressed": "ControlStrokeColorDefaultBrush",
+      "ToggleButtonBorderBrushIndeterminateDisabled": "ControlStrokeColorDefaultBrush",
+      "CheckBoxForegroundUnchecked": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundUncheckedPointerOver": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundUncheckedPressed": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundUncheckedDisabled": "TextFillColorDisabledBrush",
+      "CheckBoxForegroundChecked": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundCheckedPointerOver": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundCheckedPressed": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundCheckedDisabled": "TextFillColorDisabledBrush",
+      "CheckBoxForegroundIndeterminate": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundIndeterminatePointerOver": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundIndeterminatePressed": "TextFillColorPrimaryBrush",
+      "CheckBoxForegroundIndeterminateDisabled": "TextFillColorDisabledBrush",
+      "CheckBoxBackgroundUnchecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundUncheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundUncheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundUncheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundChecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundCheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundCheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminate": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminatePointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminatePressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBackgroundIndeterminateDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUnchecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUncheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUncheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushUncheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushChecked": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushCheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushCheckedPressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminate": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminatePointerOver": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminatePressed": "SubtleFillColorTransparentBrush",
+      "CheckBoxBorderBrushIndeterminateDisabled": "SubtleFillColorTransparentBrush",
+      "CheckBoxCheckBackgroundStrokeUnchecked": "ControlStrongStrokeColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedPointerOver": "ControlStrongStrokeColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedPressed": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundStrokeChecked": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedPointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedPressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminate": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminatePointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminatePressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminateDisabled": "ControlStrongStrokeColorDisabledBrush",
+      "CheckBoxCheckBackgroundFillUnchecked": "ControlAltFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundFillUncheckedPointerOver": "ControlAltFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundFillUncheckedPressed": "ControlAltFillColorQuarternaryBrush",
+      "CheckBoxCheckBackgroundFillUncheckedDisabled": "ControlAltFillColorDisabledBrush",
+      "CheckBoxCheckBackgroundFillChecked": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundFillCheckedPointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundFillCheckedPressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundFillCheckedDisabled": "AccentFillColorDisabledBrush",
+      "CheckBoxCheckBackgroundFillIndeterminate": "AccentFillColorDefaultBrush",
+      "CheckBoxCheckBackgroundFillIndeterminatePointerOver": "AccentFillColorSecondaryBrush",
+      "CheckBoxCheckBackgroundFillIndeterminatePressed": "AccentFillColorTertiaryBrush",
+      "CheckBoxCheckBackgroundFillIndeterminateDisabled": "AccentFillColorDisabledBrush",
+      "CheckBoxCheckGlyphForegroundUnchecked": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedPressed": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedDisabled": "TextOnAccentFillColorDisabledBrush",
+      "CheckBoxCheckGlyphForegroundChecked": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundCheckedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundCheckedPressed": "TextOnAccentFillColorSecondaryBrush",
+      "CheckBoxCheckGlyphForegroundCheckedDisabled": "TextOnAccentFillColorDisabledBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminate": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminatePointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminatePressed": "TextOnAccentFillColorSecondaryBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminateDisabled": "TextOnAccentFillColorDisabledBrush"
+    },
+    "HighContrast": {
+      "ToggleButtonBackground": "SystemControlBackgroundBaseLowBrush",
+      "ToggleButtonBackgroundPointerOver": "SystemColorHighlightTextColorBrush",
+      "ToggleButtonBackgroundPressed": "SystemColorHighlightTextColorBrush",
+      "ToggleButtonBackgroundDisabled": "SystemControlBackgroundBaseLowBrush",
+      "ToggleButtonBackgroundChecked": "SystemControlHighlightAccentBrush",
+      "ToggleButtonBackgroundCheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "ToggleButtonBackgroundCheckedPressed": "SystemColorHighlightTextColorBrush",
+      "ToggleButtonBackgroundCheckedDisabled": "SystemControlBackgroundBaseLowBrush",
+      "ToggleButtonBackgroundIndeterminate": "SystemControlBackgroundBaseLowBrush",
+      "ToggleButtonBackgroundIndeterminatePointerOver": "SystemControlBackgroundBaseLowBrush",
+      "ToggleButtonBackgroundIndeterminatePressed": "SystemControlBackgroundBaseMediumLowBrush",
+      "ToggleButtonBackgroundIndeterminateDisabled": "SystemControlBackgroundBaseLowBrush",
+      "ToggleButtonForeground": "SystemControlForegroundBaseHighBrush",
+      "ToggleButtonForegroundPointerOver": "SystemControlHighlightBaseHighBrush",
+      "ToggleButtonForegroundPressed": "SystemControlHighlightBaseHighBrush",
+      "ToggleButtonForegroundDisabled": "SystemControlDisabledBaseMediumLowBrush",
+      "ToggleButtonForegroundChecked": "SystemControlHighlightAltChromeWhiteBrush",
+      "ToggleButtonForegroundCheckedPointerOver": "SystemColorButtonFaceColorBrush",
+      "ToggleButtonForegroundCheckedPressed": "SystemColorHighlightColorBrush",
+      "ToggleButtonForegroundCheckedDisabled": "SystemControlDisabledBaseMediumLowBrush",
+      "ToggleButtonForegroundIndeterminate": "SystemControlForegroundBaseHighBrush",
+      "ToggleButtonForegroundIndeterminatePointerOver": "SystemControlHighlightBaseHighBrush",
+      "ToggleButtonForegroundIndeterminatePressed": "SystemControlHighlightBaseHighBrush",
+      "ToggleButtonForegroundIndeterminateDisabled": "SystemControlDisabledBaseMediumLowBrush",
+      "ToggleButtonBorderBrush": "SystemControlForegroundTransparentBrush",
+      "ToggleButtonBorderBrushPointerOver": "SystemControlHighlightBaseMediumLowBrush",
+      "ToggleButtonBorderBrushPressed": "SystemColorHighlightTextColorBrush",
+      "ToggleButtonBorderBrushDisabled": "SystemControlDisabledTransparentBrush",
+      "ToggleButtonBorderBrushChecked": "SystemControlHighlightAltTransparentBrush",
+      "ToggleButtonBorderBrushCheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "ToggleButtonBorderBrushCheckedPressed": "SystemColorHighlightTextColorBrush",
+      "ToggleButtonBorderBrushCheckedDisabled": "SystemControlDisabledTransparentBrush",
+      "ToggleButtonBorderBrushIndeterminate": "SystemControlForegroundTransparentBrush",
+      "ToggleButtonBorderBrushIndeterminatePointerOver": "SystemControlHighlightBaseMediumLowBrush",
+      "ToggleButtonBorderBrushIndeterminatePressed": "SystemControlHighlightTransparentBrush",
+      "ToggleButtonBorderBrushIndeterminateDisabled": "SystemControlDisabledTransparentBrush",
+      "CheckBoxForegroundUnchecked": "SystemColorButtonTextColorBrush",
+      "CheckBoxForegroundUncheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "CheckBoxForegroundUncheckedPressed": "SystemColorButtonTextColorBrush",
+      "CheckBoxForegroundUncheckedDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxForegroundChecked": "SystemColorButtonTextColorBrush",
+      "CheckBoxForegroundCheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "CheckBoxForegroundCheckedPressed": "SystemColorButtonTextColorBrush",
+      "CheckBoxForegroundCheckedDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxForegroundIndeterminate": "SystemColorWindowTextColorBrush",
+      "CheckBoxForegroundIndeterminatePointerOver": "SystemColorWindowTextColorBrush",
+      "CheckBoxForegroundIndeterminatePressed": "SystemColorWindowTextColorBrush",
+      "CheckBoxForegroundIndeterminateDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxBackgroundUnchecked": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundUncheckedPointerOver": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundUncheckedPressed": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundUncheckedDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundChecked": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundCheckedPointerOver": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundCheckedPressed": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundCheckedDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundIndeterminate": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundIndeterminatePointerOver": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundIndeterminatePressed": "SystemColorWindowColorBrush",
+      "CheckBoxBackgroundIndeterminateDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushUnchecked": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushUncheckedPointerOver": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushUncheckedPressed": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushUncheckedDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushChecked": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushCheckedPointerOver": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushCheckedPressed": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushCheckedDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushIndeterminate": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushIndeterminatePointerOver": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushIndeterminatePressed": "SystemColorWindowColorBrush",
+      "CheckBoxBorderBrushIndeterminateDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxCheckBackgroundStrokeUnchecked": "SystemColorButtonTextColorBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedPointerOver": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedPressed": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundStrokeUncheckedDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxCheckBackgroundStrokeChecked": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedPressed": "SystemColorButtonFaceColorBrush",
+      "CheckBoxCheckBackgroundStrokeCheckedDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminate": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminatePointerOver": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminatePressed": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundStrokeIndeterminateDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxCheckBackgroundFillUnchecked": "SystemColorButtonFaceColorBrush",
+      "CheckBoxCheckBackgroundFillUncheckedPointerOver": "SystemColorHighlightTextColorBrush",
+      "CheckBoxCheckBackgroundFillUncheckedPressed": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundFillUncheckedDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxCheckBackgroundFillChecked": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundFillCheckedPointerOver": "SystemColorButtonTextColorBrush",
+      "CheckBoxCheckBackgroundFillCheckedPressed": "SystemColorButtonFaceColorBrush",
+      "CheckBoxCheckBackgroundFillCheckedDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxCheckBackgroundFillIndeterminate": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundFillIndeterminatePointerOver": "SystemColorHighlightTextColorBrush",
+      "CheckBoxCheckBackgroundFillIndeterminatePressed": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckBackgroundFillIndeterminateDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxCheckGlyphForegroundUnchecked": "SystemColorButtonFaceColorBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedPointerOver": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedPressed": "SystemColorHighlightTextColorBrush",
+      "CheckBoxCheckGlyphForegroundUncheckedDisabled": "SystemColorGrayTextColorBrush",
+      "CheckBoxCheckGlyphForegroundChecked": "SystemColorHighlightTextColorBrush",
+      "CheckBoxCheckGlyphForegroundCheckedPointerOver": "SystemColorButtonFaceColorBrush",
+      "CheckBoxCheckGlyphForegroundCheckedPressed": "SystemColorButtonTextColorBrush",
+      "CheckBoxCheckGlyphForegroundCheckedDisabled": "SystemColorWindowColorBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminate": "SystemColorHighlightTextColorBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminatePointerOver": "SystemColorHighlightColorBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminatePressed": "SystemColorHighlightTextColorBrush",
+      "CheckBoxCheckGlyphForegroundIndeterminateDisabled": "SystemColorWindowColorBrush"
+    }
+  },
+  "styles": {
+    "ToggleButton": {
+      "states": {
+        "Normal": {
+          "ContentPresenter.Background": "ToggleButtonBackground",
+          "ContentPresenter.Foreground": "ToggleButtonForeground",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrush",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "PointerOver": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundPointerOver",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundPointerOver",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushPointerOver",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "Pressed": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundPressed",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundPressed",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushPressed",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "Disabled": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundDisabled",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundDisabled",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushDisabled",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "Checked": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundChecked",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundChecked",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushChecked",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius",
+          "ContentPresenter.BackgroundSizing": "ToggleButtonCheckedStateBackgroundSizing"
+        },
+        "CheckedPointerOver": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundCheckedPointerOver",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundCheckedPointerOver",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushCheckedPointerOver",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius",
+          "ContentPresenter.BackgroundSizing": "ToggleButtonCheckedStateBackgroundSizing"
+        },
+        "CheckedPressed": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundCheckedPressed",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundCheckedPressed",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushCheckedPressed",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius",
+          "ContentPresenter.BackgroundSizing": "ToggleButtonCheckedStateBackgroundSizing"
+        },
+        "CheckedDisabled": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundCheckedDisabled",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundCheckedDisabled",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushCheckedDisabled",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "Indeterminate": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundIndeterminate",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundIndeterminate",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushIndeterminate",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "IndeterminatePointerOver": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundIndeterminatePointerOver",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundIndeterminatePointerOver",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushIndeterminatePointerOver",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "IndeterminatePressed": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundIndeterminatePressed",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundIndeterminatePressed",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushIndeterminatePressed",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        },
+        "IndeterminateDisabled": {
+          "ContentPresenter.Background": "ToggleButtonBackgroundIndeterminateDisabled",
+          "ContentPresenter.Foreground": "ToggleButtonForegroundIndeterminateDisabled",
+          "ContentPresenter.BorderBrush": "ToggleButtonBorderBrushIndeterminateDisabled",
+          "ContentPresenter.BorderThickness": "ToggleButtonBorderThemeThickness",
+          "ContentPresenter.CornerRadius": "ControlCornerRadius"
+        }
+      },
+      "animatedIcon": false,
+      "backgroundTransitionMs": 83
+    },
+    "CheckBox": {
+      "states": {
+        "UncheckedNormal": {
+          "RootGrid.Background": "CheckBoxBackgroundUnchecked",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushUnchecked",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillUnchecked",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeUnchecked",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundUnchecked",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundUnchecked"
+        },
+        "UncheckedPointerOver": {
+          "RootGrid.Background": "CheckBoxBackgroundUncheckedPointerOver",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushUncheckedPointerOver",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillUncheckedPointerOver",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeUncheckedPointerOver",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundUncheckedPointerOver",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundUncheckedPointerOver"
+        },
+        "UncheckedPressed": {
+          "RootGrid.Background": "CheckBoxBackgroundUncheckedPressed",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushUncheckedPressed",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillUncheckedPressed",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeUncheckedPressed",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundUncheckedPressed",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundUncheckedPressed"
+        },
+        "UncheckedDisabled": {
+          "RootGrid.Background": "CheckBoxBackgroundUncheckedDisabled",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushUncheckedDisabled",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillUncheckedDisabled",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeUncheckedDisabled",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundUncheckedDisabled",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundUncheckedDisabled"
+        },
+        "CheckedNormal": {
+          "RootGrid.Background": "CheckBoxBackgroundChecked",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushChecked",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillChecked",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeChecked",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundChecked",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundChecked"
+        },
+        "CheckedPointerOver": {
+          "RootGrid.Background": "CheckBoxBackgroundCheckedPointerOver",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushCheckedPointerOver",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillCheckedPointerOver",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeCheckedPointerOver",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundCheckedPointerOver",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundCheckedPointerOver"
+        },
+        "CheckedPressed": {
+          "RootGrid.Background": "CheckBoxBackgroundCheckedPressed",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushCheckedPressed",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillCheckedPressed",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeCheckedPressed",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundCheckedPressed",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundCheckedPressed"
+        },
+        "CheckedDisabled": {
+          "RootGrid.Background": "CheckBoxBackgroundCheckedDisabled",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushCheckedDisabled",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillCheckedDisabled",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeCheckedDisabled",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundCheckedDisabled",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundCheckedDisabled"
+        },
+        "IndeterminateNormal": {
+          "RootGrid.Background": "CheckBoxBackgroundIndeterminate",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushIndeterminate",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillIndeterminate",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeIndeterminate",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundIndeterminate",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundIndeterminate"
+        },
+        "IndeterminatePointerOver": {
+          "RootGrid.Background": "CheckBoxBackgroundIndeterminatePointerOver",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushIndeterminatePointerOver",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillIndeterminatePointerOver",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeIndeterminatePointerOver",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundIndeterminatePointerOver",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundIndeterminatePointerOver"
+        },
+        "IndeterminatePressed": {
+          "RootGrid.Background": "CheckBoxBackgroundIndeterminatePressed",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushIndeterminatePressed",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillIndeterminatePressed",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeIndeterminatePressed",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundIndeterminatePressed",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundIndeterminatePressed"
+        },
+        "IndeterminateDisabled": {
+          "RootGrid.Background": "CheckBoxBackgroundIndeterminateDisabled",
+          "RootGrid.BorderBrush": "CheckBoxBorderBrushIndeterminateDisabled",
+          "RootGrid.CornerRadius": "ControlCornerRadius",
+          "NormalRectangle.Fill": "CheckBoxCheckBackgroundFillIndeterminateDisabled",
+          "NormalRectangle.Stroke": "CheckBoxCheckBackgroundStrokeIndeterminateDisabled",
+          "CheckGlyph.Foreground": "CheckBoxCheckGlyphForegroundIndeterminateDisabled",
+          "DownLevelCheckGlyph.FontFamily": "SymbolThemeFontFamily",
+          "ContentPresenter.Foreground": "CheckBoxForegroundIndeterminateDisabled"
+        }
+      },
+      "animatedIcon": true,
+      "backgroundTransitionMs": 0
+    }
+  },
+  "checkbox": {
+    "CheckBoxSize": 20.0,
+    "CheckBoxGlyphSize": 12.0,
+    "CheckBoxHeight": 32.0,
+    "CheckBoxMinWidth": 120.0,
+    "CheckBoxBorderThickness": 1.0,
+    "padding": [
+      8.0,
+      5.0,
+      0.0,
+      0.0
+    ],
+    "checkedGlyph": "",
+    "mixedGlyph": ""
+  },
+  "primitives": {
+    "Light": {
+      "ControlFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "ControlFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#F9F9F980",
+        "opacity": 1
+      },
+      "ControlFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#F9F9F94D",
+        "opacity": 1
+      },
+      "ControlFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#F9F9F94D",
+        "opacity": 1
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "AccentFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.8999999761581421
+      },
+      "AccentFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 0.800000011920929
+      },
+      "AccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000029"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "ControlStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "AccentControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000066"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF14"
+          }
+        ],
+        "opacity": 1
+      },
+      "ControlFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1
+      },
+      "ControlAltFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ControlAltFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ControlAltFillColorQuarternaryBrush": {
+        "kind": "solid",
+        "color": "#00000018",
+        "opacity": 1
+      },
+      "ControlAltFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "ControlFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ControlFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF15",
+        "opacity": 1
+      },
+      "ControlFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF08",
+        "opacity": 1
+      },
+      "ControlFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "AccentFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.8999999761581421
+      },
+      "AccentFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 0.800000011920929
+      },
+      "AccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#00000080",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      },
+      "ControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#FFFFFF18"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "ControlStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "AccentControlElevationBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          3
+        ],
+        "stops": [
+          {
+            "offset": 0.33000001311302185,
+            "color": "#00000023"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF14"
+          }
+        ],
+        "opacity": 1
+      },
+      "ControlFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ControlStrongStrokeColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF28",
+        "opacity": 1
+      },
+      "ControlAltFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ControlAltFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1
+      },
+      "ControlAltFillColorQuarternaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "ControlAltFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "TextOnAccentFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "SystemControlBackgroundBaseLowBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "SystemColorHighlightTextColorBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "SystemControlHighlightAccentBrush": {
+        "kind": "solid",
+        "color": "#FFFF00FF",
+        "opacity": 1
+      },
+      "SystemColorButtonTextColorBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundBaseMediumLowBrush": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "SystemControlForegroundBaseHighBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SystemControlHighlightBaseHighBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SystemControlDisabledBaseMediumLowBrush": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "SystemControlHighlightAltChromeWhiteBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "SystemColorButtonFaceColorBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "SystemColorHighlightColorBrush": {
+        "kind": "solid",
+        "color": "#FFFF00FF",
+        "opacity": 1
+      },
+      "SystemControlForegroundTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "SystemControlHighlightBaseMediumLowBrush": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "SystemControlDisabledTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "SystemControlHighlightAltTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "SystemControlHighlightTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000",
+        "opacity": 1
+      },
+      "SystemColorGrayTextColorBrush": {
+        "kind": "solid",
+        "color": "#808080FF",
+        "opacity": 1
+      },
+      "SystemColorWindowTextColorBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SystemColorWindowColorBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      }
+    }
+  }
+}

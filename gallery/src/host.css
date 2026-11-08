@@ -1,0 +1,8 @@
+/* Browser chrome must never draw a second focus ring over a Rust control.
+   Focus, Tab order and accessibility remain intact. */
+.winui-surface:focus,
+.winui-surface:focus-visible,
+.winui-surface :focus,
+.winui-surface :focus-visible { outline: none !important; box-shadow: none !important; }
+
+.winui-editor::selection{background:transparent;color:transparent}.winui-editor::-ms-reveal,.winui-editor::-ms-clear{display:none}.winui-editor::placeholder{color:transparent}

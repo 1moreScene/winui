@@ -1,0 +1,8564 @@
+{
+  "cases": [
+    {
+      "id": "Light-SplitView-Overlay-Left-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Overlay-Left-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Overlay-Right-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Overlay-Right-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Inline-Left-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Inline-Left-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 196,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Inline-Right-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-Inline-Right-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Left-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 76,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Left-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 76,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Right-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactOverlay-Right-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Left-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 76,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Left-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 196,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Right-False",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SplitView-CompactInline-Right-True",
+      "theme": "Light",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SemanticZoom-False",
+      "theme": "Light",
+      "kind": "SemanticZoom",
+      "props": {
+        "isZoomedInViewActive": false
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SemanticZoom",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedInPresenter",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 151,
+            "y": 90.5,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 168,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 168,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 168,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 175,
+            "y": 90.5,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 192,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 192,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 192,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 199,
+            "y": 90.5,
+            "width": 15.572265625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedOutPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 41,
+            "y": 37,
+            "width": 9.0302734375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 90,
+            "y": 37,
+            "width": 8.025390625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "Button",
+          "name": "ZoomOutButton",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ContentPresenter",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 477,
+            "y": 237,
+            "width": 4,
+            "height": 4
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-SemanticZoom-True",
+      "theme": "Light",
+      "kind": "SemanticZoom",
+      "props": {
+        "isZoomedInViewActive": true
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SemanticZoom",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedInPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 38,
+            "y": 37,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 86,
+            "y": 37,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 120,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 120,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 120,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 134,
+            "y": 37,
+            "width": 15.572265625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedOutPresenter",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -182,
+            "y": -70,
+            "width": 9.0302734375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": -120,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": -120,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": -120,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -84,
+            "y": -70,
+            "width": 8.025390625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "Button",
+          "name": "ZoomOutButton",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ContentPresenter",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 477,
+            "y": 237,
+            "width": 4,
+            "height": 4
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-ParallaxView--80",
+      "theme": "Light",
+      "kind": "ParallaxView",
+      "props": {
+        "horizontalShift": -80,
+        "verticalShift": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 240,
+        "height": 160
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 240,
+            "height": 160
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 456,
+            "height": 200
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 73.978515625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-ParallaxView-0",
+      "theme": "Light",
+      "kind": "ParallaxView",
+      "props": {
+        "horizontalShift": 0,
+        "verticalShift": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 240,
+        "height": 160
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 240,
+            "height": 160
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 456,
+            "height": 200
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 73.978515625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Light-ParallaxView-80",
+      "theme": "Light",
+      "kind": "ParallaxView",
+      "props": {
+        "horizontalShift": 80,
+        "verticalShift": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 240,
+        "height": 160
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 240,
+            "height": 160
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 456,
+            "height": 200
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 73.978515625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Left-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Left-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Right-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Overlay-Right-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Overlay",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Inline-Left-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Inline-Left-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 196,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Inline-Right-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-Inline-Right-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "Inline",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Left-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 76,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Left-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 76,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Right-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactOverlay-Right-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactOverlay",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Left-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Left",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 76,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 64,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Left-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Left",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 182,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 196,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 184,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Right-False",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Right",
+        "isPaneOpen": false,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 440,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SplitView-CompactInline-Right-True",
+      "theme": "Dark",
+      "kind": "SplitView",
+      "props": {
+        "width": 480,
+        "height": 240,
+        "displayMode": "CompactInline",
+        "panePlacement": "Right",
+        "isPaneOpen": true,
+        "openPaneLength": 160,
+        "compactPaneLength": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SplitView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "PaneRoot",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 160,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 159,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 356,
+            "y": 36,
+            "width": 29.7294921875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "HCPaneBorder",
+          "rect": {
+            "x": 344,
+            "y": 24,
+            "width": 1,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "ContentRoot",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 320,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 49.5263671875,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Rectangle",
+          "name": "LightDismissLayer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SemanticZoom-False",
+      "theme": "Dark",
+      "kind": "SemanticZoom",
+      "props": {
+        "isZoomedInViewActive": false
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SemanticZoom",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedInPresenter",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 151,
+            "y": 90.5,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 168,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 168,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 168,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 175,
+            "y": 90.5,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 192,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 192,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 192,
+            "y": 84,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 199,
+            "y": 90.5,
+            "width": 15.572265625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": 144,
+            "y": 84,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedOutPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 41,
+            "y": 37,
+            "width": 9.0302734375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 90,
+            "y": 37,
+            "width": 8.025390625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "Button",
+          "name": "ZoomOutButton",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ContentPresenter",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 477,
+            "y": 237,
+            "width": 4,
+            "height": 4
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-SemanticZoom-True",
+      "theme": "Dark",
+      "kind": "SemanticZoom",
+      "props": {
+        "isZoomedInViewActive": true
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 480,
+        "height": 240
+      },
+      "parts": [
+        {
+          "type": "SemanticZoom",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedInPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 38,
+            "y": 37,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 72,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 86,
+            "y": 37,
+            "width": 16.5771484375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": 120,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": 120,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": 120,
+            "y": 24,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 134,
+            "y": 37,
+            "width": 15.572265625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ZoomedOutPresenter",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridView",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollViewer",
+          "name": "ScrollViewer",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "Root",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollContentPresenter",
+          "name": "ScrollContentPresenter",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsPresenter",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ItemsWrapGrid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 230
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -182,
+            "y": -70,
+            "width": 9.0302734375,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "GridViewItem",
+          "name": "",
+          "rect": {
+            "x": -120,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ListViewItemPresenter",
+          "name": "Root",
+          "rect": {
+            "x": -120,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "",
+          "rect": {
+            "x": -120,
+            "y": -96,
+            "width": 44,
+            "height": 44
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": -84,
+            "y": -70,
+            "width": 8.025390625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 480,
+            "height": 240
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "VerticalScrollBar",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 1
+        },
+        {
+          "type": "ScrollBar",
+          "name": "HorizontalScrollBar",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Border",
+          "name": "ScrollBarSeparator",
+          "rect": {
+            "x": -216,
+            "y": -96,
+            "width": 0,
+            "height": 0
+          },
+          "visible": "Collapsed",
+          "opacity": 0
+        },
+        {
+          "type": "Button",
+          "name": "ZoomOutButton",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "ContentPresenter",
+          "rect": {
+            "x": 473,
+            "y": 233,
+            "width": 12,
+            "height": 12
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 477,
+            "y": 237,
+            "width": 4,
+            "height": 4
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-ParallaxView--80",
+      "theme": "Dark",
+      "kind": "ParallaxView",
+      "props": {
+        "horizontalShift": -80,
+        "verticalShift": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 240,
+        "height": 160
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 240,
+            "height": 160
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 456,
+            "height": 200
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 73.978515625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-ParallaxView-0",
+      "theme": "Dark",
+      "kind": "ParallaxView",
+      "props": {
+        "horizontalShift": 0,
+        "verticalShift": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 240,
+        "height": 160
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 240,
+            "height": 160
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 456,
+            "height": 200
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 73.978515625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "id": "Dark-ParallaxView-80",
+      "theme": "Dark",
+      "kind": "ParallaxView",
+      "props": {
+        "horizontalShift": 80,
+        "verticalShift": 40
+      },
+      "rect": {
+        "x": 24,
+        "y": 24,
+        "width": 240,
+        "height": 160
+      },
+      "parts": [
+        {
+          "type": "ParallaxView",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 240,
+            "height": 160
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "Grid",
+          "name": "",
+          "rect": {
+            "x": 24,
+            "y": 24,
+            "width": 456,
+            "height": 200
+          },
+          "visible": "Visible",
+          "opacity": 1
+        },
+        {
+          "type": "TextBlock",
+          "name": "",
+          "rect": {
+            "x": 36,
+            "y": 36,
+            "width": 73.978515625,
+            "height": 18.62109375
+          },
+          "visible": "Visible",
+          "opacity": 1
+        }
+      ]
+    }
+  ],
+  "framework": "Microsoft.WinUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=de31ebe4ad15742b",
+  "source": "out/view-command-native/complete.json",
+  "nativeProbeSha256": "1e969618034e1d90a8a3ac93d9c2baa9dffdb8cd69bfe51bd456f3955575454c",
+  "nativeProbeSourceSha256": "cf6ae0df9d8405d78c90c0bd17ad12c42dbc2bf201c9ca4847aa9f646f517524",
+  "nativeRuntimeSha256": "822f173564487146b9b8231c514479816047917ab31f95b915d64dd516d31f5d",
+  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "themeAnimations": {
+    "FadeIn-Shown": [
+      {
+        "type": "Opacity",
+        "durationMs": 167,
+        "delayMs": 0,
+        "curve": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "initial": null,
+        "final": 1
+      }
+    ],
+    "FadeOut-Hidden": [
+      {
+        "type": "Opacity",
+        "durationMs": 167,
+        "delayMs": 0,
+        "curve": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "initial": null,
+        "final": 0
+      }
+    ]
+  },
+  "screenshots": {
+    "Light-SplitView-Overlay-Left-False": "a1e2e128e84e96f2b6d86767a75c5d2a0af5c20d1de1ce2ac5e50c017aade642",
+    "Light-SplitView-Overlay-Left-True": "763a8daa6cd3bc5f6b4e88ed390edf6e600c706dbefb5f3ac4b09031adc9f745",
+    "Light-SplitView-Overlay-Right-False": "a1e2e128e84e96f2b6d86767a75c5d2a0af5c20d1de1ce2ac5e50c017aade642",
+    "Light-SplitView-Overlay-Right-True": "3c98bc6e0abb0a3835ce66f1a1ed8841072ca526ae2d5140595e957f906cb90e",
+    "Light-SplitView-Inline-Left-False": "a1e2e128e84e96f2b6d86767a75c5d2a0af5c20d1de1ce2ac5e50c017aade642",
+    "Light-SplitView-Inline-Left-True": "b9b8e9898dcf531fc7e1758906691ac8f5363bd77598a6c44936106b80c9b354",
+    "Light-SplitView-Inline-Right-False": "a1e2e128e84e96f2b6d86767a75c5d2a0af5c20d1de1ce2ac5e50c017aade642",
+    "Light-SplitView-Inline-Right-True": "468245a79ccc6813465470cf4a659ad87ff720dcf67fe0f6f5b94172b58b7c97",
+    "Light-SplitView-CompactOverlay-Left-False": "860f9ebfefa6cea70f5aefa8eaf62fbb678298533f1e4f02c01cb45b22d0713c",
+    "Light-SplitView-CompactOverlay-Left-True": "763a8daa6cd3bc5f6b4e88ed390edf6e600c706dbefb5f3ac4b09031adc9f745",
+    "Light-SplitView-CompactOverlay-Right-False": "738a3851f40a414a844a1f7748c79f5be419ba6e0d13938e829fcc8a7eb9187e",
+    "Light-SplitView-CompactOverlay-Right-True": "468245a79ccc6813465470cf4a659ad87ff720dcf67fe0f6f5b94172b58b7c97",
+    "Light-SplitView-CompactInline-Left-False": "860f9ebfefa6cea70f5aefa8eaf62fbb678298533f1e4f02c01cb45b22d0713c",
+    "Light-SplitView-CompactInline-Left-True": "b9b8e9898dcf531fc7e1758906691ac8f5363bd77598a6c44936106b80c9b354",
+    "Light-SplitView-CompactInline-Right-False": "738a3851f40a414a844a1f7748c79f5be419ba6e0d13938e829fcc8a7eb9187e",
+    "Light-SplitView-CompactInline-Right-True": "468245a79ccc6813465470cf4a659ad87ff720dcf67fe0f6f5b94172b58b7c97",
+    "Light-SemanticZoom-False": "1f8764aa901f27c397c519808b1d9292c074fe354f942ee12f4e13ce8fc3ad0e",
+    "Light-SemanticZoom-True": "036c4eb1e1774956ae5bcdc91bb2da4abdfb701b26b122a734bf9c44fb975c14",
+    "Light-ParallaxView--80": "e4f2749ee61a4f5d884cdd7ab513d8a418ef0fc173cee80ff627f290b1f691ce",
+    "Light-ParallaxView-0": "e4f2749ee61a4f5d884cdd7ab513d8a418ef0fc173cee80ff627f290b1f691ce",
+    "Light-ParallaxView-80": "e4f2749ee61a4f5d884cdd7ab513d8a418ef0fc173cee80ff627f290b1f691ce",
+    "Dark-SplitView-Overlay-Left-False": "20c12669d062e082f65c7ed3340eace12aaa19b4b27cf915a3db5b4ac3cb7517",
+    "Dark-SplitView-Overlay-Left-True": "60eede0ce91e8111d4a2f176c74c9b0ccb7b82a6e3f36b236692fe820cf3d61c",
+    "Dark-SplitView-Overlay-Right-False": "20c12669d062e082f65c7ed3340eace12aaa19b4b27cf915a3db5b4ac3cb7517",
+    "Dark-SplitView-Overlay-Right-True": "e6e349c7ac23aec3c6b4cf5019e32f0e7ba36e08b83430d16bf50327feebd3c1",
+    "Dark-SplitView-Inline-Left-False": "20c12669d062e082f65c7ed3340eace12aaa19b4b27cf915a3db5b4ac3cb7517",
+    "Dark-SplitView-Inline-Left-True": "a108f4efbe30d83048e69fed4f58ab484518605901ebf3a370d28bdfb13fc11c",
+    "Dark-SplitView-Inline-Right-False": "20c12669d062e082f65c7ed3340eace12aaa19b4b27cf915a3db5b4ac3cb7517",
+    "Dark-SplitView-Inline-Right-True": "4dd85181336d8c94de4756841547de2f936e4a43c266d202ef793c7980f45e72",
+    "Dark-SplitView-CompactOverlay-Left-False": "b28abdd2656fa7d82020fc3964030bfd01fbc22670e2b7897f62a5be14af28dc",
+    "Dark-SplitView-CompactOverlay-Left-True": "60eede0ce91e8111d4a2f176c74c9b0ccb7b82a6e3f36b236692fe820cf3d61c",
+    "Dark-SplitView-CompactOverlay-Right-False": "87bb50401f0ec01a361f46c8cfada165976aae8a026c1d317b33480a050bcec1",
+    "Dark-SplitView-CompactOverlay-Right-True": "4dd85181336d8c94de4756841547de2f936e4a43c266d202ef793c7980f45e72",
+    "Dark-SplitView-CompactInline-Left-False": "b28abdd2656fa7d82020fc3964030bfd01fbc22670e2b7897f62a5be14af28dc",
+    "Dark-SplitView-CompactInline-Left-True": "a108f4efbe30d83048e69fed4f58ab484518605901ebf3a370d28bdfb13fc11c",
+    "Dark-SplitView-CompactInline-Right-False": "87bb50401f0ec01a361f46c8cfada165976aae8a026c1d317b33480a050bcec1",
+    "Dark-SplitView-CompactInline-Right-True": "4dd85181336d8c94de4756841547de2f936e4a43c266d202ef793c7980f45e72",
+    "Dark-SemanticZoom-False": "1f0e6e1af3931294a2324ecf5e06bc4356a90b9981395e484e49b50a72aa6f95",
+    "Dark-SemanticZoom-True": "b5a819440063be858f48ad2e8859adc909c6f4820c7621c5b325492acdfa418b",
+    "Dark-ParallaxView--80": "aa695a02a0b1a5feaed9774dd79902fd654aa76957f71ee7bc7bb1267decdc28",
+    "Dark-ParallaxView-0": "aa695a02a0b1a5feaed9774dd79902fd654aa76957f71ee7bc7bb1267decdc28",
+    "Dark-ParallaxView-80": "aa695a02a0b1a5feaed9774dd79902fd654aa76957f71ee7bc7bb1267decdc28"
+  }
+}

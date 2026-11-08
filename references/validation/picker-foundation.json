@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-11-08T11:15:19.052869+00:00",
+  "status": "Foundation implemented; five control UIs are not yet implemented or accepted",
+  "controls": [
+    "CalendarView",
+    "CalendarDatePicker",
+    "DatePicker",
+    "TimePicker",
+    "ColorPicker"
+  ],
+  "scope": "Gregorian date-only arithmetic, local minute values and HSV/ARGB conversions. CPU spectrum interior pixels compared to same-SDK HueSaturation Box/Ring fixtures. No browser control or animation parity claim.",
+  "nativeRun": "references/picker-controls-run.json",
+  "nativeStates": 58,
+  "spectrum": {
+    "rows": [
+      {
+        "theme": "Light",
+        "shape": "box",
+        "comparedPixels": 92286,
+        "interiorRgbMae": 0.3321955659580001,
+        "native": "picker-Light-ColorPicker-Selected"
+      },
+      {
+        "theme": "Dark",
+        "shape": "box",
+        "comparedPixels": 92286,
+        "interiorRgbMae": 0.3321955659580001,
+        "native": "picker-Dark-ColorPicker-Selected"
+      },
+      {
+        "theme": "Light",
+        "shape": "ring",
+        "comparedPixels": 72417,
+        "interiorRgbMae": 0.29636227221048467,
+        "native": "picker-Light-ColorPicker-Ring"
+      },
+      {
+        "theme": "Dark",
+        "shape": "ring",
+        "comparedPixels": 72417,
+        "interiorRgbMae": 0.29636227221048467,
+        "native": "picker-Dark-ColorPicker-Ring"
+      }
+    ],
+    "excluded": [
+      "Selection ellipse",
+      "Outer ring edge and clipping",
+      "Other spectrum component combinations",
+      "Canvas2D/WebGL2 presentation"
+    ]
+  },
+  "tests": {
+    "log": "out/picker-foundation-tests.log",
+    "passed": 6,
+    "failed": false
+  },
+  "remaining": [
+    "Wire five Rust control trees, layout, input, events and popup lifetimes.",
+    "Expose typed TS/React factories and Gallery examples only when their Rust control kinds exist.",
+    "Verify locale calendars, date/time field ordering, wheel input, keyboard and accessibility.",
+    "Compare control geometry, materials, hover and animations in both browser backends; Store Gallery acceptance remains separate."
+  ],
+  "sourceFiles": {
+    "src\\picker_value.rs": "4168554d441037b15efd189a3801930705639baa77412a08ca146a43f86f60b0",
+    "src\\picker_spectrum.rs": "59da24aaf3c6e8f253e638fd6618ca262458ffbef86b4df875f1b85a5e00f708",
+    "references\\picker-controls-template.json": "ea1d7d17ea7f374a61b5c11f55bdd1ea02ed2124d7aaeb0e52e0872e642d82e7",
+    "references\\picker-controls-sources.json": "6dbc756975cb2eeab582297c7b62478323b6980281f42e2f35aa06c60046e1a7"
+  }
+}

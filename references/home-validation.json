@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-08",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "officialGroups": 19,
+  "officialSamples": 126,
+  "existingSampleRoutes": 52,
+  "placeholderSamples": 74,
+  "homepage": {
+    "mode": "Vite production preview",
+    "config": "gallery/playwright.home.config.ts",
+    "passed": 7,
+    "failed": 0,
+    "results": "out/home-test-results.json",
+    "implementedNavigationItemsClicked": 52
+  },
+  "navigationRegression": {
+    "mode": "Vite with HMR disabled",
+    "config": "gallery/playwright.home-regression.config.ts",
+    "passed": 11,
+    "failed": 0,
+    "results": "out/home-navigation-regression-results.json",
+    "testedWasmSha256": "13123a07e55b0e26a7067e87ea0a72ab9d9ba814562d1751c5e25537998fb9c1",
+    "note": "Final shared-shell NavigationView regression with HMR disabled."
+  },
+  "checks": [
+    "npm run build",
+    "npm run typecheck",
+    "npx vite build",
+    "npm run declarations"
+  ],
+  "productionWasm": {
+    "path": "gallery/dist/assets/winui_bg-B0hgO0dn.wasm",
+    "sha256": "13123a07e55b0e26a7067e87ea0a72ab9d9ba814562d1751c5e25537998fb9c1",
+    "matchesCurrentBinary": true
+  },
+  "productionEntryFiles": [
+    {
+      "path": "gallery/dist/assets/index-jw6DERlC.css",
+      "sha256": "b0a4b87390ac49ed1925f9a42f95fb9d63d02c7272b8013159cc18de2797a2be"
+    },
+    {
+      "path": "gallery/dist/assets/index-W9_X5oAc.js",
+      "sha256": "261c809997833cc456fd3034af3e1a4bd2b5b2ec423b6ddead0477eddfb19890"
+    }
+  ],
+  "screenshots": [
+    "out/home-light.png",
+    "out/home-dark.png",
+    "out/home-high-contrast.png",
+    "out/home-mobile.png",
+    "out/gallery-shared-shell.png"
+  ],
+  "limits": [
+    "No same-condition native-window pixel comparison",
+    "Gallery shell uses React DOM and theme background fallback; existing demos keep Rust/WASM rendering",
+    "Existing sample route availability does not establish complete control parity"
+  ]
+}

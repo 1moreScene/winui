@@ -1,0 +1,69 @@
+{
+  "recordedAtUtc": "2026-11-08T17:39:37.518287+00:00",
+  "package": {
+    "name": "Microsoft.WinUI3ControlsGallery",
+    "fullName": "Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe",
+    "version": "3.0.4.0",
+    "signatureKind": "Store",
+    "isDevelopmentMode": false,
+    "location": "C:\\Program Files\\WindowsApps\\Microsoft.WinUI3ControlsGallery_3.0.4.0_x64__8wekyb3d8bbwe"
+  },
+  "binaries": [
+    {
+      "name": "Microsoft.ui.xaml.dll",
+      "installedSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "probeSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "identical": true
+    },
+    {
+      "name": "Microsoft.UI.Xaml.Controls.dll",
+      "installedSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013",
+      "probeSha256": "955f25e394a3d520a9dbb125f1489254453b06f0fa08665124528fd8a1535013",
+      "identical": true
+    }
+  ],
+  "depsSha256": "be8ee82927b283a4a34ae45ca831f313e5e369b9ab9665490e55f0033964192a",
+  "dependencies": [
+    "Microsoft.WindowsAppSDK/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.AI/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Base/2.0.5-experimental2",
+    "Microsoft.WindowsAppSDK.DWrite/2.1.1-experimental",
+    "Microsoft.WindowsAppSDK.Foundation/2.3.13-experimental",
+    "Microsoft.WindowsAppSDK.InteractiveExperiences/2.1.10-experimental",
+    "Microsoft.WindowsAppSDK.ML/2.3.5-experimental",
+    "Microsoft.WindowsAppSDK.Runtime/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Search/2.5.4-experimental",
+    "Microsoft.WindowsAppSDK.Widgets/2.0.6-experimental",
+    "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental"
+  ],
+  "dependencyAuditMatchesCurrent": true,
+  "probe": "references/validation/reading-gallery-native.json",
+  "desktopObservations": [
+    {
+      "page": "ItemsView",
+      "interaction": "Double-click first landscape image",
+      "observed": "You invoked Item 1."
+    },
+    {
+      "page": "PagerControl",
+      "interaction": "Click the basic pager next button",
+      "observed": "Page number changed from 3 to 4; total stayed 12."
+    },
+    {
+      "page": "AnnotatedScrollBar",
+      "interaction": "Click near the Gold marker",
+      "observed": "ScrollView shows Gold cells; Gold detail tooltip opens."
+    },
+    {
+      "page": "LayoutPanel",
+      "interaction": "Choose Vertical stack",
+      "observed": "Nine children switch from featured/two-column rows to one column; natural panel width shrinks."
+    },
+    {
+      "page": "RichTextBlock",
+      "interaction": "Drag across the formatted-text sample",
+      "observed": "Selected text has the native green highlight."
+    }
+  ],
+  "desktopScope": "Direct Store-window observation of the five listed sample interactions. Static same-DLL probe supplies controlled-width/theme comparisons; this is not full animation or Composition acceptance."
+}

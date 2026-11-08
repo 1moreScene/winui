@@ -1,0 +1,225 @@
+{
+  "scope": "Actual same-SDK Flyout and MenuFlyout visual follow-up",
+  "nativeScenes": 16,
+  "nativeMotionFrames": 52,
+  "browserScenes": 32,
+  "browserMotionFrames": 104,
+  "maximumGeometryErrorDIP": 3.0517578011313162e-06,
+  "maximumMenuRowErrorDIP": 1.2207031261368684e-05,
+  "runtimeErrors": [],
+  "materialMAEByKind": {
+    "-Flyout-": {
+      "minimum": 0.5810533515731874,
+      "maximum": 1.60687414500684
+    },
+    "-MenuFlyout-": {
+      "minimum": 0.6262265834076717,
+      "maximum": 8.324957874913272
+    }
+  },
+  "rust": {
+    "generatedAtUtc": "2026-11-07T15:08:38.0605053Z",
+    "passed": 120,
+    "exitCode": 0,
+    "command": "cargo test --locked",
+    "log": "out/lint/rust-tests.log"
+  },
+  "density": {
+    "startTime": "2026-11-07T14:49:19.880Z",
+    "duration": 4383.248,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "validatedWasm": {
+    "sha256": "be8d69eabd22c49ca1c1ac5cf6062735b00f56b6ab18043eb07fc1b51245a2d1",
+    "completedAt": 1794063399362
+  },
+  "review": "out/overlay-controls-review/index.html",
+  "boundary": [
+    "Actual native SDK geometry and live screen pixels; not a Store Gallery claim.",
+    "Menu SystemBackdrop retains measured noise/blur differences; full pixel equivalence is not asserted.",
+    "Wall-clock animation sampling does not prove compositor present-time synchronization.",
+    "Concurrent compact-control edits were preserved. Final global source/local fingerprint checks passed; full browser and final overlay checkpoints identify separate WASM snapshots."
+  ],
+  "files": [
+    {
+      "path": "src\\scene\\overlays.rs",
+      "sha256": "efeb4bcdcef3d5a26a11b6aae65671a0e4be5e42ad1a4c1ead45cf5ca65841c5"
+    },
+    {
+      "path": "src\\scene\\overlay_visual.rs",
+      "sha256": "32f15c2cc9cfadeeacb9e14814fdaf42ca7772b64fdaa30fc43e41f5a390beb8"
+    },
+    {
+      "path": "src\\scene\\layout.rs",
+      "sha256": "bd1afb0b0fe145beab5abb6f6d1aebaefa09138864e04e34b0ad9ea2fb308b28"
+    },
+    {
+      "path": "src\\scene\\paint.rs",
+      "sha256": "d0bd479f51e246c2244967a492893884e62c4e2819c1568db1252602c1d9e7b5"
+    },
+    {
+      "path": "src\\scene\\input.rs",
+      "sha256": "7bdaa4a4904124e2344fbfc727ab39bc876e088fed0ccea2cd3d18d0fff477be"
+    },
+    {
+      "path": "gallery\\src\\scene.ts",
+      "sha256": "cae205d3ae66323301dbd933e5a707daef86c52e8dfb161db33189b8ef21f839"
+    },
+    {
+      "path": "tools\\native-navigation\\OverlayControlsProbe.cs",
+      "sha256": "8ad155d47b4bc8d7e852d6c6f36a7759ce2be5e33aafc17982beebdb90d61ceb"
+    },
+    {
+      "path": "references\\overlay-controls-metrics.json",
+      "sha256": "773977890c3f72f29a674cb4f997d14023fe11b71104290f34bb1a5d0bfbef70"
+    },
+    {
+      "path": "references\\overlay-template.json",
+      "sha256": "ce8522812665f9d3878b9ef2bb5f328a208fd2b721d432ba38c4c0c1d4d95491"
+    }
+  ],
+  "fullBrowserRegression": {
+    "stats": {
+      "startTime": "2026-11-07T14:45:10.328Z",
+      "duration": 170560.22199999998,
+      "expected": 119,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "validatedWasm": {
+      "sha256": "c7e3b069e23c69df6f4e54ae3b028f6c9d7092796af572761e94188411cb73d0",
+      "completedAt": 1794062680027
+    }
+  },
+  "finalOverlayRegression": {
+    "stats": {
+      "startTime": "2026-11-07T15:06:33.581Z",
+      "duration": 21957.79,
+      "expected": 13,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "validatedWasm": {
+      "sha256": "be8d69eabd22c49ca1c1ac5cf6062735b00f56b6ab18043eb07fc1b51245a2d1",
+      "completedAt": 1794063399362
+    }
+  },
+  "integrationChecks": {
+    "checks": [
+      {
+        "log": "out/lint/overlays-fmt.log",
+        "exitCode": 0,
+        "command": "cargo fmt --all -- --check"
+      },
+      {
+        "log": "out/lint/overlays-clippy-host.log",
+        "exitCode": 0,
+        "command": "cargo clippy --all-targets --locked -- -D warnings"
+      },
+      {
+        "log": "out/lint/overlays-clippy-wasm.log",
+        "exitCode": 0,
+        "command": "cargo clippy --target wasm32-unknown-unknown --locked -- -D warnings"
+      },
+      {
+        "log": "out/lint/overlays-enums.log",
+        "exitCode": 0,
+        "command": "node tools/generate-enums.mjs --check"
+      },
+      {
+        "log": "out/lint/overlays-baseline.log",
+        "exitCode": 0,
+        "command": "node tools/verify-baseline.mjs --local"
+      },
+      {
+        "log": "out/lint/overlays-strict-ts.log",
+        "exitCode": 0,
+        "command": "npm.cmd --prefix gallery run typecheck"
+      }
+    ],
+    "generatedAtUtc": "2026-11-07T15:07:51.9709270Z"
+  },
+  "maximumOuterEdgeMAE": 1.959016393442623,
+  "rustAnalyzer": {
+    "generatedAtUtc": "2026-11-07T15:08:37.6367405Z",
+    "analyzer": "rust-analyzer 0.3.3073-standalone (65ac641199 2026-10-04)",
+    "rustc": "rustc 1.95.0 (59807616e 2026-04-14)",
+    "exitCode": 0,
+    "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\rust-analyzer-fixed.log",
+    "command": "rust-analyzer diagnostics . --severity error",
+    "boundary": "Uses the installed VS Code server, rather than treating cargo check as editor-diagnostic verification. Editor restart may be required to reload its old process."
+  },
+  "popupMaterialFollowup": {
+    "report": "references/validation/overlay-popup-material-followup.json",
+    "browser": {
+      "report": "out/overlay-material-followup.json",
+      "stats": {
+        "startTime": "2026-11-07T15:49:31.313Z",
+        "duration": 28873.943,
+        "expected": 16,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "wasm": {
+        "sha256": "59fc9ad76bb962ef4daeb47975c4933e120835beeee5646c448594a27819ced7",
+        "completedAt": 1794066526109
+      }
+    },
+    "rust": {
+      "passed": 128,
+      "log": "out/overlay-followup-rust.log"
+    },
+    "maximumMenuMaterialMAE": 1.1922390722569134
+  },
+  "refinement": {
+    "report": "references/validation/overlay-refinement.json",
+    "acceptedPixelEquality": false,
+    "latestTargetedBrowser": {
+      "startTime": "2026-11-07T20:36:59.377Z",
+      "duration": 205384.922,
+      "expected": 61,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "latestFullBrowser": {
+      "startTime": "2026-11-07T20:22:33.571Z",
+      "duration": 674431.4839999999,
+      "expected": 147,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "latestFullBoundary": "Before SVG upload fix; one unhandled GPU error is retained in the linked report.",
+    "historicalFullBrowser": {
+      "startTime": "2026-11-07T19:17:58.207Z",
+      "duration": 772572.507,
+      "expected": 140,
+      "skipped": 0,
+      "unexpected": 5,
+      "flaky": 0
+    },
+    "rust": 151,
+    "nativeScenes": 24
+  },
+  "textRenderingFollowup": {
+    "report": "references/validation/overlay-text-render-followup.json",
+    "acceptedPixelEquality": false,
+    "browser": {
+      "startTime": "2026-11-07T21:10:06.516Z",
+      "duration": 697871.142,
+      "expected": 149,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "rust": 154,
+    "wasm": "1e529285a802ff632e03dec467d6821f4dad829c20088898c5ef60840e3f0356"
+  }
+}

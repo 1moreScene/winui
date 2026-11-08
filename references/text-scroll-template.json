@@ -1,0 +1,3207 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sourceAliases": {
+    "Light": {
+      "TextControlBackground": "ControlFillColorDefaultBrush",
+      "TextControlBackgroundPointerOver": "ControlFillColorSecondaryBrush",
+      "TextControlBackgroundFocused": "ControlFillColorInputActiveBrush",
+      "TextControlBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "TextControlBorderBrush": "TextControlElevationBorderBrush",
+      "TextControlBorderBrushPointerOver": "TextControlElevationBorderBrush",
+      "TextControlBorderBrushFocused": "TextControlElevationBorderFocusedBrush",
+      "TextControlBorderBrushDisabled": "ControlStrokeColorDefaultBrush",
+      "TextControlForeground": "TextFillColorPrimaryBrush",
+      "TextControlForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "TextControlForegroundFocused": "TextFillColorPrimaryBrush",
+      "TextControlForegroundDisabled": "TemporaryTextFillColorDisabled",
+      "TextControlPlaceholderForeground": "TextFillColorSecondaryBrush",
+      "TextControlPlaceholderForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "TextControlPlaceholderForegroundFocused": "TextFillColorSecondaryBrush",
+      "TextControlPlaceholderForegroundDisabled": "TextFillColorDisabledBrush",
+      "TextControlSelectionHighlightColor": "AccentFillColorSelectedTextBackgroundBrush",
+      "TextControlButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "TextControlButtonBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "TextControlButtonBorderBrush": "ControlFillColorTransparent",
+      "TextControlButtonBorderBrushPointerOver": "ControlFillColorTransparent",
+      "TextControlButtonBorderBrushPressed": "ControlFillColorTransparent",
+      "TextControlButtonForeground": "TextFillColorSecondaryBrush",
+      "TextControlButtonForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "TextControlButtonForegroundPressed": "TextFillColorTertiaryBrush",
+      "ScrollViewerScrollBarSeparatorBackground": "ControlFillColorTransparentBrush",
+      "ScrollBarBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarForeground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "ScrollBarButtonBackgroundPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPressed": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonArrowForeground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonArrowForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundPressed": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbFill": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBorderBrush": "ControlFillColorTransparentBrush",
+      "ScrollBarTrackFill": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillPointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStroke": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokePointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokeDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackgroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBackgroundColor": "ControlStrongFillColorDefault",
+      "ScrollBarPanningThumbBackgroundColor": "ControlStrongFillColorDefault"
+    },
+    "Dark": {
+      "TextControlBackground": "ControlFillColorDefaultBrush",
+      "TextControlBackgroundPointerOver": "ControlFillColorSecondaryBrush",
+      "TextControlBackgroundFocused": "ControlFillColorInputActiveBrush",
+      "TextControlBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "TextControlBorderBrush": "TextControlElevationBorderBrush",
+      "TextControlBorderBrushPointerOver": "TextControlElevationBorderBrush",
+      "TextControlBorderBrushFocused": "TextControlElevationBorderFocusedBrush",
+      "TextControlBorderBrushDisabled": "ControlStrokeColorDefaultBrush",
+      "TextControlForeground": "TextFillColorPrimaryBrush",
+      "TextControlForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "TextControlForegroundFocused": "TextFillColorPrimaryBrush",
+      "TextControlForegroundDisabled": "TemporaryTextFillColorDisabled",
+      "TextControlPlaceholderForeground": "TextFillColorSecondaryBrush",
+      "TextControlPlaceholderForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "TextControlPlaceholderForegroundFocused": "TextFillColorSecondaryBrush",
+      "TextControlPlaceholderForegroundDisabled": "TextFillColorDisabledBrush",
+      "TextControlSelectionHighlightColor": "AccentFillColorSelectedTextBackgroundBrush",
+      "TextControlButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "TextControlButtonBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "TextControlButtonBorderBrush": "ControlFillColorTransparent",
+      "TextControlButtonBorderBrushPointerOver": "ControlFillColorTransparent",
+      "TextControlButtonBorderBrushPressed": "ControlFillColorTransparent",
+      "TextControlButtonForeground": "TextFillColorSecondaryBrush",
+      "TextControlButtonForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "TextControlButtonForegroundPressed": "TextFillColorTertiaryBrush",
+      "ScrollViewerScrollBarSeparatorBackground": "ControlFillColorTransparentBrush",
+      "ScrollBarBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarForeground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "ScrollBarButtonBackgroundPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPressed": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonArrowForeground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonArrowForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundPressed": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbFill": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBorderBrush": "ControlFillColorTransparentBrush",
+      "ScrollBarTrackFill": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillPointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStroke": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokePointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokeDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackgroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBackgroundColor": "ControlStrongFillColorDefault",
+      "ScrollBarPanningThumbBackgroundColor": "ControlStrongFillColorDefault"
+    },
+    "HighContrast": {
+      "TextControlBackgroundFocused": "SystemControlBackgroundAltHighBrush",
+      "TextControlBorderBrush": "SystemControlForegroundBaseMediumBrush",
+      "TextControlBorderBrushPointerOver": "SystemControlHighlightBaseMediumHighBrush",
+      "TextControlButtonForeground": "SystemControlForegroundBaseMediumHighBrush",
+      "TextControlForegroundFocused": "SystemControlForegroundBaseHighBrush",
+      "TextControlPlaceholderForegroundFocused": "SystemControlForegroundBaseMediumLowBrush",
+      "ScrollViewerScrollBarSeparatorBackground": "SystemControlTransparentBrush",
+      "ScrollBarBackground": "SystemControlTransparentBrush",
+      "ScrollBarBackgroundPointerOver": "SystemControlTransparentBrush",
+      "ScrollBarBackgroundDisabled": "SystemControlTransparentBrush",
+      "ScrollBarForeground": "SystemControlTransparentBrush",
+      "ScrollBarBorderBrush": "SystemControlTransparentBrush",
+      "ScrollBarBorderBrushPointerOver": "SystemControlTransparentBrush",
+      "ScrollBarBorderBrushDisabled": "SystemControlTransparentBrush",
+      "ScrollBarButtonBackground": "SystemControlTransparentBrush",
+      "ScrollBarButtonBackgroundPointerOver": "SystemControlBackgroundListLowBrush",
+      "ScrollBarButtonBackgroundPressed": "SystemControlBackgroundBaseMediumBrush",
+      "ScrollBarButtonBackgroundDisabled": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrush": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrushPointerOver": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrushPressed": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrushDisabled": "SystemControlTransparentBrush",
+      "ScrollBarButtonArrowForeground": "SystemControlForegroundBaseHighBrush",
+      "ScrollBarButtonArrowForegroundPointerOver": "SystemControlHighlightBaseHighBrush",
+      "ScrollBarButtonArrowForegroundPressed": "SystemControlHighlightBaseHighBrush",
+      "ScrollBarButtonArrowForegroundDisabled": "SystemControlDisabledBaseHighBrush",
+      "ScrollBarThumbFill": "SystemControlForegroundChromeDisabledLowBrush",
+      "ScrollBarThumbFillPointerOver": "SystemControlHighlightBaseMediumLowBrush",
+      "ScrollBarThumbFillPressed": "SystemControlHighlightBaseMediumBrush",
+      "ScrollBarThumbFillDisabled": "SystemControlDisabledBaseHighBrush",
+      "ScrollBarThumbBorderBrush": "SystemControlTransparentBrush",
+      "ScrollBarTrackFill": "SystemControlPageBackgroundChromeLowBrush",
+      "ScrollBarTrackFillPointerOver": "SystemControlPageBackgroundChromeLowBrush",
+      "ScrollBarTrackFillDisabled": "SystemControlDisabledTransparentBrush",
+      "ScrollBarTrackStroke": "SystemControlForegroundTransparentBrush",
+      "ScrollBarTrackStrokePointerOver": "SystemControlForegroundTransparentBrush",
+      "ScrollBarTrackStrokeDisabled": "SystemControlDisabledTransparentBrush",
+      "ScrollBarThumbBackground": "SystemControlForegroundChromeDisabledLowBrush",
+      "ScrollBarPanningThumbBackground": "SystemControlForegroundChromeDisabledLowBrush",
+      "ScrollBarPanningThumbBackgroundDisabled": "SystemControlDisabledChromeHighBrush",
+      "ScrollBarThumbBackgroundColor": "SystemColorButtonTextColor",
+      "ScrollBarPanningThumbBackgroundColor": "SystemColorButtonTextColor"
+    }
+  },
+  "styles": {
+    "TextBox": {
+      "defaults": {
+        "Foreground": "{ThemeResource TextControlForeground}",
+        "Background": "{ThemeResource TextControlBackground}",
+        "BorderBrush": "{ThemeResource TextControlBorderBrush}",
+        "SelectionHighlightColor": "{ThemeResource TextControlSelectionHighlightColor}",
+        "BorderThickness": "{ThemeResource TextControlBorderThemeThickness}",
+        "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+        "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+        "ScrollViewer.HorizontalScrollMode": "Auto",
+        "ScrollViewer.VerticalScrollMode": "Auto",
+        "ScrollViewer.HorizontalScrollBarVisibility": "Hidden",
+        "ScrollViewer.VerticalScrollBarVisibility": "Hidden",
+        "ScrollViewer.IsDeferredScrollingEnabled": "False",
+        "MinHeight": "{ThemeResource TextControlThemeMinHeight}",
+        "MinWidth": "{ThemeResource TextControlThemeMinWidth}",
+        "Padding": "{ThemeResource TextControlThemePadding}",
+        "UseSystemFocusVisuals": "{ThemeResource IsApplicationFocusVisualKindReveal}",
+        "ContextFlyout": "{StaticResource TextControlCommandBarContextFlyout}",
+        "SelectionFlyout": "{StaticResource TextControlCommandBarSelectionFlyout}",
+        "CornerRadius": "{ThemeResource ControlCornerRadius}",
+        "BackgroundSizing": "InnerBorderEdge"
+      },
+      "states": [
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBackgroundPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBorderBrushPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBackgroundPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBorderBrushPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonForegroundPressed}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "ButtonLayoutGrid",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0",
+                "Duration": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlHeaderForegroundDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBackgroundDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderBrushDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlForegroundDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{Binding PlaceholderForeground, RelativeSource={RelativeSource TemplatedParent}, TargetNullValue={ThemeResource TextControlPlaceholderForegroundDisabled}}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderBrushPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBackgroundPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{Binding PlaceholderForeground, RelativeSource={RelativeSource TemplatedParent}, TargetNullValue={ThemeResource TextControlPlaceholderForegroundPointerOver}}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Focused"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{Binding PlaceholderForeground, RelativeSource={RelativeSource TemplatedParent}, TargetNullValue={ThemeResource TextControlPlaceholderForegroundFocused}}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBackgroundFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderBrushFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderThemeThicknessFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlForegroundFocused}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ButtonVisible"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ButtonCollapsed"
+          },
+          "animations": []
+        }
+      ]
+    },
+    "PasswordBox": {
+      "defaults": {
+        "Foreground": "{ThemeResource TextControlForeground}",
+        "Background": "{ThemeResource TextControlBackground}",
+        "SelectionHighlightColor": "{ThemeResource TextControlSelectionHighlightColor}",
+        "BorderBrush": "{ThemeResource TextControlBorderBrush}",
+        "BorderThickness": "{ThemeResource TextControlBorderThemeThickness}",
+        "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+        "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+        "ScrollViewer.HorizontalScrollMode": "Auto",
+        "ScrollViewer.VerticalScrollMode": "Auto",
+        "ScrollViewer.HorizontalScrollBarVisibility": "Hidden",
+        "ScrollViewer.VerticalScrollBarVisibility": "Hidden",
+        "Padding": "{ThemeResource TextControlThemePadding}",
+        "ContextFlyout": "{StaticResource TextControlCommandBarContextFlyout}",
+        "SelectionFlyout": "{StaticResource TextControlCommandBarSelectionFlyout}",
+        "CornerRadius": "{ThemeResource ControlCornerRadius}"
+      },
+      "states": [
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Indeterminate"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBackgroundPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBorderBrushPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBackgroundPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBorderBrushPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonForegroundPressed}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CheckedPressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBackgroundPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBorderBrushPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonForegroundPressed}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "IndeterminatePressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBackgroundPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonBorderBrushPressed}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlButtonForegroundPressed}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Storyboard.TargetName": "ButtonLayoutGrid",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0",
+                "Duration": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlHeaderForegroundDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBackgroundDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderBrushDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlForegroundDisabled}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlPlaceholderForegroundDisabled}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderBrushPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBackgroundPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlPlaceholderForegroundPointerOver}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Focused"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlPlaceholderForegroundFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBackgroundFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderBrushFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlBorderThemeThicknessFocused}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource TextControlForegroundFocused}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ButtonVisible"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ButtonCollapsed"
+          },
+          "animations": []
+        }
+      ]
+    },
+    "ScrollViewer": {
+      "defaults": {
+        "HorizontalScrollMode": "Auto",
+        "VerticalScrollMode": "Auto",
+        "IsHorizontalRailEnabled": "True",
+        "IsVerticalRailEnabled": "True",
+        "IsTabStop": "False",
+        "ZoomMode": "Disabled",
+        "HorizontalContentAlignment": "Left",
+        "VerticalContentAlignment": "Top",
+        "VerticalScrollBarVisibility": "Visible",
+        "Padding": "0",
+        "BorderThickness": "0",
+        "BorderBrush": "Transparent",
+        "Background": "Transparent",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}"
+      },
+      "states": [
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "MouseIndicator",
+            "To": "NoIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{ThemeResource ScrollViewerSeparatorContractDelay}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{ThemeResource ScrollViewerSeparatorContractDelay}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "MouseIndicatorFull",
+            "To": "NoIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{ThemeResource ScrollViewerSeparatorContractDelay}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{ThemeResource ScrollViewerSeparatorContractDelay}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "MouseIndicatorFull",
+            "To": "MouseIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{ThemeResource ScrollViewerSeparatorContractDelay}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{ThemeResource ScrollViewerSeparatorContractDelay}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "TouchIndicator",
+            "To": "NoIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.5"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0:0:0.5"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NoIndicator"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TouchIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MouseIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MouseIndicatorFull"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "ScrollBarSeparatorExpanded",
+            "To": "ScrollBarSeparatorCollapsed"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{ThemeResource ScrollViewerSeparatorContractDuration}",
+                "BeginTime": "{ThemeResource ScrollViewerSeparatorContractBeginTime}",
+                "Storyboard.TargetName": "ScrollBarSeparator",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ScrollBarSeparatorCollapsed"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ScrollBarSeparatorExpanded"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{ThemeResource ScrollViewerSeparatorExpandDuration}",
+                "BeginTime": "{ThemeResource ScrollViewerSeparatorExpandBeginTime}",
+                "Storyboard.TargetName": "ScrollBarSeparator",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ScrollBarSeparatorExpandedWithoutAnimation"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{ThemeResource ScrollViewerSeparatorExpandBeginTime}",
+                "Storyboard.TargetName": "ScrollBarSeparator",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ScrollBarSeparatorCollapsedWithoutAnimation"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{ThemeResource ScrollViewerSeparatorContractBeginTime}",
+                "Storyboard.TargetName": "ScrollBarSeparator",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ScrollBar": {
+      "defaults": {
+        "MinWidth": "{StaticResource ScrollBarSize}",
+        "MinHeight": "{StaticResource ScrollBarSize}",
+        "Background": "{ThemeResource ScrollBarBackground}",
+        "Foreground": "{ThemeResource ScrollBarForeground}",
+        "BorderBrush": "{ThemeResource ScrollBarBorderBrush}",
+        "IsTabStop": "False",
+        "CornerRadius": "{ThemeResource ScrollBarCornerRadius}"
+      },
+      "states": [
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPressed}"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleX)",
+                "RepeatBehavior": "Forever"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleY)",
+                "RepeatBehavior": "Forever"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundDisabled}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPressed}"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleX)",
+                "RepeatBehavior": "Forever"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleY)",
+                "RepeatBehavior": "Forever"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundDisabled}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPressed}"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleX)",
+                "RepeatBehavior": "Forever"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleY)",
+                "RepeatBehavior": "Forever"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundDisabled}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPointerOver}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundPressed}"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleX)",
+                "RepeatBehavior": "Forever"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "Arrow",
+                "Storyboard.TargetProperty": "(UIElement.RenderTransform).(ScaleTransform.ScaleY)",
+                "RepeatBehavior": "Forever"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{ThemeResource ScrollBarButtonArrowForegroundDisabled}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarColorChangeDuration}",
+                "Value": "{ThemeResource ScrollBarThumbFillDisabled}"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "To": "0",
+                "Storyboard.TargetProperty": "Opacity",
+                "Storyboard.TargetName": "ThumbVisual"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": [
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarColorChangeDuration}",
+                "Value": "{ThemeResource ScrollBarThumbFillDisabled}"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "To": "0",
+                "Storyboard.TargetProperty": "Opacity",
+                "Storyboard.TargetName": "ThumbVisual"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TouchIndicator"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MouseIndicator"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NoIndicator"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalThumb",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalThumb",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumb",
+                "Storyboard.TargetProperty": "Width",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarVerticalThumbMinWidth}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumbTransform",
+                "Storyboard.TargetProperty": "X",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarThumbOffset}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumb",
+                "Storyboard.TargetProperty": "Height",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarHorizontalThumbMinHeight}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumbTransform",
+                "Storyboard.TargetProperty": "Y",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarThumbOffset}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarOpacityChangeDuration}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarOpacityChangeDuration}"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "HorizontalPanningRoot",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "Storyboard.TargetName": "VerticalPanningRoot",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}"
+              }
+            },
+            {
+              "kind": "DiscreteObjectKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualTransition",
+          "attributes": {
+            "From": "Expanded",
+            "To": "Collapsed"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumb",
+                "Storyboard.TargetProperty": "Width",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarVerticalThumbMinWidth}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumbTransform",
+                "Storyboard.TargetProperty": "X",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarThumbOffset}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumb",
+                "Storyboard.TargetProperty": "Height",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarHorizontalThumbMinHeight}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumbTransform",
+                "Storyboard.TargetProperty": "Y",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarContractDuration}",
+                "Value": "{StaticResource ScrollBarThumbOffset}",
+                "KeySpline": "0,0,0,1"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Collapsed"
+          },
+          "animations": []
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Expanded"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "{StaticResource ScrollBarOpacityChangeDuration}",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumb",
+                "Storyboard.TargetProperty": "Width",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarExpandDuration}",
+                "Value": "{StaticResource ScrollBarSize}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumbTransform",
+                "Storyboard.TargetProperty": "X",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarExpandDuration}",
+                "Value": "0",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumb",
+                "Storyboard.TargetProperty": "Height",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarExpandDuration}",
+                "Value": "{StaticResource ScrollBarSize}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumbTransform",
+                "Storyboard.TargetProperty": "Y",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "{StaticResource ScrollBarExpandDuration}",
+                "Value": "0",
+                "KeySpline": "0,0,0,1"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ExpandedWithoutAnimation"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "VerticalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "Storyboard.TargetName": "HorizontalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumb",
+                "Storyboard.TargetProperty": "Width",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{StaticResource ScrollBarSize}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumbTransform",
+                "Storyboard.TargetProperty": "X",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "0",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumb",
+                "Storyboard.TargetProperty": "Height",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{StaticResource ScrollBarSize}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumbTransform",
+                "Storyboard.TargetProperty": "Y",
+                "BeginTime": "{StaticResource ScrollBarExpandBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "0",
+                "KeySpline": "0,0,0,1"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "VisualState",
+          "attributes": {
+            "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CollapsedWithoutAnimation"
+          },
+          "animations": [
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "VerticalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeIncrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalLargeDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalSmallDecrease",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimation",
+              "attributes": {
+                "Duration": "0",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "Storyboard.TargetName": "HorizontalTrackRect",
+                "Storyboard.TargetProperty": "Opacity",
+                "To": "0"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumb",
+                "Storyboard.TargetProperty": "Width",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{StaticResource ScrollBarVerticalThumbMinWidth}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "VerticalThumbTransform",
+                "Storyboard.TargetProperty": "X",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{StaticResource ScrollBarThumbOffset}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumb",
+                "Storyboard.TargetProperty": "Height",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}",
+                "EnableDependentAnimation": "True"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{StaticResource ScrollBarHorizontalThumbMinHeight}",
+                "KeySpline": "0,0,0,1"
+              }
+            },
+            {
+              "kind": "DoubleAnimationUsingKeyFrames",
+              "attributes": {
+                "Storyboard.TargetName": "HorizontalThumbTransform",
+                "Storyboard.TargetProperty": "Y",
+                "BeginTime": "{StaticResource ScrollBarContractBeginTime}"
+              }
+            },
+            {
+              "kind": "SplineDoubleKeyFrame",
+              "attributes": {
+                "KeyTime": "0",
+                "Value": "{StaticResource ScrollBarThumbOffset}",
+                "KeySpline": "0,0,0,1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "scalars": {
+    "TextBoxTopHeaderMargin": "0,0,0,8",
+    "TextBoxInnerButtonMargin": "0,4,4,4",
+    "TextBoxIconFontSize": "12",
+    "PasswordBoxTopHeaderMargin": "0,0,0,8",
+    "PasswordBoxIconFontSize": "12",
+    "ScrollViewerScrollBarMargin": "1",
+    "ScrollViewerSeparatorExpandBeginTime": "00:00:00.40",
+    "ScrollViewerSeparatorExpandDuration": "00:00:00.1",
+    "ScrollViewerSeparatorContractBeginTime": "00:00:02.00",
+    "ScrollViewerSeparatorContractDelay": "00:00:02",
+    "ScrollViewerSeparatorContractDuration": "00:00:00.1",
+    "ScrollViewerSeparatorContractFinalKeyframe": "00:00:02.1",
+    "ScrollBarExpandDuration": "00:00:00.167",
+    "ScrollBarOpacityChangeDuration": "00:00:00.083",
+    "ScrollBarColorChangeDuration": "00:00:00.083",
+    "ScrollBarContractDuration": "00:00:00.167",
+    "ScrollBarThumbOffset": "2",
+    "ScrollBarContractDelay": "00:00:02",
+    "ScrollBarContractFinalKeyframe": "00:00:02.1",
+    "ScrollBarSize": "12",
+    "ScrollBarVerticalThumbMinHeight": "30",
+    "ScrollBarVerticalThumbMinWidth": "8",
+    "ScrollBarHorizontalThumbMinWidth": "30",
+    "ScrollBarHorizontalThumbMinHeight": "8",
+    "ScrollBarThumbStrokeThickness": "6",
+    "ScrollBarButtonArrowIconFontSize": "8",
+    "ScrollBarButtonArrowScalePressed": "0.875",
+    "ScrollBarExpandBeginTime": "00:00:00.40",
+    "ScrollBarContractBeginTime": "00:00:00.50",
+    "ScrollBarCornerRadius": "3",
+    "ScrollBarHorizontalDecreaseMargin": "4,0,0,0",
+    "ScrollBarHorizontalIncreaseMargin": "0,0,4,0",
+    "ScrollBarVerticalDecreaseMargin": "0,4,0,0",
+    "ScrollBarVerticalIncreaseMargin": "0,0,0,4"
+  },
+  "requiredBrushes": {
+    "TextControlBackground": {
+      "colorResource": false
+    },
+    "TextControlBackgroundPointerOver": {
+      "colorResource": false
+    },
+    "TextControlBackgroundFocused": {
+      "colorResource": false
+    },
+    "TextControlBackgroundDisabled": {
+      "colorResource": false
+    },
+    "TextControlBorderBrush": {
+      "colorResource": false
+    },
+    "TextControlBorderBrushPointerOver": {
+      "colorResource": false
+    },
+    "TextControlBorderBrushFocused": {
+      "colorResource": false
+    },
+    "TextControlBorderBrushDisabled": {
+      "colorResource": false
+    },
+    "TextControlForeground": {
+      "colorResource": false
+    },
+    "TextControlForegroundPointerOver": {
+      "colorResource": false
+    },
+    "TextControlForegroundFocused": {
+      "colorResource": false
+    },
+    "TextControlForegroundDisabled": {
+      "colorResource": true
+    },
+    "TextControlPlaceholderForeground": {
+      "colorResource": false
+    },
+    "TextControlPlaceholderForegroundPointerOver": {
+      "colorResource": false
+    },
+    "TextControlPlaceholderForegroundFocused": {
+      "colorResource": false
+    },
+    "TextControlPlaceholderForegroundDisabled": {
+      "colorResource": false
+    },
+    "TextControlHeaderForeground": {
+      "colorResource": false
+    },
+    "TextControlHeaderForegroundDisabled": {
+      "colorResource": false
+    },
+    "TextControlSelectionHighlightColor": {
+      "colorResource": false
+    },
+    "TextControlButtonForeground": {
+      "colorResource": false
+    },
+    "TextControlButtonForegroundPointerOver": {
+      "colorResource": false
+    },
+    "TextControlButtonForegroundPressed": {
+      "colorResource": false
+    },
+    "TextControlButtonBackgroundPointerOver": {
+      "colorResource": false
+    },
+    "TextControlButtonBackgroundPressed": {
+      "colorResource": false
+    },
+    "SystemControlDescriptionTextForegroundBrush": {
+      "colorResource": false
+    },
+    "ScrollBarThumbFill": {
+      "colorResource": false
+    },
+    "ScrollBarThumbFillPointerOver": {
+      "colorResource": false
+    },
+    "ScrollBarThumbFillPressed": {
+      "colorResource": false
+    },
+    "ScrollBarThumbFillDisabled": {
+      "colorResource": false
+    },
+    "ScrollBarTrackFill": {
+      "colorResource": false
+    },
+    "ScrollBarTrackStroke": {
+      "colorResource": false
+    },
+    "ScrollBarButtonArrowForeground": {
+      "colorResource": false
+    },
+    "ScrollBarButtonArrowForegroundPointerOver": {
+      "colorResource": false
+    },
+    "ScrollBarButtonArrowForegroundPressed": {
+      "colorResource": false
+    },
+    "ScrollBarPanningThumbBackground": {
+      "colorResource": false
+    }
+  },
+  "aliases": {},
+  "primitives": {
+    "Light": {
+      "TextControlBackground": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "TextControlBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#F9F9F980",
+        "opacity": 1
+      },
+      "TextControlBackgroundFocused": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextControlBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#F9F9F94D",
+        "opacity": 1
+      },
+      "TextControlBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#00000072"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "TextControlBorderBrushPointerOver": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#00000072"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "TextControlBorderBrushFocused": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "stops": [
+          {
+            "offset": 1,
+            "color": "#0067C0FF"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ],
+        "opacity": 1
+      },
+      "TextControlBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "TextControlForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextControlForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextControlForegroundFocused": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextControlForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0101015C",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForeground": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundFocused": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "TextControlHeaderForeground": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "TextControlHeaderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#00000066",
+        "opacity": 1
+      },
+      "TextControlSelectionHighlightColor": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "TextControlButtonForeground": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextControlButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextControlButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "TextControlButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "TextControlButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "SystemControlDescriptionTextForegroundBrush": {
+        "kind": "solid",
+        "color": "#00000099",
+        "opacity": 1
+      },
+      "ScrollBarThumbFill": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillPointerOver": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillPressed": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillDisabled": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1
+      },
+      "ScrollBarTrackFill": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "ScrollBarTrackStroke": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "ScrollBarButtonArrowForeground": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForegroundPressed": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "ScrollBarPanningThumbBackground": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "TextControlBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "TextControlBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF15",
+        "opacity": 1
+      },
+      "TextControlBackgroundFocused": {
+        "kind": "solid",
+        "color": "#1E1E1EB3",
+        "opacity": 1
+      },
+      "TextControlBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF0B",
+        "opacity": 1
+      },
+      "TextControlBorderBrush": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#FFFFFF8B"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "TextControlBorderBrushPointerOver": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#FFFFFF8B"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "TextControlBorderBrushFocused": {
+        "kind": "linearGradient",
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "stops": [
+          {
+            "offset": 1,
+            "color": "#4CC2FFFF"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ],
+        "opacity": 1
+      },
+      "TextControlBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      },
+      "TextControlForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextControlForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextControlForegroundFocused": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextControlForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FEFEFE5D",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundFocused": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "TextControlHeaderForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextControlHeaderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF66",
+        "opacity": 1
+      },
+      "TextControlSelectionHighlightColor": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "TextControlButtonForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextControlButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextControlButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1
+      },
+      "TextControlButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "TextControlButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "SystemControlDescriptionTextForegroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF99",
+        "opacity": 1
+      },
+      "ScrollBarThumbFill": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1
+      },
+      "ScrollBarTrackFill": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "ScrollBarTrackStroke": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "ScrollBarButtonArrowForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "ScrollBarPanningThumbBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "TextControlBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "TextControlBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "TextControlBackgroundFocused": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "TextControlBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "TextControlBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlBorderBrushFocused": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "TextControlBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "TextControlForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlForegroundFocused": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "TextControlForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundFocused": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "TextControlPlaceholderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "TextControlHeaderForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlHeaderForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "TextControlSelectionHighlightColor": {
+        "kind": "solid",
+        "color": "#FFFF00",
+        "opacity": 1
+      },
+      "TextControlButtonForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "TextControlButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "TextControlButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "SystemControlDescriptionTextForegroundBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarThumbFill": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarThumbFillDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "ScrollBarTrackFill": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ScrollBarTrackStroke": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarButtonArrowForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1
+      },
+      "ScrollBarPanningThumbBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "measure": "CShape::ApplyContentStretch / GenerateGeometryBounds",
+  "rectangle": "GetOutlineRect / UpdateRectangleBoundsForStretchMode / CreateRoundedRect",
+  "stroke": "CShape::InitPenFromShape; independent start/end/dash caps, joins, miter, dash widths",
+  "sources": [
+    {
+      "path": "references/winui/shape.cpp",
+      "sha256": "c83e32eca50d0f390d64a790d4d10433e140dd527548fbbda7780a5dcfd50cad"
+    },
+    {
+      "path": "references/winui/shape.h",
+      "sha256": "b8822aa9273b5f3ca475f8d24fa857635285742abb476dace1339a6fb838cda3"
+    },
+    {
+      "path": "references/winui/rectangle.cpp",
+      "sha256": "9f1deb9a0179f272f2502cd2f21cf7ee77ae6d131d28651e416abffeb5539c33"
+    },
+    {
+      "path": "references/winui/line.cpp",
+      "sha256": "82cc0d3bf7bd59a991dc0ac9aa699f5d3ff406c1a226432b9e23ccdc7bebf9d1"
+    },
+    {
+      "path": "references/winui/path.cpp",
+      "sha256": "abcf3465a373e605b0fe606c5cb1ec3850bd200ae8dab891c9c8581d42b5aaad"
+    },
+    {
+      "path": "references/winui/polygon.cpp",
+      "sha256": "3657ca4a8b1bd42708c03cede69bd32f9ac74a71783c719016ca74bbd9c56561"
+    },
+    {
+      "path": "references/winui/polyline.cpp",
+      "sha256": "89e303e8509a08028beb5dc97687574ffe22090b23a873b331489f99583bb36b"
+    }
+  ]
+}

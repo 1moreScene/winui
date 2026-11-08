@@ -1,0 +1,184 @@
+{
+  "generatedAtUtc": "2026-11-07T21:26:56.504172+00:00",
+  "acceptedPixelEquality": false,
+  "changes": [
+    "All axis-aligned glyph runs snap their physical baseline, including the DWriteLayout route.",
+    "DWriteLayout painting adds the TextBlock height-rounding adjustment without changing its public baseline metrics. LineServices retains its already-adjusted baseline.",
+    "Material pixel byte conversion uses ToUint8Clamp ties-to-even; recipe Color packing is unchanged."
+  ],
+  "sources": "references/text-raster-sources.json",
+  "sourceBinaryCorrespondence": "Same release label as the resolved umbrella package. Binary-to-source commit equivalence has not been established; NuGet nuspec does not provide a repository commit.",
+  "text": {
+    "nativeReport": "references/text-coverage-native.json",
+    "beforeReport": "references/validation/overlay-text-coverage-before-baseline.json",
+    "afterReport": "references/validation/overlay-text-coverage-after-baseline.json",
+    "nativeScenes": 2,
+    "nativeTextCases": 84,
+    "browserCasesPerVersion": 168,
+    "sample": "Open",
+    "ordinaryGlyphMeanBefore": 37.4992623074226,
+    "ordinaryGlyphMeanAfter": 18.163000252587192,
+    "groups": [
+      {
+        "family": "Segoe UI",
+        "trimming": "None",
+        "cases": 28,
+        "beforeInkMAE": 49.234312305551214,
+        "afterInkMAE": 19.11807185402541
+      },
+      {
+        "family": "Segoe UI",
+        "trimming": "Clip",
+        "cases": 28,
+        "beforeInkMAE": 19.11807185402541,
+        "afterInkMAE": 19.11807185402541
+      },
+      {
+        "family": "Arial",
+        "trimming": "None",
+        "cases": 28,
+        "beforeInkMAE": 64.43673641896477,
+        "afterInkMAE": 17.20792865114898
+      },
+      {
+        "family": "Arial",
+        "trimming": "Clip",
+        "cases": 28,
+        "beforeInkMAE": 17.20792865114898,
+        "afterInkMAE": 17.20792865114898
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "trimming": "None",
+        "cases": 28,
+        "beforeInkMAE": 123.28130983356459,
+        "afterInkMAE": 121.93607878852985
+      },
+      {
+        "family": "Segoe Fluent Icons",
+        "trimming": "Clip",
+        "cases": 28,
+        "beforeInkMAE": 25.17618825153868,
+        "afterInkMAE": 25.17618825153868
+      }
+    ],
+    "beforeWasm": "f8430b980f7814c3bd5ef63762bb5fb6eedf064d0cd4db50c7819623e34389a4",
+    "afterWasm": "1e529285a802ff632e03dec467d6821f4dad829c20088898c5ef60840e3f0356",
+    "review": "out/overlay-text-coverage/index.html"
+  },
+  "browser": {
+    "report": "out/overlay-baseline-full-browser.json",
+    "stats": {
+      "startTime": "2026-11-07T21:10:06.516Z",
+      "duration": 697871.142,
+      "expected": 149,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "wasm": {
+      "sha256": "1e529285a802ff632e03dec467d6821f4dad829c20088898c5ef60840e3f0356",
+      "completedAt": 1794085708949
+    },
+    "unhandledErrorsInLog": false,
+    "fetchedBinaryEvidence": [
+      "out/overlay-baseline-full-collections-Canvas2D.json",
+      "out/overlay-baseline-full-collections-WebGL2.json"
+    ]
+  },
+  "rust": {
+    "passed": 154,
+    "log": "out/overlay-baseline-rust.log"
+  },
+  "controls": {
+    "report": "references/validation/overlay-controls-comparison.json",
+    "wasm": "1e529285a802ff632e03dec467d6821f4dad829c20088898c5ef60840e3f0356",
+    "stableComparisons": 48,
+    "motionComparisons": 312,
+    "maximumGeometryErrorDip": 3.051757857974735e-06,
+    "maximumRowErrorDip": 1.2207031261368684e-05,
+    "maximumEdgeRGBMAE": 1.959016393442623,
+    "maximumMaterialRGBMAE": 2.320598006644518
+  },
+  "popupCorners": {
+    "report": "references/validation/popup-corner-materials.json",
+    "comparisons": 32,
+    "cornerLeakMaximum": 0
+  },
+  "checks": {
+    "buildAndTypecheck": "out/overlay-baseline-build.log",
+    "fmt": "out/overlay-baseline-fmt.log",
+    "clippyHost": "out/overlay-baseline-clippy.log",
+    "clippyWasm": "out/overlay-baseline-wasm-clippy.log",
+    "sourceAndReferenceFingerprints": "out/overlay-baseline-fingerprints.log"
+  },
+  "diagnostics": [
+    "references/validation/overlay-text-coverage-diagnostic.json",
+    "references/validation/overlay-canvas-context-diagnostic.json",
+    "references/validation/overlay-noise-sampling-diagnostic.json",
+    "references/validation/overlay-app-backdrop-kernel.json"
+  ],
+  "remaining": [
+    "Glyph coverage still differs after aligning placement. Diagnostic Canvas modes are not production corrections.",
+    "Symbol-font None/Latin text still falls back in the browser while the native fast path renders missing glyphs.",
+    "In-app Gaussian and DWM HostBackdrop retain measured residuals; external desktop sampling and compositor present-time equivalence are not provided by this browser renderer."
+  ],
+  "nextBatch": {
+    "controls": [
+      "AutoSuggestBox",
+      "NumberBox",
+      "ComboBox",
+      "ContentDialog",
+      "TeachingTip"
+    ],
+    "sceneControlsImplemented": false,
+    "status": "Source/template baseline and NumberBox parser core only; the requested floating-fidelity gate is not accepted."
+  },
+  "boundaries": [
+    "The first text-only probe omitted its per-monitor startup flag. That unaware capture is discarded; all accepted rows assert XAML scale, Win32 DPI, and physical capture ratio agreement.",
+    "Material UNORM conversion is corrected to the Canvas byte-domain rule. The isolated flat-noise error remains measurable; no native equality improvement is claimed for that diagnostic.",
+    "The matching-SDK probe is not a Store Gallery distribution acceptance.",
+    "Windows native host support has not been added; delivery-mode clarification is pending."
+  ],
+  "standards": [
+    "https://tc39.es/ecma262/multipage/abstract-operations.html#sec-touint8clamp"
+  ],
+  "repositoryAtReportTime": [
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "83801438a3d237bd466c39faf3764b740243764461f6e9b4cfa8feab539fb293"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "fd3b5dc92e95124cbeec4040c9c291a9da4c90d419d8367a10e3ce4a0ddc5a7c"
+    },
+    {
+      "path": "src/material.rs",
+      "sha256": "aa32a9da1e803a51c9a0eef0495e1871abb5f2254d9be61910aa6aacb5c51ee2"
+    },
+    {
+      "path": "src/material_blur.rs",
+      "sha256": "601181224540b36c394577ade03c28eb7920881ae42a69a3bac8bfdedfdb9a90"
+    },
+    {
+      "path": "tests/text_raster.rs",
+      "sha256": "352681bf3f4cb2e187c320471852ccb8d7b89a8e14f2270442b0c73673670cae"
+    },
+    {
+      "path": "tests/material_blend.rs",
+      "sha256": "384cde5b1d9981d572c715260fd97e98f4619f3dc39e1e3d26d40299a5bf95ab"
+    },
+    {
+      "path": "tools/native-navigation/Program.cs",
+      "sha256": "b00c26c050100aca3755b4366638f4aeca5caab349e77e6d9547afd9ecc3ab76"
+    },
+    {
+      "path": "tools/native-navigation/TextCoverageProbe.cs",
+      "sha256": "492d7964d3a76627c12d4e9f15fc44976809a242b5d7d431775ad54a0b8dfabe"
+    }
+  ],
+  "nativeRuntime": {
+    "probeExeSha256": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704",
+    "winuiDllSha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c"
+  }
+}

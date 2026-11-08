@@ -1,0 +1,43 @@
+{
+  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "aliases": {},
+  "primitives": {
+    "Light": {
+      "SolidBackgroundFillColorBaseBrush": {
+        "kind": "solid",
+        "color": "#F3F3F3",
+        "opacity": 1.0
+      },
+      "FlyoutBackgroundThemeBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
+      }
+    },
+    "Dark": {
+      "SolidBackgroundFillColorBaseBrush": {
+        "kind": "solid",
+        "color": "#202020",
+        "opacity": 1.0
+      },
+      "FlyoutBackgroundThemeBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1.0
+      }
+    },
+    "HighContrast": {
+      "SolidBackgroundFillColorBaseBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "FlyoutBackgroundThemeBrush": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      }
+    }
+  }
+}

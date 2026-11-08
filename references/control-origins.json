@@ -1,0 +1,400 @@
+{
+  "date": "2026-11-08",
+  "baseline": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+  "removed": [
+    "InputProbe React component",
+    "Panel.inputProbe factory",
+    "InputProbe NodeKind and render/input branches",
+    "legacy composition/commit prototype protocol"
+  ],
+  "replacement": "Real TextBox with EditorHost and EditComposition protocol",
+  "nodeKinds": [
+    {
+      "name": "Grid",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Grid"
+    },
+    {
+      "name": "StackPanel",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.StackPanel"
+    },
+    {
+      "name": "TextBlock",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.TextBlock"
+    },
+    {
+      "name": "Button",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Button"
+    },
+    {
+      "name": "NavigationView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.NavigationView"
+    },
+    {
+      "name": "Image",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Image"
+    },
+    {
+      "name": "Ellipse",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Ellipse"
+    },
+    {
+      "name": "ToggleButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleButton"
+    },
+    {
+      "name": "CheckBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.CheckBox"
+    },
+    {
+      "name": "RadioButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RadioButton"
+    },
+    {
+      "name": "RadioButtons",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RadioButtons"
+    },
+    {
+      "name": "ToggleSwitch",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleSwitch"
+    },
+    {
+      "name": "ScrollViewer",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ScrollViewer"
+    },
+    {
+      "name": "TextBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.TextBox"
+    },
+    {
+      "name": "PasswordBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.PasswordBox"
+    },
+    {
+      "name": "ProgressBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ProgressBar"
+    },
+    {
+      "name": "ProgressRing",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ProgressRing"
+    },
+    {
+      "name": "RepeatButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RepeatButton"
+    },
+    {
+      "name": "Viewbox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Viewbox"
+    },
+    {
+      "name": "Border",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Border"
+    },
+    {
+      "name": "Canvas",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Canvas"
+    },
+    {
+      "name": "HyperlinkButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.HyperlinkButton"
+    },
+    {
+      "name": "Expander",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Expander"
+    },
+    {
+      "name": "InfoBadge",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.InfoBadge"
+    },
+    {
+      "name": "FontIcon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.FontIcon"
+    },
+    {
+      "name": "SymbolIcon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.SymbolIcon"
+    },
+    {
+      "name": "PathIcon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.PathIcon"
+    },
+    {
+      "name": "BitmapIcon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.BitmapIcon"
+    },
+    {
+      "name": "ImageIcon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ImageIcon"
+    },
+    {
+      "name": "AnimatedIcon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.AnimatedIcon"
+    },
+    {
+      "name": "IconSourceElement",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.IconSourceElement"
+    },
+    {
+      "name": "Rectangle",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Rectangle"
+    },
+    {
+      "name": "Line",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Line"
+    },
+    {
+      "name": "Path",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Path"
+    },
+    {
+      "name": "Polygon",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Polygon"
+    },
+    {
+      "name": "Polyline",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Polyline"
+    },
+    {
+      "name": "Popup",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Popup"
+    },
+    {
+      "name": "ToolTip",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToolTip"
+    },
+    {
+      "name": "Flyout",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Flyout"
+    },
+    {
+      "name": "MenuFlyout",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuFlyout"
+    },
+    {
+      "name": "Slider",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Slider"
+    },
+    {
+      "name": "InfoBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.InfoBar"
+    },
+    {
+      "name": "PersonPicture",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.PersonPicture"
+    },
+    {
+      "name": "RatingControl",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RatingControl"
+    },
+    {
+      "name": "SplitButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.SplitButton"
+    },
+    {
+      "name": "ToggleSplitButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleSplitButton"
+    },
+    {
+      "name": "ItemsStackPanel",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsStackPanel"
+    },
+    {
+      "name": "ItemsWrapGrid",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsWrapGrid"
+    },
+    {
+      "name": "VariableSizedWrapGrid",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.VariableSizedWrapGrid"
+    },
+    {
+      "name": "ListView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ListView"
+    },
+    {
+      "name": "GridView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.GridView"
+    },
+    {
+      "name": "CollectionItem",
+      "classification": "internal rendering machinery",
+      "reason": "Internal realized ListView/GridView item container, owned by the collection; no standalone React control."
+    },
+    {
+      "name": "AutoSuggestBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.AutoSuggestBox"
+    },
+    {
+      "name": "NumberBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.NumberBox"
+    },
+    {
+      "name": "ComboBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ComboBox"
+    },
+    {
+      "name": "ContentDialog",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ContentDialog"
+    },
+    {
+      "name": "TeachingTip",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.TeachingTip"
+    },
+    {
+      "name": "CollectionHeader",
+      "classification": "internal rendering machinery",
+      "reason": "Internal collection group-header presenter, owned by the collection; no standalone React control."
+    },
+    {
+      "name": "FlipView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.FlipView"
+    },
+    {
+      "name": "PipsPager",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.PipsPager"
+    },
+    {
+      "name": "BreadcrumbBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.BreadcrumbBar"
+    },
+    {
+      "name": "TreeView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.TreeView"
+    },
+    {
+      "name": "TabView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.TabView"
+    },
+    {
+      "name": "AppBarButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarButton"
+    },
+    {
+      "name": "AppBarToggleButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarToggleButton"
+    },
+    {
+      "name": "DropDownButton",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.DropDownButton"
+    },
+    {
+      "name": "SelectorBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.SelectorBar"
+    },
+    {
+      "name": "CommandBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.CommandBar"
+    },
+    {
+      "name": "MenuBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuBar",
+      "evidence": "docs/menu-layout-controls.md"
+    },
+    {
+      "name": "MenuBarItem",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuBarItem",
+      "evidence": "docs/menu-layout-controls.md"
+    },
+    {
+      "name": "CommandBarFlyout",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.CommandBarFlyout",
+      "evidence": "docs/menu-layout-controls.md"
+    },
+    {
+      "name": "RelativePanel",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RelativePanel",
+      "evidence": "docs/menu-layout-controls.md"
+    },
+    {
+      "name": "WrapPanel",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.WrapPanel",
+      "evidence": "docs/menu-layout-controls.md"
+    }
+  ],
+  "galleryInterface": {
+    "htmlControlSubstitutes": 0,
+    "sourceAudit": "tools/gallery-control-source.mjs --check",
+    "runtimeAudit": "gallery/tests/gallery-controls.spec.ts",
+    "implementation": "Existing SDK controls mounted through GalleryControls.tsx; no alternate checkbox, dropdown, button or expander state machine."
+  },
+  "reactAdapters": {
+    "Frame": "Microsoft.UI.Xaml.Controls.Frame: Rust journal, cache and motion with a React DOM content host; sources in references/frame-sources.json.",
+    "WinUIProvider": "WASM runtime ownership and React context, not a visual control.",
+    "SceneView": "Canvas rendering host, not a visual control.",
+    "SceneNavigationView": "React adapter to the existing NavigationView inside a shared scene."
+  },
+  "notes": [
+    "Origins classify APIs, not implementation completeness or native visual parity.",
+    "Scene/Panel/runtime/renderer and host bridges are infrastructure, not additional user-facing controls.",
+    "Historical validation records retain the prototype name as evidence of the old run."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "navigationview",
+  "name": "NavigationView",
+  "description": "Common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+  "details": "The NavigationView control provides a common vertical layout for top-level areas of your app via a collapsible navigation menu.",
+  "apiNamespace": "Microsoft.UI.Xaml.Controls",
+  "relatedControls": [
+    "SplitView",
+    "Pivot"
+  ],
+  "usings": [
+    "Microsoft.UI.Xaml",
+    "Microsoft.UI.Xaml.Automation",
+    "Microsoft.UI.Xaml.Controls",
+    "System",
+    "System.Collections.ObjectModel",
+    "System.Diagnostics",
+    "System.Linq",
+    "Windows.System"
+  ],
+  "keywords": [
+    "Object",
+    "DependencyObject",
+    "UIElement",
+    "FrameworkElement",
+    "Control",
+    "ContentControl"
+  ],
+  "curatedKeywords": [
+    "hamburger menu",
+    "side nav",
+    "nav pane"
+  ],
+  "docs": [
+    {
+      "title": "NavigationView - API",
+      "uri": "https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.NavigationView"
+    },
+    {
+      "title": "Guidelines",
+      "uri": "https://learn.microsoft.com/windows/apps/design/controls/navigationview"
+    }
+  ],
+  "gallery": {
+    "uniqueId": "NavigationView",
+    "group": {
+      "id": "Navigation",
+      "title": "Navigation"
+    },
+    "page": "WinUIGallery/Samples/NavigationView/NavigationViewPage.xaml",
+    "codeBehind": "WinUIGallery/Samples/NavigationView/NavigationViewPage.xaml.cs",
+    "baseClasses": [
+      "Object",
+      "DependencyObject",
+      "UIElement",
+      "FrameworkElement",
+      "Control",
+      "ContentControl"
+    ],
+    "relatedSamples": [
+      "microsoft/WinUI-Gallery#Pivot",
+      "microsoft/WinUI-Gallery#SplitView"
+    ]
+  },
+  "samples": [
+    {
+      "header": "NavigationView with default PaneDisplayMode",
+      "xaml": "<NavigationView x:Name=\"nvSample\">\n    <NavigationView.MenuItems>\n        <NavigationViewItem Icon=\"Play\" Content=\"Menu Item1\" Tag=\"SamplePage1\" />\n        <NavigationViewItem Icon=\"Save\" Content=\"Menu Item2\" Tag=\"SamplePage2\" />\n        <NavigationViewItem Icon=\"Refresh\" Content=\"Menu Item3\" Tag=\"SamplePage3\" />\n        <NavigationViewItem Icon=\"Download\" Content=\"Menu Item4\" Tag=\"SamplePage4\" />\n    </NavigationView.MenuItems>\n    <Frame x:Name=\"contentFrame\"/>\n</NavigationView>",
+      "gallery": {
+        "snippet": "NavigationviewDefaultPanedisplaymode.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationviewDefaultPanedisplaymode.txt",
+        "name": "Default Panedisplaymode"
+      }
+    },
+    {
+      "header": "NavigationView with PaneDisplayMode set to Top",
+      "xaml": "<NavigationView x:Name=\"nvSample\" Header=\"This is Header Text\" PaneDisplayMode=\"Top\">\n    <NavigationView.MenuItems>\n        <NavigationViewItem  Content=\"Menu Item1\" Tag=\"SamplePage1\" />\n        <NavigationViewItem  Content=\"Menu Item2\" Tag=\"SamplePage2\" />\n        <NavigationViewItem  Content=\"Menu Item3\" Tag=\"SamplePage3\" />\n        <NavigationViewItem  Content=\"Menu Item4\" Tag=\"SamplePage4\" />\n    </NavigationView.MenuItems>\n    <Frame x:Name=\"contentFrame\"/>\n</NavigationView>",
+      "gallery": {
+        "snippet": "NavigationviewPanedisplaymodeTop.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationviewPanedisplaymodeTop.txt",
+        "name": "Panedisplaymode Top"
+      }
+    },
+    {
+      "header": "NavigationView that switches pane orientation based on window width",
+      "xaml": "<!-- Put the following VisualStateGroup(s) inside the first component of your Page -->\n<VisualStateManager.VisualStateGroups>\n    <VisualStateGroup>\n        <VisualState>\n            <VisualState.StateTriggers>\n                <AdaptiveTrigger MinWindowWidth=\"{x:Bind nvSample.CompactModeThresholdWidth}\" />\n            </VisualState.StateTriggers>\n            <VisualState.Setters>\n                <Setter Target=\"nvSample.PaneDisplayMode\" Value=\"Top\" />\n            </VisualState.Setters>\n        </VisualState>\n    </VisualStateGroup>\n</VisualStateManager.VisualStateGroups >\n\n<NavigationView x:Name=\"nvSample\">\n    <NavigationView.MenuItems>\n        <NavigationViewItem Content=\"Menu Item1\" Tag=\"SamplePage1\" />\n        <NavigationViewItem Content=\"Menu Item2\" Tag=\"SamplePage2\" />\n        <NavigationViewItem Content=\"Menu Item3\" Tag=\"SamplePage3\" />\n        <NavigationViewItem Content=\"Menu Item4\" Tag=\"SamplePage4\" />\n    </NavigationView.MenuItems>\n    <Frame x:Name=\"contentFrame\"/>\n</NavigationView>",
+      "gallery": {
+        "snippet": "NavigationviewSwitchesPaneOrientation.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationviewSwitchesPaneOrientation.txt",
+        "name": "Switches Pane Orientation"
+      }
+    },
+    {
+      "header": "Tying selection and focus - Tabs",
+      "xaml": "<NavigationView x:Name=\"nvSample\" PaneDisplayMode=\"Top\" \n    SelectionFollowsFocus=\"Enabled\" IsBackButtonVisible=\"Collapsed\">\n    <NavigationView.MenuItems>\n        <NavigationViewItem Icon=\"Play\" Content=\"Item1\" x:Name=\"SamplePage1Item\" />\n        <NavigationViewItem Icon=\"Save\" Content=\"Item2\" x:Name=\"SamplePage2Item\" />\n        <NavigationViewItem Icon=\"Refresh\" Content=\"Item3\" x:Name=\"SamplePage3Item\" />\n        <NavigationViewItem Icon=\"Download\" Content=\"Item4\" x:Name=\"SamplePage4Item\" />\n    </NavigationView.MenuItems>\n    <Frame x:Name=\"contentFrame\"/>\n</NavigationView>",
+      "code": "//C# code behind\nprivate void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)\n{\n    FrameNavigationOptions navOptions = new FrameNavigationOptions();\n    navOptions.TransitionInfoOverride = args.RecommendedNavigationTransitionInfo;\n    if (sender.PaneDisplayMode == NavigationViewPaneDisplayMode.Top)\n    {\n        navOptions.IsNavigationStackEnabled = False;\n    }\n    Type pageType;\n    if (args.InvokedItem == SamplePage1Item) \n    {\n        pageType = typeof(SamplePage1);\n    }\n    else if (args.InvokedItem == SamplePage2Item) \n    {\n        pageType = typeof(SamplePage2);\n    }\n    else if (args.InvokedItem == SamplePage3Item) \n    {\n        pageType = typeof(SamplePage3);\n    }\n    else if (args.InvokedItem == SamplePage4Item) \n    {\n        pageType = typeof(SamplePage4);\n    }\n    ContentFrame.NavigateToType(pageType, null, navOptions);\n}",
+      "language": "csharp",
+      "gallery": {
+        "snippet": "NavigationViewTyingSelectionFocusTabs.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationViewTyingSelectionFocusTabs.txt",
+        "name": "Tying Selection Focus Tabs"
+      }
+    },
+    {
+      "header": "Data binding",
+      "xaml": "<NavigationView x:Name=\"nvSample\" \n                MenuItemTemplateSelector=\"{StaticResource selector}\" \n                MenuItemsSource=\"{x:Bind Categories, Mode=OneWay}\" />\n \n<local:MenuItemTemplateSelector x:Key=\"selector\"> \n    <local:MenuItemTemplateSelector.ItemTemplate> \n        <DataTemplate x:DataType=\"local:Category\" > \n            <NavigationViewItem Content=\"{x:Bind Name}\" ToolTipService.ToolTip=\"{x:Bind Tooltip}\"> \n                <NavigationViewItem.Icon> \n                    <SymbolIcon Symbol=\"{x:Bind Glyph}\" /> \n                </NavigationViewItem.Icon> \n            </NavigationViewItem>\n        </DataTemplate> \n    </local:MenuItemTemplateSelector.ItemTemplate > \n</local:MenuItemTemplateSelector>",
+      "code": "//C# code behind\nCategories = new ObservableCollection<CategoryBase>(); \nCategories.Add(new Category { Name = \"Category 1\", Glyph = Symbol.Home, Tooltip = \"This is category 1\" }); \nCategories.Add(new Category { Name = \"Category 2\", Glyph = Symbol.Keyboard, Tooltip = \"This is category 2\" }); \nCategories.Add(new Separator()); \nCategories.Add(new Header { Name = \"More categories\" }); \nCategories.Add(new Category { Name = \"Category 3\", Glyph = Symbol.Library, Tooltip = \"This is category 3\" }); \nCategories.Add(new Category { Name = \"Category 4\", Glyph = Symbol.Mail, Tooltip = \"This is category 4\" }); \n\npublic class CategoryBase { } \n\npublic class Category : CategoryBase\n{\n    public string Name { get; set; } = string.Empty;\n    public string Tooltip { get; set; } = string.Empty;\n    public Symbol Glyph { get; set; }\n}\n\npublic class Separator : CategoryBase { }\n\n[WinRT.GeneratedBindableCustomProperty]\npublic partial class Header : CategoryBase\n{\n    public string Name { get; set; } = string.Empty;\n}\n\n[ContentProperty(Name = \"ItemTemplate\")]\nclass MenuItemTemplateSelector : DataTemplateSelector\n{\n    public DataTemplate? ItemTemplate { get; set; }\n\n    protected override DataTemplate? SelectTemplateCore(object item)\n    {\n        return item is Separator ? SeparatorTemplate : item is Header ? HeaderTemplate : ItemTemplate;\n    }\n\n    // Header and separator templates are created in code with the DataTemplate(DataTemplateElementFactory) constructor.\n    private readonly DataTemplate HeaderTemplate = new DataTemplate(() =>\n    {\n        NavigationViewItemHeader header = new NavigationViewItemHeader();\n        header.SetBinding(ContentControl.ContentProperty, new Binding { Path = new PropertyPath(nameof(Header.Name)) });\n        return header;\n    });\n\n    private readonly DataTemplate SeparatorTemplate = new DataTemplate(() => new NavigationViewItemSeparator());\n}",
+      "language": "csharp",
+      "xmlnsImports": [
+        "xmlns:local=\"using:YourNamespace\""
+      ],
+      "gallery": {
+        "snippet": "NavigationViewDataBinding.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationViewDataBinding.txt",
+        "name": "Data Binding"
+      }
+    },
+    {
+      "header": "NavigationView with Footer Menu Items",
+      "xaml": "<NavigationView x:Name=\"nvSample9\" \n                            Header=\"This is Header Text\" \n                            PaneDisplayMode=\"Left\" \n                            SelectionChanged=\"NavigationView_SelectionChanged9\"\n                            IsSettingsVisible=\"False\">\n        <NavigationView.MenuItems>\n            <NavigationViewItem Content=\"Browse\" Tag=\"SamplePage1\" Icon=\"Library\" />\n            <NavigationViewItem Content=\"Track an Order\" Tag=\"SamplePage2\" Icon=\"Map\" />\n            <NavigationViewItem Content=\"Order History\" Tag=\"SamplePage3\" Icon=\"Tag\" />\n        </NavigationView.MenuItems>\n        <NavigationView.FooterMenuItems>\n            <NavigationViewItem Content=\"Account\" Tag=\"SamplePage4\" Icon=\"Contact\" />\n            <NavigationViewItem Content=\"Your Cart\" Tag=\"SamplePage5\" Icon=\"Shop\" />\n            <NavigationViewItem Content=\"Help\" Tag=\"SamplePage5\" Icon=\"Help\" />\n        </NavigationView.FooterMenuItems>\n    <Frame x:Name=\"contentFrame9\" />\n</NavigationView>",
+      "gallery": {
+        "snippet": "NavigationviewFooterMenuItems.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationviewFooterMenuItems.txt",
+        "name": "Footer Menu Items"
+      }
+    },
+    {
+      "header": "Hierarchical NavigationView",
+      "xaml": "<NavigationView x:Name=\"nvSample8\" Grid.Row=\"1\" Height=\"460\"\n                        PaneDisplayMode=\"Left\" \n                        IsTabStop=\"False\" \n                        SelectionChanged=\"NavigationView_SelectionChanged8\">\n    <NavigationView.MenuItems>\n        <NavigationViewItem Content=\"Home\" Icon=\"Home\" ToolTipService.ToolTip=\"Home\" Tag=\"SamplePage1\"/>\n        <NavigationViewItem Content=\"Account\" Icon=\"Contact\" ToolTipService.ToolTip=\"Account\" Tag=\"SamplePage2\">\n            <NavigationViewItem.MenuItems>\n                <NavigationViewItem Content=\"Mail\" Icon=\"Mail\" ToolTipService.ToolTip=\"Mail\" Tag=\"SamplePage3\"/>\n                <NavigationViewItem Content=\"Calendar\" Icon=\"Calendar\" ToolTipService.ToolTip=\"Calendar\" Tag=\"SamplePage4\"/>\n            </NavigationViewItem.MenuItems>\n        </NavigationViewItem>\n        <NavigationViewItem Content=\"Document options\" Icon=\"Page2\" ToolTipService.ToolTip=\"Document options\" SelectsOnInvoked=\"False\">\n            <NavigationViewItem.MenuItems>\n                <NavigationViewItem Content=\"Create new\" Icon=\"NewFolder\" ToolTipService.ToolTip=\"Create new\" Tag=\"SamplePage5\"/>\n                <NavigationViewItem Content=\"Upload file\" Icon=\"OpenLocal\" ToolTipService.ToolTip=\"Upload file\" Tag=\"SamplePage6\"/>\n            </NavigationViewItem.MenuItems>\n        </NavigationViewItem>\n    </NavigationView.MenuItems>\n    <Frame x:Name=\"contentFrame8\" />\n</NavigationView>",
+      "gallery": {
+        "snippet": "HierarchicalNavigationview.txt",
+        "source": "WinUIGallery/Samples/NavigationView/HierarchicalNavigationview.txt",
+        "name": "Hierarchical Navigationview"
+      }
+    },
+    {
+      "header": "API in action",
+      "xaml": "<NavigationView x:Name=\"nvSample\"\n    IsSettingsVisible=\"True\"\n    IsBackEnabled=\"False\"\n    SelectionChanged=\"NavigationView_SelectionChanged\"\n    Header=\"Header\"\n    AlwaysShowHeader=\"True\"\n    PaneTitle=\"Pane Title\"\n    PaneDisplayMode=\"Left\" \n    ExpandedModeThresholdWidth=\"500\"\n    IsTabStop=\"False\">\n                    \n    <NavigationView.MenuItems>\n        <NavigationViewItem Content=\"Menu Item1\" Tag=\"SamplePage1\" x:Name=\"SamplePage1Item\">\n            <NavigationViewItem.Icon>\n                <SymbolIcon Symbol=\"Play\" />\n            </NavigationViewItem.Icon>\n        </NavigationViewItem>\n        <NavigationViewItemHeader Content=\"Actions\"/>\n        <NavigationViewItem Content=\"Menu Item2\" Tag=\"SamplePage2\" x:Name=\"SamplePage2Item\" SelectsOnInvoked=\"True\">\n            <NavigationViewItem.Icon>\n                <SymbolIcon Symbol=\"Save\" />\n            </NavigationViewItem.Icon>\n        </NavigationViewItem>\n        <NavigationViewItem Content=\"Menu Item3\" Tag=\"SamplePage3\" x:Name=\"SamplePage3Item\">\n            <NavigationViewItem.Icon>\n                <SymbolIcon Symbol=\"Refresh\" />\n            </NavigationViewItem.Icon>\n        </NavigationViewItem>\n    </NavigationView.MenuItems>\n                    \n    <NavigationView.PaneCustomContent>\n        <HyperlinkButton x:Name=\"PaneHyperlink\" Content=\"More info\" Margin=\"12,0\" Visibility=\"Collapsed\" />\n    </NavigationView.PaneCustomContent>\n    <NavigationView.PaneFooter>\n        <StackPanel x:Name=\"FooterStackPanel\" Orientation=\"Vertical\" Visibility=\"Collapsed\">\n            <NavigationViewItem Icon=\"Download\" AutomationProperties.Name=\"download\" />\n            <NavigationViewItem Icon=\"Favorite\" AutomationProperties.Name=\"favorite\" />\n        </StackPanel>\n    </NavigationView.PaneFooter>\n\n    <Frame x:Name=\"contentFrame\" />\n</NavigationView>",
+      "gallery": {
+        "snippet": "NavigationViewApiAction.txt",
+        "source": "WinUIGallery/Samples/NavigationView/NavigationViewApiAction.txt",
+        "name": "Api Action",
+        "xamlPlaceholdersDropped": [
+          "BackButtonVis",
+          "SelectionFollowsFocus",
+          "NavViewASB"
+        ]
+      }
+    }
+  ]
+}

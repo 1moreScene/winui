@@ -1,0 +1,67 @@
+{
+  "recordedAt": "2026-11-08T14:52:12.845231+00:00",
+  "issue": "CommandBarFlyout primary-only bottom rounded corners contained rectangular shadow remnants.",
+  "cause": "Missing CommandBarFlyout entry in Rust floating-window shadow insets clipped the shadow at the panel rectangle; only the transparent corner wedges exposed it.",
+  "fix": {
+    "owner": "Rust SDK resource IR consumed by scene::overlay_visual::window_bounds",
+    "generator": "tools/extract-overlays.py",
+    "contract": "references/overlay-template.json",
+    "insets": [
+      10,
+      2,
+      10,
+      18
+    ],
+    "source": "references/winui/ThemeShadow.cpp, DropShadowDepthClass::Medium",
+    "layoutAndHitGeometryUnchanged": true,
+    "galleryCleanup": "Clear disposed anchor/flyout business handles when changing the renderer so the remounted scene receives fresh handles."
+  },
+  "runtime": {
+    "sha256": "c4c4da606628de14889ecce6b60fd35b23943a955087e052d2fc219939c2ea78",
+    "completedAt": 1794149115967
+  },
+  "source": {
+    "snapshot": "out/menu-layout-shadow-source",
+    "manifestSha256": "948f2eab68da7bbf8282d7acca33e07e225bd6b89f58677fe2c95a3a2bdefde0",
+    "gallery": "out/command-shadow-app"
+  },
+  "validation": {
+    "beforeFailure": "out/command-shadow-before-browser.log",
+    "rust": {
+      "passed": 57,
+      "log": "out/command-shadow-frozen-rust.log"
+    },
+    "browser": {
+      "tests": 4,
+      "states": 24,
+      "engines": [
+        "Edge",
+        "WebKit"
+      ],
+      "backends": [
+        "Canvas2D",
+        "WebGL2"
+      ],
+      "dpr": [
+        1,
+        1.25,
+        2
+      ],
+      "modes": [
+        "Transient",
+        "Standard"
+      ],
+      "log": "out/command-shadow-final-browser.log",
+      "assertions": [
+        "Shadow surface extends below and beside the panel",
+        "Real pixels below the panel form a fading shadow",
+        "Both backend selections remount with live handles"
+      ]
+    },
+    "types": "out/command-shadow-final-types.log",
+    "productionBuild": "out/command-shadow-final-build.log",
+    "before": "out/command-shadow-transient-corners.png",
+    "after": "out/command-shadow-after-corners.png"
+  },
+  "preview": "http://127.0.0.1:5302/#command-bar-flyout"
+}

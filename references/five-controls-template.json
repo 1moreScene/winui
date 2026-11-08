@@ -1,0 +1,1641 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "primitives": {
+    "Light": {
+      "HyperlinkButtonForeground": {
+        "kind": "solid",
+        "color": "#003E92FF",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#001A68FF",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundDisabled": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderHeaderBackground": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "ExpanderHeaderForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ExpanderHeaderForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ExpanderHeaderForegroundPressed": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderPointerOverBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderPressedBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ExpanderHeaderDisabledForeground": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "ExpanderHeaderDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "ExpanderChevronBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderChevronPointerOverBackground": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "ExpanderChevronPressedBackground": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "ExpanderChevronForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ExpanderChevronPointerOverForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ExpanderChevronPressedForeground": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderPointerOverBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderPressedBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderContentBackground": {
+        "kind": "solid",
+        "color": "#F6F6F680",
+        "opacity": 1
+      },
+      "ExpanderContentBorderBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "InfoBadgeForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "InfoBadgeBackground": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "SystemFillColorAttentionBrush": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "SystemFillColorSolidNeutralBrush": {
+        "kind": "solid",
+        "color": "#8A8A8AFF",
+        "opacity": 1
+      },
+      "SystemFillColorSuccessBrush": {
+        "kind": "solid",
+        "color": "#0F7B0FFF",
+        "opacity": 1
+      },
+      "SystemFillColorCautionBrush": {
+        "kind": "solid",
+        "color": "#9D5D00FF",
+        "opacity": 1
+      },
+      "SystemFillColorCriticalBrush": {
+        "kind": "solid",
+        "color": "#C42B1CFF",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "HyperlinkButtonForeground": {
+        "kind": "solid",
+        "color": "#99EBFFFF",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#99EBFFFF",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderHeaderBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF0D",
+        "opacity": 1
+      },
+      "ExpanderHeaderForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ExpanderHeaderForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ExpanderHeaderForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderPointerOverBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderPressedBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ExpanderHeaderDisabledForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "ExpanderHeaderDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "ExpanderChevronBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderChevronPointerOverBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ExpanderChevronPressedBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "ExpanderChevronForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ExpanderChevronPointerOverForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ExpanderChevronPressedForeground": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderPointerOverBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderPressedBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF00",
+        "opacity": 1
+      },
+      "ExpanderContentBackground": {
+        "kind": "solid",
+        "color": "#FFFFFF08",
+        "opacity": 1
+      },
+      "ExpanderContentBorderBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "InfoBadgeForeground": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "InfoBadgeBackground": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "SystemFillColorAttentionBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "SystemFillColorSolidNeutralBrush": {
+        "kind": "solid",
+        "color": "#9D9D9DFF",
+        "opacity": 1
+      },
+      "SystemFillColorSuccessBrush": {
+        "kind": "solid",
+        "color": "#6CCB5FFF",
+        "opacity": 1
+      },
+      "SystemFillColorCautionBrush": {
+        "kind": "solid",
+        "color": "#FCE100FF",
+        "opacity": 1
+      },
+      "SystemFillColorCriticalBrush": {
+        "kind": "solid",
+        "color": "#FF99A4FF",
+        "opacity": 1
+      }
+    },
+    "HighContrast": {
+      "HyperlinkButtonForeground": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundPressed": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "HyperlinkButtonForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundPointerOver": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundPressed": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "HyperlinkButtonBackgroundDisabled": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushPointerOver": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushPressed": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "HyperlinkButtonBorderBrushDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "ExpanderHeaderBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ExpanderHeaderForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderHeaderForegroundPointerOver": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderHeaderForegroundPressed": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderPointerOverBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderHeaderBorderPressedBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderHeaderDisabledForeground": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "ExpanderHeaderDisabledBorderBrush": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1
+      },
+      "ExpanderChevronBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ExpanderChevronPointerOverBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ExpanderChevronPressedBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ExpanderChevronForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderChevronPointerOverForeground": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "ExpanderChevronPressedForeground": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderPointerOverBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "ExpanderChevronBorderPressedBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "ExpanderContentBackground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "ExpanderContentBorderBrush": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1
+      },
+      "InfoBadgeForeground": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1
+      },
+      "InfoBadgeBackground": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SystemFillColorAttentionBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SystemFillColorSolidNeutralBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SystemFillColorSuccessBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SystemFillColorCautionBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      },
+      "SystemFillColorCriticalBrush": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1
+      }
+    }
+  },
+  "aliases": {},
+  "requiredBrushes": {
+    "HyperlinkButtonForeground": {},
+    "HyperlinkButtonForegroundPointerOver": {},
+    "HyperlinkButtonForegroundPressed": {},
+    "HyperlinkButtonForegroundDisabled": {},
+    "HyperlinkButtonBackground": {},
+    "HyperlinkButtonBackgroundPointerOver": {},
+    "HyperlinkButtonBackgroundPressed": {},
+    "HyperlinkButtonBackgroundDisabled": {},
+    "HyperlinkButtonBorderBrush": {},
+    "HyperlinkButtonBorderBrushPointerOver": {},
+    "HyperlinkButtonBorderBrushPressed": {},
+    "HyperlinkButtonBorderBrushDisabled": {},
+    "ExpanderHeaderBackground": {},
+    "ExpanderHeaderForeground": {},
+    "ExpanderHeaderForegroundPointerOver": {},
+    "ExpanderHeaderForegroundPressed": {},
+    "ExpanderHeaderBorderBrush": {},
+    "ExpanderHeaderBorderPointerOverBrush": {},
+    "ExpanderHeaderBorderPressedBrush": {},
+    "ExpanderHeaderDisabledForeground": {},
+    "ExpanderHeaderDisabledBorderBrush": {},
+    "ExpanderChevronBackground": {},
+    "ExpanderChevronPointerOverBackground": {},
+    "ExpanderChevronPressedBackground": {},
+    "ExpanderChevronForeground": {},
+    "ExpanderChevronPointerOverForeground": {},
+    "ExpanderChevronPressedForeground": {},
+    "ExpanderChevronBorderBrush": {},
+    "ExpanderChevronBorderPointerOverBrush": {},
+    "ExpanderChevronBorderPressedBrush": {},
+    "ExpanderContentBackground": {},
+    "ExpanderContentBorderBrush": {},
+    "InfoBadgeForeground": {},
+    "InfoBadgeBackground": {},
+    "SystemFillColorAttentionBrush": {},
+    "SystemFillColorSolidNeutralBrush": {},
+    "SystemFillColorSuccessBrush": {},
+    "SystemFillColorCautionBrush": {},
+    "SystemFillColorCriticalBrush": {}
+  },
+  "metrics": {
+    "Light": {
+      "HyperlinkButtonBorderThemeThickness": "1",
+      "ExpanderHeaderBorderThickness": "1",
+      "ExpanderChevronBorderThickness": "0",
+      "InfoBadgeMinHeight": "4",
+      "InfoBadgeMinWidth": "4",
+      "InfoBadgeMaxHeight": "16",
+      "InfoBadgeValueFontSize": "11",
+      "InfoBadgeIconHeight": "9",
+      "InfoBadgeIconWidth": "12",
+      "InfoBadgePadding": "0,0,0,0",
+      "IconInfoBadgeFontIconMargin": "4,0,4,2",
+      "ValueInfoBadgeTextMargin": "4,0,4,2",
+      "IconInfoBadgeIconMargin": "4,4,4,4"
+    },
+    "Dark": {
+      "HyperlinkButtonBorderThemeThickness": "1",
+      "ExpanderHeaderBorderThickness": "1",
+      "ExpanderChevronBorderThickness": "0",
+      "InfoBadgeMinHeight": "4",
+      "InfoBadgeMinWidth": "4",
+      "InfoBadgeMaxHeight": "16",
+      "InfoBadgeValueFontSize": "11",
+      "InfoBadgeIconHeight": "8",
+      "InfoBadgeIconWidth": "12",
+      "InfoBadgePadding": "0,0,0,0",
+      "IconInfoBadgeFontIconMargin": "4,0,4,2",
+      "ValueInfoBadgeTextMargin": "4,0,4,2",
+      "IconInfoBadgeIconMargin": "4,4,4,4"
+    },
+    "HighContrast": {
+      "HyperlinkButtonBorderThemeThickness": "1",
+      "ExpanderHeaderBorderThickness": "2",
+      "ExpanderChevronBorderThickness": "2",
+      "InfoBadgeMinHeight": "4",
+      "InfoBadgeMinWidth": "4",
+      "InfoBadgeMaxHeight": "16",
+      "InfoBadgeValueFontSize": "11",
+      "InfoBadgeIconHeight": "9",
+      "InfoBadgeIconWidth": "12",
+      "InfoBadgePadding": "0,0,0,0",
+      "IconInfoBadgeFontIconMargin": "4,0,4,2",
+      "ValueInfoBadgeTextMargin": "4,0,4,2",
+      "IconInfoBadgeIconMargin": "4,4,4,4"
+    },
+    "ExpanderMinHeight": "48",
+    "ExpanderHeaderPadding": "16,0,0,0",
+    "ExpanderChevronMargin": "20,0,8,0",
+    "ExpanderChevronUpGlyph": "",
+    "ExpanderChevronDownGlyph": "",
+    "ExpanderChevronButtonSize": "32",
+    "ExpanderChevronGlyphSize": "12",
+    "ExpanderContentPadding": "16",
+    "ExpanderContentDownBorderThickness": "1,0,1,1",
+    "ExpanderContentUpBorderThickness": "1,1,1,0"
+  },
+  "hyperlinkStyle": {
+    "key": "DefaultHyperlinkButtonStyle",
+    "states": {
+      "Normal": {
+        "Background": "HyperlinkButtonBackground",
+        "Foreground": "HyperlinkButtonForeground",
+        "BorderBrush": "HyperlinkButtonBorderBrush"
+      },
+      "PointerOver": {
+        "Background": "HyperlinkButtonBackgroundPointerOver",
+        "Foreground": "HyperlinkButtonForegroundPointerOver",
+        "BorderBrush": "HyperlinkButtonBorderBrushPointerOver"
+      },
+      "Pressed": {
+        "Background": "HyperlinkButtonBackgroundPressed",
+        "Foreground": "HyperlinkButtonForegroundPressed",
+        "BorderBrush": "HyperlinkButtonBorderBrushPressed"
+      },
+      "Disabled": {
+        "Background": "HyperlinkButtonBackgroundDisabled",
+        "Foreground": "HyperlinkButtonForegroundDisabled",
+        "BorderBrush": "HyperlinkButtonBorderBrushDisabled"
+      }
+    },
+    "backgroundSizing": "OuterBorderEdge",
+    "backgroundTransitionMs": 83,
+    "part": "ContentPresenter"
+  },
+  "expanderTransitions": {
+    "ExpandUp": [
+      {
+        "KeyTime": "0:0:0.333",
+        "Value": "0",
+        "KeySpline": "0.0, 0.0, 0.0, 1.0"
+      }
+    ],
+    "CollapseDown": [
+      {
+        "KeyTime": "0:0:0.167",
+        "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.ContentHeight}",
+        "KeySpline": "1.0, 1.0, 0.0, 1.0"
+      }
+    ],
+    "ExpandDown": [
+      {
+        "KeyTime": "0:0:0.333",
+        "Value": "0",
+        "KeySpline": "0.0, 0.0, 0.0, 1.0"
+      }
+    ],
+    "CollapseUp": [
+      {
+        "KeyTime": "0:0:0.167",
+        "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.NegativeContentHeight}",
+        "KeySpline": "1.0, 1.0, 0.0, 1.0"
+      }
+    ]
+  },
+  "expanderVisibility": {
+    "ExpandUp": 0.0,
+    "CollapseDown": 200.0,
+    "ExpandDown": 0.0,
+    "CollapseUp": 167.0
+  },
+  "chevron": {
+    "durationMs": 4333.3333,
+    "points": [
+      [
+        -3.54299998,
+        -1.79299998
+      ],
+      [
+        0.0199999996,
+        1.70700002
+      ],
+      [
+        3.48900008,
+        -1.71500003
+      ]
+    ],
+    "rotation": [
+      {
+        "progress": 0.0,
+        "value": 180.0,
+        "curve": "start"
+      },
+      {
+        "progress": 0.057692308,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.0961538479,
+        "value": 0.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.115384616,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.15384616,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.192307696,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.25,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.288461536,
+        "value": 180.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.307692319,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.346153855,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.384615391,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.419230759,
+        "value": 0.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.423076928,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.461538464,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.5,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.534615397,
+        "value": 180.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.538461566,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.576923072,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.615384638,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.649999976,
+        "value": 0.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.653846145,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.673076928,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.711538434,
+        "value": 0.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.730769217,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.75,
+        "value": 180.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.788461566,
+        "value": 0.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.807692289,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.842307687,
+        "value": 180.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.846153855,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.865384638,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.903846145,
+        "value": 180.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.923076928,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.942307711,
+        "value": 0.0,
+        "curve": "step"
+      },
+      {
+        "progress": 0.980769217,
+        "value": 180.0,
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "offset": [
+      {
+        "progress": 0.0,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.0384615399,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.057692308,
+        "value": [
+          24.0,
+          18.0
+        ],
+        "curve": [
+          0.850000024,
+          0.0,
+          0.75,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.111538462,
+        "value": [
+          24.1709995,
+          23.9230003
+        ],
+        "curve": [
+          0.349999994,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.115384616,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.15384616,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.188461542,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.192307696,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.230769232,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.25,
+        "value": [
+          24.0,
+          30.0
+        ],
+        "curve": [
+          0.850000024,
+          0.0,
+          0.449999988,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.303846151,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": [
+          0.349999994,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.346153855,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.380769223,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.384615391,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.461538464,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.496153831,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.5,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.576923072,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.61153847,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.615384638,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.649999976,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.653846145,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.673076928,
+        "value": [
+          24.0,
+          18.0
+        ],
+        "curve": [
+          0.850000024,
+          0.0,
+          0.75,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.726923048,
+        "value": [
+          24.1709995,
+          23.9230003
+        ],
+        "curve": [
+          0.349999994,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.730769217,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.75,
+        "value": [
+          24.0,
+          18.0
+        ],
+        "curve": [
+          0.850000024,
+          0.0,
+          0.75,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.80384618,
+        "value": [
+          24.1709995,
+          23.9230003
+        ],
+        "curve": [
+          0.349999994,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.807692289,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.842307687,
+        "value": [
+          24.0,
+          26.0
+        ],
+        "curve": [
+          0.166999996,
+          0.166999996,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.846153855,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.865384638,
+        "value": [
+          24.0,
+          30.0
+        ],
+        "curve": [
+          0.850000024,
+          0.0,
+          0.449999988,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.919230759,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": [
+          0.349999994,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.923076928,
+        "value": [
+          24.0,
+          22.0
+        ],
+        "curve": "step"
+      },
+      {
+        "progress": 0.942307711,
+        "value": [
+          24.0,
+          30.0
+        ],
+        "curve": [
+          0.850000024,
+          0.0,
+          0.449999988,
+          1.0
+        ]
+      },
+      {
+        "progress": 0.996153831,
+        "value": [
+          24.0,
+          24.0
+        ],
+        "curve": [
+          0.349999994,
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    ],
+    "curve": [
+      0.166999996,
+      0.166999996,
+      0.0,
+      1.0
+    ],
+    "markers": {
+      "NormalOnToNormalOff_Start": 0.0,
+      "NormalOnToNormalOff_End": 0.111730769230769,
+      "NormalOnToPointerOverOn_Start": 0.115576923076923,
+      "NormalOnToPointerOverOn_End": 0.150192307692308,
+      "NormalOnToPressedOn_Start": 0.154038461538462,
+      "NormalOnToPressedOn_End": 0.188653846153846,
+      "NormalOffToNormalOn_Start": 0.1925,
+      "NormalOffToNormalOn_End": 0.304038461538462,
+      "NormalOffToPointerOverOff_Start": 0.307884615384615,
+      "NormalOffToPointerOverOff_End": 0.3425,
+      "NormalOffToPressedOff_Start": 0.346346153846154,
+      "NormalOffToPressedOff_End": 0.380961538461538,
+      "PointerOverOnToPointerOverOff_Start": 0.384807692307692,
+      "PointerOverOnToPointerOverOff_End": 0.419423076923077,
+      "PointerOverOnToNormalOn_Start": 0.423269230769231,
+      "PointerOverOnToNormalOn_End": 0.457884615384615,
+      "PointerOverOnToPressedOn_Start": 0.461730769230769,
+      "PointerOverOnToPressedOn_End": 0.496346153846154,
+      "PointerOverOffToPointerOverOn_Start": 0.500192307692308,
+      "PointerOverOffToPointerOverOn_End": 0.534807692307692,
+      "PointerOverOffToNormalOff_Start": 0.538653846153846,
+      "PointerOverOffToNormalOff_End": 0.573269230769231,
+      "PointerOverOffToPressedOff_Start": 0.577115384615385,
+      "PointerOverOffToPressedOff_End": 0.611730769230769,
+      "PressedOnToPressedOff_Start": 0.615576923076923,
+      "PressedOnToPressedOff_End": 0.650192307692308,
+      "PressedOnToPointerOverOff_Start": 0.654038461538462,
+      "PressedOnToPointerOverOff_End": 0.727115384615385,
+      "PressedOnToNormalOff_Start": 0.730961538461539,
+      "PressedOnToNormalOff_End": 0.804038461538462,
+      "PressedOffToPressedOn_Start": 0.807884615384615,
+      "PressedOffToPressedOn_End": 0.8425,
+      "PressedOffToPointerOverOn_Start": 0.846346153846154,
+      "PressedOffToPointerOverOn_End": 0.919423076923077,
+      "PressedOffToNormalOn_Start": 0.923269230769231,
+      "PressedOffToNormalOn_End": 0.996346153846154
+    }
+  },
+  "badgeStyles": {
+    "DefaultInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "AttentionDotInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "AttentionValueInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "AttentionIconInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        4.0,
+        0.0,
+        2.0
+      ],
+      "icon": {
+        "Glyph": ""
+      }
+    },
+    "InformationalDotInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "InformationalValueInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "InformationalIconInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        4.0,
+        0.0,
+        2.0
+      ],
+      "icon": {
+        "Glyph": ""
+      }
+    },
+    "SuccessDotInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "SuccessValueInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "SuccessIconInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": {
+        "Symbol": "Accept"
+      }
+    },
+    "CautionDotInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "CautionValueInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "CautionIconInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": {
+        "Symbol": "Important"
+      }
+    },
+    "CriticalDotInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "CriticalValueInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": null
+    },
+    "CriticalIconInfoBadgeStyle": {
+      "padding": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "icon": {
+        "Symbol": "Cancel"
+      }
+    }
+  },
+  "nativeDefaults": {
+    "expanderMinWidth": 96
+  },
+  "sources": [
+    {
+      "path": "references/winui/Border.cpp",
+      "sha256": "983982fd714659f3d81f7daa9937e7980f3585a2fadfcb384bfaa96523e19318"
+    },
+    {
+      "path": "references/winui/canvas.cpp",
+      "sha256": "e4214da93e4f5fcc982681fb43d86fcbffa63345ca595a21ab1b1c3f30d5f83c"
+    },
+    {
+      "path": "references/winui/HyperLinkButton_Partial.cpp",
+      "sha256": "15592f085e52a0c04755c5724fb0d147c2fffb32c0398f7d6d73633500cdb79b"
+    },
+    {
+      "path": "references/winui/HyperLinkButton_Partial.h",
+      "sha256": "453800823f55827882278ad8e6d61a31e636f2529862d67a5b32e72351ae5a01"
+    },
+    {
+      "path": "references/winui/HyperlinkButton_themeresources.xaml",
+      "sha256": "6fe9f6492589a0b9870b0102e77e5e0c95abc996f4c1090502b3e85abe9dd57d"
+    },
+    {
+      "path": "references/winui/Expander.cpp",
+      "sha256": "6bde3613c03b0eea9c2c9318776ba5b5f1fe1fd3199b5a3c748912fe7015be97"
+    },
+    {
+      "path": "references/winui/Expander.h",
+      "sha256": "bcdf7eb9fa9bba0ec7c9663fa6b39157cfe4926d140bfea510c92878663916a7"
+    },
+    {
+      "path": "references/winui/Expander.xaml",
+      "sha256": "94db0f1f33d759af4a1a261e9f50abbb6e902c70fc069113d8135a8fae423e6d"
+    },
+    {
+      "path": "references/winui/Expander_themeresources.xaml",
+      "sha256": "1bfb318e58ba01dc12c9035c21a2fa85c309b78be2b2d82f376bd01dd8fa1a95"
+    },
+    {
+      "path": "references/winui/AnimatedChevronUpDownSmallVisualSource.cpp",
+      "sha256": "ee5fce9af0a8c48959e16367622aa326685f580f3819ce6b3331203c3210a41a"
+    },
+    {
+      "path": "references/winui/InfoBadge.cpp",
+      "sha256": "5875fc28dcf24ad9597fd0ce4f1dc8b50c35bc42e7a8bd3ca604612e2b7bdb90"
+    },
+    {
+      "path": "references/winui/InfoBadge.h",
+      "sha256": "92aa9d859fb41f52acc1b1e7c71aa039b1aeb1a58985f1db4e1186e81e2b7314"
+    },
+    {
+      "path": "references/winui/InfoBadge.xaml",
+      "sha256": "9086886491838f8b4edb16de33bead7628f2b177c3f09715a38b3c815e5d686a"
+    },
+    {
+      "path": "references/winui/InfoBadge_themeresources.xaml",
+      "sha256": "5f2605df42ec21f305055814b3f8f502c47c165d6792df8b4d07f93ad62a690d"
+    }
+  ]
+}

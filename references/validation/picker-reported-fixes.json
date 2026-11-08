@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-11-08T14:57:09.971557+00:00",
+  "preview": "http://127.0.0.1:5173/",
+  "liveBuild": {
+    "sha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+    "completedAt": 1794149733936
+  },
+  "validatedWasmSha256": "f8cc59c15c0b7b8c7d06ccb9a4fad0b8ed7d098439b4bd0eab392cd997a2ae0b",
+  "matchesLive": false,
+  "changes": [
+    "Calendar paging uses the SDK ScrollTrack profile, row-distance calculations and interruption sampling. Weekday headings remain fixed.",
+    "Picker template Arrange temporarily applies its slot constraints and restores them before the next Measure; field advances receive a physical-pixel ceiling.",
+    "Sample outputs use the existing bounded options column and readable values so selection does not change the preview width.",
+    "Keyboard focus and pending popup Escape process before the next render frame; visible out-of-scope date selection preserves the displayed month.",
+    "An initial CalendarDatePicker selection synchronizes without dismissing the popup.",
+    "Rust skips zero-sized Canvas presentation and floating backdrop sampling while preserving layout/events on hidden-host frames."
+  ],
+  "liveChecks": {
+    "startTime": "2026-11-08T14:56:14.910Z",
+    "duration": 25042.781,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "log": "out/picker-live-final.log",
+  "browserValidation": "references/validation/picker-controls.json",
+  "nativeConstrainedCalendar": {
+    "ActualWidth": 180,
+    "ActualHeight": 354.3999938964844,
+    "DesiredWidth": 180,
+    "MinWidth": 0
+  },
+  "liveBuildBeforeChecks": {
+    "sha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+    "completedAt": 1794149733936
+  },
+  "servedWasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+  "liveRegressionWasmSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+  "liveRegressionMatchesServed": true,
+  "versionScope": "The full Chromium/WebKit native static matrix and interaction suite use frozen validatedWasmSha256. A concurrent chat rebuilt the shared 5173 runtime afterward; all six reported regressions were rerun against liveRegressionWasmSha256 with identical before/after build stamps and a matching HTTP-served WASM hash. Full static-matrix results do not certify that later shared binary.",
+  "browserChecks": {
+    "Chromium": {
+      "startTime": "2026-11-08T14:50:56.919Z",
+      "duration": 90772.722,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "WebKit": {
+      "startTime": "2026-11-08T14:52:28.907Z",
+      "duration": 154442.91,
+      "expected": 20,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  },
+  "relatedChecks": {
+    "wasmSha256": "f8cc59c15c0b7b8c7d06ccb9a4fad0b8ed7d098439b4bd0eab392cd997a2ae0b",
+    "stats": {
+      "startTime": "2026-11-08T14:55:13.936Z",
+      "duration": 80683.02799999999,
+      "expected": 27,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "log": "out/picker-related-run.log"
+  },
+  "zeroSurfaceRegression": "Canvas2D CalendarDatePicker popup is framed at 0x0 and restored without browser pageerror; covered in both Chromium and WebKit on validatedWasmSha256."
+}

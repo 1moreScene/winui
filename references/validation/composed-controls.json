@@ -1,0 +1,6498 @@
+{
+  "recordedAt": "2026-11-08T11:12:44.483899+00:00",
+  "scope": "100 live same-SDK Light/Dark states at 1.25 DPR, with two Rust backends. Geometry comparisons use matching surface/window parts; glyph rasterization and DWM frame acceptance remain separate.",
+  "backends": {
+    "Canvas2D": {
+      "states": 100,
+      "wasmSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+      "geometryMaxDip": 56.80000305175781,
+      "withinClientGeometryMaxDip": 0.8000061035156136,
+      "windowEdgeCases": [
+        {
+          "name": "Light-ComboBox-Open",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        },
+        {
+          "name": "Light-ComboBox-OpenSelected",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        },
+        {
+          "name": "Dark-ComboBox-Open",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        },
+        {
+          "name": "Dark-ComboBox-OpenSelected",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        }
+      ],
+      "backendVerified": true,
+      "regionMeanRgbMae": 4.860598278612112,
+      "rows": [
+        {
+          "name": "Light-NumberBox-Normal",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.6817622950819672
+        },
+        {
+          "name": "Light-NumberBox-Header",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.19999694824219
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.2
+              },
+              "maxDip": 3.051757815342171e-06
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            139
+          ],
+          "regionRgbMae": 1.3852153361344535
+        },
+        {
+          "name": "Light-NumberBox-Disabled",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.17889344262295082
+        },
+        {
+          "name": "Light-NumberBox-Inline",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.049077868852459
+        },
+        {
+          "name": "Light-NumberBox-InlineHover",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.5258709016393446
+        },
+        {
+          "name": "Light-NumberBox-InlinePressed",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 8.803705601092895
+        },
+        {
+          "name": "Light-NumberBox-Compact",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 243.1999969482422,
+                "y": -3.200000762939453,
+                "width": 49.599998474121094,
+                "height": 89.5999984741211
+              },
+              "actual": {
+                "x": 243.2,
+                "y": -3.2,
+                "width": 49.60000000000002,
+                "height": 89.60000000000001
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            293,
+            0,
+            376,
+            118
+          ],
+          "regionRgbMae": 1.149717514124294
+        },
+        {
+          "name": "Light-NumberBox-Expression",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.6817622950819672
+        },
+        {
+          "name": "Light-AutoSuggestBox-Normal",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 2.776741803278688
+        },
+        {
+          "name": "Light-AutoSuggestBox-Header",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 2.033453947368421
+        },
+        {
+          "name": "Light-AutoSuggestBox-Disabled",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.3896516393442624
+        },
+        {
+          "name": "Light-AutoSuggestBox-Focused",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 3.4290129781420764
+        },
+        {
+          "name": "Light-AutoSuggestBox-Open",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.332282529239766
+        },
+        {
+          "name": "Light-AutoSuggestBox-OpenSelected",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.438783808479532
+        },
+        {
+          "name": "Light-ComboBox-Normal",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.9852604166666667
+        },
+        {
+          "name": "Light-ComboBox-Header",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 59.2
+              },
+              "maxDip": 0.7999999999999972
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 3.801480263157895
+        },
+        {
+          "name": "Light-ComboBox-Disabled",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.1223958333333333
+        },
+        {
+          "name": "Light-ComboBox-Editable",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8754687500000002
+        },
+        {
+          "name": "Light-ComboBox-EditableFocus",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 9.656915983606558
+        },
+        {
+          "name": "Light-ComboBox-EditableOpen",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            20,
+            60,
+            340,
+            277
+          ],
+          "regionRgbMae": 2.4612327188940095
+        },
+        {
+          "name": "Light-ComboBox-Focused",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 26.424479166666668
+        },
+        {
+          "name": "Light-ComboBox-Hover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.9361458333333335
+        },
+        {
+          "name": "Light-ComboBox-Pressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 2.67234375
+        },
+        {
+          "name": "Light-ComboBox-EditableHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8392708333333332
+        },
+        {
+          "name": "Light-ComboBox-EditableButtonHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8459895833333333
+        },
+        {
+          "name": "Light-ComboBox-EditablePressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 10.971055327868852
+        },
+        {
+          "name": "Light-ComboBox-Open",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 8.664279935275081
+        },
+        {
+          "name": "Light-ComboBox-OpenSelected",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 15.76616605987055
+        },
+        {
+          "name": "Light-ContentDialog-Basic",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 3.616243866105853
+        },
+        {
+          "name": "Light-ContentDialog-ThreeButtons",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 3.1664103575184015
+        },
+        {
+          "name": "Light-ContentDialog-Gallery",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            130,
+            865,
+            497
+          ],
+          "regionRgbMae": 4.606617090523766
+        },
+        {
+          "name": "Light-TeachingTip-Auto",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.774280863448946
+        },
+        {
+          "name": "Light-TeachingTip-Top",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.774280863448946
+        },
+        {
+          "name": "Light-TeachingTip-Bottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            297,
+            862,
+            514
+          ],
+          "regionRgbMae": 6.636158137278681
+        },
+        {
+          "name": "Light-TeachingTip-Left",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            120,
+            200,
+            593,
+            416
+          ],
+          "regionRgbMae": 4.7261275546159265
+        },
+        {
+          "name": "Light-TeachingTip-Right",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            658,
+            200,
+            1132,
+            416
+          ],
+          "regionRgbMae": 3.223980309423348
+        },
+        {
+          "name": "Light-TeachingTip-TopRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            559,
+            102,
+            1033,
+            319
+          ],
+          "regionRgbMae": 5.4194326158393125
+        },
+        {
+          "name": "Light-TeachingTip-TopLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 113.6,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            217,
+            102,
+            691,
+            319
+          ],
+          "regionRgbMae": 5.150139026619223
+        },
+        {
+          "name": "Light-TeachingTip-BottomRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            559,
+            297,
+            1033,
+            514
+          ],
+          "regionRgbMae": 3.4156604250520135
+        },
+        {
+          "name": "Light-TeachingTip-BottomLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 270.4,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            217,
+            297,
+            691,
+            514
+          ],
+          "regionRgbMae": 3.0092846448501818
+        },
+        {
+          "name": "Light-TeachingTip-LeftTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            158,
+            593,
+            374
+          ],
+          "regionRgbMae": 5.937710437710439
+        },
+        {
+          "name": "Light-TeachingTip-LeftBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            241,
+            593,
+            458
+          ],
+          "regionRgbMae": 6.685778587504019
+        },
+        {
+          "name": "Light-TeachingTip-RightTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            158,
+            1132,
+            374
+          ],
+          "regionRgbMae": 4.869882012814502
+        },
+        {
+          "name": "Light-TeachingTip-RightBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            241,
+            1132,
+            458
+          ],
+          "regionRgbMae": 5.734167493048669
+        },
+        {
+          "name": "Light-TeachingTip-Center",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 130.39999389648438,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 129.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            122,
+            862,
+            338
+          ],
+          "regionRgbMae": 7.776812865497075
+        },
+        {
+          "name": "Light-TeachingTip-TitleOnly",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 348,
+                "y": 176.8000030517578,
+                "width": 304,
+                "height": 44.79999923706055
+              },
+              "actual": {
+                "x": 348,
+                "y": 177.6,
+                "width": 304,
+                "height": 44.80000000000001
+              },
+              "maxDip": 0.7999969482421818
+            }
+          ],
+          "region": [
+            395,
+            181,
+            855,
+            318
+          ],
+          "regionRgbMae": 4.154712789590606
+        },
+        {
+          "name": "Light-TeachingTip-Untargeted",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 32,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 32,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            0,
+            862,
+            216
+          ],
+          "regionRgbMae": 6.643050682261209
+        },
+        {
+          "name": "Light-TeachingTip-TailCollapsed",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.769604656803298
+        },
+        {
+          "name": "Light-TeachingTip-Hero",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 34.400001525878906,
+                "width": 314.3999938964844,
+                "height": 188
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 33.6,
+                "width": 314.40000000000003,
+                "height": 188.8
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            2,
+            862,
+            319
+          ],
+          "regionRgbMae": 6.0096961647019755
+        },
+        {
+          "name": "Light-TeachingTip-Transient",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 10.367761338830949
+        },
+        {
+          "name": "Dark-NumberBox-Normal",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.7698258196721312
+        },
+        {
+          "name": "Dark-NumberBox-Header",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.19999694824219
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.2
+              },
+              "maxDip": 3.051757815342171e-06
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            139
+          ],
+          "regionRgbMae": 2.0929884453781513
+        },
+        {
+          "name": "Dark-NumberBox-Disabled",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.2322233606557377
+        },
+        {
+          "name": "Dark-NumberBox-Inline",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.1942110655737705
+        },
+        {
+          "name": "Dark-NumberBox-InlineHover",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.8280737704918033
+        },
+        {
+          "name": "Dark-NumberBox-InlinePressed",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 13.338456284153006
+        },
+        {
+          "name": "Dark-NumberBox-Compact",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 243.1999969482422,
+                "y": -3.200000762939453,
+                "width": 49.599998474121094,
+                "height": 89.5999984741211
+              },
+              "actual": {
+                "x": 243.2,
+                "y": -3.2,
+                "width": 49.60000000000002,
+                "height": 89.60000000000001
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            293,
+            0,
+            376,
+            118
+          ],
+          "regionRgbMae": 0.9282553944591928
+        },
+        {
+          "name": "Dark-NumberBox-Expression",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.7698258196721312
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Normal",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 3.0542520491803278
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Header",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 2.190559210526316
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Disabled",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.51875
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Focused",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 3.7195355191256834
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Open",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.1490405701754387
+        },
+        {
+          "name": "Dark-AutoSuggestBox-OpenSelected",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.2640670687134503
+        },
+        {
+          "name": "Dark-ComboBox-Normal",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 2.1721875
+        },
+        {
+          "name": "Dark-ComboBox-Header",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 59.2
+              },
+              "maxDip": 0.7999999999999972
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 3.464276315789474
+        },
+        {
+          "name": "Dark-ComboBox-Disabled",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.04828125
+        },
+        {
+          "name": "Dark-ComboBox-Editable",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8481770833333335
+        },
+        {
+          "name": "Dark-ComboBox-EditableFocus",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 6.345372267759562
+        },
+        {
+          "name": "Dark-ComboBox-EditableOpen",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            20,
+            60,
+            340,
+            277
+          ],
+          "regionRgbMae": 2.0486175115207375
+        },
+        {
+          "name": "Dark-ComboBox-Focused",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 24.831736111111113
+        },
+        {
+          "name": "Dark-ComboBox-Hover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 2.11921875
+        },
+        {
+          "name": "Dark-ComboBox-Pressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 8.513854166666667
+        },
+        {
+          "name": "Dark-ComboBox-EditableHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8051562500000002
+        },
+        {
+          "name": "Dark-ComboBox-EditableButtonHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8119791666666665
+        },
+        {
+          "name": "Dark-ComboBox-EditablePressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 8.131318306010929
+        },
+        {
+          "name": "Dark-ComboBox-Open",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 9.780739279935275
+        },
+        {
+          "name": "Dark-ComboBox-OpenSelected",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 18.622244134304207
+        },
+        {
+          "name": "Dark-ContentDialog-Basic",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 2.6975398703119526
+        },
+        {
+          "name": "Dark-ContentDialog-ThreeButtons",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 2.2495859621451104
+        },
+        {
+          "name": "Dark-ContentDialog-Gallery",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            130,
+            865,
+            497
+          ],
+          "regionRgbMae": 3.494510672116258
+        },
+        {
+          "name": "Dark-TeachingTip-Auto",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.380257094348775
+        },
+        {
+          "name": "Dark-TeachingTip-Top",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.380257094348775
+        },
+        {
+          "name": "Dark-TeachingTip-Bottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            297,
+            862,
+            514
+          ],
+          "regionRgbMae": 6.177104050448702
+        },
+        {
+          "name": "Dark-TeachingTip-Left",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            120,
+            200,
+            593,
+            416
+          ],
+          "regionRgbMae": 4.117091457207736
+        },
+        {
+          "name": "Dark-TeachingTip-Right",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            658,
+            200,
+            1132,
+            416
+          ],
+          "regionRgbMae": 2.68131739334271
+        },
+        {
+          "name": "Dark-TeachingTip-TopRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            559,
+            102,
+            1033,
+            319
+          ],
+          "regionRgbMae": 5.022710921853429
+        },
+        {
+          "name": "Dark-TeachingTip-TopLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 113.6,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            217,
+            102,
+            691,
+            319
+          ],
+          "regionRgbMae": 4.746786832331953
+        },
+        {
+          "name": "Dark-TeachingTip-BottomRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            559,
+            297,
+            1033,
+            514
+          ],
+          "regionRgbMae": 3.0736160531995567
+        },
+        {
+          "name": "Dark-TeachingTip-BottomLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 270.4,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            217,
+            297,
+            691,
+            514
+          ],
+          "regionRgbMae": 2.694121993427833
+        },
+        {
+          "name": "Dark-TeachingTip-LeftTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            158,
+            593,
+            374
+          ],
+          "regionRgbMae": 5.560439667997808
+        },
+        {
+          "name": "Dark-TeachingTip-LeftBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            241,
+            593,
+            458
+          ],
+          "regionRgbMae": 5.916047193616586
+        },
+        {
+          "name": "Dark-TeachingTip-RightTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            158,
+            1132,
+            374
+          ],
+          "regionRgbMae": 4.482760978277856
+        },
+        {
+          "name": "Dark-TeachingTip-RightBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            241,
+            1132,
+            458
+          ],
+          "regionRgbMae": 4.939294950319859
+        },
+        {
+          "name": "Dark-TeachingTip-Center",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 130.39999389648438,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 129.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            122,
+            862,
+            338
+          ],
+          "regionRgbMae": 7.352651072124757
+        },
+        {
+          "name": "Dark-TeachingTip-TitleOnly",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 348,
+                "y": 176.8000030517578,
+                "width": 304,
+                "height": 44.79999923706055
+              },
+              "actual": {
+                "x": 348,
+                "y": 177.6,
+                "width": 304,
+                "height": 44.80000000000001
+              },
+              "maxDip": 0.7999969482421818
+            }
+          ],
+          "region": [
+            395,
+            181,
+            855,
+            318
+          ],
+          "regionRgbMae": 3.438797207235798
+        },
+        {
+          "name": "Dark-TeachingTip-Untargeted",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 32,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 32,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            0,
+            862,
+            216
+          ],
+          "regionRgbMae": 5.991793372319688
+        },
+        {
+          "name": "Dark-TeachingTip-TailCollapsed",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.373980111569246
+        },
+        {
+          "name": "Dark-TeachingTip-Hero",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 34.400001525878906,
+                "width": 314.3999938964844,
+                "height": 188
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 33.6,
+                "width": 314.40000000000003,
+                "height": 188.8
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            2,
+            862,
+            319
+          ],
+          "regionRgbMae": 5.6568775250428915
+        },
+        {
+          "name": "Dark-TeachingTip-Transient",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 9.692854717438758
+        }
+      ]
+    },
+    "WebGL2": {
+      "states": 100,
+      "wasmSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+      "geometryMaxDip": 56.80000305175781,
+      "withinClientGeometryMaxDip": 0.8000061035156136,
+      "windowEdgeCases": [
+        {
+          "name": "Light-ComboBox-Open",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        },
+        {
+          "name": "Light-ComboBox-OpenSelected",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        },
+        {
+          "name": "Dark-ComboBox-Open",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        },
+        {
+          "name": "Dark-ComboBox-OpenSelected",
+          "part": "popupWindow",
+          "native": {
+            "x": 24,
+            "y": -56.80000305175781,
+            "width": 240,
+            "height": 156.8000030517578
+          },
+          "actual": {
+            "x": 24,
+            "y": 0,
+            "width": 240,
+            "height": 156.8
+          },
+          "maxDip": 56.80000305175781
+        }
+      ],
+      "backendVerified": true,
+      "regionMeanRgbMae": 4.826461575642214,
+      "rows": [
+        {
+          "name": "Light-NumberBox-Normal",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.4944672131147541
+        },
+        {
+          "name": "Light-NumberBox-Header",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.19999694824219
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.2
+              },
+              "maxDip": 3.051757815342171e-06
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            139
+          ],
+          "regionRgbMae": 1.2892069327731093
+        },
+        {
+          "name": "Light-NumberBox-Disabled",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.14293032786885246
+        },
+        {
+          "name": "Light-NumberBox-Inline",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.861782786885246
+        },
+        {
+          "name": "Light-NumberBox-InlineHover",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.338575819672131
+        },
+        {
+          "name": "Light-NumberBox-InlinePressed",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 8.8145662568306
+        },
+        {
+          "name": "Light-NumberBox-Compact",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 243.1999969482422,
+                "y": -3.200000762939453,
+                "width": 49.599998474121094,
+                "height": 89.5999984741211
+              },
+              "actual": {
+                "x": 243.2,
+                "y": -3.2,
+                "width": 49.60000000000002,
+                "height": 89.60000000000001
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            293,
+            0,
+            376,
+            118
+          ],
+          "regionRgbMae": 1.166360356680961
+        },
+        {
+          "name": "Light-NumberBox-Expression",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.4944672131147541
+        },
+        {
+          "name": "Light-AutoSuggestBox-Normal",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 2.589702868852459
+        },
+        {
+          "name": "Light-AutoSuggestBox-Header",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 1.9133552631578947
+        },
+        {
+          "name": "Light-AutoSuggestBox-Disabled",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.3537909836065574
+        },
+        {
+          "name": "Light-AutoSuggestBox-Focused",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 3.362687841530055
+        },
+        {
+          "name": "Light-AutoSuggestBox-Open",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.3205180921052633
+        },
+        {
+          "name": "Light-AutoSuggestBox-OpenSelected",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.4271518640350878
+        },
+        {
+          "name": "Light-ComboBox-Normal",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.9866145833333333
+        },
+        {
+          "name": "Light-ComboBox-Header",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 59.2
+              },
+              "maxDip": 0.7999999999999972
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 3.7999671052631583
+        },
+        {
+          "name": "Light-ComboBox-Disabled",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.1236979166666667
+        },
+        {
+          "name": "Light-ComboBox-Editable",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8768229166666666
+        },
+        {
+          "name": "Light-ComboBox-EditableFocus",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 9.660109289617486
+        },
+        {
+          "name": "Light-ComboBox-EditableOpen",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            20,
+            60,
+            340,
+            277
+          ],
+          "regionRgbMae": 2.425244815668203
+        },
+        {
+          "name": "Light-ComboBox-Focused",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 26.426093749999996
+        },
+        {
+          "name": "Light-ComboBox-Hover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.9378645833333332
+        },
+        {
+          "name": "Light-ComboBox-Pressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 2.672083333333333
+        },
+        {
+          "name": "Light-ComboBox-EditableHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8409895833333334
+        },
+        {
+          "name": "Light-ComboBox-EditableButtonHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8477083333333333
+        },
+        {
+          "name": "Light-ComboBox-EditablePressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 10.974197404371585
+        },
+        {
+          "name": "Light-ComboBox-Open",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 8.616368325242718
+        },
+        {
+          "name": "Light-ComboBox-OpenSelected",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 15.719275889967639
+        },
+        {
+          "name": "Light-ContentDialog-Basic",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 3.572114879074659
+        },
+        {
+          "name": "Light-ContentDialog-ThreeButtons",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 3.121385383806519
+        },
+        {
+          "name": "Light-ContentDialog-Gallery",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            130,
+            865,
+            497
+          ],
+          "regionRgbMae": 4.577058734483803
+        },
+        {
+          "name": "Light-TeachingTip-Auto",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.743739995149164
+        },
+        {
+          "name": "Light-TeachingTip-Top",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.743739995149164
+        },
+        {
+          "name": "Light-TeachingTip-Bottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            297,
+            862,
+            514
+          ],
+          "regionRgbMae": 6.596769342711617
+        },
+        {
+          "name": "Light-TeachingTip-Left",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            120,
+            200,
+            593,
+            416
+          ],
+          "regionRgbMae": 4.654754913475844
+        },
+        {
+          "name": "Light-TeachingTip-Right",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            658,
+            200,
+            1132,
+            416
+          ],
+          "regionRgbMae": 3.147523050476637
+        },
+        {
+          "name": "Light-TeachingTip-TopRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            559,
+            102,
+            1033,
+            319
+          ],
+          "regionRgbMae": 5.391082852087344
+        },
+        {
+          "name": "Light-TeachingTip-TopLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 113.6,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            217,
+            102,
+            691,
+            319
+          ],
+          "regionRgbMae": 5.122080927103386
+        },
+        {
+          "name": "Light-TeachingTip-BottomRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            559,
+            297,
+            1033,
+            514
+          ],
+          "regionRgbMae": 3.379134340547162
+        },
+        {
+          "name": "Light-TeachingTip-BottomLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 270.4,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            217,
+            297,
+            691,
+            514
+          ],
+          "regionRgbMae": 2.973011336016645
+        },
+        {
+          "name": "Light-TeachingTip-LeftTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            158,
+            593,
+            374
+          ],
+          "regionRgbMae": 5.93664356745752
+        },
+        {
+          "name": "Light-TeachingTip-LeftBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            241,
+            593,
+            458
+          ],
+          "regionRgbMae": 6.61116902602274
+        },
+        {
+          "name": "Light-TeachingTip-RightTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            158,
+            1132,
+            374
+          ],
+          "regionRgbMae": 4.869872245663385
+        },
+        {
+          "name": "Light-TeachingTip-RightBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            241,
+            1132,
+            458
+          ],
+          "regionRgbMae": 5.656983414027105
+        },
+        {
+          "name": "Light-TeachingTip-Center",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 130.39999389648438,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 129.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            122,
+            862,
+            338
+          ],
+          "regionRgbMae": 7.742982456140351
+        },
+        {
+          "name": "Light-TeachingTip-TitleOnly",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 348,
+                "y": 176.8000030517578,
+                "width": 304,
+                "height": 44.79999923706055
+              },
+              "actual": {
+                "x": 348,
+                "y": 177.6,
+                "width": 304,
+                "height": 44.80000000000001
+              },
+              "maxDip": 0.7999969482421818
+            }
+          ],
+          "region": [
+            395,
+            181,
+            855,
+            318
+          ],
+          "regionRgbMae": 4.075642653125992
+        },
+        {
+          "name": "Light-TeachingTip-Untargeted",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 32,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 32,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            0,
+            862,
+            216
+          ],
+          "regionRgbMae": 6.562816764132553
+        },
+        {
+          "name": "Light-TeachingTip-TailCollapsed",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.738268251273344
+        },
+        {
+          "name": "Light-TeachingTip-Hero",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 34.400001525878906,
+                "width": 314.3999938964844,
+                "height": 188
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 33.6,
+                "width": 314.40000000000003,
+                "height": 188.8
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            2,
+            862,
+            319
+          ],
+          "regionRgbMae": 5.999778626376667
+        },
+        {
+          "name": "Light-TeachingTip-Transient",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 10.333330099442154
+        },
+        {
+          "name": "Dark-NumberBox-Normal",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.6028176229508196
+        },
+        {
+          "name": "Dark-NumberBox-Header",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.19999694824219
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 79.2
+              },
+              "maxDip": 3.051757815342171e-06
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            139
+          ],
+          "regionRgbMae": 2.0073792016806724
+        },
+        {
+          "name": "Dark-NumberBox-Disabled",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.24846311475409835
+        },
+        {
+          "name": "Dark-NumberBox-Inline",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.027202868852459
+        },
+        {
+          "name": "Dark-NumberBox-InlineHover",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.661065573770492
+        },
+        {
+          "name": "Dark-NumberBox-InlinePressed",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 13.345765027322406
+        },
+        {
+          "name": "Dark-NumberBox-Compact",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 243.1999969482422,
+                "y": -3.200000762939453,
+                "width": 49.599998474121094,
+                "height": 89.5999984741211
+              },
+              "actual": {
+                "x": 243.2,
+                "y": -3.2,
+                "width": 49.60000000000002,
+                "height": 89.60000000000001
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            293,
+            0,
+            376,
+            118
+          ],
+          "regionRgbMae": 0.9363215574161051
+        },
+        {
+          "name": "Dark-NumberBox-Expression",
+          "kind": "NumberBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 0.6028176229508196
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Normal",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 2.888217213114754
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Header",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 2.0839473684210525
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Disabled",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 1.5353483606557379
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Focused",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 3.6542349726775956
+        },
+        {
+          "name": "Dark-AutoSuggestBox-Open",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.143028143274854
+        },
+        {
+          "name": "Dark-AutoSuggestBox-OpenSelected",
+          "kind": "AutoSuggestBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 55.20000076293945,
+                "width": 240,
+                "height": 165.60000610351562
+              },
+              "actual": {
+                "x": 24,
+                "y": 55.2,
+                "width": 240,
+                "height": 165.60000000000002
+              },
+              "maxDip": 6.1035156022626325e-06
+            }
+          ],
+          "region": [
+            20,
+            59,
+            340,
+            287
+          ],
+          "regionRgbMae": 2.25797240497076
+        },
+        {
+          "name": "Dark-ComboBox-Normal",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 2.1734375
+        },
+        {
+          "name": "Dark-ComboBox-Header",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 60
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 59.2
+              },
+              "maxDip": 0.7999999999999972
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            115
+          ],
+          "regionRgbMae": 3.464342105263158
+        },
+        {
+          "name": "Dark-ComboBox-Disabled",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.04921875
+        },
+        {
+          "name": "Dark-ComboBox-Editable",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8494270833333333
+        },
+        {
+          "name": "Dark-ComboBox-EditableFocus",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 6.348036202185792
+        },
+        {
+          "name": "Dark-ComboBox-EditableOpen",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 56,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            20,
+            60,
+            340,
+            277
+          ],
+          "regionRgbMae": 2.0430923579109064
+        },
+        {
+          "name": "Dark-ComboBox-Focused",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 24.831649305555555
+        },
+        {
+          "name": "Dark-ComboBox-Hover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 2.1202604166666665
+        },
+        {
+          "name": "Dark-ComboBox-Pressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 8.5146875
+        },
+        {
+          "name": "Dark-ComboBox-EditableHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8061979166666664
+        },
+        {
+          "name": "Dark-ComboBox-EditableButtonHover",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            80
+          ],
+          "regionRgbMae": 1.8130208333333335
+        },
+        {
+          "name": "Dark-ComboBox-EditablePressed",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.79999923706055
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32.8
+              },
+              "maxDip": 7.629394502828291e-07
+            }
+          ],
+          "region": [
+            20,
+            20,
+            340,
+            81
+          ],
+          "regionRgbMae": 8.134238387978142
+        },
+        {
+          "name": "Dark-ComboBox-Open",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 9.777533373786406
+        },
+        {
+          "name": "Dark-ComboBox-OpenSelected",
+          "kind": "ComboBox",
+          "geometry": [
+            {
+              "part": "control",
+              "native": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "actual": {
+                "x": 24,
+                "y": 24,
+                "width": 240,
+                "height": 32
+              },
+              "maxDip": 0
+            },
+            {
+              "part": "popupWindow",
+              "native": {
+                "x": 24,
+                "y": -56.80000305175781,
+                "width": 240,
+                "height": 156.8000030517578
+              },
+              "actual": {
+                "x": 24,
+                "y": 0,
+                "width": 240,
+                "height": 156.8
+              },
+              "maxDip": 56.80000305175781
+            }
+          ],
+          "region": [
+            20,
+            0,
+            340,
+            206
+          ],
+          "regionRgbMae": 18.6221126618123
+        },
+        {
+          "name": "Dark-ContentDialog-Basic",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 2.6885800035050824
+        },
+        {
+          "name": "Dark-ContentDialog-ThreeButtons",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 156,
+                "width": 320,
+                "height": 188.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            155,
+            865,
+            472
+          ],
+          "regionRgbMae": 2.2405888538380654
+        },
+        {
+          "name": "Dark-ContentDialog-Gallery",
+          "kind": "ContentDialog",
+          "geometry": [
+            {
+              "part": "dialogBorder",
+              "native": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8000030517578
+              },
+              "actual": {
+                "x": 340,
+                "y": 136,
+                "width": 320,
+                "height": 228.8
+              },
+              "maxDip": 3.0517578011313162e-06
+            }
+          ],
+          "region": [
+            385,
+            130,
+            865,
+            497
+          ],
+          "regionRgbMae": 3.490612700575235
+        },
+        {
+          "name": "Dark-TeachingTip-Auto",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.375629396070823
+        },
+        {
+          "name": "Dark-TeachingTip-Top",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.375629396070823
+        },
+        {
+          "name": "Dark-TeachingTip-Bottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            297,
+            862,
+            514
+          ],
+          "regionRgbMae": 6.180014552510308
+        },
+        {
+          "name": "Dark-TeachingTip-Left",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            120,
+            200,
+            593,
+            416
+          ],
+          "regionRgbMae": 4.11169837914024
+        },
+        {
+          "name": "Dark-TeachingTip-Right",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 192,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 192,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            658,
+            200,
+            1132,
+            416
+          ],
+          "regionRgbMae": 2.6727320675105486
+        },
+        {
+          "name": "Dark-TeachingTip-TopRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            559,
+            102,
+            1033,
+            319
+          ],
+          "regionRgbMae": 5.018151237628575
+        },
+        {
+          "name": "Dark-TeachingTip-TopLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 113.6,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000015258789119
+            }
+          ],
+          "region": [
+            217,
+            102,
+            691,
+            319
+          ],
+          "regionRgbMae": 4.74291742013261
+        },
+        {
+          "name": "Dark-TeachingTip-BottomRight",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 479.20001220703125,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 479.2,
+                "y": 270.4,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            559,
+            297,
+            1033,
+            514
+          ],
+          "regionRgbMae": 3.076668805537732
+        },
+        {
+          "name": "Dark-TeachingTip-BottomLeft",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 206.39999389648438,
+                "y": 270.3999938964844,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 206.4,
+                "y": 270.4,
+                "width": 314.4,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000000000000114
+            }
+          ],
+          "region": [
+            217,
+            297,
+            691,
+            514
+          ],
+          "regionRgbMae": 2.6984191798401675
+        },
+        {
+          "name": "Dark-TeachingTip-LeftTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            158,
+            593,
+            374
+          ],
+          "regionRgbMae": 5.571813092161929
+        },
+        {
+          "name": "Dark-TeachingTip-LeftBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 128,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 128,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            120,
+            241,
+            593,
+            458
+          ],
+          "regionRgbMae": 5.914848842080649
+        },
+        {
+          "name": "Dark-TeachingTip-RightTop",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 159.1999969482422,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 158.4,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            158,
+            1132,
+            374
+          ],
+          "regionRgbMae": 4.496845210189092
+        },
+        {
+          "name": "Dark-TeachingTip-RightBottom",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 558.4000244140625,
+                "y": 224.8000030517578,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 558.4,
+                "y": 225.6,
+                "width": 314.4,
+                "height": 108.79999999999998
+              },
+              "maxDip": 0.799999999999983
+            }
+          ],
+          "region": [
+            658,
+            241,
+            1132,
+            458
+          ],
+          "regionRgbMae": 4.936018588733983
+        },
+        {
+          "name": "Dark-TeachingTip-Center",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 130.39999389648438,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 129.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            122,
+            862,
+            338
+          ],
+          "regionRgbMae": 7.34169590643275
+        },
+        {
+          "name": "Dark-TeachingTip-TitleOnly",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 348,
+                "y": 176.8000030517578,
+                "width": 304,
+                "height": 44.79999923706055
+              },
+              "actual": {
+                "x": 348,
+                "y": 177.6,
+                "width": 304,
+                "height": 44.80000000000001
+              },
+              "maxDip": 0.7999969482421818
+            }
+          ],
+          "region": [
+            395,
+            181,
+            855,
+            318
+          ],
+          "regionRgbMae": 3.4456521739130435
+        },
+        {
+          "name": "Dark-TeachingTip-Untargeted",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 32,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 32,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            0,
+            862,
+            216
+          ],
+          "regionRgbMae": 5.980643274853801
+        },
+        {
+          "name": "Dark-TeachingTip-TailCollapsed",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 7.36878001455251
+        },
+        {
+          "name": "Dark-TeachingTip-Hero",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 34.400001525878906,
+                "width": 314.3999938964844,
+                "height": 188
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 33.6,
+                "width": 314.40000000000003,
+                "height": 188.8
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            2,
+            862,
+            319
+          ],
+          "regionRgbMae": 5.659653550279484
+        },
+        {
+          "name": "Dark-TeachingTip-Transient",
+          "kind": "TeachingTip",
+          "geometry": [
+            {
+              "part": "presenter",
+              "native": {
+                "x": 342.3999938964844,
+                "y": 114.4000015258789,
+                "width": 314.3999938964844,
+                "height": 108
+              },
+              "actual": {
+                "x": 343.2,
+                "y": 113.6,
+                "width": 314.40000000000003,
+                "height": 108.80000000000001
+              },
+              "maxDip": 0.8000061035156136
+            }
+          ],
+          "region": [
+            387,
+            102,
+            862,
+            319
+          ],
+          "regionRgbMae": 9.690244967256852
+        }
+      ]
+    }
+  },
+  "nativeRun": {
+    "binaries": {
+      "Microsoft.UI.Xaml.dll": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "NavigationProbe.exe": "5763b6197cf7303562b10db22fb7dc610a950a7d52cbeffef4bacce5885bd704",
+      "NavigationProbe.dll": "5aba6a61ae8bafb4ed4be6c36af32934575a80f97eb16f780c221a83ecc06a0e"
+    },
+    "sources": {
+      "Program.cs": "8bb05d9f41d7957cffedb6140c8f0648d4197c949a21a18442c33d312d14f096",
+      "OverlayPresentationProbe.cs": "b574baeb7073279d60a4d99db63b577cf5be164ef538c8d861c9e1fd91c6b286",
+      "ComposedControlsProbe.cs": "6df6b78889571f9e5a0f0ca0baf7453fda83dc9d7326afd78a332acd386f413d",
+      "EffectsProbe.cs": "8631af3b85838138a61441902a5c0f046632973c5194dc46c648b775535bf67e",
+      "CompactControlsProbe.cs": "d481aade677b8097b8638ba7fcedbdd984a88297734455c877acaad4e214a9e4"
+    },
+    "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+    "startedAt": "2026-11-08T05:33:44.1742772Z",
+    "completedAt": "2026-11-08T05:36:03.6962222Z",
+    "mode": "--composed-controls",
+    "os": "Microsoft Windows NT 10.0.26300.0"
+  },
+  "wasm": {
+    "frozenSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "currentSha256": "239aeb1d7222de56182340a433a37f6da931093fb486b7580ec012f2d41296db",
+    "matchesCurrentBinary": true,
+    "allMatricesMatchFrozenBinary": true
+  },
+  "host": {
+    "files": {
+      "src/scene.ts": {
+        "frozenSha256": "b107932e97d2bd9b8afc7537105fa7091b9a0ce29fae4900ff52d4df65e20939",
+        "currentSha256": "b107932e97d2bd9b8afc7537105fa7091b9a0ce29fae4900ff52d4df65e20939"
+      },
+      "src/react.tsx": {
+        "frozenSha256": "d38ba6dfda3f67246d2b9dd1cecc12a8f284cf6f64c8e246321ef377daaf6dd3",
+        "currentSha256": "d38ba6dfda3f67246d2b9dd1cecc12a8f284cf6f64c8e246321ef377daaf6dd3"
+      },
+      "src/composed-types.ts": {
+        "frozenSha256": "0f73c06401d45413813dc06838763895eaf41d4f07be6b8c7d2c38f9edc10b38",
+        "currentSha256": "0f73c06401d45413813dc06838763895eaf41d4f07be6b8c7d2c38f9edc10b38"
+      },
+      "src/ComposedControlsPage.tsx": {
+        "frozenSha256": "360a693b72fb3612b57f2563283a8351e2cafe0190d343f5c6da2e153fe1edfc",
+        "currentSha256": "360a693b72fb3612b57f2563283a8351e2cafe0190d343f5c6da2e153fe1edfc"
+      },
+      "src/editor-host.ts": {
+        "frozenSha256": "46ab8c2d1c8500b33ef954a3f44b7a8c85856fa976e4692fe49e8d3fd4d86877",
+        "currentSha256": "46ab8c2d1c8500b33ef954a3f44b7a8c85856fa976e4692fe49e8d3fd4d86877"
+      },
+      "src/scroll-input-scope.ts": {
+        "frozenSha256": "6fb04b2c0f7b5b3a1d8042738188ec88f209c6328419be4e7a9c19f622bafa56",
+        "currentSha256": "6fb04b2c0f7b5b3a1d8042738188ec88f209c6328419be4e7a9c19f622bafa56"
+      },
+      "src/enums.ts": {
+        "frozenSha256": "003c0f50e269c8fc64d6806075adef32f8790432b841a7710985a9e9a272c0c2",
+        "currentSha256": "003c0f50e269c8fc64d6806075adef32f8790432b841a7710985a9e9a272c0c2"
+      }
+    },
+    "matchesCurrentFiles": true
+  },
+  "sourceFiles": {
+    "src\\scene\\composed.rs": "dc780f1db1897a424fd3cbdf418da4f34d83f684024d59dcdbb94206818d4e59",
+    "src\\scene\\overlay_visual.rs": "482e40e95915e8ca1837275474e6b043420e03ce89b0d89e5cd7cc5b7f21e752",
+    "src\\number_box.rs": "7aa31a3261f6bdc1eecc8b7a2d292f564c080a59c257c6ec298a1864009155ae",
+    "gallery\\src\\scene.ts": "b107932e97d2bd9b8afc7537105fa7091b9a0ce29fae4900ff52d4df65e20939",
+    "gallery\\src\\react.tsx": "d38ba6dfda3f67246d2b9dd1cecc12a8f284cf6f64c8e246321ef377daaf6dd3",
+    "gallery\\src\\composed-types.ts": "0f73c06401d45413813dc06838763895eaf41d4f07be6b8c7d2c38f9edc10b38",
+    "gallery\\src\\ComposedControlsPage.tsx": "360a693b72fb3612b57f2563283a8351e2cafe0190d343f5c6da2e153fe1edfc",
+    "references\\composed-controls-template.json": "9b50a448a25c8772bca260a7d91b16513f624c4430f8142eb4ca1d7eb6980087",
+    "references\\composed-controls-resources.json": "ae0c0281c2451cb07895a6446555fc2e95ae5cb032303de3c09f73e61406cf6c",
+    "references\\composed-number-format.json": "87eb64b2650af0e10993bbe12fa7008c83698eab62910278e69ae24d5fcb1291",
+    "src/wasm.rs": "cb25611e0c8025b5c3e702b1d9923aca00017d04da6e259ff3033f7d40c42438",
+    "src/render.rs": "17d37b3945b7c980be08be2fcf816a62a551adf1aae0edd3a5a072848c6d31b7",
+    "src/gpu.rs": "a8cad9b6ff6c97cb26da93436fb606ebe710dbb2fec31e52ad5c879f49b41579",
+    "src/resources.rs": "b5584480138edd991fa298222e9dbac746e01837b35d10273c8b34b95de65135",
+    "src/scene/paint.rs": "177eaf55db14819b16064dcc38a7ce5f26237e27fce23723f3bbb1a7444751a9",
+    "src/scene/input.rs": "1d3117d25729fb7062baae849c935a2d2aa96b8f983a9755dece2c1eaa3cf364",
+    "src/scene/layout.rs": "582d7766c0d1a0c08db1f6eab47bbcd2934ff5610e106dcdb2493d80dd974f4c",
+    "src/scene/overlays.rs": "c6e9bd74d22b39493e5a9bcdb2750d25f6dab46590caac3f2ee05788d3fd1a7e",
+    "src/scene/collections.rs": "0f97e96d5d299217a8be9c08b06194b03c69d4bb487f76425e573f5700ea703f",
+    "src/scene/text_edit.rs": "037e31d5bfa610f05fdf7358a3b4ab2c2c51c2dd6eb5952f60ad397a7f9d8404",
+    "gallery/src/editor-host.ts": "46ab8c2d1c8500b33ef954a3f44b7a8c85856fa976e4692fe49e8d3fd4d86877",
+    "gallery/src/scroll-input-scope.ts": "6fb04b2c0f7b5b3a1d8042738188ec88f209c6328419be4e7a9c19f622bafa56",
+    "tools/extract-composed-resources.py": "8a1de75d9a89e644e0f579d91da62224c651478fef8bf79763a1320782eb771e"
+  },
+  "rustTests": 242,
+  "rustTestLog": "out\\picker-foundation-rust-full.log",
+  "concurrentFullRustRun": {
+    "log": "out/combo-hover-rust-all.log",
+    "recordedAtUtc": "2026-11-08T09:05:37.806364+00:00",
+    "passed": false,
+    "scope": "Historical full-run attempt includes command_controls tests being implemented concurrently; the scoped run above verifies this change and existing suites."
+  },
+  "browser": {
+    "startTime": "2026-11-08T11:02:54.273Z",
+    "duration": 133152.225,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "webkit": {
+    "startTime": "2026-11-08T11:02:54.243Z",
+    "duration": 210917.447,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "motion": {
+    "startTime": "2026-11-08T11:10:47.164Z",
+    "duration": 81452.325,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "regression": {
+    "startTime": "2026-11-08T11:02:54.273Z",
+    "duration": 137961.491,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "broaderRegressionAttempt": {
+    "stats": {
+      "startTime": "2026-11-08T08:57:49.532Z",
+      "duration": 291980.003,
+      "expected": 34,
+      "skipped": 0,
+      "unexpected": 2,
+      "flaky": 0
+    },
+    "log": "out/combo-broader-regression.log",
+    "notes": [
+      "Collection-route heading contract changed in the concurrent Gallery shell work (ItemsStackPanel versus items stack panel).",
+      "Flyout test raced the light-dismiss triggered by unchecking its external checkbox; corrected to avoid focusing an already closing control. The final overlay suite reruns that interaction."
+    ]
+  },
+  "remaining": [
+    "Native DWrite glyph coverage/phase versus browser font rasterization.",
+    "Desktop HostBackdrop and DWM composition differ from a browser-backed popup island.",
+    "Live same-SDK motion is recorded and replayed; Store distribution frame-by-frame pixel acceptance remains separate.",
+    "Arbitrary WinRT formatter implementations, editable rich selection-box templates, InPlace ContentDialog and full UIA parity are outside this slice.",
+    "Native windowed ComboBox fixtures can extend above the client top; the browser popup is constrained to its viewport. Raw placement differences remain in geometryMaxDip and windowEdgeCases; withinClientGeometryMaxDip excludes only those explicit client-top constraint cases."
+  ],
+  "intentionalException": "The project suppresses focus rings while retaining real focus, highlight fill and accent selection pills. Native ring pixels remain in the raw difference images.",
+  "sourceHashScope": "Source hashes record files at analysis time. Concurrent navigation/command-control work can change shared source after a successful build; executable acceptance is tied to the frozen WASM and host hashes.",
+  "closedComboBox": "references/validation/combobox-faceplate.json"
+}

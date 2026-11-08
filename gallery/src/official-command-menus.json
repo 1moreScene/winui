@@ -1,0 +1,152 @@
+{
+  "commit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "AppBarSeparator": {
+      "description": "An AppBarSeparator creates a vertical line to visually separate groups of commands in a app bar. It has a compact state with reduced padding to match the compact state of the AppBarButton and AppBarToggleButton controls.",
+      "samples": [
+        {
+          "title": "AppBarButtons separated by AppBarSeparators.",
+          "xaml": "<CommandBar>\n    <CommandBar.PrimaryCommands>\n        <AppBarButton Icon=\"AttachCamera\" Label=\"Attach Camera\"/>\n        <AppBarSeparator />\n        <AppBarButton Icon=\"Like\" Label=\"Like\"/>\n        <AppBarButton Icon=\"Dislike\" Label=\"Dislike\"/>\n        <AppBarSeparator />\n        <AppBarButton Icon=\"Orientation\" Label=\"Orientation\"/>\n    </CommandBar.PrimaryCommands>\n</CommandBar>",
+          "code": ""
+        }
+      ]
+    },
+    "CommandBarFlyout": {
+      "description": "A mini-toolbar which displays a set of proactive commands, as well as a secondary menu of commands if desired.",
+      "samples": [
+        {
+          "title": "CommandBarFlyout for commands on an in-app object",
+          "xaml": "<Page.Resources>\n    <CommandBarFlyout Placement=\"Right\" x:Name=\"CommandBarFlyout1\">\n        <AppBarButton Label=\"Share\" Icon=\"Share\" ToolTipService.ToolTip=\"Share\" Click=\"OnElementClicked\" />\n        <AppBarButton Label=\"Save\" Icon=\"Save\" ToolTipService.ToolTip=\"Save\" Click=\"OnElementClicked\" />\n        <AppBarButton Label=\"Delete\" Icon=\"Delete\" ToolTipService.ToolTip=\"Delete\" Click=\"OnElementClicked\" />\n        <CommandBarFlyout.SecondaryCommands>\n            <AppBarButton x:Name=\"ResizeButton1\" Label=\"Resize\" Click=\"OnElementClicked\" />\n            <AppBarButton x:Name=\"MoveButton1\" Label=\"Move\" Click=\"OnElementClicked\" />\n        </CommandBarFlyout.SecondaryCommands>\n    </CommandBarFlyout>\n</Page.Resources>\n\n<Button x:Name=\"myImageButton\" AutomationProperties.Name=\"mountain\" Padding=\"0\"\n    Click=\"MyImageButton_Click\" ContextRequested=\"MyImageButton_ContextRequested\" >\n    <Image x:Name=\"Image1\" Height=\"300\" Source=\"/Assets/SampleMedia/rainier.jpg\"/>\n</Button>",
+          "code": "private void ShowMenu(bool isTransient)\n{\n    FlyoutShowOptions myOption = new FlyoutShowOptions();\n    myOption.ShowMode = isTransient ? FlyoutShowMode.Transient : FlyoutShowMode.Standard;\n    CommandBarFlyout1.ShowAt(Image1, myOption);\n}\n\nprivate void MyImageButton_ContextRequested(Microsoft.UI.Xaml.UIElement sender, ContextRequestedEventArgs args)\n{\n    // Show a context menu in standard mode\n    // Focus will move to the menu\n    ShowMenu(false);\n}\n\nprivate void MyImageButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)\n{\n    // Show a context menu in transient mode\n    // Focus will not move to the menu\n    ShowMenu(true);\n}"
+        }
+      ]
+    },
+    "MenuBar": {
+      "description": "The Menubar simplifies the creation of basic applications by providing a set of menus at the top of the app or window.",
+      "samples": [
+        {
+          "title": "A simple MenuBar",
+          "xaml": "<MenuBar>\n    <MenuBarItem Title=\"File\">\n        <MenuFlyoutItem Text=\"New\"/>\n        <MenuFlyoutItem Text=\"Open...\"/>\n        <MenuFlyoutItem Text=\"Save\"/>\n        <MenuFlyoutItem Text=\"Exit\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"Edit\">\n        <MenuFlyoutItem Text=\"Undo\"/>\n        <MenuFlyoutItem Text=\"Cut\"/>\n        <MenuFlyoutItem Text=\"Copy\"/>\n        <MenuFlyoutItem Text=\"Paste\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"Help\">\n        <MenuFlyoutItem Text=\"About\"/>\n    </MenuBarItem>\n</MenuBar>",
+          "code": ""
+        },
+        {
+          "title": "MenuBar with keyboard accelerators",
+          "xaml": "<MenuBar>\n  <MenuBarItem Title=\"File\">\n    <MenuFlyoutItem Text=\"New\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"N\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Open...\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"O\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Save\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"S\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Exit\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"E\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n  </MenuBarItem>\n\n  <MenuBarItem Title=\"Edit\">\n    <MenuFlyoutItem Text=\"Undo\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"Z\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Cut\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"X\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Copy\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"C\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n    <MenuFlyoutItem Text=\"Paste\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"V\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n  </MenuBarItem>\n\n  <MenuBarItem Title=\"Help\">\n    <MenuFlyoutItem Text=\"About\">\n      <MenuFlyoutItem.KeyboardAccelerators>\n        <KeyboardAccelerator Modifiers=\"Control\" Key=\"I\"/>\n      </MenuFlyoutItem.KeyboardAccelerators>\n    </MenuFlyoutItem>\n  </MenuBarItem>\n</MenuBar>",
+          "code": ""
+        },
+        {
+          "title": "MenuBar with submenus, separators, and radio items",
+          "xaml": "<MenuBar>\n    <MenuBarItem Title=\"File\">\n        <MenuFlyoutSubItem Text=\"New\">\n            <MenuFlyoutItem Text=\"Plain Text Document\"/>\n            <MenuFlyoutItem Text=\"Rich Text Document\"/>\n            <MenuFlyoutItem Text=\"Other Formats...\"/>\n        </MenuFlyoutSubItem>\n        <MenuFlyoutItem Text=\"Open...\"/>\n        <MenuFlyoutItem Text=\"Save\"/>\n        <MenuFlyoutSeparator />\n        <MenuFlyoutItem Text=\"Exit\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"Edit\">\n        <MenuFlyoutItem Text=\"Undo\"/>\n        <MenuFlyoutItem Text=\"Cut\"/>\n        <MenuFlyoutItem Text=\"Copy\"/>\n        <MenuFlyoutItem Text=\"Paste\"/>\n    </MenuBarItem>\n\n    <MenuBarItem Title=\"View\">\n        <MenuFlyoutItem Text=\"Output\"/>\n        <MenuFlyoutSeparator/>\n        <RadioMenuFlyoutItem Text=\"Landscape\" GroupName=\"OrientationGroup\"/>\n        <RadioMenuFlyoutItem Text=\"Portrait\" GroupName=\"OrientationGroup\" IsChecked=\"True\"/>\n        <MenuFlyoutSeparator/>\n        <RadioMenuFlyoutItem Text=\"Small icons\" GroupName=\"SizeGroup\"/>\n        <RadioMenuFlyoutItem Text=\"Medium icons\" IsChecked=\"True\" GroupName=\"SizeGroup\"/>\n        <RadioMenuFlyoutItem Text=\"Large icons\" GroupName=\"SizeGroup\"/>\n    </MenuBarItem>\n                    \n    <MenuBarItem Title=\"Help\">\n        <MenuFlyoutItem Text=\"About\"/>\n    </MenuBarItem>\n</MenuBar>",
+          "code": ""
+        }
+      ]
+    },
+    "StandardUICommand": {
+      "description": "StandardUICommands are a set of built-in XamlUICommands represeting commonly used commands. Including the look and feel of a given command, which can be reused across your app, and which is understood natively by the standard XAML controls. E.g. Save, Open, Copy, Paste, etc.",
+      "samples": [
+        {
+          "title": "Exposing a command in multiple controls using StandardUICommand",
+          "xaml": "<SwipeItem x:Name=\"DeleteSwipeItem\" Background=\"Red\" Command=\"{x:Bind Command}\" CommandParameter=\"{x:Bind Text}\" />\n\n<AppBarButton x:Name=\"HoverButton\" IsTabStop=\"False\" HorizontalAlignment=\"Right\" Visibility=\"Collapsed\" \n Command=\"{x:Bind Command}\" CommandParameter=\"{x:Bind Text}\" />",
+          "code": "private void ControlExample_Loaded(object sender, RoutedEventArgs e)\n{\n    var deleteCommand = new StandardUICommand(StandardUICommandKind.Delete);\n    deleteCommand.ExecuteRequested += DeleteCommand_ExecuteRequested;\n\n    DeleteFlyoutItem.Command = deleteCommand;\n\n    for (var i = 0; i < 15; i++)\n    {\n        collection.Add(new ListItemData { Text = \"List item \" + i.ToString(), Command = deleteCommand });\n    }\n}\n\nprivate void ListViewRight_ContainerContentChanging(ListViewBase sender, ContainerContentChangingEventArgs args)\n{\n    MenuFlyout flyout = new MenuFlyout();\n    ListItemData data = (ListItemData)args.Item;\n    MenuFlyoutItem item = new MenuFlyoutItem() { Command = data.Command};\n    flyout.Items.Add(item);\n    args.ItemContainer.ContextFlyout = flyout;\n}"
+        }
+      ]
+    },
+    "XamlUICommand": {
+      "description": "An object which is used to define the look and feel of a given command, which can be reused across your app, and which is understood natively by the standard XAML controls.",
+      "samples": [
+        {
+          "title": "Creating a reusable command with XamlUICommand",
+          "xaml": "<Page.Resources>\n    <XamlUICommand x:Name=\"CustomXamlUICommand\" ExecuteRequested=\"CustomXamlUICommand_ExecuteRequested\" \n\tDescription=\"This is a custom command\" Label=\"Custom Command\">\n        <XamlUICommand.IconSource>\n            <SymbolIconSource Symbol=\"Favorite\" />\n        </XamlUICommand.IconSource>\n        <XamlUICommand.KeyboardAccelerators>\n            <KeyboardAccelerator Key=\"D\" Modifiers=\"Control\"/>\n        </XamlUICommand.KeyboardAccelerators>\n    </XamlUICommand>\n</Page.Resources>\n\n<RelativePanel Grid.Row=\"1\">\n    <AppBarButton x:Name=\"CustomButton\" Command=\"{StaticResource CustomXamlUICommand}\"/>\n    <TextBlock x:Name=\"XamlUICommandOutput\" Margin=\"8,0,0,0\" FontFamily=\"Global User Interface\" \n                RelativePanel.RightOf=\"CustomButton\" RelativePanel.AlignVerticalCenterWith=\"CustomButton\" />\n</RelativePanel>",
+          "code": "private void CustomXamlUICommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)\n{\n    XamlUICommandOutput.Text = \"You fired the custom command\";\n}"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "local": "references/gallery-input/AppBarSeparator/AppBarSeparatorPage.xaml",
+      "upstream": "WinUIGallery/Samples/AppBarSeparator/AppBarSeparatorPage.xaml",
+      "sha256": "587d602b445af9c9827ecb07ea2ed25fe4eb41e5d5c70a5abfda7df462f9aee9"
+    },
+    {
+      "local": "references/gallery-input/AppBarSeparator/AppBarSeparatorPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/AppBarSeparator/AppBarSeparatorPage.xaml.cs",
+      "sha256": "972a4d558e29b70b9a4947b0e49fba78485acf824a27318c470ef919ebf13f7c"
+    },
+    {
+      "local": "references/gallery-input/AppBarSeparator/AppbarbuttonsSeparatedAppbarseparators.txt",
+      "upstream": "WinUIGallery/Samples/AppBarSeparator/AppbarbuttonsSeparatedAppbarseparators.txt",
+      "sha256": "baa2dc507eeade5a36812369227c86ecb1f9b44aee7f7eafa616a15a7adba857"
+    },
+    {
+      "local": "references/gallery-input/CommandBarFlyout/CommandBarFlyoutPage.xaml",
+      "upstream": "WinUIGallery/Samples/CommandBarFlyout/CommandBarFlyoutPage.xaml",
+      "sha256": "f6828d1d9fcfc1a78498b217dde57b4690fb41cd6f4e5573f7d985363813ccc4"
+    },
+    {
+      "local": "references/gallery-input/CommandBarFlyout/CommandBarFlyoutPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/CommandBarFlyout/CommandBarFlyoutPage.xaml.cs",
+      "sha256": "955594f0512024c13a6952c6160823c856a3f6123d9b5296e87e97d25a211b8a"
+    },
+    {
+      "local": "references/gallery-input/CommandBarFlyout/CommandbarflyoutCommandsAppObject.txt",
+      "upstream": "WinUIGallery/Samples/CommandBarFlyout/CommandbarflyoutCommandsAppObject.txt",
+      "sha256": "f99a12c1e03ec99a228d0c91bae57d925218ec0b0c40f26416e78e20bf647051"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenuBarPage.xaml",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenuBarPage.xaml",
+      "sha256": "0b0567adfc658b3cedf5efa102e1f19ff01e10efd128b69563da030ffecb7407"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenuBarPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenuBarPage.xaml.cs",
+      "sha256": "5f5ae93d33a4c538abb938fc37c72a2fc643e05d1dd936e9d1574bf84610fb34"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenubarKeyboardAccelerators.txt",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenubarKeyboardAccelerators.txt",
+      "sha256": "6dcc471459081171b0cc5becd9d9dea9d0188d00724f2c2efe64887f9ea2b5b0"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/MenubarSubmenusSeparatorsRadio.txt",
+      "upstream": "WinUIGallery/Samples/MenuBar/MenubarSubmenusSeparatorsRadio.txt",
+      "sha256": "a3dd0c5aa62dcae7148900072061a720b17d9b45dea7961be1ba0f24812cf1ae"
+    },
+    {
+      "local": "references/gallery-input/MenuBar/SimpleMenubar.txt",
+      "upstream": "WinUIGallery/Samples/MenuBar/SimpleMenubar.txt",
+      "sha256": "ff2a186721a127947d22d967914617a3ce1c49ce215fdb0de4577cdaac69939e"
+    },
+    {
+      "local": "references/gallery-input/StandardUICommand/StandardUICommandExposingCommandMultipleControls.txt",
+      "upstream": "WinUIGallery/Samples/StandardUICommand/StandardUICommandExposingCommandMultipleControls.txt",
+      "sha256": "fcaf71d93dfa9f1b2f42c466e8fba9cd65986108b91c8f0be044d939de214be2"
+    },
+    {
+      "local": "references/gallery-input/StandardUICommand/StandardUICommandPage.xaml",
+      "upstream": "WinUIGallery/Samples/StandardUICommand/StandardUICommandPage.xaml",
+      "sha256": "ae09c74a8e5df35e1e6dcf8ac3b001890cf59af5f47f50fef0ed505d70287979"
+    },
+    {
+      "local": "references/gallery-input/StandardUICommand/StandardUICommandPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/StandardUICommand/StandardUICommandPage.xaml.cs",
+      "sha256": "cc10bde5b796096969ec7190f2d2c98aeca700b9a94b5182b0e06bedc76f1d14"
+    },
+    {
+      "local": "references/gallery-input/XamlUICommand/CreatingReusableCommandXamluicommand.txt",
+      "upstream": "WinUIGallery/Samples/XamlUICommand/CreatingReusableCommandXamluicommand.txt",
+      "sha256": "77c08c86ce761a24b2450da4590f110c11f54e4c59e285e7b8e0f7f392c71048"
+    },
+    {
+      "local": "references/gallery-input/XamlUICommand/XamlUICommandPage.xaml",
+      "upstream": "WinUIGallery/Samples/XamlUICommand/XamlUICommandPage.xaml",
+      "sha256": "c0b7086234fb0df40c39fa20d60f51fa0b99a47bcab06ff61c1ae7f5a0c7f766"
+    },
+    {
+      "local": "references/gallery-input/XamlUICommand/XamlUICommandPage.xaml.cs",
+      "upstream": "WinUIGallery/Samples/XamlUICommand/XamlUICommandPage.xaml.cs",
+      "sha256": "aad6224d9a6b393ec6ea5702a4415eb42693b20ea8e83ceb96a255404462089f"
+    }
+  ]
+}

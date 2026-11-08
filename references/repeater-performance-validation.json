@@ -1,0 +1,156 @@
+{
+  "recordedAtUtc": "2026-11-08T15:03:43.295363+00:00",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "fullyMatchesNative": false,
+  "changes": [
+    "Preserve size estimates across intermediate Grid star-column measurements and finite Arrange.",
+    "Defer unknown-size template viewport expansion until the first real template is measured; never cache empty template placeholders as 32-DIP content.",
+    "Reconcile React template membership once per RealizationChanged batch, preserving per-element notifications and container identity.",
+    "Use native Button ContentPresenter VSM precedence for local Background/Foreground, with background transitions.",
+    "Reuse shared ControlExample preview, Options and source-tab presentation."
+  ],
+  "measurements": {
+    "idleFramesOver1600ms": {
+      "basic": {
+        "before": 0,
+        "after": 0
+      },
+      "virtual": {
+        "before": 0,
+        "after": 0
+      },
+      "flow": {
+        "before": 0,
+        "after": 0
+      },
+      "mixed": {
+        "before": 0,
+        "after": 0
+      },
+      "nested": {
+        "before": 83,
+        "after": 0
+      },
+      "animated": {
+        "before": 0,
+        "after": 0
+      },
+      "recipes": {
+        "before": 0,
+        "after": 0
+      }
+    },
+    "recipesFrameP95Ms": {
+      "before": 56.70000001788139,
+      "after": 22.19999998807907
+    },
+    "sampleScope": "Single local Chromium diagnostic: page initialization, 1600 ms idle and one color-button click. Small frame sample; timings are not cross-device guarantees. Remaining startup long tasks are recorded in the full profiles.",
+    "before": "out/repeater-profile-before.json",
+    "after": "out/repeater-performance-delivery/out/repeater-profile-after.json"
+  },
+  "checks": {
+    "rust": {
+      "passed": 333,
+      "log": "out/repeater-perf-rust-delivery.log",
+      "scope": "All frozen cargo test --locked targets, no exclusions"
+    },
+    "performance": {
+      "path": "out/repeater-performance-delivery/out/repeater-performance-results.json",
+      "sha256": "23133e8536f2c8d66aeda8ab11c7a7f5e4d0138011f9a275a79d714146e58d63",
+      "startTime": "2026-11-08T14:59:40.547Z",
+      "duration": 12782.679,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "regression": {
+      "path": "out/repeater-performance-delivery/out/repeater-refresh-browser-results.json",
+      "sha256": "117f253516d897051bdc600e007e329d1c635ac54bf59a56b879fdbb3da31370",
+      "startTime": "2026-11-08T14:56:28.962Z",
+      "duration": 51505.838,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "production": {
+      "path": "out/repeater-performance-delivery/out/repeater-performance-production-results.json",
+      "sha256": "ed0c97a9c466aa8a85137d99a568e2e5a284c5637778db90c1ba1b6b1f4517e2",
+      "startTime": "2026-11-08T14:59:30.359Z",
+      "duration": 44592.591,
+      "expected": 18,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "currentBinary": {
+      "path": "out/repeater-performance-results.json",
+      "sha256": "4e142b9a9c62c28eb797c25b0bf321bc91d83d825a2f00b042fc0a8629f09734",
+      "startTime": "2026-11-08T15:02:44.076Z",
+      "duration": 14619.774,
+      "expected": 4,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "typescript": true,
+    "productionBuild": true,
+    "declarations": true
+  },
+  "wasm": {
+    "frozenSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+    "currentSha256": "ed5cbf15c4a2c4125adfe622d95b811add32ba6a829c05c10a1214ef5790ac55",
+    "matchesCurrentBinary": true,
+    "currentRun": "out/repeater-performance-current-runtime.json"
+  },
+  "evidence": {
+    "sourceSnapshot": "out/repeater-performance-delivery/snapshot.json",
+    "nativeButtonStates": "references/repeater-button-native.json",
+    "nativeRun": "references/repeater-button-native-run.json",
+    "screenshots": "out/repeater-performance-delivery/out/repeater-performance",
+    "documentation": "docs/repeater-performance.md"
+  },
+  "files": [
+    {
+      "path": "src/scene/repeater.rs",
+      "sha256": "ff4ef84b60d3dd83c75e1710828f4dd55b034d3c0226449a9ccece345b5aff1a"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "e034f7774b98136a7b81073982e7bfa0541f68a15ebead23b662ab61e6329c64"
+    },
+    {
+      "path": "src/button.rs",
+      "sha256": "98e1e9fbc1d87987c761a0bd260d27d7d121028c8b4aa0b96e0a1a1adc66619f"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "dd8069c2b95b258e865bbad9dd1034c3323904c352ee754c4c15940ddd91c75e"
+    },
+    {
+      "path": "gallery/src/RepeaterRefreshPage.tsx",
+      "sha256": "823a5f6b28ca0482af0f750d9b84c2da56b0d9040807bf0cf1396b1faf0b8c3e"
+    },
+    {
+      "path": "gallery/src/repeater-gallery.css",
+      "sha256": "c8ed316ee32ed89f89d15e5361e44c6df3e33e4fddd260aaa2dc618cbd30b776"
+    },
+    {
+      "path": "gallery/tests/repeater-performance.spec.ts",
+      "sha256": "24c7ca3df65e02e07456898abd68bc407ea25e8f5736d3f968bea8cf05bb4dde"
+    },
+    {
+      "path": "tests/repeater_refresh.rs",
+      "sha256": "2405f25ba1208675967ad1b06bb697d8c585e650831b1d4bfbe2925dea57a77a"
+    },
+    {
+      "path": "references/repeater-button-native.json",
+      "sha256": "383130e5ad3b4cb30ea5309c020a069062e5659ce88df109ede45eb1f61d0295"
+    }
+  ],
+  "remaining": [
+    "Full Windows Composition motion/pixel acceptance and Store-distribution parity remain unaccepted.",
+    "Startup still has long tasks from mounting the Gallery; see the recorded full-page profile."
+  ]
+}

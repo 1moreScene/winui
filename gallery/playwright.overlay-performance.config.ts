@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';import base from './playwright.config';
+export default defineConfig({...base,testMatch:'**/overlay-performance.spec.ts',webServer:undefined,use:{...base.use,baseURL:process.env.WINUI_OVERLAY_PERF_URL??'http://127.0.0.1:5197',deviceScaleFactor:1.25},outputDir:'../out/overlay-performance-browser',reporter:[['list'],['json',{outputFile:'../out/overlay-performance-browser-results.json'}]]});

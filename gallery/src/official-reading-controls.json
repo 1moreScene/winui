@@ -1,0 +1,436 @@
+{
+  "commit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "controls": {
+    "AnnotatedScrollBar": {
+      "description": "The AnnotatedScrollBar lets you navigate through a large collection of items via a clickable rail with labels which act as markers.",
+      "samples": [
+        {
+          "title": "AnnotatedScrollBar linked to a ScrollView.",
+          "xaml": "<ScrollView x:Name=\"scrollView\"\n    Background=\"LightGray\" MaxWidth=\"800\" MaxHeight=\"500\"\n    VerticalScrollBarVisibility=\"Hidden\">\n    <!-- ... -->\n</ScrollView>\n                \n<AnnotatedScrollBar x:Name=\"annotatedScrollBar\"\n    Margin=\"4,0,48,0\" MaxHeight=\"500\"\n    HorizontalAlignment=\"Right\"\n    DetailLabelRequested=\"AnnotatedScrollBar_DetailLabelRequested\"/>",
+          "code": "private void AnnotatedScrollBarPage_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)\n{\n    scrollView.ScrollPresenter.VerticalScrollController = annotatedScrollBar.ScrollController;\n}",
+          "runtimeXaml": "<ns0:Grid xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\" ColumnDefinitions=\"*, Auto\">\n                <ns0:ScrollView ns1:Name=\"scrollView\" MaxWidth=\"800\" MaxHeight=\"500\" Background=\"LightGray\" VerticalScrollBarVisibility=\"Hidden\">\n                    <ns0:ItemsRepeater ns1:Name=\"itemsRepeater\" Margin=\"2\" ItemsSource=\"{x:Bind ColorCollection}\" SizeChanged=\"ItemsRepeater_SizeChanged\">\n                        <ns0:ItemsRepeater.Layout>\n                            <ns0:UniformGridLayout />\n                        </ns0:ItemsRepeater.Layout>\n                        <ns0:ItemsRepeater.ItemTemplate>\n                            <ns0:DataTemplate ns1:DataType=\"media:SolidColorBrush\">\n                                <ns0:Grid Width=\"112\" Height=\"82\" Margin=\"4\" Background=\"{x:Bind}\" CornerRadius=\"4\" />\n                            </ns0:DataTemplate>\n                        </ns0:ItemsRepeater.ItemTemplate>\n                    </ns0:ItemsRepeater>\n                </ns0:ScrollView>\n\n                <ns0:AnnotatedScrollBar ns1:Name=\"annotatedScrollBar\" Grid.Column=\"1\" MaxHeight=\"500\" Margin=\"4,0,48,0\" HorizontalAlignment=\"Right\" DetailLabelRequested=\"AnnotatedScrollBar_DetailLabelRequested\" />\n            </ns0:Grid>\n\n            ",
+          "optionsXaml": "<ns0:ControlExample.Options xmlns:ns0=\"using:WinUIGallery.Controls\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n                <ns1:Grid MinWidth=\"200\" RowDefinitions=\"Auto, Auto\">\n\n                    <ns1:TextBlock VerticalAlignment=\"Center\" Text=\"Changing the AnnotatedScrollBar height refreshes its Labels layout.\" />\n\n                    <ns1:Slider Grid.Row=\"1\" Margin=\"0,10,0,0\" Header=\"AnnotatedScrollBar maximum height:\" Maximum=\"500\" Minimum=\"100\" ValueChanged=\"AnnotatedScrollBarMaxHeightSlider_ValueChanged\" Value=\"500\" />\n                </ns1:Grid>\n            </ns0:ControlExample.Options>\n\n        "
+        }
+      ]
+    },
+    "ItemsView": {
+      "description": "The ItemsView lets you show a collection of items using scrollable & swappable layouts.",
+      "samples": [
+        {
+          "title": "Basic ItemsView",
+          "xaml": "<DataTemplate x:Key=\"ImageTemplate\" x:DataType=\"local:CustomDataObject\">\n    <ItemContainer HorizontalAlignment=\"Left\" Width=\"200\" Height=\"140\" AutomationProperties.Name=\"{x:Bind Title}\">\n        <Image Stretch=\"UniformToFill\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\" Source=\"{x:Bind ImageLocation}\" Margin=\"4\" AutomationProperties.AccessibilityView=\"Raw\"/>\n    </ItemContainer>\n</DataTemplate>\n\n<ItemsView Width=\"220\" Height=\"400\" HorizontalAlignment=\"Left\"\n    ItemTemplate=\"{StaticResource ImageTemplate}\" IsItemInvokedEnabled=\"True\" ItemInvoked=\"BasicItemsView_ItemInvoked\"/>",
+          "code": "private void BasicItemsView_ItemInvoked(ItemsView sender, ItemsViewItemInvokedEventArgs e)\n{\n    tblBasicInvokeOutput.Text = \"You invoked \" + (e.InvokedItem as CustomDataObject).Title + \".\";\n}",
+          "runtimeXaml": "<ns0:StackPanel xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n                <ns0:TextBlock Margin=\"0,0,0,15\">\n                    This is a basic ItemsView which uses its default StackLayout layout and a simple ItemTemplate.<ns0:LineBreak />\n                    Hit the Enter key, double-click or double-tap an item to invoke it.</ns0:TextBlock>\n                <ns0:ItemsView ns1:Name=\"BasicItemsView\" Width=\"220\" Height=\"400\" HorizontalAlignment=\"Left\" IsItemInvokedEnabled=\"True\" ItemInvoked=\"BasicItemsView_ItemInvoked\" ItemTemplate=\"{StaticResource ImageTemplate}\" />\n                <ns0:TextBlock ns1:Name=\"tblBasicInvokeOutput\" Style=\"{StaticResource OutputTextBlockStyle}\" />\n            </ns0:StackPanel>\n\n        ",
+          "optionsXaml": ""
+        },
+        {
+          "title": "ItemsView with swappable layouts",
+          "xaml": "<DataTemplate x:Key=\"LinedFlowLayoutItemTemplate\" x:DataType=\"local:CustomDataObject\">\n    <ItemContainer AutomationProperties.Name=\"{x:Bind Title}\">\n        <Grid>\n            <Image Source=\"{x:Bind ImageLocation}\" Stretch=\"UniformToFill\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\" MinWidth=\"70\"/>\n            <StackPanel Orientation=\"Vertical\" Height=\"40\" VerticalAlignment=\"Bottom\" Padding=\"5,1,5,1\" Background=\"{ThemeResource SystemControlBackgroundBaseMediumBrush}\" Opacity=\".75\">\n                <TextBlock Text=\"{x:Bind Title}\" Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\"/>\n                <StackPanel Orientation=\"Horizontal\">\n                    <TextBlock Text=\"{x:Bind Likes}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\"/>\n                    <TextBlock Text=\" Likes\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\"/>\n                </StackPanel>\n            </StackPanel>\n        </Grid>\n    </ItemContainer>\n</DataTemplate>\n\n<ItemsView Height=\"400\" HorizontalAlignment=\"Stretch\" MaxWidth=\"500\"\n    ItemTemplate=\"{StaticResource LinedFlowLayoutItemTemplate}\">\n    <ItemsView.Layout>\n        <LinedFlowLayout ItemsStretch=\"Fill\" LineHeight=\"160\" LineSpacing=\"5\" MinItemSpacing=\"5\"/>\n    </ItemsView.Layout>\n</ItemsView>",
+          "code": "",
+          "runtimeXaml": "<ns0:StackPanel xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n                <ns0:TextBlock Margin=\"0,0,0,15\" TextWrapping=\"Wrap\">\n                    Use the options on the right to control different layout customizations to the ItemsView below.\n                </ns0:TextBlock>\n                <ns0:ItemsView ns1:Name=\"SwappableLayoutsItemsView\" Height=\"400\" HorizontalAlignment=\"Stretch\" MaxWidth=\"500\" ItemTemplate=\"{StaticResource LinedFlowLayoutItemTemplate}\">\n                    <ns0:ItemsView.Layout>\n                        <ns0:LinedFlowLayout ItemsStretch=\"Fill\" LineHeight=\"160\" LineSpacing=\"5\" MinItemSpacing=\"5\" />\n                    </ns0:ItemsView.Layout>\n                </ns0:ItemsView>\n            </ns0:StackPanel>\n\n            ",
+          "optionsXaml": "<ns0:ControlExample.Options xmlns:ns0=\"using:WinUIGallery.Controls\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns2=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n                <ns1:StackPanel MinWidth=\"300\">\n                    <ns1:StackPanel.Resources>\n                        <ns1:Style ns2:Key=\"DefaultNumberBoxStyle\" TargetType=\"NumberBox\">\n                            <ns1:Setter Property=\"SpinButtonPlacementMode\" Value=\"Inline\" />\n                            <ns1:Setter Property=\"SmallChange\" Value=\"1\" />\n                            <ns1:Setter Property=\"HorizontalAlignment\" Value=\"Stretch\" />\n                            <ns1:Setter Property=\"HorizontalContentAlignment\" Value=\"Stretch\" />\n                            <ns1:Setter Property=\"MaxWidth\" Value=\"250\" />\n                            <ns1:Setter Property=\"Margin\" Value=\"0,0,0,16\" />\n                        </ns1:Style>\n                    </ns1:StackPanel.Resources>\n\n                    <ns1:RadioButtons FontWeight=\"SemiBold\" Header=\"Layout\">\n                        <ns1:RadioButton Checked=\"RbLayout_Checked\" Content=\"LinedFlowLayout\" FontWeight=\"Normal\" GroupName=\"ItemsViewLayouts\" IsChecked=\"True\" />\n\n                        <ns1:RadioButton Checked=\"RbLayout_Checked\" Content=\"UniformGridLayout\" FontWeight=\"Normal\" GroupName=\"ItemsViewLayouts\" />\n\n                        <ns1:RadioButton Checked=\"RbLayout_Checked\" Content=\"StackLayout\" FontWeight=\"Normal\" GroupName=\"ItemsViewLayouts\" />\n                    </ns1:RadioButtons>\n\n                    <ns1:StackPanel ns2:Name=\"spLinedFlowLayoutOptions\" MinHeight=\"300\">\n                        <ns1:TextBlock Margin=\"0,15,0,10\" FontWeight=\"SemiBold\" Text=\"LinedFlowLayout settings\" />\n\n                        <ns1:NumberBox ns2:Name=\"nbLineSpacing\" AutomationProperties.Name=\"Space between lines\" Header=\"Space between lines\" Maximum=\"100\" Minimum=\"0\" Style=\"{ThemeResource DefaultNumberBoxStyle}\" ValueChanged=\"NbLinedFlowLayoutOptions_ValueChanged\" Value=\"5\" />\n\n                        <ns1:NumberBox ns2:Name=\"nbMinItemSpacing\" AutomationProperties.Name=\"Minimum space between items on a line\" Header=\"Minimum space between items on a line\" Maximum=\"100\" Minimum=\"0\" Style=\"{ThemeResource DefaultNumberBoxStyle}\" ValueChanged=\"NbLinedFlowLayoutOptions_ValueChanged\" Value=\"5\" />\n\n                        <ns1:RadioButtons Header=\"Line height\">\n                            <ns1:RadioButton ns2:Name=\"rbSmallLineHeight\" Checked=\"RbLineHeight_Checked\" Content=\"Small\" GroupName=\"LinedFlowLayoutLineHeights\" />\n\n                            <ns1:RadioButton ns2:Name=\"rbLargeLineHeight\" Checked=\"RbLineHeight_Checked\" Content=\"Large\" GroupName=\"LinedFlowLayoutLineHeights\" IsChecked=\"True\" />\n                        </ns1:RadioButtons>\n                    </ns1:StackPanel>\n\n                    <ns1:StackPanel ns2:Name=\"spStackLayoutOptions\" MinHeight=\"300\" Visibility=\"Collapsed\">\n                        <ns1:TextBlock Margin=\"0,15,0,10\" FontWeight=\"SemiBold\" Text=\"StackLayout settings\" />\n\n                        <ns1:NumberBox ns2:Name=\"nbSpacing\" AutomationProperties.Name=\"Space between rows\" Header=\"Space between rows\" Maximum=\"100\" Minimum=\"0\" Style=\"{ThemeResource DefaultNumberBoxStyle}\" ValueChanged=\"NbStackLayoutOptions_ValueChanged\" Value=\"5\" />\n                    </ns1:StackPanel>\n\n                    <ns1:StackPanel ns2:Name=\"spUniformGridLayoutOptions\" MinHeight=\"300\" Visibility=\"Collapsed\">\n                        <ns1:TextBlock Margin=\"0,15,0,10\" FontWeight=\"SemiBold\" Text=\"UniformGridLayout settings\" />\n\n                        <ns1:NumberBox ns2:Name=\"nbMinColumnSpacing\" AutomationProperties.Name=\"Minimum space between columns\" Header=\"Minimum space between columns\" Maximum=\"100\" Minimum=\"0\" Style=\"{ThemeResource DefaultNumberBoxStyle}\" ValueChanged=\"NbUniformGridLayoutOptions_ValueChanged\" Value=\"5\" />\n\n                        <ns1:NumberBox ns2:Name=\"nbMinRowSpacing\" AutomationProperties.Name=\"Minimum space between rows\" Header=\"Minimum space between rows\" Maximum=\"100\" Minimum=\"0\" Style=\"{ThemeResource DefaultNumberBoxStyle}\" ValueChanged=\"NbUniformGridLayoutOptions_ValueChanged\" Value=\"5\" />\n\n                        <ns1:NumberBox ns2:Name=\"nbMaximumRowsOrColumns\" AutomationProperties.Name=\"Maximum number of items per row before wrapping\" Header=\"Maximum number of items per row before wrapping\" Maximum=\"8\" Minimum=\"1\" Style=\"{ThemeResource DefaultNumberBoxStyle}\" ValueChanged=\"NbUniformGridLayoutOptions_ValueChanged\" Value=\"3\" />\n                    </ns1:StackPanel>\n                </ns1:StackPanel>\n            </ns0:ControlExample.Options>\n\n        "
+        },
+        {
+          "title": "ItemsView item invocation and selection",
+          "xaml": "<DataTemplate x:Key=\"UniformGridLayoutItemTemplate\" x:DataType=\"local:CustomDataObject\">\n    <ItemContainer AutomationProperties.Name=\"{x:Bind Title}\">\n        <Grid Width=\"150\">\n            <Image Source=\"{x:Bind ImageLocation}\" Stretch=\"UniformToFill\" HorizontalAlignment=\"Center\" VerticalAlignment=\"Center\"/>\n            <StackPanel Orientation=\"Vertical\" Height=\"40\" VerticalAlignment=\"Bottom\" Padding=\"5,1,5,1\" Background=\"{ThemeResource SystemControlBackgroundBaseMediumBrush}\" Opacity=\".75\">\n                <TextBlock Text=\"{x:Bind Title}\" Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\"/>\n                <StackPanel Orientation=\"Horizontal\">\n                    <TextBlock Text=\"{x:Bind Likes}\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\"/>\n                    <TextBlock Text=\" Likes\" Style=\"{ThemeResource CaptionTextBlockStyle}\" Foreground=\"{ThemeResource SystemControlForegroundAltHighBrush}\"/>\n                </StackPanel>\n            </StackPanel>\n        </Grid>\n    </ItemContainer>\n</DataTemplate>\n\n<ItemsView Height=\"400\" HorizontalAlignment=\"Stretch\" MaxWidth=\"500\"\n    SelectionMode=\"Multiple\"\n    ItemTemplate=\"{StaticResource UniformGridLayoutItemTemplate}\"\n    ItemInvoked=\"SwappableSelectionModesItemsView_ItemInvoked\"\n    SelectionChanged=\"SwappableSelectionModesItemsView_SelectionChanged\">\n    <ItemsView.Layout>\n        <UniformGridLayout MinRowSpacing=\"5\" MinColumnSpacing=\"5\" MaximumRowsOrColumns=\"3\"/>\n    </ItemsView.Layout>\n</ItemsView>",
+          "code": "private void SwappableSelectionModesItemsView_ItemInvoked(ItemsView sender, ItemsViewItemInvokedEventArgs e)\n{\n    tblInvocationOutput.Text = \"You invoked \" + (e.InvokedItem as CustomDataObject).Title + \".\";\n}\n\nprivate void SwappableSelectionModesItemsView_SelectionChanged(ItemsView sender, ItemsViewSelectionChangedEventArgs e)\n{\n    tblSelectionOutput.Text = string.Format(\"You have selected {0} item(s).\", SwappableSelectionModesItemsView.SelectedItems.Count);\n}",
+          "runtimeXaml": "<ns0:Grid xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\" RowDefinitions=\"Auto, *, Auto\">\n                <ns0:RichTextBlock Margin=\"0,0,0,15\" TextWrapping=\"Wrap\">\n                    <ns0:Paragraph>You can enable four different selection modes on the right.</ns0:Paragraph>\n                    <ns0:Paragraph>\n                        <ns0:Bold>None</ns0:Bold>\n                        disables selection all together.</ns0:Paragraph>\n                    <ns0:Paragraph>\n                        <ns0:Bold>Single</ns0:Bold>\n                        allows for only one item to be selected in the collection.</ns0:Paragraph>\n                    <ns0:Paragraph>\n                        <ns0:Bold>Multiple</ns0:Bold>\n                        causes checkboxes to appear within the items, so that multiple items can be chosen from the collection.</ns0:Paragraph>\n                    <ns0:Paragraph>\n                        <ns0:Bold>Extended</ns0:Bold>\n                        allows the user to select multiple items by using Ctrl+Click to select the individual items they want, or Shift+Click to select a range of contiguous items.</ns0:Paragraph>\n                </ns0:RichTextBlock>\n\n                <ns0:ItemsView ns1:Name=\"SwappableSelectionModesItemsView\" Grid.Row=\"1\" Height=\"400\" HorizontalAlignment=\"Stretch\" MaxWidth=\"500\" ItemInvoked=\"SwappableSelectionModesItemsView_ItemInvoked\" ItemTemplate=\"{StaticResource UniformGridLayoutItemTemplate}\" SelectionChanged=\"SwappableSelectionModesItemsView_SelectionChanged\" SelectionMode=\"Multiple\">\n                    <ns0:ItemsView.Layout>\n                        <ns0:UniformGridLayout MaximumRowsOrColumns=\"3\" MinColumnSpacing=\"5\" MinRowSpacing=\"5\" />\n                    </ns0:ItemsView.Layout>\n                </ns0:ItemsView>\n\n                <ns0:StackPanel Grid.Row=\"2\">\n                    <ns0:TextBlock ns1:Name=\"tblInvocationOutput\" Style=\"{StaticResource OutputTextBlockStyle}\" />\n                    <ns0:TextBlock ns1:Name=\"tblSelectionOutput\" Style=\"{StaticResource OutputTextBlockStyle}\" />\n                </ns0:StackPanel>\n            </ns0:Grid>\n\n            ",
+          "optionsXaml": "<ns0:ControlExample.Options xmlns:ns0=\"using:WinUIGallery.Controls\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns2=\"http://schemas.microsoft.com/winfx/2006/xaml\">\n                <ns1:Grid MinWidth=\"200\" ColumnDefinitions=\"Auto, *\" RowDefinitions=\"Auto, Auto\">\n                    <ns1:TextBlock Margin=\"0,0,10,0\" VerticalAlignment=\"Center\" Text=\"SelectionMode\" />\n\n                    <ns1:ComboBox ns2:Name=\"cmbSelectionMode\" Grid.Column=\"1\" HorizontalAlignment=\"Stretch\" AutomationProperties.Name=\"selection mode\" SelectedIndex=\"2\" SelectionChanged=\"CmbSelectionMode_SelectionChanged\">\n                        <ns1:ComboBoxItem>None</ns1:ComboBoxItem>\n                        <ns1:ComboBoxItem>Single</ns1:ComboBoxItem>\n                        <ns1:ComboBoxItem>Multiple</ns1:ComboBoxItem>\n                        <ns1:ComboBoxItem>Extended</ns1:ComboBoxItem>\n                    </ns1:ComboBox>\n\n                    <ns1:TextBlock Grid.Row=\"1\" Margin=\"0,0,10,0\" VerticalAlignment=\"Center\" Text=\"IsItemInvokedEnabled\" />\n\n                    <ns1:CheckBox ns2:Name=\"chkIsItemInvokedEnabled\" Grid.Row=\"1\" Grid.Column=\"1\" AutomationProperties.Name=\"is item invocation enabled?\" Checked=\"ChkIsItemInvokedEnabled_IsCheckedChanged\" Unchecked=\"ChkIsItemInvokedEnabled_IsCheckedChanged\" />\n                </ns1:Grid>\n            </ns0:ControlExample.Options>\n\n\n            ",
+          "paragraphs": [
+            {
+              "runs": [
+                {
+                  "text": "You can enable four different selection modes on the right."
+                }
+              ]
+            },
+            {
+              "runs": [
+                {
+                  "text": "None",
+                  "fontWeight": 700
+                },
+                {
+                  "text": " disables selection all together."
+                }
+              ]
+            },
+            {
+              "runs": [
+                {
+                  "text": "Single",
+                  "fontWeight": 700
+                },
+                {
+                  "text": " allows for only one item to be selected in the collection."
+                }
+              ]
+            },
+            {
+              "runs": [
+                {
+                  "text": "Multiple",
+                  "fontWeight": 700
+                },
+                {
+                  "text": " causes checkboxes to appear within the items, so that multiple items can be chosen from the collection."
+                }
+              ]
+            },
+            {
+              "runs": [
+                {
+                  "text": "Extended",
+                  "fontWeight": 700
+                },
+                {
+                  "text": " allows the user to select multiple items by using Ctrl+Click to select the individual items they want, or Shift+Click to select a range of contiguous items."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "LayoutPanel": {
+      "description": "Use LayoutPanel to apply a reusable Layout, including a custom NonVirtualizingLayout, to ordinary panel children. LayoutPanel also provides border, corner radius, and padding properties.",
+      "samples": [
+        {
+          "title": "LayoutPanel lets a custom Layout arrange ordinary panel children.",
+          "xaml": "<LayoutPanel\n    BorderBrush=\"{ThemeResource CardStrokeColorDefaultBrush}\"\n    BorderThickness=\"1\"\n    CornerRadius=\"8\"\n    Padding=\"12\">\n    <LayoutPanel.Layout>\n        <layouts:FeaturedTileLayout Spacing=\"8\"/>\n    </LayoutPanel.Layout>\n\n    <Border Height=\"96\">\n        <TextBlock Text=\"Featured item\"/>\n    </Border>\n    <Border Height=\"72\">\n        <TextBlock Text=\"Second\"/>\n    </Border>\n    <Border Height=\"92\">\n        <TextBlock Text=\"Third\"/>\n    </Border>\n    <Border Height=\"80\">\n        <TextBlock Text=\"Fourth\"/>\n    </Border>\n    <Border Height=\"64\">\n        <TextBlock Text=\"Fifth\"/>\n    </Border>\n    <Border Height=\"88\">\n        <TextBlock Text=\"Sixth\"/>\n    </Border>\n    <Border Height=\"68\">\n        <TextBlock Text=\"Seventh\"/>\n    </Border>\n    <Border Height=\"76\">\n        <TextBlock Text=\"Eighth\"/>\n    </Border>\n    <Border Height=\"96\">\n        <TextBlock Text=\"Ninth\"/>\n    </Border>\n</LayoutPanel>",
+          "code": "public partial class FeaturedTileLayout : NonVirtualizingLayout\n{\n    protected override Size MeasureOverride(\n        NonVirtualizingLayoutContext context,\n        Size availableSize)\n    {\n        // Measure the first child at full width and the remaining\n        // children in two columns, then return the combined extent.\n        // See FeaturedTileLayout.cs in the WinUI Gallery for the\n        // complete measure and arrange implementation.\n    }\n\n    protected override Size ArrangeOverride(\n        NonVirtualizingLayoutContext context,\n        Size finalSize)\n    {\n        // Arrange the first child across the panel. Arrange each\n        // subsequent pair in equal-width columns.\n    }\n}",
+          "runtimeXaml": "<ns0:LayoutPanel xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\" xmlns:ns2=\"using:WinUIGallery.Layouts\" ns1:Name=\"LayoutPanel1\" MaxWidth=\"560\" HorizontalAlignment=\"Stretch\" BorderBrush=\"{ThemeResource CardStrokeColorDefaultBrush}\" BorderThickness=\"1\" CornerRadius=\"{StaticResource ControlCornerRadius}\" Padding=\"12\">\n                <ns0:LayoutPanel.Layout>\n                    <ns2:FeaturedTileLayout Spacing=\"8\" />\n                </ns0:LayoutPanel.Layout>\n\n                <ns0:Border Height=\"96\" Padding=\"16\" Background=\"{ThemeResource AccentFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:StackPanel VerticalAlignment=\"Center\">\n                        <ns0:TextBlock Foreground=\"{ThemeResource TextOnAccentFillColorPrimaryBrush}\" Style=\"{StaticResource BodyStrongTextBlockStyle}\" Text=\"Featured item\" />\n                        <ns0:TextBlock Foreground=\"{ThemeResource TextOnAccentFillColorSecondaryBrush}\" Text=\"The first child spans the available width.\" />\n                    </ns0:StackPanel>\n                </ns0:Border>\n                <ns0:Border Height=\"72\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Second\" />\n                </ns0:Border>\n                <ns0:Border Height=\"92\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Third (taller)\" />\n                </ns0:Border>\n                <ns0:Border Height=\"80\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Fourth\" />\n                </ns0:Border>\n                <ns0:Border Height=\"64\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Fifth\" />\n                </ns0:Border>\n                <ns0:Border Height=\"88\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Sixth (taller)\" />\n                </ns0:Border>\n                <ns0:Border Height=\"68\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Seventh\" />\n                </ns0:Border>\n                <ns0:Border Height=\"76\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Eighth\" />\n                </ns0:Border>\n                <ns0:Border Height=\"96\" Padding=\"12\" Background=\"{ThemeResource ControlFillColorDefaultBrush}\" CornerRadius=\"{StaticResource ControlCornerRadius}\">\n                    <ns0:TextBlock VerticalAlignment=\"Center\" Text=\"Ninth (taller)\" />\n                </ns0:Border>\n            </ns0:LayoutPanel>\n\n            ",
+          "optionsXaml": "<ns0:ControlExample.Options xmlns:ns0=\"using:WinUIGallery.Controls\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n                <ns1:StackPanel Width=\"220\" Spacing=\"12\">\n                    <ns1:RadioButtons AutomationProperties.AutomationId=\"LayoutPanelLayoutSelector\" AutomationProperties.Name=\"LayoutPanel layout\" Header=\"Layout\" SelectionChanged=\"LayoutButtons_SelectionChanged\">\n                        <ns1:RadioButton AutomationProperties.AutomationId=\"LayoutPanelFeaturedLayout\" AutomationProperties.Name=\"Featured tile layout\" Content=\"Featured tile\" IsChecked=\"True\" Tag=\"Featured\" />\n                        <ns1:RadioButton AutomationProperties.AutomationId=\"LayoutPanelStackLayout\" AutomationProperties.Name=\"Vertical StackLayout\" Content=\"Vertical stack\" Tag=\"Stack\" />\n                    </ns1:RadioButtons>\n                    <ns1:Slider AutomationProperties.AutomationId=\"LayoutPanelSpacing\" AutomationProperties.Name=\"Layout spacing\" Header=\"Spacing\" Maximum=\"24\" SnapsTo=\"Ticks\" StepFrequency=\"2\" TickFrequency=\"2\" Value=\"8\" ValueChanged=\"SpacingSlider_ValueChanged\" />\n                    <ns1:TextBlock Text=\"LayoutPanel also applies its BorderBrush, BorderThickness, CornerRadius, and Padding around the layout.\" TextWrapping=\"Wrap\" />\n                </ns1:StackPanel>\n            </ns0:ControlExample.Options>\n        "
+        }
+      ]
+    },
+    "PagerControl": {
+      "description": "PagerControl provides numbered page navigation with multiple display modes and configurable navigation buttons.",
+      "samples": [
+        {
+          "title": "A basic pager",
+          "xaml": "<PagerControl\n    NumberOfPages=\"12\"\n    PrefixText=\"Page\"\n    SelectedPageIndex=\"2\"\n    SuffixText=\"of\" />",
+          "code": "",
+          "runtimeXaml": "<ns0:PagerControl xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" AutomationProperties.AutomationId=\"PagerControlBasic\" AutomationProperties.Name=\"Page selector\" NumberOfPages=\"12\" PrefixText=\"Page\" SelectedPageIndex=\"2\" SuffixText=\"of\" />\n            ",
+          "optionsXaml": ""
+        },
+        {
+          "title": "Pager display modes",
+          "xaml": "<StackPanel Spacing=\"20\">\n    <PagerControl\n        DisplayMode=\"NumberBox\"\n        NumberOfPages=\"50\"\n        PrefixText=\"Page\"\n        SelectedPageIndex=\"9\"\n        SuffixText=\"of\" />\n    <PagerControl\n        DisplayMode=\"ButtonPanel\"\n        FirstButtonVisibility=\"Visible\"\n        LastButtonVisibility=\"Visible\"\n        NextButtonVisibility=\"Visible\"\n        NumberOfPages=\"20\"\n        PreviousButtonVisibility=\"Visible\"\n        SelectedPageIndex=\"4\" />\n</StackPanel>",
+          "code": "",
+          "runtimeXaml": "<ns0:StackPanel xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" Spacing=\"20\">\n                    <ns0:StackPanel Spacing=\"8\">\n                        <ns0:TextBlock Style=\"{StaticResource BodyStrongTextBlockStyle}\" Text=\"Number box\" />\n                        <ns0:PagerControl AutomationProperties.AutomationId=\"PagerControlNumberBox\" AutomationProperties.Name=\"Number box page selector\" DisplayMode=\"NumberBox\" NumberOfPages=\"50\" PrefixText=\"Page\" SelectedPageIndex=\"9\" SuffixText=\"of\" />\n                    </ns0:StackPanel>\n                    <ns0:StackPanel Spacing=\"8\">\n                        <ns0:TextBlock Style=\"{StaticResource BodyStrongTextBlockStyle}\" Text=\"Button panel\" />\n                        <ns0:PagerControl AutomationProperties.AutomationId=\"PagerControlButtonPanel\" AutomationProperties.Name=\"Button panel page selector\" DisplayMode=\"ButtonPanel\" FirstButtonVisibility=\"Visible\" LastButtonVisibility=\"Visible\" NextButtonVisibility=\"Visible\" NumberOfPages=\"20\" PreviousButtonVisibility=\"Visible\" SelectedPageIndex=\"4\" />\n                    </ns0:StackPanel>\n                </ns0:StackPanel>\n            ",
+          "optionsXaml": ""
+        },
+        {
+          "title": "Unbounded pagers",
+          "xaml": "<StackPanel Spacing=\"20\">\n    <PagerControl\n        DisplayMode=\"NumberBox\"\n        NumberOfPages=\"-1\"\n        PrefixText=\"Page\"\n        SelectedPageIndex=\"99\" />\n    <PagerControl\n        DisplayMode=\"ButtonPanel\"\n        FirstButtonVisibility=\"Visible\"\n        NextButtonVisibility=\"Visible\"\n        NumberOfPages=\"-1\"\n        PreviousButtonVisibility=\"Visible\"\n        SelectedPageIndex=\"99\" />\n</StackPanel>",
+          "code": "",
+          "runtimeXaml": "<ns0:StackPanel xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" Spacing=\"20\">\n                    <ns0:TextBlock Text=\"Set NumberOfPages to -1 when the final page is not known. Unbounded pagers omit the total-page count and last-page navigation.\" TextWrapping=\"Wrap\" />\n                    <ns0:StackPanel Spacing=\"8\">\n                        <ns0:TextBlock Style=\"{StaticResource BodyStrongTextBlockStyle}\" Text=\"Number box\" />\n                        <ns0:PagerControl AutomationProperties.AutomationId=\"PagerControlUnboundedNumberBox\" AutomationProperties.Name=\"Unbounded number box page selector\" DisplayMode=\"NumberBox\" NumberOfPages=\"-1\" PrefixText=\"Page\" SelectedPageIndex=\"99\" />\n                    </ns0:StackPanel>\n                    <ns0:StackPanel Spacing=\"8\">\n                        <ns0:TextBlock Style=\"{StaticResource BodyStrongTextBlockStyle}\" Text=\"Button panel\" />\n                        <ns0:PagerControl AutomationProperties.AutomationId=\"PagerControlUnboundedButtonPanel\" AutomationProperties.Name=\"Unbounded button panel page selector\" DisplayMode=\"ButtonPanel\" FirstButtonVisibility=\"Visible\" NextButtonVisibility=\"Visible\" NumberOfPages=\"-1\" PreviousButtonVisibility=\"Visible\" SelectedPageIndex=\"99\" />\n                    </ns0:StackPanel>\n                </ns0:StackPanel>\n            ",
+          "optionsXaml": ""
+        }
+      ]
+    },
+    "RichTextBlock": {
+      "description": "RichTextBlock provides more advanced formatting features than the TextBlock control. You can apply character and paragraph formatting to the text in the RichTextBlock. For example, you can apply Bold, Italic, and Underline to any portion of the text in the control. You can use linked text containers (a RichTextBlock linked to RichTextBlockOverflow elements) to create advanced page layouts.",
+      "samples": [
+        {
+          "title": "A simple RichTextBlock.",
+          "xaml": "<RichTextBlock>\n    <Paragraph>I am a RichTextBlock.</Paragraph>\n</RichTextBlock>",
+          "code": "",
+          "runtimeXaml": "<ns0:RichTextBlock xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n                    <ns0:Paragraph>I am a RichTextBlock.</ns0:Paragraph>\n                </ns0:RichTextBlock>\n            ",
+          "optionsXaml": "",
+          "paragraphs": [
+            {
+              "runs": [
+                {
+                  "text": "I am a RichTextBlock."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "A RichTextBlock with a custom selection highlight color.",
+          "xaml": "<RichTextBlock SelectionHighlightColor=\"Green\">\n    <Paragraph>RichTextBlock provides a rich text display container that supports\n        <Run FontStyle=\"Italic\" FontWeight=\"Bold\">formatted text</Run>,\n        <Hyperlink NavigateUri=\"https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Documents.Hyperlink\">hyperlinks</Hyperlink>, inline images, and other rich content.</Paragraph>\n    <Paragraph>RichTextBlock also supports a built-in overflow model.</Paragraph>\n</RichTextBlock>",
+          "code": "",
+          "runtimeXaml": "<ns0:RichTextBlock xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" SelectionHighlightColor=\"Green\">\n                    <ns0:Paragraph>\n                        RichTextBlock provides a rich text display container that supports<ns0:Run FontStyle=\"Italic\" FontWeight=\"Bold\">formatted text</ns0:Run>\n                        , <ns0:Hyperlink NavigateUri=\"https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Documents.Hyperlink\">hyperlinks</ns0:Hyperlink>\n                        , inline images, and other rich content.</ns0:Paragraph>\n                    <ns0:Paragraph>RichTextBlock also supports a built-in overflow model.</ns0:Paragraph>\n                </ns0:RichTextBlock>\n            ",
+          "optionsXaml": "",
+          "paragraphs": [
+            {
+              "runs": [
+                {
+                  "text": "RichTextBlock provides a rich text display container that supports"
+                },
+                {
+                  "text": "formatted text",
+                  "fontWeight": 700,
+                  "fontStyle": "Italic"
+                },
+                {
+                  "text": " , "
+                },
+                {
+                  "text": "hyperlinks",
+                  "link": "https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Documents.Hyperlink"
+                },
+                {
+                  "text": " , inline images, and other rich content."
+                }
+              ]
+            },
+            {
+              "runs": [
+                {
+                  "text": "RichTextBlock also supports a built-in overflow model."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "A RichTextBlock with overflow.",
+          "xaml": "<Grid>\n    <Grid.ColumnDefinitions>\n        <ColumnDefinition/>\n        <ColumnDefinition/>\n        <ColumnDefinition/>\n    </Grid.ColumnDefinitions>\n    <RichTextBlock Grid.Column=\"0\" OverflowContentTarget=\"{x:Bind firstOverflowContainer}\" TextAlignment=\"Justify\" Margin=\"12,0\">\n        <Paragraph>\n            Linked text containers allow text which does not fit in one element to overflow into a different element on the page.\n            Creative use of linked text containers enables basic multicolumn support and other advanced page layouts.\n        </Paragraph>\n    <!-- Additional content not shown. -->\n    </RichTextBlock>\n    <RichTextBlockOverflow x:Name=\"firstOverflowContainer\" OverflowContentTarget=\"{x:Bind secondOverflowContainer}\" Grid.Column=\"1\" Margin=\"12,0\"/>\n    <RichTextBlockOverflow x:Name=\"secondOverflowContainer\" Grid.Column=\"2\" Margin=\"12,0\"/>\n</Grid>",
+          "code": "",
+          "runtimeXaml": "<ns0:Grid xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\" Height=\"300\">\n                    <ns0:Grid.ColumnDefinitions>\n                        <ns0:ColumnDefinition />\n                        <ns0:ColumnDefinition />\n                        <ns0:ColumnDefinition />\n                    </ns0:Grid.ColumnDefinitions>\n                    <ns0:RichTextBlock Grid.Column=\"0\" Margin=\"12,0\" OverflowContentTarget=\"{x:Bind firstOverflowContainer}\" TextAlignment=\"Justify\">\n                        <ns0:Paragraph>Linked text containers allow text which does not fit in one element to overflow into a different element on the page. Creative use of linked text containers enables basic multicolumn support and other advanced page layouts.</ns0:Paragraph>\n                        <ns0:Paragraph>\n                            Duis sed nulla metus, id hendrerit velit. Curabitur dolor purus, bibendum eu cursus lacinia, interdum vel augue. Aenean euismod eros et sapien vehicula dictum. Duis ullamcorper, turpis nec feugiat tincidunt, dui erat luctus risus, aliquam accumsan lacus est vel quam. Nunc lacus massa, varius eget accumsan id, congue sed orci. Duis dignissim hendrerit egestas. Proin ut turpis magna, sit amet porta erat. Nunc semper metus nec magna imperdiet nec vestibulum dui fringilla. Sed sed ante libero, nec porttitor mi. Ut luctus, neque vitae placerat egestas, urna leo auctor magna, sit amet ultricies ipsum felis quis sapien. Proin eleifend varius dui, at vestibulum nunc consectetur nec. Mauris nulla elit, ultrices a sodales non, aliquam ac est. Quisque sit amet risus nulla. Quisque vestibulum posuere velit, vitae vestibulum eros scelerisque sit amet. In in risus est, at laoreet dolor. Nullam aliquet pellentesque convallis. Ut vel tincidunt nulla. Mauris auctor tincidunt auctor.\n                            Aenean orci ante, vulputate ac sagittis sit amet, consequat at mi. Morbi elementum purus consectetur nisi adipiscing vitae blandit sapien placerat. Aliquam adipiscing tortor non sem lobortis consectetur mattis felis rhoncus. Nunc eu nunc rhoncus arcu sollicitudin ultrices. In vulputate eros in mauris aliquam id dignissim nisl laoreet.\n                        </ns0:Paragraph>\n                    </ns0:RichTextBlock>\n                    <ns0:RichTextBlockOverflow ns1:Name=\"firstOverflowContainer\" Grid.Column=\"1\" Margin=\"12,0\" AutomationProperties.Name=\"firstOverflowContainer\" OverflowContentTarget=\"{x:Bind secondOverflowContainer}\" />\n                    <ns0:RichTextBlockOverflow ns1:Name=\"secondOverflowContainer\" Grid.Column=\"2\" Margin=\"12,0\" AutomationProperties.Name=\"secondOverflowContainer\" />\n                </ns0:Grid>\n            ",
+          "optionsXaml": "",
+          "paragraphs": [
+            {
+              "runs": [
+                {
+                  "text": "Linked text containers allow text which does not fit in one element to overflow into a different element on the page. Creative use of linked text containers enables basic multicolumn support and other advanced page layouts."
+                }
+              ]
+            },
+            {
+              "runs": [
+                {
+                  "text": "Duis sed nulla metus, id hendrerit velit. Curabitur dolor purus, bibendum eu cursus lacinia, interdum vel augue. Aenean euismod eros et sapien vehicula dictum. Duis ullamcorper, turpis nec feugiat tincidunt, dui erat luctus risus, aliquam accumsan lacus est vel quam. Nunc lacus massa, varius eget accumsan id, congue sed orci. Duis dignissim hendrerit egestas. Proin ut turpis magna, sit amet porta erat. Nunc semper metus nec magna imperdiet nec vestibulum dui fringilla. Sed sed ante libero, nec porttitor mi. Ut luctus, neque vitae placerat egestas, urna leo auctor magna, sit amet ultricies ipsum felis quis sapien. Proin eleifend varius dui, at vestibulum nunc consectetur nec. Mauris nulla elit, ultrices a sodales non, aliquam ac est. Quisque sit amet risus nulla. Quisque vestibulum posuere velit, vitae vestibulum eros scelerisque sit amet. In in risus est, at laoreet dolor. Nullam aliquet pellentesque convallis. Ut vel tincidunt nulla. Mauris auctor tincidunt auctor. Aenean orci ante, vulputate ac sagittis sit amet, consequat at mi. Morbi elementum purus consectetur nisi adipiscing vitae blandit sapien placerat. Aliquam adipiscing tortor non sem lobortis consectetur mattis felis rhoncus. Nunc eu nunc rhoncus arcu sollicitudin ultrices. In vulputate eros in mauris aliquam id dignissim nisl laoreet. "
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "RichTextBlock with custom TextHighlighting",
+          "xaml": "<RichTextBlock x:Name=\"TextHighlightingRichTextBlock\">\n    <Paragraph>\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua\n    </Paragraph>\n</RichTextBlock>",
+          "code": "private void HighlightColorCombobox_SelectionChanged(object sender, SelectionChangedEventArgs e)\n{\n    // Get color to use\n    var selectedItem = (sender as ComboBox).SelectedItem as ComboBoxItem;\n    var color = Colors.Yellow;\n    switch (selectedItem.Content as string)\n    {\n        case \"Yellow\":\n            color = Colors.Yellow;\n            break;\n        case \"Red\":\n            color = Colors.Red;\n            break;\n        case \"Blue\":\n            color = Colors.Blue;\n            break;\n    }\n\n    // Get text range and highlighter\n    TextRange textRange = new TextRange()\n    {\n        StartIndex = 28,\n        Length = 11\n    };\n    TextHighlighter highlighter = new TextHighlighter()\n    {\n        Background = new SolidColorBrush(color),\n        Ranges = { textRange }\n    };\n\n    // Switch texthighlighter\n    TextHighlightingRichTextBlock.TextHighlighters.Clear();\n    TextHighlightingRichTextBlock.TextHighlighters.Add(highlighter);\n}",
+          "runtimeXaml": "<ns0:RichTextBlock xmlns:ns0=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml\" ns1:Name=\"TextHighlightingRichTextBlock\">\n                    <ns0:Paragraph>\n                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua\n                    </ns0:Paragraph>\n                </ns0:RichTextBlock>\n            ",
+          "optionsXaml": "<ns0:ControlExample.Options xmlns:ns0=\"using:WinUIGallery.Controls\" xmlns:ns1=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">\n                <ns1:StackPanel>\n                    <ns1:ComboBox Header=\"Text highlighting color\" SelectionChanged=\"HighlightColorCombobox_SelectionChanged\">\n                        <ns1:ComboBoxItem Content=\"Yellow\" IsSelected=\"True\" />\n                        <ns1:ComboBoxItem Content=\"Red\" />\n                        <ns1:ComboBoxItem Content=\"Blue\" />\n                    </ns1:ComboBox>\n                </ns1:StackPanel>\n            </ns0:ControlExample.Options>\n        ",
+          "paragraphs": [
+            {
+              "runs": [
+                {
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua "
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "dataSources": [
+    {
+      "upstream": "WinUIGallery/Samples/ConnectedAnimation/ConnectedAnimationPage.xaml.cs",
+      "sha256": "0d3c4a3d1e17027b2e6ba7c0566326c107b0a1bebd4831ae0141656b2f72c169"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage1.jpg",
+      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage2.jpg",
+      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage3.jpg",
+      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage4.jpg",
+      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage5.jpg",
+      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage6.jpg",
+      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage7.jpg",
+      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage8.jpg",
+      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage9.jpg",
+      "sha256": "6ee8e036511b2f61d2d37284f23dab8a7ce7125206f3777d70c7daaa09df814b"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage10.jpg",
+      "sha256": "a83e0ee6399f80f0172004c233ffe92b3332df82f1015e826de7a9a28386a418"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage11.jpg",
+      "sha256": "ef425fc738141b0b90e432a8e170d1b0ba5461f1e308714cab8baacbc1625970"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage12.jpg",
+      "sha256": "ec739a0ef01e4bd5eba38e77748453e0f1eda09061686b281cfe69c1d8ac4626"
+    },
+    {
+      "upstream": "WinUIGallery/Assets/SampleMedia/LandscapeImage13.jpg",
+      "sha256": "f0a67632f9868fd790d3790370a435a4fcbbce5619c7389b9aa9dc720a030a14"
+    }
+  ],
+  "items": [
+    {
+      "id": "0",
+      "text": "Item 1",
+      "image": "/official/reading/LandscapeImage1.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id facilisis lectus. Cras nec convallis ante, quis pulvinar tellus. Integer dictum accumsan pulvinar. Pellentesque eget enim sodales sapien vestibulum consequat.",
+      "likes": "17",
+      "width": 400,
+      "height": 268,
+      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188"
+    },
+    {
+      "id": "1",
+      "text": "Item 2",
+      "image": "/official/reading/LandscapeImage2.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Nullam eget mattis metus. Donec pharetra, tellus in mattis tincidunt, magna ipsum gravida nibh, vitae lobortis ante odio vel quam.",
+      "likes": "24",
+      "width": 400,
+      "height": 268,
+      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e"
+    },
+    {
+      "id": "2",
+      "text": "Item 3",
+      "image": "/official/reading/LandscapeImage3.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Quisque accumsan pretium ligula in faucibus. Mauris sollicitudin augue vitae lorem cursus condimentum quis ac mauris. Pellentesque quis turpis non nunc pretium sagittis. Nulla facilisi. Maecenas eu lectus ante. Proin eleifend vel lectus non tincidunt. Fusce condimentum luctus nisi, in elementum ante tincidunt nec.",
+      "likes": "31",
+      "width": 400,
+      "height": 268,
+      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540"
+    },
+    {
+      "id": "3",
+      "text": "Item 4",
+      "image": "/official/reading/LandscapeImage4.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Aenean in nisl at elit venenatis blandit ut vitae lectus. Praesent in sollicitudin nunc. Pellentesque justo augue, pretium at sem lacinia, scelerisque semper erat. Ut cursus tortor at metus lacinia dapibus.",
+      "likes": "38",
+      "width": 400,
+      "height": 268,
+      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3"
+    },
+    {
+      "id": "4",
+      "text": "Item 5",
+      "image": "/official/reading/LandscapeImage5.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Ut consequat magna luctus justo egestas vehicula. Integer pharetra risus libero, et posuere justo mattis et.",
+      "likes": "45",
+      "width": 400,
+      "height": 268,
+      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5"
+    },
+    {
+      "id": "5",
+      "text": "Item 6",
+      "image": "/official/reading/LandscapeImage6.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Proin malesuada, libero vitae aliquam venenatis, diam est faucibus felis, vitae efficitur erat nunc non mauris. Suspendisse at sodales erat.",
+      "likes": "52",
+      "width": 400,
+      "height": 268,
+      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431"
+    },
+    {
+      "id": "6",
+      "text": "Item 7",
+      "image": "/official/reading/LandscapeImage7.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Aenean vulputate, turpis non tincidunt ornare, metus est sagittis erat, id lobortis orci odio eget quam. Suspendisse ex purus, lobortis quis suscipit a, volutpat vitae turpis.",
+      "likes": "59",
+      "width": 400,
+      "height": 268,
+      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77"
+    },
+    {
+      "id": "7",
+      "text": "Item 8",
+      "image": "/official/reading/LandscapeImage8.jpg",
+      "aspectRatio": 1.492537313432836,
+      "description": "Duis facilisis, quam ut laoreet commodo, elit ex aliquet massa, non varius tellus lectus et nunc. Donec vitae risus ut ante pretium semper. Phasellus consectetur volutpat orci, eu dapibus turpis. Fusce varius sapien eu mattis pharetra.",
+      "likes": "66",
+      "width": 400,
+      "height": 268,
+      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36"
+    },
+    {
+      "id": "8",
+      "text": "Item 9",
+      "image": "/official/reading/LandscapeImage9.jpg",
+      "aspectRatio": 1.0,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id facilisis lectus. Cras nec convallis ante, quis pulvinar tellus. Integer dictum accumsan pulvinar. Pellentesque eget enim sodales sapien vestibulum consequat.",
+      "likes": "73",
+      "width": 266,
+      "height": 266,
+      "sha256": "6ee8e036511b2f61d2d37284f23dab8a7ce7125206f3777d70c7daaa09df814b"
+    },
+    {
+      "id": "9",
+      "text": "Item 10",
+      "image": "/official/reading/LandscapeImage10.jpg",
+      "aspectRatio": 2.56,
+      "description": "Nullam eget mattis metus. Donec pharetra, tellus in mattis tincidunt, magna ipsum gravida nibh, vitae lobortis ante odio vel quam.",
+      "likes": "80",
+      "width": 1024,
+      "height": 400,
+      "sha256": "a83e0ee6399f80f0172004c233ffe92b3332df82f1015e826de7a9a28386a418"
+    },
+    {
+      "id": "10",
+      "text": "Item 11",
+      "image": "/official/reading/LandscapeImage11.jpg",
+      "aspectRatio": 0.5,
+      "description": "Quisque accumsan pretium ligula in faucibus. Mauris sollicitudin augue vitae lorem cursus condimentum quis ac mauris. Pellentesque quis turpis non nunc pretium sagittis. Nulla facilisi. Maecenas eu lectus ante. Proin eleifend vel lectus non tincidunt. Fusce condimentum luctus nisi, in elementum ante tincidunt nec.",
+      "likes": "87",
+      "width": 133,
+      "height": 266,
+      "sha256": "ef425fc738141b0b90e432a8e170d1b0ba5461f1e308714cab8baacbc1625970"
+    },
+    {
+      "id": "11",
+      "text": "Item 12",
+      "image": "/official/reading/LandscapeImage12.jpg",
+      "aspectRatio": 1.0,
+      "description": "Aenean in nisl at elit venenatis blandit ut vitae lectus. Praesent in sollicitudin nunc. Pellentesque justo augue, pretium at sem lacinia, scelerisque semper erat. Ut cursus tortor at metus lacinia dapibus.",
+      "likes": "94",
+      "width": 265,
+      "height": 265,
+      "sha256": "ec739a0ef01e4bd5eba38e77748453e0f1eda09061686b281cfe69c1d8ac4626"
+    },
+    {
+      "id": "12",
+      "text": "Item 13",
+      "image": "/official/reading/LandscapeImage13.jpg",
+      "aspectRatio": 3.076923076923077,
+      "description": "Ut consequat magna luctus justo egestas vehicula. Integer pharetra risus libero, et posuere justo mattis et.",
+      "likes": "11",
+      "width": 400,
+      "height": 130,
+      "sha256": "f0a67632f9868fd790d3790370a435a4fcbbce5619c7389b9aa9dc720a030a14"
+    }
+  ],
+  "dataNotes": "13 original images/descriptions/titles; Likes frozen deterministically because upstream uses Random."
+}

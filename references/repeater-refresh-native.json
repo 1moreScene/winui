@@ -1,0 +1,3424 @@
+{
+  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+  "scope": "Same-SDK layout and refresh lifecycle probe; RenderTargetBitmap does not capture Composition rotation or demonstrate Store parity.",
+  "palettes": {
+    "Light": {
+      "SystemChromeLowColor": {
+        "kind": "solid",
+        "color": "#F2F2F2FF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundChromeMediumBrush": {
+        "kind": "solid",
+        "color": "#E6E6E6FF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundBaseLowBrush": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1
+      },
+      "SystemControlBackgroundAccentBrush": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "SystemControlForegroundChromeWhiteBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SystemControlForegroundAltHighBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextFillColorInverseBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextControlBorderBrush": {
+        "kind": "linearGradient",
+        "opacity": 1,
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#00000072"
+          },
+          {
+            "offset": 1,
+            "color": "#0000000F"
+          }
+        ]
+      },
+      "SystemControlForegroundBaseHighBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "ControlFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1
+      },
+      "ControlStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      }
+    },
+    "Dark": {
+      "SystemChromeLowColor": {
+        "kind": "solid",
+        "color": "#171717FF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundChromeMediumBrush": {
+        "kind": "solid",
+        "color": "#1F1F1FFF",
+        "opacity": 1
+      },
+      "SystemControlBackgroundBaseLowBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF33",
+        "opacity": 1
+      },
+      "SystemControlBackgroundAccentBrush": {
+        "kind": "solid",
+        "color": "#0078D4FF",
+        "opacity": 1
+      },
+      "SystemControlForegroundChromeWhiteBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "SystemControlForegroundAltHighBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1
+      },
+      "TextFillColorInverseBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextControlBorderBrush": {
+        "kind": "linearGradient",
+        "opacity": 1,
+        "mappingMode": "Absolute",
+        "spreadMethod": "Pad",
+        "from": [
+          0,
+          0
+        ],
+        "to": [
+          0,
+          2
+        ],
+        "relativeTransform": [
+          1,
+          0,
+          0,
+          -1,
+          0,
+          1
+        ],
+        "transform": [
+          1,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "stops": [
+          {
+            "offset": 0.5,
+            "color": "#FFFFFF8B"
+          },
+          {
+            "offset": 1,
+            "color": "#FFFFFF12"
+          }
+        ]
+      },
+      "SystemControlForegroundBaseHighBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "ControlFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "ControlStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF12",
+        "opacity": 1
+      }
+    }
+  },
+  "rows": [
+    {
+      "theme": "Light",
+      "kind": "StackLayout",
+      "state": "Vertical",
+      "dpr": 1.25,
+      "size": [
+        320,
+        376
+      ],
+      "desired": [
+        320,
+        376
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            120,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            120,
+            48,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            120,
+            96,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            120,
+            144,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            120,
+            192,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            120,
+            240,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            120,
+            288,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            120,
+            336,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "StackLayout",
+      "state": "Horizontal",
+      "dpr": 1.25,
+      "size": [
+        696,
+        40
+      ],
+      "desired": [
+        320,
+        40
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            88,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            176,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            264,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            352,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            440,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            528,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            616,
+            0,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-None-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            88,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            176,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            176,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            88,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-None-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            32,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            120,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            208,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            32,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            120,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            208,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            76,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            164,
+            88,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Fill-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            108.80000305175781,
+            0,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            44,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            108.80000305175781,
+            44,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            44,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            88,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            108.80000305175781,
+            88,
+            100.80000305175781,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Fill-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0.800000011920929,
+            0,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            109.5999984741211,
+            0,
+            100.79999542236328,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0.800000011920929,
+            44,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            109.5999984741211,
+            44,
+            100.79999542236328,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            44,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            55.20000076293945,
+            88,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            164,
+            88,
+            100.79998779296875,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Uniform-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            108.80000305175781,
+            0,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            54.400001525878906,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            108.80000305175781,
+            54.400001525878906,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            54.400001525878906,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            108.80000305175781,
+            100.80000305175781,
+            50.40000915527344
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            108.80000305175781,
+            108.80000305175781,
+            100.80000305175781,
+            50.40000915527344
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Uniform-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0.800000011920929,
+            0,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            109.5999984741211,
+            0,
+            100.79999542236328,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0.800000011920929,
+            54.400001525878906,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            109.5999984741211,
+            54.400001525878906,
+            100.79999542236328,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            54.400001525878906,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            55.20000076293945,
+            108.80000305175781,
+            100.80000305175781,
+            50.40000915527344
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            164,
+            108.80000305175781,
+            100.79998779296875,
+            50.40000915527344
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-None-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            132,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            132,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-None-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            4,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            48,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            136,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            4,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            48,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            92,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            136,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Fill-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Fill-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Uniform-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            92,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            92,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            92,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            92,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Uniform-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            92,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            92,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            92,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            92,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "FlowLayout",
+      "state": "GalleryDependency",
+      "dpr": 1.25,
+      "size": [
+        520,
+        320
+      ],
+      "desired": [
+        520,
+        320
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            104,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            208,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            312,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            416,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            0,
+            72,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            104,
+            72,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            208,
+            72,
+            96,
+            64
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "ActivityFeedLayout",
+      "state": "GalleryDependency",
+      "dpr": 1.25,
+      "size": [
+        520,
+        468
+      ],
+      "desired": [
+        520,
+        320
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            12.800000190734863,
+            22.399999618530273,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            145.60000610351562,
+            22.399999618530273,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            345.6000061035156,
+            22.399999618530273,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            79.19999694824219,
+            142.39999389648438,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            278.3999938964844,
+            142.39999389648438,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            412,
+            142.39999389648438,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            12.800000190734863,
+            262.3999938964844,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            145.60000610351562,
+            262.3999938964844,
+            96,
+            64
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "VariedImageSizeLayout",
+      "state": "GalleryDependency",
+      "dpr": 1.25,
+      "size": [
+        520,
+        384
+      ],
+      "desired": [
+        520,
+        320
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            52,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            252,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            52,
+            64,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            252,
+            64,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            52,
+            128,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            252,
+            128,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            52,
+            192,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            252,
+            192,
+            96,
+            64
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshVisualizer",
+      "state": "Idle",
+      "dpr": 1.25,
+      "size": [
+        320,
+        100
+      ],
+      "desired": [
+        320,
+        100
+      ],
+      "elements": [],
+      "visualizerState": "Idle"
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshVisualizer",
+      "state": "Refreshing",
+      "dpr": 1.25,
+      "size": [
+        320,
+        100
+      ],
+      "desired": [
+        320,
+        100
+      ],
+      "elements": [],
+      "visualizerState": "Refreshing"
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshVisualizer",
+      "state": "Completed",
+      "requests": 1,
+      "visualizerState": "Idle"
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshContainer",
+      "state": "TopToBottom",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshContainer",
+      "state": "BottomToTop",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshContainer",
+      "state": "LeftToRight",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Light",
+      "kind": "RefreshContainer",
+      "state": "RightToLeft",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "StackLayout",
+      "state": "Vertical",
+      "dpr": 1.25,
+      "size": [
+        320,
+        376
+      ],
+      "desired": [
+        320,
+        376
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            120,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            120,
+            48,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            120,
+            96,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            120,
+            144,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            120,
+            192,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            120,
+            240,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            120,
+            288,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            120,
+            336,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "StackLayout",
+      "state": "Horizontal",
+      "dpr": 1.25,
+      "size": [
+        696,
+        40
+      ],
+      "desired": [
+        320,
+        40
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            88,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            176,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            264,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            352,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            440,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            528,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            616,
+            0,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-None-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            88,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            176,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            176,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            88,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-None-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            32,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            120,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            208,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            32,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            120,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            208,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            76,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            164,
+            88,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Fill-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            108.80000305175781,
+            0,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            44,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            108.80000305175781,
+            44,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            44,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            88,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            108.80000305175781,
+            88,
+            100.80000305175781,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Fill-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0.800000011920929,
+            0,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            109.5999984741211,
+            0,
+            100.79999542236328,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0.800000011920929,
+            44,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            109.5999984741211,
+            44,
+            100.79999542236328,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            44,
+            100.80001831054688,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            55.20000076293945,
+            88,
+            100.80000305175781,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            164,
+            88,
+            100.79998779296875,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Uniform-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            108.80000305175781,
+            0,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            54.400001525878906,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            108.80000305175781,
+            54.400001525878906,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            54.400001525878906,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            108.80000305175781,
+            100.80000305175781,
+            50.40000915527344
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            108.80000305175781,
+            108.80000305175781,
+            100.80000305175781,
+            50.40000915527344
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Horizontal-Uniform-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0.800000011920929,
+            0,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            109.5999984741211,
+            0,
+            100.79999542236328,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            218.39999389648438,
+            0,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0.800000011920929,
+            54.400001525878906,
+            100.80000305175781,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            109.5999984741211,
+            54.400001525878906,
+            100.79999542236328,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            218.39999389648438,
+            54.400001525878906,
+            100.80001831054688,
+            50.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            55.20000076293945,
+            108.80000305175781,
+            100.80000305175781,
+            50.40000915527344
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            164,
+            108.80000305175781,
+            100.79998779296875,
+            50.40000915527344
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-None-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            132,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            0,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            44,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            88,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            132,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-None-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            4,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            48,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            136,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            4,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            48,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            92,
+            80,
+            40
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            136,
+            80,
+            40
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Fill-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Fill-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            88,
+            0,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            88,
+            46.400001525878906,
+            80,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            88,
+            92,
+            80,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            88,
+            138.39999389648438,
+            80,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Uniform-Start",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            92,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            92,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            92,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            92,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "UniformGridLayout",
+      "state": "Vertical-Uniform-Center",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            0,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            0,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            92,
+            0,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            92,
+            46.400001525878906,
+            84,
+            42.400001525878906
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            92,
+            92,
+            84,
+            42.399993896484375
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            92,
+            138.39999389648438,
+            84,
+            42.399993896484375
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "FlowLayout",
+      "state": "GalleryDependency",
+      "dpr": 1.25,
+      "size": [
+        520,
+        320
+      ],
+      "desired": [
+        520,
+        320
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            104,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            208,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            312,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            416,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            0,
+            72,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            104,
+            72,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            208,
+            72,
+            96,
+            64
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "ActivityFeedLayout",
+      "state": "GalleryDependency",
+      "dpr": 1.25,
+      "size": [
+        520,
+        468
+      ],
+      "desired": [
+        520,
+        320
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            12.800000190734863,
+            22.399999618530273,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            145.60000610351562,
+            22.399999618530273,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            345.6000061035156,
+            22.399999618530273,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            79.19999694824219,
+            142.39999389648438,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            278.3999938964844,
+            142.39999389648438,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            412,
+            142.39999389648438,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            12.800000190734863,
+            262.3999938964844,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            145.60000610351562,
+            262.3999938964844,
+            96,
+            64
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "VariedImageSizeLayout",
+      "state": "GalleryDependency",
+      "dpr": 1.25,
+      "size": [
+        520,
+        384
+      ],
+      "desired": [
+        520,
+        320
+      ],
+      "elements": [
+        {
+          "index": 0,
+          "rect": [
+            52,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            252,
+            0,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            52,
+            64,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            252,
+            64,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            52,
+            128,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            252,
+            128,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            52,
+            192,
+            96,
+            64
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            252,
+            192,
+            96,
+            64
+          ]
+        }
+      ],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshVisualizer",
+      "state": "Idle",
+      "dpr": 1.25,
+      "size": [
+        320,
+        100
+      ],
+      "desired": [
+        320,
+        100
+      ],
+      "elements": [],
+      "visualizerState": "Idle"
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshVisualizer",
+      "state": "Refreshing",
+      "dpr": 1.25,
+      "size": [
+        320,
+        100
+      ],
+      "desired": [
+        320,
+        100
+      ],
+      "elements": [],
+      "visualizerState": "Refreshing"
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshVisualizer",
+      "state": "Completed",
+      "requests": 1,
+      "visualizerState": "Idle"
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshContainer",
+      "state": "TopToBottom",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshContainer",
+      "state": "BottomToTop",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshContainer",
+      "state": "LeftToRight",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    },
+    {
+      "theme": "Dark",
+      "kind": "RefreshContainer",
+      "state": "RightToLeft",
+      "dpr": 1.25,
+      "size": [
+        320,
+        180
+      ],
+      "desired": [
+        320,
+        180
+      ],
+      "elements": [],
+      "visualizerState": null
+    }
+  ]
+}

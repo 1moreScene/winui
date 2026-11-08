@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src", "tests", "playwright.config.ts", "playwright.stage6.config.ts"],
+  "exclude": ["tests/overlays.spec.ts"]
+}

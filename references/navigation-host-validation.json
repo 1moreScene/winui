@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-08",
+  "generatedAt": "2026-11-08T12:30:38.893Z",
+  "fixes": [
+    "Keep global Rust scrollbar ownership during inert Frame transitions; discover new surfaces before paint.",
+    "Apply DOM ancestor opacity and interactivity to the Rust scrollbar projection.",
+    "Use the shared Rust ScrollState paint, drag, repeat and auto-hide behavior for NavigationView menu and content ScrollViewers.",
+    "Expose Rust scrollbar geometry and deferred wake deadlines consistently through standalone and Scene hosts."
+  ],
+  "baseline": {
+    "path": "out/navigation-host-baseline-motion.json",
+    "sha256": "d5e7163877edc74355d0e60e0f86206a0bfc2d8b7f13a033d237cfd053d0b12b",
+    "frames": 135,
+    "visibleNativeScrollbarPages": 42,
+    "observation": "The previously tested example did animate: 140 DIP to zero, while inert pages exposed native browser scrollbars."
+  },
+  "traces": [
+    {
+      "browser": "chromium",
+      "path": "out/navigation-host-chromium-frames.json",
+      "sha256": "a7d7ad4ff0cd6cdde629e208833be8779df424ea6ff55d523137415482297dc3",
+      "frames": 109,
+      "visiblePagesWithNativeChrome": 0,
+      "movingVisiblePages": 30
+    },
+    {
+      "browser": "msedge",
+      "path": "out/navigation-host-msedge-frames.json",
+      "sha256": "68f026e31e6f8f3cfa6f0544b4038bbf3fafc870f50e4355dc31579525761541",
+      "frames": 89,
+      "visiblePagesWithNativeChrome": 0,
+      "movingVisiblePages": 16
+    },
+    {
+      "browser": "webkit",
+      "path": "out/navigation-host-webkit-frames.json",
+      "sha256": "c811ca952b6c7b897ce0842ae5d2c1c924e1aedf4559f9a2bdd68876e57cf4bb",
+      "frames": 37,
+      "visiblePagesWithNativeChrome": 0,
+      "movingVisiblePages": 4
+    }
+  ],
+  "browsers": [
+    {
+      "path": "out/navigation-host-regression-chromium-results.json",
+      "sha256": "1e853a69d9cd0831eb59c670bbb3385ff333df017ab890943c9b9bd96239ac01",
+      "stats": {
+        "startTime": "2026-11-08T12:26:20.004Z",
+        "duration": 80872.159,
+        "expected": 28,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/navigation-host-msedge-results.json",
+      "sha256": "6f01105806abf7047f1f43599eaf632a474a8cb917f633ab7ceec22a112177f1",
+      "stats": {
+        "startTime": "2026-11-08T12:26:20.004Z",
+        "duration": 17569.783,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/navigation-host-webkit-results.json",
+      "sha256": "c3e93f1a70ce51db3a18accf49bd69d18be2a2d7a740950d84f587cb2f3a2dc1",
+      "stats": {
+        "startTime": "2026-11-08T12:26:20.050Z",
+        "duration": 21443.93,
+        "expected": 6,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "path": "out/navigation-host-installed-chromium-results.json",
+      "sha256": "7ce4359e6802304d3789e6b4d51fd6f41ef0aedcdab1b1be4a67f59cf9012b12",
+      "stats": {
+        "startTime": "2026-11-08T12:28:15.264Z",
+        "duration": 12551.780999999999,
+        "expected": 5,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      }
+    }
+  ],
+  "browserPassed": 45,
+  "rust": {
+    "scopedRegression": {
+      "passed": 256,
+      "filtered": 1,
+      "command": "cargo test --locked -- --skip five_picker_templates_measure_paint_and_release_all_private_children",
+      "path": "out/navigation-host-rust-scoped-regression.log",
+      "sha256": "d5ae27fd4fd44913e47a4a9d4e86d57278da57fb07383f5f5ee6dedb38cceffb"
+    },
+    "newScrollbarTests": {
+      "passed": 3,
+      "path": "out/navigation-scrollbars-tests-final.log",
+      "sha256": "3f3957fc1cdfe7c1ebcd096e9bab99103f16a54c1620b8b81d1110ce6a9b15c3"
+    },
+    "fullSuite": {
+      "status": "One unrelated picker template failure: unknown field textAlignment. The scoped regression explicitly excludes this test; it is not counted as passing.",
+      "path": "out/navigation-host-rust-regression.log",
+      "sha256": "3953b1bdcdc1b9ad6924f66b6944c5538da4354ae3bd8833fd6e055aa0d1e387"
+    }
+  },
+  "checks": {
+    "releaseWasm": "passed from current workspace source; no isolated exclusions",
+    "typecheck": "passed",
+    "declarations": "passed",
+    "productionBuild": "default and validation Vite entries passed"
+  },
+  "sources": {
+    "capturedAtBuild": {
+      "src/navigation.rs": "658b0d397417fee9946c4551b9798541c814deb42d19b67f83cba7624001dee0",
+      "src/navigation_scroll.rs": "23ca62b60a932fcecb35a8a581595be3aea45b3693fdc36b7ab73ad6024b315f",
+      "src/scene/scroll.rs": "94807435fdf05672a0fd6ee27e2c298cf280379321b7453d3fadc03c1d68c321",
+      "src/frame.rs": "baddf30cbfa67aec6a6e9ded54493c5a66d241e4ecc2897befabf8af6d24273b",
+      "src/render.rs": "8b112fac9e64d3e4f3af7625d49d319925208a155772fe1e71bd5a1558664a91",
+      "src/scene/mod.rs": "7090fd97d125a0ba79f74ad1533376ebc3d30da92407dd54e264288a0d2c95ed",
+      "gallery/src/global-scrollbars.ts": "76ea359726845475891f84a5a50c17c0585b64fb9f57b97b4bd07633a73395e7",
+      "gallery/src/navigation-scrollbars.ts": "2cccc2b76dc9a2a7b6a43623fe82bad02c1aae7bd29651d1098a8386ca334a93",
+      "gallery/src/frame.ts": "09c5e59415487fd09bc7bd0295dc8a3488bf4105ea4f9174ab843dee314f2f99",
+      "gallery/src/react.tsx": "40da6a019aaaeae51c7b6e7cea9f262b7644c6a61e52c2f2dc886de135f83ea4",
+      "gallery/src/sdk.ts": "66a19d5325d70030e229a400b6177d3709a70f9ccba239b3dee041e8daa8174e",
+      "gallery/src/scene.ts": "87545eece491a2da3645daa8c78d80f0fc7d9cdb28266a0428841612779cdf6b"
+    },
+    "matchesCurrent": true
+  },
+  "binaries": [
+    {
+      "path": "out/navigation-host-sdk/winui_bg.wasm",
+      "sha256": "6a3b99e2c3d74959011448ca12173a6ac6d83bbe0b9c35ed71246e7e87e8aec1"
+    },
+    {
+      "path": "gallery/src/wasm/winui_bg.wasm",
+      "sha256": "6a3b99e2c3d74959011448ca12173a6ac6d83bbe0b9c35ed71246e7e87e8aec1"
+    },
+    {
+      "path": "out/navigation-host-preview/assets/winui_bg-g3rMsQ6e.wasm",
+      "sha256": "6a3b99e2c3d74959011448ca12173a6ac6d83bbe0b9c35ed71246e7e87e8aec1"
+    },
+    {
+      "path": "gallery/dist/assets/winui_bg-g3rMsQ6e.wasm",
+      "sha256": "6a3b99e2c3d74959011448ca12173a6ac6d83bbe0b9c35ed71246e7e87e8aec1"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "out/navigation-host-menu.png",
+      "sha256": "d03445ecf16c907d39eb47717e2fab163bf920f4a265c9c32aae06952e70f4d3"
+    },
+    {
+      "path": "out/navigation-host-example.png",
+      "sha256": "ccaede8cdaf2f65b1ee453463aee5a5be323e900896363744935f3b4b2dfdb97"
+    }
+  ],
+  "preview": "http://127.0.0.1:62145/#navigation-view",
+  "previewAlias": "http://127.0.0.1:57172/#navigation-view",
+  "limits": [
+    "Windows only; macOS/Linux not exercised.",
+    "Firefox could not launch in the previous validation and is not counted.",
+    "This validates scrollbar and Frame behavior, not complete native Composition/pixel parity."
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sdk": "Microsoft.WindowsAppSDK.WinUI 2.3.10-experimental",
+  "source": "NavigationView_themeresources.xaml aliases plus native SDK ThemeResource probe",
+  "highContrast": "Explicit host fallback; custom OS colors not captured",
+  "aliases": {
+    "Light": {
+      "NavigationViewDefaultPaneBackground": "AcrylicInAppFillColorDefaultBrush",
+      "NavigationViewExpandedPaneBackground": "SolidBackgroundFillColorTransparent",
+      "NavigationViewTopPaneBackground": "SolidBackgroundFillColorTransparent",
+      "NavigationViewContentBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackground": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "NavigationViewItemBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundChecked": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundCheckedPointerOver": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundCheckedPressed": "SubtleFillColorTertiaryBrush",
+      "NavigationViewItemBackgroundCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundSelected": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundSelectedPointerOver": "SubtleFillColorTertiaryBrush",
+      "NavigationViewItemBackgroundSelectedPressed": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundSelectedDisabled": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemForeground": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "NavigationViewItemForegroundChecked": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundCheckedPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundCheckedPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewItemForegroundCheckedDisabled": "TextFillColorDisabledBrush",
+      "NavigationViewItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundSelectedPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundSelectedPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewItemForegroundSelectedDisabled": "TextFillColorDisabledBrush",
+      "NavigationViewItemBorderBrush": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushPressed": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushChecked": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushCheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushCheckedPressed": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelected": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelectedPointerOver": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelectedPressed": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelectedDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemIconBackground": "SystemControlTransparentBrush",
+      "NavigationViewItemSeparatorForeground": "DividerStrokeColorDefaultBrush",
+      "NavigationViewItemHeaderForeground": "TextFillColorSecondaryBrush",
+      "NavigationViewSelectionIndicatorForeground": "AccentFillColorDefaultBrush",
+      "NavigationViewContentGridBorderBrush": "CardStrokeColorDefaultBrush",
+      "TopNavigationViewItemForeground": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "TopNavigationViewItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "TopNavigationViewItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundSelectedPointerOver": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundSelectedPressed": "TextFillColorSecondaryBrush",
+      "TopNavigationViewItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "TopNavigationViewItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "TopNavigationViewItemBackgroundSelected": "SubtleFillColorTransparentBrush",
+      "TopNavigationViewItemBackgroundSelectedPointerOver": "SubtleFillColorTransparentBrush",
+      "TopNavigationViewItemBackgroundSelectedPressed": "SubtleFillColorTransparentBrush",
+      "TopNavigationViewItemSeparatorForeground": "DividerStrokeColorDefaultBrush",
+      "NavigationViewButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "NavigationViewButtonBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "NavigationViewButtonBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "NavigationViewButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewButtonForegroundPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewButtonForegroundDisabled": "TextFillColorDisabledBrush"
+    },
+    "Dark": {
+      "NavigationViewDefaultPaneBackground": "AcrylicInAppFillColorDefaultBrush",
+      "NavigationViewExpandedPaneBackground": "SolidBackgroundFillColorTransparent",
+      "NavigationViewTopPaneBackground": "SolidBackgroundFillColorTransparent",
+      "NavigationViewContentBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackground": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "NavigationViewItemBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundChecked": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundCheckedPointerOver": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundCheckedPressed": "SubtleFillColorTertiaryBrush",
+      "NavigationViewItemBackgroundCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBackgroundSelected": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundSelectedPointerOver": "SubtleFillColorTertiaryBrush",
+      "NavigationViewItemBackgroundSelectedPressed": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemBackgroundSelectedDisabled": "SubtleFillColorSecondaryBrush",
+      "NavigationViewItemForeground": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "NavigationViewItemForegroundChecked": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundCheckedPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundCheckedPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewItemForegroundCheckedDisabled": "TextFillColorDisabledBrush",
+      "NavigationViewItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundSelectedPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundSelectedPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewItemForegroundSelectedDisabled": "TextFillColorDisabledBrush",
+      "NavigationViewItemBorderBrush": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushPressed": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushChecked": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushCheckedPointerOver": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushCheckedPressed": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushCheckedDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelected": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelectedPointerOver": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelectedPressed": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemBorderBrushSelectedDisabled": "SubtleFillColorTransparentBrush",
+      "NavigationViewItemIconBackground": "SystemControlTransparentBrush",
+      "NavigationViewItemSeparatorForeground": "DividerStrokeColorDefaultBrush",
+      "NavigationViewItemHeaderForeground": "TextFillColorSecondaryBrush",
+      "NavigationViewSelectionIndicatorForeground": "AccentFillColorDefaultBrush",
+      "NavigationViewContentGridBorderBrush": "CardStrokeColorDefaultBrush",
+      "TopNavigationViewItemForeground": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "TopNavigationViewItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "TopNavigationViewItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "TopNavigationViewItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "TopNavigationViewItemBackgroundSelected": "SubtleFillColorTransparentBrush",
+      "TopNavigationViewItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundSelectedPointerOver": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundSelectedPressed": "TextFillColorSecondaryBrush",
+      "TopNavigationViewItemBackgroundSelectedPointerOver": "SubtleFillColorTransparentBrush",
+      "TopNavigationViewItemBackgroundSelectedPressed": "SubtleFillColorTransparentBrush",
+      "TopNavigationViewItemSeparatorForeground": "DividerStrokeColorDefaultBrush",
+      "NavigationViewButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "NavigationViewButtonBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "NavigationViewButtonBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "NavigationViewButtonForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "NavigationViewButtonForegroundPressed": "TextFillColorSecondaryBrush",
+      "NavigationViewButtonForegroundDisabled": "TextFillColorDisabledBrush"
+    },
+    "HighContrast": {
+      "NavigationViewDefaultPaneBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewTopPaneBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackgroundPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBackgroundPressed": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackgroundDisabled": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackgroundChecked": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackgroundCheckedPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBackgroundCheckedPressed": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackgroundCheckedDisabled": "LayerFillColorDefaultBrush",
+      "NavigationViewItemBackgroundSelected": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBackgroundSelectedPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBackgroundSelectedPressed": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBackgroundSelectedDisabled": "AccentFillColorDefaultBrush",
+      "NavigationViewItemForeground": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemForegroundPressed": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundDisabled": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundChecked": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundCheckedPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemForegroundCheckedPressed": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundCheckedDisabled": "TextFillColorPrimaryBrush",
+      "NavigationViewItemForegroundSelected": "AccentFillColorDefaultBrush",
+      "NavigationViewItemForegroundSelectedPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemForegroundSelectedPressed": "AccentFillColorDefaultBrush",
+      "NavigationViewItemForegroundSelectedDisabled": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBorderBrush": "TextFillColorPrimaryBrush",
+      "NavigationViewItemBorderBrushPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBorderBrushPressed": "TextFillColorPrimaryBrush",
+      "NavigationViewItemBorderBrushDisabled": "TextFillColorPrimaryBrush",
+      "NavigationViewItemBorderBrushChecked": "TextFillColorPrimaryBrush",
+      "NavigationViewItemBorderBrushCheckedPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBorderBrushCheckedPressed": "TextFillColorPrimaryBrush",
+      "NavigationViewItemBorderBrushCheckedDisabled": "TextFillColorPrimaryBrush",
+      "NavigationViewItemBorderBrushSelected": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBorderBrushSelectedPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBorderBrushSelectedPressed": "AccentFillColorDefaultBrush",
+      "NavigationViewItemBorderBrushSelectedDisabled": "AccentFillColorDefaultBrush",
+      "NavigationViewItemIconBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewItemSeparatorForeground": "TextFillColorPrimaryBrush",
+      "NavigationViewItemHeaderForeground": "TextFillColorPrimaryBrush",
+      "NavigationViewContentGridBorderBrush": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForeground": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundPointerOver": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemForegroundPressed": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundDisabled": "TextFillColorPrimaryBrush",
+      "TopNavigationViewItemForegroundSelected": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemForegroundSelectedPointerOver": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemForegroundSelectedPressed": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemBackgroundPointerOver": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemBackgroundPressed": "LayerFillColorDefaultBrush",
+      "TopNavigationViewItemBackgroundSelected": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemBackgroundSelectedPointerOver": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemBackgroundSelectedPressed": "AccentFillColorDefaultBrush",
+      "TopNavigationViewItemSeparatorForeground": "TextFillColorPrimaryBrush",
+      "NavigationViewButtonBackgroundPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewButtonBackgroundPressed": "LayerFillColorDefaultBrush",
+      "NavigationViewButtonBackgroundDisabled": "LayerFillColorDefaultBrush",
+      "NavigationViewButtonForegroundPointerOver": "AccentFillColorDefaultBrush",
+      "NavigationViewButtonForegroundPressed": "TextFillColorPrimaryBrush",
+      "NavigationViewButtonForegroundDisabled": "TextFillColorPrimaryBrush",
+      "NavigationViewContentBackground": "LayerFillColorDefaultBrush",
+      "NavigationViewSelectionIndicatorForeground": "AccentFillColorDefaultBrush"
+    }
+  },
+  "primitives": {
+    "Light": {
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#0000005C",
+        "opacity": 1
+      },
+      "SubtleFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#00000009",
+        "opacity": 1
+      },
+      "SubtleFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#00000006",
+        "opacity": 1
+      },
+      "DividerStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1
+      },
+      "LayerFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF80",
+        "opacity": 1
+      },
+      "AcrylicInAppFillColorDefaultBrush": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0067C0FF",
+        "opacity": 1
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000"
+      },
+      "SystemControlTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000"
+      },
+      "SolidBackgroundFillColorTransparent": {
+        "kind": "solid",
+        "color": "#00000000"
+      }
+    },
+    "Dark": {
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF5D",
+        "opacity": 1
+      },
+      "SubtleFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0F",
+        "opacity": 1
+      },
+      "SubtleFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0A",
+        "opacity": 1
+      },
+      "DividerStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF15",
+        "opacity": 1
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1
+      },
+      "LayerFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#3A3A3A4C",
+        "opacity": 1
+      },
+      "AcrylicInAppFillColorDefaultBrush": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15000000596046448,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#4CC2FFFF",
+        "opacity": 1
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000"
+      },
+      "SystemControlTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000"
+      },
+      "SolidBackgroundFillColorTransparent": {
+        "kind": "solid",
+        "color": "#00000000"
+      }
+    },
+    "HighContrast": {
+      "TextFillColorPrimaryBrush": {
+        "kind": "solid",
+        "color": "#ffffffff"
+      },
+      "TextFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#ffffffff"
+      },
+      "TextFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#7fff00ff"
+      },
+      "SubtleFillColorSecondaryBrush": {
+        "kind": "solid",
+        "color": "#1aebffff"
+      },
+      "SubtleFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#ffff00ff"
+      },
+      "DividerStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#ffffffff"
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#ffffffff"
+      },
+      "LayerFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#000000ff"
+      },
+      "AccentFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#ffff00ff"
+      },
+      "SubtleFillColorTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000"
+      },
+      "SystemControlTransparentBrush": {
+        "kind": "solid",
+        "color": "#00000000"
+      },
+      "SolidBackgroundFillColorTransparent": {
+        "kind": "solid",
+        "color": "#00000000"
+      }
+    }
+  }
+}

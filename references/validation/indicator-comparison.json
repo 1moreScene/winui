@@ -1,0 +1,240 @@
+{
+  "acceptedTemporalParity": false,
+  "reason": "RenderTargetBitmap takes approximately 150ms per capture. Requested times are not frame timestamps; browser uses interval midpoints for diagnosis only. Composition effects may not be represented by RenderTargetBitmap.",
+  "frames": [
+    {
+      "name": "Light-indicator-0",
+      "requestedMs": 0,
+      "actualStartMs": 1.479,
+      "actualEndMs": 162.9153,
+      "browserTimeMs": 82.19714999999997,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 96,
+            "width": 3,
+            "height": 20.632287719455036
+          },
+          "opacity": 1
+        },
+        {
+          "rect": {
+            "x": 4,
+            "y": 96,
+            "width": 3,
+            "height": 20.632287719455036
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 97,
+        "height": 14
+      }
+    },
+    {
+      "name": "Light-indicator-50",
+      "requestedMs": 50,
+      "actualStartMs": 163.2697,
+      "actualEndMs": 314.5151,
+      "browserTimeMs": 238.89239999999995,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 142.21148999572588,
+            "width": 3,
+            "height": 49.788510004274116
+          },
+          "opacity": 0.4223563750534264
+        },
+        {
+          "rect": {
+            "x": 4,
+            "y": 142.21148999572588,
+            "width": 3,
+            "height": 49.788510004274116
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 97,
+        "height": 25
+      }
+    },
+    {
+      "name": "Light-indicator-100",
+      "requestedMs": 100,
+      "actualStartMs": 314.5214,
+      "actualEndMs": 471.1285,
+      "browserTimeMs": 392.82494999999994,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 172.98447819808246,
+            "width": 3,
+            "height": 19.015521801917544
+          },
+          "opacity": 0.03769402252396925
+        },
+        {
+          "rect": {
+            "x": 4,
+            "y": 172.98447819808246,
+            "width": 3,
+            "height": 19.015521801917544
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 167,
+        "height": 25
+      }
+    },
+    {
+      "name": "Light-indicator-160",
+      "requestedMs": 160,
+      "actualStartMs": 471.1335,
+      "actualEndMs": 624.6582,
+      "browserTimeMs": 547.8958499999999,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 175.91152429268138,
+            "width": 3,
+            "height": 16.088475707318622
+          },
+          "opacity": 0.0011059463414827553
+        },
+        {
+          "rect": {
+            "x": 4,
+            "y": 175.91152429268138,
+            "width": 3,
+            "height": 16.088475707318622
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 176,
+        "height": 16
+      }
+    },
+    {
+      "name": "Light-indicator-200",
+      "requestedMs": 200,
+      "actualStartMs": 624.6632,
+      "actualEndMs": 779.6094,
+      "browserTimeMs": 702.1363000000001,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 176,
+            "width": 3,
+            "height": 16
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 176,
+        "height": 16
+      }
+    },
+    {
+      "name": "Light-indicator-260",
+      "requestedMs": 260,
+      "actualStartMs": 779.6139,
+      "actualEndMs": 936.8903,
+      "browserTimeMs": 858.2520999999999,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 176,
+            "width": 3,
+            "height": 16
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 176,
+        "height": 16
+      }
+    },
+    {
+      "name": "Light-indicator-400",
+      "requestedMs": 400,
+      "actualStartMs": 936.8954,
+      "actualEndMs": 1092.387,
+      "browserTimeMs": 1014.6412,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 176,
+            "width": 3,
+            "height": 16
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 176,
+        "height": 16
+      }
+    },
+    {
+      "name": "Light-indicator-600",
+      "requestedMs": 600,
+      "actualStartMs": 1092.3917,
+      "actualEndMs": 1248.2857,
+      "browserTimeMs": 1170.3386999999998,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 176,
+            "width": 3,
+            "height": 16
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 176,
+        "height": 16
+      }
+    },
+    {
+      "name": "Light-indicator-750",
+      "requestedMs": 750,
+      "actualStartMs": 1248.2897,
+      "actualEndMs": 1403.7995,
+      "browserTimeMs": 1326.0446000000002,
+      "visuals": [
+        {
+          "rect": {
+            "x": 4,
+            "y": 176,
+            "width": 3,
+            "height": 16
+          },
+          "opacity": 1
+        }
+      ],
+      "nativeIndicatorBounds": {
+        "y": 176,
+        "height": 16
+      }
+    }
+  ]
+}

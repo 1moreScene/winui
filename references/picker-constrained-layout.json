@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-11-08T14:32:36.126327+00:00",
+  "scope": "Own same-SDK native CalendarView layout under a 180 DIP constraint and unconstrained zh-CN layout. No external application automation.",
+  "native": {
+    "natural": {
+      "ActualWidth": 302.3999938964844,
+      "ActualHeight": 354.3999938964844,
+      "Language": "zh-CN"
+    },
+    "constrained": {
+      "ActualWidth": 180,
+      "ActualHeight": 354.3999938964844,
+      "DesiredWidth": 180,
+      "MinWidth": 0
+    },
+    "calendar": {
+      "IsGroupLabelVisible": false,
+      "IsOutOfScopeEnabled": true,
+      "IsTodayHighlighted": true,
+      "NumberOfWeeksInView": 6,
+      "FirstDayOfWeek": 0,
+      "DayItemFontSize": 14,
+      "TodayFontWeight": {},
+      "CalendarIdentifier": "GregorianCalendar",
+      "MinDate": "1926-01-01",
+      "MaxDate": "2126-12-31"
+    },
+    "date": {
+      "DayFormat": "day",
+      "MonthFormat": "{month.full}",
+      "YearFormat": "year.full",
+      "CalendarIdentifier": "GregorianCalendar",
+      "DayVisible": true,
+      "MonthVisible": true,
+      "YearVisible": true
+    },
+    "time": {
+      "ClockIdentifier": "24HourClock",
+      "MinuteIncrement": 1
+    },
+    "color": {
+      "IsAlphaEnabled": false,
+      "IsMoreButtonVisible": false,
+      "ColorSpectrumComponents": 2,
+      "Orientation": 0
+    }
+  },
+  "sourceSha256": "2eb9bd6399c5958bee05af307a074bfb799f08bfdcb961a8612177acbf4b5ee7",
+  "binarySha256": "f3f98c080eecba5506d226efceb93b661db8af2aeb4005e835d91e997dc3b377"
+}

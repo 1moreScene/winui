@@ -1,0 +1,26 @@
+{
+  "generatedAtUtc": "2026-11-07T13:16:00.7284754Z",
+  "scope": "Shared workspace includes concurrent phase-7 edits; no source rollback or lint suppression",
+  "checks": [
+    {
+      "command": "cargo fmt --all -- --check",
+      "exitCode": 1,
+      "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\stage6-fmt.log"
+    },
+    {
+      "command": "cargo clippy --all-targets --locked -- -D warnings",
+      "exitCode": 1,
+      "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\stage6-clippy-host.log"
+    },
+    {
+      "command": "cargo clippy --target wasm32-unknown-unknown --locked -- -D warnings",
+      "exitCode": 1,
+      "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\stage6-clippy-wasm.log"
+    },
+    {
+      "command": "./gallery/node_modules/.bin/tsc.cmd -p gallery/tsconfig.json --noEmit",
+      "exitCode": 0,
+      "log": "C:\\Users\\11156\\source\\repos\\winui\\out\\lint\\stage6-strict-ts.log"
+    }
+  ]
+}

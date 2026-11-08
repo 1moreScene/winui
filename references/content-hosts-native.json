@@ -1,0 +1,2526 @@
+{
+  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+  "scope": "Independent same-SDK static geometry, not Store Gallery Composition parity",
+  "rows": [
+    {
+      "theme": "Light",
+      "kind": "ContentControl",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentControl",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentControl",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentControl",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            150.39999389648438,
+            92,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            150.39999389648438,
+            92,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentControl",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            6.400000095367432,
+            4,
+            184,
+            108
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentPresenter",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentPresenter",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            8,
+            6.400000095367432,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentPresenter",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentPresenter",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            147.1999969482422,
+            89.5999984741211,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "ContentPresenter",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "UserControl",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "UserControl",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "UserControl",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "UserControl",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "UserControl",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Page",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Page",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Page",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Page",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Page",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Frame",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Frame",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            8,
+            6.400000095367432,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Frame",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Frame",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            147.1999969482422,
+            89.5999984741211,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Light",
+      "kind": "Frame",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentControl",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentControl",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            6.400000095367432,
+            4,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentControl",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentControl",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            150.39999389648438,
+            92,
+            40,
+            20
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            150.39999389648438,
+            92,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentControl",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            6.400000095367432,
+            4,
+            184,
+            108
+          ],
+          "desired": [
+            56,
+            32
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentPresenter",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentPresenter",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            8,
+            6.400000095367432,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentPresenter",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentPresenter",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            147.1999969482422,
+            89.5999984741211,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "ContentPresenter",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "UserControl",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "UserControl",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "UserControl",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "UserControl",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "UserControl",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "UserControl",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Page",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Page",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Page",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Page",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Page",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Page",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            80,
+            50.400001525878906,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Frame",
+      "state": "Default",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Frame",
+      "state": "LeftTop",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            8,
+            6.400000095367432,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Frame",
+      "state": "Center",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            78.4000015258789,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Frame",
+      "state": "RightBottom",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            147.1999969482422,
+            89.5999984741211,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    },
+    {
+      "theme": "Dark",
+      "kind": "Frame",
+      "state": "Stretch",
+      "dpr": 1.25,
+      "rect": [
+        200,
+        120
+      ],
+      "parts": [
+        {
+          "type": "Frame",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            200,
+            120
+          ],
+          "text": null,
+          "enabled": true
+        },
+        {
+          "type": "ContentPresenter",
+          "name": "",
+          "rect": [
+            0,
+            0,
+            200,
+            120
+          ],
+          "desired": [
+            60.79999923706055,
+            36.79999923706055
+          ],
+          "text": null,
+          "enabled": null
+        },
+        {
+          "type": "Border",
+          "name": "ContentChild",
+          "rect": [
+            77.5999984741211,
+            48,
+            40,
+            20
+          ],
+          "desired": [
+            40,
+            20
+          ],
+          "text": null,
+          "enabled": null
+        }
+      ]
+    }
+  ]
+}

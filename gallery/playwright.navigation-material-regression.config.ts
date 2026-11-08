@@ -1,0 +1,1 @@
+import{defineConfig}from'@playwright/test';import base from'./playwright.navigation-controls.config';export default defineConfig({...base,testMatch:'**/materials.spec.ts',outputDir:'../out/navigation-paging-material-regression',reporter:[['list'],['json',{outputFile:'../out/navigation-paging-material-regression.json'}]]});

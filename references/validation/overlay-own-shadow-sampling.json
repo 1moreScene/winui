@@ -1,0 +1,151 @@
+{
+  "fixture": "Dark-Stripes-Flyout-Bottom",
+  "procedure": "Remove ThemeShadow and Translation.Z from every UIElement below the actual presenter, then restore both. Captures use own foreground client.",
+  "casters": [
+    {
+      "type": "FlyoutPresenter",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Border",
+      "name": "",
+      "shadow": "ThemeShadow",
+      "z": 32
+    },
+    {
+      "type": "ScrollViewer",
+      "name": "ScrollViewer",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Border",
+      "name": "Root",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Grid",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "ScrollContentPresenter",
+      "name": "ScrollContentPresenter",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "ContentPresenter",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "StackPanel",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "TextBlock",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Button",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "ContentPresenter",
+      "name": "ContentPresenter",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "TextBlock",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Grid",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Grid",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "ScrollBar",
+      "name": "VerticalScrollBar",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Grid",
+      "name": "",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "ScrollBar",
+      "name": "HorizontalScrollBar",
+      "shadow": null,
+      "z": 0
+    },
+    {
+      "type": "Border",
+      "name": "ScrollBarSeparator",
+      "shadow": null,
+      "z": 0
+    }
+  ],
+  "rows": [
+    {
+      "region": "material",
+      "physicalBounds": [
+        745,
+        176,
+        757,
+        264
+      ],
+      "withoutShadowMAE": 0.21654040404040403,
+      "restoredMAE": 0.0
+    },
+    {
+      "region": "interior",
+      "physicalBounds": [
+        470,
+        150,
+        764,
+        284
+      ],
+      "withoutShadowMAE": 0.09841100619352218,
+      "restoredMAE": 0.0
+    },
+    {
+      "region": "shadow",
+      "physicalBounds": [
+        450,
+        290,
+        775,
+        315
+      ],
+      "withoutShadowMAE": 10.552451282051281,
+      "restoredMAE": 0.0
+    }
+  ],
+  "conclusion": "Unlike windowed MenuFlyout HostBackdrop, in-app Flyout Acrylic includes its own shadow in its backdrop. Preserve that sampling distinction.",
+  "boundary": "One matched SDK scene at 125 percent DPI; not a full kernel or present-time proof."
+}

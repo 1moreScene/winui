@@ -1,0 +1,357 @@
+{
+  "generatedAtUtc": "2026-11-07T06:24:32.215917+00:00",
+  "reference": "32x32 numerical circle-area integration per edge pixel; own isolated Chrome browser contexts",
+  "method": "Circle and thumb edge-only coverage, not whole-image blank-pixel mean; local 4x Canvas vector groups with native-DPR text",
+  "rows": [
+    {
+      "dpr": 1,
+      "radioBeforeMeanCoverageError": 0.02729954346707814,
+      "radioAfterMeanCoverageError": 0.01660286269214475,
+      "thumbAfterMeanCoverageError": 0.018045343137254914,
+      "backingWidth": 420,
+      "logicalSurfaceWidth": 419.375,
+      "canvasCssWidth": 420,
+      "frameP95Ms": 2.600000001490116
+    },
+    {
+      "dpr": 1.25,
+      "radioBeforeMeanCoverageError": 0.1067053719421582,
+      "radioAfterMeanCoverageError": 0.020139424725651604,
+      "thumbAfterMeanCoverageError": 0.0181433295300879,
+      "backingWidth": 525,
+      "logicalSurfaceWidth": 419.375,
+      "canvasCssWidth": 420,
+      "frameP95Ms": 3.1999999955296516
+    },
+    {
+      "dpr": 1.5,
+      "radioBeforeMeanCoverageError": 0.05552429841106528,
+      "radioAfterMeanCoverageError": 0.01590103035455724,
+      "thumbAfterMeanCoverageError": 0.007440257352941184,
+      "backingWidth": 630,
+      "logicalSurfaceWidth": 419.375,
+      "canvasCssWidth": 420,
+      "frameP95Ms": 2.8000000044703484
+    },
+    {
+      "dpr": 2,
+      "radioBeforeMeanCoverageError": 0.0598112218120897,
+      "radioAfterMeanCoverageError": 0.013174687274079638,
+      "thumbAfterMeanCoverageError": 0.009514865728900264,
+      "backingWidth": 839,
+      "logicalSurfaceWidth": 419.375,
+      "canvasCssWidth": 419.5,
+      "frameP95Ms": 3
+    }
+  ],
+  "fractionalTranslationResults": [
+    {
+      "performance": {
+        "frameP50Ms": 0.7000000029802322,
+        "frameP95Ms": 2.899999998509884,
+        "frames": 18,
+        "averageFrameMs": 1.0055555543965764,
+        "maxFrameMs": 2.899999998509884,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "surfaceWidth": 419.375,
+      "surfaceHeight": 131.625,
+      "toggle": {
+        "x": 24.375,
+        "y": 71
+      },
+      "width": 420,
+      "height": 132,
+      "backingWidth": 420,
+      "backingHeight": 132,
+      "dpr": 1,
+      "items": [
+        {
+          "x": 24,
+          "y": 17
+        },
+        {
+          "x": 88.25,
+          "y": 17
+        },
+        {
+          "x": 153.5,
+          "y": 17
+        },
+        {
+          "x": 217.75,
+          "y": 17
+        }
+      ],
+      "measurements": [
+        {
+          "kind": "actual",
+          "edgePixels": 300,
+          "meanAbsoluteCoverageError": 0.015275554055212623,
+          "maxAbsoluteCoverageError": 0.04819315843621397
+        },
+        {
+          "kind": "candidate",
+          "edgePixels": 300,
+          "meanAbsoluteCoverageError": 0.015275554055212623,
+          "maxAbsoluteCoverageError": 0.04819315843621397
+        }
+      ],
+      "thumb": {
+        "edgePixels": 46,
+        "meanAbsoluteCoverageError": 0.015811820652173916,
+        "maxAbsoluteCoverageError": 0.04213388480392155
+      }
+    },
+    {
+      "performance": {
+        "frameP50Ms": 0.7000000029802322,
+        "frameP95Ms": 2.5,
+        "frames": 18,
+        "averageFrameMs": 0.9888888883093992,
+        "maxFrameMs": 2.5,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "surfaceWidth": 419.375,
+      "surfaceHeight": 131.625,
+      "toggle": {
+        "x": 24.375,
+        "y": 70.4
+      },
+      "width": 420,
+      "height": 132,
+      "backingWidth": 525,
+      "backingHeight": 165,
+      "dpr": 1.25,
+      "items": [
+        {
+          "x": 24,
+          "y": 16.8
+        },
+        {
+          "x": 88.25,
+          "y": 16.8
+        },
+        {
+          "x": 153.3,
+          "y": 16.8
+        },
+        {
+          "x": 217.55,
+          "y": 16.8
+        }
+      ],
+      "measurements": [
+        {
+          "kind": "actual",
+          "edgePixels": 382,
+          "meanAbsoluteCoverageError": 0.019061179485004208,
+          "maxAbsoluteCoverageError": 0.07167084619341563
+        },
+        {
+          "kind": "candidate",
+          "edgePixels": 382,
+          "meanAbsoluteCoverageError": 0.019157630102288152,
+          "maxAbsoluteCoverageError": 0.07167084619341563
+        }
+      ],
+      "thumb": {
+        "edgePixels": 56,
+        "meanAbsoluteCoverageError": 0.018297006302521013,
+        "maxAbsoluteCoverageError": 0.04453125000000002
+      }
+    },
+    {
+      "performance": {
+        "frameP50Ms": 0.7000000029802322,
+        "frameP95Ms": 2.7999999970197678,
+        "frames": 18,
+        "averageFrameMs": 0.961111112187306,
+        "maxFrameMs": 2.7999999970197678,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "surfaceWidth": 419.375,
+      "surfaceHeight": 131.625,
+      "toggle": {
+        "x": 25.041666666666668,
+        "y": 70.66666666666667
+      },
+      "width": 420,
+      "height": 132,
+      "backingWidth": 630,
+      "backingHeight": 198,
+      "dpr": 1.5,
+      "items": [
+        {
+          "x": 24,
+          "y": 16.666666666666668
+        },
+        {
+          "x": 88.25,
+          "y": 16.666666666666668
+        },
+        {
+          "x": 153.16666666666666,
+          "y": 16.666666666666668
+        },
+        {
+          "x": 217.41666666666666,
+          "y": 16.666666666666668
+        }
+      ],
+      "measurements": [
+        {
+          "kind": "actual",
+          "edgePixels": 450,
+          "meanAbsoluteCoverageError": 0.014974726366026526,
+          "maxAbsoluteCoverageError": 0.056383423353909445
+        },
+        {
+          "kind": "candidate",
+          "edgePixels": 450,
+          "meanAbsoluteCoverageError": 0.015311731967306815,
+          "maxAbsoluteCoverageError": 0.060864358281893016
+        }
+      ],
+      "thumb": {
+        "edgePixels": 70,
+        "meanAbsoluteCoverageError": 0.008145898984593844,
+        "maxAbsoluteCoverageError": 0.026979932598039214
+      }
+    },
+    {
+      "performance": {
+        "frameP50Ms": 0.8000000044703484,
+        "frameP95Ms": 2.6999999955296516,
+        "frames": 18,
+        "averageFrameMs": 1.0499999990893736,
+        "maxFrameMs": 2.6999999955296516,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      "surfaceWidth": 419.375,
+      "surfaceHeight": 131.625,
+      "toggle": {
+        "x": 24.875,
+        "y": 70.5
+      },
+      "width": 419.5,
+      "height": 132,
+      "backingWidth": 839,
+      "backingHeight": 264,
+      "dpr": 2,
+      "items": [
+        {
+          "x": 24,
+          "y": 16.5
+        },
+        {
+          "x": 88.75,
+          "y": 16.5
+        },
+        {
+          "x": 153,
+          "y": 16.5
+        },
+        {
+          "x": 217.75,
+          "y": 16.5
+        }
+      ],
+      "measurements": [
+        {
+          "kind": "actual",
+          "edgePixels": 600,
+          "meanAbsoluteCoverageError": 0.013034684713648825,
+          "maxAbsoluteCoverageError": 0.04390110596707819
+        },
+        {
+          "kind": "candidate",
+          "edgePixels": 600,
+          "meanAbsoluteCoverageError": 0.012993532450274334,
+          "maxAbsoluteCoverageError": 0.04390110596707819
+        }
+      ],
+      "thumb": {
+        "edgePixels": 90,
+        "meanAbsoluteCoverageError": 0.009757284858387807,
+        "maxAbsoluteCoverageError": 0.039621629901960775
+      }
+    }
+  ],
+  "budgets": {
+    "meanAbsoluteCoverageError": 0.03,
+    "maxAbsoluteCoverageError": 0.1,
+    "maximumVectorRasterPixels": 1048576,
+    "vectorSamplingScale": 4,
+    "maximumVectorRasterDimension": 8192
+  },
+  "hostChecks": [
+    "419.375x131.625 and 337.875x93.125 CSS surfaces",
+    "Canvas2D, standalone NavigationView and explicit WebGL2 physical mapping",
+    "DPR 1/1.25/1.5/2, pointer selection, viewport/scale changes and disposal"
+  ],
+  "acceptedNativePixelParity": false,
+  "acceptedUserWindowVerification": false,
+  "limitations": [
+    "No live user browser inspection in this fix; own localhost tests only.",
+    "CDP scale override alone does not dispatch native resolution events on this local Chrome; scale-transition tests also change the CSS viewport.",
+    "Frame timings include WASM/Canvas submission and DOM projection in a small dev-host workload, not compositor presentation or a cross-device performance guarantee.",
+    "Coverage is sampled from Canvas backing pixels; CSS presentation mapping is checked separately."
+  ],
+  "files": [
+    {
+      "path": "src/render.rs",
+      "sha256": "7d587ab469274c399b89d70d626a9b9a7c294356fc0560e9a9ee76daf2d06089"
+    },
+    {
+      "path": "src/gpu.rs",
+      "sha256": "3cd57555c1b6ea5feacc6f34d5f94d11aae85de4e06289eff161393afc12cd11"
+    },
+    {
+      "path": "src/scene/selection_input.rs",
+      "sha256": "0128b36a6a86f0bf4e24c58b371647033c635bbf0cd1c8db731ae45da015a2b0"
+    },
+    {
+      "path": "gallery/src/surface-metrics.ts",
+      "sha256": "4dbb0a80682ae8d28316a4bbc30a145c1c62025515fb64994a5fcd0135a425b6"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "d088783e13f967b56a41742b798145836c7d3e27fb8725f1bd1d71c316d29be8"
+    },
+    {
+      "path": "gallery/src/sdk.ts",
+      "sha256": "612069620159b4f02a341fa0920136f5c64b27c1f255e4d8af06c9d729507e86"
+    },
+    {
+      "path": "gallery/tests/antialias.spec.ts",
+      "sha256": "bc9ca23110c8c4b1779df8b247562b638b87f1501743f2799e361a1a21365a9d"
+    },
+    {
+      "path": "tests/selection_input.rs",
+      "sha256": "862e75512da49405f76544af58ba08de43f8f43e975ea065ff2818bca2761544"
+    },
+    {
+      "path": "tools/diagnose-antialias.mjs",
+      "sha256": "487a201646b5f298a012ee2b3a0a64327c4077dc434e4dca9ce6b4bca2ea8548"
+    },
+    {
+      "path": "references/validation/antialias-before.json",
+      "sha256": "7c0ea4300c9f7e30aea79af5ea0d89d15253e8a24fe601f6d5a5969cded1b9ce"
+    }
+  ],
+  "validation": {
+    "rustTests": 51,
+    "fullBrowserTests": 46,
+    "finalBuildTargetedTests": 7,
+    "defaultBackend": "Canvas2D"
+  }
+}

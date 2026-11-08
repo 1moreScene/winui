@@ -1,0 +1,378 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "metrics": {
+    "ScrollBarThumbOffset": 2.0,
+    "ScrollBarSize": 12.0,
+    "ScrollBarVerticalThumbMinHeight": 30.0,
+    "ScrollBarVerticalThumbMinWidth": 8.0,
+    "ScrollBarHorizontalThumbMinWidth": 30.0,
+    "ScrollBarHorizontalThumbMinHeight": 8.0,
+    "ScrollBarThumbStrokeThickness": 6.0,
+    "ScrollBarButtonArrowIconFontSize": 8.0,
+    "ScrollBarButtonArrowScalePressed": 0.875,
+    "SliderPreContentMargin": 14.0,
+    "SliderPostContentMargin": 14.0,
+    "SliderInnerThumbHeight": 12.0,
+    "SliderHorizontalHeight": 32.0,
+    "SliderVerticalWidth": 32.0,
+    "SliderHorizontalThumbWidth": 18.0,
+    "SliderHorizontalThumbHeight": 18.0,
+    "SliderVerticalThumbWidth": 18.0,
+    "SliderVerticalThumbHeight": 18.0,
+    "SliderInnerThumbWidth": 12.0
+  },
+  "aliases": {
+    "Light": {
+      "ScrollBarBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarForeground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "ScrollBarButtonBackgroundPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPressed": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonArrowForeground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonArrowForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundPressed": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbFill": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBorderBrush": "ControlFillColorTransparentBrush",
+      "ScrollBarTrackFill": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillPointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStroke": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokePointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokeDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackgroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBackgroundColor": "ControlStrongFillColorDefault",
+      "ScrollBarPanningThumbBackgroundColor": "ControlStrongFillColorDefault",
+      "SliderContainerBackground": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundPressed": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "SliderThumbBackground": "AccentFillColorDefaultBrush",
+      "SliderThumbBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderThumbBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SliderThumbBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "SliderThumbBorderBrush": "ControlElevationBorderBrush",
+      "SliderOuterThumbBackground": "ControlSolidFillColorDefaultBrush",
+      "SliderTrackFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPressed": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderTrackValueFill": "AccentFillColorDefaultBrush",
+      "SliderTrackValueFillPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderTrackValueFillPressed": "AccentFillColorTertiaryBrush",
+      "SliderTrackValueFillDisabled": "AccentFillColorDisabledBrush",
+      "SliderHeaderForeground": "TextFillColorPrimaryBrush",
+      "SliderHeaderForegroundDisabled": "TextFillColorDisabledBrush",
+      "SliderTickBarFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTickBarFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderInlineTickBarFill": "ControlFillColorInputActiveBrush"
+    },
+    "Dark": {
+      "ScrollBarBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarForeground": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackground": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "ScrollBarButtonBackgroundPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonBackgroundDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrush": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPointerOver": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushPressed": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonBorderBrushDisabled": "SubtleFillColorTransparentBrush",
+      "ScrollBarButtonArrowForeground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarButtonArrowForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundPressed": "TextFillColorSecondaryBrush",
+      "ScrollBarButtonArrowForegroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbFill": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillPressed": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarThumbFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBorderBrush": "ControlFillColorTransparentBrush",
+      "ScrollBarTrackFill": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillPointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackFillDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStroke": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokePointerOver": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarTrackStrokeDisabled": "AcrylicInAppFillColorDefaultBrush",
+      "ScrollBarThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackground": "ControlStrongFillColorDefaultBrush",
+      "ScrollBarPanningThumbBackgroundDisabled": "ControlStrongFillColorDisabledBrush",
+      "ScrollBarThumbBackgroundColor": "ControlStrongFillColorDefault",
+      "ScrollBarPanningThumbBackgroundColor": "ControlStrongFillColorDefault",
+      "SliderContainerBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundPressed": "ControlFillColorTransparentBrush",
+      "SliderContainerBackgroundDisabled": "ControlFillColorTransparent",
+      "SliderThumbBackground": "AccentFillColorDefaultBrush",
+      "SliderThumbBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderThumbBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SliderThumbBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "SliderThumbBorderBrush": "ControlElevationBorderBrush",
+      "SliderOuterThumbBackground": "ControlSolidFillColorDefaultBrush",
+      "SliderTrackFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPointerOver": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillPressed": "ControlStrongFillColorDefaultBrush",
+      "SliderTrackFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderTrackValueFill": "AccentFillColorDefaultBrush",
+      "SliderTrackValueFillPointerOver": "AccentFillColorSecondaryBrush",
+      "SliderTrackValueFillPressed": "AccentFillColorTertiaryBrush",
+      "SliderTrackValueFillDisabled": "AccentFillColorDisabledBrush",
+      "SliderHeaderForeground": "TextFillColorPrimaryBrush",
+      "SliderHeaderForegroundDisabled": "TextFillColorDisabledBrush",
+      "SliderTickBarFill": "ControlStrongFillColorDefaultBrush",
+      "SliderTickBarFillDisabled": "ControlStrongFillColorDisabledBrush",
+      "SliderInlineTickBarFill": "ControlFillColorInputActiveBrush"
+    },
+    "HighContrast": {
+      "ScrollBarBackground": "SystemControlTransparentBrush",
+      "ScrollBarBackgroundPointerOver": "SystemControlTransparentBrush",
+      "ScrollBarBackgroundDisabled": "SystemControlTransparentBrush",
+      "ScrollBarForeground": "SystemControlTransparentBrush",
+      "ScrollBarBorderBrush": "SystemControlTransparentBrush",
+      "ScrollBarBorderBrushPointerOver": "SystemControlTransparentBrush",
+      "ScrollBarBorderBrushDisabled": "SystemControlTransparentBrush",
+      "ScrollBarButtonBackground": "SystemControlTransparentBrush",
+      "ScrollBarButtonBackgroundPointerOver": "SystemControlBackgroundListLowBrush",
+      "ScrollBarButtonBackgroundPressed": "SystemControlBackgroundBaseMediumBrush",
+      "ScrollBarButtonBackgroundDisabled": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrush": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrushPointerOver": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrushPressed": "SystemControlTransparentBrush",
+      "ScrollBarButtonBorderBrushDisabled": "SystemControlTransparentBrush",
+      "ScrollBarButtonArrowForeground": "SystemControlForegroundBaseHighBrush",
+      "ScrollBarButtonArrowForegroundPointerOver": "SystemControlHighlightBaseHighBrush",
+      "ScrollBarButtonArrowForegroundPressed": "SystemControlHighlightBaseHighBrush",
+      "ScrollBarButtonArrowForegroundDisabled": "SystemControlDisabledBaseHighBrush",
+      "ScrollBarThumbFill": "SystemControlForegroundChromeDisabledLowBrush",
+      "ScrollBarThumbFillPointerOver": "SystemControlHighlightBaseMediumLowBrush",
+      "ScrollBarThumbFillPressed": "SystemControlHighlightBaseMediumBrush",
+      "ScrollBarThumbFillDisabled": "SystemControlDisabledBaseHighBrush",
+      "ScrollBarThumbBorderBrush": "SystemControlTransparentBrush",
+      "ScrollBarTrackFill": "SystemControlPageBackgroundChromeLowBrush",
+      "ScrollBarTrackFillPointerOver": "SystemControlPageBackgroundChromeLowBrush",
+      "ScrollBarTrackFillDisabled": "SystemControlDisabledTransparentBrush",
+      "ScrollBarTrackStroke": "SystemControlForegroundTransparentBrush",
+      "ScrollBarTrackStrokePointerOver": "SystemControlForegroundTransparentBrush",
+      "ScrollBarTrackStrokeDisabled": "SystemControlDisabledTransparentBrush",
+      "ScrollBarThumbBackground": "SystemControlForegroundChromeDisabledLowBrush",
+      "ScrollBarPanningThumbBackground": "SystemControlForegroundChromeDisabledLowBrush",
+      "ScrollBarPanningThumbBackgroundDisabled": "SystemControlDisabledChromeHighBrush",
+      "ScrollBarThumbBackgroundColor": "SystemColorButtonTextColor",
+      "ScrollBarPanningThumbBackgroundColor": "SystemColorButtonTextColor",
+      "SliderContainerBackground": "SystemControlTransparentBrush",
+      "SliderContainerBackgroundPointerOver": "SystemControlTransparentBrush",
+      "SliderContainerBackgroundPressed": "SystemControlTransparentBrush",
+      "SliderContainerBackgroundDisabled": "SystemControlTransparentBrush",
+      "SliderThumbBackground": "SystemControlForegroundAccentBrush",
+      "SliderThumbBackgroundPointerOver": "SystemColorHighlightColorBrush",
+      "SliderThumbBackgroundPressed": "SystemColorHotlightColorBrush",
+      "SliderThumbBackgroundDisabled": "SystemControlDisabledChromeDisabledHighBrush",
+      "SliderThumbBorderBrush": "SystemControlForegroundAccentBrush",
+      "SliderOuterThumbBackground": "SystemControlForegroundAccentBrush",
+      "SliderTrackFill": "SystemControlForegroundBaseMediumLowBrush",
+      "SliderTrackFillPointerOver": "SystemControlForegroundBaseMediumBrush",
+      "SliderTrackFillPressed": "SystemControlForegroundBaseMediumLowBrush",
+      "SliderTrackFillDisabled": "SystemControlDisabledChromeDisabledHighBrush",
+      "SliderTrackValueFill": "SystemControlHighlightAccentBrush",
+      "SliderTrackValueFillPointerOver": "SystemControlHighlightAccentBrush",
+      "SliderTrackValueFillPressed": "SystemControlHighlightAccentBrush",
+      "SliderTrackValueFillDisabled": "SystemControlDisabledChromeDisabledHighBrush",
+      "SliderHeaderForeground": "SystemControlForegroundBaseHighBrush",
+      "SliderHeaderForegroundDisabled": "SystemControlDisabledBaseMediumLowBrush",
+      "SliderTickBarFill": "SystemControlForegroundBaseMediumLowBrush",
+      "SliderInlineTickBarFill": "SystemControlBackgroundAltHighBrush"
+    }
+  },
+  "primitives": {
+    "Light": {
+      "ScrollBarTrackFill": {
+        "kind": "acrylic",
+        "tint": "#FCFCFC",
+        "tintOpacity": 0.0,
+        "luminosityOpacity": 0.85,
+        "fallback": "#F9F9F9"
+      },
+      "ScrollBarThumbFill": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillPointerOver": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillPressed": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillDisabled": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForeground": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForegroundPressed": {
+        "kind": "solid",
+        "color": "#0000009E",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForegroundDisabled": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1.0
+      },
+      "SliderTickBarFill": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1.0
+      },
+      "SliderTickBarFillDisabled": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1.0
+      }
+    },
+    "Dark": {
+      "ScrollBarTrackFill": {
+        "kind": "acrylic",
+        "tint": "#2C2C2C",
+        "tintOpacity": 0.15,
+        "luminosityOpacity": 0.96,
+        "fallback": "#2C2C2C"
+      },
+      "ScrollBarThumbFill": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillPointerOver": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillPressed": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForeground": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForegroundPressed": {
+        "kind": "solid",
+        "color": "#FFFFFFC5",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForegroundDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1.0
+      },
+      "SliderTickBarFill": {
+        "kind": "solid",
+        "color": "#FFFFFF8B",
+        "opacity": 1.0
+      },
+      "SliderTickBarFillDisabled": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1.0
+      }
+    },
+    "HighContrast": {
+      "ScrollBarTrackFill": {
+        "kind": "solid",
+        "color": "#000000",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFill": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillPointerOver": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1.0
+      },
+      "ScrollBarThumbFillDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForeground": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForegroundPressed": {
+        "kind": "solid",
+        "color": "#ffff00",
+        "opacity": 1.0
+      },
+      "ScrollBarButtonArrowForegroundDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1.0
+      },
+      "SliderTickBarFill": {
+        "kind": "solid",
+        "color": "#ffffff",
+        "opacity": 1.0
+      },
+      "SliderTickBarFillDisabled": {
+        "kind": "solid",
+        "color": "#808080",
+        "opacity": 1.0
+      }
+    }
+  },
+  "tickBar": {
+    "minimumGap": 20,
+    "thickness": "one physical pixel",
+    "source": "TickBar_Partial.h / TickBar_Partial.cpp"
+  },
+  "repeat": {
+    "delayMilliseconds": 250,
+    "intervalMilliseconds": 50,
+    "source": "RepeatButton default Delay; ScrollBar repeat part Interval=50"
+  },
+  "sdkSource": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\lib\\native\\Microsoft.UI\\Themes\\generic.xaml",
+  "sdkSourceSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724"
+}

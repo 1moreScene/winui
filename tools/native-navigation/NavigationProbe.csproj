@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType><TargetFramework>net10.0-windows10.0.22621.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion><UseWinUI>true</UseWinUI>
+    <WindowsPackageType>None</WindowsPackageType><WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize><RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <Platforms>x64</Platforms><PlatformTarget>x64</PlatformTarget><EnableDefaultApplicationDefinition>false</EnableDefaultApplicationDefinition>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems><ImplicitUsings>enable</ImplicitUsings>
+    <DefineConstants>DISABLE_XAML_GENERATED_MAIN</DefineConstants><Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup><PackageReference Include="Microsoft.WindowsAppSDK" Version="2.5.4-experimental" /><ApplicationDefinition Include="App.xaml" /></ItemGroup>
+  <ItemGroup><Page Include="NativeMotionRedPage.xaml"/><Page Include="NativeMotionBluePage.xaml"/></ItemGroup>
+  <ItemGroup><Content Include="..\..\references\gallery-pages\*.xaml" Link="GalleryPages\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><Content Include="..\..\references\winui\Button_themeresources.xaml" Link="Button_themeresources.xaml" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><Content Include="..\..\references\gallery-motion\**\*" Link="MotionSources\%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><Content Include="../../references/selection-template.json" Link="selection-template.json" CopyToOutputDirectory="PreserveNewest" /><Content Include="../../gallery/public/official/*.jpg" Link="FoundationAssets/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+  <ItemGroup><Content Include="../../references/selection-input-template.json" Link="selection-input-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/text-scroll-template.json" Link="text-scroll-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/progress-template.json" Link="progress-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/basic-next-template.json" Link="basic-next-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/five-controls-template.json" Link="five-controls-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/overlay-template.json" Link="overlay-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/compact-controls-template.json" Link="compact-controls-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../gallery/public/official/person-profile.png" Link="CompactAssets/person-profile.png" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../references/collections-template.json" Link="collections-template.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+<ItemGroup><Content Include="../../gallery/src/collections-data.json" Link="collections-data.json" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
+</Project>

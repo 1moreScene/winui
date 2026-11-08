@@ -1,0 +1,39 @@
+{
+  "backend": "WebGL2",
+  "dpr": 1.25,
+  "rows": [
+    {
+      "theme": "Light",
+      "translationZ": 16,
+      "externalShadowMAE": 0.08812188721683714,
+      "maximumCornerDarkening": 6,
+      "top": 0,
+      "bottom": 17
+    },
+    {
+      "theme": "Light",
+      "translationZ": 32,
+      "externalShadowMAE": 0.1971563219621914,
+      "maximumCornerDarkening": 1,
+      "top": 1,
+      "bottom": 25
+    },
+    {
+      "theme": "Dark",
+      "translationZ": 16,
+      "externalShadowMAE": 0.0032935254110212607,
+      "maximumCornerDarkening": 3,
+      "top": 0,
+      "bottom": 4
+    },
+    {
+      "theme": "Dark",
+      "translationZ": 32,
+      "externalShadowMAE": 0.03280137096342312,
+      "maximumCornerDarkening": 0,
+      "top": 0,
+      "bottom": 6
+    }
+  ],
+  "boundary": "Compares live native ThemeShadow own-window captures at Z 16/32; this verifies shadow profiles and rounded exterior pixels, not full control pixel equivalence."
+}

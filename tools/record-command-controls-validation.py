@@ -1,0 +1,22 @@
+"""Record command-batch evidence against the binary actually served by the frozen Gallery."""
+from pathlib import Path
+import hashlib,json,re,urllib.request,datetime
+ROOT=Path(__file__).resolve().parent.parent
+read=lambda name:json.loads((ROOT/name).read_text(encoding='utf-8-sig'))
+sha=lambda path:hashlib.sha256(path.read_bytes()).hexdigest()
+visual=read('references/command-controls-visual.json');native=read('references/command-controls-metrics.json');stamp=read('out/collections-5197-test-runtime/build-stamp.json');app=read('out/collections-5197-app-runtime/manifest.json')
+assert (ROOT/'references/command-controls-visual.json').stat().st_mtime>=(ROOT/'references/command-controls-metrics.json').stat().st_mtime,'Native reference was regenerated; repeat the visual run'
+actual=hashlib.sha256(urllib.request.urlopen('http://127.0.0.1:5197/src/wasm/winui_bg.wasm').read()).hexdigest()
+assert actual==stamp['sha256']==visual['runtime']['sha256']
+results=read('out/command-controls-browser-results.json');assert results['stats']['unexpected']==0 and results['stats']['expected']==11
+rust=(ROOT/'out/command-controls-all-rust.log').read_text(encoding='utf8');assert not re.search(r'FAILED|error:',rust)
+checks=['command-controls-clippy','command-controls-wasm-clippy'];assert all('Finished' in (ROOT/f'out/{name}.log').read_text(encoding='utf8') and 'error:' not in (ROOT/f'out/{name}.log').read_text(encoding='utf8')for name in checks)
+assert not (ROOT/'out/command-controls-types.log').read_text(encoding='utf8').strip()
+assert 'built in' in (ROOT/'out/command-controls-vite-build.log').read_text(encoding='utf8')
+rows=visual['cases'];assert len(rows)==104 and len(native['cases'])==52 and not native['missing'] and not visual['errors']
+changed=[]
+for entry in app['files']:
+ path=ROOT/'gallery/src'/entry['path']
+ if not path.exists() or sha(path)!=entry['sha256']:changed.append(entry['path'])
+status={'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'controls':['SelectorBar','DropDownButton','AppBarButton','AppBarToggleButton','CommandBar'],'excluded':['Pivot'],'gallerySamples':16,'native':{'galleryCommit':'7360ac322414e118eadfb0c7c2f4ecc31a218f59','winuiCommit':'7b12709347527238494ca28cb9fed326d513e779','sdk':'Microsoft.WindowsAppSDK/2.5.4-experimental','winui':'2.3.10-experimental','states':52,'dpi':native['dpi'],'sources':len(read('references/command-controls-sources.json')['files']),'styles':36,'brushes':169,'missingBrushes':native['missing'],'capture':'Own client PrintWindow flags 3; no screen capture. Windowed Popup pixels are excluded; Popup visual-tree geometry is compared.'},'validation':{'rustTests':sum(map(int,re.findall(r'test result: ok\. (\d+) passed;',rust))),'hostClippyWarningsDenied':True,'wasmClippyWarningsDenied':True,'typescriptStrict':True,'viteProductionBuild':True,'sdkDeclarations':True,'browser':'Microsoft Edge / Playwright','browserTests':11,'rendererComparisons':104,'maximumRootErrorDIP':max(max(map(abs,r['dimensionError']))for r in rows),'maximumPartErrorDIP':max(r['partGeometryError']for r in rows),'maximumPopupErrorDIP':max(r.get('popupGeometryError')or 0 for r in rows),'meanImageError':sum(r['meanAbsoluteColorError']for r in rows)/len(rows),'maximumImageError':max(r['meanAbsoluteColorError']for r in rows)},'runtime':{'url':'http://127.0.0.1:5197/#command-bar','sha256':actual,'matchesCurrentBinary':actual==sha(ROOT/'gallery/src/wasm/winui_bg.wasm'),'frozenRuntime':'out/collections-5197-test-runtime','frozenApplication':'out/collections-5197-app-runtime','applicationFilesChangedSinceFreeze':changed,'note':'The live service uses the recorded immutable application snapshot, including its source panels. Later shared-workspace changes are not silently included.'},'scope':{'sameSdkStaticAndBrowserAcceptance':True,'fullStoreGalleryFrameByFrameParity':False,'remaining':['Browser font rasterization versus native ClearType','Acrylic detail and complete popup clip/shadow composition timelines','Full UIA, AccessKey, touch and custom-template combination coverage']}}
+(ROOT/'references/command-controls-status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n',encoding='utf8');print(json.dumps({'rust':status['validation']['rustTests'],'browser':11,'comparisons':104,'sha256':actual,'matchesCurrentBinary':status['runtime']['matchesCurrentBinary'],'applicationDrift':changed},ensure_ascii=False))

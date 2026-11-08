@@ -1,0 +1,4 @@
+import *as SDK from '../src/index';
+(window as unknown as {readingSDK:typeof SDK}).readingSDK=SDK;
+import {createReadingGalleryFixture} from './reading-gallery-fixture';
+(window as unknown as {createReadingGalleryFixture:typeof createReadingGalleryFixture}).createReadingGalleryFixture=createReadingGalleryFixture;
