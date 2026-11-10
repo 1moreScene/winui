@@ -1,0 +1,1 @@
+export{t as ButtonPage,n as FoundationPage}from"./ButtonPage-Cv9H35SX.js";

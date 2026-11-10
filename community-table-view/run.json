@@ -1,0 +1,33 @@
+{
+  "startedAtUnix": 1794211780.0289912,
+  "completedAtUnix": 1794211815.3876562,
+  "communityCommit": "665fea52b8ad47a64187d0f202d5281b074f616f",
+  "sdk": "Microsoft.WindowsAppSDK/1.6.250108002",
+  "kind": "Local source-built instrumented SampleApp, unpackaged/self-contained WinUI; not Store",
+  "binaryHashes": {
+    "WinUI.TableView.SampleApp.exe": "ee895411bd1890e960650d758f4d6cc2c856f47dc228165a73ded41534d49878",
+    "WinUI.TableView.SampleApp.dll": "046eb91b40db6f938a22ef213a10a48391aaf47dc50a78119fb0d2557a110d16",
+    "WinUI.TableView.dll": "96bf1ed94c53e7330be657c2f89741dda431832a62d5955104e951e4c0ecdb6b",
+    "Microsoft.UI.Xaml.dll": "cf43c89b84d68cc82ac6e51ca006da58479b1ef2e41806771b074c7a3b54e0e1"
+  },
+  "instrumentation": [
+    "MainPage capture entry",
+    "Windows-only target and cached compilation runtime",
+    "Explicit nested library resource URI for unpackaged filter UserControl"
+  ],
+  "fixtureParameters": {
+    "language": "English source resw values, applied through original mutable localized-string properties",
+    "lightAccent": "#0067C0",
+    "darkAccent": "#4CC2FF",
+    "sizeDip": [
+      800,
+      320
+    ],
+    "dpr": 1.25
+  },
+  "boundaries": [
+    "RTB static template captures",
+    "Own-client PrintWindow frames with actual sample times",
+    "Programmatic control actions; no computer use, OS input injection, or physical-input parity claim"
+  ]
+}

@@ -1,0 +1,2175 @@
+{
+  "schema": 1,
+  "reviewedOn": "2026-11-10",
+  "components": [
+    {
+      "id": "gallery",
+      "license": "MIT",
+      "source": "https://github.com/microsoft/WinUI-Gallery/tree/7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+      "notices": [
+        "references/GALLERY-LICENSE"
+      ]
+    },
+    {
+      "id": "winui",
+      "license": "MIT",
+      "source": "https://github.com/microsoft/microsoft-ui-xaml/tree/7b12709347527238494ca28cb9fed326d513e779",
+      "notices": [
+        "references/winui/LICENSE"
+      ]
+    },
+    {
+      "id": "winjs-symbols",
+      "license": "Apache-2.0",
+      "source": "https://github.com/winjs/winjs/tree/b9e0b33f76c57caac941c9b1885bf69443320b1c/src/fonts",
+      "notices": [
+        "third_party/icon-fonts/Symbols-LICENSE",
+        "third_party/icon-fonts/Symbols-NOTICE",
+        "third_party/icon-fonts/WinJS-REPOSITORY-LICENSE"
+      ]
+    },
+    {
+      "id": "fluent-system-icons",
+      "license": "MIT",
+      "source": "https://github.com/microsoft/fluentui-system-icons/tree/e15fc0de25fab983e3e42bac8798be69a85c23bf",
+      "notices": [
+        "third_party/icon-fonts/FluentSystemIcons-LICENSE"
+      ]
+    },
+    {
+      "id": "libreicons",
+      "license": "MIT",
+      "source": "https://github.com/DiemenDesign/LibreICONS/tree/2d2172d15e3c6ca03c018629d60050e4b99e5c55",
+      "notices": [
+        "gallery/public/official/LibreICONS-LICENSE.txt"
+      ]
+    },
+    {
+      "id": "project",
+      "license": "MIT",
+      "source": "Project-authored geometric artwork and synthetic two-color editor fixture",
+      "notices": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "tableview-captures",
+      "license": "MIT",
+      "source": "Project-generated raster comparison captures of the pinned community WinUI.TableView, not redistributed font/SDK binaries",
+      "notices": [
+        "LICENSE",
+        "third_party/WinUI.TableView/LICENSE.md",
+        "third_party/WinUI.TableView/v1.5.1/LICENSE.md",
+        "third_party/WinUI.TableView/NOTICE.md"
+      ]
+    },
+    {
+      "id": "calendar-data",
+      "license": "MIT AND Apache-2.0 AND Unicode-3.0",
+      "source": "Pinned ICU4X/calendrical_calculations and lunar_python 1.4.9 generator; HKO is a comparison link, not an imported dataset",
+      "notices": [
+        "third_party/calendar/ICU4X-LICENSE",
+        "third_party/calendar/calendrical-calculations-LICENSE",
+        "third_party/calendar/lunar-python-LICENSE"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "gallery/public/community-table-view/Dark-cell-selected.png",
+      "sha256": "31569a45a8f6826bee0b8e22982e94601d29193c35053416e9c8a05a1c036f73",
+      "bytes": 35840,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Dark-default.png",
+      "sha256": "af4a9b3c93543ac833e15f507dfc7a7643d12f11edda65169e93ce9316f817c6",
+      "bytes": 34860,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Dark-editing.png",
+      "sha256": "eb81f2c10bedf34094db444ff0ffed25c20ceb759cd67ff005dd5edce1b8829a",
+      "bytes": 36003,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Dark-row-selected.png",
+      "sha256": "afc9a7671cb715b40bb301c3e4eab035f08184ef508e06cbadff8beff65b9b98",
+      "bytes": 35295,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Dark-sorted.png",
+      "sha256": "0d3742d4bc628c6e46d4502a3eaed64ce044c33cd6e6ef7f075fcf7821cd3ab5",
+      "bytes": 34966,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Dark-collapsed.png",
+      "sha256": "2ff0777da795f89b79f8bd5ded403de21c302841ad5502c6a62b2de31708f07d",
+      "bytes": 22634,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Dark-count-order.png",
+      "sha256": "db5afd6b1a457046dcf25c244011c5492f0d19d9cb99cfacee7b7bb3100e93c0",
+      "bytes": 39383,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Dark-expanded.png",
+      "sha256": "ce4cb473dcb31abf9d7e7319de637a9eb27a260a3fd0e9e7f78d682bebf4ff04",
+      "bytes": 42942,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Dark-multi-collapsed.png",
+      "sha256": "f603fd0452286f2ae2e106e2dcfd2c233defa674692da4487984a6a82108317a",
+      "bytes": 40794,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Dark-multi.png",
+      "sha256": "3c1f1ec788d0371a4fd6e7281e913d610f7f211666561ac2c6435002632c47f3",
+      "bytes": 40786,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Dark-sticky.png",
+      "sha256": "dca0dd242887930eed3c97bcbd51f99ebf3f47c835166103ce69820fc90ce845",
+      "bytes": 44390,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Light-collapsed.png",
+      "sha256": "049ac31cee6a8c9182d45959ff92ec56f69f145e79e7456c1716cd3fff99230e",
+      "bytes": 22375,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Light-count-order.png",
+      "sha256": "91f75019d3adb75e86852558a1e78a53922a94ef8e58d93a556e055dcc7f1296",
+      "bytes": 42777,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Light-expanded.png",
+      "sha256": "5c359fe4d820b88aa509bb597df62241e8952710ae3ada8139c07601dbce22f3",
+      "bytes": 43179,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Light-multi-collapsed.png",
+      "sha256": "a290af7b16442f02e68dbcd2c53445f67337945d8e82759ad49e28cb70f3ec9b",
+      "bytes": 38657,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Light-multi.png",
+      "sha256": "11022c207fb1f0973609f56c8be432b06750174bf8b7a04e46b818444233b08e",
+      "bytes": 37161,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/grouping/Light-sticky.png",
+      "sha256": "51975c42c1607a31a2dffb901410373ce9be0336ab9678688bd846d36e9e31e4",
+      "bytes": 44029,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-cell-selected.png",
+      "sha256": "0145efae796ceec94e2c272c0a0f21dca0f3f263baddd13efbfd59b3496125bb",
+      "bytes": 35668,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-default.png",
+      "sha256": "c861bb76374331486106b7794496b36e24e98770415e42d57ab1494afb2451b7",
+      "bytes": 34803,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-editing.png",
+      "sha256": "61f1a961a7fe2a4029e9984b66366363b95f99455861ce778066dcfb0496a3b3",
+      "bytes": 35785,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-row-selected.png",
+      "sha256": "08f7cbb3406c6ea68e0af76ecf9121542953782404abce643b367784ad8600d6",
+      "bytes": 35348,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-sorted.png",
+      "sha256": "450f76e0546dddea4df04ab83add790d07f2cb502bfbc8d2135a77ac1e81cab6",
+      "bytes": 34896,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/official/cliff.jpg",
+      "sha256": "89a8ebd17bba8842568bb2647943c3f10a703ecb46cc9046f4165932d5a1139a",
+      "bytes": 162111,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/cliff.jpg",
+      "gitBlobSha1": "3799039c552e765e36bf28fc063e0f6a92eb0b60"
+    },
+    {
+      "path": "gallery/public/official/cmd.png",
+      "sha256": "b774f1b51667fa6ee4eccf9568dadd5dea40e79ef847e163e80b279d55338511",
+      "bytes": 243,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/cmd.png",
+      "gitBlobSha1": "4406e48975d128a080fdfb4ebf562c5b31ed7673"
+    },
+    {
+      "path": "gallery/public/official/command-slices2.png",
+      "sha256": "862c3215a417489cf28d384759a15e302a97e862e151dafeedbdc4893a9b9d6e",
+      "bytes": 644,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/Slices2.png",
+      "gitBlobSha1": "1d850d17c8c013fac9a41994712ae9e2dfdc9d23"
+    },
+    {
+      "path": "gallery/public/official/folder.png",
+      "sha256": "e79df2908d7027c58f49724b0c4a0a4727549b3621dcd30eaf43616b19449e3e",
+      "bytes": 17187,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/folder.png",
+      "gitBlobSha1": "f179473a22e383a4b9261bf59105e15cd9b7bd6f"
+    },
+    {
+      "path": "gallery/public/official/grapes.jpg",
+      "sha256": "b8fb9d46903e1d27b59649537eb31b9a0975765305de9731f9062d2d5de9c4ee",
+      "bytes": 125029,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/grapes.jpg",
+      "gitBlobSha1": "6f78bdc96d2965366d596cd9becaef49809aadf7"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Accessibility.png",
+      "sha256": "573689975955096b13fd94be57d45686a79f5223de13ea4e1efac911f2c0cc46",
+      "bytes": 7200,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Accessibility.png",
+      "gitBlobSha1": "a1a8056d86a7da42db7c298bc6b6d3dcf9f15675"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Acrylic.png",
+      "sha256": "4a69d8ad172f4886ea07018900d73348587635da5b3cf8381a4d7cd09b53a273",
+      "bytes": 3624,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Acrylic.png",
+      "gitBlobSha1": "73c13283af6fa2e0dffa4e94e8f51f27f83a2e45"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AnimatedIcon.png",
+      "sha256": "e923cba9501b72a0aedf1491fb3e0df0a270a369872251cf251dee7b64d917a6",
+      "bytes": 5566,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AnimatedIcon.png",
+      "gitBlobSha1": "9311db4a0e8b41f83c5f3ac65a602c46bf7fc6f7"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AnimatedVisualPlayer.png",
+      "sha256": "078024264d55c4973a70a238241733efde70262f1619b9b653c486ec8f0424bf",
+      "bytes": 6501,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AnimatedVisualPlayer.png",
+      "gitBlobSha1": "8035660487fda7c66606fa4732c60f3c02cd7794"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AnimationInterop.png",
+      "sha256": "714cedcdf5d79960f1c95c796ef1ca4e97c6cd8b11ab1f60faa4d10fba74d612",
+      "bytes": 5078,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AnimationInterop.png",
+      "gitBlobSha1": "6b385c57b81a203cfbdb5b7e27a2bc332a92eb99"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AnnotatedScrollbar.png",
+      "sha256": "729d6174120892fe93d59e518267e75009049a0d4dae0e144d02b88257062f2b",
+      "bytes": 4540,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AnnotatedScrollBar.png",
+      "gitBlobSha1": "9a6352e4ae9204c3fabf1074a60c4777f56dc2c3"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AppBarButton.png",
+      "sha256": "399cb2565eb0b5f801f2364e2c9196d306d0719264a5e5de1505dee940270ecd",
+      "bytes": 1883,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AppBarButton.png",
+      "gitBlobSha1": "1bd23eb947f4b33ca6eef486b7672ad94102e8d8"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AppBarSeparator.png",
+      "sha256": "e3690b26c434fb496abc827d2763d2cc6951a8212eac49475c996d6aa27220d2",
+      "bytes": 4373,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AppBarSeparator.png",
+      "gitBlobSha1": "b14b397ae2611112579540d89a3e86d02ddea069"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AppBarToggleButton.png",
+      "sha256": "c841384acb696c0330733029eb71654ed17c33994da1c7b9d55f6204bc5421fa",
+      "bytes": 5849,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AppBarToggleButton.png",
+      "gitBlobSha1": "8eaaf8de9431eba004d33af5b1dd23b560d09b06"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AppNotification.png",
+      "sha256": "58d92caf6311d0ac032fadd3491fe99e20d4dbca2020dc5baa4806a056e9c0f7",
+      "bytes": 3167,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AppNotification.png",
+      "gitBlobSha1": "adddbb8216050f1cf9857dc55ea9e31763a525fd"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AppWindow.png",
+      "sha256": "eb02d125462d90835718ff68890cac77ff2f53882615d53f6e61ceaa82a36336",
+      "bytes": 2997,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AppWindow.png",
+      "gitBlobSha1": "cd782baf2b1b7d68daa61153e26cdfc898f179ea"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/AutoSuggestBox.png",
+      "sha256": "73636d8329bc7d0bcdd58057c32f7d49cbe0fd04b908c76f9eb52ed8b3199045",
+      "bytes": 4952,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/AutoSuggestBox.png",
+      "gitBlobSha1": "5403ced84eb45491b356836f8bb4ff3fbef385d4"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/BadgeNotification.png",
+      "sha256": "d717f0cae6c3df26cc73084b914c12205a8e3f63dad103ebf16ab434791c9226",
+      "bytes": 4518,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/BadgeNotification.png",
+      "gitBlobSha1": "a88d5c079ac4f15c38f18710731e882794082d13"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Border.png",
+      "sha256": "d414225ba0bd1a81bd6649b9026097eabb9c9a67bcfb325939ced61be604ecb9",
+      "bytes": 6590,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Border.png",
+      "gitBlobSha1": "02717a90f3d58c4f192bc2a24455d148007112be"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/BreadcrumbBar.png",
+      "sha256": "adc73b9914bcda9c142e4ab60056a66e48b66c2b9b8f349f2ff38f46d656d81d",
+      "bytes": 4256,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/BreadcrumbBar.png",
+      "gitBlobSha1": "38629c3065dd895d1c6a40d6c1e7bf99a8388d75"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Button.png",
+      "sha256": "b63b420d9ff18cb31eaa6e82ef7d9cf3175fe97ebb71b0549fa7956ef7800fc4",
+      "bytes": 4240,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Button.png",
+      "gitBlobSha1": "7408813833cbe6d90a3880207e7e04be71d6c311"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CalendarDatePicker.png",
+      "sha256": "79e9969b9e061c90af68bf33d55e06e91fe7161ff0e2b83ae0a56a05f42a59c8",
+      "bytes": 6117,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CalendarDatePicker.png",
+      "gitBlobSha1": "b3f5f9afb0e57546a068f88786546f3d023876d2"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CalendarView.png",
+      "sha256": "0d0c1a8f80cb46869bf740428d751829c6a48f5ee455be1556b639c347710c9c",
+      "bytes": 5120,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CalendarView.png",
+      "gitBlobSha1": "fe34b82600893813106b1a3add76c20463c5518a"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Canvas.png",
+      "sha256": "68c1c467062436415e86fedd97702de9fe37a85ff75483f23cfd91b48fa6de58",
+      "bytes": 4699,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Canvas.png",
+      "gitBlobSha1": "9c857db5d460b42e007b69c1664fdb9c7479f53e"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CaptureElement.png",
+      "sha256": "b0fc23e3dce23ccf3eb34f4e7dd4eb189a0c1cf2bb5ea889f9b5e72b064c7ac0",
+      "bytes": 4847,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CaptureElement.png",
+      "gitBlobSha1": "f0276219d785f6d94f5c784d3244da5ae2f1ce5c"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Chart.png",
+      "sha256": "571a4a6f1672e0827337b988363cb9ba7fcb137c29fc6085ade5e590109a1fd2",
+      "bytes": 3974,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Chart.png",
+      "gitBlobSha1": "8168368b59de6fdadbc070e5d51271b3fee44b56"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CheckBox.png",
+      "sha256": "ed3669a4db8bf52cf4ac9a16b103feec88a43886b31ed436c8a6caf3a1fcd462",
+      "bytes": 5919,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Checkbox.png",
+      "gitBlobSha1": "6616d8730b0827f727aa12344fa884e73017b9dc"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Clipboard.png",
+      "sha256": "f1c9a6e709e0f7fcaf048f06074dbd7d2addcdc7576e82efe618632f433ee799",
+      "bytes": 6269,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Clipboard.png",
+      "gitBlobSha1": "0e24c270c7ac5a9369253f23fcf1cd23f74b10c8"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CodeTagIcon.png",
+      "sha256": "a1da91090b4eed07714a3327464c1b3f133848bb78615eb3ed95e3125e97cc33",
+      "bytes": 6179,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CodeTagIcon.png",
+      "gitBlobSha1": "d162f58768b8121f1a799f2daa0fa4a799413d1a"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ColorPaletteResources.png",
+      "sha256": "36ed0ec3997cf2d54fa0e7dea70b245cab116f2099f10faa4ae3d0b0818188ba",
+      "bytes": 4739,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ColorPaletteResources.png",
+      "gitBlobSha1": "8f4e31cbb229b0bbae8608057cc0be96255136af"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ColorPicker.png",
+      "sha256": "5ca1a0d035248f4017856e99cc73c30a348519763348cad22d3a16a96754e6f6",
+      "bytes": 8621,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ColorPicker.png",
+      "gitBlobSha1": "b4e7a96bd75e66fa7c34bca2f1d38bfd9aeb60c6"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ComboBox.png",
+      "sha256": "3cc896b03cb784183a33c3b3575c373d35f0738d1264e0c6a40a19755ef5b8e4",
+      "bytes": 5165,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ComboBox.png",
+      "gitBlobSha1": "dee1fd9a2f2fa8df52e2b54ac1345e31ad31bd7d"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CommandBar.png",
+      "sha256": "199ada4b3d52a3dfffd947e51084a92af60e9fdd76858e5e9224f22badaabbcb",
+      "bytes": 4047,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CommandBar.png",
+      "gitBlobSha1": "e26566661e29598fd435fa4041a84387d4ee9931"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CommandBarFlyout.png",
+      "sha256": "2474a5fd0cb873cc4e3b3a9aa654636fbfbf3cb8ea68ad9ab3e5ac00db0d4bab",
+      "bytes": 5658,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CommandBarFlyout.png",
+      "gitBlobSha1": "415c4293620bf3bd4795fe60c2c5e1a75623d31e"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CompactSizing.png",
+      "sha256": "6be5ba0960cd4e98e3d0ba53bc0d9ac092a46d44a566ff0e9ee24dceb64ff1c0",
+      "bytes": 5657,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CompactSizing.png",
+      "gitBlobSha1": "4ae95db36d6a57554eb8f1c67ee750ffbf923c2a"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ConnectedAnimation.png",
+      "sha256": "d42398c4701ad259d7ea17ff41ae5a66b938433e43fca36e5731a23ed4106bb8",
+      "bytes": 4882,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ConnectedAnimation.png",
+      "gitBlobSha1": "ff4e15952718db0aa2a3a895a0ae439aa86e7626"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ContentDialog.png",
+      "sha256": "2d153b012c510de534bf102177105f293904081668e9bced325286227e66fad5",
+      "bytes": 3936,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ContentDialog.png",
+      "gitBlobSha1": "0ade66e14ef094bec81b762815e264931a22fe2d"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ContentIsland.png",
+      "sha256": "d634cfd466344b4209a2276a82eba94202c421f37b7fb23ecc7c847bf96ca9df",
+      "bytes": 4218,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ContentIsland.png",
+      "gitBlobSha1": "506ba79bb40a20e5678e4a9342b7d567b8861547"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/CustomControls.png",
+      "sha256": "b8ecf33335bb5098e2af4578f751afe4d6ec643cc5fc0a012fbf3cc0e72982c0",
+      "bytes": 5105,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CustomControls.png",
+      "gitBlobSha1": "b97741b27fb2d3a27d0b6f53b5f0085bdf54dd9d"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/DataGrid.png",
+      "sha256": "b8acd3f871e80df72fc54f67e539dfd4de39fb00744e0a387c8b22b35c6ee8fb",
+      "bytes": 4108,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/DataGrid.png",
+      "gitBlobSha1": "df2e35e794fd5dd5414494c7ef0fcca58408d083"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/DatePicker.png",
+      "sha256": "4fa0fe462d1059b390438309f28e64d7818d3796e5b0686994e7ac730bb773d3",
+      "bytes": 4565,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/DatePicker.png",
+      "gitBlobSha1": "23d35b3ecc9e47b99af35ac0ca6a578efe446637"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/DropDownButton.png",
+      "sha256": "7e8961e15e552e31d260e31c122abf64648228b5104fee29acaa7417cb99ac37",
+      "bytes": 4414,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/DropDownButton.png",
+      "gitBlobSha1": "dc5ff6d936836168db93e3c85245df24760bac1b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/EasingFunction.png",
+      "sha256": "962b5b1d6ced633b53b626fee9f9d22c33f8fd61a08d0c679f3d5bcf97540eb9",
+      "bytes": 5286,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/EasingFunction.png",
+      "gitBlobSha1": "caeee14919225761b0cdce184f37f1aaf5d13759"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Expander.png",
+      "sha256": "1bb445f349529b91e7c9987b9a9545874b4f0f517fc58d65f79bcea460271ab8",
+      "bytes": 5008,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Expander.png",
+      "gitBlobSha1": "531a7f4eae1236b5bc869fd9a36f6c90b33b3430"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/FlipView.png",
+      "sha256": "465016ccf5382d1961ac644c7d22ad7463c59e8b9f7d83f86f16ed207809f549",
+      "bytes": 5097,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/FlipView.png",
+      "gitBlobSha1": "ee466c0a76d13e1594714d757a5e69a6f2b758d1"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Flyout.png",
+      "sha256": "40ac5312ad2bdbca0ec698c66ff85861759b2b1bf3b2c8574aaafec89644b96e",
+      "bytes": 4407,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Flyout.png",
+      "gitBlobSha1": "28fd03299e6c398cd9c3e2a380d36662c3b1560b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Grid.png",
+      "sha256": "3b25f39e7493af1d2a69328649b57bca0dec15532f853f162cf35cdbefea7fbc",
+      "bytes": 5129,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Grid.png",
+      "gitBlobSha1": "6019cee42e22010214d9e368a654b48d864abaaa"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/GridView.png",
+      "sha256": "d2f44f549802365b9f61960c5beb3513c4e29ab73ac5bfa9228a31154b206422",
+      "bytes": 3313,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/GridView.png",
+      "gitBlobSha1": "3829acbfe40daa8e7284d0459d1e5eaee1962477"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/HyperlinkButton.png",
+      "sha256": "d8e20146f132d8f8f8358e539f47e33a28b0a1e2821e77f30894ac9c9f6d948b",
+      "bytes": 4900,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/HyperlinkButton.png",
+      "gitBlobSha1": "51549ecce478ec4d48f37e4a64a7843a2953e229"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/IconElement.png",
+      "sha256": "caa59a8c78c9e2a89cf8ec90de1b7bbaa333ee2d0fe061d3dea7b273dbc124c7",
+      "bytes": 6371,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/IconElement.png",
+      "gitBlobSha1": "9164bffdd0a4d8d66c46946acfe70b01e9bb4636"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Image.png",
+      "sha256": "0a511a7e329aa9e9363787e807452b84cdf6adc360216f1857acb602da1f2eb2",
+      "bytes": 5082,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Image.png",
+      "gitBlobSha1": "96df4be1a872f7f8b939c40ad91a82410d376184"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ImplicitTransition.png",
+      "sha256": "9c3075ad400f0854ea9a79f398dc6a7e32530b2490e32afaa546427dae2e9411",
+      "bytes": 3064,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ImplicitTransition.png",
+      "gitBlobSha1": "fe595e1761125f89a07a7df142c82fb31cffe1b2"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/InfoBadge.png",
+      "sha256": "449b4d8a803a262ebd40850c7e991d2733b32517e1a9b15a90c0eca222d4c075",
+      "bytes": 7375,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/InfoBadge.png",
+      "gitBlobSha1": "21263ace6d6f607d1e8a3e3a5337b99a0196c77f"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/InfoBar.png",
+      "sha256": "68b331f2dda5b14f0b3c9d6eeeea0de989310c4bef6ecd02ea3c019eef482498",
+      "bytes": 4795,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/InfoBar.png",
+      "gitBlobSha1": "3d9f9d7f2fb7fe90c9d66044f4febb3823ebf641"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/InkToolbar.png",
+      "sha256": "6b0228674739095beeead2ebb70213da397f4ff4cdcab9a8a17681eb8b167951",
+      "bytes": 4589,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/InkToolbar.png",
+      "gitBlobSha1": "2134e8c7479e5d242be3429c93ea6215e55668f1"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ItemsView.png",
+      "sha256": "cb6e288bca71ca4f087ae3cf9e5f4bc2ee8ab4acd01246962a25e5c590cbca76",
+      "bytes": 4715,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ItemsRepeater.png",
+      "gitBlobSha1": "18dc1cd1302171793303e652dcbe0744d03a49fc"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/JumpList.png",
+      "sha256": "373ff339ba6d8cbb44e43e269470087dc13a52a61c2f72b2e7cd0004ae5b0123",
+      "bytes": 5201,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/JumpList.png",
+      "gitBlobSha1": "6fdc534a641c5d0362c22294baecb5474dbf09a1"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/LayoutPanel.png",
+      "sha256": "d9817c978ea097370c37b973d571e24ebede01dfd55db6b7c718c0e60d02bbcc",
+      "bytes": 3637,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/LayoutPanel.png",
+      "gitBlobSha1": "ba65f59bd7c3f349832252f3907f978dc6206093"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Line.png",
+      "sha256": "e6326a3be9238caa8bed865b39389c5a708887d2dc10e0b3e2069aece036bc75",
+      "bytes": 5015,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Line.png",
+      "gitBlobSha1": "ed3e408f68f82f8bcfd9ede0459bc5db3a8f1cdc"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ListView.png",
+      "sha256": "015f4f86b6c5f56be4b04d6f26b2f3a06f7e33f6f1757fe2519732751b8745cc",
+      "bytes": 5506,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ListView.png",
+      "gitBlobSha1": "8fc7cec7961b8a5454b18a614c320f46247b0781"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/MapControl.png",
+      "sha256": "c623e98aa5da1bba67cfaf207016b69438d456e4281e3b935a11f47647664ce9",
+      "bytes": 5901,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/MapControl.png",
+      "gitBlobSha1": "1e0ccd6ee308f5ded638a5ea626bd32ebb943a7b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/MediaPlayerElement.png",
+      "sha256": "7803efd958c4ed3f8c2f7864f23ce202bdb86df83036c6d7ce98cb8565ac21a7",
+      "bytes": 3886,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/MediaPlayerElement.png",
+      "gitBlobSha1": "b517c7ec09d8e132383608cb73344b2e3e7a8101"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/MenuBar.png",
+      "sha256": "c8b7c4866e6cd35af1ab3ace8aa63fce4de734e8661da2d12d2d114a08f75c75",
+      "bytes": 4122,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/MenuBar.png",
+      "gitBlobSha1": "35553ad4cacfb91b54861c2b5897721694b79710"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/MenuFlyout.png",
+      "sha256": "b76f8a0efbaf4775eba83b70b03141328a60c493bec281a2c6c8d238b93546b8",
+      "bytes": 5227,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/MenuFlyout.png",
+      "gitBlobSha1": "a501970958ff1d08b408d460d1f08774f06b48c0"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/NavigationView.png",
+      "sha256": "490dc87faf8a8ba0b9793ce7e7237cc1eac15142ed85a222735e64db481e5eab",
+      "bytes": 5022,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/NavigationView.png",
+      "gitBlobSha1": "a92e069c44e87f5d1adf003a9f66d6c6d54c8c37"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/NumberBox.png",
+      "sha256": "fc53d55b453f7f0d56222812e8edf3fb3f72247a7ed8a1bf116e18f920665200",
+      "bytes": 5857,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/NumberBox.png",
+      "gitBlobSha1": "674791cb5afeb5019ca2475d9bc002944f999eaa"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PagerControl.png",
+      "sha256": "f0f2bb07ad7feffc2ceab06929e27962959316f46f06166923ce78ce9f3170f7",
+      "bytes": 4775,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PagerControl.png",
+      "gitBlobSha1": "b8f7d26784f29b0829e90d86589f87c5cd371589"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PageTransition.png",
+      "sha256": "8911cec3180e1a9335a5a2e02ff84c4bdc3aec7893e29430301412685ba0d46a",
+      "bytes": 4561,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PageTransition.png",
+      "gitBlobSha1": "25b18ab10af7412f3db878a17755b54b00972c4b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ParallaxView.png",
+      "sha256": "2e42d24c5938d23d101c764d2e3d1dd41dfddeb496588e21eb00a8384362f00d",
+      "bytes": 3631,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ParallaxView.png",
+      "gitBlobSha1": "07160cf07d0b080879d3d064fc25f3d5da8c2362"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PasswordBox.png",
+      "sha256": "f734a547b966801d34a2e282ec2f0def2d189794124f1373035ce4e542a8944e",
+      "bytes": 4861,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PasswordBox.png",
+      "gitBlobSha1": "9b613c79b9f3be6a54851a5c45083ab3ad171762"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PersonPicture.png",
+      "sha256": "5767adfa0573d77737ad54a60d1e0f53237f18f1d5fd1a5ceef95255f03f9bb9",
+      "bytes": 6534,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PersonPicture.png",
+      "gitBlobSha1": "23d2e64db8f8d51ca27cbc22e98e59abc4a4e08d"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PipsPager.png",
+      "sha256": "6f7d415b63e1aceb7d35d02e720645ba3fd08278632c6cf6cc5323a2fedc51f6",
+      "bytes": 4829,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PipsPager.png",
+      "gitBlobSha1": "c07faf14d19e8ccbdf18027acb806052ca55d68e"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Pivot.png",
+      "sha256": "d1d76de9ba77c854bac73b05931268219127c7f2afd8958f9e4a407a88e8f90c",
+      "bytes": 3374,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Pivot.png",
+      "gitBlobSha1": "675ee0edc59c6904b251daaf1150b3e8c097084e"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Popup.png",
+      "sha256": "991c7d5920978b12843a2eebd154bfda4160000f9fbf7f827f03de7dbc841a43",
+      "bytes": 3595,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Popup.png",
+      "gitBlobSha1": "f4b04d92d3d1e31d4b51047e93043e6f7676bb23"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ProgressBar.png",
+      "sha256": "109e2733d62e816ffd288942a194aca5ff020626513b75b46411bbbaa0c54c93",
+      "bytes": 2986,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ProgressBar.png",
+      "gitBlobSha1": "9e0e00338e90f9ef5401092b446c8e8e95b91103"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ProgressRing.png",
+      "sha256": "1b283ca16dc37b52dfbeb2a914d1b38a148569a131368cc300ffed41a43381ab",
+      "bytes": 4713,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ProgressRing.png",
+      "gitBlobSha1": "fc365f68d99ddded1797ef3a5c488b58fd3aa02b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PullToRefresh.png",
+      "sha256": "427030a03b16935d3526a4442d867d7e9a4e243174bdb0f0385794625fea19e6",
+      "bytes": 5290,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PullToRefresh.png",
+      "gitBlobSha1": "0ea571ae6885ff444f903d5de750fa17ca649b0a"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/RadioButton.png",
+      "sha256": "66123e2c86e3e30581dcfd39b1a2427b009bae5eda790680cd53282bef25af25",
+      "bytes": 6563,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/RadioButton.png",
+      "gitBlobSha1": "9fdaafa83c818ac0657ac888bc188bb9678ac937"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/RatingControl.png",
+      "sha256": "8b471f8147381b0dca1063fccf1c4cb68f3ba18de2a0e5220994912b4e023113",
+      "bytes": 4969,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/RatingControl.png",
+      "gitBlobSha1": "30efd43cb04a645af53efd6e8cd8aadf6f807b27"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/RelativePanel.png",
+      "sha256": "4194fe328dca4b62d72e9881bad6c8e2e628d2185bd3339c8dc7dd48e88d9c2a",
+      "bytes": 3256,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/RelativePanel.png",
+      "gitBlobSha1": "df1ae73f9f0b594d99603f5cc7a72adcf4226917"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/RepeatButton.png",
+      "sha256": "dba9882965282e0fca687ff13d511534099a839990d45df9bb2961099b34635d",
+      "bytes": 4881,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/RepeatButton.png",
+      "gitBlobSha1": "eb1ad5b9ee143373b9c4974be634feda45d31c01"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/RichEditBox.png",
+      "sha256": "c79e4e7654c6b6985dae469304d4627f902fa50c46db0d8622321e55679660d9",
+      "bytes": 5852,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/RichEditBox.png",
+      "gitBlobSha1": "3ffe648c5f3cd9c983e8d3931b5fbc59b6743e8b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/RichTextBlock.png",
+      "sha256": "1b44ddf26a404b52494aea4fb20f562004a979c912906615dee38fd35314386b",
+      "bytes": 5635,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/RichTextBlock.png",
+      "gitBlobSha1": "34cd05e7ec75ec8d6b52ab5eefaff07c0be0c229"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ScratchPad.png",
+      "sha256": "7bbc56f4f4bb37553458049c38b5359592fdaacedf9fd2101243f69281a5a044",
+      "bytes": 7663,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ScratchPad.png",
+      "gitBlobSha1": "e9e5a09f3095844a7ce176fd4b4ff405d5fb6518"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ScrollView.png",
+      "sha256": "39ea6c68ba379a2bcfa97f1306e7396d0ace2672ead8f3f60b07b7c9e230c0d9",
+      "bytes": 5694,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ScrollView.png",
+      "gitBlobSha1": "d54541ae7cc08d3b85cd86c1f082a78faa29232c"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ScrollViewer.png",
+      "sha256": "39ea6c68ba379a2bcfa97f1306e7396d0ace2672ead8f3f60b07b7c9e230c0d9",
+      "bytes": 5694,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ScrollView.png",
+      "gitBlobSha1": "d54541ae7cc08d3b85cd86c1f082a78faa29232c"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/SemanticZoom.png",
+      "sha256": "7d4811bb5f0fc7ee8bfc21054d2a9aed24fe79020d6888fd4348328d445d5ffa",
+      "bytes": 4565,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/SemanticZoom.png",
+      "gitBlobSha1": "bbdbf45b6617a0895599db7554f3a488001a73ef"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Shape.png",
+      "sha256": "fe0b4d6705bc68ec56cb56716c181a3035a1e2b8c8ebadee6c6d055bae8c9e4e",
+      "bytes": 5401,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Shape.png",
+      "gitBlobSha1": "c37f49e929a89fea5be1b478e6b87ade7ca4e928"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Slider.png",
+      "sha256": "cecf236181df2fd3b729180c9abeb6acb5d71dfeb5e503bc56d39a3bebc0283e",
+      "bytes": 2902,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Slider.png",
+      "gitBlobSha1": "cdc61759d819f65b7e8746b9913f8335b0d4530c"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Sound.png",
+      "sha256": "142f236ecd92440ad685176256422bfd977d168df561bd03711e2209aff9a879",
+      "bytes": 4488,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Sound.png",
+      "gitBlobSha1": "bcec53a9856fd8f9f0c1b6e16d573e4c97a99996"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/SplitButton.png",
+      "sha256": "0c63677e75033d7dac31d34e52caa670f904d6bef037d54cc75e0a3c030c16c7",
+      "bytes": 4541,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/SplitButton.png",
+      "gitBlobSha1": "1f0e1415e6a9ba7726d7bf4c916cb99babb1764f"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/SplitView.png",
+      "sha256": "582c896f8b6d8049eb213190da5cb4fa77d9d2031d1ea7f16a7087ed8178ebee",
+      "bytes": 4141,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/SplitView.png",
+      "gitBlobSha1": "73d81193f26985a2848dcfed18ba1936f790a479"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/StackPanel.png",
+      "sha256": "9cd682354bc22ecfee16c6270cb1ddca6269b12378357d3f03b581f801ecfbe6",
+      "bytes": 4132,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/StackPanel.png",
+      "gitBlobSha1": "f7e46a0104bd5a82418ca43c7c5aef55e3e9dc06"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/StoragePickers.png",
+      "sha256": "9fd31c45c7b4423c23e723a76dab68df8f3481c68a62dbeea9170d340f66c3cf",
+      "bytes": 5469,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/StoragePickers.png",
+      "gitBlobSha1": "7bcbbc14cc0819c3b6e5c00cc4a2aadb2066570d"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/SwipeControl.png",
+      "sha256": "ceae02f3914b53d2e860f881adc471ca45a74021d7d214add46107fd6d4b6b3f",
+      "bytes": 5173,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/SwipeControl.png",
+      "gitBlobSha1": "796eb656bb8ab92a61f8dab009269c880a18c485"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TabView.png",
+      "sha256": "56c00588e1821bde2dcef0587c7eb2866ab315896c697e2843ac17b82d340c8f",
+      "bytes": 4388,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TabView.png",
+      "gitBlobSha1": "0364e3a8e66a42ab01734c57deec42b98d983623"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TeachingTip.png",
+      "sha256": "d7d6a1fb77eeac7ffaf818b1881c060caea479045badd008f001fcde0725aeee",
+      "bytes": 4221,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TeachingTip.png",
+      "gitBlobSha1": "2428e2a35ea94cb058999bda883544245906a00e"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TextBlock.png",
+      "sha256": "2b835b5c2a347eb6c8eaa68e6a2238ebd7a06ba46304660b453cd6445276e5ab",
+      "bytes": 5421,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TextBlock.png",
+      "gitBlobSha1": "a97c489f245616111b1465ad46879f4a68428cbf"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TextBox.png",
+      "sha256": "835f0becba9d6d1eddf41258246719e28fcb5aadb12bfef45de2bb7ddb3e1be4",
+      "bytes": 5353,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TextBox.png",
+      "gitBlobSha1": "281645b685d64c4b2b0437c94121749336550a7b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ThemeShadow.png",
+      "sha256": "c29125f5d45f00285184c0e832cc3d9c6cec705cba9422f4a19a73b0ba09805b",
+      "bytes": 3131,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ThemeShadow.png",
+      "gitBlobSha1": "ee4148591665826693433e31cb6bb62fb2a70dcd"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ThemeTransition.png",
+      "sha256": "022dc04241ac3954fe83740613312ac51ceaacbfcea3c489528119f9cbfed9a9",
+      "bytes": 3377,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ThemeTransition.png",
+      "gitBlobSha1": "91a74c05a43a8f4a9082c1f896a1b4434ddf7c8d"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TimePicker.png",
+      "sha256": "f3fe48f4e2521bfe1768addb763b277245a276e0589209c641a86d21453c55bb",
+      "bytes": 4709,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TimePicker.png",
+      "gitBlobSha1": "c63aca390ddef62974dc992e9b68544d4458e8ec"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TitleBar.png",
+      "sha256": "2de1dd97224ec56959ff7807496311e9a0796af4ce6720f00bfbcecf1fa7ab11",
+      "bytes": 4559,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TitleBar.png",
+      "gitBlobSha1": "2c76819c1176ec26179cef105176bc11ed166017"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ToggleButton.png",
+      "sha256": "3675b31c430a2505e68cdb000c938d47b97886f88b7690a06edd162746f4ceb8",
+      "bytes": 3627,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ToggleButton.png",
+      "gitBlobSha1": "52682aa065ca4a87566c620981f0125742a0b5a3"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ToggleSplitButton.png",
+      "sha256": "4d8ab88312f7da76dd642b803a0d96ca4680d89c01d0b12b3e3f7489a4a093d7",
+      "bytes": 4291,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ToggleSplitButton.png",
+      "gitBlobSha1": "3582c107354b7873b5dd2bf9844420d79276bd33"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ToggleSwitch.png",
+      "sha256": "db1756654847dfb2c57bb3f1c6fba1caba3f34780a8fbfc7b69a75efb5659552",
+      "bytes": 4813,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ToggleSwitch.png",
+      "gitBlobSha1": "a8537a2a3e2c2572ddc3f8b0082dcaaad48e5403"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/ToolTip.png",
+      "sha256": "b547953d5b073e01fcd50efdce1b55cb00571935f5d5a387dd91cb3edad80f6d",
+      "bytes": 4026,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ToolTip.png",
+      "gitBlobSha1": "83eee5ac71d39c033d63b6bb7bd2d65d00a93139"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/TreeView.png",
+      "sha256": "cfcb565430674d39d8eda9f0deff7d93e292d10d1db683c3fe4a003745e909c8",
+      "bytes": 3650,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TreeView.png",
+      "gitBlobSha1": "0a652bac529260b6c50163910427745756a8d113"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/VariableSizedWrapGrid.png",
+      "sha256": "8e8923c8a38e593f780da5a3409c53e6dcad96f3dbde4f737d3ea919b09eac70",
+      "bytes": 4403,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/VariableSizedWrapGrid.png",
+      "gitBlobSha1": "f2f0c78ed9d7f879a5189ecc15601cf988e662fd"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Viewbox.png",
+      "sha256": "4061fdf243784670f1d5ef1f6416f9668a40c80fc199b7ea79f494ab23b64595",
+      "bytes": 5435,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Viewbox.png",
+      "gitBlobSha1": "8940cdfc14dde66dca147c6ca6006c597f1d6b52"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/WebView.png",
+      "sha256": "d381c5da0aed7078073621ad216e0fcf9cefe80da6fea011561a93fce5e1e9a6",
+      "bytes": 8376,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/WebView.png",
+      "gitBlobSha1": "c6742a1d2f909d95be2080ddeab1bc96f3161677"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/Windowing.png",
+      "sha256": "60ac153191e22954667188abb96ff8af3f777440f606bc6b10ff9dc3a0b1dd28",
+      "bytes": 4646,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Windowing.png",
+      "gitBlobSha1": "d70a55ca9436d9a07dd9945f5833059caa9429f8"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/WrapPanel.png",
+      "sha256": "a0398fa774315d9f5a7c884e1153f8a6dd0b66dca8f9fb5b1001e226805a215d",
+      "bytes": 4478,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/WrapPanel.png",
+      "gitBlobSha1": "84c61d3c7e08361e251a7879753ceae13717bbd0"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/GalleryHeaderImage.png",
+      "sha256": "b11b82a530c84b0641d1ade82c7b9586a66dfe694a03ed118370d82f0656fe80",
+      "bytes": 1121736,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/GalleryHeaderImage.png",
+      "gitBlobSha1": "5b7a9bd72cd37ea433e3993c0bdd8d91f6bdbd27"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-Store.dark.png",
+      "sha256": "192228fb9504b8cec5ee5762a6ad582992291fc96fe5600c5fee4e7dbb487f32",
+      "bytes": 2416,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-Store.dark.png",
+      "gitBlobSha1": "d5fbc1eedd54cee72e738133d0f4118c9c3260cf"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-Store.light.png",
+      "sha256": "863becea59249e7fdfa5446670c543c5efb2f060dd542d7b23f60102763918af",
+      "bytes": 3228,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-Store.light.png",
+      "gitBlobSha1": "1ff4cfb95660f247bca16909dfe26880dc4bb3da"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-Toolkit.png",
+      "sha256": "93f2f4ca512d3739db4db72b4d24cb257c0cc42ffbe6cf1b004291ef9bc0ddd1",
+      "bytes": 33602,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-Toolkit.png",
+      "gitBlobSha1": "3e4e0a8974c1cf9f232d2475243684e678db099a"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-WindowsDesign.png",
+      "sha256": "ef286fc0aea37c98ffead7a8cb0db3229b6c834383f2d0a594d9dd3add48aea7",
+      "bytes": 199353,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-WindowsDesign.png",
+      "gitBlobSha1": "5c822819242335c434089456ead537f6ff6c2c17"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-WinUI.png",
+      "sha256": "a73b76f15213041232d50058fec473aa6d820acc919f2276a3bc477ae1fb52fa",
+      "bytes": 564580,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-WinUI.png",
+      "gitBlobSha1": "10c18b5df9944c2452be4c0e438f87744cf9215b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/Tiles/AppList.targetsize-32.png",
+      "sha256": "8467a3e831a8287e69e3c9d859144e51aba4ed800b92bd797c657fb02414844a",
+      "bytes": 1412,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/Tiles/AppList.targetsize-32.png",
+      "gitBlobSha1": "7f97d03767855020bf3ac98bc5d07a2997062a1b"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage1.jpg",
+      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188",
+      "bytes": 84659,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage1.jpg",
+      "gitBlobSha1": "8dafb3e38bb77ed993912b0a2bd91b83be7ee264"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage2.jpg",
+      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e",
+      "bytes": 67449,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage2.jpg",
+      "gitBlobSha1": "a52230e06e71d0d47a121cbbaebe23ccd568b765"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage3.jpg",
+      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540",
+      "bytes": 83628,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage3.jpg",
+      "gitBlobSha1": "7a09346ee7b75e1ce51fcadcc61d5e6f0feef4eb"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage4.jpg",
+      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3",
+      "bytes": 176812,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage4.jpg",
+      "gitBlobSha1": "b4551eac266fe3ac3f42f29bd85d91987ec19dd5"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage5.jpg",
+      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5",
+      "bytes": 127560,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage5.jpg",
+      "gitBlobSha1": "732735668119564d01d6c20773780db5044afa36"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage6.jpg",
+      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431",
+      "bytes": 117162,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage6.jpg",
+      "gitBlobSha1": "4ac428ecf1c7e687e24dd1fe0b5874b44efe1e86"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage7.jpg",
+      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77",
+      "bytes": 137565,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage7.jpg",
+      "gitBlobSha1": "192e058b7405107c7c5785b9d1543f87b11dcaff"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage8.jpg",
+      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36",
+      "bytes": 157194,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage8.jpg",
+      "gitBlobSha1": "979f50d6288864fbb744e14cbc28f77c0c02edf0"
+    },
+    {
+      "path": "gallery/public/official/libre-camera-panorama.svg",
+      "sha256": "7168458bc216dea0854f76febb66b8d828f4e3db56f77ab50c484e04eae67d53",
+      "bytes": 535,
+      "components": [
+        "libreicons"
+      ],
+      "source": "https://raw.githubusercontent.com/DiemenDesign/LibreICONS/2d2172d15e3c6ca03c018629d60050e4b99e5c55/svg-color/libre-camera-panorama.svg"
+    },
+    {
+      "path": "gallery/public/official/linux.png",
+      "sha256": "92e13dc9a7989969667889390d771b364147fc94b259e01b8df64b4ed6d6a2f5",
+      "bytes": 755,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/linux.png",
+      "gitBlobSha1": "eb9b64c3f5d7a773e437f38b8b44763f5d80b59c"
+    },
+    {
+      "path": "gallery/public/official/MirrorPCConsent.svg",
+      "sha256": "7aabf9a35b9770f018ad9703a553147600982d3e333f345c760bac34252c09b0",
+      "bytes": 28578,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/MirrorPCConsent.svg",
+      "gitBlobSha1": "c235b668814b3eae4018100f1baaee1ef8ba034f"
+    },
+    {
+      "path": "gallery/public/official/nav-Accessibility.png",
+      "sha256": "573689975955096b13fd94be57d45686a79f5223de13ea4e1efac911f2c0cc46",
+      "bytes": 7200,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Accessibility.png",
+      "gitBlobSha1": "a1a8056d86a7da42db7c298bc6b6d3dcf9f15675"
+    },
+    {
+      "path": "gallery/public/official/nav-CodeTagIcon.png",
+      "sha256": "a1da91090b4eed07714a3327464c1b3f133848bb78615eb3ed95e3125e97cc33",
+      "bytes": 6179,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CodeTagIcon.png",
+      "gitBlobSha1": "d162f58768b8121f1a799f2daa0fa4a799413d1a"
+    },
+    {
+      "path": "gallery/public/official/nav-ColorPaletteResources.png",
+      "sha256": "36ed0ec3997cf2d54fa0e7dea70b245cab116f2099f10faa4ae3d0b0818188ba",
+      "bytes": 4739,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ColorPaletteResources.png",
+      "gitBlobSha1": "8f4e31cbb229b0bbae8608057cc0be96255136af"
+    },
+    {
+      "path": "gallery/public/official/nav-CompactSizing.png",
+      "sha256": "6be5ba0960cd4e98e3d0ba53bc0d9ac092a46d44a566ff0e9ee24dceb64ff1c0",
+      "bytes": 5657,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CompactSizing.png",
+      "gitBlobSha1": "4ae95db36d6a57554eb8f1c67ee750ffbf923c2a"
+    },
+    {
+      "path": "gallery/public/official/nav-CustomControls.png",
+      "sha256": "b8ecf33335bb5098e2af4578f751afe4d6ec643cc5fc0a012fbf3cc0e72982c0",
+      "bytes": 5105,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/CustomControls.png",
+      "gitBlobSha1": "b97741b27fb2d3a27d0b6f53b5f0085bdf54dd9d"
+    },
+    {
+      "path": "gallery/public/official/nav-IconElement.png",
+      "sha256": "caa59a8c78c9e2a89cf8ec90de1b7bbaa333ee2d0fe061d3dea7b273dbc124c7",
+      "bytes": 6371,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/IconElement.png",
+      "gitBlobSha1": "9164bffdd0a4d8d66c46946acfe70b01e9bb4636"
+    },
+    {
+      "path": "gallery/public/official/nav-ScratchPad.png",
+      "sha256": "7bbc56f4f4bb37553458049c38b5359592fdaacedf9fd2101243f69281a5a044",
+      "bytes": 7663,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/ScratchPad.png",
+      "gitBlobSha1": "e9e5a09f3095844a7ce176fd4b4ff405d5fb6518"
+    },
+    {
+      "path": "gallery/public/official/nav-Shape.png",
+      "sha256": "fe0b4d6705bc68ec56cb56716c181a3035a1e2b8c8ebadee6c6d055bae8c9e4e",
+      "bytes": 5401,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/Shape.png",
+      "gitBlobSha1": "c37f49e929a89fea5be1b478e6b87ade7ca4e928"
+    },
+    {
+      "path": "gallery/public/official/nav-TextBlock.png",
+      "sha256": "2b835b5c2a347eb6c8eaa68e6a2238ebd7a06ba46304660b453cd6445276e5ab",
+      "bytes": 5421,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/TextBlock.png",
+      "gitBlobSha1": "a97c489f245616111b1465ad46879f4a68428cbf"
+    },
+    {
+      "path": "gallery/public/official/parallax-cliff.jpg",
+      "sha256": "89a8ebd17bba8842568bb2647943c3f10a703ecb46cc9046f4165932d5a1139a",
+      "bytes": 162111,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/cliff.jpg",
+      "gitBlobSha1": "3799039c552e765e36bf28fc063e0f6a92eb0b60"
+    },
+    {
+      "path": "gallery/public/official/powershell.png",
+      "sha256": "225f69c01321d74637be8d3a041469ff141a7b50e37d529d6b185543030d86ee",
+      "bytes": 616,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/powershell.png",
+      "gitBlobSha1": "6230746aeec9230decbce0d966602408b59cc826"
+    },
+    {
+      "path": "gallery/public/official/rainier.jpg",
+      "sha256": "e592c58f29a7cea37e338c364a15d0801e490511c5239a1f99da84f632cc2503",
+      "bytes": 736388,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/rainier.jpg",
+      "gitBlobSha1": "0ff6f960bfd6f09af813ec4f2e208194d363d51d"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage1.jpg",
+      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188",
+      "bytes": 84659,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage1.jpg",
+      "gitBlobSha1": "8dafb3e38bb77ed993912b0a2bd91b83be7ee264"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage10.jpg",
+      "sha256": "a83e0ee6399f80f0172004c233ffe92b3332df82f1015e826de7a9a28386a418",
+      "bytes": 189420,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage10.jpg",
+      "gitBlobSha1": "d88df4eed587e08af71b08fe4e0c78cd0375d1b5"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage11.jpg",
+      "sha256": "ef425fc738141b0b90e432a8e170d1b0ba5461f1e308714cab8baacbc1625970",
+      "bytes": 26070,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage11.jpg",
+      "gitBlobSha1": "395c34e4ff22921522c1498eca12b8e1dd1adc15"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage12.jpg",
+      "sha256": "ec739a0ef01e4bd5eba38e77748453e0f1eda09061686b281cfe69c1d8ac4626",
+      "bytes": 38555,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage12.jpg",
+      "gitBlobSha1": "b7ef1a481f230f6bd720920d2995a634dcdf94d9"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage13.jpg",
+      "sha256": "f0a67632f9868fd790d3790370a435a4fcbbce5619c7389b9aa9dc720a030a14",
+      "bytes": 43455,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage13.jpg",
+      "gitBlobSha1": "da56cdf34835a025475611448dcf30efbc6dd1df"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage2.jpg",
+      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e",
+      "bytes": 67449,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage2.jpg",
+      "gitBlobSha1": "a52230e06e71d0d47a121cbbaebe23ccd568b765"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage3.jpg",
+      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540",
+      "bytes": 83628,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage3.jpg",
+      "gitBlobSha1": "7a09346ee7b75e1ce51fcadcc61d5e6f0feef4eb"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage4.jpg",
+      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3",
+      "bytes": 176812,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage4.jpg",
+      "gitBlobSha1": "b4551eac266fe3ac3f42f29bd85d91987ec19dd5"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage5.jpg",
+      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5",
+      "bytes": 127560,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage5.jpg",
+      "gitBlobSha1": "732735668119564d01d6c20773780db5044afa36"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage6.jpg",
+      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431",
+      "bytes": 117162,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage6.jpg",
+      "gitBlobSha1": "4ac428ecf1c7e687e24dd1fe0b5874b44efe1e86"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage7.jpg",
+      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77",
+      "bytes": 137565,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage7.jpg",
+      "gitBlobSha1": "192e058b7405107c7c5785b9d1543f87b11dcaff"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage8.jpg",
+      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36",
+      "bytes": 157194,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage8.jpg",
+      "gitBlobSha1": "979f50d6288864fbb744e14cbc28f77c0c02edf0"
+    },
+    {
+      "path": "gallery/public/official/reading/LandscapeImage9.jpg",
+      "sha256": "6ee8e036511b2f61d2d37284f23dab8a7ce7125206f3777d70c7daaa09df814b",
+      "bytes": 55405,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage9.jpg",
+      "gitBlobSha1": "363898a5af4cf66273c3bfda2c14da9d83a78e9f"
+    },
+    {
+      "path": "gallery/public/official/repeater/SunBlack.png",
+      "sha256": "03f5c06c7d0ea883b0082ee7ad49d553ebb434c4891cba006db53a9051e0470c",
+      "bytes": 246,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/SunBlack.png",
+      "gitBlobSha1": "ad6d640abd40df54918bf8f0b040cfaafe134682"
+    },
+    {
+      "path": "gallery/public/official/repeater/SunWhite.png",
+      "sha256": "c1c7ea4c16f0ab5ac58d36ab1a2a5ae65e6fed8faf3691cf9f0bd8a947c2f182",
+      "bytes": 248,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/SunWhite.png",
+      "gitBlobSha1": "fd65de1eeaa03b7322167b2dfa75aa08c9ff2523"
+    },
+    {
+      "path": "gallery/public/official/rich-edit/embedded.png",
+      "sha256": "407038c31c2f08428c09ae65242938cd467fde1db5977572294ef81989113385",
+      "bytes": 119,
+      "components": [
+        "project"
+      ],
+      "source": "gallery/src/rich-edit-fixtures.json: image; 48x32 red/blue test rectangles"
+    },
+    {
+      "path": "gallery/public/official/Slices.png",
+      "sha256": "dac97fd49097b9dc7518b6c3e68a5497c33074951bc8375d8cb98c3e537896fc",
+      "bytes": 2653,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/Slices.png",
+      "gitBlobSha1": "8c793521c6fbb816483ecbbcc9f87a0acb9e5e7a"
+    },
+    {
+      "path": "gallery/public/official/sunset.jpg",
+      "sha256": "dde8ca43fdedd3d1746cf29c9d1a3d2b428066ea75c5a87f3d6eeddbd1f930aa",
+      "bytes": 96309,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/sunset.jpg",
+      "gitBlobSha1": "11957d9232420bb95527d5a0b9af38c74bc2238e"
+    },
+    {
+      "path": "gallery/public/official/treetops.jpg",
+      "sha256": "c81ff5da7162cc0e80400859207b7a7f08e6322e02ca835e7ed327b1e1b6a0f0",
+      "bytes": 61815,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/treetops.jpg",
+      "gitBlobSha1": "c52cdcd45b90405aafd26581786705f99957dfe4"
+    },
+    {
+      "path": "gallery/public/official/valley.jpg",
+      "sha256": "4ad3c0819ccaa45322319a085c3a3d314c683d26dd53e1378c5210dacbe7432e",
+      "bytes": 154556,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/valley.jpg",
+      "gitBlobSha1": "58879f8c89a79f0e3c47b5b9e3d7eb0505df74c3"
+    },
+    {
+      "path": "gallery/public/project/person-profile.png",
+      "sha256": "61edeee0ab25abd58769b794e5f2534dc9cf44f90bfe031bc61689fc190b32ba",
+      "bytes": 5266,
+      "components": [
+        "project"
+      ],
+      "source": "tools/generate-project-avatar.py"
+    },
+    {
+      "path": "gallery/public/project/person-profile.svg",
+      "sha256": "c67da62ad6b29665c404d9789c6501d67647897b6fd46704366ab502bd5025c7",
+      "bytes": 348,
+      "components": [
+        "project"
+      ],
+      "source": "tools/generate-project-avatar.py"
+    },
+    {
+      "path": "packages/winui-wasm/src/assets/winui-icons.woff",
+      "sha256": "504c000204af0e86a34cfd52f8be0ee0b72ad075fbd063cd869f4ba7b5659684",
+      "bytes": 53620,
+      "components": [
+        "winjs-symbols",
+        "fluent-system-icons",
+        "project"
+      ],
+      "source": "tools/build-icon-font.py and tools/icon_geometry.py",
+      "modified": true
+    },
+    {
+      "path": "third_party/icon-fonts/FluentSystemIcons-Filled.ttf",
+      "sha256": "cd88ff3ff72c93a575d39b5504a422e67c6c28278642e7946b76a7b6ef35f46f",
+      "bytes": 2566016,
+      "components": [
+        "fluent-system-icons"
+      ],
+      "source": "https://raw.githubusercontent.com/microsoft/fluentui-system-icons/e15fc0de25fab983e3e42bac8798be69a85c23bf/fonts/FluentSystemIcons-Filled.ttf"
+    },
+    {
+      "path": "third_party/icon-fonts/FluentSystemIcons-Regular.ttf",
+      "sha256": "af1b71ab7bb475ae30b8c87172551503f8de6cf733548fe7ddbda15fc08dea34",
+      "bytes": 2900836,
+      "components": [
+        "fluent-system-icons"
+      ],
+      "source": "https://raw.githubusercontent.com/microsoft/fluentui-system-icons/e15fc0de25fab983e3e42bac8798be69a85c23bf/fonts/FluentSystemIcons-Regular.ttf"
+    },
+    {
+      "path": "third_party/icon-fonts/Symbols.ttf",
+      "sha256": "44fad6f19d2c676fafec5d3168df2b5ca53de7ec4766960f196aa39bb96ece1e",
+      "bytes": 47488,
+      "components": [
+        "winjs-symbols"
+      ],
+      "source": "https://raw.githubusercontent.com/winjs/winjs/b9e0b33f76c57caac941c9b1885bf69443320b1c/src/fonts/Symbols.ttf"
+    }
+  ],
+  "notices": {
+    "references/GALLERY-LICENSE": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+    "references/winui/LICENSE": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+    "third_party/icon-fonts/Symbols-LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "third_party/icon-fonts/Symbols-NOTICE": "6e71dca4e7602954e09af13ec96b8ecf4e3f6a501baaa6d492c1e545a9326c5f",
+    "third_party/icon-fonts/WinJS-REPOSITORY-LICENSE": "13217bb585c27ee298f49c7aec2ef74578bc0d644880906a89d2c3ccec5d647e",
+    "third_party/icon-fonts/FluentSystemIcons-LICENSE": "69bc45dc42b9acb96a69823adbc6ae538374e3c0bde169b855b32c48eaaef52f",
+    "gallery/public/official/LibreICONS-LICENSE.txt": "1f5393dea76e0a3a76ed273ae7e7e470345b9bb91a3e8d3e880140a2461c9194",
+    "LICENSE": "99ec156219baead4b8eb0edee50cbe65f7776890919ab52a94c857574d18be0d",
+    "third_party/WinUI.TableView/LICENSE.md": "7669376774e3395bd62ad1c07a453fdae22c24db0d55c22953564a4a4f046010",
+    "third_party/WinUI.TableView/v1.5.1/LICENSE.md": "58f98255dc8859d796d4eb4f82a8afc2b21488e2b9e93e0af59960804300abb8",
+    "third_party/WinUI.TableView/NOTICE.md": "d7a2df08a7d4c4f66383e220ebf56342bc86a1bf308edf5398ee486dcba1ee85",
+    "third_party/calendar/ICU4X-LICENSE": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
+    "third_party/calendar/calendrical-calculations-LICENSE": "192ea857d1bff2b87c174de36cbae5c173234726c6b8eceab9790a535d7dbc95",
+    "third_party/calendar/lunar-python-LICENSE": "a9d04f47f0615c0ce48bdbe2ff58d5c174279d9f20f044ef29249632302a4ab3"
+  },
+  "inlineResources": [
+    {
+      "path": "gallery/src/HomePage.tsx",
+      "sha256": "eb1a57c04a39f6a281b5c2ee870592c3925cd3c6dcf18a7067fd88f5ffac803a",
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/App.xaml#GitHubIcon",
+      "components": [
+        "gallery"
+      ]
+    },
+    {
+      "path": "gallery/src/rich-edit-fixtures.json",
+      "sha256": "3e2c4264e7e62c7facecd96bec62b356f48134cc9b1f06378006c07b4d86da97",
+      "source": "Project-authored red/blue PNG literal and test documents",
+      "components": [
+        "project"
+      ]
+    }
+  ],
+  "supportingFiles": {
+    "references/mit-xaml-sources.json": "db745ac442ec9c643f63a4618084564178b7d650ea786ef754b44733c563f79b",
+    "references/mit-xaml-generation.json": "3206375855bb6f17bf5bd3629bedb82a7e2badfb25c2de99d1853ba648d564e0",
+    "references/mit-palette-generation.json": "91b3ea6432a648ef8bc60ee9e08322cd84268251cc7ae863f86e0e724536d6a6",
+    "references/browser-theme-profile.json": "22886726f2efcf604095599dbc48a51d5720d35822686c27743e00d1d7b4c801",
+    "references/mit-palette-requirements.json": "68627f4526e3eca5452a981103e214d04426cceb7f9e03875e6b15e36bee9e52",
+    "tools/build-mit-resource-dictionary.py": "49926b5b205871780f038609545b752226883d10d187df40a282550d040c7f6f",
+    "tools/generate-mit-palettes.py": "553016b6a3dfc38d02f3f0785c295743a8797a51ba61186867b5f46311428228",
+    "tools/mit_xaml_resources.py": "476e2f47814f31b23c3bf8f6fcf4844f99d3f9e1fc8c48b034284488e58eb34d",
+    "tools/sdk_resource_reader.py": "21d15c735cc58e9bf0bc43147c5ccf28a4852ce231aa86e8a9efea3bf9dd3ae1",
+    "tools/verify_mit_resources.py": "f729a77c568cf5e5429a0a5f6d14a6e2371c0b39c9390835dae6e92ed41e7752",
+    "third_party/resource-source-verification.json": "799cd6911fc44be3a817839a2b66ade043cc8e00be1ec93c53db7fb3f463404e",
+    "references/external-icons.json": "e99574f62e7a039f1dec4dbb20b0f8da5d5fcb432f4ce5a2e514eef7e92b90b4",
+    "third_party/icon-fonts/source.json": "88e10649bf54d96394ae90e6bf7057e8eded3a283299de52d4a02aec7a1f4df2",
+    "references/mit-xaml/LICENSE": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+    "references/mit-xaml/controls/dev/AnnotatedScrollBar/AnnotatedScrollBar.xaml": "8f5159d0e2c3b66c0c7e4c4ac695f572ff77fb823e69ece3416015f3a4eb0074",
+    "references/mit-xaml/controls/dev/AnnotatedScrollBar/AnnotatedScrollBar_themeresources.xaml": "54206634bbdc5ea4b47ec013d7a6417d6a6e88edde91cceed30b6da611c3e1ae",
+    "references/mit-xaml/controls/dev/AutoSuggestBox/AutoSuggestBox_themeresources.xaml": "84c5e4e056df5c2cc07757cf73215c495f4e58c9ab6f7b2862087bd3d208bfed",
+    "references/mit-xaml/controls/dev/Breadcrumb/BreadcrumbBar.xaml": "01f6e508d33ad36ccb7a543ecef0423f5c7837c36cd4e7a58f30db3c708a8a32",
+    "references/mit-xaml/controls/dev/Breadcrumb/BreadcrumbBar_themeresources.xaml": "71f7aba29d9be59ab4d18746418ce43e118d9d1f42dedb233d55d74d51b17de0",
+    "references/mit-xaml/controls/dev/ColorPicker/ColorPicker.xaml": "ed05efc9e934cd7364744cff16fe45cc801e455cb89ff5c7ae784565c5862488",
+    "references/mit-xaml/controls/dev/ColorPicker/ColorPicker_themeresources.xaml": "76a0caeceb10757926650211d39d38dda508a9df76528b31c72540ed699b8e49",
+    "references/mit-xaml/controls/dev/ColorPicker/ColorSpectrum.xaml": "9896e225eee1bec6dc837bc633bb6acbf248e0c69e0c62ca1de9e962ba2dd6c9",
+    "references/mit-xaml/controls/dev/ComboBox/ComboBox_themeresources.xaml": "c821a016f2e670b6a31017ee563784a90262f20e9c26367b39bc7aebb90c520d",
+    "references/mit-xaml/controls/dev/CommandBarFlyout/CommandBarFlyout.xaml": "67fa72b163d4cbbd54403e4cf7da0d8e3f5f667bff87e41814ab634bdc36fab7",
+    "references/mit-xaml/controls/dev/CommandBarFlyout/CommandBarFlyout_themeresources.xaml": "e93cf402a0e6a5e4b3418dc0b2acad903136ac75526a75b7b7aadc773ccc305d",
+    "references/mit-xaml/controls/dev/CommonStyles/AppBarButton_themeresources.xaml": "3f457195db8c723b665b725cb8218f087fc6fdff39539d2077432b22f312144e",
+    "references/mit-xaml/controls/dev/CommonStyles/AppBarSeparator_themeresources.xaml": "6e33bdd81552c1b3db4c37b283393db1e1b572a0174ed41c95a43306d251ecb5",
+    "references/mit-xaml/controls/dev/CommonStyles/AppBarToggleButton_themeresources.xaml": "a1154b934bd61b6d0425b7771f47abe387db032304a74e10fd663b939638cca1",
+    "references/mit-xaml/controls/dev/CommonStyles/Button_themeresources.xaml": "897f3e3f336077489925b77d31695363d3af97875cdacc7443a60b77b1fdcb6e",
+    "references/mit-xaml/controls/dev/CommonStyles/CalendarDatePicker_themeresources.xaml": "3a710808f2d631c8475719242ec362a9da881d6fe710f28151f7bb9be46244ee",
+    "references/mit-xaml/controls/dev/CommonStyles/CalendarView_themeresources.xaml": "3f7a2414ae445cc506298ecf3ffc0c5b5e11f1532f1c3462e101d6e89f65cde1",
+    "references/mit-xaml/controls/dev/CommonStyles/CheckBox_themeresources.xaml": "d278a1df7ddc3e8516e3c8022a42f5eb1dd834686018e574dc85b2de41140017",
+    "references/mit-xaml/controls/dev/CommonStyles/CommandBar_themeresources.xaml": "f1595e099fc056f22f7d6ab1dbd56437ae717a773ca92699368c9be75fa3597a",
+    "references/mit-xaml/controls/dev/CommonStyles/Common_themeresources.xaml": "333600531de59b2004ca652b27b8a41e6b485ee09cb16d0c72ecc556ba7bcfe5",
+    "references/mit-xaml/controls/dev/CommonStyles/Common_themeresources_any.xaml": "8b1189968a551161fd46a4e876d1e0e6b694f6626dc278d881b8cb5446f97bd3",
+    "references/mit-xaml/controls/dev/CommonStyles/ContentDialog_themeresources.xaml": "31d2146701fa9ee8da16acf5b876861cac9959ae715830100bd791f7688a6ff3",
+    "references/mit-xaml/controls/dev/CommonStyles/CornerRadius_themeresources.xaml": "e975b21373c71181bde26b4ab45df8607d8269d9d57bc30fedc93795c66e9adf",
+    "references/mit-xaml/controls/dev/CommonStyles/DatePicker_themeresources.xaml": "d61e8bb651a59a0c705e4e28dc735581105f8b2ffcc5c6df38589ba73f18769e",
+    "references/mit-xaml/controls/dev/CommonStyles/DateTimePickerFlyout_themeresources.xaml": "0da5b09dd4eb703477c2501a72bad427cbc31e0501769c96c66943ae37ae66f7",
+    "references/mit-xaml/controls/dev/CommonStyles/Deprecated_themeresources.xaml": "5685768ac472cb1242025c4304cc5916cd0df9e0a60d905fa908e79c7289a635",
+    "references/mit-xaml/controls/dev/CommonStyles/Deprecated_themeresources_any.xaml": "d371a76675724211c0e1d9805940988a583c8c7f6364080a4b3255d2f3e2365b",
+    "references/mit-xaml/controls/dev/CommonStyles/FlipViewItem_themeresources.xaml": "07df31ca7a0ef4fafe595c3d834ba469160266ec2d7300bc6f2565c106134515",
+    "references/mit-xaml/controls/dev/CommonStyles/FlipView_themeresources.xaml": "21af9d36c9fa28b7e751c1cfa8a8ad2d037b6e515232235927b61b34036de93a",
+    "references/mit-xaml/controls/dev/CommonStyles/FlyoutPresenter_themeresources.xaml": "c672e5a34069778113d37aea762dcfbf6f4ce3708aee719552dc844bbf231645",
+    "references/mit-xaml/controls/dev/CommonStyles/GridViewItem_themeresources.xaml": "92888f819c9b48e848b6794bfe2b6d07d910ef4dc0d9e92fb50c1c464ff5de4c",
+    "references/mit-xaml/controls/dev/CommonStyles/HyperlinkButton_themeresources.xaml": "6fe9f6492589a0b9870b0102e77e5e0c95abc996f4c1090502b3e85abe9dd57d",
+    "references/mit-xaml/controls/dev/CommonStyles/Hyperlink_themeresources.xaml": "54b8d05ca5d9eb299b537923b1d8c007d620ed54bd56f1b3c7c3622bdae539ff",
+    "references/mit-xaml/controls/dev/CommonStyles/ListBox_themeresources.xaml": "ce2993cb8f3a5abb5833bda527ce32e81d938bb5923879d42a59c0d0b1de12f9",
+    "references/mit-xaml/controls/dev/CommonStyles/ListViewItem_themeresources.xaml": "0758f65bc447b9af7b12a0d779f644f7541d5e2dd39540a9c206f35222b0478c",
+    "references/mit-xaml/controls/dev/CommonStyles/MediaTransportControls_themeresources.xaml": "5fc3b603543ecf76e7fc63ae1aa1cd178aa16641d1e8701837eac5d64d585bf7",
+    "references/mit-xaml/controls/dev/CommonStyles/MenuFlyout_themeresources.xaml": "df415aea23e56a4af583f1a1875898a9965a9e48141b4af12fae1e3a6337e68f",
+    "references/mit-xaml/controls/dev/CommonStyles/PasswordBox_themeresources.xaml": "f26fe45f0137fe5a5b432ddda090349ad2718e4cf29a9531132ca6a149e53b2b",
+    "references/mit-xaml/controls/dev/CommonStyles/Pivot_themeresources.xaml": "e4a9abed3c4125fd0593b3a439e158fa586d898fa7c9bf4eeb398118827613fb",
+    "references/mit-xaml/controls/dev/CommonStyles/RadioButton_themeresources.xaml": "e81b287331445235b8b3c95bb57929383745c002808f4d8c457306da3825f11a",
+    "references/mit-xaml/controls/dev/CommonStyles/RepeatButton_themeresources.xaml": "71c4261539124ed938633bf69043a528e26ac7f198b519b198b4aded39dab83c",
+    "references/mit-xaml/controls/dev/CommonStyles/RichEditBox_themeresources.xaml": "a7e951a3b55a32f85ecd1c65738d1518fd0801a81c81a51a5c1a192d3d9e9535",
+    "references/mit-xaml/controls/dev/CommonStyles/ScrollBar_themeresources.xaml": "1d236b6eef68d35722056d10173d7ea170a468c8c3033cae8859ce8576dfe756",
+    "references/mit-xaml/controls/dev/CommonStyles/ScrollViewer_themeresources.xaml": "de35b23ecbcae9053e54aaba84dbd0448181f0f1ef4596ca7948483e0eb205e3",
+    "references/mit-xaml/controls/dev/CommonStyles/Slider_themeresources.xaml": "e4f9a29fa4cbdaa73838bbc9730487c54e83198860464ef10ca8197a7e3cc920",
+    "references/mit-xaml/controls/dev/CommonStyles/TabularSurfaces_themeresources.xaml": "64ab33c5395cce3e34d59626dda940ac95b4ec267f98d5ea840c3923b327217a",
+    "references/mit-xaml/controls/dev/CommonStyles/TextBlock_themeresources.xaml": "d2914b149fb384215b8996041c420d4b9769995e1b111d5e8b11e4ac3f85df5d",
+    "references/mit-xaml/controls/dev/CommonStyles/TextBlock_themeresources_v2.5.xaml": "00a9ec3f770a0e9d31e24431fa906146415b3c785be53e34df7679c7117bc85d",
+    "references/mit-xaml/controls/dev/CommonStyles/TextBox_themeresources.xaml": "4d5eb20ee3f049c10345502b43f47e04bc59a5801727a970ab3bd6dc8f281b17",
+    "references/mit-xaml/controls/dev/CommonStyles/TextControlsCommon_themeresources.xaml": "4dd2c54e44cdf4325d760ac12c8783e3231c8603272ec7fc0cb31024925079a0",
+    "references/mit-xaml/controls/dev/CommonStyles/TimePicker_themeresources.xaml": "d7588154602a2572419a6e359f77adc8f0f1aa2643eec57a938b94dab329173b",
+    "references/mit-xaml/controls/dev/CommonStyles/ToggleButton_themeresources.xaml": "dde10f54c59fe9a6af9ec22b9b4723e2990b5498846155e9ee8097def46e69ce",
+    "references/mit-xaml/controls/dev/CommonStyles/ToggleSwitch_themeresources.xaml": "2f475fdddbe8d89022e69163cdf07afb0760487afdd78baec01c9d7468d040ae",
+    "references/mit-xaml/controls/dev/CommonStyles/ToolTip_themeresources.xaml": "6d8eebbc00d9cf2ffba4a11465ae9d99a06736fb5317fd0d362246304e61b572",
+    "references/mit-xaml/controls/dev/DropDownButton/DropDownButton.xaml": "d8a7da3e6fb344b12e64d373fb82c7346e0da7eed2abbc5165b72c2ba1760335",
+    "references/mit-xaml/controls/dev/DropDownButton/DropDownButton_themeresources.xaml": "d0de025ac0b1f5d9a38397ef992b54796bce9cfe9e6efd8e972dbf42f4786707",
+    "references/mit-xaml/controls/dev/Expander/Expander.xaml": "94db0f1f33d759af4a1a261e9f50abbb6e902c70fc069113d8135a8fae423e6d",
+    "references/mit-xaml/controls/dev/Expander/Expander_themeresources.xaml": "1bfb318e58ba01dc12c9035c21a2fa85c309b78be2b2d82f376bd01dd8fa1a95",
+    "references/mit-xaml/controls/dev/ImageIcon/ImageIcon.xaml": "922d1277550ef86829f4ea6d7c924e34a0abfcdb1929cceb9b0a0bd0cc4b8421",
+    "references/mit-xaml/controls/dev/ImageIcon/ImageIcon_themeresources.xaml": "f97115ba6f930269695948182377411a92332b8d5630a4d82f0b43e2c1691f76",
+    "references/mit-xaml/controls/dev/InfoBadge/InfoBadge.xaml": "9086886491838f8b4edb16de33bead7628f2b177c3f09715a38b3c815e5d686a",
+    "references/mit-xaml/controls/dev/InfoBadge/InfoBadge_themeresources.xaml": "5f2605df42ec21f305055814b3f8f502c47c165d6792df8b4d07f93ad62a690d",
+    "references/mit-xaml/controls/dev/InfoBar/InfoBar.xaml": "aa8fe57ceaed73d12502b923517cc153f3b302dc160be331571be216be0ad602",
+    "references/mit-xaml/controls/dev/InfoBar/InfoBar_themeresources.xaml": "45ee915557f6351abc5b47b693a5547ff4b37d2890f23915be7efd1db60b7cfe",
+    "references/mit-xaml/controls/dev/ItemContainer/ItemContainer.xaml": "16e1f46fffc051fd8492d6c4b520ca87bceb82fe29d005d5bfcdf4fab2cfd2c5",
+    "references/mit-xaml/controls/dev/ItemContainer/ItemContainer_themeresources.xaml": "6b2834c314c3d942e9f1c758d7a250513e49cb89c7c7ce396f39cc2219e82020",
+    "references/mit-xaml/controls/dev/ItemsView/ItemsView.xaml": "0e755138871253c215b40d33facf3f053238c48c18fe36feb41625d6e17b213a",
+    "references/mit-xaml/controls/dev/ItemsView/ItemsView_themeresources.xaml": "fa282a7f6efba48ba788fbd778cec68b19c415feef76d39e08c638ca57a2e7ac",
+    "references/mit-xaml/controls/dev/Materials/Acrylic/AcrylicBrush_themeresources.xaml": "b3dcc134c4228da61054e04a89f1fcee3802135370cd60d9a86e9a3b63c36a1f",
+    "references/mit-xaml/controls/dev/Materials/Reveal/RevealBrush_themeresources.xaml": "140ca06598622abb0dac3691f4d9bc78810274f4886f9298281e9e890b5fef16",
+    "references/mit-xaml/controls/dev/MenuBar/MenuBar.xaml": "d951c0696e776fc3b789d868e988cefea4c518a2dc85b9e43900714c906d363e",
+    "references/mit-xaml/controls/dev/MenuBar/MenuBarItem.xaml": "90a07a5cd97c98fcc1e687c5059f9058a3145e05159fcfe2df21e8da347d36f4",
+    "references/mit-xaml/controls/dev/MenuBar/MenuBar_themeresources.xaml": "80a3deaa1ab532ea8f2a6d40beb33b6653e911ae22aba8c965b9761e1176fc8a",
+    "references/mit-xaml/controls/dev/NavigationView/NavigationBackButton.xaml": "31459b28cd88ad96b1b7769232fe4c47cb185aceb53b1817775e6e67be316dda",
+    "references/mit-xaml/controls/dev/NavigationView/NavigationBackButton_themeresources.xaml": "754c3c847dbf2ddae0e139ee992af19cbc91f7430f1a488786e1eed6b04600a0",
+    "references/mit-xaml/controls/dev/NavigationView/NavigationView.xaml": "f5a2784add9fda34ec64fd312a7877047a53b2c8cecb111af93efaace1ee4e7a",
+    "references/mit-xaml/controls/dev/NavigationView/NavigationView_themeresources.xaml": "200cd9d5527c51d9d2db497ba3580847260d2601179d4c5042516648962fd1a4",
+    "references/mit-xaml/controls/dev/NumberBox/NumberBox.xaml": "ad6c46ae67dc95cc476b240b0854d2a52fd5086e85f07c8386dae73ca8bae034",
+    "references/mit-xaml/controls/dev/NumberBox/NumberBox_themeresources.xaml": "190da0817f6a22716dd9626d63f510360e35cdfb7876acbae2257e5fa87a8473",
+    "references/mit-xaml/controls/dev/PagerControl/PagerControl.xaml": "5c07e0f54efb111524b7fb1f300de3059235dd9dfa3c0c539013f67b4dfad059",
+    "references/mit-xaml/controls/dev/PagerControl/PagerControl_themeresources.xaml": "35cfb294229596525825ace2bd0cebb3f491693e7846c3e59d7095cd524d2cb2",
+    "references/mit-xaml/controls/dev/PersonPicture/PersonPicture.xaml": "9fd335b8aa76d8710dcb9ac7a9ab2d6c2c75b779e99a03615ac74bb82ac1fb27",
+    "references/mit-xaml/controls/dev/PersonPicture/PersonPicture_themeresources.xaml": "664158bca909222901ec8eb5689d5b6192ab9330a2e2fcaee9ec8a16ed6d84c7",
+    "references/mit-xaml/controls/dev/PipsPager/PipsPager.xaml": "1c7054b1502e5ebe33f32580ae0c07c7b551e94490ccda0d9ca317767008db64",
+    "references/mit-xaml/controls/dev/PipsPager/PipsPager_themeresources.xaml": "526f0c0cad7c184e38febb02da63717c7c5f16f90ebc47fcc4822ff3dab85b1e",
+    "references/mit-xaml/controls/dev/ProgressBar/ProgressBar.xaml": "d6c125752b8b1d64934af820712c936b6fa64501859b9ab8429e812e67f8cf53",
+    "references/mit-xaml/controls/dev/ProgressBar/ProgressBar_themeresources.xaml": "ead8e05c4c4d9f1f6a55feef65260d2fd8b02d159a381bdf10dd1364b566e7cd",
+    "references/mit-xaml/controls/dev/ProgressRing/ProgressRing.xaml": "bb7466602953dc71606a8b80cb112dde4d5f844d9f9c847b5c564b4b8be28c85",
+    "references/mit-xaml/controls/dev/ProgressRing/ProgressRing_themeresources.xaml": "d4bbf6aa665a55faf2866d928398b16b7e409f2fa2895260462e9bf0cfa3b820",
+    "references/mit-xaml/controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.xaml": "b7266b6169bc07ae0f242b335c48a9c6c18778ae9e64187a088ca54046d1c07f",
+    "references/mit-xaml/controls/dev/PullToRefresh/RefreshContainer/RefreshContainer_themeresources.xaml": "2338362e7cbd5c44f9b183f1b4d08dadf8c07650992c9420d97b80186c183b06",
+    "references/mit-xaml/controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.xaml": "14b9a50e2454bc2854ec97a955ee5131edd101a320f6bbb43a22f30e17d76745",
+    "references/mit-xaml/controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer_themeresources.xaml": "bd7ca91e5b0eb57284146cde66bf0d71136be003b22395cfba1d8cc37e3a5571",
+    "references/mit-xaml/controls/dev/RadioButtons/RadioButton.xaml": "622c543cafe13853dc31fc2e713ab5f096c9b7bb070c23128d20b555f448b17b",
+    "references/mit-xaml/controls/dev/RadioButtons/RadioButtons.xaml": "96c230153af9df80ddee485924550b7e5b952245ee52c8131f58156296279a61",
+    "references/mit-xaml/controls/dev/RadioButtons/RadioButtons_themeresources.xaml": "874463fa857383ac33b2043d094bea7ea5be3a327a2514f7a395626a8f52acf2",
+    "references/mit-xaml/controls/dev/RadioMenuFlyoutItem/RadioMenuFlyoutItem_themeresources.xaml": "9e7461a7b05da0062731f63a113bad1629f428bd44b999b250d261198cb30545",
+    "references/mit-xaml/controls/dev/RatingControl/RatingControl.xaml": "10c9cefe04458ad377e7062c812d369f72af4db71875799e49fc3c6137db77bd",
+    "references/mit-xaml/controls/dev/RatingControl/RatingControl_themeresources.xaml": "a0df3c386c2bb8734a4454ef75a842ca0d5971e6b38d61a73f2cd63b7cc1b51a",
+    "references/mit-xaml/controls/dev/ResizeGripper/ResizeGripper.xaml": "5bf7c925158c4f5dfd70d9096edd141ca2641d3820e9e28765864cd4927849bc",
+    "references/mit-xaml/controls/dev/ScrollView/ScrollView.xaml": "fec8d27bdab4a1959b8ff24e40aad713535f12a58deb49907ca9884f851befde",
+    "references/mit-xaml/controls/dev/ScrollView/ScrollView_themeresources.xaml": "2765ed363206a2ec1a385f48502e0696c4b8d2fe323f2ae2de9c007829fb460b",
+    "references/mit-xaml/controls/dev/SelectorBar/SelectorBar.xaml": "5d568a2f8987bac3d03d8c63350768cfcb68e72f0a0855a4bc8dc3b2b5050d7d",
+    "references/mit-xaml/controls/dev/SelectorBar/SelectorBar_themeresources.xaml": "b7aeab0036d8ff978cde0ae5bb98ad334867d9ec2d81a47956e58399c6b0356b",
+    "references/mit-xaml/controls/dev/SortIndicator/SortIndicator.xaml": "bf2f0572ebe10d13c921d2562093bfc683eb07f4a4d655bb457b419fdbb6b678",
+    "references/mit-xaml/controls/dev/SortIndicator/SortIndicator_themeresources.xaml": "072dc25ac74d4f9cd94c48a78dfce49dde3e3e16f0bf191747d51a187e2422a0",
+    "references/mit-xaml/controls/dev/SplitButton/SplitButton.xaml": "c2d6029afb1dc5b3a1779377afcefc8596fb21ef6f22bcb7c7ccb8ba00f3fb54",
+    "references/mit-xaml/controls/dev/SplitButton/SplitButton_themeresources.xaml": "366afbdf06fd0070a45d101246fe2a311279118cf055897780a06dbfdb2fb8da",
+    "references/mit-xaml/controls/dev/SplitView/SplitView_themeresources.xaml": "b97b256f454f9b2f6d2f2d7131fbed87227b3858042c003212bc7d44d7862743",
+    "references/mit-xaml/controls/dev/SwipeControl/SwipeControl.xaml": "3c16d77386d3a694d8a6d6b9a0db775f0911c84a04e4747a0d988f44abbd50fd",
+    "references/mit-xaml/controls/dev/SwipeControl/SwipeControl_themeresources.xaml": "ccf31aef69dceb4b73f7cc6baeec13ee7d1174b2cd064495e072aaebc53e10c4",
+    "references/mit-xaml/controls/dev/TabView/TabView.xaml": "770273e4d185cc74971149901549b403c22a15947cc5e90de0f8b332c7cfaec4",
+    "references/mit-xaml/controls/dev/TabView/TabView_themeresources.xaml": "262106f9b1b533bd99904f1d7475b9e7233937936b78f1ad6bcb43e9cd41d5e8",
+    "references/mit-xaml/controls/dev/TeachingTip/TeachingTip.xaml": "648cf4df25deca67a0ca9f3d432290c38d693410775db6578802e2892c34d0a7",
+    "references/mit-xaml/controls/dev/TeachingTip/TeachingTip_themeresources.xaml": "edf193bc2e21ac136b4707caf38ccc90294e9143c103ddc0f62f0ded6632bade",
+    "references/mit-xaml/controls/dev/TitleBar/TitleBar.xaml": "b0a8667eaa023c9c736ddb07828f1ce3cf176823e6822fd9b48ce035c4b529d6",
+    "references/mit-xaml/controls/dev/TitleBar/TitleBar_themeresources.xaml": "c3fe7d02c3248ff34c74015f4be0f9b558cd1b2ce53dc3e753206738f6dc28b3",
+    "references/mit-xaml/controls/dev/TreeView/TreeView.xaml": "ea7677a3626091989c035091d36e0c65de538800c4d7b0dcf80545eca7d6c3ff",
+    "references/mit-xaml/controls/dev/TreeView/TreeViewItem.xaml": "8ea8f12771cd2e23b39def9156513919c22e3da0b8b97b5ada99ae93edb492f0",
+    "references/mit-xaml/controls/dev/TreeView/TreeView_themeresources.xaml": "594c6aaef90d4c5de900ea8119ccc78d2431dfe115143b0613cba00df89937e8",
+    "references/mit-xaml/controls/dev/TwoPaneView/TwoPaneView.xaml": "25f8b074b7fc7c1efd0544ded2a7009d8450b7645a8d594e8f64a051d5543c32",
+    "references/mit-xaml/dxaml/xcp/dxaml/themes/generic.xaml": "4c4085838721c0afcb1a9ee17591c0655cdddadb26d330788e08bcd7f1af8285",
+    "references/mit-xaml-generated/generic.xaml": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
+    "references/basic-next-palettes.json": "db45bf11b96bb1a79f739aa5cfa71349f555b53893342702cf9a1b35a02eb487",
+    "references/button-palettes.json": "2b5d082599a791c4aa9a15c790880b8a8f887018b256b6d292ad0e35cea9f65c",
+    "references/collections-palettes.json": "77a57980be77b0dffd278860a306c9a4f4443fea01502d452cf1d51b376a94fd",
+    "references/command-controls-palettes.json": "ef8a33fba44039fd0c5b977268078e2c9523dc44d1187dce3922129bff7c13e6",
+    "references/compact-controls-palettes.json": "f90dee292a173fb6ced6f01f2505d416ea4ceac96c9863ba218e54d9a8f36670",
+    "references/composed-controls-palettes.json": "8c6e23f5e60113e8678d1e03bb3631e235589eb75a7da24a3f135e05d5f861d7",
+    "references/five-controls-palettes.json": "c44318325b9f1bb6c93210923a7af8f3372cadbb926c2d930cdb14435462d623",
+    "references/foundation-palettes.json": "5121ece5d8ec888a9150d9a862fbf0842ef7ffdbd471372bc49052fbadfdb170",
+    "references/input-palettes.json": "15c168576aa18a80bb0ae2f63124a6caf40fa309e7ed1238021b117ec11d9cf0",
+    "references/navigation-controls-palettes.json": "2765ee993511b57ace63bbf8c513f2ed03a87b1befb6695eb1e438b5b8fd63ee",
+    "references/overlay-palettes.json": "a73f7fcfec9bd4f0b3ee1b102ed354b19db47826c531a123093cac33026a4d21",
+    "references/picker-controls-palettes.json": "8aca7c56214f8b3b07603b7c47504bcfad4b4e1e08d6eec06c6ad949285c151c",
+    "references/progress-palettes.json": "6441e3ea73b0eb849c3bf224ec52f319b74413b766d93465f1a2d49934e89028",
+    "references/repeater-gallery-native-palettes.json": "26f1b9c9648778dfecea9fa402a04cc64bd8a2db100a3b0e0ae7b44c2fe56ae1",
+    "references/text-scroll-palettes.json": "607e3abf4483945051e3db92b175338726153fa4817450453528ef11294168cd",
+    "references/navigation-resources.json": "f7bf40055ec3bee0b0a0f96c69509a091fdc82c36ced11c153e80fdbbc6ac0bb",
+    "references/sdk/collections.xaml": "fe7590eb05cd359e31c432251acbfa334c2662b24128ae2c167caf84e63b69f0",
+    "references/sdk/command-controls.xaml": "93da96b4fcdfd60f1daf14b01e8d452f3c40dbc03e9eac5ad2165ea5b0e206c0",
+    "references/sdk/compact-controls.xaml": "1ae9c997249ecf5a75d9b162975f10e79f3228a4572e8e554fd0ef740716052b",
+    "references/sdk/composed-controls.xaml": "587fd8f342c6eed846650ef6a20d26b880965ca2ac8854b6619c5ad7642acbb6",
+    "references/sdk/navigation-controls.xaml": "892c86e87158ef9bf493775b2d9d960f2395453a76a661db8a669b53d4bbd2d7",
+    "references/sdk/picker-controls.xaml": "6e7c9c070f03c626d3243ac49bae44d7f2dc0ace528f6648436a4cf47243b781",
+    "references/sdk/reading-controls.xaml": "b12cf5eea5301ce877e356cc98c34995ff4eea59edcf235aa547b5cebbe15810",
+    "references/sdk/rich-edit.xaml": "00b2c75cda9b2c8cc328613d3d0cb43fcb94153dbd7d7eab8117b4a95dd90a57",
+    "references/sdk/view-command.xaml": "948631fe7713e352547ad1b17aa568384d13c63f9fd7bb51a2ebf068fd046efc",
+    "references/winui/NoiseAsset_256X256_PNG.png": "4f2aa94a2e345a32dae689176b86c644bef87081ff9daef8c77417731862031b"
+  },
+  "embeddedResources": [
+    {
+      "path": "references/winui/NoiseAsset_256X256_PNG.png",
+      "upstream": "controls/dev/Materials/Acrylic/Assets/NoiseAsset_256X256_PNG.png",
+      "gitBlobSha1": "41de173d9014b38f8290acf270c490b37fc79a60",
+      "sha256": "4f2aa94a2e345a32dae689176b86c644bef87081ff9daef8c77417731862031b",
+      "components": [
+        "winui"
+      ],
+      "source": "https://github.com/microsoft/microsoft-ui-xaml/blob/7b12709347527238494ca28cb9fed326d513e779/controls/dev/Materials/Acrylic/Assets/NoiseAsset_256X256_PNG.png"
+    }
+  ],
+  "reviewScope": "Media in gallery/public, packages/winui-wasm/src/assets and third_party/icon-fonts; pinned source references; Cargo/npm dependencies in dependency-licenses.json. Local out/target/node_modules/native tools and Windows SDK installations are not redistribution grants.",
+  "unresolved": []
+}
