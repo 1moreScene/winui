@@ -4,13 +4,13 @@ test('sample the Rust indicator using native capture timestamps',async({page})=>
   const native=JSON.parse(readFileSync('../out/navigation-native/animation-times.json','utf8')) as {name:string;requestedMs:number;actualStartMs:number;actualEndMs:number}[];
   await page.goto('/#navigation-view');await expect(page.locator('#runtime-status')).toHaveText('Ready');
   await page.evaluate(async()=>{
-    const path='/src/index.ts';const api=await import(path)as typeof import('../src/index');
+    const path='/@id/winui-wasm';const api=await import(path)as typeof import('winui-wasm');
     let time=0;const sdk=await api.WinUI.create({clock:()=>time});
     const host=document.createElement('div');host.id='animation-fixture';host.style.cssText='position:fixed;left:0;top:0;width:1000px;height:500px;z-index:99999';document.body.append(host);
     const view=sdk.navigationView(host,{paneDisplayMode:api.PaneDisplayMode.Left,selectedId:'page1',items:[1,2,3,4].map(n=>({id:`page${n}`,text:`Menu Item${n}`}))});
     Object.assign(window,{indicatorCapture:{sdk,view,setTime:(value:number)=>{time=value;view.update({});}}});
   });
-  type Capture={sdk:import('../src/index').WinUI;view:import('../src/index').NavigationView;setTime:(time:number)=>void};
+  type Capture={sdk:import('winui-wasm').WinUI;view:import('winui-wasm').NavigationViewController;setTime:(time:number)=>void};
   await page.evaluate(()=>{const c=(window as unknown as {indicatorCapture:Capture}).indicatorCapture;c.setTime(1000);});
   await expect.poll(()=>page.evaluate(()=>(window as unknown as {indicatorCapture:Capture}).indicatorCapture.view.snapshot.time)).toBe(1000);
   await page.evaluate(()=>{(window as unknown as {indicatorCapture:Capture}).indicatorCapture.view.invoke('page3');});

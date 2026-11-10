@@ -49,7 +49,7 @@ for (const path of ['Assets/GalleryHeaderImage.png', 'Assets/Tiles/AppList.targe
 copyFileSync(resolve(reference, 'LICENSE'), resolve(output, 'LICENSE.txt'));
 writeFileSync(resolve(root, 'gallery/src/official-home.json'), JSON.stringify({ commit, groups }, null, 2) + '\n');
 const sources = [source, 'Pages/HomePage.xaml', 'Pages/HomePage.xaml.cs', 'Controls/HomePage/HomePageHeader.xaml',
-  'Controls/HomePage/Tile.xaml', 'Controls/HorizontalScrollContainer.xaml', 'Styles/ItemTemplates.xaml',
+  'Controls/HomePage/Tile.xaml', 'Controls/HorizontalScrollContainer.xaml', 'Controls/HorizontalScrollContainer.xaml.cs', 'Styles/ItemTemplates.xaml',
   'Styles/GridViewItem.xaml', 'Styles/SelectorBar.xaml', 'App.xaml', 'MainWindow.xaml', 'MainWindow.xaml.cs',
   'Pages/ItemPage.xaml', 'Controls/PageHeader.xaml', 'Controls/ControlExample.xaml', 'Controls/SampleCodePresenter.xaml', 'Styles/Grid.xaml'];
 writeFileSync(resolve(root, 'references/home-source.json'), JSON.stringify({

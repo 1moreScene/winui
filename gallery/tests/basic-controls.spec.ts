@@ -2,7 +2,7 @@ import {selectGalleryOption} from './gallery-control-helper';
 import { test, expect } from "@playwright/test";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { Scene, ToggleButton, WinUI } from "../src/index";
+import type { Scene, ToggleButtonController as ToggleButton, WinUI } from "winui-wasm";
 declare global {
   interface Window {
     selectionFixture: { scene: Scene; controls: ToggleButton[] };
@@ -130,8 +130,8 @@ test("selection forced-state probe crops are measured on Canvas and GPU", async 
         ).toBeVisible();
         await page.evaluate(
           async ({ backend, theme, kind }) => {
-            const path = "/src/index.ts";
-            const a = (await import(path)) as typeof import("../src/index");
+            const path = "/@id/winui-wasm";
+            const a = (await import(path)) as typeof import("winui-wasm");
             const host = document.createElement("div");
             host.style.cssText =
               "position:fixed;top:0;left:0;width:1000px;height:500px;z-index:99999";
@@ -252,8 +252,8 @@ test("native image crops and styled text match both renderers", async ({
     ).toBeVisible();
     await page.evaluate(
       async ({ backend, native }) => {
-        const path = "/src/index.ts";
-        const a = (await import(path)) as typeof import("../src/index");
+        const path = "/@id/winui-wasm";
+        const a = (await import(path)) as typeof import("winui-wasm");
         const host = document.createElement("div");
         host.id = "image-parity";
         host.style.cssText =
@@ -422,8 +422,8 @@ test("source vector CheckBox draws progressively on both backends and settles un
   for (const backend of ["Canvas2D", "WebGL2"]) {
     await page.evaluate(async (backend) => {
       const api = (await import(
-        "/src/index.ts" as string
-      )) as typeof import("../src/index");
+        "/@id/winui-wasm" as string
+      )) as typeof import("winui-wasm");
       const host = document.createElement("div");
       host.id = "accept-fixture";
       host.style.cssText =

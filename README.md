@@ -1,5 +1,15 @@
 # WinUI Rust/WASM SDK
 
+SDK 已抽为独立 npm 包 `packages/winui-wasm`，Gallery 只通过 `winui-wasm` 和 `winui-wasm/react` 调用；消费者安装包即可使用预编译 WASM、JS、类型、字体和样式，无需复制 TS SDK 或安装 Rust。包尚未发布到 npm，使用方式与独立安装验收见 [npm 包说明](docs/npm-package.md)。
+
+**资源来源状态（2026-11-10）：工程预览模板阻断已解除。** 模板和画刷已从固定 MIT WinUI 源码重新生成；发行检查核验源文件、生成证据、媒体、依赖和完整许可证，详见 [资源授权审计](docs/resource-licensing.md)。本次不执行公开发布。
+
+[RichEditBox](http://127.0.0.1:5173/#rich-edit-box) 已接入 Rust、普通 TS SDK 和 React：RTF 导入/导出、PNG/JPEG 嵌入、MathML 排版、选区、IME、段落列表及撤销/重做由 Rust 执行，SplitButton / ToggleSplitButton 也已使用真实富文本编辑器。[API、验证与边界](docs/rich-edit-box.md)。
+
+社区 **WinUI.TableView** 已按用户指定仓库接入 Rust、普通 TS/React API 与 Gallery 十组示例（`#table-view`），包含 10,000 行数据、九类列、排序筛选、编辑、模板、冻结列、导出，以及基于正式 1.5.1 的按列/多级分组和粘性组头。来源、MIT 许可证、API 与明确差异见 [TableView 接入记录](docs/table-view.md)。官方 TableView 仍不在范围内。
+
+Expander 已按固定官方页面补齐两个示例，Grid 已接入目录与四个交互选项；独立行列间距和 Header 内容槽由 Rust SDK 执行。来源差异及验证见 [布局示例对齐](docs/layout-gallery-alignment.md)。
+
 ScrollBar、Thumb、TickBar、ScrollContentPresenter、ItemsPresenter 已接入 Rust SDK、类型化 TS/React API 与五个示例。调用方使用控件 API，滚动、拖拽、刻度和模板布局由 Rust 执行；来源、验证及边界见 [本批记录](docs/scroll-primitives.md)。
 
 ItemsRepeater、StackLayout、UniformGridLayout、RefreshContainer、RefreshVisualizer 已接入 Rust、公共 TS/React 与 Gallery；官方 7+2 个用例对应及验收边界见 [Gallery 对齐记录](docs/repeater-gallery-alignment.md)，基础调用见 [本批 API](docs/repeater-refresh.md)。
@@ -7,6 +17,8 @@ ItemsRepeater、StackLayout、UniformGridLayout、RefreshContainer、RefreshVisu
 后续的持续布局、未知模板尺寸估计和颜色按钮状态问题已修正，见 [性能与按钮状态记录](docs/repeater-performance.md)。
 
 CalendarView、CalendarDatePicker、DatePicker、TimePicker、ColorPicker 已接入 Rust、TS/React 与 Gallery；固定 SDK 的 66 个状态及一致性边界见 [批次进度](docs/picker-controls.md)。
+
+CalendarIdentifier 已启用全部 10 种原有历法，并增加 ChineseCalendar：支持农历和闰月、常见节日、二十四节气，范围为 1901–2100 年，不包含调休安排。三个日期控件共用 Rust 历法逻辑，日期输入及事件仍使用公历 `YYYY-MM-DD`，见 [历法 API 与数据来源](docs/picker-controls.md#calendaridentifier-与-chinese-日历2026-11-10)。
 
 首页已接入 Rust Frame：返回/前进历史、页面生命周期与取消、Disabled / Enabled / Required 缓存、页面状态与滚动保留、可中断页面转场。NavigationView 页新增可操作示例，API、材质宿主边界及验证见 [NavigationView 与 Frame](docs/navigation-frame.md)。
 
@@ -41,15 +53,38 @@ Gallery 默认打开[首页](http://127.0.0.1:5173/#home)，按固定官方版�
 ```powershell
 rustup target add wasm32-unknown-unknown
 cargo install wasm-bindgen-cli --version 0.2.104 --locked
+npm ci --prefix packages/winui-wasm
 cd gallery
 npm ci
-npm run build
+npm run build:local
 npm run dev
 ```
+
+开发服务默认监听 `0.0.0.0:5173`，同一局域网设备使用 `http://<本机局域网 IPv4>:5173` 访问；生产预览 `npm run preview` 同样监听所有网卡，端口为 4173。防火墙需允许对应端口的本地子网入站连接。无需开放路由器公网端口。
+
+SDK 初始化自动加载随包提供的图标字体，不需要访问字体 CDN。所有平台统一使用包内的 `packages/winui-wasm/src/assets/winui-icons.woff`，不依赖本机 Segoe 安装版本。该回退字体按 WinUI 码位映射了 WinJS Symbols（Apache-2.0）和 Fluent System Icons（MIT）的图形。已按本机 Segoe 的数字尺寸校准字宽和墨迹边界，并为实心箭头、状态圆点、诊断波形、网格、代码花括号等纠正了明显形状差异；部分轮廓仍与原生 Segoe 不同。`tools/compare-icon-font.py` 生成本地原生/回退对照图，`tools/test_icon_font.py` 检查实心和方向等轮廓不变量。普通文本字体仍遵循平台字体回退规则。位图和路径图标沿用原资源。
+
+若监听所有网卡、项目允许规则已生效后，其他设备仍连接失败，需要同时检查防火墙规则的程序、端口、地址和 LocalUser 账户筛选，不能只凭规则名称或 Program=Any 判断它影响所有用户。本机的 `codex_sandbox_offline_block_inbound` 仅针对 `CodexSandboxOffline` 账户，不匹配普通用户从独立终端启动的 Vite。跨设备连通性仍需实际验证，本机访问自身局域网 IP 成功不能代替其他设备测试。
+
+字体来源、固定提交、映射和许可证保存在 `third_party/icon-fonts`；`tools/check-icon-fonts.mjs` 在每次构建时检查项目和模板里的图标码位以及资源指纹，遗漏会使构建失败。修改映射后可安装 `fonttools` 并运行 `python tools/build-icon-font.py` 重建随包字体；常规构建不需要 fonttools。生产构建包含字体和许可证。
+
+Python 资源提取通过 `tools/generate.py` 执行：相同内容不触碰文件，更新时先写同目录临时文件再原子替换，遇到 Windows 临时文件占用做有限重试；永久失败保留旧文件并报错。
+
+`build:wasm` 会先运行 `tools/extract-*.py` 重新生成 `gallery/src/official-*.json`，因此还需要本机具备两份固定来源：NuGet 包 `Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental`（位于 `~/.nuget/packages/`）和提交 `7360ac322414e118eadfb0c7c2f4ecc31a218f59` 的 `WinUI-Gallery` 克隆；克隆路径由 `references/baseline.json` 的 `gallery.path` 指定。提取脚本按清单哈希校验本地文件，工作区需保持 LF 换行（`git config core.autocrlf false`）。
 
 打开 [NavigationView](http://127.0.0.1:5173/#navigation-view)、[Button](http://127.0.0.1:5173/#button) 、[组合与 GPU](http://127.0.0.1:5173/#foundation) 或 [Acrylic](http://127.0.0.1:5173/#acrylic)、[缓动函数](http://127.0.0.1:5173/#easing)、[属性过渡](http://127.0.0.1:5173/#transitions)、[渐变](http://127.0.0.1:5173/#gradients)。后续修改 Rust 后运行 `npm run build:wasm`；Vite 不会自动编译 Rust；构建完成的 sentinel 会使开发页面重新加载，避免旧 JS glue 与新 WASM 混用。生产预览用 `npm run preview`。
 
 本轮补齐来源明确的主题资源、应用内 Acrylic、可组合 Gallery 内容页和中断指示条动画，修复全局焦点黑框及快速往返点击拉长。已完成 22 组同条件静态对照；精确原生动画与完整功能差异仍见验收记录。
+
+## 打包 npm SDK
+
+在项目根目录执行 `npm run pack:sdk`，生成 `out/npm/winui-wasm-<version>.tgz` 及 SHA-256 报告。其他项目可通过 `npm install <tgz 文件路径>` 安装普通 SDK 与 React 入口。
+
+Rust 源码改动后使用 `npm run pack:sdk:full` 先重新构建 WASM；仅修改 TypeScript/React 时使用 `pack:sdk`。自定义输出目录可用 `npm run pack:sdk -- --out-dir ./out/release`。命令只生成本地安装包，详细流程见 [npm 包说明](docs/npm-package.md#生成-npm-安装包)。
+
+## GitHub Pages
+
+推送到 `main` 后，GitHub Actions 会自动校验资源、编译 Rust/WASM、运行手机触屏滚动回归并构建和部署 Gallery。无需手动执行部署命令。本地预览可运行 `npm run build:pages`，输出为 `gallery/dist-pages`；详见 [GitHub Pages 部署](docs/github-pages.md)。
 
 ## 基准与依赖
 
@@ -66,7 +101,7 @@ npm run dev
 基础 SDK 无 React 依赖：
 
 ```ts
-import { WinUI, EventKind, PaneDisplayMode, ThemeMode } from './src/index';
+import { WinUI, EventKind, PaneDisplayMode, ThemeMode } from 'winui-wasm';
 
 const ui = await WinUI.create();
 const navigation = ui.navigationView(host, {
@@ -82,8 +117,8 @@ navigation.dispose(); // 幂等；也可以 ui.dispose() 一次释放其全部�
 React 适配使用直接属性和同一个 SDK，由组件卸载自动释放。所有 Gallery 页面默认 Canvas2D，WebGL2 为显式可选项。发行版来源及未验收差异见 [来源审计](docs/release-audit.md)。
 
 ```tsx
-import { WinUIProvider, NavigationView } from './src/react';
-import { PaneDisplayMode } from './src/index';
+import { WinUIProvider, NavigationView } from 'winui-wasm/react';
+import { PaneDisplayMode } from 'winui-wasm';
 
 <WinUIProvider>
   <NavigationView

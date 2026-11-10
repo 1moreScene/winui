@@ -13,11 +13,11 @@ const passed=log=>[...log.matchAll(/test result: ok\. (\d+) passed/g)].reduce((n
 const chrome=JSON.parse(read('out/frame-chrome-results.json')),edge=JSON.parse(read('out/frame-edge-results.json'));
 if(chrome.stats.unexpected||edge.stats.unexpected)throw new Error('Browser regressions did not all pass');
 const sourceFiles=['src/frame.rs','src/navigation.rs','src/model.rs','src/render.rs','src/wasm.rs','src/lib.rs','references/api-enums.json',
-  'gallery/src/frame.ts','gallery/src/react.tsx','gallery/src/sdk.ts','gallery/src/index.ts','gallery/src/HomePage.tsx','gallery/src/App.tsx',
-  'gallery/src/GalleryNavigation.tsx','gallery/src/NavigationFrameExample.tsx','gallery/src/GalleryControls.tsx','gallery/src/scene.ts','gallery/src/sample-pages.css','gallery/src/gallery-controls.css'];
+  'packages/winui-wasm/src/frame.ts','packages/winui-wasm/src/react.tsx','packages/winui-wasm/src/sdk.ts','packages/winui-wasm/src/index.ts','gallery/src/HomePage.tsx','gallery/src/App.tsx',
+  'gallery/src/GalleryNavigation.tsx','gallery/src/NavigationFrameExample.tsx','gallery/src/GalleryControls.tsx','packages/winui-wasm/src/scene.ts','gallery/src/sample-pages.css','gallery/src/gallery-controls.css'];
 const assets=files(artifact);const wasm=assets.find(file=>file.path.endsWith('.wasm'));
 const record={date:'2026-11-08',generatedAt:new Date().toISOString(),baseline:JSON.parse(read('references/frame-sources.json')),
-  artifact,wasmSha256:wasm.sha256,matchesCurrentWasm:wasm.sha256===sha('gallery/src/wasm/winui_bg.wasm'),
+  artifact,wasmSha256:wasm.sha256,matchesCurrentWasm:wasm.sha256===sha('packages/winui-wasm/src/wasm/winui_bg.wasm'),
   builds:['npm run build (Rust/WASM, TypeScript strict, Vite production, SDK declarations)','tsc --noEmit + vite build + npm run declarations after final TS changes'],
   rust:{full:{passed:passed(rust),log:'out/frame-rust-tests.log'},finalNavigation:{passed:passed(targeted),log:'out/frame-final-rust-targeted.log'}},
   browsers:{chrome:{stats:chrome.stats,result:'out/frame-chrome-results.json'},edge:{stats:edge.stats,result:'out/frame-edge-results.json'}},

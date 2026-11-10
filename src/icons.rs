@@ -77,7 +77,7 @@ pub fn source(p: &NodeProperties, kind: NodeKind) -> &str {
         &p.source
     }
 }
-#[derive(Clone, Debug, serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Debug, serde::Serialize, serde::Deserialize, PartialEq)]
 pub enum PathCommand {
     Move([f64; 2]),
     Line([f64; 2]),
@@ -85,7 +85,7 @@ pub enum PathCommand {
     Cubic([f64; 6]),
     Close,
 }
-#[derive(Clone, Debug, serde::Serialize)]
+#[derive(Clone, Debug, serde::Serialize, PartialEq)]
 pub struct PathGeometry {
     pub commands: Vec<PathCommand>,
     pub bounds: Rect,

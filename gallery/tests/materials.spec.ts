@@ -2,7 +2,7 @@ import {selectGalleryOption} from './gallery-control-helper';
 import { test, expect } from "@playwright/test";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { WinUI, Scene, Panel } from "../src/index";
+import type { WinUI, Scene, Panel } from "winui-wasm";
 declare global {
   interface Window {
     tintClock: number;
@@ -72,8 +72,8 @@ test("500ms tint updates follow native HSL path through interruption", async ({
     page.getByRole("button", { name: "Standard XAML", exact: true }),
   ).toBeVisible();
   await page.evaluate(async () => {
-    const path = "/src/index.ts";
-    const a = (await import(path)) as typeof import("../src/index");
+    const path = "/@id/winui-wasm";
+    const a = (await import(path)) as typeof import("winui-wasm");
     window.tintClock = 0;
     const ui = await a.WinUI.create({ clock: () => window.tintClock });
     const host = document.createElement("div");
@@ -509,8 +509,8 @@ test("radial gradient spread and outside focal point match native on both backen
       ).toBeVisible();
       await page.evaluate(
         async ({ record, backend }) => {
-          const path = "/src/index.ts";
-          const a = (await import(path)) as typeof import("../src/index");
+          const path = "/@id/winui-wasm";
+          const a = (await import(path)) as typeof import("winui-wasm");
           const host = document.createElement("div");
           host.id = "gradient-fixture";
           host.style.cssText =

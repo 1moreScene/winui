@@ -17,6 +17,7 @@ pub fn constants() -> &'static MaterialConstants {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct AcrylicOptions {
     pub tint_color: String,
     pub tint_opacity: f64,
@@ -26,7 +27,7 @@ pub struct AcrylicOptions {
 }
 /// Effective brush inputs are animated after the original tint/luminosity recipe,
 /// just as AcrylicBrush::OnPropertyChanged animates Composition effect colors.
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Serialize, PartialEq)]
 pub struct AcrylicColors {
     pub tint: String,
     pub luminosity: String,

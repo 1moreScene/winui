@@ -1,25 +1,85 @@
 {
-  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
-  "templateSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "sdk": "microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779",
+  "templateSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
   "styles": {
     "FlipView": {},
-    "TreeView": {},
-    "DefaultTreeViewStyle": {
-      "IsTabStop": "False",
-      "CanDragItems": "True",
-      "CanReorderItems": "True",
-      "AllowDrop": "True"
+    "DefaultBreadcrumbBarItemStyle": {
+      "Background": "{ThemeResource BreadcrumbBarBackgroundBrush}",
+      "BorderBrush": "{ThemeResource BreadcrumbBarBorderBrush}",
+      "FocusVisualMargin": "1",
+      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+      "FontSize": "{ThemeResource BreadcrumbBarItemThemeFontSize}",
+      "FontWeight": "{ThemeResource BreadcrumbBarItemFontWeight}",
+      "Foreground": "{ThemeResource BreadcrumbBarForegroundBrush}",
+      "HorizontalAlignment": "Stretch",
+      "HorizontalContentAlignment": "Stretch",
+      "IsTabStop": "True",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "VerticalAlignment": "Center",
+      "VerticalContentAlignment": "Center",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}"
     },
-    "TreeViewItem": {},
-    "MUX_TreeViewItemStyle": {
-      "Padding": "0",
-      "Background": "{ThemeResource TreeViewItemBackground}",
-      "BorderBrush": "{ThemeResource TreeViewItemBorderBrush}",
-      "BorderThickness": "{ThemeResource TreeViewItemBorderThemeThickness}",
-      "GlyphBrush": "{ThemeResource TreeViewItemForeground}",
-      "MinHeight": "{ThemeResource TreeViewItemMinHeight}",
-      "CornerRadius": "{ThemeResource ControlCornerRadius}",
-      "FocusVisualMargin": "0,-1,0,-1"
+    "BreadcrumbBar": {
+      "AutomationProperties.LandmarkType": "Navigation",
+      "IsTabStop": "False"
+    },
+    "BreadcrumbBarItem": {},
+    "PipsPager": {
+      "Background": "Transparent",
+      "HorizontalAlignment": "Left",
+      "VerticalAlignment": "Top",
+      "IsTabStop": "False",
+      "PreviousButtonStyle": "{StaticResource PipsPagerPreviousPageButtonStyle}",
+      "NextButtonStyle": "{StaticResource PipsPagerNextPageButtonStyle}",
+      "SelectedPipStyle": "{StaticResource PipsPagerSelectedPipButtonStyle}",
+      "NormalPipStyle": "{StaticResource PipsPagerNormalPipButtonStyle}"
+    },
+    "PipsPagerNavigationButtonBaseStyle": {
+      "Background": "{ThemeResource PipsPagerNavigationButtonBackground}",
+      "Foreground": "{ThemeResource PipsPagerNavigationButtonForeground}",
+      "BorderBrush": "{ThemeResource PipsPagerNavigationButtonBorderBrush}",
+      "BorderThickness": "{StaticResource PipsPagerNavigationButtonBorderThickness}",
+      "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
+      "FontSize": "{StaticResource PipsPagerNavigationButtonFontSize}",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "FocusVisualMargin": "0",
+      "HorizontalAlignment": "Center",
+      "HorizontalContentAlignment": "Center",
+      "VerticalContentAlignment": "Center",
+      "Width": "{StaticResource PipsPagerNavigationButtonWidth}",
+      "Height": "{StaticResource PipsPagerNavigationButtonHeight}",
+      "CornerRadius": "{StaticResource ControlCornerRadius}"
+    },
+    "PipsPagerPreviousPageButtonStyle": {
+      "Content": "{StaticResource PipsPagerPreviousPageButtonGlyph}"
+    },
+    "PipsPagerNextPageButtonStyle": {
+      "Content": "{StaticResource PipsPagerNextPageButtonGlyph}"
+    },
+    "PipsPagerButtonBaseStyle": {
+      "Background": "{ThemeResource PipsPagerSelectionIndicatorBackground}",
+      "Foreground": "{ThemeResource PipsPagerSelectionIndicatorForeground}",
+      "BorderBrush": "{ThemeResource PipsPagerSelectionIndicatorBorderBrush}",
+      "BorderThickness": "{StaticResource PipsPagerButtonBorderThickness}",
+      "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
+      "HorizontalContentAlignment": "Center",
+      "VerticalContentAlignment": "Center",
+      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+      "FocusVisualMargin": "0",
+      "Content": "{StaticResource PipsPagerNormalGlyph}",
+      "FontSize": "{StaticResource PipsPagerNormalGlyphFontSize}",
+      "CornerRadius": "{StaticResource ControlCornerRadius}"
+    },
+    "PipsPagerSelectedPipButtonStyle": {
+      "Content": "{StaticResource PipsPagerSelectedGlyph}",
+      "FontSize": "{StaticResource PipsPagerSelectedGlyphFontSize}",
+      "Background": "{ThemeResource PipsPagerSelectionIndicatorBackgroundSelected}",
+      "BorderBrush": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushSelected}",
+      "Foreground": "{ThemeResource PipsPagerSelectionIndicatorForegroundSelected}"
+    },
+    "PipsPagerNormalPipButtonStyle": {
+      "Content": "{StaticResource PipsPagerNormalGlyph}",
+      "FontSize": "{StaticResource PipsPagerNormalGlyphFontSize}"
     },
     "TabView": {},
     "DefaultTabViewStyle": {
@@ -94,36 +154,23 @@
       "FocusVisualMargin": "-3",
       "ManipulationMode": "None"
     },
-    "DefaultBreadcrumbBarItemStyle": {
-      "Background": "{ThemeResource BreadcrumbBarBackgroundBrush}",
-      "BorderBrush": "{ThemeResource BreadcrumbBarBorderBrush}",
-      "FocusVisualMargin": "1",
-      "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
-      "FontSize": "{ThemeResource BreadcrumbBarItemThemeFontSize}",
-      "FontWeight": "{ThemeResource BreadcrumbBarItemFontWeight}",
-      "Foreground": "{ThemeResource BreadcrumbBarForegroundBrush}",
-      "HorizontalAlignment": "Stretch",
-      "HorizontalContentAlignment": "Stretch",
-      "IsTabStop": "True",
-      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
-      "VerticalAlignment": "Center",
-      "VerticalContentAlignment": "Center",
-      "CornerRadius": "{ThemeResource ControlCornerRadius}"
-    },
-    "BreadcrumbBar": {
-      "AutomationProperties.LandmarkType": "Navigation",
-      "IsTabStop": "False"
-    },
-    "BreadcrumbBarItem": {},
-    "PipsPager": {
-      "Background": "Transparent",
-      "HorizontalAlignment": "Left",
-      "VerticalAlignment": "Top",
+    "TreeView": {},
+    "DefaultTreeViewStyle": {
       "IsTabStop": "False",
-      "PreviousButtonStyle": "{StaticResource PipsPagerPreviousPageButtonStyle}",
-      "NextButtonStyle": "{StaticResource PipsPagerNextPageButtonStyle}",
-      "SelectedPipStyle": "{StaticResource PipsPagerSelectedPipButtonStyle}",
-      "NormalPipStyle": "{StaticResource PipsPagerNormalPipButtonStyle}"
+      "CanDragItems": "True",
+      "CanReorderItems": "True",
+      "AllowDrop": "True"
+    },
+    "TreeViewItem": {},
+    "MUX_TreeViewItemStyle": {
+      "Padding": "0",
+      "Background": "{ThemeResource TreeViewItemBackground}",
+      "BorderBrush": "{ThemeResource TreeViewItemBorderBrush}",
+      "BorderThickness": "{ThemeResource TreeViewItemBorderThemeThickness}",
+      "GlyphBrush": "{ThemeResource TreeViewItemForeground}",
+      "MinHeight": "{ThemeResource TreeViewItemMinHeight}",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}",
+      "FocusVisualMargin": "0,-1,0,-1"
     },
     "DefaultFlipViewStyle": {
       "Background": "{ThemeResource FlipViewBackground}",
@@ -140,53 +187,6 @@
       "ScrollViewer.BringIntoViewOnFocusChange": "True",
       "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
       "CornerRadius": "{ThemeResource ControlCornerRadius}"
-    },
-    "PipsPagerNavigationButtonBaseStyle": {
-      "Background": "{ThemeResource PipsPagerNavigationButtonBackground}",
-      "Foreground": "{ThemeResource PipsPagerNavigationButtonForeground}",
-      "BorderBrush": "{ThemeResource PipsPagerNavigationButtonBorderBrush}",
-      "BorderThickness": "{StaticResource PipsPagerNavigationButtonBorderThickness}",
-      "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
-      "FontSize": "{StaticResource PipsPagerNavigationButtonFontSize}",
-      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
-      "FocusVisualMargin": "0",
-      "HorizontalAlignment": "Center",
-      "HorizontalContentAlignment": "Center",
-      "VerticalContentAlignment": "Center",
-      "Width": "{StaticResource PipsPagerNavigationButtonWidth}",
-      "Height": "{StaticResource PipsPagerNavigationButtonHeight}",
-      "CornerRadius": "{StaticResource ControlCornerRadius}"
-    },
-    "PipsPagerPreviousPageButtonStyle": {
-      "Content": "{StaticResource PipsPagerPreviousPageButtonGlyph}"
-    },
-    "PipsPagerNextPageButtonStyle": {
-      "Content": "{StaticResource PipsPagerNextPageButtonGlyph}"
-    },
-    "PipsPagerButtonBaseStyle": {
-      "Background": "{ThemeResource PipsPagerSelectionIndicatorBackground}",
-      "Foreground": "{ThemeResource PipsPagerSelectionIndicatorForeground}",
-      "BorderBrush": "{ThemeResource PipsPagerSelectionIndicatorBorderBrush}",
-      "BorderThickness": "{StaticResource PipsPagerButtonBorderThickness}",
-      "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
-      "HorizontalContentAlignment": "Center",
-      "VerticalContentAlignment": "Center",
-      "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
-      "FocusVisualMargin": "0",
-      "Content": "{StaticResource PipsPagerNormalGlyph}",
-      "FontSize": "{StaticResource PipsPagerNormalGlyphFontSize}",
-      "CornerRadius": "{StaticResource ControlCornerRadius}"
-    },
-    "PipsPagerSelectedPipButtonStyle": {
-      "Content": "{StaticResource PipsPagerSelectedGlyph}",
-      "FontSize": "{StaticResource PipsPagerSelectedGlyphFontSize}",
-      "Background": "{ThemeResource PipsPagerSelectionIndicatorBackgroundSelected}",
-      "BorderBrush": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushSelected}",
-      "Foreground": "{ThemeResource PipsPagerSelectionIndicatorForegroundSelected}"
-    },
-    "PipsPagerNormalPipButtonStyle": {
-      "Content": "{StaticResource PipsPagerNormalGlyph}",
-      "FontSize": "{StaticResource PipsPagerNormalGlyphFontSize}"
     }
   },
   "metrics": {
@@ -195,6 +195,34 @@
       "value": "0"
     },
     "TreeViewItemBorderThemeThickness": {
+      "type": "Thickness",
+      "value": "0"
+    },
+    "BreadcrumbBarChevronLeftToRight": {
+      "type": "String",
+      "value": ""
+    },
+    "BreadcrumbBarChevronRightToLeft": {
+      "type": "String",
+      "value": ""
+    },
+    "BreadcrumbBarChevronPadding": {
+      "type": "Thickness",
+      "value": "2,0"
+    },
+    "BreadcrumbBarEllipsisFlyoutPresenterBorderThemeThickness": {
+      "type": "Thickness",
+      "value": "1"
+    },
+    "BreadcrumbBarChevronFontSize": {
+      "type": "Double",
+      "value": "12"
+    },
+    "TabViewButtonBorderThickness": {
+      "type": "Thickness",
+      "value": "0"
+    },
+    "TabViewItemHeaderCloseButtonBorderThickness": {
       "type": "Thickness",
       "value": "0"
     },
@@ -222,39 +250,75 @@
       "type": "Double",
       "value": "20"
     },
-    "TabViewButtonBorderThickness": {
-      "type": "Thickness",
-      "value": "0"
+    "PipsPagerButtonWidth": {
+      "type": "Double",
+      "value": "20"
     },
-    "TabViewItemHeaderCloseButtonBorderThickness": {
-      "type": "Thickness",
-      "value": "0"
-    },
-    "BreadcrumbBarChevronLeftToRight": {
-      "type": "String",
-      "value": ""
-    },
-    "BreadcrumbBarChevronRightToLeft": {
-      "type": "String",
-      "value": ""
-    },
-    "BreadcrumbBarChevronPadding": {
-      "type": "Thickness",
-      "value": "2,0"
-    },
-    "BreadcrumbBarEllipsisFlyoutPresenterBorderThemeThickness": {
-      "type": "Thickness",
-      "value": "1"
-    },
-    "BreadcrumbBarChevronFontSize": {
+    "PipsPagerButtonHeight": {
       "type": "Double",
       "value": "12"
     },
-    "FlipViewButtonFontSize": {
+    "PipsPagerHorizontalOrientationButtonWidth": {
+      "type": "Double",
+      "value": "12"
+    },
+    "PipsPagerHorizontalOrientationButtonHeight": {
+      "type": "Double",
+      "value": "24"
+    },
+    "PipsPagerVerticalOrientationButtonWidth": {
+      "type": "Double",
+      "value": "24"
+    },
+    "PipsPagerVerticalOrientationButtonHeight": {
+      "type": "Double",
+      "value": "12"
+    },
+    "PipsPagerButtonBorderThickness": {
+      "type": "Thickness",
+      "value": "1"
+    },
+    "PipsPagerNavigationButtonBorderThickness": {
+      "type": "Thickness",
+      "value": "1"
+    },
+    "PipsPagerSelectedGlyph": {
+      "type": "String",
+      "value": ""
+    },
+    "PipsPagerNormalGlyph": {
+      "type": "String",
+      "value": ""
+    },
+    "PipsPagerPreviousPageButtonGlyph": {
+      "type": "String",
+      "value": ""
+    },
+    "PipsPagerNextPageButtonGlyph": {
+      "type": "String",
+      "value": ""
+    },
+    "PipsPagerNavigationButtonHeight": {
+      "type": "Double",
+      "value": "24"
+    },
+    "PipsPagerNavigationButtonWidth": {
+      "type": "Double",
+      "value": "24"
+    },
+    "PipsPagerNavigationButtonFontSize": {
       "type": "Double",
       "value": "8"
     },
-    "FlipViewButtonScalePressed": {
+    "PipsPagerSelectedGlyphFontSize": {
+      "type": "String",
+      "value": "6"
+    },
+    "PipsPagerNormalGlyphFontSize": {
+      "type": "String",
+      "value": "4"
+    },
+    "PipsPagerNavigationButtonScalePressed": {
       "type": "Double",
       "value": "0.875"
     },
@@ -382,75 +446,11 @@
       "type": "Thickness",
       "value": "-1,0,-1,1"
     },
-    "PipsPagerButtonWidth": {
-      "type": "Double",
-      "value": "20"
-    },
-    "PipsPagerButtonHeight": {
-      "type": "Double",
-      "value": "12"
-    },
-    "PipsPagerHorizontalOrientationButtonWidth": {
-      "type": "Double",
-      "value": "12"
-    },
-    "PipsPagerHorizontalOrientationButtonHeight": {
-      "type": "Double",
-      "value": "24"
-    },
-    "PipsPagerVerticalOrientationButtonWidth": {
-      "type": "Double",
-      "value": "24"
-    },
-    "PipsPagerVerticalOrientationButtonHeight": {
-      "type": "Double",
-      "value": "12"
-    },
-    "PipsPagerButtonBorderThickness": {
-      "type": "Thickness",
-      "value": "1"
-    },
-    "PipsPagerNavigationButtonBorderThickness": {
-      "type": "Thickness",
-      "value": "1"
-    },
-    "PipsPagerSelectedGlyph": {
-      "type": "String",
-      "value": ""
-    },
-    "PipsPagerNormalGlyph": {
-      "type": "String",
-      "value": ""
-    },
-    "PipsPagerPreviousPageButtonGlyph": {
-      "type": "String",
-      "value": ""
-    },
-    "PipsPagerNextPageButtonGlyph": {
-      "type": "String",
-      "value": ""
-    },
-    "PipsPagerNavigationButtonHeight": {
-      "type": "Double",
-      "value": "24"
-    },
-    "PipsPagerNavigationButtonWidth": {
-      "type": "Double",
-      "value": "24"
-    },
-    "PipsPagerNavigationButtonFontSize": {
+    "FlipViewButtonFontSize": {
       "type": "Double",
       "value": "8"
     },
-    "PipsPagerSelectedGlyphFontSize": {
-      "type": "String",
-      "value": "6"
-    },
-    "PipsPagerNormalGlyphFontSize": {
-      "type": "String",
-      "value": "4"
-    },
-    "PipsPagerNavigationButtonScalePressed": {
+    "FlipViewButtonScalePressed": {
       "type": "Double",
       "value": "0.875"
     },
@@ -616,32 +616,376 @@
   ],
   "parts": {
     "FlipView": [],
-    "TreeView": [],
-    "DefaultTreeViewStyle": [
-      {
-        "type": "TreeViewList",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ListControl",
-        "Background": "{TemplateBinding Background}",
-        "ItemTemplate": "{TemplateBinding ItemTemplate}",
-        "ItemTemplateSelector": "{TemplateBinding ItemTemplateSelector}",
-        "ItemContainerStyle": "{TemplateBinding ItemContainerStyle}",
-        "ItemContainerStyleSelector": "{TemplateBinding ItemContainerStyleSelector}",
-        "ItemContainerTransitions": "{TemplateBinding ItemContainerTransitions}",
-        "CanDragItems": "{TemplateBinding CanDragItems}",
-        "AllowDrop": "{TemplateBinding AllowDrop}",
-        "CanReorderItems": "{TemplateBinding CanReorderItems}"
-      }
-    ],
-    "TreeViewItem": [],
-    "MUX_TreeViewItemStyle": [
+    "DefaultBreadcrumbBarItemStyle": [
       {
         "type": "Grid",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ContentPresenterGrid",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_LayoutRoot",
+        "CornerRadius": "{TemplateBinding CornerRadius}"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ItemTypeStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Inline"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "EllipsisDropDown"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "EllipsisDropDownItemCommonStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "InlineItemTypeStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Default"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "DefaultRTL"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "LastItem"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Ellipsis"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "EllipsisRTL"
+      },
+      {
+        "type": "Flyout",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_EllipsisFlyout",
+        "ShouldConstrainToRootBounds": "False"
+      },
+      {
+        "type": "ScrollViewer",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "FlyoutPresenterScrollViewer",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "Margin": "{TemplateBinding Padding}",
+        "HorizontalScrollMode": "{TemplateBinding ScrollViewer.HorizontalScrollMode}",
+        "HorizontalScrollBarVisibility": "{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}",
+        "VerticalScrollMode": "{TemplateBinding ScrollViewer.VerticalScrollMode}",
+        "VerticalScrollBarVisibility": "{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}",
+        "IsHorizontalRailEnabled": "{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}",
+        "IsVerticalRailEnabled": "{TemplateBinding ScrollViewer.IsVerticalRailEnabled}",
+        "Content": "{TemplateBinding Content}",
+        "ZoomMode": "{TemplateBinding ScrollViewer.ZoomMode}"
+      },
+      {
+        "type": "Border",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "FlyoutPresenterBorder",
+        "BorderBrush": "{TemplateBinding BorderBrush}",
+        "BorderThickness": "{TemplateBinding BorderThickness}",
+        "CornerRadius": "{TemplateBinding CornerRadius}"
+      },
+      {
+        "type": "ColumnDefinition",
+        "Width": "Auto",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ContentColumn"
+      },
+      {
+        "type": "ColumnDefinition",
+        "Width": "Auto",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ChevronColumn"
+      },
+      {
+        "type": "Button",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ItemButton",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}DeferLoadStrategy": "Lazy",
+        "AutomationProperties.AccessibilityView": "Raw",
         "Background": "{TemplateBinding Background}",
         "BorderBrush": "{TemplateBinding BorderBrush}",
         "BorderThickness": "{TemplateBinding BorderThickness}",
-        "Margin": "{ThemeResource TreeViewItemPresenterMargin}",
-        "Padding": "{ThemeResource TreeViewItemPresenterPadding}",
+        "CornerRadius": "{TemplateBinding CornerRadius}",
+        "Foreground": "{TemplateBinding Foreground}",
+        "Control.IsTemplateFocusTarget": "True",
+        "IsTabStop": "False",
+        "FocusVisualMargin": "-3",
+        "Padding": "1,3"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CommonStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentNormal"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentPointerOver"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentPressed"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentDisabled"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Focus"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentFocus"
+      },
+      {
+        "type": "ContentPresenter",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ContentPresenter",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "BorderBrush": "{TemplateBinding BorderBrush}",
+        "Content": "{TemplateBinding Content}",
+        "ContentTransitions": "{TemplateBinding ContentTransitions}",
+        "ContentTemplate": "{TemplateBinding ContentTemplate}",
+        "Foreground": "{TemplateBinding Foreground}",
+        "Padding": "{TemplateBinding Padding}",
+        "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
+        "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}"
+      },
+      {
+        "type": "ContentPresenter",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ItemContentPresenter",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "Content": "{TemplateBinding Content}",
+        "ContentTransitions": "{TemplateBinding ContentTransitions}",
+        "ContentTemplate": "{TemplateBinding ContentTemplate}",
+        "FontFamily": "{TemplateBinding FontFamily}",
+        "FontSize": "{TemplateBinding FontSize}",
+        "FontWeight": "{TemplateBinding FontWeight}",
+        "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
+        "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
+        "LineHeight": "20"
+      },
+      {
+        "type": "TextBlock",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_EllipsisTextBlock",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
+        "FontSize": "{TemplateBinding FontSize}",
+        "Padding": "3",
+        "Text": "",
+        "Visibility": "Collapsed",
+        "VerticalAlignment": "Stretch",
+        "IsTextScaleFactorEnabled": "False"
+      },
+      {
+        "type": "ContentPresenter",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_LastItemContentPresenter",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "Visibility": "Collapsed",
+        "Background": "{TemplateBinding Background}",
+        "Content": "{TemplateBinding Content}",
+        "ContentTransitions": "{TemplateBinding ContentTransitions}",
+        "ContentTemplate": "{TemplateBinding ContentTemplate}",
+        "FocusVisualMargin": "-3",
+        "FontFamily": "{TemplateBinding FontFamily}",
+        "FontSize": "{TemplateBinding FontSize}",
+        "FontWeight": "{TemplateBinding FontWeight}",
+        "Foreground": "{ThemeResource BreadcrumbBarCurrentNormalForegroundBrush}",
+        "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
+        "LineHeight": "20",
+        "Padding": "1,3",
+        "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
+        "CornerRadius": "{TemplateBinding CornerRadius}"
+      },
+      {
+        "type": "ContentPresenter",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_EllipsisDropDownItemContentPresenter",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}DeferLoadStrategy": "Lazy",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "Visibility": "Collapsed",
+        "Content": "{TemplateBinding Content}",
+        "ContentTemplate": "{TemplateBinding ContentTemplate}",
+        "ContentTransitions": "{TemplateBinding ContentTransitions}",
+        "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
+        "HorizontalContentAlignment": "Stretch",
+        "FontWeight": "Normal",
+        "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}"
+      },
+      {
+        "type": "TextBlock",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ChevronTextBlock",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "Grid.Column": "1",
+        "HorizontalAlignment": "Center",
+        "IsTextScaleFactorEnabled": "False",
+        "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
+        "FontSize": "{ThemeResource BreadcrumbBarChevronFontSize}",
+        "Foreground": "{ThemeResource BreadcrumbBarNormalForegroundBrush}",
+        "Text": "",
+        "Padding": "{ThemeResource BreadcrumbBarChevronPadding}",
+        "VerticalAlignment": "Center"
+      }
+    ],
+    "BreadcrumbBar": [
+      {
+        "type": "ItemsRepeater",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ItemsRepeater"
+      }
+    ],
+    "BreadcrumbBarItem": [],
+    "PipsPager": [
+      {
+        "type": "StackPanel",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootPanel",
+        "Orientation": "{TemplateBinding Orientation}",
+        "Background": "{TemplateBinding Background}"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonVisibilityStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonVisible"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonHidden"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonCollapsed"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonIsEnabledStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonEnabled"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonDisabled"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonVisibilityStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonVisible"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonHidden"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonCollapsed"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonIsEnabledStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonEnabled"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonDisabled"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootPanelOrientationStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "VerticalOrientationView"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "HorizontalOrientationView"
+      },
+      {
+        "type": "Button",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButton",
+        "ToolTipService.ToolTip": "{Binding ElementName=PreviousPageButton, Path=(AutomationProperties.Name)}",
+        "ToolTipService.Placement": "Top",
+        "Style": "{TemplateBinding PreviousButtonStyle}",
+        "HorizontalAlignment": "Center",
+        "VerticalAlignment": "Center"
+      },
+      {
+        "type": "ScrollViewer",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PipsPagerScrollViewer",
+        "VerticalScrollBarVisibility": "Hidden",
+        "VerticalScrollMode": "Disabled",
+        "HorizontalScrollBarVisibility": "Hidden",
+        "HorizontalScrollMode": "Disabled",
+        "IsHorizontalScrollChainingEnabled": "False",
+        "IsVerticalScrollChainingEnabled": "False",
+        "HorizontalAlignment": "Center",
+        "VerticalAlignment": "Center"
+      },
+      {
+        "type": "ItemsRepeater",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PipsPagerItemsRepeater",
+        "ItemsSource": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PipsPagerItems}"
+      },
+      {
+        "type": "Button",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButton",
+        "ToolTipService.ToolTip": "{Binding ElementName=NextPageButton, Path=(AutomationProperties.Name)}",
+        "ToolTipService.Placement": "Bottom",
+        "Style": "{TemplateBinding NextButtonStyle}",
+        "HorizontalAlignment": "Center",
+        "VerticalAlignment": "Center"
+      }
+    ],
+    "PipsPagerNavigationButtonBaseStyle": [
+      {
+        "type": "Grid",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootGrid",
+        "Background": "{TemplateBinding Background}",
+        "BorderBrush": "{TemplateBinding BorderBrush}",
+        "BorderThickness": "{TemplateBinding BorderThickness}",
         "CornerRadius": "{TemplateBinding CornerRadius}"
       },
       {
@@ -662,169 +1006,86 @@
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Selected"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
+      },
+      {
+        "type": "ScaleTransform",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ScaleTransform",
+        "ScaleY": "1",
+        "ScaleX": "1"
+      },
+      {
+        "type": "FontIcon",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Content",
+        "FontSize": "{TemplateBinding FontSize}",
+        "FontFamily": "{TemplateBinding FontFamily}",
+        "Glyph": "{TemplateBinding Content}",
+        "MirroredWhenRightToLeft": "True",
+        "Foreground": "{TemplateBinding Foreground}",
+        "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
+        "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}",
+        "AutomationProperties.AccessibilityView": "Raw"
+      }
+    ],
+    "PipsPagerPreviousPageButtonStyle": [],
+    "PipsPagerNextPageButtonStyle": [],
+    "PipsPagerButtonBaseStyle": [
+      {
+        "type": "Grid",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootGrid",
+        "Background": "{TemplateBinding Background}",
+        "BorderBrush": "{TemplateBinding BorderBrush}",
+        "BorderThickness": "{TemplateBinding BorderThickness}",
+        "Width": "{StaticResource PipsPagerHorizontalOrientationButtonWidth}",
+        "Height": "{StaticResource PipsPagerHorizontalOrientationButtonHeight}",
+        "CornerRadius": "{TemplateBinding CornerRadius}"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CommonStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
       },
       {
         "type": "VisualState",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
       },
       {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverSelected"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PressedSelected"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "SelectedDisabled"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ReorderedPlaceholder"
-      },
-      {
         "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectStates"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "OrientationStates"
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectDisabled"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "HorizontalOrientation"
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectEnabledUnselected"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "VerticalOrientation"
       },
       {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectEnabledSelected"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "DragStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NotDragging"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultipleDraggingPrimary"
-      },
-      {
-        "type": "Rectangle",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "SelectionIndicator",
-        "Width": "3",
-        "Height": "16",
-        "Fill": "{ThemeResource TreeViewItemSelectionIndicatorForeground}",
-        "Opacity": "0",
-        "HorizontalAlignment": "Left",
-        "VerticalAlignment": "Center",
-        "RadiusX": "2",
-        "RadiusY": "2"
-      },
-      {
-        "type": "Grid",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiSelectGrid",
-        "Margin": "{ThemeResource TreeViewItemMultiSelectSelectedItemBorderMargin}",
-        "Padding": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.Indentation}",
-        "BorderBrush": "Transparent",
-        "BorderThickness": "{ThemeResource TreeViewItemBorderThemeThickness}",
-        "CornerRadius": "{ThemeResource ControlCornerRadius}"
-      },
-      {
-        "type": "CheckBox",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiSelectCheckBox",
-        "Width": "32",
-        "MinWidth": "32",
-        "MinHeight": "{ThemeResource TreeViewItemMultiSelectCheckBoxMinHeight}",
-        "Margin": "10,0,0,0",
-        "VerticalAlignment": "Center",
-        "Visibility": "Collapsed",
-        "IsTabStop": "False",
-        "AutomationProperties.AccessibilityView": "Raw"
-      },
-      {
-        "type": "Border",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiArrangeOverlayTextBorder",
-        "Visibility": "Collapsed",
-        "IsHitTestVisible": "False",
-        "MinWidth": "20",
-        "Height": "20",
-        "VerticalAlignment": "Center",
-        "HorizontalAlignment": "Center",
-        "Background": "{ThemeResource SystemControlBackgroundAccentBrush}",
-        "BorderThickness": "1",
-        "BorderBrush": "{ThemeResource SystemControlBackgroundChromeWhiteBrush}",
-        "CornerRadius": "{ThemeResource ControlCornerRadius}"
-      },
-      {
-        "type": "TextBlock",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiArrangeOverlayText",
-        "Text": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.DragItemsCount}",
-        "Style": "{ThemeResource CaptionTextBlockStyle}",
-        "Foreground": "{ThemeResource SystemControlForegroundChromeWhiteBrush}",
-        "IsHitTestVisible": "False",
-        "VerticalAlignment": "Center",
-        "HorizontalAlignment": "Center",
-        "AutomationProperties.AccessibilityView": "Raw"
-      },
-      {
-        "type": "Grid",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ExpandCollapseChevron",
-        "Grid.Column": "1",
-        "Padding": "14,0",
-        "Width": "Auto",
-        "Opacity": "{TemplateBinding GlyphOpacity}",
-        "Background": "Transparent"
-      },
-      {
-        "type": "TextBlock",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CollapsedGlyph",
-        "Foreground": "{TemplateBinding GlyphBrush}",
-        "Width": "12",
-        "Height": "12",
-        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.CollapsedGlyphVisibility}",
-        "FontSize": "{TemplateBinding GlyphSize}",
-        "Text": "{TemplateBinding CollapsedGlyph}",
-        "FontFamily": "{StaticResource SymbolThemeFontFamily}",
-        "Padding": "2",
-        "VerticalAlignment": "Center",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "IsTextScaleFactorEnabled": "False",
-        "IsHitTestVisible": "False"
-      },
-      {
-        "type": "TextBlock",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ExpandedGlyph",
-        "Foreground": "{TemplateBinding GlyphBrush}",
-        "Width": "12",
-        "Height": "12",
-        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.ExpandedGlyphVisibility}",
-        "FontSize": "{TemplateBinding GlyphSize}",
-        "Text": "{TemplateBinding ExpandedGlyph}",
-        "FontFamily": "{StaticResource SymbolThemeFontFamily}",
-        "Padding": "2",
-        "VerticalAlignment": "Center",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "IsTextScaleFactorEnabled": "False",
-        "IsHitTestVisible": "False"
-      },
-      {
-        "type": "ContentPresenter",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ContentPresenter",
-        "Grid.Column": "2",
-        "ContentTransitions": "{TemplateBinding ContentTransitions}",
-        "ContentTemplate": "{TemplateBinding ContentTemplate}",
-        "Content": "{TemplateBinding Content}",
+        "type": "FontIcon",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Content",
+        "FontSize": "{TemplateBinding FontSize}",
+        "FontFamily": "{TemplateBinding FontFamily}",
+        "Glyph": "{TemplateBinding Content}",
         "Foreground": "{TemplateBinding Foreground}",
         "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
         "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}",
-        "MinHeight": "{ThemeResource TreeViewItemContentHeight}",
-        "Margin": "{TemplateBinding Padding}"
+        "AutomationProperties.AccessibilityView": "Raw"
       }
     ],
+    "PipsPagerSelectedPipButtonStyle": [],
+    "PipsPagerNormalPipButtonStyle": [],
     "TabView": [],
     "DefaultTabViewStyle": [
       {
@@ -1453,118 +1714,33 @@
         "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
       }
     ],
-    "DefaultBreadcrumbBarItemStyle": [
+    "TreeView": [],
+    "DefaultTreeViewStyle": [
+      {
+        "type": "TreeViewList",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ListControl",
+        "Background": "{TemplateBinding Background}",
+        "ItemTemplate": "{TemplateBinding ItemTemplate}",
+        "ItemTemplateSelector": "{TemplateBinding ItemTemplateSelector}",
+        "ItemContainerStyle": "{TemplateBinding ItemContainerStyle}",
+        "ItemContainerStyleSelector": "{TemplateBinding ItemContainerStyleSelector}",
+        "ItemContainerTransitions": "{TemplateBinding ItemContainerTransitions}",
+        "CanDragItems": "{TemplateBinding CanDragItems}",
+        "AllowDrop": "{TemplateBinding AllowDrop}",
+        "CanReorderItems": "{TemplateBinding CanReorderItems}"
+      }
+    ],
+    "TreeViewItem": [],
+    "MUX_TreeViewItemStyle": [
       {
         "type": "Grid",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_LayoutRoot",
-        "CornerRadius": "{TemplateBinding CornerRadius}"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ItemTypeStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Inline"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "EllipsisDropDown"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "EllipsisDropDownItemCommonStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "InlineItemTypeStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Default"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "DefaultRTL"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "LastItem"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Ellipsis"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "EllipsisRTL"
-      },
-      {
-        "type": "Flyout",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_EllipsisFlyout",
-        "ShouldConstrainToRootBounds": "False"
-      },
-      {
-        "type": "ScrollViewer",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "FlyoutPresenterScrollViewer",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "Margin": "{TemplateBinding Padding}",
-        "HorizontalScrollMode": "{TemplateBinding ScrollViewer.HorizontalScrollMode}",
-        "HorizontalScrollBarVisibility": "{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}",
-        "VerticalScrollMode": "{TemplateBinding ScrollViewer.VerticalScrollMode}",
-        "VerticalScrollBarVisibility": "{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}",
-        "IsHorizontalRailEnabled": "{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}",
-        "IsVerticalRailEnabled": "{TemplateBinding ScrollViewer.IsVerticalRailEnabled}",
-        "Content": "{TemplateBinding Content}",
-        "ZoomMode": "{TemplateBinding ScrollViewer.ZoomMode}"
-      },
-      {
-        "type": "Border",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "FlyoutPresenterBorder",
-        "BorderBrush": "{TemplateBinding BorderBrush}",
-        "BorderThickness": "{TemplateBinding BorderThickness}",
-        "CornerRadius": "{TemplateBinding CornerRadius}"
-      },
-      {
-        "type": "ColumnDefinition",
-        "Width": "Auto",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ContentColumn"
-      },
-      {
-        "type": "ColumnDefinition",
-        "Width": "Auto",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ChevronColumn"
-      },
-      {
-        "type": "Button",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ItemButton",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}DeferLoadStrategy": "Lazy",
-        "AutomationProperties.AccessibilityView": "Raw",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ContentPresenterGrid",
         "Background": "{TemplateBinding Background}",
         "BorderBrush": "{TemplateBinding BorderBrush}",
         "BorderThickness": "{TemplateBinding BorderThickness}",
-        "CornerRadius": "{TemplateBinding CornerRadius}",
-        "Foreground": "{TemplateBinding Foreground}",
-        "Control.IsTemplateFocusTarget": "True",
-        "IsTabStop": "False",
-        "FocusVisualMargin": "-3",
-        "Padding": "1,3"
+        "Margin": "{ThemeResource TreeViewItemPresenterMargin}",
+        "Padding": "{ThemeResource TreeViewItemPresenterPadding}",
+        "CornerRadius": "{TemplateBinding CornerRadius}"
       },
       {
         "type": "VisualStateGroup",
@@ -1576,15 +1752,7 @@
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentNormal"
-      },
-      {
-        "type": "VisualState",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentPointerOver"
       },
       {
         "type": "VisualState",
@@ -1592,7 +1760,7 @@
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentPressed"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Selected"
       },
       {
         "type": "VisualState",
@@ -1600,220 +1768,159 @@
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentDisabled"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverSelected"
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Focus"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PressedSelected"
       },
       {
         "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CurrentFocus"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "SelectedDisabled"
       },
       {
-        "type": "ContentPresenter",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ContentPresenter",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "BorderBrush": "{TemplateBinding BorderBrush}",
-        "Content": "{TemplateBinding Content}",
-        "ContentTransitions": "{TemplateBinding ContentTransitions}",
-        "ContentTemplate": "{TemplateBinding ContentTemplate}",
-        "Foreground": "{TemplateBinding Foreground}",
-        "Padding": "{TemplateBinding Padding}",
-        "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
-        "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}"
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ReorderedPlaceholder"
       },
       {
-        "type": "ContentPresenter",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ItemContentPresenter",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "Content": "{TemplateBinding Content}",
-        "ContentTransitions": "{TemplateBinding ContentTransitions}",
-        "ContentTemplate": "{TemplateBinding ContentTemplate}",
-        "FontFamily": "{TemplateBinding FontFamily}",
-        "FontSize": "{TemplateBinding FontSize}",
-        "FontWeight": "{TemplateBinding FontWeight}",
-        "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
-        "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
-        "LineHeight": "20"
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectDisabled"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectEnabledUnselected"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "TreeViewMultiSelectEnabledSelected"
+      },
+      {
+        "type": "VisualStateGroup",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "DragStates"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NotDragging"
+      },
+      {
+        "type": "VisualState",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultipleDraggingPrimary"
+      },
+      {
+        "type": "Rectangle",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "SelectionIndicator",
+        "Width": "3",
+        "Height": "16",
+        "Fill": "{ThemeResource TreeViewItemSelectionIndicatorForeground}",
+        "Opacity": "0",
+        "HorizontalAlignment": "Left",
+        "VerticalAlignment": "Center",
+        "RadiusX": "2",
+        "RadiusY": "2"
+      },
+      {
+        "type": "Grid",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiSelectGrid",
+        "Margin": "{ThemeResource TreeViewItemMultiSelectSelectedItemBorderMargin}",
+        "Padding": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.Indentation}",
+        "BorderBrush": "Transparent",
+        "BorderThickness": "{ThemeResource TreeViewItemBorderThemeThickness}",
+        "CornerRadius": "{ThemeResource ControlCornerRadius}"
+      },
+      {
+        "type": "CheckBox",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiSelectCheckBox",
+        "Width": "32",
+        "MinWidth": "32",
+        "MinHeight": "{ThemeResource TreeViewItemMultiSelectCheckBoxMinHeight}",
+        "Margin": "10,0,0,0",
+        "VerticalAlignment": "Center",
+        "Visibility": "Collapsed",
+        "IsTabStop": "False",
+        "AutomationProperties.AccessibilityView": "Raw"
+      },
+      {
+        "type": "Border",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiArrangeOverlayTextBorder",
+        "Visibility": "Collapsed",
+        "IsHitTestVisible": "False",
+        "MinWidth": "20",
+        "Height": "20",
+        "VerticalAlignment": "Center",
+        "HorizontalAlignment": "Center",
+        "Background": "{ThemeResource SystemControlBackgroundAccentBrush}",
+        "BorderThickness": "1",
+        "BorderBrush": "{ThemeResource SystemControlBackgroundChromeWhiteBrush}",
+        "CornerRadius": "{ThemeResource ControlCornerRadius}"
       },
       {
         "type": "TextBlock",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_EllipsisTextBlock",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
-        "FontSize": "{TemplateBinding FontSize}",
-        "Padding": "3",
-        "Text": "",
-        "Visibility": "Collapsed",
-        "VerticalAlignment": "Stretch",
-        "IsTextScaleFactorEnabled": "False"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "MultiArrangeOverlayText",
+        "Text": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.DragItemsCount}",
+        "Style": "{ThemeResource CaptionTextBlockStyle}",
+        "Foreground": "{ThemeResource SystemControlForegroundChromeWhiteBrush}",
+        "IsHitTestVisible": "False",
+        "VerticalAlignment": "Center",
+        "HorizontalAlignment": "Center",
+        "AutomationProperties.AccessibilityView": "Raw"
       },
       {
-        "type": "ContentPresenter",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_LastItemContentPresenter",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "Visibility": "Collapsed",
-        "Background": "{TemplateBinding Background}",
-        "Content": "{TemplateBinding Content}",
-        "ContentTransitions": "{TemplateBinding ContentTransitions}",
-        "ContentTemplate": "{TemplateBinding ContentTemplate}",
-        "FocusVisualMargin": "-3",
-        "FontFamily": "{TemplateBinding FontFamily}",
-        "FontSize": "{TemplateBinding FontSize}",
-        "FontWeight": "{TemplateBinding FontWeight}",
-        "Foreground": "{ThemeResource BreadcrumbBarCurrentNormalForegroundBrush}",
-        "HorizontalContentAlignment": "{TemplateBinding HorizontalContentAlignment}",
-        "LineHeight": "20",
-        "Padding": "1,3",
-        "VerticalContentAlignment": "{TemplateBinding VerticalContentAlignment}",
-        "CornerRadius": "{TemplateBinding CornerRadius}"
-      },
-      {
-        "type": "ContentPresenter",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_EllipsisDropDownItemContentPresenter",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}DeferLoadStrategy": "Lazy",
-        "AutomationProperties.AccessibilityView": "Raw",
-        "Visibility": "Collapsed",
-        "Content": "{TemplateBinding Content}",
-        "ContentTemplate": "{TemplateBinding ContentTemplate}",
-        "ContentTransitions": "{TemplateBinding ContentTransitions}",
-        "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
-        "HorizontalContentAlignment": "Stretch",
-        "FontWeight": "Normal",
-        "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}"
-      },
-      {
-        "type": "TextBlock",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ChevronTextBlock",
-        "AutomationProperties.AccessibilityView": "Raw",
+        "type": "Grid",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ExpandCollapseChevron",
         "Grid.Column": "1",
-        "HorizontalAlignment": "Center",
+        "Padding": "14,0",
+        "Width": "Auto",
+        "Opacity": "{TemplateBinding GlyphOpacity}",
+        "Background": "Transparent"
+      },
+      {
+        "type": "TextBlock",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CollapsedGlyph",
+        "Foreground": "{TemplateBinding GlyphBrush}",
+        "Width": "12",
+        "Height": "12",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.CollapsedGlyphVisibility}",
+        "FontSize": "{TemplateBinding GlyphSize}",
+        "Text": "{TemplateBinding CollapsedGlyph}",
+        "FontFamily": "{StaticResource SymbolThemeFontFamily}",
+        "Padding": "2",
+        "VerticalAlignment": "Center",
+        "AutomationProperties.AccessibilityView": "Raw",
         "IsTextScaleFactorEnabled": "False",
-        "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
-        "FontSize": "{ThemeResource BreadcrumbBarChevronFontSize}",
-        "Foreground": "{ThemeResource BreadcrumbBarNormalForegroundBrush}",
-        "Text": "",
-        "Padding": "{ThemeResource BreadcrumbBarChevronPadding}",
-        "VerticalAlignment": "Center"
-      }
-    ],
-    "BreadcrumbBar": [
-      {
-        "type": "ItemsRepeater",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PART_ItemsRepeater"
-      }
-    ],
-    "BreadcrumbBarItem": [],
-    "PipsPager": [
-      {
-        "type": "StackPanel",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootPanel",
-        "Orientation": "{TemplateBinding Orientation}",
-        "Background": "{TemplateBinding Background}"
+        "IsHitTestVisible": "False"
       },
       {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonVisibilityStates"
+        "type": "TextBlock",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ExpandedGlyph",
+        "Foreground": "{TemplateBinding GlyphBrush}",
+        "Width": "12",
+        "Height": "12",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TreeViewItemTemplateSettings.ExpandedGlyphVisibility}",
+        "FontSize": "{TemplateBinding GlyphSize}",
+        "Text": "{TemplateBinding ExpandedGlyph}",
+        "FontFamily": "{StaticResource SymbolThemeFontFamily}",
+        "Padding": "2",
+        "VerticalAlignment": "Center",
+        "AutomationProperties.AccessibilityView": "Raw",
+        "IsTextScaleFactorEnabled": "False",
+        "IsHitTestVisible": "False"
       },
       {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonVisible"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonHidden"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonCollapsed"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonIsEnabledStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonEnabled"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButtonDisabled"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonVisibilityStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonVisible"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonHidden"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonCollapsed"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonIsEnabledStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonEnabled"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButtonDisabled"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootPanelOrientationStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "VerticalOrientationView"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "HorizontalOrientationView"
-      },
-      {
-        "type": "Button",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PreviousPageButton",
-        "ToolTipService.ToolTip": "{Binding ElementName=PreviousPageButton, Path=(AutomationProperties.Name)}",
-        "ToolTipService.Placement": "Top",
-        "Style": "{TemplateBinding PreviousButtonStyle}",
-        "HorizontalAlignment": "Center",
-        "VerticalAlignment": "Center"
-      },
-      {
-        "type": "ScrollViewer",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PipsPagerScrollViewer",
-        "VerticalScrollBarVisibility": "Hidden",
-        "VerticalScrollMode": "Disabled",
-        "HorizontalScrollBarVisibility": "Hidden",
-        "HorizontalScrollMode": "Disabled",
-        "IsHorizontalScrollChainingEnabled": "False",
-        "IsVerticalScrollChainingEnabled": "False",
-        "HorizontalAlignment": "Center",
-        "VerticalAlignment": "Center"
-      },
-      {
-        "type": "ItemsRepeater",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PipsPagerItemsRepeater",
-        "ItemsSource": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PipsPagerItems}"
-      },
-      {
-        "type": "Button",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NextPageButton",
-        "ToolTipService.ToolTip": "{Binding ElementName=NextPageButton, Path=(AutomationProperties.Name)}",
-        "ToolTipService.Placement": "Bottom",
-        "Style": "{TemplateBinding NextButtonStyle}",
-        "HorizontalAlignment": "Center",
-        "VerticalAlignment": "Center"
+        "type": "ContentPresenter",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ContentPresenter",
+        "Grid.Column": "2",
+        "ContentTransitions": "{TemplateBinding ContentTransitions}",
+        "ContentTemplate": "{TemplateBinding ContentTemplate}",
+        "Content": "{TemplateBinding Content}",
+        "Foreground": "{TemplateBinding Foreground}",
+        "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
+        "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}",
+        "MinHeight": "{ThemeResource TreeViewItemContentHeight}",
+        "Margin": "{TemplateBinding Padding}"
       }
     ],
     "DefaultFlipViewStyle": [
@@ -2060,121 +2167,56 @@
         "HorizontalAlignment": "Center",
         "VerticalAlignment": "Bottom"
       }
-    ],
-    "PipsPagerNavigationButtonBaseStyle": [
-      {
-        "type": "Grid",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootGrid",
-        "Background": "{TemplateBinding Background}",
-        "BorderBrush": "{TemplateBinding BorderBrush}",
-        "BorderThickness": "{TemplateBinding BorderThickness}",
-        "CornerRadius": "{TemplateBinding CornerRadius}"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CommonStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
-      },
-      {
-        "type": "ScaleTransform",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ScaleTransform",
-        "ScaleY": "1",
-        "ScaleX": "1"
-      },
-      {
-        "type": "FontIcon",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Content",
-        "FontSize": "{TemplateBinding FontSize}",
-        "FontFamily": "{TemplateBinding FontFamily}",
-        "Glyph": "{TemplateBinding Content}",
-        "MirroredWhenRightToLeft": "True",
-        "Foreground": "{TemplateBinding Foreground}",
-        "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
-        "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}",
-        "AutomationProperties.AccessibilityView": "Raw"
-      }
-    ],
-    "PipsPagerPreviousPageButtonStyle": [],
-    "PipsPagerNextPageButtonStyle": [],
-    "PipsPagerButtonBaseStyle": [
-      {
-        "type": "Grid",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "RootGrid",
-        "Background": "{TemplateBinding Background}",
-        "BorderBrush": "{TemplateBinding BorderBrush}",
-        "BorderThickness": "{TemplateBinding BorderThickness}",
-        "Width": "{StaticResource PipsPagerHorizontalOrientationButtonWidth}",
-        "Height": "{StaticResource PipsPagerHorizontalOrientationButtonHeight}",
-        "CornerRadius": "{TemplateBinding CornerRadius}"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CommonStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Normal"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOver"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Pressed"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled"
-      },
-      {
-        "type": "VisualStateGroup",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "OrientationStates"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "HorizontalOrientation"
-      },
-      {
-        "type": "VisualState",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "VerticalOrientation"
-      },
-      {
-        "type": "FontIcon",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Content",
-        "FontSize": "{TemplateBinding FontSize}",
-        "FontFamily": "{TemplateBinding FontFamily}",
-        "Glyph": "{TemplateBinding Content}",
-        "Foreground": "{TemplateBinding Foreground}",
-        "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
-        "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}",
-        "AutomationProperties.AccessibilityView": "Raw"
-      }
-    ],
-    "PipsPagerSelectedPipButtonStyle": [],
-    "PipsPagerNormalPipButtonStyle": []
+    ]
   },
   "states": {
     "FlipView": [],
-    "TreeView": [],
-    "DefaultTreeViewStyle": [],
-    "TreeViewItem": [],
-    "MUX_TreeViewItemStyle": [
+    "DefaultBreadcrumbBarItemStyle": [
+      {
+        "name": "Inline",
+        "setters": []
+      },
+      {
+        "name": "EllipsisDropDown",
+        "setters": [
+          {
+            "Target": "PART_ItemButton.Visibility",
+            "Value": "Collapsed"
+          },
+          {
+            "Target": "PART_ChevronTextBlock.Visibility",
+            "Value": "Collapsed"
+          },
+          {
+            "Target": "PART_ContentColumn.Width",
+            "Value": "*"
+          },
+          {
+            "Target": "PART_EllipsisDropDownItemContentPresenter.Visibility",
+            "Value": "Visible"
+          },
+          {
+            "Target": "PART_LayoutRoot.Padding",
+            "Value": "11,7,11,9"
+          },
+          {
+            "Target": "PART_LayoutRoot.Margin",
+            "Value": "5,3"
+          },
+          {
+            "Target": "PART_LayoutRoot.FocusVisualMargin",
+            "Value": "-3"
+          },
+          {
+            "Target": "PART_ItemButton.(Control.IsTemplateFocusTarget)",
+            "Value": "False"
+          },
+          {
+            "Target": "PART_LayoutRoot.(Control.IsTemplateFocusTarget)",
+            "Value": "True"
+          }
+        ]
+      },
       {
         "name": "Normal",
         "setters": []
@@ -2183,32 +2225,12 @@
         "name": "PointerOver",
         "setters": [
           {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundPointerOver}"
+            "KeyTime": "0",
+            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemBackgroundPointerOver}"
           },
           {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundPointerOver}"
-          },
-          {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPointerOver}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundPointerOver}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundPointerOver}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushPointerOver}"
-          },
-          {
-            "Target": "SelectionIndicator.Opacity",
-            "Value": "0"
+            "KeyTime": "0",
+            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemForegroundPointerOver}"
           }
         ]
       },
@@ -2216,65 +2238,12 @@
         "name": "Pressed",
         "setters": [
           {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundPressed}"
+            "KeyTime": "0",
+            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemBackgroundPressed}"
           },
           {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundPressed}"
-          },
-          {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPressed}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundPressed}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundPressed}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushPressed}"
-          },
-          {
-            "Target": "SelectionIndicator.Opacity",
-            "Value": "0"
-          }
-        ]
-      },
-      {
-        "name": "Selected",
-        "setters": [
-          {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundSelected}"
-          },
-          {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelected}"
-          },
-          {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForeground}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelected}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelected}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushSelected}"
-          },
-          {
-            "Target": "SelectionIndicator.Opacity",
-            "Value": "1"
+            "KeyTime": "0",
+            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemForegroundPressed}"
           }
         ]
       },
@@ -2282,198 +2251,488 @@
         "name": "Disabled",
         "setters": [
           {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundDisabled}"
+            "KeyTime": "0",
+            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemBackgroundDisabled}"
           },
           {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundDisabled}"
-          },
-          {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundDisabled}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundDisabled}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundDisabled}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushDisabled}"
+            "KeyTime": "0",
+            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemForegroundDisabled}"
           }
         ]
       },
       {
-        "name": "PointerOverSelected",
+        "name": "Default",
         "setters": [
           {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundSelectedPointerOver}"
-          },
-          {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedPointerOver}"
-          },
-          {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPointerOver}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedPointerOver}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedPointerOver}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushSelectedPointerOver}"
-          },
-          {
-            "Target": "SelectionIndicator.Opacity",
-            "Value": "1"
+            "Target": "PART_ChevronTextBlock.Text",
+            "Value": "{ThemeResource BreadcrumbBarChevronLeftToRight}"
           }
         ]
       },
       {
-        "name": "PressedSelected",
+        "name": "DefaultRTL",
         "setters": [
           {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundSelectedPressed}"
-          },
-          {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedPressed}"
-          },
-          {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPressed}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedPressed}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedPressed}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushSelectedPressed}"
-          },
-          {
-            "Target": "SelectionIndicator.Opacity",
-            "Value": "1"
+            "Target": "PART_ChevronTextBlock.Text",
+            "Value": "{ThemeResource BreadcrumbBarChevronRightToLeft}"
           }
         ]
       },
       {
-        "name": "SelectedDisabled",
+        "name": "LastItem",
         "setters": [
           {
-            "Target": "ContentPresenterGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundSelectedDisabled}"
+            "Target": "PART_ItemButton.Visibility",
+            "Value": "Collapsed"
           },
           {
-            "Target": "ContentPresenter.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedDisabled}"
+            "Target": "PART_ChevronTextBlock.Visibility",
+            "Value": "Collapsed"
           },
           {
-            "Target": "SelectionIndicator.Fill",
-            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundDisabled}"
-          },
-          {
-            "Target": "CollapsedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedDisabled}"
-          },
-          {
-            "Target": "ExpandedGlyph.Foreground",
-            "Value": "{ThemeResource TreeViewItemForegroundSelectedDisabled}"
-          },
-          {
-            "Target": "ContentPresenterGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemBorderBrushSelectedDisabled}"
-          },
-          {
-            "Target": "SelectionIndicator.Opacity",
-            "Value": "1"
-          }
-        ]
-      },
-      {
-        "name": "ReorderedPlaceholder",
-        "setters": []
-      },
-      {
-        "name": "TreeViewMultiSelectDisabled",
-        "setters": []
-      },
-      {
-        "name": "TreeViewMultiSelectEnabledUnselected",
-        "setters": [
-          {
-            "Target": "MultiSelectCheckBox.Visibility",
+            "Target": "PART_LastItemContentPresenter.Visibility",
             "Value": "Visible"
           },
           {
-            "Target": "ExpandCollapseChevron.Padding",
-            "Value": "0,0,14,0"
+            "Target": "PART_ItemButton.(Control.IsTemplateFocusTarget)",
+            "Value": "False"
           },
           {
-            "Target": "ContentPresenterGrid.Padding",
-            "Value": "0"
+            "Target": "PART_LastItemContentPresenter.(Control.IsTemplateFocusTarget)",
+            "Value": "True"
           }
         ]
       },
       {
-        "name": "TreeViewMultiSelectEnabledSelected",
+        "name": "Ellipsis",
         "setters": [
           {
-            "Target": "MultiSelectCheckBox.Visibility",
+            "Target": "PART_ChevronTextBlock.Text",
+            "Value": "{ThemeResource BreadcrumbBarChevronLeftToRight}"
+          },
+          {
+            "Target": "PART_EllipsisTextBlock.Visibility",
             "Value": "Visible"
           },
           {
-            "Target": "MultiSelectGrid.Background",
-            "Value": "{ThemeResource TreeViewItemBackgroundSelected}"
-          },
-          {
-            "Target": "MultiSelectGrid.BorderBrush",
-            "Value": "{ThemeResource TreeViewItemMultiSelectBorderBrushSelected}"
-          },
-          {
-            "Target": "ExpandCollapseChevron.Padding",
-            "Value": "0,0,14,0"
-          },
-          {
-            "Target": "ContentPresenterGrid.Padding",
-            "Value": "0"
+            "Target": "PART_ItemContentPresenter.Visibility",
+            "Value": "Collapsed"
           }
         ]
       },
       {
-        "name": "NotDragging",
+        "name": "EllipsisRTL",
+        "setters": [
+          {
+            "Target": "PART_EllipsisTextBlock.Visibility",
+            "Value": "Visible"
+          },
+          {
+            "Target": "PART_ItemContentPresenter.Visibility",
+            "Value": "Collapsed"
+          },
+          {
+            "Target": "PART_ChevronTextBlock.Text",
+            "Value": "{ThemeResource BreadcrumbBarChevronRightToLeft}"
+          }
+        ]
+      },
+      {
+        "name": "Normal",
         "setters": []
       },
       {
-        "name": "MultipleDraggingPrimary",
+        "name": "CurrentNormal",
         "setters": [
           {
-            "Target": "MultiSelectCheckBox.Opacity",
-            "Value": "0"
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarCurrentNormalForegroundBrush}"
+          }
+        ]
+      },
+      {
+        "name": "PointerOver",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarHoverForegroundBrush}"
           },
           {
-            "Target": "MultiArrangeOverlayTextBorder.Visibility",
-            "Value": "Visible"
+            "Target": "PART_ContentPresenter.Background",
+            "Value": "{ThemeResource BreadcrumbBarBackgroundBrush}"
+          },
+          {
+            "Target": "PART_ContentPresenter.BorderBrush",
+            "Value": "{ThemeResource BreadcrumbBarBorderBrush}"
+          }
+        ]
+      },
+      {
+        "name": "CurrentPointerOver",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarCurrentHoverForegroundBrush}"
+          },
+          {
+            "Target": "PART_ContentPresenter.Background",
+            "Value": "{ThemeResource BreadcrumbBarBackgroundBrush}"
+          },
+          {
+            "Target": "PART_ContentPresenter.BorderBrush",
+            "Value": "{ThemeResource BreadcrumbBarBorderBrush}"
+          }
+        ]
+      },
+      {
+        "name": "Pressed",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarPressedForegroundBrush}"
+          },
+          {
+            "Target": "PART_ContentPresenter.Background",
+            "Value": "{ThemeResource BreadcrumbBarBackgroundBrush}"
+          },
+          {
+            "Target": "PART_ContentPresenter.BorderBrush",
+            "Value": "{ThemeResource BreadcrumbBarBorderBrush}"
+          }
+        ]
+      },
+      {
+        "name": "CurrentPressed",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarCurrentPressedForegroundBrush}"
+          },
+          {
+            "Target": "PART_ContentPresenter.Background",
+            "Value": "Transparent"
+          },
+          {
+            "Target": "PART_ContentPresenter.BorderBrush",
+            "Value": "Transparent"
+          }
+        ]
+      },
+      {
+        "name": "Disabled",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarDisabledForegroundBrush}"
+          }
+        ]
+      },
+      {
+        "name": "CurrentDisabled",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarCurrentDisabledForegroundBrush}"
+          }
+        ]
+      },
+      {
+        "name": "Focus",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarFocusForegroundBrush}"
+          }
+        ]
+      },
+      {
+        "name": "CurrentFocus",
+        "setters": [
+          {
+            "Target": "PART_ContentPresenter.Foreground",
+            "Value": "{ThemeResource BreadcrumbBarCurrentFocusForegroundBrush}"
           }
         ]
       }
     ],
+    "BreadcrumbBar": [],
+    "BreadcrumbBarItem": [],
+    "PipsPager": [
+      {
+        "name": "PreviousPageButtonVisible",
+        "setters": []
+      },
+      {
+        "name": "PreviousPageButtonHidden",
+        "setters": [
+          {
+            "Target": "PreviousPageButton.Opacity",
+            "Value": "0"
+          }
+        ]
+      },
+      {
+        "name": "PreviousPageButtonCollapsed",
+        "setters": [
+          {
+            "Target": "PreviousPageButton.Visibility",
+            "Value": "Collapsed"
+          }
+        ]
+      },
+      {
+        "name": "PreviousPageButtonEnabled",
+        "setters": []
+      },
+      {
+        "name": "PreviousPageButtonDisabled",
+        "setters": [
+          {
+            "Target": "PreviousPageButton.IsEnabled",
+            "Value": "False"
+          }
+        ]
+      },
+      {
+        "name": "NextPageButtonVisible",
+        "setters": []
+      },
+      {
+        "name": "NextPageButtonHidden",
+        "setters": [
+          {
+            "Target": "NextPageButton.Opacity",
+            "Value": "0"
+          }
+        ]
+      },
+      {
+        "name": "NextPageButtonCollapsed",
+        "setters": [
+          {
+            "Target": "NextPageButton.Visibility",
+            "Value": "Collapsed"
+          }
+        ]
+      },
+      {
+        "name": "NextPageButtonEnabled",
+        "setters": []
+      },
+      {
+        "name": "NextPageButtonDisabled",
+        "setters": [
+          {
+            "Target": "NextPageButton.IsEnabled",
+            "Value": "False"
+          }
+        ]
+      },
+      {
+        "name": "VerticalOrientationView",
+        "setters": []
+      },
+      {
+        "name": "HorizontalOrientationView",
+        "setters": [
+          {
+            "Target": "RootPanel.Orientation",
+            "Value": "Horizontal"
+          },
+          {
+            "Target": "PreviousPageButton.(ToolTipService.Placement)",
+            "Value": "Left"
+          },
+          {
+            "Target": "PreviousPageButton.RenderTransformOrigin",
+            "Value": "0.5, 0.5"
+          },
+          {
+            "Target": "PreviousPageButton.RenderTransform"
+          },
+          {
+            "Target": "NextPageButton.(ToolTipService.Placement)",
+            "Value": "Right"
+          },
+          {
+            "Target": "NextPageButton.RenderTransformOrigin",
+            "Value": "0.5, 0.5"
+          },
+          {
+            "Target": "NextPageButton.RenderTransform"
+          }
+        ]
+      }
+    ],
+    "PipsPagerNavigationButtonBaseStyle": [
+      {
+        "name": "Normal",
+        "setters": []
+      },
+      {
+        "name": "PointerOver",
+        "setters": [
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonBackgroundPointerOver}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonBorderBrushPointerOver}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonForegroundPointerOver}"
+          }
+        ]
+      },
+      {
+        "name": "Pressed",
+        "setters": [
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonBackgroundPressed}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonBorderBrushPressed}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonForegroundPressed}"
+          },
+          {
+            "Storyboard.TargetName": "ScaleTransform",
+            "Storyboard.TargetProperty": "ScaleX",
+            "RepeatBehavior": "Forever"
+          },
+          {
+            "KeyTime": "0:0:0.016",
+            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
+          },
+          {
+            "KeyTime": "0:0:30",
+            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
+          },
+          {
+            "Storyboard.TargetName": "ScaleTransform",
+            "Storyboard.TargetProperty": "ScaleY",
+            "RepeatBehavior": "Forever"
+          },
+          {
+            "KeyTime": "0:0:0.016",
+            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
+          },
+          {
+            "KeyTime": "0:0:30",
+            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
+          }
+        ]
+      },
+      {
+        "name": "Disabled",
+        "setters": [
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonBackgroundDisabled}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonBorderBrushDisabled}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerNavigationButtonForegroundDisabled}"
+          }
+        ]
+      }
+    ],
+    "PipsPagerPreviousPageButtonStyle": [],
+    "PipsPagerNextPageButtonStyle": [],
+    "PipsPagerButtonBaseStyle": [
+      {
+        "name": "Normal",
+        "setters": []
+      },
+      {
+        "name": "PointerOver",
+        "setters": [
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorBackgroundPointerOver}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushPointerOver}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorForegroundPointerOver}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{StaticResource PipsPagerSelectedGlyphFontSize}"
+          }
+        ]
+      },
+      {
+        "name": "Pressed",
+        "setters": [
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorBackgroundPressed}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushPressed}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorForegroundPressed}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{StaticResource PipsPagerNormalGlyphFontSize}"
+          }
+        ]
+      },
+      {
+        "name": "Disabled",
+        "setters": [
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorBackgroundDisabled}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushDisabled}"
+          },
+          {
+            "KeyTime": "0",
+            "Value": "{ThemeResource PipsPagerSelectionIndicatorForegroundDisabled}"
+          }
+        ]
+      },
+      {
+        "name": "HorizontalOrientation",
+        "setters": []
+      },
+      {
+        "name": "VerticalOrientation",
+        "setters": [
+          {
+            "Target": "RootGrid.Width",
+            "Value": "{ThemeResource PipsPagerVerticalOrientationButtonWidth}"
+          },
+          {
+            "Target": "RootGrid.Height",
+            "Value": "{ThemeResource PipsPagerVerticalOrientationButtonHeight}"
+          }
+        ]
+      }
+    ],
+    "PipsPagerSelectedPipButtonStyle": [],
+    "PipsPagerNormalPipButtonStyle": [],
     "TabView": [],
     "DefaultTabViewStyle": [
       {
@@ -3219,52 +3478,10 @@
         ]
       }
     ],
-    "DefaultBreadcrumbBarItemStyle": [
-      {
-        "name": "Inline",
-        "setters": []
-      },
-      {
-        "name": "EllipsisDropDown",
-        "setters": [
-          {
-            "Target": "PART_ItemButton.Visibility",
-            "Value": "Collapsed"
-          },
-          {
-            "Target": "PART_ChevronTextBlock.Visibility",
-            "Value": "Collapsed"
-          },
-          {
-            "Target": "PART_ContentColumn.Width",
-            "Value": "*"
-          },
-          {
-            "Target": "PART_EllipsisDropDownItemContentPresenter.Visibility",
-            "Value": "Visible"
-          },
-          {
-            "Target": "PART_LayoutRoot.Padding",
-            "Value": "11,7,11,9"
-          },
-          {
-            "Target": "PART_LayoutRoot.Margin",
-            "Value": "5,3"
-          },
-          {
-            "Target": "PART_LayoutRoot.FocusVisualMargin",
-            "Value": "-3"
-          },
-          {
-            "Target": "PART_ItemButton.(Control.IsTemplateFocusTarget)",
-            "Value": "False"
-          },
-          {
-            "Target": "PART_LayoutRoot.(Control.IsTemplateFocusTarget)",
-            "Value": "True"
-          }
-        ]
-      },
+    "TreeView": [],
+    "DefaultTreeViewStyle": [],
+    "TreeViewItem": [],
+    "MUX_TreeViewItemStyle": [
       {
         "name": "Normal",
         "setters": []
@@ -3273,12 +3490,32 @@
         "name": "PointerOver",
         "setters": [
           {
-            "KeyTime": "0",
-            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemBackgroundPointerOver}"
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundPointerOver}"
           },
           {
-            "KeyTime": "0",
-            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemForegroundPointerOver}"
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundPointerOver}"
+          },
+          {
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPointerOver}"
+          },
+          {
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundPointerOver}"
+          },
+          {
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundPointerOver}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushPointerOver}"
+          },
+          {
+            "Target": "SelectionIndicator.Opacity",
+            "Value": "0"
           }
         ]
       },
@@ -3286,12 +3523,65 @@
         "name": "Pressed",
         "setters": [
           {
-            "KeyTime": "0",
-            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemBackgroundPressed}"
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundPressed}"
           },
           {
-            "KeyTime": "0",
-            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemForegroundPressed}"
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundPressed}"
+          },
+          {
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPressed}"
+          },
+          {
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundPressed}"
+          },
+          {
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundPressed}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushPressed}"
+          },
+          {
+            "Target": "SelectionIndicator.Opacity",
+            "Value": "0"
+          }
+        ]
+      },
+      {
+        "name": "Selected",
+        "setters": [
+          {
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundSelected}"
+          },
+          {
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelected}"
+          },
+          {
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForeground}"
+          },
+          {
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelected}"
+          },
+          {
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelected}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushSelected}"
+          },
+          {
+            "Target": "SelectionIndicator.Opacity",
+            "Value": "1"
           }
         ]
       },
@@ -3299,315 +3589,194 @@
         "name": "Disabled",
         "setters": [
           {
-            "KeyTime": "0",
-            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemBackgroundDisabled}"
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundDisabled}"
           },
           {
-            "KeyTime": "0",
-            "Value": "{ThemeResource BreadcrumbBarEllipsisDropDownItemForegroundDisabled}"
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundDisabled}"
+          },
+          {
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundDisabled}"
+          },
+          {
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundDisabled}"
+          },
+          {
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundDisabled}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushDisabled}"
           }
         ]
       },
       {
-        "name": "Default",
+        "name": "PointerOverSelected",
         "setters": [
           {
-            "Target": "PART_ChevronTextBlock.Text",
-            "Value": "{ThemeResource BreadcrumbBarChevronLeftToRight}"
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundSelectedPointerOver}"
+          },
+          {
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedPointerOver}"
+          },
+          {
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPointerOver}"
+          },
+          {
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedPointerOver}"
+          },
+          {
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedPointerOver}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushSelectedPointerOver}"
+          },
+          {
+            "Target": "SelectionIndicator.Opacity",
+            "Value": "1"
           }
         ]
       },
       {
-        "name": "DefaultRTL",
+        "name": "PressedSelected",
         "setters": [
           {
-            "Target": "PART_ChevronTextBlock.Text",
-            "Value": "{ThemeResource BreadcrumbBarChevronRightToLeft}"
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundSelectedPressed}"
+          },
+          {
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedPressed}"
+          },
+          {
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundPressed}"
+          },
+          {
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedPressed}"
+          },
+          {
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedPressed}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushSelectedPressed}"
+          },
+          {
+            "Target": "SelectionIndicator.Opacity",
+            "Value": "1"
           }
         ]
       },
       {
-        "name": "LastItem",
+        "name": "SelectedDisabled",
         "setters": [
           {
-            "Target": "PART_ItemButton.Visibility",
-            "Value": "Collapsed"
+            "Target": "ContentPresenterGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundSelectedDisabled}"
           },
           {
-            "Target": "PART_ChevronTextBlock.Visibility",
-            "Value": "Collapsed"
+            "Target": "ContentPresenter.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedDisabled}"
           },
           {
-            "Target": "PART_LastItemContentPresenter.Visibility",
-            "Value": "Visible"
+            "Target": "SelectionIndicator.Fill",
+            "Value": "{ThemeResource TreeViewItemSelectionIndicatorForegroundDisabled}"
           },
           {
-            "Target": "PART_ItemButton.(Control.IsTemplateFocusTarget)",
-            "Value": "False"
+            "Target": "CollapsedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedDisabled}"
           },
           {
-            "Target": "PART_LastItemContentPresenter.(Control.IsTemplateFocusTarget)",
-            "Value": "True"
+            "Target": "ExpandedGlyph.Foreground",
+            "Value": "{ThemeResource TreeViewItemForegroundSelectedDisabled}"
+          },
+          {
+            "Target": "ContentPresenterGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemBorderBrushSelectedDisabled}"
+          },
+          {
+            "Target": "SelectionIndicator.Opacity",
+            "Value": "1"
           }
         ]
       },
       {
-        "name": "Ellipsis",
-        "setters": [
-          {
-            "Target": "PART_ChevronTextBlock.Text",
-            "Value": "{ThemeResource BreadcrumbBarChevronLeftToRight}"
-          },
-          {
-            "Target": "PART_EllipsisTextBlock.Visibility",
-            "Value": "Visible"
-          },
-          {
-            "Target": "PART_ItemContentPresenter.Visibility",
-            "Value": "Collapsed"
-          }
-        ]
-      },
-      {
-        "name": "EllipsisRTL",
-        "setters": [
-          {
-            "Target": "PART_EllipsisTextBlock.Visibility",
-            "Value": "Visible"
-          },
-          {
-            "Target": "PART_ItemContentPresenter.Visibility",
-            "Value": "Collapsed"
-          },
-          {
-            "Target": "PART_ChevronTextBlock.Text",
-            "Value": "{ThemeResource BreadcrumbBarChevronRightToLeft}"
-          }
-        ]
-      },
-      {
-        "name": "Normal",
+        "name": "ReorderedPlaceholder",
         "setters": []
       },
       {
-        "name": "CurrentNormal",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarCurrentNormalForegroundBrush}"
-          }
-        ]
-      },
-      {
-        "name": "PointerOver",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarHoverForegroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.Background",
-            "Value": "{ThemeResource BreadcrumbBarBackgroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.BorderBrush",
-            "Value": "{ThemeResource BreadcrumbBarBorderBrush}"
-          }
-        ]
-      },
-      {
-        "name": "CurrentPointerOver",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarCurrentHoverForegroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.Background",
-            "Value": "{ThemeResource BreadcrumbBarBackgroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.BorderBrush",
-            "Value": "{ThemeResource BreadcrumbBarBorderBrush}"
-          }
-        ]
-      },
-      {
-        "name": "Pressed",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarPressedForegroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.Background",
-            "Value": "{ThemeResource BreadcrumbBarBackgroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.BorderBrush",
-            "Value": "{ThemeResource BreadcrumbBarBorderBrush}"
-          }
-        ]
-      },
-      {
-        "name": "CurrentPressed",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarCurrentPressedForegroundBrush}"
-          },
-          {
-            "Target": "PART_ContentPresenter.Background",
-            "Value": "Transparent"
-          },
-          {
-            "Target": "PART_ContentPresenter.BorderBrush",
-            "Value": "Transparent"
-          }
-        ]
-      },
-      {
-        "name": "Disabled",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarDisabledForegroundBrush}"
-          }
-        ]
-      },
-      {
-        "name": "CurrentDisabled",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarCurrentDisabledForegroundBrush}"
-          }
-        ]
-      },
-      {
-        "name": "Focus",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarFocusForegroundBrush}"
-          }
-        ]
-      },
-      {
-        "name": "CurrentFocus",
-        "setters": [
-          {
-            "Target": "PART_ContentPresenter.Foreground",
-            "Value": "{ThemeResource BreadcrumbBarCurrentFocusForegroundBrush}"
-          }
-        ]
-      }
-    ],
-    "BreadcrumbBar": [],
-    "BreadcrumbBarItem": [],
-    "PipsPager": [
-      {
-        "name": "PreviousPageButtonVisible",
+        "name": "TreeViewMultiSelectDisabled",
         "setters": []
       },
       {
-        "name": "PreviousPageButtonHidden",
+        "name": "TreeViewMultiSelectEnabledUnselected",
         "setters": [
           {
-            "Target": "PreviousPageButton.Opacity",
+            "Target": "MultiSelectCheckBox.Visibility",
+            "Value": "Visible"
+          },
+          {
+            "Target": "ExpandCollapseChevron.Padding",
+            "Value": "0,0,14,0"
+          },
+          {
+            "Target": "ContentPresenterGrid.Padding",
             "Value": "0"
           }
         ]
       },
       {
-        "name": "PreviousPageButtonCollapsed",
+        "name": "TreeViewMultiSelectEnabledSelected",
         "setters": [
           {
-            "Target": "PreviousPageButton.Visibility",
-            "Value": "Collapsed"
-          }
-        ]
-      },
-      {
-        "name": "PreviousPageButtonEnabled",
-        "setters": []
-      },
-      {
-        "name": "PreviousPageButtonDisabled",
-        "setters": [
+            "Target": "MultiSelectCheckBox.Visibility",
+            "Value": "Visible"
+          },
           {
-            "Target": "PreviousPageButton.IsEnabled",
-            "Value": "False"
-          }
-        ]
-      },
-      {
-        "name": "NextPageButtonVisible",
-        "setters": []
-      },
-      {
-        "name": "NextPageButtonHidden",
-        "setters": [
+            "Target": "MultiSelectGrid.Background",
+            "Value": "{ThemeResource TreeViewItemBackgroundSelected}"
+          },
           {
-            "Target": "NextPageButton.Opacity",
+            "Target": "MultiSelectGrid.BorderBrush",
+            "Value": "{ThemeResource TreeViewItemMultiSelectBorderBrushSelected}"
+          },
+          {
+            "Target": "ExpandCollapseChevron.Padding",
+            "Value": "0,0,14,0"
+          },
+          {
+            "Target": "ContentPresenterGrid.Padding",
             "Value": "0"
           }
         ]
       },
       {
-        "name": "NextPageButtonCollapsed",
-        "setters": [
-          {
-            "Target": "NextPageButton.Visibility",
-            "Value": "Collapsed"
-          }
-        ]
-      },
-      {
-        "name": "NextPageButtonEnabled",
+        "name": "NotDragging",
         "setters": []
       },
       {
-        "name": "NextPageButtonDisabled",
+        "name": "MultipleDraggingPrimary",
         "setters": [
           {
-            "Target": "NextPageButton.IsEnabled",
-            "Value": "False"
-          }
-        ]
-      },
-      {
-        "name": "VerticalOrientationView",
-        "setters": []
-      },
-      {
-        "name": "HorizontalOrientationView",
-        "setters": [
-          {
-            "Target": "RootPanel.Orientation",
-            "Value": "Horizontal"
+            "Target": "MultiSelectCheckBox.Opacity",
+            "Value": "0"
           },
           {
-            "Target": "PreviousPageButton.(ToolTipService.Placement)",
-            "Value": "Left"
-          },
-          {
-            "Target": "PreviousPageButton.RenderTransformOrigin",
-            "Value": "0.5, 0.5"
-          },
-          {
-            "Target": "PreviousPageButton.RenderTransform"
-          },
-          {
-            "Target": "NextPageButton.(ToolTipService.Placement)",
-            "Value": "Right"
-          },
-          {
-            "Target": "NextPageButton.RenderTransformOrigin",
-            "Value": "0.5, 0.5"
-          },
-          {
-            "Target": "NextPageButton.RenderTransform"
+            "Target": "MultiArrangeOverlayTextBorder.Visibility",
+            "Value": "Visible"
           }
         ]
       }
@@ -3869,829 +4038,668 @@
           }
         ]
       }
-    ],
-    "PipsPagerNavigationButtonBaseStyle": [
-      {
-        "name": "Normal",
-        "setters": []
-      },
-      {
-        "name": "PointerOver",
-        "setters": [
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonBackgroundPointerOver}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonBorderBrushPointerOver}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonForegroundPointerOver}"
-          }
-        ]
-      },
-      {
-        "name": "Pressed",
-        "setters": [
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonBackgroundPressed}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonBorderBrushPressed}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonForegroundPressed}"
-          },
-          {
-            "Storyboard.TargetName": "ScaleTransform",
-            "Storyboard.TargetProperty": "ScaleX",
-            "RepeatBehavior": "Forever"
-          },
-          {
-            "KeyTime": "0:0:0.016",
-            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
-          },
-          {
-            "KeyTime": "0:0:30",
-            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
-          },
-          {
-            "Storyboard.TargetName": "ScaleTransform",
-            "Storyboard.TargetProperty": "ScaleY",
-            "RepeatBehavior": "Forever"
-          },
-          {
-            "KeyTime": "0:0:0.016",
-            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
-          },
-          {
-            "KeyTime": "0:0:30",
-            "Value": "{ThemeResource PipsPagerNavigationButtonScalePressed}"
-          }
-        ]
-      },
-      {
-        "name": "Disabled",
-        "setters": [
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonBackgroundDisabled}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonBorderBrushDisabled}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerNavigationButtonForegroundDisabled}"
-          }
-        ]
-      }
-    ],
-    "PipsPagerPreviousPageButtonStyle": [],
-    "PipsPagerNextPageButtonStyle": [],
-    "PipsPagerButtonBaseStyle": [
-      {
-        "name": "Normal",
-        "setters": []
-      },
-      {
-        "name": "PointerOver",
-        "setters": [
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorBackgroundPointerOver}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushPointerOver}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorForegroundPointerOver}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{StaticResource PipsPagerSelectedGlyphFontSize}"
-          }
-        ]
-      },
-      {
-        "name": "Pressed",
-        "setters": [
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorBackgroundPressed}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushPressed}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorForegroundPressed}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{StaticResource PipsPagerNormalGlyphFontSize}"
-          }
-        ]
-      },
-      {
-        "name": "Disabled",
-        "setters": [
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorBackgroundDisabled}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorBorderBrushDisabled}"
-          },
-          {
-            "KeyTime": "0",
-            "Value": "{ThemeResource PipsPagerSelectionIndicatorForegroundDisabled}"
-          }
-        ]
-      },
-      {
-        "name": "HorizontalOrientation",
-        "setters": []
-      },
-      {
-        "name": "VerticalOrientation",
-        "setters": [
-          {
-            "Target": "RootGrid.Width",
-            "Value": "{ThemeResource PipsPagerVerticalOrientationButtonWidth}"
-          },
-          {
-            "Target": "RootGrid.Height",
-            "Value": "{ThemeResource PipsPagerVerticalOrientationButtonHeight}"
-          }
-        ]
-      }
-    ],
-    "PipsPagerSelectedPipButtonStyle": [],
-    "PipsPagerNormalPipButtonStyle": []
+    ]
   },
   "palettes": {
     "Light": {
       "BreadcrumbBarBackgroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentDisabledForegroundBrush": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentFocusForegroundBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentHoverForegroundBrush": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentNormalForegroundBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentPressedForegroundBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarDisabledForegroundBrush": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemForegroundPressed": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisFlyoutPresenterBackground": {
         "kind": "acrylic",
-        "tint": "#FCFCFC",
-        "tintOpacity": 0,
+        "tint": "#FCFCFCFF",
+        "tintOpacity": 0.0,
         "luminosityOpacity": 0.85,
-        "fallback": "#F9F9F9",
-        "opacity": 1
+        "fallback": "#F9F9F9FF",
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisFlyoutPresenterBorderBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarFocusForegroundBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarForegroundBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarHoverForegroundBrush": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarNormalForegroundBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarPressedForegroundBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewBackground": {
         "kind": "solid",
         "color": "#F3F3F3FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousArrowForeground": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousArrowForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousArrowForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBackground": {
         "kind": "acrylic",
-        "tint": "#FCFCFC",
-        "tintOpacity": 0,
+        "tint": "#FCFCFCFF",
+        "tintOpacity": 0.0,
         "luminosityOpacity": 0.85,
-        "fallback": "#F9F9F9",
-        "opacity": 1
+        "fallback": "#F9F9F9FF",
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBackgroundPointerOver": {
         "kind": "acrylic",
-        "tint": "#FCFCFC",
-        "tintOpacity": 0,
+        "tint": "#FCFCFCFF",
+        "tintOpacity": 0.0,
         "luminosityOpacity": 0.85,
-        "fallback": "#F9F9F9",
-        "opacity": 1
+        "fallback": "#F9F9F9FF",
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBackgroundPressed": {
         "kind": "acrylic",
-        "tint": "#FCFCFC",
-        "tintOpacity": 0,
+        "tint": "#FCFCFCFF",
+        "tintOpacity": 0.0,
         "luminosityOpacity": 0.85,
-        "fallback": "#F9F9F9",
-        "opacity": 1
+        "fallback": "#F9F9F9FF",
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBorderBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForeground": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#00000051",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForeground": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundDisabled": {
         "kind": "solid",
         "color": "#00000051",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundSelected": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlBackgroundAccentBrush": {
         "kind": "solid",
         "color": "#0078D4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlBackgroundChromeWhiteBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlForegroundChromeWhiteBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewBorderBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackground": {
         "kind": "solid",
         "color": "#00000000",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundDisabled": {
         "kind": "solid",
         "color": "#00000000",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundPointerOver": {
         "kind": "solid",
         "color": "#0000000A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundSelected": {
         "kind": "solid",
         "color": "#F9F9F9FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderDisabledCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderDisabledCloseButtonForeground": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderDragBackground": {
         "kind": "solid",
         "color": "#F9F9F9FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundPressed": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundSelected": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPointerOverCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPointerOverCloseButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPressedCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPressedCloseButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderSelectedCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderSelectedCloseButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForegroundPressed": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForegroundSelected": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemSeparator": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewSelectedItemBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
-        "from": [
-          0,
-          0
-        ],
-        "to": [
-          0,
-          4
-        ],
         "relativeTransform": [
+          1.0,
+          0,
+          0,
+          -1.0,
+          0.0,
+          1.0
+        ],
+        "transform": [
           1,
           0,
           0,
-          -1,
+          1,
           0,
-          1
+          0
         ],
-        "opacity": 1,
+        "from": [
+          0.0,
+          0.0
+        ],
+        "to": [
+          0.0,
+          4.0
+        ],
+        "opacity": 1.0,
         "stops": [
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF00"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
         ]
@@ -4699,800 +4707,808 @@
       "TreeViewItemBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelected": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelectedPressed": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelectedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelectedPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelected": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelectedDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelectedPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemMultiSelectBorderBrushSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForeground": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForegroundPointerOver": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForegroundPressed": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       }
     },
     "Dark": {
       "BreadcrumbBarBackgroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentDisabledForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentFocusForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentHoverForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentNormalForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarCurrentPressedForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarDisabledForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisDropDownItemForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisFlyoutPresenterBackground": {
         "kind": "acrylic",
-        "tint": "#2C2C2C",
-        "tintOpacity": 0.15000000596046448,
+        "tint": "#2C2C2CFF",
+        "tintOpacity": 0.15,
         "luminosityOpacity": 0.96,
-        "fallback": "#2C2C2C",
-        "opacity": 1
+        "fallback": "#2C2C2CFF",
+        "opacity": 1.0
       },
       "BreadcrumbBarEllipsisFlyoutPresenterBorderBrush": {
         "kind": "solid",
         "color": "#00000033",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarFocusForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarHoverForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarNormalForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "BreadcrumbBarPressedForegroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewBackground": {
         "kind": "solid",
         "color": "#202020FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousArrowForeground": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousArrowForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousArrowForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBackground": {
         "kind": "acrylic",
-        "tint": "#2C2C2C",
-        "tintOpacity": 0.15000000596046448,
+        "tint": "#2C2C2CFF",
+        "tintOpacity": 0.15,
         "luminosityOpacity": 0.96,
-        "fallback": "#2C2C2C",
-        "opacity": 1
+        "fallback": "#2C2C2CFF",
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBackgroundPointerOver": {
         "kind": "acrylic",
-        "tint": "#2C2C2C",
-        "tintOpacity": 0.15000000596046448,
+        "tint": "#2C2C2CFF",
+        "tintOpacity": 0.15,
         "luminosityOpacity": 0.96,
-        "fallback": "#2C2C2C",
-        "opacity": 1
+        "fallback": "#2C2C2CFF",
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBackgroundPressed": {
         "kind": "acrylic",
-        "tint": "#2C2C2C",
-        "tintOpacity": 0.15000000596046448,
+        "tint": "#2C2C2CFF",
+        "tintOpacity": 0.15,
         "luminosityOpacity": 0.96,
-        "fallback": "#2C2C2C",
-        "opacity": 1
+        "fallback": "#2C2C2CFF",
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "FlipViewNextPreviousButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF3F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerNavigationButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBackgroundSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorBorderBrushSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForeground": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF3F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PipsPagerSelectionIndicatorForegroundSelected": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlBackgroundAccentBrush": {
         "kind": "solid",
         "color": "#0078D4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlBackgroundChromeWhiteBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlForegroundChromeWhiteBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewBorderBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundPressed": {
         "kind": "solid",
         "color": "#3A3A3A73",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderBackgroundSelected": {
         "kind": "solid",
         "color": "#282828FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderCloseButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderDisabledCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderDisabledCloseButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderDragBackground": {
         "kind": "solid",
         "color": "#282828FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderForegroundSelected": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPointerOverCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPointerOverCloseButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPressedCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderPressedCloseButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderSelectedCloseButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemHeaderSelectedCloseButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemIconForegroundSelected": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewItemSeparator": {
         "kind": "solid",
         "color": "#FFFFFF15",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewScrollButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TabViewSelectedItemBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
-        "from": [
-          0,
-          0
-        ],
-        "to": [
-          0,
-          4
-        ],
         "relativeTransform": [
+          1.0,
+          0,
+          0,
+          -1.0,
+          0.0,
+          1.0
+        ],
+        "transform": [
           1,
           0,
           0,
-          -1,
+          1,
           0,
-          1
+          0
         ],
-        "opacity": 1,
+        "from": [
+          0.0,
+          0.0
+        ],
+        "to": [
+          0.0,
+          4.0
+        ],
+        "opacity": 1.0,
         "stops": [
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF00"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#00000019"
           }
         ]
@@ -5500,147 +5516,147 @@
       "TreeViewItemBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelected": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBackgroundSelectedPressed": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelectedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemBorderBrushSelectedPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelected": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemForegroundSelectedPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemMultiSelectBorderBrushSelected": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForeground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForegroundPointerOver": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TreeViewItemSelectionIndicatorForegroundPressed": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       }
     }
   }

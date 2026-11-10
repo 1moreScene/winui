@@ -6,7 +6,7 @@ export async function clickGalleryNavigation(page: Page, id: string, groupId?: s
   const navigation = page.locator('.gallery-navigation');
   const toggle = page.getByRole('button', { name: 'Toggle navigation pane' });
   if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click();
-  await expect(navigation.locator('canvas')).toBeVisible();
+  await expect(navigation.locator('.winui-surface > canvas')).toBeVisible();
   if (groupId) {
     const open = await page.evaluate(group => window.gallery.navigation!.snapshot.expandedIds.includes(`group:${group}`), groupId);
     if (!open) await clickGalleryNavigation(page, `group:${groupId}`);

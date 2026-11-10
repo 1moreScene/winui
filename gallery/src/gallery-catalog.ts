@@ -2,6 +2,7 @@ import official from './official-home.json';
 
 /** Existing Gallery sample pages; an entry means a demo exists, not full parity. */
 const implemented: Record<string, string> = {
+  TableView: '#table-view',
   ConnectedAnimation:'#connected-animation',ThemeTransition:'#theme-transitions',XamlCompInterop:'#xaml-comp-interop',
   CustomUserControls:'#custom-user-controls',PageTransition:'#page-transitions',
   ItemsView:'#items-view',AnnotatedScrollBar:'#annotated-scroll-bar',PagerControl:'#pager-control',LayoutPanel:'#layout-panel',RichTextBlock:'#rich-text-block',
@@ -18,16 +19,15 @@ const implemented: Record<string, string> = {
   ContentDialog: '#content-dialog', Flyout: '#flyout', Popup: '#popup', TeachingTip: '#teaching-tip',
   MenuFlyout: '#menu-flyout', FlipView: '#flip-view', GridView: '#grid-view', ListView: '#list-view',
   TreeView: '#tree-view', PipsPager: '#pips-pager', ScrollViewer: '#scroll-viewer',
-  Border: '#border', Canvas: '#canvas', Expander: '#expander', VariableSizedWrapGrid: '#variable-sized-wrap-grid',
+  Border: '#border', Canvas: '#canvas', Expander: '#expander', Grid: '#grid', VariableSizedWrapGrid: '#variable-sized-wrap-grid',
   Viewbox: '#viewbox', BreadcrumbBar: '#breadcrumb-bar', NavigationView: '#navigation-view', TabView: '#tab-view',
   Image: '#image', PersonPicture: '#person-picture', Acrylic: '#acrylic', AnimatedIcon: '#animated-icon',
   IconElement: '#icon-element', Line: '#line', Shape: '#shapes', RadialGradientBrush: '#gradients',
   SystemBackdrops: '#system-backdrops', AutoSuggestBox: '#auto-suggest-box', NumberBox: '#number-box',
-  PasswordBox: '#password-box', TextBlock: '#textblock', TextBox: '#text-box',
+  RichEditBox:'#rich-edit-box', PasswordBox: '#password-box', TextBlock: '#textblock', TextBox: '#text-box',
   EasingFunction: '#easing', ImplicitTransition: '#transitions',
 };
 const excluded: Record<string, string> = {
-  TableView: '官方 TableView 不在实现范围；社区版本另按指定基准处理。',
   Chart: '官方 Chart / Charts 不在实现范围。',
   Sound: 'Sound 不在实现范围。', WebView2: 'WebView2 不在实现范围。',
   MapControl: 'MapControl 不在实现范围。', InkCanvas: 'InkCanvas / InkToolbar 不在实现范围。',
@@ -38,7 +38,7 @@ export const galleryGroups = [
   ...official.groups.filter(g => !g.special).sort((a, b) => a.title.localeCompare(b.title, 'en')),
 ];
 export const galleryItems = galleryGroups.flatMap(group => group.items.map(item => ({
-  ...item, groupId: group.id, groupTitle: group.title,
+  ...item, ...(item.id==='TableView'?{description:'An editable data grid with sorting, filtering, templates and virtualized rows. Community WinUI.TableView (MIT).',subtitle:'Community WinUI.TableView data grid.',namespace:'WinUI.TableView',baseClasses:['Object','DependencyObject','UIElement','FrameworkElement','Control','ItemsControl','ListViewBase','ListView'],experimental:false,tags:['table','data grid','editing','sorting','filtering','virtualization','community'],docs:[{Title:'Community TableView documentation',Uri:'https://github.com/w-ahmad/WinUI.TableView/blob/665fea52b8ad47a64187d0f202d5281b074f616f/README.md'}]}:{}),communitySource:item.id==='TableView'?{repository:'https://github.com/w-ahmad/WinUI.TableView',commit:'665fea52b8ad47a64187d0f202d5281b074f616f',sample:'samples/WinUI.TableView.SampleApp/Pages/OverviewPage.xaml'}:undefined, groupId: group.id, groupTitle: group.title,
   implemented: !!implemented[item.id], href: implemented[item.id] ?? `#sample/${item.id}`,
   excludedReason: excluded[item.id] ?? '',
 }))).sort((a, b) => a.title.localeCompare(b.title, 'en'));

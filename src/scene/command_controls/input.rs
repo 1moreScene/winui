@@ -188,7 +188,8 @@ impl Scene {
             let kind = n.kind;
             let owner = n.command.owner;
             let role = n.command.role.clone();
-            if is_action(kind) && n.props.flyout_target.is_some() {
+            // Button_Partial.cpp::OnClick opens its associated Flyout after Click.
+            if (kind == NodeKind::Button || is_action(kind)) && n.props.flyout_target.is_some() {
                 let _ = self.set_command_flyout(e.target, true);
             }
             let Some(owner) = owner.filter(|id| {

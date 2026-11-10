@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption, GallerySlider } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import {useEffect,useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
-import {SceneView,StackPanel,TextBox,PasswordBox,ScrollViewer,Image,CheckBox} from './react';
-import {ThemeMode,FontStyle,PasswordRevealMode,Orientation,HorizontalAlignment,VerticalAlignment,ScrollMode,ScrollBarVisibility,ZoomMode,ImageStretch,type Scene} from './index';
+import {SceneView,StackPanel,TextBox,PasswordBox,ScrollViewer,Image,CheckBox} from 'winui-wasm/react';
+import {ThemeMode,FontStyle,PasswordRevealMode,Orientation,HorizontalAlignment,VerticalAlignment,ScrollMode,ScrollBarVisibility,ZoomMode,ImageStretch,type Scene} from 'winui-wasm';
 import official from './official-text-scroll.json';
 import source from './TextScrollPage.tsx?raw';
 import {extractSampleSource} from './sample-source';
@@ -12,7 +14,7 @@ declare global {interface Window {textScrollScenes:Record<string,Scene>}}
 function remember(name:string,scene:Scene){window.textScrollScenes??={};window.textScrollScenes[name]=scene;}
 function Example({page,name,file,children,options,output}:{page:Page;name:string;file:string;children:ReactNode;options?:ReactNode;output?:string}){
  const [native,setNative]=useState(false);const sample=official.controls[page].samples.find(s=>s.file===file)!;
- return <section className="example basic-example" id={name}><h2>{sample.title}</h2><div className="example-card"><div className={`basic-live${options?" with-options":""}`}><div className="basic-preview">{children}</div>{options&&<aside className="options">{options}</aside>}{output!==undefined&&<div className="basic-output"><span>Output:</span><span role="status">{output}</span></div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><pre><code>{native?sample.xaml:extractSampleSource(source,name)}</code></pre></GalleryExpander></div></section>;
+ return <section className="example basic-example" id={name}><h2><LocalizedText>{sample.title}</LocalizedText></h2><div className="example-card"><div className={`basic-live${options?" with-options":""}`}><div className="basic-preview">{children}</div>{options&&<aside className="options">{options}</aside>}{output!==undefined&&<div className="basic-output"><span>Output:</span><span role="status">{output}</span></div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><SourceCode language={native ? 'xaml' : 'tsx'}>{native?sample.xaml:extractSampleSource(source,name)}</SourceCode></GalleryExpander></div></section>;
 }
 function EnumOption<T extends string>({label,value,values,onChange}:{label:string;value:T;values:Record<string,T>;onChange:(v:T)=>void}){return <label>{label}<GalleryComboBox aria-label={label} value={value} onValueChanged={e=>onChange(e as T)}>{Object.values(values).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label>;}
 export function TextScrollPage({page}:{page:Page}){

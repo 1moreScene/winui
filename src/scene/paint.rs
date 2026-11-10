@@ -132,6 +132,7 @@ impl Scene {
         !self.overlay_ids().is_empty()
     }
     pub fn base_display_list(&mut self) -> Vec<Draw> {
+        self.refresh_table_pointer();
         let mut out = vec![];
         // A Scene is an embeddable visual tree, not a Window backdrop. WinUI
         // Grid.Background defaults to null: leave unpainted pixels transparent
@@ -141,6 +142,7 @@ impl Scene {
         out
     }
     pub fn floating_display_list(&mut self) -> Vec<Draw> {
+        self.refresh_table_pointer();
         let mut out = vec![];
         out.push(Draw::Clip {
             rect: self.floating_surface_bounds(),
@@ -155,7 +157,15 @@ impl Scene {
                         NodeKind::NumberBox | NodeKind::AutoSuggestBox | NodeKind::ComboBox | NodeKind::CalendarDatePicker | NodeKind::DatePicker | NodeKind::TimePicker
                     )
                 });
-            out.push(Draw::Layer { opacity });
+            let combo_acrylic = n.composed.owner.is_some_and(|owner|
+                self.nodes[&owner].kind == NodeKind::ComboBox);
+            // Keep the shadow in its own surface so restored in-app Acrylic
+            // can inherit the page backdrop without sampling that shadow.
+            out.push(if combo_acrylic {
+                Draw::WindowLayer { opacity, inherit_backdrop: false }
+            } else {
+                Draw::Layer { opacity }
+            });
             out.push(Draw::Clip {
                 rect: self.popup_window_bounds(id),
             });
@@ -166,6 +176,7 @@ impl Scene {
                         n.presentation
                             .matrix(n.props.transform, n.props.center_point),
                     )
+                    .multiply(n.effects.matrix(self.time,n.rect))
                     .multiply(n.overlay.visual.matrix(
                         n.kind,
                         n.overlay.actual,
@@ -202,7 +213,7 @@ impl Scene {
             // The compositor's shadow is outside the popup's content surface.
             // In-app Acrylic inside that window must not blur its own shadow.
             if windowed {
-                out.push(Draw::WindowLayer { opacity: 1. });
+                out.push(Draw::WindowLayer { opacity: 1., inherit_backdrop: combo_acrylic });
             }
             self.paint_node(id, None, &mut out);
             self.paint_composed_tail(id, &mut out);
@@ -257,6 +268,8 @@ impl Scene {
         }
     }
     pub(super) fn paint_node(&mut self, id: u32, inherited: Option<String>, out: &mut Vec<Draw>) {
+        if self.paint_navigation_template(id,inherited.clone(),out){return;}
+        if self.connected_source_hidden(id) { return; }
         if self.paint_picker_wheel_navigation(id,out){return;}
         if self.picker_custom_part(id){return;}
         if self.paint_picker_wheel_item(id,out){return;}
@@ -272,7 +285,7 @@ impl Scene {
             n.theme,
             n.enabled,
             n.text.clone(),
-            self.ordered_children(id),
+            self.ordered_visual_children(id),
         );
         let visual_height=if kind==NodeKind::CommandBar&&!p.clip{self.nodes[&id].command.body.height.max(rect.height)}else if id==self.root&&self.auto_height&&!p.clip{self.raster_height()}else{rect.height};
         let r = Rect::new(0.,0.,rect.width,visual_height);
@@ -282,6 +295,7 @@ impl Scene {
             matrix: Matrix([1., 0., 0., 1., rect.x, rect.y])
                 .multiply(presentation.matrix(p.transform, p.center_point))
                 .multiply(n.effects.matrix(self.time,rect))
+                .multiply(if n.table.role=="tableBodyRows" {Matrix([1.,0.,0.,1.,0.,n.table.body_offset_y.value(self.time)])}else{Matrix::default()})
                 .multiply(if kind == NodeKind::CollectionItem {
                     n.collection.entry_matrix(r, self.time)
                 } else {
@@ -300,7 +314,7 @@ impl Scene {
                 .0,
         });
         if !overlays::is_overlay(kind) {
-            if let Some(z) = p.shadow_depth {
+            if let Some(z) = p.shadow_depth.or_else(||(p.theme_shadow||n.effects.casts_shadow()).then_some(presentation.translation_z+n.effects.depth(self.time))) {
                 out.extend(super::overlay_visual::shadow_at_depth(
                     z,
                     theme,
@@ -312,12 +326,14 @@ impl Scene {
         }
         let text_commands_start = out.len();
         let layout_clip = self.nodes[&id].viewbox.clip;
-        if p.clip || id == self.root || layout_clip.is_some() {
+        if p.clip || layout_clip.is_some() {
             out.push(Draw::Clip {
                 rect: layout_clip.unwrap_or(r),
             });
         }
         let command_clip=(kind==NodeKind::CommandBar).then(||self.command_primary_clip(id));
+        let table_clip=n.table.cell_clip;
+        if let Some(rect)=table_clip {out.push(Draw::Clip{rect});}
         if let Some(rect)=command_clip{out.push(Draw::Clip{rect});}
         let split_clip = self.nodes[&id].overlay.visual.split_clip(r, self.time);
         if let Some(rect) = split_clip {
@@ -326,7 +342,7 @@ impl Scene {
         let joined = self.composed_corner_radii(id).or_else(||self.command_flyout_radii(id));
         let floating_radii = joined.unwrap_or([p.corner_radius; 4]);
         let floating_clip =
-            (overlays::is_overlay(kind) || kind == NodeKind::FlipView) && p.corner_radius > 0.;
+            (overlays::is_overlay(kind) || matches!(kind,NodeKind::FlipView|NodeKind::TableView)) && p.corner_radius > 0.;
         if floating_clip {
             if joined.is_some() {
                 out.push(Draw::CornerClip {
@@ -340,8 +356,9 @@ impl Scene {
                 });
             }
         }
-        n.effects.paint_connection_source(self.time,r,out);
+        let connection_start=n.effects.has_crossfade(self.time).then_some(out.len());
         let opacity = presentation.opacity * n.effects.opacity(self.time)
+            * if n.table.role=="tableBodyRows"{n.table.body_opacity.value(self.time)}else{1.}
             * if kind == NodeKind::CollectionItem {
                 n.collection.item_visual(self.time).opacity
             } else {
@@ -644,7 +661,7 @@ impl Scene {
                 | NodeKind::RepeatButton
                 | NodeKind::ToggleButton
                 | NodeKind::HyperlinkButton
-        ) && !self.is_command_more(id) {
+        ) && !self.is_command_more(id) && !matches!(self.nodes[&id].table.role.as_str(),"headerMain"|"filterMenuItem"|"detailsToggle") {
             let style = if kind == NodeKind::HyperlinkButton {
                 five_controls::hyperlink_style()
             } else if kind == NodeKind::RepeatButton && p.variant == ButtonVariant::Standard {
@@ -826,7 +843,7 @@ impl Scene {
             if p.foreground.is_none() || state != ControlState::Normal {
                 foreground = fg.solid_color();
             }
-            let b = crate::button::defaults().border_thickness;
+            let b = if self.nodes[&id].table.owner.is_some() {0.}else{crate::button::defaults().border_thickness};
             let inner = if !outer {
                 Rect::new(
                     b,
@@ -865,6 +882,7 @@ impl Scene {
                     color: background,
                     radius: (p.corner_radius - if !outer { b } else { 0. }).max(0.),
                 });
+                if b>0. {
                 Self::brush_command(
                     out,
                     Rect::new(
@@ -877,6 +895,7 @@ impl Scene {
                     b,
                     border,
                 );
+                }
             }
         } else if matches!(kind, NodeKind::RadioButton | NodeKind::ToggleSwitch) {
             let input_foreground = self.paint_input_selection(id, out);
@@ -1013,6 +1032,8 @@ impl Scene {
                 });
             }
         }
+        self.paint_table_selection_background(id,out);
+        if self.nodes[&id].table.role=="filterMenuItem" {foreground=Self::color(&BrushValue::Resource{resource:if enabled{"TextFillColorPrimaryBrush"}else{"TextFillColorDisabledBrush"}.into()},theme);}
         self.paint_primitive(id,out);
         self.paint_reading(id,out);
         if picker_controls::is_control(kind)||self.is_picker_surface(id){
@@ -1029,7 +1050,7 @@ impl Scene {
             self.paint_navigation_control(id, out, false);
         }
         match kind {
-            NodeKind::TextBox | NodeKind::PasswordBox => self.paint_editor(id, out),
+            NodeKind::TextBox | NodeKind::PasswordBox | NodeKind::RichEditBox => self.paint_editor(id, out),
             NodeKind::RadioButtons => self.paint_input_header(id, out),
             NodeKind::NavigationView => {
                 let nav = self.nodes.get_mut(&id).unwrap().nav.as_mut().unwrap();
@@ -1061,7 +1082,7 @@ impl Scene {
                         | NodeKind::ToggleButton
                         | NodeKind::HyperlinkButton
                 ) {
-                    crate::button::defaults().border_thickness
+                    if self.nodes[&id].table.owner.is_some() {0.}else{crate::button::defaults().border_thickness}
                 } else {
                     0.
                 };
@@ -1218,6 +1239,10 @@ impl Scene {
             });
         }
         if kind == NodeKind::Expander {
+            self.snap_text_commands(id, text_commands_start, out);
+            for child in children.iter().copied().filter(|child| self.nodes[child].props.is_expander_header).collect::<Vec<_>>() {
+                self.paint_node(child, Some(foreground.clone()), out);
+            }
             let v = self.nodes[&id].expander.snapshot(self.time, &p);
             out.push(Draw::Clip { rect: v.clip });
             out.push(Draw::Save);
@@ -1248,8 +1273,12 @@ impl Scene {
                 radius: p.corner_radius,
             });
         }
-        self.snap_text_commands(id, text_commands_start, out);
+        if kind != NodeKind::Expander { self.snap_text_commands(id, text_commands_start, out); }
+        if !self.paint_table_rows_retained(id,&children,&foreground,out) {
         for child in children {
+            let table_clip=(self.nodes[&child].table.role!="groupHeader").then(||self.table_sticky_row_clip(id)).flatten();
+            if let Some(rect)=table_clip {out.push(Draw::Clip{rect});}
+            if kind == NodeKind::Expander && self.nodes[&child].props.is_expander_header { continue; }
             let pane=kind==NodeKind::SplitView&&view_controls::props(&self.nodes[&child]).slot==ViewControlSlot::Pane;
             if pane {
                 let v=view_controls::props(&self.nodes[&id]);
@@ -1289,7 +1318,10 @@ impl Scene {
             if sticky_clip && self.collection_sticky_clip(id).is_some() {
                 out.push(Draw::Restore);
             }
+            if table_clip.is_some(){out.push(Draw::Restore);}
         }
+        }
+        self.paint_table_separators(id,out);
         if kind == NodeKind::FlipView {
             let start = out.len();
             self.paint_navigation_control(id, out, true);
@@ -1340,6 +1372,7 @@ impl Scene {
         if opacity < 1. {
             out.push(Draw::EndLayer);
         }
+        if let Some(start)=connection_start {let target=out.split_off(start);out.push(self.nodes[&id].effects.crossfade(self.time,r,target).unwrap());}
         if floating_clip {
             out.push(Draw::Restore);
         }
@@ -1347,7 +1380,8 @@ impl Scene {
             out.push(Draw::Restore);
         }
         if command_clip.is_some(){out.push(Draw::Restore);}
-        if p.clip || id == self.root || layout_clip.is_some() {
+        if table_clip.is_some(){out.push(Draw::Restore);}
+        if p.clip || layout_clip.is_some() {
             out.push(Draw::Restore);
         }
         out.push(Draw::Restore);
@@ -1358,6 +1392,12 @@ impl Scene {
         // realizes every glyph run through D2DTextDrawingContext, which snaps
         // its physical baseline. This includes the ordinary DWriteLayout path.
         let mut raster = self.nodes[&id].world;
+        // Table rows scroll as retained glyph textures in native Composition.
+        // Snap at their layout position, then move that texture continuously.
+        // Snapping again after every scroll sample makes text jump a pixel.
+        let table_scroll = self.table_text_scroll_offset(id);
+        raster.0[4] += table_scroll[0];
+        raster.0[5] += table_scroll[1];
         let mut ancestor = Some(id);
         while let Some(at) = ancestor {
             let n = &self.nodes[&at];

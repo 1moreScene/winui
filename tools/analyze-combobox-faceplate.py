@@ -22,7 +22,7 @@ report = {
     'scope': 'Closed ComboBox at 1.25 DPR: 28 explicit same-SDK VSM fixtures, Light/Dark, editable/readonly. Flat background and straight edges exclude text, glyphs, rounded corners and the intentionally suppressed focus ring; this is not whole-control pixel acceptance.',
     'nativeRun': read('references/combo-faceplate-run.json'),
     'backends': {},
-    'wasmSha256': digest('out/composed-validation/gallery/src/wasm/winui_bg.wasm'),
+    'wasmSha256': digest('out/composed-validation/packages/winui-wasm/src/wasm/winui_bg.wasm'),
     'scrollScope': 'Rust owns active popup root, hit routing and boundary consumption. The SDK document adapter projects that scope onto native DOM wheel, touch, keyboard and background pointer input. Closing/disposal releases it.',
     'overflowFix': 'Canonical physical cross constraint preserves adaptive template measurements. ScrollState discards relative floating-point roundoff in extent minus viewport, including the 2.84e-14 DIP residue at 1.375 DPR. The short font sample has zero scrollableHeight and no vertical thumb; true subpixel overflow remains scrollable.',
     'performanceBefore': read('out/combobox-performance-before.json'),

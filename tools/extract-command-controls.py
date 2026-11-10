@@ -7,8 +7,8 @@ PREFIX=KINDS+['AppBarSeparator','AppBar','SelectorBarItem','CommandBarOverflowPr
 X='{http://schemas.microsoft.com/winfx/2006/xaml}'
 def tag(e):return e.tag.rsplit('}',1)[-1]
 def save(p,v):(ROOT/p).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-sdk=Path.home()/'.nuget/packages/microsoft.windowsappsdk.winui/2.3.10-experimental/lib/native/Microsoft.UI/Themes/generic.xaml'
-root=E.parse(sdk).getroot();ir={'sdk':'Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental','sha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'styles':{},'metrics':{},'parts':{},'states':{},'brushes':[]};selected=E.Element(root.tag);brushes=set()
+from mit_xaml_resources import resource_path as sdk
+root=E.parse(sdk).getroot();ir={'sdk':'microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779','sha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'styles':{},'metrics':{},'parts':{},'states':{},'brushes':[]};selected=E.Element(root.tag);brushes=set()
 def visit(parent,theme='Shared'):
  for n in parent:
   key=n.get(X+'Key','');name=tag(n);current=key if name=='ResourceDictionary' and key in ['Light','Default','HighContrast']else theme
@@ -28,7 +28,7 @@ def duration(key):
  value=next(n.text for n in root.iter() if n.get(X+'Key')==key);h,m,seconds=map(float,value.split(':'));return round((h*3600+m*60+seconds)*1000)
 appbar=next(n for n in root.iter() if tag(n)=='Style' and n.get(X+'Key')=='DefaultAppBarButtonStyle');transition=next(n for n in appbar.iter() if tag(n)=='BrushTransition');h,m,seconds=map(float,transition.get('Duration').split(':'))
 ir['motion']={'brushMs':round((h*3600+m*60+seconds)*1000),'selectorPillMs':duration('ComboBoxItemScaleAnimationDuration'),'barOpenMs':duration('ControlNormalAnimationDuration'),'barCloseMs':duration('ControlFastAnimationDuration'),'barCurve':[float(v) for v in next(n.text for n in root.iter() if n.get(X+'Key')=='ControlFastOutSlowInKeySpline').split(',')],'source':'fixed generic.xaml named resources and AppBarButtonInnerBorder BrushTransition'}
-save('references/command-controls-template.json',ir);E.ElementTree(selected).write(ROOT/'references/sdk/command-controls.xaml',encoding='utf8',xml_declaration=True)
+save('references/command-controls-template.json',ir);E.ElementTree(selected).write(ROOT/'references/sdk/command-controls.xaml',encoding='utf-8',xml_declaration=True)
 gallery=Path(json.loads((ROOT/'references/baseline.json').read_text(encoding='utf-8-sig'))['gallery']['path']);commit='7360ac322414e118eadfb0c7c2f4ecc31a218f59';catalog=json.loads((gallery/'catalog/windows-samples.json').read_text(encoding='utf8'));controls={};sources=[]
 import subprocess
 for c in catalog['controls']:

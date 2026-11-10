@@ -6,7 +6,7 @@ for(const theme of ['Light','Dark'])for(const backend of ['Canvas2D','WebGL2'])t
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/#number-box');await page.getByRole('spinbutton',{name:'Quantity',exact:true}).waitFor();
   await page.evaluate(async({theme,backend})=>{
-    const {WinUI}=await import('/src/index.ts' as string),w=window as any;
+    const {WinUI}=await import('/@id/winui-wasm' as string),w=window as any;
     document.querySelector('#app')?.setAttribute('style','display:none');
     const host=document.createElement('div');host.id='choice-fixture';host.style.cssText='position:fixed;inset:0;width:1000px;height:500px';document.body.append(host);
     w.choiceSdk=await WinUI.create({globalScrollbars:false});

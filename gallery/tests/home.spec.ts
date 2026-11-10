@@ -22,7 +22,7 @@ test('official home structure, assets, resource scrolling and full catalog', asy
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'WinUI Gallery', exact: true })).toBeVisible();
   await expect(page.locator(active+'.home-resource')).toHaveCount(6);
-  await expect(page.locator('.gallery-navigation canvas')).toHaveCount(1);
+  await expect(page.locator('.gallery-navigation .winui-surface > canvas')).toHaveCount(1);
   await expect(page.locator('.home-sidebar details')).toHaveCount(0);
   await expect(page.locator(active+'.home-samples .home-sample')).toHaveCount(official.groups.flatMap(g => g.items).filter(i => i.isNew || i.isUpdated).length);
   const first = page.locator(active+'.home-resource').first();
@@ -44,7 +44,61 @@ test('official home structure, assets, resource scrolling and full catalog', asy
   expect(errors).toEqual([]);
 });
 
-test('search, placeholder, category, favorites and recent navigation persist', async ({ page }) => {
+for (const theme of ['Light', 'Dark', 'HighContrast']) test(`home card rows hide scrollbars and handle mouse/trackpad input in ${theme}`, async ({ page }) => {
+  await page.addInitScript(theme => {
+    localStorage.setItem('winui-gallery.theme', theme);
+    localStorage.setItem('winui-gallery.recent', JSON.stringify(['Expander', 'Grid', 'Canvas', 'Border', 'Button', 'ComboBox', 'TextBox', 'NavigationView']));
+  }, theme);
+  await page.emulateMedia({ reducedMotion: theme === 'Dark' ? 'reduce' : 'no-preference' });
+  await page.setViewportSize({ width: 900, height: 900 });
+  await page.goto('/');
+  const main = page.locator(active + '.home-main');
+  const rows = page.locator(active + '.home-horizontal-content');
+  await expect(rows).toHaveCount(2);
+  for (const row of await rows.all()) {
+    await expect(row).toHaveAttribute('data-winui-scroll-host', '');
+    const id = await row.getAttribute('id');
+    const bars = page.locator(`[data-winui-global-scrollbars] [role=scrollbar][aria-controls="${id}"]`);
+    const offset = () => row.evaluate(e => e.scrollLeft);
+    await row.hover({ position: { x: 120, y: 45 } });
+    const pageOffset = await main.evaluate(e => e.scrollTop);
+    await page.mouse.wheel(0, 120);
+    await expect.poll(offset).toBeGreaterThan(80);
+    await expect(bars.filter({ visible: true })).toHaveCount(0);
+    expect(await row.evaluate(e => [getComputedStyle(e).scrollbarWidth, e.scrollTop])).toEqual(['none', 0]);
+    expect(await main.evaluate(e => e.scrollTop)).toBe(pageOffset);
+    await page.mouse.wheel(0, -10000);
+    await expect.poll(offset).toBe(0);
+    await page.mouse.wheel(0, -120);
+    await page.keyboard.down('Shift');
+    await page.mouse.wheel(0, 120);
+    await page.keyboard.up('Shift');
+    await expect.poll(offset).toBeGreaterThan(80);
+    await page.mouse.wheel(0, -10000);
+    await expect.poll(offset).toBe(0);
+    await page.mouse.wheel(180, 0);
+    await expect.poll(offset).toBeGreaterThan(140);
+    await page.mouse.wheel(0, 10000);
+    await expect.poll(() => row.evaluate(e => e.scrollWidth - e.clientWidth - e.scrollLeft)).toBeLessThan(1);
+    await page.mouse.wheel(0, 120);
+    expect(await main.evaluate(e => e.scrollTop)).toBe(pageOffset);
+    await expect(bars.filter({ visible: true })).toHaveCount(0);
+  }
+  // Arrow buttons move one viewport, including after responsive resizing.
+  await page.setViewportSize({ width: 390, height: 844 });
+  const row = rows.first();
+  await row.evaluate(e => e.scrollTo({ left: 0, behavior: 'instant' }));
+  await expect.poll(() => row.evaluate(e => e.scrollLeft)).toBe(0);
+  await page.getByRole('button', { name: 'Scroll resources right', exact: true }).click();
+  await expect.poll(() => row.evaluate(e => Math.abs(e.scrollLeft - e.clientWidth))).toBeLessThan(1);
+  await expect(page.getByRole('button', { name: 'Scroll resources left', exact: true })).toBeFocused();
+  await page.screenshot({ path: `../out/home-horizontal-${theme}.png` });
+  await page.setViewportSize({ width: 2200, height: 1000 });
+  await expect(page.getByRole('button', { name: 'Scroll resources right', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Scroll resources left', exact: true })).toHaveCount(0);
+});
+
+test('search, category, favorites and recent navigation persist', async ({ page }) => {
   await page.goto('/');
   await page.getByRole('tab', { name: 'Favorites' }).click();
   await expect(page.getByText('No favorites yet')).toBeVisible();
@@ -54,7 +108,6 @@ test('search, placeholder, category, favorites and recent navigation persist', a
   await page.keyboard.type('CalendarDatePicker');
   await expect(page.locator(active+'.home-sample')).toHaveCount(1);
   await page.locator(active+'.home-sample-link').click();
-  await expect(page.getByRole('heading', { name: '此示例尚未实现' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'CalendarDatePicker', exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Favorite CalendarDatePicker', exact: true }).click();
   await clickGalleryNavigation(page, 'gallery-home');
@@ -88,7 +141,7 @@ test('existing Rust samples are reachable and return home without stale controls
   await page.goto('/#all');
   await page.locator(active+'[data-sample-id=NavigationView] .home-sample-link').click();
   await expect.poll(() => page.evaluate(() => window.gallery.views.filter(Boolean).length)).toBe(8);
-  await expect(page.locator('#example-0 .control-host canvas')).toBeVisible();
+  await expect(page.locator('#example-0 .control-host .winui-surface > canvas')).toBeVisible();
   await page.locator('#example-0 [data-item-id=page2]').click();
   await expect.poll(() => page.evaluate(() => window.gallery.views[0].snapshot.selectedId)).toBe('page2');
   await clickGalleryNavigation(page, 'gallery-home');

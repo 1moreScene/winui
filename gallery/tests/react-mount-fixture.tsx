@@ -1,7 +1,7 @@
 import {StrictMode,useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {WinUI,RendererBackend,type Scene,type SceneNode,type FloatingSurface} from '../src/index';
-import {WinUIProvider,SceneView,Canvas,StackPanel,Button,TextBlock,Flyout,MenuFlyout,ToolTip} from '../src/react';
+import {WinUI,RendererBackend,type Scene,type SceneNode,type FloatingSurface} from 'winui-wasm';
+import {WinUIProvider,SceneView,Canvas,StackPanel,Button,TextBlock,Flyout,MenuFlyout,ToolTip} from 'winui-wasm/react';
 declare global {interface Window {mountReactScene:(backend:RendererBackend,strict:boolean)=>Promise<{kinds:string[];helpers:number}>;unmountReactScene:()=>void;}}
 const runtime=await WinUI.create({globalScrollbars:false});
 let root:ReturnType<typeof createRoot>|undefined;
@@ -16,7 +16,7 @@ window.mountReactScene=async(backend,strict)=>{
  return{kinds:scene!.snapshot.nodes.map(n=>n.kind),helpers:document.querySelectorAll('[data-winui-font-metrics]').length};
 };
 
-declare global {interface Window {mountReactFloating:(backend:RendererBackend,strict:boolean,kind:'Flyout'|'MenuFlyout'|'ToolTip')=>Promise<{owner:import('../src/scene').NodeSnapshot;surface:import('../src/scene').NodeSnapshot}>;}}
+declare global {interface Window {mountReactFloating:(backend:RendererBackend,strict:boolean,kind:'Flyout'|'MenuFlyout'|'ToolTip')=>Promise<{owner:import('winui-wasm').NodeSnapshot;surface:import('winui-wasm').NodeSnapshot}>;}}
 window.mountReactFloating=async(backend,strict,kind)=>{
  window.unmountReactScene();root=createRoot(document.getElementById('fixture')!);let owner:SceneNode|undefined,surface:FloatingSurface|undefined;
  let ready!:()=>void;const mounted=new Promise<void>(resolve=>ready=resolve);

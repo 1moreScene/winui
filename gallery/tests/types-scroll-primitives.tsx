@@ -1,5 +1,5 @@
-import {ScrollBar,Thumb,TickBar,ItemsPresenter,ScrollContentPresenter,StackPanel,Button} from '../src/react';
-import {Orientation,ScrollingIndicatorMode,ScrollEventType,type Slider,type ScrollViewer,type ScrollBar as Bar} from '../src/index';
+import {ScrollBar,Thumb,TickBar,ItemsPresenter,ScrollContentPresenter,StackPanel,Button} from 'winui-wasm/react';
+import {Orientation,ScrollingIndicatorMode,ScrollEventType,type SliderController as Slider,type ScrollViewerController as ScrollViewer,type ScrollBarController as Bar} from 'winui-wasm';
 export function Valid({slider,target}:{slider:Slider;target:ScrollViewer}){return <><ScrollBar orientation={Orientation.Vertical} viewportSize={40} indicatorMode={ScrollingIndicatorMode.MouseIndicator} scrollTarget={target} onScroll={e=>{const event:ScrollEventType=e.scroll.eventType;void event;}}/><Thumb background="#0078D4" onDragDelta={e=>{const x:number=e.horizontalChange;void x;}}/><TickBar source={slider}/><ItemsPresenter header="Header" footer={<Button text="Footer action"/>}><StackPanel/></ItemsPresenter><ScrollContentPresenter><StackPanel/></ScrollContentPresenter></>;}
 // @ts-expect-error Closed choices require runtime enum values.
 export const bare=<ScrollBar orientation="Vertical"/>;

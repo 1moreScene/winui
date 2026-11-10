@@ -31,7 +31,7 @@ const record = {
     wasmSha256: hash(`${snapshot}/src/wasm/winui_bg.wasm`) },
   checks: ['npm run typecheck', 'npm run declarations', 'node tools/prepare-gallery-page-validation.mjs', 'npx vite build'],
   productionWasm: { path: `out/gallery-page-preview/assets/${wasm}`, sha256: hash(`out/gallery-page-preview/assets/${wasm}`),
-    matchesCurrentBinary: hash(`out/gallery-page-preview/assets/${wasm}`) === hash('gallery/src/wasm/winui_bg.wasm') },
+    matchesCurrentBinary: hash(`out/gallery-page-preview/assets/${wasm}`) === hash('packages/winui-wasm/src/wasm/winui_bg.wasm') },
   productionFiles: assets.map(name => ({ path: `out/gallery-page-preview/assets/${name}`, sha256: hash(`out/gallery-page-preview/assets/${name}`),
     matchesGalleryDist: existsSync(resolve(root, `gallery/dist/assets/${name}`)) && hash(`out/gallery-page-preview/assets/${name}`) === hash(`gallery/dist/assets/${name}`) })),
   sourceSnapshot: sourceFiles.map(name => ({ path: `${snapshot}/src/${name}`, sha256: hash(`${snapshot}/src/${name}`),

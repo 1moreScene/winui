@@ -1,7 +1,9 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryNumberBox, GalleryOption, GalleryRadioButton, GallerySlider } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useRef, useState } from "react";
-import { SceneView, Grid, Ellipse, Button, TextBlock, CheckBox } from "./react";
+import { SceneView, Grid, Ellipse, Button, TextBlock, CheckBox } from "winui-wasm/react";
 import { Header } from "./ButtonPage";
 import {
   ThemeMode,
@@ -16,16 +18,16 @@ import {
   type Panel,
   type AnimationOptions,
   type AnimationTargets,
-} from "./index";
-import { GradientKind, BrushMappingMode, GradientSpread } from "./index";
+} from "winui-wasm";
+import { GradientKind, BrushMappingMode, GradientSpread } from "winui-wasm";
 import official from "./official-motion.json";
 import source from "./MaterialsPage.tsx?raw";
 import nativeDefaults from "../../references/motion-native-defaults.json";
 import { extractSampleSource } from "./sample-source";
 declare global {
   interface Window {
-    materialScenes: import("./index").Scene[];
-    propertyScenes: import("./index").Scene[];
+    materialScenes: import("winui-wasm").Scene[];
+    propertyScenes: import("winui-wasm").Scene[];
   }
 }
 
@@ -48,9 +50,7 @@ function SampleCode({ name, xaml }: { name: string; xaml: string }) {
           Official XAML
         </GalleryButton>
       </div>
-      <pre>
-        <code>{native ? xaml : extractSampleSource(source, name)}</code>
-      </pre>
+      <SourceCode language={native ? 'xaml' : 'tsx'}>{native ? xaml : extractSampleSource(source, name)}</SourceCode>
     </GalleryExpander>
   );
 }
@@ -97,7 +97,7 @@ function AcrylicSample({
   // @sample:official-acrylic-options:end
   return (
     <section className="example" id={`acrylic-${index}`}>
-      <h2>{example.title}</h2>
+      <h2><LocalizedText>{example.title}</LocalizedText></h2>
       <div className="example-card">
         <div
           className={
@@ -228,9 +228,7 @@ function AcrylicSample({
         />
         <GalleryExpander className="source">
           <GalleryExpanderHeader>背景与材质的组合代码</GalleryExpanderHeader>
-          <pre>
-            <code>{extractSampleSource(source, "official-acrylic-scene")}</code>
-          </pre>
+          <SourceCode>{extractSampleSource(source, "official-acrylic-scene")}</SourceCode>
         </GalleryExpander>
       </div>
     </section>
@@ -335,7 +333,7 @@ function EasingSample({ index, theme }: { index: number; theme: ThemeMode }) {
   // @sample:official-easing-call:end
   return (
     <section className="example" id={`easing-${index}`}>
-      <h2>{sample.title}</h2>
+      <h2><LocalizedText>{sample.title}</LocalizedText></h2>
       <div className="example-card">
         <div className={index ? "easing-live with-options" : "easing-live"}>
           <SceneView theme={theme} style={{ height: 74 }}>
@@ -471,7 +469,7 @@ function PropertyTransitionSample({
   // @sample:property-transition:end
   return (
     <section className="example" id={`property-transition-${index}`}>
-      <h2>{sample.title}</h2>
+      <h2><LocalizedText>{sample.title}</LocalizedText></h2>
       <div className="example-card">
         <div className="official-acrylic-row">
           <SceneView
@@ -528,7 +526,7 @@ function PropertyTransitionSample({
                     Set {name} to ({preset}, {preset})
                   </GalleryButton>
                 ))}
-                <p>Components (X/Y)</p>
+                <p><LocalizedText>Components (X/Y)</LocalizedText></p>
                 {["X", "Y"].map((axis, i) => (
                   <GalleryCheckBox
                       
@@ -582,7 +580,7 @@ function PropertyTransitionSample({
 function BackgroundTransitionSample({theme,index}:{theme:ThemeMode;index:number}) {
   const [blue,setBlue]=useState(true),[localTheme,setLocalTheme]=useState(ThemeMode.Light);
   const sample=official.catalog.find(entry=>entry.name==='ImplicitTransition')!.samples[index];
-  return <section className="example" id={`property-transition-${index}`}><h2>{sample.title}</h2><div className="example-card"><div className="official-acrylic-row">
+  return <section className="example" id={`property-transition-${index}`}><h2><LocalizedText>{sample.title}</LocalizedText></h2><div className="example-card"><div className="official-acrylic-row">
     {/* @sample:background-transition:start */}
     <SceneView theme={theme} style={{height:index===4?110:240}} onReady={scene=>{window.propertyScenes??=[];window.propertyScenes[index]=scene;}}>
       <Grid width={index===4?50:440} height={index===4?50:216} horizontalAlignment={HorizontalAlignment.Center} verticalAlignment={VerticalAlignment.Center}
@@ -632,7 +630,7 @@ export function GradientPage() {
       <Header title="RadialGradientBrush" theme={theme} onTheme={setTheme} />
       <main className="stage-main official-motion">
         <section className="example" id="radial-gradient">
-          <h2>{sample.title}</h2>
+          <h2><LocalizedText>{sample.title}</LocalizedText></h2>
           <div className="example-card">
             <div className="official-acrylic-row">
               {/* @sample:radial-gradient:start */}
@@ -745,7 +743,7 @@ export function GradientPage() {
           </div>
         </section>
         <section className="example" id="linear-gradient">
-          <h2>LinearGradientBrush</h2>
+          <h2><LocalizedText>LinearGradientBrush</LocalizedText></h2>
           <div className="example-card">
             {/* @sample:linear-gradient:start */}
             <SceneView theme={theme} backend={backend} style={{ height: 224 }}>
@@ -796,18 +794,16 @@ export function SystemBackdropsPage() {
       />
       <main className="stage-main official-motion">
         
-        <p>
+        <p><LocalizedText>
           <a href="#acrylic">可运行的应用内 Acrylic</a> ·{" "}
           <a href="#gradients">线性与径向渐变</a>
-        </p>
+        </LocalizedText></p>
         {official.catalog
           .find((entry) => entry.name === "SystemBackdrops")!
           .samples.map((sample) => (
             <GalleryExpander className="source" key={sample.title}>
               <GalleryExpanderHeader>{sample.title} · 官方宿主调用</GalleryExpanderHeader>
-              <pre>
-                <code>{sample.xaml}</code>
-              </pre>
+              <SourceCode language="xaml">{sample.xaml}</SourceCode>
             </GalleryExpander>
           ))}
       </main>

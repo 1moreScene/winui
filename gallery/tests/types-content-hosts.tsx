@@ -1,5 +1,5 @@
-import {ContentControl,ContentPresenter,UserControl,Page,SceneFrame} from '../src/react';
-import {HorizontalAlignment,VerticalAlignment,NodeKind,NavigationCacheMode,NavigationTransition,type ContentTemplate,type SceneFrame as Controller} from '../src/index';
+import {ContentControl,ContentPresenter,UserControl,Page,SceneFrame} from 'winui-wasm/react';
+import {HorizontalAlignment,VerticalAlignment,NodeKind,NavigationCacheMode,NavigationTransition,type ContentTemplate,type SceneFrameController as Controller} from 'winui-wasm';
 const content:ContentTemplate={kind:NodeKind.StackPanel,children:[{kind:NodeKind.TextBlock,properties:{text:'Hello'}},{kind:NodeKind.Button,name:'save',properties:{text:'Save'}}]};
 export const valid=<><ContentControl content="Hello"/><ContentPresenter horizontalContentAlignment={HorizontalAlignment.Center}/><UserControl><Page content="A page"/></UserControl><SceneFrame pages={[{key:'main',content,cacheMode:NavigationCacheMode.Required}]} onReady={f=>f.navigate('main',{transition:NavigationTransition.Entrance})}/></>;
 // @ts-expect-error Closed enum values require runtime enum members.

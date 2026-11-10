@@ -1,10 +1,19 @@
 use crate::{model::*, navigation::NavigationView};
 use serde::Serialize;
+mod retained;
+pub use retained::{expand_retained, contains_external_image};
 
+pub fn command_count(commands:&[Draw],limit:usize)->usize {
+    let mut stack=vec![(commands,0)];let mut count=0;
+    while let Some((commands,depth))=stack.pop(){if depth>8{return limit+1;}for command in commands{count+=1;if count>limit{return count;}match command{Draw::CrossFade{source,target,..}=>{stack.push((source,depth+1));stack.push((target,depth+1));},Draw::RetainedGroup{commands,..}=>stack.push((commands,depth+1)),_=>{}}}}count
+}
 /// Backend-independent display list shared by Canvas2D and the Rust WebGL2 executor.
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Serialize, PartialEq)]
 #[serde(tag = "op", rename_all = "camelCase")]
 pub enum Draw {
+    /// Retained visual content. Its raster transform excludes compositor-only
+    /// scrolling/entrance motion; other backends may execute commands directly.
+    RetainedGroup { bounds:Rect, raster:[f64;6], commands:std::sync::Arc<Vec<Draw>> },
     /// Physical-pixel phase of the next glyph run before compositor motion.
     TextRasterPhase {
         phase: [f64; 2],
@@ -29,6 +38,9 @@ pub enum Draw {
     /// HostBackdrop still samples the windows underneath it.
     WindowLayer {
         opacity: f64,
+        /// Inherit the parent window's underlying backdrop, excluding its
+        /// shadow/content surface (used by restored ComboBox in-app Acrylic).
+        inherit_backdrop: bool,
     },
     /// Small vector group. Canvas samples geometry above display resolution;
     /// text remains outside the group and keeps its native-DPR rasterization.
@@ -36,6 +48,8 @@ pub enum Draw {
         bounds: Rect,
     },
     EndLayer,
+    /// Premultiplied RGBA interpolation, composited onto the parent exactly once.
+    CrossFade { rect:Rect, progress:f64, source:std::sync::Arc<Vec<Draw>>, source_scale:[f64;2], target:std::sync::Arc<Vec<Draw>> },
     Gradient {
         rect: Rect,
         radius: f64,
@@ -208,15 +222,23 @@ pub fn display_list(nav: &NavigationView) -> Vec<Draw> {
 }
 /// A shared scene already painted the app backdrop. Expanded/Top pane resources
 /// are transparent in native WinUI; do not cover that backdrop with a fake gray.
+#[derive(Clone, Copy, PartialEq)]
+pub(crate) enum NavigationLayer<'a> { All, Background, Pane, Dismiss, Flyout, Item(&'a str) }
 pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:bool)->Vec<Draw>{
+    navigation_layer(nav,standalone_background,NavigationLayer::All)
+}
+pub(crate) fn navigation_layer(nav:&NavigationView,standalone_background:bool,layer:NavigationLayer<'_>)->Vec<Draw>{
     let p = Palette::new(nav.props.theme);
     let mut out = vec![];
+    if matches!(layer,NavigationLayer::All|NavigationLayer::Background) {
     fill(
         &mut out,
         Rect::new(0., 0., nav.width, nav.height),
-        if standalone_background||nav.props.theme==Theme::HighContrast{p.pane}else{"#00000000"},
+        if !nav.props.has_external_content && (standalone_background||nav.props.theme==Theme::HighContrast){p.pane}else{"#00000000"},
         0.,
     );
+    }
+    if !nav.props.has_external_content && matches!(layer,NavigationLayer::All|NavigationLayer::Background) {
     out.push(Draw::ContentBackground {
         rect: nav.content,
         color: p.content.into(),
@@ -227,6 +249,8 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
             8.
         },
     });
+    }
+    if !nav.props.has_external_content && layer==NavigationLayer::All {
     out.push(Draw::Clip { rect: nav.content });
     let border = if nav.is_top() || nav.display_mode == DisplayMode::Minimal {
         0.
@@ -235,7 +259,7 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
     };
     let left = nav.content.x + border + nav.template.header_margin[0];
     let mut y = nav.content.y;
-    if !nav.props.header.is_empty()
+    if nav.props.header.is_some()
         && (nav.props.always_show_header
             || (!nav.is_top() && nav.display_mode == DisplayMode::Minimal))
     {
@@ -243,7 +267,7 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
             &mut out,
             left,
             y + 76.,
-            &nav.props.header,
+            nav.props.header.as_deref().unwrap_or_default(),
             p.text,
             nav.template.header_font_size,
             nav.content.width - nav.template.header_margin[0],
@@ -260,7 +284,7 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
             nav.content_scroll,
         );
     } else {
-        for line in nav.props.content.lines() {
+        for line in nav.props.content.as_deref().unwrap_or_default().lines() {
             text(
                 &mut out,
                 nav.content.x + border,
@@ -274,23 +298,21 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
         }
     }
     out.push(Draw::Restore);
-    nav.content_scrollbar.paint(nav.props.theme,nav.props.reduced_transparency||!nav.props.is_backdrop_available,nav.now,&mut out);
+    nav.content_scrollbar.paint(nav.props.theme,nav.props.reduced_transparency||!nav.backdrop_available(),nav.now,&mut out);
+    }
+    if let Some(layer) = nav.light_dismiss_visual().filter(|v| matches!(layer,NavigationLayer::All|NavigationLayer::Dismiss) && v.color != "#00000000" && v.opacity > 0.) {
+        out.push(Draw::Layer { opacity: layer.opacity });
+        fill(&mut out, layer.rect, &layer.color, 0.);
+        out.push(Draw::EndLayer);
+    }
     // CompactOverlay/Overlay panes sample the already-painted content backdrop.
-    if nav.props.is_pane_visible && !nav.is_top() && nav.pane.width > 0. {
+    if matches!(layer,NavigationLayer::All|NavigationLayer::Pane) && nav.props.is_pane_visible && !nav.is_top() && nav.pane.width > 0. {
         let pane_start = out.len();
-        if nav.pane_open && nav.display_mode != DisplayMode::Expanded {
-            fill(
-                &mut out,
-                Rect::new(nav.pane.width, 0., 6., nav.height),
-                "#00000018",
-                0.,
-            );
-        }
-        let overlay = nav.display_mode != DisplayMode::Expanded && nav.pane_open;
+        let overlay = nav.pane_overlay_visible();
         let recipe = nav.pane_recipe();
         if let Some(recipe) = recipe {
             let colors=nav.pane_colors();
-            let weight = if nav.props.is_backdrop_available { nav.material_motion.value(nav.now) } else { 0. };
+            let weight = if nav.backdrop_available() { nav.material_motion.value(nav.now) } else { 0. };
             if weight <= 0.001 || nav.props.theme == Theme::HighContrast {
                 fill(
                     &mut out,
@@ -303,20 +325,31 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
                     0.,
                 );
             } else {
+                // SplitView keeps PaneRoot at OpenPaneLength and animates its
+                // rectangle clip. A changing Acrylic surface would invalidate
+                // the backdrop blur cache on every pane-animation sample.
+                out.push(Draw::Clip { rect: nav.pane });
                 out.push(Draw::Acrylic {
-                    rect: nav.pane,
+                    rect: Rect::new(nav.pane.x, nav.pane.y,
+                        nav.props.open_pane_length.min(nav.width), nav.pane.height),
                     colors,
                     recipe,
                     weight,
                 });
+                out.push(Draw::Restore);
             }
         } else {
-            fill(&mut out, nav.pane, crate::resources::Resources::current().color(nav.props.theme,"NavigationViewExpandedPaneBackground"), 0.);
+            fill(&mut out, nav.pane, if nav.props.theme == Theme::HighContrast { p.pane } else { crate::resources::Resources::current().color(nav.props.theme,"NavigationViewExpandedPaneBackground") }, 0.);
         }
-        if nav.pane_open && !nav.props.pane_title.is_empty() {
+        if overlay {
+            // Draw after the backdrop sample: the moving shadow must not feed
+            // back into the fixed pane's Acrylic surface.
+            fill(&mut out, Rect::new(nav.pane.width, 0., 6., nav.height), "#00000018", 0.);
+        }
+        if layer==NavigationLayer::All && nav.pane_open && !nav.props.pane_title.is_empty() {
             text(
                 &mut out,
-                52. + if nav.props.is_back_button_visible {
+                52. + if nav.props.back_button_visible() {
                     40.
                 } else {
                     0.
@@ -328,14 +361,14 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
                 nav.pane.width - 64.,
             );
         }
-        if !overlay {
+        if layer==NavigationLayer::All && !overlay {
             // Inline/closed-compact Pane is behind Content in SplitView's tree;
             // sampling later content would leak tile colors into the pane blur.
             let pane_commands = out.split_off(pane_start);
             out.splice(1..1, pane_commands);
         }
     }
-    if let Some(r) = nav.flyout {
+    if let Some(r) = nav.flyout.filter(|_|matches!(layer,NavigationLayer::All|NavigationLayer::Flyout)) {
         fill(
             &mut out,
             Rect::new(r.x + 2., r.y + 3., r.width, r.height),
@@ -351,6 +384,7 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
         });
     }
     for part in &nav.parts {
+        if !matches!(layer,NavigationLayer::All) && !matches!(layer,NavigationLayer::Item(id) if id==part.id) { continue; }
         if part.id == "$dismiss" || part.id.starts_with("$expand:") {
             continue;
         }
@@ -442,7 +476,8 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
                     weight: 400,
                 });
             }
-            if !icon_only && part.id != "$toggle" && part.id != "$back" {
+            let custom_content=layer!=NavigationLayer::All && (nav.props.find(&part.id).is_some_and(|item|item.content_template.is_some())||nav.props.menu_item_template.is_some());
+            if !custom_content && !icon_only && part.id != "$toggle" && part.id != "$back" && part.id != "$close" && !(part.id=="$overflow"&&nav.props.overflow_label_mode==NavigationViewOverflowLabelMode::NoLabel) {
                 let x = r.x
                     + if nav.is_top() && r.y < 48. {
                         if part.icon.is_empty() && animated.is_none() {
@@ -486,7 +521,7 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
             out.push(Draw::Restore);
         }
     }
-    if nav.indicator_target.is_some() {
+    if matches!(layer,NavigationLayer::All) && nav.indicator_target.is_some() {
         let color = if nav.props.accent == "#005fb8" {
             crate::resources::Resources::current().color(
                 nav.props.theme,
@@ -508,7 +543,7 @@ pub(crate) fn navigation_display_list(nav:&NavigationView,standalone_background:
             if clip.is_some() { out.push(Draw::Restore); }
         }
     }
-    nav.menu_scrollbar.paint(nav.props.theme,nav.props.reduced_transparency||!nav.props.is_backdrop_available,nav.now,&mut out);
+    if matches!(layer,NavigationLayer::All) { nav.menu_scrollbar.paint(nav.props.theme,nav.props.reduced_transparency||!nav.backdrop_available(),nav.now,&mut out); }
     out
 }
 
@@ -534,7 +569,12 @@ pub struct CanvasBackend {
     layers: std::cell::RefCell<Vec<CanvasBackend>>,
     gradients: std::cell::RefCell<std::collections::HashMap<String, web_sys::HtmlCanvasElement>>,
     vector_layers: std::cell::RefCell<Vec<CanvasBackend>>,
-    glyphs: std::cell::RefCell<std::collections::HashMap<String, GlyphSurface>>,
+    vector_rasters: std::rc::Rc<std::cell::RefCell<std::collections::VecDeque<(Vec<u8>,web_sys::HtmlCanvasElement)>>>,
+    pub vector_raster_hits: std::rc::Rc<std::cell::Cell<u64>>,
+    retained_rasters: std::rc::Rc<std::cell::RefCell<std::collections::VecDeque<(retained::Key,web_sys::HtmlCanvasElement)>>>,
+    pub retained_raster_hits: std::rc::Rc<std::cell::Cell<u64>>,
+    glyphs: std::rc::Rc<std::cell::RefCell<std::collections::HashMap<String, (GlyphSurface,u64)>>>,
+    glyph_serial: std::rc::Rc<std::cell::Cell<u64>>,
 }
 #[cfg(target_arch = "wasm32")]
 struct MaterialTile {
@@ -604,7 +644,12 @@ impl CanvasBackend {
             layers: Default::default(),
             gradients: Default::default(),
             vector_layers: Default::default(),
+            vector_rasters: Default::default(),
+            vector_raster_hits: Default::default(),
+            retained_rasters: Default::default(),
+            retained_raster_hits: Default::default(),
             glyphs: Default::default(),
+            glyph_serial: Default::default(),
         })
     }
     pub fn release(&self) {
@@ -627,6 +672,8 @@ impl CanvasBackend {
         self.images.borrow_mut().clear();
         for layer in self.layers.borrow_mut().drain(..){layer.release();}
         for layer in self.vector_layers.borrow_mut().drain(..){layer.release();}
+        for (_,canvas) in self.vector_rasters.borrow_mut().drain(..){canvas.set_width(0);canvas.set_height(0);}
+        for (_,canvas) in self.retained_rasters.borrow_mut().drain(..){canvas.set_width(0);canvas.set_height(0);}
         self.glyphs.borrow_mut().clear();
         for canvas in self.gradients.borrow_mut().drain().map(|(_, c)| c) {
             canvas.set_width(0);
@@ -643,7 +690,9 @@ impl CanvasBackend {
         use wasm_bindgen::JsCast;
         let dpr = self.dpr.get();
         let key = format!("{}:{color}:{dpr}:{phase:?}:{text}", font.css());
-        if let Some(glyph) = self.glyphs.borrow().get(&key) {
+        let serial=self.glyph_serial.get().wrapping_add(1);self.glyph_serial.set(serial);
+        if let Some((glyph,used)) = self.glyphs.borrow_mut().get_mut(&key) {
+            *used=serial;
             return Ok(glyph.clone());
         }
         let canvas = self
@@ -685,10 +734,31 @@ impl CanvasBackend {
         };
         let mut cache = self.glyphs.borrow_mut();
         if cache.len() >= 1024 {
-            cache.clear();
+            if let Some(old)=cache.iter().min_by_key(|(_,(_,used))|*used).map(|(key,_)|key.clone()) {
+                if let Some((old,_))=cache.remove(&old){old.canvas.set_width(0);old.canvas.set_height(0);}
+            }
         }
-        cache.insert(key, glyph.clone());
+        cache.insert(key, (glyph.clone(),serial));
         Ok(glyph)
+    }
+    fn composite_surface(&self,w:u32,h:u32,left:f64,top:f64,m:crate::scene::Matrix,commands:&[Draw])->Result<Self,wasm_bindgen::JsValue>{
+        use wasm_bindgen::JsCast;
+        let mut layer=if let Some(layer)=self.layers.borrow_mut().pop(){layer}else{let canvas=self.canvas.owner_document().unwrap().create_element("canvas")?.dyn_into::<web_sys::HtmlCanvasElement>()?;let ctx=canvas.get_context("2d")?.unwrap().dyn_into()?;Self::new(canvas,ctx)?};
+        if layer.canvas.width()!=w{layer.canvas.set_width(w);}if layer.canvas.height()!=h{layer.canvas.set_height(h);}
+        layer.images=self.images.clone();layer.dpr.set(self.dpr.get());layer.windowed.set(self.windowed.get());layer.isolated_window.set(false);
+        layer.context.set_transform(1.,0.,0.,1.,0.,0.)?;layer.context.clear_rect(0.,0.,w as f64,h as f64);
+        fn material(commands:&[Draw])->bool{commands.iter().any(|draw|matches!(draw,Draw::Acrylic{..}|Draw::SystemBackdrop{..})||matches!(draw,Draw::CrossFade{source,target,..} if material(source)||material(target)))}
+        if material(commands){
+            for (dest,local) in [(&layer.backdrop,false),(&layer.local_backdrop,true)]{
+                if dest.width()!=w{dest.set_width(w);}if dest.height()!=h{dest.set_height(h);}
+                let ctx: web_sys::CanvasRenderingContext2d=dest.get_context("2d")?.unwrap().dyn_into()?;ctx.set_transform(1.,0.,0.,1.,0.,0.)?;ctx.clear_rect(0.,0.,w as f64,h as f64);
+                let base=if local{&self.local_backdrop}else{&self.backdrop};
+                if base.width()>0&&base.height()>0{ctx.draw_image_with_html_canvas_element(base,-left,-top)?;}
+                ctx.draw_image_with_html_canvas_element(&self.canvas,-left,-top)?;
+            }
+        }
+        layer.context.set_transform(m.0[0],m.0[1],m.0[2],m.0[3],m.0[4]-left,m.0[5]-top)?;
+        Ok(layer)
     }
     fn uniform_acrylic(&self,rect:Rect,weight:f64,colors:&crate::material::AcrylicColors,backdrop:[f64;3],desktop:bool)->Result<(),wasm_bindgen::JsValue>{
         use wasm_bindgen::JsCast;
@@ -1204,6 +1274,9 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
         if !matches!(cmd,Draw::Save|Draw::Restore|Draw::Transform{..}|Draw::Clip{..}|Draw::RoundedClip{..}|Draw::CornerClip{..}|Draw::TextRasterPhase{..}) { painted = true; }
         index += 1;
         match cmd {
+            Draw::RetainedGroup { bounds, raster, commands } => {
+                retained::paint(backend,*bounds,*raster,commands)?;
+            }
             Draw::Shadow {
                 rect,
                 caster,
@@ -1345,6 +1418,26 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
             Draw::Transform { matrix } => ctx.transform(
                 matrix[0], matrix[1], matrix[2], matrix[3], matrix[4], matrix[5],
             )?,
+            Draw::CrossFade{rect,progress,source,source_scale,target} => {
+                let t=ctx.get_transform()?;
+                let m=crate::scene::Matrix([t.a(),t.b(),t.c(),t.d(),t.e(),t.f()]);
+                let bounds=m.bounds(*rect);let left=bounds.x.floor()-1.;let top=bounds.y.floor()-1.;
+                let w=(bounds.x+bounds.width).ceil()-left+1.;let h=(bounds.y+bounds.height).ceil()-top+1.;
+                if w<=0.||h<=0.{continue;}
+                if w>8192.||h>8192.||w*h>16_777_216.{return Err(wasm_bindgen::JsValue::from_str("crossfade surface exceeds allocation budget"));}
+                let a=backend.composite_surface(w as u32,h as u32,left,top,m,source)?;
+                let b=backend.composite_surface(w as u32,h as u32,left,top,m,target)?;
+                a.context.scale(source_scale[0],source_scale[1])?;
+                paint(&a,source)?;paint(&b,target)?;
+                a.context.set_transform(1.,0.,0.,1.,0.,0.)?;
+                a.context.set_global_composite_operation("destination-in")?;
+                a.context.set_fill_style_str(&format!("rgba(0,0,0,{})",1.-progress.clamp(0.,1.)));a.context.fill_rect(0.,0.,w,h);
+                a.context.set_global_composite_operation("lighter")?;a.context.set_global_alpha(progress.clamp(0.,1.));
+                a.context.draw_image_with_html_canvas_element(&b.canvas,0.,0.)?;
+                a.context.set_global_composite_operation("source-over")?;a.context.set_global_alpha(1.);
+                ctx.save();ctx.set_transform(1.,0.,0.,1.,0.,0.)?;ctx.draw_image_with_html_canvas_element(&a.canvas,left,top)?;ctx.restore();
+                backend.layers.borrow_mut().extend([a,b]);
+            }
             Draw::VectorLayer { bounds } => {
                 let start = index;
                 let mut depth = 1;
@@ -1409,6 +1502,33 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     paint_commands(backend, &commands[start..index - 1])?;
                     continue;
                 }
+                let group=&commands[start..index-1];
+                // Reuse immutable vector textures across equal controls and
+                // frames. Include transform/physical phase so fractional DPR
+                // and animation samples retain their exact raster geometry.
+                // Backdrop/material and external pixel content stay dynamic.
+                let reusable=group.iter().all(|draw|matches!(draw,
+                    Draw::Save|Draw::Restore|Draw::Transform{..}|Draw::Layer{..}|Draw::EndLayer|
+                    Draw::Fill{..}|Draw::Stroke{..}|Draw::Border{..}|Draw::Ellipse{..}|
+                    Draw::Arc{..}|Draw::Polyline{..}|Draw::VectorPath{..}|
+                    Draw::Clip{..}|Draw::RoundedClip{..}|Draw::CornerClip{..}|Draw::VectorLayer{..}));
+                let phase=|v:f64|(v*1_000_000.).round()/1_000_000.;
+                let key=if reusable {Some(serde_json::to_vec(&(backend.dpr.get(),w,h,
+                    [t.a(),t.b(),t.c(),t.d(),phase(t.e()-left),phase(t.f()-top)],group))
+                    .map_err(|e|wasm_bindgen::JsValue::from_str(&e.to_string()))?)}else{None};
+                let cached=key.as_ref().and_then(|key|{
+                    let mut cache=backend.vector_rasters.borrow_mut();
+                    let at=cache.iter().position(|(k,_)|k==key)?;
+                    let entry=cache.remove(at).unwrap();let canvas=entry.1.clone();cache.push_back(entry);Some(canvas)
+                });
+                if let Some(canvas)=cached {
+                    backend.vector_raster_hits.set(backend.vector_raster_hits.get()+1);
+                    ctx.save();ctx.set_transform(1.,0.,0.,1.,0.,0.)?;
+                    ctx.set_image_smoothing_enabled(true);
+                    ctx.unchecked_ref::<SamplingContext>().set_image_smoothing_quality("high");
+                    ctx.draw_image_with_html_canvas_element_and_dw_and_dh(&canvas,left,top,w,h)?;
+                    ctx.restore();continue;
+                }
                 use wasm_bindgen::JsCast;
                 let layer = if let Some(layer) = backend.vector_layers.borrow_mut().pop() {
                     layer
@@ -1440,6 +1560,16 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     (t.f() - top) * SAMPLES,
                 )?;
                 paint(&layer, &commands[start..index - 1])?;
+                if let Some(key)=key {
+                    let canvas=backend.canvas.owner_document().unwrap().create_element("canvas")?.dyn_into::<web_sys::HtmlCanvasElement>()?;
+                    canvas.set_width(layer.canvas.width());canvas.set_height(layer.canvas.height());
+                    let context=canvas.get_context("2d")?.unwrap().dyn_into::<web_sys::CanvasRenderingContext2d>()?;
+                    context.draw_image_with_html_canvas_element(&layer.canvas,0.,0.)?;
+                    let mut cache=backend.vector_rasters.borrow_mut();cache.push_back((key,canvas));
+                    while cache.len()>64||cache.iter().map(|(_,c)|c.width() as u64*c.height() as u64).sum::<u64>()>1_048_576 {
+                        let (_,canvas)=cache.pop_front().unwrap();canvas.set_width(0);canvas.set_height(0);
+                    }
+                }
                 ctx.save();
                 ctx.set_transform(1., 0., 0., 1., 0., 0.)?;
                 ctx.set_image_smoothing_enabled(true);
@@ -1455,8 +1585,9 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 ctx.restore();
                 backend.vector_layers.borrow_mut().push(layer);
             }
-            Draw::Layer { opacity } | Draw::WindowLayer { opacity } => {
+            Draw::Layer { opacity } | Draw::WindowLayer { opacity, .. } => {
                 let new_window = matches!(commands[index - 1], Draw::WindowLayer { .. });
+                let inherit_backdrop = matches!(commands[index - 1], Draw::WindowLayer { inherit_backdrop: true, .. });
                 let start = index;
                 let mut depth = 1;
                 while index < commands.len() && depth > 0 {
@@ -1478,6 +1609,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 if *opacity <= 0. {
                     continue;
                 }
+                if *opacity>=1. && !new_window {ctx.save();paint_commands(backend,&commands[start..index-1])?;ctx.restore();continue;}
                 let mut layer = if let Some(layer) = backend.layers.borrow_mut().pop() {
                     layer
                 } else {
@@ -1492,7 +1624,11 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     CanvasBackend::new(canvas, context)?
                 };
                 layer.images = backend.images.clone();
-                for canvas in [&layer.canvas, &layer.backdrop, &layer.local_backdrop] {
+                layer.glyphs=backend.glyphs.clone();layer.glyph_serial=backend.glyph_serial.clone();
+                layer.vector_rasters=backend.vector_rasters.clone();layer.vector_raster_hits=backend.vector_raster_hits.clone();
+                layer.retained_rasters=backend.retained_rasters.clone();layer.retained_raster_hits=backend.retained_raster_hits.clone();
+                let needs_backdrop=retained::requires_backdrop(&commands[start..index-1]);
+                for canvas in [&layer.canvas].into_iter().chain(needs_backdrop.then_some([&layer.backdrop,&layer.local_backdrop]).into_iter().flatten()) {
                     if canvas.width() != backend.canvas.width() {
                         canvas.set_width(backend.canvas.width());
                     }
@@ -1509,6 +1645,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 );
                 layer.dpr.set(backend.dpr.get());
                 use wasm_bindgen::JsCast;
+                if needs_backdrop {
                 let backdrop = layer
                     .backdrop
                     .get_context("2d")?
@@ -1539,10 +1676,15 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 );
                 layer.windowed.set(new_window || backend.windowed.get());
                 layer.isolated_window.set(new_window);
-                if !new_window && backend.windowed.get() {
+                if inherit_backdrop {
+                    local.draw_image_with_html_canvas_element(&backend.backdrop, 0., 0.)?;
+                } else if !new_window && backend.windowed.get() {
                     local.draw_image_with_html_canvas_element(&backend.local_backdrop, 0., 0.)?;
                     local.draw_image_with_html_canvas_element(&backend.canvas, 0., 0.)?;
                 }
+                }
+                layer.windowed.set(new_window || backend.windowed.get());
+                layer.isolated_window.set(new_window && !inherit_backdrop);
                 let t = ctx.get_transform()?;
                 layer
                     .context
@@ -1842,7 +1984,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 if *max_width <= 0. {
                     continue;
                 }
-                ctx.set_font(
+                if phase.is_none() { ctx.set_font(
                     &crate::typography::Font {
                         style: *style,
                         weight: *weight,
@@ -1851,7 +1993,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     }
                     .css(),
                 );
-                ctx.set_fill_style_str(color);
+                ctx.set_fill_style_str(color); }
                 // Clip instead of Canvas maxWidth's horizontal glyph scaling.
                 ctx.save();
                 ctx.begin_path();

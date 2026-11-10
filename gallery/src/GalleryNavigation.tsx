@@ -1,8 +1,9 @@
+import {NavigationViewBackButtonVisible} from "winui-wasm";
 import { useEffect, useRef, useState } from 'react';
 import { galleryPaneMaterial } from './examples';
-import { NavigationView } from './react';
-import { EventKind, ItemKind, PaneDisplayMode, type NavigationView as Controller,
-  type NavigationItem, type NavigationSnapshot, type ThemeMode } from './index';
+import { NavigationView } from 'winui-wasm/react';
+import { EventKind, ItemKind, PaneDisplayMode, type NavigationViewController as Controller,
+  type NavigationItem, type NavigationSnapshot, type ThemeMode } from 'winui-wasm';
 import { galleryGroups, itemById, itemForRoute } from './gallery-catalog';
 
 const groups = (special: boolean): NavigationItem[] => galleryGroups.filter(group => group.special === special).map(group => ({
@@ -42,8 +43,8 @@ export function GalleryNavigation({ route, theme, onSnapshot, onReady }: {
   // resource fallback instead of blurring the full viewport on every hover.
   return <NavigationView id="home-navigation" className="home-sidebar gallery-navigation" style={{ width: '100%', height: 'calc(100dvh - 48px)' }}
     items={items} selectedId={selectedId} theme={theme} paneDisplayMode={PaneDisplayMode.Auto}
-    isBackButtonVisible={false} isPaneToggleButtonVisible={false} openPaneLength={320}
-    isSettingsVisible isBackdropAvailable={false} expandedPaneMaterial={galleryPaneMaterial(theme)}
+    isBackButtonVisible={NavigationViewBackButtonVisible.Collapsed} isPaneToggleButtonVisible={false} openPaneLength={320}
+    isSettingsVisible hasExternalContent isBackdropAvailable={false} expandedPaneMaterial={galleryPaneMaterial(theme)}
     reducedMotion={policies.motion} reducedTransparency={policies.transparency} alwaysShowHeader={false}
     onReady={view => {
       control.current = view;

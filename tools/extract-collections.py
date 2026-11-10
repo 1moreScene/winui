@@ -1,12 +1,13 @@
 """Extract actual resolved SDK templates; no generic XAML execution claimed."""
 from pathlib import Path
 import json,hashlib,xml.etree.ElementTree as E,shutil,re
+from sdk_resource_reader import brush as sdk_brush
 ROOT=Path(__file__).resolve().parent.parent
 X='{http://schemas.microsoft.com/winfx/2006/xaml}'
-sdk=Path.home()/'.nuget/packages/microsoft.windowsappsdk.winui/2.3.10-experimental/lib/native/Microsoft.UI/Themes/generic.xaml'
+from mit_xaml_resources import resource_path as sdk
 r=E.parse(sdk).getroot();tag=lambda n:n.tag.rsplit('}',1)[-1]
 prefixes=('ListView','GridView','ItemsStackPanel','ItemsWrapGrid','VariableSizedWrapGrid')
-ir={'sdkSource':str(sdk),'sdkSha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'styles':{},'metrics':{},'brushes':[],'presenters':{},'sourceFiles':json.loads((ROOT/'references/collections-sources.json').read_text())['files']}
+ir={'sdkSource':sdk.relative_to(ROOT).as_posix(),'sdkSha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'styles':{},'metrics':{},'brushes':[],'presenters':{},'sourceFiles':json.loads((ROOT/'references/collections-sources.json').read_text())['files']}
 selected=E.Element(r.tag)
 for n in r.iter():
  key=n.get(X+'Key','');name=tag(n)
@@ -23,7 +24,8 @@ for n in r.iter():
  if key.startswith(prefixes) and name in ['Double','Thickness','CornerRadius','Color','Duration']:
   ir['metrics'].setdefault(key,{'type':name,'value':n.text or ''})
   selected.append(E.fromstring(E.tostring(n)))
-ir['brushes']=sorted(set(ir['brushes'])|{'ControlStrongStrokeColorDefaultBrush','ControlStrongFillColorDefaultBrush','SystemControlBackgroundBaseMediumBrush','SystemControlForegroundAltHighBrush'})
+header_brushes={'ListViewHeaderItemDividerStroke','GridViewHeaderItemDividerStroke'}
+ir['brushes']=sorted(set(ir['brushes'])|header_brushes|{'ControlStrongStrokeColorDefaultBrush','ControlStrongFillColorDefaultBrush','SystemControlBackgroundBaseMediumBrush','SystemControlForegroundAltHighBrush'})
 ir['headerStyles']={}
 for n in r.iter():
  if tag(n)=='Style' and n.get('TargetType') in ['ListViewHeaderItem','GridViewHeaderItem']:ir['headerStyles'][n.get('TargetType')]={s.get('Property'):s.get('Value') for s in n if tag(s)=='Setter' and s.get('Value') is not None}
@@ -67,15 +69,16 @@ ir['animations']['listRemainingDelayMs']=motion['DeleteFromList-Remaining'][0]['
 
 assert set(ir['styles'])=={'ListView','GridView','ListViewItem','GridViewItem'} and len(ir['presenters'])==2
 palette=ROOT/'references/collections-palettes.json'
-if palette.exists():
- ir['palettes']=json.loads(palette.read_text(encoding='utf-8-sig'))
- advanced=ROOT/'out/collections-advanced-native/collections-advanced-palettes.json'
- if advanced.exists():
-  for theme,colors in json.loads(advanced.read_text(encoding='utf-8-sig')).items():ir['palettes'][theme].update(colors)
- ir['palettes']['HighContrast']={k:{'kind':'solid','color':color,'opacity':1} for k,color in {'ControlStrongStrokeColorDefaultBrush':'#FFFFFF','ControlStrongFillColorDefaultBrush':'#FFFFFF','SystemControlBackgroundBaseMediumBrush':'#FFFFFF','SystemControlForegroundAltHighBrush':'#000000'}.items()}
- ir['highContrastSource']='Shared black/white high-contrast fixture; not an arbitrary Windows system palette acceptance.'
+ir['palettes']=json.loads(palette.read_text(encoding='utf-8-sig'))
+for theme in ['Light','Dark']:
+ # Required runtime resources must survive a clean build without native probe output.
+ for key in sorted(header_brushes):ir['palettes'][theme][key]=sdk_brush(theme,key)
+ missing=set(ir['brushes'])-ir['palettes'][theme].keys()
+ assert not missing,f'Missing collection brushes in {theme}: {sorted(missing)}'
+ir['palettes']['HighContrast']={k:{'kind':'solid','color':color,'opacity':1} for k,color in {'ControlStrongStrokeColorDefaultBrush':'#FFFFFF','ControlStrongFillColorDefaultBrush':'#FFFFFF','SystemControlBackgroundBaseMediumBrush':'#FFFFFF','SystemControlForegroundAltHighBrush':'#000000'}.items()}
+ir['highContrastSource']='Shared black/white high-contrast fixture; not an arbitrary Windows system palette acceptance.'
 (ROOT/'references/collections-template.json').write_text(json.dumps(ir,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-E.ElementTree(selected).write(ROOT/'references/sdk/collections.xaml',encoding='utf8',xml_declaration=True)
+E.ElementTree(selected).write(ROOT/'references/sdk/collections.xaml',encoding='utf-8',xml_declaration=True)
 gallery=Path(json.loads((ROOT/'references/baseline.json').read_text(encoding='utf-8-sig'))['gallery']['path']);catalog=json.loads((gallery/'catalog/windows-samples.json').read_text())
 official={};sources=[]
 for c in catalog['controls']:

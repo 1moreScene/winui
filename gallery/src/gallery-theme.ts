@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, type Dispatch, type SetStateAction } from 'react';
-import { ThemeMode } from './index';
+import { ThemeMode } from 'winui-wasm';
 
 type GalleryTheme = [ThemeMode, Dispatch<SetStateAction<ThemeMode>>];
 export const GalleryThemeContext = createContext<GalleryTheme | null>(null);

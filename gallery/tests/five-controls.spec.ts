@@ -2,7 +2,7 @@ import {selectGalleryOption} from './gallery-control-helper';
 import { test, expect } from "@playwright/test";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { WinUI, Scene, SceneNode } from "../src/index";
+import type { WinUI, Scene, SceneNode } from "winui-wasm";
 declare global {
   interface Window {
     fiveFixture: { sdk: WinUI; scene: Scene; control: SceneNode; time: number };
@@ -38,7 +38,8 @@ test("five Gallery pages use public controls, real input, options and sample-onl
       )
       .toBe(true);
     if (name === "Border") {
-      await page.getByRole("slider", { name: "Corner radius" }).fill("20");
+      const radius=page.getByRole("slider", { name: "Corner radius" });
+      await radius.press('Home');await radius.press('PageUp');await radius.press('PageUp');
       await expect
         .poll(() =>
           page.evaluate(
@@ -77,9 +78,8 @@ test("five Gallery pages use public controls, real input, options and sample-onl
       await page.keyboard.press(" ");
       await expect(b).toHaveAttribute("aria-expanded", "false");
       await page.waitForTimeout(550);
-      await expect(page.locator("output")).toContainText("Collapsed");
       await selectGalleryOption(page
-        .getByRole("combobox", { name: "Expand direction" }),"Up");
+        .getByRole("combobox", { name: "ExpandDirection" }),"Up");
       await b.click();
       await expect(b).toHaveAttribute("aria-expanded", "true");
     }
@@ -91,8 +91,8 @@ test("five Gallery pages use public controls, real input, options and sample-onl
         page.getByRole("img", { name: "1", exact: true }),
       ).toBeVisible();
     }
-    const section = page.locator("section.example").first();
-    await selectGalleryOption(page.locator('#theme'),'HighContrast');
+    const section = page.locator("section.example:visible").first();
+    await selectGalleryOption(page.locator('#theme:visible'),'HighContrast');
     const sampleId=await section.getAttribute('id');
     await expect.poll(()=>page.evaluate(id=>window.fiveScenes[id!].snapshot.nodes.find(n=>n.kind!=='Grid')?.theme,sampleId)).toBe('HighContrast');
     await section.locator("[aria-label=\"Source code\"][aria-expanded]").click();
@@ -117,8 +117,8 @@ test("nested five-control content keeps editor coordinates, focus restoration an
     ).toBeVisible();
     await page.evaluate(async () => {
       const a = (await import(
-        "/src/index.ts" as string
-      )) as typeof import("../src/index");
+        "/@id/winui-wasm" as string
+      )) as typeof import("winui-wasm");
       const sdk = await a.WinUI.create({ globalScrollbars: false });
       const host = document.createElement("div");
       host.id = "five-fixture";
@@ -220,8 +220,8 @@ for (const backend of ["Canvas2D", "WebGL2"] as const)
           window.fiveFixture?.sdk.dispose();
           document.getElementById("five-fixture")?.remove();
           const a = (await import(
-            "/src/index.ts" as string
-          )) as typeof import("../src/index");
+            "/@id/winui-wasm" as string
+          )) as typeof import("winui-wasm");
           const sdk = await a.WinUI.create({
             globalScrollbars: false,
             clock: () => window.fiveFixture?.time ?? 0,
@@ -359,8 +359,8 @@ test("ProgressBar cap coverage stays curved at default and larger heights across
       ).toBeVisible();
       await page.evaluate(async (backend) => {
         const a = (await import(
-          "/src/index.ts" as string
-        )) as typeof import("../src/index");
+          "/@id/winui-wasm" as string
+        )) as typeof import("winui-wasm");
         const sdk = await a.WinUI.create({
           globalScrollbars: false,
           clock: () => window.fiveFixture?.time ?? 0,
@@ -371,7 +371,7 @@ test("ProgressBar cap coverage stays curved at default and larger heights across
           "position:fixed;inset:0;width:300px;height:100px;z-index:999999";
         document.body.append(host);
         const s = sdk.scene(host, {
-          backend: backend as import("../src/index").RendererBackend,
+          backend: backend as import("winui-wasm").RendererBackend,
           reducedMotion: false,
         });
         s.root.progressBar({

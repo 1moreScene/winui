@@ -12,7 +12,7 @@ test('actual wheel input scrolls every overflowing Gallery ListView',async({page
 
 test('animated distant wheel destinations keep realization bounded and cover the visible viewport',async({page})=>{
  await page.goto('/#list-view');const results=await page.evaluate(async()=>{
-  const a=await import('/src/index.ts' as string) as typeof import('../src/index');const sdk=await a.WinUI.create({globalScrollbars:false});const results=[];
+  const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');const sdk=await a.WinUI.create({globalScrollbars:false});const results=[];
   for(const mode of ['plain','template','grouped']){
    const host=document.createElement('div');host.style.cssText='position:fixed;inset:0;width:400px;height:300px;z-index:99999';document.body.append(host);const scene=sdk.scene(host);
    const items=Array.from({length:100000},(_,i)=>({id:String(i),text:`Item ${i}`}));const list=scene.root.listView({width:360,height:280,...(mode==='grouped'?{groups:[{id:'a',header:'Group A',items:items.slice(0,50000)},{id:'b',header:'Group B',items:items.slice(50000)}]}:{items})});

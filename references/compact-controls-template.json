@@ -1,7 +1,7 @@
 {
-  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
-  "templateSource": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\lib\\native\\Microsoft.UI\\Themes\\generic.xaml",
-  "templateSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "sdk": "microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779",
+  "templateSource": "references/mit-xaml-generated/generic.xaml",
+  "templateSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
   "metrics": {
     "Shared": {
       "SplitButtonPrimaryButtonSize": {
@@ -14,77 +14,15 @@
         "value": "35",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonSecondaryButtonSize"
       },
-      "SplitButtonStyle": {
-        "type": "Style",
-        "value": "\n        ",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonStyle",
-        "TargetType": "controls:SplitButton"
-      },
-      "InfoBarActionButtonMinWidth": {
-        "type": "Double",
-        "value": "96",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonMinWidth"
-      },
-      "InfoBarActionButtonMinHeight": {
-        "type": "Double",
-        "value": "24",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonMinHeight"
-      },
-      "InfoBarActionButtonPadding": {
+      "SplitButtonBorderThemeThickness": {
         "type": "Thickness",
-        "value": "8,0,8,1",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonPadding"
-      },
-      "InfoBarActionButtonCornerRadius": {
-        "type": "CornerRadius",
         "value": "2",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonCornerRadius"
-      },
-      "InfoBarHyperlinkButtonFontSize": {
-        "type": "Double",
-        "value": "14",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarHyperlinkButtonFontSize"
-      },
-      "InfoBarHyperlinkButtonMinHeight": {
-        "type": "Double",
-        "value": "24",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarHyperlinkButtonMinHeight"
-      },
-      "InfoBarHyperlinkButtonPadding": {
-        "type": "Thickness",
-        "value": "0,0,0,1",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarHyperlinkButtonPadding"
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
       },
       "SplitButtonRevealStyle": {
         "type": "Style",
-        "value": "\n        ",
+        "value": "\n    ",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonRevealStyle",
-        "TargetType": "controls:SplitButton"
-      },
-      "RatingControlFontSizeForRendering": {
-        "type": "Double",
-        "value": "32",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "RatingControlFontSizeForRendering"
-      },
-      "RatingControlItemSpacing": {
-        "type": "Double",
-        "value": "8",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "RatingControlItemSpacing"
-      },
-      "RatingControlCaptionTopMargin": {
-        "type": "Double",
-        "value": "-12.5",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "RatingControlCaptionTopMargin"
-      },
-      "SplitButtonPadding": {
-        "type": "Thickness",
-        "value": "11,6,11,7",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonPadding"
-      },
-      "SplitButtonCommandBarStyle": {
-        "type": "Style",
-        "value": "\n        ",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonCommandBarStyle",
         "TargetType": "controls:SplitButton"
       },
       "InfoBarTitleFontSize": {
@@ -219,10 +157,77 @@
       },
       "InfoBarCloseButtonStyle": {
         "type": "Style",
-        "value": "\n        ",
+        "value": "\n    ",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarCloseButtonStyle",
         "TargetType": "Button",
         "BasedOn": "{StaticResource DefaultButtonStyle}"
+      },
+      "RatingControlFontSizeForRendering": {
+        "type": "Double",
+        "value": "32",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "RatingControlFontSizeForRendering"
+      },
+      "RatingControlItemSpacing": {
+        "type": "Double",
+        "value": "8",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "RatingControlItemSpacing"
+      },
+      "RatingControlCaptionTopMargin": {
+        "type": "Double",
+        "value": "-12.5",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "RatingControlCaptionTopMargin"
+      },
+      "SplitButtonStyle": {
+        "type": "Style",
+        "value": "\n    ",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonStyle",
+        "TargetType": "controls:SplitButton"
+      },
+      "SplitButtonPadding": {
+        "type": "Thickness",
+        "value": "11,6,11,7",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonPadding"
+      },
+      "SplitButtonCommandBarStyle": {
+        "type": "Style",
+        "value": "\n    ",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonCommandBarStyle",
+        "TargetType": "controls:SplitButton"
+      },
+      "InfoBarActionButtonMinWidth": {
+        "type": "Double",
+        "value": "96",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonMinWidth"
+      },
+      "InfoBarActionButtonMinHeight": {
+        "type": "Double",
+        "value": "24",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonMinHeight"
+      },
+      "InfoBarActionButtonPadding": {
+        "type": "Thickness",
+        "value": "8,0,8,1",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonPadding"
+      },
+      "InfoBarActionButtonCornerRadius": {
+        "type": "CornerRadius",
+        "value": "2",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarActionButtonCornerRadius"
+      },
+      "InfoBarHyperlinkButtonFontSize": {
+        "type": "Double",
+        "value": "14",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarHyperlinkButtonFontSize"
+      },
+      "InfoBarHyperlinkButtonMinHeight": {
+        "type": "Double",
+        "value": "24",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarHyperlinkButtonMinHeight"
+      },
+      "InfoBarHyperlinkButtonPadding": {
+        "type": "Thickness",
+        "value": "0,0,0,1",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarHyperlinkButtonPadding"
       }
     },
     "Default": {
@@ -468,52 +473,6 @@
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDisabled",
         "ResourceKey": "ControlFillColorTransparentBrush"
       },
-      "PersonPictureEllipseFillStrokeBrush": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureEllipseFillStrokeBrush",
-        "ResourceKey": "CardStrokeColorDefaultBrush"
-      },
-      "PersonPictureBadgeGridMargin": {
-        "type": "Thickness",
-        "value": "0,-4,-4,0",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureBadgeGridMargin"
-      },
-      "SplitButtonForegroundSecondary": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondary",
-        "ResourceKey": "TextFillColorSecondaryBrush"
-      },
-      "SplitButtonForegroundSecondaryPressed": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondaryPressed",
-        "ResourceKey": "TextFillColorTertiaryBrush"
-      },
-      "SplitButtonBorderBrushDivider": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushDivider",
-        "ResourceKey": "ControlStrokeColorDefaultBrush"
-      },
-      "SplitButtonBorderBrushCheckedDivider": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDivider",
-        "ResourceKey": "ControlStrokeColorOnAccentTertiaryBrush"
-      },
-      "SplitButtonBorderThemeThickness": {
-        "type": "Thickness",
-        "value": "1",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
-      },
-      "SplitButtonInAppBarUnfocusedPointerOver": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonInAppBarUnfocusedPointerOver",
-        "ResourceKey": "SubtleFillColorTertiaryBrush"
-      },
       "InfoBarErrorSeverityBackgroundBrush": {
         "type": "StaticResource",
         "value": "",
@@ -614,6 +573,52 @@
         "type": "Thickness",
         "value": "1",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarBorderThickness"
+      },
+      "PersonPictureEllipseFillStrokeBrush": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureEllipseFillStrokeBrush",
+        "ResourceKey": "CardStrokeColorDefaultBrush"
+      },
+      "PersonPictureBadgeGridMargin": {
+        "type": "Thickness",
+        "value": "0,-4,-4,0",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureBadgeGridMargin"
+      },
+      "SplitButtonForegroundSecondary": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondary",
+        "ResourceKey": "TextFillColorSecondaryBrush"
+      },
+      "SplitButtonForegroundSecondaryPressed": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondaryPressed",
+        "ResourceKey": "TextFillColorTertiaryBrush"
+      },
+      "SplitButtonBorderBrushDivider": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushDivider",
+        "ResourceKey": "ControlStrokeColorDefaultBrush"
+      },
+      "SplitButtonBorderBrushCheckedDivider": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDivider",
+        "ResourceKey": "ControlStrokeColorOnAccentTertiaryBrush"
+      },
+      "SplitButtonBorderThemeThickness": {
+        "type": "Thickness",
+        "value": "1",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
+      },
+      "SplitButtonInAppBarUnfocusedPointerOver": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonInAppBarUnfocusedPointerOver",
+        "ResourceKey": "SubtleFillColorTertiaryBrush"
       }
     },
     "HighContrast": {
@@ -859,52 +864,6 @@
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDisabled",
         "ResourceKey": "SystemColorGrayTextColorBrush"
       },
-      "PersonPictureEllipseFillStrokeBrush": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureEllipseFillStrokeBrush",
-        "ResourceKey": "CardStrokeColorDefaultBrush"
-      },
-      "PersonPictureBadgeGridMargin": {
-        "type": "Thickness",
-        "value": "0,-4,-4,0",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureBadgeGridMargin"
-      },
-      "SplitButtonForegroundSecondary": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondary",
-        "ResourceKey": "SystemColorButtonTextColorBrush"
-      },
-      "SplitButtonForegroundSecondaryPressed": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondaryPressed",
-        "ResourceKey": "SystemColorHighlightColorBrush"
-      },
-      "SplitButtonBorderBrushDivider": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushDivider",
-        "ResourceKey": "SystemControlDisabledBaseMediumLowBrush"
-      },
-      "SplitButtonBorderBrushCheckedDivider": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDivider",
-        "ResourceKey": "SystemColorHighlightTextColorBrush"
-      },
-      "SplitButtonBorderThemeThickness": {
-        "type": "Thickness",
-        "value": "1",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
-      },
-      "SplitButtonInAppBarUnfocusedPointerOver": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonInAppBarUnfocusedPointerOver",
-        "ResourceKey": "SystemColorButtonFaceColorBrush"
-      },
       "InfoBarErrorSeverityBackgroundBrush": {
         "type": "StaticResource",
         "value": "",
@@ -1005,6 +964,52 @@
         "type": "Thickness",
         "value": "2",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarBorderThickness"
+      },
+      "PersonPictureEllipseFillStrokeBrush": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureEllipseFillStrokeBrush",
+        "ResourceKey": "CardStrokeColorDefaultBrush"
+      },
+      "PersonPictureBadgeGridMargin": {
+        "type": "Thickness",
+        "value": "0,-4,-4,0",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureBadgeGridMargin"
+      },
+      "SplitButtonForegroundSecondary": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondary",
+        "ResourceKey": "SystemColorButtonTextColorBrush"
+      },
+      "SplitButtonForegroundSecondaryPressed": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondaryPressed",
+        "ResourceKey": "SystemColorHighlightColorBrush"
+      },
+      "SplitButtonBorderBrushDivider": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushDivider",
+        "ResourceKey": "SystemControlDisabledBaseMediumLowBrush"
+      },
+      "SplitButtonBorderBrushCheckedDivider": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDivider",
+        "ResourceKey": "SystemColorHighlightTextColorBrush"
+      },
+      "SplitButtonBorderThemeThickness": {
+        "type": "Thickness",
+        "value": "1",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
+      },
+      "SplitButtonInAppBarUnfocusedPointerOver": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonInAppBarUnfocusedPointerOver",
+        "ResourceKey": "SystemColorButtonFaceColorBrush"
       }
     },
     "Light": {
@@ -1250,52 +1255,6 @@
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDisabled",
         "ResourceKey": "ControlFillColorTransparentBrush"
       },
-      "PersonPictureEllipseFillStrokeBrush": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureEllipseFillStrokeBrush",
-        "ResourceKey": "CardStrokeColorDefaultBrush"
-      },
-      "PersonPictureBadgeGridMargin": {
-        "type": "Thickness",
-        "value": "0,-4,-4,0",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureBadgeGridMargin"
-      },
-      "SplitButtonForegroundSecondary": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondary",
-        "ResourceKey": "TextFillColorSecondaryBrush"
-      },
-      "SplitButtonForegroundSecondaryPressed": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondaryPressed",
-        "ResourceKey": "TextFillColorTertiaryBrush"
-      },
-      "SplitButtonBorderBrushDivider": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushDivider",
-        "ResourceKey": "ControlStrokeColorDefaultBrush"
-      },
-      "SplitButtonBorderBrushCheckedDivider": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDivider",
-        "ResourceKey": "ControlStrokeColorOnAccentTertiaryBrush"
-      },
-      "SplitButtonBorderThemeThickness": {
-        "type": "Thickness",
-        "value": "1",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
-      },
-      "SplitButtonInAppBarUnfocusedPointerOver": {
-        "type": "StaticResource",
-        "value": "",
-        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonInAppBarUnfocusedPointerOver",
-        "ResourceKey": "SubtleFillColorTertiaryBrush"
-      },
       "InfoBarErrorSeverityBackgroundBrush": {
         "type": "StaticResource",
         "value": "",
@@ -1396,6 +1355,52 @@
         "type": "Thickness",
         "value": "1",
         "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "InfoBarBorderThickness"
+      },
+      "PersonPictureEllipseFillStrokeBrush": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureEllipseFillStrokeBrush",
+        "ResourceKey": "CardStrokeColorDefaultBrush"
+      },
+      "PersonPictureBadgeGridMargin": {
+        "type": "Thickness",
+        "value": "0,-4,-4,0",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "PersonPictureBadgeGridMargin"
+      },
+      "SplitButtonForegroundSecondary": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondary",
+        "ResourceKey": "TextFillColorSecondaryBrush"
+      },
+      "SplitButtonForegroundSecondaryPressed": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonForegroundSecondaryPressed",
+        "ResourceKey": "TextFillColorTertiaryBrush"
+      },
+      "SplitButtonBorderBrushDivider": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushDivider",
+        "ResourceKey": "ControlStrokeColorDefaultBrush"
+      },
+      "SplitButtonBorderBrushCheckedDivider": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderBrushCheckedDivider",
+        "ResourceKey": "ControlStrokeColorOnAccentTertiaryBrush"
+      },
+      "SplitButtonBorderThemeThickness": {
+        "type": "Thickness",
+        "value": "1",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonBorderThemeThickness"
+      },
+      "SplitButtonInAppBarUnfocusedPointerOver": {
+        "type": "StaticResource",
+        "value": "",
+        "{http://schemas.microsoft.com/winfx/2006/xaml}Key": "SplitButtonInAppBarUnfocusedPointerOver",
+        "ResourceKey": "SubtleFillColorTertiaryBrush"
       }
     }
   },
@@ -1438,12 +1443,6 @@
       "SplitButtonBorderBrushCheckedPointerOver": "AccentControlElevationBorderBrush",
       "SplitButtonBorderBrushCheckedPressed": "ControlFillColorTransparentBrush",
       "SplitButtonBorderBrushCheckedDisabled": "ControlFillColorTransparentBrush",
-      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
-      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
-      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
-      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
-      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
-      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush",
       "InfoBarErrorSeverityBackgroundBrush": "SystemFillColorCriticalBackgroundBrush",
       "InfoBarWarningSeverityBackgroundBrush": "SystemFillColorCautionBackgroundBrush",
       "InfoBarSuccessSeverityBackgroundBrush": "SystemFillColorSuccessBackgroundBrush",
@@ -1459,7 +1458,13 @@
       "InfoBarTitleForeground": "TextFillColorPrimaryBrush",
       "InfoBarMessageForeground": "TextFillColorPrimaryBrush",
       "InfoBarHyperlinkButtonForeground": "AccentTextFillColorPrimaryBrush",
-      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush"
+      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush",
+      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
+      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
+      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
+      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
+      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
+      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush"
     },
     "HighContrast": {
       "RatingControlUnselectedForeground": "SystemControlForegroundBaseLowBrush",
@@ -1496,12 +1501,6 @@
       "SplitButtonBorderBrushCheckedPointerOver": "SystemColorButtonTextColorBrush",
       "SplitButtonBorderBrushCheckedPressed": "SystemColorButtonFaceColorBrush",
       "SplitButtonBorderBrushCheckedDisabled": "SystemColorGrayTextColorBrush",
-      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
-      "SplitButtonForegroundSecondary": "SystemColorButtonTextColorBrush",
-      "SplitButtonForegroundSecondaryPressed": "SystemColorHighlightColorBrush",
-      "SplitButtonBorderBrushDivider": "SystemControlDisabledBaseMediumLowBrush",
-      "SplitButtonBorderBrushCheckedDivider": "SystemColorHighlightTextColorBrush",
-      "SplitButtonInAppBarUnfocusedPointerOver": "SystemColorButtonFaceColorBrush",
       "InfoBarErrorSeverityBackgroundBrush": "SystemColorWindowColorBrush",
       "InfoBarWarningSeverityBackgroundBrush": "SystemColorWindowColorBrush",
       "InfoBarSuccessSeverityBackgroundBrush": "SystemColorWindowColorBrush",
@@ -1517,7 +1516,13 @@
       "InfoBarTitleForeground": "SystemColorWindowTextColorBrush",
       "InfoBarMessageForeground": "SystemColorWindowTextColorBrush",
       "InfoBarHyperlinkButtonForeground": "SystemColorHotlightColorBrush",
-      "InfoBarBorderBrush": "SystemControlTransientBorderBrush"
+      "InfoBarBorderBrush": "SystemControlTransientBorderBrush",
+      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
+      "SplitButtonForegroundSecondary": "SystemColorButtonTextColorBrush",
+      "SplitButtonForegroundSecondaryPressed": "SystemColorHighlightColorBrush",
+      "SplitButtonBorderBrushDivider": "SystemControlDisabledBaseMediumLowBrush",
+      "SplitButtonBorderBrushCheckedDivider": "SystemColorHighlightTextColorBrush",
+      "SplitButtonInAppBarUnfocusedPointerOver": "SystemColorButtonFaceColorBrush"
     },
     "Light": {
       "RatingControlUnselectedForeground": "TextFillColorSecondaryBrush",
@@ -1557,12 +1562,6 @@
       "SplitButtonBorderBrushCheckedPointerOver": "AccentControlElevationBorderBrush",
       "SplitButtonBorderBrushCheckedPressed": "ControlFillColorTransparentBrush",
       "SplitButtonBorderBrushCheckedDisabled": "ControlFillColorTransparentBrush",
-      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
-      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
-      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
-      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
-      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
-      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush",
       "InfoBarErrorSeverityBackgroundBrush": "SystemFillColorCriticalBackgroundBrush",
       "InfoBarWarningSeverityBackgroundBrush": "SystemFillColorCautionBackgroundBrush",
       "InfoBarSuccessSeverityBackgroundBrush": "SystemFillColorSuccessBackgroundBrush",
@@ -1578,73 +1577,179 @@
       "InfoBarTitleForeground": "TextFillColorPrimaryBrush",
       "InfoBarMessageForeground": "TextFillColorPrimaryBrush",
       "InfoBarHyperlinkButtonForeground": "AccentTextFillColorPrimaryBrush",
-      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush"
+      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush",
+      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
+      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
+      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
+      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
+      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
+      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush"
     }
   },
   "styles": {
-    "RatingControl": {
+    "InfoBar": {
       "key": "",
       "setters": {
-        "MinHeight": "32",
-        "Foreground": "{ThemeResource RatingControlCaptionForeground}",
-        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
-        "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
-        "ItemInfo": "{ThemeResource MUX_RatingControlDefaultFontInfo}",
-        "FocusVisualMargin": "-8,-7,-8,0",
-        "IsFocusEngagementEnabled": "True"
+        "IsTabStop": "False",
+        "CloseButtonStyle": "{StaticResource InfoBarCloseButtonStyle}",
+        "Background": "Transparent",
+        "BorderBrush": "{ThemeResource InfoBarBorderBrush}",
+        "BorderThickness": "{ThemeResource InfoBarBorderThickness}",
+        "AutomationProperties.LandmarkType": "Custom",
+        "AutomationProperties.IsDialog": "True",
+        "CornerRadius": "{ThemeResource ControlCornerRadius}"
       },
       "states": [
         {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled",
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Informational",
+          "setters": []
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Error",
           "setters": [
             {
-              "Target": "ForegroundContentPresenter.Foreground",
-              "Value": "{ThemeResource RatingControlDisabledSelectedForeground}"
+              "Target": "ContentRoot.Background",
+              "Value": "{ThemeResource InfoBarErrorSeverityBackgroundBrush}"
+            },
+            {
+              "Target": "IconBackground.Foreground",
+              "Value": "{ThemeResource InfoBarErrorSeverityIconBackground}"
+            },
+            {
+              "Target": "StandardIcon.Text",
+              "Value": "{StaticResource InfoBarErrorIconGlyph}"
+            },
+            {
+              "Target": "StandardIcon.Foreground",
+              "Value": "{ThemeResource InfoBarErrorSeverityIconForeground}"
             }
           ]
         },
         {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Placeholder",
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Warning",
           "setters": [
             {
-              "Target": "ForegroundContentPresenter.Foreground",
-              "Value": "{ThemeResource RatingControlPlaceholderForeground}"
+              "Target": "ContentRoot.Background",
+              "Value": "{ThemeResource InfoBarWarningSeverityBackgroundBrush}"
+            },
+            {
+              "Target": "IconBackground.Foreground",
+              "Value": "{ThemeResource InfoBarWarningSeverityIconBackground}"
+            },
+            {
+              "Target": "StandardIcon.Text",
+              "Value": "{StaticResource InfoBarWarningIconGlyph}"
+            },
+            {
+              "Target": "StandardIcon.Foreground",
+              "Value": "{ThemeResource InfoBarWarningSeverityIconForeground}"
             }
           ]
         },
         {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverPlaceholder",
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Success",
           "setters": [
             {
-              "Target": "ForegroundContentPresenter.Foreground",
-              "Value": "{ThemeResource RatingControlPointerOverPlaceholderForeground}"
+              "Target": "ContentRoot.Background",
+              "Value": "{ThemeResource InfoBarSuccessSeverityBackgroundBrush}"
+            },
+            {
+              "Target": "IconBackground.Foreground",
+              "Value": "{ThemeResource InfoBarSuccessSeverityIconBackground}"
+            },
+            {
+              "Target": "StandardIcon.Text",
+              "Value": "{StaticResource InfoBarSuccessIconGlyph}"
+            },
+            {
+              "Target": "StandardIcon.Foreground",
+              "Value": "{ThemeResource InfoBarSuccessSeverityIconForeground}"
             }
           ]
         },
         {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverUnselected",
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "StandardIconVisible",
           "setters": [
             {
-              "Target": "ForegroundContentPresenter.Foreground",
-              "Value": "{ThemeResource RatingControlPointerOverUnselectedForeground}"
+              "Target": "UserIconBox.Visibility",
+              "Value": "Collapsed"
+            },
+            {
+              "Target": "StandardIconArea.Visibility",
+              "Value": "Visible"
             }
           ]
         },
         {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Set",
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "UserIconVisible",
           "setters": [
             {
-              "Target": "ForegroundContentPresenter.Foreground",
-              "Value": "{ThemeResource RatingControlSelectedForeground}"
+              "Target": "UserIconBox.Visibility",
+              "Value": "Visible"
+            },
+            {
+              "Target": "StandardIconArea.Visibility",
+              "Value": "Collapsed"
             }
           ]
         },
         {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverSet",
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NoIconVisible",
+          "setters": []
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CloseButtonVisible",
+          "setters": []
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CloseButtonCollapsed",
           "setters": [
             {
-              "Target": "ForegroundContentPresenter.Foreground",
-              "Value": "{ThemeResource RatingControlSelectedForeground}"
+              "Target": "CloseButton.Visibility",
+              "Value": "Collapsed"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "InfoBarVisible",
+          "setters": []
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "InfoBarCollapsed",
+          "setters": [
+            {
+              "Target": "ContentRoot.Visibility",
+              "Value": "Collapsed"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ForegroundNotSet",
+          "setters": []
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ForegroundSet",
+          "setters": [
+            {
+              "Target": "Title.Foreground",
+              "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
+            },
+            {
+              "Target": "Message.Foreground",
+              "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "BannerContent",
+          "setters": []
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NoBannerContent",
+          "setters": [
+            {
+              "Target": "ContentArea.(Grid.Row)",
+              "Value": "0"
             }
           ]
         }
@@ -1730,6 +1835,74 @@
             },
             {
               "Target": "BadgingEllipse.Fill"
+            }
+          ]
+        }
+      ]
+    },
+    "RatingControl": {
+      "key": "",
+      "setters": {
+        "MinHeight": "32",
+        "Foreground": "{ThemeResource RatingControlCaptionForeground}",
+        "UseSystemFocusVisuals": "{StaticResource UseSystemFocusVisuals}",
+        "FontFamily": "{ThemeResource SymbolThemeFontFamily}",
+        "ItemInfo": "{ThemeResource MUX_RatingControlDefaultFontInfo}",
+        "FocusVisualMargin": "-8,-7,-8,0",
+        "IsFocusEngagementEnabled": "True"
+      },
+      "states": [
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Disabled",
+          "setters": [
+            {
+              "Target": "ForegroundContentPresenter.Foreground",
+              "Value": "{ThemeResource RatingControlDisabledSelectedForeground}"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Placeholder",
+          "setters": [
+            {
+              "Target": "ForegroundContentPresenter.Foreground",
+              "Value": "{ThemeResource RatingControlPlaceholderForeground}"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverPlaceholder",
+          "setters": [
+            {
+              "Target": "ForegroundContentPresenter.Foreground",
+              "Value": "{ThemeResource RatingControlPointerOverPlaceholderForeground}"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverUnselected",
+          "setters": [
+            {
+              "Target": "ForegroundContentPresenter.Foreground",
+              "Value": "{ThemeResource RatingControlPointerOverUnselectedForeground}"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Set",
+          "setters": [
+            {
+              "Target": "ForegroundContentPresenter.Foreground",
+              "Value": "{ThemeResource RatingControlSelectedForeground}"
+            }
+          ]
+        },
+        {
+          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "PointerOverSet",
+          "setters": [
+            {
+              "Target": "ForegroundContentPresenter.Foreground",
+              "Value": "{ThemeResource RatingControlSelectedForeground}"
             }
           ]
         }
@@ -2205,174 +2378,6 @@
             {
               "Target": "SecondaryButton.(Grid.ColumnSpan)",
               "Value": "3"
-            }
-          ]
-        }
-      ]
-    },
-    "InfoBar": {
-      "key": "",
-      "setters": {
-        "IsTabStop": "False",
-        "CloseButtonStyle": "{StaticResource InfoBarCloseButtonStyle}",
-        "Background": "Transparent",
-        "BorderBrush": "{ThemeResource InfoBarBorderBrush}",
-        "BorderThickness": "{ThemeResource InfoBarBorderThickness}",
-        "AutomationProperties.LandmarkType": "Custom",
-        "AutomationProperties.IsDialog": "True",
-        "CornerRadius": "{ThemeResource ControlCornerRadius}"
-      },
-      "states": [
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Informational",
-          "setters": []
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Error",
-          "setters": [
-            {
-              "Target": "ContentRoot.Background",
-              "Value": "{ThemeResource InfoBarErrorSeverityBackgroundBrush}"
-            },
-            {
-              "Target": "IconBackground.Foreground",
-              "Value": "{ThemeResource InfoBarErrorSeverityIconBackground}"
-            },
-            {
-              "Target": "StandardIcon.Text",
-              "Value": "{StaticResource InfoBarErrorIconGlyph}"
-            },
-            {
-              "Target": "StandardIcon.Foreground",
-              "Value": "{ThemeResource InfoBarErrorSeverityIconForeground}"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Warning",
-          "setters": [
-            {
-              "Target": "ContentRoot.Background",
-              "Value": "{ThemeResource InfoBarWarningSeverityBackgroundBrush}"
-            },
-            {
-              "Target": "IconBackground.Foreground",
-              "Value": "{ThemeResource InfoBarWarningSeverityIconBackground}"
-            },
-            {
-              "Target": "StandardIcon.Text",
-              "Value": "{StaticResource InfoBarWarningIconGlyph}"
-            },
-            {
-              "Target": "StandardIcon.Foreground",
-              "Value": "{ThemeResource InfoBarWarningSeverityIconForeground}"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "Success",
-          "setters": [
-            {
-              "Target": "ContentRoot.Background",
-              "Value": "{ThemeResource InfoBarSuccessSeverityBackgroundBrush}"
-            },
-            {
-              "Target": "IconBackground.Foreground",
-              "Value": "{ThemeResource InfoBarSuccessSeverityIconBackground}"
-            },
-            {
-              "Target": "StandardIcon.Text",
-              "Value": "{StaticResource InfoBarSuccessIconGlyph}"
-            },
-            {
-              "Target": "StandardIcon.Foreground",
-              "Value": "{ThemeResource InfoBarSuccessSeverityIconForeground}"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "StandardIconVisible",
-          "setters": [
-            {
-              "Target": "UserIconBox.Visibility",
-              "Value": "Collapsed"
-            },
-            {
-              "Target": "StandardIconArea.Visibility",
-              "Value": "Visible"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "UserIconVisible",
-          "setters": [
-            {
-              "Target": "UserIconBox.Visibility",
-              "Value": "Visible"
-            },
-            {
-              "Target": "StandardIconArea.Visibility",
-              "Value": "Collapsed"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NoIconVisible",
-          "setters": []
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CloseButtonVisible",
-          "setters": []
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "CloseButtonCollapsed",
-          "setters": [
-            {
-              "Target": "CloseButton.Visibility",
-              "Value": "Collapsed"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "InfoBarVisible",
-          "setters": []
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "InfoBarCollapsed",
-          "setters": [
-            {
-              "Target": "ContentRoot.Visibility",
-              "Value": "Collapsed"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ForegroundNotSet",
-          "setters": []
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "ForegroundSet",
-          "setters": [
-            {
-              "Target": "Title.Foreground",
-              "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
-            },
-            {
-              "Target": "Message.Foreground",
-              "Value": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
-            }
-          ]
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "BannerContent",
-          "setters": []
-        },
-        {
-          "{http://schemas.microsoft.com/winfx/2006/xaml}Name": "NoBannerContent",
-          "setters": [
-            {
-              "Target": "ContentArea.(Grid.Row)",
-              "Value": "0"
             }
           ]
         }
@@ -3138,227 +3143,227 @@
       "AppBarButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarBorderBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#FDE7E9FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconBackground": {
         "kind": "solid",
         "color": "#C42B1CFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarHyperlinkButtonForeground": {
         "kind": "solid",
         "color": "#003E92FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#F6F6F680",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconBackground": {
         "kind": "solid",
         "color": "#0078D4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarMessageForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#DFF6DDFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconBackground": {
         "kind": "solid",
         "color": "#0F7B0FFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarTitleForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#FFF4CEFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconBackground": {
         "kind": "solid",
         "color": "#9D5D00FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeFillThemeBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeForegroundThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeStrokeThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillStrokeBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillThemeBrush": {
         "kind": "solid",
         "color": "#00000018",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureForegroundThemeBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlCaptionForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlDisabledSelectedForeground": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPlaceholderForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverPlaceholderForeground": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverSelectedForeground": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverUnselectedForeground": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlSelectedForeground": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlUnselectedForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundChecked": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedDisabled": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedPointerOver": {
         "kind": "solid",
@@ -3373,29 +3378,29 @@
       "SplitButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#F9F9F980",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -3406,36 +3411,36 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushChecked": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -3446,46 +3451,46 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000066"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedDivider": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -3496,51 +3501,51 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000066"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDivider": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -3551,306 +3556,306 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundChecked": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPressed": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondary": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondaryPressed": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       }
     },
     "Dark": {
       "AppBarButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarBorderBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#442726FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconBackground": {
         "kind": "solid",
         "color": "#FF99A4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarHyperlinkButtonForeground": {
         "kind": "solid",
         "color": "#99EBFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconBackground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarMessageForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#393D1BFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconBackground": {
         "kind": "solid",
         "color": "#6CCB5FFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarTitleForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#433519FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconBackground": {
         "kind": "solid",
         "color": "#FCE100FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeFillThemeBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeForegroundThemeBrush": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeStrokeThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillStrokeBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureForegroundThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlCaptionForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlDisabledSelectedForeground": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPlaceholderForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverPlaceholderForeground": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverSelectedForeground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverUnselectedForeground": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlSelectedForeground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlUnselectedForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundChecked": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedPointerOver": {
         "kind": "solid",
@@ -3865,17 +3870,17 @@
       "SplitButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF15",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrush": {
         "kind": "linearGradient",
@@ -3898,36 +3903,36 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushChecked": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -3938,46 +3943,46 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000023"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedDivider": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -3988,39 +3993,39 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000023"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDivider": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushPointerOver": {
         "kind": "linearGradient",
@@ -4043,79 +4048,79 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundChecked": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPointerOver": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPressed": {
         "kind": "solid",
         "color": "#00000080",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondary": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondaryPressed": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       }
     }
   },

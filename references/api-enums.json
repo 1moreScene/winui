@@ -405,6 +405,74 @@
       "Scroll": [
         "scroll",
         "Scroll notification from a Rust scrolling primitive."
+      ],
+      "ConnectedAnimationCompleted": [
+        "connectedAnimationCompleted",
+        "A connected animation reached its destination; payload contains its key."
+      ],
+      "Sorting": [
+        "sorting",
+        "TableView Sorting notification; request events support synchronous cancellation."
+      ],
+      "ClearSorting": [
+        "clearSorting",
+        "TableView ClearSorting notification; request events support synchronous cancellation."
+      ],
+      "CurrentCellChanged": [
+        "currentCellChanged",
+        "TableView CurrentCellChanged notification; request events support synchronous cancellation."
+      ],
+      "CellSelectionChanged": [
+        "cellSelectionChanged",
+        "TableView CellSelectionChanged notification; request events support synchronous cancellation."
+      ],
+      "BeginningEdit": [
+        "beginningEdit",
+        "TableView BeginningEdit notification; request events support synchronous cancellation."
+      ],
+      "PreparingCellForEdit": [
+        "preparingCellForEdit",
+        "TableView PreparingCellForEdit notification; request events support synchronous cancellation."
+      ],
+      "CellEditEnding": [
+        "cellEditEnding",
+        "TableView CellEditEnding notification; request events support synchronous cancellation."
+      ],
+      "CellEditEnded": [
+        "cellEditEnded",
+        "TableView CellEditEnded notification; request events support synchronous cancellation."
+      ],
+      "CellDoubleTapped": [
+        "cellDoubleTapped",
+        "TableView CellDoubleTapped notification; request events support synchronous cancellation."
+      ],
+      "RowDoubleTapped": [
+        "rowDoubleTapped",
+        "TableView RowDoubleTapped notification; request events support synchronous cancellation."
+      ],
+      "ColumnReordering": [
+        "columnReordering",
+        "TableView ColumnReordering notification; request events support synchronous cancellation."
+      ],
+      "ColumnReordered": [
+        "columnReordered",
+        "TableView ColumnReordered notification; request events support synchronous cancellation."
+      ],
+      "TableViewChanged": [
+        "tableViewChanged",
+        "TableView TableViewChanged notification; request events support synchronous cancellation."
+      ],
+      "TableViewExport": [
+        "tableViewExport",
+        "TableView TableViewExport notification; request events support synchronous cancellation."
+      ],
+      "PasteFromClipboard": [
+        "pasteFromClipboard",
+        "TableView clipboard paste request and completion. The request permits synchronous cancellation or text replacement."
+      ],
+      "Grouping": [
+        "grouping",
+        "Community TableView column grouping request; setting cancel suppresses the default action."
       ]
     }
   },
@@ -1019,6 +1087,34 @@
       "ItemsPresenter": [
         "ItemsPresenter",
         "Header, items panel and footer presenter."
+      ],
+      "TableView": [
+        "TableView",
+        "Community WinUI.TableView data grid; fixed source in references/table-view-source.json."
+      ],
+      "NavigationViewItem": [
+        "NavigationViewItem",
+        "A Rust-owned NavigationView menu item."
+      ],
+      "NavigationViewItemHeader": [
+        "NavigationViewItemHeader",
+        "A noninteractive NavigationView group header."
+      ],
+      "NavigationViewItemSeparator": [
+        "NavigationViewItemSeparator",
+        "A noninteractive NavigationView group separator."
+      ],
+      "NavigationViewItemPresenter": [
+        "NavigationViewItemPresenter",
+        "The source-traced NavigationView item template presenter."
+      ],
+      "ItemsRepeaterScrollHost": [
+        "ItemsRepeaterScrollHost",
+        "A viewport host for ItemsRepeater inside a scrolling template."
+      ],
+      "RichEditBox": [
+        "RichEditBox",
+        "Editable rich text document; Rust owns formatting, selection and history."
       ]
     },
     "default": "Grid"
@@ -3245,6 +3341,10 @@
       "Persian": [
         "PersianCalendar",
         "Persian solar calendar."
+      ],
+      "Chinese": [
+        "ChineseCalendar",
+        "Chinese lunisolar calendar with leap months, traditional festivals and 24 solar terms (1901-2100, UTC+8)."
       ]
     },
     "default": "Gregorian"
@@ -3929,6 +4029,10 @@
       "Opacity": [
         "opacity",
         "Opacity presentation channel."
+      ],
+      "TranslationZ": [
+        "translationZ",
+        "Depth translation in DIP. Controls composition order and ThemeShadow elevation; default 0."
       ]
     }
   },
@@ -3975,6 +4079,10 @@
       "ActualOffsetY": [
         "actualOffsetY",
         "Arranged vertical offset relative to the parent."
+      ],
+      "TranslationZ": [
+        "translationZ",
+        "Depth translation in DIP. Controls composition order and ThemeShadow elevation; default 0."
       ]
     }
   },
@@ -4001,6 +4109,354 @@
       "Modulo": [
         "modulo",
         "Remainder; nonfinite frames retain the previous presentation."
+      ]
+    }
+  },
+  "TableViewColumnKind": {
+    "rust": "TableViewColumnKind",
+    "description": "Built-in TableView display and editing column. Default: Text.",
+    "default": "Text",
+    "members": {
+      "Text": [
+        "Text",
+        "Native Text cell display/editor."
+      ],
+      "Number": [
+        "Number",
+        "Native Number cell display/editor."
+      ],
+      "CheckBox": [
+        "CheckBox",
+        "Native CheckBox cell display/editor."
+      ],
+      "ToggleSwitch": [
+        "ToggleSwitch",
+        "Native ToggleSwitch cell display/editor."
+      ],
+      "ComboBox": [
+        "ComboBox",
+        "Native ComboBox cell display/editor."
+      ],
+      "Date": [
+        "Date",
+        "Native Date cell display/editor."
+      ],
+      "Time": [
+        "Time",
+        "Native Time cell display/editor."
+      ],
+      "Hyperlink": [
+        "Hyperlink",
+        "Native Hyperlink cell display/editor."
+      ],
+      "Template": [
+        "Template",
+        "Native Template cell display/editor."
+      ]
+    }
+  },
+  "TableViewSelectionUnit": {
+    "rust": "TableViewSelectionUnit",
+    "description": "Community TableView selection target. Default: CellOrRow.",
+    "default": "CellOrRow",
+    "members": {
+      "CellOrRow": [
+        "CellOrRow",
+        "Cells and row headers select independently."
+      ],
+      "CellWithRow": [
+        "CellWithRow",
+        "A cell also selects its row."
+      ],
+      "Cell": [
+        "Cell",
+        "Cells only."
+      ],
+      "Row": [
+        "Row",
+        "Rows only."
+      ]
+    }
+  },
+  "TableViewGridLinesVisibility": {
+    "rust": "TableViewGridLinesVisibility",
+    "description": "Table grid separators. Default: All.",
+    "default": "All",
+    "members": {
+      "None": [
+        "None",
+        "None grid lines."
+      ],
+      "Horizontal": [
+        "Horizontal",
+        "Horizontal grid lines."
+      ],
+      "Vertical": [
+        "Vertical",
+        "Vertical grid lines."
+      ],
+      "All": [
+        "All",
+        "All grid lines."
+      ]
+    }
+  },
+  "TableViewHeadersVisibility": {
+    "rust": "TableViewHeadersVisibility",
+    "description": "Header visibility. Default: All.",
+    "default": "All",
+    "members": {
+      "All": [
+        "All",
+        "Both row and column headers."
+      ],
+      "Columns": [
+        "Columns",
+        "Column headers only."
+      ],
+      "Rows": [
+        "Rows",
+        "Row headers only."
+      ],
+      "None": [
+        "None",
+        "Hide headers."
+      ]
+    }
+  },
+  "TableViewRowDetailsVisibilityMode": {
+    "rust": "TableViewRowDetailsVisibilityMode",
+    "description": "Community row details policy. Default: VisibleWhenExpanded.",
+    "default": "VisibleWhenExpanded",
+    "members": {
+      "Collapsed": [
+        "Collapsed",
+        "Collapsed row details."
+      ],
+      "Visible": [
+        "Visible",
+        "Visible row details."
+      ],
+      "VisibleWhenSelected": [
+        "VisibleWhenSelected",
+        "VisibleWhenSelected row details."
+      ],
+      "VisibleWhenExpanded": [
+        "VisibleWhenExpanded",
+        "Show details when the row-header toggle is expanded."
+      ]
+    }
+  },
+  "TableViewColumnAutoWidthMode": {
+    "rust": "TableViewColumnAutoWidthMode",
+    "description": "Automatic column measurement. Default: Both.",
+    "default": "Both",
+    "members": {
+      "Both": [
+        "Both",
+        "Measure header and cells."
+      ],
+      "Cells": [
+        "Cells",
+        "Measure cells."
+      ],
+      "Header": [
+        "Header",
+        "Measure header."
+      ]
+    }
+  },
+  "TableViewCornerButtonMode": {
+    "rust": "TableViewCornerButtonMode",
+    "description": "Corner button behavior. Default: Options.",
+    "default": "Options",
+    "members": {
+      "None": [
+        "None",
+        "None corner button."
+      ],
+      "SelectAll": [
+        "SelectAll",
+        "SelectAll corner button."
+      ],
+      "Options": [
+        "Options",
+        "Options corner button."
+      ]
+    }
+  },
+  "TableViewSortDirection": {
+    "rust": "TableViewSortDirection",
+    "description": "Column sort order. Default: Ascending.",
+    "default": "Ascending",
+    "members": {
+      "Ascending": [
+        "Ascending",
+        "Ascending comparison."
+      ],
+      "Descending": [
+        "Descending",
+        "Descending comparison."
+      ]
+    }
+  },
+  "NavigationViewBackButtonVisible": {
+    "rust": "NavigationViewBackButtonVisible",
+    "description": "NavigationView back-button visibility. Auto follows the native desktop policy.",
+    "default": "Auto",
+    "members": {
+      "Collapsed": [
+        "Collapsed",
+        "Hide the back button without reserving space."
+      ],
+      "Visible": [
+        "Visible",
+        "Show the back button. IsBackEnabled controls invocation."
+      ],
+      "Auto": [
+        "Auto",
+        "Use the native desktop policy, which shows the button."
+      ]
+    }
+  },
+  "NavigationViewOverflowLabelMode": {
+    "rust": "NavigationViewOverflowLabelMode",
+    "description": "Label on the NavigationView top overflow button.",
+    "default": "MoreLabel",
+    "members": {
+      "MoreLabel": [
+        "MoreLabel",
+        "Show the More label beside the overflow icon."
+      ],
+      "NoLabel": [
+        "NoLabel",
+        "Show only the overflow icon."
+      ]
+    }
+  },
+  "NavigationViewSlot": {
+    "rust": "NavigationViewSlot",
+    "description": "Content slots owned and arranged by the Rust NavigationView template.",
+    "default": "Content",
+    "members": {
+      "Content": [
+        "Content",
+        "Main content, commonly a Frame."
+      ],
+      "Header": [
+        "Header",
+        "Header content above the main content."
+      ],
+      "PaneHeader": [
+        "PaneHeader",
+        "Content beside the pane toggle and title."
+      ],
+      "PaneCustomContent": [
+        "PaneCustomContent",
+        "Custom content above the menu."
+      ],
+      "PaneFooter": [
+        "PaneFooter",
+        "Custom content above footer menu items."
+      ],
+      "AutoSuggestBox": [
+        "AutoSuggestBox",
+        "Search control, moved between left and top presenters."
+      ],
+      "ContentOverlay": [
+        "ContentOverlay",
+        "Content above top navigation."
+      ]
+    }
+  },
+  "NavigationViewShoulderNavigationEnabled": {
+    "rust": "NavigationViewShoulderNavigationEnabled",
+    "description": "Gamepad shoulder navigation policy.",
+    "default": "Never",
+    "members": {
+      "Never": [
+        "Never",
+        "Do not change selection for shoulder input."
+      ],
+      "Always": [
+        "Always",
+        "Shoulder input moves between selectable top navigation items."
+      ],
+      "WhenSelectionFollowsFocus": [
+        "WhenSelectionFollowsFocus",
+        "Enable shoulder navigation only when SelectionFollowsFocus is enabled."
+      ]
+    }
+  },
+  "RichEditAlignment": {
+    "description": "RichEditBox paragraph alignment. Default Left.",
+    "rust": "RichEditAlignment",
+    "default": "Left",
+    "members": {
+      "Left": [
+        "Left",
+        "Align to the left edge (default)."
+      ],
+      "Center": [
+        "Center",
+        "Center each line."
+      ],
+      "Right": [
+        "Right",
+        "Align to the right edge."
+      ]
+    }
+  },
+  "RichEditListStyle": {
+    "description": "RichEditBox paragraph numbering. Default None.",
+    "rust": "RichEditListStyle",
+    "default": "None",
+    "members": {
+      "None": [
+        "None",
+        "No list marker (default)."
+      ],
+      "Bullet": [
+        "Bullet",
+        "Round bullet marker."
+      ],
+      "Decimal": [
+        "Decimal",
+        "Decimal paragraph numbering."
+      ],
+      "UpperRoman": [
+        "UpperRoman",
+        "Uppercase Roman paragraph numbering."
+      ]
+    }
+  },
+  "TableViewGroupState": {
+    "rust": "TableViewGroupState",
+    "description": "Initial state for community TableView groups. Explicit per-group choices survive changes to the default.",
+    "default": "Collapsed",
+    "members": {
+      "Expanded": [
+        "Expanded",
+        "Show descendant groups and rows by default."
+      ],
+      "Collapsed": [
+        "Collapsed",
+        "Show only group headers by default; this is the community default."
+      ]
+    }
+  },
+  "TableViewGroupSortMode": {
+    "rust": "TableViewGroupSortMode",
+    "description": "What orders group headers at a grouping level.",
+    "default": "Key",
+    "members": {
+      "Key": [
+        "Key",
+        "Order by the original typed group key."
+      ],
+      "Count": [
+        "Count",
+        "Order by item count, breaking ties by key."
       ]
     }
   }

@@ -1,9 +1,8 @@
 /* Pinned Gallery: ItemPage.xaml, PageHeader.xaml and ControlExample.xaml. */
-.home-gallery .gallery-navigation{position:fixed;inset:48px 0 0;z-index:25;display:block;padding:0;background:none;transform:none;box-shadow:none;transition:none;clip-path:inset(0 max(0px,calc(100% - var(--gallery-pane-width))) 0 0)}
+.home-gallery{--gallery-content-x:0px;position:fixed;inset:0;contain:paint}
+.home-gallery .gallery-navigation{position:fixed;inset:48px 0 0;z-index:25;display:block;padding:0;background:none;transform:none;box-shadow:none;transition:none}
 .home-gallery .home-main{inset:48px 0 0 var(--gallery-content-x);display:flex;flex-direction:column;overflow:hidden;transition:none}
 .gallery-scroll-content{flex:1;min-height:0;overflow:auto;scrollbar-width:thin}
-.home-gallery .home-pane-backdrop{display:block;position:fixed;inset:48px 0 0 var(--gallery-pane-width);border:0;border-radius:0;background:#0003;z-index:24}
-.home-gallery .home-pane-backdrop:hover{background:#0003}
 .gallery-page-header{flex-shrink:0;padding:24px 36px 0;background:var(--soft);z-index:8}
 .gallery-page-title{display:flex;align-items:center;gap:4px;min-width:0}
 .gallery-page-title h1{font-size:28px;line-height:36px;font-weight:600;margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}

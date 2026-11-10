@@ -369,7 +369,7 @@ fn navigation_owns_animation_state_and_releases_removed_item_players() {
         model::{Input as NavInput, Properties},
         navigation::NavigationView,
     };
-    let mut nav=NavigationView::new(serde_json::from_value::<Properties>(json!({"items":[{"id":"settings","text":"Game Settings","animatedIconSource":"Settings"}],"isSettingsVisible":false,"isBackButtonVisible":false})).unwrap()).unwrap();
+    let mut nav=NavigationView::new(serde_json::from_value::<Properties>(json!({"items":[{"id":"settings","text":"Game Settings","animatedIconSource":"Settings"}],"isSettingsVisible":false,"isBackButtonVisible":"Collapsed"})).unwrap()).unwrap();
     nav.width = 500.;
     nav.height = 300.;
     nav.layout();

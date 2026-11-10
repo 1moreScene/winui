@@ -21,7 +21,7 @@ test('AppBarSeparator official command sample, source and nonfocusable semantics
 for(const backend of ['Canvas2D','WebGL2'] as const)test(backend+' public AppBarSeparator factory uses the shared Rust template',async({page})=>{
  await page.goto('/#app-bar-separator');await page.getByRole('separator').first().waitFor();
  const state=await page.evaluate(async backend=>{
-  const a=await import('/src/index.ts' as string) as typeof import('../src/index');const ui=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.style.cssText='position:fixed;inset:0;width:400px;height:160px';document.body.append(host);
+  const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');const ui=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.style.cssText='position:fixed;inset:0;width:400px;height:160px';document.body.append(host);
   const scene=ui.scene(host,{backend:a.RendererBackend[backend]});const row=scene.root.stack({height:64,orientation:a.Orientation.Horizontal});row.appBarButton({label:'Before'});const separator=row.appBarSeparator();row.appBarButton({label:'After'});
   await new Promise(r=>setTimeout(r,150));const first=separator.snapshot;separator.update({foreground:'#ff0000',padding:[2,12,2,12]});await new Promise(r=>setTimeout(r,100));const second=separator.snapshot;const result={kind:first.kind,width:first.rect.width,height:first.rect.height,tab:first.tabStop,foreground:separator.properties.foreground,afterHeight:second.rect.height};scene.dispose();ui.dispose();host.remove();return result;
  },backend);
@@ -31,7 +31,7 @@ for(const backend of ['Canvas2D','WebGL2'] as const)test(backend+' public AppBar
 for(const backend of ['Canvas2D','WebGL2'] as const)test(backend+' primary row animates, shows complete labels and remains clickable below compact bounds',async({page},testInfo)=>{
  await page.goto('/#app-bar-separator');await page.getByRole('separator').first().waitFor();
  await page.evaluate(async backend=>{
-  const a=await import('/src/index.ts' as string) as typeof import('../src/index');const f:any={time:1000,events:[]};
+  const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');const f:any={time:1000,events:[]};
   f.ui=await a.WinUI.create({clock:()=>f.time,globalScrollbars:false});f.host=document.createElement('div');f.host.id='primary-expansion';f.host.style.cssText='position:fixed;left:0;top:0;width:600px;height:48px;z-index:999999';document.body.append(f.host);
   f.scene=f.ui.scene(f.host,{autoHeight:true,backend:a.RendererBackend[backend],root:{background:'#f3f3f3'}});
   f.bar=f.scene.root.commandBar({primaryCommands:[{id:'camera',label:'Attach Camera'},{id:'orientation',label:'Screen orientation'}]});f.bar.onCommandInvoked((e:any)=>f.events.push(e.command.id));(window as any).__primaryExpansion=f;

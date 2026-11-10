@@ -7,6 +7,7 @@ use crate::animation::{bezier, Motion};
 pub struct VisualValues {
     pub translation_x: f64,
     pub translation_y: f64,
+    pub translation_z: f64,
     pub scale_x: f64,
     pub scale_y: f64,
     pub opacity: f64,
@@ -17,6 +18,7 @@ impl Default for VisualValues {
         Self {
             translation_x: 0.,
             translation_y: 0.,
+            translation_z: 0.,
             scale_x: 1.,
             scale_y: 1.,
             opacity: 1.,
@@ -29,6 +31,7 @@ impl VisualValues {
         Self {
             translation_x: p.translation_x,
             translation_y: p.translation_y,
+            translation_z: p.translation_z,
             scale_x: p.scale_x,
             scale_y: p.scale_y,
             opacity: p.opacity,
@@ -49,6 +52,7 @@ impl VisualValues {
         match key {
             "translationX" => self.translation_x,
             "translationY" => self.translation_y,
+            "translationZ" => self.translation_z,
             "scaleX" => self.scale_x,
             "scaleY" => self.scale_y,
             "opacity" => self.opacity,
@@ -60,6 +64,7 @@ impl VisualValues {
         match key {
             "translationX" => self.translation_x = value,
             "translationY" => self.translation_y = value,
+            "translationZ" => self.translation_z = value,
             "scaleX" => self.scale_x = value,
             "scaleY" => self.scale_y = value,
             "opacity" => self.opacity = value,
@@ -219,7 +224,7 @@ impl Scene {
             || targets.keys().any(|k| {
                 !matches!(
                     k.as_str(),
-                    "translationX" | "translationY" | "scaleX" | "scaleY" | "opacity" | "rotation"
+                    "translationX" | "translationY" | "translationZ" | "scaleX" | "scaleY" | "opacity" | "rotation"
                 )
             })
         {
@@ -265,10 +270,10 @@ impl Scene {
         }
         if options.spring.is_some() && tracks.values().any(|frames|frames.len()!=1) {return Err("spring animation accepts scalar endpoints only".into());}
         let velocities=targets.keys().map(|key|{
-            let v=self.animations.values().find(|a|a.node==node&&a.targets.contains_key(key)).map(|a|{
+            let v=options.spring.as_ref().and_then(|s|s.initial_velocity).unwrap_or_else(||self.animations.values().find(|a|a.node==node&&a.targets.contains_key(key)).map(|a|{
                 let elapsed=(self.time-a.start-a.options.delay).max(0.);
                 (a.value(key,elapsed+0.01)-a.value(key,elapsed))/0.01
-            }).unwrap_or(0.);(key.clone(),v)
+            }).unwrap_or(0.));(key.clone(),v)
         }).collect();
         let patch = serde_json::Value::Object(patch);
         let props = properties::patch(&self.get(node)?.props, &patch, self.get(node)?.kind)?;
@@ -285,6 +290,7 @@ impl Scene {
         for key in targets.keys() {self.nodes.get_mut(&node).unwrap().effects.bindings.remove(key);}
         self.nodes.get_mut(&node).unwrap().props = props;
         self.next_animation = id;
+        self.revision+=1;
         self.animations.insert(
             id,
             Animation {

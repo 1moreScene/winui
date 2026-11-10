@@ -17,7 +17,7 @@ for (const [name, definition] of Object.entries(definitions)) {
 const formatted = spawnSync('rustfmt', ['--edition', '2021', '--emit', 'stdout'], { input: rust, encoding: 'utf8' });
 if (formatted.status !== 0) throw new Error(formatted.stderr || 'rustfmt failed');
 rust = formatted.stdout.replaceAll('\r\n', '\n');
-for (const [path, value] of [['../src/enums.rs', rust], ['../gallery/src/enums.ts', ts]]) {
+for (const [path, value] of [['../src/enums.rs', rust], ['../packages/winui-wasm/src/enums.ts', ts]]) {
   const url = new URL(path, import.meta.url);
   if (process.argv.includes('--check')) {
     if (readFileSync(url, 'utf8') !== value) throw new Error(`${path} drifted; run node tools/generate-enums.mjs`);

@@ -1,0 +1,14 @@
+/* ControlExample: RootPanel Margin=0,16,0,0; header Margin=0,12;
+   ControlPresenter Padding=12, HorizontalContentAlignment=Left, content Top;
+   OptionsPresenter Padding=16, Width=Auto, MaxWidth=320. */
+.gallery-item-page .official-motion.motion-parity .basic-example{margin:0;padding-top:16px}
+.gallery-item-page .official-motion.motion-parity .basic-live{display:grid;grid-template-columns:minmax(0,1fr)}
+.gallery-item-page .official-motion.motion-parity .basic-live.with-options{grid-template-columns:minmax(0,1fr) auto}
+.gallery-item-page .official-motion.motion-parity .basic-preview{justify-content:flex-start;align-items:flex-start;padding:0}
+.gallery-item-page .official-motion.motion-parity .basic-preview>div{width:100%}
+.gallery-item-page .official-motion.motion-parity .basic-live>.options{grid-column:2;grid-row:1;width:auto;max-width:320px;padding:16px;box-sizing:border-box}
+.gallery-item-page .official-motion.motion-parity .options>.winui-scene{max-width:288px}
+@media(max-width:640px){
+ .gallery-item-page .official-motion.motion-parity .basic-live.with-options{grid-template-columns:minmax(0,1fr)}
+ .gallery-item-page .official-motion.motion-parity .basic-live>.options{grid-column:1;grid-row:auto;max-width:none}
+}

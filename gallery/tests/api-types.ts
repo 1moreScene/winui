@@ -6,7 +6,7 @@ import {
   DisplayMode,
   EventKind,
   type NavigationViewOptions,
-} from "../src/index";
+} from "winui-wasm";
 // This module is typechecked but never executed. @ts-expect-error becomes a
 // compiler failure if a public property is accidentally widened to string.
 function apiContract(sdk: WinUI, host: HTMLElement) {
@@ -62,7 +62,7 @@ import {
   GradientKind,
   BrushMappingMode,
   GradientSpread,
-} from "../src/index";
+} from "winui-wasm";
 function sceneContract(sdk: WinUI, host: HTMLElement) {
   const scene = sdk.scene(host, { backend: RendererBackend.WebGL2 });
   const panel = scene.root.stack({ orientation: Orientation.Horizontal });
@@ -163,7 +163,7 @@ function sceneContract(sdk: WinUI, host: HTMLElement) {
 }
 void sceneContract;
 
-import { FontStyle, ImageStretch } from "../src/index";
+import { FontStyle, ImageStretch } from "winui-wasm";
 function basicContract(sdk: WinUI, host: HTMLElement) {
   const scene = sdk.scene(host);
   const check = scene.root.checkBox({
@@ -231,7 +231,7 @@ import {
   ScrollBarVisibility,
   ZoomMode,
   PasswordRevealMode,
-} from "../src/index";
+} from "winui-wasm";
 function textScrollContract(sdk: WinUI, host: HTMLElement) {
   const scene = sdk.scene(host);
   const text = scene.root.textBox({ header: "Name", placeholderText: "Name" });
@@ -318,7 +318,7 @@ function progressContract(sdk: WinUI, host: HTMLElement) {
 }
 void progressContract;
 
-import { Stretch, StretchDirection } from "../src/index";
+import { Stretch, StretchDirection } from "winui-wasm";
 function nextBasicContract(sdk: WinUI, host: HTMLElement) {
   const scene = sdk.scene(host);
   const vb = scene.root.viewbox({
@@ -351,7 +351,7 @@ function nextBasicContract(sdk: WinUI, host: HTMLElement) {
 }
 void nextBasicContract;
 
-import { Symbol } from '../src/index';
+import { Symbol } from 'winui-wasm';
 function iconContract(sdk: WinUI, host: HTMLElement) {
   const scene = sdk.scene(host);
   const icon = scene.root.symbolIcon({ symbol: Symbol.Accept });
@@ -365,7 +365,7 @@ function iconContract(sdk: WinUI, host: HTMLElement) {
 }
 void iconContract;
 
-import {OverlayPlacement,MenuEntryKind} from '../src/index';
+import {OverlayPlacement,MenuEntryKind} from 'winui-wasm';
 function floatingContract(ui:WinUI,host:HTMLElement) {
  const s=ui.scene(host);const owner=s.root.button({text:'Open'});const flyout=s.root.flyout({placement:OverlayPlacement.Top});flyout.showAt(owner);flyout.hide();
  // @ts-expect-error placement requires the runtime enum
@@ -382,7 +382,7 @@ function floatingContract(ui:WinUI,host:HTMLElement) {
 }
 void floatingContract;
 
-import {SplitViewDisplayMode,SplitViewPanePlacement,LightDismissOverlayMode,StandardCommandKind,ParallaxSourceOffsetKind} from '../src/index';
+import {SplitViewDisplayMode,SplitViewPanePlacement,LightDismissOverlayMode,StandardCommandKind,ParallaxSourceOffsetKind} from 'winui-wasm';
 function viewCommandContract(ui:WinUI,host:HTMLElement){
  const s=ui.scene(host),c=s.root.standardCommand({standardKind:StandardCommandKind.Save});
  s.root.button({command:c,commandParameter:{document:7}});c.onCanExecuteRequested(e=>{e.canExecute=true;});

@@ -164,7 +164,7 @@ fn editor_ime_commits_once_and_masked_password_uses_own_events() {
         .contains("secret"));
 }
 #[test]
-fn scrolling_measure_clamp_wheel_chaining_and_transformed_children() {
+fn scrolling_measure_clamp_wheel_ownership_and_transformed_children() {
     let mut s = Scene::new(Theme::Light, true);
     s.resize(500., 400., 1.).unwrap();
     let outer = s
@@ -206,7 +206,9 @@ fn scrolling_measure_clamp_wheel_chaining_and_transformed_children() {
     );
     assert!(s.wheel(20., 20., 0., 500., false).unwrap());
     frame(&mut s, 2000.);
-    assert_eq!(s.get(inner).unwrap().world.0[5], -500.);
+    assert_eq!(s.properties(outer).unwrap().vertical_offset, 0.);
+    assert_eq!(s.properties(inner).unwrap().vertical_offset, 200.);
+    assert_eq!(s.get(inner).unwrap().world.0[5], 0.);
     assert!(s.create(outer, NodeKind::Grid, json!({})).is_err());
     s.input(
         Input::Scroll {

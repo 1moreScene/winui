@@ -1,6 +1,7 @@
 use serde_json::{json, Value};
 use winui_wasm::{
     enums::*,
+    render::Draw,
     scene::{Input, Scene, Update},
     typography::{Font, Metrics, TextMeasurer},
 };
@@ -50,6 +51,29 @@ fn order(s: &Scene, id: u32) -> Vec<String> {
         .iter()
         .map(|i| i.id.clone())
         .collect()
+}
+#[test]
+fn grouped_collection_headers_paint_dividers_in_every_theme() {
+    for (theme, color) in [
+        (Theme::Light, "#00000033"),
+        (Theme::Dark, "#ffffff33"),
+        (Theme::HighContrast, "#ffffff"),
+    ] {
+        for kind in [NodeKind::ListView, NodeKind::GridView] {
+            let mut s = Scene::new(theme, true);
+            s.resize(800., 500., 1.).unwrap();
+            s.create(s.root, kind, json!({
+                "width":400,"height":200,
+                "collectionGroups":[{"id":"g","header":"Group"}],
+                "collectionItems":[{"id":"a","text":"Contact","group":"g"}]
+            })).unwrap();
+            s.layout(&mut Measure);
+            assert!(s.display_list().iter().any(|draw| matches!(draw,
+                Draw::Stroke { width, color: actual, .. }
+                    if *width == 0.5 && actual == color
+            )), "Missing group divider for {kind:?} in {theme:?}");
+        }
+    }
 }
 #[test]
 fn group_headers_stick_push_and_recycle_without_leaking_containers() {

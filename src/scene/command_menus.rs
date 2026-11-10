@@ -46,6 +46,7 @@ fn color(theme: Theme, key: &str) -> String {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct MenuBarEntry {
     pub id: String,
     pub title: String,
@@ -66,6 +67,7 @@ impl Default for MenuBarEntry {
 }
 #[derive(Clone, Debug, Serialize, Deserialize, Default)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct MenuProperties {
     pub items: Vec<MenuBarEntry>,
     pub always_expanded: bool,

@@ -347,6 +347,57 @@ pub enum EventKind {
     /// Scroll notification from a Rust scrolling primitive.
     #[serde(rename = "scroll")]
     Scroll,
+    /// A connected animation reached its destination; payload contains its key.
+    #[serde(rename = "connectedAnimationCompleted")]
+    ConnectedAnimationCompleted,
+    /// TableView Sorting notification; request events support synchronous cancellation.
+    #[serde(rename = "sorting")]
+    Sorting,
+    /// TableView ClearSorting notification; request events support synchronous cancellation.
+    #[serde(rename = "clearSorting")]
+    ClearSorting,
+    /// TableView CurrentCellChanged notification; request events support synchronous cancellation.
+    #[serde(rename = "currentCellChanged")]
+    CurrentCellChanged,
+    /// TableView CellSelectionChanged notification; request events support synchronous cancellation.
+    #[serde(rename = "cellSelectionChanged")]
+    CellSelectionChanged,
+    /// TableView BeginningEdit notification; request events support synchronous cancellation.
+    #[serde(rename = "beginningEdit")]
+    BeginningEdit,
+    /// TableView PreparingCellForEdit notification; request events support synchronous cancellation.
+    #[serde(rename = "preparingCellForEdit")]
+    PreparingCellForEdit,
+    /// TableView CellEditEnding notification; request events support synchronous cancellation.
+    #[serde(rename = "cellEditEnding")]
+    CellEditEnding,
+    /// TableView CellEditEnded notification; request events support synchronous cancellation.
+    #[serde(rename = "cellEditEnded")]
+    CellEditEnded,
+    /// TableView CellDoubleTapped notification; request events support synchronous cancellation.
+    #[serde(rename = "cellDoubleTapped")]
+    CellDoubleTapped,
+    /// TableView RowDoubleTapped notification; request events support synchronous cancellation.
+    #[serde(rename = "rowDoubleTapped")]
+    RowDoubleTapped,
+    /// TableView ColumnReordering notification; request events support synchronous cancellation.
+    #[serde(rename = "columnReordering")]
+    ColumnReordering,
+    /// TableView ColumnReordered notification; request events support synchronous cancellation.
+    #[serde(rename = "columnReordered")]
+    ColumnReordered,
+    /// TableView TableViewChanged notification; request events support synchronous cancellation.
+    #[serde(rename = "tableViewChanged")]
+    TableViewChanged,
+    /// TableView TableViewExport notification; request events support synchronous cancellation.
+    #[serde(rename = "tableViewExport")]
+    TableViewExport,
+    /// TableView clipboard paste request and completion. The request permits synchronous cancellation or text replacement.
+    #[serde(rename = "pasteFromClipboard")]
+    PasteFromClipboard,
+    /// Community TableView column grouping request; setting cancel suppresses the default action.
+    #[serde(rename = "grouping")]
+    Grouping,
 }
 impl EventKind {
     pub fn as_str(self) -> &'static str {
@@ -431,6 +482,23 @@ impl EventKind {
             Self::DragDelta => "thumbDragDelta",
             Self::DragCompleted => "thumbDragCompleted",
             Self::Scroll => "scroll",
+            Self::ConnectedAnimationCompleted => "connectedAnimationCompleted",
+            Self::Sorting => "sorting",
+            Self::ClearSorting => "clearSorting",
+            Self::CurrentCellChanged => "currentCellChanged",
+            Self::CellSelectionChanged => "cellSelectionChanged",
+            Self::BeginningEdit => "beginningEdit",
+            Self::PreparingCellForEdit => "preparingCellForEdit",
+            Self::CellEditEnding => "cellEditEnding",
+            Self::CellEditEnded => "cellEditEnded",
+            Self::CellDoubleTapped => "cellDoubleTapped",
+            Self::RowDoubleTapped => "rowDoubleTapped",
+            Self::ColumnReordering => "columnReordering",
+            Self::ColumnReordered => "columnReordered",
+            Self::TableViewChanged => "tableViewChanged",
+            Self::TableViewExport => "tableViewExport",
+            Self::PasteFromClipboard => "pasteFromClipboard",
+            Self::Grouping => "grouping",
         }
     }
 }
@@ -977,6 +1045,27 @@ pub enum NodeKind {
     /// Header, items panel and footer presenter.
     #[serde(rename = "ItemsPresenter")]
     ItemsPresenter,
+    /// Community WinUI.TableView data grid; fixed source in references/table-view-source.json.
+    #[serde(rename = "TableView")]
+    TableView,
+    /// A Rust-owned NavigationView menu item.
+    #[serde(rename = "NavigationViewItem")]
+    NavigationViewItem,
+    /// A noninteractive NavigationView group header.
+    #[serde(rename = "NavigationViewItemHeader")]
+    NavigationViewItemHeader,
+    /// A noninteractive NavigationView group separator.
+    #[serde(rename = "NavigationViewItemSeparator")]
+    NavigationViewItemSeparator,
+    /// The source-traced NavigationView item template presenter.
+    #[serde(rename = "NavigationViewItemPresenter")]
+    NavigationViewItemPresenter,
+    /// A viewport host for ItemsRepeater inside a scrolling template.
+    #[serde(rename = "ItemsRepeaterScrollHost")]
+    ItemsRepeaterScrollHost,
+    /// Editable rich text document; Rust owns formatting, selection and history.
+    #[serde(rename = "RichEditBox")]
+    RichEditBox,
 }
 impl NodeKind {
     pub fn as_str(self) -> &'static str {
@@ -1091,6 +1180,13 @@ impl NodeKind {
             Self::TickBar => "TickBar",
             Self::ScrollContentPresenter => "ScrollContentPresenter",
             Self::ItemsPresenter => "ItemsPresenter",
+            Self::TableView => "TableView",
+            Self::NavigationViewItem => "NavigationViewItem",
+            Self::NavigationViewItemHeader => "NavigationViewItemHeader",
+            Self::NavigationViewItemSeparator => "NavigationViewItemSeparator",
+            Self::NavigationViewItemPresenter => "NavigationViewItemPresenter",
+            Self::ItemsRepeaterScrollHost => "ItemsRepeaterScrollHost",
+            Self::RichEditBox => "RichEditBox",
         }
     }
 }
@@ -3633,6 +3729,9 @@ pub enum CalendarIdentifier {
     /// Persian solar calendar.
     #[serde(rename = "PersianCalendar")]
     Persian,
+    /// Chinese lunisolar calendar with leap months, traditional festivals and 24 solar terms (1901-2100, UTC+8).
+    #[serde(rename = "ChineseCalendar")]
+    Chinese,
 }
 impl CalendarIdentifier {
     pub fn as_str(self) -> &'static str {
@@ -3647,6 +3746,7 @@ impl CalendarIdentifier {
             Self::Hijri => "HijriCalendar",
             Self::UmAlQura => "UmAlQuraCalendar",
             Self::Persian => "PersianCalendar",
+            Self::Chinese => "ChineseCalendar",
         }
     }
 }
@@ -4455,6 +4555,9 @@ pub enum AnimatedProperty {
     /// Opacity presentation channel.
     #[serde(rename = "opacity")]
     Opacity,
+    /// Depth translation in DIP. Controls composition order and ThemeShadow elevation; default 0.
+    #[serde(rename = "translationZ")]
+    TranslationZ,
 }
 impl AnimatedProperty {
     pub fn as_str(self) -> &'static str {
@@ -4465,6 +4568,7 @@ impl AnimatedProperty {
             Self::ScaleY => "scaleY",
             Self::Rotation => "rotation",
             Self::Opacity => "opacity",
+            Self::TranslationZ => "translationZ",
         }
     }
 }
@@ -4502,6 +4606,9 @@ pub enum ExpressionProperty {
     /// Arranged vertical offset relative to the parent.
     #[serde(rename = "actualOffsetY")]
     ActualOffsetY,
+    /// Depth translation in DIP. Controls composition order and ThemeShadow elevation; default 0.
+    #[serde(rename = "translationZ")]
+    TranslationZ,
 }
 impl ExpressionProperty {
     pub fn as_str(self) -> &'static str {
@@ -4516,6 +4623,7 @@ impl ExpressionProperty {
             Self::ActualHeight => "actualHeight",
             Self::ActualOffsetX => "actualOffsetX",
             Self::ActualOffsetY => "actualOffsetY",
+            Self::TranslationZ => "translationZ",
         }
     }
 }
@@ -4547,6 +4655,434 @@ impl ExpressionOperation {
             Self::Multiply => "multiply",
             Self::Divide => "divide",
             Self::Modulo => "modulo",
+        }
+    }
+}
+
+/// Built-in TableView display and editing column. Default: Text.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewColumnKind {
+    /// Native Text cell display/editor.
+    #[serde(rename = "Text")]
+    #[default]
+    Text,
+    /// Native Number cell display/editor.
+    #[serde(rename = "Number")]
+    Number,
+    /// Native CheckBox cell display/editor.
+    #[serde(rename = "CheckBox")]
+    CheckBox,
+    /// Native ToggleSwitch cell display/editor.
+    #[serde(rename = "ToggleSwitch")]
+    ToggleSwitch,
+    /// Native ComboBox cell display/editor.
+    #[serde(rename = "ComboBox")]
+    ComboBox,
+    /// Native Date cell display/editor.
+    #[serde(rename = "Date")]
+    Date,
+    /// Native Time cell display/editor.
+    #[serde(rename = "Time")]
+    Time,
+    /// Native Hyperlink cell display/editor.
+    #[serde(rename = "Hyperlink")]
+    Hyperlink,
+    /// Native Template cell display/editor.
+    #[serde(rename = "Template")]
+    Template,
+}
+impl TableViewColumnKind {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Text => "Text",
+            Self::Number => "Number",
+            Self::CheckBox => "CheckBox",
+            Self::ToggleSwitch => "ToggleSwitch",
+            Self::ComboBox => "ComboBox",
+            Self::Date => "Date",
+            Self::Time => "Time",
+            Self::Hyperlink => "Hyperlink",
+            Self::Template => "Template",
+        }
+    }
+}
+
+/// Community TableView selection target. Default: CellOrRow.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewSelectionUnit {
+    /// Cells and row headers select independently.
+    #[serde(rename = "CellOrRow")]
+    #[default]
+    CellOrRow,
+    /// A cell also selects its row.
+    #[serde(rename = "CellWithRow")]
+    CellWithRow,
+    /// Cells only.
+    #[serde(rename = "Cell")]
+    Cell,
+    /// Rows only.
+    #[serde(rename = "Row")]
+    Row,
+}
+impl TableViewSelectionUnit {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::CellOrRow => "CellOrRow",
+            Self::CellWithRow => "CellWithRow",
+            Self::Cell => "Cell",
+            Self::Row => "Row",
+        }
+    }
+}
+
+/// Table grid separators. Default: All.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewGridLinesVisibility {
+    /// None grid lines.
+    #[serde(rename = "None")]
+    None,
+    /// Horizontal grid lines.
+    #[serde(rename = "Horizontal")]
+    Horizontal,
+    /// Vertical grid lines.
+    #[serde(rename = "Vertical")]
+    Vertical,
+    /// All grid lines.
+    #[serde(rename = "All")]
+    #[default]
+    All,
+}
+impl TableViewGridLinesVisibility {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::None => "None",
+            Self::Horizontal => "Horizontal",
+            Self::Vertical => "Vertical",
+            Self::All => "All",
+        }
+    }
+}
+
+/// Header visibility. Default: All.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewHeadersVisibility {
+    /// Both row and column headers.
+    #[serde(rename = "All")]
+    #[default]
+    All,
+    /// Column headers only.
+    #[serde(rename = "Columns")]
+    Columns,
+    /// Row headers only.
+    #[serde(rename = "Rows")]
+    Rows,
+    /// Hide headers.
+    #[serde(rename = "None")]
+    None,
+}
+impl TableViewHeadersVisibility {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::All => "All",
+            Self::Columns => "Columns",
+            Self::Rows => "Rows",
+            Self::None => "None",
+        }
+    }
+}
+
+/// Community row details policy. Default: VisibleWhenExpanded.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewRowDetailsVisibilityMode {
+    /// Collapsed row details.
+    #[serde(rename = "Collapsed")]
+    Collapsed,
+    /// Visible row details.
+    #[serde(rename = "Visible")]
+    Visible,
+    /// VisibleWhenSelected row details.
+    #[serde(rename = "VisibleWhenSelected")]
+    VisibleWhenSelected,
+    /// Show details when the row-header toggle is expanded.
+    #[serde(rename = "VisibleWhenExpanded")]
+    #[default]
+    VisibleWhenExpanded,
+}
+impl TableViewRowDetailsVisibilityMode {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Collapsed => "Collapsed",
+            Self::Visible => "Visible",
+            Self::VisibleWhenSelected => "VisibleWhenSelected",
+            Self::VisibleWhenExpanded => "VisibleWhenExpanded",
+        }
+    }
+}
+
+/// Automatic column measurement. Default: Both.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewColumnAutoWidthMode {
+    /// Measure header and cells.
+    #[serde(rename = "Both")]
+    #[default]
+    Both,
+    /// Measure cells.
+    #[serde(rename = "Cells")]
+    Cells,
+    /// Measure header.
+    #[serde(rename = "Header")]
+    Header,
+}
+impl TableViewColumnAutoWidthMode {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Both => "Both",
+            Self::Cells => "Cells",
+            Self::Header => "Header",
+        }
+    }
+}
+
+/// Corner button behavior. Default: Options.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewCornerButtonMode {
+    /// None corner button.
+    #[serde(rename = "None")]
+    None,
+    /// SelectAll corner button.
+    #[serde(rename = "SelectAll")]
+    SelectAll,
+    /// Options corner button.
+    #[serde(rename = "Options")]
+    #[default]
+    Options,
+}
+impl TableViewCornerButtonMode {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::None => "None",
+            Self::SelectAll => "SelectAll",
+            Self::Options => "Options",
+        }
+    }
+}
+
+/// Column sort order. Default: Ascending.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewSortDirection {
+    /// Ascending comparison.
+    #[serde(rename = "Ascending")]
+    #[default]
+    Ascending,
+    /// Descending comparison.
+    #[serde(rename = "Descending")]
+    Descending,
+}
+impl TableViewSortDirection {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Ascending => "Ascending",
+            Self::Descending => "Descending",
+        }
+    }
+}
+
+/// NavigationView back-button visibility. Auto follows the native desktop policy.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum NavigationViewBackButtonVisible {
+    /// Hide the back button without reserving space.
+    #[serde(rename = "Collapsed")]
+    Collapsed,
+    /// Show the back button. IsBackEnabled controls invocation.
+    #[serde(rename = "Visible")]
+    Visible,
+    /// Use the native desktop policy, which shows the button.
+    #[serde(rename = "Auto")]
+    #[default]
+    Auto,
+}
+impl NavigationViewBackButtonVisible {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Collapsed => "Collapsed",
+            Self::Visible => "Visible",
+            Self::Auto => "Auto",
+        }
+    }
+}
+
+/// Label on the NavigationView top overflow button.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum NavigationViewOverflowLabelMode {
+    /// Show the More label beside the overflow icon.
+    #[serde(rename = "MoreLabel")]
+    #[default]
+    MoreLabel,
+    /// Show only the overflow icon.
+    #[serde(rename = "NoLabel")]
+    NoLabel,
+}
+impl NavigationViewOverflowLabelMode {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::MoreLabel => "MoreLabel",
+            Self::NoLabel => "NoLabel",
+        }
+    }
+}
+
+/// Content slots owned and arranged by the Rust NavigationView template.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum NavigationViewSlot {
+    /// Main content, commonly a Frame.
+    #[serde(rename = "Content")]
+    #[default]
+    Content,
+    /// Header content above the main content.
+    #[serde(rename = "Header")]
+    Header,
+    /// Content beside the pane toggle and title.
+    #[serde(rename = "PaneHeader")]
+    PaneHeader,
+    /// Custom content above the menu.
+    #[serde(rename = "PaneCustomContent")]
+    PaneCustomContent,
+    /// Custom content above footer menu items.
+    #[serde(rename = "PaneFooter")]
+    PaneFooter,
+    /// Search control, moved between left and top presenters.
+    #[serde(rename = "AutoSuggestBox")]
+    AutoSuggestBox,
+    /// Content above top navigation.
+    #[serde(rename = "ContentOverlay")]
+    ContentOverlay,
+}
+impl NavigationViewSlot {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Content => "Content",
+            Self::Header => "Header",
+            Self::PaneHeader => "PaneHeader",
+            Self::PaneCustomContent => "PaneCustomContent",
+            Self::PaneFooter => "PaneFooter",
+            Self::AutoSuggestBox => "AutoSuggestBox",
+            Self::ContentOverlay => "ContentOverlay",
+        }
+    }
+}
+
+/// Gamepad shoulder navigation policy.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum NavigationViewShoulderNavigationEnabled {
+    /// Do not change selection for shoulder input.
+    #[serde(rename = "Never")]
+    #[default]
+    Never,
+    /// Shoulder input moves between selectable top navigation items.
+    #[serde(rename = "Always")]
+    Always,
+    /// Enable shoulder navigation only when SelectionFollowsFocus is enabled.
+    #[serde(rename = "WhenSelectionFollowsFocus")]
+    WhenSelectionFollowsFocus,
+}
+impl NavigationViewShoulderNavigationEnabled {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Never => "Never",
+            Self::Always => "Always",
+            Self::WhenSelectionFollowsFocus => "WhenSelectionFollowsFocus",
+        }
+    }
+}
+
+/// RichEditBox paragraph alignment. Default Left.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum RichEditAlignment {
+    /// Align to the left edge (default).
+    #[serde(rename = "Left")]
+    #[default]
+    Left,
+    /// Center each line.
+    #[serde(rename = "Center")]
+    Center,
+    /// Align to the right edge.
+    #[serde(rename = "Right")]
+    Right,
+}
+impl RichEditAlignment {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Left => "Left",
+            Self::Center => "Center",
+            Self::Right => "Right",
+        }
+    }
+}
+
+/// RichEditBox paragraph numbering. Default None.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum RichEditListStyle {
+    /// No list marker (default).
+    #[serde(rename = "None")]
+    #[default]
+    None,
+    /// Round bullet marker.
+    #[serde(rename = "Bullet")]
+    Bullet,
+    /// Decimal paragraph numbering.
+    #[serde(rename = "Decimal")]
+    Decimal,
+    /// Uppercase Roman paragraph numbering.
+    #[serde(rename = "UpperRoman")]
+    UpperRoman,
+}
+impl RichEditListStyle {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::None => "None",
+            Self::Bullet => "Bullet",
+            Self::Decimal => "Decimal",
+            Self::UpperRoman => "UpperRoman",
+        }
+    }
+}
+
+/// Initial state for community TableView groups. Explicit per-group choices survive changes to the default.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewGroupState {
+    /// Show descendant groups and rows by default.
+    #[serde(rename = "Expanded")]
+    Expanded,
+    /// Show only group headers by default; this is the community default.
+    #[serde(rename = "Collapsed")]
+    #[default]
+    Collapsed,
+}
+impl TableViewGroupState {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Expanded => "Expanded",
+            Self::Collapsed => "Collapsed",
+        }
+    }
+}
+
+/// What orders group headers at a grouping level.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum TableViewGroupSortMode {
+    /// Order by the original typed group key.
+    #[serde(rename = "Key")]
+    #[default]
+    Key,
+    /// Order by item count, breaking ties by key.
+    #[serde(rename = "Count")]
+    Count,
+}
+impl TableViewGroupSortMode {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Key => "Key",
+            Self::Count => "Count",
         }
     }
 }

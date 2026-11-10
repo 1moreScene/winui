@@ -1,4 +1,4 @@
-import * as m from '../src/index';
+import * as m from 'winui-wasm';
 import official from '../src/official-reading-controls.json';
 
 /** Recreates the pinned native probe through the public SDK, with no layout code. */

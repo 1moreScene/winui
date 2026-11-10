@@ -3,34 +3,34 @@
     "TextControlBackground": {
       "kind": "solid",
       "color": "#FFFFFFB3",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBackgroundPointerOver": {
       "kind": "solid",
       "color": "#F9F9F980",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBackgroundFocused": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBackgroundDisabled": {
       "kind": "solid",
       "color": "#F9F9F94D",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBorderBrush": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -41,36 +41,36 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        2
+        0.0,
+        2.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.5,
           "color": "#00000072"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#0000000F"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "TextControlBorderBrushPointerOver": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -81,36 +81,36 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        2
+        0.0,
+        2.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.5,
           "color": "#00000072"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#0000000F"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "TextControlBorderBrushFocused": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -121,202 +121,204 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        2
+        0.0,
+        2.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#0067C0FF"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#0000000F"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "TextControlBorderBrushDisabled": {
       "kind": "solid",
       "color": "#0000000F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForeground": {
       "kind": "solid",
       "color": "#000000E4",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForegroundPointerOver": {
       "kind": "solid",
       "color": "#000000E4",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForegroundFocused": {
       "kind": "solid",
       "color": "#000000E4",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForegroundDisabled": {
       "kind": "solid",
       "color": "#0101015C",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForeground": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundPointerOver": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundFocused": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundDisabled": {
       "kind": "solid",
       "color": "#0000005C",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlHeaderForeground": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlHeaderForegroundDisabled": {
       "kind": "solid",
       "color": "#00000066",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlSelectionHighlightColor": {
       "kind": "solid",
       "color": "#0078D4FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonForeground": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonForegroundPointerOver": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonForegroundPressed": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonBackgroundPointerOver": {
       "kind": "solid",
       "color": "#00000009",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonBackgroundPressed": {
       "kind": "solid",
       "color": "#00000006",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlDescriptionTextForegroundBrush": {
       "kind": "solid",
       "color": "#00000099",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFill": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFillPointerOver": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFillPressed": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFillDisabled": {
       "kind": "solid",
       "color": "#00000051",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarTrackFill": {
       "kind": "acrylic",
-      "tint": "#FCFCFC",
-      "tintOpacity": 0,
+      "tint": "#FCFCFCFF",
+      "tintOpacity": 0.0,
       "luminosityOpacity": 0.85,
-      "fallback": "#F9F9F9"
+      "fallback": "#F9F9F9FF",
+      "opacity": 1.0
     },
     "ScrollBarTrackStroke": {
       "kind": "acrylic",
-      "tint": "#FCFCFC",
-      "tintOpacity": 0,
+      "tint": "#FCFCFCFF",
+      "tintOpacity": 0.0,
       "luminosityOpacity": 0.85,
-      "fallback": "#F9F9F9"
+      "fallback": "#F9F9F9FF",
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForeground": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForegroundPointerOver": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForegroundPressed": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarPanningThumbBackground": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     }
   },
   "Dark": {
     "TextControlBackground": {
       "kind": "solid",
       "color": "#FFFFFF0F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBackgroundPointerOver": {
       "kind": "solid",
       "color": "#FFFFFF15",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBackgroundFocused": {
       "kind": "solid",
       "color": "#1E1E1EB3",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBackgroundDisabled": {
       "kind": "solid",
       "color": "#FFFFFF0B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlBorderBrush": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -327,36 +329,36 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        2
+        0.0,
+        2.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.5,
           "color": "#FFFFFF8B"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#FFFFFF12"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "TextControlBorderBrushPointerOver": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -367,36 +369,36 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        2
+        0.0,
+        2.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.5,
           "color": "#FFFFFF8B"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#FFFFFF12"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "TextControlBorderBrushFocused": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -407,345 +409,347 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        2
+        0.0,
+        2.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#4CC2FFFF"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#FFFFFF12"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "TextControlBorderBrushDisabled": {
       "kind": "solid",
       "color": "#FFFFFF12",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForeground": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForegroundPointerOver": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForegroundFocused": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlForegroundDisabled": {
       "kind": "solid",
       "color": "#FEFEFE5D",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForeground": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundPointerOver": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundFocused": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundDisabled": {
       "kind": "solid",
       "color": "#FFFFFF5D",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlHeaderForeground": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlHeaderForegroundDisabled": {
       "kind": "solid",
       "color": "#FFFFFF66",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlSelectionHighlightColor": {
       "kind": "solid",
       "color": "#0078D4FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonForeground": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonForegroundPointerOver": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonForegroundPressed": {
       "kind": "solid",
       "color": "#FFFFFF87",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonBackgroundPointerOver": {
       "kind": "solid",
       "color": "#FFFFFF0F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextControlButtonBackgroundPressed": {
       "kind": "solid",
       "color": "#FFFFFF0A",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlDescriptionTextForegroundBrush": {
       "kind": "solid",
       "color": "#FFFFFF99",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFill": {
       "kind": "solid",
       "color": "#FFFFFF8B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFillPointerOver": {
       "kind": "solid",
       "color": "#FFFFFF8B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFillPressed": {
       "kind": "solid",
       "color": "#FFFFFF8B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarThumbFillDisabled": {
       "kind": "solid",
       "color": "#FFFFFF3F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarTrackFill": {
       "kind": "acrylic",
-      "tint": "#2C2C2C",
-      "tintOpacity": 0.15000000596046448,
+      "tint": "#2C2C2CFF",
+      "tintOpacity": 0.15,
       "luminosityOpacity": 0.96,
-      "fallback": "#2C2C2C"
+      "fallback": "#2C2C2CFF",
+      "opacity": 1.0
     },
     "ScrollBarTrackStroke": {
       "kind": "acrylic",
-      "tint": "#2C2C2C",
-      "tintOpacity": 0.15000000596046448,
+      "tint": "#2C2C2CFF",
+      "tintOpacity": 0.15,
       "luminosityOpacity": 0.96,
-      "fallback": "#2C2C2C"
+      "fallback": "#2C2C2CFF",
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForeground": {
       "kind": "solid",
       "color": "#FFFFFF8B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForegroundPointerOver": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForegroundPressed": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ScrollBarPanningThumbBackground": {
       "kind": "solid",
       "color": "#FFFFFF8B",
-      "opacity": 1
+      "opacity": 1.0
     }
   },
   "HighContrast": {
     "TextControlBackground": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "TextControlBackgroundPointerOver": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "TextControlBackgroundFocused": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "TextControlBackgroundDisabled": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "TextControlBorderBrush": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlBorderBrushPointerOver": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlBorderBrushFocused": {
       "kind": "solid",
-      "color": "#FFFF00",
-      "opacity": 1
+      "color": "#FFFF00FF",
+      "opacity": 1.0
     },
     "TextControlBorderBrushDisabled": {
       "kind": "solid",
-      "color": "#808080",
-      "opacity": 1
+      "color": "#808080FF",
+      "opacity": 1.0
     },
     "TextControlForeground": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlForegroundPointerOver": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlForegroundFocused": {
       "kind": "solid",
-      "color": "#FFFF00",
-      "opacity": 1
+      "color": "#FFFF00FF",
+      "opacity": 1.0
     },
     "TextControlForegroundDisabled": {
       "kind": "solid",
-      "color": "#808080",
-      "opacity": 1
+      "color": "#808080FF",
+      "opacity": 1.0
     },
     "TextControlPlaceholderForeground": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundPointerOver": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundFocused": {
       "kind": "solid",
-      "color": "#FFFF00",
-      "opacity": 1
+      "color": "#FFFF00FF",
+      "opacity": 1.0
     },
     "TextControlPlaceholderForegroundDisabled": {
       "kind": "solid",
-      "color": "#808080",
-      "opacity": 1
+      "color": "#808080FF",
+      "opacity": 1.0
     },
     "TextControlHeaderForeground": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlHeaderForegroundDisabled": {
       "kind": "solid",
-      "color": "#808080",
-      "opacity": 1
+      "color": "#808080FF",
+      "opacity": 1.0
     },
     "TextControlSelectionHighlightColor": {
       "kind": "solid",
-      "color": "#FFFF00",
-      "opacity": 1
+      "color": "#FFFF00FF",
+      "opacity": 1.0
     },
     "TextControlButtonForeground": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlButtonForegroundPointerOver": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlButtonForegroundPressed": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "TextControlButtonBackgroundPointerOver": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "TextControlButtonBackgroundPressed": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "SystemControlDescriptionTextForegroundBrush": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarThumbFill": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarThumbFillPointerOver": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarThumbFillPressed": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarThumbFillDisabled": {
       "kind": "solid",
-      "color": "#808080",
-      "opacity": 1
+      "color": "#808080FF",
+      "opacity": 1.0
     },
     "ScrollBarTrackFill": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     },
     "ScrollBarTrackStroke": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFF00",
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForeground": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForegroundPointerOver": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarButtonArrowForegroundPressed": {
       "kind": "solid",
-      "color": "#FFFFFF",
-      "opacity": 1
+      "color": "#FFFFFFFF",
+      "opacity": 1.0
     },
     "ScrollBarPanningThumbBackground": {
       "kind": "solid",
-      "color": "#000000",
-      "opacity": 1
+      "color": "#000000FF",
+      "opacity": 1.0
     }
   }
 }

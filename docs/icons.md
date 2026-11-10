@@ -1,5 +1,19 @@
 # 阶段 6.7：InfoBadge 修正与五种图标
 
+## 跨平台字体修正（2026-11-10）
+
+SDK 0.1.1 初始化先加载独立命名的 `WinUI Portable Icons` 开源 WOFF。Windows 再尝试用 `local("Segoe Fluent Icons")`、`local("Segoe MDL2 Assets")` 加载本机字体，分别注册为 SDK 自有别名 `WinUI Native Fluent Icons`、`WinUI Native MDL2 Icons`。不注册或覆盖 `Segoe Fluent Icons` / `Segoe MDL2 Assets` 原生名称，不复制系统字体文件。
+
+Rust 的共享 `Font::css()` 把图标字体引用转换成这些 SDK 别名，再附加开源字体回退；测量、Canvas2D 与 WebGL2 共用这条路径。Windows 先使用本机原生字形，较新缺字逐字形回退；Windows 未安装字体或浏览器禁用本地字体时，继续使用开源字体。macOS/Linux 不注册系统字体别名，只使用开源字形。显式指定其他字体族的 FontIcon 保留调用方原有字体栈。
+
+因此不再宣称所有平台使用相同轮廓：Windows 优先原生，其他平台提供已核验许可证的替代图标。开源替代字体并非 Segoe 的原生字形副本。
+
+内置字体的 hhea / OS/2 行框统一为 2048 units/em、2048 ascent、0 descent、0 lineGap，与本机 Segoe Fluent Icons 的数值度量一致；原来的 -512 descent 会令替代图标的自然高度增加 25%，改变尺寸和垂直居中。字体只包含已有开源轮廓及数值度量适配，不分发 Windows 字体轮廓。`tools/build-icon-font.py` 重建资源和指纹，`tools/test_icon_font.py` 检查行框。
+
+文字共享测量仍保留大字号探针以取得稳定字体的分数度量，但以实际字号结果校验：超过 1 CSS px（小字号度量取整预算）的偏差退回实际字号。行高不得小于当前文本字体的 ascent + descent，缓存的主字体行高也按每个文本运行重新保留回退字体高度；墨迹左右边界直接采用实际字号结果。修改同时作用于 Canvas2D / WebGL2，不修改示例宽高或关闭裁剪。
+
+回归入口：`cd gallery; npx playwright test -c playwright.font-portability.config.ts`。Chrome 检查系统字体可用与禁用两种情况及全部 457 个内置字形；Chrome / WebKit 另验证 Windows 本机别名与系统字形一致、模拟 macOS/Linux 只注册开源字体，以及两后端的实际 SDK 图标栅格与所选字体一致；Chrome / WebKit 检查异常放大探针、缺失字体、混合中文、嵌套 Grid/StackPanel、多字号、图标自然尺寸及 DPR 1 / 1.25 / 1.5 / 2，并比较两个后端实际绘制的墨迹覆盖。浏览器验证环境为 Windows，不能替代 macOS Chrome / Safari 实机验收；普通文字仍允许按平台系统字体回退，未声明所有平台的文字轮廓一致。
+
 本文保留 6.7 的历史验证记录。6.8 已补图标源、局部方向/镜像、图片放大对照、AnimatedIcon，并将 SVG 改为官方 camera 素材、BitmapIcon 示例默认改为彩色；当前范围以 [6.8 记录](animated-icons-shapes.md) 为准。
 
 日期：2026-11-07。运行入口：[InfoBadge](http://127.0.0.1:5173/#info-badge)、[IconElement](http://127.0.0.1:5173/#icon-element)。本批实现五个可运行切片，阶段 6 整体仍未完成。

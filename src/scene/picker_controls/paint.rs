@@ -252,6 +252,14 @@ impl Scene {
         let kind = n.kind;
         let theme = n.theme;
         let enabled = n.enabled;
+        if n.table.role == "tableTimeEditor" {
+            return Some(Self::color(
+                &BrushValue::Resource {
+                    resource: "TextFillColorPrimaryBrush".into(),
+                },
+                theme,
+            ));
+        }
         if kind == NodeKind::CalendarView {
             let r = Rect::new(0., 0., n.rect.width, n.rect.height);
             let b = overlays::border_thickness([1.; 4], self.dpr)[0];
@@ -287,7 +295,7 @@ impl Scene {
             let cells = n.picker.cells.clone();
             let grid = n.picker.calendar_grid;
 
-            for cell in cells {
+            for (cell_index, cell) in cells.into_iter().enumerate() {
                 let child = &self.nodes[&cell.node];
                 if !child.visible {
                     continue;
@@ -410,7 +418,9 @@ impl Scene {
                 let target = Rect::new(
                     cell.bounds.x,
                     cell.bounds.y
-                        + if q.display_mode == CalendarViewDisplayMode::Month {
+                        + if !cell.annotation.is_empty() {
+                            4.
+                        } else if q.display_mode == CalendarViewDisplayMode::Month {
                             (cell.bounds.height - 4. + 3. - child.text.height) / 2.
                         } else {
                             (cell.bounds.height - child.text.height) / 2.
@@ -426,6 +436,19 @@ impl Scene {
                     target,
                     true,
                 );
+                if !cell.annotation.is_empty() {
+                    let label = &self.nodes[&n.picker.parts[&format!("GroupLabel{cell_index}")]];
+                    if label.visible {
+                        text(
+                            out,
+                            &label.text,
+                            &label.props.font(),
+                            &foreground,
+                            label.rect,
+                            false,
+                        );
+                    }
+                }
                 if cell.blackout {
                     let y = cell.bounds.y + cell.bounds.height / 2.;
                     out.push(Draw::Polyline {
@@ -463,7 +486,10 @@ impl Scene {
                 },
             );
             for (role, part) in &n.picker.parts {
-                if !role.starts_with("GroupLabel") {
+                if !role.starts_with("GroupLabel")
+                    || (q.calendar_identifier == CalendarIdentifier::Chinese
+                        && q.display_mode == CalendarViewDisplayMode::Month)
+                {
                     continue;
                 }
                 let label = &self.nodes[part];

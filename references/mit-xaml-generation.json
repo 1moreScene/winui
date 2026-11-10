@@ -1,0 +1,993 @@
+{
+  "schema": 1,
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "license": "MIT",
+  "inputs": [
+    {
+      "local": "references/mit-xaml/dxaml/xcp/dxaml/themes/generic.xaml",
+      "upstream": "dxaml/xcp/dxaml/themes/generic.xaml",
+      "gitBlobSha1": "def26a6152487e366589660cd220509db6d4cf09",
+      "sha256": "4c4085838721c0afcb1a9ee17591c0655cdddadb26d330788e08bcd7f1af8285",
+      "bytes": 2045878,
+      "resourceEntries": 5841
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/Materials/Acrylic/AcrylicBrush_themeresources.xaml",
+      "upstream": "controls/dev/Materials/Acrylic/AcrylicBrush_themeresources.xaml",
+      "gitBlobSha1": "146524c5c0af889168770279d389b25af8dcf4e7",
+      "sha256": "b3dcc134c4228da61054e04a89f1fcee3802135370cd60d9a86e9a3b63c36a1f",
+      "bytes": 25216,
+      "resourceEntries": 150
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/Materials/Reveal/RevealBrush_themeresources.xaml",
+      "upstream": "controls/dev/Materials/Reveal/RevealBrush_themeresources.xaml",
+      "gitBlobSha1": "11414ceeff713c55cde70e78678503c75b861eaa",
+      "sha256": "140ca06598622abb0dac3691f4d9bc78810274f4886f9298281e9e890b5fef16",
+      "bytes": 268892,
+      "resourceEntries": 568
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/AnnotatedScrollBar/AnnotatedScrollBar.xaml",
+      "upstream": "controls/dev/AnnotatedScrollBar/AnnotatedScrollBar.xaml",
+      "gitBlobSha1": "5e84a8dfe4481d88b8fabec7602990ddb3e0a9e5",
+      "sha256": "8f5159d0e2c3b66c0c7e4c4ac695f572ff77fb823e69ece3416015f3a4eb0074",
+      "bytes": 6795,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/AnnotatedScrollBar/AnnotatedScrollBar_themeresources.xaml",
+      "upstream": "controls/dev/AnnotatedScrollBar/AnnotatedScrollBar_themeresources.xaml",
+      "gitBlobSha1": "dd312445431351223d46afdf1006bd87de06ea0a",
+      "sha256": "54206634bbdc5ea4b47ec013d7a6417d6a6e88edde91cceed30b6da611c3e1ae",
+      "bytes": 7062,
+      "resourceEntries": 32
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/AutoSuggestBox/AutoSuggestBox_themeresources.xaml",
+      "upstream": "controls/dev/AutoSuggestBox/AutoSuggestBox_themeresources.xaml",
+      "gitBlobSha1": "7cd762ebf3f870d238c428a8ca551d3cd311ee4a",
+      "sha256": "84c5e4e056df5c2cc07757cf73215c495f4e58c9ab6f7b2862087bd3d208bfed",
+      "bytes": 26961,
+      "resourceEntries": 21
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/Breadcrumb/BreadcrumbBar.xaml",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar.xaml",
+      "gitBlobSha1": "d7d0b16aae852dc792122bcfc1d788237f784209",
+      "sha256": "01f6e508d33ad36ccb7a543ecef0423f5c7837c36cd4e7a58f30db3c708a8a32",
+      "bytes": 23488,
+      "resourceEntries": 3
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/Breadcrumb/BreadcrumbBar_themeresources.xaml",
+      "upstream": "controls/dev/Breadcrumb/BreadcrumbBar_themeresources.xaml",
+      "gitBlobSha1": "af094a1594bb76d73034e91d8c6e9677d7c67e15",
+      "sha256": "71f7aba29d9be59ab4d18746418ce43e118d9d1f42dedb233d55d74d51b17de0",
+      "bytes": 10010,
+      "resourceEntries": 87
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ColorPicker/ColorPicker.xaml",
+      "upstream": "controls/dev/ColorPicker/ColorPicker.xaml",
+      "gitBlobSha1": "68f539f2388355850077999d1657b8cecdcbf6cb",
+      "sha256": "ed05efc9e934cd7364744cff16fe45cc801e455cb89ff5c7ae784565c5862488",
+      "bytes": 42782,
+      "resourceEntries": 3
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ColorPicker/ColorPicker_themeresources.xaml",
+      "upstream": "controls/dev/ColorPicker/ColorPicker_themeresources.xaml",
+      "gitBlobSha1": "ff69cb7eb766097830b201c4b0785041027fa499",
+      "sha256": "76a0caeceb10757926650211d39d38dda508a9df76528b31c72540ed699b8e49",
+      "bytes": 3882,
+      "resourceEntries": 30
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ColorPicker/ColorSpectrum.xaml",
+      "upstream": "controls/dev/ColorPicker/ColorSpectrum.xaml",
+      "gitBlobSha1": "fb5f7bd1a83acafccc63e43c0451d8775d82afcd",
+      "sha256": "9896e225eee1bec6dc837bc633bb6acbf248e0c69e0c62ca1de9e962ba2dd6c9",
+      "bytes": 6579,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ComboBox/ComboBox_themeresources.xaml",
+      "upstream": "controls/dev/ComboBox/ComboBox_themeresources.xaml",
+      "gitBlobSha1": "4578f4c9b2e32fc701ca803aba51c032f9c23ead",
+      "sha256": "c821a016f2e670b6a31017ee563784a90262f20e9c26367b39bc7aebb90c520d",
+      "bytes": 76622,
+      "resourceEntries": 344
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommandBarFlyout/CommandBarFlyout.xaml",
+      "upstream": "controls/dev/CommandBarFlyout/CommandBarFlyout.xaml",
+      "gitBlobSha1": "37b93446d59295c9ba036d36ea88c018465804e0",
+      "sha256": "67fa72b163d4cbbd54403e4cf7da0d8e3f5f667bff87e41814ab634bdc36fab7",
+      "bytes": 514,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommandBarFlyout/CommandBarFlyout_themeresources.xaml",
+      "upstream": "controls/dev/CommandBarFlyout/CommandBarFlyout_themeresources.xaml",
+      "gitBlobSha1": "bcc9d0171251f1130c61004d5d5856e19b31a1ea",
+      "sha256": "e93cf402a0e6a5e4b3418dc0b2acad903136ac75526a75b7b7aadc773ccc305d",
+      "bytes": 103851,
+      "resourceEntries": 107
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/DropDownButton/DropDownButton.xaml",
+      "upstream": "controls/dev/DropDownButton/DropDownButton.xaml",
+      "gitBlobSha1": "aa07b40c6f40b28c347ab25fd73a8ba36524505f",
+      "sha256": "d8a7da3e6fb344b12e64d373fb82c7346e0da7eed2abbc5165b72c2ba1760335",
+      "bytes": 8396,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/DropDownButton/DropDownButton_themeresources.xaml",
+      "upstream": "controls/dev/DropDownButton/DropDownButton_themeresources.xaml",
+      "gitBlobSha1": "c1e68023c2f729b36e83b7fc6b91ed7e0d2e97fe",
+      "sha256": "d0de025ac0b1f5d9a38397ef992b54796bce9cfe9e6efd8e972dbf42f4786707",
+      "bytes": 1700,
+      "resourceEntries": 9
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/Expander/Expander.xaml",
+      "upstream": "controls/dev/Expander/Expander.xaml",
+      "gitBlobSha1": "42067bde3bf95d33ca5f1718798b6ef81a9be420",
+      "sha256": "94db0f1f33d759af4a1a261e9f50abbb6e902c70fc069113d8135a8fae423e6d",
+      "bytes": 11130,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/Expander/Expander_themeresources.xaml",
+      "upstream": "controls/dev/Expander/Expander_themeresources.xaml",
+      "gitBlobSha1": "270447141f6f1a39ad7c3e570f0ac8ed3ccb0a8e",
+      "sha256": "1bfb318e58ba01dc12c9035c21a2fa85c309b78be2b2d82f376bd01dd8fa1a95",
+      "bytes": 44695,
+      "resourceEntries": 80
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ImageIcon/ImageIcon.xaml",
+      "upstream": "controls/dev/ImageIcon/ImageIcon.xaml",
+      "gitBlobSha1": "c38bc82ba0eb4d73ed4afcc9be81217b8b7dd554",
+      "sha256": "922d1277550ef86829f4ea6d7c924e34a0abfcdb1929cceb9b0a0bd0cc4b8421",
+      "bytes": 416,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ImageIcon/ImageIcon_themeresources.xaml",
+      "upstream": "controls/dev/ImageIcon/ImageIcon_themeresources.xaml",
+      "gitBlobSha1": "50aab881e57c7cb332fd5a91f9a905cfdf9efd16",
+      "sha256": "f97115ba6f930269695948182377411a92332b8d5630a4d82f0b43e2c1691f76",
+      "bytes": 352,
+      "resourceEntries": 0
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/InfoBadge/InfoBadge.xaml",
+      "upstream": "controls/dev/InfoBadge/InfoBadge.xaml",
+      "gitBlobSha1": "1f6ab40e7cc23c5bb7311a85006ec780e6a27d4f",
+      "sha256": "9086886491838f8b4edb16de33bead7628f2b177c3f09715a38b3c815e5d686a",
+      "bytes": 465,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/InfoBadge/InfoBadge_themeresources.xaml",
+      "upstream": "controls/dev/InfoBadge/InfoBadge_themeresources.xaml",
+      "gitBlobSha1": "b09b56572ac8a2159bf9ba2dda7f063ec5460c6a",
+      "sha256": "5f2605df42ec21f305055814b3f8f502c47c165d6792df8b4d07f93ad62a690d",
+      "bytes": 9405,
+      "resourceEntries": 52
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/InfoBar/InfoBar.xaml",
+      "upstream": "controls/dev/InfoBar/InfoBar.xaml",
+      "gitBlobSha1": "1f036889684c7af85187811a1ef776d059eed2a8",
+      "sha256": "aa8fe57ceaed73d12502b923517cc153f3b302dc160be331571be216be0ad602",
+      "bytes": 16086,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/InfoBar/InfoBar_themeresources.xaml",
+      "upstream": "controls/dev/InfoBar/InfoBar_themeresources.xaml",
+      "gitBlobSha1": "1056af57d0340a7e9aa2d5f9e2f2f177b841897c",
+      "sha256": "45ee915557f6351abc5b47b693a5547ff4b37d2890f23915be7efd1db60b7cfe",
+      "bytes": 8460,
+      "resourceEntries": 78
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ItemContainer/ItemContainer.xaml",
+      "upstream": "controls/dev/ItemContainer/ItemContainer.xaml",
+      "gitBlobSha1": "369db4d085838fa2658ce2056f0091684d554adc",
+      "sha256": "16e1f46fffc051fd8492d6c4b520ca87bceb82fe29d005d5bfcdf4fab2cfd2c5",
+      "bytes": 10878,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ItemContainer/ItemContainer_themeresources.xaml",
+      "upstream": "controls/dev/ItemContainer/ItemContainer_themeresources.xaml",
+      "gitBlobSha1": "b56c1a0b4abbe42b77c8cd74e47e42a2d7e8a2a6",
+      "sha256": "6b2834c314c3d942e9f1c758d7a250513e49cb89c7c7ce396f39cc2219e82020",
+      "bytes": 12363,
+      "resourceEntries": 50
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ItemsView/ItemsView.xaml",
+      "upstream": "controls/dev/ItemsView/ItemsView.xaml",
+      "gitBlobSha1": "f8ac105313c64b831e8debdeff39bc2a305fe815",
+      "sha256": "0e755138871253c215b40d33facf3f053238c48c18fe36feb41625d6e17b213a",
+      "bytes": 2309,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ItemsView/ItemsView_themeresources.xaml",
+      "upstream": "controls/dev/ItemsView/ItemsView_themeresources.xaml",
+      "gitBlobSha1": "a9381d8d76a4bb401ace5fce98bb63723873d02f",
+      "sha256": "fa282a7f6efba48ba788fbd778cec68b19c415feef76d39e08c638ca57a2e7ac",
+      "bytes": 537,
+      "resourceEntries": 0
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/MenuBar/MenuBar.xaml",
+      "upstream": "controls/dev/MenuBar/MenuBar.xaml",
+      "gitBlobSha1": "cb7f431c58b377eff7812f590b10c219ae309d80",
+      "sha256": "d951c0696e776fc3b789d868e988cefea4c518a2dc85b9e43900714c906d363e",
+      "bytes": 1508,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/MenuBar/MenuBarItem.xaml",
+      "upstream": "controls/dev/MenuBar/MenuBarItem.xaml",
+      "gitBlobSha1": "610d3249721d6be66eb202791cfd5b1dc7a67041",
+      "sha256": "90a07a5cd97c98fcc1e687c5059f9058a3145e05159fcfe2df21e8da347d36f4",
+      "bytes": 4674,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/MenuBar/MenuBar_themeresources.xaml",
+      "upstream": "controls/dev/MenuBar/MenuBar_themeresources.xaml",
+      "gitBlobSha1": "96cf1b1e788a327c5c00e07af0e3fc3cbf23e40b",
+      "sha256": "80a3deaa1ab532ea8f2a6d40beb33b6653e911ae22aba8c965b9761e1176fc8a",
+      "bytes": 4279,
+      "resourceEntries": 36
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/NavigationView/NavigationBackButton.xaml",
+      "upstream": "controls/dev/NavigationView/NavigationBackButton.xaml",
+      "gitBlobSha1": "f806d90cf22cf6b7e2fec8d4c5dee704c25324ed",
+      "sha256": "31459b28cd88ad96b1b7769232fe4c47cb185aceb53b1817775e6e67be316dda",
+      "bytes": 5336,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/NavigationView/NavigationBackButton_themeresources.xaml",
+      "upstream": "controls/dev/NavigationView/NavigationBackButton_themeresources.xaml",
+      "gitBlobSha1": "93ee8933c7f216ecd23a42e6ae54c9baccc93915",
+      "sha256": "754c3c847dbf2ddae0e139ee992af19cbc91f7430f1a488786e1eed6b04600a0",
+      "bytes": 1076,
+      "resourceEntries": 5
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/NavigationView/NavigationView.xaml",
+      "upstream": "controls/dev/NavigationView/NavigationView.xaml",
+      "gitBlobSha1": "a21c87b48e29d0dd25beacaa4ae62167947e14fe",
+      "sha256": "f5a2784add9fda34ec64fd312a7877047a53b2c8cecb111af93efaace1ee4e7a",
+      "bytes": 48258,
+      "resourceEntries": 5
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/NavigationView/NavigationView_themeresources.xaml",
+      "upstream": "controls/dev/NavigationView/NavigationView_themeresources.xaml",
+      "gitBlobSha1": "aa3ff11b2c3128dd198d7140417594cfa6fe5c74",
+      "sha256": "200cd9d5527c51d9d2db497ba3580847260d2601179d4c5042516648962fd1a4",
+      "bytes": 89221,
+      "resourceEntries": 269
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/NumberBox/NumberBox.xaml",
+      "upstream": "controls/dev/NumberBox/NumberBox.xaml",
+      "gitBlobSha1": "d70025ee3655bbb03c2580470d596a31b3e07bcc",
+      "sha256": "ad6c46ae67dc95cc476b240b0854d2a52fd5086e85f07c8386dae73ca8bae034",
+      "bytes": 33313,
+      "resourceEntries": 4
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/NumberBox/NumberBox_themeresources.xaml",
+      "upstream": "controls/dev/NumberBox/NumberBox_themeresources.xaml",
+      "gitBlobSha1": "3b532d4b76b2ac9f2d06c8c0d473fa7d8f9a32b2",
+      "sha256": "190da0817f6a22716dd9626d63f510360e35cdfb7876acbae2257e5fa87a8473",
+      "bytes": 2826,
+      "resourceEntries": 25
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PagerControl/PagerControl.xaml",
+      "upstream": "controls/dev/PagerControl/PagerControl.xaml",
+      "gitBlobSha1": "4606b2611013238bf0f5f557a79681feba7eac3a",
+      "sha256": "5c07e0f54efb111524b7fb1f300de3059235dd9dfa3c0c539013f67b4dfad059",
+      "bytes": 11825,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PagerControl/PagerControl_themeresources.xaml",
+      "upstream": "controls/dev/PagerControl/PagerControl_themeresources.xaml",
+      "gitBlobSha1": "33a364a33dd5ab24d2c2c3f5b7c1f660d40951cc",
+      "sha256": "35cfb294229596525825ace2bd0cebb3f491693e7846c3e59d7095cd524d2cb2",
+      "bytes": 10901,
+      "resourceEntries": 24
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PersonPicture/PersonPicture.xaml",
+      "upstream": "controls/dev/PersonPicture/PersonPicture.xaml",
+      "gitBlobSha1": "1bd0a1c6f84ab4565c2b2c8fd10ba092e4ebb98c",
+      "sha256": "9fd335b8aa76d8710dcb9ac7a9ab2d6c2c75b779e99a03615ac74bb82ac1fb27",
+      "bytes": 6684,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PersonPicture/PersonPicture_themeresources.xaml",
+      "upstream": "controls/dev/PersonPicture/PersonPicture_themeresources.xaml",
+      "gitBlobSha1": "228efb45b2e22ae1d482304ecf9b2a6af1496011",
+      "sha256": "664158bca909222901ec8eb5689d5b6192ab9330a2e2fcaee9ec8a16ed6d84c7",
+      "bytes": 3948,
+      "resourceEntries": 33
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PipsPager/PipsPager.xaml",
+      "upstream": "controls/dev/PipsPager/PipsPager.xaml",
+      "gitBlobSha1": "42c1ab313201354cb4d77897acfc36b8b867cc25",
+      "sha256": "1c7054b1502e5ebe33f32580ae0c07c7b551e94490ccda0d9ca317767008db64",
+      "bytes": 6561,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PipsPager/PipsPager_themeresources.xaml",
+      "upstream": "controls/dev/PipsPager/PipsPager_themeresources.xaml",
+      "gitBlobSha1": "0d93a289b39a22b7e859a2ecea964575826e52f7",
+      "sha256": "526f0c0cad7c184e38febb02da63717c7c5f16f90ebc47fcc4822ff3dab85b1e",
+      "bytes": 26490,
+      "resourceEntries": 105
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ProgressBar/ProgressBar.xaml",
+      "upstream": "controls/dev/ProgressBar/ProgressBar.xaml",
+      "gitBlobSha1": "5f188ab8b3d45632d74a90b742299e0412e45feb",
+      "sha256": "d6c125752b8b1d64934af820712c936b6fa64501859b9ab8429e812e67f8cf53",
+      "bytes": 17439,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ProgressBar/ProgressBar_themeresources.xaml",
+      "upstream": "controls/dev/ProgressBar/ProgressBar_themeresources.xaml",
+      "gitBlobSha1": "f2cf8b8edbc50ab21d0f2d5f460f30b92d662a36",
+      "sha256": "ead8e05c4c4d9f1f6a55feef65260d2fd8b02d159a381bdf10dd1364b566e7cd",
+      "bytes": 2576,
+      "resourceEntries": 22
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ProgressRing/ProgressRing.xaml",
+      "upstream": "controls/dev/ProgressRing/ProgressRing.xaml",
+      "gitBlobSha1": "df15b1794bbd0cda30279b5ab0674cafa544a0cd",
+      "sha256": "bb7466602953dc71606a8b80cb112dde4d5f844d9f9c847b5c564b4b8be28c85",
+      "bytes": 2126,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ProgressRing/ProgressRing_themeresources.xaml",
+      "upstream": "controls/dev/ProgressRing/ProgressRing_themeresources.xaml",
+      "gitBlobSha1": "f3fa38ea83ea910200a6a539140a379b128bbf94",
+      "sha256": "d4bbf6aa665a55faf2866d928398b16b7e409f2fa2895260462e9bf0cfa3b820",
+      "bytes": 1392,
+      "resourceEntries": 7
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.xaml",
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer.xaml",
+      "gitBlobSha1": "cab438fd6fb387c1bc271f223d97be4793a4e38d",
+      "sha256": "b7266b6169bc07ae0f242b335c48a9c6c18778ae9e64187a088ca54046d1c07f",
+      "bytes": 1262,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PullToRefresh/RefreshContainer/RefreshContainer_themeresources.xaml",
+      "upstream": "controls/dev/PullToRefresh/RefreshContainer/RefreshContainer_themeresources.xaml",
+      "gitBlobSha1": "ddb712d13fc2f2903d63fcec5c26468f841debe4",
+      "sha256": "2338362e7cbd5c44f9b183f1b4d08dadf8c07650992c9420d97b80186c183b06",
+      "bytes": 1147,
+      "resourceEntries": 6
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.xaml",
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer.xaml",
+      "gitBlobSha1": "4cabb426e157000e3cac4f36eda325d59b311a65",
+      "sha256": "14b9a50e2454bc2854ec97a955ee5131edd101a320f6bbb43a22f30e17d76745",
+      "bytes": 979,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer_themeresources.xaml",
+      "upstream": "controls/dev/PullToRefresh/RefreshVisualizer/RefreshVisualizer_themeresources.xaml",
+      "gitBlobSha1": "d0911158cf863b43cf7ed5b3220e86bb050dda80",
+      "sha256": "bd7ca91e5b0eb57284146cde66bf0d71136be003b22395cfba1d8cc37e3a5571",
+      "bytes": 1123,
+      "resourceEntries": 6
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/RadioButtons/RadioButton.xaml",
+      "upstream": "controls/dev/RadioButtons/RadioButton.xaml",
+      "gitBlobSha1": "d5af78755406431aba0463408531a93191bfb8c9",
+      "sha256": "622c543cafe13853dc31fc2e713ab5f096c9b7bb070c23128d20b555f448b17b",
+      "bytes": 410,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/RadioButtons/RadioButtons.xaml",
+      "upstream": "controls/dev/RadioButtons/RadioButtons.xaml",
+      "gitBlobSha1": "40a2827458d18bd57fd164c3f00fc88b19501fb8",
+      "sha256": "96c230153af9df80ddee485924550b7e5b952245ee52c8131f58156296279a61",
+      "bytes": 2206,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/RadioButtons/RadioButtons_themeresources.xaml",
+      "upstream": "controls/dev/RadioButtons/RadioButtons_themeresources.xaml",
+      "gitBlobSha1": "efbc00b43e516636dcbe421bd5f5640a64c9260a",
+      "sha256": "874463fa857383ac33b2043d094bea7ea5be3a327a2514f7a395626a8f52acf2",
+      "bytes": 1506,
+      "resourceEntries": 9
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/RadioMenuFlyoutItem/RadioMenuFlyoutItem_themeresources.xaml",
+      "upstream": "controls/dev/RadioMenuFlyoutItem/RadioMenuFlyoutItem_themeresources.xaml",
+      "gitBlobSha1": "078fadf4058d7c6b269b335350a075d6c079ab03",
+      "sha256": "9e7461a7b05da0062731f63a113bad1629f428bd44b999b250d261198cb30545",
+      "bytes": 15660,
+      "resourceEntries": 3
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/RatingControl/RatingControl.xaml",
+      "upstream": "controls/dev/RatingControl/RatingControl.xaml",
+      "gitBlobSha1": "6229cfe469d53d5d466f0baead99c19a5cc7eb6b",
+      "sha256": "10c9cefe04458ad377e7062c812d369f72af4db71875799e49fc3c6137db77bd",
+      "bytes": 5740,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/RatingControl/RatingControl_themeresources.xaml",
+      "upstream": "controls/dev/RatingControl/RatingControl_themeresources.xaml",
+      "gitBlobSha1": "0d9fccdf29a38836bd89fabbc222f6605d104b59",
+      "sha256": "a0df3c386c2bb8734a4454ef75a842ca0d5971e6b38d61a73f2cd63b7cc1b51a",
+      "bytes": 5218,
+      "resourceEntries": 34
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ResizeGripper/ResizeGripper.xaml",
+      "upstream": "controls/dev/ResizeGripper/ResizeGripper.xaml",
+      "gitBlobSha1": "e1078aef2436e3bdb8fc0c6c00b929064bbfb2e9",
+      "sha256": "5bf7c925158c4f5dfd70d9096edd141ca2641d3820e9e28765864cd4927849bc",
+      "bytes": 5943,
+      "resourceEntries": 6
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ScrollView/ScrollView.xaml",
+      "upstream": "controls/dev/ScrollView/ScrollView.xaml",
+      "gitBlobSha1": "7edfcccf9512bd8db807da18ff24a2b55c1ea0c7",
+      "sha256": "fec8d27bdab4a1959b8ff24e40aad713535f12a58deb49907ca9884f851befde",
+      "bytes": 12787,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/ScrollView/ScrollView_themeresources.xaml",
+      "upstream": "controls/dev/ScrollView/ScrollView_themeresources.xaml",
+      "gitBlobSha1": "558330c59bd7e1fa177e9ddaa585d1e7e2ab55de",
+      "sha256": "2765ed363206a2ec1a385f48502e0696c4b8d2fe323f2ae2de9c007829fb460b",
+      "bytes": 1837,
+      "resourceEntries": 13
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SelectorBar/SelectorBar.xaml",
+      "upstream": "controls/dev/SelectorBar/SelectorBar.xaml",
+      "gitBlobSha1": "b928003fb521d2901aa1dc3edef3f16a2fd869f3",
+      "sha256": "5d568a2f8987bac3d03d8c63350768cfcb68e72f0a0855a4bc8dc3b2b5050d7d",
+      "bytes": 18439,
+      "resourceEntries": 4
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SelectorBar/SelectorBar_themeresources.xaml",
+      "upstream": "controls/dev/SelectorBar/SelectorBar_themeresources.xaml",
+      "gitBlobSha1": "194182902a7df8b134b1eeeda17c0bf354464c44",
+      "sha256": "b7aeab0036d8ff978cde0ae5bb98ad334867d9ec2d81a47956e58399c6b0356b",
+      "bytes": 9435,
+      "resourceEntries": 86
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SortIndicator/SortIndicator.xaml",
+      "upstream": "controls/dev/SortIndicator/SortIndicator.xaml",
+      "gitBlobSha1": "7b6a2dd468bc5a10b40e9e34d07af5898bf54dc6",
+      "sha256": "bf2f0572ebe10d13c921d2562093bfc683eb07f4a4d655bb457b419fdbb6b678",
+      "bytes": 3298,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SortIndicator/SortIndicator_themeresources.xaml",
+      "upstream": "controls/dev/SortIndicator/SortIndicator_themeresources.xaml",
+      "gitBlobSha1": "a63d995a17a79512aceb8bb4261d15a887feddca",
+      "sha256": "072dc25ac74d4f9cd94c48a78dfce49dde3e3e16f0bf191747d51a187e2422a0",
+      "bytes": 1364,
+      "resourceEntries": 5
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SplitButton/SplitButton.xaml",
+      "upstream": "controls/dev/SplitButton/SplitButton.xaml",
+      "gitBlobSha1": "0be293a87cd5d944267906e159fbcc4d1d85911b",
+      "sha256": "c2d6029afb1dc5b3a1779377afcefc8596fb21ef6f22bcb7c7ccb8ba00f3fb54",
+      "bytes": 21941,
+      "resourceEntries": 3
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SplitButton/SplitButton_themeresources.xaml",
+      "upstream": "controls/dev/SplitButton/SplitButton_themeresources.xaml",
+      "gitBlobSha1": "e9601d1f29cd59aa5fe7b7f0ebb49ef9c836ac19",
+      "sha256": "366afbdf06fd0070a45d101246fe2a311279118cf055897780a06dbfdb2fb8da",
+      "bytes": 28009,
+      "resourceEntries": 94
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SplitView/SplitView_themeresources.xaml",
+      "upstream": "controls/dev/SplitView/SplitView_themeresources.xaml",
+      "gitBlobSha1": "84cc5a983fc6af7f8ea8466887692095471b6c23",
+      "sha256": "b97b256f454f9b2f6d2f2d7131fbed87227b3858042c003212bc7d44d7862743",
+      "bytes": 65395,
+      "resourceEntries": 29
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SwipeControl/SwipeControl.xaml",
+      "upstream": "controls/dev/SwipeControl/SwipeControl.xaml",
+      "gitBlobSha1": "fedb0dfa17a9ab41b046cce479a964427743f96e",
+      "sha256": "3c16d77386d3a694d8a6d6b9a0db775f0911c84a04e4747a0d988f44abbd50fd",
+      "bytes": 1833,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/SwipeControl/SwipeControl_themeresources.xaml",
+      "upstream": "controls/dev/SwipeControl/SwipeControl_themeresources.xaml",
+      "gitBlobSha1": "59422a941fa9c5cb2790b280725c31e9c5d5a881",
+      "sha256": "ccf31aef69dceb4b73f7cc6baeec13ee7d1174b2cd064495e072aaebc53e10c4",
+      "bytes": 5355,
+      "resourceEntries": 22
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TabView/TabView.xaml",
+      "upstream": "controls/dev/TabView/TabView.xaml",
+      "gitBlobSha1": "c0e732a4604036f8cce7fee1aed757a9fc4bacdb",
+      "sha256": "770273e4d185cc74971149901549b403c22a15947cc5e90de0f8b332c7cfaec4",
+      "bytes": 50328,
+      "resourceEntries": 8
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TabView/TabView_themeresources.xaml",
+      "upstream": "controls/dev/TabView/TabView_themeresources.xaml",
+      "gitBlobSha1": "e4db61f8793560b59fa8390ade0a59cc9addeb13",
+      "sha256": "262106f9b1b533bd99904f1d7475b9e7233937936b78f1ad6bcb43e9cd41d5e8",
+      "bytes": 27195,
+      "resourceEntries": 235
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TeachingTip/TeachingTip.xaml",
+      "upstream": "controls/dev/TeachingTip/TeachingTip.xaml",
+      "gitBlobSha1": "edcd4dba11ce2e28e2538724d42c9172749843ba",
+      "sha256": "648cf4df25deca67a0ca9f3d432290c38d693410775db6578802e2892c34d0a7",
+      "bytes": 25839,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TeachingTip/TeachingTip_themeresources.xaml",
+      "upstream": "controls/dev/TeachingTip/TeachingTip_themeresources.xaml",
+      "gitBlobSha1": "50cc6d2d6cb7648df90e21faa0cc9e6aa816a9bd",
+      "sha256": "edf193bc2e21ac136b4707caf38ccc90294e9143c103ddc0f62f0ded6632bade",
+      "bytes": 15600,
+      "resourceEntries": 91
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TitleBar/TitleBar.xaml",
+      "upstream": "controls/dev/TitleBar/TitleBar.xaml",
+      "gitBlobSha1": "acd14c7c6f242d99a0467d69f701b8599d8dd9c5",
+      "sha256": "b0a8667eaa023c9c736ddb07828f1ce3cf176823e6822fd9b48ce035c4b529d6",
+      "bytes": 18656,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TitleBar/TitleBar_themeresources.xaml",
+      "upstream": "controls/dev/TitleBar/TitleBar_themeresources.xaml",
+      "gitBlobSha1": "b22068a7909c99426a1f1811e227db4ad11baa1c",
+      "sha256": "c3fe7d02c3248ff34c74015f4be0f9b558cd1b2ce53dc3e753206738f6dc28b3",
+      "bytes": 20431,
+      "resourceEntries": 86
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TreeView/TreeView.xaml",
+      "upstream": "controls/dev/TreeView/TreeView.xaml",
+      "gitBlobSha1": "9f419035a19cc68910b97cec4fd5ce264cdfefde",
+      "sha256": "ea7677a3626091989c035091d36e0c65de538800c4d7b0dcf80545eca7d6c3ff",
+      "bytes": 2121,
+      "resourceEntries": 4
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TreeView/TreeViewItem.xaml",
+      "upstream": "controls/dev/TreeView/TreeViewItem.xaml",
+      "gitBlobSha1": "e6655da4feacad75dd68395ec2ddb231e6ad5cfb",
+      "sha256": "8ea8f12771cd2e23b39def9156513919c22e3da0b8b97b5ada99ae93edb492f0",
+      "bytes": 14767,
+      "resourceEntries": 1
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TreeView/TreeView_themeresources.xaml",
+      "upstream": "controls/dev/TreeView/TreeView_themeresources.xaml",
+      "gitBlobSha1": "8e7a107255310706dda5e4e5ca6edf99b6b14eb9",
+      "sha256": "594c6aaef90d4c5de900ea8119ccc78d2431dfe115143b0613cba00df89937e8",
+      "bytes": 13028,
+      "resourceEntries": 117
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/TwoPaneView/TwoPaneView.xaml",
+      "upstream": "controls/dev/TwoPaneView/TwoPaneView.xaml",
+      "gitBlobSha1": "c7821c2691543cf5854ae4306c24ecf1345fc1a6",
+      "sha256": "25f8b074b7fc7c1efd0544ded2a7009d8450b7645a8d594e8f64a051d5543c32",
+      "bytes": 4342,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/AppBarButton_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/AppBarButton_themeresources.xaml",
+      "gitBlobSha1": "83055262b5b17b53c9fce21d55264a659c39f43d",
+      "sha256": "3f457195db8c723b665b725cb8218f087fc6fdff39539d2077432b22f312144e",
+      "bytes": 34132,
+      "resourceEntries": 115
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/AppBarSeparator_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/AppBarSeparator_themeresources.xaml",
+      "gitBlobSha1": "51801458b679a563d21471423f4ebb94f0b13ad0",
+      "sha256": "6e33bdd81552c1b3db4c37b283393db1e1b572a0174ed41c95a43306d251ecb5",
+      "bytes": 3510,
+      "resourceEntries": 10
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/AppBarToggleButton_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/AppBarToggleButton_themeresources.xaml",
+      "gitBlobSha1": "2c3e6c5ad5aa3d6c4cd6fe1e3c8c5688b8e31f18",
+      "sha256": "a1154b934bd61b6d0425b7771f47abe387db032304a74e10fd663b939638cca1",
+      "bytes": 50717,
+      "resourceEntries": 199
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Button_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/Button_themeresources.xaml",
+      "gitBlobSha1": "e63c32389e599c2277061d9ce29483516e6927a3",
+      "sha256": "897f3e3f336077489925b77d31695363d3af97875cdacc7443a60b77b1fdcb6e",
+      "bytes": 32897,
+      "resourceEntries": 146
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/CalendarDatePicker_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/CalendarDatePicker_themeresources.xaml",
+      "gitBlobSha1": "37b0f815e83b11bbf3602486874015f505966373",
+      "sha256": "3a710808f2d631c8475719242ec362a9da881d6fe710f28151f7bb9be46244ee",
+      "bytes": 20874,
+      "resourceEntries": 75
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/CalendarView_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/CalendarView_themeresources.xaml",
+      "gitBlobSha1": "237f442197d73a203e59a2d6ba8c16f04f294a64",
+      "sha256": "3f7a2414ae445cc506298ecf3ffc0c5b5e11f1532f1c3462e101d6e89f65cde1",
+      "bytes": 106536,
+      "resourceEntries": 236
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/CheckBox_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/CheckBox_themeresources.xaml",
+      "gitBlobSha1": "71e21d32b764c8b7fc6fe7312e7a6847a0fb5c89",
+      "sha256": "d278a1df7ddc3e8516e3c8022a42f5eb1dd834686018e574dc85b2de41140017",
+      "bytes": 60651,
+      "resourceEntries": 269
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/CommandBar_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/CommandBar_themeresources.xaml",
+      "gitBlobSha1": "f524c6d543ea735b7b4e833294891eec448b8b5f",
+      "sha256": "f1595e099fc056f22f7d6ab1dbd56437ae717a773ca92699368c9be75fa3597a",
+      "bytes": 93840,
+      "resourceEntries": 71
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Common_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/Common_themeresources.xaml",
+      "gitBlobSha1": "4442cd93a301ffbb86de5248c4a99dc94d583e32",
+      "sha256": "333600531de59b2004ca652b27b8a41e6b485ee09cb16d0c72ecc556ba7bcfe5",
+      "bytes": 4496,
+      "resourceEntries": 40
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Common_themeresources_any.xaml",
+      "upstream": "controls/dev/CommonStyles/Common_themeresources_any.xaml",
+      "gitBlobSha1": "ca07acb962a7c018a174bf28dcd0e945b13ddb4d",
+      "sha256": "8b1189968a551161fd46a4e876d1e0e6b694f6626dc278d881b8cb5446f97bd3",
+      "bytes": 55806,
+      "resourceEntries": 557
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ContentDialog_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ContentDialog_themeresources.xaml",
+      "gitBlobSha1": "9cd8150fff8c216319e2d5515b538cfab5b397d5",
+      "sha256": "31d2146701fa9ee8da16acf5b876861cac9959ae715830100bd791f7688a6ff3",
+      "bytes": 20018,
+      "resourceEntries": 47
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/CornerRadius_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/CornerRadius_themeresources.xaml",
+      "gitBlobSha1": "e1d58260df35408c904d58b318de4204d134ab98",
+      "sha256": "e975b21373c71181bde26b4ab45df8607d8269d9d57bc30fedc93795c66e9adf",
+      "bytes": 2563,
+      "resourceEntries": 18
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/DatePicker_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/DatePicker_themeresources.xaml",
+      "gitBlobSha1": "8d19f3001019aa7f14ab05ea9a182d201420294b",
+      "sha256": "d61e8bb651a59a0c705e4e28dc735581105f8b2ffcc5c6df38589ba73f18769e",
+      "bytes": 29202,
+      "resourceEntries": 118
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/DateTimePickerFlyout_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/DateTimePickerFlyout_themeresources.xaml",
+      "gitBlobSha1": "78caa8f6766e699493eaeadb72e5cf27bfe943e5",
+      "sha256": "0da5b09dd4eb703477c2501a72bad427cbc31e0501769c96c66943ae37ae66f7",
+      "bytes": 23122,
+      "resourceEntries": 72
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Deprecated_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/Deprecated_themeresources.xaml",
+      "gitBlobSha1": "41220302b8cedb941eb3e0f1ce5a813de9a3b8bc",
+      "sha256": "5685768ac472cb1242025c4304cc5916cd0df9e0a60d905fa908e79c7289a635",
+      "bytes": 23056,
+      "resourceEntries": 160
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Deprecated_themeresources_any.xaml",
+      "upstream": "controls/dev/CommonStyles/Deprecated_themeresources_any.xaml",
+      "gitBlobSha1": "ae2f5b2c238724c06b203b0086664a841fb478d5",
+      "sha256": "d371a76675724211c0e1d9805940988a583c8c7f6364080a4b3255d2f3e2365b",
+      "bytes": 17462,
+      "resourceEntries": 92
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/FlipViewItem_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/FlipViewItem_themeresources.xaml",
+      "gitBlobSha1": "1ba7d04940b1da14bdd6533ddc3a0fe42b61df73",
+      "sha256": "07df31ca7a0ef4fafe595c3d834ba469160266ec2d7300bc6f2565c106134515",
+      "bytes": 2212,
+      "resourceEntries": 5
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/FlipView_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/FlipView_themeresources.xaml",
+      "gitBlobSha1": "c9aa9048d624eb962393451b2501e4f9c37c12fc",
+      "sha256": "21af9d36c9fa28b7e751c1cfa8a8ad2d037b6e515232235927b61b34036de93a",
+      "bytes": 30069,
+      "resourceEntries": 67
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/FlyoutPresenter_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/FlyoutPresenter_themeresources.xaml",
+      "gitBlobSha1": "621bf7d16825ae37cdd0b0ad05b7b5a49ddcd4c4",
+      "sha256": "c672e5a34069778113d37aea762dcfbf6f4ce3708aee719552dc844bbf231645",
+      "bytes": 4254,
+      "resourceEntries": 12
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/GridViewItem_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/GridViewItem_themeresources.xaml",
+      "gitBlobSha1": "a4ca9accccc27d9f0e7fdcfbddc2a5b8e306360d",
+      "sha256": "92888f819c9b48e848b6794bfe2b6d07d910ef4dc0d9e92fb50c1c464ff5de4c",
+      "bytes": 19789,
+      "resourceEntries": 125
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/HyperlinkButton_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/HyperlinkButton_themeresources.xaml",
+      "gitBlobSha1": "93b5efd391803a229e63e55c315e5675fef4362e",
+      "sha256": "6fe9f6492589a0b9870b0102e77e5e0c95abc996f4c1090502b3e85abe9dd57d",
+      "bytes": 10537,
+      "resourceEntries": 41
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Hyperlink_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/Hyperlink_themeresources.xaml",
+      "gitBlobSha1": "9755333d16e487361eb56d335d2190d4ed234610",
+      "sha256": "54b8d05ca5d9eb299b537923b1d8c007d620ed54bd56f1b3c7c3622bdae539ff",
+      "bytes": 1640,
+      "resourceEntries": 10
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ListBox_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ListBox_themeresources.xaml",
+      "gitBlobSha1": "df9ca8dfe48b7cd4487b24b4f7954c7a74e683f8",
+      "sha256": "ce2993cb8f3a5abb5833bda527ce32e81d938bb5923879d42a59c0d0b1de12f9",
+      "bytes": 19366,
+      "resourceEntries": 83
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ListViewItem_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ListViewItem_themeresources.xaml",
+      "gitBlobSha1": "b292e8fa9aa1f6024d16b8a5eb452e4427d45bda",
+      "sha256": "0758f65bc447b9af7b12a0d779f644f7541d5e2dd39540a9c206f35222b0478c",
+      "bytes": 63908,
+      "resourceEntries": 227
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/MediaTransportControls_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/MediaTransportControls_themeresources.xaml",
+      "gitBlobSha1": "701793b0b20ef45b95bb90695cc8b43f1102486b",
+      "sha256": "5fc3b603543ecf76e7fc63ae1aa1cd178aa16641d1e8701837eac5d64d585bf7",
+      "bytes": 30528,
+      "resourceEntries": 53
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/MenuFlyout_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/MenuFlyout_themeresources.xaml",
+      "gitBlobSha1": "6f9f3fd322583d2d537dc30c439e62accf1efbd4",
+      "sha256": "df415aea23e56a4af583f1a1875898a9965a9e48141b4af12fae1e3a6337e68f",
+      "bytes": 91737,
+      "resourceEntries": 268
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/PasswordBox_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/PasswordBox_themeresources.xaml",
+      "gitBlobSha1": "ec52d3f52cdda9002a858000b359ac5752c8eb22",
+      "sha256": "f26fe45f0137fe5a5b432ddda090349ad2718e4cf29a9531132ca6a149e53b2b",
+      "bytes": 17742,
+      "resourceEntries": 4
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Pivot_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/Pivot_themeresources.xaml",
+      "gitBlobSha1": "f7d9c7673be13474e4884fd19f0d64605ee3b68b",
+      "sha256": "e4a9abed3c4125fd0593b3a439e158fa586d898fa7c9bf4eeb398118827613fb",
+      "bytes": 50517,
+      "resourceEntries": 203
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/RadioButton_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/RadioButton_themeresources.xaml",
+      "gitBlobSha1": "223a28385186f36a4629d354928e5fb705ab10b3",
+      "sha256": "e81b287331445235b8b3c95bb57929383745c002808f4d8c457306da3825f11a",
+      "bytes": 38385,
+      "resourceEntries": 173
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/RepeatButton_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/RepeatButton_themeresources.xaml",
+      "gitBlobSha1": "80add1b94686ed1e408ce05afde9d02249b5e229",
+      "sha256": "71c4261539124ed938633bf69043a528e26ac7f198b519b198b4aded39dab83c",
+      "bytes": 13178,
+      "resourceEntries": 68
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/RichEditBox_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/RichEditBox_themeresources.xaml",
+      "gitBlobSha1": "2fe5d6ca4d5413639e1c415652f9b6833c1af6d9",
+      "sha256": "a7e951a3b55a32f85ecd1c65738d1518fd0801a81c81a51a5c1a192d3d9e9535",
+      "bytes": 9698,
+      "resourceEntries": 3
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ScrollBar_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ScrollBar_themeresources.xaml",
+      "gitBlobSha1": "6aaa54e2b229039c3021a0a0b2f4d7a3deaec517",
+      "sha256": "1d236b6eef68d35722056d10173d7ea170a468c8c3033cae8859ce8576dfe756",
+      "bytes": 74478,
+      "resourceEntries": 190
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ScrollViewer_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ScrollViewer_themeresources.xaml",
+      "gitBlobSha1": "800d5040a5e73c28b75c5c5d2f4af40c7a48256b",
+      "sha256": "de35b23ecbcae9053e54aaba84dbd0448181f0f1ef4596ca7948483e0eb205e3",
+      "bytes": 15370,
+      "resourceEntries": 12
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/Slider_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/Slider_themeresources.xaml",
+      "gitBlobSha1": "3804392c5c54081dcc64a1c533812f9b07a4155d",
+      "sha256": "e4f9a29fa4cbdaa73838bbc9730487c54e83198860464ef10ca8197a7e3cc920",
+      "bytes": 41406,
+      "resourceEntries": 165
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/TabularSurfaces_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/TabularSurfaces_themeresources.xaml",
+      "gitBlobSha1": "4ae88f8609c9eafa52fc7715484289a5edfad680",
+      "sha256": "64ab33c5395cce3e34d59626dda940ac95b4ec267f98d5ea840c3923b327217a",
+      "bytes": 31827,
+      "resourceEntries": 204
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/TextBlock_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/TextBlock_themeresources.xaml",
+      "gitBlobSha1": "08cbcf9cc6a9146b7d192f1f294b949dd2841cfd",
+      "sha256": "d2914b149fb384215b8996041c420d4b9769995e1b111d5e8b11e4ac3f85df5d",
+      "bytes": 3527,
+      "resourceEntries": 17
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/TextBlock_themeresources_v2.5.xaml",
+      "upstream": "controls/dev/CommonStyles/TextBlock_themeresources_v2.5.xaml",
+      "gitBlobSha1": "97aa103a4fbe0cc761b1c8f2046de3d186ca1b89",
+      "sha256": "00a9ec3f770a0e9d31e24431fa906146415b3c785be53e34df7679c7117bc85d",
+      "bytes": 1280,
+      "resourceEntries": 6
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/TextBox_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/TextBox_themeresources.xaml",
+      "gitBlobSha1": "6934b646465eb602218f2ebf950268ac689ea33c",
+      "sha256": "4d5eb20ee3f049c10345502b43f47e04bc59a5801727a970ab3bd6dc8f281b17",
+      "bytes": 31255,
+      "resourceEntries": 121
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/TextControlsCommon_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/TextControlsCommon_themeresources.xaml",
+      "gitBlobSha1": "61aef55c8eb6cac334a714173048acecef757307",
+      "sha256": "4dd2c54e44cdf4325d760ac12c8783e3231c8603272ec7fc0cb31024925079a0",
+      "bytes": 529,
+      "resourceEntries": 2
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/TimePicker_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/TimePicker_themeresources.xaml",
+      "gitBlobSha1": "2cfb8a7df11925a858a9c877c0886c2ccc3231bf",
+      "sha256": "d7588154602a2572419a6e359f77adc8f0f1aa2643eec57a938b94dab329173b",
+      "bytes": 29127,
+      "resourceEntries": 112
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ToggleButton_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ToggleButton_themeresources.xaml",
+      "gitBlobSha1": "868646a15b5a5062046b1edcc003f44288793b52",
+      "sha256": "dde10f54c59fe9a6af9ec22b9b4723e2990b5498846155e9ee8097def46e69ce",
+      "bytes": 34580,
+      "resourceEntries": 170
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ToggleSwitch_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ToggleSwitch_themeresources.xaml",
+      "gitBlobSha1": "50f290fbe053170d943f390d78bb4f8d6ba48140",
+      "sha256": "2f475fdddbe8d89022e69163cdf07afb0760487afdd78baec01c9d7468d040ae",
+      "bytes": 51348,
+      "resourceEntries": 180
+    },
+    {
+      "local": "references/mit-xaml/controls/dev/CommonStyles/ToolTip_themeresources.xaml",
+      "upstream": "controls/dev/CommonStyles/ToolTip_themeresources.xaml",
+      "gitBlobSha1": "281d1efcf02c33f81b32fd04e2c691da9173a323",
+      "sha256": "6d8eebbc00d9cf2ffba4a11465ae9d99a06736fb5317fd0d362246304e61b572",
+      "bytes": 5732,
+      "resourceEntries": 34
+    }
+  ],
+  "output": "references/mit-xaml-generated/generic.xaml",
+  "sha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
+  "generator": "tools/build-mit-resource-dictionary.py",
+  "scopes": {
+    "Shared": 851,
+    "Default": 2754,
+    "HighContrast": 2754,
+    "Light": 2754
+  },
+  "packageTemplatesRead": false
+}

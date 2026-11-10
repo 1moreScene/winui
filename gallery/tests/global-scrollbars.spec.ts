@@ -1,7 +1,7 @@
 import {selectGalleryOption,openSource} from './gallery-control-helper';
 import { test, expect, type Page } from "@playwright/test";
 import { writeFileSync, mkdirSync } from "node:fs";
-import type { GlobalScrollbars, WinUI } from "../src/index";
+import type { GlobalScrollbars, WinUI } from "winui-wasm";
 declare global {
   interface Window {
     globalLease: GlobalScrollbars;
@@ -154,7 +154,7 @@ test("runtime leases share one renderer, subtree disposal restores original DOM 
   await page.evaluate(() => window.gallery.sdk.dispose());
   await expect(page.locator("[data-winui-global-scrollbars]")).toHaveCount(0);
   await page.evaluate(async () => {
-    const WinUI=window.gallery.sdk.constructor as typeof import('../src/index').WinUI;
+    const WinUI=window.gallery.sdk.constructor as typeof import('winui-wasm').WinUI;
     window.localSdk = await WinUI.create({ globalScrollbars: false });
     const root = document.createElement("section");
     root.id = "subtree";

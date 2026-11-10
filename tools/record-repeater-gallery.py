@@ -54,7 +54,7 @@ own_files = [
     'src/scene/repeater.rs', 'src/scene/refresh.rs',
     'src/scene/collections.rs', 'src/scene/layout.rs',
     'gallery/src/RepeaterRefreshPage.tsx', 'gallery/src/repeater-gallery-data.ts',
-    'gallery/src/repeater-gallery.css', 'gallery/src/repeater-refresh-types.ts',
+    'gallery/src/repeater-gallery.css', 'packages/winui-wasm/src/repeater-refresh-types.ts',
     'gallery/src/GalleryControls.tsx',
     'gallery/src/official-repeater-refresh.json',
     'gallery/tests/repeater-gallery.spec.ts', 'gallery/tests/repeater-refresh.spec.ts',
@@ -64,8 +64,8 @@ own_files = [
 ]
 for path in own_files:
     assert sha(ROOT / path) == sha(FROZEN / path), path
-frozen_wasm = FROZEN / 'gallery/src/wasm/winui_bg.wasm'
-current_wasm = ROOT / 'gallery/src/wasm/winui_bg.wasm'
+frozen_wasm = FROZEN / 'packages/winui-wasm/src/wasm/winui_bg.wasm'
+current_wasm = ROOT / 'packages/winui-wasm/src/wasm/winui_bg.wasm'
 current_run = read(ROOT / 'out/repeater-gallery-current-runtime.json')
 assert current_run['binaryUnchangedDuringRun']
 assert current_run['wasmSha256'] == sha(current_wasm)

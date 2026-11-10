@@ -1,3 +1,5 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption, GalleryRadioButton } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useRef, useState, type ReactNode } from "react";
@@ -9,7 +11,7 @@ import {
   Image,
   ToggleButton,
   CheckBox,
-} from "./react";
+} from "winui-wasm/react";
 import {
   ThemeMode,
   RendererBackend,
@@ -17,9 +19,9 @@ import {
   ImageStretch,
   EventKind,
   type Scene,
-  type ToggleButton as ToggleController,
+  type ToggleButtonController as ToggleController,
   type SceneEvent,
-} from "./index";
+} from "winui-wasm";
 import official from "./official-foundation.json";
 import source from "./BasicControlsPage.tsx?raw";
 import { extractSampleSource } from "./sample-source";
@@ -52,9 +54,7 @@ function Code({
           Official XAML
         </GalleryButton>
       </div>
-      <pre>
-        <code>{native ? sample.xaml : extractSampleSource(source, name)}</code>
-      </pre>
+      <SourceCode language={native ? 'xaml' : 'tsx'}>{native ? sample.xaml : extractSampleSource(source, name)}</SourceCode>
     </GalleryExpander>
   );
 }
@@ -76,7 +76,7 @@ function Example({
   const sample = official.samples[page].find((s) => s.file === file)!;
   return (
     <section className="example basic-example">
-      <h2>{sample.title}</h2>
+      <h2><LocalizedText>{sample.title}</LocalizedText></h2>
       <div className="example-card">
         <div className={options ? "basic-live with-options" : "basic-live"}>
           <div className="basic-preview">{children}</div>
@@ -239,9 +239,7 @@ function CheckBoxExamples({
         {/* @sample:select-all-scene:end */}
         <GalleryExpander className="source">
           <GalleryExpanderHeader>Select all callback</GalleryExpanderHeader>
-          <pre>
-            <code>{extractSampleSource(source, "select-all")}</code>
-          </pre>
+          <SourceCode>{extractSampleSource(source, "select-all")}</SourceCode>
         </GalleryExpander>
       </Example>
     </>

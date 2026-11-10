@@ -1,0 +1,396 @@
+{
+  "capturedAtUtc": "2026-11-09T02:43:52.743214+00:00",
+  "source": "Previously captured independent native probe; not the Store Gallery window. No native app is run in this verification.",
+  "sdk": "2.3.10-experimental",
+  "dpi": 1,
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "rawSha256": "bd649cae65e6a465a14b01aa082eb6a258d71ce70f5e6bb065537db7ed0dfb6f",
+  "inputs": [
+    {
+      "path": "tools/native-motion-gallery/Program.cs",
+      "sha256": "57641f0d07ac4c24d1f418bb87b2cafe59b66fb065f859723cb45eacf85108d4"
+    },
+    {
+      "path": "tools/native-motion-gallery/MotionGalleryProbe.csproj",
+      "sha256": "efce5073e6c6acdbc9e23ada73607557fac0b60ab382d148a79d816f1b70d94e"
+    },
+    {
+      "path": "references/gallery-motion/XamlCompInterop/XamlCompInteropPage.xaml",
+      "sha256": "808676137a0eb235dc56846cd44d104a5c8d9e0d8bb4a0a585061a56d7763a30"
+    },
+    {
+      "path": "references/overlay-template.json",
+      "sha256": "34fd87b0af7e1212e116e8ca2c7232a84b59a94ba5c891207eb4b1246adcf698"
+    },
+    {
+      "path": "references/winui/Slider_themeresources.xaml",
+      "sha256": "e4f9a29fa4cbdaa73838bbc9730487c54e83198860464ef10ca8197a7e3cc920"
+    },
+    {
+      "path": "references/gallery-motion/ControlExample.xaml",
+      "sha256": "da58d94fc4d57c06032c96104b033caf9361e55400fefe0179cd2d48d62df0dd"
+    },
+    {
+      "path": "references/gallery-motion/ControlExample.xaml.cs",
+      "sha256": "67c5390704f6d415f01811729ac9a330a5024f990c12c15e58ef5ac19cbefbfc"
+    }
+  ],
+  "cases": [
+    {
+      "width": 640,
+      "index": 0,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 266
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 487,
+        "height": 266
+      },
+      "nodes": [
+        {
+          "kind": "Button",
+          "name": "",
+          "bounds": {
+            "x": 12,
+            "y": 43,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "RadioButtons",
+          "name": "DampingStackPanel",
+          "bounds": {
+            "x": 504,
+            "y": 16,
+            "width": 120,
+            "height": 179
+          }
+        },
+        {
+          "kind": "Slider",
+          "name": "PeriodSlider",
+          "bounds": {
+            "x": 504,
+            "y": 195,
+            "width": 120,
+            "height": 55
+          }
+        }
+      ]
+    },
+    {
+      "width": 640,
+      "index": 1,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 224
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 224
+      },
+      "nodes": [
+        {
+          "kind": "Rectangle",
+          "name": "rectangle",
+          "bounds": {
+            "x": 111,
+            "y": 62,
+            "width": 50,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Ellipse",
+          "name": "ellipse",
+          "bounds": {
+            "x": 357,
+            "y": 62,
+            "width": 50,
+            "height": 50
+          }
+        }
+      ]
+    },
+    {
+      "width": 640,
+      "index": 2,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 364
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 364
+      },
+      "nodes": [
+        {
+          "kind": "Button",
+          "name": "ExpressionButton1",
+          "bounds": {
+            "x": 17,
+            "y": 67,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Button",
+          "name": "ExpressionButton2",
+          "bounds": {
+            "x": 17,
+            "y": 127,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Button",
+          "name": "ExpressionButton3",
+          "bounds": {
+            "x": 17,
+            "y": 187,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Button",
+          "name": "ExpressionButton4",
+          "bounds": {
+            "x": 17,
+            "y": 247,
+            "width": 100,
+            "height": 50
+          }
+        }
+      ]
+    },
+    {
+      "width": 640,
+      "index": 3,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 248
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 457,
+        "height": 248
+      },
+      "nodes": []
+    },
+    {
+      "width": 640,
+      "index": 4,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 640,
+        "height": 236
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 457,
+        "height": 236
+      },
+      "nodes": []
+    },
+    {
+      "width": 1143,
+      "index": 0,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 266
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 990,
+        "height": 266
+      },
+      "nodes": [
+        {
+          "kind": "Button",
+          "name": "",
+          "bounds": {
+            "x": 12,
+            "y": 43,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "RadioButtons",
+          "name": "DampingStackPanel",
+          "bounds": {
+            "x": 1007,
+            "y": 16,
+            "width": 120,
+            "height": 179
+          }
+        },
+        {
+          "kind": "Slider",
+          "name": "PeriodSlider",
+          "bounds": {
+            "x": 1007,
+            "y": 195,
+            "width": 120,
+            "height": 55
+          }
+        }
+      ]
+    },
+    {
+      "width": 1143,
+      "index": 1,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 224
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 224
+      },
+      "nodes": [
+        {
+          "kind": "Rectangle",
+          "name": "rectangle",
+          "bounds": {
+            "x": 111,
+            "y": 62,
+            "width": 50,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Ellipse",
+          "name": "ellipse",
+          "bounds": {
+            "x": 357,
+            "y": 62,
+            "width": 50,
+            "height": 50
+          }
+        }
+      ]
+    },
+    {
+      "width": 1143,
+      "index": 2,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 364
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 364
+      },
+      "nodes": [
+        {
+          "kind": "Button",
+          "name": "ExpressionButton1",
+          "bounds": {
+            "x": 17,
+            "y": 67,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Button",
+          "name": "ExpressionButton2",
+          "bounds": {
+            "x": 17,
+            "y": 127,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Button",
+          "name": "ExpressionButton3",
+          "bounds": {
+            "x": 17,
+            "y": 187,
+            "width": 100,
+            "height": 50
+          }
+        },
+        {
+          "kind": "Button",
+          "name": "ExpressionButton4",
+          "bounds": {
+            "x": 17,
+            "y": 247,
+            "width": 100,
+            "height": 50
+          }
+        }
+      ]
+    },
+    {
+      "width": 1143,
+      "index": 3,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 248
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 248
+      },
+      "nodes": []
+    },
+    {
+      "width": 1143,
+      "index": 4,
+      "body": {
+        "x": 0,
+        "y": 0,
+        "width": 1143,
+        "height": 199
+      },
+      "preview": {
+        "x": 0,
+        "y": 0,
+        "width": 960,
+        "height": 199
+      },
+      "nodes": []
+    }
+  ]
+}

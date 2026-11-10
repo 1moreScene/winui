@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {PNG} from 'pngjs';
 import {mkdirSync,writeFileSync} from 'node:fs';
-import type {WinUI,Scene,FloatingSurface,SceneNode} from '../src/index';
+import type {WinUI,Scene,FloatingSurface,SceneNode} from 'winui-wasm';
 declare global {interface Window {overlayVisualFixture:{ui:WinUI;scene:Scene;surface:FloatingSurface;owner:SceneNode;time:number;events:string[]};}}
 for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} shared floating presentation animates, casts hollow shadows and samples Acrylic`,async({page})=>{
  test.setTimeout(90000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));const rows:object[]=[];
@@ -9,7 +9,7 @@ for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} shared floa
  mkdirSync('../out/overlay-presentation',{recursive:true});
  for(const kind of ['Flyout','MenuFlyout','ToolTip'] as const){
   await page.evaluate(async({kind,backend})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');window.overlayVisualFixture?.ui.dispose();document.querySelector('#overlay-visual-fixture')?.remove();
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');window.overlayVisualFixture?.ui.dispose();document.querySelector('#overlay-visual-fixture')?.remove();
    const host=document.createElement('div');host.id='overlay-visual-fixture';host.style.cssText='position:fixed;left:0;top:0;width:480px;height:320px;z-index:2147483640';document.body.append(host);
    const f={time:1000,events:[]} as unknown as Window['overlayVisualFixture'];window.overlayVisualFixture=f;f.ui=await a.WinUI.create({globalScrollbars:false,clock:()=>f.time});f.scene=f.ui.scene(host,{backend:a.RendererBackend[backend],reducedMotion:false});
    // Coarse stripes distinguish scene sampling from a popup window's local Backdrop.

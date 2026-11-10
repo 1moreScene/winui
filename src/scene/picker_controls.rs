@@ -70,6 +70,7 @@ pub(super) fn color(theme: Theme, key: &str) -> String {
 /// navigation, coercion and input remain Rust-owned.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct PickerLocale {
     pub language: String,
     pub digits: Vec<String>,
@@ -153,8 +154,10 @@ impl Default for PickerLocale {
 }
 impl PickerLocale {
     pub fn number(&self, value: i32) -> String {
+        self.localize_numbers(&value.to_string())
+    }
+    pub fn localize_numbers(&self, value: &str) -> String {
         value
-            .to_string()
             .chars()
             .map(|c| {
                 c.to_digit(10)
@@ -170,6 +173,7 @@ impl PickerLocale {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct PickerProperties {
     pub date: Option<String>,
     pub time: Option<u16>,
@@ -184,7 +188,8 @@ pub struct PickerProperties {
     pub calendar_identifier: CalendarIdentifier,
     pub display_mode: CalendarViewDisplayMode,
     pub calendar_selection_mode: CalendarViewSelectionMode,
-    pub first_day_of_week: DayOfWeek,
+    /// None follows the calendar language; Some preserves the caller's override.
+    pub first_day_of_week: Option<DayOfWeek>,
     pub number_of_weeks: usize,
     pub year_columns: usize,
     pub year_rows: usize,
@@ -275,9 +280,33 @@ impl Default for PickerProperties {
     }
 }
 impl PickerProperties {
+    pub fn first_day_of_week(&self) -> DayOfWeek {
+        self.first_day_of_week.unwrap_or_else(|| {
+            if self
+                .calendar_locale
+                .language
+                .split('-')
+                .next()
+                .is_some_and(|language| language.eq_ignore_ascii_case("zh"))
+            {
+                DayOfWeek::Monday
+            } else {
+                DayOfWeek::Sunday
+            }
+        })
+    }
+    pub fn year_label(&self, date: Date, locale: &PickerLocale) -> String {
+        locale.localize_numbers(
+            &self
+                .calendar_identifier
+                .year_label(date, &locale.year_suffix),
+        )
+    }
     pub fn format_day(&self, date: Date) -> String {
         let pattern = self.day_format.trim_start_matches("{}");
-        let day = self.format_locale.number(date.day as i32);
+        let day = self
+            .format_locale
+            .number(self.calendar_identifier.fields(date).day as i32);
         if pattern.is_empty() || pattern == "day" {
             format!("{day}{}", self.format_locale.day_suffix)
         } else {
@@ -292,7 +321,7 @@ impl PickerProperties {
     }
     pub fn bounds(&self) -> (Date, Date) {
         let now = self.today();
-        (
+        let (mut min, mut max) = (
             self.min_date
                 .as_deref()
                 .map(Date::parse)
@@ -313,7 +342,12 @@ impl PickerProperties {
                     month: 12,
                     day: 31,
                 }),
-        )
+        );
+        if self.calendar_identifier == CalendarIdentifier::Chinese {
+            min = min.max(Date::new(1901, 1, 1).unwrap());
+            max = max.min(Date::new(2100, 12, 31).unwrap());
+        }
+        (min, max)
     }
     pub fn day(&self) -> Date {
         self.display_date
@@ -327,9 +361,6 @@ impl PickerProperties {
     }
     pub fn valid(&self) -> Result<(), String> {
         Date::parse(&self.today)?;
-        if self.calendar_identifier != CalendarIdentifier::Gregorian {
-            return Err("This picker slice requires GregorianCalendar; other calendar systems are not silently projected as Gregorian".into());
-        }
         for value in self
             .date
             .iter()
@@ -339,7 +370,15 @@ impl PickerProperties {
             .chain(&self.selected_dates)
             .chain(&self.blackout_dates)
         {
-            Date::parse(value)?;
+            let d = Date::parse(value)?;
+            if self.calendar_identifier == CalendarIdentifier::Chinese
+                && !(1901..=2100).contains(&d.year)
+            {
+                return Err(
+                    "ChineseCalendar supports Gregorian dates from 1901-01-01 through 2100-12-31"
+                        .into(),
+                );
+            }
         }
         let (min, max) = self.bounds();
         if min > max {
@@ -476,6 +515,10 @@ pub struct CalendarCell {
     pub node: u32,
     pub date: String,
     pub text: String,
+    pub calendar_day: crate::calendar::CalendarDay,
+    pub annotation: String,
+    pub festivals: Vec<String>,
+    pub solar_term: Option<String>,
     pub bounds: Rect,
     pub out_of_scope: bool,
     pub blackout: bool,
@@ -789,6 +832,7 @@ impl Scene {
         if self.nodes[&id].picker.last_display != q.display_date.clone().unwrap_or_default() {
             let state = &mut self.nodes.get_mut(&id).unwrap().picker;
             state.focus_date = Some(q.day());
+            state.pending_focus = None;
             if kind == NodeKind::CalendarView {
                 state.date = Some(q.day());
             }
@@ -835,25 +879,33 @@ impl Scene {
             let date = self.nodes[&id].picker.date.unwrap_or_else(|| q.day());
             let header = match q.display_mode {
                 CalendarViewDisplayMode::Month => self.picker_month_header(&q, date),
-                CalendarViewDisplayMode::Year => {
-                    format!("{}{}", date.year, q.calendar_locale.year_suffix)
-                }
+                CalendarViewDisplayMode::Year => q.year_label(date, &q.calendar_locale),
                 CalendarViewDisplayMode::Decade => {
-                    format!("{} - {}", date.year / 10 * 10, date.year / 10 * 10 + 9)
+                    let year = q.calendar_identifier.fields(date).year;
+                    format!(
+                        "{} - {}",
+                        year.div_euclid(10) * 10,
+                        year.div_euclid(10) * 10 + 9
+                    )
                 }
             };
             self.patch_part(id,"HeaderButton",json!({"text":header,"enabled":q.display_mode!=CalendarViewDisplayMode::Decade,"fontFamily":p.font_family,"fontSize":p.font_size}));
             let (min, max) = q.bounds();
+            let scope = |d: Date| match q.display_mode {
+                CalendarViewDisplayMode::Month => q.calendar_identifier.month_start(d),
+                CalendarViewDisplayMode::Year => q.calendar_identifier.year_start(d),
+                CalendarViewDisplayMode::Decade => q.calendar_identifier.date(
+                    q.calendar_identifier.fields(d).year.div_euclid(10) * 10,
+                    1,
+                    1,
+                ),
+            };
             self.patch_part(
                 id,
                 "PreviousButton",
-                json!({"enabled":date.year>min.year||date.month>min.month}),
+                json!({"enabled":scope(date)>scope(min)}),
             );
-            self.patch_part(
-                id,
-                "NextButton",
-                json!({"enabled":date.year<max.year||date.month<max.month}),
-            );
+            self.patch_part(id, "NextButton", json!({"enabled":scope(date)<scope(max)}));
         } else if matches!(
             kind,
             NodeKind::CalendarDatePicker | NodeKind::DatePicker | NodeKind::TimePicker
@@ -947,8 +999,12 @@ impl Scene {
         }
     }
     fn picker_month_header(&self, q: &PickerProperties, date: Date) -> String {
-        let month = &q.calendar_locale.months[date.month as usize - 1];
-        let year = format!("{}{}", date.year, q.calendar_locale.year_suffix);
+        let month = q
+            .calendar_identifier
+            .month_label(date, &q.calendar_locale.months);
+        let year = q
+            .calendar_identifier
+            .year_label(date, &q.calendar_locale.year_suffix);
         if q.calendar_locale
             .month_year_order
             .first()

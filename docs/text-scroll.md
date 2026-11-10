@@ -6,7 +6,7 @@
 
 - TextBox：普通/标题占位/只读自定义字体与 CharacterSpacing/多行四个官方示例；UTF-16 选择、方向、拖选/双击、键盘编辑、剪贴板、撤销重做、中文组合输入事务、MaxLength、清除按钮、原生派生光标闪烁和聚焦底边。
 - PasswordBox：三个官方示例；自定义遮罩字符、Peek 按住显示并在释放/失焦时遮回、Hidden/Visible、PasswordChanged。事件不附带明文；密码仍通过显式 password 属性可读写。密码宿主不提供复制、剪切或公开撤销历史。
-- ScrollViewer：官方 cliff 图片与六组选项；单内容布局、裁剪/变换、滚轮、方向键/Page/Home/End、拖动/箭头与轨道、程序 ChangeView、触摸平移与双指缩放、范围钳制、嵌套滚轮链和焦点进入视口。缩放后的 Extent 和角落预留来自原生探针。滚动条轨道复用 Acrylic 渲染图，减少透明度时使用其原生 fallback。
+- ScrollViewer：官方 cliff 图片与六组选项；单内容布局、裁剪/变换、滚轮、方向键/Page/Home/End、拖动/箭头与轨道、程序 ChangeView、触摸平移与双指缩放、范围钳制、嵌套滚轮接收和焦点进入视口。[通用输入修正](input-behavior.md)使可滚动容器在边界继续接收滚轮，不传给父级或浏览器。缩放后的 Extent 和角落预留来自原生探针。滚动条轨道复用 Acrylic 渲染图，减少透明度时使用其原生 fallback。
 - DOM 只提供实际编辑/IME/剪贴板、焦点和无障碍投影。文字、选择、光标、状态与时间线仍由 Rust 绘制。光标用定时唤醒，空闲时不常驻 RAF。编辑器卸载会释放输入和 document selectionchange 监听。
 
 ## 通用文字裁剪修复

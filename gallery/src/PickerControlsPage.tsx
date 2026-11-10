@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import {useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
 import {useGalleryTheme} from './gallery-theme';
 import {GalleryButton,GalleryCheckBox,GalleryComboBox,GalleryOption,GalleryRadioButton,GalleryExpander,GalleryExpanderHeader} from './GalleryControls';
-import {SceneView,StackPanel,CalendarView,CalendarDatePicker,DatePicker,TimePicker,ColorPicker,Rectangle} from './react';
-import {RendererBackend,HorizontalAlignment,CalendarIdentifier,CalendarViewSelectionMode,ClockIdentifier,ColorSpectrumShape,type Scene} from './index';
+import {SceneView,StackPanel,CalendarView,CalendarDatePicker,DatePicker,TimePicker,ColorPicker,Rectangle} from 'winui-wasm/react';
+import {RendererBackend,HorizontalAlignment,CalendarIdentifier,CalendarViewSelectionMode,ClockIdentifier,ColorSpectrumShape,type Scene} from 'winui-wasm';
 import official from './official-picker-controls.json';
 import pageSource from './PickerControlsPage.tsx?raw';
 import {extractSampleSource} from './sample-source';
@@ -17,11 +19,12 @@ function exampleDate(now:Date){const target=new Date(now);target.setDate(1);targ
 function Example({id,kind,sample=0,children,options,substitutions={}}:{id:string;kind:Kind;sample?:number;children:ReactNode;options?:ReactNode;substitutions?:Record<string,string|boolean>}){
  const [native,setNative]=useState(false),definition=official.controls[kind].samples[sample];
  const xaml=definition.xaml.replace(/\$\((\w+)\)/g,(_,key:string)=>typeof substitutions[key]==='boolean'?(substitutions[key]?'True':'False'):String(substitutions[key]??''));
- return <section id={id} className="example basic-example"><h2>{definition.title}</h2><div className="example-card"><div className={`basic-live${options?' with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><pre><code>{native?xaml:extractSampleSource(pageSource,id)}</code></pre></GalleryExpander></div></section>;
+ return <section id={id} className="example basic-example"><h2><LocalizedText>{definition.title}</LocalizedText></h2><div className="example-card"><div className={`basic-live${options?' with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><SourceCode language={native ? 'xaml' : 'tsx'}>{native?xaml:extractSampleSource(pageSource,id)}</SourceCode></GalleryExpander></div></section>;
 }
 export function PickerControlsPage({kind}:{kind:Kind}){
  const [theme,setTheme]=useGalleryTheme(),[backend,setBackend]=useState(RendererBackend.Canvas2D);
  const [groupLabels,setGroupLabels]=useState(true),[outOfScope,setOutOfScope]=useState(true),[selectionMode,setSelectionMode]=useState(CalendarViewSelectionMode.Single),[language,setLanguage]=useState(official.languages[0].code);
+ const [calendarIdentifier,setCalendarIdentifier]=useState(CalendarIdentifier.Gregorian);
  const [alpha,setAlpha]=useState(false),[alphaSlider,setAlphaSlider]=useState(true),[alphaInput,setAlphaInput]=useState(true),[colorSlider,setColorSlider]=useState(true),[channelInput,setChannelInput]=useState(true),[hexInput,setHexInput]=useState(true),[more,setMore]=useState(false),[shape,setShape]=useState(ColorSpectrumShape.Box),[color,setColor]=useState('#ffffff');
  const [now]=useState(()=>new Date()),shared={theme,backend};
  const currentTime=now.getHours()*60+now.getMinutes(),formattedDate=exampleDate(now),minYear=`${now.getFullYear()}-01-01`,maxYear=`${now.getFullYear()+5}-12-31`;
@@ -29,8 +32,7 @@ export function PickerControlsPage({kind}:{kind:Kind}){
   <GalleryCheckBox horizontalAlignment={HorizontalAlignment.Stretch} checked={groupLabels} onValueChanged={setGroupLabels} label="IsGroupLabelVisible"/>
   <GalleryCheckBox horizontalAlignment={HorizontalAlignment.Stretch} checked={outOfScope} onValueChanged={setOutOfScope} label="IsOutOfScopeEnabled"/>
   <label>SelectionMode<GalleryComboBox fitWidth aria-label="SelectionMode" value={selectionMode} onValueChanged={v=>setSelectionMode(v as CalendarViewSelectionMode)}>{Object.values(CalendarViewSelectionMode).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label>
-  <label>CalendarIdentifier<GalleryComboBox aria-label="CalendarIdentifier" aria-describedby="picker-calendar-support" title="Only GregorianCalendar is currently supported" value={CalendarIdentifier.Gregorian}>{official.calendarIdentifiers.map(v=><GalleryOption key={v} disabled={v!==CalendarIdentifier.Gregorian}>{v}</GalleryOption>)}</GalleryComboBox></label>
-  <p id="picker-calendar-support" className="sr-only">Only GregorianCalendar is currently supported.</p>
+  <label>CalendarIdentifier<GalleryComboBox aria-label="CalendarIdentifier" value={calendarIdentifier} onValueChanged={v=>setCalendarIdentifier(v as CalendarIdentifier)}>{[...official.calendarIdentifiers,CalendarIdentifier.Chinese].map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label>
   <label>Language<GalleryComboBox aria-label="Language" value={language} onValueChanged={setLanguage}>{official.languages.map(v=><GalleryOption key={v.code} value={v.code} disabled={!Intl.DateTimeFormat.supportedLocalesOf([v.code]).length}>{v.name}</GalleryOption>)}</GalleryComboBox></label>
  </div>;
  const colorOptions=<div className="picker-color-options">
@@ -45,9 +47,9 @@ export function PickerControlsPage({kind}:{kind:Kind}){
   <div className="picker-rectangle"><span>ColorPicker applied on a Rectangle</span><SceneView {...shared} autoHeight style={{height:100}} onReady={s=>remember('ColorPickerPreview',s)}><Rectangle height={100} fill={color} stroke={{resource:'TextControlBorderBrush'}} strokeThickness={1}/></SceneView></div>
  </div>;
  return <><Header title={kind} theme={theme} onTheme={setTheme}/><main className="stage-main official-motion picker-gallery"><div className="effects-options"><label>Renderer <GalleryComboBox aria-label="Renderer" value={backend} onValueChanged={v=>setBackend(v as RendererBackend)}>{Object.values(RendererBackend).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label></div>
- {kind==='CalendarView'&&<Example id="picker-calendar" kind={kind} options={calendarOptions} substitutions={{SelectionMode:selectionMode,IsGroupLabelVisible:groupLabels,IsOutOfScopeEnabled:outOfScope,Language:language,CalendarIdentifier:CalendarIdentifier.Gregorian}}><SceneView {...shared} autoHeight onReady={s=>remember(kind,s)}>
+ {kind==='CalendarView'&&<Example id="picker-calendar" kind={kind} options={calendarOptions} substitutions={{SelectionMode:selectionMode,IsGroupLabelVisible:groupLabels,IsOutOfScopeEnabled:outOfScope,Language:language,CalendarIdentifier:calendarIdentifier}}><SceneView {...shared} autoHeight onReady={s=>remember(kind,s)}>
  {/* @sample:picker-calendar:start */}
- <CalendarView language={language} isGroupLabelVisible={groupLabels} isOutOfScopeEnabled={outOfScope} calendarIdentifier={CalendarIdentifier.Gregorian} selectionMode={selectionMode}/>
+ <CalendarView language={language} isGroupLabelVisible={groupLabels} isOutOfScopeEnabled={outOfScope} calendarIdentifier={calendarIdentifier} selectionMode={selectionMode}/>
  {/* @sample:picker-calendar:end */}
  </SceneView></Example>}
  {kind==='CalendarDatePicker'&&<Example id="picker-calendar-date" kind={kind}><SceneView {...shared} autoHeight onReady={s=>remember(kind,s)}>

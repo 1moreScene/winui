@@ -121,13 +121,30 @@ impl PickerState {
 impl Scene {
     pub(super) fn calendar_first_date(q: &PickerProperties, date: Date) -> Date {
         let min = q.bounds().0;
+        let cal = q.calendar_identifier;
+        if cal != CalendarIdentifier::Gregorian {
+            return match q.display_mode {
+                CalendarViewDisplayMode::Month => {
+                    let first = cal.month_start(date);
+                    let start = first.ordinal()
+                        - (i32::from(first.weekday()) - q.first_day_of_week() as i32).rem_euclid(7);
+                    let min_start = min.ordinal()
+                        - (i32::from(min.weekday()) - q.first_day_of_week() as i32).rem_euclid(7);
+                    Date::from_ordinal(start.max(min_start))
+                }
+                CalendarViewDisplayMode::Year => cal.year_start(date),
+                CalendarViewDisplayMode::Decade => {
+                    cal.date(cal.fields(date).year.div_euclid(10) * 10, 1, 1)
+                }
+            };
+        }
         match q.display_mode {
             CalendarViewDisplayMode::Month => {
                 let first = Date { day: 1, ..date };
                 let start = first.ordinal()
-                    - (i32::from(first.weekday()) - q.first_day_of_week as i32).rem_euclid(7);
+                    - (i32::from(first.weekday()) - q.first_day_of_week() as i32).rem_euclid(7);
                 let min_start = min.ordinal()
-                    - (i32::from(min.weekday()) - q.first_day_of_week as i32).rem_euclid(7);
+                    - (i32::from(min.weekday()) - q.first_day_of_week() as i32).rem_euclid(7);
                 Date::from_ordinal(start.max(min_start))
             }
             CalendarViewDisplayMode::Year => {
@@ -166,13 +183,15 @@ impl Scene {
                 (new.ordinal() - old.ordinal()).div_euclid(7) as f64 * n.picker.cell
             }
             CalendarViewDisplayMode::Year => {
-                ((new.year - old.year) * 12 + new.month as i32 - old.month as i32)
+                q.calendar_identifier
+                    .months_between(old, new)
                     .div_euclid(q.year_columns as i32) as f64
                     * n.picker.calendar_grid.height
                     / q.year_rows as f64
             }
             CalendarViewDisplayMode::Decade => {
-                (new.year - old.year).div_euclid(q.year_columns as i32) as f64
+                (q.calendar_identifier.fields(new).year - q.calendar_identifier.fields(old).year)
+                    .div_euclid(q.year_columns as i32) as f64
                     * n.picker.calendar_grid.height
                     / q.year_rows as f64
             }

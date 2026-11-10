@@ -31,7 +31,7 @@ const record = {
     log: 'out/navigation-quality-full-rust-tests.log',
     note: 'Full run captured two failures in concurrently developed CommandBar tests: closed_secondary_accelerator_invokes_and_roving_tab_is_single and ordered_overflow_focus_and_close_do_not_reopen. Navigation and TextBox suites are validated separately.' },
   audit: 'references/control-origins.json', screenshot: 'out/navigation-performance/settled.png',
-  productionWasm: { path: wasmPath, sha256: hash(wasmPath), matchesCurrentBinary: hash(wasmPath) === hash('gallery/src/wasm/winui_bg.wasm') },
+  productionWasm: { path: wasmPath, sha256: hash(wasmPath), matchesCurrentBinary: hash(wasmPath) === hash('packages/winui-wasm/src/wasm/winui_bg.wasm') },
   sources: ['src/animation.rs', 'src/navigation.rs', 'src/render.rs', 'tests/navigation_indicator.rs',
     'gallery/src/GalleryNavigation.tsx', 'gallery/tests/navigation-quality.spec.ts', 'tools/check-control-origins.mjs'].map(path => ({ path, sha256: hash(path) })),
   limits: ['No native release-window frame-by-frame Composition parity acceptance.',

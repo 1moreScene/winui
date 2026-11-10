@@ -43,10 +43,10 @@ const profiles=['before','after'].map(label=>{
 });
 const dist=readdirSync(new URL('../gallery/dist/assets/',import.meta.url)).find(path=>path.startsWith('winui_bg-')&&path.endsWith('.wasm'));
 const status={recordedAt:new Date().toISOString(),scope:'Collection scrolling: presented-viewport virtualization, layout measurement reuse, font metrics caching, capture-frame coalescing, stable accessible labels',
- testedRuntime:{url:'http://127.0.0.1:5195/#list-view',wasmSha256,runtime,manifestPath,matchesCurrentBinary:hash('gallery/src/wasm/winui_bg.wasm')===wasmSha256,matchesDistBinary:!!dist&&hash('gallery/dist/assets/'+dist)===wasmSha256,changedApplicationFiles},
+ testedRuntime:{url:'http://127.0.0.1:5195/#list-view',wasmSha256,runtime,manifestPath,matchesCurrentBinary:hash('packages/winui-wasm/src/wasm/winui_bg.wasm')===wasmSha256,matchesDistBinary:!!dist&&hash('gallery/dist/assets/'+dist)===wasmSha256,changedApplicationFiles},
  rustPassed,rustLog:{path:rustPath,sha256:hash(rustPath)},browserPassed:reports.reduce((sum,r)=>sum+r.passed,0),reports,windows,matrices,
  logs:logs.map(path=>({path,sha256:hash(path)})),profiles,
- sources:['src/scene/collections.rs','src/scene/collections/adaptive.rs','src/scene/scroll.rs','src/typography.rs','gallery/src/scene.ts','tests/collection_scroll.rs','gallery/tests/collection-scroll.spec.ts'].map(path=>({path,sha256:hash(path)})),
+ sources:['src/scene/collections.rs','src/scene/collections/adaptive.rs','src/scene/scroll.rs','src/typography.rs','packages/winui-wasm/src/scene.ts','tests/collection_scroll.rs','gallery/tests/collection-scroll.spec.ts'].map(path=>({path,sha256:hash(path)})),
  limits:['Timing includes diagnostic profiler overhead and local browser scheduling; it is not a cross-device frame-rate guarantee.','Coalescing repeated sampled offsets reconstructs a continuous curve; it does not establish full Windows inertia/compositor parity.','The earlier full collection status remains a separate checkpoint; this record covers the subsequent scrolling fix.']};
 writeFileSync(new URL('../references/validation/collections-scroll-status.json',import.meta.url),JSON.stringify(status,null,2)+'\n');
 console.log(JSON.stringify({rustPassed,browserPassed:status.browserPassed,wasmSha256,matchesCurrentBinary:status.testedRuntime.matchesCurrentBinary,matchesDistBinary:status.testedRuntime.matchesDistBinary,changedApplicationFiles}));

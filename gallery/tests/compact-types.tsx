@@ -1,5 +1,5 @@
-import {InfoBar,PersonPicture,RatingControl,SplitButton,ToggleSplitButton} from '../src/react';
-import {InfoBarSeverity,RatingItemKind,FlowDirection,type InfoBarOptions,type RatingControlOptions} from '../src/index';
+import {InfoBar,PersonPicture,RatingControl,SplitButton,ToggleSplitButton} from 'winui-wasm/react';
+import {InfoBarSeverity,RatingItemKind,FlowDirection,type InfoBarOptions,type RatingControlOptions} from 'winui-wasm';
 const valid:InfoBarOptions={isOpen:true,severity:InfoBarSeverity.Warning};
 const rating:RatingControlOptions={ratingItemInfo:{kind:RatingItemKind.Font,glyph:'★'},flowDirection:FlowDirection.RightToLeft};
 const samples=<><InfoBar {...valid}/><PersonPicture displayName="Jane Doe"/><RatingControl {...rating}/><SplitButton text="Save"/><ToggleSplitButton isChecked/></>;

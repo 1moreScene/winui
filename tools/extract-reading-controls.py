@@ -19,7 +19,7 @@ metrics['annotationButtonHeight']=19.
 foundation=json.loads(Path('references/foundation-palettes.json').read_text());links=json.loads(Path('references/five-controls-palettes.json').read_text())
 def palette(t,s):
  return {k:(brush(s,k)if t=='HighContrast' or k.startswith('TextControlHighlighter')else links[t]['HyperlinkButtonForeground']if k=='AccentTextFillColorPrimaryBrush'else foundation[t][k])for k in ['TextFillColorPrimaryBrush','AccentTextFillColorPrimaryBrush','AccentFillColorDefaultBrush','TextControlHighlighterForeground','TextControlHighlighterBackground']}
-out=dict(sdk='Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental',sdkSha256=hashlib.sha256(sdk.read_bytes()).hexdigest(),styles=styles,parts=parts,metrics=metrics,paletteSources=['foundation-palettes.json','five-controls-palettes.json'],palettes={t:palette(t,s)for t,s in [('Light','Light'),('Dark','Default'),('HighContrast','HighContrast')]})
+out=dict(sdk='microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779',sdkSha256=hashlib.sha256(sdk.read_bytes()).hexdigest(),styles=styles,parts=parts,metrics=metrics,paletteSources=['foundation-palettes.json','five-controls-palettes.json'],palettes={t:palette(t,s)for t,s in [('Light','Light'),('Dark','Default'),('HighContrast','HighContrast')]})
 out['itemContainerPalettes']={}
 for t,source in [('Light','Light'),('Dark','Default'),('HighContrast','HighContrast')]:
  out['itemContainerPalettes'][t]={}

@@ -265,9 +265,12 @@ impl GpuBackend {
         if let Some(index) = index {
             return Ok(self.layers.borrow_mut().swap_remove(index));
         }
-        if self.layers.borrow().len() > 12 {
-            let old = self.layers.borrow_mut().pop().unwrap();
-            self.delete_layer(old);
+        let reusable={self.layers.borrow_mut().pop()};
+        if let Some(mut layer)=reusable {
+            let g=&self.gl;g.bind_texture(Gl::TEXTURE_2D,Some(&layer.texture));
+            g.tex_image_2d_with_i32_and_i32_and_i32_and_format_and_type_and_opt_u8_array(Gl::TEXTURE_2D,0,Gl::RGBA as i32,w,h,0,Gl::RGBA,Gl::UNSIGNED_BYTE,None)?;
+            g.bind_renderbuffer(Gl::RENDERBUFFER,Some(&layer.stencil));g.renderbuffer_storage(Gl::RENDERBUFFER,Gl::DEPTH24_STENCIL8,w,h);
+            layer.width=w;layer.height=h;return Ok(layer);
         }
         let g = &self.gl;
         let texture = self.texture()?;
@@ -714,6 +717,8 @@ impl GpuBackend {
         height: f64,
         dpr: f64,
     ) -> Result<bool, JsValue> {
+        let expanded=crate::render::expand_retained(commands);
+        let commands=expanded.as_ref();
         let raster_slots=commands.iter().filter_map(|draw|if let Draw::Raster{slot,..}=draw{Some(*slot)}else{None}).collect::<std::collections::HashSet<_>>();
         self.raster_revisions.borrow_mut().retain(|slot,_|raster_slots.contains(slot));
         self.textures.borrow_mut().retain(|key,texture|{let keep=key.strip_prefix("raster:").and_then(|slot|slot.parse::<u64>().ok()).is_none_or(|slot|raster_slots.contains(&slot));if !keep{self.gl.delete_texture(Some(&texture.value));}keep});
@@ -777,11 +782,15 @@ impl GpuBackend {
         };
         let mut state = State::default();
         let mut stack = Vec::new();
-        let mut layers: Vec<(Layer, State, f64, bool)> = vec![];
+        let mut layers: Vec<(Layer, State, f64, bool, bool)> = vec![];
+        let mut allocated_scopes=Vec::new();
+        let mut scope_states=Vec::new();
         let mut text_phase = None;
         for command in commands {
             match command {
+                Draw::RetainedGroup{..}=>unreachable!("retained display groups are expanded above"),
                 Draw::Shadow { rect, .. }
+                | Draw::CrossFade { rect,.. }
                 | Draw::Border { rect, .. }
                 | Draw::VectorPath { rect, .. }
                 | Draw::PathBrush { rect, .. } => {
@@ -805,19 +814,16 @@ impl GpuBackend {
                     };
                     let px = phase(m[0] * rect.x + m[4]);
                     let py = phase(m[3] * rect.y + m[5]);
-                    let key = format!(
-                        "border:{}:{}:{}:{}",
-                        serde_json::to_string(command).unwrap(),
-                        density,
-                        px,
-                        py
-                    );
+                    let dynamic=matches!(command,Draw::CrossFade{..});
+                    // One streaming composite texture, not a retained texture per
+                    // animation progress value and serialized subtree.
+                    let key=if dynamic{"connected-composite".to_string()}else{format!("border:{}:{}:{}:{}",serde_json::to_string(command).unwrap(),density,px,py)};
                     let w = (rect.width * density + px).ceil() + 4.;
                     let h = (rect.height * density + py).ceil() + 4.;
                     if w > 8192. || h > 8192. || w * h > 16_777_216. {
                         return Err(err("Border exceeds raster allocation budget"));
                     }
-                    if !self.textures.borrow().contains_key(&key) {
+                    if dynamic || !self.textures.borrow().contains_key(&key) {
                         self.raster.set_width(w as u32);
                         self.raster.set_height(h as u32);
                         self.ctx.set_transform(
@@ -846,7 +852,8 @@ impl GpuBackend {
                             Draw::VectorPath {
                                 geometry, color, ..
                             } => crate::render::paint_icon_path(&self.ctx, geometry, color),
-                            Draw::Shadow { .. } | Draw::PathBrush { .. } => {
+                            Draw::Shadow { .. } | Draw::PathBrush { .. } | Draw::CrossFade {..} => {
+                                self.vector_backend.images.borrow_mut().extend(self.images.borrow().iter().map(|(k,v)|(k.clone(),v.clone())));
                                 self.vector_backend.dpr.set(density);
                                 crate::render::paint(
                                     &self.vector_backend,
@@ -855,7 +862,8 @@ impl GpuBackend {
                             }
                             _ => unreachable!(),
                         }
-                        let texture = self.texture()?;
+                        let existing=dynamic.then(||self.textures.borrow().get(&key).map(|t|t.value.clone())).flatten();
+                        let texture=if let Some(texture)=existing{self.gl.bind_texture(Gl::TEXTURE_2D,Some(&texture));texture}else{self.texture()?};
                         self.gl.pixel_storei(Gl::UNPACK_PREMULTIPLY_ALPHA_WEBGL, 1);
                         self.gl
                             .tex_image_2d_with_u32_and_u32_and_html_canvas_element(
@@ -931,11 +939,14 @@ impl GpuBackend {
                 }
                 Draw::Layer { .. } | Draw::WindowLayer { .. } | Draw::VectorLayer { .. } => {
                     let opacity =
-                        if let Draw::Layer { opacity } | Draw::WindowLayer { opacity } = command {
+                        if let Draw::Layer { opacity } | Draw::WindowLayer { opacity, .. } = command {
                             *opacity
                         } else {
                             1.
                         };
+                    scope_states.push(state.clone());
+                    let allocated=opacity<1.||matches!(command,Draw::WindowLayer{..});allocated_scopes.push(allocated);
+                    if !allocated{continue;}
                     let layer = self.layer(w as i32, h as i32)?;
                     self.gl
                         .bind_framebuffer(Gl::FRAMEBUFFER, Some(&layer.framebuffer));
@@ -946,11 +957,14 @@ impl GpuBackend {
                         state.clone(),
                         opacity,
                         matches!(command, Draw::WindowLayer { .. }),
+                        matches!(command, Draw::WindowLayer { inherit_backdrop: true, .. }),
                     ));
                     self.clip(&state, size);
                 }
                 Draw::EndLayer => {
-                    let (layer, old, alpha, _) =
+                    let scope=scope_states.pop().ok_or_else(||err("unbalanced layer state"))?;
+                    if !allocated_scopes.pop().ok_or_else(||err("unbalanced layer scope"))?{state=scope;self.clip(&state,size);continue;}
+                    let (layer, old, alpha, _, _) =
                         layers.pop().ok_or_else(|| err("unbalanced layer"))?;
                     self.gl.bind_framebuffer(
                         Gl::FRAMEBUFFER,
@@ -1411,6 +1425,7 @@ impl GpuBackend {
                     } else {
                         let desktop = matches!(command, Draw::SystemBackdrop { .. });
                         let window = layers.iter().rposition(|v| v.3);
+                        let inherit_backdrop = window.is_some_and(|i| layers[i].4);
                         let mut surfaces: Vec<_> = if desktop {
                             std::iter::once(&root_layer.texture)
                                 .chain(
@@ -1420,6 +1435,15 @@ impl GpuBackend {
                                         .map(|v| &v.0.texture),
                                 )
                                 .collect()
+                        } else if inherit_backdrop {
+                            let window = window.unwrap();
+                            // The preceding window layer owns the popup shadow.
+                            // Inherit its underlying surfaces, then this window's
+                            // content, excluding the shadow surface itself.
+                            std::iter::once(&root_layer.texture)
+                                .chain(layers.iter().take(window.saturating_sub(1)).map(|v| &v.0.texture))
+                                .chain(layers.iter().skip(window).map(|v| &v.0.texture))
+                                .collect()
                         } else if let Some(window) = window {
                             layers.iter().skip(window).map(|v| &v.0.texture).collect()
                         } else {
@@ -1427,7 +1451,7 @@ impl GpuBackend {
                                 .chain(layers.iter().map(|v| &v.0.texture))
                                 .collect()
                         };
-                        if desktop || window.is_none() {
+                        if desktop || window.is_none() || inherit_backdrop {
                             if let Some(texture) = &external_texture {
                                 surfaces.insert(0, texture);
                             }

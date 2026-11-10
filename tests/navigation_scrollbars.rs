@@ -17,6 +17,26 @@ fn view() -> NavigationView {
     nav
 }
 #[test]
+fn touch_pan_cancels_item_activation_clamps_offsets_and_keeps_taps_working(){
+    let mut nav=view();let before=nav.snapshot();
+    let row=before.parts.iter().find(|p|p.id=="item2").unwrap();
+    let x=row.rect.x+40.;let y=row.rect.y+row.rect.height/2.;
+    nav.input(Input::Touch{pointer:1,x,y,phase:"down".into()},1.).unwrap();
+    nav.input(Input::Touch{pointer:1,x,y:y-120.,phase:"move".into()},2.).unwrap();
+    nav.input(Input::Touch{pointer:1,x,y:y-120.,phase:"up".into()},3.).unwrap();
+    let after=nav.snapshot();assert!(after.scroll_offset>100.);assert_eq!(after.selected_id,before.selected_id);
+    assert!(!after.events.iter().any(|e|e.kind==winui_wasm::enums::EventKind::ItemInvoked));
+    nav.input(Input::Touch{pointer:2,x,y,phase:"down".into()},4.).unwrap();
+    nav.input(Input::Touch{pointer:2,x,y:-10000.,phase:"move".into()},5.).unwrap();
+    nav.input(Input::Touch{pointer:2,x,y:-10000.,phase:"cancel".into()},6.).unwrap();
+    let end=nav.snapshot();assert_eq!(end.scroll_offset,end.max_scroll);
+    let row=end.parts.iter().find(|p|p.kind==winui_wasm::model::ItemKind::Item&&p.clip.is_some_and(|clip|clip.contains(p.rect.x+40.,p.rect.y+p.rect.height/2.))).unwrap();
+    let (x,y,id)=(row.rect.x+40.,row.rect.y+row.rect.height/2.,row.id.clone());
+    nav.input(Input::Touch{pointer:3,x,y,phase:"down".into()},7.).unwrap();
+    nav.input(Input::Touch{pointer:3,x:x+2.,y:y+2.,phase:"up".into()},8.).unwrap();
+    assert_eq!(nav.snapshot().selected_id,Some(id));
+}
+#[test]
 fn template_menu_scrollbar_uses_shared_rust_thumb_paint_hover_drag_and_keys() {
     let mut nav = view();
     let before = nav.snapshot();

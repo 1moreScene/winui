@@ -15,7 +15,7 @@ for(const backend of ['Canvas2D','WebGL2'])test(`${backend} high contrast materi
  await page.goto('/tests/react-mount.html');
  for(const radii of [[24,8,20,4],[80,0,0,0]]){
   await page.evaluate(async({backend,radii})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
    window.overlayScenes??={};window.overlayScenes['corner-hc']?.dispose();document.querySelector('#corner-hc')?.remove();
    const host=document.createElement('div');host.id='corner-hc';host.style.cssText='position:fixed;inset:0;width:400px;height:240px';document.body.append(host);
    const ui=await a.WinUI.create({globalScrollbars:false});const scene=ui.scene(host,{theme:a.ThemeMode.HighContrast,backend:a.RendererBackend[backend as keyof typeof a.RendererBackend],reducedMotion:true,root:{background:'#ff0000'}});window.overlayScenes['corner-hc']=scene;

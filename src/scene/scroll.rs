@@ -142,6 +142,9 @@ pub(crate) struct ScrollAction {
 #[serde(rename_all = "camelCase")]
 pub struct ScrollSnapshot {
     pub hosted: bool,
+    /// Wheel ownership depends on scrollable extent, never on the current offset.
+    pub horizontal_wheel_contained: bool,
+    pub vertical_wheel_contained: bool,
     pub visible_regions: Vec<Rect>,
     pub horizontal_offset: f64,
     pub vertical_offset: f64,
@@ -306,6 +309,15 @@ impl ScrollState {
             self.y.value(time).clamp(0., m[1]),
         ]
     }
+    pub fn wheel_axes(&self, p: &NodeProperties, time: f64) -> [bool; 2] {
+        let max = self.max(time);
+        [
+            max[0] > 0. && p.horizontal_scroll_mode != ScrollMode::Disabled
+                && p.horizontal_scroll_bar_visibility != ScrollBarVisibility::Disabled,
+            max[1] > 0. && p.vertical_scroll_mode != ScrollMode::Disabled
+                && p.vertical_scroll_bar_visibility != ScrollBarVisibility::Disabled,
+        ]
+    }
     pub fn matrix(&self, time: f64) -> Matrix {
         let o = self.offsets(time);
         let z = self.zoom(time);
@@ -400,6 +412,8 @@ impl ScrollState {
         let m = self.max(time);
         ScrollSnapshot {
             hosted: self.host.is_some(),
+            horizontal_wheel_contained: self.wheel_axes(p, time)[0],
+            vertical_wheel_contained: self.wheel_axes(p, time)[1],
             visible_regions: self.visible_regions(),
             horizontal_offset: o[0],
             vertical_offset: o[1],
@@ -798,32 +812,33 @@ impl Scene {
                 self.scroll_change(id, None, None, Some(z), false)?;
                 return Ok(true);
             }
-            let old = [n.props.horizontal_offset, n.props.vertical_offset];
-            let max = n.scroll.max(self.time);
-            let x = (old[0] + dx).clamp(0., max[0]);
-            let y = (old[1] + dy).clamp(0., max[1]);
-            let x = if n.props.horizontal_scroll_mode == ScrollMode::Disabled
-                || n.props.horizontal_scroll_bar_visibility == ScrollBarVisibility::Disabled
-            {
-                old[0]
-            } else {
-                x
-            };
-            let y = if n.props.vertical_scroll_mode == ScrollMode::Disabled
-                || n.props.vertical_scroll_bar_visibility == ScrollBarVisibility::Disabled
-            {
-                old[1]
-            } else {
-                y
-            };
-            if [x, y] != old {
-                self.scroll_change(id, Some(x), Some(y), None, true)?;
-                return Ok(true);
-            }
-            if (dx != 0. && !n.props.is_horizontal_scroll_chaining_enabled)
-                || (dy != 0. && !n.props.is_vertical_scroll_chaining_enabled)
-            {
-                return Ok(true);
+            if !ctrl {
+                let axes = n.scroll.wheel_axes(&n.props, self.time);
+                // A vertical mouse wheel pans a horizontal-only ScrollViewer,
+                // including Gallery's Hidden/Disabled horizontal card rows.
+                // Keep this decision in Rust so Canvas and hosted DOM agree.
+                let horizontal_delta = if dx == 0. && axes[0] && !axes[1] { dy } else { dx };
+                if (horizontal_delta != 0. && axes[0]) || (dy != 0. && axes[1]) {
+                    let old = [n.props.horizontal_offset, n.props.vertical_offset];
+                    let max = n.scroll.max(self.time);
+                    let x = if axes[0] { (old[0] + horizontal_delta).clamp(0., max[0]) } else { old[0] };
+                    let y = if axes[1] { (old[1] + dy).clamp(0., max[1]) } else { old[1] };
+                    if [x, y] != old {
+                        self.scroll_change(id, Some(x), Some(y), None, true)?;
+                    } else {
+                        self.nodes.get_mut(&id).unwrap().scroll.activity(self.time, self.reduced_motion);
+                        self.invalidate(id, false);
+                    }
+                    // ScrollViewer::OnPointerWheelChanged handles scrollable content
+                    // even at its limits. Chaining flags govern manipulation, not
+                    // whether an exhausted mouse wheel escapes to another owner.
+                    return Ok(true);
+                }
+                if (dx != 0. && !n.props.is_horizontal_scroll_chaining_enabled)
+                    || (dy != 0. && !n.props.is_vertical_scroll_chaining_enabled)
+                {
+                    return Ok(true);
+                }
             }
             at = n.parent;
             while at.is_some_and(|p| !super::collections::is_scroll_owner(self.nodes[&p].kind)) {
@@ -833,13 +848,14 @@ impl Scene {
         Ok(scope.is_some())
     }
     pub(super) fn scroll_hover(&mut self, x: f64, y: f64) {
+        let route = self.pointer_route(x, y);
         for n in self
             .nodes
             .values_mut()
             .filter(|n| super::collections::is_scroll_owner(n.kind))
         {
             let local = n.world.inverse().map(|m| m.point(x, y));
-            let inside = local.is_some_and(|(x, y)| {
+            let inside = route.contains(&n.id) && local.is_some_and(|(x, y)| {
                 Rect::new(0., 0., n.rect.width, n.rect.height).contains(x, y)
             });
             n.scroll.hover = inside;
@@ -893,20 +909,24 @@ impl Scene {
                 break;
             }
             if super::collections::is_scroll_owner(self.nodes[&parent].kind) {
+                let table_target=self.table_scroll_target(parent,id);
+                let target=table_target.map(|(target,_,_)|target).unwrap_or(child);
+                let (fixed_x,left)=table_target.map(|(_,fixed,left)|(fixed,left)).unwrap_or((false,0.));
                 let n = &self.nodes[&parent];
                 let rect =
                     n.world
                         .inverse()
                         .unwrap_or_default()
-                        .bounds(self.nodes[&child].world.bounds(Rect::new(
+                        .bounds(self.nodes[&target].world.bounds(Rect::new(
                             0.,
                             0.,
-                            self.nodes[&child].rect.width,
-                            self.nodes[&child].rect.height,
+                            self.nodes[&target].rect.width,
+                            self.nodes[&target].rect.height,
                         )));
                 let o = n.scroll.offsets(self.time);
-                let nx = if rect.x < 0. {
-                    o[0] + rect.x
+                let nx = if fixed_x {o[0]
+                } else if rect.x < left {
+                    o[0] + rect.x-left
                 } else if rect.x + rect.width > n.rect.width {
                     o[0] + rect.x + rect.width - n.rect.width
                 } else {

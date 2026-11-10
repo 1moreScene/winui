@@ -5,7 +5,7 @@ use winui_wasm::{
     render::{display_list, Draw},
 };
 fn view() -> NavigationView {
-    NavigationView::new(serde_json::from_value(json!({"paneDisplayMode":"Left","isBackButtonVisible":false,"selectedId":"follower","items":[
+    NavigationView::new(serde_json::from_value(json!({"paneDisplayMode":"Left","isBackButtonVisible":"Collapsed","selectedId":"follower","items":[
  {"id":"parent","text":"Parent","selectsOnInvoked":false,"children":[{"id":"child","text":"Child"},{"id":"nested","text":"Nested","children":[{"id":"leaf","text":"Leaf"}]}]},
  {"id":"follower","text":"Follower"},{"id":"last","text":"Last"}]})).unwrap()).unwrap()
 }
@@ -168,7 +168,7 @@ fn acrylic_recipe_updates_have_500ms_color_motion_and_capability_returns_with_cr
 
 #[test]
 fn descendant_motion_inherits_ancestor_offset_without_restarting_its_timeline() {
-    let mut nav=NavigationView::new(serde_json::from_value(json!({"paneDisplayMode":"Left","isBackButtonVisible":false,"items":[
+    let mut nav=NavigationView::new(serde_json::from_value(json!({"paneDisplayMode":"Left","isBackButtonVisible":"Collapsed","items":[
  {"id":"a","text":"A","children":[{"id":"a1","text":"A1"},{"id":"a2","text":"A2"}]},
  {"id":"b","text":"B","children":[{"id":"nested","text":"Nested","children":[{"id":"leaf","text":"Leaf"}]},{"id":"sibling","text":"Sibling"}]}]})).unwrap()).unwrap();
     nav.input(

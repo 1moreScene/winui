@@ -116,6 +116,16 @@ impl Scene {
     }
     fn emit_collection(&mut self, id: u32, kind: EventKind, data: CollectionEvent) {
         self.emit(id, kind);
+        if kind==EventKind::ContextRequested {
+            if let Some((_,surface))=self.context_flyout_owner(id) {
+                // CollectionEvent.position is expressed in the realized item's
+                // coordinates, matching the public item-container contract.
+                let target=data.keys.first().and_then(|key|self.nodes[&id].collection.realized.get(key)).copied().unwrap_or(id);
+                let popup=self.nodes.get_mut(&surface).unwrap();
+                popup.props.placement_target=Some(target);
+                popup.props.placement_position=data.position;
+            }
+        }
         self.events.last_mut().unwrap().collection = Some(data);
     }
     fn collection_change_event(

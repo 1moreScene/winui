@@ -105,6 +105,7 @@ pub(super) fn is_compact(kind: NodeKind) -> bool {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(tag = "kind", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub enum RatingItemInfo {
     Font {
         #[serde(default)]
@@ -435,7 +436,7 @@ fn paint_text(out: &mut Vec<Draw>, text: &TextLayout, font: &Font, x: f64, y: f6
 }
 impl Scene {
     pub(super) fn validate_compact_target(&self, p: &NodeProperties) -> Result<(), String> {
-        if let Some(id) = p.flyout_target {
+        for id in [p.flyout_target,p.context_flyout_target].into_iter().flatten() {
             if !self
                 .nodes
                 .get(&id)

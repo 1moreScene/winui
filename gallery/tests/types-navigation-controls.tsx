@@ -1,5 +1,5 @@
-import {FlipView,PipsPager,TreeView,TabView} from '../src/react';
-import {Orientation,PipsPagerButtonVisibility,PipsPagerWrapMode,TreeViewSelectionMode,TabViewWidthMode,TabViewCloseButtonOverlayMode} from '../src/index';
+import {FlipView,PipsPager,TreeView,TabView} from 'winui-wasm/react';
+import {Orientation,PipsPagerButtonVisibility,PipsPagerWrapMode,TreeViewSelectionMode,TabViewWidthMode,TabViewCloseButtonOverlayMode} from 'winui-wasm';
 const valid=[<FlipView orientation={Orientation.Vertical}/>,<PipsPager wrapMode={PipsPagerWrapMode.Wrap} nextButtonVisibility={PipsPagerButtonVisibility.Visible}/>,<TreeView selectionMode={TreeViewSelectionMode.Multiple}/>,<TabView tabWidthMode={TabViewWidthMode.Compact} closeButtonOverlayMode={TabViewCloseButtonOverlayMode.OnPointerOver} allowDropTabs/>];
 // @ts-expect-error Closed choices require their exported runtime enum.
 const badOrientation=<FlipView orientation="Horizontal"/>;

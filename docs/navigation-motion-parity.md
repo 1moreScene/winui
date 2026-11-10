@@ -58,3 +58,19 @@ npx playwright test -c playwright.navigation-motion.config.ts
 原生探针构建后运行 `NavigationProbe.exe <absolute-output-directory> --navigation-motion`。探针通过 UI Rendering 回调记录时间范围、TransformToVisual 布局和自己的窗口像素；截图读回和 UI 调度会引入相位差，记录不能当作精确 GPU present timestamp。没有使用 RenderTargetBitmap 静态图替代这些运动采样。
 
 外部 DOM 的跨表面 Acrylic 采样、浏览器/Windows Composition 的像素和呈现时序差异仍保留为宿主边界。该记录证明本批源参数、原生可观察机制与浏览器行为的对应关系，不宣称原生发行版所有状态的逐像素、逐帧全面等价。
+
+## 2026-11-09 模板迁移回归修复
+
+真实模板接入后，旧的共享 Arrange 分支和新模板执行器同时调用 `adapt()`。它每帧把面板宽度轨道直接跳到目标值，导致打开/关闭看不到动画；两套主题与透明度绑定还会互相覆盖。现在只由 NavigationView 模板执行器绑定策略，只有实际视口尺寸变化才执行自适应跳转，普通重排保持当前 350 ms 打开、120 ms 关闭轨道，快速反向从当前宽度继续。
+
+关闭期间 `IsPaneOpen=false` 是逻辑状态，面板仍有可见动画阶段。Acrylic recipe、颜色轨道和面板绘制顺序现在保持到关闭完成；页面先绘制，覆盖面板随后采样并绘制，避免半途变成平色或被 Page 遮住。减少透明度立即切换 fallback，恢复时使用已有 167 ms 材质渐入。外部 DOM 仍使用明确的 fallback。
+
+新增 `tests/navigation_pane_scene.rs` 覆盖重复 Arrange、三种左侧模式、关闭期间 Acrylic 命令顺序、反向与透明度恢复。`gallery/tests/navigation-pane-motion.spec.ts` 在 Canvas2D/WebGL2 下采样实际宽度、验证浅色/深色的真实 Acrylic 像素，并通过 Gallery 的真实鼠标点击复查。旧层级、页面转场、材质回归一并运行。结果及当前构建指纹见 `references/validation/navigation-pane-motion.json`，原始帧和截图在 `out/navigation-pane-motion/`。
+
+```powershell
+cargo test --locked --test navigation_pane_scene --test navigation_composition --test navigation_motion --test navigation_external_content
+node tools/prepare-navigation-composition-validation.mjs --production
+# 启动生产快照后：
+cd gallery
+npx playwright test -c playwright.navigation-composition.config.ts
+```

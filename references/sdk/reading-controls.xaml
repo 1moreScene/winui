@@ -10,376 +10,6 @@
         <ns0:Setter Property="OpticalMarginAlignment" Value="TrimSideBearings" />
     </ns0:Style><ns0:Style ns1:Key="BodyRichTextBlockStyle" TargetType="RichTextBlock" BasedOn="{StaticResource BaseRichTextBlockStyle}">
         <ns0:Setter Property="FontWeight" Value="Normal" />
-    </ns0:Style><ns0:Style TargetType="controls:ItemsView" BasedOn="{StaticResource DefaultItemsViewStyle}" /><ns0:Style ns1:Key="DefaultItemsViewStyle" TargetType="controls:ItemsView">
-        <ns0:Setter Property="Background" Value="Transparent" />
-        <ns0:Setter Property="IsTabStop" Value="False" />
-        <ns0:Setter Property="TabNavigation" Value="Once" />
-        <ns0:Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
-        <ns0:Setter Property="XYFocusKeyboardNavigation" Value="Disabled" />
-        <ns0:Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
-        <ns0:Setter Property="Layout">
-            <ns0:Setter.Value>
-                <ns2:StackLayout />
-            </ns0:Setter.Value>
-        </ns0:Setter>
-        <ns0:Setter Property="Template">
-            <ns0:Setter.Value>
-                <ns0:ControlTemplate TargetType="controls:ItemsView">
-                    <ns2:ScrollView ns1:Name="PART_ScrollView" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" HorizontalAnchorRatio="NaN" TabNavigation="{TemplateBinding TabNavigation}" XYFocusKeyboardNavigation="{TemplateBinding XYFocusKeyboardNavigation}">
-                        <ns2:ItemsRepeater ns1:Name="PART_ItemsRepeater" ItemTransitionProvider="{TemplateBinding ItemTransitionProvider}" HorizontalCacheLength="0" ItemsSource="{TemplateBinding ItemsSource}" ItemTemplate="{TemplateBinding ItemTemplate}" Layout="{TemplateBinding Layout}" Margin="{TemplateBinding Padding}" VerticalAlignment="Top" XYFocusKeyboardNavigation="{TemplateBinding XYFocusKeyboardNavigation}" />
-                    </ns2:ScrollView>
-
-                </ns0:ControlTemplate>
-            </ns0:Setter.Value>
-        </ns0:Setter>
-    </ns0:Style><ns0:Style TargetType="controls:PagerControl">
-        <ns0:Setter Property="AutomationProperties.LandmarkType" Value="Navigation" />
-        <ns0:Setter Property="FirstButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
-        <ns0:Setter Property="PreviousButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
-        <ns0:Setter Property="NextButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
-        <ns0:Setter Property="LastButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
-        <ns0:Setter Property="Template">
-            <ns0:Setter.Value>
-                <ns0:ControlTemplate TargetType="controls:PagerControl">
-                    <ns0:Grid ns1:Name="RootGrid" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-
-                        <ns0:Grid.RowDefinitions>
-                            <ns0:RowDefinition Height="Auto" />
-                        </ns0:Grid.RowDefinitions>
-
-                        <ns0:Grid.ColumnDefinitions>
-                            <ns0:ColumnDefinition Width="*" />
-                            <ns0:ColumnDefinition Width="Auto" />
-                            <ns0:ColumnDefinition Width="*" />
-                        </ns0:Grid.ColumnDefinitions>
-
-                        <ns0:VisualStateManager.VisualStateGroups>
-                            <ns0:VisualStateGroup ns1:Name="FirstPageButtonVisibilityStates">
-                                <ns0:VisualState ns1:Name="FirstPageButtonVisible" />
-                                <ns0:VisualState ns1:Name="FirstPageButtonCollapsed">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="FirstPageButton.Visibility" Value="Collapsed" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="FirstPageButtonHidden">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="FirstPageButton.Opacity" Value="0" />
-                                        <ns0:Setter Target="FirstPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="FirstPageButtonIsEnabledStates">
-                                <ns0:VisualState ns1:Name="FirstPageButtonEnabled" />
-                                <ns0:VisualState ns1:Name="FirstPageButtonDisabled">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="FirstPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="PreviousPageButtonVisibilityStates">
-                                <ns0:VisualState ns1:Name="PreviousPageButtonVisible" />
-                                <ns0:VisualState ns1:Name="PreviousPageButtonCollapsed">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="PreviousPageButton.Visibility" Value="Collapsed" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="PreviousPageButtonHidden">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="PreviousPageButton.Opacity" Value="0" />
-                                        <ns0:Setter Target="PreviousPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="PreviousPageButtonIsEnabledStates">
-                                <ns0:VisualState ns1:Name="PreviousPageButtonEnabled" />
-                                <ns0:VisualState ns1:Name="PreviousPageButtonDisabled">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="PreviousPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="NextPageButtonVisibilityStates">
-                                <ns0:VisualState ns1:Name="NextPageButtonVisible" />
-                                <ns0:VisualState ns1:Name="NextPageButtonCollapsed">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="NextPageButton.Visibility" Value="Collapsed" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="NextPageButtonIsEnabledStates">
-                                <ns0:VisualState ns1:Name="NextPageButtonEnabled" />
-                                <ns0:VisualState ns1:Name="NextPageButtonDisabled">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="NextPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="NextPageButtonHidden">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="NextPageButton.Opacity" Value="0" />
-                                        <ns0:Setter Target="NextPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="LastPageButtonStates">
-                                <ns0:VisualState ns1:Name="LastPageButtonVisible" />
-                                <ns0:VisualState ns1:Name="LastPageButtonCollapsed">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="LastPageButton.Visibility" Value="Collapsed" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup>
-                                <ns0:VisualState ns1:Name="LastPageButtonEnabled" />
-                                <ns0:VisualState ns1:Name="LastPageButtonDisabled">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="LastPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="LastPageButtonHidden">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="LastPageButton.Opacity" Value="0" />
-                                        <ns0:Setter Target="LastPageButton.IsEnabled" Value="False" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="PagerDisplayModeStates">
-                                <ns0:VisualState ns1:Name="NumberBoxVisible">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="BoxPanels.Visibility" Value="Visible" />
-                                        <ns0:Setter Target="NumberBoxDisplay.Visibility" Value="Visible" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="ComboBoxVisible">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="ComboBoxDisplay.IsEnabled" Value="True" />
-                                        <ns0:Setter Target="BoxPanels.Visibility" Value="Visible" />
-                                        <ns0:Setter Target="ComboBoxDisplay.Visibility" Value="Visible" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="NumberPanelVisible">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="BoxPanels.Visibility" Value="Collapsed" />
-                                        <ns0:Setter Target="NumberBoxDisplay.Visibility" Value="Collapsed" />
-                                        <ns0:Setter Target="ComboBoxDisplay.Visibility" Value="Collapsed" />
-                                        <ns0:Setter Target="NumberPanelItemsRepeater.Visibility" Value="Visible" />
-                                        <ns0:Setter Target="NumberPanelCurrentPageIndicator.Visibility" Value="Visible" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-                            <ns0:VisualStateGroup ns1:Name="InfiniteItemsDisplayMode">
-                                <ns0:VisualState ns1:Name="FiniteItems" />
-                                <ns0:VisualState ns1:Name="InfiniteItems">
-                                    <ns0:VisualState.Setters>
-                                        <ns0:Setter Target="SuffixTextLabel.Visibility" Value="Collapsed" />
-                                        <ns0:Setter Target="TotalNumberOfPagesLabel.Visibility" Value="Collapsed" />
-                                        <ns0:Setter Target="LastPageButton.Visibility" Value="Collapsed" />
-
-                                    </ns0:VisualState.Setters>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-
-                        </ns0:VisualStateManager.VisualStateGroups>
-                        <ns0:StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                            <ns0:Button ns1:Name="FirstPageButton" ToolTipService.ToolTip="{Binding ElementName=FirstPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding FirstButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
-                            <ns0:Button ns1:Name="PreviousPageButton" ToolTipService.ToolTip="{Binding ElementName=PreviousPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding PreviousButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
-                        </ns0:StackPanel>
-                        <ns0:StackPanel ns1:Name="BoxPanels" Visibility="Collapsed" Orientation="Horizontal" Grid.Column="1">
-                            <ns0:TextBlock Text="{TemplateBinding PrefixText}" VerticalAlignment="Center" Margin="5,0,5,0" />
-                            
-                            <ns2:NumberBox ns1:Name="NumberBoxDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" Maximum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=NumberOfPages, Mode=OneWay}" Minimum="1" SmallChange="1" LargeChange="5" Visibility="Collapsed" />
-                            
-                            <ns0:ComboBox ns1:Name="ComboBoxDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Pages}" Visibility="Collapsed" />
-                            <ns0:TextBlock ns1:Name="SuffixTextLabel" Text="{TemplateBinding SuffixText}" VerticalAlignment="Center" Margin="5,0,0,0" />
-                            <ns0:TextBlock ns1:Name="TotalNumberOfPagesLabel" VerticalAlignment="Center" Margin="5,0,5,0" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=NumberOfPages, Mode=OneWay}" />
-                        </ns0:StackPanel>
-                        <ns2:ItemsRepeater ns1:Name="NumberPanelItemsRepeater" ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.NumberPanelItems}" Grid.Column="1" Visibility="Collapsed">
-                            <ns2:ItemsRepeater.Layout>
-                                <ns2:StackLayout Orientation="Horizontal" Spacing="5" />
-                            </ns2:ItemsRepeater.Layout>
-                        </ns2:ItemsRepeater>
-                        <ns0:Rectangle ns1:Name="NumberPanelCurrentPageIndicator" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Visibility="Collapsed" Fill="{ThemeResource PagerControlSelectionIndicatorForeground}" RadiusX="1" RadiusY="1" Height="2">
-                            <ns0:Rectangle.Transitions>
-                                <ns0:TransitionCollection>
-                                    <ns0:RepositionThemeTransition />
-                                </ns0:TransitionCollection>
-                            </ns0:Rectangle.Transitions>
-                        </ns0:Rectangle>
-                        <ns0:StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left">
-                            <ns0:Button ns1:Name="NextPageButton" ToolTipService.ToolTip="{Binding ElementName=NextPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding NextButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
-                            <ns0:Button ns1:Name="LastPageButton" ToolTipService.ToolTip="{Binding ElementName=LastPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding LastButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
-                        </ns0:StackPanel>
-
-                    </ns0:Grid>
-
-                </ns0:ControlTemplate>
-            </ns0:Setter.Value>
-        </ns0:Setter>
-    </ns0:Style><ns0:Style TargetType="controls:ItemContainer">
-        <ns0:Setter Property="Background" Value="{ThemeResource ItemContainerBackground}" />
-        <ns0:Setter Property="UseSystemFocusVisuals" Value="True" />
-        <ns0:Setter Property="FocusVisualPrimaryThickness" Value="2" />
-        <ns0:Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
-        <ns0:Setter Property="Template">
-            <ns0:Setter.Value>
-                <ns0:ControlTemplate TargetType="controls:ItemContainer">
-                    <ns0:Grid ns1:Name="PART_ContainerRoot" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
-
-                        <ns0:VisualStateManager.VisualStateGroups>
-                            <ns0:VisualStateGroup ns1:Name="CombinedStates">
-                                <ns0:VisualState ns1:Name="UnselectedNormal" />
-                                <ns0:VisualState ns1:Name="UnselectedPointerOver">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPointerOverBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPointerOverBorderBrush}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="UnselectedPressed">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPressedBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPressedBorderBrush}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="SelectedNormal">
-
-                                    <ns0:Storyboard>
-                                        <ns0:DoubleAnimation Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="BorderBrush">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectionVisualBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerBorderBrush}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Margin">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerMargin}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="SelectedPointerOver">
-
-                                    <ns0:Storyboard>
-                                        <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Opacity">
-                                            <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="1" KeySpline="0,0,0,1" />
-                                        </ns0:DoubleAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedPointerOverBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="BorderBrush">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectionVisualPointerOverBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerBorderBrush}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Margin">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerMargin}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-                                <ns0:VisualState ns1:Name="SelectedPressed">
-
-                                    <ns0:Storyboard>
-                                        <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Opacity">
-                                            <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="1" KeySpline="0,0,0,1" />
-                                        </ns0:DoubleAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedPressedBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="BorderBrush">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectionVisualPressedBackground}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerBorderBrush}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Margin">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerMargin}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-
-                            <ns0:VisualStateGroup ns1:Name="MultiSelectStates">
-                                <ns0:VisualState ns1:Name="Single" />
-                                <ns0:VisualState ns1:Name="Multiple">
-
-                                    <ns0:Storyboard>
-                                        <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionCheckbox" Storyboard.TargetProperty="Opacity">
-                                            <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="1" KeySpline="0,0,0,1" />
-                                        </ns0:DoubleAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-
-                            <ns0:VisualStateGroup ns1:Name="DisabledStates">
-                                <ns0:VisualState ns1:Name="Enabled" />
-
-                                <ns0:VisualState ns1:Name="Disabled">
-
-                                    <ns0:Storyboard>
-                                        <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_ContainerRoot" Storyboard.TargetProperty="Opacity">
-                                            <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="{StaticResource ItemContainerDisabledOpacity}" KeySpline="0,0,0,1" />
-                                        </ns0:DoubleAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Visibility">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-
-                        </ns0:VisualStateManager.VisualStateGroups>
-                        
-                        <ns0:Grid ns1:Name="PART_SelectionVisual" ns1:DeferLoadStrategy="Lazy" BorderBrush="Transparent" BorderThickness="3" Background="Transparent" CornerRadius="{TemplateBinding CornerRadius}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" Opacity="0" />
-                        <ns0:Rectangle ns1:Name="PART_CommonVisual" Stroke="{ThemeResource ItemContainerBorderBrush}" StrokeThickness="{ThemeResource ItemContainerSelectedInnerThickness}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" RadiusX="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopLeftCornerRadiusDoubleValueConverter}}" RadiusY="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BottomRightCornerRadiusDoubleValueConverter}}" />
-                        <ns0:CheckBox ns1:Name="PART_SelectionCheckbox" Style="{StaticResource ItemContainerSelectionCheckboxStyle}" ns1:DeferLoadStrategy="Lazy" Opacity="0">
-                            <ns0:CheckBox.Resources>
-                                <ns0:StaticResource ns1:Key="CheckBoxCheckBackgroundFillUnchecked" ResourceKey="ControlOnImageFillColorDefaultBrush" />
-                            </ns0:CheckBox.Resources>
-                        </ns0:CheckBox>
-
-                    </ns0:Grid>
-
-                </ns0:ControlTemplate>
-            </ns0:Setter.Value>
-        </ns0:Setter>
     </ns0:Style><ns0:Style TargetType="controls:AnnotatedScrollBar">
         <ns0:Setter Property="MinWidth" Value="{StaticResource LabelsGridMinWidth}" />
         <ns0:Setter Property="IsTabStop" Value="False" />
@@ -396,7 +26,6 @@
             <ns0:Setter.Value>
                 <ns0:ControlTemplate TargetType="controls:AnnotatedScrollBar">
                     <ns0:Grid ns1:Name="PART_RootGrid" IsTapEnabled="True">
-
                         <ns0:Grid.RowDefinitions>
                             <ns0:RowDefinition Height="auto" />
                             <ns0:RowDefinition Height="*" />
@@ -424,138 +53,139 @@
                             </ns0:Border>
                             <ns0:Border ns1:Name="PART_VerticalThumbGhost" Grid.Row="1" Visibility="Collapsed" Width="{StaticResource ThumbWidth}" Height="{StaticResource ThumbHeight}" CornerRadius="{StaticResource ThumbCornerRadius}" Background="{ThemeResource AccentFillColorDisabledBrush}" VerticalAlignment="Top" HorizontalAlignment="Right" />
                             <ns0:Border ns1:Name="PART_VerticalThumb" Grid.Row="1" Width="{StaticResource ThumbWidth}" Height="{StaticResource ThumbHeight}" CornerRadius="{StaticResource ThumbCornerRadius}" Background="{ThemeResource VerticalThumbBrush}" VerticalAlignment="Top" HorizontalAlignment="Right" />
-
                         </ns0:Grid>
                         <ns0:RepeatButton ns1:Name="PART_VerticalDecrementRepeatButton" Grid.Row="2" Style="{StaticResource ScrollButtonStyle}" AutomationProperties.AccessibilityView="Raw" HorizontalAlignment="Right" IsTabStop="False">
                             <ns0:FontIcon ns1:Name="PART_VerticalDecrementRepeatIcon" FontSize="{StaticResource ScrollButtonFontSize}" Glyph="" />
                         </ns0:RepeatButton>
-
                     </ns0:Grid>
-
                 </ns0:ControlTemplate>
             </ns0:Setter.Value>
         </ns0:Setter>
-    </ns0:Style><ns0:Style ns1:Key="PagerControlPageNavigationButtonStyle" TargetType="Button">
-        <ns0:Setter Property="Background" Value="Transparent" />
-        <ns0:Setter Property="Width" Value="40" />
-        <ns0:Setter Property="Height" Value="40" />
-        <ns0:Setter Property="HorizontalContentAlignment" Value="Center" />
-        <ns0:Setter Property="VerticalContentAlignment" Value="Center" />
-        <ns0:Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
-        <ns0:Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}" />
-        <ns0:Setter Property="Template">
-            <ns0:Setter.Value>
-                <ns0:ControlTemplate TargetType="Button">
-                    <ns0:Grid ns1:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
-
-                        <ns0:VisualStateManager.VisualStateGroups>
-                            <ns0:VisualStateGroup ns1:Name="CommonStates">
-                                <ns0:VisualState ns1:Name="Normal" />
-
-                                <ns0:VisualState ns1:Name="PointerOver">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPointerOver}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPointerOver}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                                <ns0:VisualState ns1:Name="Pressed">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPressed}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPressed}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                                <ns0:VisualState ns1:Name="Disabled">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundDisabled}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundDisabled}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-
-                        </ns0:VisualStateManager.VisualStateGroups>
-                        <ns0:FontIcon ns1:Name="Content" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" Glyph="{TemplateBinding Content}" MirroredWhenRightToLeft="True" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" AutomationProperties.AccessibilityView="Raw" />
-
-                    </ns0:Grid>
-
-                </ns0:ControlTemplate>
-            </ns0:Setter.Value>
-        </ns0:Setter>
-    </ns0:Style><ns0:Style ns1:Key="PagerControlNumberPanelButtonStyle" TargetType="Button">
-        <ns0:Setter Property="MinWidth" Value="{StaticResource PagerControlNumberPanelButtonWidth}" />
-        <ns0:Setter Property="MinHeight" Value="20" />
-        <ns0:Setter Property="Background" Value="Transparent" />
-        <ns0:Setter Property="Template">
-            <ns0:Setter.Value>
-                <ns0:ControlTemplate TargetType="Button">
-                    <ns0:ContentPresenter ns1:Name="ContentPresenter" Background="{TemplateBinding Background}" BackgroundSizing="{TemplateBinding BackgroundSizing}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" CornerRadius="{TemplateBinding CornerRadius}" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" AutomationProperties.AccessibilityView="Raw">
-
-                        <ns0:VisualStateManager.VisualStateGroups>
-                            <ns0:VisualStateGroup ns1:Name="CommonStates">
-                                <ns0:VisualState ns1:Name="Normal" />
-
-                                <ns0:VisualState ns1:Name="PointerOver">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Background">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPointerOver}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPointerOver}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                                <ns0:VisualState ns1:Name="Pressed">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Background">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPressed}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPressed}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                                <ns0:VisualState ns1:Name="Disabled">
-
-                                    <ns0:Storyboard>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Background">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundDisabled}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                        <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
-                                            <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundDisabled}" />
-                                        </ns0:ObjectAnimationUsingKeyFrames>
-                                    </ns0:Storyboard>
-                                </ns0:VisualState>
-
-                            </ns0:VisualStateGroup>
-
-                        </ns0:VisualStateManager.VisualStateGroups>
-                    </ns0:ContentPresenter>
-
-                </ns0:ControlTemplate>
-            </ns0:Setter.Value>
-        </ns0:Setter>
-    </ns0:Style><ns0:Style ns1:Key="ItemContainerSelectionCheckboxStyle" TargetType="CheckBox">
+    </ns0:Style><ns0:Style TargetType="controls:ItemContainer">
+    <ns0:Setter Property="Background" Value="{ThemeResource ItemContainerBackground}" />
+    <ns0:Setter Property="UseSystemFocusVisuals" Value="True" />
+    <ns0:Setter Property="FocusVisualPrimaryThickness" Value="2" />
+    <ns0:Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
+    <ns0:Setter Property="Template">
+      <ns0:Setter.Value>
+        <ns0:ControlTemplate TargetType="controls:ItemContainer">
+          <ns0:Grid ns1:Name="PART_ContainerRoot" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+            <ns0:VisualStateManager.VisualStateGroups>
+              <ns0:VisualStateGroup ns1:Name="CombinedStates">
+                <ns0:VisualState ns1:Name="UnselectedNormal" />
+                <ns0:VisualState ns1:Name="UnselectedPointerOver">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPointerOverBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPointerOverBorderBrush}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="UnselectedPressed">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPressedBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerPressedBorderBrush}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="SelectedNormal">
+                  <ns0:Storyboard>
+                    <ns0:DoubleAnimation Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Opacity" Duration="0" To="1" />
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="BorderBrush">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectionVisualBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
+                        <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerBorderBrush}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Margin">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerMargin}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="SelectedPointerOver">
+                  <ns0:Storyboard>
+                    <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Opacity">
+                      <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="1" KeySpline="0,0,0,1" />
+                    </ns0:DoubleAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedPointerOverBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="BorderBrush">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectionVisualPointerOverBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerBorderBrush}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Margin">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerMargin}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="SelectedPressed">
+                  <ns0:Storyboard>
+                    <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Opacity">
+                      <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="1" KeySpline="0,0,0,1" />
+                    </ns0:DoubleAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Fill">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedPressedBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="BorderBrush">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectionVisualPressedBackground}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Stroke">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerBorderBrush}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_CommonVisual" Storyboard.TargetProperty="Margin">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ItemContainerSelectedInnerMargin}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="MultiSelectStates">
+                <ns0:VisualState ns1:Name="Single" />
+                <ns0:VisualState ns1:Name="Multiple">
+                  <ns0:Storyboard>
+                    <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionCheckbox" Storyboard.TargetProperty="Opacity">
+                      <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="1" KeySpline="0,0,0,1" />
+                    </ns0:DoubleAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="DisabledStates">
+                <ns0:VisualState ns1:Name="Enabled" />
+                <ns0:VisualState ns1:Name="Disabled">
+                  <ns0:Storyboard>
+                    <ns0:DoubleAnimationUsingKeyFrames Storyboard.TargetName="PART_ContainerRoot" Storyboard.TargetProperty="Opacity">
+                      <ns0:SplineDoubleKeyFrame KeyTime="{StaticResource ControlFastAnimationDuration}" Value="{StaticResource ItemContainerDisabledOpacity}" KeySpline="0,0,0,1" />
+                    </ns0:DoubleAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="PART_SelectionVisual" Storyboard.TargetProperty="Visibility">
+                        <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+            </ns0:VisualStateManager.VisualStateGroups>
+            
+            <ns0:Grid ns1:Name="PART_SelectionVisual" ns1:DeferLoadStrategy="Lazy" BorderBrush="Transparent" BorderThickness="3" Background="Transparent" CornerRadius="{TemplateBinding CornerRadius}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" Opacity="0" />
+            <ns0:Rectangle ns1:Name="PART_CommonVisual" Stroke="{ThemeResource ItemContainerBorderBrush}" StrokeThickness="{ThemeResource ItemContainerSelectedInnerThickness}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsHitTestVisible="False" RadiusX="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopLeftCornerRadiusDoubleValueConverter}}" RadiusY="{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BottomRightCornerRadiusDoubleValueConverter}}" />
+            <ns0:CheckBox ns1:Name="PART_SelectionCheckbox" Style="{StaticResource ItemContainerSelectionCheckboxStyle}" ns1:DeferLoadStrategy="Lazy" Opacity="0">
+                 <ns0:CheckBox.Resources>
+                     <ns0:StaticResource ns1:Key="CheckBoxCheckBackgroundFillUnchecked" ResourceKey="ControlOnImageFillColorDefaultBrush" />
+                 </ns0:CheckBox.Resources>
+             </ns0:CheckBox>
+          </ns0:Grid>
+        </ns0:ControlTemplate>
+      </ns0:Setter.Value>
+    </ns0:Setter>
+  </ns0:Style><ns0:Style ns1:Key="ItemContainerSelectionCheckboxStyle" TargetType="CheckBox">
         <ns0:Setter Property="Margin" Value="{ThemeResource ItemContainerCheckboxMargin}" />
         <ns0:Setter Property="MinWidth" Value="{ThemeResource ItemContainerCheckboxMinWidth}" />
         <ns0:Setter Property="HorizontalAlignment" Value="{ThemeResource ItemContainerCheckboxHorizontalAlignment}" />
@@ -567,14 +197,12 @@
             <ns0:Setter.Value>
                 <ns0:ControlTemplate TargetType="CheckBox">
                     <ns0:Border ns1:Name="RootBorder" Background="{ThemeResource ItemContainerCheckboxBackgroundUnchecked}" BorderBrush="{ThemeResource CheckBoxCheckBackgroundStrokeUnchecked}" BorderThickness="{ThemeResource CheckBoxBorderThickness}" CornerRadius="{ThemeResource ControlCornerRadius}" Width="{ThemeResource CheckBoxSize}" Height="{ThemeResource CheckBoxSize}">
-
                         <ns0:VisualStateManager.VisualStateGroups>
                             <ns0:VisualStateGroup ns1:Name="CombinedStates">
                                 <ns0:VisualState ns1:Name="UncheckedNormal" />
                                 <ns0:VisualState ns1:Name="UncheckedPointerOver" />
                                 <ns0:VisualState ns1:Name="UncheckedPressed" />
                                 <ns0:VisualState ns1:Name="UncheckedDisabled">
-
                                     <ns0:Storyboard>
                                         <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootBorder" Storyboard.TargetProperty="BorderBrush">
                                             <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource CheckBoxCheckBackgroundStrokeUncheckedDisabled}" />
@@ -588,11 +216,9 @@
                                     </ns0:Storyboard>
                                     <ns0:VisualState.Setters>
                                         <ns0:Setter Target="CheckGlyph.(controls:AnimatedIcon.State)" Value="NormalOff" />
-
                                     </ns0:VisualState.Setters>
                                 </ns0:VisualState>
                                 <ns0:VisualState ns1:Name="CheckedNormal">
-
                                     <ns0:Storyboard>
                                         <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootBorder" Storyboard.TargetProperty="BorderBrush">
                                             <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource CheckBoxCheckBackgroundStrokeChecked}" />
@@ -606,16 +232,14 @@
                                     </ns0:Storyboard>
                                     <ns0:VisualState.Setters>
                                         <ns0:Setter Target="CheckGlyph.(controls:AnimatedIcon.State)" Value="NormalOn" />
-
                                     </ns0:VisualState.Setters>
                                 </ns0:VisualState>
                                 <ns0:VisualState ns1:Name="CheckedPointerOver" />
                                 <ns0:VisualState ns1:Name="CheckedPressed" />
                                 <ns0:VisualState ns1:Name="CheckedDisabled" />
-
                             </ns0:VisualStateGroup>
-
                         </ns0:VisualStateManager.VisualStateGroups>
+                        
                         <ns2:AnimatedIcon ns1:Name="CheckGlyph" Foreground="{ThemeResource CheckBoxCheckGlyphForegroundUnchecked}" Margin="0,1,0,-1" State="NormalOff">
                             <ns3:AnimatedAcceptVisualSource />
                             <ns2:AnimatedIcon.FallbackIconSource>
@@ -623,8 +247,302 @@
                             </ns2:AnimatedIcon.FallbackIconSource>
                         </ns2:AnimatedIcon>
                     </ns0:Border>
-
                 </ns0:ControlTemplate>
             </ns0:Setter.Value>
         </ns0:Setter>
-    </ns0:Style></ns0:ResourceDictionary>
+    </ns0:Style><ns0:Style TargetType="controls:ItemsView" BasedOn="{StaticResource DefaultItemsViewStyle}" /><ns0:Style ns1:Key="DefaultItemsViewStyle" TargetType="controls:ItemsView">
+    <ns0:Setter Property="Background" Value="Transparent" />
+    <ns0:Setter Property="IsTabStop" Value="False" />
+    <ns0:Setter Property="TabNavigation" Value="Once" />
+    <ns0:Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
+    <ns0:Setter Property="XYFocusKeyboardNavigation" Value="Disabled" />
+    <ns0:Setter Property="CornerRadius" Value="{ThemeResource ControlCornerRadius}" />
+    <ns0:Setter Property="Layout">
+      <ns0:Setter.Value>
+        <ns2:StackLayout />
+      </ns0:Setter.Value>
+    </ns0:Setter>
+    <ns0:Setter Property="Template">
+      <ns0:Setter.Value>
+        <ns0:ControlTemplate TargetType="controls:ItemsView">
+          <ns2:ScrollView ns1:Name="PART_ScrollView" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" HorizontalAnchorRatio="NaN" TabNavigation="{TemplateBinding TabNavigation}" XYFocusKeyboardNavigation="{TemplateBinding XYFocusKeyboardNavigation}">
+            <ns2:ItemsRepeater ns1:Name="PART_ItemsRepeater" ItemTransitionProvider="{TemplateBinding ItemTransitionProvider}" HorizontalCacheLength="0" ItemsSource="{TemplateBinding ItemsSource}" ItemTemplate="{TemplateBinding ItemTemplate}" Layout="{TemplateBinding Layout}" Margin="{TemplateBinding Padding}" VerticalAlignment="Top" XYFocusKeyboardNavigation="{TemplateBinding XYFocusKeyboardNavigation}" />
+          </ns2:ScrollView>
+        </ns0:ControlTemplate>
+      </ns0:Setter.Value>
+    </ns0:Setter>
+  </ns0:Style><ns0:Style TargetType="controls:PagerControl">
+    <ns0:Setter Property="AutomationProperties.LandmarkType" Value="Navigation" />
+    <ns0:Setter Property="FirstButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
+    <ns0:Setter Property="PreviousButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
+    <ns0:Setter Property="NextButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
+    <ns0:Setter Property="LastButtonStyle" Value="{StaticResource PagerControlPageNavigationButtonStyle}" />
+    <ns0:Setter Property="Template">
+      <ns0:Setter.Value>
+        <ns0:ControlTemplate TargetType="controls:PagerControl">
+          <ns0:Grid ns1:Name="RootGrid" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <ns0:Grid.RowDefinitions>
+              <ns0:RowDefinition Height="Auto" />
+            </ns0:Grid.RowDefinitions>
+            <ns0:Grid.ColumnDefinitions>
+              <ns0:ColumnDefinition Width="*" />
+              <ns0:ColumnDefinition Width="Auto" />
+              <ns0:ColumnDefinition Width="*" />
+            </ns0:Grid.ColumnDefinitions>
+            <ns0:VisualStateManager.VisualStateGroups>
+              <ns0:VisualStateGroup ns1:Name="FirstPageButtonVisibilityStates">
+                <ns0:VisualState ns1:Name="FirstPageButtonVisible" />
+                <ns0:VisualState ns1:Name="FirstPageButtonCollapsed">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="FirstPageButton.Visibility" Value="Collapsed" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="FirstPageButtonHidden">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="FirstPageButton.Opacity" Value="0" />
+                    <ns0:Setter Target="FirstPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="FirstPageButtonIsEnabledStates">
+                <ns0:VisualState ns1:Name="FirstPageButtonEnabled" />
+                <ns0:VisualState ns1:Name="FirstPageButtonDisabled">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="FirstPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="PreviousPageButtonVisibilityStates">
+                <ns0:VisualState ns1:Name="PreviousPageButtonVisible" />
+                <ns0:VisualState ns1:Name="PreviousPageButtonCollapsed">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="PreviousPageButton.Visibility" Value="Collapsed" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="PreviousPageButtonHidden">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="PreviousPageButton.Opacity" Value="0" />
+                    <ns0:Setter Target="PreviousPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="PreviousPageButtonIsEnabledStates">
+                <ns0:VisualState ns1:Name="PreviousPageButtonEnabled" />
+                <ns0:VisualState ns1:Name="PreviousPageButtonDisabled">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="PreviousPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="NextPageButtonVisibilityStates">
+                <ns0:VisualState ns1:Name="NextPageButtonVisible" />
+                <ns0:VisualState ns1:Name="NextPageButtonCollapsed">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="NextPageButton.Visibility" Value="Collapsed" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="NextPageButtonIsEnabledStates">
+                <ns0:VisualState ns1:Name="NextPageButtonEnabled" />
+                <ns0:VisualState ns1:Name="NextPageButtonDisabled">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="NextPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="NextPageButtonHidden">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="NextPageButton.Opacity" Value="0" />
+                    <ns0:Setter Target="NextPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="LastPageButtonStates">
+                <ns0:VisualState ns1:Name="LastPageButtonVisible" />
+                <ns0:VisualState ns1:Name="LastPageButtonCollapsed">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="LastPageButton.Visibility" Value="Collapsed" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup>
+                <ns0:VisualState ns1:Name="LastPageButtonEnabled" />
+                <ns0:VisualState ns1:Name="LastPageButtonDisabled">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="LastPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="LastPageButtonHidden">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="LastPageButton.Opacity" Value="0" />
+                    <ns0:Setter Target="LastPageButton.IsEnabled" Value="False" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="PagerDisplayModeStates">
+                <ns0:VisualState ns1:Name="NumberBoxVisible">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="BoxPanels.Visibility" Value="Visible" />
+                    <ns0:Setter Target="NumberBoxDisplay.Visibility" Value="Visible" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="ComboBoxVisible">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="ComboBoxDisplay.IsEnabled" Value="True" />
+                    <ns0:Setter Target="BoxPanels.Visibility" Value="Visible" />
+                    <ns0:Setter Target="ComboBoxDisplay.Visibility" Value="Visible" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="NumberPanelVisible">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="BoxPanels.Visibility" Value="Collapsed" />
+                    <ns0:Setter Target="NumberBoxDisplay.Visibility" Value="Collapsed" />
+                    <ns0:Setter Target="ComboBoxDisplay.Visibility" Value="Collapsed" />
+                    <ns0:Setter Target="NumberPanelItemsRepeater.Visibility" Value="Visible" />
+                    <ns0:Setter Target="NumberPanelCurrentPageIndicator.Visibility" Value="Visible" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+              <ns0:VisualStateGroup ns1:Name="InfiniteItemsDisplayMode">
+                <ns0:VisualState ns1:Name="FiniteItems" />
+                <ns0:VisualState ns1:Name="InfiniteItems">
+                  <ns0:VisualState.Setters>
+                    <ns0:Setter Target="SuffixTextLabel.Visibility" Value="Collapsed" />
+                    <ns0:Setter Target="TotalNumberOfPagesLabel.Visibility" Value="Collapsed" />
+                    <ns0:Setter Target="LastPageButton.Visibility" Value="Collapsed" />
+                  </ns0:VisualState.Setters>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+            </ns0:VisualStateManager.VisualStateGroups>
+            <ns0:StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+              <ns0:Button ns1:Name="FirstPageButton" ToolTipService.ToolTip="{Binding ElementName=FirstPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding FirstButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
+              <ns0:Button ns1:Name="PreviousPageButton" ToolTipService.ToolTip="{Binding ElementName=PreviousPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding PreviousButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
+            </ns0:StackPanel>
+            <ns0:StackPanel ns1:Name="BoxPanels" Visibility="Collapsed" Orientation="Horizontal" Grid.Column="1">
+              <ns0:TextBlock Text="{TemplateBinding PrefixText}" VerticalAlignment="Center" Margin="5,0,5,0" />
+              
+              <ns2:NumberBox ns1:Name="NumberBoxDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" Maximum="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=NumberOfPages, Mode=OneWay}" Minimum="1" SmallChange="1" LargeChange="5" Visibility="Collapsed" />
+              
+              <ns0:ComboBox ns1:Name="ComboBoxDisplay" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.Pages}" Visibility="Collapsed" />
+              <ns0:TextBlock ns1:Name="SuffixTextLabel" Text="{TemplateBinding SuffixText}" VerticalAlignment="Center" Margin="5,0,0,0" />
+              <ns0:TextBlock ns1:Name="TotalNumberOfPagesLabel" VerticalAlignment="Center" Margin="5,0,5,0" Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=NumberOfPages, Mode=OneWay}" />
+            </ns0:StackPanel>
+            <ns2:ItemsRepeater ns1:Name="NumberPanelItemsRepeater" ItemsSource="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.NumberPanelItems}" Grid.Column="1" Visibility="Collapsed">
+              <ns2:ItemsRepeater.Layout>
+                <ns2:StackLayout Orientation="Horizontal" Spacing="5" />
+              </ns2:ItemsRepeater.Layout>
+            </ns2:ItemsRepeater>
+            <ns0:Rectangle ns1:Name="NumberPanelCurrentPageIndicator" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Visibility="Collapsed" Fill="{ThemeResource PagerControlSelectionIndicatorForeground}" RadiusX="1" RadiusY="1" Height="2">
+              <ns0:Rectangle.Transitions>
+                <ns0:TransitionCollection>
+                  <ns0:RepositionThemeTransition />
+                </ns0:TransitionCollection>
+              </ns0:Rectangle.Transitions>
+            </ns0:Rectangle>
+            <ns0:StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Left">
+              <ns0:Button ns1:Name="NextPageButton" ToolTipService.ToolTip="{Binding ElementName=NextPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding NextButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
+              <ns0:Button ns1:Name="LastPageButton" ToolTipService.ToolTip="{Binding ElementName=LastPageButton, Path=(AutomationProperties.Name)}" Style="{TemplateBinding LastButtonStyle}" FontFamily="{StaticResource SymbolThemeFontFamily}" Content="" />
+            </ns0:StackPanel>
+          </ns0:Grid>
+        </ns0:ControlTemplate>
+      </ns0:Setter.Value>
+    </ns0:Setter>
+  </ns0:Style><ns0:Style ns1:Key="PagerControlPageNavigationButtonStyle" TargetType="Button">
+    <ns0:Setter Property="Background" Value="Transparent" />
+    <ns0:Setter Property="Width" Value="40" />
+    <ns0:Setter Property="Height" Value="40" />
+    <ns0:Setter Property="HorizontalContentAlignment" Value="Center" />
+    <ns0:Setter Property="VerticalContentAlignment" Value="Center" />
+    <ns0:Setter Property="UseSystemFocusVisuals" Value="{StaticResource UseSystemFocusVisuals}" />
+    <ns0:Setter Property="CornerRadius" Value="{StaticResource ControlCornerRadius}" />
+    <ns0:Setter Property="Template">
+      <ns0:Setter.Value>
+        <ns0:ControlTemplate TargetType="Button">
+          <ns0:Grid ns1:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+            <ns0:VisualStateManager.VisualStateGroups>
+              <ns0:VisualStateGroup ns1:Name="CommonStates">
+                <ns0:VisualState ns1:Name="Normal" />
+                <ns0:VisualState ns1:Name="PointerOver">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPointerOver}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPointerOver}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="Pressed">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPressed}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPressed}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="Disabled">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid" Storyboard.TargetProperty="Background">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundDisabled}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="Foreground">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundDisabled}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+            </ns0:VisualStateManager.VisualStateGroups>
+            <ns0:FontIcon ns1:Name="Content" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" Glyph="{TemplateBinding Content}" MirroredWhenRightToLeft="True" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" AutomationProperties.AccessibilityView="Raw" />
+          </ns0:Grid>
+        </ns0:ControlTemplate>
+      </ns0:Setter.Value>
+    </ns0:Setter>
+  </ns0:Style><ns0:Style ns1:Key="PagerControlNumberPanelButtonStyle" TargetType="Button">
+    <ns0:Setter Property="MinWidth" Value="{StaticResource PagerControlNumberPanelButtonWidth}" />
+    <ns0:Setter Property="MinHeight" Value="20" />
+    <ns0:Setter Property="Background" Value="Transparent" />
+    <ns0:Setter Property="Template">
+      <ns0:Setter.Value>
+        <ns0:ControlTemplate TargetType="Button">
+          <ns0:ContentPresenter ns1:Name="ContentPresenter" Background="{TemplateBinding Background}" BackgroundSizing="{TemplateBinding BackgroundSizing}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" CornerRadius="{TemplateBinding CornerRadius}" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" AutomationProperties.AccessibilityView="Raw">
+            <ns0:VisualStateManager.VisualStateGroups>
+              <ns0:VisualStateGroup ns1:Name="CommonStates">
+                <ns0:VisualState ns1:Name="Normal" />
+                <ns0:VisualState ns1:Name="PointerOver">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Background">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPointerOver}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPointerOver}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="Pressed">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Background">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundPressed}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundPressed}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+                <ns0:VisualState ns1:Name="Disabled">
+                  <ns0:Storyboard>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Background">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonBackgroundDisabled}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                    <ns0:ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="Foreground">
+                      <ns0:DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource PagerControlPageNavigationButtonForegroundDisabled}" />
+                    </ns0:ObjectAnimationUsingKeyFrames>
+                  </ns0:Storyboard>
+                </ns0:VisualState>
+              </ns0:VisualStateGroup>
+            </ns0:VisualStateManager.VisualStateGroups>
+          </ns0:ContentPresenter>
+        </ns0:ControlTemplate>
+      </ns0:Setter.Value>
+    </ns0:Setter>
+  </ns0:Style></ns0:ResourceDictionary>

@@ -1,0 +1,82 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "templateSource": "references/mit-xaml-generated/generic.xaml",
+  "sdkSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
+  "sources": [
+    {
+      "path": "references/winui/RichEditBox.cpp",
+      "source": "dxaml/xcp/core/native/text/Controls/RichEditBox.cpp",
+      "commit": "7b12709347527238494ca28cb9fed326d513e779",
+      "sha256": "ac9086580127f926e44704553b8771e6f0fed6a4bd9ab132e48e93803a7e4111"
+    },
+    {
+      "path": "references/winui/RichEditBox.h",
+      "source": "dxaml/xcp/core/native/text/Controls/RichEditBox.h",
+      "commit": "7b12709347527238494ca28cb9fed326d513e779",
+      "sha256": "44e1d3eefcdccf8b4b9c34ce1a367feb495a1d57defc16b0b5170f6255fec768"
+    },
+    {
+      "path": "references/winui/RichEditBox_Partial.cpp",
+      "source": "dxaml/xcp/dxaml/lib/RichEditBox_Partial.cpp",
+      "commit": "7b12709347527238494ca28cb9fed326d513e779",
+      "sha256": "a7610f2b9485aa4684c01ede96bdd9d860790079ab1105e32e51e6b2d1171525"
+    },
+    {
+      "path": "references/winui/RichEditBox_themeresources.xaml",
+      "source": "controls/dev/CommonStyles/RichEditBox_themeresources.xaml",
+      "commit": "7b12709347527238494ca28cb9fed326d513e779",
+      "sha256": "a7e951a3b55a32f85ecd1c65738d1518fd0801a81c81a51a5c1a192d3d9e9535"
+    }
+  ],
+  "scalars": {
+    "TextControlThemeMinWidth": "64",
+    "TextControlThemeMinHeight": "32",
+    "TextControlThemePadding": "10,5,6,6",
+    "ControlCornerRadius": "4,4,4,4"
+  },
+  "defaults": {
+    "Foreground": "{ThemeResource TextControlForeground}",
+    "Background": "{ThemeResource TextControlBackground}",
+    "SelectionHighlightColor": "{ThemeResource TextControlSelectionHighlightColor}",
+    "BorderBrush": "{ThemeResource TextControlBorderBrush}",
+    "BorderThickness": "{ThemeResource TextControlBorderThemeThickness}",
+    "FontFamily": "{ThemeResource ContentControlThemeFontFamily}",
+    "FontSize": "{ThemeResource ControlContentThemeFontSize}",
+    "ScrollViewer.HorizontalScrollMode": "Auto",
+    "ScrollViewer.VerticalScrollMode": "Auto",
+    "ScrollViewer.HorizontalScrollBarVisibility": "Auto",
+    "ScrollViewer.VerticalScrollBarVisibility": "Auto",
+    "ScrollViewer.IsDeferredScrollingEnabled": "False",
+    "TextWrapping": "Wrap",
+    "Padding": "{ThemeResource TextControlThemePadding}",
+    "UseSystemFocusVisuals": "{ThemeResource IsApplicationFocusVisualKindReveal}",
+    "ContextFlyout": "{StaticResource TextControlCommandBarContextFlyout}",
+    "SelectionFlyout": "{StaticResource TextControlCommandBarSelectionFlyout}",
+    "CornerRadius": "{ThemeResource ControlCornerRadius}"
+  },
+  "parts": [
+    "CommonStates",
+    "Disabled",
+    "Normal",
+    "PointerOver",
+    "Focused",
+    "HeaderContentPresenter",
+    "BorderElement",
+    "ContentElement",
+    "PlaceholderTextContentPresenter",
+    "DescriptionPresenter"
+  ],
+  "states": [
+    "Disabled",
+    "Normal",
+    "PointerOver",
+    "Focused"
+  ],
+  "sharedResources": "references/text-scroll-template.json",
+  "headerMargin": [
+    0,
+    0,
+    0,
+    8
+  ]
+}

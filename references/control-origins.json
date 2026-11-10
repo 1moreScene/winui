@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "baseline": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
   "removed": [
     "InputProbe React component",
@@ -12,388 +12,3948 @@
     {
       "name": "Grid",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Grid"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Grid",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 243
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 128
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 445
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 672
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 367
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 518
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 93
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 654
+        },
+        {
+          "path": "src/scene/repeater.rs",
+          "line": 700
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 276
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 90
+        },
+        {
+          "path": "src/scene/table_view/grouping.rs",
+          "line": 437
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 61
+        }
+      ]
     },
     {
       "name": "StackPanel",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.StackPanel"
+      "nativeType": "Microsoft.UI.Xaml.Controls.StackPanel",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 303
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 129
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 637
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 670
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 570
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 15
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 396
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 4117
+        }
+      ]
     },
     {
       "name": "TextBlock",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.TextBlock"
+      "nativeType": "Microsoft.UI.Xaml.Controls.TextBlock",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 250
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 141
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 531
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 127
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1067
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 653
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 325
+        },
+        {
+          "path": "src/scene/repeater.rs",
+          "line": 714
+        },
+        {
+          "path": "src/scene/navigation_controls/tree.rs",
+          "line": 62
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 767
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 102
+        },
+        {
+          "path": "src/scene/table_view/grouping.rs",
+          "line": 487
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 62
+        }
+      ]
     },
     {
       "name": "Button",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Button"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Button",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 309
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 152
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 431
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 147
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 635
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 80
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 660
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 661
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 705
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 317
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 415
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 4
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 399
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 771
+        },
+        {
+          "path": "src/scene/table_view/grouping.rs",
+          "line": 394
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 671
+        }
+      ]
     },
     {
       "name": "NavigationView",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.NavigationView"
+      "nativeType": "Microsoft.UI.Xaml.Controls.NavigationView",
+      "rustImplementation": [
+        {
+          "path": "src/navigation.rs"
+        },
+        {
+          "path": "src/render.rs"
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 2455
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 322
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 628
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 377
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 47
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 499
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1055
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 800
+        }
+      ]
     },
     {
       "name": "Image",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Image"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Image",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 49
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 142
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 199
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1198
+        }
+      ]
     },
     {
       "name": "Ellipse",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Shapes.Ellipse"
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Ellipse",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 144
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 570
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1022
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 1092
+        }
+      ]
     },
     {
       "name": "ToggleButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 8
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 153
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 435
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 149
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 722
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 662
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 770
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 707
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1498
+        }
+      ]
     },
     {
       "name": "CheckBox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.CheckBox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.CheckBox",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 8
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 154
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 436
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 536
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 723
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 905
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 708
+        },
+        {
+          "path": "src/scene/navigation_controls/tree.rs",
+          "line": 57
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 63
+        }
+      ]
     },
     {
       "name": "RadioButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.RadioButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.RadioButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 8
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 155
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 270
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 537
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 656
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 900
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 709
+        },
+        {
+          "path": "src/scene/selection_input.rs",
+          "line": 69
+        }
+      ]
     },
     {
       "name": "RadioButtons",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.RadioButtons"
+      "nativeType": "Microsoft.UI.Xaml.Controls.RadioButtons",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 562
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 588
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1054
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 1001
+        },
+        {
+          "path": "src/scene/selection_input.rs",
+          "line": 157
+        }
+      ]
     },
     {
       "name": "ToggleSwitch",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleSwitch"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleSwitch",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 20
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 156
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 261
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 538
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 769
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 900
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 710
+        },
+        {
+          "path": "src/scene/selection_input.rs",
+          "line": 111
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 64
+        }
+      ]
     },
     {
       "name": "ScrollViewer",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ScrollViewer"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ScrollViewer",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 80
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 337
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 135
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 347
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 497
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 524
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 81
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 820
+        },
+        {
+          "path": "src/scene/scroll.rs",
+          "line": 588
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 658
+        }
+      ]
     },
     {
       "name": "TextBox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.TextBox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.TextBox",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 286
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 157
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 442
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 481
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 762
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1053
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 741
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 807
+        },
+        {
+          "path": "src/scene/text_edit.rs",
+          "line": 11
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 88
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1736
+        }
+      ]
     },
     {
       "name": "PasswordBox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.PasswordBox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.PasswordBox",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 159
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 444
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 481
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 767
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1053
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 807
+        },
+        {
+          "path": "src/scene/text_edit.rs",
+          "line": 11
+        }
+      ]
     },
     {
       "name": "ProgressBar",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ProgressBar"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ProgressBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 475
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 851
+        },
+        {
+          "path": "src/scene/progress.rs",
+          "line": 25
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 785
+        }
+      ]
     },
     {
       "name": "ProgressRing",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ProgressRing"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ProgressRing",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 478
+        },
+        {
+          "path": "src/scene/progress.rs",
+          "line": 25
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 785
+        }
+      ]
     },
     {
       "name": "RepeatButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.RepeatButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.RepeatButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 17
+        },
+        {
+          "path": "src/scene/basic_next.rs",
+          "line": 88
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 296
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 432
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 148
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 720
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 661
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 716
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 706
+        }
+      ]
     },
     {
       "name": "Viewbox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Viewbox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Viewbox",
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 266
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 132
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 458
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 516
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1229
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 817
+        }
+      ]
     },
     {
       "name": "Border",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Border"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Border",
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 371
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 325
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 131
+        },
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 284
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 329
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 516
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 533
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 448
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 750
+        },
+        {
+          "path": "src/scene/visual_surface.rs",
+          "line": 21
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 19
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 4127
+        }
+      ]
     },
     {
       "name": "Canvas",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Canvas"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Canvas",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 446
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 130
+        },
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 193
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 361
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 670
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 710
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 750
+        },
+        {
+          "path": "src/scene/table_view/grouping.rs",
+          "line": 371
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 661
+        }
+      ]
     },
     {
       "name": "HyperlinkButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.HyperlinkButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.HyperlinkButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 18
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 166
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 235
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 150
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 721
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 663
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 743
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 65
+        }
+      ]
     },
     {
       "name": "Expander",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Expander"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Expander",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 19
+        },
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 208
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 254
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 180
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 544
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1014
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 777
+        }
+      ]
     },
     {
       "name": "InfoBadge",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.InfoBadge"
+      "nativeType": "Microsoft.UI.Xaml.Controls.InfoBadge",
+      "rustImplementation": [
+        {
+          "path": "src/model.rs",
+          "line": 177
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 161
+        },
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 296
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 371
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 334
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1014
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 767
+        }
+      ]
     },
     {
       "name": "FontIcon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.FontIcon"
+      "nativeType": "Microsoft.UI.Xaml.Controls.FontIcon",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 39
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 66
+        },
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 286
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 149
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 324
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 414
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 22
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 694
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 755
+        },
+        {
+          "path": "src/scene/table_view/grouping.rs",
+          "line": 421
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1252
+        }
+      ]
     },
     {
       "name": "SymbolIcon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.SymbolIcon"
+      "nativeType": "Microsoft.UI.Xaml.Controls.SymbolIcon",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 40
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 72
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 150
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 324
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 639
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 55
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 756
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 585
+        }
+      ]
     },
     {
       "name": "PathIcon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.PathIcon"
+      "nativeType": "Microsoft.UI.Xaml.Controls.PathIcon",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 41
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 74
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 151
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 344
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 72
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 757
+        }
+      ]
     },
     {
       "name": "BitmapIcon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.BitmapIcon"
+      "nativeType": "Microsoft.UI.Xaml.Controls.BitmapIcon",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 42
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 75
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 164
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 348
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 77
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 758
+        }
+      ]
     },
     {
       "name": "ImageIcon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ImageIcon"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ImageIcon",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 43
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 76
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 165
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 348
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 77
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 759
+        }
+      ]
     },
     {
       "name": "AnimatedIcon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.AnimatedIcon"
+      "nativeType": "Microsoft.UI.Xaml.Controls.AnimatedIcon",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 37
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 279
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 311
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 162
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 314
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 1584
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 401
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 23
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 753
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1498
+        }
+      ]
     },
     {
       "name": "IconSourceElement",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.IconSourceElement"
+      "nativeType": "Microsoft.UI.Xaml.Controls.IconSourceElement",
+      "rustImplementation": [
+        {
+          "path": "src/icons.rs",
+          "line": 38
+        },
+        {
+          "path": "src/icon_source.rs",
+          "line": 100
+        },
+        {
+          "path": "src/model.rs",
+          "line": 173
+        },
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 271
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 418
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 313
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 413
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 754
+        }
+      ]
     },
     {
       "name": "Rectangle",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Shapes.Rectangle"
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Rectangle",
+      "rustImplementation": [
+        {
+          "path": "src/shapes.rs",
+          "line": 13
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 143
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 300
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 372
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 693
+        }
+      ]
     },
     {
       "name": "Line",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Shapes.Line"
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Line",
+      "rustImplementation": [
+        {
+          "path": "src/shapes.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 145
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 301
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 694
+        }
+      ]
     },
     {
       "name": "Path",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Shapes.Path"
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Path",
+      "rustImplementation": [
+        {
+          "path": "src/shapes.rs",
+          "line": 15
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 146
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 302
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 695
+        }
+      ]
     },
     {
       "name": "Polygon",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Shapes.Polygon"
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Polygon",
+      "rustImplementation": [
+        {
+          "path": "src/shapes.rs",
+          "line": 16
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 147
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 303
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 696
+        }
+      ]
     },
     {
       "name": "Polyline",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Shapes.Polyline"
+      "nativeType": "Microsoft.UI.Xaml.Shapes.Polyline",
+      "rustImplementation": [
+        {
+          "path": "src/shapes.rs",
+          "line": 17
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 148
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 304
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 697
+        }
+      ]
     },
     {
       "name": "Popup",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Popup"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Popup",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 669
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 709
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 30
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 66
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 380
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 658
+        }
+      ]
     },
     {
       "name": "ToolTip",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ToolTip"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToolTip",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 453
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 286
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 607
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 79
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 30
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 385
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 153
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 658
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 450
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 250
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 94
+        }
+      ]
     },
     {
       "name": "Flyout",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Flyout"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Flyout",
+      "rustImplementation": [
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 443
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 298
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 671
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 628
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 88
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 30
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 129
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 699
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 658
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 7
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 395
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 4113
+        }
+      ]
     },
     {
       "name": "MenuFlyout",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.MenuFlyout"
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuFlyout",
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_menus.rs",
+          "line": 199
+        },
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 443
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 308
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 285
+        },
+        {
+          "path": "src/scene/menu_entries.rs",
+          "line": 60
+        },
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 628
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 30
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 139
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 153
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 658
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 2656
+        }
+      ]
     },
     {
       "name": "Slider",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.Slider"
+      "nativeType": "Microsoft.UI.Xaml.Controls.Slider",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 430
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 273
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 505
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 335
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 990
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 727
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 686
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 252
+        },
+        {
+          "path": "src/scene/slider.rs",
+          "line": 174
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 2064
+        }
+      ]
     },
     {
       "name": "InfoBar",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.InfoBar"
+      "nativeType": "Microsoft.UI.Xaml.Controls.InfoBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 266
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 503
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 752
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 756
+        }
+      ]
     },
     {
       "name": "PersonPicture",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.PersonPicture"
+      "nativeType": "Microsoft.UI.Xaml.Controls.PersonPicture",
+      "rustImplementation": [
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 267
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 559
+        }
+      ]
     },
     {
       "name": "RatingControl",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.RatingControl"
+      "nativeType": "Microsoft.UI.Xaml.Controls.RatingControl",
+      "rustImplementation": [
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 427
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 268
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 755
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 2064
+        }
+      ]
     },
     {
       "name": "SplitButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.SplitButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.SplitButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 15
+        },
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 97
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 428
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 269
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 711
+        }
+      ]
     },
     {
       "name": "ToggleSplitButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleSplitButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleSplitButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 16
+        },
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 97
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 429
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 270
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 712
+        }
+      ]
     },
     {
       "name": "ItemsStackPanel",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsStackPanel"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsStackPanel",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 76
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 261
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 706
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 486
+        }
+      ]
     },
     {
       "name": "ItemsWrapGrid",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsWrapGrid"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsWrapGrid",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 76
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 262
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 707
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 475
+        }
+      ]
     },
     {
       "name": "VariableSizedWrapGrid",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.VariableSizedWrapGrid"
+      "nativeType": "Microsoft.UI.Xaml.Controls.VariableSizedWrapGrid",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 76
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 263
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 708
+        }
+      ]
     },
     {
       "name": "ListView",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ListView"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ListView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 70
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 314
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 424
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 258
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 698
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 712
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 4232
+        }
+      ]
     },
     {
       "name": "GridView",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.GridView"
+      "nativeType": "Microsoft.UI.Xaml.Controls.GridView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 70
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 425
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 258
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 704
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1170
+        },
+        {
+          "path": "src/scene/collections/interaction.rs",
+          "line": 779
+        }
+      ]
     },
     {
       "name": "CollectionItem",
       "classification": "internal rendering machinery",
-      "reason": "Internal realized ListView/GridView item container, owned by the collection; no standalone React control."
+      "reason": "Internal realized ListView/GridView item container, owned by the collection; no standalone React control.",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 144
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 213
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 373
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 162
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 486
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 299
+        },
+        {
+          "path": "src/scene/picker_controls/paint.rs",
+          "line": 178
+        }
+      ]
     },
     {
       "name": "AutoSuggestBox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.AutoSuggestBox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.AutoSuggestBox",
+      "rustImplementation": [
+        {
+          "path": "src/model.rs",
+          "line": 154
+        },
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1506
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 10
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 160
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 240
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 699
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 545
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 66
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 157
+        }
+      ]
     },
     {
       "name": "NumberBox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.NumberBox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.NumberBox",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 9
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 241
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 700
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 545
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 66
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 157
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 957
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 602
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1730
+        }
+      ]
     },
     {
       "name": "ComboBox",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ComboBox"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ComboBox",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1507
+        },
+        {
+          "path": "src/scene/composed.rs",
+          "line": 11
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 223
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 242
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 701
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 545
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 49
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 157
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 729
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 600
+        },
+        {
+          "path": "src/scene/text_edit.rs",
+          "line": 685
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1733
+        }
+      ]
     },
     {
       "name": "ContentDialog",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.ContentDialog"
+      "nativeType": "Microsoft.UI.Xaml.Controls.ContentDialog",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 12
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 243
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 702
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 684
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 108
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1100
+        }
+      ]
     },
     {
       "name": "TeachingTip",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.TeachingTip"
+      "nativeType": "Microsoft.UI.Xaml.Controls.TeachingTip",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 13
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 244
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 703
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 419
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 117
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1100
+        }
+      ]
     },
     {
       "name": "CollectionHeader",
       "classification": "internal rendering machinery",
-      "reason": "Internal collection group-header presenter, owned by the collection; no standalone React control."
+      "reason": "Internal collection group-header presenter, owned by the collection; no standalone React control.",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 133
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 214
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 541
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 486
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1075
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 1597
+        },
+        {
+          "path": "src/scene/collections/adaptive.rs",
+          "line": 370
+        }
+      ]
     },
     {
       "name": "FlipView",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.FlipView"
+      "nativeType": "Microsoft.UI.Xaml.Controls.FlipView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 419
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 252
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 23
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 345
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 114
+        },
+        {
+          "path": "src/scene/navigation_controls/layout.rs",
+          "line": 104
+        },
+        {
+          "path": "src/scene/navigation_controls/paint.rs",
+          "line": 87
+        }
+      ]
     },
     {
       "name": "PipsPager",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.PipsPager"
+      "nativeType": "Microsoft.UI.Xaml.Controls.PipsPager",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 420
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 253
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 693
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 24
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 94
+        },
+        {
+          "path": "src/scene/navigation_controls/layout.rs",
+          "line": 113
+        }
+      ]
     },
     {
       "name": "BreadcrumbBar",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.BreadcrumbBar"
+      "nativeType": "Microsoft.UI.Xaml.Controls.BreadcrumbBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 421
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 254
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 694
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 25
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 129
+        },
+        {
+          "path": "src/scene/navigation_controls/layout.rs",
+          "line": 136
+        }
+      ]
     },
     {
       "name": "TreeView",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.TreeView"
+      "nativeType": "Microsoft.UI.Xaml.Controls.TreeView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 70
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 422
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 258
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 695
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 26
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 73
+        },
+        {
+          "path": "src/scene/navigation_controls/paint.rs",
+          "line": 673
+        },
+        {
+          "path": "src/scene/navigation_controls/tree.rs",
+          "line": 10
+        }
+      ]
     },
     {
       "name": "TabView",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.TabView"
+      "nativeType": "Microsoft.UI.Xaml.Controls.TabView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 423
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 255
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 696
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 27
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1297
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 114
+        },
+        {
+          "path": "src/scene/navigation_controls/layout.rs",
+          "line": 63
+        },
+        {
+          "path": "src/scene/navigation_controls/paint.rs",
+          "line": 49
+        }
+      ]
     },
     {
       "name": "AppBarButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 20
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 431
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 238
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 711
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 415
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 87
+        },
+        {
+          "path": "src/scene/command_controls/layout.rs",
+          "line": 58
+        }
+      ]
     },
     {
       "name": "AppBarToggleButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarToggleButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarToggleButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 8
+        },
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 20
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 431
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 238
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 711
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 415
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 88
+        },
+        {
+          "path": "src/scene/command_controls/layout.rs",
+          "line": 58
+        },
+        {
+          "path": "src/scene/command_controls/paint.rs",
+          "line": 43
+        }
+      ]
     },
     {
       "name": "DropDownButton",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.DropDownButton"
+      "nativeType": "Microsoft.UI.Xaml.Controls.DropDownButton",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 20
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 431
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 147
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 711
+        },
+        {
+          "path": "src/scene/command_controls/layout.rs",
+          "line": 41
+        },
+        {
+          "path": "src/scene/command_controls/paint.rs",
+          "line": 41
+        }
+      ]
     },
     {
       "name": "SelectorBar",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.SelectorBar"
+      "nativeType": "Microsoft.UI.Xaml.Controls.SelectorBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 255
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 711
+        },
+        {
+          "path": "src/scene/navigation_controls.rs",
+          "line": 27
+        },
+        {
+          "path": "src/scene/navigation_controls/input.rs",
+          "line": 114
+        },
+        {
+          "path": "src/scene/navigation_controls/layout.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/navigation_controls/paint.rs",
+          "line": 43
+        }
+      ]
     },
     {
       "name": "CommandBar",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.CommandBar"
+      "nativeType": "Microsoft.UI.Xaml.Controls.CommandBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 24
+        },
+        {
+          "path": "src/scene/command_menus.rs",
+          "line": 185
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 318
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 238
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 711
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 606
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 128
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 290
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 8
+        },
+        {
+          "path": "src/scene/command_controls/layout.rs",
+          "line": 20
+        },
+        {
+          "path": "src/scene/command_controls/paint.rs",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "name": "CalendarView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.CalendarView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 236
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 21
+        },
+        {
+          "path": "src/scene/picker_controls/input.rs",
+          "line": 11
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 120
+        },
+        {
+          "path": "src/scene/picker_controls/paint.rs",
+          "line": 263
+        }
+      ]
+    },
+    {
+      "name": "CalendarDatePicker",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.CalendarDatePicker",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 2394
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 236
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 545
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 157
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 22
+        },
+        {
+          "path": "src/scene/picker_controls/input.rs",
+          "line": 771
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 31
+        },
+        {
+          "path": "src/scene/picker_controls/paint.rs",
+          "line": 557
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1734
+        }
+      ]
+    },
+    {
+      "name": "DatePicker",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.DatePicker",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 2394
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 236
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 545
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 157
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 23
+        },
+        {
+          "path": "src/scene/picker_controls/input.rs",
+          "line": 423
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 150
+        },
+        {
+          "path": "src/scene/picker_controls/paint.rs",
+          "line": 190
+        }
+      ]
+    },
+    {
+      "name": "TimePicker",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.TimePicker",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 2394
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 236
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 545
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 157
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 24
+        },
+        {
+          "path": "src/scene/picker_controls/input.rs",
+          "line": 216
+        },
+        {
+          "path": "src/scene/picker_controls/layout.rs",
+          "line": 150
+        },
+        {
+          "path": "src/scene/picker_controls/paint.rs",
+          "line": 557
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 1735
+        }
+      ]
+    },
+    {
+      "name": "ColorPicker",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ColorPicker",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 236
+        },
+        {
+          "path": "src/scene/picker_controls.rs",
+          "line": 25
+        },
+        {
+          "path": "src/scene/picker_controls/input.rs",
+          "line": 340
+        }
+      ]
+    },
+    {
+      "name": "AppBarSeparator",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.AppBarSeparator",
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_controls.rs",
+          "line": 24
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 238
+        },
+        {
+          "path": "src/scene/command_controls/input.rs",
+          "line": 89
+        },
+        {
+          "path": "src/scene/command_controls/layout.rs",
+          "line": 17
+        },
+        {
+          "path": "src/scene/command_controls/paint.rs",
+          "line": 119
+        }
+      ]
     },
     {
       "name": "MenuBar",
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.MenuBar",
-      "evidence": "docs/menu-layout-controls.md"
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_menus.rs",
+          "line": 10
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 234
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 684
+        }
+      ]
     },
     {
       "name": "MenuBarItem",
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.MenuBarItem",
-      "evidence": "docs/menu-layout-controls.md"
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/command_menus.rs",
+          "line": 10
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 234
+        },
+        {
+          "path": "src/scene/menu_entries.rs",
+          "line": 428
+        },
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 103
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 684
+        }
+      ]
     },
     {
       "name": "CommandBarFlyout",
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.CommandBarFlyout",
-      "evidence": "docs/menu-layout-controls.md"
+      "rustImplementation": [
+        {
+          "path": "src/scene/command_menus.rs",
+          "line": 10
+        },
+        {
+          "path": "src/scene/compact_controls.rs",
+          "line": 443
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 234
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 714
+        },
+        {
+          "path": "src/scene/overlays.rs",
+          "line": 30
+        },
+        {
+          "path": "src/scene/overlay_visual.rs",
+          "line": 81
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 556
+        }
+      ]
     },
     {
       "name": "RelativePanel",
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.RelativePanel",
-      "evidence": "docs/menu-layout-controls.md"
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 134
+        },
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 284
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/layout_panels.rs",
+          "line": 96
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 670
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1014
+        }
+      ]
     },
     {
       "name": "WrapPanel",
       "classification": "WinUI control",
-      "nativeType": "Microsoft.UI.Xaml.Controls.WrapPanel",
-      "evidence": "docs/menu-layout-controls.md"
+      "nativeType": "CommunityToolkit.WinUI.Controls.WrapPanel",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 133
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 235
+        },
+        {
+          "path": "src/scene/layout_panels.rs",
+          "line": 96
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 670
+        }
+      ]
+    },
+    {
+      "name": "SplitView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.SplitView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 190
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 370
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 232
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 553
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1282
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 656
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "name": "SemanticZoom",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.SemanticZoom",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 232
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 553
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1302
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 656
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "name": "ParallaxView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ParallaxView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 232
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 516
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 656
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "name": "UICommand",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Input.XamlUICommand",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 215
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 233
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 657
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "name": "StandardCommand",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Input.StandardUICommand",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 216
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 233
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 657
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "name": "ItemsRepeater",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsRepeater",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 230
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 678
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 90
+        },
+        {
+          "path": "src/scene/repeater.rs",
+          "line": 252
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 742
+        }
+      ]
+    },
+    {
+      "name": "RefreshContainer",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RefreshContainer",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 2457
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 231
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 679
+        },
+        {
+          "path": "src/scene/refresh.rs",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "name": "RefreshVisualizer",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RefreshVisualizer",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 231
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 679
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1304
+        },
+        {
+          "path": "src/scene/refresh.rs",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "name": "ScrollView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ScrollView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 80
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 136
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 347
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 497
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 524
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 820
+        },
+        {
+          "path": "src/scene/scroll.rs",
+          "line": 588
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 1353
+        }
+      ]
+    },
+    {
+      "name": "SwipeControl",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.SwipeControl",
+      "rustImplementation": [
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 191
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 232
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 730
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 656
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "name": "ItemsView",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 70
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 258
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 698
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 960
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 210
+        },
+        {
+          "path": "src/scene/collections/adaptive.rs",
+          "line": 521
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 11
+        }
+      ]
+    },
+    {
+      "name": "AnnotatedScrollBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.AnnotatedScrollBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 229
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 718
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 206
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "name": "PagerControl",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.PagerControl",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 229
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 718
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 205
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 357
+        }
+      ]
+    },
+    {
+      "name": "LayoutPanel",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.LayoutPanel",
+      "rustImplementation": [
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 284
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 670
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1014
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "name": "RichTextBlock",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RichTextBlock",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 229
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 718
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 208
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 46
+        },
+        {
+          "path": "src/scene/reading_controls/rich.rs",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "name": "ContentControl",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ContentControl",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 82
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 228
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 82
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 275
+        }
+      ]
+    },
+    {
+      "name": "ContentPresenter",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ContentPresenter",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 83
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 399
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 448
+        }
+      ]
+    },
+    {
+      "name": "UserControl",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.UserControl",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 84
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 117
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        }
+      ]
+    },
+    {
+      "name": "Page",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Page",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 85
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 117
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        }
+      ]
+    },
+    {
+      "name": "Frame",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Frame",
+      "rustImplementation": [
+        {
+          "path": "src/frame.rs"
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 86
+        },
+        {
+          "path": "src/scene/five_controls.rs",
+          "line": 192
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 675
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 448
+        }
+      ]
+    },
+    {
+      "name": "MenuFlyoutItem",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuFlyoutItem",
+      "rustImplementation": [
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "name": "ToggleMenuFlyoutItem",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ToggleMenuFlyoutItem",
+      "rustImplementation": [
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "name": "RadioMenuFlyoutItem",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RadioMenuFlyoutItem",
+      "rustImplementation": [
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 18
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 617
+        }
+      ]
+    },
+    {
+      "name": "MenuFlyoutSubItem",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuFlyoutSubItem",
+      "rustImplementation": [
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "name": "MenuFlyoutSeparator",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.MenuFlyoutSeparator",
+      "rustImplementation": [
+        {
+          "path": "src/scene/menu_item_controls.rs",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "name": "RichTextBlockOverflow",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RichTextBlockOverflow",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 229
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 718
+        },
+        {
+          "path": "src/scene/reading_controls.rs",
+          "line": 209
+        },
+        {
+          "path": "src/scene/view_controls.rs",
+          "line": 746
+        },
+        {
+          "path": "src/scene/reading_controls/advanced.rs",
+          "line": 46
+        },
+        {
+          "path": "src/scene/reading_controls/rich.rs",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "name": "ScrollBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Primitives.ScrollBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 227
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 851
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 1260
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "name": "Thumb",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Primitives.Thumb",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 227
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "name": "TickBar",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.Primitives.TickBar",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 227
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "name": "ScrollContentPresenter",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ScrollContentPresenter",
+      "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 80
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 347
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 497
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 524
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "name": "ItemsPresenter",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.ItemsPresenter",
+      "rustImplementation": [
+        {
+          "path": "src/scene/composed.rs",
+          "line": 2456
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 227
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 501
+        },
+        {
+          "path": "src/scene/scroll_primitives.rs",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "name": "TableView",
+      "classification": "WinUI control",
+      "nativeType": "WinUI.TableView.TableView",
+      "rustImplementation": [
+        {
+          "path": "src/scene/input.rs",
+          "line": 417
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 163
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 345
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 835
+        },
+        {
+          "path": "src/scene/table_view/runtime.rs",
+          "line": 181
+        }
+      ]
+    },
+    {
+      "name": "NavigationViewItem",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.NavigationViewItem",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 167
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 286
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 631
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 464
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 42
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 804
+        }
+      ]
+    },
+    {
+      "name": "NavigationViewItemHeader",
+      "classification": "internal rendering machinery",
+      "reason": "Source-native group-header template container, owned by NavigationView.",
+      "rustImplementation": [
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "name": "NavigationViewItemSeparator",
+      "classification": "internal rendering machinery",
+      "reason": "Source-native separator template container, owned by NavigationView.",
+      "rustImplementation": [
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "name": "NavigationViewItemPresenter",
+      "classification": "internal rendering machinery",
+      "reason": "Source-native item template presenter, owned by NavigationView.",
+      "rustImplementation": [
+        {
+          "path": "src/scene/mod.rs",
+          "line": 692
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "name": "ItemsRepeaterScrollHost",
+      "classification": "internal rendering machinery",
+      "reason": "Source-native viewport template part, owned by NavigationView.",
+      "rustImplementation": [
+        {
+          "path": "src/scene/mod.rs",
+          "line": 464
+        },
+        {
+          "path": "src/scene/navigation_view.rs",
+          "line": 267
+        }
+      ]
+    },
+    {
+      "name": "RichEditBox",
+      "classification": "WinUI control",
+      "nativeType": "Microsoft.UI.Xaml.Controls.RichEditBox",
+      "rustImplementation": [
+        {
+          "path": "src/scene/content_hosts.rs",
+          "line": 158
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 443
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 481
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 763
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1053
+        },
+        {
+          "path": "src/scene/properties.rs",
+          "line": 807
+        },
+        {
+          "path": "src/scene/rich_edit.rs",
+          "line": 429
+        },
+        {
+          "path": "src/scene/text_edit.rs",
+          "line": 11
+        }
+      ]
     }
   ],
   "galleryInterface": {
     "htmlControlSubstitutes": 0,
-    "sourceAudit": "tools/gallery-control-source.mjs --check",
-    "runtimeAudit": "gallery/tests/gallery-controls.spec.ts",
-    "implementation": "Existing SDK controls mounted through GalleryControls.tsx; no alternate checkbox, dropdown, button or expander state machine."
+    "sourceAudit": "tools/check-control-origins.mjs --check",
+    "runtimeAudit": "gallery/tests/gallery-controls.spec.ts and navigation-external-content.spec.ts",
+    "implementation": "Existing SDK controls mounted through GalleryControls.tsx; navigation dismiss paint, timelines, geometry and input belong to Rust."
+  },
+  "implementationBoundary": {
+    "reactExports": [
+      "Frame",
+      "WinUIProvider",
+      "NavigationView",
+      "SceneView",
+      "Grid",
+      "StackPanel",
+      "Button",
+      "TextBlock",
+      "ToggleButton",
+      "CheckBox",
+      "Image",
+      "SceneNavigationView",
+      "NavigationViewContent",
+      "Ellipse",
+      "RadioButton",
+      "RadioButtons",
+      "ToggleSwitch",
+      "TextBox",
+      "RichEditBox",
+      "PasswordBox",
+      "ScrollViewer",
+      "ProgressBar",
+      "ProgressRing",
+      "RepeatButton",
+      "Viewbox",
+      "Border",
+      "Canvas",
+      "Expander",
+      "HyperlinkButton",
+      "InfoBadge",
+      "FontIcon",
+      "SymbolIcon",
+      "PathIcon",
+      "BitmapIcon",
+      "ImageIcon",
+      "IconSourceElement",
+      "AnimatedIcon",
+      "Rectangle",
+      "Line",
+      "Path",
+      "Polygon",
+      "Polyline",
+      "Popup",
+      "ToolTip",
+      "Flyout",
+      "MenuFlyout",
+      "Slider",
+      "InfoBar",
+      "PersonPicture",
+      "RatingControl",
+      "SplitButton",
+      "ToggleSplitButton",
+      "ListView",
+      "GridView",
+      "FlipView",
+      "PipsPager",
+      "BreadcrumbBar",
+      "TabView",
+      "TreeView",
+      "ItemsStackPanel",
+      "ItemsWrapGrid",
+      "VariableSizedWrapGrid",
+      "NumberBox",
+      "AutoSuggestBox",
+      "ComboBox",
+      "ContentDialog",
+      "TeachingTip",
+      "AppBarButton",
+      "AppBarToggleButton",
+      "DropDownButton",
+      "CommandBar",
+      "SelectorBar",
+      "AppBarSeparator",
+      "CalendarView",
+      "CalendarDatePicker",
+      "DatePicker",
+      "TimePicker",
+      "ColorPicker",
+      "MenuBar",
+      "MenuBarItem",
+      "RelativePanel",
+      "WrapPanel",
+      "CommandBarFlyout",
+      "SplitView",
+      "SemanticZoom",
+      "ParallaxView",
+      "UICommand",
+      "StandardCommand",
+      "ItemsRepeater",
+      "RefreshContainer",
+      "RefreshVisualizer",
+      "ScrollView",
+      "SwipeControl",
+      "ItemsView",
+      "PagerControl",
+      "AnnotatedScrollBar",
+      "LayoutPanel",
+      "RichTextBlock",
+      "RichTextBlockOverflow",
+      "RichInline",
+      "ContentControl",
+      "ContentPresenter",
+      "UserControl",
+      "Page",
+      "SceneFrame",
+      "MenuFlyoutItem",
+      "ToggleMenuFlyoutItem",
+      "RadioMenuFlyoutItem",
+      "MenuFlyoutSubItem",
+      "MenuFlyoutSeparator",
+      "ScrollBar",
+      "Thumb",
+      "TickBar",
+      "ScrollContentPresenter",
+      "ItemsPresenter",
+      "TableView",
+      "NavigationViewItem"
+    ],
+    "frontendFiles": 81,
+    "reactFreeSdkFiles": 27,
+    "wasmBridges": {
+      "packages/winui-wasm/src/scene.ts": [
+        "scene_create",
+        "scene_node",
+        "scene_update",
+        "scene_input",
+        "scene_frame",
+        "scene_destroy"
+      ],
+      "packages/winui-wasm/src/sdk.ts": [
+        "template",
+        "animated_icon_info"
+      ],
+      "packages/winui-wasm/src/frame.ts": [
+        "navigation_frame_create",
+        "navigation_frame_command",
+        "navigation_frame_tick",
+        "navigation_frame_destroy"
+      ]
+    },
+    "rules": [
+      "Every official React control reaches the shared Rust SDK adapter.",
+      "Every runtime NodeKind has reviewed origin and Rust implementation references.",
+      "No frontend HTML/ARIA control substitutes or navigation dismiss handlers.",
+      "React control adapters contain only approved DOM content hosts; no frontend painting, animation or input capture."
+    ],
+    "limitations": "Static checks enforce known boundaries and reject unreviewed additions; runtime regressions and code review remain necessary for semantic correctness."
   },
   "reactAdapters": {
+    "NavigationViewContent": "React projection of a named Rust NavigationView slot; no independent control behavior.",
     "Frame": "Microsoft.UI.Xaml.Controls.Frame: Rust journal, cache and motion with a React DOM content host; sources in references/frame-sources.json.",
     "WinUIProvider": "WASM runtime ownership and React context, not a visual control.",
     "SceneView": "Canvas rendering host, not a visual control.",
-    "SceneNavigationView": "React adapter to the existing NavigationView inside a shared scene."
+    "SceneNavigationView": "React adapter to the existing NavigationView inside a shared scene.",
+    "SceneFrame": "React adapter to the Rust Frame node in a shared scene.",
+    "RichInline": "Named Rust Grid content slot inside a RichTextBlock, not another text renderer."
   },
   "notes": [
     "Origins classify APIs, not implementation completeness or native visual parity.",
+    "WrapPanel follows the pinned Gallery CommunityToolkit source, not an invented Microsoft control.",
     "Scene/Panel/runtime/renderer and host bridges are infrastructure, not additional user-facing controls.",
     "Historical validation records retain the prototype name as evidence of the old run."
   ]

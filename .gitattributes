@@ -1,0 +1,14 @@
+# Provenance manifests verify exact bytes on Windows and Linux checkouts.
+references/** -text
+third_party/** -text
+gallery/public/** -text
+packages/winui-wasm/src/assets/** -text
+gallery/src/HomePage.tsx -text
+gallery/src/rich-edit-fixtures.json -text
+tools/*.py -text
+Cargo.toml -text
+Cargo.lock -text
+gallery/package*.json -text
+packages/winui-wasm/package*.json -text
+LICENSE -text
+THIRD_PARTY_NOTICES.txt -text

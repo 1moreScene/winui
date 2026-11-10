@@ -1,4 +1,4 @@
-import {Orientation,WrapPanelItemsStretch,FlyoutShowMode,ThemeMode,OverlayPlacement,type CommandBarFlyout,type SceneNode,type WrapPanelOptions,type CommandBarFlyoutOptions} from '../src/index';
+import {Orientation,WrapPanelItemsStretch,FlyoutShowMode,ThemeMode,OverlayPlacement,type CommandBarFlyoutController as CommandBarFlyout,type SceneNode,type WrapPanelOptions,type CommandBarFlyoutOptions} from 'winui-wasm';
 const wrap:WrapPanelOptions={orientation:Orientation.Horizontal,itemsStretch:WrapPanelItemsStretch.Last};
 const flyout:CommandBarFlyoutOptions={showMode:FlyoutShowMode.Standard};
 // @ts-expect-error Closed values require the public runtime enum.

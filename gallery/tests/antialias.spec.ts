@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 import {execFileSync} from 'node:child_process';
-import type {Scene, NavigationView} from '../src/index';
+import type {Scene, NavigationViewController as NavigationView} from 'winui-wasm';
 
 declare global {interface Window {aaSurfaces:{scene:Scene;nav:NavigationView;gpu:Scene}}}
 
@@ -8,7 +8,7 @@ async function fixture(page: import('@playwright/test').Page) {
   await page.goto('/#navigation-view');
   await expect(page.locator('#runtime-status')).toHaveText('Ready');
   await page.evaluate(async()=>{
-    const a=await import('/src/index.ts' as string) as typeof import('../src/index');
+    const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
     for(const [id,left] of [['aa-scene',0],['aa-nav',500],['aa-gpu',0]] as const){
       const host=document.createElement('div');host.id=id;
       host.style.cssText=`position:fixed;left:${left}px;top:0;width:419.375px;height:131.625px;z-index:99999`;

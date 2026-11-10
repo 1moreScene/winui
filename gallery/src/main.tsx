@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { WinUI } from './index';
-import { WinUIProvider } from './react';
+import { WinUI } from 'winui-wasm';
+import { WinUIProvider } from 'winui-wasm/react';
 import { App } from './App';
 import './style.css';
 

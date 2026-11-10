@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { TextBox, PasswordBox, Scene } from "../src/index";
+import type { TextBoxController as TextBox, PasswordBoxController as PasswordBox, Scene } from "winui-wasm";
 declare global {
   interface Window {
     chromeFixture: { scene: Scene; control: TextBox | PasswordBox };
@@ -21,8 +21,8 @@ test("editor helper hit region, inner hover/pressed mask and glyph match native 
   for (const item of native.matrix) {
     await page.evaluate(async (item) => {
       const a = (await import(
-        "/src/index.ts" as string
-      )) as typeof import("../src/index");
+        "/@id/winui-wasm" as string
+      )) as typeof import("winui-wasm");
       const host = document.createElement("div");
       host.id = "editor-chrome";
       host.style.cssText =

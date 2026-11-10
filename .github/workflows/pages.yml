@@ -1,0 +1,92 @@
+name: Build and deploy Gallery
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      pages: read
+    env:
+      GITHUB_PAGES_REPOSITORY: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22.14.0'
+          cache: npm
+          cache-dependency-path: |
+            packages/winui-wasm/package-lock.json
+            gallery/package-lock.json
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install pinned Rust toolchain
+        run: rustup show
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-wasm-${{ hashFiles('rust-toolchain.toml', 'Cargo.lock') }}-${{ hashFiles('src/**/*.rs', 'build.rs', 'references/**/*.json', 'references/**/*.xaml') }}
+          restore-keys: |
+            ${{ runner.os }}-wasm-${{ hashFiles('rust-toolchain.toml', 'Cargo.lock') }}-
+      - name: Install pinned wasm-bindgen CLI
+        shell: bash
+        run: |
+          archive="$RUNNER_TEMP/wasm-bindgen.tar.gz"
+          curl --fail --location --retry 3 --output "$archive" https://github.com/wasm-bindgen/wasm-bindgen/releases/download/0.2.104/wasm-bindgen-0.2.104-x86_64-unknown-linux-musl.tar.gz
+          echo "9553740907c2c1008f9a44bb00ed1f5b39ffc55d9d331581b5aebc891a4b772f  $archive" | sha256sum --check
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/wasm-bindgen-0.2.104-x86_64-unknown-linux-musl" >> "$GITHUB_PATH"
+      - name: Install SDK build dependencies
+        run: npm ci --prefix packages/winui-wasm
+      - name: Verify resources and compile Rust/WASM
+        run: npm run build:wasm:ci
+      - name: Install Gallery dependencies
+        run: npm ci --prefix gallery
+      - name: Install browser for mobile touch regression
+        working-directory: gallery
+        run: node node_modules/@playwright/test/cli.js install --with-deps chromium
+      - name: Verify mobile navigation touch scrolling
+        working-directory: gallery
+        env:
+          PW_CHANNEL: chromium
+        run: node node_modules/@playwright/test/cli.js test --config playwright.navigation-touch.config.ts
+      - name: Build Gallery for Pages
+        run: npm run build:pages
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: gallery/dist-pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Gallery
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

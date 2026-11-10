@@ -1,3 +1,5 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption, GallerySlider } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useState, type ReactNode } from "react";
@@ -13,7 +15,7 @@ import {
   StackPanel,
   TextBlock,
   Button,
-} from "./react";
+} from "winui-wasm/react";
 import {
   ThemeMode,
   RendererBackend,
@@ -24,8 +26,9 @@ import {
   HorizontalAlignment,
   VerticalAlignment,
   type Scene,
-} from "./index";
+} from "winui-wasm";
 import official from "./official-five-controls.json";
+import layoutOfficial from './official-layout-gallery.json';
 import source from "./FiveControlsPage.tsx?raw";
 import { extractSampleSource } from "./sample-source";
 export type FivePage = keyof typeof official.controls;
@@ -44,18 +47,20 @@ function Example({
   index = 0,
   children,
   options,
+  nativeXaml,
 }: {
   name: string;
   page: FivePage;
   index?: number;
   children: ReactNode;
   options?: ReactNode;
+  nativeXaml?: string;
 }) {
   const [native, setNative] = useState(false);
-  const sample = official.controls[page].samples[index];
+  const sample = page === 'Expander' ? layoutOfficial.controls.Expander.samples[index] : official.controls[page].samples[index];
   return (
     <section id={name} className="example basic-example">
-      <h2>{sample.title}</h2>
+      <h2><LocalizedText>{sample.title}</LocalizedText></h2>
       <div className="example-card">
         <div className={`basic-live ${options ? "with-options" : ""}`}>
           <div className="basic-preview">{children}</div>
@@ -77,11 +82,7 @@ function Example({
               Official XAML
             </GalleryButton>
           </div>
-          <pre>
-            <code>
-              {native ? sample.xaml : extractSampleSource(source, name)}
-            </code>
-          </pre>
+          <SourceCode language={native ? 'xaml' : 'tsx'}>{native ? nativeXaml ?? sample.xaml : extractSampleSource(source, name)}</SourceCode>
         </GalleryExpander>
       </div>
     </section>
@@ -293,15 +294,20 @@ export function FiveControlsPage({ page }: { page: FivePage }) {
           </>
         )}
         {page === "Expander" && (
+          <>
           <Example
             name="expander-text"
             page={page}
+            nativeXaml={layoutOfficial.controls.Expander.samples[0].xaml
+              .replace(/ExpandDirection="[^"]+"/, `ExpandDirection="${direction}"`)
+              .replace(/VerticalAlignment="[^"]+"/, `VerticalAlignment="${direction === ExpandDirection.Up ? 'Bottom' : 'Top'}"`)
+              .replace(/IsExpanded="[^"]+"/, `IsExpanded="${expanded ? 'True' : 'False'}"`)}
             options={
               <>
                 <label>
-                  Expand direction{" "}
+                  ExpandDirection{" "}
                   <GalleryComboBox
-                    aria-label="Expand direction"
+                    aria-label="ExpandDirection"
                     value={direction}
                     onValueChanged={(e) =>
                       setDirection(e as ExpandDirection)
@@ -312,13 +318,6 @@ export function FiveControlsPage({ page }: { page: FivePage }) {
                     ))}
                   </GalleryComboBox>
                 </label>
-                <GalleryCheckBox
-                    
-                    checked={disabled}
-                    onValueChanged={(e) => setDisabled(e)}  label={<>
-                  
-                  Disable Expander
-                </>}/>
               </>
             }
           >
@@ -330,9 +329,8 @@ export function FiveControlsPage({ page }: { page: FivePage }) {
               {/* @sample:expander-text:start */}
               <Expander
                 header="This text is in the header"
-                enabled={!disabled}
                 expandDirection={direction}
-                verticalAlignment={VerticalAlignment.Top}
+                verticalAlignment={direction === ExpandDirection.Up ? VerticalAlignment.Bottom : VerticalAlignment.Top}
                 onExpanding={() => setExpanded(true)}
                 onCollapsed={() => setExpanded(false)}
               >
@@ -340,10 +338,18 @@ export function FiveControlsPage({ page }: { page: FivePage }) {
               </Expander>
               {/* @sample:expander-text:end */}
             </SceneView>
-            <output aria-live="polite">
-              {expanded ? "Expanded" : "Collapsed"}
-            </output>
           </Example>
+          <Example name="expander-alignment" page={page} index={1}>
+            <SceneView {...shared} autoHeight onReady={s => remember('expander-alignment', s)}>
+              {/* @sample:expander-alignment:start */}
+              <Expander width={500} padding={[0,0,0,0]} horizontalContentAlignment={HorizontalAlignment.Left}
+                header={<TextBlock text="This text is centered" horizontalAlignment={HorizontalAlignment.Center} verticalAlignment={VerticalAlignment.Center}/> }>
+                <TextBlock text="And this text is left aligned" margin={[4,4,4,4]}/>
+              </Expander>
+              {/* @sample:expander-alignment:end */}
+            </SceneView>
+          </Example>
+          </>
         )}
         {page === "InfoBadge" && (
           <>

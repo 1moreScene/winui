@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import {useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
 import {useGalleryTheme} from './gallery-theme';
 import {GalleryButton,GalleryComboBox,GalleryOption,GalleryExpander,GalleryExpanderHeader} from './GalleryControls';
-import {SceneView,ContentControl,ContentPresenter,UserControl,Page,SceneFrame,StackPanel,TextBlock,NumberBox,Button,Border} from './react';
-import {ThemeMode,RendererBackend,NodeKind,HorizontalAlignment,VerticalAlignment,NavigationCacheMode,NavigationTransition,type Scene,type SceneFrame as FrameController,type ScenePageDefinition} from './index';
+import {SceneView,ContentControl,ContentPresenter,UserControl,Page,SceneFrame,StackPanel,TextBlock,NumberBox,Button,Border} from 'winui-wasm/react';
+import {ThemeMode,RendererBackend,NodeKind,HorizontalAlignment,VerticalAlignment,NavigationCacheMode,NavigationTransition,type Scene,type SceneFrameController as FrameController,type ScenePageDefinition} from 'winui-wasm';
 import source from './ContentHostsPage.tsx?raw';
 import {extractSampleSource} from './sample-source';
 import official from './official-content-hosts.json';
@@ -11,7 +13,7 @@ import official from './official-content-hosts.json';
 type Kind='ContentControl'|'ContentPresenter'|'UserControl'|'Page'|'Frame';
 declare global{interface Window{contentHostScenes:Record<string,Scene>;contentHostFrame?:FrameController;}}
 function remember(key:string,scene:Scene){window.contentHostScenes??={};window.contentHostScenes[key]=scene;}
-function Example({title,name,children,options}:{title:string;name:string;children:ReactNode;options?:ReactNode}){return <section className="example basic-example" id={name}><h2>{title}</h2><div className="example-card"><div className={`basic-live${options?' with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><pre><code>{(name==='scene-frame'?extractSampleSource(source,'scene-frame-pages')+'\n\n':'')+extractSampleSource(source,name)}</code></pre></GalleryExpander></div></section>;}
+function Example({title,name,children,options}:{title:string;name:string;children:ReactNode;options?:ReactNode}){return <section className="example basic-example" id={name}><h2><LocalizedText>{title}</LocalizedText></h2><div className="example-card"><div className={`basic-live${options?' with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><SourceCode>{(name==='scene-frame'?extractSampleSource(source,'scene-frame-pages')+'\n\n':'')+extractSampleSource(source,name)}</SourceCode></GalleryExpander></div></section>;}
 const alignments=[HorizontalAlignment.Left,HorizontalAlignment.Center,HorizontalAlignment.Right,HorizontalAlignment.Stretch];
 const vertical=[VerticalAlignment.Top,VerticalAlignment.Center,VerticalAlignment.Bottom,VerticalAlignment.Stretch];
 // @sample:scene-frame-pages:start

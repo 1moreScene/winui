@@ -15,7 +15,7 @@ test('Pinned Gallery search is one AutoSuggestBox and control cards have no inve
   await expect(page.locator('.home-search [data-gallery-control="AutoSuggestBox"]')).toHaveCount(1);
   await expect(page.locator(active+'.home-sample button')).toHaveCount(0);
   const geometry=await page.locator('.home-search').evaluate(host=>{
-    const scene=(host.querySelector('[data-gallery-control]') as HTMLElement&{galleryScene:import('../src').Scene}).galleryScene;
+    const scene=(host.querySelector('[data-gallery-control]') as HTMLElement&{galleryScene:import('winui-wasm').Scene}).galleryScene;
     const nodes=scene.snapshot.nodes,owner=nodes.find(node=>node.kind==='AutoSuggestBox')!;
     const query=nodes.find(node=>node.id===owner.composed!.parts.DropDownButton)!;
     return {width:host.getBoundingClientRect().width,height:owner.rect.height,queryX:query.world[4],queryWidth:query.rect.width,queryIcon:owner.props.queryIcon};
@@ -37,7 +37,7 @@ test('All icon actions fit their actual Rust canvas and center their glyphs at d
     await expect(page.getByRole('button',{name:'Toggle theme',exact:true})).toBeVisible();
     await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
     const rows=await page.locator('.gallery-icon-action').evaluateAll(elements=>elements.filter(element=>element.getClientRects().length>0).map(element=>{
-      const host=element as HTMLElement&{galleryScene:import('../src').Scene};const scene=host.galleryScene.snapshot;
+      const host=element as HTMLElement&{galleryScene:import('winui-wasm').Scene};const scene=host.galleryScene.snapshot;
       const control=scene.nodes.find(node=>node.kind===host.dataset.galleryControl)!;
       const glyph=scene.nodes.find(node=>node.kind==='FontIcon')!;
       const canvas=host.querySelector('canvas')!.getBoundingClientRect(),box=host.getBoundingClientRect();
@@ -55,17 +55,17 @@ for(const backend of ['Canvas2D','WebGL2'])test(`${backend} SDK scene defaults t
   for(const theme of ['Light','Dark','HighContrast']) {
     await page.evaluate(({backend,theme})=>{
       const host=document.createElement('div');host.id='transparent-scene';host.style.cssText='position:fixed;left:400px;top:120px;width:360px;height:100px;z-index:100;background:rgb(219,170,42)';document.body.append(host);
-      const scene=window.gallery.sdk.scene(host,{backend:backend as import('../src').RendererBackend,theme:theme as import('../src').ThemeMode});
+      const scene=window.gallery.sdk.scene(host,{backend:backend as import('winui-wasm').RendererBackend,theme:theme as import('winui-wasm').ThemeMode});
       scene.root.selectorBar({items:[{id:'a',text:'First'},{id:'b',text:'Second'}],selectedIndex:0});
       Object.assign(host,{galleryScene:scene});
     },{backend,theme});
     const host=page.locator('#transparent-scene');
-    await expect.poll(()=>host.evaluate(host=>(host as HTMLElement&{galleryScene:import('../src').Scene}).galleryScene.snapshot.backend.kind)).toBe(backend);
+    await expect.poll(()=>host.evaluate(host=>(host as HTMLElement&{galleryScene:import('winui-wasm').Scene}).galleryScene.snapshot.backend.kind)).toBe(backend);
     const sample=async()=>{const image=PNG.sync.read(await host.screenshot());const offset=(Math.floor(image.height*.9)*image.width+Math.floor(image.width*.9))*4;return [...image.data.subarray(offset,offset+4)];};
     expect(await sample()).toEqual([219,170,42,255]);
-    await host.evaluate(host=>(host as HTMLElement&{galleryScene:import('../src').Scene}).galleryScene.root.update({background:'#21a4c8'}));
+    await host.evaluate(host=>(host as HTMLElement&{galleryScene:import('winui-wasm').Scene}).galleryScene.root.update({background:'#21a4c8'}));
     await expect.poll(sample).toEqual([33,164,200,255]);
-    await host.evaluate(host=>{(host as HTMLElement&{galleryScene:import('../src').Scene}).galleryScene.dispose();host.remove();});
+    await host.evaluate(host=>{(host as HTMLElement&{galleryScene:import('winui-wasm').Scene}).galleryScene.dispose();host.remove();});
   }
 });
 
@@ -84,7 +84,7 @@ test('All implemented pages keep embedded Rust control roots inside their host v
     await page.evaluate(href=>location.hash=href,link.href);await expect(page.locator(active+'.gallery-page-header h1')).toHaveText(link.title);
     await expect(page.locator(active+'.home-sample-page main').first()).toBeVisible();
     const audit=()=>page.locator('[data-gallery-control]').evaluateAll(elements=>elements.filter(element=>element.getClientRects().length>0&&!element.closest('[inert],[hidden]')).map(element=>{
-      const host=element as HTMLElement&{galleryScene:import('../src').Scene};const scene=host.galleryScene;if(!scene||scene.isDisposed)return {kind:host.dataset.galleryControl,missing:true,overflow:0};
+      const host=element as HTMLElement&{galleryScene:import('winui-wasm').Scene};const scene=host.galleryScene;if(!scene||scene.isDisposed)return {kind:host.dataset.galleryControl,missing:true,overflow:0};
       const node=scene.snapshot.nodes.find(node=>node.kind===host.dataset.galleryControl)!;const box=host.querySelector('canvas')!.getBoundingClientRect();
       return {kind:node.kind,missing:false,overflow:Math.max(node.rect.width-box.width,node.rect.height-box.height),native:[node.rect.width,node.rect.height],canvas:[box.width,box.height],host:host.getBoundingClientRect().toJSON(),name:node.props.accessibleName,frame:host.closest('[data-frame-instance]')?.getAttribute('data-frame-page')};
     }));
@@ -100,7 +100,7 @@ test('125 percent DPR keeps search and icon action content inside the native hit
   const context=await browser.newContext({deviceScaleFactor:1.25,viewport:{width:1440,height:1000}});
   const page=await context.newPage();await page.goto('/#button');await expect(page.getByRole('button',{name:'Toggle theme',exact:true})).toBeVisible();
   const bad=await page.locator('.gallery-icon-action').evaluateAll(elements=>elements.flatMap(element=>{
-    const host=element as HTMLElement&{galleryScene:import('../src').Scene};const nodes=host.galleryScene.snapshot.nodes;
+    const host=element as HTMLElement&{galleryScene:import('winui-wasm').Scene};const nodes=host.galleryScene.snapshot.nodes;
     const root=nodes.find(node=>node.kind===host.dataset.galleryControl)!,icon=nodes.find(node=>node.kind==='FontIcon')!;
     const box=host.querySelector('canvas')!.getBoundingClientRect();
     return root.rect.width>box.width+.5||root.rect.height>box.height+.5||Math.abs(icon.world[4]+icon.rect.width/2-root.rect.width/2)>.5?[root.props.accessibleName]:[];

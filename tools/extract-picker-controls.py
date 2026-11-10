@@ -7,7 +7,7 @@ KINDS = ['CalendarView', 'CalendarDatePicker', 'DatePicker', 'TimePicker', 'Colo
 PREFIXES = tuple(KINDS + ['CalendarViewDayItem', 'DateTimePicker', 'DateTimeFlyout', 'LoopingSelector', 'ColorSpectrum'])
 EXTRA_METRICS = {'SliderPreContentMargin','SliderPostContentMargin','SliderTrackThemeHeight','SliderHorizontalThumbHeight','SliderHorizontalThumbWidth'}
 X = '{http://schemas.microsoft.com/winfx/2006/xaml}'
-ir = {'sdk': 'Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental', 'templateSha256': hashlib.sha256(sdk.read_bytes()).hexdigest(), 'controls': KINDS, 'styles': {}, 'metrics': {}, 'parts': {}, 'states': {}, 'xml': {}, 'brushKeys': [], 'palettes': {}, 'aliases': {}, 'unresolved': []}
+ir = {'sdk': 'microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779', 'templateSha256': hashlib.sha256(sdk.read_bytes()).hexdigest(), 'controls': KINDS, 'styles': {}, 'metrics': {}, 'parts': {}, 'states': {}, 'xml': {}, 'brushKeys': [], 'palettes': {}, 'aliases': {}, 'unresolved': []}
 selected = E.Element(root.tag)
 keys = {'SystemListLowColor','SystemBaseHighColor','SystemBaseMediumColor','SystemBaseMediumLowColor'}
 

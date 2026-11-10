@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {PNG} from 'pngjs';
-import type {WinUI,Scene,Slider} from '../src/index';
+import type {WinUI,Scene,SliderController as Slider} from 'winui-wasm';
 declare global {interface Window {floatingFixture:{ui:WinUI;scene:Scene;slider:Slider};}}
 for(const backend of ['Canvas2D','WebGL2'] as const) test(`${backend} Slider native static matrix at fractional DPR`,async({browser})=>{
  test.setTimeout(120000);const context=await browser.newContext({viewport:{width:1200,height:720},deviceScaleFactor:1.25});const page=await context.newPage();
@@ -9,10 +9,10 @@ for(const backend of ['Canvas2D','WebGL2'] as const) test(`${backend} Slider nat
  await page.goto('/#overlays');await expect(page.getByRole('heading',{name:'Slider',exact:true})).toBeVisible();
  for(const item of native.matrix) {
   const geometry=await page.evaluate(async({item,backend})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');window.floatingFixture?.ui.dispose();document.querySelector('#floating-fixture')?.remove();
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');window.floatingFixture?.ui.dispose();document.querySelector('#floating-fixture')?.remove();
    const host=document.createElement('div');host.id='floating-fixture';host.style.cssText='position:fixed;left:0;top:0;width:1000px;height:500px;z-index:2147483640';document.body.append(host);
    const ui=await a.WinUI.create({globalScrollbars:false});const scene=ui.scene(host,{backend:a.RendererBackend[backend],theme:a.ThemeMode[item.theme as keyof typeof a.ThemeMode],reducedMotion:true});const canvas=scene.root.canvas();
-   const {state,...props}=item.props;const slider=canvas.slider({...props,orientation:props.orientation as import('../src/index').Orientation,canvasLeft:24,canvasTop:24,isThumbToolTipEnabled:false});window.floatingFixture={ui,scene,slider};
+   const {state,...props}=item.props;const slider=canvas.slider({...props,orientation:props.orientation as import('winui-wasm').Orientation,canvasLeft:24,canvasTop:24,isThumbToolTipEnabled:false});window.floatingFixture={ui,scene,slider};
    await new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve())));
    let n=slider.snapshot;let t=n.slider!.thumb;const x=n.world[4]+t.x+t.width/2,y=n.world[5]+t.y+t.height/2;
    if(state==='PointerOver'||state==='Pressed')scene.input(slider,{kind:'move',x,y,pointer:1});

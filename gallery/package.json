@@ -4,18 +4,27 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "check:origins": "node ../tools/check-control-origins.mjs --check",
     "build:wasm": "node ../tools/build-wasm.mjs",
-    "dev": "vite --host 127.0.0.1",
-    "build": "npm run build:wasm && tsc --noEmit && vite build && npm run declarations",
-    "preview": "vite preview --host 127.0.0.1",
-    "typecheck": "tsc --noEmit",
+    "dev": "npm run sdk:local && vite --host 0.0.0.0",
+    "build": "npm run check:licenses && npm run build:wasm && node ../tools/build-sdk-package.mjs && tsc --noEmit && vite build",
+    "preview": "npm run check:licenses && vite preview --host 0.0.0.0",
+    "typecheck": "npm run sdk:local && npm run check:origins && npm run check:package-boundary && npm run check:translations && tsc --noEmit",
     "test": "playwright test",
     "test:home": "playwright test -c playwright.home.config.ts",
-    "declarations": "tsc -p tsconfig.sdk.json && node ../tools/copy-sdk-types.mjs"
+    "declarations": "node ../tools/build-sdk-package.mjs",
+    "check:translations": "node ../tools/check-gallery-translations.mjs",
+    "check:license-files": "python -X utf8 ../tools/check-resource-licenses.py --files",
+    "check:licenses": "python -X utf8 ../tools/check-resource-licenses.py --release",
+    "check:package-boundary": "node ../tools/check-sdk-package-boundary.mjs",
+    "sdk:local": "node ../tools/build-sdk-package.mjs --local",
+    "build:local": "npm run sdk:local && tsc --noEmit && vite build",
+    "test:package": "node ../tools/test-sdk-package.mjs"
   },
   "devDependencies": {
     "@playwright/test": "1.65.0",
     "@types/node": "22.20.5",
+    "@types/prismjs": "1.26.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.2.1",
@@ -24,6 +33,11 @@
     "vite": "8.3.6"
   },
   "dependencies": {
+    "winui-wasm": "file:../packages/winui-wasm",
+    "@prettier/plugin-xml": "3.4.2",
+    "html2canvas": "1.4.1",
+    "prettier": "3.9.10",
+    "prismjs": "1.30.0",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },

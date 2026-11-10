@@ -1,7 +1,9 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useRef, useState } from "react";
-import { SceneView, Grid, StackPanel, TextBlock, Button } from "./react";
+import { SceneView, Grid, StackPanel, TextBlock, Button } from "winui-wasm/react";
 import { Header } from "./ButtonPage";
 import {
   ThemeMode,
@@ -13,7 +15,7 @@ import {
   type Panel,
   type Animation,
   type AnimationOptions,
-} from "./index";
+} from "winui-wasm";
 import source from "./EffectsPage.tsx?raw";
 import { extractSampleSource } from "./sample-source";
 
@@ -93,7 +95,7 @@ export function EffectsPage() {
       <main className="stage-main">
         
         <section className="example" id="effects-example">
-          <h2>Interruptible animation over an in-app backdrop</h2>
+          <h2><LocalizedText>Interruptible animation over an in-app backdrop</LocalizedText></h2>
           <div className="example-card">
             <div className="effects-options">
               <label>
@@ -250,17 +252,13 @@ export function EffectsPage() {
             </div>
             <GalleryExpander className="source">
               <GalleryExpanderHeader>Source code</GalleryExpanderHeader>
-              <p className="source-hint">
+              <p className="source-hint"><LocalizedText>
                 当前运行的动画调用；共享初始化沿用整个应用的 WinUIProvider。
-              </p>
-              <pre>
-                <code>{extractSampleSource(source, "effects-animation")}</code>
-              </pre>
+              </LocalizedText></p>
+              <SourceCode>{extractSampleSource(source, "effects-animation")}</SourceCode>
               <section>
-                <h3>Acrylic 面板与内容</h3>
-                <pre>
-                  <code>{extractSampleSource(source, "effects-acrylic")}</code>
-                </pre>
+                <h3><LocalizedText>Acrylic 面板与内容</LocalizedText></h3>
+                <SourceCode>{extractSampleSource(source, "effects-acrylic")}</SourceCode>
               </section>
             </GalleryExpander>
           </div>

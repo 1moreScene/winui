@@ -28,7 +28,7 @@ if(/test result: FAILED|error: test failed/.test(rust))throw Error('Rust checks 
 const names=['HomePage.tsx','GalleryControls.tsx','GalleryPageHeader.tsx','gallery-controls.css','home.css','style.css','CollectionsPage.tsx','CommandControlsPage.tsx','NavigationControlsPage.tsx'];
 function build(buildName){
   const assets=`out/${buildName}-preview/assets`,wasm=`${assets}/${readdirSync(new URL(`../${assets}`,import.meta.url)).find(name=>name.endsWith('.wasm'))}`;
-  return {wasm:{path:wasm,sha256:hash(wasm),matchesCurrentBinary:hash(wasm)===hash('gallery/src/wasm/winui_bg.wasm')},
+  return {wasm:{path:wasm,sha256:hash(wasm),matchesCurrentBinary:hash(wasm)===hash('packages/winui-wasm/src/wasm/winui_bg.wasm')},
     sources:names.map(name=>{const path=`out/${buildName}-dev/src/${name}`;return {path,sha256:hash(path),matchesCurrentSource:hash(path)===hash(`gallery/src/${name}`)};})};
 }
 const sourcePaths=['WinUIGallery/MainWindow.xaml','WinUIGallery/Styles/ItemTemplates.xaml','WinUIGallery/Controls/PageHeader.xaml'];

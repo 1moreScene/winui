@@ -20,6 +20,29 @@ fn scene() -> Scene {
     s.resize(800., 500., 1.25).unwrap();
     s
 }
+#[test]
+fn passive_hover_panels_route_selection_to_item_but_embedded_buttons_keep_their_input() {
+    let mut s=scene();
+    let list=s.create(s.root,NodeKind::ListView,json!({"width":240,"height":120,"hasItemTemplate":true,"collectionItems":[{"id":"a","text":"A"}]})).unwrap();
+    s.layout(&mut Measure);
+    let container=s.snapshot().nodes.iter().find(|n|n.kind==NodeKind::CollectionItem).unwrap().id;
+    let panel=s.create(container,NodeKind::Grid,json!({"width":200,"height":40,"pointerNotifications":true})).unwrap();
+    let button=s.create(panel,NodeKind::Button,json!({"text":"Action","width":60,"height":32,"horizontalAlignment":"Left"})).unwrap();
+    s.layout(&mut Measure);
+    let node=s.snapshot().nodes.into_iter().find(|n|n.id==panel).unwrap();
+    let (x,y)=node.world.point(150.,20.);
+    input(&mut s,json!({"kind":"down","x":x,"y":y,"pointer":1}),1.);
+    input(&mut s,json!({"kind":"up","x":x,"y":y,"pointer":1}),1.1);
+    assert_eq!(s.properties(list).unwrap().selected_keys.as_ref(),&vec!["a".to_string()]);
+    s.update(vec![Update{id:list,patch:json!({"selectedKeys":[]})}]).unwrap();
+    s.events.clear();
+    let node=s.snapshot().nodes.into_iter().find(|n|n.id==button).unwrap();
+    let (x,y)=node.world.point(20.,16.);
+    input(&mut s,json!({"kind":"down","x":x,"y":y,"pointer":1}),2.);
+    input(&mut s,json!({"kind":"up","x":x,"y":y,"pointer":1}),2.1);
+    assert!(s.properties(list).unwrap().selected_keys.is_empty());
+    assert!(s.events.iter().any(|event|event.target==button&&event.kind==EventKind::Click));
+}
 fn data(n: usize) -> serde_json::Value {
     json!((0..n)
         .map(|i| json!({"id":i.to_string(),"text":format!("Item {}",i+1)}))

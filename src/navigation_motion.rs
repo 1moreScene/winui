@@ -23,6 +23,18 @@ fn recipe() -> &'static Reposition {
         serde_json::from_value(contract["reposition"].clone()).unwrap()
     })
 }
+/// NavigationView's RootSplitView uses CompactInline on the left in Expanded
+/// mode, CompactOverlay in Compact mode, and Overlay in Minimal mode.
+pub fn pane_timing(mode: crate::model::DisplayMode, open: bool) -> (f64, [f64; 4]) {
+    static PANE: std::sync::OnceLock<std::collections::HashMap<String, Reposition>> = std::sync::OnceLock::new();
+    let profiles = PANE.get_or_init(|| {
+        let contract: serde_json::Value = serde_json::from_str(include_str!("../references/navigation-motion-contract.json")).unwrap();
+        serde_json::from_value(contract["pane"].clone()).expect("SplitView pane source tracks")
+    });
+    let prefix = match mode { crate::model::DisplayMode::Expanded => "inline", crate::model::DisplayMode::Compact => "compact", _ => "overlay" };
+    let profile = &profiles[&format!("{prefix}{}", if open { "Open" } else { "Close" })];
+    (profile.duration_ms, profile.curve)
+}
 use std::collections::{HashMap, HashSet};
 
 #[derive(Default)]

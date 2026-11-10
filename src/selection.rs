@@ -11,7 +11,7 @@ pub fn is_toggle(kind: NodeKind) -> bool {
 pub fn is_button(kind: NodeKind) -> bool {
     matches!(
         kind,
-        NodeKind::MenuBarItem | NodeKind::Button | NodeKind::AppBarButton | NodeKind::DropDownButton
+        NodeKind::NavigationViewItem | NodeKind::MenuBarItem | NodeKind::Button | NodeKind::AppBarButton | NodeKind::DropDownButton
             | NodeKind::SplitButton
             | NodeKind::ToggleSplitButton
             | NodeKind::RepeatButton

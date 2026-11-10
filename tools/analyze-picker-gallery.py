@@ -48,7 +48,7 @@ live_sweep = read('out/picker-gallery-live-route-sweep.json')
 assert len(live_sweep['rows']) == 10 and not live_sweep['errors']
 with urllib.request.urlopen('http://127.0.0.1:5173/src/wasm/winui_bg.wasm') as response:
     served = hashlib.sha256(response.read()).hexdigest()
-frozen = digest('out/picker-validation/gallery/src/wasm/winui_bg.wasm')
+frozen = digest('out/picker-validation/packages/winui-wasm/src/wasm/winui_bg.wasm')
 report = {
     'recordedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'galleryCommit': official['commit'],
@@ -89,7 +89,7 @@ report = {
     'sourceFiles': {path: digest(path) for path in [
         'tools/extract-picker-controls.py', 'gallery/src/official-picker-controls.json',
         'gallery/src/PickerControlsPage.tsx', 'gallery/src/picker-gallery.css',
-        'gallery/src/GalleryControls.tsx', 'gallery/src/picker-controls-types.ts',
+        'gallery/src/GalleryControls.tsx', 'packages/winui-wasm/src/picker-controls-types.ts',
         'src/scene/picker_controls.rs', 'src/scene/picker_controls/input.rs',
         'src/scene/picker_controls/layout.rs', 'src/shapes.rs',
     ]},

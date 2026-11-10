@@ -1,6 +1,6 @@
-import {StackLayout,UniformGridLayout,Orientation,UniformGridLayoutItemsStretch,UniformGridLayoutItemsJustification,RefreshPullDirection,RefreshVisualizerOrientation,type Scene} from '../src/index';
-import {ItemsRepeater,RefreshContainer,RefreshVisualizer,TextBlock} from '../src/react';
-import {FlowLayout,ActivityFeedLayout,VariedImageSizeLayout,FlowLayoutLineAlignment} from '../src/index';
+import {StackLayout,UniformGridLayout,Orientation,UniformGridLayoutItemsStretch,UniformGridLayoutItemsJustification,RefreshPullDirection,RefreshVisualizerOrientation,type Scene} from 'winui-wasm';
+import {ItemsRepeater,RefreshContainer,RefreshVisualizer,TextBlock} from 'winui-wasm/react';
+import {FlowLayout,ActivityFeedLayout,VariedImageSizeLayout,FlowLayoutLineAlignment} from 'winui-wasm';
 function contract(scene:Scene){
  const repeat=scene.root.itemsRepeater({items:[{id:'a',text:'A'}],layout:new StackLayout({orientation:Orientation.Horizontal,spacing:8})});repeat.setItemTemplate((item,slot)=>slot.text({text:item.text}));repeat.update({layout:new UniformGridLayout({itemsStretch:UniformGridLayoutItemsStretch.Fill,itemsJustification:UniformGridLayoutItemsJustification.Center})});
  const refresh=scene.root.refreshContainer({pullDirection:RefreshPullDirection.TopToBottom});const off=refresh.onRefreshRequested(e=>{const d=e.getDeferral();d.complete();});off();refresh.onRefresh(async()=>{});refresh.requestRefresh();refresh.dispose();repeat.dispose();

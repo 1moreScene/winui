@@ -20,7 +20,7 @@ const assets = readdirSync(new URL('gallery/dist/assets/', root)).map(name => {
 const result = {
   date: '2026-11-07', generatedAtUtc: new Date().toISOString(),
   browserReport:reportPath,
-  validatedWasm:JSON.parse(readFileSync(new URL('gallery/src/wasm/build-stamp.json',root),'utf8')),
+  validatedWasm:JSON.parse(readFileSync(new URL('packages/winui-wasm/src/wasm/build-stamp.json',root),'utf8')),
   currentWorkspace:JSON.parse(readFileSync(new URL('references/validation/overlays-current-workspace.json',root),'utf8')),
   browserRuns:reports.map(({path,report})=>({path,stats:report.stats})),
   integrationChecks:JSON.parse(readFileSync(new URL(process.env.WINUI_INTEGRATION_CHECKS??'references/validation/stage6-integration-checks.json',root),'utf8')),

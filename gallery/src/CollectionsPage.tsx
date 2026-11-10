@@ -1,22 +1,24 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryNumberBox, GalleryOption } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import{useEffect,useMemo,useState,type ReactNode}from'react';
 import{Header}from'./ButtonPage';
-import{SceneView,ListView,GridView,ItemsStackPanel,ItemsWrapGrid,VariableSizedWrapGrid,TextBlock,Grid,Image,Button,MenuFlyout,Border,Rectangle,StackPanel,RadioButtons,TextBox,ToggleSwitch}from'./react';
-import{ThemeMode,ItemsUpdatingScrollMode,ImageStretch,TextTrimming,GridUnit,RendererBackend,ListViewSelectionMode,Orientation,HorizontalAlignment,VerticalAlignment,FlowDirection,type Scene,type CollectionView,type CollectionItemContainer,type CollectionScrollPosition}from'./index';
+import{SceneView,ListView,GridView,ItemsStackPanel,ItemsWrapGrid,VariableSizedWrapGrid,TextBlock,Grid,Image,Button,MenuFlyout,Border,Rectangle,StackPanel,RadioButtons,TextBox,ToggleSwitch}from'winui-wasm/react';
+import{ThemeMode,ItemsUpdatingScrollMode,ImageStretch,TextTrimming,GridUnit,RendererBackend,ListViewSelectionMode,Orientation,HorizontalAlignment,VerticalAlignment,FlowDirection,type Scene,type CollectionView,type CollectionScrollPosition}from'winui-wasm';
 import{ContactTemplate,PhotoItem,type PhotoTemplate}from'./CollectionTemplates';
 import data from'./collections-data.json';import official from'./official-collections.json';import source from'./CollectionsPage.tsx?raw';import templateSource from'./CollectionTemplates.tsx?raw';import{extractSampleSource}from'./sample-source';
 type Kind='ListView'|'GridView'|'ItemsStackPanel'|'ItemsWrapGrid'|'VariableSizedWrapGrid';
 declare global{interface Window{collectionScenes:Record<string,Scene>;collectionViews:Record<string,CollectionView>;}}
 function remember(name:string,scene:Scene){window.collectionScenes??={};window.collectionScenes[name]=scene;}
 function view(name:string,node:CollectionView){window.collectionViews??={};window.collectionViews[name]=node;}
-function Example({id,title,children,options,kind,index}:{id:string;title:string;children:ReactNode;options?:ReactNode;kind?:keyof typeof official.controls;index?:number}){const[native,setNative]=useState(false);return<section className="example basic-example" id={id}><h2>{title}</h2><div className="example-card"><div className={`basic-live ${options?'with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton>{kind&&<GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton>}</div><pre><code>{native&&kind?official.controls[kind].samples[index??0].xaml:extractSampleSource(source,id)}</code></pre>{!native&&(kind==="ListView"||kind==="GridView")&&<section className="source-context"><h3>Item template</h3><pre><code>{templateSource}</code></pre></section>}</GalleryExpander></div></section>;}
+function Example({id,title,children,options,kind,index}:{id:string;title:string;children:ReactNode;options?:ReactNode;kind?:keyof typeof official.controls;index?:number}){const[native,setNative]=useState(false);return<section className="example basic-example" id={id}><h2><LocalizedText>{title}</LocalizedText></h2><div className="example-card"><div className={`basic-live ${options?'with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton>{kind&&<GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton>}</div><SourceCode language={native ? 'xaml' : 'tsx'}>{native&&kind?official.controls[kind].samples[index??0].xaml:extractSampleSource(source,id)}</SourceCode>{!native&&(kind==="ListView"||kind==="GridView")&&<section className="source-context"><h3><LocalizedText>Item template</LocalizedText></h3><SourceCode>{templateSource}</SourceCode></section>}</GalleryExpander></div></section>;}
 function Mode({value,onChange}:{value:ListViewSelectionMode;onChange:(mode:ListViewSelectionMode)=>void}){return<label>SelectionMode<GalleryComboBox aria-label="Selection mode" value={value} onValueChanged={e=>onChange(e as ListViewSelectionMode)}>{Object.values(ListViewSelectionMode).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label>;}
 const frame={borderBrush:{resource:'ControlStrongStrokeColorDefaultBrush'},borderThickness:[1,1,1,1] as[number,number,number,number],horizontalAlignment:HorizontalAlignment.Left};
 export function CollectionsPage({kind}:{kind:Kind}){
  const[sticky,setSticky]=useState(false),[canDrag,setCanDrag]=useState(false),[canReorder,setCanReorder]=useState(false),[allowDrop,setAllowDrop]=useState(false);
  const[theme,setTheme]=useGalleryTheme(),[backend,setBackend]=useState(RendererBackend.Canvas2D),[mode,setMode]=useState(ListViewSelectionMode.Single),[orientation,setOrientation]=useState(Orientation.Vertical),[maximum,setMaximum]=useState(3),[columnSpace,setColumnSpace]=useState(5),[rowSpace,setRowSpace]=useState(5),[firstName,setFirstName]=useState(''),[lastName,setLastName]=useState(''),[company,setCompany]=useState(''),[clickEnabled,setClickEnabled]=useState(false),[large,setLarge]=useState(false),[clicked,setClicked]=useState(''),[selected,setSelected]=useState(''),[basicClicked,setBasicClicked]=useState(''),[template,setTemplate]=useState<PhotoTemplate>('ImageTemplate'),[rtl,setRtl]=useState(false);
- const [messages,setMessages]=useState([{id:'message-1',text:'Message 1',date:new Date().toLocaleString(),received:false}]),[imageItems,setImageItems]=useState(data.photos),[contextItems,setContextItems]=useState(data.contacts),[contextTarget,setContextTarget]=useState<CollectionItemContainer|null>(null),[contextKey,setContextKey]=useState(''),[contextPosition,setContextPosition]=useState<[number,number]|null>(null),[contextOpen,setContextOpen]=useState(false),[savedPosition,setSavedPosition]=useState<CollectionScrollPosition|null>(null);
+ const [messages,setMessages]=useState([{id:'message-1',text:'Message 1',date:new Date().toLocaleString(),received:false}]),[imageItems,setImageItems]=useState(data.photos),[contextItems,setContextItems]=useState(data.contacts),[contextKey,setContextKey]=useState(''),[savedPosition,setSavedPosition]=useState<CollectionScrollPosition|null>(null);
  const numbered=useMemo(()=>data.contacts.map((c,i)=>({id:c.id,text:`${i+1}. ${c.text}`})),[]);
  const addMessage=(received:boolean)=>setMessages(old=>[...old,{id:`message-${old.length+1}`,text:`Message ${old.length+1}`,date:new Date().toLocaleString(),received}]);
  const [dragLeft,setDragLeft]=useState(data.contacts),[dragRight,setDragRight]=useState([{id:'john-doe',firstName:'John',lastName:'Doe',company:'ABC Printers',text:'John Doe'},{id:'jane-doe',firstName:'Jane',lastName:'Doe',company:'XYZ Refrigerators',text:'Jane Doe'},{id:'santa-claus',firstName:'Santa',lastName:'Claus',company:'North Pole Toy Factory Inc.',text:'Santa Claus'}]);
@@ -26,7 +28,7 @@ export function CollectionsPage({kind}:{kind:Kind}){
  return <div className="collections-shell"><Header title={kind} theme={theme} onTheme={setTheme}/><main className="stage-main collections-gallery"><nav className="collection-docs"><a href={`https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.${kind.toLowerCase()}`} target="_blank" rel="noreferrer">Documentation</a><a href={kind==='ItemsStackPanel'?'https://github.com/microsoft/microsoft-ui-xaml/blob/7b12709347527238494ca28cb9fed326d513e779/dxaml/xcp/core/core/elements/ItemsStackPanel.cpp':kind==='ItemsWrapGrid'?'https://github.com/microsoft/microsoft-ui-xaml/blob/7b12709347527238494ca28cb9fed326d513e779/dxaml/xcp/dxaml/lib/ItemsWrapGrid_Partial.cpp':`https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Samples/${kind}/${kind}Page.xaml`} target="_blank" rel="noreferrer">Source</a><div className="collection-renderer"><label>Renderer<GalleryComboBox aria-label="Collection renderer" value={backend} onValueChanged={e=>setBackend(e as RendererBackend)}>{Object.values(RendererBackend).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label></div></nav>
  {kind==='ListView'&&<>
  <Example id="list-basic" title={official.controls.ListView.samples[0].title} kind="ListView" index={0}>
- <p className="collection-intro">This is a basic ListView that has the full source code below. Other samples on this page display only the additional markup needed to customize a simple ListView like this one.</p>
+ <p className="collection-intro"><LocalizedText>This is a basic ListView that has the full source code below. Other samples on this page display only the additional markup needed to customize a simple ListView like this one.</LocalizedText></p>
  <SceneView {...shared} autoHeight onReady={s=>remember('list-basic',s)}>
  {/* @sample:list-basic:start */}
  <ListView {...frame} width={350} height={400} items={data.contacts} accessibleName="Contacts" renderItem={contact=><TextBlock text={contact.text} margin={[0,5,0,5]}/>}/>
@@ -40,7 +42,7 @@ export function CollectionsPage({kind}:{kind:Kind}){
  {/* @sample:list-selection:end */}
  </SceneView></Example>
  <Example id="list-drag" title={official.controls.ListView.samples[2].title} kind="ListView" index={2}>
- <p className="collection-intro">In these ListView controls, you can drag and drop within a list to reorder items, or drag and drop between lists to move items.</p>
+ <p className="collection-intro"><LocalizedText>In these ListView controls, you can drag and drop within a list to reorder items, or drag and drop between lists to move items.</LocalizedText></p>
  <SceneView {...shared} autoHeight onReady={s=>remember('list-drag',s)}>
  {/* @sample:list-drag:start */}
  <Grid columns={[{unit:GridUnit.Star,value:1},{unit:GridUnit.Star,value:1}]}>
@@ -50,7 +52,7 @@ export function CollectionsPage({kind}:{kind:Kind}){
  {/* @sample:list-drag:end */}
  </SceneView></Example>
  <Example id="list-grouped" title={official.controls.ListView.samples[3].title} kind="ListView" index={3} options={<SceneView {...shared} autoHeight><ToggleSwitch header="Sticky Headers" isOn={sticky} onToggled={e=>setSticky(!!e.isOn)}/></SceneView>}>
- <p className="collection-intro">Switch the toggle on the right to enable sticky group headers, which makes the headers stay put at the top of the ListView while scrolling.</p>
+ <p className="collection-intro"><LocalizedText>Switch the toggle on the right to enable sticky group headers, which makes the headers stay put at the top of the ListView while scrolling.</LocalizedText></p>
  <SceneView {...shared} autoHeight onReady={s=>remember('list-grouped',s)}>
  {/* @sample:list-grouped:start */}
  <ListView {...frame} groups={groups} width={400} height={400} areStickyGroupHeadersEnabled={sticky} accessibleName="Grouped contacts" onReady={n=>view('grouped',n)} renderItem={contact=><ContactTemplate contact={contact}/>}/>
@@ -63,7 +65,7 @@ export function CollectionsPage({kind}:{kind:Kind}){
  {/* @sample:list-filter:end */}
  </SceneView></Example>
  <Example id="list-messages" title={official.controls.ListView.samples[5].title} kind="ListView" index={5} options={<SceneView {...shared} autoHeight><StackPanel spacing={10}><Button text="Send Message" onClick={()=>addMessage(false)}/><Button text="Receive Message" onClick={()=>addMessage(true)}/></StackPanel></SceneView>}>
- <p className="collection-intro">This ListView is inverted to grow from the bottom up. It's a good way to display logs or messages, with most recent at the bottom.</p>
+ <p className="collection-intro"><LocalizedText>This ListView is inverted to grow from the bottom up. It's a good way to display logs or messages, with most recent at the bottom.</LocalizedText></p>
  <SceneView {...shared} autoHeight onReady={s=>remember('list-messages',s)}>
  {/* @sample:list-messages:start */}
  <ListView items={messages} height={400} borderBrush={frame.borderBrush} borderThickness={frame.borderThickness} selectionMode={ListViewSelectionMode.None} itemsPanelVerticalAlignment={VerticalAlignment.Bottom} itemsUpdatingScrollMode={ItemsUpdatingScrollMode.KeepLastItemInView} accessibleName="Messages" onReady={n=>view('messages',n)} renderItem={message=><Border margin={[4,4,4,4]} horizontalAlignment={message.received?HorizontalAlignment.Left:HorizontalAlignment.Right} background="#0078d7" cornerRadius={4}><StackPanel width={350} minHeight={75} padding={[10,0,0,10]}><TextBlock text={message.text} fontSize={20} foreground="#ffffff" padding={[0,10,0,0]}/><TextBlock text={message.date} fontSize={15} foreground="#ffffff" padding={[0,0,0,10]}/></StackPanel></Border>}/>
@@ -78,8 +80,7 @@ export function CollectionsPage({kind}:{kind:Kind}){
  <Example id="list-context" title={official.controls.ListView.samples[7].title} kind="ListView" index={7}>
  <SceneView {...shared} autoHeight onReady={s=>remember('list-context',s)}>
  {/* @sample:list-context:start */}
- <ListView {...frame} items={contextItems} width={400} height={400} accessibleName="Contacts with context menu" onReady={n=>view('context',n)} onItemsChanged={e=>setContextItems([...e.items])} onContextRequested={e=>{setContextTarget(e.container);setContextPosition(e.collection?.position??null);setContextKey(e.item.id);setContextOpen(true);}} renderItem={contact=><ContactTemplate contact={contact}/>}/>
- <MenuFlyout target={contextTarget} placementPosition={contextPosition} isOpen={contextOpen} menuItems={[{id:'delete',text:'Delete'}]} onClosed={()=>setContextOpen(false)} onItemInvoked={()=>{window.collectionViews.context.remove([contextKey]);setContextOpen(false);}}/>
+ <ListView {...frame} items={contextItems} width={400} height={400} accessibleName="Contacts with context menu" onReady={n=>view('context',n)} onItemsChanged={e=>setContextItems([...e.items])} onContextRequested={e=>setContextKey(e.item.id)} renderItem={contact=><ContactTemplate contact={contact}/>} contextFlyout={<MenuFlyout menuItems={[{id:'delete',text:'Delete'}]} onItemInvoked={()=>window.collectionViews.context.remove([contextKey])}/>}/>
  {/* @sample:list-context:end */}
  </SceneView></Example>
  <Example id="list-persist" title={official.controls.ListView.samples[8].title} kind="ListView" index={8} options={<><GalleryButton onClick={()=>setSavedPosition(window.collectionViews.persist.saveScrollPosition())}>Save position</GalleryButton><GalleryButton disabled={!savedPosition} onClick={()=>savedPosition&&window.collectionViews.persist.restoreScrollPosition(savedPosition)}>Restore position</GalleryButton></>}>
@@ -96,14 +97,14 @@ export function CollectionsPage({kind}:{kind:Kind}){
  </SceneView></Example></>}
  {kind==='GridView'&&<>
  <Example id="grid-basic" title={official.controls.GridView.samples[0].title} kind="GridView" index={0}>
- <p className="collection-intro">This is a basic GridView that has the full source code below.<br/>Other samples on this page display only the additional markup needed to customize the specific GridView.</p>
+ <p className="collection-intro"><LocalizedText>This is a basic GridView that has the full source code below.<br/>Other samples on this page display only the additional markup needed to customize the specific GridView.</LocalizedText></p>
  <SceneView {...shared} autoHeight onReady={s=>remember('grid-basic',s)}>
  {/* @sample:grid-basic:start */}
  <GridView items={data.photos} accessibleName="Landscape images" isItemClickEnabled onItemClick={e=>setBasicClicked(`You clicked ${e.item.text}.`)} renderItem={item=><PhotoItem item={item}/>}/>
  {/* @sample:grid-basic:end */}
- </SceneView><p className="collection-output" aria-live="polite">{basicClicked}</p></Example>
+ </SceneView><p className="collection-output" aria-live="polite"><LocalizedText>{basicClicked}</LocalizedText></p></Example>
  <Example id="grid-layout" title={official.controls.GridView.samples[1].title} kind="GridView" index={1} options={<><label>Space between columns<GalleryNumberBox  min={0} max={100} aria-label="Space between columns" value={columnSpace} onValueChanged={e=>setColumnSpace(Math.max(0,Math.min(100,e||0)))}/></label><label>Space between rows<GalleryNumberBox  min={0} max={100} aria-label="Space between rows" value={rowSpace} onValueChanged={e=>setRowSpace(Math.max(0,Math.min(100,e||0)))}/></label><label>Maximum number of items before wrapping<GalleryNumberBox  min={1} max={8} aria-label="Maximum number of items before wrapping" value={maximum} onValueChanged={e=>setMaximum(Math.max(1,Math.min(8,e||1)))}/></label></>}>
- <p className="collection-intro">Use the options on the right to control different layout customizations to the GridView below.</p>
+ <p className="collection-intro"><LocalizedText>Use the options on the right to control different layout customizations to the GridView below.</LocalizedText></p>
  <SceneView {...shared} autoHeight onReady={s=>remember('grid-layout',s)}>
  {/* @sample:grid-layout:start */}
  <GridView items={data.photos} accessibleName="Grid layout" orientation={Orientation.Horizontal} maximumRowsOrColumns={maximum} itemContainerStyle={{margin:[columnSpace,rowSpace,columnSpace,rowSpace]}} renderItem={item=><PhotoItem item={item} template="ImageOverlayTemplate"/>}/>
@@ -114,7 +115,7 @@ export function CollectionsPage({kind}:{kind:Kind}){
  {/* @sample:grid-content:start */}
  <GridView items={data.photos} canDragItems={canDrag} canReorderItems={canReorder} allowDrop={allowDrop} accessibleName="Grid content" onReady={n=>view('grid-content',n)} selectionMode={mode} isItemClickEnabled={clickEnabled} flowDirection={rtl?FlowDirection.RightToLeft:FlowDirection.LeftToRight} renderItem={item=><PhotoItem item={item} template={template}/>} onItemClick={e=>setClicked(`You clicked ${e.item.text}.`)} onSelectionChanged={e=>setSelected(`You have selected ${e.selectedItems.length} item(s).`)}/>
  {/* @sample:grid-content:end */}
- </SceneView><p className="collection-output" aria-live="polite">{clicked}<br/>{selected}</p></Example></>}
+ </SceneView><p className="collection-output" aria-live="polite"><LocalizedText>{clicked}<br/>{selected}</LocalizedText></p></Example></>}
  {kind==='VariableSizedWrapGrid'&&<Example id="variable-grid" title={official.controls.VariableSizedWrapGrid.samples[0].title} kind="VariableSizedWrapGrid" index={0} options={<SceneView {...shared} autoHeight><RadioButtons header="Orientation" items={['Horizontal','Vertical']} selectedIndex={orientation===Orientation.Horizontal?0:1} onSelectionChanged={e=>setOrientation(e.selectedIndex===0?Orientation.Horizontal:Orientation.Vertical)}/></SceneView>}>
  <SceneView {...shared} autoHeight onReady={s=>remember('variable-grid',s)}>
  {/* @sample:variable-grid:start */}
@@ -125,11 +126,11 @@ export function CollectionsPage({kind}:{kind:Kind}){
  {/* @sample:items-stack:start */}
  <ItemsStackPanel orientation={Orientation.Vertical} width={300} horizontalAlignment={HorizontalAlignment.Left}><TextBlock text="First item" margin={[0,8,0,8]}/><TextBlock text="Second item with a larger font" fontSize={20} margin={[0,8,0,8]}/><TextBlock text="Third item" margin={[0,8,0,8]}/></ItemsStackPanel>
  {/* @sample:items-stack:end */}
- </SceneView><p className="collection-note">Standalone children are an SDK composition extension. The ListView page demonstrates the native item-host strategy.</p></Example>}
+ </SceneView><p className="collection-note"><LocalizedText>Standalone children are an SDK composition extension. The ListView page demonstrates the native item-host strategy.</LocalizedText></p></Example>}
  {kind==='ItemsWrapGrid'&&<Example id="items-wrap" title="ItemsWrapGrid uniform wrapping" options={<SceneView {...shared} autoHeight><RadioButtons header="Orientation" items={['Horizontal','Vertical']} selectedIndex={orientation===Orientation.Horizontal?0:1} onSelectionChanged={e=>setOrientation(e.selectedIndex===0?Orientation.Horizontal:Orientation.Vertical)}/></SceneView>}><SceneView {...shared} autoHeight onReady={s=>remember('items-wrap',s)}>
  {/* @sample:items-wrap:start */}
  <ItemsWrapGrid width={300} height={240} horizontalAlignment={HorizontalAlignment.Left} itemWidth={80} itemHeight={60} maximumRowsOrColumns={3} orientation={orientation}>{Array.from({length:8},(_,i)=><Border key={i} margin={[3,3,3,3]} background={i%2?'#ffa500':'#0078d4'}><TextBlock text={String(i+1)} foreground="#ffffff" horizontalAlignment={HorizontalAlignment.Center} verticalAlignment={VerticalAlignment.Center}/></Border>)}</ItemsWrapGrid>
  {/* @sample:items-wrap:end */}
- </SceneView><p className="collection-note">The GridView page uses the same Rust strategy with native container styling and viewport realization.</p></Example>}
+ </SceneView><p className="collection-note"><LocalizedText>The GridView page uses the same Rust strategy with native container styling and viewport realization.</LocalizedText></p></Example>}
  </main></div>;
 }

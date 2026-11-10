@@ -9,6 +9,80 @@
       1
     ]
   },
+  "pane": {
+    "inlineOpen": {
+      "from": "ClosedCompactLeft",
+      "to": "OpenInlineLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 200,
+      "curve": [
+        0,
+        0.35,
+        0.15,
+        1
+      ]
+    },
+    "inlineClose": {
+      "from": "OpenInlineLeft",
+      "to": "ClosedCompactLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 200,
+      "curve": [
+        0,
+        0.35,
+        0.15,
+        1
+      ]
+    },
+    "compactOpen": {
+      "from": "ClosedCompactLeft",
+      "to": "OpenCompactOverlayLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 350,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    },
+    "compactClose": {
+      "from": "OpenCompactOverlayLeft",
+      "to": "ClosedCompactLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 120,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    },
+    "overlayOpen": {
+      "from": "Closed",
+      "to": "OpenOverlayLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 350,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    },
+    "overlayClose": {
+      "from": "OpenOverlayLeft",
+      "to": "Closed",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 120,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    }
+  },
   "chevronSource": "ChevronUpDownSmall",
   "materials": [
     {
@@ -52,6 +126,10 @@
       "sha256": "200cd9d5527c51d9d2db497ba3580847260d2601179d4c5042516648962fd1a4"
     },
     {
+      "path": "references/winui/SplitView_themeresources.xaml",
+      "sha256": "b97b256f454f9b2f6d2f2d7131fbed87227b3858042c003212bc7d44d7862743"
+    },
+    {
       "path": "references/winui/ThemeTransitions.cpp",
       "sha256": "ba05371a399f0787766a424f45344062b659637918369a1efec942eada669c95"
     },
@@ -61,7 +139,7 @@
     },
     {
       "path": "references/navigation-motion-native.json",
-      "sha256": "17ed03dacf8ee543a74f76c70f6d9ccf1ea31b32f4cda53c69741afdb6b83429"
+      "sha256": "aaff55f873005253e81cfa5479862aca884258d6f23fbc41cdecc323ed16fc27"
     }
   ],
   "boundary": "Source parameters plus live same-SDK own-window observations; not Store release Composition present-time acceptance."

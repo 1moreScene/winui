@@ -27,6 +27,279 @@ fn frame(s: &mut Scene) {
     }
 }
 #[test]
+fn chinese_week_start_follows_language_and_preserves_explicit_overrides() {
+    fn assert_week(s: &Scene, id: u32, first: u8) {
+        let n = &s.nodes[&id];
+        let q = n.props.picker_controls.as_deref().unwrap();
+        assert_eq!(q.first_day_of_week() as u8, first);
+        for i in 0..7 {
+            assert_eq!(
+                s.nodes[&n.picker.parts[&format!("WeekDay{i}")]].props.text,
+                q.calendar_locale.weekdays[(i + first as usize) % 7]
+            );
+        }
+        for (i, cell) in n.picker.cells.iter().enumerate() {
+            assert_eq!(
+                winui_wasm::picker_value::Date::parse(&cell.date)
+                    .unwrap()
+                    .weekday(),
+                ((i + first as usize) % 7) as u8
+            );
+        }
+        if let Some(cell) = n
+            .picker
+            .cells
+            .iter()
+            .find(|cell| Some(cell.node) == s.focused)
+        {
+            assert_eq!(cell.date, "2026-11-10");
+        }
+    }
+    for kind in [NodeKind::CalendarView, NodeKind::CalendarDatePicker] {
+        for calendar in [CalendarIdentifier::Gregorian, CalendarIdentifier::Chinese] {
+            let mut s = scene();
+            let id=s.create(s.root,kind,json!({"isOpen":true,"pickerControls":{"calendarIdentifier":calendar,"today":"2026-11-10","date":"2026-11-10","minDate":"2020-01-01","maxDate":"2030-12-31"}})).unwrap();
+            frame(&mut s);
+            let view = if kind == NodeKind::CalendarView {
+                id
+            } else {
+                s.nodes[&id].picker.parts["Calendar"]
+            };
+            assert_week(&s, view, 0);
+            for language in ["zh", "zh-CN", "zh-Hans", "zh-Hant-TW", "ZH-cn"] {
+                let day = s.nodes[&view]
+                    .picker
+                    .cells
+                    .iter()
+                    .find(|cell| cell.date == "2026-11-10")
+                    .unwrap()
+                    .node;
+                s.input(Input::Focus { id: day }, 1000.).unwrap();
+                s.update(vec![Update {
+                    id,
+                    patch: json!({"pickerControls":{"calendarLocale":{"language":language}}}),
+                }])
+                .unwrap();
+                frame(&mut s);
+                assert_week(&s, view, 1);
+                assert_eq!(
+                    s.nodes[&view]
+                        .picker
+                        .cells
+                        .iter()
+                        .find(|cell| Some(cell.node) == s.focused)
+                        .unwrap()
+                        .date,
+                    "2026-11-10"
+                );
+            }
+            s.update(vec![Update {
+                id,
+                patch: json!({"pickerControls":{"firstDayOfWeek":"Sunday"}}),
+            }])
+            .unwrap();
+            frame(&mut s);
+            assert_week(&s, view, 0);
+            for language in ["en-US", "zh-CN"] {
+                s.update(vec![Update {
+                    id,
+                    patch: json!({"pickerControls":{"calendarLocale":{"language":language}}}),
+                }])
+                .unwrap();
+                frame(&mut s);
+                assert_week(&s, view, 0);
+            }
+            s.update(vec![Update {
+                id,
+                patch: json!({"pickerControls":{"firstDayOfWeek":null}}),
+            }])
+            .unwrap();
+            frame(&mut s);
+            assert_week(&s, view, 1);
+            s.update(vec![Update {
+                id,
+                patch: json!({"pickerControls":{"calendarLocale":{"language":"en-US"}}}),
+            }])
+            .unwrap();
+            frame(&mut s);
+            assert_week(&s, view, 0);
+        }
+    }
+}
+#[test]
+fn chinese_calendar_annotations_and_leap_month_navigation_use_civil_values() {
+    let mut s = scene();
+    let id = s.create(s.root, NodeKind::CalendarView, json!({"pickerControls":{"calendarIdentifier":"ChineseCalendar","today":"2026-02-17","displayDate":"2026-02-17"}})).unwrap();
+    frame(&mut s);
+    let spring = s.nodes[&id]
+        .picker
+        .cells
+        .iter()
+        .find(|c| c.date == "2026-02-17")
+        .unwrap();
+    assert_eq!(spring.text, "17");
+    assert_eq!(spring.annotation, "春节");
+    assert_eq!(spring.calendar_day.day, 1);
+    let child = spring.node;
+    s.input(Input::Focus { id: child }, 1000.).unwrap();
+    s.input(
+        Input::KeyDown {
+            key: "PageDown".into(),
+            repeat: false,
+        },
+        1000.,
+    )
+    .unwrap();
+    s.input(
+        Input::KeyDown {
+            key: "Enter".into(),
+            repeat: false,
+        },
+        1000.,
+    )
+    .unwrap();
+    assert_eq!(
+        s.nodes[&id]
+            .props
+            .picker_controls
+            .as_deref()
+            .unwrap()
+            .selected_dates,
+        vec!["2026-03-19"]
+    );
+    s.update(vec![Update {
+        id,
+        patch: json!({"pickerControls":{"displayDate":"2026-02-18"}}),
+    }])
+    .unwrap();
+    frame(&mut s);
+    s.input(Input::Invoke { id: child }, 1000.).unwrap();
+    assert_eq!(
+        s.nodes[&id]
+            .props
+            .picker_controls
+            .as_deref()
+            .unwrap()
+            .selected_dates,
+        vec!["2026-02-17"]
+    );
+    s.update(vec![Update {
+        id,
+        patch: json!({"pickerControls":{"displayDate":"2025-06-25"}}),
+    }])
+    .unwrap();
+    frame(&mut s);
+    let next = s.nodes[&id].picker.parts["NextButton"];
+    s.input(Input::Invoke { id: next }, 1000.).unwrap();
+    frame(&mut s);
+    let leap = s.nodes[&id]
+        .picker
+        .cells
+        .iter()
+        .find(|c| c.date == "2025-07-25")
+        .unwrap();
+    assert!(leap.calendar_day.leap_month);
+    assert_eq!(leap.annotation, "闰六月");
+    s.update(vec![Update {
+        id,
+        patch: json!({"pickerControls":{"displayMode":"Year"}}),
+    }])
+    .unwrap();
+    frame(&mut s);
+    assert_eq!(
+        s.nodes[&id]
+            .picker
+            .cells
+            .iter()
+            .filter(|c| c.calendar_day.year == 2025)
+            .count(),
+        13
+    );
+    assert!(s.nodes[&id].picker.cells.iter().any(|c| c.text == "闰六月"));
+}
+
+#[test]
+fn all_calendar_date_wheels_and_range_edges_remain_valid() {
+    let mut localized = scene();
+    let localized_id=localized.create(localized.root,NodeKind::DatePicker,json!({"isOpen":true,"pickerControls":{"today":"2026-11-10","minDate":"2026-01-01","maxDate":"2026-12-31","formatLocale":{"digits":["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"],"dateOrder":["year","month","day"]}}})).unwrap();
+    frame(&mut localized);
+    let year_wheel = localized.nodes[&localized_id].picker.parts["FirstWheel"];
+    assert!(localized.nodes[&year_wheel]
+        .props
+        .collection_items
+        .iter()
+        .any(|item| item.text == "٢٠٢٦"));
+    for calendar in [
+        CalendarIdentifier::Gregorian,
+        CalendarIdentifier::Japanese,
+        CalendarIdentifier::Julian,
+        CalendarIdentifier::Korean,
+        CalendarIdentifier::Taiwan,
+        CalendarIdentifier::Thai,
+        CalendarIdentifier::Hebrew,
+        CalendarIdentifier::Hijri,
+        CalendarIdentifier::UmAlQura,
+        CalendarIdentifier::Persian,
+        CalendarIdentifier::Chinese,
+    ] {
+        let mut s = scene();
+        let id=s.create(s.root,NodeKind::DatePicker,json!({"isOpen":true,"pickerControls":{"calendarIdentifier":calendar,"today":"2026-02-17","date":"2025-07-25","minDate":"2020-01-01","maxDate":"2030-12-31"}})).unwrap();
+        frame(&mut s);
+        let f = calendar.fields(winui_wasm::picker_value::Date::parse("2025-07-25").unwrap());
+        let month = s.nodes[&id].picker.parts["FirstWheel"];
+        let texts = s.nodes[&month]
+            .props
+            .collection_items
+            .iter()
+            .map(|i| i.text.as_str())
+            .collect::<Vec<_>>();
+        if calendar == CalendarIdentifier::Chinese {
+            assert!(texts.contains(&"闰六月"));
+        }
+        assert!(!texts.is_empty(), "{calendar:?} {f:?}");
+        let accept = s.nodes[&id].picker.parts["AcceptButton"];
+        s.input(Input::Invoke { id: accept }, 1000.).unwrap();
+        frame(&mut s);
+        assert_eq!(
+            s.nodes[&id]
+                .props
+                .picker_controls
+                .as_deref()
+                .unwrap()
+                .date
+                .as_deref(),
+            Some("2025-07-25")
+        );
+    }
+    let mut s = scene();
+    let id=s.create(s.root,NodeKind::CalendarView,json!({"pickerControls":{"calendarIdentifier":"ChineseCalendar","today":"2026-02-17","minDate":"2026-02-17","maxDate":"2026-02-20","displayMode":"Year"}})).unwrap();
+    frame(&mut s);
+    let first = s.nodes[&id]
+        .picker
+        .cells
+        .iter()
+        .find(|c| c.calendar_day.month == 1)
+        .unwrap()
+        .node;
+    s.input(Input::Invoke { id: first }, 1000.).unwrap();
+    frame(&mut s);
+    assert_eq!(
+        s.nodes[&id]
+            .props
+            .picker_controls
+            .as_deref()
+            .unwrap()
+            .display_mode,
+        CalendarViewDisplayMode::Month
+    );
+    assert!(s.nodes[&id]
+        .picker
+        .cells
+        .iter()
+        .any(|c| c.date == "2026-02-17" && s.nodes[&c.node].visible));
+    assert!(s.create(s.root,NodeKind::CalendarView,json!({"pickerControls":{"calendarIdentifier":"ChineseCalendar","displayDate":"2101-01-01"}})).unwrap_err().contains("1901"));
+}
+#[test]
 fn five_picker_templates_measure_paint_and_release_all_private_children() {
     for kind in [
         NodeKind::CalendarView,

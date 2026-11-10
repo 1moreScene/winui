@@ -17,6 +17,7 @@ pub use interaction::{CollectionEvent, DragSnapshot};
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct CollectionData {
     pub id: String,
     #[serde(default)]
@@ -28,6 +29,7 @@ pub struct CollectionData {
 }
 #[derive(Clone, Debug, Default, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct CollectionGroup {
     pub id: String,
     pub header: String,
@@ -38,6 +40,7 @@ fn enabled() -> bool {
 /// Typed subset of the item-container style, applied by the Rust item generator.
 #[derive(Clone, Debug, Default, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct ItemContainerStyle {
     pub width:Option<f64>,pub height:Option<f64>,pub horizontal_alignment:Option<HorizontalAlignment>,pub vertical_alignment:Option<VerticalAlignment>,
     pub margin: Option<[f64; 4]>,
@@ -1005,6 +1008,11 @@ impl Scene {
             };
             changed |= self.nodes[&id].collection.realized.len() != before;
             let d = self.nodes[&id].props.collection_items[i].clone();
+            if self.nodes[&id].table.owner.is_some() {
+                // Internal TableView templates must exist before measuring the
+                // newly realized container, even without another animation RAF.
+                self.prepare_table_filter_item(id,child,&d.id,&d.text);
+            }
             let templated = self.nodes[&id].props.has_item_template;
             {
                 let n = self.nodes.get_mut(&child).unwrap();
@@ -1347,6 +1355,18 @@ impl Scene {
         self.invalidate(owner, false);
         Ok(())
     }
+    // Pointer-notification panels are hit-testable for hover, but selection
+    // still bubbles to the item container. Embedded interactive controls keep
+    // their own input and must not activate the surrounding item.
+    fn collection_hit_item(&self,x:f64,y:f64)->Option<u32>{
+        let mut at=self.hit(x,y)?;
+        loop {
+            let n=&self.nodes[&at];
+            if n.kind==NodeKind::CollectionItem{return Some(at);}
+            if !matches!(n.kind,NodeKind::Grid|NodeKind::StackPanel|NodeKind::Border|NodeKind::Canvas|NodeKind::RelativePanel|NodeKind::WrapPanel|NodeKind::VariableSizedWrapGrid|NodeKind::TextBlock|NodeKind::Image|NodeKind::Rectangle|NodeKind::Line|NodeKind::Path|NodeKind::Polygon|NodeKind::Polyline|NodeKind::SwipeControl){return None;}
+            at=n.parent?;
+        }
+    }
     pub(super) fn collection_input(&mut self, input: &Input) -> Result<bool, String> {
         if self.advanced_collection_input(input)? {
             return Ok(true);
@@ -1375,9 +1395,7 @@ impl Scene {
                 phase,
             } => {
                 if phase == "down" {
-                    let hit = self
-                        .hit(*x, *y)
-                        .filter(|id| self.nodes[id].kind == NodeKind::CollectionItem);
+                    let hit = self.collection_hit_item(*x,*y);
                     let multiple = self
                         .nodes
                         .values()
@@ -1442,8 +1460,9 @@ impl Scene {
                             .collection_items
                             .iter()
                             .position(|d| d.id == key);
-                        if let Some(index) = index {
+                        if let Some(index) = index.filter(|index|self.nodes[id].enabled&&self.nodes[id].props.collection_items[*index].enabled) {
                             self.collection_activate(*id, index, ctrl, shift, false)?;
+                            if self.nodes[id].props.close_flyout {self.close_owner_flyout(*id)?;}
                         }
                     }
                 }
@@ -1485,9 +1504,7 @@ impl Scene {
                 return Ok(true);
             }
             Input::Down { x, y, pointer } => {
-                if let Some(child) = self
-                    .hit(*x, *y)
-                    .filter(|id| self.nodes[id].kind == NodeKind::CollectionItem)
+                if let Some(child) = self.collection_hit_item(*x,*y)
                 {
                     let n = &self.nodes[&child];
                     let owner = n.props.collection_owner.unwrap();

@@ -38,12 +38,6 @@
       "SplitButtonBorderBrushCheckedPointerOver": "AccentControlElevationBorderBrush",
       "SplitButtonBorderBrushCheckedPressed": "ControlFillColorTransparentBrush",
       "SplitButtonBorderBrushCheckedDisabled": "ControlFillColorTransparentBrush",
-      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
-      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
-      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
-      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
-      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
-      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush",
       "InfoBarErrorSeverityBackgroundBrush": "SystemFillColorCriticalBackgroundBrush",
       "InfoBarWarningSeverityBackgroundBrush": "SystemFillColorCautionBackgroundBrush",
       "InfoBarSuccessSeverityBackgroundBrush": "SystemFillColorSuccessBackgroundBrush",
@@ -59,7 +53,13 @@
       "InfoBarTitleForeground": "TextFillColorPrimaryBrush",
       "InfoBarMessageForeground": "TextFillColorPrimaryBrush",
       "InfoBarHyperlinkButtonForeground": "AccentTextFillColorPrimaryBrush",
-      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush"
+      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush",
+      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
+      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
+      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
+      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
+      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
+      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush"
     },
     "Dark": {
       "RatingControlUnselectedForeground": "TextFillColorSecondaryBrush",
@@ -99,12 +99,6 @@
       "SplitButtonBorderBrushCheckedPointerOver": "AccentControlElevationBorderBrush",
       "SplitButtonBorderBrushCheckedPressed": "ControlFillColorTransparentBrush",
       "SplitButtonBorderBrushCheckedDisabled": "ControlFillColorTransparentBrush",
-      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
-      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
-      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
-      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
-      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
-      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush",
       "InfoBarErrorSeverityBackgroundBrush": "SystemFillColorCriticalBackgroundBrush",
       "InfoBarWarningSeverityBackgroundBrush": "SystemFillColorCautionBackgroundBrush",
       "InfoBarSuccessSeverityBackgroundBrush": "SystemFillColorSuccessBackgroundBrush",
@@ -120,7 +114,13 @@
       "InfoBarTitleForeground": "TextFillColorPrimaryBrush",
       "InfoBarMessageForeground": "TextFillColorPrimaryBrush",
       "InfoBarHyperlinkButtonForeground": "AccentTextFillColorPrimaryBrush",
-      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush"
+      "InfoBarBorderBrush": "CardStrokeColorDefaultBrush",
+      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
+      "SplitButtonForegroundSecondary": "TextFillColorSecondaryBrush",
+      "SplitButtonForegroundSecondaryPressed": "TextFillColorTertiaryBrush",
+      "SplitButtonBorderBrushDivider": "ControlStrokeColorDefaultBrush",
+      "SplitButtonBorderBrushCheckedDivider": "ControlStrokeColorOnAccentTertiaryBrush",
+      "SplitButtonInAppBarUnfocusedPointerOver": "SubtleFillColorTertiaryBrush"
     },
     "HighContrast": {
       "RatingControlUnselectedForeground": "SystemControlForegroundBaseLowBrush",
@@ -157,12 +157,6 @@
       "SplitButtonBorderBrushCheckedPointerOver": "SystemColorButtonTextColorBrush",
       "SplitButtonBorderBrushCheckedPressed": "SystemColorButtonFaceColorBrush",
       "SplitButtonBorderBrushCheckedDisabled": "SystemColorGrayTextColorBrush",
-      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
-      "SplitButtonForegroundSecondary": "SystemColorButtonTextColorBrush",
-      "SplitButtonForegroundSecondaryPressed": "SystemColorHighlightColorBrush",
-      "SplitButtonBorderBrushDivider": "SystemControlDisabledBaseMediumLowBrush",
-      "SplitButtonBorderBrushCheckedDivider": "SystemColorHighlightTextColorBrush",
-      "SplitButtonInAppBarUnfocusedPointerOver": "SystemColorButtonFaceColorBrush",
       "InfoBarErrorSeverityBackgroundBrush": "SystemColorWindowColorBrush",
       "InfoBarWarningSeverityBackgroundBrush": "SystemColorWindowColorBrush",
       "InfoBarSuccessSeverityBackgroundBrush": "SystemColorWindowColorBrush",
@@ -178,7 +172,13 @@
       "InfoBarTitleForeground": "SystemColorWindowTextColorBrush",
       "InfoBarMessageForeground": "SystemColorWindowTextColorBrush",
       "InfoBarHyperlinkButtonForeground": "SystemColorHotlightColorBrush",
-      "InfoBarBorderBrush": "SystemControlTransientBorderBrush"
+      "InfoBarBorderBrush": "SystemControlTransientBorderBrush",
+      "PersonPictureEllipseFillStrokeBrush": "CardStrokeColorDefaultBrush",
+      "SplitButtonForegroundSecondary": "SystemColorButtonTextColorBrush",
+      "SplitButtonForegroundSecondaryPressed": "SystemColorHighlightColorBrush",
+      "SplitButtonBorderBrushDivider": "SystemControlDisabledBaseMediumLowBrush",
+      "SplitButtonBorderBrushCheckedDivider": "SystemColorHighlightTextColorBrush",
+      "SplitButtonInAppBarUnfocusedPointerOver": "SystemColorButtonFaceColorBrush"
     }
   },
   "primitives": {
@@ -186,227 +186,227 @@
       "AppBarButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarBorderBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#FDE7E9FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconBackground": {
         "kind": "solid",
         "color": "#C42B1CFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarHyperlinkButtonForeground": {
         "kind": "solid",
         "color": "#003E92FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#F6F6F680",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconBackground": {
         "kind": "solid",
         "color": "#0078D4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarMessageForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#DFF6DDFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconBackground": {
         "kind": "solid",
         "color": "#0F7B0FFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarTitleForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#FFF4CEFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconBackground": {
         "kind": "solid",
         "color": "#9D5D00FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeFillThemeBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeForegroundThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeStrokeThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillStrokeBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillThemeBrush": {
         "kind": "solid",
         "color": "#00000018",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureForegroundThemeBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlCaptionForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlDisabledSelectedForeground": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPlaceholderForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverPlaceholderForeground": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverSelectedForeground": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverUnselectedForeground": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlSelectedForeground": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlUnselectedForeground": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundChecked": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedDisabled": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedPointerOver": {
         "kind": "solid",
@@ -421,29 +421,29 @@
       "SplitButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#F9F9F980",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -454,36 +454,36 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushChecked": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -494,46 +494,46 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000066"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedDivider": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -544,51 +544,51 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000066"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDivider": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -599,139 +599,139 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundChecked": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPressed": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondary": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondaryPressed": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlAltFillColorTertiaryBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextOnAccentFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorTransparentBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlAltFillColorQuarternary": {
         "kind": "solid",
         "color": "#00000018",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#F9F9F980",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorTertiaryBrush": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentFillColorSecondaryBrush": {
         "kind": "solid",
@@ -746,24 +746,24 @@
       "AccentFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextOnAccentFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlElevationBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -774,41 +774,41 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "ControlStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentControlElevationBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -819,89 +819,89 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000066"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
-      },
-      "CardStrokeColorDefaultBrush": {
-        "kind": "solid",
-        "color": "#0000000F",
-        "opacity": 1
-      },
-      "TextFillColorTertiaryBrush": {
-        "kind": "solid",
-        "color": "#00000072",
-        "opacity": 1
-      },
-      "ControlStrokeColorOnAccentTertiaryBrush": {
-        "kind": "solid",
-        "color": "#00000037",
-        "opacity": 1
+        ]
       },
       "SystemFillColorCriticalBackgroundBrush": {
         "kind": "solid",
         "color": "#FDE7E9FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorCautionBackgroundBrush": {
         "kind": "solid",
         "color": "#FFF4CEFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorSuccessBackgroundBrush": {
         "kind": "solid",
         "color": "#DFF6DDFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorAttentionBackgroundBrush": {
         "kind": "solid",
         "color": "#F6F6F680",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorCriticalBrush": {
         "kind": "solid",
         "color": "#C42B1CFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorCautionBrush": {
         "kind": "solid",
         "color": "#9D5D00FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorSuccessBrush": {
         "kind": "solid",
         "color": "#0F7B0FFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorAttentionBrush": {
         "kind": "solid",
         "color": "#0078D4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorInverseBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentTextFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#003E92FF",
-        "opacity": 1
+        "opacity": 1.0
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000000F",
+        "opacity": 1.0
+      },
+      "TextFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#00000072",
+        "opacity": 1.0
+      },
+      "ControlStrokeColorOnAccentTertiaryBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1.0
       },
       "SplitButtonInAppBarUnfocusedPointerOver": {
         "kind": "solid",
@@ -915,42 +915,47 @@
       },
       "SystemColorButtonFaceColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorButtonTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
+        "opacity": 1.0
+      },
+      "SystemColorGrayTextColor": {
+        "kind": "solid",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SystemColorGrayTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorHighlightColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorHighlightTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorHotlightColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorWindowColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorWindowTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemControlDisabledBaseMediumLowBrush": {
@@ -960,7 +965,7 @@
       },
       "SystemControlDisabledTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "SystemControlForegroundBaseHighBrush": {
@@ -980,240 +985,245 @@
       },
       "SystemControlForegroundTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
+        "opacity": 1.0
+      },
+      "SystemControlHighlightAccentBrush": {
+        "kind": "solid",
+        "color": "#0078D4FF",
         "opacity": 1.0
       },
       "SystemControlTransientBorderBrush": {
         "kind": "solid",
-        "color": "#000000",
-        "opacity": 0.14
+        "color": "#000000FF",
+        "opacity": 0.14000000059604645
       }
     },
     "Dark": {
       "AppBarButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AppBarButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarBorderBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#442726FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconBackground": {
         "kind": "solid",
         "color": "#FF99A4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarErrorSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarHyperlinkButtonForeground": {
         "kind": "solid",
         "color": "#99EBFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconBackground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarMessageForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#393D1BFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconBackground": {
         "kind": "solid",
         "color": "#6CCB5FFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarTitleForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityBackgroundBrush": {
         "kind": "solid",
         "color": "#433519FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconBackground": {
         "kind": "solid",
         "color": "#FCE100FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "InfoBarWarningSeverityIconForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeFillThemeBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeForegroundThemeBrush": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseBadgeStrokeThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillStrokeBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureEllipseFillThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "PersonPictureForegroundThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlCaptionForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlDisabledSelectedForeground": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPlaceholderForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverPlaceholderForeground": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverSelectedForeground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlPointerOverUnselectedForeground": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlSelectedForeground": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RatingControlUnselectedForeground": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundChecked": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedPointerOver": {
         "kind": "solid",
@@ -1228,17 +1238,17 @@
       "SplitButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF15",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrush": {
         "kind": "linearGradient",
@@ -1261,36 +1271,36 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushChecked": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -1301,46 +1311,46 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000023"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedDivider": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -1351,39 +1361,39 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000023"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushCheckedPressed": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushDivider": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonBorderBrushPointerOver": {
         "kind": "linearGradient",
@@ -1406,139 +1416,139 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "SplitButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundChecked": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPointerOver": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPressed": {
         "kind": "solid",
         "color": "#00000080",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondary": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SplitButtonForegroundSecondaryPressed": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlAltFillColorTertiaryBrush": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextOnAccentFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorTransparentBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlAltFillColorQuarternary": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#FFFFFF15",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorTertiaryBrush": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentFillColorSecondaryBrush": {
         "kind": "solid",
@@ -1553,12 +1563,12 @@
       "AccentFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextOnAccentFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#00000080",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlElevationBorderBrush": {
         "kind": "linearGradient",
@@ -1581,41 +1591,41 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "ControlStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentControlElevationBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -1626,89 +1636,89 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000023"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF14"
           }
-        ],
-        "opacity": 1
-      },
-      "CardStrokeColorDefaultBrush": {
-        "kind": "solid",
-        "color": "#00000019",
-        "opacity": 1
-      },
-      "TextFillColorTertiaryBrush": {
-        "kind": "solid",
-        "color": "#FFFFFF87",
-        "opacity": 1
-      },
-      "ControlStrokeColorOnAccentTertiaryBrush": {
-        "kind": "solid",
-        "color": "#00000037",
-        "opacity": 1
+        ]
       },
       "SystemFillColorCriticalBackgroundBrush": {
         "kind": "solid",
         "color": "#442726FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorCautionBackgroundBrush": {
         "kind": "solid",
         "color": "#433519FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorSuccessBackgroundBrush": {
         "kind": "solid",
         "color": "#393D1BFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorAttentionBackgroundBrush": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorCriticalBrush": {
         "kind": "solid",
         "color": "#FF99A4FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorCautionBrush": {
         "kind": "solid",
         "color": "#FCE100FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorSuccessBrush": {
         "kind": "solid",
         "color": "#6CCB5FFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemFillColorAttentionBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorInverseBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AccentTextFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#99EBFFFF",
-        "opacity": 1
+        "opacity": 1.0
+      },
+      "CardStrokeColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#00000019",
+        "opacity": 1.0
+      },
+      "TextFillColorTertiaryBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF87",
+        "opacity": 1.0
+      },
+      "ControlStrokeColorOnAccentTertiaryBrush": {
+        "kind": "solid",
+        "color": "#00000037",
+        "opacity": 1.0
       },
       "SplitButtonInAppBarUnfocusedPointerOver": {
         "kind": "solid",
@@ -1722,42 +1732,47 @@
       },
       "SystemColorButtonFaceColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorButtonTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
+        "opacity": 1.0
+      },
+      "SystemColorGrayTextColor": {
+        "kind": "solid",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SystemColorGrayTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorHighlightColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorHighlightTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorHotlightColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorWindowColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemColorWindowTextColorBrush": {
         "kind": "solid",
-        "color": "#FF00FF",
+        "color": "#FF00FFFF",
         "opacity": 1.0
       },
       "SystemControlDisabledBaseMediumLowBrush": {
@@ -1767,7 +1782,7 @@
       },
       "SystemControlDisabledTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "SystemControlForegroundBaseHighBrush": {
@@ -1787,644 +1802,628 @@
       },
       "SystemControlForegroundTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
+        "opacity": 1.0
+      },
+      "SystemControlHighlightAccentBrush": {
+        "kind": "solid",
+        "color": "#0078D4FF",
         "opacity": 1.0
       },
       "SystemControlTransientBorderBrush": {
         "kind": "solid",
-        "color": "#000000",
-        "opacity": 0.36
+        "color": "#000000FF",
+        "opacity": 0.36000001430511475
       }
     },
     "HighContrast": {
       "AccentControlElevationBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "AccentFillColorDefaultBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "AccentFillColorDisabledBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "AccentFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "AccentFillColorTertiaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "AccentTextFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "AppBarButtonBackground": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "AppBarButtonBackgroundDisabled": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "AppBarButtonBackgroundPointerOver": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "AppBarButtonBackgroundPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "AppBarButtonBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "AppBarButtonBorderBrushDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "AppBarButtonBorderBrushPointerOver": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "AppBarButtonBorderBrushPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "AppBarButtonForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "AppBarButtonForegroundDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "AppBarButtonForegroundPointerOver": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "AppBarButtonForegroundPressed": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "CardStrokeColorDefaultBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ControlAltFillColorQuarternary": {
         "kind": "solid",
-        "color": "#FF0000",
+        "color": "#FF0000FF",
         "opacity": 1.0
       },
       "ControlAltFillColorTertiaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "ControlElevationBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ControlFillColorDefaultBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "ControlFillColorDisabledBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "ControlFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "ControlFillColorTertiaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "ControlFillColorTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "ControlStrokeColorDefaultBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ControlStrokeColorOnAccentTertiaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "InfoBarBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "InfoBarErrorSeverityBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarErrorSeverityIconBackground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "InfoBarErrorSeverityIconForeground": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarHyperlinkButtonForeground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "InfoBarInformationalSeverityBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconBackground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "InfoBarInformationalSeverityIconForeground": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarMessageForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "InfoBarSuccessSeverityBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconBackground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "InfoBarSuccessSeverityIconForeground": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarTitleForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "InfoBarWarningSeverityBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "InfoBarWarningSeverityIconBackground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "InfoBarWarningSeverityIconForeground": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "PersonPictureEllipseBadgeFillThemeBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "PersonPictureEllipseBadgeForegroundThemeBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "PersonPictureEllipseBadgeStrokeThemeBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "PersonPictureEllipseFillStrokeBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "PersonPictureEllipseFillThemeBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "PersonPictureForegroundThemeBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "RatingControlCaptionForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
+      },
+      "RatingControlDisabledSelectedForeground": {
+        "kind": "solid",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "RatingControlPlaceholderForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "RatingControlPointerOverPlaceholderForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "RatingControlPointerOverSelectedForeground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "RatingControlPointerOverUnselectedForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "RatingControlSelectedForeground": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "RatingControlUnselectedForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonBackground": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundChecked": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedPointerOver": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundCheckedPressed": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundDisabled": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundPointerOver": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBackgroundPressed": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushChecked": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedDivider": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedPointerOver": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushCheckedPressed": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushDivider": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushPointerOver": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SplitButtonBorderBrushPressed": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonForegroundChecked": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonForegroundCheckedDisabled": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPointerOver": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SplitButtonForegroundCheckedPressed": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonForegroundDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SplitButtonForegroundPointerOver": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SplitButtonForegroundPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SplitButtonForegroundSecondary": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SplitButtonForegroundSecondaryPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SplitButtonInAppBarUnfocusedPointerOver": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SubtleFillColorTertiaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemColorButtonFaceColorBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemColorButtonTextColorBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
+      },
+      "SystemColorGrayTextColor": {
+        "kind": "solid",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SystemColorGrayTextColorBrush": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SystemColorHighlightColorBrush": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SystemColorHighlightTextColorBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemColorHotlightColorBrush": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SystemColorWindowColorBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemColorWindowTextColorBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemControlDisabledBaseMediumLowBrush": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SystemControlDisabledTransparentBrush": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "SystemControlForegroundBaseHighBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemControlForegroundBaseLowBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemControlForegroundBaseMediumBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemControlForegroundTransparentBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "SystemControlHighlightAccentBrush": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "SystemControlTransientBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemFillColorAttentionBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemFillColorAttentionBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemFillColorCautionBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemFillColorCautionBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemFillColorCriticalBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemFillColorCriticalBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SystemFillColorSuccessBackgroundBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "SystemFillColorSuccessBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextFillColorDisabledBrush": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "TextFillColorInverseBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextFillColorTertiaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextOnAccentFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextOnAccentFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       }
     }
   },
   "source": "compact-controls-template.json and same-SDK compact-controls-palettes.json",
-  "unresolved": [
-    {
-      "theme": "Light",
-      "key": "SystemColorGrayTextColor",
-      "reason": "'SystemColorGrayTextColor'"
-    },
-    {
-      "theme": "Light",
-      "key": "SystemControlHighlightAccentBrush",
-      "reason": "'SystemAccentColor'"
-    },
-    {
-      "theme": "Dark",
-      "key": "SystemColorGrayTextColor",
-      "reason": "'SystemColorGrayTextColor'"
-    },
-    {
-      "theme": "Dark",
-      "key": "SystemControlHighlightAccentBrush",
-      "reason": "'SystemAccentColor'"
-    },
-    {
-      "theme": "HighContrast",
-      "key": "RatingControlDisabledSelectedForeground",
-      "reason": "'SystemColorGrayTextColor'"
-    },
-    {
-      "theme": "HighContrast",
-      "key": "SystemColorGrayTextColor",
-      "reason": "'SystemColorGrayTextColor'"
-    }
-  ]
+  "unresolved": []
 }

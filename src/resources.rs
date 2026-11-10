@@ -4,12 +4,14 @@ use std::{collections::HashMap, sync::OnceLock};
 
 #[derive(Clone, Debug, Deserialize, serde::Serialize)]
 #[serde(rename_all = "camelCase")]
+#[derive(PartialEq)]
 pub struct GradientStop {
     pub offset: f64,
     pub color: String,
 }
 #[derive(Clone, Debug, Deserialize, serde::Serialize)]
 #[serde(rename_all = "camelCase")]
+#[derive(PartialEq)]
 pub struct Brush {
     pub kind: String,
     #[serde(default)]
@@ -282,7 +284,22 @@ impl Resources {
                 result.primitives.entry(theme).or_default().extend(brushes);
             }
             let gallery:Self=serde_json::from_str(include_str!("../references/repeater-gallery-resources.json")).expect("pinned Gallery legacy brushes");
+            // Motion templates can reference native system colors as brushes.
+            // Register the already-extracted resources without replacing keys
+            // owned by the existing control/theme dictionaries.
+            let motion: Self = serde_json::from_str(include_str!("../references/motion-resources.json")).expect("pinned motion resources");
+            for (theme, brushes) in motion.primitives {
+                let target = result.primitives.entry(theme).or_default();
+                for (key, brush) in brushes { target.entry(key).or_insert(brush); }
+            }
             for(theme,brushes)in gallery.primitives{for(key,brush)in brushes{result.primitives.entry(theme.clone()).or_default().entry(key).or_insert(brush);}}
+            // User-selected community TableView resources, independently pinned
+            // to its source. These names do not refer to the excluded official control.
+            let table:serde_json::Value=serde_json::from_str(include_str!("../references/table-view-runtime.json")).expect("community TableView resources");
+            for(theme,values)in table["dependencies"].as_object().unwrap(){for(key,value)in values.as_object().unwrap(){let brush=serde_json::from_value(value.clone()).expect("matching SDK TableView dependency");result.primitives.entry(theme.clone()).or_default().entry(key.clone()).or_insert(brush);}}
+            for(theme,values)in table["themes"].as_object().unwrap(){for(key,value)in values.as_object().unwrap(){if let Some(alias)=value.get("resource").and_then(|v|v.as_str()){result.aliases.entry(theme.clone()).or_default().insert(key.clone(),alias.into());}}}
+            for(theme,values)in table["themes"].as_object().unwrap(){for(key,value)in values.as_object().unwrap(){if let Some(color)=value.get("color").and_then(|v|v.as_str()){let brush=serde_json::from_value(serde_json::json!({"kind":"solid","color":color,"opacity":value.get("opacity").and_then(|v|v.as_f64()).unwrap_or(1.)})).expect("TableView solid resource");result.primitives.entry(theme.clone()).or_default().insert(key.clone(),brush);}}}
+            for(theme,values)in table["themes"].as_object().unwrap(){for(key,value)in values.as_object().unwrap(){if let(Some(alias),Some(opacity))=(value.get("resource").and_then(|v|v.as_str()),value.get("opacity").and_then(|v|v.as_f64())){let mode=match theme.as_str(){"Light"=>Theme::Light,"Dark"=>Theme::Dark,_=>Theme::HighContrast};let mut brush=result.resolve(mode,alias).expect("TableView opacity source").clone();brush.opacity*=opacity;result.primitives.entry(theme.clone()).or_default().insert(key.clone(),brush);}}}
             result
         })
     }

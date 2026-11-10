@@ -1,6 +1,6 @@
 {
-  "sdkSource": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\lib\\native\\Microsoft.UI\\Themes\\generic.xaml",
-  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "sdkSource": "references/mit-xaml-generated/generic.xaml",
+  "sdkSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
   "styles": {
     "ListView": {
       "key": "",
@@ -208,6 +208,7 @@
   "brushes": [
     "ControlStrongFillColorDefaultBrush",
     "ControlStrongStrokeColorDefaultBrush",
+    "GridViewHeaderItemDividerStroke",
     "GridViewItemBackgroundPointerOver",
     "GridViewItemBackgroundPressed",
     "GridViewItemBackgroundSelected",
@@ -241,6 +242,7 @@
     "GridViewItemSelectedInnerBorderBrush",
     "GridViewItemSelectedPointerOverBorderBrush",
     "GridViewItemSelectedPressedBorderBrush",
+    "ListViewHeaderItemDividerStroke",
     "ListViewItemBackgroundPointerOver",
     "ListViewItemBackgroundPressed",
     "ListViewItemBackgroundSelected",
@@ -696,92 +698,92 @@
       "ControlStrongFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlStrongStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelected": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelectedDisabled": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelectedPressed": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxBorderBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxBrush": {
         "kind": "solid",
         "color": "#FFFFFFC9",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxDisabledBorderBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPointerOverBorderBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPointerOverBrush": {
         "kind": "solid",
         "color": "#F3F3F3FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPressedBorderBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPressedBrush": {
         "kind": "solid",
         "color": "#EBEBEBFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxSelectedBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxSelectedDisabledBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxSelectedPointerOverBrush": {
         "kind": "solid",
@@ -796,67 +798,67 @@
       "GridViewItemCheckBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckPressedBrush": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemDragBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemDragForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemFocusBorderBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemForegroundSelected": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemPlaceholderBackground": {
         "kind": "solid",
         "color": "#00000051",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemPointerOverBorderBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedBorderBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedDisabledBorderBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedInnerBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedPointerOverBorderBrush": {
         "kind": "solid",
@@ -871,82 +873,82 @@
       "ListViewItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundPressed": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelected": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelectedDisabled": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelectedPressed": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxBorderBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxBrush": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxDisabledBorderBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxDisabledBrush": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPointerOverBorderBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPointerOverBrush": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPressedBorderBrush": {
         "kind": "solid",
         "color": "#00000072",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPressedBrush": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxSelectedBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxSelectedDisabledBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxSelectedPointerOverBrush": {
         "kind": "solid",
@@ -961,204 +963,204 @@
       "ListViewItemCheckBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckPressedBrush": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemDragBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemDragForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemFocusBorderBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemFocusSecondaryBorderBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemForegroundSelected": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemPlaceholderBackground": {
         "kind": "solid",
         "color": "#00000051",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorDisabledBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorPointerOverBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorPressedBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlBackgroundBaseMediumBrush": {
         "kind": "solid",
         "color": "#00000099",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlForegroundAltHighBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
-      },
-      "ListViewHeaderItemDividerStroke": {
-        "kind": "solid",
-        "color": "#00000033",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewHeaderItemDividerStroke": {
         "kind": "solid",
         "color": "#00000033",
-        "opacity": 1
+        "opacity": 1.0
+      },
+      "ListViewHeaderItemDividerStroke": {
+        "kind": "solid",
+        "color": "#00000033",
+        "opacity": 1.0
       }
     },
     "Dark": {
       "ControlStrongFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ControlStrongStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelected": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackgroundSelectedPressed": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxBrush": {
         "kind": "solid",
         "color": "#1C1C1CB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxDisabledBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxDisabledBrush": {
         "kind": "solid",
         "color": "#1E1E1EFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPointerOverBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPointerOverBrush": {
         "kind": "solid",
         "color": "#1A1A1AFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPressedBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxPressedBrush": {
         "kind": "solid",
         "color": "#131313FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxSelectedBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxSelectedDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckBoxSelectedPointerOverBrush": {
         "kind": "solid",
@@ -1173,67 +1175,67 @@
       "GridViewItemCheckBrush": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemCheckPressedBrush": {
         "kind": "solid",
         "color": "#00000080",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemDragBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemDragForeground": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemFocusBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemForegroundSelected": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemPlaceholderBackground": {
         "kind": "solid",
         "color": "#FFFFFF3F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemPointerOverBorderBrush": {
         "kind": "solid",
         "color": "#00000037",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedBorderBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedDisabledBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedInnerBorderBrush": {
         "kind": "solid",
         "color": "#454545FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemSelectedPointerOverBorderBrush": {
         "kind": "solid",
@@ -1248,82 +1250,82 @@
       "ListViewItemBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelected": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelectedDisabled": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelectedPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackgroundSelectedPressed": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxDisabledBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxDisabledBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPointerOverBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPointerOverBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPressedBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFF8B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxPressedBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxSelectedBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxSelectedDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckBoxSelectedPointerOverBrush": {
         "kind": "solid",
@@ -1338,112 +1340,112 @@
       "ListViewItemCheckBrush": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF87",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemCheckPressedBrush": {
         "kind": "solid",
         "color": "#00000080",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemDragBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemDragForeground": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemFocusBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemFocusSecondaryBorderBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemForegroundSelected": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemPlaceholderBackground": {
         "kind": "solid",
         "color": "#FFFFFF3F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF28",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorPointerOverBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemSelectionIndicatorPressedBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlBackgroundBaseMediumBrush": {
         "kind": "solid",
         "color": "#FFFFFF99",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SystemControlForegroundAltHighBrush": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "ListViewItemForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemBackground": {
         "kind": "solid",
         "color": "#FFFFFF00",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewItemForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
-      },
-      "ListViewHeaderItemDividerStroke": {
-        "kind": "solid",
-        "color": "#FFFFFF33",
-        "opacity": 1
+        "opacity": 1.0
       },
       "GridViewHeaderItemDividerStroke": {
         "kind": "solid",
         "color": "#FFFFFF33",
-        "opacity": 1
+        "opacity": 1.0
+      },
+      "ListViewHeaderItemDividerStroke": {
+        "kind": "solid",
+        "color": "#FFFFFF33",
+        "opacity": 1.0
       }
     },
     "HighContrast": {

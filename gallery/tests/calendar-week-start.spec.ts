@@ -1,0 +1,61 @@
+import {test,expect} from '@playwright/test';
+import {selectGalleryOption} from './gallery-control-helper';
+
+test.use({locale:'en-US',timezoneId:'Asia/Shanghai'});
+test.beforeEach(async({page})=>{await page.clock.setFixedTime(new Date('2026-11-10T12:00:00Z'));});
+
+for(const backend of ['Canvas2D','WebGL2'])test(`${backend} Chinese language starts the calendar week on Monday`,async({page})=>{
+ const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+ await page.goto('/#calendar-view');
+ const example=page.locator('#picker-calendar');
+ await example.getByRole('group',{name:'Calendar',exact:true}).waitFor();
+ await selectGalleryOption(page.getByRole('combobox',{name:'Renderer',exact:true}),backend);
+ await expect.poll(()=>page.evaluate(backend=>{const scene=window.pickerScenes.CalendarView;if(!scene||scene.isDisposed)return false;const s=scene.snapshot;return s.backend?.kind===backend&&s.nodes.some(n=>n.kind==='CalendarView'&&n.picker?.cells.length);},backend)).toBe(true);
+ const grid=()=>page.evaluate(()=>{const s=window.pickerScenes.CalendarView.snapshot,n=s.nodes.find(n=>n.kind==='CalendarView')!;return {headers:Array.from({length:7},(_,i)=>s.nodes.find(p=>p.id===n.picker!.parts[`WeekDay${i}`])!.props.text),days:n.picker!.cells.map(c=>new Date(`${c.date}T12:00:00Z`).getUTCDay()),selected:n.props.pickerControls?.selectedDates};});
+ expect((await grid()).days[0]).toBe(0);
+ await example.getByRole('button',{name:'2026-11-10',exact:true}).click();
+ const language=example.getByRole('combobox',{name:'Language',exact:true});
+ await language.click();const popup=page.locator(`[id="${await language.getAttribute('aria-controls')}"]`),box=(await popup.boundingBox())!;
+ await page.mouse.move(box.x+box.width/2,box.y+box.height/2);await page.mouse.wheel(0,420);
+ await expect.poll(async()=>{const option=await popup.getByRole('option',{name:'Chinese (Simplified)',exact:true}).boundingBox();return !!option&&option.y>box.y&&option.y+option.height<box.y+box.height;}).toBe(true);
+ await selectGalleryOption(language,'zh');
+ await expect.poll(async()=>(await grid()).headers).toEqual(['周一','周二','周三','周四','周五','周六','周日']);
+ expect((await grid()).days).toEqual(Array.from({length:42},(_,i)=>(i+1)%7));
+ expect((await grid()).selected).toEqual(['2026-11-10']);
+ await selectGalleryOption(example.getByRole('combobox',{name:'CalendarIdentifier',exact:true}),'ChineseCalendar');
+ await expect.poll(async()=>(await grid()).days[0]).toBe(1);
+ await example.locator('.basic-preview .winui-scene').screenshot({path:test.info().outputPath(`chinese-monday-${backend}.png`)});
+
+ await page.evaluate(async backend=>{
+  const {WinUI,CalendarIdentifier,RendererBackend}=await import('/@id/winui-wasm' as string);
+  document.querySelector('#app')?.setAttribute('style','display:none');const host=document.createElement('div');host.style.cssText='position:fixed;inset:0;width:1000px;height:900px';document.body.append(host);
+  const w=window as any;w.weekSdk=await WinUI.create({globalScrollbars:false});w.weekScene=w.weekSdk.scene(host,{backend:backend as typeof RendererBackend.Canvas2D});const root=w.weekScene.root.canvas();
+  w.weekView=root.calendarView({language:'zh-Hant-TW',calendarIdentifier:CalendarIdentifier.Chinese,today:'2026-11-10',canvasLeft:20,canvasTop:20});
+  w.weekDate=root.calendarDatePicker({language:'zh-CN',calendarIdentifier:CalendarIdentifier.Chinese,date:'2026-11-10',today:'2026-11-10',canvasLeft:440,canvasTop:50,accessibleName:'Week start picker'});
+ },backend);
+ await page.getByRole('button',{name:'Week start picker',exact:true}).waitFor();
+ const first=()=>page.evaluate(()=>{const w=window as any,s=w.weekScene.snapshot;const day=(n:any)=>({header:s.nodes.find((p:any)=>p.id===n?.picker.parts.WeekDay0)?.props.text,weekday:n?.picker.cells[0]?new Date(`${n.picker.cells[0].date}T12:00:00Z`).getUTCDay():-1});const owner=w.weekDate.snapshot,child=s.nodes.find((n:any)=>n.id===owner.picker.parts.Calendar);return {view:day(w.weekView.snapshot),popup:day(child),focusedDate:w.weekView.snapshot.picker.cells.find((cell:any)=>cell.node===s.focused)?.date};});
+ await expect.poll(async()=>(await first()).view.weekday).toBe(1);
+ await page.getByRole('button',{name:/^2026-11-10 /}).first().focus();
+ await page.evaluate(()=>(window as any).weekView.update({formatLanguage:'en-US'}));
+ await expect.poll(async()=>(await first()).view.weekday).toBe(1);
+ await page.evaluate(async()=>{const {DayOfWeek}=await import('/@id/winui-wasm' as string);(window as any).weekView.update({firstDayOfWeek:DayOfWeek.Sunday});});
+ await expect.poll(async()=>(await first()).view.weekday).toBe(0);
+ await expect.poll(async()=>(await first()).focusedDate).toBe('2026-11-10');
+ await page.evaluate(()=>(window as any).weekView.update({language:'zh-CN'}));
+ await expect.poll(async()=>(await first()).view.weekday).toBe(0);
+ await page.evaluate(()=>(window as any).weekView.update({firstDayOfWeek:null}));
+ await expect.poll(async()=>(await first()).view.weekday).toBe(1);
+ await page.evaluate(()=>(window as any).weekView.update({language:'en-US'}));
+ await expect.poll(async()=>(await first()).view.weekday).toBe(0);
+ await expect.poll(async()=>(await first()).focusedDate).toBe('2026-11-10');
+ await page.keyboard.press('Enter');
+ await expect.poll(()=>page.evaluate(()=>(window as any).weekView.properties.selectedDates)).toEqual(['2026-11-10']);
+ await page.getByRole('button',{name:'Week start picker',exact:true}).click();
+ await expect.poll(async()=>(await first()).popup).toEqual({header:'周一',weekday:1});
+ await page.evaluate(async()=>{const {DayOfWeek}=await import('/@id/winui-wasm' as string);(window as any).weekDate.update({firstDayOfWeek:DayOfWeek.Sunday});});
+ await expect.poll(async()=>(await first()).popup).toEqual({header:'周日',weekday:0});
+ await page.evaluate(()=>(window as any).weekDate.update({firstDayOfWeek:null}));
+ await expect.poll(async()=>(await first()).popup).toEqual({header:'周一',weekday:1});
+ expect(errors).toEqual([]);await page.evaluate(()=>(window as any).weekSdk.dispose());
+});

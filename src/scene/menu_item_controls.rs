@@ -37,6 +37,7 @@ pub fn entry_kind(k: NodeKind) -> MenuEntryKind {
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct MenuItemProperties {
     pub icon: String,
     pub keyboard_accelerators: Vec<command_controls::Accelerator>,

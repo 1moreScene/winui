@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { Scene, Button } from "../src/index";
+import type { Scene, ButtonController as Button } from "winui-wasm";
 declare global {
   interface Window {
     buttonMatrix: { scene: Scene; button: Button };
@@ -37,8 +37,8 @@ test("Button native matrix: 3 palettes × 3 variants × 4 real input states", as
         await page.mouse.move(1100, 650);
         await page.evaluate(
           async ({ theme, variant, col, row, state }) => {
-            const path = "/src/index.ts";
-            const api = (await import(path)) as typeof import("../src/index");
+            const path = "/@id/winui-wasm";
+            const api = (await import(path)) as typeof import("winui-wasm");
             window.buttonMatrix?.scene.dispose();
             document.querySelector("#button-matrix")?.remove();
             const host = document.createElement("div");

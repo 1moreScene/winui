@@ -1,0 +1,1295 @@
+{
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "sources": [
+    {
+      "path": "references/winui/NavigationView.xaml",
+      "sha256": "f5a2784add9fda34ec64fd312a7877047a53b2c8cecb111af93efaace1ee4e7a"
+    },
+    {
+      "path": "references/winui/NavigationView_themeresources.xaml",
+      "sha256": "200cd9d5527c51d9d2db497ba3580847260d2601179d4c5042516648962fd1a4"
+    }
+  ],
+  "executor": "src/scene/navigation_view.rs",
+  "parts": [
+    {
+      "name": "RootGrid",
+      "kind": "Grid",
+      "parent": null,
+      "slot": null,
+      "attributes": {
+        "Name": "RootGrid"
+      }
+    },
+    {
+      "name": "PaneToggleButtonGrid",
+      "kind": "Grid",
+      "parent": "RootGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneToggleButtonGrid",
+        "HorizontalAlignment": "Left",
+        "VerticalAlignment": "Top",
+        "Canvas.ZIndex": "100"
+      }
+    },
+    {
+      "name": "TogglePaneTopPadding",
+      "kind": "Grid",
+      "parent": "PaneToggleButtonGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "TogglePaneTopPadding",
+        "Height": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPadding}"
+      }
+    },
+    {
+      "name": "ButtonHolderGrid",
+      "kind": "Grid",
+      "parent": "PaneToggleButtonGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "ButtonHolderGrid",
+        "Grid.Row": "1",
+        "Margin": "{ThemeResource NavigationViewButtonHolderGridMargin}"
+      }
+    },
+    {
+      "name": "NavigationViewBackButton",
+      "kind": "Button",
+      "parent": "ButtonHolderGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "NavigationViewBackButton",
+        "Style": "{StaticResource NavigationBackButtonNormalStyle}",
+        "Width": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.SmallerPaneToggleButtonWidth}",
+        "VerticalAlignment": "Top",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.BackButtonVisibility}",
+        "IsEnabled": "{TemplateBinding IsBackEnabled}"
+      }
+    },
+    {
+      "name": "NavigationViewBackButtonToolTip",
+      "kind": "ToolTip",
+      "parent": "NavigationViewBackButton",
+      "slot": "ToolTip",
+      "attributes": {
+        "Name": "NavigationViewBackButtonToolTip"
+      }
+    },
+    {
+      "name": "NavigationViewCloseButton",
+      "kind": "Button",
+      "parent": "ButtonHolderGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "NavigationViewCloseButton",
+        "Style": "{StaticResource NavigationBackButtonNormalStyle}",
+        "VerticalAlignment": "Top"
+      }
+    },
+    {
+      "name": "NavigationViewCloseButtonToolTip",
+      "kind": "ToolTip",
+      "parent": "NavigationViewCloseButton",
+      "slot": "ToolTip",
+      "attributes": {
+        "Name": "NavigationViewCloseButtonToolTip"
+      }
+    },
+    {
+      "name": "TogglePaneButton",
+      "kind": "Button",
+      "parent": "ButtonHolderGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "TogglePaneButton",
+        "Style": "{TemplateBinding PaneToggleButtonStyle}",
+        "AutomationProperties.LandmarkType": "Navigation",
+        "HorizontalAlignment": "Center",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.PaneToggleButtonVisibility}",
+        "VerticalAlignment": "Top",
+        "MinWidth": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.SmallerPaneToggleButtonWidth}",
+        "FocusVisualMargin": "0"
+      }
+    },
+    {
+      "name": "PaneTitleTextBlock",
+      "kind": "TextBlock",
+      "parent": "TogglePaneButton",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneTitleTextBlock",
+        "Grid.Column": "0",
+        "Margin": "0,-2,0,0",
+        "Text": "{TemplateBinding PaneTitle}",
+        "HorizontalAlignment": "Left",
+        "VerticalAlignment": "Center",
+        "Style": "{StaticResource NavigationViewItemHeaderTextStyle}"
+      }
+    },
+    {
+      "name": "PaneTitleHolder",
+      "kind": "Grid",
+      "parent": "ButtonHolderGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneTitleHolder",
+        "Height": "40",
+        "Visibility": "Collapsed"
+      }
+    },
+    {
+      "name": "PaneTitlePresenter",
+      "kind": "ContentControl",
+      "parent": "PaneTitleHolder",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneTitlePresenter",
+        "Margin": "{ThemeResource NavigationViewPaneTitlePresenterMargin}",
+        "IsTabStop": "False",
+        "HorizontalContentAlignment": "Stretch",
+        "VerticalContentAlignment": "Stretch"
+      }
+    },
+    {
+      "name": "Grid_12",
+      "kind": "Grid",
+      "parent": "RootGrid",
+      "slot": null,
+      "attributes": {}
+    },
+    {
+      "name": "TopNavArea",
+      "kind": "StackPanel",
+      "parent": "Grid_12",
+      "slot": null,
+      "attributes": {
+        "Name": "TopNavArea",
+        "Background": "{ThemeResource NavigationViewTopPaneBackground}",
+        "Grid.Row": "0",
+        "HorizontalAlignment": "Stretch",
+        "VerticalAlignment": "Top",
+        "Canvas.ZIndex": "1",
+        "XYFocusKeyboardNavigation": "Enabled"
+      }
+    },
+    {
+      "name": "TopNavTopPadding",
+      "kind": "Grid",
+      "parent": "TopNavArea",
+      "slot": null,
+      "attributes": {
+        "Name": "TopNavTopPadding",
+        "Height": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPadding}",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPaneVisibility}"
+      }
+    },
+    {
+      "name": "TopNavGrid",
+      "kind": "Grid",
+      "parent": "TopNavArea",
+      "slot": null,
+      "attributes": {
+        "Name": "TopNavGrid",
+        "Height": "{ThemeResource NavigationViewTopPaneHeight}",
+        "Margin": "{ThemeResource TopNavigationViewTopNavGridMargin}",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPaneVisibility}",
+        "BorderBrush": "{ThemeResource NavigationViewItemSeparatorForeground}"
+      }
+    },
+    {
+      "name": "TopNavLeftPadding",
+      "kind": "Grid",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "TopNavLeftPadding",
+        "Grid.Column": "1",
+        "Width": "0"
+      }
+    },
+    {
+      "name": "PaneHeaderOnTopPane",
+      "kind": "ContentControl",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneHeaderOnTopPane",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Grid.Column": "2"
+      }
+    },
+    {
+      "name": "PaneTitleOnTopPane",
+      "kind": "ContentControl",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneTitleOnTopPane",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Margin": "{ThemeResource NavigationViewItemInnerHeaderMargin}",
+        "Grid.Column": "2"
+      }
+    },
+    {
+      "name": "ItemsRepeaterScrollHost_19",
+      "kind": "ItemsRepeaterScrollHost",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Grid.Column": "3"
+      }
+    },
+    {
+      "name": "ScrollViewer_20",
+      "kind": "ScrollViewer",
+      "parent": "ItemsRepeaterScrollHost_19",
+      "slot": null,
+      "attributes": {
+        "HorizontalScrollMode": "Disabled",
+        "HorizontalScrollBarVisibility": "Hidden",
+        "VerticalScrollMode": "Disabled",
+        "VerticalScrollBarVisibility": "Hidden"
+      }
+    },
+    {
+      "name": "TopNavMenuItemsHost",
+      "kind": "ItemsRepeater",
+      "parent": "ScrollViewer_20",
+      "slot": null,
+      "attributes": {
+        "AutomationProperties.LandmarkType": "Navigation",
+        "AutomationProperties.Name": "{TemplateBinding AutomationProperties.Name}",
+        "AutomationProperties.AccessibilityView": "Content",
+        "Name": "TopNavMenuItemsHost"
+      }
+    },
+    {
+      "name": "TopNavOverflowButton",
+      "kind": "Button",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "TopNavOverflowButton",
+        "Grid.Column": "4",
+        "Content": "More",
+        "Margin": "{ThemeResource TopNavigationViewOverflowButtonMargin}",
+        "Style": "{StaticResource NavigationViewOverflowButtonStyleWhenPaneOnTop}",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.OverflowButtonVisibility}"
+      }
+    },
+    {
+      "name": "TopNavOverflowFlyout",
+      "kind": "Flyout",
+      "parent": "TopNavOverflowButton",
+      "slot": "Flyout",
+      "attributes": {
+        "Placement": "BottomEdgeAlignedRight",
+        "ElementSoundMode": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=ElementSoundMode}"
+      }
+    },
+    {
+      "name": "ItemsRepeaterScrollHost_24",
+      "kind": "ItemsRepeaterScrollHost",
+      "parent": "TopNavOverflowFlyout",
+      "slot": null,
+      "attributes": {}
+    },
+    {
+      "name": "ScrollViewer_25",
+      "kind": "ScrollViewer",
+      "parent": "ItemsRepeaterScrollHost_24",
+      "slot": null,
+      "attributes": {
+        "VerticalScrollBarVisibility": "Auto"
+      }
+    },
+    {
+      "name": "TopNavMenuItemsOverflowHost",
+      "kind": "ItemsRepeater",
+      "parent": "ScrollViewer_25",
+      "slot": null,
+      "attributes": {
+        "AutomationProperties.AccessibilityView": "Content",
+        "Name": "TopNavMenuItemsOverflowHost"
+      }
+    },
+    {
+      "name": "PaneCustomContentOnTopPane",
+      "kind": "ContentControl",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneCustomContentOnTopPane",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Grid.Column": "5"
+      }
+    },
+    {
+      "name": "TopPaneAutoSuggestArea",
+      "kind": "Grid",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "TopPaneAutoSuggestArea",
+        "Height": "{ThemeResource NavigationViewTopPaneHeight}",
+        "Grid.Column": "6"
+      }
+    },
+    {
+      "name": "TopPaneAutoSuggestBoxPresenter",
+      "kind": "ContentControl",
+      "parent": "TopPaneAutoSuggestArea",
+      "slot": null,
+      "attributes": {
+        "Name": "TopPaneAutoSuggestBoxPresenter",
+        "Margin": "{ThemeResource TopNavigationViewAutoSuggestBoxMargin}",
+        "MinWidth": "216",
+        "IsTabStop": "False",
+        "HorizontalContentAlignment": "Stretch",
+        "VerticalContentAlignment": "Center"
+      }
+    },
+    {
+      "name": "PaneFooterOnTopPane",
+      "kind": "ContentControl",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneFooterOnTopPane",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Grid.Column": "7"
+      }
+    },
+    {
+      "name": "TopFooterMenuItemsHost",
+      "kind": "ItemsRepeater",
+      "parent": "TopNavGrid",
+      "slot": null,
+      "attributes": {
+        "Grid.Column": "8",
+        "AutomationProperties.LandmarkType": "Navigation",
+        "AutomationProperties.AccessibilityView": "Content",
+        "Name": "TopFooterMenuItemsHost"
+      }
+    },
+    {
+      "name": "TopNavContentOverlayAreaGrid",
+      "kind": "Border",
+      "parent": "TopNavArea",
+      "slot": null,
+      "attributes": {
+        "Name": "TopNavContentOverlayAreaGrid",
+        "Child": "{TemplateBinding ContentOverlay}"
+      }
+    },
+    {
+      "name": "RootSplitView",
+      "kind": "SplitView",
+      "parent": "Grid_12",
+      "slot": null,
+      "attributes": {
+        "Name": "RootSplitView",
+        "Background": "{TemplateBinding Background}",
+        "BorderBrush": "{ThemeResource NavigationViewItemSeparatorForeground}",
+        "BorderThickness": "{ThemeResource NavigationViewBorderThickness}",
+        "CompactPaneLength": "{TemplateBinding CompactPaneLength}",
+        "DisplayMode": "Inline",
+        "IsPaneOpen": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsPaneOpen, Mode=TwoWay}",
+        "IsTabStop": "False",
+        "OpenPaneLength": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.OpenPaneLength}",
+        "PaneBackground": "{ThemeResource NavigationViewDefaultPaneBackground}",
+        "Grid.Row": "1",
+        "CornerRadius": "{Binding Source={ThemeResource OverlayCornerRadius}, Converter={StaticResource RightCornerRadiusFilterConverter}}"
+      }
+    },
+    {
+      "name": "PaneContentGrid",
+      "kind": "Grid",
+      "parent": "RootSplitView",
+      "slot": "Pane",
+      "attributes": {
+        "Name": "PaneContentGrid",
+        "BorderBrush": "{ThemeResource NavigationViewItemSeparatorForeground}",
+        "Margin": "{ThemeResource NavigationViewPaneContentGridMargin}",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.LeftPaneVisibility}"
+      }
+    },
+    {
+      "name": "ContentPaneTopPadding",
+      "kind": "Grid",
+      "parent": "PaneContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "ContentPaneTopPadding",
+        "Height": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPadding}"
+      }
+    },
+    {
+      "name": "Grid_36",
+      "kind": "Grid",
+      "parent": "PaneContentGrid",
+      "slot": null,
+      "attributes": {
+        "Grid.Row": "2"
+      }
+    },
+    {
+      "name": "PaneHeaderContentBorder",
+      "kind": "ContentControl",
+      "parent": "Grid_36",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneHeaderContentBorder",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Grid.Column": "2"
+      }
+    },
+    {
+      "name": "AutoSuggestArea",
+      "kind": "Grid",
+      "parent": "PaneContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "AutoSuggestArea",
+        "Grid.Row": "3",
+        "MinHeight": "{ThemeResource NavigationViewAutoSuggestAreaHeight}",
+        "Margin": "0,0,0,8",
+        "VerticalAlignment": "Center"
+      }
+    },
+    {
+      "name": "PaneAutoSuggestBoxPresenter",
+      "kind": "ContentControl",
+      "parent": "AutoSuggestArea",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneAutoSuggestBoxPresenter",
+        "Margin": "{ThemeResource NavigationViewAutoSuggestBoxMargin}",
+        "IsTabStop": "False",
+        "HorizontalContentAlignment": "Stretch",
+        "VerticalContentAlignment": "Center"
+      }
+    },
+    {
+      "name": "PaneAutoSuggestButton",
+      "kind": "Button",
+      "parent": "AutoSuggestArea",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneAutoSuggestButton",
+        "Visibility": "Collapsed",
+        "Style": "{ThemeResource NavigationViewPaneSearchButtonStyle}",
+        "Width": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.SmallerPaneToggleButtonWidth}"
+      }
+    },
+    {
+      "name": "PaneCustomContentBorder",
+      "kind": "ContentControl",
+      "parent": "PaneContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "PaneCustomContentBorder",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Grid.Row": "4"
+      }
+    },
+    {
+      "name": "ItemsContainerGrid",
+      "kind": "Grid",
+      "parent": "PaneContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "ItemsContainerGrid",
+        "Grid.Row": "6"
+      }
+    },
+    {
+      "name": "ItemsRepeaterScrollHost_43",
+      "kind": "ItemsRepeaterScrollHost",
+      "parent": "ItemsContainerGrid",
+      "slot": null,
+      "attributes": {
+        "HorizontalAlignment": "Stretch",
+        "VerticalAlignment": "Stretch"
+      }
+    },
+    {
+      "name": "MenuItemsScrollViewer",
+      "kind": "ScrollViewer",
+      "parent": "ItemsRepeaterScrollHost_43",
+      "slot": null,
+      "attributes": {
+        "Name": "MenuItemsScrollViewer",
+        "TabNavigation": "Local",
+        "VerticalScrollBarVisibility": "Auto"
+      }
+    },
+    {
+      "name": "MenuItemsHost",
+      "kind": "ItemsRepeater",
+      "parent": "MenuItemsScrollViewer",
+      "slot": null,
+      "attributes": {
+        "Name": "MenuItemsHost",
+        "AutomationProperties.Name": "{TemplateBinding AutomationProperties.Name}",
+        "AutomationProperties.AccessibilityView": "Content"
+      }
+    },
+    {
+      "name": "VisualItemsSeparator",
+      "kind": "NavigationViewItemSeparator",
+      "parent": "ItemsContainerGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "VisualItemsSeparator",
+        "Grid.Row": "1",
+        "Margin": "0,0,0,2",
+        "Visibility": "Collapsed",
+        "VerticalAlignment": "Center",
+        "HorizontalAlignment": "Stretch"
+      }
+    },
+    {
+      "name": "FooterContentBorder",
+      "kind": "ContentControl",
+      "parent": "ItemsContainerGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "FooterContentBorder",
+        "IsTabStop": "False",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Margin": "0,0,0,4",
+        "Grid.Row": "2"
+      }
+    },
+    {
+      "name": "ItemsRepeaterScrollHost_48",
+      "kind": "ItemsRepeaterScrollHost",
+      "parent": "ItemsContainerGrid",
+      "slot": null,
+      "attributes": {
+        "Grid.Row": "3"
+      }
+    },
+    {
+      "name": "FooterItemsScrollViewer",
+      "kind": "ScrollViewer",
+      "parent": "ItemsRepeaterScrollHost_48",
+      "slot": null,
+      "attributes": {
+        "Name": "FooterItemsScrollViewer",
+        "VerticalScrollBarVisibility": "Auto",
+        "VerticalAnchorRatio": "1"
+      }
+    },
+    {
+      "name": "FooterMenuItemsHost",
+      "kind": "ItemsRepeater",
+      "parent": "FooterItemsScrollViewer",
+      "slot": null,
+      "attributes": {
+        "Name": "FooterMenuItemsHost",
+        "AutomationProperties.AccessibilityView": "Content"
+      }
+    },
+    {
+      "name": "ContentGrid",
+      "kind": "Grid",
+      "parent": "RootSplitView",
+      "slot": "Content",
+      "attributes": {
+        "Name": "ContentGrid",
+        "BorderBrush": "{ThemeResource NavigationViewContentGridBorderBrush}",
+        "BorderThickness": "{ThemeResource NavigationViewContentGridBorderThickness}",
+        "Background": "{ThemeResource NavigationViewContentBackground}",
+        "Margin": "{ThemeResource NavigationViewContentMargin}",
+        "CornerRadius": "{ThemeResource NavigationViewContentGridCornerRadius}"
+      }
+    },
+    {
+      "name": "ContentTopPadding",
+      "kind": "Grid",
+      "parent": "ContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "ContentTopPadding",
+        "Grid.ColumnSpan": "2",
+        "Height": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.TopPadding}",
+        "Visibility": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.LeftPaneVisibility}"
+      }
+    },
+    {
+      "name": "ContentLeftPadding",
+      "kind": "Grid",
+      "parent": "ContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "ContentLeftPadding",
+        "Grid.Row": "1"
+      }
+    },
+    {
+      "name": "HeaderContent",
+      "kind": "ContentControl",
+      "parent": "ContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "HeaderContent",
+        "Grid.Row": "1",
+        "Grid.Column": "1",
+        "MinHeight": "{StaticResource PaneToggleButtonHeight}",
+        "IsTabStop": "False",
+        "Content": "{TemplateBinding Header}",
+        "ContentTemplate": "{TemplateBinding HeaderTemplate}",
+        "VerticalContentAlignment": "Stretch",
+        "HorizontalContentAlignment": "Stretch",
+        "Style": "{StaticResource NavigationViewTitleHeaderContentControlTextStyle}"
+      }
+    },
+    {
+      "name": "ContentPresenter",
+      "kind": "ContentPresenter",
+      "parent": "ContentGrid",
+      "slot": null,
+      "attributes": {
+        "Name": "ContentPresenter",
+        "AutomationProperties.LandmarkType": "Main",
+        "Grid.Row": "2",
+        "Grid.ColumnSpan": "2",
+        "Content": "{TemplateBinding Content}",
+        "Margin": "{ThemeResource NavigationViewContentPresenterMargin}"
+      }
+    },
+    {
+      "name": "ShadowCaster",
+      "kind": "Grid",
+      "parent": "Grid_12",
+      "slot": null,
+      "attributes": {
+        "Name": "ShadowCaster",
+        "Grid.RowSpan": "2",
+        "Width": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.OpenPaneLength}",
+        "HorizontalAlignment": "Left"
+      }
+    }
+  ],
+  "itemTemplates": {
+    "Left": [
+      {
+        "name": "LayoutRoot",
+        "kind": "Grid",
+        "parent": null,
+        "slot": null,
+        "attributes": {
+          "Name": "LayoutRoot",
+          "MinHeight": "{ThemeResource NavigationViewItemOnLeftMinHeight}",
+          "Background": "{TemplateBinding Background}",
+          "CornerRadius": "{TemplateBinding CornerRadius}",
+          "Margin": "{ThemeResource NavigationViewItemButtonMargin}",
+          "Control.IsTemplateFocusTarget": "True"
+        }
+      },
+      {
+        "name": "PresenterContentRootGrid",
+        "kind": "Grid",
+        "parent": "LayoutRoot",
+        "slot": null,
+        "attributes": {
+          "Name": "PresenterContentRootGrid"
+        }
+      },
+      {
+        "name": "Grid_2",
+        "kind": "Grid",
+        "parent": "PresenterContentRootGrid",
+        "slot": null,
+        "attributes": {
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center"
+        }
+      },
+      {
+        "name": "SelectionIndicator",
+        "kind": "Rectangle",
+        "parent": "Grid_2",
+        "slot": null,
+        "attributes": {
+          "Name": "SelectionIndicator",
+          "Width": "{ThemeResource NavigationViewSelectionIndicatorWidth}",
+          "Height": "{ThemeResource NavigationViewSelectionIndicatorHeight}",
+          "Fill": "{ThemeResource NavigationViewSelectionIndicatorForeground}",
+          "Opacity": "0.0",
+          "RadiusX": "{ThemeResource NavigationViewSelectionIndicatorRadius}",
+          "RadiusY": "{ThemeResource NavigationViewSelectionIndicatorRadius}"
+        }
+      },
+      {
+        "name": "ContentGrid",
+        "kind": "Grid",
+        "parent": "PresenterContentRootGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "ContentGrid",
+          "MinHeight": "{ThemeResource NavigationViewItemOnLeftMinHeight}",
+          "Margin": "0,0,14,0",
+          "HorizontalAlignment": "Stretch"
+        }
+      },
+      {
+        "name": "IconColumn",
+        "kind": "Border",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "IconColumn",
+          "Width": "{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplateSettings.SmallerIconWidth}"
+        }
+      },
+      {
+        "name": "IconBox",
+        "kind": "Viewbox",
+        "parent": "IconColumn",
+        "slot": null,
+        "attributes": {
+          "Name": "IconBox",
+          "Height": "{ThemeResource NavigationViewItemOnLeftIconBoxHeight}",
+          "HorizontalAlignment": "Center",
+          "Margin": "{ThemeResource NavigationViewItemOnLeftIconBoxMargin}"
+        }
+      },
+      {
+        "name": "Icon",
+        "kind": "ContentPresenter",
+        "parent": "IconBox",
+        "slot": null,
+        "attributes": {
+          "Name": "Icon",
+          "Content": "{TemplateBinding Icon}",
+          "Foreground": "{TemplateBinding Foreground}",
+          "Background": "{ThemeResource NavigationViewItemIconBackground}",
+          "AnimatedIcon.State": "Normal"
+        }
+      },
+      {
+        "name": "ContentPresenter",
+        "kind": "ContentPresenter",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "ContentPresenter",
+          "Grid.Column": "1",
+          "Margin": "{ThemeResource NavigationViewItemContentPresenterMargin}",
+          "ContentTransitions": "{TemplateBinding ContentTransitions}",
+          "ContentTemplate": "{TemplateBinding ContentTemplate}",
+          "Content": "{TemplateBinding Content}",
+          "Foreground": "{TemplateBinding Foreground}",
+          "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
+          "VerticalAlignment": "{TemplateBinding VerticalContentAlignment}",
+          "ContentTemplateSelector": "{TemplateBinding ContentTemplateSelector}",
+          "Padding": "{TemplateBinding Padding}",
+          "AutomationProperties.AccessibilityView": "Raw"
+        }
+      },
+      {
+        "name": "ExpandCollapseChevron",
+        "kind": "Grid",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Load": "False",
+          "Name": "ExpandCollapseChevron",
+          "Grid.Column": "3",
+          "Visibility": "Collapsed",
+          "HorizontalAlignment": "Right",
+          "Width": "40",
+          "Margin": "{ThemeResource NavigationViewItemExpandChevronMargin}",
+          "Background": "Transparent",
+          "AnimatedIcon.State": "NormalOff"
+        }
+      },
+      {
+        "name": "ExpandCollapseChevronIcon",
+        "kind": "AnimatedIcon",
+        "parent": "ExpandCollapseChevron",
+        "slot": null,
+        "attributes": {
+          "Width": "12",
+          "Height": "12",
+          "RenderTransformOrigin": "0.5, 0.5",
+          "Name": "ExpandCollapseChevronIcon",
+          "HorizontalAlignment": "Center",
+          "VerticalAlignment": "Center",
+          "Visibility": "Collapsed",
+          "AutomationProperties.AccessibilityView": "Raw",
+          "DeferLoadStrategy": "Lazy"
+        },
+        "animatedVisualSource": "AnimatedChevronUpDownSmallVisualSource"
+      },
+      {
+        "name": "InfoBadgePresenter",
+        "kind": "ContentPresenter",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "InfoBadgePresenter",
+          "Grid.Column": "2",
+          "VerticalAlignment": "Center",
+          "Content": "{TemplateBinding InfoBadge}"
+        }
+      }
+    ],
+    "Top": [
+      {
+        "name": "LayoutRoot",
+        "kind": "Grid",
+        "parent": null,
+        "slot": null,
+        "attributes": {
+          "Name": "LayoutRoot",
+          "Margin": "{StaticResource NavigationViewItemButtonMargin}",
+          "Background": "{TemplateBinding Background}",
+          "Control.IsTemplateFocusTarget": "True",
+          "CornerRadius": "{TemplateBinding CornerRadius}"
+        }
+      },
+      {
+        "name": "PointerRectangle",
+        "kind": "Rectangle",
+        "parent": "LayoutRoot",
+        "slot": null,
+        "attributes": {
+          "Name": "PointerRectangle",
+          "Fill": "Transparent",
+          "Visibility": "Collapsed"
+        }
+      },
+      {
+        "name": "ContentGrid",
+        "kind": "Grid",
+        "parent": "LayoutRoot",
+        "slot": null,
+        "attributes": {
+          "Name": "ContentGrid"
+        }
+      },
+      {
+        "name": "IconBox",
+        "kind": "Viewbox",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "IconBox",
+          "Height": "16",
+          "Width": "16",
+          "Margin": "12,0,0,0",
+          "VerticalAlignment": "Center",
+          "HorizontalAlignment": "Center"
+        }
+      },
+      {
+        "name": "Icon",
+        "kind": "ContentPresenter",
+        "parent": "IconBox",
+        "slot": null,
+        "attributes": {
+          "Name": "Icon",
+          "Content": "{TemplateBinding Icon}",
+          "Foreground": "{TemplateBinding Foreground}",
+          "Background": "{ThemeResource NavigationViewItemIconBackground}",
+          "AnimatedIcon.State": "Normal"
+        }
+      },
+      {
+        "name": "ContentPresenter",
+        "kind": "ContentPresenter",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "ContentPresenter",
+          "Grid.Column": "1",
+          "Margin": "{ThemeResource TopNavigationViewItemContentPresenterMargin}",
+          "TextWrapping": "NoWrap",
+          "Foreground": "{TemplateBinding Foreground}",
+          "ContentTransitions": "{TemplateBinding ContentTransitions}",
+          "ContentTemplate": "{TemplateBinding ContentTemplate}",
+          "Content": "{TemplateBinding Content}",
+          "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
+          "ContentTemplateSelector": "{TemplateBinding ContentTemplateSelector}",
+          "VerticalAlignment": "Center",
+          "AutomationProperties.AccessibilityView": "Raw"
+        }
+      },
+      {
+        "name": "ExpandCollapseChevron",
+        "kind": "Grid",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "ExpandCollapseChevron",
+          "Grid.Column": "2",
+          "Visibility": "Collapsed",
+          "HorizontalAlignment": "Right",
+          "Width": "40",
+          "Margin": "{ThemeResource TopNavigationViewItemExpandChevronMargin}",
+          "Background": "Transparent"
+        }
+      },
+      {
+        "name": "ExpandCollapseChevronIcon",
+        "kind": "AnimatedIcon",
+        "parent": "ExpandCollapseChevron",
+        "slot": null,
+        "attributes": {
+          "Width": "12",
+          "Height": "12",
+          "RenderTransformOrigin": "0.5, 0.5",
+          "Name": "ExpandCollapseChevronIcon",
+          "Foreground": "{ThemeResource NavigationViewItemForeground}",
+          "HorizontalAlignment": "Center",
+          "VerticalAlignment": "Center",
+          "AutomationProperties.AccessibilityView": "Raw",
+          "AnimatedIcon.State": "NormalOff"
+        },
+        "animatedVisualSource": "AnimatedChevronUpDownSmallVisualSource"
+      },
+      {
+        "name": "InfoBadgePresenter",
+        "kind": "ContentPresenter",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "InfoBadgePresenter",
+          "Grid.Column": "3",
+          "VerticalAlignment": "Center",
+          "HorizontalAlignment": "Center",
+          "Margin": "-16,0,2,13",
+          "Content": "{TemplateBinding InfoBadge}"
+        }
+      },
+      {
+        "name": "SelectionIndicatorGrid",
+        "kind": "Grid",
+        "parent": "LayoutRoot",
+        "slot": null,
+        "attributes": {
+          "Name": "SelectionIndicatorGrid",
+          "Margin": "16,0,16,4",
+          "VerticalAlignment": "Bottom",
+          "HorizontalAlignment": "Center"
+        }
+      },
+      {
+        "name": "SelectionIndicator",
+        "kind": "Rectangle",
+        "parent": "SelectionIndicatorGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "SelectionIndicator",
+          "Height": "3",
+          "Width": "16",
+          "Fill": "{ThemeResource NavigationViewSelectionIndicatorForeground}",
+          "Opacity": "0",
+          "RadiusX": "2",
+          "RadiusY": "2"
+        }
+      }
+    ],
+    "Overflow": [
+      {
+        "name": "LayoutRoot",
+        "kind": "Grid",
+        "parent": null,
+        "slot": null,
+        "attributes": {
+          "Name": "LayoutRoot",
+          "Height": "36",
+          "Background": "{TemplateBinding Background}",
+          "Control.IsTemplateFocusTarget": "True"
+        }
+      },
+      {
+        "name": "PresenterContentRootGrid",
+        "kind": "Grid",
+        "parent": "LayoutRoot",
+        "slot": null,
+        "attributes": {
+          "Name": "PresenterContentRootGrid"
+        }
+      },
+      {
+        "name": "Grid_2",
+        "kind": "Grid",
+        "parent": "PresenterContentRootGrid",
+        "slot": null,
+        "attributes": {
+          "Margin": "4,0,0,0",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Center"
+        }
+      },
+      {
+        "name": "SelectionIndicator",
+        "kind": "Rectangle",
+        "parent": "Grid_2",
+        "slot": null,
+        "attributes": {
+          "Name": "SelectionIndicator",
+          "Width": "2",
+          "Height": "24",
+          "Fill": "{ThemeResource NavigationViewSelectionIndicatorForeground}",
+          "Opacity": "0.0",
+          "RadiusX": "{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource TopLeftCornerRadiusDoubleValueConverter}}",
+          "RadiusY": "{Binding CornerRadius, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BottomRightCornerRadiusDoubleValueConverter}}"
+        }
+      },
+      {
+        "name": "ContentGrid",
+        "kind": "Grid",
+        "parent": "PresenterContentRootGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "ContentGrid",
+          "Margin": "0,0,14,0"
+        }
+      },
+      {
+        "name": "IconBox",
+        "kind": "Viewbox",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "IconBox",
+          "Height": "16",
+          "Width": "16",
+          "Margin": "16,0,0,0",
+          "VerticalAlignment": "Center",
+          "HorizontalAlignment": "Center"
+        }
+      },
+      {
+        "name": "Icon",
+        "kind": "ContentPresenter",
+        "parent": "IconBox",
+        "slot": null,
+        "attributes": {
+          "Name": "Icon",
+          "Content": "{TemplateBinding Icon}",
+          "Foreground": "{TemplateBinding Foreground}",
+          "Background": "{ThemeResource NavigationViewItemIconBackground}",
+          "AnimatedIcon.State": "Normal"
+        }
+      },
+      {
+        "name": "ContentPresenter",
+        "kind": "ContentPresenter",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "ContentPresenter",
+          "Grid.Column": "1",
+          "Margin": "{ThemeResource TopNavigationViewItemOnOverflowContentPresenterMargin}",
+          "Foreground": "{TemplateBinding Foreground}",
+          "TextWrapping": "NoWrap",
+          "ContentTransitions": "{TemplateBinding ContentTransitions}",
+          "ContentTemplate": "{TemplateBinding ContentTemplate}",
+          "Content": "{TemplateBinding Content}",
+          "HorizontalAlignment": "{TemplateBinding HorizontalContentAlignment}",
+          "ContentTemplateSelector": "{TemplateBinding ContentTemplateSelector}",
+          "VerticalAlignment": "Center",
+          "AutomationProperties.AccessibilityView": "Raw"
+        }
+      },
+      {
+        "name": "ExpandCollapseChevron",
+        "kind": "Grid",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Load": "False",
+          "Name": "ExpandCollapseChevron",
+          "Grid.Column": "3",
+          "Visibility": "Collapsed",
+          "HorizontalAlignment": "Right",
+          "Width": "40",
+          "Margin": "{ThemeResource TopNavigationViewItemOnOverflowExpandChevronMargin}",
+          "Padding": "{ThemeResource TopNavigationViewItemOnOverflowExpandChevronPadding}",
+          "Background": "Transparent"
+        }
+      },
+      {
+        "name": "ExpandCollapseChevronIcon",
+        "kind": "AnimatedIcon",
+        "parent": "ExpandCollapseChevron",
+        "slot": null,
+        "attributes": {
+          "Width": "12",
+          "Height": "12",
+          "RenderTransformOrigin": "0.5, 0.5",
+          "Name": "ExpandCollapseChevronIcon",
+          "HorizontalAlignment": "Center",
+          "VerticalAlignment": "Center",
+          "AutomationProperties.AccessibilityView": "Raw",
+          "AnimatedIcon.State": "NormalOff"
+        },
+        "animatedVisualSource": "AnimatedChevronUpDownSmallVisualSource"
+      },
+      {
+        "name": "InfoBadgePresenter",
+        "kind": "ContentPresenter",
+        "parent": "ContentGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "InfoBadgePresenter",
+          "Grid.Column": "2",
+          "VerticalAlignment": "Center",
+          "Content": "{TemplateBinding InfoBadge}"
+        }
+      }
+    ],
+    "Header": [
+      {
+        "name": "NavigationViewItemHeaderRootGrid",
+        "kind": "Grid",
+        "parent": null,
+        "slot": null,
+        "attributes": {
+          "Name": "NavigationViewItemHeaderRootGrid"
+        }
+      },
+      {
+        "name": "InnerHeaderGrid",
+        "kind": "Grid",
+        "parent": "NavigationViewItemHeaderRootGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "InnerHeaderGrid",
+          "Height": "40",
+          "HorizontalAlignment": "Left",
+          "Margin": "{ThemeResource NavigationViewItemInnerHeaderMargin}"
+        }
+      },
+      {
+        "name": "HeaderText",
+        "kind": "TextBlock",
+        "parent": "InnerHeaderGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "HeaderText",
+          "VerticalAlignment": "Center",
+          "Margin": "0,-1,0,-1",
+          "Style": "{StaticResource NavigationViewItemHeaderTextStyle}",
+          "Text": "{TemplateBinding Content}",
+          "TextWrapping": "NoWrap"
+        }
+      }
+    ],
+    "Separator": [
+      {
+        "name": "NavigationViewItemSeparatorRootGrid",
+        "kind": "Grid",
+        "parent": null,
+        "slot": null,
+        "attributes": {
+          "Name": "NavigationViewItemSeparatorRootGrid"
+        }
+      },
+      {
+        "name": "SeparatorLine",
+        "kind": "Rectangle",
+        "parent": "NavigationViewItemSeparatorRootGrid",
+        "slot": null,
+        "attributes": {
+          "Name": "SeparatorLine",
+          "Height": "{ThemeResource NavigationViewItemSeparatorHeight}",
+          "Fill": "{ThemeResource NavigationViewItemSeparatorForeground}",
+          "Margin": "{ThemeResource NavigationViewItemSeparatorMargin}"
+        }
+      }
+    ]
+  },
+  "metrics": {
+    "NavigationViewAutoSuggestBoxMargin": "16,0",
+    "TopNavigationViewAutoSuggestBoxMargin": "4,0",
+    "PaneToggleButtonHeight": "36",
+    "PaneToggleButtonWidth": "40",
+    "PaneOverlayShadowDepth": "16",
+    "NavigationViewCompactPaneLength": "48",
+    "NavigationViewIconBoxWidth": "40",
+    "NavigationViewTopPaneHeight": "48",
+    "NavigationViewAutoSuggestAreaHeight": "40",
+    "TopNavigationViewPaneCustomContentMinWidth": "48",
+    "TopNavigationViewOverflowButtonWidth": "40",
+    "TopNavigationViewOverflowButtonHeight": "40",
+    "TopNavigationViewSettingsButtonWidth": "40",
+    "TopNavigationViewSettingsButtonHeight": "40",
+    "NavigationViewItemOnLeftMinHeight": "36",
+    "NavigationViewPaneHeaderRowMinHeight": "40",
+    "NavigationViewItemOnLeftIconBoxHeight": "16",
+    "NavigationViewSelectionIndicatorWidth": "3",
+    "NavigationViewSelectionIndicatorHeight": "16",
+    "NavigationViewSelectionIndicatorRadius": "2",
+    "NavigationViewItemSeparatorHeight": "1",
+    "TopNavigationViewItemSeparatorWidth": "1",
+    "NavigationViewToggleBorderThickness": "0",
+    "NavigationViewItemBorderThickness": "1",
+    "NavigationViewItemOnLeftIconBoxMargin": "0",
+    "NavigationViewItemButtonMargin": "4,2",
+    "NavigationViewItemInnerHeaderMargin": "16,0",
+    "TopNavigationViewItemInnerHeaderMargin": "12,0",
+    "NavigationViewMinimalHeaderMargin": "-24,44,0,0",
+    "NavigationViewButtonHolderGridMargin": "0,4",
+    "NavigationViewPaneContentGridMargin": "-1,3",
+    "NavigationViewContentGridBorderThickness": "1,1,0,0",
+    "NavigationViewMinimalContentGridBorderThickness": "0,1,0,0",
+    "TopNavigationViewContentGridBorderThickness": "0,1,0,0",
+    "TopNavigationViewTopNavGridMargin": "4,0",
+    "NavigationViewBorderThickness": "1",
+    "NavigationViewHeaderMargin": "56,44,0,0",
+    "NavigationViewContentPresenterMargin": "0",
+    "NavigationViewContentMargin": "0",
+    "NavigationViewMinimalContentMargin": "0",
+    "TopNavigationViewContentMargin": "0",
+    "NavigationViewPaneTitlePresenterMargin": "8,4,0,0",
+    "NavigationViewItemMargin": "0",
+    "TopNavigationViewItemMargin": "0",
+    "NavigationViewItemSeparatorMargin": "0,3,0,4",
+    "NavigationViewCompactItemSeparatorMargin": "0,3,0,4",
+    "TopNavigationViewItemSeparatorMargin": "3,0,4,0",
+    "TopNavigationViewOverflowButtonMargin": "0",
+    "NavigationViewItemContentPresenterMargin": "4,-1,8,-1",
+    "NavigationViewCompactItemContentPresenterMargin": "0,0,0,0",
+    "TopNavigationViewItemContentPresenterMargin": "8,-1,12,-1",
+    "TopNavigationViewItemContentOnlyContentPresenterMargin": "12,0",
+    "NavigationViewItemExpandChevronMargin": "0,0,-14,0",
+    "TopNavigationViewItemExpandChevronMargin": "-16,0,0,0",
+    "TopNavigationViewItemIconOnlyExpandChevronMargin": "0,0,0,0",
+    "TopNavigationViewItemContentOnlyExpandChevronMargin": "-12,0,0,0",
+    "TopNavigationViewItemOnOverflowContentPresenterMargin": "12,0,20,0",
+    "TopNavigationViewItemOnOverflowNoIconContentPresenterMargin": "16,0,20,0",
+    "TopNavigationViewItemOnOverflowExpandChevronMargin": "-4,0,-8,0",
+    "TopNavigationViewItemOnOverflowExpandChevronPadding": "12,0,12,0",
+    "NavigationViewContentGridCornerRadius": "8,0,0,0",
+    "TopNavigationViewContentGridCornerRadius": "0",
+    "NavigationViewMinimalContentGridCornerRadius": "0",
+    "TopNavigationViewOverflowMenuPadding": "0,2",
+    "NavigationViewItemChildrenMenuFlyoutPadding": "0,2",
+    "NavigationViewItemExpandedGlyphFontSize": "8"
+  },
+  "stateExecutor": "src/navigation.rs; visual states, selection, hierarchy, pane and indicator timelines",
+  "scope": "Specialized compiled NavigationView template, not a general XAML parser."
+}

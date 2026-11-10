@@ -1,0 +1,12 @@
+WinJS Symbols font
+Copyright (c) Microsoft Open Technologies, Inc. All rights reserved.
+
+Source: https://github.com/winjs/winjs/blob/b9e0b33f76c57caac941c9b1885bf69443320b1c/src/fonts/Symbols.ttf
+The font's own name ID 13 declares Apache License 2.0; retain Symbols-LICENSE.
+The repository also supplies an MIT license; retain WinJS-REPOSITORY-LICENSE.
+
+Modifications in WinUI Portable Icons: selected glyphs remapped to WinUI PUA
+codepoints, scaled to 2048 units/em, fitted to numeric ink/advance metrics,
+merged with Fluent System Icons and original geometric recipes, and repackaged
+as WOFF with a one-em line box. Windows Segoe font outlines are not included.
+The resulting font is a modified work, not the original Microsoft font.

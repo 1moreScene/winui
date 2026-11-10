@@ -1,8 +1,8 @@
 import {StrictMode,useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {Frame,SceneView,WinUIProvider} from '../../src/react';
-import {WinUI,NavigationCacheMode,NavigationTransition,RendererBackend} from '../../src/index';
-import type {Frame as Controller,PageStackEntry} from '../../src/frame';
+import {Frame,SceneView,WinUIProvider} from 'winui-wasm/react';
+import {WinUI,NavigationCacheMode,NavigationTransition,RendererBackend} from 'winui-wasm';
+import type {FrameController as Controller,PageStackEntry} from 'winui-wasm';
 
 declare global{interface Window{frameFixture:{frame:Controller<PageStackEntry>;rerender():void}}}
 const backend=(new URL(location.href).searchParams.get('backend')??RendererBackend.Canvas2D) as RendererBackend;

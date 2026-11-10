@@ -1,5 +1,5 @@
-import {NumberBox,ComboBox,AutoSuggestBox,ContentDialog,TeachingTip} from '../src/react';
-import {NumberBoxSpinButtonPlacementMode,NumberBoxValidationMode,ContentDialogButton,TeachingTipPlacementMode,TeachingTipTailVisibility,type NumberBoxOptions,type ComposedEvent} from '../src/index';
+import {NumberBox,ComboBox,AutoSuggestBox,ContentDialog,TeachingTip} from 'winui-wasm/react';
+import {NumberBoxSpinButtonPlacementMode,NumberBoxValidationMode,ContentDialogButton,TeachingTipPlacementMode,TeachingTipTailVisibility,type NumberBoxOptions,type ComposedEvent} from 'winui-wasm';
 const valid:NumberBoxOptions={value:null,spinButtonPlacementMode:NumberBoxSpinButtonPlacementMode.Compact,validationMode:NumberBoxValidationMode.Disabled};
 const samples=<><NumberBox {...valid}/><ComboBox items={['One','Two']} isEditable/><AutoSuggestBox items={[{id:'one',text:'One',data:42}]}/><ContentDialog title="Save?" defaultButton={ContentDialogButton.Primary}/><TeachingTip preferredPlacement={TeachingTipPlacementMode.BottomLeft} tailVisibility={TeachingTipTailVisibility.Visible}/></>;
 // @ts-expect-error closed choices require the exported enum

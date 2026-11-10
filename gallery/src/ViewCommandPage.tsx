@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import {useRef,useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
 import {useGalleryTheme} from './gallery-theme';
 import {GalleryButton,GalleryComboBox,GalleryOption,GalleryExpander,GalleryExpanderHeader} from './GalleryControls';
-import {SceneView,SplitView,SemanticZoom,ParallaxView,UICommand,StandardCommand,StackPanel,Grid,TextBlock,ListView,GridView,ScrollView,Rectangle,Image,SymbolIcon,AppBarButton,MenuBar,MenuBarItem,SwipeControl,ToggleButton,ToggleSwitch,ComboBox,Slider} from './react';
-import {RendererBackend,SplitViewDisplayMode,SplitViewPanePlacement,StandardCommandKind,KeyboardAcceleratorModifier,HorizontalAlignment,VerticalAlignment,ListViewSelectionMode,GridUnit,Symbol,SwipeMode,NodeKind,ThemeMode,type Scene,type UICommand as CommandController,type ScrollView as ScrollController,type CollectionView,type AppBarButton as AppButton} from './index';
+import {SceneView,SplitView,SemanticZoom,ParallaxView,UICommand,StandardCommand,StackPanel,Grid,TextBlock,ListView,GridView,ScrollView,Rectangle,Image,SymbolIcon,AppBarButton,MenuBar,MenuBarItem,MenuFlyout,SwipeControl,ToggleButton,ToggleSwitch,ComboBox,Slider} from 'winui-wasm/react';
+import {RendererBackend,SplitViewDisplayMode,SplitViewPanePlacement,StandardCommandKind,KeyboardAcceleratorModifier,HorizontalAlignment,VerticalAlignment,ListViewSelectionMode,GridUnit,Symbol,SwipeMode,NodeKind,ThemeMode,type Scene,type UICommandController as CommandController,type CollectionView,type AppBarButtonController as AppButton} from 'winui-wasm';
 import official from './official-view-command.json';
 import source from './ViewCommandPage.tsx?raw';
 import {extractSampleSource} from './sample-source';
@@ -13,7 +15,7 @@ declare global {interface Window{viewCommandScenes:Record<string,Scene>;}}
 function remember(name:string,scene:Scene){window.viewCommandScenes??={};window.viewCommandScenes[name]=scene;}
 function Example({kind,index=0,name,children,options}:{kind:Kind;index?:number;name:string;children:ReactNode;options?:ReactNode}){
  const [native,setNative]=useState(false),sample=official.controls[kind].samples[index];
- return <section className="example basic-example" id={name}><h2>{sample.title}</h2><div className="example-card"><div className={`basic-live${options?' with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><pre><code>{native?sample.runtimeXaml:extractSampleSource(source,name)}</code></pre></GalleryExpander></div></section>;
+ return <section className="example basic-example" id={name}><h2><LocalizedText>{sample.title}</LocalizedText></h2><div className="example-card"><div className={`basic-live${options?' with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><SourceCode language={native ? 'xaml' : 'tsx'}>{native?sample.runtimeXaml:extractSampleSource(source,name)}</SourceCode></GalleryExpander></div></section>;
 }
 const groups=official.data.Groups.map(group=>({id:group.UniqueId,header:group.Title,items:group.Items.map(item=>({id:item.UniqueId,text:item.Title,subtitle:item.Subtitle}))}));
 const allItems=groups.flatMap(group=>group.items).sort((a,b)=>a.text.localeCompare(b.text,'en'));
@@ -32,10 +34,11 @@ function SplitExample({shared}:{shared:Shared}){
  <Slider header="CompactPaneLength" width={196} minimum={24} maximum={128} stepFrequency={8} value={compact} onValueChanged={e=>setCompact(e.value??48)}/>
  </StackPanel></SceneView>}><SceneView {...shared} style={{height:300,width:400,maxWidth:'100%'}} onReady={s=>remember('split-view-basic',s)}>
  {/* @sample:split-view-basic:start */}
- <SplitView displayMode={mode} panePlacement={side} isPaneOpen={open} openPaneLength={length} compactPaneLength={compact} paneBackground={paneBackground} onEvent={e=>{if(e.kind==='paneClosed')setOpen(false);}} pane={<Grid rows={[trackAuto,trackStar,trackAuto]}>
+ <SplitView displayMode={mode} panePlacement={side} isPaneOpen={open} openPaneLength={length} compactPaneLength={compact} paneBackground={paneBackground} onEvent={e=>{if(e.kind==='paneClosed')setOpen(false);}} >
+ <SplitView.Pane><Grid rows={[trackAuto,trackStar,trackAuto]}>
   <TextBlock text="PANE CONTENT" margin={[60,12,0,0]} fontSize={14} fontWeight={600}/>
   <ListView row={1} margin={[0,12,0,0]} items={links} isItemClickEnabled selectionMode={ListViewSelectionMode.Single} onItemClick={e=>setContent(e.item.text+' Page')} renderItem={link=><Grid columns={side===SplitViewPanePlacement.Left?[trackAuto,trackStar]:[trackStar,trackAuto]} margin={side===SplitViewPanePlacement.Left?[2,0,0,0]:[0,0,2,0]}><SymbolIcon symbol={link.symbol} column={side===SplitViewPanePlacement.Left?0:1}/><TextBlock text={link.text} column={side===SplitViewPanePlacement.Left?1:0} verticalAlignment={VerticalAlignment.Center} margin={side===SplitViewPanePlacement.Left?[24,0,0,0]:[0,0,24,0]}/></Grid>}/>
- </Grid>}><Grid rows={[trackAuto,trackStar]}><TextBlock text="SPLITVIEW CONTENT" fontWeight={600} margin={[12,12,0,0]}/><TextBlock text={content} row={1} margin={[12,12,0,0]}/></Grid></SplitView>
+ </Grid></SplitView.Pane><Grid rows={[trackAuto,trackStar]}><TextBlock text="SPLITVIEW CONTENT" fontWeight={600} margin={[12,12,0,0]}/><TextBlock text={content} row={1} margin={[12,12,0,0]}/></Grid></SplitView>
  {/* @sample:split-view-basic:end */}
  </SceneView></Example>;
 }
@@ -48,28 +51,27 @@ function ZoomExample({shared}:{shared:Shared}){
 }
 const rectangleColors=['#F0F8FF','#FAEBD7','#00FFFF','#7FFFD4','#F0FFFF','#F5F5DC','#FFE4C4','#FFEBCD','#8A2BE2','#A52A2A','#DEB887','#5F9EA0','#7FFF00','#D2691E','#FF7F50','#6495ED','#FFF8DC','#DC143C','#00FFFF'];
 function ParallaxExamples({shared}:{shared:Shared}){
- const [list,setList]=useState<CollectionView>(),[scroll,setScroll]=useState<ScrollController>();
  return <>{[0,1].map(index=><Example key={index} kind="ParallaxView" index={index} name={index?'parallax-scroll':'parallax-list'}><SceneView {...shared} style={{height:600}} onReady={s=>remember(index?'parallax-scroll':'parallax-list',s)}>
  {index===0?<>
  {/* @sample:parallax-list:start */}
- <ParallaxView source={list} verticalShift={500} horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Top}><Image source="/official/parallax-cliff.jpg"/></ParallaxView>
- <ListView horizontalAlignment={HorizontalAlignment.Stretch} verticalAlignment={VerticalAlignment.Top} accessibleName="all samples" background="#00000080" items={allItems} onReady={setList} renderHeader={<TextBlock text="Scroll the list to see parallaxing of image" maxWidth={280} horizontalAlignment={HorizontalAlignment.Center} verticalAlignment={VerticalAlignment.Center} fontSize={28} foreground="#FFFFFF" wrap/>} renderItem={item=><TextBlock text={item.text} foreground={{resource:'SystemControlForegroundAltHighBrush'}}/>}/>
+ <ParallaxView source="parallax-list-source" verticalShift={500} horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Top}><Image source="/official/parallax-cliff.jpg"/></ParallaxView>
+ <ListView horizontalAlignment={HorizontalAlignment.Stretch} verticalAlignment={VerticalAlignment.Top} accessibleName="all samples" background="#00000080" items={allItems} name="parallax-list-source" renderHeader={<TextBlock text="Scroll the list to see parallaxing of image" maxWidth={280} horizontalAlignment={HorizontalAlignment.Center} verticalAlignment={VerticalAlignment.Center} fontSize={28} foreground="#FFFFFF" wrap/>} renderItem={item=><TextBlock text={item.text} foreground={{resource:'SystemControlForegroundAltHighBrush'}}/>}/>
  {/* @sample:parallax-list:end */}
  </>:<>
  {/* @sample:parallax-scroll:start */}
- <ParallaxView source={scroll} verticalShift={500} horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Top}><Image source="/official/parallax-cliff.jpg"/></ParallaxView>
+ <ParallaxView source="parallax-scroll-source" verticalShift={500} horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Top}><Image source="/official/parallax-cliff.jpg"/></ParallaxView>
  <TextBlock text="Scroll the rectangles to see parallaxing of image" maxWidth={280} horizontalAlignment={HorizontalAlignment.Center} verticalAlignment={VerticalAlignment.Top} fontSize={28} foreground="#FFFFFF" wrap/>
- <ScrollView width={150} horizontalAlignment={HorizontalAlignment.Left} onReady={setScroll}><StackPanel>{rectangleColors.map((fill,i)=><Rectangle key={i} fill={fill} height={150}/>)}</StackPanel></ScrollView>
+ <ScrollView width={150} horizontalAlignment={HorizontalAlignment.Left} name="parallax-scroll-source"><StackPanel>{rectangleColors.map((fill,i)=><Rectangle key={i} fill={fill} height={150}/>)}</StackPanel></ScrollView>
  {/* @sample:parallax-scroll:end */}
  </>}
  </SceneView></Example>)}</>;
 }
 function CustomCommandExample({shared}:{shared:Shared}){
- const [command,setCommand]=useState<CommandController>(),[output,setOutput]=useState('');
+ const [output,setOutput]=useState('');
  return <Example kind="XamlUICommand" name="ui-command-basic"><SceneView {...shared} autoHeight onReady={s=>remember('ui-command-basic',s)}>
  {/* @sample:ui-command-basic:start */}
- <UICommand label="Custom XamlUICommand" description="This is a custom command" iconSymbol={Symbol.Favorite} accelerators={[{key:'D',modifiers:[KeyboardAcceleratorModifier.Control]}]} onReady={setCommand} onExecuteRequested={()=>setOutput('You fired the custom command')}/>
- <Grid rows={[trackAuto,trackAuto,trackStar]}><TextBlock text={official.controls.XamlUICommand.samples[0].description} wrap margin={[0,0,0,12]}/><Grid row={1} columns={[trackAuto,trackStar]}><AppBarButton command={command}/><TextBlock text={output} column={1} margin={[8,0,0,0]} verticalAlignment={VerticalAlignment.Center}/></Grid></Grid>
+ <UICommand label="Custom XamlUICommand" description="This is a custom command" iconSymbol={Symbol.Favorite} accelerators={[{key:'D',modifiers:[KeyboardAcceleratorModifier.Control]}]} name="custom-command" onExecuteRequested={()=>setOutput('You fired the custom command')}/>
+ <Grid rows={[trackAuto,trackAuto,trackStar]}><TextBlock text={official.controls.XamlUICommand.samples[0].description} wrap margin={[0,0,0,12]}/><Grid row={1} columns={[trackAuto,trackStar]}><AppBarButton command="custom-command"/><TextBlock text={output} column={1} margin={[8,0,0,0]} verticalAlignment={VerticalAlignment.Center}/></Grid></Grid>
  {/* @sample:ui-command-basic:end */}
  </SceneView></Example>;
 }
@@ -81,14 +83,14 @@ function DeleteRow({item,command}:{item:DeleteItem;command:CommandController|und
  </Grid>;
 }
 function StandardCommandExample({shared}:{shared:Shared}){
- const [command,setCommand]=useState<CommandController>(),[items,setItems]=useState<DeleteItem[]>(Array.from({length:15},(_,i)=>({id:String(i),text:'List item '+i}))),list=useRef<CollectionView<DeleteItem>|null>(null),context=useRef<ReturnType<Scene['root']['menuFlyout']>|null>(null);
+ const [command,setCommand]=useState<CommandController>(),[items,setItems]=useState<DeleteItem[]>(Array.from({length:15},(_,i)=>({id:String(i),text:'List item '+i}))),list=useRef<CollectionView<DeleteItem>|null>(null);
  function remove(parameter:unknown){const chosen=typeof parameter==='string'?parameter:list.current?.selectedItems[0]?.text;if(chosen)setItems(current=>current.filter(item=>item.text!==chosen));}
- return <Example kind="StandardUICommand" name="standard-command-basic"><SceneView {...shared} autoHeight onReady={s=>{remember('standard-command-basic',s);context.current=s.root.menuFlyout({menuItems:[]});}}>
+ return <Example kind="StandardUICommand" name="standard-command-basic"><SceneView {...shared} autoHeight onReady={s=>remember('standard-command-basic',s)}>
  {/* @sample:standard-command-basic:start */}
  <StandardCommand standardKind={StandardCommandKind.Delete} onReady={setCommand} onExecuteRequested={event=>remove(event.parameter)}/>
  <Grid rows={[trackAuto,trackAuto,trackStar]}><TextBlock text={official.controls.StandardUICommand.samples[0].description} wrap margin={[0,0,0,12]}/>
  <MenuBar row={1}><MenuBarItem title="File" items={[{id:'new',text:'New'},{id:'open',text:'Open...'},{id:'save',text:'Save'},{id:'exit',text:'Exit'}]}/><MenuBarItem title="Edit" items={[{id:'delete',command}]}/><MenuBarItem title="Help" items={[{id:'about',text:'About'}]}/></MenuBar>
- <ListView row={2} height={500} items={items} selectionMode={ListViewSelectionMode.Single} isItemClickEnabled itemContainerStyle={{minHeight:60,padding:[0,0,0,0],borderThickness:[0,0,0,0],horizontalContentAlignment:HorizontalAlignment.Stretch,verticalContentAlignment:VerticalAlignment.Stretch}} itemHeight={60} onReady={n=>list.current=n} renderItem={item=><DeleteRow item={item} command={command}/>} onContextRequested={e=>{list.current?.update({selectedKeys:[e.item.id]});context.current?.update({menuItems:[{id:'delete',command}]});context.current?.showAt(e.container);}}/>
+ <ListView row={2} height={500} items={items} selectionMode={ListViewSelectionMode.Single} isItemClickEnabled itemContainerStyle={{minHeight:60,padding:[0,0,0,0],borderThickness:[0,0,0,0],horizontalContentAlignment:HorizontalAlignment.Stretch,verticalContentAlignment:VerticalAlignment.Stretch}} itemHeight={60} contextFlyout={<MenuFlyout menuItems={[{id:'delete',command}]}/>} onReady={n=>list.current=n} renderItem={item=><DeleteRow item={item} command={command}/>} onContextRequested={e=>{list.current?.update({selectedKeys:[e.item.id]});}}/>
  </Grid>
  {/* @sample:standard-command-basic:end */}
  </SceneView></Example>;

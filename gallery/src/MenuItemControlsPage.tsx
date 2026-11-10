@@ -1,14 +1,16 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import {useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
 import {useGalleryTheme} from './gallery-theme';
 import {GalleryComboBox,GalleryOption,GalleryExpander,GalleryExpanderHeader} from './GalleryControls';
-import {SceneView,DropDownButton,MenuFlyout,MenuFlyoutItem,ToggleMenuFlyoutItem,RadioMenuFlyoutItem,MenuFlyoutSubItem,MenuFlyoutSeparator} from './react';
-import {FlowDirection,RendererBackend,KeyboardAcceleratorModifier,type Scene,type ToggleMenuFlyoutItem as ToggleController} from './index';
+import {SceneView,DropDownButton,MenuFlyout,MenuFlyoutItem,ToggleMenuFlyoutItem,RadioMenuFlyoutItem,MenuFlyoutSubItem,MenuFlyoutSeparator} from 'winui-wasm/react';
+import {FlowDirection,RendererBackend,KeyboardAcceleratorModifier,type Scene,type ToggleMenuFlyoutItemController as ToggleController} from 'winui-wasm';
 import source from './MenuItemControlsPage.tsx?raw';
 import {extractSampleSource} from './sample-source';
 declare global {interface Window {menuItemScenes:Record<string,Scene>;menuItemToggle?:ToggleController;}}
 function remember(key:string,s:Scene){window.menuItemScenes??={};window.menuItemScenes[key]=s;}
-function Example({id,title,children,status}:{id:string;title:string;children:ReactNode;status:string}){return <section id={id} className="example basic-example"><h2>{title}</h2><div className="example-card"><div className="basic-live"><div className="basic-preview">{children}</div></div><output aria-label={`${title} output`}>{status||'Choose a menu item.'}</output><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><pre><code>{extractSampleSource(source,id)}</code></pre></GalleryExpander></div></section>;}
+function Example({id,title,children,status}:{id:string;title:string;children:ReactNode;status:string}){return <section id={id} className="example basic-example"><h2><LocalizedText>{title}</LocalizedText></h2><div className="example-card"><div className="basic-live"><div className="basic-preview">{children}</div></div><output aria-label={`${title} output`}>{status||'Choose a menu item.'}</output><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><SourceCode>{extractSampleSource(source,id)}</SourceCode></GalleryExpander></div></section>;}
 export function MenuItemControlsPage({title='Menu item controls'}:{title?:string}){
  const [theme,setTheme]=useGalleryTheme(),[backend,setBackend]=useState(RendererBackend.Canvas2D),[direction,setDirection]=useState(FlowDirection.LeftToRight),[command,setCommand]=useState(''),[toggle,setToggle]=useState(''),[radio,setRadio]=useState(''),[nested,setNested]=useState(''),[separated,setSeparated]=useState('');
  const shared={theme,backend,style:{height:100}};

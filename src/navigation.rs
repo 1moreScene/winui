@@ -6,6 +6,13 @@ use serde::Serialize;
 use std::collections::{HashMap, HashSet};
 pub use crate::navigation_scroll::Visual as ScrollbarVisual;
 
+struct NavigationTouch {
+    pointer:i32, start:[f64;2], last_y:f64, dragging:bool,
+    content:Option<bool>, rail:bool, item:Option<String>,
+}
+#[derive(Serialize)]
+pub struct ScrollViewport { pub content:bool, pub rect:Rect }
+
 #[derive(Clone, serde::Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Template {
@@ -34,8 +41,12 @@ impl Default for Template {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Snapshot {
+    /// Browser projection only: null keeps the normal full-content surface.
+    pub host_clip: Option<Vec<Rect>>,
+    pub light_dismiss: Option<LightDismissVisual>,
     pub next_frame_at: Option<f64>,
     pub scrollbars: Vec<ScrollbarVisual>,
+    pub scroll_viewports: Vec<ScrollViewport>,
     pub pane_material: Option<PaneMaterialVisual>,
     pub time: f64,
     pub display_mode: DisplayMode,
@@ -57,6 +68,14 @@ pub struct Snapshot {
     pub hierarchy_visuals: Vec<crate::navigation_motion::Visual>,
 }
 #[derive(Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct LightDismissVisual {
+    pub rect: Rect,
+    pub color: String,
+    pub opacity: f64,
+    pub interactive: bool,
+}
+#[derive(Serialize)]
 #[serde(rename_all="camelCase")]
 pub struct PaneMaterialVisual {
     pub recipe:crate::material::AcrylicOptions,
@@ -65,7 +84,24 @@ pub struct PaneMaterialVisual {
     pub backdrop_available:bool,
 }
 
+#[derive(Default)]
+pub struct SlotMetrics {
+    pub dpr:f64,
+    pub border_width: Option<f64>,
+    pub header_height: Option<f64>,
+    pub pane_header_height: f64,
+    pub search_height: f64,
+    pub custom_height: f64,
+    pub footer_height: f64,
+    pub top_leading: f64,
+    pub top_custom: f64,
+    pub top_search: f64,
+    pub top_footer: f64,
+    pub top_overlay: f64,
+}
 pub struct NavigationView {
+    touch:Option<NavigationTouch>,
+    pub slot_metrics: SlotMetrics,
     pub(crate) menu_scrollbar: crate::navigation_scroll::Scrollbar,
     pub(crate) content_scrollbar: crate::navigation_scroll::Scrollbar,
     host_policies_initialized:bool,
@@ -84,9 +120,9 @@ pub struct NavigationView {
     pub parts: Vec<Part>,
     pub pane: Rect,
     all_rows: Vec<Part>,
-    menu_clip: Rect,
+    pub(crate) menu_clip: Rect,
     pub flyout: Option<Rect>,
-    flyout_owner: Option<String>,
+    pub(crate) flyout_owner: Option<String>,
     pub content: Rect,
     pub overflow_open: bool,
     pub scroll: f64,
@@ -111,10 +147,49 @@ pub struct NavigationView {
     pub max_content_scroll: f64,
 }
 impl NavigationView {
+    pub(crate) fn touching(&self,pointer:i32)->bool { self.touch.as_ref().is_some_and(|t|t.pointer==pointer) }
+    fn touch_input(&mut self,pointer:i32,x:f64,y:f64,phase:&str)->Result<(),String>{
+        if !x.is_finite()||!y.is_finite()||!matches!(phase,"down"|"move"|"up"|"cancel"){return Err("invalid navigation touch input".into());}
+        if phase=="down" {
+            if let Some(t)=&mut self.touch {t.dragging=true;self.pressed=None;return Ok(());}
+            let menu=self.menu_clip.contains(x,y);
+            let content=if menu{Some(false)}else if self.content_scrollbar.rect.contains(x,y)&&self.max_content_scroll>0.{Some(true)}else{None};
+            let rail=self.menu_scrollbar.down(x,y,self.now,self.props.reduced_motion)||self.content_scrollbar.down(x,y,self.now,self.props.reduced_motion);
+            let item=if rail{None}else{self.hit(x,y)};
+            self.pressed=item.clone();if item.is_some(){self.focused=item.clone();}
+            self.touch=Some(NavigationTouch{pointer,start:[x,y],last_y:y,dragging:false,content,rail,item});
+            return Ok(());
+        }
+        let Some(mut touch)=self.touch.take()else{return Ok(());};
+        if touch.pointer!=pointer {self.touch=Some(touch);return Ok(());}
+        if phase=="cancel" {self.pressed=None;self.menu_scrollbar.release();self.content_scrollbar.release();return Ok(());}
+        if phase=="up" {
+            self.menu_scrollbar.release();self.content_scrollbar.release();self.pressed=None;
+            if !touch.dragging&&!touch.rail&&touch.item==self.hit(x,y){if let Some(item)=touch.item{self.invoke(&item);}}
+            return Ok(());
+        }
+        if touch.rail {
+            self.menu_scrollbar.drag(x,y,self.now,self.props.reduced_motion);self.content_scrollbar.drag(x,y,self.now,self.props.reduced_motion);
+            self.scroll=self.menu_scrollbar.state.offsets(self.now)[1];self.content_scroll=self.content_scrollbar.state.offsets(self.now)[1];
+        }else{
+            if !touch.dragging&&(x-touch.start[0]).hypot(y-touch.start[1])>10.{touch.dragging=true;self.pressed=None;self.hovered=None;}
+            if touch.dragging {
+                match touch.content {
+                    Some(false)=>self.scroll=(self.scroll+touch.last_y-y).clamp(0.,self.max_scroll),
+                    Some(true)=>self.content_scroll=(self.content_scroll+touch.last_y-y).clamp(0.,self.max_content_scroll),
+                    None=>{},
+                }
+                touch.last_y=y;
+            }
+        }
+        self.touch=Some(touch);Ok(())
+    }
     pub fn new(props: Properties) -> Result<Self, String> {
         props.validate()?;
         let selected = props.selected_id.clone();
         let mut s = Self {
+            touch:None,
+            slot_metrics:Default::default(),
             menu_scrollbar:Default::default(),content_scrollbar:Default::default(),
             host_policies_initialized:false,
             hierarchy_motion: Default::default(),
@@ -168,7 +243,7 @@ impl NavigationView {
             .unwrap_or(s.display_mode == DisplayMode::Expanded);
         s.pane_motion.snap(s.pane_width());
         s.material_motion.snap(
-            if s.props.reduced_transparency || !s.props.is_backdrop_available || s.props.theme == Theme::HighContrast {
+            if s.props.reduced_transparency || !s.backdrop_available() || s.props.theme == Theme::HighContrast {
                 0.
             } else {
                 1.
@@ -178,11 +253,14 @@ impl NavigationView {
         Ok(s)
     }
     pub fn mode(&self) -> DisplayMode {
+        self.mode_at_width(self.width)
+    }
+    fn mode_at_width(&self, width: f64) -> DisplayMode {
         match self.props.pane_display_mode {
             PaneDisplayMode::Auto => {
-                if self.width >= self.props.expanded_mode_threshold_width {
+                if width >= self.props.expanded_mode_threshold_width {
                     DisplayMode::Expanded
-                } else if self.width > 0. && self.width < self.props.compact_mode_threshold_width {
+                } else if width > 0. && width < self.props.compact_mode_threshold_width {
                     DisplayMode::Minimal
                 } else {
                     DisplayMode::Compact
@@ -195,6 +273,22 @@ impl NavigationView {
     }
     pub fn is_top(&self) -> bool {
         self.props.pane_display_mode == PaneDisplayMode::Top
+    }
+    /// Predict the content's measure constraint without changing ActualSize,
+    /// adaptive state or any in-flight SplitView timeline. Measure constraints
+    /// may differ from the rounded Arrange size or repeat within a Grid pass.
+    pub(crate) fn measure_content_width(&self, width: f64, pixel_border: f64) -> f64 {
+        let mode = self.mode_at_width(width);
+        let open = if mode == self.display_mode { self.pane_open }
+            else if mode == DisplayMode::Expanded && !self.force_closed { true }
+            else if self.display_mode == DisplayMode::Expanded || mode == DisplayMode::Minimal { false }
+            else { self.pane_open };
+        let pane = if self.is_top() || !self.props.is_pane_visible { 0. }
+            else if mode == DisplayMode::Expanded && open { self.props.open_pane_length.min(width) }
+            else if mode != DisplayMode::Minimal { self.props.compact_pane_length.min(width) }
+            else { 0. };
+        let border = if self.is_top() || mode == DisplayMode::Minimal { 0. } else { pixel_border };
+        (width - pane - border).max(0.)
     }
     fn pane_width(&self) -> f64 {
         if !self.props.is_pane_visible || self.is_top() {
@@ -241,6 +335,7 @@ impl NavigationView {
         let orientation_changed = props.pane_display_mode != self.props.pane_display_mode;
         let material_policy_changed = props.reduced_transparency != self.props.reduced_transparency
             || props.is_backdrop_available != self.props.is_backdrop_available
+            || props.has_external_content != self.props.has_external_content
             || props.theme != self.props.theme;
         let content_changed = serde_json::to_value(&props.content_node).unwrap()
             != serde_json::to_value(&self.props.content_node).unwrap();
@@ -252,12 +347,12 @@ impl NavigationView {
         }
         if material_policy_changed {
             let target =
-                if self.props.reduced_transparency || !self.props.is_backdrop_available || self.props.theme == Theme::HighContrast {
+                if self.props.reduced_transparency || !self.backdrop_available() || self.props.theme == Theme::HighContrast {
                     0.
                 } else {
                     1.
                 };
-            self.material_motion.retarget(target, self.now, 167.);
+            if target==0.{self.material_motion.snap(0.);}else{self.material_motion.retarget(target,self.now,167.);}
         }
         self.expanded.retain(|id| self.props.find(id).is_some());
         if self
@@ -268,7 +363,14 @@ impl NavigationView {
             self.focused = None;
         }
         if selection_changed {
-            self.select(self.props.selected_id.clone());
+            let requested=self.props.selected_id.clone();
+            if requested.as_deref().and_then(|id|self.props.find(id)).is_some_and(|i|!i.selects_on_invoked){
+                // Native ChangeSelection undoes an API selection of a suppressed
+                // item and raises ItemInvoked. Changing the flag on the current
+                // item alone is valid and must not reject the property batch.
+                let previous=self.selected.clone().filter(|id|id=="$settings"||self.props.find(id).is_some_and(|i|i.selects_on_invoked));
+                self.props.selected_id=previous.clone();self.select(previous);self.emit(EventKind::ItemInvoked,requested);
+            }else{self.select(requested);}
         }
         if self
             .selected
@@ -300,7 +402,7 @@ impl NavigationView {
             self.pane_motion.snap(self.pane_width());
             self.indicator_motion.finish();
             self.material_motion.snap(
-                if self.props.reduced_transparency || !self.props.is_backdrop_available || self.props.theme == Theme::HighContrast {
+                if self.props.reduced_transparency || !self.backdrop_available() || self.props.theme == Theme::HighContrast {
                     0.
                 } else {
                     1.
@@ -329,7 +431,9 @@ impl NavigationView {
         self.advance(now);
         if self.hierarchy_motion.active(self.now){self.layout();}
         match input {
+            Input::Touch{pointer,x,y,phase} => self.touch_input(pointer,x,y,&phase)?,
             Input::Resize { width, height } => {
+                self.touch=None;
                 if !width.is_finite() || !height.is_finite() || width < 0. || height < 0. {
                     return Err("invalid viewport".into());
                 }
@@ -368,6 +472,7 @@ impl NavigationView {
                 self.hovered = None;
             }
             Input::Cancel => {
+                self.touch=None;
                 self.menu_scrollbar.release();self.content_scrollbar.release();
                 self.menu_scrollbar.hover(-1.,-1.,self.now,self.props.reduced_motion);
                 self.content_scrollbar.hover(-1.,-1.,self.now,self.props.reduced_motion);
@@ -504,21 +609,17 @@ impl NavigationView {
             EventKind::PaneClosed
         });
         // Native SplitView tracks are documented in the extracted template report.
-        let duration = if self.props.reduced_motion {
-            0.
-        } else if open {
-            350.
-        } else {
-            120.
-        };
+        let (duration, curve) = crate::navigation_motion::pane_timing(self.display_mode, open);
+        let duration = if self.props.reduced_motion { 0. } else { duration };
         self.pane_motion
             .retarget(self.pane_width(), self.now, duration);
+        self.pane_motion.curve = curve;
     }
     fn toggle_item(&mut self, id: &str) {
         if self
             .props
             .find(id)
-            .is_some_and(|i| !i.children.is_empty() && i.enabled)
+            .is_some_and(|i| i.has_children() && i.enabled)
         {
             self.hierarchy_motion.pending=true;
             if self.expanded.remove(id) {
@@ -532,6 +633,7 @@ impl NavigationView {
     fn invoke(&mut self, id: &str) {
         match id {
             "$toggle" => self.request_pane(!self.pane_open),
+            "$search" => self.request_pane(true),
             "$dismiss" => {
                 self.overflow_open = false;
                 if self.is_top() {
@@ -540,6 +642,7 @@ impl NavigationView {
                     self.request_pane(false);
                 }
             }
+            "$close" => self.request_pane(false),
             "$back" => {
                 if self.props.is_back_enabled {
                     self.emit(EventKind::BackRequested, None);
@@ -562,7 +665,7 @@ impl NavigationView {
                         return;
                     }
                     let selects = i.selects_on_invoked;
-                    let parent = !i.children.is_empty();
+                    let parent = i.has_children();
                     self.emit(EventKind::ItemInvoked, Some(id.into()));
                     if selects {
                         self.select(Some(id.into()));
@@ -582,6 +685,14 @@ impl NavigationView {
         }
     }
     fn key(&mut self, key: &str) {
+        if matches!(key,"GamepadLeftShoulder"|"GamepadRightShoulder") {
+            let policy=self.props.shoulder_navigation_enabled;
+            if !self.is_top()||policy==NavigationViewShoulderNavigationEnabled::Never||(policy==NavigationViewShoulderNavigationEnabled::WhenSelectionFollowsFocus&&!self.props.selection_follows_focus){return;}
+            let candidates=self.parts.iter().filter(|p|p.enabled&&p.kind==ItemKind::Item&&p.rect.y<48.&&(!p.id.starts_with('$')||p.id=="$settings")&&self.props.find(&p.id).is_none_or(|i|i.selects_on_invoked)).map(|p|p.id.clone()).collect::<Vec<_>>();
+            let Some(index)=self.selected.as_ref().and_then(|id|candidates.iter().position(|p|p==id))else{return;};
+            let next=if key=="GamepadRightShoulder"{index.checked_add(1).filter(|i|*i<candidates.len())}else{index.checked_sub(1)};
+            if let Some(index)=next{self.focused=Some(candidates[index].clone());self.select(Some(candidates[index].clone()));}return;
+        }
         if key == "Escape" {
             self.overflow_open = false;
             if let Some(owner) = self.flyout_owner.clone() {
@@ -698,6 +809,7 @@ impl NavigationView {
     fn rows(&mut self, items: &[Item], depth: usize, x: f64, y: &mut f64, width: f64, clip: Rect) {
         let row = self.template.item_height + 4.;
         for i in items {
+            if i.kind==ItemKind::Header&&!self.pane_open&&!self.is_top()&&self.flyout.is_none(){continue;}
             let h = match i.kind {
                 ItemKind::Separator => 8.,
                 ItemKind::Header => 40.,
@@ -716,7 +828,7 @@ impl NavigationView {
                 rect: r,
                 enabled: i.enabled,
                 selected: self.selected.as_ref() == Some(&i.id),
-                expanded: if i.children.is_empty() {
+                expanded: if !i.has_children() {
                     None
                 } else {
                     Some(self.expanded.contains(&i.id))
@@ -728,7 +840,7 @@ impl NavigationView {
             self.all_rows.push(row_part.clone());
             {
                 self.parts.push(row_part);
-                if !i.children.is_empty()
+                if i.has_children()
                     && (self.pane_open || self.is_top() || self.flyout.is_some())
                 {
                     self.part(
@@ -756,7 +868,7 @@ impl NavigationView {
     pub fn layout(&mut self) {
         let previous_scroll=self.scroll;
         self.menu_clip=Rect::default();self.max_scroll=0.;
-        let overlay=self.display_mode!=DisplayMode::Expanded&&self.pane_open;
+        let overlay=self.pane_overlay_visible();
         if let Some(recipe)=self.pane_recipe(){self.pane_material_colors[usize::from(overlay)].sample(&recipe,self.now,self.props.reduced_motion);}
         self.parts.clear();
         self.all_rows.clear();
@@ -777,19 +889,22 @@ impl NavigationView {
             0.
         };
         let content_y = if top && self.props.is_pane_visible {
-            self.template.top_pane_height
+            self.template.top_pane_height + self.slot_metrics.top_overlay
         } else {
             0.
         };
         self.content = Rect::new(
             content_x,
             content_y,
-            self.width - content_x,
+            // SplitView's column width changes discretely; ContentTransform
+            // supplies the intermediate position. Resizing content at every
+            // animation sample remeasures the entire page and its canvases.
+            self.width - if inline&&!top&&self.props.is_pane_visible{self.pane_width()}else{content_x},
             self.height - content_y,
         );
         self.pane = Rect::new(0., 0., pw, self.height);
         let body = self.content_body();
-        self.max_content_scroll = self
+        self.max_content_scroll = if self.props.has_external_content { 0. } else { self
             .props
             .content_node
             .as_ref()
@@ -800,7 +915,7 @@ impl NavigationView {
                 .1 - body.height)
                     .max(0.)
             })
-            .unwrap_or(0.);
+            .unwrap_or(0.) };
         self.content_scroll = self.content_scroll.min(self.max_content_scroll);
         if !self.props.is_pane_visible {
             self.sync_animated_icons();
@@ -810,8 +925,9 @@ impl NavigationView {
         let items = self.props.items.clone();
         let footer = self.props.footer_items.clone();
         if top {
-            let mut x = 4.;
-            if self.props.is_back_button_visible {
+            let overflow_width=if self.props.overflow_label_mode==NavigationViewOverflowLabelMode::NoLabel{40.}else{self.template.overflow_width};
+            let mut x = 4. + self.slot_metrics.top_leading;
+            if self.props.back_button_visible() {
                 self.part(
                     "$back",
                     "Back",
@@ -821,7 +937,7 @@ impl NavigationView {
                 );
                 x += 40.;
             }
-            let mut reserve = if self.props.is_settings_visible {
+            let mut reserve = self.slot_metrics.top_custom + self.slot_metrics.top_search + self.slot_metrics.top_footer + if self.props.is_settings_visible {
                 40.
             } else {
                 0.
@@ -832,21 +948,18 @@ impl NavigationView {
                 .sum::<f64>()
                 .min((self.width - 100.).max(0.));
             reserve += 4.;
-            let menu_items: Vec<_> = items.iter().filter(|i| i.kind == ItemKind::Item).collect();
+            let menu_items: Vec<_> = items.iter().collect();
             let total_width = menu_items
                 .iter()
                 .map(|i| self.top_item_width(i))
                 .sum::<f64>();
             let overflow_reserve = if x + total_width > self.width - reserve {
-                self.template.overflow_width
+                overflow_width
             } else {
                 0.
             };
             let mut overflow = vec![];
             for i in &items {
-                if i.kind != ItemKind::Item {
-                    continue;
-                }
                 let w = self.top_item_width(i);
                 if overflow.is_empty() && x + w <= self.width - reserve - overflow_reserve {
                     self.part(
@@ -856,7 +969,8 @@ impl NavigationView {
                         Rect::new(x + 4., 2., w - 8., 44.),
                         i.enabled,
                     );
-                    self.parts.last_mut().unwrap().expanded = if i.children.is_empty() {
+                    self.parts.last_mut().unwrap().kind=i.kind;
+                    self.parts.last_mut().unwrap().expanded = if !i.has_children() {
                         None
                     } else {
                         Some(self.expanded.contains(&i.id))
@@ -871,7 +985,7 @@ impl NavigationView {
                     "$overflow",
                     "More",
                     "\u{e712}",
-                    Rect::new(x, 4., self.template.overflow_width, 40.),
+                    Rect::new(x, 4., overflow_width, 40.),
                     true,
                 );
             }
@@ -912,7 +1026,7 @@ impl NavigationView {
                     "$overflow",
                     "More",
                     "\u{e712}",
-                    Rect::new(x, 4., self.template.overflow_width, 40.),
+                    Rect::new(x, 4., overflow_width, 40.),
                     true,
                 );
             }
@@ -929,7 +1043,7 @@ impl NavigationView {
             } else if let Some(parent) = items
                 .iter()
                 .chain(footer.iter())
-                .find(|i| !i.children.is_empty() && self.expanded.contains(&i.id))
+                .find(|i| i.has_children() && self.expanded.contains(&i.id))
             {
                 if let Some(part) = self.parts.iter().find(|p| p.id == parent.id) {
                     let w = self.popup_width(&parent.children).min(self.width);
@@ -955,35 +1069,22 @@ impl NavigationView {
                 );
             }
             let minimal = self.display_mode == DisplayMode::Minimal;
-            let toggle_y = if self.props.is_back_button_visible && !minimal {
+            let toggle_y = if self.props.back_button_visible() && !minimal {
                 44.
             } else {
                 4.
             };
-            let button_x = if self.props.is_back_button_visible && minimal {
-                44.
-            } else {
-                4.
-            };
-            if self.props.is_back_button_visible {
-                self.part(
-                    "$back",
-                    "Back",
-                    "\u{e72b}",
-                    Rect::new(4., 6., 40., 36.),
-                    self.props.is_back_enabled,
-                );
+            let leading=if self.props.back_button_visible()&&minimal{40.}else{0.};
+            if self.props.back_button_visible() {
+                self.part(if minimal&&self.pane_open{"$close"}else{"$back"},if minimal&&self.pane_open{"Close navigation"}else{"Back"},"\u{e72b}",Rect::new(4.,6.,40.,36.),if minimal&&self.pane_open{true}else{self.props.is_back_enabled});
             }
             if self.props.is_pane_toggle_button_visible {
-                self.part(
-                    "$toggle",
-                    "Open navigation",
-                    "\u{e700}",
-                    Rect::new(button_x, toggle_y + 2., 40., 36.),
-                    true,
-                );
+                self.part("$toggle",if self.pane_open{"Close navigation"}else{"Open navigation"},"\u{e700}",Rect::new(leading,toggle_y,if self.pane_open{(pw-leading).max(0.)}else{self.props.compact_pane_length},40.),true);
             }
             if pw > 0. {
+                if !self.pane_open&&self.slot_metrics.search_height>0.{
+                    self.part("$search","Search","\u{e721}",Rect::new(4.,toggle_y+self.template.header_row_height,40.,40.),true);
+                }
                 let footer_h = (footer.len() as f64
                     + if self.props.is_settings_visible {
                         1.
@@ -991,13 +1092,14 @@ impl NavigationView {
                         0.
                     })
                     * 40.
-                    + 4.;
+                    + 4. + self.slot_metrics.footer_height;
                 let menu_top = toggle_y
-                    + if self.props.is_pane_toggle_button_visible {
+                    + (if self.props.is_pane_toggle_button_visible {
                         self.template.header_row_height
                     } else {
                         0.
-                    };
+                    }).max(self.slot_metrics.pane_header_height)
+                    + self.slot_metrics.search_height + self.slot_metrics.custom_height;
                 let bottom = (self.height - footer_h).max(menu_top);
                 let clip = Rect::new(0., menu_top, pw, bottom - menu_top);
                 self.menu_clip = clip;
@@ -1005,7 +1107,7 @@ impl NavigationView {
                 self.rows(&items, 0, 0., &mut y, pw, clip);
                 self.max_scroll = (y + self.scroll - bottom).max(0.);
                 self.scroll = self.scroll.min(self.max_scroll);
-                let mut y = bottom;
+                let mut y = bottom + self.slot_metrics.footer_height;
                 let clip = Rect::new(0., bottom, pw, self.height - bottom);
                 self.rows(&footer, 0, 0., &mut y, pw, clip);
                 if self.props.is_settings_visible {
@@ -1057,38 +1159,41 @@ impl NavigationView {
     fn popup_width(&self, items: &[Item]) -> f64 {
         items
             .iter()
-            .map(|i| self.top_item_width(i) + if i.children.is_empty() { 0. } else { 16. })
+            .map(|i| self.top_item_width(i) + if !i.has_children() { 0. } else { 16. })
             .fold(160., f64::max)
     }
     fn top_item_width(&self, item: &Item) -> f64 {
+        if item.kind==ItemKind::Separator{return 8.;}
         let text = self
             .text_widths
             .get(&item.text)
             .copied()
             .unwrap_or_else(|| item.text.chars().count() as f64 * 7.2);
+        let dpr=self.slot_metrics.dpr.max(1.);let text=(text*dpr).ceil()/dpr;
+        if item.kind==ItemKind::Header{return text+24.;}
         (text
-            + if item.icon.is_empty() && item.animated_icon_source.is_none() {
+            + if item.icon.is_empty() && item.animated_icon_source.is_none() && item.icon_source.is_none() {
                 32.
             } else {
                 56.
             }
-            + if item.children.is_empty() { 0. } else { 24. })
-        .ceil()
+            + if !item.has_children() { 0. } else { 24. })
         .max(40.)
     }
     pub fn content_body(&self) -> Rect {
-        let header = if !self.props.header.is_empty()
+        let pixel_border=self.slot_metrics.border_width.unwrap_or(1.);
+        let header = if (self.props.header.is_some() || self.props.header_template.is_some() || self.slot_metrics.header_height.is_some_and(|h|h>1.))
             && (self.props.always_show_header
                 || (!self.is_top() && self.display_mode == DisplayMode::Minimal))
         {
-            83.
+            self.slot_metrics.header_height.unwrap_or(if self.props.header.as_ref().is_some_and(String::is_empty){81.}else{83.})
         } else {
-            1.
+            pixel_border
         };
         let border = if self.is_top() || self.display_mode == DisplayMode::Minimal {
             0.
         } else {
-            1.
+            pixel_border
         };
         Rect::new(
             self.content.x + border,
@@ -1158,6 +1263,14 @@ impl NavigationView {
         self.indicator_owner = owner;
         self.indicator_clip = clip;
     }
+    pub fn is_animating(&self)->bool{self.animated_icons.values().any(|(_, p)| p.active())
+                || self.menu_scrollbar.active(self.now)||self.content_scrollbar.active(self.now)
+                || self.hierarchy_motion.active(self.now)
+                || self.pane_motion.active(self.now)
+                || self.material_motion.active(self.now)
+                || self.pane_material_colors.iter().any(|c|c.active(self.now))
+                || self.indicator_motion.active(self.now)
+                || self.settle_event.is_some()}
     pub fn indicator_visual_clips(&self) -> Vec<(crate::animation::IndicatorVisual, Option<Rect>)> {
         if self.indicator_target.is_none() { return vec![]; }
         let visuals = self.indicator_motion.visuals(self.now);
@@ -1181,9 +1294,12 @@ impl NavigationView {
         let mut expanded_ids: Vec<_> = self.expanded.iter().cloned().collect();
         expanded_ids.sort();
         Snapshot {
+            host_clip: self.host_clip(),
+            light_dismiss: self.light_dismiss_visual(),
             next_frame_at:self.next_frame_at(),
             scrollbars:[self.menu_scrollbar.visual(false,self.now),self.content_scrollbar.visual(true,self.now)].into_iter().flatten().collect(),
-            pane_material:self.pane_recipe().map(|recipe|PaneMaterialVisual{recipe,colors:self.pane_colors(),weight:if self.props.is_backdrop_available{self.material_motion.value(self.now)}else{0.},backdrop_available:self.props.is_backdrop_available}),
+            scroll_viewports:[(false,self.menu_clip,self.max_scroll),(true,self.content_scrollbar.rect,self.max_content_scroll)].into_iter().filter(|(_,rect,max)|*max>0.&&rect.width>0.&&rect.height>0.).map(|(content,rect,_)|ScrollViewport{content,rect}).collect(),
+            pane_material:self.pane_recipe().map(|recipe|PaneMaterialVisual{recipe,colors:self.pane_colors(),weight:if self.backdrop_available(){self.material_motion.value(self.now)}else{0.},backdrop_available:self.backdrop_available()}),
             time: self.now,
             display_mode: self.display_mode,
             is_pane_open: self.pane_open,
@@ -1193,14 +1309,7 @@ impl NavigationView {
             content: self.content,
             parts: self.parts.clone(),
             events: std::mem::take(&mut self.events),
-            animating: self.animated_icons.values().any(|(_, p)| p.active())
-                || self.menu_scrollbar.active(self.now)||self.content_scrollbar.active(self.now)
-                || self.hierarchy_motion.active(self.now)
-                || self.pane_motion.active(self.now)
-                || self.material_motion.active(self.now)
-                || self.pane_material_colors.iter().any(|c|c.active(self.now))
-                || self.indicator_motion.active(self.now)
-                || self.settle_event.is_some(),
+            animating: self.is_animating(),
             overflow_open: self.overflow_open,
             expanded_ids,
             scroll_offset: self.scroll,
@@ -1214,24 +1323,72 @@ impl NavigationView {
 }
 
 impl NavigationView {
+    pub(crate) fn backdrop_available(&self) -> bool {
+        self.props.is_backdrop_available && !self.props.has_external_content
+    }
+    /// SplitView LightDismissLayer: native Auto is transparent on the desktop;
+    /// On uses the pinned theme brush. Reuse this mode's pane timeline,
+    /// including continuous reversal and reduced motion, for the layer opacity.
+    pub fn light_dismiss_visual(&self) -> Option<LightDismissVisual> {
+        if !self.props.is_pane_visible || self.is_top() || self.display_mode == DisplayMode::Expanded {
+            return None;
+        }
+        let closed = if self.display_mode == DisplayMode::Compact { self.props.compact_pane_length.min(self.width) } else { 0. };
+        let open = self.props.open_pane_length.min(self.width);
+        let opacity = if open > closed { ((self.pane.width - closed) / (open - closed)).clamp(0., 1.) } else if self.pane_open { 1. } else { 0. };
+        if !self.pane_open && !self.pane_motion.active(self.now) { return None; }
+        Some(LightDismissVisual {
+            rect: Rect::new(self.pane.width, 0., self.width - self.pane.width, self.height),
+            color: if self.props.light_dismiss_overlay_mode == LightDismissOverlayMode::On {
+                crate::scene::view_controls::pane_color(self.props.theme, "SplitViewLightDismissOverlayBackground")
+            } else { "#00000000".into() },
+            opacity,
+            interactive: self.pane_open,
+        })
+    }
+    /// Clip the browser surface to Rust-owned paint/input regions while a DOM
+    /// page paints behind it. The host must not derive pane/dismiss policy.
+    fn host_clip(&self) -> Option<Vec<Rect>> {
+        if !self.props.has_external_content { return None; }
+        let mut rects = Vec::new();
+        if self.props.is_pane_visible {
+            rects.push(if self.is_top() { Rect::new(0., 0., self.width, self.template.top_pane_height) } else { self.pane });
+        }
+        if let Some(layer) = self.light_dismiss_visual() { rects.push(layer.rect); }
+        for part in &self.parts {
+            let r = part.rect;
+            let clip = part.clip.unwrap_or(Rect::new(0., 0., self.width, self.height));
+            let x = r.x.max(clip.x); let y = r.y.max(clip.y);
+            rects.push(Rect::new(x, y, (r.x+r.width).min(clip.x+clip.width)-x, (r.y+r.height).min(clip.y+clip.height)-y));
+        }
+        if let Some(flyout) = self.flyout { rects.push(flyout); }
+        rects.retain(|r| r.width > 0. && r.height > 0.);
+        Some(rects)
+    }
     pub fn next_frame_at(&self)->Option<f64>{self.menu_scrollbar.next_frame_at(self.now).into_iter().chain(self.content_scrollbar.next_frame_at(self.now)).min_by(f64::total_cmp)}
     pub(crate) fn inherit_policies(&mut self,theme:Theme,reduced:bool,transparency:bool){
         if !self.host_policies_initialized {
             self.props.theme=theme;self.props.reduced_motion=reduced;self.props.reduced_transparency=transparency;
             self.pane_material_colors=Default::default();
-            self.material_motion.snap(if transparency||!self.props.is_backdrop_available||theme==Theme::HighContrast{0.}else{1.});
+            self.material_motion.snap(if transparency||!self.backdrop_available()||theme==Theme::HighContrast{0.}else{1.});
             self.host_policies_initialized=true;
         }else if self.props.theme!=theme||self.props.reduced_motion!=reduced||self.props.reduced_transparency!=transparency{
             self.update(serde_json::json!([{"theme":theme,"reducedMotion":reduced,"reducedTransparency":transparency}])).expect("valid inherited NavigationView policies");
         }
     }
+    /// Closing Overlay/CompactOverlay panes keep their brush and stacking
+    /// until SplitView's transition ends, even though IsPaneOpen is false.
+    pub(crate) fn pane_overlay_visible(&self)->bool {
+        !self.is_top()&&self.display_mode!=DisplayMode::Expanded
+            &&self.props.is_pane_visible&&(self.pane_open||self.pane_motion.active(self.now))
+    }
     pub fn pane_recipe(&self)->Option<crate::material::AcrylicOptions>{
-        if self.display_mode!=DisplayMode::Expanded&&self.pane_open {
+        if self.pane_overlay_visible() {
             crate::resources::Resources::current().resolve(self.props.theme,"NavigationViewDefaultPaneBackground").ok()
                 .filter(|b|b.kind=="acrylic").map(|b|crate::material::AcrylicOptions{tint_color:b.tint.clone(),tint_opacity:b.tint_opacity,luminosity_opacity:b.luminosity_opacity,fallback_color:b.fallback.clone()})
         }else{self.props.expanded_pane_material.clone()}
     }
-    pub fn pane_colors(&self)->Option<crate::material::AcrylicColors>{self.pane_material_colors[usize::from(self.display_mode!=DisplayMode::Expanded&&self.pane_open)].current(self.now)}
+    pub fn pane_colors(&self)->Option<crate::material::AcrylicColors>{self.pane_material_colors[usize::from(self.pane_overlay_visible())].current(self.now)}
     fn sync_animated_icons(&mut self) {
         let visible: Vec<_> = self
             .parts

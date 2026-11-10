@@ -1,0 +1,78 @@
+{
+  "commit": "6de5f1cf388747e7ed046d5180815ca28c59f525",
+  "groupIndentSize": 24.0,
+  "themes": {
+    "Light": {
+      "TableViewGroupHeaderRowBackground": {
+        "ResourceKey": "CardBackgroundFillColorSecondaryBrush"
+      },
+      "TableViewGroupHeaderRowForeground": {
+        "ResourceKey": "TextFillColorPrimaryBrush"
+      },
+      "TableViewGroupHeaderRowMinHeight": 36.0,
+      "TableViewGroupHeaderRowExpanderMargin": [
+        4.0,
+        0.0,
+        4.0,
+        0.0
+      ],
+      "TableViewGroupHeaderRowContentMargin": [
+        8.0,
+        0.0,
+        16.0,
+        0.0
+      ],
+      "TableViewGroupHeaderRowFontSize": 18.0
+    },
+    "Dark": {
+      "TableViewGroupHeaderRowBackground": {
+        "ResourceKey": "CardBackgroundFillColorSecondaryBrush"
+      },
+      "TableViewGroupHeaderRowForeground": {
+        "ResourceKey": "TextFillColorPrimaryBrush"
+      },
+      "TableViewGroupHeaderRowMinHeight": 36.0,
+      "TableViewGroupHeaderRowExpanderMargin": [
+        4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "TableViewGroupHeaderRowContentMargin": [
+        8.0,
+        0.0,
+        16.0,
+        0.0
+      ],
+      "TableViewGroupHeaderRowFontSize": 18.0
+    },
+    "HighContrast": {
+      "TableViewGroupHeaderRowBackground": {
+        "Color": "{ThemeResource SystemColorWindowColor}"
+      },
+      "TableViewGroupHeaderRowForeground": {
+        "Color": "{ThemeResource SystemColorWindowTextColor}"
+      },
+      "TableViewGroupHeaderRowMinHeight": 36.0,
+      "TableViewGroupHeaderRowExpanderMargin": [
+        4.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "TableViewGroupHeaderRowContentMargin": [
+        8.0,
+        0.0,
+        16.0,
+        0.0
+      ],
+      "TableViewGroupHeaderRowFontSize": 18.0
+    }
+  },
+  "expandButtonSize": 24.0,
+  "expandIcon": {
+    "glyph": "",
+    "fontSize": 12.0
+  },
+  "visualState": "Collapsed setter rotates -90 degrees; no transition storyboard in release template."
+}

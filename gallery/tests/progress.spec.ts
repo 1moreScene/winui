@@ -5,10 +5,10 @@ import { PNG } from "pngjs";
 import type {
   Scene,
   WinUI,
-  ProgressBar,
-  ProgressRing,
+  ProgressBarController as ProgressBar,
+  ProgressRingController as ProgressRing,
   SceneEvent,
-} from "../src/index";
+} from "winui-wasm";
 test.use({ deviceScaleFactor: 1.25 });
 declare global {
   interface Window {
@@ -152,8 +152,8 @@ for (const backend of ["Canvas2D", "WebGL2"] as const)
       await page.evaluate(
         async ({ item, backend }) => {
           const a = (await import(
-            "/src/index.ts" as string
-          )) as typeof import("../src/index");
+            "/@id/winui-wasm" as string
+          )) as typeof import("winui-wasm");
           window.progressFixture?.sdk.dispose();
           document.querySelector("#progress-fixture")?.remove();
           const f = {
@@ -302,8 +302,8 @@ test("Progress SDK ranges, notifications, animation interruption and lifetime", 
   ).toBeVisible();
   const result = await page.evaluate(async () => {
     const a = (await import(
-      "/src/index.ts" as string
-    )) as typeof import("../src/index");
+      "/@id/winui-wasm" as string
+    )) as typeof import("winui-wasm");
     const host = document.createElement("div");
     document.body.append(host);
     const sdk = await a.WinUI.create({ globalScrollbars: false });

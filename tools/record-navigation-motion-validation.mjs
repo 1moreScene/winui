@@ -9,7 +9,7 @@ const sha=p=>createHash('sha256').update(readFileSync(join(root,p))).digest('hex
 const json=p=>JSON.parse(read(p));
 const native=json('references/navigation-motion-native.json'),contract=json('references/navigation-motion-contract.json');
 const artifact='out/navigation-motion-preview';const bundle=json(`${artifact}/wasm-build.json`);
-const sourceFiles=['src/navigation.rs','src/navigation_motion.rs','src/render.rs','src/scene/paint.rs','src/scene/layout.rs','src/frame.rs','src/lib.rs','gallery/src/sdk.ts','gallery/src/react.tsx','tools/native-navigation/NavigationMotionProbe.cs','tools/native-navigation/Program.cs','tools/native-navigation/NavigationProbe.csproj','tools/native-navigation/NativeMotionRedPage.xaml','tools/native-navigation/NativeMotionBluePage.xaml','tools/extract-navigation-motion.mjs','references/navigation-motion-contract.json'];
+const sourceFiles=['src/navigation.rs','src/navigation_motion.rs','src/render.rs','src/scene/paint.rs','src/scene/layout.rs','src/frame.rs','src/lib.rs','packages/winui-wasm/src/sdk.ts','packages/winui-wasm/src/react.tsx','tools/native-navigation/NavigationMotionProbe.cs','tools/native-navigation/Program.cs','tools/native-navigation/NavigationProbe.csproj','tools/native-navigation/NativeMotionRedPage.xaml','tools/native-navigation/NativeMotionBluePage.xaml','tools/extract-navigation-motion.mjs','references/navigation-motion-contract.json'];
 const browser=Object.fromEntries(['chrome','msedge'].map(channel=>{const path=`out/navigation-motion-${channel}-results.json`;const result=json(path);if(result.stats.unexpected||result.stats.flaky)throw new Error(`${channel} did not pass cleanly`);return[channel,{path,stats:result.stats}];}));
 const log=read('out/navigation-motion-rust.log');if(log.includes('test result: FAILED'))throw new Error('Rust tests failed');
 const rustPassed=[...log.matchAll(/test result: ok\. (\d+) passed/g)].reduce((n,m)=>n+Number(m[1]),0);
@@ -32,7 +32,7 @@ const record={date:'2026-11-08',generatedAt:new Date().toISOString(),baseline:{c
   nativeRapidOverlap:native.records.find(r=>r.action==='page-RapidEntrance').samples.some(s=>s.red&&s.blue),
   rust:{passed:rustPassed,log:'out/navigation-motion-rust.log'},browser,
   materialChecks:json('out/navigation-motion-materials.json'),fallbackPixelChecks:json('out/navigation-motion-fallback-pixels.json'),
-  artifact,wasmSha256:bundle.sha256,matchesCurrentWasm:sha('gallery/src/wasm/winui_bg.wasm')===bundle.sha256,
+  artifact,wasmSha256:bundle.sha256,matchesCurrentWasm:sha('packages/winui-wasm/src/wasm/winui_bg.wasm')===bundle.sha256,
   sources:sourceFiles.map(path=>({path,sha256:sha(path)})),assets:files(artifact),
   limits:['Live same-SDK standalone probe, not the Store release window.','UI Rendering time brackets plus own-window GDI pixels; no exact compositor present timestamps.','Cross-DOM Acrylic remains the explicit native resource fallback.','No claim of complete font rasterization, GPU pixel or frame-present equivalence.']};
 writeFileSync(join(root,'references/navigation-motion-validation.json'),JSON.stringify(record,null,2)+'\n');

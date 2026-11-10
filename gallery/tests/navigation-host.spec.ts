@@ -1,6 +1,6 @@
 import {expect,test} from '@playwright/test';
 import {writeFileSync} from 'node:fs';
-import {RendererBackend,PaneDisplayMode,NavigationTransition} from '../src/enums';
+import {RendererBackend,PaneDisplayMode,NavigationTransition} from 'winui-wasm';
 
 test('example page animation never releases global WinUI scrollbar ownership',async({page})=>{
  await page.goto('/#navigation-view');const sample=page.locator('#navigation-frame-example');

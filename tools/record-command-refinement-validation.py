@@ -71,7 +71,7 @@ changed = [f["path"] for f in manifest["files"] if
 record["runtime"] = {
     "url": "http://127.0.0.1:5197/#command-bar",
     "sha256": expected,
-    "matchesCurrentBinary": read("gallery/src/wasm/build-stamp.json")["sha256"] == expected,
+    "matchesCurrentBinary": read("packages/winui-wasm/src/wasm/build-stamp.json")["sha256"] == expected,
     "frozenRuntime": runtime_path,
     "frozenApplication": app_path,
     "servedRuntime": "out/collections-5197-test-runtime",

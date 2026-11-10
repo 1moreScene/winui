@@ -43,11 +43,11 @@ fn tracks(
             values[start..end].iter().sum::<f64>() + gap * (end - start).saturating_sub(1) as f64;
         let deficit = (size - occupied).max(0.);
         let mut targets: Vec<_> = (start..end)
-            .filter(|i| spec[*i].unit == GridUnit::Auto)
+            .filter(|i| spec[*i].unit == GridUnit::Star)
             .collect();
         if targets.is_empty() {
             targets = (start..end)
-                .filter(|i| spec[*i].unit == GridUnit::Star)
+                .filter(|i| spec[*i].unit == GridUnit::Auto)
                 .collect();
         }
         if !targets.is_empty() {
@@ -91,6 +91,14 @@ fn span(values: &[f64], start: usize, count: usize, gap: f64) -> f64 {
 fn offset(values: &[f64], index: usize, gap: f64) -> f64 {
     let index = index.min(values.len() - 1);
     values[..index].iter().sum::<f64>() + gap * index as f64
+}
+// CGrid::MeasureCell gives an unbounded constraint only to a range that
+// contains Auto and no Star. A spanning child can begin in an Auto column
+// while still requiring the finite width of its Star columns for wrapping.
+fn unbounded_auto(spec: &[GridTrack], start: usize, count: usize) -> bool {
+    let range = spec.iter().skip(start.min(spec.len().saturating_sub(1))).take(count);
+    range.clone().any(|t| t.unit == GridUnit::Auto)
+        && !range.clone().any(|t| t.unit == GridUnit::Star)
 }
 impl Scene {
     pub(super) fn effective_flow_direction(&self, id: u32) -> FlowDirection {
@@ -152,12 +160,12 @@ impl Scene {
             p.padding[3] + border,
         ];
         if kind == NodeKind::CollectionItem
-            || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+            || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
             || collections::is_view(kind)
             || overlays::is_overlay(kind)
         {
             let thickness = if kind == NodeKind::CollectionItem
-                || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+                || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
                 || overlays::is_overlay(kind)
                 || collections::is_view(kind)
             {
@@ -215,6 +223,7 @@ impl Scene {
             (kind, p)
         };
         match measure_kind {
+            NodeKind::TableView=>{size=self.measure_table(id,inner);}
             NodeKind::ScrollBar|NodeKind::Thumb|NodeKind::TickBar|NodeKind::ItemsPresenter=>{size=self.measure_primitive(id,inner,measure);}
             NodeKind::ContentControl|NodeKind::ContentPresenter|NodeKind::UserControl|NodeKind::Page|NodeKind::Frame=>{size=self.measure_content_host(id,inner,measure);}
             NodeKind::PagerControl|NodeKind::AnnotatedScrollBar|NodeKind::LayoutPanel|NodeKind::RichTextBlock|NodeKind::RichTextBlockOverflow=>{size=self.measure_reading(id,inner,measure);}
@@ -416,9 +425,13 @@ impl Scene {
                     p.line_height,
                     measure,
                 );
-                let hh = p.min_height.max(head.height + 2.);
+                let mut header_size = [head.width, head.height];
+                if let Some(child) = children.iter().find(|child| self.nodes[child].props.is_expander_header && !self.nodes[child].children.is_empty()) {
+                    header_size = self.measure_node(*child, [(inner[0] - 78.).max(0.), f64::INFINITY], measure);
+                }
+                let hh = p.min_height.max(header_size[1] + 2.);
                 let mut content = [0.; 2];
-                if let Some(child) = children.first() {
+                if let Some(child) = children.iter().find(|child| !self.nodes[child].props.is_expander_header) {
                     content = self.measure_node(
                         *child,
                         [
@@ -434,7 +447,7 @@ impl Scene {
                 n.expander.content_height =
                     (content[1] + p.padding[1] + p.padding[3] + 1.).max(p.min_height);
                 size = [
-                    (n.header_text.width + 78.).max(content[0] + p.padding[0] + p.padding[2] + 2.),
+                    (header_size[0] + 78.).max(content[0] + p.padding[0] + p.padding[2] + 2.),
                     hh + if n.expander.shown(self.time, &p) {
                         n.expander.content_height
                     } else {
@@ -465,7 +478,7 @@ impl Scene {
             NodeKind::ProgressRing => {
                 size = [32., 32.];
             }
-            NodeKind::TextBox | NodeKind::PasswordBox => {
+            NodeKind::TextBox | NodeKind::PasswordBox | NodeKind::RichEditBox => {
                 let hh = self.input_header_height(id);
                 let focused = self.focused == Some(id);
                 size = self.nodes.get_mut(&id).unwrap().editor.layout(
@@ -540,6 +553,9 @@ impl Scene {
                 if kind == NodeKind::TextBlock && p.trimming == TextTrimming::Clip {
                     typography::line_services_rounding(&mut text, self.dpr);
                 }
+                if kind == NodeKind::TextBlock {
+                    typography::constrain_lines(&mut text,&p.font(),inner[0],inner[1],p.max_lines,p.trimming,measure);
+                }
                 size = [text.width, text.height];
                 self.nodes.get_mut(&id).unwrap().text = text;
             }
@@ -610,7 +626,13 @@ impl Scene {
                 }
             }
             NodeKind::NavigationView => {
-                size = [inner[0].min(640.), inner[1].min(300.)];
+                size = self.measure_navigation_view(id,inner,measure);
+            }
+            NodeKind::NavigationViewItem => {
+                let text=typography::layout(&p.text,&p.font(),inner[0],p.wrap,p.trimming,p.line_height,measure);
+                let host=self.nodes[&id].navigation_template.parts.get("ItemPart:standalone/ContentPresenter").copied();
+                let content=host.map(|host|self.measure_node(host,inner,measure)).unwrap_or([text.width,text.height]);
+                size=[8.+content[0]+if p.icon_source.is_some(){40.+12.+(14.*self.dpr).round()/self.dpr}else{12.+(14.*self.dpr).round()/self.dpr},content[1].max(36.)+4.];
             }
             NodeKind::StackPanel => {
                 let vertical = p.orientation == Orientation::Vertical;
@@ -658,18 +680,18 @@ impl Scene {
             | NodeKind::CollectionHeader => {
                 for child in &children {
                     let cp = &self.nodes[child].props;
-                    let width = if p
-                        .columns
-                        .get(cp.column)
-                        .is_some_and(|t| t.unit == GridUnit::Auto)
+                    let width = if unbounded_auto(&p.columns, cp.column, cp.column_span)
                     {
                         f64::INFINITY
                     } else {
                         inner[0]
                     };
-                    self.measure_node(*child, [width, inner[1]], measure);
+                    let height = if unbounded_auto(&p.rows, cp.row, cp.row_span) {f64::INFINITY} else {inner[1]};
+                    self.measure_node(*child, [width, height], measure);
                 }
-                let widths = self.grid_tracks(&children, &p.columns, inner[0], p.spacing, true);
+                let column_spacing = p.column_spacing.unwrap_or(p.spacing);
+                let row_spacing = p.row_spacing.unwrap_or(p.spacing);
+                let widths = self.grid_tracks(&children, &p.columns, inner[0], column_spacing, true);
                 for child in &children {
                     let cp = &self.nodes[child].props;
                     // An unbounded Star/Auto axis remains unbounded during
@@ -685,22 +707,23 @@ impl Scene {
                     let w = if !inner[0].is_finite() && !fixed {
                         f64::INFINITY
                     } else {
-                        span(&widths, cp.column, cp.column_span, p.spacing)
+                        span(&widths, cp.column, cp.column_span, column_spacing)
                     };
-                    self.measure_node(*child, [w, inner[1]], measure);
+                    let h = if unbounded_auto(&p.rows, cp.row, cp.row_span) {f64::INFINITY} else {inner[1]};
+                    self.measure_node(*child, [w, h], measure);
                 }
-                let heights = self.grid_tracks(&children, &p.rows, inner[1], p.spacing, false);
+                let heights = self.grid_tracks(&children, &p.rows, inner[1], row_spacing, false);
                 // Desired size of star tracks comes from content, rather than occupying the
                 // entire measure constraint. Arrange distributes the final available size.
                 let desired_w =
-                    self.grid_tracks(&children, &p.columns, f64::INFINITY, p.spacing, true);
+                    self.grid_tracks(&children, &p.columns, f64::INFINITY, column_spacing, true);
                 let desired_h =
-                    self.grid_tracks(&children, &p.rows, f64::INFINITY, p.spacing, false);
+                    self.grid_tracks(&children, &p.rows, f64::INFINITY, row_spacing, false);
                 size = [
                     desired_w.iter().sum::<f64>()
-                        + p.spacing * widths.len().saturating_sub(1) as f64,
+                        + column_spacing * widths.len().saturating_sub(1) as f64,
                     desired_h.iter().sum::<f64>()
-                        + p.spacing * heights.len().saturating_sub(1) as f64,
+                        + row_spacing * heights.len().saturating_sub(1) as f64,
                 ];
             }
             _ => {}
@@ -968,7 +991,7 @@ impl Scene {
             0.
         };
         if kind == NodeKind::CollectionItem
-            || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+            || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
             || overlays::is_overlay(kind)
             || collections::is_view(kind)
         {
@@ -981,7 +1004,7 @@ impl Scene {
                     + border
                     + crate::selection::leading(kind)
                     + if kind == NodeKind::CollectionItem
-                        || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+                        || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
                         || collections::is_view(kind)
                         || overlays::is_overlay(kind)
                     {
@@ -992,7 +1015,7 @@ impl Scene {
                 p.padding[1]
                     + border
                     + if kind == NodeKind::CollectionItem
-                        || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+                        || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
                         || collections::is_view(kind)
                         || overlays::is_overlay(kind)
                     {
@@ -1003,7 +1026,7 @@ impl Scene {
                 p.padding[2]
                     + border
                     + if kind == NodeKind::CollectionItem
-                        || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+                        || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
                         || collections::is_view(kind)
                         || overlays::is_overlay(kind)
                     {
@@ -1014,7 +1037,7 @@ impl Scene {
                 p.padding[3]
                     + border
                     + if kind == NodeKind::CollectionItem
-                        || kind == NodeKind::Border || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
+                        || matches!(kind,NodeKind::Border|NodeKind::TableView) || matches!(kind,NodeKind::ContentPresenter|NodeKind::Frame) || matches!(kind,NodeKind::RelativePanel|NodeKind::LayoutPanel)
                         || collections::is_view(kind)
                         || overlays::is_overlay(kind)
                     {
@@ -1051,14 +1074,11 @@ impl Scene {
             if kind == NodeKind::TextBlock && p.trimming == TextTrimming::Clip {
                 typography::line_services_rounding(&mut n.text, self.dpr);
             }
+            if kind == NodeKind::TextBlock {
+                typography::constrain_lines(&mut n.text,&p.font(),inner.width,inner.height,p.max_lines,p.trimming,measure);
+            }
         }
-        if let Some(nav) = &mut n.nav {
-            nav.width = rect.width;
-            nav.height = rect.height;
-            nav.inherit_policies(theme,self.reduced_motion,self.reduced_transparency);
-            nav.adapt();
-            nav.layout();
-        }
+        // NavigationView binds its viewport and policies once, in its template executor.
         if text_edit::is_editor(kind) {
             let hh = self.input_header_height(id);
             let focused = self.focused == Some(id);
@@ -1088,7 +1108,10 @@ impl Scene {
             self.nodes.get_mut(&id).unwrap().overlay.rows = rows;
             self.arrange_menu_parts(id);
         }
-        if kind==NodeKind::ItemsPresenter{self.arrange_items_presenter(id,inner,measure);
+        if kind==NodeKind::NavigationView{self.arrange_navigation_view(id,measure);
+        }else if kind==NodeKind::NavigationViewItem&&self.nodes[&id].navigation_template.owner.is_none(){self.arrange_standalone_navigation_item(id,measure);
+        }else if kind==NodeKind::TableView{self.arrange_table(id,inner,measure);
+        }else if kind==NodeKind::ItemsPresenter{self.arrange_items_presenter(id,inner,measure);
         }else if content_hosts::is_host(kind){self.arrange_content_host(id,inner,measure);
         }else if matches!(kind,NodeKind::PagerControl|NodeKind::AnnotatedScrollBar|NodeKind::LayoutPanel|NodeKind::RichTextBlock|NodeKind::RichTextBlockOverflow){self.arrange_reading(id,inner,measure);
         }else if view_controls::is_view(kind){
@@ -1127,6 +1150,10 @@ impl Scene {
             let v = self.nodes[&id].expander.snapshot(self.time, &p);
             let shown = self.nodes[&id].expander.shown(self.time, &p);
             for child in children {
+                if self.nodes[&child].props.is_expander_header {
+                    self.arrange_node(child, Rect::new(17., v.header.y + 1., (rect.width - 78.).max(0.), (v.header.height - 2.).max(0.)), world, (theme, enabled, visible), measure);
+                    continue;
+                }
                 let available = [
                     (rect.width - 2. - p.padding[0] - p.padding[2]).max(0.),
                     (v.clip.height - 1. - p.padding[1] - p.padding[3]).max(0.),
@@ -1319,15 +1346,17 @@ impl Scene {
                 | NodeKind::CollectionItem
                 | NodeKind::CollectionHeader
         ) {
-            let widths = self.grid_tracks(&children, &p.columns, inner.width, p.spacing, true);
-            let heights = self.grid_tracks(&children, &p.rows, inner.height, p.spacing, false);
+            let column_spacing = p.column_spacing.unwrap_or(p.spacing);
+            let row_spacing = p.row_spacing.unwrap_or(p.spacing);
+            let widths = self.grid_tracks(&children, &p.columns, inner.width, column_spacing, true);
+            let heights = self.grid_tracks(&children, &p.rows, inner.height, row_spacing, false);
             for child in children {
                 let cp = &self.nodes[&child].props;
                 let mut slot = Rect::new(
-                    inner.x + offset(&widths, cp.column, p.spacing),
-                    inner.y + offset(&heights, cp.row, p.spacing),
-                    span(&widths, cp.column, cp.column_span, p.spacing),
-                    span(&heights, cp.row, cp.row_span, p.spacing),
+                    inner.x + offset(&widths, cp.column, column_spacing),
+                    inner.y + offset(&heights, cp.row, row_spacing),
+                    span(&widths, cp.column, cp.column_span, column_spacing),
+                    span(&heights, cp.row, cp.row_span, row_spacing),
                 );
                 if p.flow_direction == FlowDirection::RightToLeft && kind == NodeKind::Grid {
                     slot.x = inner.x + inner.width - (slot.x - inner.x) - slot.width;
@@ -1389,20 +1418,11 @@ impl Scene {
         n.enabled = enabled && n.props.enabled && n.view_control.command_enabled.unwrap_or(true);
         n.visible = visible
             && n.props.visible
-            && (!overlays::is_overlay(n.kind) || n.overlay.visual.shown(self.time));
-        let (world, theme, enabled, mut visible, children) =
+            && (!overlays::is_overlay(n.kind) || (n.navigation_template.owner.is_some()&&n.kind!=NodeKind::ToolTip) || n.overlay.visual.shown(self.time));
+        let (world, theme, enabled, visible, children) =
             (n.world, n.theme, n.enabled, n.visible, n.children.clone());
-        let world = if n.kind == NodeKind::Expander {
-            visible &= n.expander.shown(self.time, &n.props);
-            n.world.multiply(Matrix([
-                1.,
-                0.,
-                0.,
-                1.,
-                0.,
-                n.expander.snapshot(self.time, &n.props).offset,
-            ]))
-        } else if n.kind == NodeKind::Viewbox {
+        let expander = (n.kind == NodeKind::Expander).then(|| (n.expander.shown(self.time, &n.props), n.expander.snapshot(self.time, &n.props).offset));
+        let world = if n.kind == NodeKind::Viewbox {
             world.multiply(n.viewbox.matrix())
         } else if super::collections::is_scroll_owner(n.kind) {
             world.multiply(n.scroll.matrix(self.time))
@@ -1410,12 +1430,14 @@ impl Scene {
             world
         };
         for child in children {
-            let parent_world = if overlays::is_overlay(self.nodes[&child].kind) {
+            let parent_world = if overlays::is_overlay(self.nodes[&child].kind)&&(self.nodes[&child].navigation_template.owner.is_none()||self.nodes[&child].kind==NodeKind::ToolTip) {
                 Matrix::default()
+            } else if expander.is_some() && !self.nodes[&child].props.is_expander_header {
+                world.multiply(Matrix([1., 0., 0., 1., 0., expander.unwrap().1]))
             } else {
                 world
             };
-            let child_visible=visible&&self.view_child_visible(id,child)&&self.content_child_visible(id,child);
+            let child_visible=visible&&expander.is_none_or(|(shown,_)| shown||self.nodes[&child].props.is_expander_header)&&self.view_child_visible(id,child)&&self.content_child_visible(id,child);
             let child_enabled=enabled&&self.view_child_enabled(id,child)&&self.content_child_enabled(id,child);
             self.refresh_visual_tree(child, parent_world.multiply(self.semantic_child_matrix(id,child)).multiply(self.content_child_matrix(id,child)), theme, child_enabled, child_visible);
         }

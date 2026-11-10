@@ -41,7 +41,7 @@ for case in browser['cases']:
  case['nodeGeometry']=[{'id':n['id'],'kind':n['kind'],'rect':n['rect'],'world':n['world'],'visible':n['visible'],'text':str(n['props'].get('text',''))[:80],'collectionIndex':n['props'].get('collectionIndex')} for n in case['nodes'] if n['kind'] in ['CollectionItem','Image','Button','NumberBox','ComboBox','TextBlock','Border','RichTextBlock','RichTextBlockOverflow']]
  case['nodeCount']=len(case.pop('nodes'))
 (R/'references/validation/reading-gallery-browser.json').write_text(json.dumps(browser,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-files=['src/scene/reading_controls.rs','src/scene/reading_controls/advanced.rs','src/scene/reading_controls/rich.rs','src/scene/repeater.rs','src/scene/collections.rs','src/scene/layout.rs','src/scene/input.rs','gallery/src/scene.ts','gallery/src/react.tsx','gallery/src/reading-controls-types.ts','gallery/src/ReadingControlsPage.tsx','references/reading-controls-template.json','tools/record-reading-refinement.py','gallery/tests/reading-controls.spec.ts','gallery/tests/reading-gallery-fixture.ts']
+files=['src/scene/reading_controls.rs','src/scene/reading_controls/advanced.rs','src/scene/reading_controls/rich.rs','src/scene/repeater.rs','src/scene/collections.rs','src/scene/layout.rs','src/scene/input.rs','packages/winui-wasm/src/scene.ts','packages/winui-wasm/src/react.tsx','packages/winui-wasm/src/reading-controls-types.ts','gallery/src/ReadingControlsPage.tsx','references/reading-controls-template.json','tools/record-reading-refinement.py','gallery/tests/reading-controls.spec.ts','gallery/tests/reading-gallery-fixture.ts']
 status={
  'date':datetime.date.today().isoformat(),
  'controls':['ItemsView','AnnotatedScrollBar','PagerControl','LayoutPanel','RichTextBlock'],
@@ -49,7 +49,7 @@ status={
  'rust':{'passed':sum(passed),'suites':dict(zip(suite_names,passed))},
  'browser':results['stats'],'nativeStates':len(native['cases']),'browserNativeStates':len(browser['cases']),
  'legacyNativeStates':len(read('references/validation/reading-native.json')['cases']),
- 'wasm':{'tested':sha(wasm),'current':sha(R/'gallery/src/wasm/winui_bg.wasm'),'matchesCurrentBinary':sha(wasm)==sha(R/'gallery/src/wasm/winui_bg.wasm'),'matrixMatchesTestedBinary':all(c['buildVersion']==sha(wasm) for c in browser['cases']),'bytes':wasm.stat().st_size},
+ 'wasm':{'tested':sha(wasm),'current':sha(R/'packages/winui-wasm/src/wasm/winui_bg.wasm'),'matchesCurrentBinary':sha(wasm)==sha(R/'packages/winui-wasm/src/wasm/winui_bg.wasm'),'matrixMatchesTestedBinary':all(c['buildVersion']==sha(wasm) for c in browser['cases']),'bytes':wasm.stat().st_size},
  'sourceFiles':len(read('references/reading-controls-sources.json')['files']),
  'sourceFingerprints':{p:sha(R/p) for p in files},
  'validationArtifacts':['references/validation/reading-gallery-native.json','references/validation/reading-gallery-browser.json','references/validation/reading-gallery-release-audit.json','out/reading-production-results.json','out/reading-rust-validation.log'],

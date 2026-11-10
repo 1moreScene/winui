@@ -1,5 +1,7 @@
 # InfoBar、PersonPicture、RatingControl、SplitButton、ToggleSplitButton
 
+2026-11-09 更新：SplitButton 两个颜色示例与 ToggleSplitButton 列表示例已接入真实 Rust RichEditBox；下文提及 TextBlock 的内容为本批之前的历史边界。当前范围见 [RichEditBox](rich-edit-box.md)。
+
 本批是五个控件的可运行切片，Rust 管理状态、布局、输入与绘制；TS 提供类型化控制器、事件和宿主投影；React 使用直接属性。默认 Canvas2D，WebGL2 仅显式选择。没有接受完整 WinUI、Store 发行版逐像素或逐帧等价。
 
 ## 入口与范围

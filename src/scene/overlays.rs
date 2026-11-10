@@ -32,6 +32,7 @@ pub fn is_overlay(kind: NodeKind) -> bool {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct MenuEntry {
     #[serde(skip_serializing_if="Option::is_none")]
     pub source_node:Option<u32>,
@@ -402,11 +403,24 @@ impl Scene {
         let mut ids: Vec<_> = self
             .nodes
             .values()
-            .filter(|n| is_overlay(n.kind) && n.overlay.visual.shown(self.time) && n.visible)
+            .filter(|n| is_overlay(n.kind) && (n.navigation_template.owner.is_none()||n.kind==NodeKind::ToolTip) && n.overlay.visual.shown(self.time) && n.visible)
             .map(|n| n.id)
             .collect();
         ids.sort_by_key(|id| self.nodes[id].overlay.order);
         ids
+    }
+    /// Local native window bounds for platform input projection. ToolTips do
+    /// not receive input; child controls continue to receive normal events.
+    pub fn floating_input_regions(&self) -> Vec<(u32, Rect)> {
+        self.overlay_ids().into_iter().filter_map(|id| {
+            let n=&self.nodes[&id];
+            if !n.overlay.open || n.kind==NodeKind::ToolTip || !n.props.is_hit_test_visible {return None;}
+            let mut rect=super::overlay_visual::window_bounds(n.kind,Rect::new(0.,0.,n.rect.width,n.rect.height));
+            if n.composed.owner.is_some_and(|owner|self.nodes[&owner].kind==NodeKind::TeachingTip) {
+                rect=Rect::new(rect.x-8.,rect.y-8.,rect.width+16.,rect.height+16.);
+            }
+            Some((id,rect))
+        }).collect()
     }
     pub(super) fn descendant_of(&self, mut id: u32, parent: u32) -> bool {
         loop {
@@ -423,7 +437,7 @@ impl Scene {
         let ids: Vec<_> = self
             .nodes
             .values()
-            .filter(|n| is_overlay(n.kind))
+            .filter(|n| is_overlay(n.kind)&&(n.navigation_template.owner.is_none()||n.kind==NodeKind::ToolTip))
             .map(|n| n.id)
             .collect();
         for id in ids {
@@ -444,6 +458,7 @@ impl Scene {
                     .get(&target)
                     .is_some_and(|n| n.visible && n.enabled);
             }
+            eligible &= self.placement_reference_ready(id);
             let open = eligible && n.props.is_open;
             let closing_with_owner=n.overlay.visual.command_overflow && presentation_eligible && n.command.owner.and_then(|bar|self.nodes.get(&bar)).and_then(|bar|bar.menu.owner).and_then(|owner|self.nodes.get(&owner)).is_some_and(|owner|owner.kind==NodeKind::CommandBarFlyout && !owner.props.is_open && owner.overlay.visual.shown(self.time));
             let reduced = self.reduced_motion || n.theme == Theme::HighContrast || (!eligible && !closing_with_owner);
@@ -882,7 +897,7 @@ impl Scene {
             let hovered = self.pointer.is_some_and(|(x, y)| {
                 self.nodes.contains_key(&target) && self.inside(target, x, y)
             });
-            let focused = self.focused == Some(target);
+            let focused = self.focused == Some(target)||self.nodes.get(&target).is_some_and(|n|n.navigation_template.owner.zip(n.navigation_template.action.as_ref()).is_some_and(|(owner,key)|self.focused==Some(owner)&&self.nodes[&owner].nav.as_ref().is_some_and(|nav|nav.focused.as_ref()==Some(key))));
             let eligible = self
                 .nodes
                 .get(&target)

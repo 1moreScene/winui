@@ -8,7 +8,7 @@ import type {
   Panel,
   Animation,
   AnimationResult,
-} from "../src/index";
+} from "winui-wasm";
 declare global {
   interface Window {
     effectsTime: number;
@@ -37,8 +37,8 @@ async function fixture(page: Page) {
     page.getByRole("button", { name: "Standard XAML", exact: true }),
   ).toBeVisible();
   await page.evaluate(async () => {
-    const path = "/src/index.ts";
-    const a = (await import(path)) as typeof import("../src/index");
+    const path = "/@id/winui-wasm";
+    const a = (await import(path)) as typeof import("winui-wasm");
     window.effectsTime = 0;
     const sdk = await a.WinUI.create({ clock: () => window.effectsTime });
     const root = document.createElement("div");
@@ -464,8 +464,8 @@ test("host motion policy, high contrast and completion reentry remain determinis
     .toEqual(["Completed", "Completed"]);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.evaluate(async () => {
-    const path = "/src/index.ts";
-    const a = (await import(path)) as typeof import("../src/index");
+    const path = "/@id/winui-wasm";
+    const a = (await import(path)) as typeof import("winui-wasm");
     const p = window.effectsFixture.panels[1];
     void p
       .animate({ translationX: 10 }, { duration: 5000, delay: 2000 })
@@ -526,8 +526,8 @@ test("fixed native Acrylic and frame-by-frame interruption retain measured diffe
   for (const record of native.staticRecords) {
     expect(record.screenForeground).toBe(true);
     await page.evaluate(async ({ theme, offset }) => {
-      const path = "/src/index.ts";
-      const a = (await import(path)) as typeof import("../src/index");
+      const path = "/@id/winui-wasm";
+      const a = (await import(path)) as typeof import("winui-wasm");
       const f = window.effectsFixture;
       for (const s of f.scenes)
         s.configure({ theme: a.ThemeMode[theme as keyof typeof a.ThemeMode] });
@@ -553,8 +553,8 @@ test("fixed native Acrylic and frame-by-frame interruption retain measured diffe
     expect(difference.mean).toBeLessThan(8);
   }
   await page.evaluate(async () => {
-    const path = "/src/index.ts";
-    const a = (await import(path)) as typeof import("../src/index");
+    const path = "/@id/winui-wasm";
+    const a = (await import(path)) as typeof import("winui-wasm");
     for (const s of window.effectsFixture.scenes)
       s.configure({ theme: a.ThemeMode.Light });
     for (const b of window.effectsFixture.backgrounds)

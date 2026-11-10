@@ -21,7 +21,7 @@ const traces=['chromium','msedge','webkit'].map(browser=>{
 if(traces.some(trace=>trace.visiblePagesWithNativeChrome!==0||trace.movingVisiblePages===0))throw Error('Unexpected Frame/scrollbar regression');
 const scoped=text('out/navigation-host-rust-scoped-regression.log'),fresh=text('out/navigation-scrollbars-tests-final.log');
 const passed=log=>[...log.matchAll(/test result: ok\. (\d+) passed;/g)].reduce((sum,m)=>sum+Number(m[1]),0);
-const binaries=['out/navigation-host-sdk/winui_bg.wasm','gallery/src/wasm/winui_bg.wasm',
+const binaries=['out/navigation-host-sdk/winui_bg.wasm','packages/winui-wasm/src/wasm/winui_bg.wasm',
  ...['out/navigation-host-preview/assets','gallery/dist/assets'].map(dir=>`${dir}/${readdirSync(resolve(root,dir)).find(name=>name.endsWith('.wasm'))}`)].map(fingerprint);
 if(binaries.some(binary=>binary.sha256!==binaries[0].sha256))throw Error('Installed/preview binaries do not match');
 const browsers=['regression-chromium','msedge','webkit','installed-chromium'].map(name=>result(`out/navigation-host-${name}-results.json`));

@@ -21,7 +21,7 @@ Gallery 五页包含固定官方页的全部 13 个示例位置，源码面板�
 ## 使用
 
 ```ts
-import { WinUI, NumberBoxSpinButtonPlacementMode, ContentDialogButton } from './gallery/src/index';
+import { WinUI, NumberBoxSpinButtonPlacementMode, ContentDialogButton } from 'winui-wasm';
 
 const sdk = await WinUI.create();
 const scene = sdk.scene(host);
@@ -68,6 +68,53 @@ React 同样使用直接属性，例如 `<NumberBox value={42} />`、`<ComboBox 
 - 扩展回归发现，滚动到页面下方的 TeachingTip 仍以 Scene 高度选择方向，按钮可能落到浏览器窗口外。目标定位现在使用 SDK 投影的实际窗口范围选择回退方向，允许弹出岛延伸到 Scene 上方。
 
 ## 基准与验证
+
+### ComboBox 浮层亚克力恢复（2026-11-10）
+
+按用户要求，ComboBox 浮层恢复固定 WinUI 源码模板的应用内 Acrylic 外观，
+作为相对二进制 SDK 窗口化浮层表现的明确例外。
+`ComboBoxDropDownBackground` 已保存官方 `AcrylicInAppFillColorDefaultBrush`
+浅色/深色配方；原有窗口隔离使其只采样空白弹出窗口，视觉上接近实色。
+现在 Rust 在阴影表面内另建内容表面，内容继承阴影下面的背景，
+Canvas2D 和 WebGL2 均排除自身阴影并采样当前 Scene 的实际内容。
+保留浮层圆角、选项、开合动画和主题资源，高对比度及减少透明度继续回退。
+此前采样范围只有所属 Rust Canvas，不能覆盖 Gallery 的 DOM 卡片、文字及
+其他 Canvas。这正是用户仍看不到背后内容的原因，材质权重为 1 不能作为
+真实页面背景模糊已生效的验收。
+
+现在公共 Scene 宿主自动在 ComboBox 展开时采集页面中对应浮层区域，排除
+所有浮层及采集容器，把安全的背景栅格与本地坐标交给 Rust；Rust 继续执行
+官方模糊、明度/色调混合、噪点、圆角及开合，不采用 CSS backdrop-filter。
+页面 DOM 变化、滚动、窗口尺寸和主 Canvas 内容变化会使背景失效，采集请求
+合并并限制为最多每 250 ms 一次，不逐帧克隆文档。关闭、停用或销毁 Scene
+后释放采集观察器，异步旧请求不能覆盖已关闭/重开的浮层。
+
+浏览器栅格适配采用 `html2canvas@1.4.1`（2026-11-10 从 npm 官方 registry
+核实 latest，MIT，固定版本及完整许可证已归档）。首次展开异步采集完成后
+更新背景。这是页面内容的重绘栅格，不是操作系统截图：不采集 iframe、桌面、
+无 CORS 授权的跨域图像，不承诺库不支持的 CSS、视频或未保留缓冲的独立
+WebGL Canvas。失败状态通过 `data-winui-page-backdrop=unavailable` 标明。
+
+`gallery/tests/combobox-page-backdrop.spec.ts` 在独立 Scene 外创建真实 DOM
+文字和红/蓝背景，验证浮层色彩响应、锐利分界被模糊、DOM 变色自动更新及
+关闭后释放；覆盖 Canvas2D/WebGL2、浅/深色、125% DPR。截图为
+`out/combobox-dom-acrylic-{backend}-{theme}.png`。原有独立彩色 Canvas 回归
+继续保留，不能用其替代页面采样测试。
+
+回归：`cargo test --test composed`；构建 WASM 后在 `gallery` 运行
+`npx playwright test tests/combobox-acrylic.spec.ts`，检查两后端、两主题的
+实时背景响应和减少透明度回退。
+
+本次验证：82 项相关 Rust 测试、Chrome 下 4 项两后端/两主题材质像素检查
+通过；TypeScript 类型检查、来源边界检查、发布版 WASM 与 Vite 生产构建通过。
+浏览器采用 `PW_CHANNEL=chrome`，不依赖本机缺少的 Playwright Chromium 包。
+
+实际 Gallery 宿主回归补充：此前 `GalleryControls.Surface` 对所有控件显式
+传入 `reducedTransparency=true`，使顶栏及选项 ComboBox 始终回退为实色。
+ComboBox 现移除此强制覆盖，跟随 SDK 的系统透明度策略；其他控件策略保持原样。
+独立创建彩色背景 Scene 的测试不能替代这条挂载链路。新增测试直接点击
+Gallery 的 Renderer 下拉框和 Colors 示例，确认浮层实际材质权重为 1，
+并保存 `out/combobox-gallery-acrylic.png`、`out/combobox-example-acrylic.png`。
 
 - Gallery 固定为 `7360ac322414e118eadfb0c7c2f4ecc31a218f59`；WinUI 源码固定为 `7b12709347527238494ca28cb9fed326d513e779`。47 份 C++/IDL/XAML 的来源与指纹已保存。
 - 实际 SDK 为 `Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental`，从其 generic.xaml 提取 18 个样式和 698 个资源（485 个已解析画刷）。未宣称该 SDK DLL 与固定源码 commit 严格一一对应。

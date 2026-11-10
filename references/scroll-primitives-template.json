@@ -205,10 +205,11 @@
     "Light": {
       "ScrollBarTrackFill": {
         "kind": "acrylic",
-        "tint": "#FCFCFC",
+        "tint": "#FCFCFCFF",
         "tintOpacity": 0.0,
         "luminosityOpacity": 0.85,
-        "fallback": "#F9F9F9"
+        "fallback": "#F9F9F9FF",
+        "opacity": 1.0
       },
       "ScrollBarThumbFill": {
         "kind": "solid",
@@ -259,10 +260,11 @@
     "Dark": {
       "ScrollBarTrackFill": {
         "kind": "acrylic",
-        "tint": "#2C2C2C",
+        "tint": "#2C2C2CFF",
         "tintOpacity": 0.15,
         "luminosityOpacity": 0.96,
-        "fallback": "#2C2C2C"
+        "fallback": "#2C2C2CFF",
+        "opacity": 1.0
       },
       "ScrollBarThumbFill": {
         "kind": "solid",
@@ -313,52 +315,52 @@
     "HighContrast": {
       "ScrollBarTrackFill": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "ScrollBarThumbFill": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ScrollBarThumbFillPointerOver": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ScrollBarThumbFillPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ScrollBarThumbFillDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "ScrollBarButtonArrowForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ScrollBarButtonArrowForegroundPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "ScrollBarButtonArrowForegroundDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "SliderTickBarFill": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "SliderTickBarFillDisabled": {
         "kind": "solid",
-        "color": "#808080",
+        "color": "#808080FF",
         "opacity": 1.0
       }
     }
@@ -373,6 +375,6 @@
     "intervalMilliseconds": 50,
     "source": "RepeatButton default Delay; ScrollBar repeat part Interval=50"
   },
-  "sdkSource": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\lib\\native\\Microsoft.UI\\Themes\\generic.xaml",
-  "sdkSourceSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724"
+  "sdkSource": "references/mit-xaml-generated/generic.xaml",
+  "sdkSourceSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160"
 }

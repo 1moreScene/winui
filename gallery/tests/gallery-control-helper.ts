@@ -18,13 +18,19 @@ export async function selectGalleryOption(target:Locator,option:string|{label?:s
       await page.evaluate(hash=>location.hash=hash,hash);
       await expect(page.getByRole('button',{name:'Toggle theme',exact:true})).toBeVisible();
     } else {
-      for(let i=0;i<2&&await page.locator('html').getAttribute('data-theme')!==requested;i++)await target.getByRole('button').click();
+      for(let i=0;i<2&&await page.locator('html').getAttribute('data-theme')!==requested;i++) {
+        const previous=await page.locator('html').getAttribute('data-theme');
+        await target.getByRole('button').click();
+        // Rust projects Click on its next frame. Wait for the theme update
+        // before deciding whether another click is needed.
+        await expect(page.locator('html')).not.toHaveAttribute('data-theme',previous??'');
+      }
     }
     await expect(page.locator('html')).toHaveAttribute('data-theme',requested);return;
   }
   const combo=await target.getAttribute('role')==='combobox'?target:target.getByRole('combobox');
   const label=await combo.evaluate((element,value)=>{
-    const host=element.closest('[data-gallery-control="ComboBox"]') as HTMLElement & {galleryScene?:import('../src').Scene};
+    const host=element.closest('[data-gallery-control="ComboBox"]') as HTMLElement & {galleryScene?:import('winui-wasm').Scene};
     const scene=host?.galleryScene,node=scene?.snapshot.nodes.find(node=>node.kind==='ComboBox');
     const props=node?.props as {collectionItems?:{id:string;text:string}[]}|undefined;
     const controller=(scene as unknown as {nodes:Map<number,{items?:{id:string;text:string}[]}>})?.nodes.get(node!.id);
@@ -43,6 +49,6 @@ export async function openSource(source:Locator) {
   const surface=source.locator(':scope > [data-gallery-control="Expander"]');
   const header=surface.getByRole('button').first();
   if(await header.getAttribute('aria-expanded')!=='true')await header.click();
-  await expect.poll(()=>surface.evaluate(element=>(element as HTMLElement&{galleryScene?:import('../src').Scene}).galleryScene?.snapshot.animating)).toBe(false);
+  await expect.poll(()=>surface.evaluate(element=>(element as HTMLElement&{galleryScene?:import('winui-wasm').Scene}).galleryScene?.snapshot.animating)).toBe(false);
   return header;
 }

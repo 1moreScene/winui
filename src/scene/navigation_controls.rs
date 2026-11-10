@@ -86,6 +86,7 @@ fn color(theme: Theme, key: &str) -> String {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct NavigationItem {
     pub id: String,
     pub text: String,
@@ -118,6 +119,7 @@ impl Default for NavigationItem {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct NavigationProperties {
     pub items: Arc<Vec<NavigationItem>>,
     pub number_of_pages: i32,

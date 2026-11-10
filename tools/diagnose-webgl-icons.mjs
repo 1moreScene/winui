@@ -3,7 +3,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 
 const browser = await chromium.launch({channel:'chrome'});
 const results=[];
-const expectedWasm=JSON.parse(readFileSync('out/overlay-validation/gallery/src/wasm/build-stamp.json','utf8')).sha256;
+const expectedWasm=JSON.parse(readFileSync('out/overlay-validation/packages/winui-wasm/src/wasm/build-stamp.json','utf8')).sha256;
 try {
   for(let repeat=0;repeat<10;repeat++) {
     const page=await browser.newPage({viewport:{width:1440,height:1000}});

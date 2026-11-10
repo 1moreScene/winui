@@ -1,4 +1,5 @@
-import { ItemKind, PaneDisplayMode, ThemeMode as Theme, EventKind, type NavigationItem, type NavigationViewOptions, type WinUI } from './index';
+import {NavigationViewBackButtonVisible} from "winui-wasm";
+import { ItemKind, PaneDisplayMode, ThemeMode as Theme, EventKind,NodeKind, type NavigationItem, type NavigationViewOptions, type WinUI } from 'winui-wasm';
 
 export const icons = { play: '\uE768', save: '\uE74E', refresh: '\uE72C', download: '\uE896', home: '\uE80F', account: '\uE77B', mail: '\uE715', calendar: '\uE787', library: '\uE8F1', map: '\uE707', tag: '\uE8EC', shop: '\uE719', help: '\uE897' };
 const menu = (): NavigationItem[] => [icons.play, icons.save, icons.refresh, icons.download].map((icon, i) => ({ id: `page${i + 1}`, text: `Menu Item${i + 1}`, icon }));
@@ -15,15 +16,16 @@ export const exampleNames = [
 ];
 export const galleryPaneMaterial=(theme:Theme)=>({tintColor:theme===Theme.Light?'#ffffff':'#1f1f1f',tintOpacity:0.8,fallbackColor:theme===Theme.Light?'#f2f2f2':'#1f1f1f'});
 export function exampleOptions(index: number, theme: Theme): NavigationViewOptions {
-  const options: NavigationViewOptions = { items: menu(), selectedId: 'page1', theme, isBackButtonVisible:true, expandedPaneMaterial:galleryPaneMaterial(theme),header: 'Sample Page 1', content: 'This is the content for Sample Page 1.' };
-  if (index === 1 || index === 3) { options.paneDisplayMode = PaneDisplayMode.Top; options.header = index===1?'This is Header Text':''; }
-  if(index===2)options.header='';
-  if (index === 3) {options.selectionFollowsFocus = true;options.isBackButtonVisible=false;}
+  const options: NavigationViewOptions = { items: menu(), selectedId: 'page1', theme, isBackButtonVisible:NavigationViewBackButtonVisible.Visible, expandedPaneMaterial:galleryPaneMaterial(theme),header: 'Sample Page 1', content: 'This is the content for Sample Page 1.' };
+  if (index === 1 || index === 3) { options.paneDisplayMode = PaneDisplayMode.Top; options.header = index===1?'This is Header Text':null; }
+  if(index===2)options.header=null;
+  if (index === 3) {options.selectionFollowsFocus = true;options.isBackButtonVisible=NavigationViewBackButtonVisible.Collapsed;}
   if (index === 4) {
     options.items = [category('page1', 'Category 1', icons.home), category('page2', 'Category 2', '\uE765'),
       { id: 'separator', text: '', kind: ItemKind.Separator }, { id: 'header', text: 'More categories', kind: ItemKind.Header },
       category('page3', 'Category 3', icons.library), category('page4', 'Category 4', icons.mail)];
-    options.paneDisplayMode = PaneDisplayMode.Left;
+    options.items=options.items.map(item=>item.kind?item:{...item,tooltip:`This is ${item.text.toLowerCase()}`});
+    options.paneDisplayMode = PaneDisplayMode.Auto;
   }
   if (index === 5) {
     options.items = [category('page1', 'Browse', icons.library), category('page2', 'Track an Order', icons.map), category('page3', 'Order History', icons.tag)];
@@ -40,17 +42,22 @@ export function exampleOptions(index: number, theme: Theme): NavigationViewOptio
   if (index === 7) {
     options.items = [menu()[0], { id: 'header', text: 'Actions', kind: ItemKind.Header }, menu()[1], menu()[2]];
     options.paneDisplayMode = PaneDisplayMode.Left; options.expandedModeThresholdWidth = 500;
-    options.isBackButtonVisible = true; options.isBackEnabled = false;
+    options.isBackButtonVisible = NavigationViewBackButtonVisible.Visible; options.isBackEnabled = false; options.selectedId=null; options.header='Header';
   }
   return options;
 }
-/** The Gallery displays this actual module as its executable TypeScript source. */
+/** Standalone SDK equivalent of the Gallery composition: real Rust Frame/Page. */
 export function createExample(sdk: WinUI, host: HTMLElement, index: number, theme: Theme) {
-  const view = sdk.navigationView(host, exampleOptions(index, theme));
-  const output = { lastEvent: 'Ready', count: 0 };
-  view.on(EventKind.SelectionChanged, e => {
-    const title = e.itemId === '$settings' ? 'Settings' : `Sample Page ${e.itemId?.replace('page', '') ?? ''}`;
-    view.batch([{ header: title }, { content: `This is the content for ${title}.` }]);
+  const {content:_,contentNode:__,...options}=exampleOptions(index,theme);
+  const view=sdk.navigationView(host,options);
+  const pages=[...Array.from({length:7},(_,i)=>`SamplePage${i+1}`),'SampleSettingsPage'].map(key=>({key,contentResource:`gallery/${key}`}));
+  const frame=view.content.sceneFrame({pages});
+  if(index!==7)frame.navigate('SamplePage1');
+  const output={lastEvent:'Ready',count:0};
+  view.on(EventKind.SelectionChanged,e=>{
+    const page=e.itemId==='$settings'?'SampleSettingsPage':`SamplePage${index===4?1:index===1&&e.itemId==='page4'?3:index===5&&e.itemId==='page6'?5:Number(e.itemId?.replace('page',''))||1}`;
+    if([0,4,6].includes(index)&&e.itemId!=='$settings')view.update({header:`Sample Page ${Number(e.itemId?.replace('page',''))||1}`});
+    frame.navigate(page,{transition:e.recommendedNavigationTransition});output.lastEvent=e.kind;output.count++;
   });
-  return { view, output };
+  return {view,frame,output};
 }

@@ -13,6 +13,8 @@
 
 首页、目录、占位与全部已实现示例共用一个持续挂载的 Gallery 外壳。应用侧栏直接使用现有 Rust NavigationView，早期 React details/链接导航已经移除；Gallery 只提供分类数据与路由，展开、选择、滚动和自适应由原控件负责。DOM 内容位置来自 Rust 的布局快照。设置与示例的 Theme 选择使用同一份主题状态；搜索期间保留已挂载示例与其内部状态。首页资源卡片使用普通主题背景 fallback，未宣称复现 Windows Composition Acrylic、Mica 或原生动画。后续控件页工作与当前验收见 [Gallery 示例页](gallery-sample-pages.md)。
 
+首页资源与最近访问行对应官方 `Controls/HorizontalScrollContainer.xaml(.cs)`，实际为隐藏双轴滚动条、启用横向/禁用纵向滚动的 ScrollViewer；左右按钮采用 FlipView 资源样式，并非 FlipView 的逐项选择模型。两行用 `data-winui-scrollbars="hidden"` 声明隐藏 chrome，仍由全局适配器绑定 Rust ScrollViewer。竖向鼠标滚轮在仅横向可滚动时转为横向滚动，横向触控板输入保持原方向，端点继续接收输入；无横向溢出时让外层页面接收滚轮。箭头按当前 viewport 宽度调用租约的 `changeView`，动画由 Rust 推进，支持减少动画设置。浏览器保留卡片链接、触摸和焦点滚入可见区。
+
 ## 来源与复现
 
 `node tools/extract-gallery-home.mjs` 从本机 `../WinUI-Gallery` 提取目录与 115 个图片资产，校验固定提交；也可传参考仓库绝对路径。来源文件和资产 SHA-256 记录在 `references/home-source.json`，目录在 `gallery/src/official-home.json`，图片及上游 MIT 许可证位于 `gallery/public/official/home/`。生成文件已随项目保存，日常开发无需再次提取。

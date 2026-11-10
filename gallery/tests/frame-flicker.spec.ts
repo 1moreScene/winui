@@ -1,7 +1,7 @@
 import {expect,test} from '@playwright/test';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {PNG} from 'pngjs';
-import {RendererBackend,NavigationTransition} from '../src/enums';
+import {RendererBackend,NavigationTransition} from 'winui-wasm';
 declare global{interface Window{flickerTrace:{rows:{time:number;animating:boolean;current:string|null;pages:unknown[];leaks:unknown[]}[];stop:()=>void};}}
 test('cached pages never become visible outside the Rust compositor frame',async({page})=>{
  await page.goto('/#home');await expect.poll(()=>page.evaluate(()=>!!window.gallery?.frame)).toBe(true);

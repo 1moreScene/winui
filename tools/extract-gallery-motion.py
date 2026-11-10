@@ -63,6 +63,28 @@ defaults=json.loads((ROOT/'references/motion-native-defaults.json').read_text(en
 transition={'curve':[float(v) for v in curve.groups()], 'duration':defaults['scalarMs'], 'vectorDuration':defaults['vectorMs']}
 result={'galleryCommit':'7360ac322414e118eadfb0c7c2f4ecc31a218f59','acrylic':extract_acrylic(),'easing':easing_samples, 'propertyTransition':transition,
     'catalog':[], 'sources':[{'path':str(p.relative_to(ROOT)).replace('\\','/'),'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in SOURCE.rglob('*') if p.is_file()]}
+data_source=(SOURCE/'ConnectedAnimation/ConnectedAnimationPage.xaml.cs').read_text(encoding='utf-8-sig')
+descriptions=re.findall(r'@"([^"]+)"',data_source[data_source.index('string[] dummyTexts'):data_source.index('Random rand')])
+result['connectedItems']=[{'id':str(i),'text':f'Item {i+1}', 'image':f'/official/reading/LandscapeImage{i+1}.jpg',
+    'views':str(100+((i+1)*137)%899),'likes':str(10+((i+1)*7)%89),'description':descriptions[i%len(descriptions)]} for i in range(13)]
+result['connectedDataNote']='Original titles, images and descriptions; Views/Likes frozen within upstream Random ranges for repeatable comparisons.'
+from sdk_resource_reader import find as sdk_find, sdk as sdk_path
+def text_style(key):
+    node=sdk_find('Light',key)
+    parent=re.search(r'\{StaticResource (.+)\}',node.get('BasedOn',''))
+    values=text_style(parent[1]) if parent else {}
+    for setter in node:
+        name,value=setter.get('Property'),setter.get('Value')
+        resource=re.fullmatch(r'\{StaticResource (.+)\}',value or '')
+        if resource:value=(sdk_find('Light',resource[1]).text or '').strip()
+        if name=='FontSize':values['fontSize']=float(value)
+        elif name=='FontWeight':values['fontWeight']={'Normal':400,'SemiBold':600,'Light':300,'Bold':700}[value]
+        elif name=='TextWrapping':values['wrap']=value!='NoWrap'
+        elif name=='TextTrimming':values['trimming']=value
+        elif name=='OpticalMarginAlignment':values['opticalMarginAlignment']=value
+    return values
+result['textStyles']={key:text_style(key) for key in ['SubtitleTextBlockStyle','SubheaderTextBlockStyle','TitleTextBlockStyle','BodyTextBlockStyle','CaptionTextBlockStyle']}
+result['textStyleSdkSha256']=hashlib.sha256(sdk_path.read_bytes()).hexdigest()
 for directory in SOURCE.iterdir():
     if directory.is_dir():
         if directory.name in ['ConnectedAnimation','ThemeTransition','XamlCompInterop']:
@@ -73,5 +95,5 @@ for directory in SOURCE.iterdir():
         result['catalog'].append({'name':directory.name,'samples':[snippet(p) for p in paths]})
 target=ROOT/'gallery/src/official-motion.json'
 text=json.dumps(result,indent=2,ensure_ascii=False)+'\n'
-if not target.exists() or target.read_text(encoding='utf-8')!=text: target.write_text(text,encoding='utf-8')
+if not target.exists() or target.read_text(encoding='utf-8')!=text: target.write_text(text,encoding='utf-8',newline='\n')
 print(f'Extracted {len(result["acrylic"])} Acrylic and {len(easing_samples)} easing examples; {len(result["sources"])} pinned sources.')

@@ -1,5 +1,5 @@
 import {expect,test} from '@playwright/test';
-import {NavigationCacheMode as C,NavigationTransition as T} from '../src/enums';
+import {NavigationCacheMode as C,NavigationTransition as T} from 'winui-wasm';
 
 test('Frame home navigation retains page instance, scroll and browser history',async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));

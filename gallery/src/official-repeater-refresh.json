@@ -257,43 +257,43 @@
         "SystemChromeLowColor": "#F2F2F2FF",
         "SystemControlBackgroundChromeMediumBrush": "#E6E6E6FF",
         "SystemControlBackgroundBaseLowBrush": "#00000033",
+        "SystemControlBackgroundAccentBrush": "#0078D4FF",
         "SystemControlForegroundChromeWhiteBrush": "#FFFFFFFF",
         "SystemControlForegroundAltHighBrush": "#FFFFFFFF",
         "TextFillColorInverseBrush": "#FFFFFFFF",
         "SystemControlForegroundBaseHighBrush": "#000000FF",
         "ControlFillColorDefaultBrush": "#FFFFFFB3",
-        "ControlStrokeColorDefaultBrush": "#0000000F",
-        "SystemControlBackgroundAccentBrush": "#0078D4FF"
+        "ControlStrokeColorDefaultBrush": "#0000000F"
       },
       "Dark": {
         "SystemChromeLowColor": "#171717FF",
         "SystemControlBackgroundChromeMediumBrush": "#1F1F1FFF",
         "SystemControlBackgroundBaseLowBrush": "#FFFFFF33",
+        "SystemControlBackgroundAccentBrush": "#0078D4FF",
         "SystemControlForegroundChromeWhiteBrush": "#FFFFFFFF",
         "SystemControlForegroundAltHighBrush": "#000000FF",
         "TextFillColorInverseBrush": "#000000E4",
         "SystemControlForegroundBaseHighBrush": "#FFFFFFFF",
         "ControlFillColorDefaultBrush": "#FFFFFF0F",
-        "ControlStrokeColorDefaultBrush": "#FFFFFF12",
-        "SystemControlBackgroundAccentBrush": "#0078D4FF"
+        "ControlStrokeColorDefaultBrush": "#FFFFFF12"
       },
       "HighContrast": {
         "SystemChromeLowColor": "#1F1F1FFF",
-        "SystemControlBackgroundChromeMediumBrush": "#000000",
-        "SystemControlBackgroundBaseLowBrush": "#000000",
-        "SystemControlBackgroundAccentBrush": "#000000",
-        "SystemControlForegroundChromeWhiteBrush": "#ffffff",
-        "SystemControlForegroundAltHighBrush": "#ffffff",
-        "TextFillColorInverseBrush": "#ffffff",
-        "TextControlBorderBrush": "#ffffff",
-        "SystemControlForegroundBaseHighBrush": "#ffffff",
-        "ControlFillColorDefaultBrush": "#000000",
-        "ControlStrokeColorDefaultBrush": "#ffffff"
+        "SystemControlBackgroundChromeMediumBrush": "#000000FF",
+        "SystemControlBackgroundBaseLowBrush": "#000000FF",
+        "SystemControlBackgroundAccentBrush": "#000000FF",
+        "SystemControlForegroundChromeWhiteBrush": "#FFFFFFFF",
+        "SystemControlForegroundAltHighBrush": "#FFFFFFFF",
+        "TextFillColorInverseBrush": "#FFFFFFFF",
+        "TextControlBorderBrush": "#FFFFFFFF",
+        "SystemControlForegroundBaseHighBrush": "#FFFFFFFF",
+        "ControlFillColorDefaultBrush": "#000000FF",
+        "ControlStrokeColorDefaultBrush": "#FFFFFFFF"
       }
     },
     "sdkResources": {
-      "path": "C:\\Users\\11156\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.3.10-experimental\\lib\\native\\Microsoft.UI\\Themes\\generic.xaml",
-      "sha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724"
+      "path": "references/mit-xaml-generated/generic.xaml",
+      "sha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160"
     }
   }
 }

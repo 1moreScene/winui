@@ -1,6 +1,6 @@
 {
-  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
-  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "sdk": "microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779",
+  "sdkSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
   "styles": {
     "CommandBarFlyoutAppBarButtonStyleBase": {
       "Background": "{ThemeResource CommandBarFlyoutAppBarButtonBackground}",
@@ -69,26 +69,6 @@
       "CornerRadius": "{ThemeResource ControlCornerRadius}"
     },
     "CommandBarFlyoutCommandBar": {},
-    "MenuBar": {},
-    "DefaultMenuBarStyle": {
-      "Background": "{ThemeResource MenuBarBackground}",
-      "IsTabStop": "False",
-      "MinHeight": "{StaticResource MenuBarHeight}",
-      "TabNavigation": "Once"
-    },
-    "MenuBarItem": {
-      "Foreground": "{ThemeResource MenuBarItemForeground}",
-      "Background": "{ThemeResource MenuBarItemBackground}",
-      "BorderThickness": "{ThemeResource MenuBarItemBorderThickness}",
-      "BorderBrush": "{ThemeResource MenuBarItemBorderBrush}",
-      "Margin": "{ThemeResource MenuBarItemMargin}",
-      "CornerRadius": "{ThemeResource ControlCornerRadius}",
-      "Title": "Item",
-      "IsTabStop": "True",
-      "ExitDisplayModeOnAccessKeyInvoked": "False",
-      "UseSystemFocusVisuals": "True",
-      "FocusVisualMargin": "-3"
-    },
     "DefaultCommandBarFlyoutCommandBarStyle": {
       "SystemBackdrop": "{StaticResource CommandBarFlyoutSystemBackdrop}",
       "Background": "{ThemeResource CommandBarFlyoutBackground}",
@@ -108,6 +88,26 @@
       "CommandBarOverflowPresenterStyle": "{StaticResource CommandBarFlyoutCommandBarOverflowPresenterStyle}",
       "CornerRadius": "{ThemeResource OverlayCornerRadius}",
       "primitives:CommandBarFlyoutCommandBarAutomationProperties.ControlType": "Menu"
+    },
+    "MenuBar": {},
+    "DefaultMenuBarStyle": {
+      "Background": "{ThemeResource MenuBarBackground}",
+      "IsTabStop": "False",
+      "MinHeight": "{StaticResource MenuBarHeight}",
+      "TabNavigation": "Once"
+    },
+    "MenuBarItem": {
+      "Foreground": "{ThemeResource MenuBarItemForeground}",
+      "Background": "{ThemeResource MenuBarItemBackground}",
+      "BorderThickness": "{ThemeResource MenuBarItemBorderThickness}",
+      "BorderBrush": "{ThemeResource MenuBarItemBorderBrush}",
+      "Margin": "{ThemeResource MenuBarItemMargin}",
+      "CornerRadius": "{ThemeResource ControlCornerRadius}",
+      "Title": "Item",
+      "IsTabStop": "True",
+      "ExitDisplayModeOnAccessKeyInvoked": "False",
+      "UseSystemFocusVisuals": "True",
+      "FocusVisualMargin": "-3"
     }
   },
   "metrics": {
@@ -196,7 +196,7 @@
       },
       "TextOnAccentFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#FFFFFF",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       }
     },
@@ -248,7 +248,7 @@
       },
       "MenuBarItemForeground": {
         "kind": "solid",
-        "color": "#FFFFFF",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "CommandBarFlyoutBackground": {
@@ -263,7 +263,7 @@
       },
       "CommandBarFlyoutForeground": {
         "kind": "solid",
-        "color": "#FFFFFF",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "CardBackgroundFillColorSecondaryBrush": {
@@ -278,89 +278,89 @@
       },
       "TextOnAccentFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       }
     },
     "HighContrast": {
       "MenuBarBackground": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "MenuBarItemBackground": {
         "kind": "solid",
-        "color": "#00000000",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "MenuBarItemBackgroundPointerOver": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "MenuBarItemBackgroundPressed": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "MenuBarItemBackgroundSelected": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "MenuBarItemBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "MenuBarItemBorderBrushPointerOver": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#FFFF00FF",
         "opacity": 1.0
       },
       "MenuBarItemBorderBrushPressed": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "MenuBarItemBorderBrushSelected": {
         "kind": "solid",
-        "color": "#ffff00",
+        "color": "#808080FF",
         "opacity": 1.0
       },
       "MenuBarItemForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "CommandBarFlyoutBackground": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "CommandBarFlyoutBorderBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFF00",
         "opacity": 1.0
       },
       "CommandBarFlyoutForeground": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "CardBackgroundFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "CardStrokeColorDefaultBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       },
       "TextOnAccentFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#ffffff",
+        "color": "#FFFFFFFF",
         "opacity": 1.0
       }
     }
@@ -421,7 +421,7 @@
   },
   "flyoutGeometry": {
     "source": "references/menu-layout-native.json",
-    "sha256": "5271901a53ba16031a41a2ffe828d7c87b02c23c602913ab6ee93b9a9411fc6c",
+    "sha256": "0d2846d53131732797eca36deff41cd27c0bc58485439e3f9ddfe1e2d4754470",
     "primaryWidth": 60,
     "rowHeight": 60,
     "moreWidth": 44,

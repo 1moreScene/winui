@@ -9,12 +9,12 @@ const hash=path=>createHash('sha256').update(read(path)).digest('hex');
 const browser=json('out/motion-browser-results.json');
 if(browser.stats.unexpected||browser.stats.flaky||browser.stats.expected!==8)throw new Error('Motion browser run must pass all eight tests without retries');
 const tested=json('out/motion-tested-wasm.json');
-if(tested.sha256!==hash('gallery/src/wasm/winui_bg.wasm'))throw new Error('The current WASM differs from the browser-tested artifact');
+if(tested.sha256!==hash('packages/winui-wasm/src/wasm/winui_bg.wasm'))throw new Error('The current WASM differs from the browser-tested artifact');
 const rust=read('out/motion-rust-regression.log').toString();
 if(/test result: FAILED|error\[/.test(rust))throw new Error('Rust regression log contains failures');
 const suites=[...rust.matchAll(/test result: ok\. (\d+) passed; (\d+) failed/g)];
 if(suites.length<30)throw new Error('Full Rust regression log is incomplete');
-const inputs=['src/scene/motion_effects.rs','src/scene/motion.rs','gallery/src/motion.ts','gallery/src/MotionPages.tsx','references/gallery-motion-native.json','references/motion-resources.json','references/motion-sources.json'];
+const inputs=['src/scene/motion_effects.rs','src/scene/motion.rs','packages/winui-wasm/src/motion.ts','gallery/src/MotionPages.tsx','references/gallery-motion-native.json','references/motion-resources.json','references/motion-sources.json'];
 const lint=read('out/motion-clippy.log').toString();
 const lintPassed=!/^error:/m.test(lint)&&!/could not compile/.test(lint);
 const result={

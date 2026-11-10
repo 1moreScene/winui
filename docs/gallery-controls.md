@@ -47,3 +47,30 @@ npx playwright test -c playwright.gallery-controls-regression.config.ts
 该记录验证实现来源和浏览器行为，不代表同条件原生发行版窗口的逐像素或 Composition 逐帧验收。
 
 后续搜索框、卡片按钮、图标命中区与 SDK 场景默认底色修复见 [Gallery 宿主样式与透明背景](gallery-visual-consistency.md)。
+
+## 2026-11-09：导航遮罩归属 Rust SDK
+
+首页与 NavigationView + Frame 示例不再创建 DOM 遮罩，也不再通过页面 CSS 裁掉 Rust 的 `$dismiss`。调用方仅给现有 `NavigationView` 设置 `hasExternalContent`：Rust 保留页面内容透明，输出 `hostClip`、`lightDismiss` 和原有交互部件。SDK 浏览器适配仅投影矩形与输入；页面布局继续读取 Rust 的 `content`。移除了 React 的遮罩显示条件、`#0003`、遮罩 pointer handler 及页面级 Esc 关闭处理。
+
+`lightDismissOverlayMode` 使用已有具名枚举。固定 `SplitView_themeresources.xaml` 的 `LightDismissLayer` 默认透明；桌面 `Auto` / `Off` 保留透明的关闭区域，`On` 使用匹配 SDK 的 `SplitViewLightDismissOverlayBackground`，不再沿用前端黑色常量。遮罩跟随 Rust 的 350/120 ms pane 时间线、减少动画、反向和关闭取消。原有 `$dismiss` 命中与 `PaneClosing` 握手继续负责关闭。动画结束后释放遮罩区域；内容恢复直接接收点击。高对比度面板使用已有背景回退。外部 DOM 不能被 Canvas 采样时，Rust 强制使用材质 fallback。
+
+来源检查现在覆盖全部 NodeKind、React 适配函数及递归前端文件：校验官方来源、Rust 运行时代码引用和 React 到同一 SDK 的调用链，拒绝 HTML/ARIA 替代控件、DOM 激活命中区域以及 React 中的绘制、动画、输入捕获。基础 SDK 的依赖图保持无 React。`WrapPanel` 明确记录为固定 Gallery 的 CommunityToolkit 控件，命令和 primitives 也使用真实命名空间。`--check` 不改写来源记录，常规执行刷新 `references/control-origins.json`。检查已接入 `typecheck` 与 WASM 构建，新增控制类型或 React 导出必须重新审查。
+
+```powershell
+node tools/check-control-origins.mjs
+node --test tools/control-implementation-audit.test.mjs
+cargo test --locked --test navigation_external_content --test navigation --test navigation_motion --test navigation_scrollbars --test frame --test frame_presentation --test scene
+node tools/prepare-navigation-external-content-validation.mjs
+cd gallery
+npm run typecheck
+npm run declarations
+npx playwright test -c playwright.navigation-external-content.config.ts
+```
+
+独立构建和浏览器结果位于 `out/navigation-external-content-*`。此检查约束实现分层，不以源码中出现 Rust 名称、导出齐全或静态检查通过证明原生完整度；运行时回归和代码审查仍需继续执行。
+
+全页审计同时发现 Connected Animation 调用的 `SystemAccentColor` 已在匹配 SDK 的 motion 资源合同中提取，却未注册进共享 Rust 资源表；现仅补入缺失项，不覆盖已有主题键。既有源码滚动检查改为在每次主题切换后解析当前活动页的 Expander，并等待异步源码展示完成；浮层挂载边界则按实际物理像素比较，覆盖 DPR 1.25 的半像素锚点。
+
+最终记录：[导航外部内容与遮罩验证](../references/validation/navigation-external-content.json)。Rust 全量 427 项通过；来源检查覆盖 110 个运行时节点、113 个 React 函数导出和 69 个前端文件，3 项反例检查通过。开发环境导航/挂载矩阵经受影响项复跑后为 51 项通过；最终生产包另有 14 项通过，包含三种主题、DPR 1 / 1.25 / 2、关闭取消、Esc、样式及卸载恢复、源码双轴滚动和 85 个已实现入口的独立来源审计。类型检查、声明生成与生产构建通过。各轮报告、修正过的旧断言、产物范围与源文件指纹均在记录中单列。
+
+最终工作区和独立生产包使用同一 WASM：`034f087997f09eacdc06f8c893168c10dc6e91327a468e1db275f08ac07236fc`。透明 Auto / Off 层仅保留 Rust 命中范围，不创建无用的离屏绘制层。

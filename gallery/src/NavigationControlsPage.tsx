@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import {useEffect,useRef,useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
-import {SceneView,FlipView,PipsPager,BreadcrumbBar,TreeView,TabView,Grid,StackPanel,Border,Image,TextBlock,Button,ScrollViewer} from './react';
-import {ThemeMode,RendererBackend,Orientation,HorizontalAlignment,VerticalAlignment,GridUnit,ImageStretch,PipsPagerButtonVisibility,PipsPagerWrapMode,TreeViewSelectionMode,TabViewWidthMode,TabViewCloseButtonOverlayMode,type Scene,type NavigationControl,type TabView as TabController,type TreeItem,type TabItem} from './index';
+import {SceneView,FlipView,PipsPager,BreadcrumbBar,TreeView,TabView,Grid,StackPanel,Border,Image,TextBlock,Button,ScrollViewer} from 'winui-wasm/react';
+import {ThemeMode,RendererBackend,Orientation,HorizontalAlignment,VerticalAlignment,GridUnit,ImageStretch,PipsPagerButtonVisibility,PipsPagerWrapMode,TreeViewSelectionMode,TabViewWidthMode,TabViewCloseButtonOverlayMode,type Scene,type NavigationControl,type TabViewController as TabController,type TreeItem,type TabItem} from 'winui-wasm';
 import official from './official-navigation-controls.json';
 import data from './navigation-controls-data.json';
 import source from './NavigationControlsPage.tsx?raw';
@@ -13,7 +15,7 @@ declare global {interface Window {navigationScenes:Record<string,Scene>;navigati
 function remember(id:string,s:Scene){window.navigationScenes??={};window.navigationScenes[id]=s;}
 function control(id:string,n:NavigationControl<any,any>){window.navigationControls??={};window.navigationControls[id]=n;}
 function Example({id,kind,index,children,options,title}:{id:string;kind:Kind;index:number;children:ReactNode;options?:ReactNode;title?:string}){
- const[native,setNative]=useState(false);const sample=official.controls[kind].samples[index];return <section className="example basic-example" id={id}><h2>{title??sample.title}</h2><div className="example-card"><div className={`basic-live ${options?'with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><pre><code>{native?sample.xaml:extractSampleSource(source,id.startsWith("tab-")&&id!=="tab-9"?"tab-0":id)}</code></pre></GalleryExpander></div></section>;
+ const[native,setNative]=useState(false);const sample=official.controls[kind].samples[index];return <section className="example basic-example" id={id}><h2><LocalizedText>{title??sample.title}</LocalizedText></h2><div className="example-card"><div className={`basic-live ${options?'with-options':''}`}><div className="basic-preview">{children}</div>{options&&<div className="options">{options}</div>}</div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><SourceCode language={native ? 'xaml' : 'tsx'}>{native?sample.xaml:extractSampleSource(source,id.startsWith("tab-")&&id!=="tab-9"?"tab-0":id)}</SourceCode></GalleryExpander></div></section>;
 }
 const images=['cliff','grapes','rainier','sunset','valley'].map(name=>({id:name,text:name[0].toUpperCase()+name.slice(1),imageSource:`/official/${name}.jpg`}));
 const landscape=Array.from({length:8},(_,i)=>({id:`landscape-${i}`,text:`Landscape ${i+1}`,imageSource:`/official/LandscapeImage${i+1}.jpg`}));
@@ -38,14 +40,14 @@ function TabSample({index,shared}:{index:number;shared:{theme:ThemeMode;backend:
  {/* @sample:tab-9:start */}
  <Button text="Open Windowing Sample" onClick={()=>window.open(`${location.pathname}#tab-view-window`,'_blank','width=900,height=600')}/>
  {/* @sample:tab-9:end */}
- </SceneView><p>The web host opens a separate browser window for this sample.</p></Example>;
+ </SceneView><p><LocalizedText>The web host opens a separate browser window for this sample.</LocalizedText></p></Example>;
  return <Example id={id} kind="TabView" index={index} options={index===5?<label>TabWidthBehavior<GalleryComboBox value={widthMode} onValueChanged={e=>setWidthMode(e as TabViewWidthMode)}>{Object.values(TabViewWidthMode).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label>:index===6?<label>TabViewItem CloseButtonOverlayMode<GalleryComboBox value={closeMode} onValueChanged={e=>setCloseMode(e as TabViewCloseButtonOverlayMode)}>{Object.values(TabViewCloseButtonOverlayMode).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label>:undefined}>
  <div onKeyDownCapture={e=>{if(index!==3||!(e.ctrlKey||e.metaKey))return;const key=e.key.toLowerCase();if(key==='t'){e.preventDefault();e.stopPropagation();add();}else if(key==='w'){e.preventDefault();e.stopPropagation();const item=node.current?.selectedItem;if(item)setItems(old=>old.filter(i=>i.id!==item.id));}else if(/^[1-9]$/.test(key)){e.preventDefault();e.stopPropagation();node.current?.select(key==='9'?items.length-1:Math.min(Number(key)-1,items.length-1));}}}>
  <SceneView {...shared} autoHeight onReady={s=>remember(id,s)}>
  {/* @sample:tab-0:start */}
  <TabView items={index===7?colorItems:items} height={index===7?40:475} isAddTabButtonVisible={index!==5&&index!==6&&index!==7} horizontalAlignment={HorizontalAlignment.Stretch} accessibleName={`Tabs ${index+1}`} tabWidthMode={widthMode} closeButtonOverlayMode={closeMode} canReorderTabs onReady={n=>{node.current=n;control(id,n);}} onAddTabButtonClick={add} onTabCloseRequested={e=>setItems(old=>old.filter(item=>item.id!==e.item?.id))} onItemsChanged={e=>setItems([...e.items])} onTabDroppedOutside={e=>setMessage(`Dropped outside: ${e.item?.text}`)} tabStripBackground={index===8?data.accentStrip[shared.theme]:undefined} tabStripHeaderWidth={index===4?185:0} tabStripFooterWidth={index===4?185:0} tabStripHeader={index===4?<TextBlock text="TabStripHeader Content" margin={[8,6,8,6]} verticalAlignment={VerticalAlignment.Center} fontWeight={600}/>:undefined} tabStripFooter={index===4?<TextBlock text="TabStripFooter Content" margin={[6,6,6,6]} verticalAlignment={VerticalAlignment.Center} horizontalAlignment={HorizontalAlignment.Right} fontWeight={600}/>:undefined} renderContent={index===7?undefined:(_,context)=><TabContent page={context.index%3}/>}/>
  {/* @sample:tab-0:end */}
- </SceneView></div>{index===3&&<p>Ctrl+T: add · Ctrl+W / Ctrl+F4: close · Ctrl+Tab: next · Ctrl+1…9: select</p>}{message&&<output>{message}</output>}
+ </SceneView></div>{index===3&&<p><LocalizedText>Ctrl+T: add · Ctrl+W / Ctrl+F4: close · Ctrl+Tab: next · Ctrl+1…9: select</LocalizedText></p>}{message&&<output>{message}</output>}
  </Example>;
 }
 export function NavigationControlsPage({kind,windowed=false}:{kind:Kind;windowed?:boolean}){
@@ -109,7 +111,7 @@ export function NavigationControlsPage({kind,windowed=false}:{kind:Kind;windowed
  </SceneView></Example>
  <Example id="tree-template" kind={kind} index={3}><SceneView {...shared} autoHeight onReady={s=>remember('tree-template',s)}>
  {/* @sample:tree-template:start */}
- <Border width={347} height={200} borderBrush={{resource:"TextControlBorderBrush"}} borderThickness={[1,1,1,1]}><TreeView items={boundTree} minWidth={345} maxHeight={400} margin={[0,12,0,0]} horizontalAlignment={HorizontalAlignment.Center} accessibleName="File templates" onReady={n=>control('tree-template',n)} renderItem={item=><StackPanel orientation={Orientation.Horizontal} spacing={10}>{item.children?<Image source="/official/folder.png" width={20} height={20} stretch={ImageStretch.Uniform}/>:<TextBlock text="\uE8A5" fontFamily="Segoe Fluent Icons" width={20} height={20}/>}<TextBlock text={item.text} verticalAlignment={VerticalAlignment.Center}/></StackPanel>}/></Border>
+ <Border width={347} height={200} borderBrush={{resource:"TextControlBorderBrush"}} borderThickness={[1,1,1,1]}><TreeView items={boundTree} minWidth={345} maxHeight={400} margin={[0,12,0,0]} horizontalAlignment={HorizontalAlignment.Center} accessibleName="File templates" onReady={n=>control('tree-template',n)} renderItem={item=><StackPanel orientation={Orientation.Horizontal} spacing={10}>{item.children?<Image source="/official/folder.png" width={20} height={20} stretch={ImageStretch.Uniform}/>:<TextBlock text={"\uE8A5"} fontFamily="Segoe Fluent Icons" width={20} height={20}/>}<TextBlock text={item.text} verticalAlignment={VerticalAlignment.Center}/></StackPanel>}/></Border>
  {/* @sample:tree-template:end */}
  </SceneView></Example></>}
  {kind==='TabView'&&official.controls.TabView.samples.map((_,i)=><TabSample key={i} index={i} shared={shared}/>)}

@@ -1,8 +1,6 @@
 {
   "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
-  "sdk": "Microsoft.WindowsAppSDK.WinUI 2.3.10-experimental",
-  "source": "NavigationView_themeresources.xaml aliases plus native SDK ThemeResource probe",
-  "highContrast": "Explicit host fallback; custom OS colors not captured",
+  "source": "Verified MIT NavigationView aliases and generated MIT brushes; project browser high-contrast roles",
   "aliases": {
     "Light": {
       "NavigationViewDefaultPaneBackground": "AcrylicInAppFillColorDefaultBrush",
@@ -207,182 +205,202 @@
       "TextFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SubtleFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#00000009",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SubtleFillColorTertiaryBrush": {
         "kind": "solid",
         "color": "#00000006",
-        "opacity": 1
+        "opacity": 1.0
       },
       "DividerStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "CardStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "LayerFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFF80",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AcrylicInAppFillColorDefaultBrush": {
         "kind": "acrylic",
-        "tint": "#FCFCFC",
-        "tintOpacity": 0,
+        "tint": "#FCFCFCFF",
+        "tintOpacity": 0.0,
         "luminosityOpacity": 0.85,
-        "fallback": "#F9F9F9"
+        "fallback": "#F9F9F9FF",
+        "opacity": 1.0
       },
       "AccentFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#0067C0FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SubtleFillColorTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "SystemControlTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "SolidBackgroundFillColorTransparent": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#F3F3F300",
+        "opacity": 1.0
       }
     },
     "Dark": {
       "TextFillColorPrimaryBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "TextFillColorDisabledBrush": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SubtleFillColorSecondaryBrush": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SubtleFillColorTertiaryBrush": {
         "kind": "solid",
         "color": "#FFFFFF0A",
-        "opacity": 1
+        "opacity": 1.0
       },
       "DividerStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#FFFFFF15",
-        "opacity": 1
+        "opacity": 1.0
       },
       "CardStrokeColorDefaultBrush": {
         "kind": "solid",
         "color": "#00000019",
-        "opacity": 1
+        "opacity": 1.0
       },
       "LayerFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#3A3A3A4C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "AcrylicInAppFillColorDefaultBrush": {
         "kind": "acrylic",
-        "tint": "#2C2C2C",
-        "tintOpacity": 0.15000000596046448,
+        "tint": "#2C2C2CFF",
+        "tintOpacity": 0.15,
         "luminosityOpacity": 0.96,
-        "fallback": "#2C2C2C"
+        "fallback": "#2C2C2CFF",
+        "opacity": 1.0
       },
       "AccentFillColorDefaultBrush": {
         "kind": "solid",
         "color": "#4CC2FFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "SubtleFillColorTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "SystemControlTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "SolidBackgroundFillColorTransparent": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#20202000",
+        "opacity": 1.0
       }
     },
     "HighContrast": {
       "TextFillColorPrimaryBrush": {
         "kind": "solid",
-        "color": "#ffffffff"
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
       },
       "TextFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#ffffffff"
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
       },
       "TextFillColorDisabledBrush": {
         "kind": "solid",
-        "color": "#7fff00ff"
+        "color": "#808080FF",
+        "opacity": 1.0
       },
       "SubtleFillColorSecondaryBrush": {
         "kind": "solid",
-        "color": "#1aebffff"
+        "color": "#000000FF",
+        "opacity": 1.0
       },
       "SubtleFillColorTertiaryBrush": {
         "kind": "solid",
-        "color": "#ffff00ff"
+        "color": "#000000FF",
+        "opacity": 1.0
       },
       "DividerStrokeColorDefaultBrush": {
         "kind": "solid",
-        "color": "#ffffffff"
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
       },
       "CardStrokeColorDefaultBrush": {
         "kind": "solid",
-        "color": "#ffffffff"
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
       },
       "LayerFillColorDefaultBrush": {
         "kind": "solid",
-        "color": "#000000ff"
+        "color": "#000000FF",
+        "opacity": 1.0
       },
       "AccentFillColorDefaultBrush": {
         "kind": "solid",
-        "color": "#ffff00ff"
+        "color": "#000000FF",
+        "opacity": 1.0
       },
       "SubtleFillColorTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "SystemControlTransparentBrush": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "SolidBackgroundFillColorTransparent": {
         "kind": "solid",
-        "color": "#00000000"
+        "color": "#FF0000FF",
+        "opacity": 1.0
       }
     }
   }

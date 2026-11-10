@@ -6,7 +6,7 @@ for(const [route,count]of [['split-view',1],['semantic-zoom',1],['parallax-view'
  test(`${route}: public React API, live examples and matching source`,async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#'+route);await expect(page.locator('.basic-example')).toHaveCount(count);await expect.poll(()=>page.evaluate(()=>Object.keys(window.viewCommandScenes??{}).length)).toBe(count);
   const official=JSON.parse(readFileSync('src/official-view-command.json','utf8')),kind={'split-view':'SplitView','semantic-zoom':'SemanticZoom','parallax-view':'ParallaxView','ui-command':'XamlUICommand','standard-command':'StandardUICommand'}[route];
-  for(let index=0;index<count;index++){const sample=page.locator('.basic-example').nth(index);await sample.getByRole('button',{name:'Source code',exact:true}).click();await expect(sample.locator('pre')).toBeVisible();expect(await sample.locator('pre').textContent()).not.toContain('options={{');await sample.getByRole('button',{name:'Official XAML',exact:true}).click();expect(await sample.locator('pre').textContent()).toBe(official.controls[kind].samples[index].runtimeXaml);}expect(errors).toEqual([]);
+  for(let index=0;index<count;index++){const sample=page.locator('.basic-example').nth(index);await sample.getByRole('button',{name:'Source code',exact:true}).click();await expect(sample.locator('pre')).toBeVisible();expect(await sample.locator('pre').textContent()).not.toContain('options={{');await sample.getByRole('button',{name:'Official XAML',exact:true}).click();await expect(sample.locator('pre')).toHaveAttribute('data-source-status','formatted');expect((await sample.locator('pre').textContent())!.replace(/\s+/g,'')).toBe(official.controls[kind].samples[index].runtimeXaml.replace(/\s+/g,''));}expect(errors).toEqual([]);
  });
 }
 test('XamlUICommand Gallery label, description, Favorite, Ctrl+D and output',async({page})=>{
@@ -53,7 +53,7 @@ test('StandardUICommand Gallery context menu and touch Execute swipe delete the 
 test('public SDK lifecycle, child command, metadata overrides and invalid ownership',async({page})=>{
  test.skip(process.env.VIEW_COMMAND_PRODUCTION==='1','Module fixture runs against the development SDK; page interactions also run on production.');
  await page.goto('/#ui-command');const result=await page.evaluate(async()=>{
-  const m=await import('/src/index.ts' as string),sdk=await m.WinUI.create({globalScrollbars:false}),host=document.createElement('div');host.style.cssText='width:500px;height:300px';document.body.append(host);const scene=sdk.scene(host),child=scene.root.uiCommand(),parent=scene.root.standardCommand({standardKind:m.StandardCommandKind.Save,command:child});
+  const m=await import('/@id/winui-wasm' as string),sdk=await m.WinUI.create({globalScrollbars:false}),host=document.createElement('div');host.style.cssText='width:500px;height:300px';document.body.append(host);const scene=sdk.scene(host),child=scene.root.uiCommand(),parent=scene.root.standardCommand({standardKind:m.StandardCommandKind.Save,command:child});
   let count=0;const off=child.onExecuteRequested(()=>count++);parent.execute({document:7});await new Promise(r=>setTimeout(r,100));const first=count;off();parent.execute();await new Promise(r=>setTimeout(r,100));parent.update({label:'Custom',standardKind:m.StandardCommandKind.Copy});const label=parent.metadata.label;
   let cycle=false;try{child.update({command:parent});}catch{cycle=true;}
   const other=sdk.scene(document.createElement('div'));let cross=false;try{other.root.button({command:parent});}catch{cross=true;}
@@ -67,7 +67,7 @@ test('32 native SplitView states: both Rust rendering backends and themes',async
  for(const backend of ['Canvas2D','WebGL2'])for(const row of native.cases.filter((c:any)=>c.kind==='SplitView')){
   const geometry=await page.evaluate(async({row,backend})=>{
    const w=window as any;if(w.viewFixture){w.viewFixture.sdk.dispose();w.viewFixture.host.remove();}
-   const m=await import('/src/index.ts' as string),sdk=await m.WinUI.create({globalScrollbars:false}),host=document.createElement('div');host.id='view-native-fixture';host.style.cssText='position:fixed;inset:0;width:640px;height:360px;z-index:999999';document.body.append(host);
+   const m=await import('/@id/winui-wasm' as string),sdk=await m.WinUI.create({globalScrollbars:false}),host=document.createElement('div');host.id='view-native-fixture';host.style.cssText='position:fixed;inset:0;width:640px;height:360px;z-index:999999';document.body.append(host);
    const scene=sdk.scene(host,{backend,theme:row.theme,reducedMotion:true,root:{background:row.theme==='Light'?'#FFFFFF':'#202020'}}),canvas=scene.root.canvas(),split=canvas.splitView({...row.props,canvasLeft:24,canvasTop:24});split.pane({background:'#DCE6F0'}).text({text:'Pane',margin:[12,12,12,12]});const content=split.content({background:'#F0E6DC'});content.text({text:'Content',margin:[12,12,12,12]});w.viewFixture={sdk,scene,host};await new Promise(r=>setTimeout(r,45));return{rect:split.snapshot.rect,content:content.snapshot.rect,backend:scene.diagnostics,wasmSha256:m.WinUI.buildVersion};
   },{row,backend});
   expect(geometry.backend.kind).toBe(backend);expect(geometry.backend.lost).toBe(false);

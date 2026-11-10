@@ -13,7 +13,7 @@ keys += ['CommandBarFlyoutBackground','CommandBarFlyoutBorderBrush','CommandBarF
 keys += ['CardBackgroundFillColorSecondaryBrush','CardStrokeColorDefaultBrush','TextOnAccentFillColorPrimaryBrush']
 palettes={theme:{key:sdk.brush(theme,key) for key in keys} for theme in ['Light','Default','HighContrast']}
 metrics={key:(node.text or '').strip() for key,node in sdk.table['Shared'].items() if key.startswith(('MenuBar','CommandBarFlyout')) and sdk.tag(node) in ['Double','Thickness','CornerRadius']}
-out={'sdk':'Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental','sdkSha256':hashlib.sha256(sdk.sdk.read_bytes()).hexdigest(),'styles':styles,'metrics':metrics,'palettes':palettes}
+out={'sdk':'microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779','sdkSha256':hashlib.sha256(sdk.sdk.read_bytes()).hexdigest(),'styles':styles,'metrics':metrics,'palettes':palettes}
 # The current SDK selects opacity storyboards over its legacy translation ones.
 template=next(n for n in sdk.root.iter() if sdk.tag(n)=='ControlTemplate' and n.get('TargetType','').split(':')[-1]=='CommandBarFlyoutCommandBar')
 storyboards={}

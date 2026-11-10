@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { Scene } from "../src/index";
+import type { Scene } from "winui-wasm";
 declare global {
   interface Window {
     drawing: { canvas: Scene; gpu: Scene };
@@ -21,8 +21,8 @@ test("Canvas and GPU text/affine clips/layer opacity agree at DPR 1, 1.25, 1.5 a
     await page.goto("/#navigation-view");
     await expect(page.locator("#runtime-status")).toHaveText("Ready");
     await page.evaluate(async () => {
-      const path = "/src/index.ts";
-      const a = (await import(path)) as typeof import("../src/index");
+      const path = "/@id/winui-wasm";
+      const a = (await import(path)) as typeof import("winui-wasm");
       window.drawing?.canvas.dispose();
       window.drawing?.gpu.dispose();
       document.querySelector("#drawing-root")?.remove();

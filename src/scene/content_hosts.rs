@@ -6,6 +6,7 @@ use serde_json::{json, Value};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct TemplateNode {
     pub kind: NodeKind,
     #[serde(default)]
@@ -20,16 +21,28 @@ fn empty_object() -> Value {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct PageDefinition {
     pub key: String,
     #[serde(default)]
     pub title: String,
     #[serde(default)]
     pub cache_mode: NavigationCacheMode,
-    pub content: TemplateNode,
+    #[serde(default)]
+    pub content: Option<TemplateNode>,
+    #[serde(default)]
+    pub content_resource: Option<String>,
+}
+fn page_content(page:&PageDefinition)->Result<TemplateNode,String>{
+    match (&page.content,&page.content_resource){
+        (Some(content),None)=>Ok(content.clone()),
+        (None,Some(key))=>crate::content::template(key).map(|n|super::navigation_view::legacy_content(&n)),
+        _=>Err("A Page requires exactly one content or contentResource".into()),
+    }
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct HostProperties {
     pub content: Option<String>,
     pub content_template: Option<TemplateNode>,
@@ -142,11 +155,20 @@ fn validate_template(t: &TemplateNode, depth: usize, count: &mut usize) -> Resul
             | NodeKind::RadioButton
             | NodeKind::ToggleSwitch
             | NodeKind::TextBox
+                        | NodeKind::RichEditBox
             | NodeKind::PasswordBox
+            | NodeKind::AutoSuggestBox
+            | NodeKind::InfoBadge
+            | NodeKind::AnimatedIcon
+            | NodeKind::IconSourceElement
+            | NodeKind::BitmapIcon
+            | NodeKind::ImageIcon
+            | NodeKind::HyperlinkButton
+            | NodeKind::NavigationViewItem
     ) {
         return Err("Unsupported content template node; use an explicit child tree".into());
     }
-    properties::patch(&NodeProperties::defaults(t.kind), &t.properties, t.kind)?;
+    properties::create(&t.properties, t.kind)?;
     if t.children.len() > 1
         && matches!(
             t.kind,
@@ -200,6 +222,10 @@ fn validate_template(t: &TemplateNode, depth: usize, count: &mut usize) -> Resul
     }
     Ok(())
 }
+/// Validate a public descriptor before a navigation/template transaction commits.
+pub(crate) fn validate_descriptor(t: &TemplateNode) -> Result<(), String> {
+    validate_template(t, 0, &mut 0)
+}
 pub fn validate(p: &NodeProperties) -> Result<(), String> {
     let Some(q) = &p.content_host else {
         return Ok(());
@@ -222,7 +248,7 @@ pub fn validate(p: &NodeProperties) -> Result<(), String> {
         if page.key.is_empty() || page.key.len() > 1024 || !keys.insert(&page.key) {
             return Err("Page keys must be nonempty and unique".into());
         }
-        validate_template(&page.content, 0, &mut count)?;
+        validate_template(&page_content(page)?, 0, &mut count)?;
     }
     Ok(())
 }
@@ -299,7 +325,7 @@ impl Scene {
         }
         Ok(())
     }
-    fn instantiate_content(&mut self, parent: u32, t: &TemplateNode) -> Result<u32, String> {
+    pub(super) fn instantiate_content(&mut self, parent: u32, t: &TemplateNode) -> Result<u32, String> {
         let mut p = t.properties.clone();
         if !t.name.is_empty() {
             p.as_object_mut()
@@ -381,7 +407,7 @@ impl Scene {
                 self.nodes.get_mut(&id).unwrap().content_host.creating = true;
                 let result = (|| {
                     let node = self.create(id, NodeKind::Page, json!({"title":def.title}))?;
-                    self.instantiate_content(node, &def.content)?;
+                    self.instantiate_content(node, &page_content(def)?)?;
                     Ok::<_, String>(node)
                 })();
                 self.nodes.get_mut(&id).unwrap().content_host.creating = false;
@@ -687,7 +713,7 @@ impl Scene {
             if let Some(def) = q.pages.iter().find(|p| p.key == entry.page) {
                 let mut probe = Scene::new(self.theme, true);
                 let page = probe.create(probe.root, NodeKind::Page, json!({}))?;
-                probe.instantiate_content(page, &def.content)?;
+                probe.instantiate_content(page, &page_content(def)?)?;
             }
         }
         let needed = preview
@@ -710,7 +736,7 @@ impl Scene {
         let budget = q
             .pages
             .iter()
-            .map(|p| count(&p.content) + 1)
+            .map(|p| page_content(p).map(|t|count(&t)+1).unwrap_or(usize::MAX/256))
             .max()
             .unwrap_or(0)
             * needed;

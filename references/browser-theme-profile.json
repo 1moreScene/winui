@@ -1,0 +1,61 @@
+{
+  "source": "Project-authored deterministic browser theme profile. Numeric UISettings accent/system color values retained from the existing test profile; no SDK template or brush expressions.",
+  "license": "MIT",
+  "accent": {
+    "SystemAccentColor": "#0078D4FF",
+    "SystemAccentColorDark1": "#0067C0FF",
+    "SystemAccentColorDark2": "#003E92FF",
+    "SystemAccentColorDark3": "#001A68FF",
+    "SystemAccentColorLight2": "#4CC2FFFF",
+    "SystemAccentColorLight3": "#99EBFFFF"
+  },
+  "system": {
+    "SystemColorButtonTextColor": "#FFFFFFFF",
+    "SystemColorWindowTextColor": "#FFFFFFFF",
+    "SystemColorWindowColor": "#000000FF",
+    "SystemColorButtonFaceColor": "#000000FF",
+    "SystemColorHighlightColor": "#FFFF00FF",
+    "SystemColorHighlightTextColor": "#000000FF",
+    "SystemColorHotlightColor": "#FFFF00FF",
+    "SystemColorGrayTextColor": "#808080FF"
+  },
+  "highContrastCompatibility": {
+    "description": "Project browser presentation policy preserving existing high-contrast numeric appearance. Color roles are platform/profile data, not imported XAML expressions.",
+    "roles": {
+      "foreground": "#FFFFFFFF",
+      "background": "#000000FF",
+      "highlight": "#FFFF00FF",
+      "disabled": "#808080FF",
+      "transparent": "#FFFFFF00"
+    },
+    "brushRoles": {
+      "RepeatButtonBackgroundPressed": "disabled",
+      "RepeatButtonForegroundPointerOver": "foreground",
+      "RepeatButtonForegroundPressed": "foreground",
+      "RepeatButtonBorderBrush": "transparent",
+      "RepeatButtonBorderBrushPointerOver": "disabled",
+      "RepeatButtonBorderBrushPressed": "transparent",
+      "RepeatButtonBorderBrushDisabled": "transparent",
+      "SystemControlForegroundAccentBrush": "highlight",
+      "SystemControlBackgroundBaseMediumLowBrush": "disabled",
+      "SystemControlHighlightBaseHighBrush": "foreground",
+      "SystemControlHighlightBaseMediumLowBrush": "disabled",
+      "SystemControlHighlightTransparentBrush": "transparent",
+      "SystemControlDisabledTransparentBrush": "transparent",
+      "SystemControlForegroundTransparentBrush": "transparent",
+      "SystemControlHighlightAltTransparentBrush": "transparent",
+      "TextControlBorderBrushPointerOver": "foreground",
+      "TextControlForegroundFocused": "highlight",
+      "TextControlPlaceholderForegroundFocused": "highlight",
+      "TextControlButtonForegroundPointerOver": "foreground",
+      "TextControlButtonForegroundPressed": "foreground",
+      "TextControlButtonBackgroundPointerOver": "background",
+      "TextControlButtonBackgroundPressed": "background",
+      "ScrollBarThumbFillPointerOver": "foreground",
+      "ScrollBarThumbFillPressed": "foreground",
+      "ScrollBarButtonArrowForegroundPointerOver": "foreground",
+      "ScrollBarButtonArrowForegroundPressed": "foreground",
+      "ScrollBarPanningThumbBackground": "background"
+    }
+  }
+}

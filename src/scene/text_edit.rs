@@ -8,7 +8,7 @@ use std::sync::OnceLock;
 use unicode_segmentation::UnicodeSegmentation;
 
 pub fn is_editor(kind: NodeKind) -> bool {
-    matches!(kind, NodeKind::TextBox | NodeKind::PasswordBox)
+    matches!(kind, NodeKind::TextBox | NodeKind::PasswordBox | NodeKind::RichEditBox)
 }
 pub fn contract() -> &'static serde_json::Value {
     static V: OnceLock<serde_json::Value> = OnceLock::new();
@@ -69,12 +69,16 @@ pub fn boundary(s: &str, index: usize) -> usize {
 }
 #[derive(Clone)]
 struct Revision {
+    document: Option<Box<rich_edit::RichEditDocument>>,
+    typing: rich_edit::CharacterFormat,
     text: String,
     start: usize,
     length: usize,
 }
 #[derive(Clone, Default)]
 pub struct Glyph {
+    pub object: Option<std::sync::Arc<rich_edit::objects::InlineVisual>>,
+    pub format: rich_edit::CharacterFormat,
     pub text: String,
     pub start: usize,
     pub end: usize,
@@ -83,6 +87,10 @@ pub struct Glyph {
 }
 #[derive(Clone, Default)]
 pub struct EditLine {
+    pub y: f64,
+    pub height: f64,
+    pub marker: String,
+    pub paragraph: usize,
     pub text: String,
     pub glyphs: Vec<Glyph>,
     pub start: usize,
@@ -92,9 +100,12 @@ pub struct EditLine {
 }
 #[derive(Default)]
 pub struct EditorState {
+    pub manual_scroll: bool,
+    pub math_cache: HashMap<String,rich_edit::math::MathNode>,
+    pub typing_format: rich_edit::CharacterFormat,
     undo: Vec<Revision>,
     redo: Vec<Revision>,
-    last_type: String,
+    pub(super) last_type: String,
     last_edit: f64,
     pub draft: Option<String>,
     pub draft_selection: (usize, usize),
@@ -122,6 +133,9 @@ pub struct EditorState {
 #[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct EditorSnapshot {
+    pub scrollable_x: f64,
+    pub scrollable_y: f64,
+    pub character_format: rich_edit::CharacterFormat,
     pub view: Rect,
     pub caret: Rect,
     pub scroll_x: f64,
@@ -137,6 +151,11 @@ pub struct EditorSnapshot {
     pub helper_mask: Option<Rect>,
 }
 impl EditorState {
+    pub(super) fn push_revision(&mut self,p:&NodeProperties) {
+        if self.undo.len()>=100 {self.undo.remove(0);}
+        self.undo.push(Revision{text:p.text.clone(),start:p.selection_start,length:p.selection_length,document:p.document.clone(),typing:self.typing_format.clone()});
+        self.redo.clear();
+    }
     pub fn logical(kind: NodeKind, p: &NodeProperties) -> &str {
         if kind == NodeKind::PasswordBox {
             &p.password
@@ -149,7 +168,8 @@ impl EditorState {
             || (p.password_reveal_mode == PasswordRevealMode::Peek && self.peek)
     }
     pub fn helper(&self, kind: NodeKind, p: &NodeProperties, focused: bool) -> bool {
-        focused
+        kind != NodeKind::RichEditBox
+            && focused
             && !Self::logical(kind, p).is_empty()
             && !p.is_read_only
             && if kind == NodeKind::PasswordBox {
@@ -161,6 +181,9 @@ impl EditorState {
     pub fn snapshot(&self, kind: NodeKind, p: &NodeProperties, focused: bool) -> EditorSnapshot {
         let helper = self.helper(kind, p, focused);
         EditorSnapshot {
+            scrollable_x:(self.text_width-self.view.width+1.).max(0.),
+            scrollable_y:(self.text_height-self.view.height).max(0.),
+            character_format: self.typing_format.clone(),
             view: self.view,
             caret: self.caret,
             scroll_x: self.scroll_x,
@@ -179,6 +202,8 @@ impl EditorState {
     pub fn reset_programmatic(&mut self) {
         self.generation = self.generation.wrapping_add(1);
         self.backward = false;
+        self.manual_scroll=false;
+        self.typing_format = Default::default();
         self.undo.clear();
         self.redo.clear();
         self.last_type.clear();
@@ -197,6 +222,7 @@ impl EditorState {
         dpr: f64,
         measure: &mut impl TextMeasurer,
     ) -> [f64; 2] {
+        if kind == NodeKind::RichEditBox {return self.layout_rich_editor(p,size,header_height,dpr,measure);}
         let (width, height) = size;
         let font = p.font();
         let reference = measure.measure("Hg", &font);
@@ -301,6 +327,7 @@ impl EditorState {
                 end,
                 x: at,
                 width: advance,
+                ..Default::default()
             });
             line.width += advance + tracking;
             line.end = end;
@@ -405,6 +432,12 @@ impl EditorState {
         ]
     }
     pub fn hit(&self, x: f64, y: f64) -> usize {
+        if self.lines.first().is_some_and(|l| l.height>0.) {
+            let y=y-self.view.y+self.scroll_y;
+            let line=self.lines.iter().find(|l|y<l.y+l.height).or_else(||self.lines.last()).unwrap();
+            let x=x-self.view.x+self.scroll_x;
+            return line.glyphs.iter().find(|g|x<g.x+g.width/2.).map_or(line.end,|g|g.start);
+        }
         let row = (((y - self.view.y + self.scroll_y) / self.line_height)
             .floor()
             .max(0.) as usize)
@@ -447,7 +480,9 @@ impl Scene {
         n.editor.backward = false;
         n.editor.blink_start = self.time;
         if changed {
+            n.editor.manual_scroll=false;
             n.editor.last_type.clear();
+            if let Some(doc)=&n.props.document {n.editor.typing_format=doc.format_at(if start>0 && end==start {start-1} else {start});}
         }
         if changed {
             self.emit(id, EventKind::SelectionChanged);
@@ -507,8 +542,11 @@ impl Scene {
         }
         let changed = old != value;
         let kind = n.kind;
+        let document=if changed && kind==NodeKind::RichEditBox {
+            let doc=n.props.document.as_ref().unwrap().edited(&old,&value,n.props.selection_start,n.props.selection_length,&n.editor.typing_format);doc.validate()?;Some(Box::new(doc))
+        } else {n.props.document.clone()};
         let n = self.nodes.get_mut(&id).unwrap();
-        if changed && kind == NodeKind::TextBox {
+        if changed && matches!(kind, NodeKind::TextBox | NodeKind::RichEditBox) {
             let coalesce = input_type == n.editor.last_type
                 && matches!(
                     input_type.as_str(),
@@ -521,7 +559,9 @@ impl Scene {
                     n.editor.undo.remove(0);
                 }
                 n.editor.undo.push(Revision {
-                    text: old,
+                    document: n.props.document.clone(),
+                    typing: n.editor.typing_format.clone(),
+                    text: old.clone(),
                     start: n.props.selection_start,
                     length: n.props.selection_length,
                 });
@@ -533,11 +573,14 @@ impl Scene {
         } else {
             n.props.text = value;
         }
+        n.props.document=document;
+        let typing=n.editor.typing_format.clone();
         n.editor.draft = None;
         n.editor.user_edited = true;
         n.editor.blink_start = self.time;
         self.editor_select(id, start, length)?;
         let n = self.nodes.get_mut(&id).unwrap();
+        n.editor.typing_format=typing;
         n.editor.last_type = input_type;
         n.editor.last_edit = self.time;
         if changed {
@@ -555,7 +598,7 @@ impl Scene {
     }
     pub(super) fn editor_history(&mut self, id: u32, redo: bool) -> Result<(), String> {
         let n = self.get(id)?;
-        if n.kind != NodeKind::TextBox || !self.effective_enabled(id) || n.props.is_read_only {
+        if !matches!(n.kind, NodeKind::TextBox | NodeKind::RichEditBox) || !self.effective_enabled(id) || n.props.is_read_only {
             return Ok(());
         }
         let n = self.nodes.get_mut(&id).unwrap();
@@ -566,6 +609,7 @@ impl Scene {
         };
         if let Some(r) = revision {
             let current = Revision {
+                document:n.props.document.clone(),typing:n.editor.typing_format.clone(),
                 text: n.props.text.clone(),
                 start: n.props.selection_start,
                 length: n.props.selection_length,
@@ -576,6 +620,8 @@ impl Scene {
                 n.editor.redo.push(current);
             }
             n.props.text = r.text;
+            n.props.document=r.document;
+            n.editor.typing_format=r.typing;
             n.props.selection_start = r.start;
             n.props.selection_length = r.length;
             n.editor.last_type.clear();
@@ -790,6 +836,7 @@ impl Scene {
         let highlight = p.selection_highlight_color.clone().unwrap_or_else(|| {
             resource(n.theme, "TextControlSelectionHighlightColor").solid_color()
         });
+        if n.kind == NodeKind::RichEditBox {self.paint_rich_editor(id,out,&foreground,&highlight,ss,sl,focused);} else {
         for (row, line) in e.lines.iter().enumerate() {
             if focused && sl > 0 {
                 for g in &line.glyphs {
@@ -834,6 +881,7 @@ impl Scene {
                     });
                 }
             }
+        }
         }
         let value = e
             .draft

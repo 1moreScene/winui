@@ -674,7 +674,12 @@ impl Scene {
             return None;
         }
         let row = root.nav_controls.tree_rows.get(&n.props.collection_key)?;
-        let hovered = n.button.pointer_inside;
+        // Collection rows do not track Button's pointer state. Use the current
+        // hit route so checkbox/template descendants hover their row, while
+        // clipped rows and rows behind another surface remain unhovered.
+        let hovered = self.pointer.is_some_and(|(x, y)| {
+            self.inside(id, x, y) && self.pointer_route(x, y).contains(&id)
+        });
         let pressed = root.collection.pressed.as_ref() == Some(&row.key);
         let selected = row.selected;
         let enabled = n.enabled;

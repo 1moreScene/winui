@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption, GallerySlider } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import {useEffect,useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
-import {SceneView,Canvas,Rectangle,Line,Path,Polygon,Polyline} from './react';
-import {ThemeMode,RendererBackend,HorizontalAlignment,type Scene} from './index';
+import {SceneView,Rectangle,Line,Path,Polygon,Polyline} from 'winui-wasm/react';
+import {ThemeMode,RendererBackend,HorizontalAlignment,VerticalAlignment,type Scene} from 'winui-wasm';
 import official from './official-vectors.json';
 import source from './ShapesPage.tsx?raw';
 import {extractSampleSource} from './sample-source';
@@ -12,7 +14,7 @@ function remember(name:string,scene:Scene){window.shapeScenes??={};window.shapeS
 function Range({name,value,onChange,min=0,max=100}:{name:string;value:number;onChange:(n:number)=>void;min?:number;max?:number}){return <label>{name}<GallerySlider  aria-label={name} min={min} max={max} step={.5} value={value} onValueChanged={e=>onChange(e)}/>{value}</label>;}
 function Example({name,page,index,children,options,filter}:{name:string;page:'Shape'|'Line';index:number;children:ReactNode;options:ReactNode;filter?:'Shape'|'Line'}){
  const[native,setNative]=useState(false);if(filter&&filter!==page)return null;const sample=official.controls[page].samples[index];
- return <section id={name} className="example basic-example"><h2>{sample.title}</h2><div className="example-card"><div className="basic-live with-options"><div className="basic-preview">{children}</div><div className="options">{options}</div></div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><pre><code>{native?sample.xaml:extractSampleSource(source,name)}</code></pre></GalleryExpander></div></section>;
+ return <section id={name} className="example basic-example"><h2><LocalizedText>{sample.title}</LocalizedText></h2><div className="example-card"><div className="basic-live with-options"><div className="basic-preview">{children}</div><div className="options">{options}</div></div><GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native?'active':''} onClick={()=>setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native?'active':''} onClick={()=>setNative(true)}>Official XAML</GalleryButton></div><SourceCode language={native ? 'xaml' : 'tsx'}>{native?sample.xaml:extractSampleSource(source,name)}</SourceCode></GalleryExpander></div></section>;
 }
 export function ShapesPage({filter}:{filter?:'Shape'|'Line'}){
  const[theme,setTheme]=useGalleryTheme(),[backend,setBackend]=useState(RendererBackend.Canvas2D);
@@ -31,9 +33,9 @@ export function ShapesPage({filter}:{filter?:'Shape'|'Line'}){
  <Example filter={filter} name="shape-line" page="Line" index={0} options={<><Range name="Start point X" value={x1} onChange={setX1}/><Range name="Start point Y" value={y1} onChange={setY1}/><Range name="End point X" min={200} max={300} value={x2} onChange={setX2}/><Range name="End point Y" value={y2} onChange={setY2}/><Range name="Line stroke" min={5} max={10} value={ls} onChange={setLs}/></>}>
  <SceneView {...shared} style={{height:210}} onReady={s=>remember('line',s)}>
   {/* @sample:shape-line:start */}
-  <Canvas width={100} height={200} horizontalAlignment={HorizontalAlignment.Left}>
-    <Line x1={x1} y1={y1} x2={x2} y2={y2} canvasTop={50} stroke="#4682b4" strokeThickness={ls}/>
-  </Canvas>
+
+    <Line x1={x1} y1={y1} x2={x2} y2={y2} horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Top} margin={[0,50,0,0]} stroke="#4682b4" strokeThickness={ls}/>
+
   {/* @sample:shape-line:end */}
  </SceneView></Example>
 

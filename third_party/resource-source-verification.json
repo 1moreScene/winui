@@ -1,0 +1,52 @@
+{
+  "reviewedOn": "2026-11-10",
+  "upstreamChecks": {
+    "winjs-font": {
+      "url": "https://raw.githubusercontent.com/winjs/winjs/b9e0b33f76c57caac941c9b1885bf69443320b1c/src/fonts/Symbols.ttf",
+      "sha256": "44fad6f19d2c676fafec5d3168df2b5ca53de7ec4766960f196aa39bb96ece1e",
+      "local": "third_party/icon-fonts/Symbols.ttf",
+      "identical": true
+    },
+    "winjs-license": {
+      "url": "https://raw.githubusercontent.com/winjs/winjs/b9e0b33f76c57caac941c9b1885bf69443320b1c/License.txt",
+      "sha256": "13217bb585c27ee298f49c7aec2ef74578bc0d644880906a89d2c3ccec5d647e",
+      "local": null
+    },
+    "fluent-license": {
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-system-icons/e15fc0de25fab983e3e42bac8798be69a85c23bf/LICENSE",
+      "sha256": "69bc45dc42b9acb96a69823adbc6ae538374e3c0bde169b855b32c48eaaef52f",
+      "local": "third_party/icon-fonts/FluentSystemIcons-LICENSE",
+      "identical": true
+    },
+    "libre-icon": {
+      "url": "https://raw.githubusercontent.com/DiemenDesign/LibreICONS/2d2172d15e3c6ca03c018629d60050e4b99e5c55/svg-color/libre-camera-panorama.svg",
+      "sha256": "7168458bc216dea0854f76febb66b8d828f4e3db56f77ab50c484e04eae67d53",
+      "local": "gallery/public/official/libre-camera-panorama.svg",
+      "identical": true
+    },
+    "fluent-regular": {
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-system-icons/e15fc0de25fab983e3e42bac8798be69a85c23bf/fonts/FluentSystemIcons-Regular.ttf",
+      "sha256": "af1b71ab7bb475ae30b8c87172551503f8de6cf733548fe7ddbda15fc08dea34",
+      "local": "third_party/icon-fonts/FluentSystemIcons-Regular.ttf",
+      "identical": true
+    },
+    "winui-license": {
+      "url": "https://raw.githubusercontent.com/microsoft/microsoft-ui-xaml/7b12709347527238494ca28cb9fed326d513e779/LICENSE",
+      "sha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0",
+      "local": "references/winui/LICENSE",
+      "identical": true
+    },
+    "fluent-filled": {
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui-system-icons/e15fc0de25fab983e3e42bac8798be69a85c23bf/fonts/FluentSystemIcons-Filled.ttf",
+      "sha256": "cd88ff3ff72c93a575d39b5504a422e67c6c28278642e7946b76a7b6ef35f46f",
+      "local": "third_party/icon-fonts/FluentSystemIcons-Filled.ttf",
+      "identical": true
+    },
+    "libre-license": {
+      "url": "https://raw.githubusercontent.com/DiemenDesign/LibreICONS/2d2172d15e3c6ca03c018629d60050e4b99e5c55/LICENSE",
+      "local": "gallery/public/official/LibreICONS-LICENSE.txt",
+      "sha256": "1f5393dea76e0a3a76ed273ae7e7e470345b9bb91a3e8d3e880140a2461c9194",
+      "verification": "Primary pinned license text inspected using the web tool; local copyright and permission body match."
+    }
+  }
+}

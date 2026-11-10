@@ -1,7 +1,7 @@
 import {selectGalleryOption} from './gallery-control-helper';
 import { test, expect, type Page } from "@playwright/test";
 import { mkdirSync, writeFileSync } from "node:fs";
-import type { Scene, Button, SceneNode, TextOptions } from "../src/index";
+import type { Scene, ButtonController as Button, SceneNode, TextOptions } from "winui-wasm";
 declare global {
   interface Window {
     fixture: {
@@ -28,8 +28,8 @@ async function start(page: Page) {
 }
 async function create(page: Page, backend = "Canvas2D") {
   await page.evaluate(async (backend) => {
-    const path = "/src/index.ts";
-    const api = (await import(path)) as typeof import("../src/index");
+    const path = "/@id/winui-wasm";
+    const api = (await import(path)) as typeof import("winui-wasm");
     const host = document.createElement("div");
     host.id = "stage-fixture";
     host.style.cssText =

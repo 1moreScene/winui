@@ -2,6 +2,7 @@ use crate::{content::GridTrack, enums::*, material, model::Properties};
 use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(untagged)]
+#[derive(PartialEq)]
 pub enum BrushValue {
     Color(String),
     Resource { resource: String },
@@ -61,6 +62,7 @@ impl BrushValue {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(untagged)]
+#[derive(PartialEq)]
 pub enum RadioOption {
     Text(String),
     Item {
@@ -85,9 +87,18 @@ impl RadioOption {
         }
     }
 }
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
 pub struct NodeProperties {
+    #[serde(skip_serializing_if="String::is_empty")]
+    pub name:String,
+    #[serde(skip_serializing_if="std::collections::BTreeMap::is_empty")]
+    pub element_references:std::collections::BTreeMap<super::ElementReferenceProperty,Option<String>>,
+    #[serde(skip)]
+    #[doc(hidden)]
+    pub snapshot_omit:bool,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub table:Option<Box<super::table_view::TableProperties>>,
     #[serde(skip_serializing_if="Option::is_none")]
     pub motion:Option<Box<super::motion_effects::MotionProperties>>,
     #[serde(skip_serializing_if="Option::is_none")]
@@ -187,6 +198,7 @@ pub struct NodeProperties {
     pub is_closable: bool,
     pub is_icon_visible: bool,
     pub is_info_bar_action: bool,
+    pub is_expander_header: bool,
     pub display_name: String,
     pub initials: String,
     pub profile_picture: String,
@@ -202,6 +214,8 @@ pub struct NodeProperties {
     pub placeholder_value: f64,
     pub rating_item_info: Option<super::compact_controls::RatingItemInfo>,
     pub flyout_target: Option<u32>,
+    pub context_flyout_target: Option<u32>,
+    pub close_flyout: bool,
     pub is_open: bool,
     pub placement: OverlayPlacement,
     pub placement_position: Option<[f64; 2]>,
@@ -233,11 +247,16 @@ pub struct NodeProperties {
     pub columns: Vec<GridTrack>,
     pub orientation: Orientation,
     pub spacing: f64,
+    pub row_spacing: Option<f64>,
+    pub column_spacing: Option<f64>,
     pub visible: bool,
+    pub is_hit_test_visible: bool,
     pub enabled: bool,
     pub opacity: f64,
     pub translation_x: f64,
     pub translation_y: f64,
+    pub translation_z: f64,
+    pub theme_shadow: bool,
     pub scale_x: f64,
     pub scale_y: f64,
     pub rotation: f64,
@@ -269,6 +288,12 @@ pub struct NodeProperties {
     #[serde(skip)]
     pub badge_auto_radius: bool,
     pub text: String,
+    pub document: Option<Box<super::rich_edit::RichEditDocument>>,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub rtf:Option<String>,
+    #[serde(rename="mathML",skip_serializing_if="Option::is_none")]
+    pub math_ml:Option<String>,
+    pub max_lines: usize,
     pub placeholder_text: String,
     pub description: String,
     pub is_read_only: bool,
@@ -300,6 +325,7 @@ pub struct NodeProperties {
     pub font_weight: u16,
     pub font_style: FontStyle,
     pub is_checked: Option<bool>,
+    pub is_selected: bool,
     pub is_three_state: bool,
     pub group_name: String,
     pub header: String,
@@ -364,9 +390,12 @@ pub struct NodeProperties {
 impl Default for NodeProperties {
     fn default() -> Self {
         Self {
+            name:String::new(),
+            element_references:Default::default(),
             motion:None,
             repeater:None,refresh:None,
             menu_item:None,
+            table:None,
             primitives:None,
             tick_frequency:0.,
             content_host:None,
@@ -444,6 +473,7 @@ impl Default for NodeProperties {
             is_closable: true,
             is_icon_visible: true,
             is_info_bar_action: false,
+            is_expander_header: false,
             display_name: String::new(),
             initials: String::new(),
             profile_picture: String::new(),
@@ -459,6 +489,8 @@ impl Default for NodeProperties {
             placeholder_value: -1.,
             rating_item_info: None,
             flyout_target: None,
+            context_flyout_target: None,
+            close_flyout: false,
             is_open: false,
             placement: OverlayPlacement::Auto,
             placement_position: None,
@@ -490,11 +522,17 @@ impl Default for NodeProperties {
             columns: vec![],
             orientation: Orientation::Vertical,
             spacing: 0.,
+            row_spacing: None,
+            column_spacing: None,
             visible: true,
+            snapshot_omit:false,
+            is_hit_test_visible: true,
             enabled: true,
             opacity: 1.,
             translation_x: 0.,
             translation_y: 0.,
+            translation_z: 0.,
+            theme_shadow: false,
             scale_x: 1.,
             scale_y: 1.,
             rotation: 0.,
@@ -524,6 +562,8 @@ impl Default for NodeProperties {
             badge_auto_padding: false,
             badge_auto_radius: false,
             text: String::new(),
+            document: None,rtf:None,math_ml:None,
+            max_lines: 0,
             placeholder_text: String::new(),
             description: String::new(),
             is_read_only: false,
@@ -555,6 +595,7 @@ impl Default for NodeProperties {
             font_weight: 400,
             font_style: FontStyle::Normal,
             is_checked: Some(false),
+            is_selected: false,
             is_three_state: false,
             group_name: String::new(),
             header: String::new(),
@@ -620,6 +661,7 @@ impl Default for NodeProperties {
 impl NodeProperties {
     pub fn defaults(kind: NodeKind) -> Self {
         let mut p = Self::default();
+        if kind == NodeKind::Grid { p.is_tab_stop = false; }
         match kind {
             NodeKind::SplitView|NodeKind::SemanticZoom|NodeKind::ParallaxView|NodeKind::SwipeControl=>{p.clip=true;p.is_tab_stop=false;}
             NodeKind::UICommand|NodeKind::StandardCommand=>{p.width=Some(0.);p.height=Some(0.);p.is_tab_stop=false;}
@@ -766,12 +808,15 @@ impl NodeProperties {
                 }
             }
             NodeKind::NavigationView => {
-                p.height = Some(300.);
                 p.navigation = Some(Properties::default());
                 p.clip = true;
             }
-            NodeKind::TextBox | NodeKind::PasswordBox => {
-                let m = super::text_edit::native_defaults();
+            NodeKind::NavigationViewItem => {
+                p.is_tab_stop=true;p.min_height=40.;p.min_width=40.;
+            }
+            NodeKind::TextBox | NodeKind::PasswordBox | NodeKind::RichEditBox => {
+                let m = if kind==NodeKind::RichEditBox {super::rich_edit::native_defaults()}else{super::text_edit::native_defaults()};
+                if kind == NodeKind::RichEditBox {p.accepts_return=true;p.wrap=super::rich_edit::contract()["defaults"]["TextWrapping"]=="Wrap";p.is_spell_check_enabled=true;}
                 p.padding = m.padding;
                 p.min_width = m.min_width;
                 p.min_height = m.min_height;
@@ -797,6 +842,7 @@ impl NodeProperties {
         super::command_controls::defaults(kind,&mut p);
         super::command_menus::defaults(kind,&mut p);
         super::layout_panels::defaults(kind,&mut p);
+        if kind==NodeKind::TableView{p.table=Some(Box::default());p.is_tab_stop=true;p.clip=true;p.border_thickness=[1.;4];p.corner_radius=4.;p.border_brush=Some(BrushValue::Resource{resource:"TableViewBorderBrush".into()});}
         super::scroll_primitives::defaults(kind,&mut p);
         super::content_hosts::defaults(kind,&mut p);
         super::reading_controls::defaults(kind,&mut p);
@@ -827,6 +873,8 @@ impl NodeProperties {
         if let Some(motion)=&self.motion {motion.validate()?;}
         super::menu_item_controls::validate(kind,self)?;
         super::view_controls::validate(self)?;
+        if kind==NodeKind::TableView&&self.table.is_none(){return Err("TableView requires its table properties".into());}
+        super::table_view::validate(self)?;
         super::scroll_primitives::validate(self)?;
         super::content_hosts::validate(self)?;
         super::reading_controls::validate(self)?;
@@ -973,6 +1021,8 @@ impl NodeProperties {
         ]
         .into_iter()
         .chain(self.width)
+        .chain(self.row_spacing)
+        .chain(self.column_spacing)
         .chain(self.height)
         .chain(self.max_width)
         .chain(self.max_height)
@@ -1004,6 +1054,7 @@ impl NodeProperties {
                 .chain([
                     self.translation_x,
                     self.translation_y,
+                    self.translation_z,
                     self.scale_x,
                     self.scale_y,
                 ])
@@ -1054,6 +1105,7 @@ impl NodeProperties {
                     | NodeKind::ToggleButton
                     | NodeKind::CheckBox
                     | NodeKind::TextBox
+                        | NodeKind::RichEditBox
                     | NodeKind::PasswordBox
             ) && matches!(self.background, Some(BrushValue::Gradient(_))))
         {
@@ -1083,6 +1135,7 @@ impl NodeProperties {
         if super::text_edit::is_editor(kind) && !self.description.is_empty() {
             return Err("TextBox/PasswordBox Description presenter is not implemented".into());
         }
+        if let Some(doc)=&self.document {doc.validate()?;}
         if self.text.len() > 1_000_000
             || self.source.len() > 1_000_000
             || self.font_family.len() > 2048
@@ -1092,6 +1145,26 @@ impl NodeProperties {
         Ok(())
     }
 }
+/// Creation starts from the same kind defaults as an update, but only needs
+/// their differences from serde's schema defaults. Avoid round-tripping every
+/// default field for each source-template Grid, presenter and icon.
+pub(super) fn create(value:&serde_json::Value,kind:NodeKind)->Result<NodeProperties,String>{
+    use std::sync::{Arc,Mutex,OnceLock};
+    struct Initial{base:NodeProperties,compact:serde_json::Value}
+    static INITIAL:OnceLock<Mutex<std::collections::BTreeMap<&'static str,Arc<Initial>>>>=OnceLock::new();
+    static DEFAULT:OnceLock<serde_json::Value>=OnceLock::new();
+    let initial={
+        let mut cache=INITIAL.get_or_init(Default::default).lock().unwrap();
+        cache.entry(kind.as_str()).or_insert_with(||{
+            let base=NodeProperties::defaults(kind);
+            let defaults=DEFAULT.get_or_init(||serde_json::to_value(NodeProperties::default()).unwrap());
+            let mut compact=serde_json::to_value(&base).unwrap();
+            compact.as_object_mut().unwrap().retain(|key,value|defaults.get(key)!=Some(value));
+            Arc::new(Initial{base,compact})
+        }).clone()
+    };
+    apply_patch(&initial.base,value,kind,initial.compact.clone())
+}
 pub fn patch(
     base: &NodeProperties,
     value: &serde_json::Value,
@@ -1100,13 +1173,17 @@ pub fn patch(
     let mut serializable = base.clone();
     serializable.selected_keys = Default::default();
     serializable.collection_items = Default::default();
+    if let Some(table)=serializable.table.as_mut(){table.items=Default::default();}
     serializable.nav_controls.items = Default::default();
     serializable.command_controls.primary_commands = Default::default();
     serializable.command_controls.secondary_commands = Default::default();
-    let mut full = serde_json::to_value(serializable).map_err(|e| e.to_string())?;
+    let full = serde_json::to_value(serializable).map_err(|e| e.to_string())?;
+    apply_patch(base,value,kind,full)
+}
+fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut full:serde_json::Value)->Result<NodeProperties,String>{
     let patch = value.as_object().ok_or("node patch must be an object")?;
     for (key, value) in patch {
-        if matches!(key.as_str(),"primitives"|"menuItem"|"contentHost"|"menuControls"|"panelControls")&&value.is_object(){
+        if matches!(key.as_str(),"table"|"primitives"|"menuItem"|"contentHost"|"menuControls"|"panelControls")&&value.is_object(){
             let dest=full.as_object_mut().unwrap().entry(key).or_insert_with(||serde_json::json!({}));
             if dest.is_null(){*dest=serde_json::json!({});}for(key,value)in value.as_object().unwrap(){dest.as_object_mut().unwrap().insert(key.clone(),value.clone());}
         }else if (key == "viewControls" || key=="reading") && value.is_object() {
@@ -1131,7 +1208,7 @@ pub fn patch(
             let nav=full.as_object_mut().unwrap().entry(key).or_insert_with(||serde_json::to_value(super::navigation_controls::NavigationProperties::default()).unwrap());
             for (key,value) in value.as_object().unwrap(){nav.as_object_mut().unwrap().insert(key.clone(),value.clone());}
         } else if key == "navigation" && value.is_object() {
-            let nav = full.get_mut(key).unwrap();
+            let nav = full.as_object_mut().unwrap().entry(key).or_insert(serde_json::Value::Null);
             if nav.is_null() {
                 *nav = serde_json::to_value(Properties::default()).unwrap();
             }
@@ -1145,8 +1222,19 @@ pub fn patch(
         }
     }
     let mut result: NodeProperties = serde_json::from_value(full).map_err(|e| e.to_string())?;
+    if kind == NodeKind::RichEditBox {
+        let sources=["document","text","rtf","mathML"].iter().filter(|k|patch.contains_key(**k)).count();
+        if sources>1{return Err("set one RichEditBox content source: text, document, rtf or mathML".into());}
+        if let Some(rtf)=result.rtf.take(){result.document=Some(Box::new(super::rich_edit::rtf::decode(&rtf)?));}
+        if let Some(mathml)=result.math_ml.take(){super::rich_edit::math::parse(&mathml)?;result.document=Some(Box::new(super::rich_edit::RichEditDocument{runs:vec![super::rich_edit::RichEditRun{text:super::rich_edit::objects::OBJECT.into(),mathml:Some(mathml),..Default::default()}],..Default::default()}));}
+        if patch.contains_key("text") || result.document.is_none() {
+            result.text=result.text.replace("\r\n","\n").replace('\r',"\n");
+            result.document=Some(Box::new(super::rich_edit::RichEditDocument::plain(result.text.clone())));
+        } else {result.text=result.document.as_ref().unwrap().text();}
+    } else if result.document.is_some()||result.rtf.is_some()||result.math_ml.is_some() {return Err("rich content requires RichEditBox".into());}
     // inside_bar is derived by the CommandBar, never supplied by the caller.
     result.command_controls.inside_bar = base.command_controls.inside_bar;
+    if patch.get("table").and_then(|p|p.get("items")).is_none(){if let (Some(base),Some(result))=(&base.table,&mut result.table){result.items=base.items.clone();}}
     let command_patch = patch.get("commandControls");
     if command_patch.and_then(|p| p.get("primaryCommands")).is_none() {
         result.command_controls.primary_commands = base.command_controls.primary_commands.clone();
@@ -1177,7 +1265,8 @@ pub fn patch(
         super::text_edit::EditorState::logical(kind, &result),
         result.selection_start.min(len),
     );
-    result.selection_length = result.selection_length.min(len - result.selection_start);
+    let end=super::text_edit::boundary(super::text_edit::EditorState::logical(kind,&result),result.selection_start.saturating_add(result.selection_length).min(len));
+    result.selection_length=end-result.selection_start;
     if super::progress::is_progress(kind) || matches!(kind,NodeKind::Slider|NodeKind::ScrollBar) {
         if result.minimum > result.maximum {
             if patch.contains_key("minimum") && !patch.contains_key("maximum") {
@@ -1290,6 +1379,28 @@ pub fn patch(
     super::command_menus::validate(kind,&result)?;
     super::layout_panels::validate(&result)?;
     super::picker_controls::validate(kind,&mut result)?;
+    if kind==NodeKind::NavigationView&&patch.get("navigation").and_then(|p|p.get("theme")).is_some(){result.theme=result.navigation.as_ref().map(|p|p.theme);}
     result.validate(kind)?;
     Ok(result)
+}
+
+pub(super) fn serialize_snapshot<S:serde::Serializer>(p:&NodeProperties,serializer:S)->Result<S::Ok,S::Error>{if p.snapshot_omit{serializer.serialize_none()}else{p.serialize(serializer)}}
+
+#[cfg(test)]mod creation_tests{
+    use super::*;
+    #[test]fn compact_creation_preserves_every_control_default_and_validation(){
+        let contract:serde_json::Value=serde_json::from_str(include_str!("../../references/control-origins.json")).unwrap();
+        for entry in contract["nodeKinds"].as_array().unwrap(){
+            let kind:NodeKind=serde_json::from_value(entry["name"].clone()).unwrap();
+            for value in [serde_json::json!({}),serde_json::json!({"text":"Sample","width":180,"height":48}),serde_json::json!({"unknownProperty":true})]{
+                let expected=patch(&NodeProperties::defaults(kind),&value,kind);
+                let actual=create(&value,kind);
+                match(expected,actual){
+                    (Ok(expected),Ok(actual))=>assert_eq!(serde_json::to_value(actual).unwrap(),serde_json::to_value(expected).unwrap(),"{}: {value}",kind.as_str()),
+                    (Err(expected),Err(actual))=>assert_eq!(actual,expected,"{}: {value}",kind.as_str()),
+                    _=>panic!("{}: compact creation changed validation for {value}",kind.as_str()),
+                }
+            }
+        }
+    }
 }

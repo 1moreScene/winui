@@ -1,7 +1,7 @@
 from pathlib import Path
 import subprocess,json,re,hashlib,xml.etree.ElementTree as E
 from PIL import Image
-R=Path.cwd();G=Path(r'C:/Users/11156/source/repos/WinUI-Gallery');C='7360ac322414e118eadfb0c7c2f4ecc31a218f59';out=R/'gallery/src/official-reading-controls.json';data=json.loads(out.read_text(encoding='utf-8-sig'));tag=lambda n:n.tag.rsplit('}',1)[-1]
+R=Path.cwd();C='7360ac322414e118eadfb0c7c2f4ecc31a218f59';G=Path(json.loads((R/'references/baseline.json').read_text(encoding='utf-8-sig'))['gallery']['path']);out=R/'gallery/src/official-reading-controls.json';data=json.loads(out.read_text(encoding='utf-8-sig'));tag=lambda n:n.tag.rsplit('}',1)[-1]
 def git(path):return subprocess.check_output(['git','-C',str(G),'show',f'{C}:{path}'])
 path='WinUIGallery/Samples/ConnectedAnimation/ConnectedAnimationPage.xaml.cs';cs=git(path).decode('utf-8-sig');descriptions=re.findall(r'@"([^"]+)"',cs[cs.index('string[] dummyTexts'):cs.index('Random rand')]);data['dataSources']=[{'upstream':path,'sha256':hashlib.sha256(git(path)).hexdigest()}];data['items']=[]
 dest=R/'gallery/public/official/reading';dest.mkdir(parents=True,exist_ok=True)

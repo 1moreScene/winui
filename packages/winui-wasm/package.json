@@ -1,0 +1,32 @@
+{
+  "name": "winui-wasm",
+  "version": "0.1.1",
+  "private": true,
+  "description": "Rust/WASM WinUI controls with a framework-independent browser SDK and optional React adapters",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./react": { "types": "./dist/react.d.ts", "import": "./dist/react.js" },
+    "./styles.css": "./dist/host.css",
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "LICENSE", "THIRD_PARTY_NOTICES.txt", "README.md", "RELEASE-STATUS.txt"],
+  "sideEffects": ["**/*.css"],
+  "dependencies": { "html2canvas": "1.4.1" },
+  "peerDependencies": { "react": "^19.0.0" },
+  "peerDependenciesMeta": { "react": { "optional": true } },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "rolldown": "1.2.16",
+    "typescript": "7.0.2"
+  },
+  "scripts": {
+    "build": "node ../../tools/build-sdk-package.mjs",
+    "build:local": "node ../../tools/build-sdk-package.mjs --local",
+    "prepack": "node ../../tools/build-sdk-package.mjs",
+    "prepublishOnly": "python -X utf8 ../../tools/check-resource-licenses.py --release"
+  }
+}

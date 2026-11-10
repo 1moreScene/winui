@@ -6,6 +6,7 @@ use crate::{
 use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct IconSource {
     pub kind: IconSourceKind,
     pub foreground: Option<BrushValue>,

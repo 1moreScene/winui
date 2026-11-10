@@ -4,6 +4,8 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "Source-traced WinUI controls with a Rust-owned browser runtime"
+# Re-enable only after the recorded template-provenance release blocker is resolved.
+publish = false
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -15,6 +17,9 @@ unicode-segmentation = "=1.12.0"
 unicode-linebreak = "=0.1.5"
 unicode-bidi = "=0.3.18"
 kurbo = "=0.13.1"
+roxmltree = "=0.20.0"
+encoding_rs = "=0.8.35"
+icu_calendar = { version = "=2.4.0", default-features = false, features = ["compiled_data"] }
 
 [build-dependencies]
 roxmltree = "0.20"

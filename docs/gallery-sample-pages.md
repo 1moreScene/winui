@@ -12,7 +12,29 @@
 
 页头固定，说明文字与示例在独立内容区滚动。说明直接来自官方目录，每页只显示一份。窄屏边距采用官方的 16px。主题在示例与应用外壳之间共享；搜索时保持既有示例挂载和内部状态。
 
+## 页面异步加载
+
+示例页统一通过 React `lazy` / 动态 `import()` 按需加载，包括 NavigationView、Button 和材质页；同一文件中的示例继续共享模块缓存。首页、目录和设置保留在应用外壳中。
+
+`App.tsx` 使用统一的 `Suspense` 边界，等待期间由 `GalleryPageLoading` 挂载已有 Rust SDK `ProgressRing`，替代原先可见的 `Loading controls…` 等文字。圆环为 32 DIP、不确定进度，沿用页面主题、系统减少动画策略与 Frame 活动状态；React 只负责异步模块和挂载，Rust 负责圆环绘制与动画。加载完成后卸载占位场景，已缓存的页面继续沿用 Frame 生命周期。
+
+这里异步的是页面模块下载与导入；WASM 控件创建和布局仍在浏览器主线程执行，没有迁移到 Worker。
+
+`gallery/tests/page-loading.spec.ts` 延迟真实模块请求，验证圆环动画、Canvas2D / ARIA、首页不提前加载页面模块、加载后的真实示例，以及加载期间返回/前进、深色/高对比度、减少动画和占位场景释放：
+
+```powershell
+cd gallery
+npx playwright test -c playwright.page-loading.config.ts
+# 已构建 gallery/dist 时，可设置 $env:GALLERY_PRODUCTION='1' 验证生产产物。
+```
+
+2026-11-09 验证：Rust/WASM release 编译、类型检查、来源边界检查、Vite 生产打包和 SDK 类型声明生成通过；开发环境与生产包各通过 6 项加载专项，首页/搜索/示例往返的 3 项现有回归通过。额外的全目录导航回归在 `gallery-navigation-helper.ts` 等待侧栏滚动偏移变化时超时，未将全目录导航标为通过。三种主题的加载截图保存在 `out/page-loading-tests/`。
+
 ## 示例卡片
+
+标题栏的 Subtle 语言按钮在英文界面显示“中文”，切换后显示“English”。语言选择保存到 `winui-gallery.language`，刷新后沿用；首次访问保留英文默认值。`GalleryLanguageProvider` 和 `LocalizedText` 在 React 渲染阶段选择说明文字，不修改 SDK 绘制、示例代码、控件名或 API 标识符。切换语言不重新挂载页面控件。
+
+中文词条保存在 `gallery/src/gallery-zh.json`，包含页面描述、示例标题及操作说明。`npm run check:translations` 检查固定官方数据中的说明和标题覆盖，已纳入 `npm run typecheck`；`npx playwright test -c playwright.language.config.ts` 验证实际语言按钮、控件名称保留、语言持久化和窄屏布局。
 
 按照 `Controls/ControlExample.xaml` 与 `Styles/Grid.xaml` 调整共有样式：14px 示例标题、12px 预览内边距、16px Options / Output 内边距、8px 圆角、原生主题背景和分隔线、48px 源码折叠头。输出在预览与选项之间排列，窄屏转换为纵向布局。
 

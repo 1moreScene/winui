@@ -6,9 +6,9 @@ X='{http://schemas.microsoft.com/winfx/2006/xaml}'
 KINDS=['InfoBar','PersonPicture','RatingControl','SplitButton','ToggleSplitButton']
 def tag(n):return n.tag.rsplit('}',1)[-1]
 def save(p,o):(ROOT/p).write_text(json.dumps(o,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-sdk=Path.home()/'.nuget/packages/microsoft.windowsappsdk.winui/2.3.10-experimental/lib/native/Microsoft.UI/Themes/generic.xaml'
+from mit_xaml_resources import resource_path as sdk
 root=E.parse(sdk).getroot()
-ir={'sdk':'Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental','templateSource':str(sdk),'templateSha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'metrics':{},'aliases':{},'styles':{},'requiredBrushes':[],'sources':[]}
+ir={'sdk':'microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779','templateSource':sdk.relative_to(ROOT).as_posix(),'templateSha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'metrics':{},'aliases':{},'styles':{},'requiredBrushes':[],'sources':[]}
 selected=E.Element(root.tag)
 for dictionary in root.iter():
  if tag(dictionary)!='ResourceDictionary':continue

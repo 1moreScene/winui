@@ -5,6 +5,7 @@ use serde_json::{json, Value};
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct PrimitiveProperties {
     pub viewport_size: f64,
     pub indicator_mode: ScrollingIndicatorMode,

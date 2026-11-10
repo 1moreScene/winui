@@ -21,7 +21,7 @@ exec(compile(source.split("\ndata=json.loads",1)[0],str(R/'tools/extract-compose
 keys=['ScrollBarTrackFill','ScrollBarThumbFill','ScrollBarThumbFillPointerOver','ScrollBarThumbFillPressed','ScrollBarThumbFillDisabled','ScrollBarButtonArrowForeground','ScrollBarButtonArrowForegroundPressed','ScrollBarButtonArrowForegroundDisabled','SliderTickBarFill','SliderTickBarFillDisabled']
 for theme,native in [('Light','Light'),('Dark','Default'),('HighContrast','HighContrast')]:
  ir['primitives'][theme]={key:resolver['brush'](native,key)for key in keys}
-ir['sdkSource']=str(resolver['sdk'])
+ir['sdkSource']=resolver['sdk'].relative_to(R).as_posix()
 ir['sdkSourceSha256']=hashlib.sha256(resolver['sdk'].read_bytes()).hexdigest()
 p=R/'references/scroll-primitives-template.json';s=json.dumps(ir,ensure_ascii=False,indent=2)+'\n'
 if not p.exists()or p.read_text(encoding='utf-8')!=s:p.write_text(s,encoding='utf-8')

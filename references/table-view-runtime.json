@@ -1,0 +1,591 @@
+{
+  "communityCommit": "665fea52b8ad47a64187d0f202d5281b074f616f",
+  "winuiSource": "references/table-view-winui-1.6/source.json",
+  "themes": {
+    "Light": {
+      "SortIconAscending": "",
+      "SortIconDescending": "",
+      "FilterIcon": "",
+      "OptionsButtonIcon": "",
+      "SelectAllButtonIcon": "",
+      "TableViewRowDisabledThemeOpacity": 0.3,
+      "TableViewRowDragThemeOpacity": 0.8,
+      "TableViewRowReorderHintThemeOffset": 10.0,
+      "TableViewRowMinWidth": 88.0,
+      "TableViewHorizontalGridLineStrokeThickness": 1.0,
+      "TableViewVerticalGridLineStrokeThickness": 1.0,
+      "TableViewCellSelectionBorderThickness": "2",
+      "TableViewDetailsPadding": "8",
+      "TableViewDetailsToggleButtonMargin": "4,2,4,2",
+      "TableViewRowCellSelectionBorderCornerRadius": "4",
+      "TableViewRowCornerRadius": "4",
+      "TableViewRowCheckBoxCornerRadius": "3",
+      "TableViewRowSelectionIndicatorCornerRadius": "1.5",
+      "TableViewBorderBrush": {
+        "resource": "CardStrokeColorDefaultBrush"
+      },
+      "TableViewCellSelectionBrush": {
+        "resource": "FocusStrokeColorOuterBrush"
+      },
+      "TableViewCellBackgroundPointerOver": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewCellBackgroundSelected": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewHeaderForeground": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewHeaderRowBackground": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowBackground": {
+        "resource": "SubtleFillColorTransparentBrush"
+      },
+      "TableViewRowBackgroundPointerOver": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowBackgroundPressed": {
+        "resource": "SubtleFillColorTertiaryBrush"
+      },
+      "TableViewRowBackgroundSelected": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowBackgroundSelectedPointerOver": {
+        "resource": "SubtleFillColorTertiaryBrush"
+      },
+      "TableViewRowBackgroundSelectedPressed": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowForeground": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowForegroundPointerOver": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowForegroundSelected": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowFocusVisualPrimaryBrush": {
+        "resource": "FocusStrokeColorOuterBrush"
+      },
+      "TableViewRowFocusVisualSecondaryBrush": {
+        "resource": "FocusStrokeColorInnerBrush"
+      },
+      "TableViewRowFocusBorderBrush": {
+        "resource": "FocusStrokeColorOuterBrush"
+      },
+      "TableViewRowFocusSecondaryBorderBrush": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowCheckBrush": {
+        "resource": "TextOnAccentFillColorPrimaryBrush"
+      },
+      "TableViewRowCheckBoxBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowDragBackground": {
+        "resource": "SubtleFillColorTransparentBrush"
+      },
+      "TableViewRowDragForeground": {
+        "resource": "TextOnAccentFillColorPrimaryBrush"
+      },
+      "TableViewRowPlaceholderBackground": {
+        "resource": "ControlStrongFillColorDisabledBrush"
+      },
+      "TableViewRowCheckPressedBrush": {
+        "resource": "TextOnAccentFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckDisabledBrush": {
+        "resource": "TextOnAccentFillColorDisabledBrush"
+      },
+      "TableViewRowCheckBoxPointerOverBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxPressedBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxDisabledBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxSelectedBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxSelectedPointerOverBrush": {
+        "resource": "AccentFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxSelectedPressedBrush": {
+        "resource": "AccentFillColorTertiaryBrush"
+      },
+      "TableViewRowCheckBoxSelectedDisabledBrush": {
+        "resource": "AccentFillColorDisabledBrush"
+      },
+      "TableViewRowCheckBoxBorderBrush": {
+        "resource": "ControlStrongStrokeColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxPointerOverBorderBrush": {
+        "resource": "ControlStrongStrokeColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxPressedBorderBrush": {
+        "resource": "ControlStrongStrokeColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxDisabledBorderBrush": {
+        "resource": "ControlStrongStrokeColorDisabledBrush"
+      },
+      "TableViewRowBackgroundSelectedDisabled": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowSelectionIndicatorBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowSelectionIndicatorPointerOverBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowSelectionIndicatorPressedBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowSelectionIndicatorDisabledBrush": {
+        "resource": "AccentFillColorDisabledBrush"
+      },
+      "TableViewHorizontalGridLineStroke": {
+        "resource": "CardStrokeColorDefaultBrush"
+      },
+      "TableViewVerticalGridLineStroke": {
+        "resource": "CardStrokeColorDefaultBrush"
+      },
+      "TableViewRowDetailsBackgroundBrush": {
+        "resource": "CardBackgroundFillColorSecondaryBrush"
+      },
+      "TableViewDragRectangleFill": {
+        "resource": "SystemControlHighlightAccentBrush",
+        "opacity": 0.2
+      },
+      "TableViewDragRectangleStroke": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewDragRectangleCornerRadius": "0"
+    },
+    "Dark": {
+      "SortIconAscending": "",
+      "SortIconDescending": "",
+      "FilterIcon": "",
+      "OptionsButtonIcon": "",
+      "SelectAllButtonIcon": "",
+      "TableViewRowDisabledThemeOpacity": 0.3,
+      "TableViewRowDragThemeOpacity": 0.8,
+      "TableViewRowReorderHintThemeOffset": 10.0,
+      "TableViewRowMinWidth": 88.0,
+      "TableViewHorizontalGridLineStrokeThickness": 1.0,
+      "TableViewVerticalGridLineStrokeThickness": 1.0,
+      "TableViewCellSelectionBorderThickness": "2",
+      "TableViewDetailsPadding": "8",
+      "TableViewDetailsToggleButtonMargin": "4,2,4,2",
+      "TableViewRowCellSelectionBorderCornerRadius": "4",
+      "TableViewRowCornerRadius": "4",
+      "TableViewRowCheckBoxCornerRadius": "3",
+      "TableViewRowSelectionIndicatorCornerRadius": "1.5",
+      "TableViewBorderBrush": {
+        "resource": "ControlStrokeColorDefaultBrush"
+      },
+      "TableViewCellSelectionBrush": {
+        "resource": "FocusStrokeColorOuterBrush"
+      },
+      "TableViewCellBackgroundPointerOver": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewCellBackgroundSelected": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewHeaderForeground": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewHeaderRowBackground": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowBackground": {
+        "resource": "SubtleFillColorTransparentBrush"
+      },
+      "TableViewRowBackgroundPointerOver": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowBackgroundPressed": {
+        "resource": "SubtleFillColorTertiaryBrush"
+      },
+      "TableViewRowBackgroundSelected": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowBackgroundSelectedPointerOver": {
+        "resource": "SubtleFillColorTertiaryBrush"
+      },
+      "TableViewRowBackgroundSelectedPressed": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowForeground": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowForegroundPointerOver": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowForegroundSelected": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowFocusVisualPrimaryBrush": {
+        "resource": "FocusStrokeColorOuterBrush"
+      },
+      "TableViewRowFocusVisualSecondaryBrush": {
+        "resource": "FocusStrokeColorInnerBrush"
+      },
+      "TableViewRowFocusBorderBrush": {
+        "resource": "FocusStrokeColorOuterBrush"
+      },
+      "TableViewRowFocusSecondaryBorderBrush": {
+        "resource": "TextFillColorPrimaryBrush"
+      },
+      "TableViewRowCheckBrush": {
+        "resource": "TextOnAccentFillColorPrimaryBrush"
+      },
+      "TableViewRowCheckBoxBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowDragBackground": {
+        "resource": "SubtleFillColorTransparentBrush"
+      },
+      "TableViewRowDragForeground": {
+        "resource": "TextOnAccentFillColorPrimaryBrush"
+      },
+      "TableViewRowPlaceholderBackground": {
+        "resource": "ControlStrongFillColorDisabledBrush"
+      },
+      "TableViewRowCheckPressedBrush": {
+        "resource": "TextOnAccentFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckDisabledBrush": {
+        "resource": "TextOnAccentFillColorDisabledBrush"
+      },
+      "TableViewRowCheckBoxPointerOverBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxPressedBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxDisabledBrush": {
+        "resource": "ControlAltFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxSelectedBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxSelectedPointerOverBrush": {
+        "resource": "AccentFillColorSecondaryBrush"
+      },
+      "TableViewRowCheckBoxSelectedPressedBrush": {
+        "resource": "AccentFillColorTertiaryBrush"
+      },
+      "TableViewRowCheckBoxSelectedDisabledBrush": {
+        "resource": "AccentFillColorDisabledBrush"
+      },
+      "TableViewRowCheckBoxBorderBrush": {
+        "resource": "ControlStrongStrokeColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxPointerOverBorderBrush": {
+        "resource": "ControlStrongStrokeColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxPressedBorderBrush": {
+        "resource": "ControlStrongStrokeColorDefaultBrush"
+      },
+      "TableViewRowCheckBoxDisabledBorderBrush": {
+        "resource": "ControlStrongStrokeColorDisabledBrush"
+      },
+      "TableViewRowBackgroundSelectedDisabled": {
+        "resource": "SubtleFillColorSecondaryBrush"
+      },
+      "TableViewRowSelectionIndicatorBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowSelectionIndicatorPointerOverBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowSelectionIndicatorPressedBrush": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewRowSelectionIndicatorDisabledBrush": {
+        "resource": "AccentFillColorDisabledBrush"
+      },
+      "TableViewHorizontalGridLineStroke": {
+        "resource": "ControlStrokeColorDefaultBrush"
+      },
+      "TableViewVerticalGridLineStroke": {
+        "resource": "ControlStrokeColorDefaultBrush"
+      },
+      "TableViewRowDetailsBackgroundBrush": {
+        "resource": "CardBackgroundFillColorSecondaryBrush"
+      },
+      "TableViewDragRectangleFill": {
+        "resource": "SystemControlHighlightAccentBrush",
+        "opacity": 0.2
+      },
+      "TableViewDragRectangleStroke": {
+        "resource": "AccentFillColorDefaultBrush"
+      },
+      "TableViewDragRectangleCornerRadius": "0"
+    },
+    "HighContrast": {
+      "SortIconAscending": "",
+      "SortIconDescending": "",
+      "FilterIcon": "",
+      "OptionsButtonIcon": "",
+      "SelectAllButtonIcon": "",
+      "TableViewRowDisabledThemeOpacity": 0.3,
+      "TableViewRowDragThemeOpacity": 0.8,
+      "TableViewRowReorderHintThemeOffset": 10.0,
+      "TableViewRowMinWidth": 88.0,
+      "TableViewHorizontalGridLineStrokeThickness": 1.0,
+      "TableViewVerticalGridLineStrokeThickness": 1.0,
+      "TableViewCellSelectionBorderThickness": "2",
+      "TableViewDetailsPadding": "8",
+      "TableViewDetailsToggleButtonMargin": "4,2,4,2",
+      "TableViewRowCellSelectionBorderCornerRadius": "4",
+      "TableViewRowCornerRadius": "4",
+      "TableViewRowCheckBoxCornerRadius": "3",
+      "TableViewRowSelectionIndicatorCornerRadius": "1.5",
+      "TableViewBorderBrush": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewCellSelectionBrush": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewCellBackgroundPointerOver": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewCellBackgroundSelected": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewHeaderForeground": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewHeaderRowBackground": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewRowBackground": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowBackgroundPointerOver": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewRowBackgroundPressed": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewRowBackgroundSelected": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewRowBackgroundSelectedPointerOver": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewRowBackgroundSelectedPressed": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewRowForeground": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewRowForegroundPointerOver": {
+        "resource": "SystemColorHighlightTextColorBrush"
+      },
+      "TableViewRowForegroundSelected": {
+        "resource": "SystemColorHighlightTextColorBrush"
+      },
+      "TableViewRowFocusVisualPrimaryBrush": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewRowFocusVisualSecondaryBrush": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowFocusBorderBrush": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewRowFocusSecondaryBorderBrush": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewRowCheckBrush": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewRowCheckBoxBrush": {
+        "resource": "SystemColorButtonFaceColorBrush"
+      },
+      "TableViewRowDragBackground": {
+        "color": "#00000000"
+      },
+      "TableViewRowDragForeground": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewRowPlaceholderBackground": {
+        "resource": "SystemColorButtonFaceColorBrush"
+      },
+      "TableViewRowCheckPressedBrush": {
+        "resource": "SystemColorWindowTextColorBrush"
+      },
+      "TableViewRowCheckDisabledBrush": {
+        "resource": "SystemColorGrayTextColorBrush"
+      },
+      "TableViewRowCheckBoxPointerOverBrush": {
+        "resource": "SystemColorButtonFaceColorBrush"
+      },
+      "TableViewRowCheckBoxPressedBrush": {
+        "resource": "SystemColorButtonFaceColorBrush"
+      },
+      "TableViewRowCheckBoxDisabledBrush": {
+        "resource": "SystemColorButtonFaceColorBrush"
+      },
+      "TableViewRowCheckBoxSelectedBrush": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowCheckBoxSelectedPointerOverBrush": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowCheckBoxSelectedPressedBrush": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowCheckBoxSelectedDisabledBrush": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowCheckBoxBorderBrush": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewRowCheckBoxPointerOverBorderBrush": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewRowCheckBoxPressedBorderBrush": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewRowCheckBoxDisabledBorderBrush": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewRowBackgroundSelectedDisabled": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewRowSelectionIndicatorBrush": {
+        "resource": "SystemColorHighlightTextColorBrush"
+      },
+      "TableViewRowSelectionIndicatorPointerOverBrush": {
+        "resource": "SystemColorHighlightTextColorBrush"
+      },
+      "TableViewRowSelectionIndicatorPressedBrush": {
+        "resource": "SystemColorHighlightTextColorBrush"
+      },
+      "TableViewRowSelectionIndicatorDisabledBrush": {
+        "resource": "SystemColorGrayTextColorBrush"
+      },
+      "TableViewHorizontalGridLineStroke": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewVerticalGridLineStroke": {
+        "resource": "SystemColorButtonTextColorBrush"
+      },
+      "TableViewRowDetailsBackgroundBrush": {
+        "resource": "SystemColorWindowColorBrush"
+      },
+      "TableViewDragRectangleFill": {
+        "resource": "SystemColorHighlightColorBrush",
+        "opacity": 0.3
+      },
+      "TableViewDragRectangleStroke": {
+        "resource": "SystemColorHighlightColorBrush"
+      },
+      "TableViewDragRectangleCornerRadius": "0"
+    }
+  },
+  "indicator": {
+    "opacityMs": 83,
+    "scaleMs": 167,
+    "fromZeroCurve": [
+      0.167,
+      0.167,
+      0,
+      1
+    ],
+    "fromNonzeroCurve": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "cell": {
+    "selectionBorderThickness": 2.0,
+    "contentMargin": 12.0
+  },
+  "entrance": {
+    "defaults": {
+      "FromHorizontalOffset": 0,
+      "FromVerticalOffset": 28,
+      "IsStaggeringEnabled": false
+    },
+    "translation": {
+      "durationMs": 667,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    },
+    "opacity": {
+      "durationMs": 667,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": 0
+      }
+    },
+    "source": "WinUI 1.6.4 LayoutTransition_partial.cpp EntranceThemeTransition::CreateStoryboardImpl -> TAS_ENTERPAGE; native OS timing query in the same SampleApp."
+  },
+  "dragSelection": {
+    "edgeThreshold": 40.0,
+    "maxScrollSpeed": 20.0,
+    "intervalMs": 16.0
+  },
+  "dependencies": {
+    "Light": {
+      "FocusStrokeColorOuterBrush": {
+        "kind": "solid",
+        "color": "#000000E4",
+        "opacity": 1.0
+      },
+      "FocusStrokeColorInnerBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1.0
+      },
+      "ControlStrongFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#00000051",
+        "opacity": 1.0
+      }
+    },
+    "Dark": {
+      "FocusStrokeColorOuterBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF",
+        "opacity": 1.0
+      },
+      "FocusStrokeColorInnerBrush": {
+        "kind": "solid",
+        "color": "#000000B3",
+        "opacity": 1.0
+      },
+      "ControlStrongFillColorDisabledBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF3F",
+        "opacity": 1.0
+      }
+    }
+  }
+}

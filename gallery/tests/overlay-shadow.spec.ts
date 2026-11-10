@@ -1,14 +1,14 @@
 import {test,expect} from '@playwright/test';
 import {PNG} from 'pngjs';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
-import type {WinUI} from '../src/index';
+import type {WinUI} from 'winui-wasm';
 declare global {interface Window {shadowUI:WinUI;}}
 for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} hollow shadow corners and downward projection match native Composition`,async({browser})=>{
  const context=await browser.newContext({viewport:{width:1100,height:650},deviceScaleFactor:1.25});const page=await context.newPage();const rows:object[]=[];
  await page.goto('/#flyout');await expect(page.getByRole('heading',{name:'Flyout',exact:true})).toBeVisible();mkdirSync('../out/overlay-presentation',{recursive:true});
  for(const theme of ['Light','Dark'] as const)for(const z of [16,32]){
   await page.evaluate(async({backend,theme,z})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');window.shadowUI?.dispose();document.querySelector('#shadow-fixture')?.remove();const host=document.createElement('div');host.id='shadow-fixture';host.style.cssText='position:fixed;left:0;top:0;width:1000px;height:500px;z-index:2147483640';document.body.append(host);
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');window.shadowUI?.dispose();document.querySelector('#shadow-fixture')?.remove();const host=document.createElement('div');host.id='shadow-fixture';host.style.cssText='position:fixed;left:0;top:0;width:1000px;height:500px;z-index:2147483640';document.body.append(host);
    const ui=await a.WinUI.create({globalScrollbars:false});window.shadowUI=ui;const scene=ui.scene(host,{backend:a.RendererBackend[backend],theme:a.ThemeMode[theme],reducedMotion:true,root:{background:theme==='Light'?'#f3f3f3':'#202020'}});const c=scene.root.canvas();
    const owner=c.button({width:100,height:32,opacity:0,canvasLeft:170,canvasTop:z===16?220:224});const props={width:240,height:120,isOpen:false,placement:a.OverlayPlacement.Top,background:theme==='Light'?'#f9f9f9':'#2c2c2c',cornerRadius:8};const surface=z===16?c.toolTip(props):c.flyout(props);surface.showAt(owner);
    await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));

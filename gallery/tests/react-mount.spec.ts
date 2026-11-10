@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {RendererBackend} from '../src/enums';
+import {RendererBackend} from 'winui-wasm';
 for(const backend of [RendererBackend.Canvas2D,RendererBackend.WebGL2])for(const strict of [false,true])test(`${backend} React mounts the complete tree before its first frame; StrictMode=${strict}`,async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/tests/react-mount.html');await page.waitForFunction(()=>typeof window.mountReactScene==='function');
@@ -16,12 +16,15 @@ for(const backend of [RendererBackend.Canvas2D,RendererBackend.WebGL2])for(const
 
 for(const backend of [RendererBackend.Canvas2D,RendererBackend.WebGL2])for(const strict of [false,true])test(`${backend} floating target references are bound before the opening frame; StrictMode=${strict}`,async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/tests/react-mount.html');await page.waitForFunction(()=>typeof window.mountReactFloating==='function');
+ const dpr=await page.evaluate(()=>devicePixelRatio);
  for(const kind of ['Flyout','MenuFlyout','ToolTip'] as const){
   const {owner,surface}=await page.evaluate(({backend,strict,kind})=>window.mountReactFloating(backend,strict,kind),{backend,strict,kind});
   expect(surface.props.placementTarget).toBe(owner.id);
   expect(surface.overlay!.isOpen).toBe(true);
   expect(Math.abs(surface.rect.x+surface.rect.width/2-owner.world[4]-owner.rect.width/2)).toBeLessThanOrEqual(.8);
-  expect(surface.rect.y+surface.rect.height).toBeLessThanOrEqual(owner.world[5]);
+  // Anchor edges can sit at half a physical pixel (150 DIP at DPR 1.25).
+  // Compare the presented pixel boundary, including the Rust layout rounding.
+  expect(Math.round((surface.rect.y+surface.rect.height)*dpr)).toBeLessThanOrEqual(Math.round(owner.world[5]*dpr));
   await page.evaluate(()=>window.unmountReactScene());
  }
  expect(errors).toEqual([]);

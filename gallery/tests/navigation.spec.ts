@@ -128,7 +128,7 @@ test('React remount releases surfaces and event callbacks', async ({ page }) => 
 
 test('batch rollback, callback cancellation and destruction during dispatch', async ({ page }) => {
   const result = await page.evaluate(async () => {
-    const browserModule = '/src/index.ts';
+    const browserModule = '/@id/winui-wasm';
     const { EventKind } = await import(browserModule);
     const host = document.createElement('div'); host.style.cssText = 'width:600px;height:400px'; document.body.append(host);
     const view = window.gallery.create(host, { items: [{ id: 'one', text: 'One' }] });
@@ -145,7 +145,7 @@ test('batch rollback, callback cancellation and destruction during dispatch', as
 test('record startup, frame diagnostics and screenshots', async ({ page }, testInfo) => {
   await page.screenshot({ path: '../out/gallery-light.png' });
   await page.evaluate(async () => {
-    const modulePath = '/src/index.ts'; const { EventKind } = await import(modulePath);
+    const modulePath = '/@id/winui-wasm'; const { EventKind } = await import(modulePath);
     document.querySelector('#example-0 [data-item-id="page2"]')!.addEventListener('pointerdown', () => performance.mark('navigation-pointerdown'), { once: true });
     const off = window.gallery.views[0].on(EventKind.SelectionChanged, () => { performance.measure('input-to-selection-notification', 'navigation-pointerdown'); off(); });
   });

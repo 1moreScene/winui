@@ -6,14 +6,16 @@ KINDS=['FlipView','PipsPager','BreadcrumbBar','TreeView','TabView']
 X='{http://schemas.microsoft.com/winfx/2006/xaml}'
 def tag(e):return e.tag.rsplit('}',1)[-1]
 def save(path,data):(ROOT/path).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
-sdk=Path.home()/'.nuget/packages/microsoft.windowsappsdk.winui/2.3.10-experimental/lib/native/Microsoft.UI/Themes/generic.xaml'
+from mit_xaml_resources import resource_path as sdk
+from sdk_resource_reader import find
 root=E.parse(sdk).getroot(); selected=E.Element(root.tag)
-ir={'sdk':'Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental','templateSha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'styles':{},'metrics':{},'brushes':[],'parts':{},'states':{}}
+ir={'sdk':'microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779','templateSha256':hashlib.sha256(sdk.read_bytes()).hexdigest(),'styles':{},'metrics':{},'brushes':[],'parts':{},'states':{}}
 brushes=set()
 for n in root.iter():
  key=n.get(X+'Key',n.get(X+'Name',''));name=tag(n)
  if key.startswith(tuple(KINDS)) and name in ['Double','Thickness','CornerRadius','Duration','x:String','String']:
-  ir['metrics'][key]={'type':name,'value':n.text or ''}
+  metric=find('Default',key)
+  ir['metrics'][key]={'type':tag(metric),'value':metric.text or ''}
   selected.append(E.fromstring(E.tostring(n)))
  target=n.get('TargetType','').split(':')[-1]
  if name=='Style' and (target in KINDS+['TabViewItem','TreeViewItem','BreadcrumbBarItem','TabViewListView'] or key.startswith(tuple(KINDS))):

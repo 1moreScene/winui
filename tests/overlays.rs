@@ -28,6 +28,165 @@ fn scene() -> Scene {
     s
 }
 #[test]
+fn collection_context_flyout_uses_the_requested_item_coordinate_space() {
+    let mut s=scene();
+    let surface=s.create(s.root,NodeKind::MenuFlyout,json!({"menuItems":[{"id":"delete","text":"Delete"}]})).unwrap();
+    let list=s.create(s.root,NodeKind::ListView,json!({"width":240,"height":160,"contextFlyoutTarget":surface,"collectionItems":[{"id":"a","text":"A"},{"id":"b","text":"B"}]})).unwrap();
+    frame(&mut s,0.);
+    let item=s.snapshot().nodes.into_iter().find(|n|n.kind==NodeKind::CollectionItem&&n.props.collection_key=="b").unwrap();
+    let (x,y)=item.world.point(15.,20.);
+    s.input(serde_json::from_value(json!({"kind":"collectionContext","id":list,"index":1,"x":x,"y":y})).unwrap(),1.).unwrap();
+    let popup=s.properties(surface).unwrap();
+    assert_eq!(popup.placement_target,Some(item.id));
+    assert_eq!(popup.placement_position,Some([15.,20.]));
+}
+#[test]
+fn named_placement_waits_for_a_target_and_reopens_after_target_recreation() {
+    let mut s=scene();
+    let surface=s.create(s.root,NodeKind::Flyout,json!({"isOpen":true,"elementReferences":{"placementTarget":"anchor"}})).unwrap();
+    frame(&mut s,0.);
+    assert!(!s.snapshot().nodes.iter().find(|n|n.id==surface).unwrap().overlay.as_ref().unwrap().is_open);
+    assert!(s.properties(surface).unwrap().is_open);
+    let anchor=s.create(s.root,NodeKind::Button,json!({"name":"anchor","text":"Anchor"})).unwrap();
+    frame(&mut s,1.);
+    assert!(s.snapshot().nodes.iter().find(|n|n.id==surface).unwrap().overlay.as_ref().unwrap().is_open);
+    s.destroy(anchor).unwrap();frame(&mut s,2.);
+    assert!(!s.snapshot().nodes.iter().find(|n|n.id==surface).unwrap().overlay.as_ref().unwrap().is_open);
+    s.create(s.root,NodeKind::Button,json!({"name":"anchor","text":"Replacement"})).unwrap();
+    frame(&mut s,3.);
+    assert!(s.snapshot().nodes.iter().find(|n|n.id==surface).unwrap().overlay.as_ref().unwrap().is_open);
+}
+
+#[test]
+fn collection_close_action_runs_after_commit_and_respects_cancellation_and_removed_items() {
+    let mut s=scene();
+    let surface=s.create(s.root,NodeKind::Flyout,json!({"isOpen":true})).unwrap();
+    let grid=s.create(surface,NodeKind::GridView,json!({"width":240,"height":120,"closeFlyout":true,"isItemClickEnabled":true,"collectionItems":[{"id":"a","text":"A"}]})).unwrap();
+    frame(&mut s,0.);s.snapshot();
+    s.input(serde_json::from_value(json!({"kind":"collectionInvoke","id":grid,"index":0})).unwrap(),1.).unwrap();
+    let before=s.snapshot();
+    assert!(!before.events.iter().any(|e|e.kind==EventKind::Closing));
+    let request=before.events.iter().find(|e|e.kind==EventKind::ItemClick).unwrap().request_id.unwrap();
+    s.input(serde_json::from_value(json!({"kind":"collectionCommit","id":grid,"request":request})).unwrap(),1.).unwrap();
+    let events=s.snapshot().events;
+    let selection=events.iter().position(|e|e.kind==EventKind::SelectionChanged).unwrap();
+    let closing=events.iter().position(|e|e.kind==EventKind::Closing).unwrap();
+    assert!(selection<closing);
+    s.input(Input::ResolveOverlay{id:surface,request:events[closing].request_id.unwrap(),cancel:true},1.).unwrap();
+    assert!(s.properties(surface).unwrap().is_open);
+    s.input(serde_json::from_value(json!({"kind":"collectionInvoke","id":grid,"index":0})).unwrap(),2.).unwrap();
+    let request=s.snapshot().events.iter().find(|e|e.kind==EventKind::ItemClick).unwrap().request_id.unwrap();
+    patch(&mut s,grid,json!({"collectionItems":[]}));
+    s.input(serde_json::from_value(json!({"kind":"collectionCommit","id":grid,"request":request})).unwrap(),2.).unwrap();
+    assert!(!s.snapshot().events.iter().any(|e|e.kind==EventKind::Closing));
+}
+#[test]
+fn declarative_close_flyout_uses_nearest_owner_and_the_cancellable_close_protocol() {
+    let mut s=scene();
+    let outer=s.create(s.root,NodeKind::Flyout,json!({"isOpen":true,"width":300,"height":200})).unwrap();
+    let inner=s.create(outer,NodeKind::Flyout,json!({"isOpen":true,"width":200,"height":100})).unwrap();
+    let panel=s.create(inner,NodeKind::StackPanel,json!({})).unwrap();
+    let confirm=s.create(panel,NodeKind::Button,json!({"text":"Confirm","closeFlyout":true})).unwrap();
+    frame(&mut s,0.);s.snapshot();
+    s.input(Input::Invoke{id:confirm},1.).unwrap();
+    let close=s.snapshot().events.into_iter().find(|e|e.kind==EventKind::Closing).unwrap();
+    assert_eq!(close.target,inner);
+    s.input(Input::ResolveOverlay{id:inner,request:close.request_id.unwrap(),cancel:true},1.).unwrap();
+    assert!(s.properties(inner).unwrap().is_open);
+    s.input(Input::Invoke{id:confirm},2.).unwrap();
+    let close=s.snapshot().events.into_iter().find(|e|e.kind==EventKind::Closing).unwrap();
+    s.input(Input::ResolveOverlay{id:inner,request:close.request_id.unwrap(),cancel:false},2.).unwrap();
+    assert!(!s.properties(inner).unwrap().is_open);
+    assert!(s.properties(outer).unwrap().is_open);
+    let standalone=s.create(s.root,NodeKind::Button,json!({"closeFlyout":true})).unwrap();
+    s.input(Input::Invoke{id:standalone},3.).unwrap();
+}
+#[test]
+fn declarative_context_flyout_routes_from_content_and_opens_for_keyboard_requests() {
+    let mut s=scene();
+    let owner=s.create(s.root,NodeKind::StackPanel,json!({})).unwrap();
+    let child=s.create(owner,NodeKind::Button,json!({"text":"Context owner"})).unwrap();
+    let menu=s.create(s.root,NodeKind::MenuFlyout,json!({"menuItems":[{"id":"open","text":"Open"}]})).unwrap();
+    patch(&mut s,owner,json!({"contextFlyoutTarget":menu}));
+    frame(&mut s,0.);
+    s.input(Input::Focus{id:child},1.).unwrap();
+    s.input(Input::KeyDown{key:"ContextMenu".into(),repeat:false},2.).unwrap();
+    frame(&mut s,2.);
+    assert!(s.properties(menu).unwrap().is_open);
+    assert_eq!(s.properties(menu).unwrap().placement_target,Some(owner));
+    assert_eq!(s.properties(menu).unwrap().placement_position,None);
+    s.destroy(menu).unwrap();
+    assert_eq!(s.properties(owner).unwrap().context_flyout_target,None);
+    s.input(Input::ContextRequest{id:child},3.).unwrap();
+}
+#[test]
+fn canvas_only_controls_route_context_requests_through_rust_hit_testing() {
+    let mut s=scene();
+    let shape=s.create(s.root,NodeKind::Rectangle,json!({"width":100,"height":60})).unwrap();
+    let menu=s.create(s.root,NodeKind::MenuFlyout,json!({"menuItems":[{"id":"open","text":"Open"}]})).unwrap();
+    patch(&mut s,shape,json!({"contextFlyoutTarget":menu}));frame(&mut s,0.);
+    let node=&s.nodes[&shape];let(x,y)=node.world.point(20.,20.);
+    s.input(Input::ContextRequestAt{x,y},1.).unwrap();
+    assert!(s.properties(menu).unwrap().is_open);
+    assert_eq!(s.properties(menu).unwrap().placement_target,Some(shape));
+}
+
+#[test]
+fn command_bar_flyout_is_an_owned_button_flyout_and_context_targets_validate_atomically() {
+    let mut s=scene();
+    let owner=s.create(s.root,NodeKind::Button,json!({"text":"Commands"})).unwrap();
+    let surface=s.create(owner,NodeKind::CommandBarFlyout,json!({"commandControls":{"primaryCommands":[{"id":"save","label":"Save"}]}})).unwrap();
+    assert_eq!(s.properties(owner).unwrap().flyout_target,Some(surface));
+    frame(&mut s,0.);s.input(Input::Invoke{id:owner},1.).unwrap();
+    assert!(s.properties(surface).unwrap().is_open);
+    assert!(s.update(vec![Update{id:owner,patch:json!({"contextFlyoutTarget":owner,"text":"Invalid"})}]).is_err());
+    assert_eq!(s.properties(owner).unwrap().text,"Commands");
+}
+#[test]
+fn button_owned_flyout_opens_without_application_state_and_keeps_close_cancellation() {
+    for kind in [NodeKind::Flyout, NodeKind::MenuFlyout] {
+        let mut s=scene();
+        let owner=s.create(s.root,NodeKind::Button,json!({"text":"Owner"})).unwrap();
+        frame(&mut s,0.);
+        let size=s.nodes[&owner].desired;
+        let surface=s.create(owner,kind,json!({"width":300,"height":90,"placement":"Top"})).unwrap();
+        frame(&mut s,1.);
+        assert_eq!(s.nodes[&owner].desired,size,"overlay must not become Button content");
+        assert_eq!(s.properties(owner).unwrap().flyout_target,Some(surface));
+        assert_eq!(s.properties(surface).unwrap().placement_target,Some(owner));
+        s.input(Input::Invoke{id:owner},2.).unwrap();
+        frame(&mut s,2.);
+        assert!(s.properties(surface).unwrap().is_open);
+        assert_eq!(s.properties(surface).unwrap().placement,OverlayPlacement::Top);
+        s.snapshot();
+        s.input(Input::CloseOverlay{id:surface},3.).unwrap();
+        let event=s.snapshot().events.into_iter().find(|e|e.kind==EventKind::Closing).unwrap();
+        s.input(Input::ResolveOverlay{id:surface,request:event.request_id.unwrap(),cancel:true},3.).unwrap();
+        assert!(s.properties(surface).unwrap().is_open);
+        s.destroy(surface).unwrap();
+        assert_eq!(s.properties(owner).unwrap().flyout_target,None);
+        s.input(Input::Invoke{id:owner},4.).unwrap();
+    }
+}
+
+#[test]
+fn moving_an_owned_flyout_rebinds_activation_and_destruction_to_the_new_button() {
+    let mut s=scene();
+    let first=s.create(s.root,NodeKind::Button,json!({"text":"First"})).unwrap();
+    let second=s.create(s.root,NodeKind::Button,json!({"text":"Second"})).unwrap();
+    let surface=s.create(first,NodeKind::Flyout,json!({"width":120,"height":70})).unwrap();
+    s.reparent(surface,second,None).unwrap();
+    assert_eq!(s.properties(first).unwrap().flyout_target,None);
+    assert_eq!(s.properties(second).unwrap().flyout_target,Some(surface));
+    assert_eq!(s.properties(surface).unwrap().placement_target,Some(second));
+    s.destroy(first).unwrap();
+    frame(&mut s,1.);
+    s.input(Input::Invoke{id:second},2.).unwrap();
+    assert!(s.properties(surface).unwrap().is_open);
+    s.destroy(second).unwrap();
+    assert!(!s.nodes.contains_key(&surface));
+}
+#[test]
 fn floating_content_does_not_measure_into_its_logical_parent_and_escapes_clip() {
     let mut s = scene();
     let parent = s

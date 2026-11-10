@@ -3,7 +3,7 @@ use winui_wasm::{enums::NodeKind, model::*, navigation::NavigationView};
 
 fn long_menu() -> NavigationView {
     NavigationView::new(serde_json::from_value(json!({
-        "paneDisplayMode":"Left", "selectedId":"item2", "isBackButtonVisible":false,
+        "paneDisplayMode":"Left", "selectedId":"item2", "isBackButtonVisible":"Collapsed",
         "reducedTransparency":true,
         "items":(0..30).map(|i|json!({"id":format!("item{i}"),"text":format!("Item {i}")})).collect::<Vec<_>>()
     })).unwrap()).unwrap()
@@ -38,7 +38,7 @@ fn selected_item_scrolling_carries_animation_without_restarting_or_stretching_it
 fn reflow_above_the_selected_item_does_not_start_a_selection_transition() {
     let mut nav = NavigationView::new(serde_json::from_value(json!({
         "paneDisplayMode":"Left", "selectedId":"selected", "reducedTransparency":true,
-        "isBackButtonVisible":false,
+        "isBackButtonVisible":"Collapsed",
         "items":[{"id":"branch","text":"Branch","selectsOnInvoked":false,"children":[
             {"id":"a","text":"A"},{"id":"b","text":"B"}]},
             {"id":"selected","text":"Selected"}]

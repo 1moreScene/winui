@@ -31,6 +31,17 @@ fn same_font(a: &Fragment, b: &Fragment) -> bool {
         && a.strike == b.strike
 }
 impl Scene {
+    pub(in crate::scene) fn rich_pointer_presentation(&self, id: u32) -> Option<(&'static str, &'static str)> {
+        let n = &self.nodes[&id];
+        if !matches!(n.kind, NodeKind::RichTextBlock | NodeKind::RichTextBlockOverflow) {
+            return None;
+        }
+        let selectable = props(&self.nodes[&self.rich_owner(id)].props).is_text_selection_enabled;
+        let link = self.pointer.and_then(|(x, y)| n.world.inverse().map(|m| m.point(x, y)))
+            .is_some_and(|(x, y)| n.reading.fragments.iter().any(|f| f.link.is_some() && f.rect.contains(x, y)));
+        Some((if link { "pointer" } else if selectable { "text" } else { "default" },
+            if selectable { "text" } else { "none" }))
+    }
     pub(in crate::scene) fn finish_rich_flow(&mut self, m: &mut impl TextMeasurer) {
         let roots = self
             .nodes

@@ -34,7 +34,7 @@ test('named radio groups span containers and preserve selection',async({page})=>
 
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {PNG} from 'pngjs';
-import type {Scene,RadioButton,ToggleSwitch} from '../src/index';
+import type {Scene,RadioButtonController as RadioButton,ToggleSwitchController as ToggleSwitch} from 'winui-wasm';
 declare global {interface Window {selectionInputFixture:{scene:Scene;control:RadioButton|ToggleSwitch}}}
 test('RadioButton and ToggleSwitch settled templates compare with the matched SDK matrix',async({page})=>{
  test.setTimeout(120000);mkdirSync('../out/selection-input',{recursive:true});
@@ -43,7 +43,7 @@ test('RadioButton and ToggleSwitch settled templates compare with the matched SD
  await page.goto('/#navigation-view');await expect(page.locator('#runtime-status')).toHaveText(/Ready/);
  for(const backend of ['Canvas2D','WebGL2'])for(const item of native.matrix){
   await page.evaluate(async({backend,item})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
    const host=document.createElement('div');host.id='selection-input-fixture';host.style.cssText='position:fixed;left:0;top:0;width:1000px;height:500px;z-index:99999';document.body.append(host);
    const surface=window.gallery.sdk.scene(host,{backend:a.RendererBackend[backend as keyof typeof a.RendererBackend],theme:a.ThemeMode[item.theme as keyof typeof a.ThemeMode],reducedMotion:true});
    const layout={width:220,height:item.bounds.height,margin:[24,24,0,0] as [number,number,number,number],verticalAlignment:a.VerticalAlignment.Top,horizontalAlignment:a.HorizontalAlignment.Left,enabled:item.state!=='Disabled',accessibleName:'fixture'};

@@ -1,5 +1,5 @@
-import{ListView,GridView}from'../src/react';
-import{ItemsUpdatingScrollMode,DataPackageOperation,VerticalAlignment,type CollectionViewOptions,type CollectionDragEvent}from'../src/index';
+import{ListView,GridView}from'winui-wasm/react';
+import{ItemsUpdatingScrollMode,DataPackageOperation,VerticalAlignment,type CollectionViewOptions,type CollectionDragEvent}from'winui-wasm';
 const options:CollectionViewOptions={groups:[{id:'a',header:'A',items:[{id:'1',text:'First'}]}],itemsUpdatingScrollMode:ItemsUpdatingScrollMode.KeepItemsInView,itemsPanelVerticalAlignment:VerticalAlignment.Bottom,canDragItems:true};
 const valid=<ListView {...options} onDragOver={e=>{e.acceptedOperation=DataPackageOperation.Move;}}/>;
 // @ts-expect-error Closed options require their runtime enum.

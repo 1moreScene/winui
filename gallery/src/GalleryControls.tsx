@@ -2,8 +2,8 @@
  * popup and checked state belong to the existing SDK controls in ./react. */
 import { Children, isValidElement, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode, type KeyboardEvent, type Ref } from 'react';
 import { createPortal } from 'react-dom';
-import { SceneView, CheckBox, RadioButton, ComboBox, AutoSuggestBox, NumberBox, Slider, TextBox, Button, ToggleButton, Expander, StackPanel, TextBlock, FontIcon, DropDownButton, MenuFlyout, Flyout } from './react';
-import { ButtonVariant, HorizontalAlignment, Orientation, VerticalAlignment, OverlayPlacement, type AutoSuggestBox as SearchController, type CollectionItem, type ComposedEvent, type Scene, type Expander as ExpanderController, type FloatingSurface, type PopupOptions, type Button as ButtonController, type TextBox as TextBoxController } from './index';
+import { SceneView, CheckBox, RadioButton, ComboBox, AutoSuggestBox, NumberBox, Slider, TextBox, Button, ToggleButton, Expander, StackPanel, TextBlock, FontIcon, DropDownButton, MenuFlyout, Flyout } from 'winui-wasm/react';
+import { ButtonVariant, HorizontalAlignment, Orientation, VerticalAlignment, OverlayPlacement, type AutoSuggestBoxController as SearchController, type CollectionItem, type ComposedEvent, type Scene, type ExpanderController, type TextBoxController } from 'winui-wasm';
 import { useGalleryTheme } from './gallery-theme';
 import './gallery-controls.css';
 
@@ -32,7 +32,7 @@ function Surface({kind,children,fitWidth=false,...props}:HostProps & {kind:strin
   },[props['aria-label']]);
   return <div ref={host} id={props.id} title={props.title} hidden={props.hidden} onKeyDown={props.onKeyDown}
     data-gallery-control={kind} className={`gallery-control gallery-${kind.toLowerCase()} ${props.className??''}`} style={props.style}>
-    <SceneView theme={theme} autoHeight autoWidth={fitWidth||['Button','ToggleButton','DropDownButton'].includes(kind)} reducedTransparency onReady={setScene} style={{height:kind==='Expander'?48:32}}>{children(name)}</SceneView>
+    <SceneView theme={theme} autoHeight autoWidth={fitWidth||['Button','ToggleButton','DropDownButton'].includes(kind)} reducedTransparency={kind==='ComboBox'?undefined:true} onReady={setScene} style={{height:kind==='Expander'?48:32}}>{children(name)}</SceneView>
   </div>;
 }
 type ValueProps<T> = HostProps & {value?:T;onValueChanged?:(value:T)=>void};
@@ -116,19 +116,20 @@ export function GalleryExpander({children,open=false,...props}:HostProps & {chil
   </div>;
 }
 export function GalleryMenu({label,items,...props}:HostProps & {label:string;items:{id:string;text:string;invoke:()=>void}[]}) {
-  const [menu,setMenu]=useState<FloatingSurface<PopupOptions>|null>(null);
-  return <Surface {...props} kind="DropDownButton">{name=><>
-    <DropDownButton accessibleName={name||label} text={label} flyout={menu}/>
-    <MenuFlyout onReady={setMenu} placement={OverlayPlacement.BottomEdgeAlignedLeft} menuItems={items.map(({id,text})=>({id,text}))}
-      onItemInvoked={event=>items.find(item=>item.id===event.itemId)?.invoke()}/>
-  </>}</Surface>;
+  return <Surface {...props} kind="DropDownButton">{name=>
+    <DropDownButton accessibleName={name||label} text={label}>
+      <DropDownButton.Flyout><MenuFlyout placement={OverlayPlacement.BottomEdgeAlignedLeft} menuItems={items.map(({id,text})=>({id,text}))}
+        onItemInvoked={event=>items.find(item=>item.id===event.itemId)?.invoke()}/></DropDownButton.Flyout>
+    </DropDownButton>
+  }</Surface>;
 }
 export function GalleryInformation({title,lines,...props}:HostProps & {title:string;lines:string[]}) {
-  const [target,setTarget]=useState<ButtonController|null>(null),[open,setOpen]=useState(false);
-  return <Surface {...props} kind="Button">{name=><>
-    <Button accessibleName={name||title} width={24} height={24} minWidth={0} minHeight={0} padding={[4,4,4,4]} onReady={setTarget} onClick={()=>setOpen(true)} variant={ButtonVariant.Subtle}><FontIcon glyph={'\uE946'} fontSize={14}/></Button>
-    <Flyout target={target} isOpen={open} width={360} onClosed={()=>setOpen(false)} placement={OverlayPlacement.BottomEdgeAlignedLeft}>
-      <StackPanel spacing={8}>{lines.map((text,index)=><TextBlock key={index} text={text} wrap/>)}</StackPanel>
-    </Flyout>
-  </>}</Surface>;
+  return <Surface {...props} kind="Button">{name=>
+    <Button accessibleName={name||title} width={24} height={24} minWidth={0} minHeight={0} padding={[4,4,4,4]} variant={ButtonVariant.Subtle}>
+      <FontIcon glyph={'\uE946'} fontSize={14}/>
+      <Button.Flyout><Flyout width={360} placement={OverlayPlacement.BottomEdgeAlignedLeft}>
+        <StackPanel spacing={8}>{lines.map((text,index)=><TextBlock key={index} text={text} wrap/>)}</StackPanel>
+      </Flyout></Button.Flyout>
+    </Button>
+  }</Surface>;
 }

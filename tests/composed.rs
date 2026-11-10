@@ -28,6 +28,39 @@ fn scene() -> Scene {
     s
 }
 #[test]
+fn combo_popup_restores_official_acrylic_and_separates_the_shadow_surface() {
+    use winui_wasm::{render::Draw, resources::Resources};
+    for theme in [Theme::Light, Theme::Dark, Theme::HighContrast] {
+        for editable in [false, true] {
+            let mut s = Scene::new(theme, true);
+            s.resize(500., 300., 1.25).unwrap();
+            let id = s.create(s.root, NodeKind::ComboBox, json!({
+                "width":240,"isEditable":editable,"isDropDownOpen":true,
+                "collectionItems":[{"id":"a","text":"Alpha"},{"id":"b","text":"Beta"}]
+            })).unwrap();
+            frame(&mut s, 1000.);
+            let popup = s.nodes[&id].composed.parts["Popup"];
+            assert_eq!(s.nodes[&popup].props.acrylic_resource.as_deref(), Some("ComboBoxDropDownBackground"));
+            let draws = s.floating_display_list();
+            let windows: Vec<_> = draws.iter().filter_map(|d| match d {
+                Draw::WindowLayer { inherit_backdrop, .. } => Some(*inherit_backdrop),
+                _ => None,
+            }).collect();
+            assert_eq!(windows, [false, true]);
+            if theme == Theme::HighContrast {
+                assert!(!draws.iter().any(|d| matches!(d, Draw::Acrylic { .. })));
+            } else {
+                let official = Resources::current().resolve_material(theme, "AcrylicInAppFillColorDefaultBrush").unwrap();
+                assert!(draws.iter().any(|d| matches!(d, Draw::Acrylic { recipe, weight, .. }
+                    if recipe.tint_color == official.tint && recipe.tint_opacity == official.tint_opacity
+                    && recipe.luminosity_opacity == official.luminosity_opacity && *weight == 1.)));
+                s.reduced_transparency = true;
+                assert!(s.floating_display_list().iter().any(|d| matches!(d, Draw::Acrylic { weight, .. } if *weight == 0.)));
+            }
+        }
+    }
+}
+#[test]
 fn inline_combo_popup_uses_the_window_viewport_instead_of_the_32_dip_scene() {
     let mut s=Scene::new(Theme::Light,true);
     s.resize(132.,32.,1.).unwrap();
@@ -78,6 +111,48 @@ fn number_template_commit_step_empty_and_range() {
     assert_eq!(s.nodes[&id].props.number_value, None);
     action(&mut s, id, ComposedAction::Increment);
     assert_eq!(s.nodes[&id].props.number_value, None);
+}
+
+#[test]
+fn number_focus_loss_keeps_committed_value_and_emits_one_change() {
+    for external_blur in [false, true] {
+        for (initial, text, expected, display) in [
+            (Some(42.), "27", Some(27.), "27"),
+            (None, "-12.5", Some(-12.5), "-12.5"),
+            (Some(42.), "1 + 2^2", Some(5.), "5"),
+            (Some(42.), "200", Some(100.), "100"),
+            (Some(42.), "", None, ""),
+            (Some(42.), "bad", Some(42.), "42"),
+            (None, "bad", None, ""),
+        ] {
+            let mut s = scene();
+            let id = s.create(s.root, NodeKind::NumberBox,
+                json!({"numberValue":initial,"acceptsExpression":true,"maximum":100,"width":240})).unwrap();
+            let outside = s.create(s.root, NodeKind::Button, json!({"text":"Outside"})).unwrap();
+            frame(&mut s, 0.);
+            action(&mut s, id, ComposedAction::Focus);
+            let input = s.nodes[&id].composed.parts["InputBox"];
+            s.input(Input::Edit { id: input, text: text.into(), start: text.len(), length: 0,
+                input_type: "insertText".into() }, 1.).unwrap();
+            frame(&mut s, 1.);
+            assert_eq!(s.nodes[&id].props.number_value, initial, "draft must stay uncommitted");
+            s.snapshot();
+            s.input(if external_blur { Input::Blur } else { Input::Focus { id: outside } }, 2.).unwrap();
+            frame(&mut s, 2.);
+            frame(&mut s, 3.);
+            assert_eq!(s.nodes[&id].props.number_value, expected, "blur={external_blur}, text={text:?}");
+            assert_eq!(s.nodes[&id].props.text, display);
+            assert_eq!(s.nodes[&input].props.text, display);
+            let changes: Vec<_> = s.snapshot().events.into_iter()
+                .filter(|event| event.target == id && event.kind == EventKind::ValueChanged).collect();
+            assert_eq!(changes.len(), usize::from(initial != expected));
+            if let Some(event) = changes.first() {
+                let payload = event.payload.as_ref().unwrap();
+                assert_eq!(payload["oldValue"], json!(initial));
+                assert_eq!(payload["newValue"], json!(expected));
+            }
+        }
+    }
 }
 
 #[test]

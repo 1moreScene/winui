@@ -12,6 +12,7 @@ mod rich;
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct RichRun {
     pub text: String,
     pub inline: Option<String>,
@@ -25,18 +26,21 @@ pub struct RichRun {
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct Paragraph {
     pub runs: Vec<RichRun>,
     pub margin: [f64; 4],
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct TextRange {
     pub start_index: usize,
     pub length: usize,
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct TextHighlighter {
     pub background: Option<BrushValue>,
     pub foreground: Option<BrushValue>,
@@ -44,6 +48,7 @@ pub struct TextHighlighter {
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct Annotation {
     pub text: String,
     pub scroll_offset: f64,
@@ -51,6 +56,7 @@ pub struct Annotation {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct ReadingProperties {
     pub text_alignment: TextAlignment,
     pub is_text_selection_enabled: bool,

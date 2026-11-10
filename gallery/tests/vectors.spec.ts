@@ -2,13 +2,13 @@ import {selectGalleryOption} from './gallery-control-helper';
 import {test,expect} from '@playwright/test';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {PNG} from 'pngjs';
-import type {Scene,WinUI} from '../src/index';
+import type {Scene,WinUI} from 'winui-wasm';
 declare global{interface Window{vectorFixture:{sdk:WinUI;scene:Scene};}}
 for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} shapes and advanced icon sources match the native vector matrix`,async({browser})=>{
  const native=JSON.parse(readFileSync('../references/vectors-metrics.json','utf8'));const context=await browser.newContext({deviceScaleFactor:native.dpi,viewport:{width:1100,height:600}});const page=await context.newPage();await page.goto('/#icon-element');await expect(page.getByRole('img',{name:'Slices bitmap icon'})).toBeVisible();const results:object[]=[];
  for(const group of native.rows){
   await page.evaluate(async({group,backend})=>{
-   window.vectorFixture?.sdk.dispose();document.getElementById('vector-fixture')?.remove();const a=await import('/src/index.ts' as string) as typeof import('../src/index');const sdk=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.id='vector-fixture';host.style.cssText='position:fixed;inset:0;width:1000px;height:500px;z-index:99999';document.body.append(host);const scene=sdk.scene(host,{theme:group.theme,backend:a.RendererBackend[backend],reducedMotion:true});const c=scene.root.canvas();
+   window.vectorFixture?.sdk.dispose();document.getElementById('vector-fixture')?.remove();const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');const sdk=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.id='vector-fixture';host.style.cssText='position:fixed;inset:0;width:1000px;height:500px;z-index:99999';document.body.append(host);const scene=sdk.scene(host,{theme:group.theme,backend:a.RendererBackend[backend],reducedMotion:true});const c=scene.root.canvas();
    for(const row of group.nodes){const props={...row.props,canvasLeft:24+row.index%4*240,canvasTop:24+Math.floor(row.index/4)*100};switch(group.kind){case 'Rectangle':c.rectangle(props);break;case 'Line':c.line(props);break;case 'Path':c.path(props);break;case 'Polygon':c.polygon(props);break;case 'Polyline':c.polyline(props);break;case 'BitmapIcon':c.bitmapIcon(props);break;case 'ImageIcon':c.imageIcon(props);break;case 'FontIcon':c.fontIcon(props);break;case 'PathIcon':c.pathIcon(props);break;case 'IconSourceElement':c.iconSourceElement(props);break;case 'AnimatedIcon':c.animatedIcon(props);break;}}
    window.vectorFixture={sdk,scene};
   },{group,backend});
@@ -57,7 +57,7 @@ for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} gradient Sh
  const context=await browser.newContext({deviceScaleFactor:1.25});const page=await context.newPage();await page.goto('/#shapes');
  await expect(page.locator('.example')).toHaveCount(5);
  await page.evaluate(async backend=>{
-  const a=await import('/src/index.ts' as string) as typeof import('../src/index');const sdk=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.id='gradient-shape';host.style.cssText='position:fixed;inset:0;width:120px;height:120px;background:white;z-index:99999';document.body.append(host);
+  const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');const sdk=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.id='gradient-shape';host.style.cssText='position:fixed;inset:0;width:120px;height:120px;background:white;z-index:99999';document.body.append(host);
   const scene=sdk.scene(host,{backend:a.RendererBackend[backend],theme:a.ThemeMode.Light,root:{padding:[0,0,0,0],background:'#ffffff'}});
   scene.root.path({width:100,height:100,horizontalAlignment:a.HorizontalAlignment.Left,verticalAlignment:a.VerticalAlignment.Top,data:'M0 0L100 0L0 100Z',fill:{kind:a.GradientKind.Linear,from:[0,0],to:[1,0],stops:[{offset:0,color:'#ff0000'},{offset:1,color:'#0000ff'}]}});
   window.vectorFixture={sdk,scene};

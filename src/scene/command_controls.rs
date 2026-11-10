@@ -48,12 +48,14 @@ pub(in crate::scene) fn color(theme: Theme, key: &str) -> String {
 }
 #[derive(Clone, Debug, Serialize, Deserialize, Default)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct Accelerator {
     pub key: String,
     pub modifiers: Vec<KeyboardAcceleratorModifier>,
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct CommandItem {
     pub id: String,
     pub label: String,
@@ -86,6 +88,7 @@ impl Default for CommandItem {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct CommandProperties {
     pub label: String,
     pub is_compact: bool,

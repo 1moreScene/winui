@@ -11,7 +11,7 @@ test('all floating profiles: Rust frame cost and Canvas readback work',async({pa
  const imageRoot=process.env.WINUI_OVERLAY_PERF_IMAGES??'../out/overlay-performance-before-images';mkdirSync(imageRoot,{recursive:true});
  for(const backend of ['Canvas2D','WebGL2'] as const)for(const profile of profiles){
   const result=await page.evaluate(async({backend,profile,background})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
    const host=document.createElement('div');host.style.cssText='position:fixed;inset:0;width:720px;height:480px;z-index:999999';document.body.append(host);
    let time=1000;const ui=await a.WinUI.create({globalScrollbars:false,clock:()=>time});
    const scene=ui.scene(host,{backend:a.RendererBackend[backend],root:{background:'#f3f3f3'}});scene.setHostActive(false);
@@ -38,11 +38,11 @@ test('all floating profiles: Rust frame cost and Canvas readback work',async({pa
     else{const node=profile==='DropDownButton'?canvas.dropDownButton({...place,text:'Open'}):canvas.appBarButton({...place,label:'Open'});node.setFlyout(popup);open=()=>node.openFlyout();}
    }
    const internal=scene as unknown as {raw:{scene_frame:(id:number,time:number,width:number,height:number,dpr:number)=>string};handle:number};
-   const nativeFrame=(t:number)=>{time=t;return JSON.parse(internal.raw.scene_frame(internal.handle,time,720,480,1.25)) as import('../src/scene').SceneSnapshot;};
+   const nativeFrame=(t:number)=>{time=t;return JSON.parse(internal.raw.scene_frame(internal.handle,time,720,480,1.25)) as import('winui-wasm').SceneSnapshot;};
    nativeFrame(time);open!();
    const proto=CanvasRenderingContext2D.prototype,read=proto.getImageData;let readbacks=0,readbackMs=0,readPixels=0;
    proto.getImageData=function(...args:Parameters<typeof read>){const t=performance.now();try{readbacks++;readPixels+=args[2]*args[3];return read.apply(this,args);}finally{readbackMs+=performance.now()-t;}};
-   const samples:number[]=[];let snapshot:import('../src/scene').SceneSnapshot;
+   const samples:number[]=[];let snapshot:import('winui-wasm').SceneSnapshot;
    try{for(let i=0;i<36;i++){const t=performance.now();snapshot=nativeFrame(1000+i*16.667);samples.push(performance.now()-t);}}
    finally{proto.getImageData=read;}
    const sorted=[...samples].sort((a,b)=>a-b);

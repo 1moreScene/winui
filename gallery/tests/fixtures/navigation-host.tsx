@@ -1,7 +1,7 @@
 import {StrictMode,useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {Frame,WinUIProvider} from '../../src/react';
-import {WinUI,NavigationCacheMode,type Frame as Controller,type PageStackEntry} from '../../src/index';
+import {Frame,WinUIProvider} from 'winui-wasm/react';
+import {WinUI,NavigationCacheMode,type FrameController as Controller,type PageStackEntry} from 'winui-wasm';
 declare global{interface Window{externalFrame:Controller<PageStackEntry>}}
 const sdk=await WinUI.create();
 function Pages(){

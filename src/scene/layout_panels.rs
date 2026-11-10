@@ -5,6 +5,7 @@ use std::collections::{HashMap, HashSet};
 
 #[derive(Clone, Debug, Serialize, Deserialize, Default)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct PanelProperties {
     pub item_spacing: f64,
     pub line_spacing: f64,
@@ -13,6 +14,7 @@ pub struct PanelProperties {
 /// Sibling names are stable layout keys, independent of browser DOM names.
 #[derive(Clone, Debug, Serialize, Deserialize, Default)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct RelativeConstraints {
     pub left_of: Option<String>,
     pub right_of: Option<String>,

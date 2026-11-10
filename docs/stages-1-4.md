@@ -31,7 +31,7 @@ npm run dev
 同一个 scene 只有一个可见 Canvas。Rust 保存全部节点、父子关系、控件状态和布局；TS 保存包装对象、业务回调以及浏览器宿主资源。不同 Gallery 示例可以使用不同 scene。旧 `ui.navigationView(host, options)` 保持兼容；组合页面使用 `scene.root.navigationView(options, layout)`，内部仍调用同一个 Rust NavigationView。
 
 ```ts
-import { WinUI, ButtonVariant, Orientation, PaneDisplayMode } from './src/index';
+import { WinUI, ButtonVariant, Orientation, PaneDisplayMode } from 'winui-wasm';
 
 const ui = await WinUI.create();
 const scene = ui.scene(host);

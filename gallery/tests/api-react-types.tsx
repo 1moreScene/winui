@@ -7,7 +7,7 @@ import {
   SceneView,
   TextBlock,
   ToggleButton,
-} from "../src/react";
+} from "winui-wasm/react";
 import {
   ClickMode,
   FontStyle,
@@ -15,7 +15,11 @@ import {
   PaneDisplayMode,
   RendererBackend,
   ThemeMode,
-} from "../src/index";
+} from "winui-wasm/react";
+import type { ButtonController } from "winui-wasm";
+import * as CoreSDK from "winui-wasm";
+import type { ButtonOptions } from "winui-wasm/react";
+const sharedButtonOptions: ButtonOptions = { text: "Save", clickMode: ClickMode.Release };
 // Typechecked only: direct props retain the SDK's enum, callback and tuple contracts.
 function directReactContract() {
   return (
@@ -27,6 +31,7 @@ function directReactContract() {
           enabled
           clickMode={ClickMode.Release}
           onClick={(event) => console.log(event.target)}
+          onReady={(button: ButtonController) => button.update({ text: "Ready" })}
         />
         <CheckBox
           text="Option"
@@ -54,11 +59,17 @@ const rawEnum = <Button text="Save" clickMode="Release" />;
 const rawState = <CheckBox isChecked="mixed" />;
 void [directReactContract, navigation, obsolete, rawEnum, rawState];
 
+// @ts-expect-error Unsuffixed component names must not be exported by the root entry.
+const handleAsComponent = <CoreSDK.Button text="Save" />;
+// @ts-expect-error The root entry exposes ContentControlController, not ContentControl.
+const controllerAsComponent = <CoreSDK.ContentControl />;
+void [handleAsComponent, controllerAsComponent, sharedButtonOptions];
+
 import {
   RadioButtons as ReactRadioButtons,
   RadioButton as ReactRadioButton,
   ToggleSwitch as ReactToggleSwitch,
-} from "../src/react";
+} from "winui-wasm/react";
 const radioGroup = (
   <ReactRadioButtons
     items={["One", { text: "Two", enabled: false }]}
@@ -91,13 +102,13 @@ void [
   invalidGroup,
   invalidRadio,
 ];
-import { TextBox, PasswordBox, ScrollViewer } from "../src/react";
+import { TextBox, PasswordBox, ScrollViewer } from "winui-wasm/react";
 import {
   ScrollMode,
   ScrollBarVisibility,
   ZoomMode,
   PasswordRevealMode,
-} from "../src/index";
+} from "winui-wasm";
 function textScrollReactContract() {
   return (
     <>
@@ -124,7 +135,7 @@ const invalidReveal = <PasswordBox passwordRevealMode="Visible" />;
 const invalidZoom = <ScrollViewer zoomMode={ScrollMode.Enabled} />;
 void [textScrollReactContract, invalidTextOptions, invalidReveal, invalidZoom];
 
-import { ProgressBar, ProgressRing } from "../src/react";
+import { ProgressBar, ProgressRing } from "winui-wasm/react";
 const progressDirect = (
   <>
     <ProgressBar
@@ -144,8 +155,8 @@ const progressOptions = <ProgressBar options={{ value: 50 }} />;
 const progressWrong = <ProgressRing value="50" />;
 void [progressDirect, progressOptions, progressWrong];
 
-import { RepeatButton, Viewbox } from "../src/react";
-import { Stretch, StretchDirection } from "../src/index";
+import { RepeatButton, Viewbox } from "winui-wasm/react";
+import { Stretch, StretchDirection } from "winui-wasm";
 const nextBasic = (
   <>
     <RepeatButton text="Hold" delay={500} interval={33} />
@@ -169,12 +180,12 @@ import {
   HyperlinkButton,
   Expander,
   InfoBadge,
-} from "../src/react";
+} from "winui-wasm/react";
 import {
   ExpandDirection,
   InfoBadgeStyle,
   HorizontalAlignment,
-} from "../src/index";
+} from "winui-wasm";
 const five = (
   <Border borderThickness={[1, 2, 3, 4]}>
     <Canvas>
@@ -200,8 +211,8 @@ void [five, badExpand, badBadge, badBorder];
 const badCanvas=<Canvas rows={[]}/>;
 void badCanvas;
 
-import { FontIcon, SymbolIcon, PathIcon, BitmapIcon, ImageIcon } from '../src/react';
-import { Symbol } from '../src/index';
+import { FontIcon, SymbolIcon, PathIcon, BitmapIcon, ImageIcon } from 'winui-wasm/react';
+import { Symbol } from 'winui-wasm';
 const iconElements = <><FontIcon glyph="A" fontSize={24} /><SymbolIcon symbol={Symbol.Accept} /><PathIcon data="M0 0L10 10Z" /><BitmapIcon uriSource="sample.png" showAsMonochrome /><ImageIcon source="sample.svg" /></>;
 // @ts-expect-error Symbol is a closed runtime enum
 const badSymbol = <SymbolIcon symbol="Accept" />;
@@ -211,8 +222,8 @@ const wrongSymbol = <SymbolIcon symbol={InfoBadgeStyle.Success} />;
 const wrappedIcon = <FontIcon options={{ glyph: 'A' }} />;
 void [iconElements, badSymbol, wrongSymbol, wrappedIcon];
 
-import {AnimatedIcon,IconSourceElement,Rectangle,Line,Path,Polygon,Polyline} from '../src/react';
-import {AnimatedIconSource,IconSourceKind,FlowDirection,FillRule,PenLineCap,PenLineJoin} from '../src/index';
+import {AnimatedIcon,IconSourceElement,Rectangle,Line,Path,Polygon,Polyline} from 'winui-wasm/react';
+import {AnimatedIconSource,IconSourceKind,FlowDirection,FillRule,PenLineCap,PenLineJoin} from 'winui-wasm';
 const vectors=<><AnimatedIcon source={AnimatedIconSource.Find} state="PointerOver" fallbackIconSource={{kind:IconSourceKind.Symbol,symbol:Symbol.Find}}/><IconSourceElement iconSource={{kind:IconSourceKind.Font,glyph:'A'}}/><FontIcon flowDirection={FlowDirection.RightToLeft}/><Rectangle radiusX={8}/><Line strokeStartLineCap={PenLineCap.Round}/><Path data="F1 M0 0Z"/><Polygon points={[[0,0],[20,20]]} strokeLineJoin={PenLineJoin.Bevel}/><Polyline points={[]}/></>;
 // @ts-expect-error finite source requires runtime enum
 const badAnimated=<AnimatedIcon source="Find"/>;
@@ -228,17 +239,31 @@ const badCap=<Line strokeEndLineCap={PenLineJoin.Round}/>;
 const wrappedShape=<Rectangle options={{width:20}}/>;
 void [vectors,badAnimated,badSource,unsupportedSource,badRule,badCap,wrappedShape];
 
-import {Popup,ToolTip,Flyout,MenuFlyout,Slider as FloatingSlider} from '../src/react';
-import {OverlayPlacement,MenuEntryKind} from '../src/index';
+import {Popup,ToolTip,Flyout,MenuFlyout,MenuFlyoutItem,Slider as FloatingSlider} from 'winui-wasm/react';
+import {OverlayPlacement,MenuEntryKind} from 'winui-wasm';
 const floatingElements=<><Popup isOpen><TextBlock text="Hello"/></Popup><ToolTip text="Help" placement={OverlayPlacement.Top}/><Flyout placement={OverlayPlacement.Bottom}/><MenuFlyout menuItems={[{id:'open',kind:MenuEntryKind.Command}]}/><FloatingSlider value={50}/></>;
 // @ts-expect-error closed placement values require the public enum
 const wrongPlacement=<Flyout placement="Top"/>;
 // @ts-expect-error flat props; no options wrapper
 const wrappedSlider=<FloatingSlider options={{value:5}}/>;
 void [floatingElements,wrongPlacement,wrappedSlider];
+const ownedFlyout=<Button text="Open" flyout={<Flyout>{surface=><Button text="Close" onClick={()=>surface.hide()}/>}</Flyout>}/>;
+const propertyFlyout=<Button text="Menu"><Button.Flyout><MenuFlyout><MenuFlyoutItem text="Open"/></MenuFlyout></Button.Flyout></Button>;
+// A string references a named floating surface in the same Rust Scene.
+const namedFlyout=<Button flyout="shared-menu"/>;
+// @ts-expect-error The render callback receives a typed floating controller.
+const invalidFlyoutRender=<Flyout>{surface=><Button onClick={()=>surface.nonexistent()}/>}</Flyout>;
+void [ownedFlyout,propertyFlyout,namedFlyout,invalidFlyoutRender];
+// @ts-expect-error Declarative close is a boolean action, not an open string.
+const invalidCloseAction=<Button closeFlyout="true"/>;
+// @ts-expect-error Attached ToolTip content is a typed component declaration.
+const invalidToolTipDeclaration=<Button toolTip="help"/>;
+// @ts-expect-error A ContextFlyout declaration cannot be an arbitrary object.
+const invalidContextDeclaration=<TextBox contextFlyout={{text:'Menu'}}/>;
+void [invalidCloseAction,invalidToolTipDeclaration,invalidContextDeclaration];
 
-import {ListView,GridView,ItemsStackPanel,ItemsWrapGrid,VariableSizedWrapGrid} from '../src/react';
-import {ListViewSelectionMode,NodeKind,Orientation} from '../src/index';
+import {ListView,GridView,ItemsStackPanel,ItemsWrapGrid,VariableSizedWrapGrid} from 'winui-wasm/react';
+import {ListViewSelectionMode,NodeKind,Orientation} from 'winui-wasm';
 const collectionElements=<><ListView items={[{id:'one',text:'One',company:'Microsoft'}]} selectionMode={ListViewSelectionMode.Extended} renderItem={item=><TextBlock text={item.company}/>}/><GridView items={['One']} itemsPanel={NodeKind.ItemsWrapGrid}/><ItemsStackPanel orientation={Orientation.Vertical}/><ItemsWrapGrid maximumRowsOrColumns={3}/><VariableSizedWrapGrid itemWidth={44}/></>;
 // @ts-expect-error selection uses the exported enum
 const badCollectionMode=<ListView selectionMode="Single"/>;
@@ -252,7 +277,7 @@ const badCollectionTemplate=<ListView items={[{id:'x',company:'a'}]} renderItem=
 const wrappedCollection=<ListView options={{items:['One']}}/>;
 void [collectionElements,badCollectionMode,wrongCollectionMode,badCollectionPanel,badCollectionTemplate,wrappedCollection];
 
-import {TextTrimming,OpticalMarginAlignment} from '../src/index';
+import {TextTrimming,OpticalMarginAlignment} from 'winui-wasm';
 const styledCollection=<GridView items={['One']} itemContainerStyle={{margin:[5,5,5,5],minWidth:100,horizontalContentAlignment:HorizontalAlignment.Stretch}} renderItem={item=><TextBlock text={item} trimming={TextTrimming.WordEllipsis}/>}/>;
 // @ts-expect-error container alignment requires its public runtime enum
 const badContainerStyle=<GridView itemContainerStyle={{horizontalContentAlignment:'Stretch'}}/>;
@@ -263,8 +288,8 @@ const opticalTitle=<TextBlock text="Title" opticalMarginAlignment={OpticalMargin
 const badOpticalTitle=<TextBlock opticalMarginAlignment="TrimSideBearings"/>;
 void [styledCollection,badContainerStyle,badWordTrimming,opticalTitle,badOpticalTitle];
 
-import {SplitView,SemanticZoom,ParallaxView,UICommand,StandardCommand,ScrollView,SwipeControl} from '../src/react';
-import {SplitViewDisplayMode,StandardCommandKind,SwipeMode} from '../src/index';
+import {SplitView,SemanticZoom,ParallaxView,UICommand,StandardCommand,ScrollView,SwipeControl} from 'winui-wasm/react';
+import {SplitViewDisplayMode,StandardCommandKind,SwipeMode} from 'winui-wasm';
 const viewCommandElements=<><UICommand label="Custom XamlUICommand" onExecuteRequested={event=>void event.parameter}/><StandardCommand standardKind={StandardCommandKind.Delete}/><SplitView displayMode={SplitViewDisplayMode.Inline} pane={<TextBlock text="Pane"/>}><TextBlock text="Content"/></SplitView><SemanticZoom zoomedInView={<GridView items={['Detail']}/>} zoomedOutView={<ListView items={['Group']}/>}/><ParallaxView verticalShift={500}/><ScrollView><SwipeControl rightItems={{mode:SwipeMode.Execute,items:[{id:'delete'}]}}><TextBlock text="Item"/></SwipeControl></ScrollView></>;
 // @ts-expect-error SwipeMode is a closed runtime enum.
 const wrongSwipeMode=<SwipeControl rightItems={{mode:'Execute',items:[{id:'delete'}]}}/>;

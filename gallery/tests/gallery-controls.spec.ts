@@ -27,7 +27,7 @@ test('Source content is inside one Rust Expander and follows its layout and clip
   await expect(source.locator('[data-gallery-expander]')).toHaveCount(0);
   expect(await code.evaluate(element=>{
     const content=element.closest('[data-winui-content-host]');
-    const surface=content?.closest('[data-gallery-control="Expander"]') as HTMLElement&{galleryScene:import('../src').Scene};
+    const surface=content?.closest('[data-gallery-control="Expander"]') as HTMLElement&{galleryScene:import('winui-wasm').Scene};
     const slot=content?.parentElement?.getAttribute('data-scene-node');
     const snapshot=surface?.galleryScene.snapshot;
     const node=snapshot?.nodes.find(node=>String(node.id)===slot);
@@ -42,13 +42,18 @@ test('Source content is inside one Rust Expander and follows its layout and clip
 });
 
 test('Code horizontal and vertical scrollbars use the shared Rust ScrollViewer in all themes',async({page})=>{
-  await page.goto('/#grid-view');const source=page.locator('.example .source').first();await openSource(source);
-  const code=source.locator('pre').first();await expect(code).toHaveAttribute('data-winui-scroll-host','');
-  // Exercise both axes with app-owned code text; do not replace the scrollbar.
-  await code.evaluate(element=>{element.textContent=Array.from({length:80},(_,i)=>`// line ${i} `+'source '.repeat(120)).join('\n');element.style.maxHeight='160px';});
-  await expect.poll(()=>code.evaluate(e=>e.scrollWidth>e.clientWidth&&e.scrollHeight>e.clientHeight)).toBe(true);
+  test.setTimeout(90_000);
+  await page.goto('/#grid-view');const source=page.locator(active+'.example .source').first();
   for(const theme of ['Light','Dark','HighContrast']) {
-    await selectGalleryOption(page.locator('#theme'),theme);
+    await selectGalleryOption(page.locator(active+'#theme'),theme);
+    // Theme/navigation can remount the sample. Resolve its current Expander
+    // and wait for the async code presenter before changing app-owned text.
+    await openSource(source);
+    const code=source.locator('pre').first();
+    await expect(code).not.toHaveAttribute('data-source-status','loading');
+    await code.locator('code').evaluate(element=>{element.textContent=Array.from({length:80},(_,i)=>`// line ${i} `+'source '.repeat(120)).join('\n');});
+    await code.evaluate(element=>{element.style.maxHeight='160px';});
+    await expect.poll(()=>code.evaluate(e=>e.scrollWidth>e.clientWidth&&e.scrollHeight>e.clientHeight)).toBe(true);
     await expect(code).toHaveAttribute('data-winui-scroll-host','');
     // Settings uses Frame navigation; returning re-registers this DOM scroll host.
     const id=await code.getAttribute('id');
@@ -63,22 +68,29 @@ test('Code horizontal and vertical scrollbars use the shared Rust ScrollViewer i
     await vertical.focus();await vertical.press('End');await expect.poll(()=>code.evaluate(e=>e.scrollTop)).toBeGreaterThan(100);
     await page.screenshot({path:`../out/gallery-controls-scroll-${theme}.png`});
   }
-  await source.getByRole('button',{name:'Source code',exact:true}).click();await expect(code).toBeHidden();
+  await source.getByRole('button',{name:'Source code',exact:true}).click();await expect(source.locator('pre').first()).toBeHidden();
 });
 
 test('Every implemented Gallery page mounts existing SDK controls and no HTML substitutes',async({page})=>{
-  test.setTimeout(180_000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
-  await page.goto('/#button');const rows=[];
+  test.setTimeout(300_000);page.setDefaultTimeout(15_000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+  const rows=[];
   for(const item of galleryItems.filter(item=>!item.href.startsWith('#sample/'))) {
-    await page.evaluate(href=>location.hash=href,item.href);
+    // This is an ownership inventory. Load each route independently so cached
+    // pages and overlapping Frame transitions cannot redirect source locators.
+    await page.goto('/'+item.href);
+    await expect.poll(()=>page.evaluate(()=>window.gallery?.frame?.snapshot.animating)).toBe(false);
     await expect(page.locator(active+'.gallery-page-header h1')).toHaveText(item.title);
-    await expect(page.locator(active+'.home-sample-page main').first()).toBeVisible();
-    const source=page.locator(active+'.home-sample-page .example .source').first();
+    const body=page.locator(active+'.home-sample-page');
+    await expect(body).toBeVisible();
+    // Pages may use main, article or section for their app layout. Require a
+    // real SDK rendering surface in the sample rather than one DOM tag name.
+    await expect.poll(()=>body.locator('.winui-surface canvas').count()).toBeGreaterThan(0);
+    const source=body.locator('.example [data-gallery-expander].source').first();
     if(await source.count()) {await openSource(source);await expect(source.locator('pre').first()).toBeVisible();await expect(source.locator('[data-gallery-expander]')).toHaveCount(0);}
     const audit=await page.evaluate(()=>{
       const foreign=[...document.querySelectorAll('input,select,textarea,button,details,summary')].filter(e=>!e.closest('.winui-surface')).map(e=>e.outerHTML.slice(0,100));
       const origins=[...document.querySelectorAll<HTMLElement>('[data-gallery-control]')].filter(e=>e.getClientRects().length>0).map(element=>{
-        const scene=(element as HTMLElement&{galleryScene?:import('../src').Scene}).galleryScene;
+        const scene=(element as HTMLElement&{galleryScene?:import('winui-wasm').Scene}).galleryScene;
         return {kind:element.dataset.galleryControl,valid:!!scene&&!scene.isDisposed&&scene.snapshot.nodes.some(node=>node.kind===element.dataset.galleryControl)};
       });
       return {foreign,origins};

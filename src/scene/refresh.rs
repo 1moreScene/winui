@@ -18,6 +18,7 @@ fn rotation_enabled() -> bool {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct RefreshProperties {
     pub pull_direction: RefreshPullDirection,
     pub visualizer_orientation: RefreshVisualizerOrientation,

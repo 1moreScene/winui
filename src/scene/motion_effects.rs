@@ -6,6 +6,7 @@ use std::collections::BTreeSet;
 
 #[derive(Clone, Debug, Default, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct MotionProperties {
     pub implicit: BTreeMap<String, f64>,
     pub background_duration: Option<f64>,
@@ -37,7 +38,7 @@ impl MotionProperties {
 pub(super) fn visual_key(key: &str) -> bool {
     matches!(
         key,
-        "translationX" | "translationY" | "scaleX" | "scaleY" | "rotation" | "opacity"
+        "translationX" | "translationY" | "translationZ" | "scaleX" | "scaleY" | "rotation" | "opacity"
     )
 }
 fn validate_duration(value: f64) -> Result<(), String> {
@@ -49,21 +50,25 @@ fn validate_duration(value: f64) -> Result<(), String> {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct SpringOptions {
     pub period: f64,
     pub damping_ratio: f64,
+    /// Units per millisecond; None preserves interrupted velocity. Native hover uses 0.
+    pub initial_velocity: Option<f64>,
 }
 impl Default for SpringOptions {
     fn default() -> Self {
         Self {
             period: 50.,
             damping_ratio: 0.6,
+            initial_velocity: None,
         }
     }
 }
 impl SpringOptions {
     pub fn validate(&self) -> Result<(), String> {
-        if !self.period.is_finite()
+        if self.initial_velocity.is_some_and(|v|!v.is_finite()||v.abs()>1e7) || !self.period.is_finite()
             || !(1. ..=10_000.).contains(&self.period)
             || !self.damping_ratio.is_finite()
             || !(0.01..=1.).contains(&self.damping_ratio)
@@ -73,11 +78,13 @@ impl SpringOptions {
         Ok(())
     }
     pub fn duration(&self) -> f64 {
-        (12. * self.period / (std::f64::consts::TAU * self.damping_ratio)).max(self.period)
+        (12. * self.period / self.damping_ratio).max(self.period)
     }
     /// Exact damped oscillator solution, including velocity on interruption (units/ms).
     pub fn value(&self, from: f64, to: f64, velocity: f64, time: f64) -> f64 {
-        let w = std::f64::consts::TAU / self.period;
+        // Matching Composition capture: Period is the reciprocal natural
+        // angular frequency, not 2*pi/omega. See motion-spring-native.json.
+        let w = 1. / self.period;
         let z = self.damping_ratio;
         let x = from - to;
         let t = time.max(0.);
@@ -91,6 +98,7 @@ impl SpringOptions {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct HoverSpring {
     pub scale: f64,
     #[serde(flatten)]
@@ -163,6 +171,7 @@ impl Expression {
                     ExpressionProperty::ScaleY => n.presentation.scale_y,
                     ExpressionProperty::TranslationX => n.presentation.translation_x,
                     ExpressionProperty::TranslationY => n.presentation.translation_y,
+                    ExpressionProperty::TranslationZ => n.presentation.translation_z + n.effects.depth(scene.time),
                     ExpressionProperty::Rotation => n.presentation.rotation,
                     ExpressionProperty::Opacity => n.presentation.opacity,
                 }
@@ -250,9 +259,10 @@ pub(super) struct Connection {
     start: f64,
     duration: f64,
     configuration: ConnectedAnimationConfiguration,
-    source: Vec<Draw>,
+    source: std::sync::Arc<Vec<Draw>>,
     source_size: [f64; 2],
     key: String,
+    source_node: Option<u32>,
 }
 impl Connection {
     pub fn progress(&self, time: f64) -> f64 {
@@ -264,6 +274,11 @@ impl Connection {
                 [0.8, 0., 0.2, 1.]
             },
         )
+    }
+    fn dip(&self,time:f64)->f64 {
+        if self.configuration!=ConnectedAnimationConfiguration::Gravity{return 0.;}
+        let t=((time-self.start)/self.duration).clamp(0.,1.);
+        if t<0.66 {bezier(t/0.66,[0.35,0.,0.55,1.])}else{1.-bezier((t-0.66)/0.34,[0.45,0.,0.55,1.])}
     }
     fn matrix(&self, time: f64) -> Matrix {
         let t = ((time - self.start) / self.duration).clamp(0., 1.);
@@ -292,6 +307,7 @@ struct PreparedConnection {
     size: [f64; 2],
     prepared: f64,
     commands: Vec<Draw>,
+    node: u32,
 }
 #[derive(Clone, Debug)]
 pub(super) struct Ghost {
@@ -305,6 +321,7 @@ pub(super) struct Ghost {
 #[derive(Default)]
 pub(super) struct MotionRuntime {
     prepared: BTreeMap<String, PreparedConnection>,
+    hidden_sources: BTreeMap<u32, u32>,
     pub ghosts: Vec<Ghost>,
 }
 
@@ -322,6 +339,8 @@ pub enum MotionCommand {
         key: String,
         #[serde(default)]
         configuration: ConnectedAnimationConfiguration,
+        #[serde(default)]
+        coordinated: Vec<u32>,
     },
     CancelConnected {
         key: String,
@@ -376,33 +395,21 @@ impl EffectState {
                     .unwrap_or_default(),
             )
     }
+    pub fn depth(&self,time:f64)->f64 {self.connection.as_ref().map_or(0.,|c|32.*c.dip(time))}
+    pub fn casts_shadow(&self)->bool {self.connection.as_ref().is_some_and(|c|c.source_node.is_some()&&c.configuration==ConnectedAnimationConfiguration::Gravity)}
     pub fn opacity(&self, time: f64) -> f64 {
         self.values(time).opacity.clamp(0., 1.)
             * self
                 .connection
                 .as_ref()
-                .map(|c| c.progress(time))
+                .map(|c| if c.source_node.is_some(){1.}else{c.progress(time)})
                 .unwrap_or(1.)
     }
-    pub fn paint_connection_source(&self, time: f64, rect: Rect, out: &mut Vec<Draw>) {
-        if let Some(c) = &self.connection {
-            if time < c.start + c.duration {
-                out.push(Draw::Save);
-                out.push(Draw::Transform {
-                    matrix: [
-                        rect.width / c.source_size[0],
-                        0.,
-                        0.,
-                        rect.height / c.source_size[1],
-                        0.,
-                        0.,
-                    ],
-                });
-                out.extend(c.source.clone());
-                out.push(Draw::Restore);
-            }
-        }
+    pub fn crossfade(&self,time:f64,rect:Rect,target:Vec<Draw>)->Option<Draw> {
+        let c=self.connection.as_ref().filter(|c|c.source_node.is_some()&&time<c.start+c.duration)?;
+        Some(Draw::CrossFade{rect,progress:c.progress(time),source:c.source.clone(),source_scale:[rect.width/c.source_size[0],rect.height/c.source_size[1]],target:target.into()})
     }
+    pub fn has_crossfade(&self,time:f64)->bool {self.connection.as_ref().is_some_and(|c|c.source_node.is_some()&&time<c.start+c.duration)}
     pub fn active(&self, time: f64) -> bool {
         self.tracks.iter().any(|t| time < t.start + t.duration)
             || self
@@ -555,7 +562,7 @@ impl Scene {
                 ];
                 self.paint_node(node, None, &mut commands);
                 commands.push(Draw::Restore);
-                if commands.len() > 32768 {
+                if crate::render::command_count(&commands,32768)>32768 {
                     return Err("connected visual exceeds display-list snapshot budget".into());
                 }
                 self.motion_runtime.prepared.insert(
@@ -565,10 +572,21 @@ impl Scene {
                         size,
                         prepared: self.time,
                         commands,
+                        node,
                     },
                 );
             }
-            MotionCommand::StartConnected { key, configuration } => {
+            MotionCommand::StartConnected { key, configuration, coordinated } => {
+                let mut seen = BTreeSet::new();
+                for id in &coordinated {
+                    let element = self.get(*id)?;
+                    if *id == node || !seen.insert(*id) || element.rect.width <= 0.
+                        || element.rect.height <= 0. || !element.visible
+                        || element.world.inverse().is_none()
+                    {
+                        return Err("coordinated elements must be distinct, laid out and visible".into());
+                    }
+                }
                 let n = &self.nodes[&node];
                 let previous_connection = n
                     .effects
@@ -601,20 +619,36 @@ impl Scene {
                     0.,
                     0.,
                 ]));
+                let duration = if configuration == ConnectedAnimationConfiguration::Direct { 200. } else { 300. };
                 if !self.reduced_motion {
+                    self.motion_runtime.hidden_sources.insert(prepared.node, node);
+                    // WinUI constructs each coordinated source rectangle by applying the
+                    // base image's source/destination mapping to its natural rectangle.
+                    let mapping = base_world.multiply(from).multiply(inverse);
+                    for id in coordinated {
+                        let n = &self.nodes[&id];
+                        let world = n.world;
+                        let local = world.inverse().ok_or("coordinated element has a singular transform")?
+                            .multiply(mapping).multiply(world);
+                        let size = [n.rect.width, n.rect.height];
+                        self.nodes.get_mut(&id).unwrap().effects.connection = Some(Connection {
+                            from: local, start: self.time, duration, configuration,
+                            source: vec![].into(), source_size: size, key: key.clone(), source_node: None,
+                        });
+                    }
                     self.nodes.get_mut(&node).unwrap().effects.connection = Some(Connection {
                         from,
                         start: self.time,
-                        duration: if configuration == ConnectedAnimationConfiguration::Direct {
-                            200.
-                        } else {
-                            300.
-                        },
+                        duration,
                         configuration,
-                        source: prepared.commands,
+                        source: prepared.commands.into(),
                         source_size: prepared.size,
                         key,
+                        source_node: Some(prepared.node),
                     });
+                } else {
+                    self.emit(node, EventKind::ConnectedAnimationCompleted);
+                    self.events.last_mut().unwrap().payload = Some(serde_json::json!({"key":key}));
                 }
             }
             MotionCommand::CancelConnected { key } => {
@@ -628,6 +662,11 @@ impl Scene {
         }
         self.invalidate(node, false);
         Ok(true)
+    }
+    pub(super) fn connected_source_hidden(&self, id: u32) -> bool {
+        self.motion_runtime.hidden_sources.get(&id).filter(|target| **target != id)
+            .and_then(|target| self.nodes.get(target)).and_then(|n| n.effects.connection.as_ref())
+            .is_some_and(|c| c.source_node == Some(id) && self.time < c.start + c.duration)
     }
     pub(super) fn implicit_updates(
         &self,
@@ -731,6 +770,7 @@ impl Scene {
     /// Runs after layout. Expressions read final arranged geometry and evaluate in dependency order.
     pub(super) fn sync_motion_effects(&mut self) {
         let ids = self.nodes.keys().copied().collect::<Vec<_>>();
+        let mut completed_connections = Vec::new();
         let mut stagger: BTreeMap<u32, usize> = BTreeMap::new();
         for &id in &ids {
             let n = &self.nodes[&id];
@@ -739,6 +779,7 @@ impl Scene {
                 && n.props.motion.is_none()
                 && n.effects.rect.is_none()
                 && n.effects.bindings.is_empty()
+                && n.effects.connection.is_none()
             {
                 continue;
             }
@@ -843,6 +884,11 @@ impl Scene {
                 n.effects.background = None;
             }
             if self.reduced_motion || !visible {
+                if self.reduced_motion && visible {
+                    if let Some(c) = &n.effects.connection {
+                        if c.source_node.is_some() { completed_connections.push((id, c.key.clone())); }
+                    }
+                }
                 n.effects.tracks.clear();
                 n.effects.connection = None;
                 if let Some(bg) = &mut n.effects.background {
@@ -854,6 +900,9 @@ impl Scene {
                 .as_ref()
                 .is_some_and(|c| self.time >= c.start + c.duration)
             {
+                if let Some(c) = &n.effects.connection {
+                    if c.source_node.is_some() { completed_connections.push((id, c.key.clone())); }
+                }
                 n.effects.connection = None;
             }
             n.effects
@@ -869,11 +918,15 @@ impl Scene {
                     id,
                     serde_json::json!({"scaleX":scale,"scaleY":scale}),
                     AnimationOptions {
-                        spring: Some(spring.spring),
+                        spring: Some(SpringOptions{initial_velocity:Some(0.),..spring.spring}),
                         ..Default::default()
                     },
                 );
             }
+        }
+        for (id, key) in completed_connections {
+            self.emit(id, EventKind::ConnectedAnimationCompleted);
+            self.events.last_mut().unwrap().payload = Some(serde_json::json!({"key":key}));
         }
         fn evaluate(scene: &mut Scene, id: u32, done: &mut BTreeSet<u32>) {
             if !done.insert(id) {
@@ -914,6 +967,9 @@ impl Scene {
         self.motion_runtime
             .prepared
             .retain(|_, p| self.time - p.prepared < 2000.);
+        self.motion_runtime.hidden_sources.retain(|source, target| self.nodes.contains_key(source)
+            && self.nodes.get(target).is_some_and(|n| n.effects.connection.as_ref()
+                .is_some_and(|c| c.source_node == Some(*source))));
     }
     pub(super) fn capture_motion_exit(&mut self, id: u32) {
         let n = &self.nodes[&id];

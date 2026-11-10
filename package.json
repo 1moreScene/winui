@@ -1,0 +1,11 @@
+{
+  "name": "winui-wasm-workspace",
+  "private": true,
+  "scripts": {
+    "pack:sdk": "node tools/pack-sdk.mjs",
+    "pack:sdk:full": "node tools/pack-sdk.mjs --build-wasm",
+    "build:pages": "node tools/build-gallery-pages.mjs",
+    "build:wasm:ci": "node tools/build-wasm-ci.mjs",
+    "deploy:pages": "node tools/deploy-gallery-pages.mjs"
+  }
+}

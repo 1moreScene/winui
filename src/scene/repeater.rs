@@ -8,6 +8,7 @@ use std::{
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct StackLayout {
     pub orientation: Orientation,
     pub spacing: f64,
@@ -24,6 +25,7 @@ impl Default for StackLayout {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct UniformGridLayout {
     pub orientation: Orientation,
     pub min_item_width: Option<f64>,
@@ -50,6 +52,7 @@ impl Default for UniformGridLayout {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(tag = "kind")]
+#[derive(PartialEq)]
 pub enum RepeaterLayout {
     LinedFlowLayout(LinedFlowLayout),
     StackLayout(StackLayout),
@@ -60,12 +63,14 @@ pub enum RepeaterLayout {
 }
 #[derive(Clone,Debug,Serialize,Deserialize,Default)]
 #[serde(default,rename_all="camelCase",deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct LinedFlowLayout {
  pub line_height:Option<f64>,pub line_spacing:f64,pub min_item_spacing:f64,
  pub items_stretch:LinedFlowLayoutItemsStretch,pub items_justification:LinedFlowLayoutItemsJustification,
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct FlowLayout {
     pub orientation: Orientation,
     pub min_item_spacing: f64,
@@ -85,6 +90,7 @@ impl Default for FlowLayout {
 /// Port of the fixed Gallery ActivityFeedLayout, not a browser packing helper.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct ActivityFeedLayout {
     pub min_item_size: [f64; 2],
     pub row_spacing: f64,
@@ -102,6 +108,7 @@ impl Default for ActivityFeedLayout {
 /// Port of the fixed Gallery lowest-column placement strategy.
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct VariedImageSizeLayout {
     pub width: f64,
 }
@@ -117,6 +124,7 @@ impl Default for RepeaterLayout {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct RepeaterProperties {
     pub layout: RepeaterLayout,
     pub horizontal_cache_length: f64,
@@ -619,8 +627,20 @@ impl Scene {
                     let target = match key.as_str() {
                         "Home" => Some(0),
                         "End" => Some(last),
-                        "ArrowDown" => Some((index + 1).min(last)),
-                        "ArrowUp" => Some(index.saturating_sub(1)),
+                        "ArrowDown" | "ArrowUp" | "ArrowLeft" | "ArrowRight" => {
+                            let horizontal = matches!(key.as_str(), "ArrowLeft" | "ArrowRight");
+                            let positive = matches!(key.as_str(), "ArrowRight" | "ArrowDown");
+                            let current = n.repeater.slots.get(index).copied().unwrap_or_default();
+                            let center = |r: Rect| if horizontal {(r.x+r.width/2.,r.y+r.height/2.)} else {(r.y+r.height/2.,r.x+r.width/2.)};
+                            let origin = center(current);
+                            n.repeater.slots.iter().enumerate().filter_map(|(i, r)| {
+                                if !n.props.collection_items[i].enabled {return None;}
+                                let point = center(*r);
+                                let along = (point.0-origin.0) * if positive {1.} else {-1.};
+                                let across = (point.1-origin.1).abs();
+                                (along > 0.01).then_some((i, along*along + across*across*4.))
+                            }).min_by(|a,b|a.1.total_cmp(&b.1)).map(|v|v.0)
+                        },
                         _ => None,
                     };
                     if let Some(target) = target {

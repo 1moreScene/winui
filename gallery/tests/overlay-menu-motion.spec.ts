@@ -1,13 +1,13 @@
 import {test,expect} from '@playwright/test';
 import {PNG} from 'pngjs';
 import {mkdirSync,writeFileSync} from 'node:fs';
-import type {WinUI,Scene,FloatingSurface} from '../src/index';
+import type {WinUI,Scene,FloatingSurface} from 'winui-wasm';
 declare global {interface Window {menuMotion:{ui:WinUI;scene:Scene;menu:FloatingSurface;time:number};}}
 for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} menu translates at full size inside native window insets`,async({page})=>{
  await page.goto('/#menu-flyout');await expect(page.getByRole('heading',{name:'MenuFlyout',exact:true})).toBeVisible();const rows:object[]=[];mkdirSync('../out/overlay-presentation',{recursive:true});
  for(const side of ['Top','Bottom','Left','Right'] as const){
   await page.evaluate(async({backend,side})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');window.menuMotion?.ui.dispose();document.querySelector('#menu-motion')?.remove();const host=document.createElement('div');host.id='menu-motion';host.style.cssText='position:fixed;left:0;top:0;width:640px;height:480px;z-index:2147483640';document.body.append(host);
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');window.menuMotion?.ui.dispose();document.querySelector('#menu-motion')?.remove();const host=document.createElement('div');host.id='menu-motion';host.style.cssText='position:fixed;left:0;top:0;width:640px;height:480px;z-index:2147483640';document.body.append(host);
    const f={time:1000} as Window['menuMotion'];window.menuMotion=f;f.ui=await a.WinUI.create({globalScrollbars:false,clock:()=>f.time});f.scene=f.ui.scene(host,{backend:a.RendererBackend[backend],reducedMotion:false,root:{background:'#f3f3f3'}});const c=f.scene.root.canvas();const owner=c.button({width:80,height:32,canvasLeft:280,canvasTop:220,opacity:0});f.menu=c.menuFlyout({width:200,height:120,background:'#ff0000',isOpen:false,placement:a.OverlayPlacement[side],menuItems:[{id:'one',text:'Command'}]});f.menu.showAt(owner);await new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r())));
   },{backend,side});
   for(const time of [1000,1100,1500]){

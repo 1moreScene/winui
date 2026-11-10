@@ -1,0 +1,67 @@
+{
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "sources": [
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/CustomEditorRicheditbox.txt",
+      "path": "references/gallery-input/RichEditBox/CustomEditorRicheditbox.txt",
+      "sha256": "b28bd6cfc0b052f4084880dab39556c26e58d05ff08836bf6e89203b1595cea8"
+    },
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/CustomizingRicheditboxCommandbarflyoutAdding.txt",
+      "path": "references/gallery-input/RichEditBox/CustomizingRicheditboxCommandbarflyoutAdding.txt",
+      "sha256": "722086b74594b9b3a56662d07ee39504402510b7a99bae86c842aeb3e01202ae"
+    },
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/RichEditBoxMath.txt",
+      "path": "references/gallery-input/RichEditBox/RichEditBoxMath.txt",
+      "sha256": "fc8ddedc97b382ffe31f59ae5ccf7636fb2b7ca2782bd048369567566a55c3f7"
+    },
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/RichEditBoxPage.xaml",
+      "path": "references/gallery-input/RichEditBox/RichEditBoxPage.xaml",
+      "sha256": "78d54c6f26932aa1c514b42ddaf8b7429b64710dd22c3dc04a07e6b92fb92251"
+    },
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/RichEditBoxPage.xaml.cs",
+      "path": "references/gallery-input/RichEditBox/RichEditBoxPage.xaml.cs",
+      "sha256": "2e59638aea781ee653b065f87b19b2d0c403f12c44c28288cd7a0893bea66bf2"
+    },
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/SimpleTextEditorRicheditbox.txt",
+      "path": "references/gallery-input/RichEditBox/SimpleTextEditorRicheditbox.txt",
+      "sha256": "bec138808bdc335bd37b8a763e8ba96b4e00bbdc289778682f22e5fe5200ba11"
+    },
+    {
+      "source": "WinUIGallery/Samples/RichEditBox/WorkingMathmlRicheditbox.txt",
+      "path": "references/gallery-input/RichEditBox/WorkingMathmlRicheditbox.txt",
+      "sha256": "e53f8c75a92d15b1cc136ebfc09e46e6267ebcc6853a3c3f49f410b441a224d6"
+    }
+  ],
+  "samples": [
+    {
+      "title": "A simple text editor using RichEditBox.",
+      "source": "SimpleTextEditorRicheditbox.txt",
+      "xaml": "<RichEditBox x:Name=\"editor\" AutomationProperties.Name=\"simple text editor\"/>"
+    },
+    {
+      "title": "Customizing RichEditBox's CommandBarFlyout - Adding 'Share'",
+      "source": "CustomizingRicheditboxCommandbarflyoutAdding.txt",
+      "xaml": "<RichEditBox x:Name=\"REBCustom\" \n    AutomationProperties.Name=\"editor with custom menu\"\n    Width=\"800\" Height=\"200\" \n    Loaded=\"REBCustom_Loaded\" \n    Unloaded=\"REBCustom_Unloaded\"/>"
+    },
+    {
+      "title": "A custom editor with RichEditBox.",
+      "source": "CustomEditorRicheditbox.txt",
+      "xaml": "<RelativePanel Margin=\"0,0,0,20\" HorizontalAlignment=\"Stretch\">\n    <RelativePanel.Resources>\n        <Style TargetType=\"Button\">\n            <Setter Property=\"BorderThickness\" Value=\"0\" />\n            <Setter Property=\"Background\" Value=\"Transparent\"/>\n            <Setter Property=\"Margin\" Value=\"0,0,8,0\" />\n        </Style>\n    </RelativePanel.Resources>\n    <Button x:Name=\"openFileButton\" Click=\"OpenButton_Click\" AutomationProperties.Name=\"Open file\" ToolTipService.ToolTip=\"Open file\">\n        <Button.Content>\n            <FontIcon Glyph=\"&#xE8E5;\"/>\n        </Button.Content>\n    </Button>\n    <Button Click=\"SaveButton_Click\" AutomationProperties.Name=\"Save file\" ToolTipService.ToolTip=\"Save file\" \n            RelativePanel.RightOf=\"openFileButton\">\n        <Button.Content>\n            <FontIcon Glyph=\"&#xE74E;\"/>\n        </Button.Content>\n    </Button>\n    <Button AutomationProperties.Name=\"Bold\" ToolTipService.ToolTip=\"Bold\" Click=\"BoldButton_Click\" \n            RelativePanel.LeftOf=\"italicButton\" >\n        <Button.Content>\n            <FontIcon Glyph=\"&#xE8DD;\"/>\n        </Button.Content>\n    </Button>\n    <Button x:Name=\"italicButton\" Click=\"ItalicButton_Click\" AutomationProperties.Name=\"Italic\" ToolTipService.ToolTip=\"Italic\" \n            RelativePanel.LeftOf=\"fontColorButton\">\n        <Button.Content>\n            <FontIcon Glyph=\"&#xE8DB;\"/>\n        </Button.Content>\n    </Button>\n\n    <DropDownButton x:Name=\"fontColorButton\" AutomationProperties.Name=\"Font color\"\n                                BorderThickness=\"0\" ToolTipService.ToolTip=\"Font color\"\n                                Background=\"Transparent\" \n                                RelativePanel.AlignRightWithPanel=\"True\">\n        <SymbolIcon Symbol=\"FontColor\"/>\n        <DropDownButton.Flyout>\n            <Flyout Placement=\"Bottom\">\n                <VariableSizedWrapGrid Orientation=\"Horizontal\" MaximumRowsOrColumns=\"3\">\n                    <VariableSizedWrapGrid.Resources>\n                        <Style TargetType=\"Rectangle\">\n                            <Setter Property=\"Width\" Value=\"32\"/>\n                            <Setter Property=\"Height\" Value=\"32\"/>\n                        </Style>\n                        <Style TargetType=\"Button\">\n                            <Setter Property=\"Padding\" Value=\"0\"/>\n                            <Setter Property=\"MinWidth\" Value=\"0\"/>\n                            <Setter Property=\"MinHeight\" Value=\"0\"/>\n                            <Setter Property=\"Margin\" Value=\"6\"/>\n                        </Style>\n                    </VariableSizedWrapGrid.Resources>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Red\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Red\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Orange\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Orange\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Yellow\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Yellow\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Green\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Green\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Blue\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Blue\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Indigo\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Indigo\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Violet\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Violet\"/>\n                        </Button.Content>\n                    </Button>\n                    <Button Click=\"ColorButton_Click\" AutomationProperties.Name=\"Gray\">\n                        <Button.Content>\n                            <Rectangle Fill=\"Gray\"/>\n                        </Button.Content>\n                    </Button>\n                </VariableSizedWrapGrid>\n            </Flyout>\n        </DropDownButton.Flyout>\n    </DropDownButton>\n\n    <RichEditBox x:Name=\"editor\" Height=\"200\" AutomationProperties.Name=\"Custom editor\"\n                    RelativePanel.Below=\"openFileButton\" \n                    RelativePanel.AlignLeftWithPanel=\"True\" \n                    RelativePanel.AlignRightWithPanel=\"True\" \n                    TextChanged=\"Editor_TextChanged\"\n                    GotFocus=\"Editor_GotFocus\"/>\n    <StackPanel Orientation=\"Horizontal\" \n                RelativePanel.Below=\"editor\" \n                RelativePanel.AlignLeftWith=\"editor\" \n                Margin=\"0,10,0,0\">\n        <TextBlock x:Name=\"findBoxLabel\" Text=\"Find:\" Height=\"20\"/>\n        <TextBox x:Name=\"findBox\" Width=\"150\" PlaceholderText=\"Enter search text\" Margin=\"10,0,0,0\"\n                TextChanged=\"{x:Bind FindBoxHighlightMatches}\" \n                GotFocus=\"{x:Bind FindBoxHighlightMatches}\" \n                LostFocus=\"{x:Bind FindBoxRemoveHighlights}\"/>\n    </StackPanel>\n</RelativePanel>"
+    },
+    {
+      "title": "Rich edit box in math mode",
+      "source": "RichEditBoxMath.txt",
+      "xaml": "<RichEditBox x:Name=\"mathEditor\" FontSize=\"16\" />"
+    },
+    {
+      "title": "Working with MathML in RichEditBox",
+      "source": "WorkingMathmlRicheditbox.txt",
+      "xaml": "<RichEditBox x:Name=\"mathEditor2\" FontSize=\"16\" />"
+    }
+  ]
+}

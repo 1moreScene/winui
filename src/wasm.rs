@@ -5,11 +5,14 @@ use crate::{
 use std::collections::HashMap;
 use wasm_bindgen::{prelude::*, JsCast};
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
+mod popup_input;
 
 #[wasm_bindgen]
 extern "C" {
     #[wasm_bindgen(js_namespace = console, js_name = error)]
     fn report_panic(message: &str);
+    #[wasm_bindgen(js_namespace = performance, js_name = now)]
+    fn frame_clock() -> f64;
 }
 
 fn error(e: impl ToString) -> JsValue {
@@ -98,8 +101,9 @@ impl WinUiRuntime {
         if canvas.height() != h {
             canvas.set_height(h);
         }
+        ctx.set_transform(1., 0., 0., 1., 0., 0.)?;
+        ctx.clear_rect(0., 0., w as f64, h as f64);
         ctx.set_transform(dpr, 0., 0., dpr, 0., 0.)?;
-        ctx.clear_rect(0., 0., nav.width, nav.height);
         backend.dpr.set(dpr);
         render::paint(backend, &render::display_list(nav))?;
         serde_json::to_string(&nav.snapshot()).map_err(error)
@@ -207,16 +211,20 @@ enum SceneBackend {
     Gpu(crate::gpu::GpuBackend),
 }
 struct SceneHost {
+    popup_input: popup_input::PopupInput,
     floating_canvas: Option<HtmlCanvasElement>,
     floating_backend: Option<SceneBackend>,
     floating_backdrop: Option<HtmlCanvasElement>,
+    page_backdrop: Option<(HtmlCanvasElement, crate::model::Rect)>,
     scene: crate::scene::Scene,
     backend: SceneBackend,
     text: crate::typography::BrowserText,
     lost: bool,
-    retained_base: Option<Vec<u8>>,
+    retained_base: Option<(crate::model::Rect,f64,Vec<render::Draw>)>,
+    projected_properties: HashMap<u32, crate::scene::NodeProperties>,
     base_paints: u64,
     base_reuses: u64,
+    last_serialize_ms: f64,
 }
 fn paint_scene_backend(
     backend: &mut SceneBackend,
@@ -234,8 +242,13 @@ fn paint_scene_backend(
             if b.canvas.height() != h {
                 b.canvas.set_height(h);
             }
+            // ceil(DIP * DPR) may allocate a partial trailing pixel. Clearing
+            // the logical DIP rectangle can leave that backing row untouched
+            // (and outside the browser's damage region). Repeated translucent
+            // borders then accumulate into a dark line, even after they move.
+            b.context.set_transform(1., 0., 0., 1., 0., 0.)?;
+            b.context.clear_rect(0., 0., w as f64, h as f64);
             b.context.set_transform(dpr, 0., 0., dpr, 0., 0.)?;
-            b.context.clear_rect(0., 0., width, height);
             b.dpr.set(dpr);
             // A hidden host can receive its final ResizeObserver/animation
             // frame at zero size. Keep layout/events current, but Canvas2D
@@ -286,16 +299,20 @@ impl WinUiRuntime {
         self.scenes.insert(
             id,
             SceneHost {
+                popup_input: popup_input::PopupInput::default(),
                 floating_canvas: None,
                 floating_backend: None,
                 floating_backdrop: None,
+                page_backdrop: None,
                 scene,
                 backend,
                 text,
                 lost: false,
                 retained_base: None,
+                projected_properties:HashMap::new(),
                 base_paints: 0,
                 base_reuses: 0,
+                last_serialize_ms: 0.,
             },
         );
         Ok(id)
@@ -309,6 +326,7 @@ impl WinUiRuntime {
             .scenes
             .get_mut(&id)
             .ok_or_else(|| error("invalid scene"))?;
+        host.popup_input = popup_input::PopupInput::default();
         host.floating_canvas = Some(canvas);
         host.floating_backend = None;
         Ok(())
@@ -320,6 +338,15 @@ impl WinUiRuntime {
             .ok_or_else(|| error("invalid scene"))?
             .scene
             .root)
+    }
+    /// Browser host rasterization only. Acrylic composition remains in Rust.
+    pub fn scene_floating_backdrop(&mut self, id: u32, canvas: Option<HtmlCanvasElement>, x: f64, y: f64, width: f64, height: f64) -> Result<(), JsValue> {
+        if ![x,y,width,height].iter().all(|v|v.is_finite()) || width < 0. || height < 0. {
+            return Err(error("invalid page backdrop bounds"));
+        }
+        let host = self.scenes.get_mut(&id).ok_or_else(||error("invalid scene"))?;
+        host.page_backdrop = canvas.map(|canvas|(canvas,crate::model::Rect::new(x,y,width,height)));
+        Ok(())
     }
     pub fn scene_node(
         &mut self,
@@ -472,7 +499,7 @@ impl WinUiRuntime {
         node: u32,
         input: &str,
         time: f64,
-    ) -> Result<(), JsValue> {
+    ) -> Result<String, JsValue> {
         let metrics = serde_json::from_str(input).map_err(error)?;
         let scene = &mut self
             .scenes
@@ -480,7 +507,9 @@ impl WinUiRuntime {
             .ok_or_else(|| error("invalid scene"))?
             .scene;
         scene.advance(time);
-        scene.set_scroll_host(node, metrics).map_err(error)
+        scene.set_scroll_host(node, metrics).map_err(error)?;
+        let n = scene.get(node).map_err(error)?;
+        serde_json::to_string(&n.scroll.snapshot(&n.props, time)).map_err(error)
     }
     pub fn scene_scroll_scope(&self, id: u32) -> Result<u32, JsValue> {
         Ok(self.scenes.get(&id).ok_or_else(|| error("invalid scene"))?.scene.background_scroll_root().unwrap_or(0))
@@ -548,6 +577,19 @@ impl WinUiRuntime {
         )
         .map_err(error)
     }
+    pub fn scene_rich_edit_export(&self,id:u32,node:u32,mathml:bool,selection:bool)->Result<String,JsValue>{
+        let scene=&self.scenes.get(&id).ok_or_else(||error("invalid scene"))?.scene;
+        if selection {
+            let p=scene.properties(node).map_err(error)?;let doc=p.document.as_ref().ok_or_else(||error("rich export requires RichEditBox"))?.selection(p.selection_start,p.selection_length);
+            return if mathml {Ok(crate::scene::rich_edit::math::document_xml(&doc))}else{crate::scene::rich_edit::rtf::encode(&doc,&p).map_err(error)};
+        }
+        if mathml{scene.rich_edit_mathml(node)}else{scene.rich_edit_rtf(node)}.map_err(error)
+    }
+    pub fn scene_rich_edit_selection(&self,id:u32,node:u32)->Result<String,JsValue>{
+        let p=self.scenes.get(&id).ok_or_else(||error("invalid scene"))?.scene.properties(node).map_err(error)?;
+        let doc=p.document.as_ref().ok_or_else(||error("rich selection requires RichEditBox"))?.selection(p.selection_start,p.selection_length);
+        serde_json::to_string(&serde_json::json!({"document":doc,"text":doc.plain_text()})).map_err(error)
+    }
     pub fn scene_content_slot(&self, id: u32, node: u32, slot: &str) -> Result<u32, JsValue> {
         self.scenes
             .get(&id)
@@ -571,6 +613,7 @@ impl WinUiRuntime {
         height: f64,
         dpr: f64,
     ) -> Result<String, JsValue> {
+        let frame_started = frame_clock();
         if width * dpr > 8192. || height * dpr > 8192. || width * height * dpr * dpr > 16_777_216. {
             return Err(error(
                 "surface exceeds supported GPU/Canvas allocation budget",
@@ -600,8 +643,9 @@ impl WinUiRuntime {
         }
         host.scene.layout(&mut host.text);
         host.scene.validate_panel_layouts().map_err(error)?;
+        let layout_finished = frame_clock();
         let floating = host.floating_canvas.is_some();
-        let list = if floating {
+        let mut list = if floating {
             host.scene.base_display_list()
         } else {
             host.scene.display_list()
@@ -610,27 +654,36 @@ impl WinUiRuntime {
         // it. Compare the actual display list, including transforms, material
         // values and raster revisions, instead of repainting an unchanged base.
         // GPU presentation still runs each frame to observe context loss.
-        let raster_height=host.scene.raster_height();
-        if raster_height*dpr>8192.||width*raster_height*dpr*dpr>16_777_216.{return Err(error("presentation surface exceeds allocation budget"));}
-        let key = if matches!(&host.backend, SceneBackend::Canvas(_)) && !list.iter().any(|draw|matches!(draw,render::Draw::Image{..}|render::Draw::TintedImage{..})) {
-            Some(serde_json::to_vec(&(width, raster_height, dpr, &list)).map_err(error)?)
-        } else { None };
-        let reuse = key.is_some() && key == host.retained_base;
+        let surface=host.scene.surface_bounds();
+        let raster_height=surface.height;
+        list.insert(0,render::Draw::Transform{matrix:[1.,0.,0.,1.,-surface.x,-surface.y]});
+        list.insert(0,render::Draw::Save);list.push(render::Draw::Restore);
+        if raster_height*dpr>8192.||surface.width*raster_height*dpr*dpr>16_777_216.{return Err(error("presentation surface exceeds allocation budget"));}
+        let retain = !host.scene.has_composition_animation() && matches!(&host.backend, SceneBackend::Canvas(_)) && !render::contains_external_image(&list);
+        let reuse = retain && host.retained_base.as_ref().is_some_and(|(old_surface,old_dpr,old_list)|*old_surface==surface && *old_dpr==dpr && *old_list==list);
+        let list_finished = frame_clock();
         let mut backend = if reuse {
             host.base_reuses += 1;
             serde_json::json!({"kind":"Canvas2D","lost":false,"generation":1})
         } else {
             host.base_paints += 1;
-            let info=paint_scene_backend(&mut host.backend, &list, width, raster_height, dpr)?;
-            host.retained_base=key;
+            let info=paint_scene_backend(&mut host.backend, &list, surface.width, raster_height, dpr)?;
+            host.retained_base=retain.then_some((surface,dpr,list));
             info
         };
         backend["basePaints"]=host.base_paints.into();
         backend["baseReuses"]=host.base_reuses.into();
+        if let SceneBackend::Canvas(canvas)=&host.backend {
+            backend["vectorRasterHits"]=canvas.vector_raster_hits.get().into();
+            backend["retainedRasterHits"]=canvas.retained_raster_hits.get().into();
+        }
         host.lost = backend["lost"].as_bool().unwrap_or(false);
         let bounds = host.scene.floating_surface_bounds();
         let visible = floating && width > 0. && raster_height > 0.
             && host.scene.has_floating_surface();
+        if let Some(canvas) = &host.floating_canvas {
+            host.popup_input.sync(canvas, if visible { host.scene.floating_input_regions() } else { Vec::new() });
+        }
         let mut floating_info = serde_json::Value::Null;
         if visible {
             if bounds.width * dpr > 8192.
@@ -684,10 +737,16 @@ impl WinUiRuntime {
                 crate::enums::Theme::HighContrast => "#000000",
             });
             context.fill_rect(0., 0., seed.width() as f64, seed.height() as f64);
+            if let Some((page, rect)) = &host.page_backdrop {
+                context.draw_image_with_html_canvas_element_and_dw_and_dh(
+                    page, (rect.x-bounds.x)*dpr, (rect.y-bounds.y)*dpr,
+                    rect.width*dpr, rect.height*dpr,
+                )?;
+            }
             context.draw_image_with_html_canvas_element(
                 source,
-                -bounds.x * dpr,
-                -bounds.y * dpr,
+                (surface.x-bounds.x) * dpr,
+                (surface.y-bounds.y) * dpr,
             )?;
             let target = host.floating_backend.as_mut().unwrap();
             match target {
@@ -709,15 +768,31 @@ impl WinUiRuntime {
             floating_info =
                 paint_scene_backend(target, &commands, bounds.width, bounds.height, dpr)?;
         }
-        let mut snapshot = serde_json::to_value(host.scene.snapshot()).map_err(error)?;
-        snapshot["backend"] = backend;
-        if floating_info["lost"].as_bool() == Some(true) {
-            snapshot["backend"]["lost"] = true.into();
+        if floating_info["lost"].as_bool()==Some(true){backend["lost"]=true.into();}
+        let paint_finished = frame_clock();
+        #[derive(serde::Serialize)]
+        #[serde(rename_all="camelCase")]
+        struct FrameSnapshot {#[serde(flatten)] scene:crate::scene::Snapshot,backend:serde_json::Value,floating_surface:serde_json::Value}
+        let mut snapshot=host.scene.snapshot();
+        // Properties include the complete public schema, even on small template
+        // nodes. Send them only when their actual values change. Comparing the
+        // actual values also observes internal template/editor mutations,
+        // which need not go through a public property update or layout revision.
+        host.projected_properties.retain(|id,_|host.scene.nodes.contains_key(id));
+        for node in &mut snapshot.nodes {
+            if host.projected_properties.get(&node.id)==Some(&node.props) {
+                node.props.snapshot_omit=true;
+            } else {
+                host.projected_properties.insert(node.id,node.props.clone());
+            }
         }
-        snapshot["floatingSurface"] =
-            serde_json::json!({"visible":visible,"bounds":bounds,"backend":floating_info});
-        serde_json::to_string(&snapshot).map_err(error)
+        let snapshot_finished = frame_clock();
+        backend["rustFrameTimings"] = serde_json::json!({"layoutMs":layout_finished-frame_started,"displayListMs":list_finished-layout_finished,"paintMs":paint_finished-list_finished,"snapshotMs":snapshot_finished-paint_finished,"previousSerializeMs":host.last_serialize_ms});
+        let result = serde_json::to_string(&FrameSnapshot{scene:snapshot,backend,floating_surface:serde_json::json!({"visible":visible,"bounds":bounds,"backend":floating_info})}).map_err(error);
+        host.last_serialize_ms=frame_clock()-snapshot_finished;
+        result
     }
+
     pub fn scene_image(
         &mut self,
         id: u32,

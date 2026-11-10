@@ -7,12 +7,14 @@ use serde_json::{json, Value};
 
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct SwipeItems {
     pub mode: SwipeMode,
     pub items: Vec<SwipeItem>,
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct SwipeItem {
     pub id: String,
     pub text: String,
@@ -29,7 +31,7 @@ pub(super) fn contract() -> &'static Value {
         serde_json::from_str(include_str!("../../references/view-command-template.json")).unwrap()
     })
 }
-pub(super) fn pane_color(theme: Theme, key: &str) -> String {
+pub(crate) fn pane_color(theme: Theme, key: &str) -> String {
     contract()["palettes"][theme.as_str()][key]["color"]
         .as_str()
         .unwrap()
@@ -50,6 +52,7 @@ pub fn is_command(kind: NodeKind) -> bool {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct ViewProperties {
     pub left_items: Option<SwipeItems>,
     pub right_items: Option<SwipeItems>,
@@ -236,6 +239,7 @@ struct PendingExecution {
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+#[derive(PartialEq)]
 pub struct CommandMetadata {
     pub label: String,
     pub description: String,
@@ -1017,8 +1021,9 @@ impl Scene {
     }
     pub(super) fn view_child_visible(&self, parent: u32, child: u32) -> bool {
         let n = &self.nodes[&parent];
+        if !matches!(n.kind,NodeKind::SwipeControl|NodeKind::SplitView|NodeKind::SemanticZoom){return !is_command(self.nodes[&child].kind);}
         let p = props(n);
-        let slot = props(&self.nodes[&child]).slot;
+        let slot = self.nodes[&child].props.view_controls.as_ref().map_or(ViewControlSlot::Content,|p|p.slot);
         match n.kind {
             NodeKind::SwipeControl if slot == ViewControlSlot::SwipeAction => {
                 n.view_control.motion.value(self.time).abs() > 0.01
@@ -1051,8 +1056,8 @@ impl Scene {
     }
     pub(super) fn view_child_enabled(&self, parent: u32, child: u32) -> bool {
         let n = &self.nodes[&parent];
-        let slot = props(&self.nodes[&child]).slot;
         if n.kind == NodeKind::SemanticZoom {
+            let slot=self.nodes[&child].props.view_controls.as_ref().map_or(ViewControlSlot::Content,|p|p.slot);
             let p = props(n);
             if slot == ViewControlSlot::ZoomedIn {
                 return p.is_zoomed_in_view_active;

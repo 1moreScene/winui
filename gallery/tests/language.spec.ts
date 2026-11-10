@@ -1,0 +1,30 @@
+import {test,expect} from '@playwright/test';
+
+test('title bar switches prose, preserves control names and sample state, and persists language',async({page})=>{
+  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.goto('/#button');
+  await expect(page.getByRole('heading',{name:'A simple Button with text content.',exact:true})).toBeVisible();
+  const toggle=page.getByRole('button',{name:'Switch to Chinese',exact:true});
+  await expect(toggle).toBeVisible();
+  const variant=await toggle.evaluate(button=>(button.closest('[data-gallery-control]') as any).galleryScene.snapshot.nodes.find((node:any)=>node.kind==='Button').props.variant);
+  expect(variant).toBe('Subtle');
+  await toggle.click();
+  await expect(page.locator('html')).toHaveAttribute('lang','zh-CN');
+  await expect(page.getByRole('heading',{name:'Button',exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'带文本内容的简单 Button。',exact:true})).toBeVisible();
+  await expect(page.locator('.gallery-page-description').filter({visible:true})).toContainText('Click 事件');
+  await page.evaluate(()=>{location.hash='#grid';});
+  await expect(page.getByRole('heading',{name:'3×3 的 Grid 示例。',exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Grid',exact:true})).toBeVisible();
+  await page.reload();
+  await expect(page.locator('html')).toHaveAttribute('lang','zh-CN');
+  await expect(page.getByRole('heading',{name:'3×3 的 Grid 示例。',exact:true})).toBeVisible();
+  await page.evaluate(()=>{(window as any).languageTestScene=window.gridScene;});
+  await page.getByRole('button',{name:'切换为英文',exact:true}).click();
+  await expect(page.getByRole('heading',{name:'A 3x3 Grid control.',exact:true})).toBeVisible();
+  expect(await page.evaluate(()=>window.gridScene===(window as any).languageTestScene)).toBe(true);
+  await page.setViewportSize({width:390,height:844});
+  await expect(page.getByRole('button',{name:'Switch to Chinese',exact:true})).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  expect(errors).toEqual([]);
+});

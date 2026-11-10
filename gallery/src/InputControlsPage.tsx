@@ -1,3 +1,5 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useState, type ReactNode } from "react";
@@ -10,14 +12,14 @@ import {
   RadioButtons,
   ToggleSwitch,
   ProgressRing,
-} from "./react";
+} from "winui-wasm/react";
 import {
   ThemeMode,
   RendererBackend,
   HorizontalAlignment,
   Orientation,
   type Scene,
-} from "./index";
+} from "winui-wasm";
 import official from "./official-input.json";
 import source from "./InputControlsPage.tsx?raw";
 import { extractSampleSource } from "./sample-source";
@@ -48,7 +50,7 @@ function InputExample({
   const sample = official.controls[page].samples.find((s) => s.file === file)!;
   return (
     <section className="example basic-example" id={name}>
-      <h2>{sample.title}</h2>
+      <h2><LocalizedText>{sample.title}</LocalizedText></h2>
       <div className="example-card">
         <div className="basic-live">
           <div className="basic-preview">{children}</div>
@@ -75,11 +77,7 @@ function InputExample({
               Official XAML
             </GalleryButton>
           </div>
-          <pre>
-            <code>
-              {native ? sample.xaml : extractSampleSource(source, name)}
-            </code>
-          </pre>
+          <SourceCode language={native ? 'xaml' : 'tsx'}>{native ? sample.xaml : extractSampleSource(source, name)}</SourceCode>
         </GalleryExpander>
       </div>
     </section>

@@ -8,6 +8,31 @@ impl Scene {
         new: &PickerProperties,
     ) {
         let kind = self.nodes[&id].kind;
+        if kind == NodeKind::CalendarView
+            && old.first_day_of_week() != new.first_day_of_week()
+            && old.date == new.date
+            && old.display_date == new.display_date
+        {
+            let state = &self.nodes[&id].picker;
+            let focused_date = self.focused.and_then(|focused| {
+                state
+                    .cells
+                    .iter()
+                    .find(|cell| cell.node == focused)
+                    .and_then(|cell| Date::parse(&cell.date).ok())
+                    .map(|date| state.pending_focus.unwrap_or(date))
+            });
+            if let Some(date) = focused_date {
+                let state = &mut self.nodes.get_mut(&id).unwrap().picker;
+                state.focus_date = Some(date);
+                state.pending_focus = Some(date);
+            }
+        }
+        if old.calendar_identifier != new.calendar_identifier
+            || old.format_locale != new.format_locale
+        {
+            self.nodes.get_mut(&id).unwrap().picker.wheel_values.clear();
+        }
         if old.date != new.date {
             self.nodes.get_mut(&id).unwrap().picker.date =
                 new.date.as_deref().and_then(|v| Date::parse(v).ok());
@@ -89,9 +114,12 @@ impl Scene {
             .unwrap()
             .clone();
         let text = date.iso();
-        if date < q.bounds().0 || date > q.bounds().1 || q.blackout_dates.contains(&text) {
+        if q.display_mode == CalendarViewDisplayMode::Month
+            && (date < q.bounds().0 || date > q.bounds().1 || q.blackout_dates.contains(&text))
+        {
             return;
         }
+        let date = date.clamp(q.bounds().0, q.bounds().1);
         self.nodes.get_mut(&id).unwrap().picker.focus_date = Some(date);
         if q.display_mode != CalendarViewDisplayMode::Month {
             self.nodes.get_mut(&id).unwrap().picker.date = Some(date);
@@ -124,17 +152,15 @@ impl Scene {
     }
     fn picker_navigate(&mut self, id: u32, direction: i32) {
         let q = self.nodes[&id].props.picker_controls.as_deref().unwrap();
-        let step = match q.display_mode {
-            CalendarViewDisplayMode::Month => 1,
-            CalendarViewDisplayMode::Year => 12,
-            CalendarViewDisplayMode::Decade => 120,
-        };
-        let date = self.nodes[&id]
-            .picker
-            .date
-            .unwrap_or_else(|| q.day())
-            .add_months(direction * step)
-            .clamp(q.bounds().0, q.bounds().1);
+        let current = self.nodes[&id].picker.date.unwrap_or_else(|| q.day());
+        let date = match q.display_mode {
+            CalendarViewDisplayMode::Month => q.calendar_identifier.add_months(current, direction),
+            CalendarViewDisplayMode::Year => q.calendar_identifier.add_years(current, direction),
+            CalendarViewDisplayMode::Decade => {
+                q.calendar_identifier.add_years(current, direction * 10)
+            }
+        }
+        .clamp(q.bounds().0, q.bounds().1);
         let old = self.nodes[&id].picker.date.unwrap_or_else(|| q.day());
         self.start_calendar_scroll(id, old, date);
         self.nodes.get_mut(&id).unwrap().picker.date = Some(date);
@@ -391,6 +417,8 @@ impl Scene {
         let kind = n.kind;
         let q = n.props.picker_controls.as_deref().unwrap().clone();
         let date = n.picker.pending_date.unwrap_or_else(|| q.today());
+        let cal = q.calendar_identifier;
+        let calendar_date = cal.fields(date);
         let time = n.picker.pending_time;
         let fields = if kind == NodeKind::DatePicker {
             self.date_fields(&q)
@@ -409,29 +437,34 @@ impl Scene {
             match field.as_str() {
                 "year" => {
                     let (min, max) = q.bounds();
-                    for year in min.year..=max.year {
+                    for year in cal.fields(min).year..=cal.fields(max).year {
                         values.push(year);
-                        labels.push(format!(
-                            "{}{}",
-                            q.format_locale.number(year),
-                            q.format_locale.year_suffix
-                        ));
+                        labels.push(
+                            q.year_label(cal.date(year, 1, 1).clamp(min, max), &q.format_locale),
+                        );
                     }
-                    chosen = date.year;
+                    chosen = calendar_date.year;
                 }
                 "month" => {
-                    for month in 1..=12 {
-                        values.push(month);
-                        labels.push(q.format_locale.months[month as usize - 1].clone());
+                    for month in 1..=calendar_date.months_in_year {
+                        values.push(month as i32);
+                        labels.push(cal.month_label(
+                            cal.date(calendar_date.year, month, 1),
+                            &q.format_locale.months,
+                        ));
                     }
-                    chosen = date.month as i32;
+                    chosen = calendar_date.month as i32;
                 }
                 "day" => {
-                    for day in 1..=Date::month_days(date.year, date.month) {
+                    for day in 1..=calendar_date.days_in_month {
                         values.push(day as i32);
-                        labels.push(q.format_day(Date::new(date.year, date.month, day).unwrap()));
+                        labels.push(q.format_day(cal.date(
+                            calendar_date.year,
+                            calendar_date.month,
+                            day,
+                        )));
                     }
-                    chosen = date.day as i32;
+                    chosen = calendar_date.day as i32;
                 }
                 "hour" => {
                     let length = if q.clock_identifier == ClockIdentifier::TwelveHour {
@@ -490,7 +523,13 @@ impl Scene {
                 items.push(json!({"id":format!("{field}-end-{j}"),"text":"","enabled":false}));
             }
             let changed = self.nodes[&id].picker.wheel_values.get(role) != Some(&expanded);
-            if changed || opening {
+            let labels_changed = self.nodes[&self.nodes[&id].picker.parts[role]]
+                .props
+                .collection_items
+                .iter()
+                .map(|item| item.text.as_str())
+                .ne(items.iter().map(|item| item["text"].as_str().unwrap()));
+            if changed || opening || labels_changed {
                 self.patch_part(id,role,json!({"collectionItems":items,"itemContainerStyle":{"minHeight":0,"margin":[0,0,0,0],"padding":if field=="month"{[9,3,0,6]}else{[0,3,0,6]},"horizontalContentAlignment":if field=="month"{"Left"}else{"Center"}}}));
                 let state = &mut self.nodes.get_mut(&id).unwrap().picker;
                 state.wheel_values.insert(role.into(), expanded);
@@ -565,16 +604,17 @@ impl Scene {
             .unwrap()
             .clone();
         if self.nodes[&id].kind == NodeKind::DatePicker {
-            let mut date = self.nodes[&id]
+            let date = self.nodes[&id]
                 .picker
                 .pending_date
                 .unwrap_or_else(|| q.today());
-            match field.as_str() {
-                "year" => date.year = value,
-                "month" => date.month = value as u8,
-                _ => date.day = value as u8,
+            let cal = q.calendar_identifier;
+            let f = cal.fields(date);
+            let date = match field.as_str() {
+                "year" => cal.add_years(date, value - f.year),
+                "month" => cal.date(f.year, value as u8, f.day),
+                _ => cal.date(f.year, f.month, value as u8),
             };
-            date.day = date.day.min(Date::month_days(date.year, date.month));
             self.nodes.get_mut(&id).unwrap().picker.pending_date =
                 Some(date.clamp(q.bounds().0, q.bounds().1));
         } else {
@@ -765,12 +805,16 @@ impl Scene {
                 .as_deref()
                 .unwrap()
                 .clone();
-            let date = self.nodes[&owner]
-                .picker
-                .cells
-                .iter()
-                .find(|c| c.node == focused)
-                .and_then(|c| Date::parse(&c.date).ok())
+            let state = &self.nodes[&owner].picker;
+            let date = state
+                .pending_focus
+                .or_else(|| {
+                    state
+                        .cells
+                        .iter()
+                        .find(|c| c.node == focused)
+                        .and_then(|c| Date::parse(&c.date).ok())
+                })
                 .unwrap_or_else(|| q.day());
             if matches!(key.as_str(), "Enter" | " ") {
                 self.picker_choose_date(owner, date);
@@ -797,47 +841,60 @@ impl Scene {
             let next = if direction != 0 {
                 match q.display_mode {
                     CalendarViewDisplayMode::Month => date.add_days(direction),
-                    CalendarViewDisplayMode::Year => date.add_months(direction),
-                    CalendarViewDisplayMode::Decade => date.add_months(direction * 12),
+                    CalendarViewDisplayMode::Year => {
+                        q.calendar_identifier.add_months(date, direction)
+                    }
+                    CalendarViewDisplayMode::Decade => {
+                        q.calendar_identifier.add_years(date, direction)
+                    }
                 }
             } else if key == "PageUp" || key == "PageDown" {
-                date.add_months(
-                    if key == "PageUp" { -1 } else { 1 }
-                        * match q.display_mode {
-                            CalendarViewDisplayMode::Month => 1,
-                            CalendarViewDisplayMode::Year => 12,
-                            CalendarViewDisplayMode::Decade => 120,
-                        },
-                )
-            } else if key == "Home" {
-                Date { day: 1, ..date }
-            } else if key == "End" {
-                Date {
-                    day: Date::month_days(date.year, date.month),
-                    ..date
+                let direction = if key == "PageUp" { -1 } else { 1 };
+                match q.display_mode {
+                    CalendarViewDisplayMode::Month => {
+                        q.calendar_identifier.add_months(date, direction)
+                    }
+                    CalendarViewDisplayMode::Year => {
+                        q.calendar_identifier.add_years(date, direction)
+                    }
+                    CalendarViewDisplayMode::Decade => {
+                        q.calendar_identifier.add_years(date, direction * 10)
+                    }
                 }
+            } else if key == "Home" {
+                q.calendar_identifier.month_start(date)
+            } else if key == "End" {
+                q.calendar_identifier
+                    .month_start(date)
+                    .add_days(q.calendar_identifier.fields(date).days_in_month as i32 - 1)
             } else {
                 return Ok(false);
             };
             let next = next.clamp(q.bounds().0, q.bounds().1);
             self.nodes.get_mut(&owner).unwrap().picker.focus_date = Some(next);
             self.nodes.get_mut(&owner).unwrap().picker.signature.clear();
-            if !self.nodes[&owner]
-                .picker
-                .cells
-                .iter()
-                .any(|cell| cell.date == next.iso() && self.nodes[&cell.node].visible)
+            let paging = matches!(key.as_str(), "PageUp" | "PageDown");
+            if paging
+                || !self.nodes[&owner]
+                    .picker
+                    .cells
+                    .iter()
+                    .any(|cell| cell.date == next.iso() && self.nodes[&cell.node].visible)
             {
                 let old = self.nodes[&owner].picker.date.unwrap_or_else(|| q.day());
                 self.start_calendar_scroll(owner, old, next);
                 self.nodes.get_mut(&owner).unwrap().picker.date = Some(next);
             }
-            let realized = self.nodes[&owner]
-                .picker
-                .cells
-                .iter()
-                .find(|cell| cell.date == next.iso() && self.nodes[&cell.node].visible)
-                .map(|cell| cell.node);
+            let realized = if paging {
+                None
+            } else {
+                self.nodes[&owner]
+                    .picker
+                    .cells
+                    .iter()
+                    .find(|cell| cell.date == next.iso() && self.nodes[&cell.node].visible)
+                    .map(|cell| cell.node)
+            };
             if let Some(part) = realized {
                 self.focus(Some(part));
             } else {

@@ -30,8 +30,37 @@ MenuFlyout 内容与完整背景边框沿竖直方向平移，受固定弹出窗
 
 ## 公共 API
 
+普通 Button 支持与 WinUI `Button.Flyout` 对应的关联浮层。React 可用属性元素写法，MenuFlyout 中也可以直接声明菜单项，不需要保存目标对象或管理打开状态：
+
+```tsx
+<Button text="Open menu">
+  <Button.Flyout>
+    <MenuFlyout>
+      <MenuFlyoutItem text="Open" onClick={openDocument} />
+    </MenuFlyout>
+  </Button.Flyout>
+</Button>
+```
+
+普通确认按钮直接使用 `closeFlyout`，无需浮层句柄或 render callback。也可使用等价的 `flyout` 属性：
+
+```tsx
+<Button text="Empty cart" flyout={
+  <Flyout width={260}>
+    <StackPanel spacing={12}>
+      <TextBlock text="Remove all items?" />
+      <Button text="Confirm" closeFlyout />
+    </StackPanel>
+  </Flyout>
+} />
+```
+
+需要直接操作控制器的高级内容仍可使用 render callback 和 `surface.hide()`。两条关闭路径均经过可取消协议。更多控件的声明式属性、内容槽和检查范围见 [声明式 API 检查](declarative-api.md)。
+
+Rust 按 `Button_Partial.cpp::OnClick/OpenAssociatedFlyout` 在激活后打开关联浮层。浮层不参与 Button 内容布局，默认以所属 Button 为定位目标，子声明随 Button 销毁；鼠标、键盘和 `invoke()` 复用同一路径。普通 TS 可直接调用 `button.flyout(...)`／`button.menuFlyout(...)` 创建子浮层，或用 `button.setFlyout(surface)` 关联现有对象（不转移现有对象的生命周期）。独立浮层原有的 `target`、`isOpen` 和事件接口仍可用于受控场景。
+
 ```ts
-import { WinUI, OverlayPlacement, MenuEntryKind, EventKind } from './src/index';
+import { WinUI, OverlayPlacement, MenuEntryKind, EventKind } from 'winui-wasm';
 const ui = await WinUI.create();
 const scene = ui.scene(host);
 const button = scene.root.button({ text: 'Open' });
@@ -59,14 +88,17 @@ off(); cancel(); ui.dispose();
 React 直接属性：
 
 ```tsx
-const [target, setTarget] = useState<SceneNode | null>(null);
-const [open, setOpen] = useState(false);
 <SceneView style={{ height: 260 }}>
-  <Button text="Open" onReady={setTarget} onClick={() => setOpen(true)} />
-  <Flyout target={target} isOpen={open} onClosed={() => setOpen(false)}>
-    <TextBlock text="Hello" />
-  </Flyout>
-  <ToolTip target={target} text="Help" />
+  <Button text="Open" toolTip={<ToolTip text="Help" />}>
+    <Button.Flyout>
+      <Flyout>
+        <StackPanel spacing={12}>
+          <TextBlock text="Hello" />
+          <Button text="Confirm" closeFlyout />
+        </StackPanel>
+      </Flyout>
+    </Button.Flyout>
+  </Button>
   <Slider width={240} value={40} onValueChanged={e => save(e.value)} />
 </SceneView>
 ```

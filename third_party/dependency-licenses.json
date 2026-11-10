@@ -1,0 +1,2926 @@
+{
+  "schema": 1,
+  "reviewedOn": "2026-11-10",
+  "scope": "All resolved Cargo crates and npm packages, including build/test tools. Uninstalled optional platform binaries are metadata-only and are not distributed.",
+  "lockfiles": {
+    "Cargo.toml": "98e8202d87cc71bedb6f5943d22dd8c2bda79100fca9e52a889d1f6dbef38099",
+    "Cargo.lock": "c8789e8f4c221bdfec77077536aeeab3f39917f5471cc676f43d35cd79e08a5b",
+    "gallery/package.json": "4b04a6c95d3fdce3150b85d80a87d1a5087170d39f5504c3cc0d02460cded3be",
+    "gallery/package-lock.json": "1ee1005bbcdf5ea1293ba40ebb256d0aada419e19426453111c6c7934d6134c8",
+    "packages/winui-wasm/package.json": "322047f65b55e37c7d34b4975a9882bc04af09a406d4b5fb2ee94c8ff5b218fa",
+    "packages/winui-wasm/package-lock.json": "1733da59198ac34af21412475230319f58d9f5915421bfd8841f99bdb34cd4be"
+  },
+  "components": [
+    {
+      "ecosystem": "cargo",
+      "name": "adler2",
+      "version": "2.0.1",
+      "license": "0BSD OR MIT OR Apache-2.0",
+      "repository": "https://github.com/oyvindln/adler2",
+      "source": "https://crates.io/crates/adler2/2.0.1",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/adler2-2.0.1/LICENSE-0BSD",
+          "sha256": "861399f8c21c042b110517e76dc6b63a2b334276c8cf17412fc3c8908ca8dc17"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/adler2-2.0.1/LICENSE-APACHE",
+          "sha256": "8ada45cd9f843acf64e4722ae262c622a2b3b3007c7310ef36ac1061a30f6adb"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/adler2-2.0.1/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "arrayvec",
+      "version": "0.7.8",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/bluss/arrayvec",
+      "source": "https://crates.io/crates/arrayvec/0.7.8",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/arrayvec-0.7.8/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/arrayvec-0.7.8/LICENSE-MIT",
+          "sha256": "4da95ec4ecb65b738d470b7d762894ad9c97da93e6cbfb18b570fc2c96f4b871"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "autocfg",
+      "version": "1.5.1",
+      "license": "Apache-2.0 OR MIT",
+      "repository": "https://github.com/cuviper/autocfg",
+      "source": "https://crates.io/crates/autocfg/1.5.1",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/autocfg-1.5.1/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/autocfg-1.5.1/LICENSE-MIT",
+          "sha256": "27995d58ad5c1145c1a8cd86244ce844886958a35eb2b78c6b772748669999ac"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "bitflags",
+      "version": "1.3.2",
+      "license": "MIT/Apache-2.0",
+      "repository": "https://github.com/bitflags/bitflags",
+      "source": "https://crates.io/crates/bitflags/1.3.2",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/bitflags-1.3.2/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/bitflags-1.3.2/LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "bumpalo",
+      "version": "3.20.3",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/fitzgen/bumpalo",
+      "source": "https://crates.io/crates/bumpalo/3.20.3",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/bumpalo-3.20.3/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/bumpalo-3.20.3/LICENSE-MIT",
+          "sha256": "65f94e99ddaf4f5d1782a6dae23f35d4293a9a01444a13135a6887017d353cee"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "calendrical_calculations",
+      "version": "0.2.4",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/calendrical_calculations/0.2.4",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/calendrical_calculations-0.2.4/LICENSE",
+          "sha256": "192ea857d1bff2b87c174de36cbae5c173234726c6b8eceab9790a535d7dbc95"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "cfg-if",
+      "version": "1.0.5",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/rust-lang/cfg-if",
+      "source": "https://crates.io/crates/cfg-if/1.0.5",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/cfg-if-1.0.5/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/cfg-if-1.0.5/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "core_maths",
+      "version": "0.1.1",
+      "license": "MIT",
+      "repository": "https://github.com/robertbastian/core_maths",
+      "source": "https://crates.io/crates/core_maths/0.1.1",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/core_maths-0.1.1/LICENSE",
+          "sha256": "9ebf8c4cc0b735ca13a766451f7b8097db3185975ceb2ba94b5abf439156a91f"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "crc32fast",
+      "version": "1.5.4",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/srijs/rust-crc32fast",
+      "source": "https://crates.io/crates/crc32fast/1.5.4",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/crc32fast-1.5.4/LICENSE-APACHE",
+          "sha256": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/crc32fast-1.5.4/LICENSE-MIT",
+          "sha256": "61d383b05b87d78f94d2937e2580cce47226d17823c0430fbcad09596537efcf"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "displaydoc",
+      "version": "0.2.7",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/yaahc/displaydoc",
+      "source": "https://crates.io/crates/displaydoc/0.2.7",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/displaydoc-0.2.7/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/displaydoc-0.2.7/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "encoding_rs",
+      "version": "0.8.35",
+      "license": "(Apache-2.0 OR MIT) AND BSD-3-Clause",
+      "repository": "https://github.com/hsivonen/encoding_rs",
+      "source": "https://crates.io/crates/encoding_rs/0.8.35",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/encoding_rs-0.8.35/COPYRIGHT",
+          "sha256": "11789f45bb180841cd362a5eee6789c68ddb573a11105e30768c308a6add0190"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/encoding_rs-0.8.35/LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/encoding_rs-0.8.35/LICENSE-MIT",
+          "sha256": "3fa4ca83dcc9237839b1bdeb2e6d16bdfb5ec0c5ce42b24694d8bbf0dcbef72c"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/encoding_rs-0.8.35/LICENSE-WHATWG",
+          "sha256": "838118388fe5c2e7f1dbbaeed13e1c7f3ebf88be91319c7c1d77c18e987d1a50"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "euclid",
+      "version": "0.22.14",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/servo/euclid",
+      "source": "https://crates.io/crates/euclid/0.22.14",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/euclid-0.22.14/COPYRIGHT",
+          "sha256": "ec82b96487e9e778ee610c7ab245162464782cfa1f555c2299333f8dbe5c036a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/euclid-0.22.14/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/euclid-0.22.14/LICENSE-MIT",
+          "sha256": "62065228e42caebca7e7d7db1204cbb867033de5982ca4009928915e4095f3a3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "fdeflate",
+      "version": "0.3.7",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/image-rs/fdeflate",
+      "source": "https://crates.io/crates/fdeflate/0.3.7",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/fdeflate-0.3.7/LICENSE-APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/fdeflate-0.3.7/LICENSE-MIT",
+          "sha256": "c77a4cf9da729987d0fe7ccd811e3bd27393914ddf3d23467c18cc22954513b3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "flate2",
+      "version": "1.1.11",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/rust-lang/flate2-rs",
+      "source": "https://crates.io/crates/flate2/1.1.11",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/flate2-1.1.11/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/flate2-1.1.11/LICENSE-MIT",
+          "sha256": "025436edff4cfcdde17a5811fdea78892d8482efd1abdec5a17872d07a4f2112"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "icu_calendar",
+      "version": "2.4.0",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/icu_calendar/2.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/icu_calendar-2.4.0/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "icu_calendar_data",
+      "version": "2.4.0",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/icu_calendar_data/2.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/icu_calendar_data-2.4.0/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "icu_locale_core",
+      "version": "2.4.0",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/icu_locale_core/2.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/icu_locale_core-2.4.0/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "icu_locale_fallback",
+      "version": "2.4.0",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/icu_locale_fallback/2.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/icu_locale_fallback-2.4.0/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "icu_locale_fallback_data",
+      "version": "2.4.0",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/icu_locale_fallback_data/2.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/icu_locale_fallback_data-2.4.0/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "icu_provider",
+      "version": "2.4.0",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/icu_provider/2.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/icu_provider-2.4.0/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "itoa",
+      "version": "1.0.18",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/dtolnay/itoa",
+      "source": "https://crates.io/crates/itoa/1.0.18",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/itoa-1.0.18/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/itoa-1.0.18/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "js-sys",
+      "version": "0.3.81",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys",
+      "source": "https://crates.io/crates/js-sys/0.3.81",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/js-sys-0.3.81/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/js-sys-0.3.81/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "kurbo",
+      "version": "0.13.1",
+      "license": "Apache-2.0 OR MIT",
+      "repository": "https://github.com/linebender/kurbo",
+      "source": "https://crates.io/crates/kurbo/0.13.1",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/kurbo-0.13.1/LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/kurbo-0.13.1/LICENSE-MIT",
+          "sha256": "23c23145f6eac25c28cdcc03d38506a5712a9a8cffb5bd5301457f6173ea696e"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "libm",
+      "version": "0.2.16",
+      "license": "MIT",
+      "repository": "https://github.com/rust-lang/compiler-builtins",
+      "source": "https://crates.io/crates/libm/0.2.16",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/libm-0.2.16/LICENSE.txt",
+          "sha256": "3823dda7cf046602f4b4e77ec8e227863dc4736037cc85bb33d9f19febe16bb7"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "litemap",
+      "version": "0.8.3",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/litemap/0.8.3",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/litemap-0.8.3/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "log",
+      "version": "0.4.35",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/rust-lang/log",
+      "source": "https://crates.io/crates/log/0.4.35",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/log-0.4.35/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/log-0.4.35/LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "memchr",
+      "version": "2.8.3",
+      "license": "Unlicense OR MIT",
+      "repository": "https://github.com/BurntSushi/memchr",
+      "source": "https://crates.io/crates/memchr/2.8.3",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/memchr-2.8.3/COPYING",
+          "sha256": "01c266bced4a434da0051174d6bee16a4c82cf634e2679b6155d40d75012390f"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/memchr-2.8.3/LICENSE-MIT",
+          "sha256": "0f96a83840e146e43c0ec96a22ec1f392e0680e6c1226e6f3ba87e0740af850f"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "miniz_oxide",
+      "version": "0.8.9",
+      "license": "MIT OR Zlib OR Apache-2.0",
+      "repository": "https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide",
+      "source": "https://crates.io/crates/miniz_oxide/0.8.9",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.8.9/LICENSE",
+          "sha256": "4108245a1f2df9d4e94df8abed5b4ba0759bb2f9b40a6b939f1be141077ae50b"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.8.9/LICENSE-APACHE.md",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.8.9/LICENSE-MIT.md",
+          "sha256": "799e9ca9d179295ef372f25d3769cdda7d25bb2668add6a6a1e22d1e4c678b8d"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.8.9/LICENSE-ZLIB.md",
+          "sha256": "0a54e647fe54104658b5e563c04c6f9edf251710e47bce692e0bd990a4ddaa39"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "miniz_oxide",
+      "version": "0.9.1",
+      "license": "MIT OR Zlib OR Apache-2.0",
+      "repository": "https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide",
+      "source": "https://crates.io/crates/miniz_oxide/0.9.1",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.9.1/LICENSE",
+          "sha256": "4108245a1f2df9d4e94df8abed5b4ba0759bb2f9b40a6b939f1be141077ae50b"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.9.1/LICENSE-APACHE.md",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.9.1/LICENSE-MIT.md",
+          "sha256": "799e9ca9d179295ef372f25d3769cdda7d25bb2668add6a6a1e22d1e4c678b8d"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/miniz_oxide-0.9.1/LICENSE-ZLIB.md",
+          "sha256": "0a54e647fe54104658b5e563c04c6f9edf251710e47bce692e0bd990a4ddaa39"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "num-traits",
+      "version": "0.2.19",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/rust-num/num-traits",
+      "source": "https://crates.io/crates/num-traits/0.2.19",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/num-traits-0.2.19/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/num-traits-0.2.19/LICENSE-MIT",
+          "sha256": "6485b8ed310d3f0340bf1ad1f47645069ce4069dcc6bb46c7d5c6faf41de1fdb"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "once_cell",
+      "version": "1.21.4",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/matklad/once_cell",
+      "source": "https://crates.io/crates/once_cell/1.21.4",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/once_cell-1.21.4/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/once_cell-1.21.4/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "png",
+      "version": "0.17.16",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/image-rs/image-png",
+      "source": "https://crates.io/crates/png/0.17.16",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/png-0.17.16/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/png-0.17.16/LICENSE-MIT",
+          "sha256": "eaf40297c75da471f7cda1f3458e8d91b4b2ec866e609527a13acfa93b638652"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "polycool",
+      "version": "0.4.0",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/linebender/kurbo",
+      "source": "https://crates.io/crates/polycool/0.4.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/polycool-0.4.0/LICENSE-APACHE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/polycool-0.4.0/LICENSE-MIT",
+          "sha256": "23c23145f6eac25c28cdcc03d38506a5712a9a8cffb5bd5301457f6173ea696e"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "potential_utf",
+      "version": "0.1.6",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/potential_utf/0.1.6",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/potential_utf-0.1.6/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "proc-macro2",
+      "version": "1.0.107",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/dtolnay/proc-macro2",
+      "source": "https://crates.io/crates/proc-macro2/1.0.107",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/proc-macro2-1.0.107/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/proc-macro2-1.0.107/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "quote",
+      "version": "1.0.47",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/dtolnay/quote",
+      "source": "https://crates.io/crates/quote/1.0.47",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/quote-1.0.47/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/quote-1.0.47/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "roxmltree",
+      "version": "0.20.0",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/RazrFalcon/roxmltree",
+      "source": "https://crates.io/crates/roxmltree/0.20.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/roxmltree-0.20.0/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/roxmltree-0.20.0/LICENSE-MIT",
+          "sha256": "fffe218c1e349e1d482a05677f2ce850502f88298174d77f6ac7c04821db7899"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "rustversion",
+      "version": "1.0.23",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/dtolnay/rustversion",
+      "source": "https://crates.io/crates/rustversion/1.0.23",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/rustversion-1.0.23/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/rustversion-1.0.23/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "serde",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/serde-rs/serde",
+      "source": "https://crates.io/crates/serde/1.0.229",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/serde-1.0.229/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/serde-1.0.229/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "serde_core",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/serde-rs/serde",
+      "source": "https://crates.io/crates/serde_core/1.0.229",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/serde_core-1.0.229/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/serde_core-1.0.229/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "serde_derive",
+      "version": "1.0.229",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/serde-rs/serde",
+      "source": "https://crates.io/crates/serde_derive/1.0.229",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/serde_derive-1.0.229/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/serde_derive-1.0.229/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "serde_json",
+      "version": "1.0.154",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/serde-rs/json",
+      "source": "https://crates.io/crates/serde_json/1.0.154",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/serde_json-1.0.154/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/serde_json-1.0.154/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "simd-adler32",
+      "version": "0.3.10",
+      "license": "MIT",
+      "repository": "https://github.com/mcountryman/simd-adler32",
+      "source": "https://crates.io/crates/simd-adler32/0.3.10",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/simd-adler32-0.3.10/LICENSE.md",
+          "sha256": "42a35170233e83e18856792e748de4c1ce4a63b2afce9a370c89ef3fe23f9f2d"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "smallvec",
+      "version": "1.16.5",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/servo/rust-smallvec",
+      "source": "https://crates.io/crates/smallvec/1.16.5",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/smallvec-1.16.5/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/smallvec-1.16.5/LICENSE-MIT",
+          "sha256": "0b28172679e0009b655da42797c03fd163a3379d5cfa67ba1f1655e974a2a1a9"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "stable_deref_trait",
+      "version": "1.2.1",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/storyyeller/stable_deref_trait",
+      "source": "https://crates.io/crates/stable_deref_trait/1.2.1",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/stable_deref_trait-1.2.1/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/stable_deref_trait-1.2.1/LICENSE-MIT",
+          "sha256": "5e05b024f653a5ce199e77cbbbd42fb5553562ec714b819421ed0c3e552a75d7"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "syn",
+      "version": "2.0.119",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/dtolnay/syn",
+      "source": "https://crates.io/crates/syn/2.0.119",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/syn-2.0.119/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/syn-2.0.119/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "syn",
+      "version": "3.0.9",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/dtolnay/syn",
+      "source": "https://crates.io/crates/syn/3.0.9",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/syn-3.0.9/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/syn-3.0.9/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "synstructure",
+      "version": "0.14.0",
+      "license": "MIT",
+      "repository": "https://github.com/mystor/synstructure",
+      "source": "https://crates.io/crates/synstructure/0.14.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/synstructure-0.14.0/LICENSE",
+          "sha256": "219920e865eee70b7dcfc948a86b099e7f4fe2de01bcca2ca9a20c0a033f2b59"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "tinystr",
+      "version": "0.8.5",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/tinystr/0.8.5",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/tinystr-0.8.5/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "unicode-bidi",
+      "version": "0.3.18",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/servo/unicode-bidi",
+      "source": "https://crates.io/crates/unicode-bidi/0.3.18",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-bidi-0.3.18/COPYRIGHT",
+          "sha256": "edb20b474f6cbd4f4db066b54a9e0f687d0009d309412a63431189b59b8e2a07"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-bidi-0.3.18/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-bidi-0.3.18/LICENSE-MIT",
+          "sha256": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "unicode-ident",
+      "version": "1.0.27",
+      "license": "(MIT OR Apache-2.0) AND Unicode-3.0",
+      "repository": "https://github.com/dtolnay/unicode-ident",
+      "source": "https://crates.io/crates/unicode-ident/1.0.27",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-ident-1.0.27/LICENSE-APACHE",
+          "sha256": "62c7a1e35f56406896d7aa7ca52d0cc0d272ac022b5d2796e7d6905db8a3636a"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-ident-1.0.27/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-ident-1.0.27/LICENSE-UNICODE",
+          "sha256": "f7db81051789b729fea528a63ec4c938fdcb93d9d61d97dc8cc2e9df6d47f2a1"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "unicode-linebreak",
+      "version": "0.1.5",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/axelf4/unicode-linebreak",
+      "source": "https://crates.io/crates/unicode-linebreak/0.1.5",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-linebreak-0.1.5/LICENSE",
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "unicode-segmentation",
+      "version": "1.12.0",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/unicode-rs/unicode-segmentation",
+      "source": "https://crates.io/crates/unicode-segmentation/1.12.0",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-segmentation-1.12.0/COPYRIGHT",
+          "sha256": "23860c2a7b5d96b21569afedf033469bab9fe14a1b24a35068b8641c578ce24d"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-segmentation-1.12.0/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/unicode-segmentation-1.12.0/LICENSE-MIT",
+          "sha256": "7b63ecd5f1902af1b63729947373683c32745c16a10e8e6292e2e2dcd7e90ae0"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "wasm-bindgen",
+      "version": "0.2.104",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen",
+      "source": "https://crates.io/crates/wasm-bindgen/0.2.104",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-0.2.104/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-0.2.104/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "wasm-bindgen-backend",
+      "version": "0.2.104",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/backend",
+      "source": "https://crates.io/crates/wasm-bindgen-backend/0.2.104",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-backend-0.2.104/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-backend-0.2.104/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "wasm-bindgen-macro",
+      "version": "0.2.104",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro",
+      "source": "https://crates.io/crates/wasm-bindgen-macro/0.2.104",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-macro-0.2.104/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-macro-0.2.104/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "wasm-bindgen-macro-support",
+      "version": "0.2.104",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro-support",
+      "source": "https://crates.io/crates/wasm-bindgen-macro-support/0.2.104",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-macro-support-0.2.104/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-macro-support-0.2.104/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "wasm-bindgen-shared",
+      "version": "0.2.104",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared",
+      "source": "https://crates.io/crates/wasm-bindgen-shared/0.2.104",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-shared-0.2.104/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/wasm-bindgen-shared-0.2.104/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "web-sys",
+      "version": "0.3.81",
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/web-sys",
+      "source": "https://crates.io/crates/web-sys/0.3.81",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/web-sys-0.3.81/LICENSE-APACHE",
+          "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2"
+        },
+        {
+          "path": "third_party/licenses/dependencies/rust/web-sys-0.3.81/LICENSE-MIT",
+          "sha256": "378f5840b258e2779c39418f3f2d7b2ba96f1c7917dd6be0713f88305dbda397"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "writeable",
+      "version": "0.6.4",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/writeable/0.6.4",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/writeable-0.6.4/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "yoke",
+      "version": "0.8.4",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/yoke/0.8.4",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/yoke-0.8.4/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "yoke-derive",
+      "version": "0.8.4",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/yoke-derive/0.8.4",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/yoke-derive-0.8.4/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zerofrom",
+      "version": "0.1.8",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/zerofrom/0.1.8",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zerofrom-0.1.8/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zerofrom-derive",
+      "version": "0.1.8",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/zerofrom-derive/0.1.8",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zerofrom-derive-0.1.8/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zerotrie",
+      "version": "0.2.5",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/zerotrie/0.2.5",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zerotrie-0.2.5/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zerovec",
+      "version": "0.11.9",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/zerovec/0.11.9",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zerovec-0.11.9/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zerovec-derive",
+      "version": "0.11.7",
+      "license": "Unicode-3.0",
+      "repository": "https://github.com/unicode-org/icu4x",
+      "source": "https://crates.io/crates/zerovec-derive/0.11.7",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zerovec-derive-0.11.7/LICENSE",
+          "sha256": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zlib-rs",
+      "version": "0.6.8",
+      "license": "Zlib",
+      "repository": "https://github.com/trifectatechfoundation/zlib-rs",
+      "source": "https://crates.io/crates/zlib-rs/0.6.8",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zlib-rs-0.6.8/LICENSE",
+          "sha256": "e72111c52b7d96ebe25348dee19f0744f444d3c95ae6b1ecb6ccaecc5bce05ba"
+        }
+      ]
+    },
+    {
+      "ecosystem": "cargo",
+      "name": "zmij",
+      "version": "1.0.23",
+      "license": "MIT",
+      "repository": "https://github.com/dtolnay/zmij",
+      "source": "https://crates.io/crates/zmij/1.0.23",
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/rust/zmij-1.0.23/LICENSE-MIT",
+          "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3"
+        }
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@oxc-project/types",
+      "version": "0.156.0",
+      "license": "MIT",
+      "integrity": "sha512-1Duyg48TdJNdyhEB8Xn1L36bT9Pv6GUtlKjHxOys8xkaF/rQq3XJE+bAurSK/AgIz5mGFsb77cn9Pb20+WCScw==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@oxc-project/types/-/types-0.156.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@oxc-project__types-0.156.0/LICENSE",
+          "sha256": "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/oxc-project/oxc.git",
+        "directory": "npm/oxc-types"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@playwright/test",
+      "version": "1.65.0",
+      "license": "Apache-2.0",
+      "integrity": "sha512-iGURLGuKDLakSEl7Pgfv8h7f+XLT+V861Wfhz0zlEl5nyFuKUopdkFBPKqTllTUp06aOwPuH8iuUEb3yp3MpbQ==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@playwright/test/-/test-1.65.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@playwright__test-1.65.0/LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path": "third_party/licenses/dependencies/npm/@playwright__test-1.65.0/NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@prettier/plugin-xml",
+      "version": "3.4.2",
+      "license": "MIT",
+      "integrity": "sha512-/UyNlHfkuLXG6Ed85KB0WBF283xn2yavR+UtRibBRUcvEJId2DSLdGXwJ/cDa1X++SWDPzq3+GSFniHjkNy7yg==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@prettier/plugin-xml/-/plugin-xml-3.4.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@prettier__plugin-xml-3.4.2/LICENSE",
+          "sha256": "a9e5631b7af03f7cde54acfc4304ba40316c8226e01acd7fbabe2ad0ca2cceb1"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prettier/plugin-xml.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-android-arm-eabi",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-ia3DwAs0OsMGS7+IConptSiyk9pEXkOx/AbJ2n/lAGxH3QkWQus1t8d7gnAT38FCU2sQu8lUbeR6AiZFv4JxaA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-android-arm-eabi/-/binding-android-arm-eabi-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-android-arm64",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-kx5wBiMB6E7TEvpl2B9gjLU004BkvEm2Dr941BFjx/SontPwSzNuQUIoVKxHHoSjpFIfHMmcguyLOtyn0hObRg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-android-arm64/-/binding-android-arm64-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-darwin-arm64",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-qslZrXnKJU4cUpjoAmtAo/KQM9e2IRMlmpig6Zpwj+8KWxW8v+nkAf9216Bsek9lOC1jvg2yCjygCFo2f83msQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-darwin-arm64/-/binding-darwin-arm64-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-darwin-x64",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-FdF+y48ND13eAyM2mQn+85kvAqNlvRWROy2rhgA463X/0Gv4vGtazZtfaF1mRBLscYvtOlh4QnLjOWiFzX69OQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-darwin-x64/-/binding-darwin-x64-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-freebsd-x64",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-ddjqFM5e95AgLbUPtKIS7V1KTVlA0RUgCVr5mn+/IEhsdy3pr+Vuj/HZ7nlMN2FyxIwUktOH1LEPIQXO1v9y1Q==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-freebsd-x64/-/binding-freebsd-x64-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-arm-gnueabihf",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-tHdKWbFkFBI687iim3LIyIvyL7j66VvQYkDPss5Stn/qyE2tWkR1YD0dXmXPFKKqT/o5ZEJVsaRsWS2meQwGOA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-arm-gnueabihf/-/binding-linux-arm-gnueabihf-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-arm64-gnu",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-FJiLGAblPBMlBEdbOqw6kW6QcXDWAf/oJu7gYs9ZJZwmg+K+/zjFLxPTIY9izJUzxzc24FHvmseyA0IvJSl17w==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-gnu/-/binding-linux-arm64-gnu-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-arm64-musl",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-hrJpblMsrQ58U9veWpbXzkhV5zStunds6HWLprqq1qauvgBr1E6P+24kLj6lSLI9vjRn/RYpjprhkHQPKGWpNg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-arm64-musl/-/binding-linux-arm64-musl-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-ppc64-gnu",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-qJd/dC6j6CwLG9/s/RP2nb1RZ0GIgj7Ioj7x/SYa3RzjVrlzrmH0fhIOpfvqQDeIsdP0loi+kHaMhJzY1PBIaA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-ppc64-gnu/-/binding-linux-ppc64-gnu-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-s390x-gnu",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-Vx7Xg5uUJuNcujJjI70OICaH0EYj80BtOLZTSN7uOYg8QOLlyKnaG0IW7Fn/J0IpJsaKzmDKMhOQv1JBM9m9vg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-s390x-gnu/-/binding-linux-s390x-gnu-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-TNKhgE3uJTsTzatUSSYt0Kgo+Oa2uSlSjz4r1aEIea7HX6ULBym4fAlYUhG1i6pjNf2njfCUAfKwr6C3E9Xg1w==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-linux-x64-musl",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-7chXdpjXZ8qG0+mIxECN3cT9kvhZ3/oZhMX6Pp876P7CDrIy8nJswva6Mq357JR7eYXfuskwZxMeV1SzoZdHrA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-openharmony-arm64",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-Kwjt+7uNTJK5/MDkGWGVO2KQPnj8yAV75dMpfwyHZrJSXWHrniOB0aUEWlVYf3H1hOqFLIStLdM5QXq6bnKmOQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-openharmony-arm64/-/binding-openharmony-arm64-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-win32-arm64-msvc",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-/LH6WfjDRXXJz/p5xl4TmU+jpcnwcxbKEQBW/GZE0JHfN0lGIyTtsUEGaQ/q/GikkGJ2yLKe6pwm7AnEWO8pdw==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-win32-arm64-msvc/-/binding-win32-arm64-msvc-1.2.16.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-1lv1KvX0Z871zfk7vw+dnXMMnHNyDwMzWG8Kv3HxDXMOhzCX4SHc7HK319fInP0i+0p9D8brkfzL7pJOaGl+tw==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@rolldown/binding-win32-x64-msvc/-/binding-win32-x64-msvc-1.2.16.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@rolldown__binding-win32-x64-msvc-1.2.16/LICENSE",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rolldown/rolldown.git",
+        "directory": "packages/rolldown"
+      },
+      "noticeSource": "rolldown project license (build tool; native binding is not shipped)"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@rolldown/pluginutils",
+      "version": "1.0.1",
+      "license": "MIT",
+      "integrity": "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@rolldown__pluginutils-1.0.1/LICENSE",
+          "sha256": "e1919b3b98b8bf6c1b99fcc60a0ed46027c97ac947432e1278446c9606f50161"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rolldown/plugins.git",
+        "directory": "packages/pluginutils"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/node",
+      "version": "22.20.5",
+      "license": "MIT",
+      "integrity": "sha512-U2+DNr+wSjpsTS/wZGYHq7GcwfuSmKiKvoPvK22zwTlRhU91yOniN4qRR5KhIjvif7ysw/dz/hKmfDH0Ris4aA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@types/node/-/node-22.20.5.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@types__node-22.20.5/LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/node"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/prismjs",
+      "version": "1.26.6",
+      "license": "MIT",
+      "integrity": "sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@types/prismjs/-/prismjs-1.26.6.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@types__prismjs-1.26.6/LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/prismjs"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/react",
+      "version": "19.3.0",
+      "license": "MIT",
+      "integrity": "sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@types/react/-/react-19.3.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@types__react-19.3.0/LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "license": "MIT",
+      "integrity": "sha512-ZI7bU42mZXXKHn/qNLEw2IrbiINU7X5+vfgdixBHkCNpYWXjKgfQ/P+uyGb5CjOLB9UcnTeg3rylQtV2hym44Q==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.3.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@types__react-dom-19.3.0/LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-dom"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-aix-ppc64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-aix-ppc64/-/typescript-aix-ppc64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-darwin-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-gowzar9MwS/aRWp6f3a4KUqzRjAZjOsmGNCM6LcTgXum+dBfgsBVMN+AgvOCCbguXyick6LJhpBszxMebJ8syA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-darwin-arm64/-/typescript-darwin-arm64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-darwin-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-SZ9xZInqApNlNGc9s0W1VSsktYSOe9cFqNOIqmN1Gs8SmkjKZYFt017G4VwPxASInODuAdbTW7sXiFUf893RgA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-darwin-x64/-/typescript-darwin-x64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-freebsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-W5NH4y/J0plIIS5b2xvTEkU7JFxyqdMAOgf+Ilhl0vHQXKO5dZoxd+C/jEtq56c4F3wk71RB4BMRQ2XdI+bwYQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-freebsd-arm64/-/typescript-freebsd-arm64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-freebsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-UMGDx5sTpzNw3WiPebH7l90IWfJggEd+egHt/q6p7/Cm3zqoV7VxkGXt+3DxPIw8CcmvAB0j3sVVfbhX+M4Tpw==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-freebsd-x64/-/typescript-freebsd-x64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-arm",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-gffT3xPz9sR7j/YJExkyPntrI0P2EP9XbOyWzth2/Gs0RstK+90RBcO0ncXoXy/beYll1SXw846Nf2zdnEz0QQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-arm/-/typescript-linux-arm-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-Qh4eU4/y3yDjnfjjyPYihMj5/ODIlmt+Bzu17OI+fiSRDW57QmU5SiN63exPRNJPKUzcc1INa1NXdrJ+MqHjUQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-arm64/-/typescript-linux-arm64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-loong64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-uEHck9i8hoAzXPiYRib1O7miOnz23SxIeVl6F4LXox+qov1K35jHcEW6VHKvZI+pyvl7fZEP4MCU5LYvIq1GuQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-loong64/-/typescript-linux-loong64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-mips64el",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-R4KvAMnE43W5Qeqb0Ly56O3mWMWIAgsMyz36DCaycd5nbg/9kzm0liw3JocfRqyJY0KPmzFjbswozXyW0DnIYA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-mips64el/-/typescript-linux-mips64el-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-ppc64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-DORx5b3sd/4S7eayxm4FQv+A7CrkUIGRaHiwI8oiHTAI1fAPWhF4J0vAlkC8biAlHSVVwxMQ3tjZ2/DVbnQiiA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-ppc64/-/typescript-linux-ppc64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-riscv64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-wf0jqEDOjrPRnKwYRyyJDRo11KMbvMFrU+q4zqKyChODBzvlkbhNQfKvLxQCcwTpdDaXSHZTVuh0JoCrKCUMHQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-riscv64/-/typescript-linux-riscv64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-s390x",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-IkwJc3L7yhytWd/ewjyxNDfOmswCm9GWMJT/ue/dU4aZNbwZeYAetq42VyLmsmSjvoX7z74X6ZaYCtzAr0EuGw==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-s390x/-/typescript-linux-s390x-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-linux-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-netbsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-+polYF4MF04aPpO5FTkHran9yUQDSXqy5GiSDKpsll5jy3l3+g9QLhpf39T+ePtefhXLOGrLl0QIjkQP6VnelA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-netbsd-arm64/-/typescript-netbsd-arm64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-netbsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-8YIT0EHM/3dq10ZOVF/A7pc/YSMtbcecct4rWtexrnSCHOPcpC2KTLXfTCR6vDpnSiY12heNb1GiN/wu+T/FyA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-netbsd-x64/-/typescript-netbsd-x64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-openbsd-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-APT8+ClYnuYm1u9+kgGXoMj2VzWzcymwh2gNSQVySHfkRDGOTVkoWLjCmOQSaO+PoqQ57B0flRp9SA+7GnnkzQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-openbsd-arm64/-/typescript-openbsd-arm64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-openbsd-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-yX7s+Q0Dln0Dt9tEzZsAjXXR/+ytBM7AlglaqyeMPxQszJ1JhlJdZ6jLA+IzldHtflX81em7lDao1xXu+aRRkg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-openbsd-x64/-/typescript-openbsd-x64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-sunos-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-dLJDGaLZ1D4HPQn62u1n8mBDkJREwMsAkCdkwd4Ieqw+x3TUyTsqY0YiBCtE6H6OzzgGk3iuZ3vFWRS+E8/d1g==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-sunos-x64/-/typescript-sunos-x64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-win32-arm64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-Gyl1Vy6OsWesLzmq+EP0Fb7b4Nid5232AvcA2SFcdYreldpNtYFFofPjnt62y9hQy7VTaZp65ICJjuAQRaVcIQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-win32-arm64/-/typescript-win32-arm64-7.0.2.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@typescript/typescript-win32-x64",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-0BQ3HkAHHlKLSp1qRvf3SUhGpGsDuhB/jgFw75guyqbxJqEaS0Cw/VFO8i2nHglJUzQCRtMMR/IBAKE3ETMC4g==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/@typescript/typescript-win32-x64/-/typescript-win32-x64-7.0.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@typescript__typescript-win32-x64-7.0.2/LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+        },
+        {
+          "path": "third_party/licenses/dependencies/npm/@typescript__typescript-win32-x64-7.0.2/NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/TypeScript.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@vitejs/plugin-react",
+      "version": "6.2.1",
+      "license": "MIT",
+      "integrity": "sha512-9KyWCij3r0+qLG3Q62vBmv0VyevmYibAtxaCIVK9o0k6CXgaajZRIe8tpfchQcdZArJ5b/7OrIz4W3b2uxVRDA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@vitejs/plugin-react/-/plugin-react-6.2.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@vitejs__plugin-react-6.2.1/LICENSE",
+          "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite-plugin-react.git",
+        "directory": "packages/plugin-react"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "@xml-tools/parser",
+      "version": "1.0.12",
+      "license": "Apache-2.0",
+      "integrity": "sha512-YNIPbmr/7ClPpWyk0MLImLBLyVLgW+BeOkbd4UDp8w0tCcgU8lmA4karXBF9EQwaQzDTzaBbJtmSA0G2NKKlPA==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/@xml-tools/parser/-/parser-1.0.12.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/@xml-tools__parser-1.0.12/LICENSE",
+          "sha256": "00486ef83838a313a30b3f7c2c999149a4614102a906ae9b600eac7c58b07b87"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/SAP/app-studio-toolkit.git",
+        "directory": "projects/xml-tools/packages/parser"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "base64-arraybuffer",
+      "version": "1.0.2",
+      "license": "MIT",
+      "integrity": "sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/base64-arraybuffer/-/base64-arraybuffer-1.0.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/base64-arraybuffer-1.0.2/LICENSE",
+          "sha256": "f3eca6ff762533fa5a77caf954a143e48afa204668cf97dce758c45a9e006be3"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/niklasvh/base64-arraybuffer"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "chevrotain",
+      "version": "7.1.1",
+      "license": "Apache-2.0",
+      "integrity": "sha512-wy3mC1x4ye+O+QkEinVJkPf5u2vsrDIYW9G7ZuwFl6v/Yu0LwUuT2POsb+NUWApebyxfkQq6+yDfRExbnI5rcw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/chevrotain/-/chevrotain-7.1.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/chevrotain-7.1.1/LICENSE.txt",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/SAP/chevrotain.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "css-line-break",
+      "version": "2.1.0",
+      "license": "MIT",
+      "integrity": "sha512-FHcKFCZcAha3LwfVBhCQbW2nCNbkZXn7KVUJcsT5/P8YmfsVja0FMPJr0B903j/E69HUphKiV9iQArX8SDYA4w==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/css-line-break/-/css-line-break-2.1.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/css-line-break-2.1.0/LICENSE",
+          "sha256": "ce1ee0539f7fe1f7b75b76d121e674cb897c709c3e24ddba7f9a10fe2d0d88a5"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/niklasvh/css-line-break.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "csstype",
+      "version": "3.2.3",
+      "license": "MIT",
+      "integrity": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/csstype-3.2.3/LICENSE",
+          "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": "https://github.com/frenic/csstype"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/detect-libc-2.1.2/LICENSE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/lovell/detect-libc.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "fdir",
+      "version": "6.5.0",
+      "license": "MIT",
+      "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/fdir-6.5.0/LICENSE",
+          "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thecodrr/fdir.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "html2canvas",
+      "version": "1.4.1",
+      "license": "MIT",
+      "integrity": "sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/html2canvas/-/html2canvas-1.4.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/html2canvas-1.4.1/LICENSE",
+          "sha256": "86200ce4e92d9a22c41c8647a55f7a5fddff304ff89b4d36ecc699ed8c123d2c"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:niklasvh/html2canvas.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-WkUDrojuJs0xkgGf2udWxa3yGBRxPtxUkB79i6aCZLRgc7PM8fZe9TosfPDcvEpQZbuFASnHYmRLBLUbmLOIIA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.33.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/lightningcss-1.33.0/LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/parcel-bundler/lightningcss.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-android-arm64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-gEpRTalKdosp4Bb8qWtc2iOgE5SeIHlpS1up9bFq2wAyYhl1UdTObYiHe98zEM9SQvSoqQZ1IQD0JNpg3Ml5pg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-android-arm64/-/lightningcss-android-arm64-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-darwin-arm64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-Sciaz8eenNTKn9b3t7+xr0ipTp9YxKQY4npwQ3mrRuL0BAVHBLyZxofhaKBAVtzmtRZ/zTyo0/to4B1uWG/Djg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-darwin-x64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-Z5UPAxzrjlWNNyGy6i65cJzzvgJ5D3T6wMvs+gWpY9d7qRhANrxqAp6LhxIgZhWEw18RfJTGcRxjuLIBr+m8XQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-freebsd-x64",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-QQM/Ti/hQajJwCY+RiWuCZ9sdtI/XQk7nDK5vC8kkdwixezOlDgvDx7+RT+QjK6FcFT4MpsuoBnHIo/O3StRRg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-linux-arm-gnueabihf",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-N7FVBe6iS24MlM6R/4RBTxGhQheZGs7tiQ9U32UtF75NzP5Q7xWPRqLBCKxlRQRk3rY1jCIPLzx7WzOhuUIRLQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-linux-arm64-gnu",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-j2v/itmy4HlNxlc6voKXYgBqNi0Ng2LShg4z7GufpEgs05P+2suBVyi9I6YHq5uoVFx9ETin3eCEhLVyXGQnKg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-linux-arm64-musl",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-yiO5ROMuYQgXbC60yjZU5CYSFZGKXL0HFATXt9mHJn1+zW55oCtMI9NfcVhYLMFDL7gV7oBPon/EmMMGg2OvtQ==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-linux-x64-gnu",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-ar+Ju7LmcN0Jo4FpL4hpFybwNG9/3A/Br5KW2n2jyODg3MEZXaDYADdemoNS+BDNfMgKvylJLj4S5tyRActuAg==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-linux-x64-musl",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-RYiYbkokw0trfKqqzfF55lginwEPrD3OJDfTuJzFs1MK6iFnDenaz1fqLLtX4ITG3OktJQXOeTaw1awrBAlZPw==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-win32-arm64-msvc",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-1K+MPfLSFVpphzpdbfkhlWk6wBrTObBzS2T6db10PNOZgR9GoVsAWzwNyuhUYYbTp23j+4RrncfujZ4uAzXvwA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.33.0.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    },
+    {
+      "ecosystem": "npm",
+      "name": "lightningcss-win32-x64-msvc",
+      "version": "1.33.0",
+      "license": "MPL-2.0",
+      "integrity": "sha512-OlEICDx/Xl0FqSp4bry8zFnCvGpig3Gl4gCquvYwHuqJKEC1+n9NgDniFvqHGmMv1ZkqDJrDqKKSykTDX+ehuA==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.33.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/lightningcss-win32-x64-msvc-1.33.0/LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/parcel-bundler/lightningcss.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "nanoid",
+      "version": "3.3.20",
+      "license": "MIT",
+      "integrity": "sha512-uKdg2G3GNCKQn9byYOpxbGqrT2fGO5KRt5J/8b3pok8rT6qxGWF6hxMyJiEYtAf+FVyYuD9hRaDqX5uPFYJ4ZQ==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.20.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/nanoid-3.3.20/LICENSE",
+          "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "ai/nanoid"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "picocolors",
+      "version": "1.1.1",
+      "license": "ISC",
+      "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/picocolors-1.1.1/LICENSE",
+          "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "alexeyraspopov/picocolors"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "picomatch",
+      "version": "4.0.7",
+      "license": "MIT",
+      "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.7.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/picomatch-4.0.7/LICENSE",
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "micromatch/picomatch"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "playwright",
+      "version": "1.65.0",
+      "license": "Apache-2.0",
+      "integrity": "sha512-F3AMWcR44qMBt4kq+6Kb6mX7bjGXshktKFOPULd7reED6ZJWevjbNRqysP7q+AATE9kdPEZBibex1BYsvpVoeA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/playwright/-/playwright-1.65.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/playwright-1.65.0/LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path": "third_party/licenses/dependencies/npm/playwright-1.65.0/NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "playwright-core",
+      "version": "1.65.0",
+      "license": "Apache-2.0",
+      "integrity": "sha512-vNSKgH6YqtN7cdT/L334zo0a+YwkrpicyrHJlWWPIm/Q+Nn2SWInil01oT0mbu96U4GgoRtCYQD9CzJQgju+lA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/playwright-core/-/playwright-core-1.65.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/playwright-core-1.65.0/LICENSE",
+          "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+        },
+        {
+          "path": "third_party/licenses/dependencies/npm/playwright-core-1.65.0/NOTICE",
+          "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/microsoft/playwright.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "pngjs",
+      "version": "7.0.0",
+      "license": "MIT",
+      "integrity": "sha512-LKWqWJRhstyYo9pGvgor/ivk2w94eSjE3RGVuzLGlr3NmD8bf7RcYGze1mNdEHRP6TRP6rMuDHk5t44hnTRyow==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/pngjs/-/pngjs-7.0.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/pngjs-7.0.0/LICENSE",
+          "sha256": "be75ef59c5cf59715588a17a82dff7dd3e83c4dba3c458676bb9311e05fbedc5"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/pngjs/pngjs.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "postcss",
+      "version": "8.5.32",
+      "license": "MIT",
+      "integrity": "sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/postcss/-/postcss-8.5.32.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/postcss-8.5.32/LICENSE",
+          "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "postcss/postcss"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "prettier",
+      "version": "3.9.10",
+      "license": "MIT",
+      "integrity": "sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/prettier/-/prettier-3.9.10.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/prettier-3.9.10/LICENSE",
+          "sha256": "b0f2417199889f1c0d28ec4e0244eacf1a15de5819d61f641dd7d8f45153ac9c"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "prettier/prettier"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "prismjs",
+      "version": "1.30.0",
+      "license": "MIT",
+      "integrity": "sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/prismjs/-/prismjs-1.30.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/prismjs-1.30.0/LICENSE",
+          "sha256": "2b947f0901a7ffcf08a89957da9783c0e9c6e72cb6ce8e959f501ab5409e4d2b"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PrismJS/prism.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react",
+      "version": "19.3.1",
+      "license": "MIT",
+      "integrity": "sha512-QNhWdt7nrgVWWQG58QuGsAR3jv3Hbe4mb4vz7w2csnHavciZJgda1CPNaldF6eVxv90ud3jUXpKlHL69gO38yw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/react/-/react-19.3.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/react-19.3.1/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/react/react.git",
+        "directory": "packages/react"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "react-dom",
+      "version": "19.3.1",
+      "license": "MIT",
+      "integrity": "sha512-Y0bARz53lhEC1NMCASs0/j+faB/zqt3R8hpvg1e8+61ZVJ4UL0UdC4cBbXfZMcIuhrfgeILTLe+ZeBCavQPtKQ==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/react-dom/-/react-dom-19.3.1.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/react-dom-19.3.1/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/react/react.git",
+        "directory": "packages/react-dom"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "regexp-to-ast",
+      "version": "0.5.0",
+      "license": "MIT",
+      "integrity": "sha512-tlbJqcMHnPKI9zSrystikWKwHkBqu2a/Sgw01h3zFjvYrMxEDYHzzoMZnUrbIfpTFEsoRnnviOXNCzFiSc54Qw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/regexp-to-ast/-/regexp-to-ast-0.5.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/regexp-to-ast-0.5.0/LICENSE",
+          "sha256": "ffdfd706a54ae16965504e916e4e236bc76bcd1573c6f88045daec6c1fed64c5"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "https://github.com/bd82/regexp-to-ast.git"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "rolldown",
+      "version": "1.2.16",
+      "license": "MIT",
+      "integrity": "sha512-bWvlMpFKiTfDKfnK7FC2MPgPeWCf/Kpwsq49ApdW+FQaBZb6O6dZ4MAPbPUjp7hYQrw/RobqCzn64BRrQecGHw==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/rolldown/-/rolldown-1.2.16.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/rolldown-1.2.16/LICENSE",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rolldown/rolldown.git",
+        "directory": "packages/rolldown"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "scheduler",
+      "version": "0.28.0",
+      "license": "MIT",
+      "integrity": "sha512-juorfCmIkIw8tT+p5BXSm6PJjQF/ycEYmKyzURCIt/RaZIhL+PulbQ9Yu2z1HdOJDdqDTlxA1+xKBmHXJsczAw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/scheduler/-/scheduler-0.28.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/scheduler-0.28.0/LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/react/react.git",
+        "directory": "packages/scheduler"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "license": "BSD-3-Clause",
+      "integrity": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/source-map-js-1.2.2/LICENSE",
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": "7rulnik/source-map-js"
+    },
+    {
+      "ecosystem": "npm",
+      "name": "text-segmentation",
+      "version": "1.0.3",
+      "license": "MIT",
+      "integrity": "sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/text-segmentation/-/text-segmentation-1.0.3.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/text-segmentation-1.0.3/LICENSE",
+          "sha256": "8b00952cd8d0f5cbbefb13576778e1185dc963943151353d90c4e14a5a4caf40"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/niklasvh/text-segmentation.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "license": "MIT",
+      "integrity": "sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/tinyglobby-0.2.17/LICENSE",
+          "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SuperchupuDev/tinyglobby.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "typescript",
+      "version": "7.0.2",
+      "license": "Apache-2.0",
+      "integrity": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/typescript-7.0.2/LICENSE",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+        },
+        {
+          "path": "third_party/licenses/dependencies/npm/typescript-7.0.2/NOTICE.txt",
+          "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/TypeScript.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "undici-types",
+      "version": "6.21.0",
+      "license": "MIT",
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/undici-types-6.21.0/LICENSE",
+          "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nodejs/undici.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "utrie",
+      "version": "1.0.2",
+      "license": "MIT",
+      "integrity": "sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==",
+      "dev": false,
+      "optional": false,
+      "source": "https://registry.npmjs.org/utrie/-/utrie-1.0.2.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/utrie-1.0.2/LICENSE",
+          "sha256": "8b00952cd8d0f5cbbefb13576778e1185dc963943151353d90c4e14a5a4caf40"
+        }
+      ],
+      "projects": [
+        "gallery",
+        "packages/winui-wasm"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/niklasvh/utrie.git"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "vite",
+      "version": "8.3.6",
+      "license": "MIT",
+      "integrity": "sha512-UI7dK29NnS54Fk+mmo7o+jI6U8Fp7hDl+X5Q1k45WH+d4dSlbLVUETGQ+hfkNgvLQGyoElPj837nZyv4MBc0VA==",
+      "dev": true,
+      "optional": false,
+      "source": "https://registry.npmjs.org/vite/-/vite-8.3.6.tgz",
+      "installedAtReview": true,
+      "notices": [
+        {
+          "path": "third_party/licenses/dependencies/npm/vite-8.3.6/LICENSE.md",
+          "sha256": "a22152baa1aef74402443008e767e7c689a524c0909d19b0431d97f5ab066a13"
+        }
+      ],
+      "projects": [
+        "gallery"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite.git",
+        "directory": "packages/vite"
+      }
+    },
+    {
+      "ecosystem": "npm",
+      "name": "fsevents",
+      "version": "2.3.3",
+      "license": "MIT",
+      "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==",
+      "dev": true,
+      "optional": true,
+      "source": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz",
+      "installedAtReview": false,
+      "notices": [],
+      "projects": [
+        "gallery"
+      ]
+    }
+  ]
+}

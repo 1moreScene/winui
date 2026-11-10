@@ -1,3 +1,6 @@
+import { LocalizedText } from "./GalleryLanguage";
+import {NavigationViewBackButtonVisible} from "winui-wasm";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useRef, useState } from "react";
@@ -9,7 +12,7 @@ import {
   Button,
   Image,
   TextBox,
-} from "./react";
+} from "winui-wasm/react";
 import {
   WinUI,
   ThemeMode,
@@ -23,12 +26,12 @@ import {
   GridUnit,
   PaneDisplayMode,
   type Scene,
-  type Button as ButtonController,
+  type ButtonController,
   type SceneNode,
   type TextOptions,
-  type TextBox as TextBoxController,
-  type SceneNavigationView,
-} from "./index";
+  type TextBoxController,
+  type SceneNavigationViewController as SceneNavigationView,
+} from "winui-wasm";
 import official from "./official-button.json";
 import source from "./ButtonPage.tsx?raw";
 import initializationSource from "./main.tsx?raw";
@@ -77,24 +80,18 @@ function Code({ index }: { index: number }) {
         </GalleryButton>
       </div>
       {!reference && (
-        <p className="source-hint">
+        <p className="source-hint"><LocalizedText>
           当前示例的控件调用。WinUIProvider 和 SceneView
           由页面统一提供；Options、Output 和 Gallery 外壳不属于按钮调用。
-        </p>
+        </LocalizedText></p>
       )}
-      <pre data-sample-source={buttonSampleNames[index]}>
-        <code>
-          {reference
+      <SourceCode data-sample-source={buttonSampleNames[index]} language={reference ? 'xaml' : 'tsx'}>{reference
             ? official.samples[index]?.xaml
-            : buttonSampleSources[index]}
-        </code>
-      </pre>
+            : buttonSampleSources[index]}</SourceCode>
       {!reference && index < 2 && (
         <section className="source-context">
-          <h3>Options / Output 的共享页面状态</h3>
-          <pre>
-            <code>{buttonStateSource}</code>
-          </pre>
+          <h3><LocalizedText>Options / Output 的共享页面状态</LocalizedText></h3>
+          <SourceCode>{buttonStateSource}</SourceCode>
         </section>
       )}
     </GalleryExpander>
@@ -118,7 +115,7 @@ export function ButtonPage({ sdk }: { sdk: WinUI }) {
       <main className="stage-main">
         
         <section className="example" id="button-standard">
-          <h2>{official.samples[0].header}</h2>
+          <h2><LocalizedText>{official.samples[0].header}</LocalizedText></h2>
           <div className="example-card">
             <div className="basic-live with-options">
               <SceneView
@@ -163,7 +160,7 @@ export function ButtonPage({ sdk }: { sdk: WinUI }) {
           </div>
         </section>
         <section className="example" id="button-image">
-          <h2>{official.samples[1].header}</h2>
+          <h2><LocalizedText>{official.samples[1].header}</LocalizedText></h2>
           <div className="example-card"><div className="basic-live">
             <SceneView
               theme={theme}
@@ -196,7 +193,7 @@ export function ButtonPage({ sdk }: { sdk: WinUI }) {
           </div>
         </section>
         <section className="example" id="button-styles">
-          <h2>{official.samples[2].header}</h2>
+          <h2><LocalizedText>{official.samples[2].header}</LocalizedText></h2>
           <div className="example-card">
             <SceneView
               theme={theme}
@@ -224,7 +221,7 @@ export function ButtonPage({ sdk }: { sdk: WinUI }) {
           </div>
         </section>
         <section className="example" id="button-wrapping">
-          <h2>{official.samples[3].header}</h2>
+          <h2><LocalizedText>{official.samples[3].header}</LocalizedText></h2>
           <div className="example-card">
             <SceneView
               theme={theme}
@@ -289,13 +286,11 @@ export function ButtonPage({ sdk }: { sdk: WinUI }) {
                 </label></GalleryExpander>
         <GalleryExpander className="source" id="button-initialization">
           <GalleryExpanderHeader>共享初始化（整个应用只执行一次）</GalleryExpanderHeader>
-          <p className="source-hint">
+          <p className="source-hint"><LocalizedText>
             这是 Gallery
             的入口文件，包含应用挂载和测试诊断；不需要为每个按钮重复编写。
-          </p>
-          <pre>
-            <code>{initializationSource}</code>
-          </pre>
+          </LocalizedText></p>
+          <SourceCode>{initializationSource}</SourceCode>
         </GalleryExpander>
         <footer>
           Gallery 7360ac3 · matched SDK 2.3.10-experimental<span>Button</span>
@@ -332,7 +327,7 @@ function SharedScene({ sdk, theme }: { sdk: WinUI; theme: ThemeMode }) {
         ],
         selectedId: "home",
         header: "Shared content",
-        isBackButtonVisible: false,
+        isBackButtonVisible: NavigationViewBackButtonVisible.Collapsed,
       },
       { height: 220 },
     );
@@ -367,13 +362,13 @@ export function FoundationPage({ sdk }: { sdk: WinUI }) {
       />
       <main className="stage-main">
         <section className="example" id="shared-scene">
-          <h2>Text + Button + NavigationView in one scene</h2>
+          <h2><LocalizedText>Text + Button + NavigationView in one scene</LocalizedText></h2>
           <div className="example-card">
             <SharedScene sdk={sdk} theme={theme} />
           </div>
         </section>
         <section className="example" id="rendering-scene">
-          <h2>Nested layout and typography</h2>
+          <h2><LocalizedText>Nested layout and typography</LocalizedText></h2>
           <div className="page-toolbar">
             <label>
               Renderer{" "}
@@ -458,12 +453,12 @@ export function FoundationPage({ sdk }: { sdk: WinUI }) {
           )}
         </section>
         <section className="example" id="input-host">
-          <h2>TextBox composition host</h2>
-          <p>
+          <h2><LocalizedText>TextBox composition host</LocalizedText></h2>
+          <p><LocalizedText>
             The browser owns IME composition and its candidate window. This TextBox
             sample verifies focus, text commits, accessibility naming and anchor
             coordinates.
-          </p>
+          </LocalizedText></p>
           <div className="example-card">
             <SceneView
               theme={theme}
@@ -482,9 +477,7 @@ export function FoundationPage({ sdk }: { sdk: WinUI }) {
         </section>
         <GalleryExpander className="source">
           <GalleryExpanderHeader>Running public SDK / React source</GalleryExpanderHeader>
-          <pre>
-            <code>{source}</code>
-          </pre>
+          <SourceCode>{source}</SourceCode>
         </GalleryExpander>
       </main>
     </>

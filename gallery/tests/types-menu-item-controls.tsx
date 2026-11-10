@@ -1,5 +1,5 @@
-import {FlowDirection,KeyboardAcceleratorModifier,type MenuFlyoutItemOptions,type RadioMenuFlyoutItemOptions,type Scene} from '../src/index';
-import {MenuFlyout,MenuFlyoutItem,MenuFlyoutSubItem,MenuFlyoutSeparator,RadioMenuFlyoutItem,ToggleMenuFlyoutItem} from '../src/react';
+import {FlowDirection,KeyboardAcceleratorModifier,type MenuFlyoutItemOptions,type RadioMenuFlyoutItemOptions,type Scene} from 'winui-wasm';
+import {MenuFlyout,MenuFlyoutItem,MenuFlyoutSubItem,MenuFlyoutSeparator,RadioMenuFlyoutItem,ToggleMenuFlyoutItem} from 'winui-wasm/react';
 const command:MenuFlyoutItemOptions={text:'Open',keyboardAccelerators:[{key:'o',modifiers:[KeyboardAcceleratorModifier.Control]}]};
 const radio:RadioMenuFlyoutItemOptions={text:'Portrait',groupName:'orientation',isChecked:true};
 const jsx=<MenuFlyout flowDirection={FlowDirection.RightToLeft}><MenuFlyoutItem {...command}/><ToggleMenuFlyoutItem text="Toolbar"/><MenuFlyoutSubItem text="Size"><RadioMenuFlyoutItem {...radio}/></MenuFlyoutSubItem><MenuFlyoutSeparator/></MenuFlyout>;

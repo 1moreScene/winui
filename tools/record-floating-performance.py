@@ -89,7 +89,7 @@ for backend in ['Canvas2D', 'WebGL2']:
                        'meanRGBDifference': ImageStat.Stat(difference).mean[:3]})
 
 baseline = (ROOT / 'out/overlay-performance-before-runtime/winui_bg.wasm').read_bytes()
-current = (ROOT / 'gallery/src/wasm/winui_bg.wasm').read_bytes()
+current = (ROOT / 'packages/winui-wasm/src/wasm/winui_bg.wasm').read_bytes()
 root_changes = [f['path'] for f in manifest['rustFiles']
                 if not (ROOT / f['path']).exists() or sha256((ROOT / f['path']).read_bytes()).hexdigest() != f['sha256']]
 app_changes = [f['path'] for f in read(f'{app}/manifest.json')['files']

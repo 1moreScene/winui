@@ -1,6 +1,6 @@
-import {ItemsViewSelectionMode,PagerControlDisplayMode,PagerControlButtonVisibility,FontStyle,StandardCommandKind,FeaturedTileLayout,StackLayout,LinedFlowLayout,LinedFlowLayoutItemsStretch,TextAlignment} from '../src/index';
-import type {ItemsViewOptions,PagerControlOptions,RichTextBlockOptions,LayoutPanelOptions} from '../src/index';
-import {ItemsView,PagerControl,RichTextBlock,LayoutPanel} from '../src/react';
+import {ItemsViewSelectionMode,PagerControlDisplayMode,PagerControlButtonVisibility,FontStyle,StandardCommandKind,FeaturedTileLayout,StackLayout,LinedFlowLayout,LinedFlowLayoutItemsStretch,TextAlignment} from 'winui-wasm';
+import type {ItemsViewOptions,PagerControlOptions,RichTextBlockOptions,LayoutPanelOptions} from 'winui-wasm';
+import {ItemsView,PagerControl,RichTextBlock,LayoutPanel} from 'winui-wasm/react';
 const pager:PagerControlOptions={displayMode:PagerControlDisplayMode.ButtonPanel,nextButtonVisibility:PagerControlButtonVisibility.HiddenOnEdge};
 const items:ItemsViewOptions={items:['one'],selectionMode:ItemsViewSelectionMode.Extended,layout:new StackLayout()};
 const rich:RichTextBlockOptions={paragraphs:[{runs:[{text:'Bold',fontWeight:700,fontStyle:FontStyle.Italic,link:'help'}]}]};

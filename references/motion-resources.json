@@ -1,43 +1,125 @@
 {
-  "sdk": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
-  "sdkSha256": "3eb5a6d7e129151a8cf40c21cb247bb250ff64c20d61dc02e5c0b32afbc0b724",
+  "sdk": "microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779",
+  "sdkSha256": "0fdca24b6807557325ce279e1e9b80361537f1093fa049530d34684208791160",
   "aliases": {},
   "primitives": {
     "Light": {
       "SolidBackgroundFillColorBaseBrush": {
         "kind": "solid",
-        "color": "#F3F3F3",
+        "color": "#F3F3F3FF",
         "opacity": 1.0
       },
       "FlyoutBackgroundThemeBrush": {
         "kind": "solid",
         "color": "#FFFFFFFF",
         "opacity": 1.0
+      },
+      "SystemControlForegroundChromeGrayBrush": {
+        "kind": "solid",
+        "color": "#767676FF",
+        "opacity": 1.0
+      },
+      "SmokeFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000004D",
+        "opacity": 1.0
+      },
+      "CardBackgroundFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFB3",
+        "opacity": 1.0
+      },
+      "AcrylicBackgroundFillColorBaseBrush": {
+        "kind": "acrylic",
+        "tint": "#F3F3F3FF",
+        "tintOpacity": 0.0,
+        "luminosityOpacity": 0.9,
+        "fallback": "#EEEEEEFF",
+        "opacity": 1.0
+      },
+      "SystemAccentColor": {
+        "kind": "solid",
+        "color": "#7C3AFF",
+        "opacity": 1.0
       }
     },
     "Dark": {
       "SolidBackgroundFillColorBaseBrush": {
         "kind": "solid",
-        "color": "#202020",
+        "color": "#202020FF",
         "opacity": 1.0
       },
       "FlyoutBackgroundThemeBrush": {
         "kind": "solid",
         "color": "#000000FF",
         "opacity": 1.0
+      },
+      "SystemControlForegroundChromeGrayBrush": {
+        "kind": "solid",
+        "color": "#767676FF",
+        "opacity": 1.0
+      },
+      "SmokeFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#0000004D",
+        "opacity": 1.0
+      },
+      "CardBackgroundFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#FFFFFF0D",
+        "opacity": 1.0
+      },
+      "AcrylicBackgroundFillColorBaseBrush": {
+        "kind": "acrylic",
+        "tint": "#202020FF",
+        "tintOpacity": 0.5,
+        "luminosityOpacity": 0.96,
+        "fallback": "#1C1C1CFF",
+        "opacity": 1.0
+      },
+      "SystemAccentColor": {
+        "kind": "solid",
+        "color": "#7C3AFF",
+        "opacity": 1.0
       }
     },
     "HighContrast": {
       "SolidBackgroundFillColorBaseBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
         "opacity": 1.0
       },
       "FlyoutBackgroundThemeBrush": {
         "kind": "solid",
-        "color": "#000000",
+        "color": "#000000FF",
+        "opacity": 1.0
+      },
+      "SystemControlForegroundChromeGrayBrush": {
+        "kind": "solid",
+        "color": "#FFFFFFFF",
+        "opacity": 1.0
+      },
+      "SmokeFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1.0
+      },
+      "CardBackgroundFillColorDefaultBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1.0
+      },
+      "AcrylicBackgroundFillColorBaseBrush": {
+        "kind": "solid",
+        "color": "#000000FF",
+        "opacity": 1.0
+      },
+      "SystemAccentColor": {
+        "kind": "solid",
+        "color": "#7C3AFF",
         "opacity": 1.0
       }
     }
-  }
+  },
+  "systemColorSource": "motion-system-colors.json; frozen UISettings accent, independent of application light/dark theme"
 }

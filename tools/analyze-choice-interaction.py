@@ -8,8 +8,8 @@ native=json.loads((ROOT/'references/composed-choice-interaction.json').read_text
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 report={'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'nativeRun':json.loads((ROOT/'references/choice-interaction-run.json').read_text(encoding='utf-8-sig')),
-        'wasmSha256':digest(ROOT/'out/composed-validation/gallery/src/wasm/winui_bg.wasm'),
-        'editorHostSha256':digest(ROOT/'out/composed-validation/gallery/src/editor-host.ts'),
+        'wasmSha256':digest(ROOT/'out/composed-validation/packages/winui-wasm/src/wasm/winui_bg.wasm'),
+        'editorHostSha256':digest(ROOT/'out/composed-validation/packages/winui-wasm/src/editor-host.ts'),
         'scope':native['scope'],'fullNativePixelMatch':False,'backends':{}}
 for backend in ['Canvas2D','WebGL2']:
     rows=[]

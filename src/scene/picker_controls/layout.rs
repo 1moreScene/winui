@@ -122,11 +122,16 @@ impl Scene {
         }
         if kind == NodeKind::CalendarView {
             for i in 0..7 {
-                self.patch_part(id,&format!("WeekDay{i}"),json!({"text":q.calendar_locale.weekdays[(i+q.first_day_of_week as usize)%7],"visible":q.display_mode==CalendarViewDisplayMode::Month}));
+                self.patch_part(id,&format!("WeekDay{i}"),json!({"text":q.calendar_locale.weekdays[(i+q.first_day_of_week() as usize)%7],"visible":q.display_mode==CalendarViewDisplayMode::Month}));
             }
             self.measure_picker_parts(id, measure);
             let day = style_number("CalendarViewDayItem", "MinHeight");
             let cell = ceil(day + 2., self.dpr);
+            let cell = if q.calendar_identifier == CalendarIdentifier::Chinese {
+                cell.max(ceil(52., self.dpr))
+            } else {
+                cell
+            };
             let b = overlays::border_thickness([1.; 4], self.dpr)[0];
             let header = self.nodes[&self.nodes[&id].picker.parts["HeaderButton"]].desired[1]
                 + round(6., self.dpr)
@@ -155,8 +160,22 @@ impl Scene {
                     i < fields,
                 );
             }
+            if self.nodes[&id].table.role == "tableTimeEditor" {
+                let mut icon = font.clone();
+                icon.family = "Segoe Fluent Icons".into();
+                icon.size = 12.;
+                self.picker_text_part(id, "Field1", "\u{e823}".into(), &icon, true);
+            }
             self.measure_picker_parts(id, measure);
             let header = self.picker_header_height(id);
+            if self.nodes[&id].table.role == "tableTimeEditor" {
+                return [
+                    44. + self.nodes[&self.nodes[&id].picker.parts["Field0"]]
+                        .text
+                        .width,
+                    32.,
+                ];
+            }
             if kind == NodeKind::CalendarDatePicker {
                 let width = typography::layout(
                     &texts[0],
@@ -373,7 +392,31 @@ impl Scene {
             self.nodes.get_mut(&id).unwrap().picker.body = body;
             self.arrange_picker_part(id, "InputButton", body, measure);
             let b = overlays::border_thickness([1.; 4], self.dpr)[0];
-            if kind == NodeKind::CalendarDatePicker {
+            if self.nodes[&id].table.role == "tableTimeEditor" {
+                for (key, left, width, bottom) in [
+                    ("Field0", 12., (body.width - 44.).max(0.), 2.),
+                    ("Field1", (body.width - 22.).max(0.), 12., 0.),
+                ] {
+                    let h = self.nodes[&self.nodes[&id].picker.parts[key]].text.height;
+                    self.arrange_picker_part(
+                        id,
+                        key,
+                        Rect::new(
+                            left,
+                            body.y + round((body.height - h - bottom) / 2., self.dpr),
+                            width,
+                            ceil(h, self.dpr),
+                        ),
+                        measure,
+                    );
+                }
+                self.nodes
+                    .get_mut(&id)
+                    .unwrap()
+                    .picker
+                    .face_dividers
+                    .clear();
+            } else if kind == NodeKind::CalendarDatePicker {
                 self.patch_part(
                     id,
                     "Field0",
@@ -489,21 +532,65 @@ impl Scene {
     fn picker_face_texts(&self, id: u32) -> Vec<String> {
         let n = &self.nodes[&id];
         let q = n.props.picker_controls.as_deref().unwrap();
+        if n.table.role == "tableTimeEditor" {
+            let label = q
+                .time
+                .map(|time| {
+                    let hour = if q.clock_identifier == ClockIdentifier::TwelveHour {
+                        let hour = time / 60 % 12;
+                        if hour == 0 {
+                            12
+                        } else {
+                            hour
+                        }
+                    } else {
+                        time / 60
+                    };
+                    format!(
+                        "{}:{:02}{}",
+                        q.format_locale.number(hour as i32),
+                        time % 60,
+                        if q.clock_identifier == ClockIdentifier::TwelveHour {
+                            format!(" {}", q.format_locale.periods[usize::from(time >= 720)])
+                        } else {
+                            String::new()
+                        }
+                    )
+                })
+                .unwrap_or_else(|| "Select time".into());
+            return vec![label, "\u{e823}".into()];
+        }
         if n.kind == NodeKind::CalendarDatePicker {
             return vec![q
                 .date
                 .as_deref()
                 .map(|v| {
                     let d = Date::parse(v).unwrap();
+                    let f = q.calendar_identifier.fields(d);
+                    if q.calendar_identifier == CalendarIdentifier::Chinese {
+                        return format!(
+                            "{}{}{}",
+                            q.year_label(d, &q.format_locale),
+                            q.calendar_identifier.month_label(d, &[]),
+                            if f.day == 1 {
+                                "初一".into()
+                            } else {
+                                crate::calendar::lunar_day(d)
+                            }
+                        );
+                    }
                     q.format_locale
                         .date_order
                         .iter()
-                        .map(|part| {
-                            q.format_locale.number(match part.as_str() {
-                                "year" => d.year,
-                                "month" => d.month as i32,
-                                _ => d.day as i32,
-                            })
+                        .map(|part| match part.as_str() {
+                            "year" => q
+                                .format_locale
+                                .localize_numbers(&q.calendar_identifier.year_label(d, "")),
+                            "month" if q.calendar_identifier != CalendarIdentifier::Gregorian => q
+                                .calendar_identifier
+                                .month_label(d, &q.format_locale.months),
+                            "month" => q.format_locale.number(f.month as i32),
+                            _ => q.format_locale.number(f.day as i32),
                         })
                         .collect::<Vec<_>>()
                         .join(&q.format_locale.date_separator)
@@ -519,12 +606,10 @@ impl Scene {
                         return q.format_locale.label(part);
                     };
                     match part.as_str() {
-                        "year" => format!(
-                            "{}{}",
-                            q.format_locale.number(d.year),
-                            q.format_locale.year_suffix
-                        ),
-                        "month" => q.format_locale.months[d.month as usize - 1].clone(),
+                        "year" => q.year_label(d, &q.format_locale),
+                        "month" => q
+                            .calendar_identifier
+                            .month_label(d, &q.format_locale.months),
                         _ => q.format_day(d),
                     }
                 })
@@ -687,6 +772,9 @@ impl Scene {
         }
         let start = Self::calendar_first_date(&q, date);
         let first = start.ordinal();
+        let cal = q.calendar_identifier;
+        let anchor = cal.fields(date);
+        let today_fields = cal.fields(q.today());
         let today = q.today();
         let (min, max) = q.bounds();
         let mut cells = Vec::new();
@@ -695,50 +783,82 @@ impl Scene {
                 let d = Date::from_ordinal(first + i as i32);
                 (
                     d,
-                    q.calendar_locale.number(d.day as i32),
-                    d.month != date.month,
+                    q.calendar_locale
+                        .number(if cal == CalendarIdentifier::Chinese {
+                            d.day as i32
+                        } else {
+                            cal.fields(d).day as i32
+                        }),
+                    cal.month_start(d) != cal.month_start(date),
                 )
             } else if q.display_mode == CalendarViewDisplayMode::Year {
-                let d = start.add_months(i as i32);
+                let d = cal.add_months(start, i as i32);
                 (
                     d,
-                    q.calendar_locale.short_months[d.month as usize - 1].clone(),
-                    d.year != date.year,
+                    cal.month_label(d, &q.calendar_locale.short_months),
+                    cal.fields(d).year != anchor.year,
                 )
             } else {
-                let y = (start.year + i as i32).max(1);
-                let d = Date {
-                    year: y.min(9999),
-                    month: 1,
-                    day: 1,
-                };
+                let d = cal.add_years(start, i as i32);
                 (
                     d,
-                    q.calendar_locale.number(d.year),
-                    d.year / 10 != date.year / 10,
+                    q.year_label(d, &q.calendar_locale),
+                    cal.fields(d).year.div_euclid(10) != anchor.year.div_euclid(10),
                 )
             };
             let is_today = if month {
                 d == today
             } else if q.display_mode == CalendarViewDisplayMode::Year {
-                d.year == today.year && d.month == today.month
+                cal.month_start(d) == cal.month_start(today)
             } else {
-                d.year == today.year
+                cal.fields(d).year == today_fields.year
             };
             let blackout = q.blackout_dates.contains(&d.iso());
             let selected = month && q.selected_dates.contains(&d.iso());
-            let visible =
-                d >= min && d <= max || !month && d.year >= min.year && d.year <= max.year;
+            let end = if month {
+                d
+            } else if q.display_mode == CalendarViewDisplayMode::Year {
+                cal.add_months(d, 1).add_days(-1)
+            } else {
+                cal.add_years(d, 1).add_days(-1)
+            };
+            let visible = d <= max && end >= min;
             let key = format!("Day{i}");
             let child = self.nodes[&id].picker.parts[&key];
             let focused_item = if month {
                 d == focus_date
             } else if q.display_mode == CalendarViewDisplayMode::Year {
-                d.year == focus_date.year && d.month == focus_date.month
+                cal.month_start(d) == cal.month_start(focus_date)
             } else {
-                d.year == focus_date.year
+                cal.fields(d).year == cal.fields(focus_date).year
             };
-            self.patch_part(id,&key,json!({"text":text,"fontSize":14,"fontFamily":p.font_family,"visible":visible,"enabled":!blackout&&visible,"isTabStop":focused_item,"accessibleName":d.iso()}));
+            let festivals = if cal == CalendarIdentifier::Chinese && month {
+                crate::calendar::festivals(d)
+            } else {
+                vec![]
+            };
+            let solar_term = if cal == CalendarIdentifier::Chinese && month {
+                crate::calendar::solar_term(d).map(str::to_owned)
+            } else {
+                None
+            };
+            let annotation = if cal == CalendarIdentifier::Chinese && month {
+                festivals
+                    .first()
+                    .cloned()
+                    .or_else(|| solar_term.clone())
+                    .unwrap_or_else(|| crate::calendar::lunar_day(d))
+            } else {
+                String::new()
+            };
+            let mut descriptions = festivals.clone();
+            if let Some(term) = &solar_term {
+                descriptions.push(term.clone());
+            }
+            if cal == CalendarIdentifier::Chinese && month {
+                descriptions.insert(0, crate::calendar::lunar_day(d));
+            }
+            self.patch_part(id,&key,json!({"text":text,"fontSize":14,"fontFamily":p.font_family,"visible":visible,"enabled":!blackout&&visible,"isTabStop":focused_item,"accessibleName":if descriptions.is_empty(){d.iso()}else{format!("{} {}",d.iso(),descriptions.join(" "))}}));
             self.measure_node(child, [cw, ch], measure);
             let rect = if month {
                 Rect::new(
@@ -757,27 +877,42 @@ impl Scene {
             };
             self.arrange_picker_part(id, &key, rect, measure);
             let group_key = format!("GroupLabel{i}");
+            let chinese_annotation = !annotation.is_empty();
             let group_visible = visible
-                && q.is_group_label_visible
-                && if month {
-                    d.day == 1
-                } else {
-                    q.display_mode == CalendarViewDisplayMode::Year && d.month == 1
-                };
-            let label = if month {
-                q.calendar_locale.short_months[d.month as usize - 1].clone()
+                && (chinese_annotation
+                    || (q.is_group_label_visible
+                        && if month {
+                            cal.fields(d).day == 1 && cal != CalendarIdentifier::Chinese
+                        } else {
+                            q.display_mode == CalendarViewDisplayMode::Year
+                                && cal.fields(d).month == 1
+                        }));
+            let label = if chinese_annotation {
+                annotation.clone()
+            } else if month {
+                cal.month_label(d, &q.calendar_locale.short_months)
             } else {
-                q.calendar_locale.number(d.year)
+                q.year_label(d, &q.calendar_locale)
             };
-            self.patch_part(id,&group_key,json!({"text":label,"visible":group_visible,"fontFamily":p.font_family,"fontSize":8}));
+            self.patch_part(id,&group_key,json!({"text":label,"visible":group_visible,"fontFamily":p.font_family,"fontSize":if chinese_annotation {10}else{8}}));
             if group_visible {
                 let label_id = self.nodes[&id].picker.parts[&group_key];
                 self.measure_node(label_id, [f64::INFINITY; 2], measure);
                 let layout = &self.nodes[&label_id].text;
                 let label_rect = Rect::new(
                     rect.x + (rect.width - layout.width) / 2.,
-                    rect.y + round(if month { 2. } else { 9. }, self.dpr),
-                    layout.width,
+                    rect.y
+                        + round(
+                            if chinese_annotation {
+                                rect.height - layout.height - 4.
+                            } else if month {
+                                2.
+                            } else {
+                                9.
+                            },
+                            self.dpr,
+                        ),
+                    layout.width.min(rect.width),
                     ceil(layout.height, self.dpr),
                 );
                 self.arrange_picker_part(id, &group_key, label_rect, measure);
@@ -790,6 +925,10 @@ impl Scene {
                 node: child,
                 date: d.iso(),
                 text,
+                calendar_day: cal.fields(d),
+                annotation,
+                festivals,
+                solar_term,
                 bounds: rect,
                 out_of_scope: out,
                 blackout,

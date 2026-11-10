@@ -1,9 +1,11 @@
+import { LocalizedText } from "./GalleryLanguage";
+import { SourceCode } from './SourceCode';
 import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, GalleryExpanderHeader, GalleryOption } from './GalleryControls';
 import { useGalleryTheme } from './gallery-theme';
 import { useEffect, useState, type ReactNode } from "react";
 import { Header } from "./ButtonPage";
-import { SceneView, FontIcon, SymbolIcon, PathIcon, BitmapIcon, ImageIcon, Button, StackPanel, TextBlock } from "./react";
-import { ThemeMode, RendererBackend, Symbol, HorizontalAlignment, VerticalAlignment, type Scene } from "./index";
+import { SceneView, FontIcon, SymbolIcon, PathIcon, BitmapIcon, ImageIcon, Button, StackPanel, TextBlock } from "winui-wasm/react";
+import { ThemeMode, RendererBackend, Symbol, HorizontalAlignment, VerticalAlignment, type Scene } from "winui-wasm";
 import official from "./official-icons.json";
 import source from "./IconsPage.tsx?raw";
 import { extractSampleSource } from "./sample-source";
@@ -12,10 +14,10 @@ function remember(name: string, scene: Scene) { window.iconScenes ??= {}; window
 function Example({ index, name, children, options }: { index: number; name: string; children: ReactNode; options?: ReactNode }) {
   const [native, setNative] = useState(false);
   return <section id={name} className="example basic-example">
-    <h2>{official.samples[index].title}</h2>
+    <h2><LocalizedText>{official.samples[index].title}</LocalizedText></h2>
     <div className="example-card">
       <div className={`basic-live ${options ? "with-options" : ""}`}><div className="basic-preview">{children}</div>{options && <div className="options">{options}</div>}</div>
-      <GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native ? "active" : ""} onClick={() => setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native ? "active" : ""} onClick={() => setNative(true)}>Official XAML</GalleryButton></div><pre><code>{native ? official.samples[index].xaml : extractSampleSource(source, name)}</code></pre></GalleryExpander>
+      <GalleryExpander className="source"><GalleryExpanderHeader>Source code</GalleryExpanderHeader><div className="source-tabs"><GalleryButton className={!native ? "active" : ""} onClick={() => setNative(false)}>TypeScript / React</GalleryButton><GalleryButton className={native ? "active" : ""} onClick={() => setNative(true)}>Official XAML</GalleryButton></div><SourceCode language={native ? 'xaml' : 'tsx'}>{native ? official.samples[index].xaml : extractSampleSource(source, name)}</SourceCode></GalleryExpander>
     </div>
   </section>;
 }
@@ -27,7 +29,7 @@ export function IconsPage() {
     
     <div className="effects-options"><label>Renderer <GalleryComboBox aria-label="Renderer" value={backend} onValueChanged={e => setBackend(e as RendererBackend)}>{Object.values(RendererBackend).map(v => <GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label></div>
     <Example index={0} name="bitmap-icon" options={<GalleryCheckBox  checked={monochrome} onValueChanged={e => setMonochrome(e)}  label={<>Monochrome</>}/>}>
-      <p>{official.bitmapDescription}</p>
+      <p><LocalizedText>{official.bitmapDescription}</LocalizedText></p>
       <SceneView {...shared} onReady={s => remember("bitmap-icon", s)}>
         {/* @sample:bitmap-icon:start */}
         <BitmapIcon uriSource="/official/Slices.png" width={50} showAsMonochrome={monochrome} horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Center} accessibleName="Slices bitmap icon" />

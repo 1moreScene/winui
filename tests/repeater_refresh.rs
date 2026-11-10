@@ -31,6 +31,26 @@ fn scene() -> Scene {
     s.resize(640., 480., 1.25).unwrap();
     s
 }
+
+#[test]
+fn focusable_grid_repeater_uses_spatial_arrow_navigation() {
+    let mut s=scene();
+    let id=s.create(s.root,NodeKind::ItemsRepeater,json!({"collectionItems":items(8),"hasItemTemplate":true,"repeater":{"isKeyboardNavigationEnabled":true,"layout":{"kind":"UniformGridLayout","minItemWidth":150,"minItemHeight":120,"minColumnSpacing":8,"minRowSpacing":8}}})).unwrap();
+    frame(&mut s);
+    let mut targets=Vec::new();
+    for i in 0..8 {
+        let slot=s.try_get_repeater_element(id,i).unwrap().unwrap();
+        targets.push(s.create(slot,NodeKind::Grid,json!({"isTabStop":true,"minWidth":150,"minHeight":120})).unwrap());
+    }
+    frame(&mut s);
+    s.input(Input::Focus{id:targets[0]},1000.).unwrap();
+    for (key,index) in [("ArrowRight",1),("ArrowDown",5),("ArrowLeft",4),("ArrowUp",0)] {
+        s.input(Input::KeyDown{key:key.into(),repeat:false},1000.).unwrap();
+        frame(&mut s);
+        let snapshot=s.snapshot();
+        assert!(snapshot.nodes.iter().find(|n|n.id==targets[index]).unwrap().focused,"{key} must follow the realized grid geometry; focused {:?}; slots {:?}",snapshot.nodes.iter().filter(|n|n.focused).map(|n|(n.id,n.kind,n.rect)).collect::<Vec<_>>(),(0..8).map(|i|s.repeater_item_bounds(id,i)).collect::<Vec<_>>());
+    }
+}
 #[test]
 fn centered_refresh_list_uses_natural_width_but_stretched_lists_keep_their_viewport() {
     let mut s = scene();

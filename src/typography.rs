@@ -21,12 +21,27 @@ impl Default for Font {
 }
 impl Font {
     pub fn css(&self) -> String {
+        // 宿主仅在 Windows 注册本机字体别名；其他平台只加载独立命名的开源字体。
+        // 测量、Canvas2D 和 WebGL2 使用同一字体栈，缺字时逐字形回退。
+        let fluent = self.family.contains("Segoe Fluent Icons");
+        let mdl2 = self.family.contains("Segoe MDL2 Assets");
+        let family = self.family
+            .replace("Segoe Fluent Icons", "WinUI Native Fluent Icons")
+            .replace("Segoe MDL2 Assets", "WinUI Native MDL2 Icons");
+        let fallback = if fluent && !mdl2 {
+            ", WinUI Native MDL2 Icons, WinUI Portable Icons"
+        } else if fluent || mdl2 {
+            ", WinUI Portable Icons"
+        } else {
+            ""
+        };
         format!(
-            "{} {} {}px {}, Segoe UI, system-ui, sans-serif",
+            "{} {} {}px {}{}, Segoe UI, system-ui, sans-serif",
             self.style.as_str().to_lowercase(),
             self.weight,
             self.size,
-            self.family
+            family,
+            fallback
         )
     }
 }
@@ -47,6 +62,17 @@ pub trait TextMeasurer {
     /// Design cap height used by TextLineBounds=Tight. Hosts may provide exact font metrics.
     fn cap_height(&mut self, font: &Font) -> f64 {
         font.size * 0.7
+    }
+}
+/// Oversized probes are only a precision aid. System/variable fonts can select
+/// another optical face at large sizes, and platform font APIs can clamp them
+/// without changing Canvas.font. Never let that probe replace target-size metrics.
+#[cfg(target_arch = "wasm32")]
+fn refined_metric(target: f64, scaled: f64) -> f64 {
+    if scaled.is_finite() && (scaled - target).abs() <= 1. {
+        scaled
+    } else {
+        target
     }
 }
 /// D2DTextDrawingContext::GetGlyphRunTransformAndBounds rounds the physical
@@ -232,6 +258,30 @@ pub fn layout(
     result.height = result.lines.len() as f64 * line_height;
     result
 }
+/// TextBlock MaxLines and height-constrained ellipsis are applied after wrapping.
+/// Retain full line baselines; the renderer still clips a partially visible line.
+pub fn constrain_lines(
+    result: &mut TextLayout, font: &Font, width: f64, height: f64,
+    max_lines: usize, trimming: crate::enums::TextTrimming,
+    measure: &mut impl TextMeasurer,
+) {
+    let ellipsis = matches!(trimming, crate::enums::TextTrimming::CharacterEllipsis | crate::enums::TextTrimming::WordEllipsis);
+    let mut count = if max_lines == 0 {usize::MAX} else {max_lines};
+    if ellipsis && height.is_finite() && result.line_height > 0. {
+        count = count.min(((height / result.line_height + 1e-9).floor() as usize).max(1));
+    }
+    if result.lines.len() <= count {return;}
+    result.lines.truncate(count);
+    if ellipsis {
+        if let Some(last) = result.lines.last_mut() {
+            let text = format!("{}…", last.text.trim_end().trim_end_matches('…'));
+            let mut clipped = layout(&text,font,width,false,trimming,Some(result.line_height),measure);
+            if let Some(mut line) = clipped.lines.pop() {line.baseline=last.baseline;*last=line;}
+        }
+    }
+    result.width=result.lines.iter().map(|line|line.width.min(width.max(0.))).fold(0.,f64::max);
+    result.height=result.lines.len() as f64*result.line_height;
+}
 #[cfg(target_arch = "wasm32")]
 pub struct BrowserText {
     pub ctx: web_sys::CanvasRenderingContext2d,
@@ -296,8 +346,12 @@ impl TextMeasurer for BrowserText {
     fn line_height(&mut self, font: &Font, reference: Metrics) -> f64 {
         let key = font.css();
         if let Some(value) = self.line_cache.get(&key) {
-            return *value;
+            return value.max(reference.ascent + reference.descent);
         }
+        self.ctx.set_font(&key);
+        self.line_box.style().set_property("font", &self.ctx.font()).expect("valid font");
+        self.line_box.style().set_property("line-height", "normal").expect("valid line spacing");
+        let target = self.line_box.get_bounding_client_rect().height();
         let mut large = font.clone();
         large.size = 8192.;
         self.ctx.set_font(&large.css());
@@ -317,7 +371,7 @@ impl TextMeasurer for BrowserText {
         let value = self.line_box.get_bounding_client_rect().height() / accepted_size * font.size;
         self.ctx.set_font(&key);
         let value = if value > 0. && value.is_finite() {
-            value
+            refined_metric(target, value)
         } else {
             reference.ascent + reference.descent
         };
@@ -325,13 +379,15 @@ impl TextMeasurer for BrowserText {
             self.line_cache.clear();
         }
         self.line_cache.insert(key, value);
-        value
+        value.max(reference.ascent + reference.descent)
     }
     fn cap_height(&mut self, font: &Font) -> f64 {
         let key = font.css();
         if let Some(value) = self.cap_cache.get(&key) {
             return *value;
         }
+        self.ctx.set_font(&key);
+        let target = self.ctx.measure_text("H").expect("valid cap-height metrics").actual_bounding_box_ascent();
         let precision = 8192. / font.size;
         let mut large = font.clone();
         large.size *= precision;
@@ -352,7 +408,7 @@ impl TextMeasurer for BrowserText {
             .actual_bounding_box_ascent()
             / precision;
         self.ctx.set_font(&font.css());
-        let cap = cap.max(font.size * 0.1);
+        let cap = refined_metric(target, cap).max(font.size * 0.1);
         if self.cap_cache.len() >= 1024 {
             self.cap_cache.clear();
         }
@@ -371,8 +427,8 @@ impl TextMeasurer for BrowserText {
         let m = self.ctx.measure_text(text).expect("valid font and text");
         // At small sizes Canvas rounds font-box metrics to whole CSS pixels,
         // while DirectWrite exposes fractional baselines. Measure a larger run
-        // with the same fallback glyphs to recover those font metrics. 8192px
-        // stays below Chrome's cap and preserves common 2048/1024-em design units.
+        // to recover fractional metrics, but validate against the target size:
+        // platform font limits and optical/fallback faces can change at 8192px.
         let precision = 8192. / font.size;
         let mut large = font.clone();
         large.size *= precision;
@@ -388,10 +444,12 @@ impl TextMeasurer for BrowserText {
         self.ctx.set_font(&font.css());
         let value = Metrics {
             width: m.width(),
-            ascent: high.font_bounding_box_ascent() / precision,
-            descent: high.font_bounding_box_descent() / precision,
-            left: high.actual_bounding_box_left() / precision,
-            right: high.actual_bounding_box_right() / precision,
+            ascent: refined_metric(m.font_bounding_box_ascent(), high.font_bounding_box_ascent() / precision),
+            descent: refined_metric(m.font_bounding_box_descent(), high.font_bounding_box_descent() / precision),
+            // Ink bounds belong to the run we actually draw, including hinting
+            // and fallback at its real size; a larger optical face can differ.
+            left: m.actual_bounding_box_left(),
+            right: m.actual_bounding_box_right(),
         };
         if self.cache.len() > 8192 {
             self.cache.clear();

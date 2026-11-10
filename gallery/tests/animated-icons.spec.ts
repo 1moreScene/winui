@@ -2,7 +2,7 @@ import {selectGalleryOption,setGalleryChecked} from './gallery-control-helper';
 import {test,expect} from '@playwright/test';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {PNG} from 'pngjs';
-import type {Scene,WinUI,AnimatedIcon} from '../src/index';
+import type {Scene,WinUI,AnimatedIconController as AnimatedIcon} from 'winui-wasm';
 declare global{interface Window{animatedFixture:{sdk:WinUI;scene:Scene;icons:AnimatedIcon[]};animatedLiveFrames:{progress:number;inkHash:number}[];}}
 for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} seven animated sources match frozen native Composition frames`,async({browser})=>{
  const metrics=JSON.parse(readFileSync('../references/animated-icons-metrics.json','utf8'));
@@ -11,7 +11,7 @@ for(const backend of ['Canvas2D','WebGL2'] as const)test(`${backend} seven anima
   const context=await browser.newContext({deviceScaleFactor:group.captureScale,viewport:{width:1100,height:600}});const page=await context.newPage();await page.goto('/#icon-element');
   await expect(page.getByRole('img',{name:'Slices bitmap icon'})).toBeVisible();
   await page.evaluate(async({group,backend})=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');const sdk=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.id='animated-fixture';host.style.cssText='position:fixed;inset:0;width:1000px;height:500px;z-index:99999';document.body.append(host);const scene=sdk.scene(host,{theme:group.theme,backend:a.RendererBackend[backend],reducedMotion:true});const canvas=scene.root.canvas();const icons=group.nodes.map((r:any)=>canvas.animatedIcon({source:a.AnimatedIconSource[r.name as keyof typeof a.AnimatedIconSource],state:String(r.progress),width:48,height:48,canvasLeft:r.bounds.x,canvasTop:r.bounds.y,foreground:'#0067c0'}));window.animatedFixture={sdk,scene,icons};
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');const sdk=await a.WinUI.create({globalScrollbars:false});const host=document.createElement('div');host.id='animated-fixture';host.style.cssText='position:fixed;inset:0;width:1000px;height:500px;z-index:99999';document.body.append(host);const scene=sdk.scene(host,{theme:group.theme,backend:a.RendererBackend[backend],reducedMotion:true});const canvas=scene.root.canvas();const icons=group.nodes.map((r:any)=>canvas.animatedIcon({source:a.AnimatedIconSource[r.name as keyof typeof a.AnimatedIconSource],state:String(r.progress),width:48,height:48,canvasLeft:r.bounds.x,canvasTop:r.bounds.y,foreground:'#0067c0'}));window.animatedFixture={sdk,scene,icons};
   },{group,backend});
   await expect.poll(()=>page.evaluate(()=>window.animatedFixture.scene.snapshot.nodes.filter(n=>n.kind==='AnimatedIcon').length)).toBe(63);
   const actual=PNG.sync.read(await page.locator('#animated-fixture').screenshot());const native=PNG.sync.read(readFileSync(`../out/animated-icons-native/${group.theme}-AnimatedIcons.png`));

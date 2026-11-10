@@ -11,7 +11,7 @@ for row in native['rows']:
     shutil.copyfile(ROOT / 'out/composed-controls-native' / row['image'], OUT / 'native' / row['image'])
 report = {'recordedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
           'scope': '368 live same-SDK native frames, replayed at their pre-capture times. Native DWM scheduling and capture latency are retained; raw pixel errors are evidence, not an assertion of Store distribution parity.',
-          'wasmSha256': hashlib.sha256((ROOT / 'out/composed-validation/gallery/src/wasm/winui_bg.wasm').read_bytes()).hexdigest(), 'backends': {}}
+          'wasmSha256': hashlib.sha256((ROOT / 'out/composed-validation/packages/winui-wasm/src/wasm/winui_bg.wasm').read_bytes()).hexdigest(), 'backends': {}}
 for backend in ['Canvas2D', 'WebGL2']:
     matrix = json.loads((OUT / backend / 'metrics.json').read_text())
     rows = []

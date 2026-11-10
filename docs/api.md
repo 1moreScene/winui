@@ -1,6 +1,6 @@
 # 公共 SDK
 
-基础入口 `gallery/src/index.ts`；React 入口 `gallery/src/react.tsx`。Rust 的 wasm-bindgen glue 位于构建生成的 `gallery/src/wasm/`，属于内部边界，业务代码不需要 JSON、数字句柄或协议命令。
+基础入口 `winui-wasm`；React 入口 `winui-wasm/react`，源码统一位于 `packages/winui-wasm/src/`。Rust 的 wasm-bindgen glue 位于构建生成的 `packages/winui-wasm/src/wasm/`，属于内部边界，业务代码不需要 JSON、数字句柄或协议命令。
 
 ## 创建与初始化
 
@@ -64,6 +64,16 @@ ui.dispose();  // 释放其余控件和 WASM runtime；均幂等
 
 ## React
 
+常用内容槽支持属性元素写法，例如 `SplitButton.Flyout`、`TextBox.ToolTip`、`InfoBar.ActionButton`、`SplitView.Pane`。确认按钮可用 `closeFlyout` 关闭所属浮层，无需取得浮层句柄；Canvas 仅用于绝对定位。完整检查范围、用法与保留的高级关系见 [声明式 API 检查](declarative-api.md)。
+
+JSX 控件、枚举、配置类型和公共工具均可从 `winui-wasm/react` 导入。`Button`、`ContentControl`、`Frame` 等无后缀控件名只由 React 入口导出；基础入口的对应命令式对象统一使用 `ButtonController`、`ContentControlController`、`FrameController` 等名称。需要标注控件对象时使用 `import type {ButtonController} from 'winui-wasm'`（React 入口也提供该类型），或让 `onReady` 自动推断类型。
+
+此区分由 SDK 公共导出和打包后的类型声明保证，消费项目不需要添加编辑器配置。迁移时将基础入口的旧控件导入名改为对应的 `*Controller`；不保留旧名别名，否则会重新引入重复候选。`scene.root.button(...)`、`ui.frame(...)` 等工厂调用和 React 组件用法不变；枚举、配置及事件类型名称不变。
+
+```tsx
+import {WinUIProvider, SceneView, Button, ButtonVariant} from 'winui-wasm/react';
+```
+
 React 组件直接接收类型化属性，不使用 `options={{...}}` 包装。基础 TS 工厂仍接收配置对象。所有页面与 SceneView 默认 Canvas2D，WebGL2 仅通过 `backend={RendererBackend.WebGL2}` 显式选择。
 
 ```tsx
@@ -94,7 +104,7 @@ Provider 未传 runtime 时负责初始化和销毁；传入的 runtime 由调�
 ## 类型化内容与材质
 
 ```ts
-import { ContentKind, GridUnit, HorizontalAlignment } from './src/index';
+import { ContentKind, GridUnit, HorizontalAlignment } from 'winui-wasm';
 
 nav.update({ contentNode: ui.template('gallery/SamplePage2') });
 nav.update({
@@ -118,7 +128,7 @@ nav.setExpanded('files', true);
 ## Scene 与 Button：最简用法
 
 ```ts
-import { WinUI } from './src/index';
+import { WinUI } from 'winui-wasm';
 const ui = await WinUI.create();
 const scene = ui.scene(host);
 const save = scene.root.button({ text: 'Save' });
@@ -137,7 +147,7 @@ host 需要实际宽高。基础 SDK 不依赖 React；工厂返回类型化控�
 import {
   WinUI, ThemeMode, RendererBackend, ButtonVariant, ClickMode,
   Orientation, HorizontalAlignment, TextTrimming, EventKind,
-} from './src/index';
+} from 'winui-wasm';
 
 const ui = await WinUI.create();
 const scene = ui.scene(host, { backend: RendererBackend.WebGL2 });
@@ -176,8 +186,8 @@ Grid 支持 `GridUnit.Pixel/Auto/Star` 与跨度。所有布局尺寸使用 DIP�
 ## React 组合
 
 ```tsx
-import { WinUIProvider, SceneView, StackPanel, TextBlock, Button } from './src/react';
-import { ButtonVariant } from './src/index';
+import { WinUIProvider, SceneView, StackPanel, TextBlock, Button } from 'winui-wasm/react';
+import { ButtonVariant } from 'winui-wasm';
 
 <WinUIProvider>
   <SceneView style={{height:180}}>
@@ -199,7 +209,7 @@ WebGL2 目前支持本批几何、文字纹理、图像、仿射变换、stencil
 同一个已初始化的 scene 可以直接创建材质和动画，无需额外注册资源：
 
 ```ts
-import { AnimationResult } from './src/index';
+import { AnimationResult } from 'winui-wasm';
 const panel = scene.root.grid({
   width: 320, height: 240,
   acrylic: { tintColor: '#ffffff', tintOpacity: 0.2, fallbackColor: '#f3f3f3' },
@@ -212,7 +222,7 @@ if (await animation.finished === AnimationResult.Completed) console.log('Done');
 后绘制的 panel 只采样已经绘制的下层场景。Acrylic 可设置在 Grid/StackPanel 的公共 options 上，React 使用同一 options；业务通过 `onReady` 得到的公共 controller 调用 `animate`。共享初始化仍然只执行一次。
 
 ```ts
-import { AnimationEasing, ThemeMode } from './src/index';
+import { AnimationEasing, ThemeMode } from 'winui-wasm';
 const motion = panel.animate(
   { translationX: 200, translationY: 40, scaleX: 0.95, scaleY: 0.95, opacity: 0.6 },
   { duration: 600, delay: 80, easing: AnimationEasing.EaseOut },
@@ -237,7 +247,7 @@ panel.update({ acrylic: null }); // 移除材质；dispose() 则销毁整个子�
 ## 缓动、关键帧和旋转
 
 ```ts
-import { EasingFunction, EasingMode, AnimationEasing } from './src/index';
+import { EasingFunction, EasingMode, AnimationEasing } from 'winui-wasm';
 panel.update({ centerPoint: [25, 25] });
 panel.animate({ rotation: 180 }, {
   duration: 500, easingFunction: EasingFunction.Bounce, easingMode: EasingMode.EaseOut,
@@ -255,7 +265,7 @@ panel.animate({ translationX: [
 ## 渐变画刷
 
 ```ts
-import { GradientKind, GradientSpread, BrushMappingMode } from './src/index';
+import { GradientKind, GradientSpread, BrushMappingMode } from 'winui-wasm';
 const gradient = scene.root.grid({ width: 200, height: 200, background: {
   kind: GradientKind.Radial,
   stops: [{ offset: 0, color: '#ffff00' }, { offset: 1, color: '#0000ff' }],
@@ -302,7 +312,7 @@ CheckBox 默认用 Space 在释放时切换，Enter 不切换；二态支持数�
 ## FontStyle 与 Image stretch
 
 ```ts
-import { FontStyle, ImageStretch } from './src/index';
+import { FontStyle, ImageStretch } from 'winui-wasm';
 scene.root.text({ text: 'Italic', fontStyle: FontStyle.Italic });
 scene.root.image({ source: '/photo.jpg', width: 100, height: 100,
   stretch: ImageStretch.UniformToFill, accessibleName: 'Photo' });

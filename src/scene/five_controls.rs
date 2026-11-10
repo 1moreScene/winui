@@ -195,6 +195,12 @@ impl Scene {
         }
         ids
     }
+    pub(super) fn ordered_visual_children(&self,id:u32)->Vec<u32>{
+        // The native default projection preserves visual collection order:
+        // Z affects elevation, not an invented 2D z-index. Captured by the
+        // independent Composition/XAML depth probe.
+        self.ordered_children(id)
+    }
     pub(super) fn sync_expanders(&mut self) {
         for n in self
             .nodes

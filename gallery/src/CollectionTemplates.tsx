@@ -1,5 +1,5 @@
-import{Grid,StackPanel,TextBlock,Ellipse,Image}from'./react';
-import{GridUnit,HorizontalAlignment,VerticalAlignment,Orientation,ImageStretch,TextTrimming,OpticalMarginAlignment}from'./index';
+import{Grid,StackPanel,TextBlock,Ellipse,Image}from'winui-wasm/react';
+import{GridUnit,HorizontalAlignment,VerticalAlignment,Orientation,ImageStretch,TextTrimming,OpticalMarginAlignment}from'winui-wasm';
 import data from'./collections-data.json';
 export type Contact=typeof data.contacts[number];
 export type Photo=typeof data.photos[number];

@@ -2,7 +2,7 @@ import {selectGalleryOption} from './gallery-control-helper';
 import { test, expect } from '@playwright/test';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { PNG } from 'pngjs';
-import type { WinUI, Scene, SceneNode } from '../src/index';
+import type { WinUI, Scene, SceneNode } from 'winui-wasm';
 declare global { interface Window { iconsFixture: { sdk: WinUI; scene: Scene; nodes: SceneNode[] }; } }
 for (const backend of ['Canvas2D', 'WebGL2'] as const) test(`${backend} five icon controls match native size and isolated crops`, async ({ page }) => {
   const native = JSON.parse(readFileSync('../references/icons-metrics.json', 'utf8'));
@@ -13,7 +13,7 @@ for (const backend of ['Canvas2D', 'WebGL2'] as const) test(`${backend} five ico
     const rows = native.rows.filter((r: any) => r.theme === theme && r.kind === kind);
     await page.evaluate(async ({ rows, backend, theme }) => {
       window.iconsFixture?.sdk.dispose(); document.getElementById('icons-fixture')?.remove();
-      const a = await import('/src/index.ts' as string) as typeof import('../src/index');
+      const a = await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
       const sdk = await a.WinUI.create({ globalScrollbars: false });
       const host = document.createElement('div'); host.id = 'icons-fixture'; host.style.cssText = 'position:fixed;inset:0;width:1000px;height:500px;z-index:99999'; document.body.append(host);
       const scene = sdk.scene(host, { theme: a.ThemeMode[theme as keyof typeof a.ThemeMode], backend: a.RendererBackend[backend], reducedMotion: true });
@@ -75,7 +75,7 @@ for (const backend of ['Canvas2D', 'WebGL2'] as const) test(`${backend} icon upd
     await page.goto('/#icon-element');
     await expect(page.getByRole('img', { name: 'Slices bitmap icon' })).toBeVisible();
     await page.evaluate(async ({ backend }) => {
-      const a = await import('/src/index.ts' as string) as typeof import('../src/index');
+      const a = await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
       const sdk = await a.WinUI.create({ globalScrollbars: false }); const host = document.createElement('div'); host.id = 'icons-fixture'; host.style.cssText = 'position:fixed;inset:0;width:1000px;height:500px;z-index:99999'; document.body.append(host);
       const scene = sdk.scene(host, { backend: a.RendererBackend[backend], root: { background: '#ffffff' } }); const c = scene.root.canvas();
       const path = c.pathIcon({ data: 'M10 0 A10 10 0 1 1 9.999 0 Z', foreground: '#000000', canvasLeft: 24, canvasTop: 24 });

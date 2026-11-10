@@ -26,6 +26,8 @@ local.dispose();
 
 临时保留原生外观可给容器/子树设置 `data-winui-scrollbars="native"`。同一文档的多个 runtime/租约共享一张 Canvas2D 和一套 Rust 场景。释放最后租约会移除样式、观测器、事件、临时 ID 与绘制资源；不会重排业务节点或清空内容。
 
+容器自身设置 `data-winui-scrollbars="hidden"` 时，适配器为可滚动轴传入 `ScrollBarVisibility.Hidden`，仍绑定同一个 Rust ScrollViewer 并保留 DOM 内容输入。仅横向可滚动的容器将竖向滚轮交给 Rust，按横向滚动并在端点保留输入；常规 DOM 滚动仍走浏览器。租约的 `changeView(element, { horizontalOffset, verticalOffset, disableAnimation })` 可对已接管容器发起 Rust 滚动动画，例如用当前 `element.clientWidth` 作为翻页距离。
+
 开放 Shadow Root 创建使用文档级、可恢复的 attachShadow 包装，以发现已存在宿主后来创建的根；已有开放根同样扫描。最后租约释放时，仅在包装仍是 SDK 安装的版本时恢复原函数，保留调用方后续覆盖。根被移除时清理其观测器与样式。常态由事件/ResizeObserver/MutationObserver 驱动，没有扫描轮询或空闲 RAF；宿主几何动画期间及 Rust 动画期间按帧推进。
 
 Rust 宿主 API 是平台中立的；其他自有平台适配器可传入同样的测量并将 ViewChanged 请求应用于内容。本仓库实际运行的全局自动发现适配器是浏览器 DOM，尚未实现 Win32 HWND/其他原生工具包的自动遍历和非客户区替换。

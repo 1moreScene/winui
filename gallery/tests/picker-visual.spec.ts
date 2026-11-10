@@ -5,7 +5,7 @@ const baseline=JSON.parse(readFileSync(join(repo,'references/picker-controls-nat
 for(const backend of ['Canvas2D','WebGL2'])test(`${backend} native picker matrix`,async({page})=>{
  test.setTimeout(240000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('/#calendar-view');await page.getByRole('group',{name:'Calendar',exact:true}).waitFor();
- await page.evaluate(async()=>{const {WinUI}=await import('/src/index.ts' as string);const w=window as any;w.pickerSdk=await WinUI.create({globalScrollbars:false});document.querySelector('#app')?.setAttribute('style','display:none');const h=document.createElement('div');h.id='picker-validation';h.style.cssText='position:fixed;inset:0;width:1000px;height:800px';document.body.append(h);});
+ await page.evaluate(async()=>{const {WinUI}=await import('/@id/winui-wasm' as string);const w=window as any;w.pickerSdk=await WinUI.create({globalScrollbars:false});document.querySelector('#app')?.setAttribute('style','display:none');const h=document.createElement('div');h.id='picker-validation';h.style.cssText='position:fixed;inset:0;width:1000px;height:800px';document.body.append(h);});
  const output=join(repo,'out',process.env.WINUI_PICKER_EVIDENCE??'picker-visual',backend);mkdirSync(output,{recursive:true});const rows=[];
  for(const reference of baseline.rows){
   await page.evaluate(({reference,backend})=>{

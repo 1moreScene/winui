@@ -47,7 +47,7 @@ for(const backend of ['Canvas2D','WebGL2'])test(`${backend} Slider uses Rust val
 test('floating SDK validates ownership and releases detached layers across repeated Gallery remounts',async({page})=>{
  await page.goto('/#slider');await expect(page.getByRole('heading',{name:'Slider',exact:true})).toBeVisible();
  const result=await page.evaluate(async()=>{
-  const entry='/src/index.ts';const {WinUI,OverlayPlacement,MenuEntryKind,EventKind}=await import(/* @vite-ignore */ entry) as typeof import('../src/index');
+  const entry='/@id/winui-wasm';const {WinUI,OverlayPlacement,MenuEntryKind,EventKind}=await import(/* @vite-ignore */ entry) as typeof import('winui-wasm');
   const host=document.createElement('div');host.style.cssText='width:500px;height:300px';document.body.append(host);const ui=await WinUI.create({globalScrollbars:false});const scene=ui.scene(host);const button=scene.root.button({text:'Owner'});const flyout=scene.root.flyout({placement:OverlayPlacement.Bottom});flyout.text({text:'Hello'});flyout.showAt(button);
   const otherHost=document.createElement('div');document.body.append(otherHost);const other=ui.scene(otherHost);let rejected=false;try{flyout.showAt(other.root.button({text:'Foreign'}));}catch{rejected=true;}
   const menu=scene.root.menuFlyout({menuItems:[{id:'option',kind:MenuEntryKind.Toggle}]});const off=menu.on(EventKind.MenuItemInvoked,()=>{});off();menu.dispose();flyout.dispose();scene.dispose();other.dispose();ui.dispose();host.remove();otherHost.remove();return {rejected,detached:!host.isConnected};

@@ -2,7 +2,7 @@ import {selectGalleryOption} from './gallery-control-helper';
 import { test, expect } from "@playwright/test";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { PNG } from "pngjs";
-import type { WinUI, Scene, RepeatButton, Viewbox } from "../src/index";
+import type { WinUI, Scene, RepeatButtonController as RepeatButton, ViewboxController as Viewbox } from "winui-wasm";
 declare global {
   interface Window {
     basicFixture: {
@@ -86,8 +86,8 @@ test("RepeatButton SDK clock, live interval, atomic failure, cancel and disposal
   ).toBeVisible();
   await page.evaluate(async () => {
     const a = (await import(
-      "/src/index.ts" as string
-    )) as typeof import("../src/index");
+      "/@id/winui-wasm" as string
+    )) as typeof import("winui-wasm");
     const f = { time: 0, clicks: 0 } as Window["basicFixture"];
     window.basicFixture = f;
     f.sdk = await a.WinUI.create({
@@ -293,8 +293,8 @@ for (const backend of ["Canvas2D", "WebGL2"] as const)
         await page.evaluate(
           async ({ item, backend }) => {
             const a = (await import(
-              "/src/index.ts" as string
-            )) as typeof import("../src/index");
+              "/@id/winui-wasm" as string
+            )) as typeof import("winui-wasm");
             window.basicFixture?.sdk.dispose();
             document.querySelector("#basic-fixture")?.remove();
             const host = document.createElement("div");
@@ -490,8 +490,8 @@ test("Viewbox child-space DOM, pointer/keyboard clipping, single-child validatio
     ).toBeVisible();
     await page.evaluate(async () => {
       const a = (await import(
-        "/src/index.ts" as string
-      )) as typeof import("../src/index");
+        "/@id/winui-wasm" as string
+      )) as typeof import("winui-wasm");
       const host = document.createElement("div");
       host.id = "basic-fixture";
       host.style.cssText =
@@ -529,8 +529,8 @@ test("Viewbox child-space DOM, pointer/keyboard clipping, single-child validatio
       .toBe(1);
     await page.evaluate(async () => {
       const a = (await import(
-        "/src/index.ts" as string
-      )) as typeof import("../src/index");
+        "/@id/winui-wasm" as string
+      )) as typeof import("winui-wasm");
       window.basicFixture.box!.update({ stretch: a.Stretch.Fill });
     });
     await expect

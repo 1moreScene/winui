@@ -50,54 +50,54 @@
       "RepeatButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFFB3",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#F9F9F980",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#F9F9F94D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForeground": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#000000E4",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundPressed": {
         "kind": "solid",
         "color": "#0000009E",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#0000005C",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrush": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -108,36 +108,36 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "RepeatButtonBorderBrushPointerOver": {
         "kind": "linearGradient",
         "mappingMode": "Absolute",
         "spreadMethod": "Pad",
         "relativeTransform": [
-          1,
+          1.0,
           0,
           0,
-          -1,
-          0,
-          1
+          -1.0,
+          0.0,
+          1.0
         ],
         "transform": [
           1,
@@ -148,76 +148,76 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#00000029"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#0000000F"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "RepeatButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#0000000F",
-        "opacity": 1
+        "opacity": 1.0
       }
     },
     "Dark": {
       "RepeatButtonBackground": {
         "kind": "solid",
         "color": "#FFFFFF0F",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFF15",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#FFFFFF08",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF0B",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFC5",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#FFFFFF5D",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrush": {
         "kind": "linearGradient",
@@ -240,24 +240,24 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "RepeatButtonBorderBrushPointerOver": {
         "kind": "linearGradient",
@@ -280,96 +280,96 @@
           0
         ],
         "from": [
-          0,
-          0
+          0.0,
+          0.0
         ],
         "to": [
-          0,
-          3
+          0.0,
+          3.0
         ],
+        "opacity": 1.0,
         "stops": [
           {
             "offset": 0.33000001311302185,
             "color": "#FFFFFF18"
           },
           {
-            "offset": 1,
+            "offset": 1.0,
             "color": "#FFFFFF12"
           }
-        ],
-        "opacity": 1
+        ]
       },
       "RepeatButtonBorderBrushPressed": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrushDisabled": {
         "kind": "solid",
         "color": "#FFFFFF12",
-        "opacity": 1
+        "opacity": 1.0
       }
     },
     "HighContrast": {
       "RepeatButtonBackground": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundPointerOver": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundPressed": {
         "kind": "solid",
         "color": "#808080FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBackgroundDisabled": {
         "kind": "solid",
         "color": "#000000FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForeground": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundPointerOver": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundPressed": {
         "kind": "solid",
         "color": "#FFFFFFFF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonForegroundDisabled": {
         "kind": "solid",
         "color": "#808080FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrush": {
         "kind": "solid",
-        "color": "#00000000",
-        "opacity": 1
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrushPointerOver": {
         "kind": "solid",
         "color": "#808080FF",
-        "opacity": 1
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrushPressed": {
         "kind": "solid",
-        "color": "#00000000",
-        "opacity": 1
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       },
       "RepeatButtonBorderBrushDisabled": {
         "kind": "solid",
-        "color": "#00000000",
-        "opacity": 1
+        "color": "#FFFFFF00",
+        "opacity": 1.0
       }
     }
   },

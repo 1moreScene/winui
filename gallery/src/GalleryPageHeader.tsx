@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ThemeMode } from './index';
+import { ThemeMode } from 'winui-wasm';
 import type { GalleryItem } from './gallery-catalog';
 import { useGalleryTheme } from './gallery-theme';
 import { GalleryButton, GalleryMenu, GalleryInformation } from './GalleryControls';
@@ -12,13 +12,18 @@ function Icon({glyph}:{glyph:string}) {return <span className="fluent" aria-hidd
 export function GalleryPageHeader({item,title,favorite,onFavorite}:{item?:GalleryItem;title?:string;favorite:boolean;onFavorite:()=>void}) {
   const [theme,setTheme]=useGalleryTheme(),[copied,setCopied]=useState(false);
   const name=item?.title??title??'Sample';
+  const community=item?.communitySource;
   return <header className="gallery-page-header">
     <div className="gallery-page-title"><h1>{name}</h1>
       {item?.namespace&&<GalleryInformation className="gallery-api" aria-label="API details" title="API details" lines={['Namespace',item.namespace,'Inheritance',`${item.baseClasses.join(' › ')} › ${item.id}`]}/>}
     </div>
     <div className="gallery-page-commands"><div className="gallery-page-links">
       {!!item?.docs.length&&<GalleryMenu label="Documentation" items={item.docs.map((doc,index)=>({id:String(index),text:doc.Title,invoke:external(doc.Uri)}))}/>}
-      <GalleryMenu label="Source" items={[
+      <GalleryMenu label="Source" items={community?[
+        {id:'sample',text:'Community TableView sample',invoke:external(`${community.repository}/blob/${community.commit}/${community.sample}`)},
+        {id:'repository',text:'WinUI.TableView repository',invoke:external(`${community.repository}/tree/${community.commit}`)},
+        {id:'license',text:'MIT license',invoke:external(`${community.repository}/blob/${community.commit}/LICENSE.md`)},
+      ]:[
         {id:'sample',text:'Official Gallery sample',invoke:external(`${repository}/${item?.samplePage?`blob/${commit}/${item.samplePage}`:`tree/${commit}/WinUIGallery/Samples`}`)},
         {id:'repository',text:'WinUI Gallery repository',invoke:external(`${repository}/tree/${commit}`)},
       ]}/>

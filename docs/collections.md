@@ -164,6 +164,14 @@ npx playwright test --config playwright.collections-regression.config.ts
 
 本轮通过 178 项 Rust 测试、42 项浏览器检查（Edge/Chrome 滚动各 3 项、集合/拖放/静态矩阵回归 21 项、文字与全局滚动条回归 15 项）、Host/WASM Clippy、严格类型检查和生产构建。独立顺序采样中，普通/模板/分组/十万项列表的 `scene_frame` P95 分别由 4.6/7.4/4.4/4.6ms 降到 3.9/5.9/3.7/3.7ms；这些数值包含 CPU profiler 开销，仅用于本机对照。完整结果见 `references/validation/collections-scroll-status.json`，当前源码、生产 WASM 和 5195 验收 WASM 指纹一致。
 
+## ListView 页面启动修复（2026-11-09）
+
+`/#list-view` 曾因 `ListViewHeaderItemDividerStroke` 缺失而在绘制分组标题时触发 WASM panic。提取脚本此前仅从未纳入版本控制的 `out/collections-advanced-native/collections-advanced-palettes.json` 合并标题画刷，重新构建会丢失这些必需资源。现在两个 HeaderItem 分隔线画刷均直接通过 `sdk_resource_reader.py` 解析固定版本 SDK 的主题字典，并在提取阶段检查 Light/Dark 所有集合画刷是否齐全。
+
+`tests/collections_advanced.rs` 新增 ListView/GridView 三种主题的分组标题绘制检查；`gallery/tests/collections.spec.ts` 新增三种主题直接打开 ListView 并等待分组列表完成绘制的回归检查。运行 `cargo test --locked --test collections --test collections_advanced`、`npm run build`，再以 `PW_CHANNEL=chrome` 运行集合页面的浏览器回归。
+
+本轮通过 29 项集合 Rust 测试和 8 项选定浏览器检查；键盘用例曾在 `Loading collections…` 阶段超时，单独重跑通过。旧集合检查已同步到实际页标题，并使用 Enter 提交 NumberBox 输入，保留原有布局数值断言。严格类型检查、Vite 生产构建及 SDK 声明生成均通过。5173 实际打开后的零错误记录和 WASM 指纹位于 `out/list-view-startup-fix.json`，页面截图位于 `out/list-view-startup-fixed.png`。
+
 ## 验证边界
 
 已实现本节列明的 SDK 应用内鼠标拖放与动画轨道；触摸长按拖放、任意 WinRT DataPackage/跨应用文件拖放、完整 UIA/SelectionModel、ItemsRepeater 不在本轮完成范围。可变高 Stack 非可见项使用估计尺寸；异步图像/字体造成上游尺寸变化的锚定仍需更广泛测试。分组 GridView 的全部原生模板组合未形成完整矩阵。

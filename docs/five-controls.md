@@ -35,7 +35,7 @@ details.dispose();
 | Border | 四边独立厚度、统一外圆角、正确的椭圆内边缘、背景、Padding、单内容布局和圆角裁剪；Canvas2D 直接路径，WebGL2 缓存目标密度的边框纹理 |
 | Canvas | 子项无限约束测量；自然 DesiredSize 为零；Left / Top 附加位置、负坐标、稳定 ZIndex、溢出和可选显式裁剪；绘制、命中及 DOM 顺序一致 |
 | HyperlinkButton | 独立的原生资源样式和 83ms 背景过渡、Click / ClickMode、指针捕获与键盘、禁用；Click 后由浏览器宿主打开 URI |
-| Expander | 字符串 Header、任意单内容、Up / Down、默认居中及显式内容对齐；展开/收起事件、裁剪、输入与编辑宿主坐标、收起后的焦点恢复；原版内容转场与箭头关键帧 |
+| Expander | 字符串或 SDK 元素 Header、任意单内容、Up / Down、默认居中及显式内容对齐；展开/收起事件、裁剪、输入与编辑宿主坐标、收起后的焦点恢复；原版内容转场与箭头关键帧 |
 | InfoBadge | Dot / 数字 / FontIcon；Value >= 0 优先于图标；六种资源配色、自适应圆角、至少正方形的自然尺寸；错误数值原子拒绝；非交互的可访问图像语义 |
 
 Expander 默认最小宽度 96、Header 最小高度 48、内容 Padding 16、方向 Down，默认收起。内容水平和垂直对齐均为 Center，可通过 `horizontalContentAlignment` / `verticalContentAlignment` 设置对应枚举。事件 `Expanding` / `Collapsed` 捕获当时的 `isExpanded`，在程序设置和用户操作时均通知。
@@ -78,8 +78,8 @@ node node_modules/playwright/cli.js test
 - 这些是固定来源的可运行切片，整阶段 6 尚未完成，也未通过 Store 发行版逐像素、逐帧、完整 UIA 验收。字形栅格化、小圆角裁剪和原生 Composition 仍有差异，所有对照记录明确 `acceptedPixelParity=false`。
 - 浅/深主题由匹配 SDK 读取资源；HighContrast 使用确定性的系统色语义 fixture，不切换用户的 Windows 辅助功能设置，也不将该 fixture 当作原生高对比度像素验收。
 - Border 公共圆角当前为统一值；通用 XAML 模板、渐变边框和 BackgroundSizing 覆盖未导出，非实色 borderBrush 报错。Canvas 没有 Padding、行列轨道或 Spacing，类型和运行时均拒绝。
-- Expander 自定义 HeaderTemplate/Selector、任意 React Header 槽及完整 AnimatedIcon 原生队列策略未实现。箭头移植原关键帧、缓动、偏移及标记；快速状态变化合并到一个待播目标，不宣称原生队列完全等价。
+- Expander 已补充由 Rust 布局的 React Header 内容槽及普通 SDK `headerContent`；通用 XAML HeaderTemplate/Selector 和完整 AnimatedIcon 原生队列策略仍未实现。箭头移植原关键帧、缓动、偏移及标记；快速状态变化合并到一个待播目标，不宣称原生队列完全等价。
 - InfoBadge 尚未导出任意 BitmapIcon / PathIcon / ImageIconSource 体系；Gallery 已实现样式与按钮组合示例，NavigationView 的 InfoBadge 插槽示例仍待集成。
-- 官方 Canvas 示例的实心矩形通过既有 Grid 组合；Expander 本批实现第一个官方示例，第二个自定义 Header 示例未冒充完成。Options 中的宿主编辑器尚未替换为 Slider / ComboBox。
+- 官方 Canvas 示例的实心矩形通过既有 Grid 组合；Expander 现已按固定版本实际页面接入两个示例，包含 Up 时的 Bottom 对齐和第二例的 Header/Content 对齐。仓库示例片段与实际页面的差异及 Grid 示例接入见 [布局示例对齐记录](layout-gallery-alignment.md)。
 - HyperlinkButton 第二个示例使用实际 Click 计数展示业务事件；官方 Frame 页面导航宿主尚未移植。官方 XAML 作为独立参考标签保存，React 源码面板显示实际运行代码。
 - AutoSuggestBox、NumberBox、Slider 继续等待统一 Popup / ToolTip，不在本批发布缺少默认浮层能力的接口。

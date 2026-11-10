@@ -18,7 +18,7 @@ pub fn defaults(k: NodeKind, p: &mut NodeProperties) {
         return;
     }
     p.is_tab_stop = false;
-    p.horizontal_alignment = HorizontalAlignment::Left;
+    p.horizontal_alignment = if k==NodeKind::AutoSuggestBox{HorizontalAlignment::Stretch}else{HorizontalAlignment::Left};
     p.vertical_alignment = VerticalAlignment::Top;
     if k == NodeKind::NumberBox {
         p.number_decimal_separator = ".".into();
@@ -106,6 +106,9 @@ pub fn validate_properties(
         }
         if p.selected_index >= p.collection_items.len() as i32 {
             p.selected_index = -1;
+        }
+        if k==NodeKind::ComboBox && !p.is_editable {
+            p.text=p.collection_items.get(p.selected_index as usize).map(|item|item.text.clone()).unwrap_or_default();
         }
     }
     Ok(())
@@ -800,6 +803,9 @@ impl Scene {
             if old_focus && !focused {
                 if kind == NodeKind::NumberBox {
                     self.commit_number(id);
+                    // Commit can change Value/Text. Use that state for the rest
+                    // of this sync instead of restoring the pre-blur value.
+                    p = self.nodes[&id].props.clone();
                 }
                 if kind == NodeKind::AutoSuggestBox {
                     self.nodes
@@ -1103,7 +1109,7 @@ impl Scene {
                     | TeachingTipPlacementMode::RightBottom => OverlayPlacement::Right,
                     _ => OverlayPlacement::Top,
                 };
-                self.patch_part(id,"Popup",json!({"isOpen":p.is_open,"placementTarget":p.placement_target,"placement":placement,"horizontalOffset":if p.placement_target.is_none(){24.}else{0.},"verticalOffset":if p.placement_target.is_none(){(self.height-160.).max(0.)}else{0.},"isLightDismissEnabled":p.is_light_dismiss_enabled,"background":if p.is_light_dismiss_enabled{Value::Null}else{json!({"resource":"TeachingTipBackgroundBrush"})},"acrylicResource":if p.is_light_dismiss_enabled{Some("TeachingTipTransientBackground")}else{None}}));
+                self.patch_part(id,"Popup",json!({"isOpen":p.is_open&&self.placement_reference_ready(id),"placementTarget":p.placement_target,"placement":placement,"horizontalOffset":if p.placement_target.is_none(){24.}else{0.},"verticalOffset":if p.placement_target.is_none(){(self.height-160.).max(0.)}else{0.},"isLightDismissEnabled":p.is_light_dismiss_enabled,"background":if p.is_light_dismiss_enabled{Value::Null}else{json!({"resource":"TeachingTipBackgroundBrush"})},"acrylicResource":if p.is_light_dismiss_enabled{Some("TeachingTipTransientBackground")}else{None}}));
                 let parts = &self.nodes[&id].composed.parts;
                 let root = parts["LayoutRoot"];
                 let hero = parts["HeroContent"];
@@ -1171,7 +1177,7 @@ impl Scene {
             self.events.last_mut().unwrap().value = None;
         }
     }
-    fn commit_number(&mut self, id: u32) {
+    pub(in crate::scene) fn commit_number(&mut self, id: u32) {
         let p = &self.nodes[&id].props;
         let text = p.text.trim();
         if text.is_empty() {
@@ -2229,14 +2235,16 @@ impl Scene {
     }
     pub(super) fn popup_window_bounds(&self, id: u32) -> Rect {
         let n = &self.nodes[&id];
-        let mut r = super::overlay_visual::window_bounds(n.kind, n.rect);
+        let mut r = super::overlay_visual::window_bounds(n.kind, Rect::new(0.,0.,n.rect.width,n.rect.height));
         if n.composed
             .owner
             .is_some_and(|id| self.nodes[&id].kind == NodeKind::TeachingTip)
         {
             r = Rect::new(r.x - 8., r.y - 8., r.width + 16., r.height + 16.);
         }
-        r
+        Matrix([1.,0.,0.,1.,n.rect.x,n.rect.y])
+            .multiply(n.presentation.matrix(n.props.transform,n.props.center_point))
+            .multiply(n.effects.matrix(self.time,n.rect)).bounds(r)
     }
     pub(super) fn paint_composed_tail(&self, id: u32, out: &mut Vec<crate::render::Draw>) {
         let popup = &self.nodes[&id];
@@ -2444,6 +2452,7 @@ fn number_format_signature(p: &NodeProperties) -> Value {
 impl Scene {
     pub fn composed_content_slot(&self, id: u32, slot: &str) -> Result<u32, String> {
         let n = self.get(id)?;
+        if n.kind==NodeKind::NavigationView{return self.navigation_view_slot(id,slot);}
         if n.kind==NodeKind::ItemsPresenter{return self.primitive_slot(id,slot)}
         if slot=="refreshVisualizer"&&n.kind==NodeKind::RefreshContainer{return n.refresh.visualizer.ok_or("RefreshVisualizer is not initialized".into());}
         let key = match slot {

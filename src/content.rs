@@ -6,6 +6,7 @@ use crate::{
 use serde::{Deserialize, Serialize};
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct GridTrack {
     pub unit: GridUnit,
     pub value: f64,
@@ -20,6 +21,7 @@ impl Default for GridTrack {
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct ContentNode {
     pub kind: ContentKind,
     pub children: Vec<ContentNode>,
@@ -294,12 +296,22 @@ fn color(value: &str, theme: Theme) -> String {
         "DarkGray" => "#a9a9a9",
         "LightGray" => "#d3d3d3",
         "Gray" => "#808080",
+        "DarkSalmon" => "#e9967a", "DarkRed" => "#8b0000", "LightCoral" => "#f08080", "IndianRed" => "#cd5c5c",
+        "Khaki" => "#f0e68c", "DarkKhaki" => "#bdb76b", "DarkSeaGreen" => "#8fbc8f", "MediumSeaGreen" => "#3cb371", "DarkOliveGreen" => "#556b2f",
+        "MediumTurquoise" => "#48d1cc", "SteelBlue" => "#4682b4", "SkyBlue" => "#87ceeb", "PowderBlue" => "#b0e0e6", "PaleVioletRed" => "#db7093",
         "Transparent" => "#00000000",
         "Black" => "#000000",
         "White" => "#ffffff",
         other => other,
     }
     .into()
+}
+/// Preserve XAML resource identity when instantiating a source Page as real nodes.
+pub(crate) fn brush(value:&str)->crate::scene::BrushValue{
+    if let Some(key)=value.strip_prefix("{ThemeResource ").and_then(|s|s.strip_suffix('}')){
+        return crate::scene::BrushValue::Resource{resource:key.into()};
+    }
+    crate::scene::BrushValue::Color(color(value,Theme::Light))
 }
 pub fn paint(
     n: &ContentNode,

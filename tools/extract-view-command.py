@@ -44,7 +44,7 @@ print(f'Extracted {len(controls)} controls, {sum(len(c["samples"]) for c in cont
 import xml.etree.ElementTree as E
 from sdk_resource_reader import root, sdk, tag, X, brush, find
 ir=json.loads((ROOT/'references/view-command-template.json').read_text(encoding='utf-8'))
-ir['sdk']='Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental'
+ir['sdk']='microsoft/microsoft-ui-xaml@7b12709347527238494ca28cb9fed326d513e779'
 ir['sdkSha256']=hashlib.sha256(sdk.read_bytes()).hexdigest()
 selected=E.Element(root.tag);ir['styles']={};ir['metrics']={}
 for n in root.iter():

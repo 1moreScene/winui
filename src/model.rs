@@ -4,12 +4,18 @@ pub use crate::enums::*;
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct Item {
     pub id: String,
     pub text: String,
     /// Segoe Fluent Icons glyph. The browser host supplies the font.
     pub icon: String,
     pub animated_icon_source: Option<AnimatedIconSource>,
+    pub icon_source: Option<crate::icon_source::IconSource>,
+    pub content_template: Option<crate::scene::content_hosts::TemplateNode>,
+    pub info_badge: Option<crate::scene::content_hosts::TemplateNode>,
+    pub has_unrealized_children: bool,
+    pub tooltip: String,
     pub kind: ItemKind,
     pub enabled: bool,
     pub selects_on_invoked: bool,
@@ -22,6 +28,11 @@ impl Default for Item {
             text: String::new(),
             icon: String::new(),
             animated_icon_source: None,
+            icon_source: None,
+            content_template: None,
+            info_badge: None,
+            has_unrealized_children: false,
+            tooltip: String::new(),
             kind: ItemKind::Item,
             enabled: true,
             selects_on_invoked: true,
@@ -29,8 +40,12 @@ impl Default for Item {
         }
     }
 }
+impl Item {
+    pub fn has_children(&self)->bool{!self.children.is_empty()||self.has_unrealized_children}
+}
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+#[derive(PartialEq)]
 pub struct Properties {
     pub items: Vec<Item>,
     pub footer_items: Vec<Item>,
@@ -39,7 +54,7 @@ pub struct Properties {
     pub is_pane_open: Option<bool>,
     pub is_pane_visible: bool,
     pub is_settings_visible: bool,
-    pub is_back_button_visible: bool,
+    pub is_back_button_visible: NavigationViewBackButtonVisible,
     pub is_back_enabled: bool,
     pub is_pane_toggle_button_visible: bool,
     pub selection_follows_focus: bool,
@@ -48,9 +63,21 @@ pub struct Properties {
     pub compact_mode_threshold_width: f64,
     pub expanded_mode_threshold_width: f64,
     pub pane_title: String,
-    pub header: String,
-    pub content: String,
+    pub header: Option<String>,
+    pub content: Option<String>,
     pub content_node: Option<crate::content::ContentNode>,
+    pub header_template: Option<crate::scene::content_hosts::TemplateNode>,
+    pub pane_header: Option<crate::scene::content_hosts::TemplateNode>,
+    pub pane_custom_content: Option<crate::scene::content_hosts::TemplateNode>,
+    pub pane_footer: Option<crate::scene::content_hosts::TemplateNode>,
+    pub auto_suggest_box: Option<crate::scene::content_hosts::TemplateNode>,
+    pub content_overlay: Option<crate::scene::content_hosts::TemplateNode>,
+    pub menu_item_template: Option<crate::scene::content_hosts::TemplateNode>,
+    pub overflow_label_mode: NavigationViewOverflowLabelMode,
+    pub shoulder_navigation_enabled: NavigationViewShoulderNavigationEnabled,
+    /// The host paints page content; Rust still owns navigation and dismiss layers.
+    pub has_external_content: bool,
+    pub light_dismiss_overlay_mode: LightDismissOverlayMode,
     pub theme: Theme,
     pub accent: String,
     pub reduced_motion: bool,
@@ -70,7 +97,7 @@ impl Default for Properties {
             is_pane_open: None,
             is_pane_visible: true,
             is_settings_visible: true,
-            is_back_button_visible: true,
+            is_back_button_visible: NavigationViewBackButtonVisible::Auto,
             is_back_enabled: false,
             is_pane_toggle_button_visible: true,
             selection_follows_focus: false,
@@ -79,9 +106,20 @@ impl Default for Properties {
             compact_mode_threshold_width: 641.,
             expanded_mode_threshold_width: 1008.,
             pane_title: String::new(),
-            header: "Sample Page 1".into(),
-            content: "Sample Page 1".into(),
+            header: None,
+            content: None,
             content_node: None,
+            header_template: None,
+            pane_header: None,
+            pane_custom_content: None,
+            pane_footer: None,
+            auto_suggest_box: None,
+            content_overlay: None,
+            menu_item_template: None,
+            overflow_label_mode: NavigationViewOverflowLabelMode::MoreLabel,
+            shoulder_navigation_enabled: NavigationViewShoulderNavigationEnabled::Never,
+            has_external_content: false,
+            light_dismiss_overlay_mode: LightDismissOverlayMode::Auto,
             theme: Theme::Light,
             accent: "#005fb8".into(),
             reduced_motion: false,
@@ -93,6 +131,9 @@ impl Default for Properties {
     }
 }
 impl Properties {
+    pub fn back_button_visible(&self) -> bool {
+        self.is_back_button_visible != NavigationViewBackButtonVisible::Collapsed
+    }
     pub fn find(&self, id: &str) -> Option<&Item> {
         fn find_in<'a>(items: &'a [Item], id: &str) -> Option<&'a Item> {
             items.iter().find_map(|i| {
@@ -106,6 +147,13 @@ impl Properties {
         find_in(&self.items, id).or_else(|| find_in(&self.footer_items, id))
     }
     pub fn validate(&self) -> Result<(), String> {
+        for template in [&self.header_template, &self.pane_header, &self.pane_custom_content,
+            &self.pane_footer, &self.auto_suggest_box, &self.content_overlay, &self.menu_item_template].into_iter().flatten() {
+            crate::scene::content_hosts::validate_descriptor(template)?;
+        }
+        if self.auto_suggest_box.as_ref().is_some_and(|t| t.kind != NodeKind::AutoSuggestBox) {
+            return Err("NavigationView AutoSuggestBox slot requires an AutoSuggestBox".into());
+        }
         if let Some(material) = &self.expanded_pane_material {
             material.validate()?;
         }
@@ -122,6 +170,13 @@ impl Properties {
                 return Err("menu nesting exceeds 16".into());
             }
             for i in items {
+                if let Some(source)=&i.icon_source{source.validate(&crate::scene::NodeProperties::defaults(NodeKind::IconSourceElement))?;}
+                for template in [&i.content_template, &i.info_badge].into_iter().flatten() {
+                    crate::scene::content_hosts::validate_descriptor(template)?;
+                }
+                if i.info_badge.as_ref().is_some_and(|t| t.kind != NodeKind::InfoBadge) {
+                    return Err("NavigationViewItem InfoBadge requires an InfoBadge".into());
+                }
                 if i.id.is_empty() || i.id.starts_with('$') || !ids.insert(i.id.clone()) {
                     return Err(format!("empty, reserved or duplicate item id: {}", i.id));
                 }
@@ -154,7 +209,7 @@ impl Properties {
             if id != "$settings"
                 && !self
                     .find(id)
-                    .is_some_and(|i| i.kind == ItemKind::Item && i.selects_on_invoked)
+                    .is_some_and(|i| i.kind == ItemKind::Item)
             {
                 return Err(format!("invalid selected id: {id}"));
             }
@@ -211,6 +266,7 @@ pub struct Event {
 #[derive(Debug, Deserialize)]
 #[serde(tag = "kind", rename_all = "camelCase", deny_unknown_fields)]
 pub enum Input {
+    Touch { pointer:i32, x:f64, y:f64, phase:String },
     Resize { width: f64, height: f64 },
     Move { x: f64, y: f64 },
     Down { x: f64, y: f64 },

@@ -4,7 +4,7 @@ test('floating material cache follows live backdrop, palette, policy, size and D
  await page.goto('/#command-bar');await page.locator('#command-0 button[data-control-id]').first().waitFor();
  for(const kind of ['Flyout','MenuFlyout'] as const){
   const results=await page.evaluate(async kind=>{
-   const a=await import('/src/index.ts' as string) as typeof import('../src/index');
+   const a=await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
    async function create(){
     const host=document.createElement('div');host.style.cssText='position:fixed;inset:0;width:720px;height:480px';document.body.append(host);
     let time=1000,dpr=1.25;const ui=await a.WinUI.create({clock:()=>time,globalScrollbars:false});

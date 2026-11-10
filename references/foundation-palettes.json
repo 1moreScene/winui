@@ -3,27 +3,27 @@
     "ControlFillColorDefaultBrush": {
       "kind": "solid",
       "color": "#FFFFFFB3",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#F9F9F980",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlFillColorTertiaryBrush": {
       "kind": "solid",
       "color": "#F9F9F94D",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#F9F9F94D",
-      "opacity": 1
+      "opacity": 1.0
     },
     "AccentFillColorDefaultBrush": {
       "kind": "solid",
       "color": "#0067C0FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "AccentFillColorSecondaryBrush": {
       "kind": "solid",
@@ -38,49 +38,49 @@
     "AccentFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#00000037",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextFillColorPrimaryBrush": {
       "kind": "solid",
       "color": "#000000E4",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#0000009E",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#0000005C",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorPrimaryBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#FFFFFFB3",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorDisabled": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlElevationBorderBrush": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -91,41 +91,41 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        3
+        0.0,
+        3.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.33000001311302185,
           "color": "#00000029"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#0000000F"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "ControlStrokeColorDefaultBrush": {
       "kind": "solid",
       "color": "#0000000F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "AccentControlElevationBorderBrush": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -136,96 +136,96 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        3
+        0.0,
+        3.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.33000001311302185,
           "color": "#00000066"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#FFFFFF14"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "ControlFillColorTransparentBrush": {
       "kind": "solid",
       "color": "#FFFFFF00",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SubtleFillColorTransparentBrush": {
       "kind": "solid",
       "color": "#FFFFFF00",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlStrongStrokeColorDefaultBrush": {
       "kind": "solid",
       "color": "#00000072",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlStrongStrokeColorDisabledBrush": {
       "kind": "solid",
       "color": "#00000037",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#00000006",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorTertiaryBrush": {
       "kind": "solid",
       "color": "#0000000F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorQuarternaryBrush": {
       "kind": "solid",
       "color": "#00000018",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF00",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     }
   },
   "Dark": {
     "ControlFillColorDefaultBrush": {
       "kind": "solid",
       "color": "#FFFFFF0F",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#FFFFFF15",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlFillColorTertiaryBrush": {
       "kind": "solid",
       "color": "#FFFFFF08",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF0B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "AccentFillColorDefaultBrush": {
       "kind": "solid",
       "color": "#4CC2FFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "AccentFillColorSecondaryBrush": {
       "kind": "solid",
@@ -240,37 +240,37 @@
     "AccentFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF28",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextFillColorPrimaryBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#FFFFFFC5",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF5D",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorPrimaryBrush": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#00000080",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorDisabled": {
       "kind": "solid",
       "color": "#FFFFFF87",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlElevationBorderBrush": {
       "kind": "linearGradient",
@@ -293,41 +293,41 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        3
+        0.0,
+        3.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.33000001311302185,
           "color": "#FFFFFF18"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#FFFFFF12"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "ControlStrokeColorDefaultBrush": {
       "kind": "solid",
       "color": "#FFFFFF12",
-      "opacity": 1
+      "opacity": 1.0
     },
     "AccentControlElevationBorderBrush": {
       "kind": "linearGradient",
       "mappingMode": "Absolute",
       "spreadMethod": "Pad",
       "relativeTransform": [
-        1,
+        1.0,
         0,
         0,
-        -1,
-        0,
-        1
+        -1.0,
+        0.0,
+        1.0
       ],
       "transform": [
         1,
@@ -338,166 +338,166 @@
         0
       ],
       "from": [
-        0,
-        0
+        0.0,
+        0.0
       ],
       "to": [
-        0,
-        3
+        0.0,
+        3.0
       ],
+      "opacity": 1.0,
       "stops": [
         {
           "offset": 0.33000001311302185,
           "color": "#00000023"
         },
         {
-          "offset": 1,
+          "offset": 1.0,
           "color": "#FFFFFF14"
         }
-      ],
-      "opacity": 1
+      ]
     },
     "ControlFillColorTransparentBrush": {
       "kind": "solid",
       "color": "#FFFFFF00",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SubtleFillColorTransparentBrush": {
       "kind": "solid",
       "color": "#FFFFFF00",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlStrongStrokeColorDefaultBrush": {
       "kind": "solid",
       "color": "#FFFFFF8B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlStrongStrokeColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF28",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorSecondaryBrush": {
       "kind": "solid",
       "color": "#00000019",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorTertiaryBrush": {
       "kind": "solid",
       "color": "#FFFFFF0B",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorQuarternaryBrush": {
       "kind": "solid",
       "color": "#FFFFFF12",
-      "opacity": 1
+      "opacity": 1.0
     },
     "ControlAltFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF00",
-      "opacity": 1
+      "opacity": 1.0
     },
     "TextOnAccentFillColorDisabledBrush": {
       "kind": "solid",
       "color": "#FFFFFF87",
-      "opacity": 1
+      "opacity": 1.0
     }
   },
   "HighContrast": {
     "SystemControlBackgroundBaseLowBrush": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemColorHighlightTextColorBrush": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlHighlightAccentBrush": {
       "kind": "solid",
       "color": "#FFFF00FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemColorButtonTextColorBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlBackgroundBaseMediumLowBrush": {
       "kind": "solid",
       "color": "#808080FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlForegroundBaseHighBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlHighlightBaseHighBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlDisabledBaseMediumLowBrush": {
       "kind": "solid",
       "color": "#808080FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlHighlightAltChromeWhiteBrush": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemColorButtonFaceColorBrush": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemColorHighlightColorBrush": {
       "kind": "solid",
       "color": "#FFFF00FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlForegroundTransparentBrush": {
       "kind": "solid",
-      "color": "#00000000",
-      "opacity": 1
+      "color": "#FFFFFF00",
+      "opacity": 1.0
     },
     "SystemControlHighlightBaseMediumLowBrush": {
       "kind": "solid",
       "color": "#808080FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemControlDisabledTransparentBrush": {
       "kind": "solid",
-      "color": "#00000000",
-      "opacity": 1
+      "color": "#FFFFFF00",
+      "opacity": 1.0
     },
     "SystemControlHighlightAltTransparentBrush": {
       "kind": "solid",
-      "color": "#00000000",
-      "opacity": 1
+      "color": "#FFFFFF00",
+      "opacity": 1.0
     },
     "SystemControlHighlightTransparentBrush": {
       "kind": "solid",
-      "color": "#00000000",
-      "opacity": 1
+      "color": "#FFFFFF00",
+      "opacity": 1.0
     },
     "SystemColorGrayTextColorBrush": {
       "kind": "solid",
       "color": "#808080FF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemColorWindowTextColorBrush": {
       "kind": "solid",
       "color": "#FFFFFFFF",
-      "opacity": 1
+      "opacity": 1.0
     },
     "SystemColorWindowColorBrush": {
       "kind": "solid",
       "color": "#000000FF",
-      "opacity": 1
+      "opacity": 1.0
     }
   }
 }

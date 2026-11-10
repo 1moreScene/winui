@@ -1,9 +1,11 @@
 //! One root owns layout, input, ordering, composition and lifetime for all node types.
+pub mod table_view;
 pub mod scroll_primitives;
 pub mod menu_item_controls;
 mod menu_presenter;
 pub use menu_presenter::MenuRowParts;
 pub mod content_hosts;
+pub mod navigation_view;
 pub mod reading_controls;
 pub mod view_controls;
 mod basic_next;
@@ -27,15 +29,20 @@ mod slider;
 pub use basic_next::viewbox_scale;
 mod layout;
 mod properties;
+mod element_names;
+pub use element_names::{ElementReferenceProperty,UnresolvedElementReference};
 pub use input::Input;
+pub use input::PointerPresentation;
 mod motion;
 pub mod motion_effects;
 mod paint;
+mod visual_surface;
 mod progress;
 pub(crate) mod scroll;
 pub use scroll::HostScrollMetrics;
 mod selection_input;
 mod text_edit;
+pub mod rich_edit;
 use crate::{
     button::ButtonState,
     enums::*,
@@ -104,6 +111,8 @@ impl Matrix {
     }
 }
 pub struct Node {
+    pub navigation_template: navigation_view::TemplateState,
+    pub table:table_view::TableState,
     pub(super) effects:motion_effects::EffectState,
     pub primitive:scroll_primitives::PrimitiveState,
     pub menu_item:menu_item_controls::MenuItemState,
@@ -199,6 +208,8 @@ pub struct SceneEvent {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct NodeSnapshot {
+    pub table:Option<table_view::TableSnapshot>,
+    pub pointer: PointerPresentation,
     pub primitive:Option<serde_json::Value>,
     pub content_host:Option<serde_json::Value>,
     pub reading:Option<serde_json::Value>,
@@ -230,10 +241,13 @@ pub struct NodeSnapshot {
     pub enabled: bool,
     pub visible: bool,
     pub focused: bool,
+    pub composition_depth:f64,
     pub tab_stop: bool,
+    #[serde(serialize_with="properties::serialize_snapshot")]
     pub props: NodeProperties,
     pub text: TextLayout,
-    pub template_part: Option<&'static str>,
+    pub template_part: Option<String>,
+    pub navigation_owner: Option<u32>,
     pub layout_version: u64,
     pub paint_version: u64,
     pub navigation: Option<crate::navigation::Snapshot>,
@@ -254,10 +268,13 @@ pub struct NodeSnapshot {
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Snapshot {
+    #[serde(skip_serializing_if="Vec::is_empty")]
+    pub unresolved_element_references:Vec<UnresolvedElementReference>,
     /// Rust-owned input root while a windowed choice popup blocks background scrolling.
     pub background_scroll_root: Option<u32>,
     /// Auto-sized host extent, including native template presentation overflow.
     pub presentation_height: f64,
+    pub surface_bounds: Rect,
     pub time: f64,
     pub root: u32,
     pub nodes: Vec<NodeSnapshot>,
@@ -312,6 +329,8 @@ pub struct Scene {
     pending_bring_into_view: Option<u32>,
     realizing_collection: Option<u32>,
     picker_template_depth:usize,
+    element_references_dirty:bool,
+    unresolved_element_references:Vec<UnresolvedElementReference>,
 }
 impl Scene {
     pub fn new(theme: Theme, reduced_motion: bool) -> Self {
@@ -322,6 +341,8 @@ impl Scene {
             next_composed_request: 0,
             realizing_collection: None,
             picker_template_depth:0,
+            element_references_dirty:true,
+            unresolved_element_references:vec![],
             nodes: BTreeMap::new(),
             root: 1,
             next: 1,
@@ -351,7 +372,7 @@ impl Scene {
         };
         s.nodes.insert(
             1,
-            Self::node(1, None, NodeKind::Grid, NodeProperties::default()).unwrap(),
+            Self::node(1, None, NodeKind::Grid, NodeProperties::defaults(NodeKind::Grid)).unwrap(),
         );
         s
     }
@@ -372,7 +393,11 @@ impl Scene {
         } else {
             None
         };
+        let mut editor=text_edit::EditorState::default();
+        if let Some(doc)=&props.document {editor.typing_format=doc.format_at(props.selection_start.saturating_sub(1));}
         Ok(Node {
+            navigation_template:Default::default(),
+            table:Default::default(),
             primitive:Default::default(),
             menu_item:Default::default(),
             content_host:Default::default(),
@@ -405,7 +430,7 @@ impl Scene {
             text: TextLayout::default(),
             button: ButtonState::default(),
             selection_visual: Default::default(),
-            editor: Default::default(),
+            editor,
             scroll: Default::default(),
             progress: Default::default(),
             repeat: Default::default(),
@@ -442,7 +467,13 @@ impl Scene {
         kind: NodeKind,
         patch: serde_json::Value,
     ) -> Result<u32, String> {
+        let parent = self.navigation_content_parent(parent)?;
         let parent = self.primitive_content_parent(parent)?;
+        if ((navigation_view::is_item(kind)&&kind!=NodeKind::NavigationViewItem)||kind==NodeKind::ItemsRepeaterScrollHost)
+            && self.nodes[&parent].navigation_template.owner.is_none()
+            && !self.nodes[&parent].navigation_template.building{
+            return Err("NavigationView template containers are owned by NavigationView".into());
+        }
         let parent = self.composed_content_parent(parent, kind)?;
         self.can_parent(parent, kind)?;
         self.preflight_menu_item(parent,kind)?;
@@ -490,7 +521,7 @@ impl Scene {
         }
         if matches!(
             self.nodes[&parent].kind,
-            NodeKind::Viewbox | NodeKind::Border | NodeKind::Expander | NodeKind::ParallaxView
+            NodeKind::Viewbox | NodeKind::Border | NodeKind::ParallaxView
         ) && !view_controls::is_command(kind) && !self.ordered_children(parent).is_empty()
         {
             return Err(format!(
@@ -517,7 +548,13 @@ impl Scene {
                 "Floating content accepts one child; use a panel to combine content".into(),
             );
         }
-        let mut props = properties::patch(&NodeProperties::defaults(kind), &patch, kind)?;
+        let mut props = properties::create(&patch, kind)?;
+        if props.is_expander_header && (kind != NodeKind::Grid || self.nodes[&parent].kind != NodeKind::Expander) {
+            return Err("Expander header slot must be a Grid directly owned by an Expander".into());
+        }
+        if !view_controls::is_command(kind) && self.nodes[&parent].kind == NodeKind::Expander && self.nodes[&parent].children.iter().any(|child| !view_controls::is_command(self.nodes[child].kind) && self.nodes[child].props.is_expander_header == props.is_expander_header) {
+            return Err("Expander accepts one header slot and one content child; combine content in a panel".into());
+        }
         self.preflight_content_host(parent,kind,&props)?;
         self.validate_primitive_references(self.next.saturating_add(1),kind,&props)?;
         self.validate_view_references(self.next.saturating_add(1), &props,None)?;
@@ -580,6 +617,10 @@ impl Scene {
             node.overlay.local_horizontal_offset = patch.get("horizontalOffset").is_some();
             node.overlay.local_vertical_offset = patch.get("verticalOffset").is_some();
         }
+        if !node.props.name.is_empty()||!node.props.element_references.is_empty(){self.validate_element_names(&[(id,kind,&node.props)])?;self.element_references_dirty=true;}
+        if !node.props.name.is_empty() && self.nodes.values().any(|source|source.props.element_references.get(&ElementReferenceProperty::PlacementTarget).and_then(|n|n.as_ref())==Some(&node.props.name)&&self.descendant_of(parent,source.id)) {
+            return Err("placement target must be outside its content subtree".into());
+        }
         self.nodes.insert(id, node);
         self.nodes.get_mut(&parent).unwrap().children.push(id);
         self.next = id;
@@ -595,10 +636,11 @@ impl Scene {
         if picker_controls::is_control(kind) { self.init_picker(id)?; }
         if command_controls::is_control(kind){self.init_command(id)?;}
         if command_menus::is_control(kind){self.init_command_menu(id)?;}
-        if (compact_controls::is_split(self.nodes[&parent].kind)||command_controls::is_action(self.nodes[&parent].kind))
-            && matches!(kind, NodeKind::Flyout | NodeKind::MenuFlyout)
+        if (self.nodes[&parent].kind==NodeKind::Button||compact_controls::is_split(self.nodes[&parent].kind)||command_controls::is_action(self.nodes[&parent].kind))
+            && matches!(kind, NodeKind::Flyout | NodeKind::MenuFlyout | NodeKind::CommandBarFlyout)
         {
             self.nodes.get_mut(&parent).unwrap().props.flyout_target = Some(id);
+            self.nodes.get_mut(&id).unwrap().props.placement_target = Some(parent);
         }
         if kind == NodeKind::InfoBar {
             let size =
@@ -618,6 +660,7 @@ impl Scene {
             self.nodes.get_mut(&id).unwrap().slider.tooltip = Some(tip);
         }
         self.init_primitive(id)?;
+        self.init_navigation_template(id,&patch)?;
         if content_hosts::is_host(kind){self.sync_content_host(id)?;}
         self.invalidate(parent, true);
         if kind == NodeKind::RadioButtons {
@@ -633,6 +676,7 @@ impl Scene {
     }
     fn can_parent(&self, parent: u32, child_kind: NodeKind) -> Result<(), String> {
         let p = self.get(parent)?;
+        if p.navigation_template.slot&&!p.children.is_empty(){return Err("NavigationView content slots accept one root; use a panel".into());}
         if p.kind==NodeKind::ItemsPresenter&&!p.primitive.building{return Err("ItemsPresenter owns its template parts".into())}
         if p.primitive.owner.is_some_and(|owner|self.nodes[&owner].primitive.items==Some(parent)){
             if !p.children.is_empty(){return Err("ItemsPresenter accepts one items panel; combine children in a panel".into())}
@@ -658,7 +702,7 @@ impl Scene {
         }
         if !matches!(
             p.kind,
-            NodeKind::ItemsPresenter|NodeKind::ContentControl|NodeKind::ContentPresenter|NodeKind::UserControl|NodeKind::Page|NodeKind::Frame|NodeKind::FlipView
+            NodeKind::NavigationView|NodeKind::NavigationViewItem|NodeKind::NavigationViewItemHeader|NodeKind::NavigationViewItemSeparator|NodeKind::NavigationViewItemPresenter|NodeKind::ItemsRepeaterScrollHost|NodeKind::TableView|NodeKind::ItemsPresenter|NodeKind::ContentControl|NodeKind::ContentPresenter|NodeKind::UserControl|NodeKind::Page|NodeKind::Frame|NodeKind::FlipView
                 | NodeKind::PipsPager
                 | NodeKind::BreadcrumbBar
                 | NodeKind::TreeView
@@ -713,7 +757,7 @@ impl Scene {
             floating_content |= overlays::is_overlay(node.kind);
             if !floating_content
                 && crate::selection::is_button(node.kind)
-                && node.kind != NodeKind::Expander
+                && !matches!(node.kind,NodeKind::Expander|NodeKind::NavigationViewItem)
                 && matches!(
                     child_kind,
                     NodeKind::Button
@@ -729,6 +773,7 @@ impl Scene {
                         | NodeKind::RadioButton
                         | NodeKind::RadioButtons
                         | NodeKind::TextBox
+                        | NodeKind::RichEditBox
                         | NodeKind::NumberBox
                         | NodeKind::AutoSuggestBox
                         | NodeKind::ComboBox
@@ -782,6 +827,7 @@ impl Scene {
                         | "transform"
                         | "translationX"
                         | "translationY"
+                        | "translationZ"
                         | "scaleX"
                         | "scaleY"
                         | "rotation"
@@ -794,7 +840,11 @@ impl Scene {
                 )
             });
         }
-        for (&id,props) in &staged {self.validate_view_references(id,props,Some(&staged))?;self.validate_menu_item_patch(id,props)?;}
+        for (&id,props) in &staged {
+            if props.is_expander_header != self.nodes[&id].props.is_expander_header {return Err("Expander slot identity cannot be changed".into());}
+            if self.nodes[&id].kind==NodeKind::NavigationView {self.validate_navigation_slots(id,props)?;}
+            self.validate_view_references(id,props,Some(&staged))?;self.validate_menu_item_patch(id,props)?;
+        }
         self.stage_menu_radio_updates(&mut staged,&updates.iter().map(|u|u.id).collect::<Vec<_>>());
         let before: Vec<_> = self
             .nodes
@@ -841,6 +891,12 @@ impl Scene {
         if self.nodes.len() as i64 + item_delta > 5000 {
             return Err("scene node limit reached".into());
         }
+        if staged.iter().any(|(id,p)|p.name!=self.nodes[id].props.name||p.element_references!=self.nodes[id].props.element_references){
+            let changed:Vec<_>=staged.iter().map(|(id,p)|(*id,self.nodes[id].kind,p)).collect();self.validate_element_names(&changed)?;self.element_references_dirty=true;
+        }
+        // Hosts may submit the same named declaration again with an empty numeric
+        // handle. Reassert bindings after all staged updates, including batches.
+        if staged.values().any(|p|p.element_references.values().any(Option::is_some)){self.element_references_dirty=true;}
         let mut staged: Vec<_> = staged.into_iter().collect();
         staged.sort_by_key(|(id, p)| {
             u8::from(self.nodes[id].kind == NodeKind::RadioButton && p.is_checked == Some(true))
@@ -859,6 +915,7 @@ impl Scene {
                         "opacity"
                             | "translationX"
                             | "translationY"
+                        | "translationZ"
                             | "scaleX"
                             | "scaleY"
                             | "rotation"
@@ -874,6 +931,7 @@ impl Scene {
             self.capture_collection_anchor(id, &props);
             let implicit = self.implicit_updates(id,&props,&keys);
             let node = self.nodes.get_mut(&id).unwrap();
+            if node.kind==NodeKind::NavigationView{for update in updates.iter().filter(|u|u.id==id){if let Some(p)=update.patch.get("navigation"){if let Some(v)=p.get("reducedMotion").and_then(serde_json::Value::as_bool){node.navigation_template.motion_override=Some(v);}if let Some(v)=p.get("reducedTransparency").and_then(serde_json::Value::as_bool){node.navigation_template.transparency_override=Some(v);}}}}
             let implicit_from=node.presentation;
             for key in &keys {node.effects.bindings.remove(*key);}
             if node.kind == NodeKind::ToolTip {
@@ -914,14 +972,15 @@ impl Scene {
                     "rotation" => node.presentation.rotation = props.rotation,
                     "translationX" => node.presentation.translation_x = props.translation_x,
                     "translationY" => node.presentation.translation_y = props.translation_y,
+                    "translationZ" => node.presentation.translation_z = props.translation_z,
                     "scaleX" => node.presentation.scale_x = props.scale_x,
                     "scaleY" => node.presentation.scale_y = props.scale_y,
                     _ => {}
                 }
             }
             let text_changed = text_edit::is_editor(node.kind)
-                && text_edit::EditorState::logical(node.kind, &node.props)
-                    != text_edit::EditorState::logical(node.kind, &props);
+                && (text_edit::EditorState::logical(node.kind, &node.props)
+                    != text_edit::EditorState::logical(node.kind, &props) || node.props.document != props.document);
             let selection_changed = text_edit::is_editor(node.kind)
                 && (node.props.selection_start, node.props.selection_length)
                     != (props.selection_start, props.selection_length);
@@ -965,6 +1024,7 @@ impl Scene {
             }
             if matches!(node.kind,NodeKind::FlipView|NodeKind::TabView)&&updates.iter().any(|u|u.id==id&&u.patch.get("selectedIndex").is_some()){node.nav_controls.selection_explicit=true;}
             node.props = props;
+            if text_changed {if let Some(doc)=&node.props.document {node.editor.typing_format=doc.format_at(node.props.selection_start.saturating_sub(1));}}
             if scroll_changed {
                 let p = &node.props;
                 let (x, y, z) = (p.horizontal_offset, p.vertical_offset, p.zoom_factor);
@@ -1051,9 +1111,12 @@ impl Scene {
         self.sync_selection_visuals();
     }
     pub fn reparent(&mut self, id: u32, parent: u32, index: Option<usize>) -> Result<(), String> {
+        let parent=self.navigation_content_parent(parent)?;
         let parent=self.primitive_content_parent(parent)?;
         if self.get(id)?.parent==Some(parent)&&(self.get(parent)?.kind==NodeKind::ScrollContentPresenter||self.get(parent)?.primitive.owner.is_some()){return Ok(())}
         let kind = self.get(id)?.kind;
+        if self.nodes[&id].navigation_template.owner.is_some(){return Err("NavigationView owns its template parts".into());}
+        if self.nodes[&id].props.is_expander_header { return Err("Expander header slot cannot be reparented".into()); }
         if self.nodes[&id].primitive.owner.is_some(){return Err("Presenter template parts cannot be reparented".into())}
         if self.nodes[&id].content_host.owner.is_some(){return Err("Content host owns this template/page".into())}
         if self.nodes[&id].composed.owner.is_some()||self.nodes[&id].refresh.owner.is_some()||self.nodes[&id].parent.is_some_and(|p|self.nodes[&p].kind==NodeKind::ItemsRepeater) {
@@ -1072,7 +1135,7 @@ impl Scene {
         }
         if matches!(
             self.nodes[&parent].kind,
-            NodeKind::Viewbox | NodeKind::Border | NodeKind::Expander
+            NodeKind::Viewbox | NodeKind::Border
         ) && self.nodes[&parent]
             .children
             .iter()
@@ -1085,6 +1148,10 @@ impl Scene {
         }
         if id == self.root {
             return Err("cannot reparent scene root".into());
+        }
+        self.validate_named_reparent(id,parent)?;
+        if self.nodes[&parent].kind == NodeKind::Expander && self.nodes[&parent].children.iter().any(|child| *child != id && !self.nodes[child].props.is_expander_header) {
+            return Err("Expander accepts one content child; combine content in a panel".into());
         }
         let mut p = Some(parent);
         while let Some(n) = p {
@@ -1129,6 +1196,7 @@ impl Scene {
                         | NodeKind::RadioButton
                         | NodeKind::RadioButtons
                         | NodeKind::TextBox
+                        | NodeKind::RichEditBox
                         | NodeKind::NumberBox
                         | NodeKind::AutoSuggestBox
                         | NodeKind::ComboBox
@@ -1172,11 +1240,15 @@ impl Scene {
         if menu_item_controls::is_item(kind){self.nodes.get_mut(&parent).unwrap().menu_item.children_mode=true;}
         if self.nodes[&old].props.flyout_target == Some(id) {
             self.nodes.get_mut(&old).unwrap().props.flyout_target = None;
+            if self.nodes[&id].props.placement_target == Some(old) {
+                self.nodes.get_mut(&id).unwrap().props.placement_target = None;
+            }
         }
-        if compact_controls::is_split(self.nodes[&parent].kind)
-            && matches!(kind, NodeKind::Flyout | NodeKind::MenuFlyout)
+        if (self.nodes[&parent].kind==NodeKind::Button||compact_controls::is_split(self.nodes[&parent].kind)||command_controls::is_action(self.nodes[&parent].kind))
+            && matches!(kind, NodeKind::Flyout | NodeKind::MenuFlyout | NodeKind::CommandBarFlyout)
         {
             self.nodes.get_mut(&parent).unwrap().props.flyout_target = Some(id);
+            self.nodes.get_mut(&id).unwrap().props.placement_target = Some(parent);
         }
         self.invalidate(old, true);
         self.invalidate(parent, true);
@@ -1189,6 +1261,10 @@ impl Scene {
         Ok(())
     }
     pub fn destroy(&mut self, id: u32) -> Result<Vec<u32>, String> {
+        self.element_references_dirty=true;
+        if let Some(owner)=self.get(id)?.navigation_template.owner {
+            if !self.nodes[&owner].navigation_template.building{return Err("NavigationView owns its template parts; dispose the control or update its content".into());}
+        }
         if self.nodes.get(&id).is_some_and(|n|n.kind==NodeKind::RichTextBlock){let inlines=self.nodes[&id].reading.inline_nodes.values().copied().filter(|c|self.nodes.get(c).is_some_and(|n|n.parent!=Some(id))).collect::<Vec<_>>();for child in inlines{self.destroy(child)?;}}
 
         self.forget_navigation_slot(id);
@@ -1244,6 +1320,9 @@ impl Scene {
             {
                 node.props.flyout_target = None;
             }
+            if node.props.context_flyout_target.is_some_and(|target|removed.contains(&target)) {
+                node.props.context_flyout_target=None;
+            }
         }
         if self.focused.is_some_and(|n| removed.contains(&n)) {
             self.focused = None;
@@ -1285,6 +1364,7 @@ impl Scene {
         Ok(())
     }
     pub fn advance(&mut self, time: f64) {
+        self.resolve_element_names();
         if time.is_finite() {
             self.time = self.time.max(time);
         }
@@ -1294,20 +1374,31 @@ impl Scene {
         self.advance_animations();
         self.scroll_tick();
         self.collection_drag_tick();
+        self.table_drag_tick();
         self.repeat_tick();
         self.sync_sliders();
         self.tooltip_tick();
         self.menu_entry_tick();
         for n in self.nodes.values_mut() {
             if let Some(nav) = &mut n.nav {
+                let geometry=nav.pane_motion.active(nav.now)||nav.hierarchy_motion.active(nav.now);
+                let scroll=(nav.scroll,nav.content_scroll);
                 nav.advance(self.time);
-                nav.layout();
+                let geometry=geometry||nav.pane_motion.active(nav.now)||nav.hierarchy_motion.active(nav.now)||scroll!=(nav.scroll,nav.content_scroll);
+                if geometry{nav.layout();}
+                // Indicator, Acrylic, icon and scrollbar opacity timelines paint
+                // from the Rust sample; they do not change the page's layout.
+                self.dirty |=geometry;
             }
         }
     }
     pub fn layout(&mut self, measure: &mut impl TextMeasurer) {
+        self.resolve_element_names();
+        self.pump_table_events();
         self.sync_primitives();
         self.sync_content_hosts();
+        self.sync_navigation_templates();
+        self.sync_navigation_item_visuals();
         self.sync_reading();
         self.sync_menu_item_nodes();
         self.sync_view_controls();
@@ -1355,15 +1446,12 @@ impl Scene {
                 measure,
             );
             self.dirty = false;
-            if let Some(id) = self
-                .pending_bring_into_view
-                .take()
-                .filter(|id| self.nodes.contains_key(id))
-            {
-                self.bring_into_view(id);
-            }
             self.layout_passes += 1;
         }
+        let tables=self.nodes.values().filter(|n|n.kind==NodeKind::TableView&&n.visible).map(|n|n.id).collect::<Vec<_>>();
+        for id in tables{let n=&self.nodes[&id];let p=n.props.padding;let inner=n.table.layout_bounds.unwrap_or_else(||Rect::new(p[0],p[1],(n.rect.width-p[0]-p[2]).max(0.),(n.rect.height-p[1]-p[3]).max(0.)));self.arrange_table(id,inner,measure);}
+        let navigation_items=self.nodes.values().filter(|n|n.kind==NodeKind::NavigationViewItem&&n.navigation_template.owner.is_none()&&n.visible).map(|n|n.id).collect::<Vec<_>>();
+        for id in navigation_items{self.arrange_standalone_navigation_item(id,measure);}
         self.refresh_parallax(measure);
         self.sync_motion_effects();
         self.refresh_visual_tree(self.root, Matrix::default(), self.theme, true, true);
@@ -1394,9 +1482,18 @@ impl Scene {
             self.prepare_navigation_glyphs(id,measure);
             self.arrange_navigation_control(id,rect,measure);
         }
-        let repeaters=self.nodes.values().filter(|n|n.kind==NodeKind::ItemsRepeater&&n.visible).map(|n|n.id).collect::<Vec<_>>();
+        let repeaters=self.nodes.values().filter(|n|n.kind==NodeKind::ItemsRepeater&&n.visible&&n.navigation_template.owner.is_none()).map(|n|n.id).collect::<Vec<_>>();
         for id in repeaters{let n=&self.nodes[&id];let p=n.props.padding;let inner=Rect::new(p[0],p[1],(n.rect.width-p[0]-p[2]).max(0.),(n.rect.height-p[1]-p[3]).max(0.));self.arrange_repeater(id,inner,measure);}
         self.finish_rich_flow(measure);
+        // Focus requested while realizing Canvas/template children must use
+        // their final Left/Top and world geometry, before placing any popup.
+        if let Some(id)=self.pending_bring_into_view.take().filter(|id|self.nodes.contains_key(id)) {
+            self.refresh_visual_tree(self.root, Matrix::default(), self.theme, true, true);
+            self.bring_into_view(id);
+            let tables=self.nodes.values().filter(|n|n.kind==NodeKind::TableView&&n.visible).map(|n|n.id).collect::<Vec<_>>();
+            for table in tables {if let Some(inner)=self.nodes[&table].table.layout_bounds {self.arrange_table(table,inner,measure);}}
+            self.refresh_visual_tree(self.root, Matrix::default(), self.theme, true, true);
+        }
         self.sync_sliders();
         self.sync_composed();
         self.sync_overlays();
@@ -1414,6 +1511,7 @@ impl Scene {
         self.pump_navigation_control_events();
     }
     pub fn snapshot(&mut self) -> Snapshot {
+        self.resolve_element_names();
         let (command_managed,command_stops)=self.command_tab_stops();
         let(menu_managed,menu_stops)=self.menu_tab_stops();
         let radio_stops: std::collections::HashSet<_> = self
@@ -1462,9 +1560,11 @@ impl Scene {
             if n.kind==NodeKind::CommandBar{snapshot.primary_clip=self.command_primary_clip(*id);}
         }
         let mut ui_commands=self.nodes.values().filter(|n|view_controls::is_command(n.kind)).filter_map(|n|self.command_metadata(n.id).ok().map(|m|(n.id,m))).collect::<HashMap<_,_>>();
-        let primitives=self.nodes.keys().filter_map(|id|self.primitive_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
-        let content_hosts=self.nodes.keys().filter_map(|id|self.content_host_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
-        let reading=self.nodes.keys().filter_map(|id|self.reading_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
+        let mut tables=self.nodes.keys().filter_map(|id|self.table_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
+        let mut primitives=self.nodes.keys().filter_map(|id|self.primitive_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
+        let mut content_hosts=self.nodes.keys().filter_map(|id|self.content_host_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
+        let mut reading=self.nodes.keys().filter_map(|id|self.reading_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
+        let mut pointers = self.nodes.keys().map(|id| (*id, self.pointer_presentation(*id))).collect::<HashMap<_, _>>();
         let nodes = self
             .nodes
             .values_mut()
@@ -1473,7 +1573,7 @@ impl Scene {
                     let mut s = v.snapshot();
                     for e in s.events.drain(..) {
                         self.events.push(SceneEvent {
-                            payload: None,
+                            payload: Some(serde_json::json!({"recommendedNavigationTransition":e.recommended_navigation_transition})),
                             composed_processed: false, command_processed:false, menu_processed:false, reading_processed:false,
                             collection: None,
                             selected_keys: None,
@@ -1520,6 +1620,9 @@ impl Scene {
                     && n.selection_visual.active(self.time);
                 animating |= n.kind == NodeKind::ItemsRepeater && n.repeater.unsettled;
                 animating |= refresh::is_control(n.kind) && !self.reduced_motion && (n.refresh.state==RefreshVisualizerState::Refreshing || n.refresh.state==RefreshVisualizerState::Pending&&self.time-n.refresh.started<300.);
+                animating |= n.table.row_indicator_opacity.active(self.time)||n.table.row_indicator_scale.active(self.time);
+                animating |= n.table.body_opacity.active(self.time)||n.table.body_offset_y.active(self.time);
+                animating |= n.table.auto_scroll_next.is_some();
                 animating |= n.collection.indicator_opacity.active(self.time)
                     || n.collection.indicator_scale.active(self.time)
                     || n.collection.layout_unsettled
@@ -1527,10 +1630,12 @@ impl Scene {
                 animating |= (n.props.acrylic.is_some() || n.props.acrylic_resource.is_some())
                     && (n.material_motion.active(self.time) || n.material_colors.active(self.time));
                 NodeSnapshot {
+                    table:tables.remove(&n.id),
+                    pointer: pointers.remove(&n.id).unwrap(),
                     ui_command:ui_commands.remove(&n.id),
-                    primitive:primitives.get(&n.id).cloned(),
-                    content_host:content_hosts.get(&n.id).cloned(),
-                    reading:reading.get(&n.id).cloned(),
+                    primitive:primitives.remove(&n.id),
+                    content_host:content_hosts.remove(&n.id),
+                    reading:reading.remove(&n.id),
                     view_control:view_controls::is_view(n.kind).then(||serde_json::json!({"progress":n.view_control.motion.value(self.time),"pane":n.view_control.pane,"translation":n.view_control.translation})),
                     command: command_snapshots.remove(&n.id),
                     navigation_control: navigation_control_snapshots.remove(&n.id),
@@ -1575,6 +1680,7 @@ impl Scene {
                     enabled: n.enabled,
                     visible: n.visible,
                     focused: self.focused == Some(n.id),
+                    composition_depth:n.presentation.translation_z+n.effects.depth(self.time),
                     tab_stop: n.props.is_tab_stop
                         &&(!command_managed.contains(&n.id)||command_stops.contains(&n.id))
                         &&(!menu_managed.contains(&n.id)||menu_stops.contains(&n.id))
@@ -1582,6 +1688,7 @@ impl Scene {
                     props: {
                         let mut p = n.props.clone();
                         p.nav_controls.items = Default::default();
+                        if let Some(table)=p.table.as_mut(){table.items=Default::default();table.selected_keys.clear();table.selected_cells.clear();}
                         if collections::is_view(n.kind) || matches!(n.kind, NodeKind::ItemsRepeater | NodeKind::ComboBox | NodeKind::AutoSuggestBox) {
                             p.collection_items = Default::default();
                             p.selected_keys = Default::default();
@@ -1589,8 +1696,8 @@ impl Scene {
                         p
                     },
                     text: n.text.clone(),
-                    template_part: crate::selection::is_button(n.kind)
-                        .then_some("ContentPresenter"),
+                    template_part: if !n.navigation_template.name.is_empty(){Some(n.navigation_template.name.clone())}else{crate::selection::is_button(n.kind).then_some("ContentPresenter".into())},
+                    navigation_owner:n.navigation_template.owner,
                     layout_version: n.layout_version,
                     paint_version: n.paint_version,
                     navigation: nav,
@@ -1627,7 +1734,7 @@ impl Scene {
                         },
                     ),
                     viewbox: (n.kind == NodeKind::Viewbox).then(|| n.viewbox.clone()),
-                    overlay: overlays::is_overlay(n.kind)
+                    overlay: (overlays::is_overlay(n.kind)&&(n.navigation_template.owner.is_none()||n.kind==NodeKind::ToolTip))
                         .then(|| n.overlay.snapshot(n.kind, n.rect, self.time)),
                     slider: slider_snapshots.get(&n.id).map(|s| slider::SliderSnapshot {
                         track: s.track,
@@ -1678,8 +1785,10 @@ impl Scene {
             })
             .min_by(f64::total_cmp);
         Snapshot {
+            unresolved_element_references:self.unresolved_element_references.clone(),
             background_scroll_root: self.background_scroll_root(),
             presentation_height: self.presentation_height(),
+            surface_bounds: self.surface_bounds(),
             next_frame_at: next_frame_at
                 .into_iter()
                 .chain(self.nodes.values().filter_map(|n|n.nav.as_ref().and_then(|nav|nav.next_frame_at())))
@@ -1708,6 +1817,7 @@ impl Scene {
             .values()
             .flat_map(|n| {
                 let mut urls = compact_controls::image_sources(n);
+                if let Some(doc)=&n.props.document {urls.extend(doc.runs.iter().filter_map(|r|r.image.as_ref().map(|i|i.source.clone())));}
                 if matches!(n.kind,NodeKind::FlipView|NodeKind::TabView) {
                     urls.extend(n.nav_controls.parts.iter().filter(|p|p.role=="page"||p.role=="tab").filter_map(|p|usize::try_from(p.index).ok().and_then(|i|n.props.nav_controls.items.get(i))).filter(|i|!i.image_source.is_empty()).map(|i|i.image_source.clone()));
                 }
@@ -1728,10 +1838,19 @@ impl Scene {
         self.invalidate(self.root, true);
         Ok(())
     }
+    fn context_flyout_owner(&self, id:u32)->Option<(u32,u32)> {
+        let mut at=Some(id);
+        while let Some(owner)=at {
+            let node=self.nodes.get(&owner)?;
+            if let Some(surface)=node.props.context_flyout_target.filter(|id|self.nodes.contains_key(id)){return Some((owner,surface));}
+            at=node.parent;
+        }
+        None
+    }
     fn emit(&mut self, id: u32, kind: EventKind) {
         self.events.push(SceneEvent {
             collection: None,
-            payload: None,
+            payload: (self.nodes[&id].kind==NodeKind::RichEditBox && kind==EventKind::TextChanged).then(||serde_json::json!({"document":self.nodes[&id].props.document})),
             composed_processed: false, command_processed:false, menu_processed:false, reading_processed:false,
             selected_keys: (collections::is_view(self.nodes[&id].kind)
                 && kind == EventKind::SelectionChanged)
@@ -1754,7 +1873,7 @@ impl Scene {
             selected_index: (kind == EventKind::SelectionChanged
                 && self.nodes[&id].kind == NodeKind::RadioButtons)
                 .then_some(self.nodes[&id].props.selected_index),
-            text: (self.nodes[&id].kind == NodeKind::TextBox && kind == EventKind::TextChanged)
+            text: (matches!(self.nodes[&id].kind, NodeKind::TextBox | NodeKind::RichEditBox) && kind == EventKind::TextChanged)
                 .then(|| self.nodes[&id].props.text.clone()),
             selection_start: text_edit::is_editor(self.nodes[&id].kind)
                 .then_some(self.nodes[&id].props.selection_start),
@@ -1766,6 +1885,19 @@ impl Scene {
                     .snapshot(&self.nodes[&id].props, self.time)
             }),
         });
+        // UIElement.ContextFlyout: opening belongs to the Rust input tree,
+        // including routed requests from descendants and keyboard invocation.
+        // Do not emit another event here: callers enrich the just-added event.
+        if kind==EventKind::ContextRequested && self.effective_enabled(id) {
+            if let Some((owner,surface))=self.context_flyout_owner(id) {
+                let point=(!self.menu_input_narrow).then(||self.pointer.and_then(|(x,y)|self.nodes[&owner].world.inverse().map(|m|{let (x,y)=m.point(x,y);[x,y]}))).flatten();
+                let node=self.nodes.get_mut(&surface).unwrap();
+                node.props.placement_target=Some(owner);
+                node.props.placement_position=point;
+                node.props.is_open=true;
+                self.invalidate(surface,true);
+            }
+        }
     }
     fn effective_enabled(&self, id: u32) -> bool {
         let mut at = Some(id);
@@ -1774,7 +1906,7 @@ impl Scene {
                 return false;
             };
             if n.parent.is_some_and(|p|!self.content_child_enabled(p,id)){return false;}
-            if view_controls::props(n).command.is_some_and(|c|!self.command_can_execute(c,&mut vec![]).unwrap_or(false)) || n.parent.is_some_and(|parent|!self.view_child_enabled(parent,id)) {return false;}
+            if n.props.view_controls.as_ref().and_then(|p|p.command).is_some_and(|c|!self.command_can_execute(c,&mut vec![]).unwrap_or(false)) || n.parent.is_some_and(|parent|!self.view_child_enabled(parent,id)) {return false;}
             if !n.props.enabled
                 || !n.props.visible
                 || n.kind == NodeKind::ToolTip

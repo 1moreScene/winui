@@ -78,12 +78,15 @@ impl Scene {
         } else {
             let length = (n.rect.width - size).max(0.);
             let x = round(f * length);
-            let y = round(header + (n.rect.height - header - thickness) / 2.);
+            // HorizontalTemplate places its 32-DIP track row at the top, even
+            // when the Slider itself stretches (native radius option: H=216).
+            let row_height = overlays::metric("SliderHorizontalHeight", 32.).min((n.rect.height-header).max(0.));
+            let y = round(header + (row_height - thickness) / 2.);
             (
                 Rect::new(0., y, n.rect.width, round(thickness)),
                 Rect::new(
                     x,
-                    round(header + (n.rect.height - header - size) / 2.),
+                    round(header + (row_height - size) / 2.),
                     size,
                     size,
                 ),
@@ -273,6 +276,18 @@ impl Scene {
             color: color(&p.foreground, &foreground),
             radius: 2.,
         });
+        // Slider's default TickPlacement is Inline. The same source-traced
+        // TickBar algorithm supplies physical-pixel spacing and decimation.
+        let ticks=super::scroll_primitives::tick_marks(
+            if vertical {n.rect.height - if p.header.is_empty(){0.}else{n.header_text.height+4.}} else {n.rect.width},
+            if vertical {v.track.width} else {v.track.height},
+            if vertical {t.height} else {t.width},p.minimum,p.maximum,p.tick_frequency,
+            vertical,reverse,self.dpr,
+        );
+        for mut tick in ticks {
+            tick.x+=v.track.x;tick.y+=v.track.y;
+            out.push(Draw::Fill{rect:tick,color:overlays::brush(n.theme,"SliderInlineTickBarFill").solid_color(),radius:0.});
+        }
         // Template Border Margin=-2 extends the 18-DIP hit thumb to 22 DIPs.
         let outer = Rect::new(t.x - 2., t.y - 2., t.width + 4., t.height + 4.);
         out.push(Draw::Fill {
