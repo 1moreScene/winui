@@ -99,3 +99,19 @@ test('the same touch path opens a combo editor and scrolls a time picker wheel',
  await page.locator('#table-editing').getByRole('button',{name:'Commit edit',exact:true}).tap();
  await expect.poll(()=>page.evaluate(()=>window.tableViewControls.editing.items[0].start)).toBe(481);
 });
+test('touch expands and collapses TableView groups without treating a pan as a toggle',async({page})=>{
+ const section=page.locator('#table-grouping');
+ const collapse=section.getByRole('button',{name:'Collapse department: Design',exact:true});
+ await collapse.scrollIntoViewIfNeeded();const box=(await collapse.boundingBox())!;
+ await gesture(page,box.x+box.width/2,box.y+box.height/2,0,0,true);
+ await expect.poll(()=>page.evaluate(()=>window.tableViewControls.grouping.tableSnapshot!.viewKeys.length)).toBe(24);
+ await collapse.tap();await expect.poll(()=>page.evaluate(()=>window.tableViewControls.grouping.tableSnapshot!.viewKeys.length)).toBe(18);
+ await section.getByRole('button',{name:'Expand department: Design',exact:true}).tap();
+ await expect.poll(()=>page.evaluate(()=>window.tableViewControls.grouping.tableSnapshot!.viewKeys.length)).toBe(24);
+ await section.getByRole('button',{name:'Collapse all groups',exact:true}).tap();
+ await expect.poll(()=>page.evaluate(()=>window.tableViewControls.grouping.tableSnapshot!.viewKeys.length)).toBe(0);
+ await section.getByRole('button',{name:'Expand department: Design',exact:true}).tap();
+ await expect.poll(()=>page.evaluate(()=>window.tableViewControls.grouping.tableSnapshot!.viewKeys.length)).toBe(6);
+ await section.getByRole('button',{name:'Expand all groups',exact:true}).tap();
+ await expect.poll(()=>page.evaluate(()=>window.tableViewControls.grouping.tableSnapshot!.viewKeys.length)).toBe(24);
+});

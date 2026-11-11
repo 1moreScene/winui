@@ -41,6 +41,26 @@ test('ItemsRepeater touch scrolling and cancelled taps do not activate a connect
  await section.getByRole('button',{name:'Go Back',exact:true}).tap();
  await expect.poll(offset).toBeCloseTo(before,0);
 });
+test('connected navigation stays usable before its destination image has loaded',async({page})=>{
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
+ let release!:()=>void;const images=new Promise<void>(resolve=>{release=resolve;});
+ await page.route('**/official/**',async route=>{await images;await route.continue();});
+ try{
+  await page.goto('./#connected-animation',{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.motionScenes?.['connected-3']);
+  const section=page.locator('#connected-animation-0');
+  await section.getByRole('option',{name:'Item 1',exact:true}).tap();
+  await expect(section.getByRole('button',{name:'Go Back',exact:true})).toBeVisible();
+  await section.getByRole('button',{name:'Go Back',exact:true}).tap();
+  await expect(section.getByRole('option',{name:'Item 1',exact:true})).toBeVisible();
+  await section.getByRole('option',{name:'Item 1',exact:true}).tap();
+  await expect(section.getByRole('button',{name:'Go Back',exact:true})).toBeVisible();
+  release();
+  await expect.poll(()=>page.evaluate(()=>window.motionScenes['connected-0'].snapshot.nodes.some(n=>n.kind==='Image'&&n.visible&&n.rect.width>0&&n.rect.height>0))).toBe(true);
+  await section.getByRole('button',{name:'Go Back',exact:true}).tap();
+  await expect(section.getByRole('option',{name:'Item 1',exact:true})).toBeVisible();
+  expect(errors).toEqual([]);
+ }finally{release();}
+});
 test('Top NavigationView overflow paints over content, accepts taps and dismisses',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('./#navigation-view');await page.waitForFunction(()=>window.gallery?.views?.[3]);
@@ -64,4 +84,12 @@ test('Top NavigationView overflow paints over content, accepts taps and dismisse
   await expect.poll(()=>page.evaluate(i=>window.gallery.views[i].snapshot.overflowOpen,index)).toBe(false);
  }
  expect(errors).toEqual([]);
+});
+test('NavigationView hierarchy groups expand and collapse with touch',async({page})=>{
+ await page.goto('./#navigation-view');await page.waitForFunction(()=>window.gallery?.views?.[6]);
+ const section=page.locator('#example-6'),account=section.getByRole('button',{name:'Account',exact:true});
+ await account.tap();await expect.poll(()=>page.evaluate(()=>window.gallery.views[6].snapshot.expandedIds.includes('page2'))).toBe(true);
+ await expect(section.getByRole('button',{name:'Mail',exact:true})).toBeVisible();
+ await account.tap();await expect.poll(()=>page.evaluate(()=>window.gallery.views[6].snapshot.expandedIds.includes('page2'))).toBe(false);
+ await expect(section.getByRole('button',{name:'Mail',exact:true})).toHaveCount(0);
 });

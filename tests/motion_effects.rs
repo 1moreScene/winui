@@ -282,6 +282,30 @@ fn connected_capture_survives_source_disposal_is_single_use_and_times_out() {
 }
 
 #[test]
+fn connected_start_waits_for_image_layout_and_can_be_cancelled_expired_or_removed() {
+    for outcome in ["loaded","cancelled","expired","removed","unready-source"] {
+        let mut s=scene();
+        let source=s.create(s.root,NodeKind::Grid,json!({"width":50,"height":50})).unwrap();
+        frame(&mut s,0.);
+        command(&mut s,source,json!({"command":"prepareConnected","key":"late-image"})).unwrap();
+        let target=s.create(s.root,NodeKind::Image,json!({"source":"late-image.png","horizontalAlignment":"Left","verticalAlignment":"Top"})).unwrap();
+        frame(&mut s,10.);
+        assert!(s.nodes[&target].rect.width<=0.||s.nodes[&target].rect.height<=0.);
+        assert!(command(&mut s,target,json!({"command":"startConnected","key":"late-image"})).unwrap());
+        assert!(!s.snapshot().animating);
+        if outcome=="cancelled" {command(&mut s,target,json!({"command":"cancelConnected","key":"late-image"})).unwrap();}
+        if outcome=="unready-source" {assert!(!command(&mut s,target,json!({"command":"prepareConnected","key":"late-image"})).unwrap());}
+        if outcome=="removed" {s.destroy(target).unwrap();frame(&mut s,100.);continue;}
+        s.images.insert("late-image.png".into(),[200.,100.]);s.invalidate(s.root,true);
+        frame(&mut s,if outcome=="expired"{2100.}else{100.});
+        assert_eq!(s.snapshot().animating,outcome=="loaded");
+        frame(&mut s,2500.);
+        let completed=s.events.iter().filter(|e|e.target==target&&e.kind==EventKind::ConnectedAnimationCompleted).count();
+        assert_eq!(completed,usize::from(outcome=="loaded"));
+    }
+}
+
+#[test]
 fn resource_background_theme_change_animates_without_recoloring_border_or_foreground() {
     let mut s = scene();
     let n=s.create(s.root,NodeKind::Border,json!({"width":100,"height":100,"background":{"resource":"SolidBackgroundFillColorBaseBrush"},"borderBrush":"#ff0000","borderThickness":[2,2,2,2],"theme":"Light","motion":{"backgroundDuration":150}})).unwrap();

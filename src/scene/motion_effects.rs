@@ -308,7 +308,10 @@ struct PreparedConnection {
     prepared: f64,
     commands: Vec<Draw>,
     node: u32,
+    pending: Option<PendingConnection>,
 }
+#[derive(Clone, Debug)]
+struct PendingConnection {target:u32,configuration:ConnectedAnimationConfiguration,coordinated:Vec<u32>}
 #[derive(Clone, Debug)]
 pub(super) struct Ghost {
     pub parent: u32,
@@ -547,7 +550,10 @@ impl Scene {
                 }
                 let n = &self.nodes[&node];
                 if n.rect.width <= 0. || n.rect.height <= 0. || !n.visible {
-                    return Err("connected source must be laid out and visible".into());
+                    // Navigation must remain usable when the user returns
+                    // before an asynchronously loaded image can be captured.
+                    self.motion_runtime.prepared.remove(&key);
+                    return Ok(false);
                 }
                 let (world, size, parent) = (n.world, [n.rect.width, n.rect.height], n.parent);
                 let inverse = world
@@ -573,19 +579,28 @@ impl Scene {
                         prepared: self.time,
                         commands,
                         node,
+                        pending: None,
                     },
                 );
             }
             MotionCommand::StartConnected { key, configuration, coordinated } => {
+                let Some(prepared)=self.motion_runtime.prepared.get(&key) else{return Ok(false);};
+                if self.time-prepared.prepared>=2000. {self.motion_runtime.prepared.remove(&key);return Ok(false);}
                 let mut seen = BTreeSet::new();
                 for id in &coordinated {
-                    let element = self.get(*id)?;
-                    if *id == node || !seen.insert(*id) || element.rect.width <= 0.
-                        || element.rect.height <= 0. || !element.visible
-                        || element.world.inverse().is_none()
-                    {
-                        return Err("coordinated elements must be distinct, laid out and visible".into());
+                    self.get(*id)?;
+                    if *id == node || !seen.insert(*id) {
+                        return Err("coordinated elements must be distinct".into());
                     }
+                }
+                // Native TryStart records a destination before the compositor
+                // initializes it. React mount callbacks and asynchronously
+                // loaded images can precede their first nonzero arrangement.
+                let ready=std::iter::once(&node).chain(coordinated.iter()).all(|id|self.nodes.get(id)
+                    .is_some_and(|n|n.visible&&n.rect.width>0.&&n.rect.height>0.&&n.world.inverse().is_some()));
+                if !ready {
+                    self.motion_runtime.prepared.get_mut(&key).unwrap().pending=Some(PendingConnection{target:node,configuration,coordinated});
+                    self.invalidate(node,false);return Ok(true);
                 }
                 let n = &self.nodes[&node];
                 let previous_connection = n
@@ -769,6 +784,19 @@ impl Scene {
     }
     /// Runs after layout. Expressions read final arranged geometry and evaluate in dependency order.
     pub(super) fn sync_motion_effects(&mut self) {
+        let nodes=&self.nodes;let now=self.time;
+        self.motion_runtime.prepared.retain(|_,p|now-p.prepared<2000.&&p.pending.as_ref().is_none_or(|start|
+            nodes.contains_key(&start.target)&&start.coordinated.iter().all(|id|nodes.contains_key(id))));
+        let ready=self.motion_runtime.prepared.iter().filter_map(|(key,p)|{
+            let start=p.pending.as_ref()?;
+            std::iter::once(&start.target).chain(start.coordinated.iter()).all(|id|nodes.get(id)
+                .is_some_and(|n|n.visible&&n.rect.width>0.&&n.rect.height>0.&&n.world.inverse().is_some()))
+                .then(||(key.clone(),start.clone()))
+        }).collect::<Vec<_>>();
+        for(key,start)in ready {
+            self.motion_runtime.prepared.get_mut(&key).unwrap().pending=None;
+            let _=self.motion_command(start.target,MotionCommand::StartConnected{key,configuration:start.configuration,coordinated:start.coordinated});
+        }
         let ids = self.nodes.keys().copied().collect::<Vec<_>>();
         let mut completed_connections = Vec::new();
         let mut stagger: BTreeMap<u32, usize> = BTreeMap::new();

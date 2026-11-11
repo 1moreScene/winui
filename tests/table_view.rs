@@ -1469,6 +1469,19 @@ fn scene(count: usize) -> (Scene, u32) {
     s.layout(&mut Measure);
     (s, id)
 }
+#[test]
+fn touch_group_buttons_expand_and_collapse_without_selecting_cells() {
+    let(mut s,id)=scene(20);
+    s.update(vec![Update{id,patch:json!({"table":{"groups":[{"column":"group"}],"defaultGroupState":"Expanded"}})}]).unwrap();
+    s.layout(&mut Measure);
+    for(label,count)in [("Collapse group: A",10),("Expand group: A",20)] {
+        let button=s.nodes.values().find(|n|n.props.accessible_name.as_deref()==Some(label)).unwrap();
+        let(x,y)=button.world.point(button.rect.width/2.,button.rect.height/2.);
+        for phase in ["down","up"] {s.input(Input::Touch{pointer:17,x,y,phase:phase.into()},s.time+20.).unwrap();s.layout(&mut Measure);}
+        let table=state(&mut s,id);assert_eq!(table["viewKeys"].as_array().unwrap().len(),count);
+        assert!(table["currentCell"].is_null());
+    }
+}
 fn drive(s: &mut Scene, id: u32, action: &str, data: Value) {
     s.input(
         serde_json::from_value::<Input>(

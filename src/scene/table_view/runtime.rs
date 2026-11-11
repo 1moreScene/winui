@@ -2081,6 +2081,9 @@ impl Scene {
             .find(|s| self.descendant_of(target, s.id))
             .cloned()
     }
+    pub(in crate::scene) fn table_cell_owns_touch(&self,target:u32)->bool {
+        self.table_owner(target).is_some_and(|id|self.table_slot(id,target).is_some())
+    }
     pub(in crate::scene) fn table_pointer_cursor(&self, target: u32) -> Option<&'static str> {
         let id = self.table_owner(target)?;
         let s = &self.nodes[&id].table;

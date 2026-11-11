@@ -3070,12 +3070,16 @@ export class SceneNode<
   bindExpressions(expressions:ExpressionBindings){this.scene.bindExpressions(this,expressions);}
   /** Remove bindings and restore their logical property values. */
   clearExpressions(){this.scene.motionCommand(this,{command:'clearExpressions'});}
-  /** Capture the current Rust visual. The prepared connection expires after 2000ms. */
+  /** Capture the current Rust visual. The prepared connection expires after 2000ms.
+   * A source without visible layout produces an inactive connection so navigation
+   * can continue while images or templates are still loading. */
   prepareConnectedAnimation(key:string){
     this.scene.motionCommand(this,{command:'prepareConnected',key});
     const scene=this.scene;
     return {
-      /** Start on a laid-out target in the same scene. Optional coordinated elements
+      /** Start on a target in the same scene. Rust waits for newly mounted targets
+       * and coordinated elements to finish layout within the prepared lifetime.
+       * Optional coordinated elements
        * share the connection's scale, offset, fade and timing. Completion emits
        * EventKind.ConnectedAnimationCompleted on the target with payload.key.
        * Returns false when expired or consumed. */

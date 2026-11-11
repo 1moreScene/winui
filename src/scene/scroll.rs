@@ -678,12 +678,14 @@ impl Scene {
         let tap_target = if phase == "down" && self.nodes[&id].scroll.touches.is_empty() {
             self.hit(x,y).filter(|target| {
                 let n=&self.nodes[target];
-                if n.kind!=NodeKind::Grid || !n.props.is_tab_stop {return false;}
+                let button=crate::selection::is_button(n.kind);
+                if !button && (n.kind!=NodeKind::Grid || !n.props.is_tab_stop) {return false;}
+                if self.table_cell_owns_touch(*target) {return false;}
                 // CollectionView owns item taps. Focusable ItemsRepeater
                 // templates and other panels keep their own Click semantics.
                 let mut at=n.parent;
                 while let Some(parent)=at {
-                    if self.nodes[&parent].kind==NodeKind::CollectionItem {return false;}
+                    if !button && self.nodes[&parent].kind==NodeKind::CollectionItem {return false;}
                     if parent==id {break;}
                     at=self.nodes[&parent].parent;
                 }
