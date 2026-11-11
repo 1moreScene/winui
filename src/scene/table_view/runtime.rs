@@ -2904,6 +2904,31 @@ impl Scene {
             phase,
         } = input
         {
+            if !x.is_finite() || !y.is_finite() {
+                return Err("invalid touch position".into());
+            }
+            // An editor is inside the table's ScrollViewer, so the browser
+            // submits Touch rather than Down/Up even for its template buttons.
+            // Recognize a tap separately from cell selection; leave pans and
+            // picker wheels on their existing Rust scrolling paths.
+            let editor_touches = self.nodes.values()
+                .filter_map(|n| n.table.editor_touch.map(|touch| (n.id, touch)))
+                .collect::<Vec<_>>();
+            for (id, (pid, target, origin)) in editor_touches {
+                if phase == "down" || (pid == *pointer &&
+                    (phase == "cancel" || (*x-origin[0]).abs()+(*y-origin[1]).abs()>8.)) {
+                    self.nodes.get_mut(&id).unwrap().table.editor_touch = None;
+                } else if pid == *pointer && phase == "up" {
+                    self.nodes.get_mut(&id).unwrap().table.editor_touch = None;
+                    let editor = self.nodes[&id].table.editor;
+                    if editor.is_some_and(|root| self.nodes.contains_key(&root)
+                        && self.nodes.contains_key(&target) && self.descendant_of(target, root))
+                        && self.hit(*x, *y) == Some(target) {
+                        self.input(Input::Down {pointer:*pointer, x:*x, y:*y}, self.time)?;
+                        self.input(Input::Up {pointer:*pointer, x:*x, y:*y}, self.time)?;
+                    }
+                }
+            }
             if phase == "cancel" {
                 for n in self.nodes.values_mut() {
                     if n.table
@@ -2921,6 +2946,17 @@ impl Scene {
                 if let Some(target) = self.hit(*x, *y) {
                     if let Some(id) = self.table_owner(target) {
                         if let Some(slot) = self.table_slot(id, target) {
+                            if slot.editing {
+                                let multi_touch = self.nodes.values().any(|n|
+                                    n.scroll.touches.keys().any(|p| p != pointer));
+                                if !multi_touch && crate::selection::is_button(self.nodes[&target].kind)
+                                    && self.nodes[&id].table.editor.is_some_and(|root|self.descendant_of(target,root)) {
+                                    self.nodes.get_mut(&id).unwrap().table.editor_touch = Some((*pointer,target,[*x,*y]));
+                                }
+                                // Tapping an active editor must not double-tap
+                                // the containing cell and recreate that editor.
+                                return Ok(false);
+                            }
                             if slot.role != "details" {
                                 let column = if slot.column.is_empty() {
                                     self.nodes[&id]
@@ -3244,6 +3280,7 @@ impl Scene {
                 n.table.select_drag = None;
                 n.table.auto_scroll_next = None;
                 n.table.touch_candidate = None;
+                n.table.editor_touch = None;
             }
             return Ok(false);
         }

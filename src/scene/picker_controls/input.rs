@@ -576,7 +576,11 @@ impl Scene {
     fn read_picker_wheel(&mut self, id: u32, role: &str) {
         let wheel = self.nodes[&id].picker.parts[role];
         let n = &self.nodes[&wheel];
-        let active = n.scroll.active(self.time);
+        // LoopingSelector::OnViewChanged settles only a final view. A direct
+        // finger/scrollbar drag is intermediate even without an animation.
+        let active = n.scroll.active(self.time)
+            || !n.scroll.touches.is_empty()
+            || n.scroll.drag.is_some();
         let Some(values) = self.nodes[&id].picker.wheel_values.get(role).cloned() else {
             return;
         };

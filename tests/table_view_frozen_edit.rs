@@ -48,6 +48,68 @@ fn begin(s: &mut Scene, id: u32, row: &str, column: &str) {
     s.layout(&mut Measure);
     s.layout(&mut Measure);
 }
+fn picker_editor(kind: TableViewColumnKind) -> (Scene, u32, u32) {
+    let mut s = Scene::new(Theme::Light, true);
+    s.resize(390., 140., 2.).unwrap();
+    s.popup_viewport = Some(winui_wasm::model::Rect::new(0., 0., 390., 844.));
+    let value = if kind == TableViewColumnKind::Date { json!("2024-01-01") } else { json!(480) };
+    let id = s.create(s.root, NodeKind::TableView, json!({"height":140,"table":{
+        "autoGenerateColumns":false,"frozenColumnCount":0,
+        "items":[{"id":"r0","values":{"value":value}}],
+        "columns":[{"key":"value","field":"value","kind":kind,"width":{"unit":"Pixel","value":200}}]
+    }})).unwrap();
+    s.layout(&mut Measure);
+    begin(&mut s, id, "r0", "value");
+    let editor = s.nodes.values().find(|n| matches!(n.kind,NodeKind::CalendarDatePicker|NodeKind::TimePicker)).unwrap().id;
+    (s,id,editor)
+}
+fn touch(s: &mut Scene, target: u32, phases: &[(&str, f64)]) {
+    let n = &s.nodes[&target];
+    let (x,y) = n.world.point(n.rect.width/2.,n.rect.height/2.);
+    for (phase,dx) in phases {
+        s.input(Input::Touch{pointer:7,x:x+dx,y,phase:(*phase).into()},s.time+10.).unwrap();
+        s.layout(&mut Measure);
+    }
+}
+#[test]
+fn touch_operates_picker_editor_buttons_and_calendar_outside_the_table_viewport() {
+    for kind in [TableViewColumnKind::Date,TableViewColumnKind::Time] {
+        let (mut s,id,editor) = picker_editor(kind);
+        let input = s.nodes[&editor].picker.parts["InputButton"];
+        touch(&mut s,input,&[("down",0.),("up",0.)]);
+        assert!(s.nodes[&editor].props.is_open,"{kind:?} must open on touch");
+        if kind == TableViewColumnKind::Date {
+            let calendar = s.nodes[&editor].picker.parts["Calendar"];
+            let next = s.nodes[&calendar].picker.parts["NextButton"];
+            touch(&mut s,next,&[("down",0.),("up",0.)]);
+            let day = s.nodes[&calendar].picker.cells.iter().find(|c|c.date=="2024-02-15").unwrap().node;
+            assert!(s.nodes[&day].world.point(0.,0.).1>140.,"Exercise a floating date outside the table scene");
+            touch(&mut s,day,&[("down",0.),("up",0.)]);
+            assert_eq!(s.nodes[&editor].props.picker_controls.as_ref().unwrap().date.as_deref(),Some("2024-02-15"));
+        } else {
+            let accept = s.nodes[&editor].picker.parts["AcceptButton"];
+            touch(&mut s,accept,&[("down",0.),("up",0.)]);
+        }
+        assert!(!s.nodes[&editor].props.is_open);
+        assert_eq!(s.events.iter().filter(|e|e.target==id&&e.kind==EventKind::BeginningEdit).count(),1,"Editor gestures must not restart cell editing");
+    }
+}
+#[test]
+fn editor_touch_pan_cancellation_and_removal_do_not_activate_the_picker() {
+    use winui_wasm::scene::Update;
+    let (mut s,id,editor) = picker_editor(TableViewColumnKind::Date);
+    let input = s.nodes[&editor].picker.parts["InputButton"];
+    for phases in [vec![("down",0.),("cancel",0.)],vec![("down",0.),("move",-30.),("up",0.)]] {
+        touch(&mut s,input,&phases);
+        assert!(!s.nodes[&editor].props.is_open);
+    }
+    touch(&mut s,input,&[("down",0.)]);
+    s.update(vec![Update{id,patch:json!({"table":{"isReadOnly":true}})}]).unwrap();
+    s.layout(&mut Measure);
+    s.input(Input::Touch{pointer:7,x:100.,y:50.,phase:"up".into()},s.time+10.).unwrap();
+    s.layout(&mut Measure);
+    assert!(!s.nodes.values().any(|n|n.kind==NodeKind::CalendarDatePicker));
+}
 #[test]
 fn editing_at_the_right_edge_keeps_horizontal_offset_and_real_focus() {
     let (mut s, id, body) = setup();

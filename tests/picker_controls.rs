@@ -27,6 +27,33 @@ fn frame(s: &mut Scene) {
     }
 }
 #[test]
+fn picker_wheels_follow_small_touch_moves_before_snapping_on_release() {
+    for kind in [NodeKind::DatePicker, NodeKind::TimePicker] {
+        let mut s = scene();
+        let id = s.create(s.root, kind, json!({"width":296,"isOpen":true,
+            "pickerControls":{"date":"2026-11-10","time":480,"minDate":"2020-01-01","maxDate":"2030-12-31"}})).unwrap();
+        frame(&mut s);
+        let wheel = s.nodes[&id].picker.parts["SecondWheel"];
+        let n = &s.nodes[&wheel];
+        let (x,y) = n.world.point(n.rect.width/2.,n.rect.height/2.);
+        let initial = n.scroll.offsets(s.time)[1];
+        for step in 0..=8 {
+            s.input(Input::Touch{pointer:11,x,y:y-step as f64*5.,phase:if step==0{"down"}else{"move"}.into()},s.time+20.).unwrap();
+            s.layout(&mut Measure);
+            assert!((s.nodes[&wheel].scroll.offsets(s.time)[1]-initial-step as f64*5.).abs()<0.01,
+                "{kind:?} must follow the finger instead of snapping back between moves");
+        }
+        s.input(Input::Touch{pointer:11,x,y:y-40.,phase:"up".into()},s.time+20.).unwrap();
+        s.layout(&mut Measure);
+        let accept = s.nodes[&id].picker.parts["AcceptButton"];
+        s.input(Input::Invoke{id:accept},s.time+500.).unwrap();
+        s.layout(&mut Measure);
+        let value=s.nodes[&id].props.picker_controls.as_ref().unwrap();
+        if kind == NodeKind::TimePicker {assert_eq!(value.time,Some(481));}
+        else {assert_eq!(value.date.as_deref(),Some("2026-11-11"));}
+    }
+}
+#[test]
 fn chinese_week_start_follows_language_and_preserves_explicit_overrides() {
     fn assert_week(s: &Scene, id: u32, first: u8) {
         let n = &s.nodes[&id];

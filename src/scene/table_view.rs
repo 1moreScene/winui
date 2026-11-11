@@ -832,6 +832,7 @@ pub struct TableState {
     shift: bool,
     last_tap: Option<(Cell, f64)>,
     touch_candidate: Option<(i32, Cell, bool, [f64; 2], NodeKind)>,
+    editor_touch: Option<(i32, u32, [f64; 2])>,
     drag: Option<(i32, usize, f64, f64, bool)>,
     drag_ghost: Option<(f64, std::sync::Arc<Vec<crate::render::Draw>>)>,
     row_drag: Option<(i32, String, f64)>,

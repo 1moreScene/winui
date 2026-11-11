@@ -8,7 +8,7 @@
 
 1. 安装锁定版本的 Node、Python、Rust 和 wasm-bindgen。
 2. 校验仓库内的 MIT 资源、许可证、枚举与 SDK 实现边界，再从 Rust 源码编译 WASM。
-3. 安装 SDK/Gallery 的锁定依赖，运行手机视口下的导航触屏滚动回归。
+3. 安装 SDK/Gallery 的锁定依赖，运行手机视口下的导航触屏滚动与 TableView 编辑器交互回归。
 4. 构建 `/winui/` 子路径的 Gallery，上传 Pages artifact 并部署。
 
 仓库 Pages 的 Source 使用 **GitHub Actions**，`github-pages` 环境允许 `main` 部署。工作流使用内置 `GITHUB_TOKEN` 和 OIDC，无需额外配置个人访问令牌。构建或测试失败时不会进入部署任务；并发推送会取消较旧的工作流，优先发布最新提交。

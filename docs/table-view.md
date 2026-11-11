@@ -201,6 +201,12 @@ npm run build
 npx playwright test -c playwright.table-view.config.ts
 ```
 
+手机上双击单元格进入编辑。日期、时间、下拉选择以及自定义编辑器中的按钮复用 Rust 的点击处理；
+触屏滑动和取消手势不会重新开始单元格编辑。日期日历的翻页、选日及超出表格视口的浮层交互
+仍由 SDK 处理。日期／时间滚轮在拖动期间跟随手指，结束手势后再吸附到选项。
+移动端回归使用 `npx playwright test -c playwright.table-view-touch.config.ts`（在 `gallery` 目录运行），
+覆盖日期选择和提交、取消／滑动、下拉编辑器和时间滚轮；Pages 工作流也执行这些检查。
+
 测试覆盖数据视图、CSV 转义、选择及清除语义、可取消排序与编辑、粘贴原子性、源替换、
 冻结列、大数据节点上界和销毁，以及实际浏览器的输入、筛选弹层、模板、导出、滚轮与键盘。
 结果和截图位于 `out/table-view-*`。`table-view-visual-differences.json` 分区域记录浅/深主题
