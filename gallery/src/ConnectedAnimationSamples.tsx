@@ -56,7 +56,7 @@ export function ConnectedCollection({shared,repeater=false}:{shared:Shared;repea
     <Preview {...shared} onReady={scene=>remember(key,scene)}>
       <StackPanel>
         {repeater&&<TextBlock text="Unlike ListView and GridView, ItemsRepeater does not have built-in ConnectedAnimation methods. Use ConnectedAnimationService.PrepareToAnimate() directly, and manually find the target element in the visual tree. Click an item to navigate with a connected animation." wrap margin={[0,0,0,12]}/>}
-        <Grid height={repeater?400:750} minWidth={500}>
+        <Grid height={repeater?400:750}>
           <Grid visible={selected===null}>
             {repeater?<ScrollViewer onReady={node=>{scroll.current=node;}}><ItemsRepeater items={items} isKeyboardNavigationEnabled layout={new UniformGridLayout({minItemWidth:150,minItemHeight:120,minColumnSpacing:8,minRowSpacing:8})} renderItem={item=><Grid cornerRadius={4} clip isTabStop accessibleName={item.text} onClick={()=>navigate(item)} onReady={node=>tiles.current.set(item.id,node)}>{picture(item)}<Border verticalAlignment={V.Bottom} padding={[8,4,8,4]} acrylicResource="AcrylicBackgroundFillColorBaseBrush"><TextBlock text={item.text} {...caption}/></Border></Grid>}/></ScrollViewer>:
               <ListView items={items.slice(0,8)} selectionMode={ListViewSelectionMode.None} isItemClickEnabled onItemClick={e=>navigate(e.item)} onReady={node=>{list.current=node;}} renderItem={item=><Grid margin={[0,12,0,12]} accessibleName={item.text} columns={[auto,star]}>{picture(item)}<StackPanel column={1} margin={[12,0,0,0]}><TextBlock text={item.text} {...subtitle} margin={[0,0,0,6]}/><Counts item={item}/><StackPanel orientation={Orientation.Horizontal}><TextBlock text={item.description} {...body} maxWidth={500} maxHeight={40} fontStyle={FontStyle.Italic} margin={[0,8,0,0]} wrap trimming={TextTrimming.CharacterEllipsis}/></StackPanel></StackPanel></Grid>}/>}
@@ -103,10 +103,10 @@ export function ConnectedCards({shared}:{shared:Shared}){
   }
   return <Example name="connected-card" id="connected-animation-1" kind="ConnectedAnimation" index={1} source={source}>
     <Preview {...shared} onReady={scene=>remember('connected-1',scene)}>
-      <Grid minWidth={500} minHeight={300}>
+      <Grid minHeight={300}>
         <GridView items={items} isHitTestVisible={!smoke} maxWidth={1400} minHeight={300} maxHeight={700} horizontalAlignment={H.Center} itemWidth={158} itemHeight={118} itemContainerStyle={{margin:[4,4,4,4],padding:[0,0,0,0]}} isItemClickEnabled onItemClick={e=>open(e.item)} renderItem={item=><Grid width={150} height={110} cornerRadius={4} clip accessibleName={item.text} onReady={node=>cards.current.set(item.id,node)}><Image source={item.image} stretch={ImageStretch.UniformToFill}/><Border padding={[8,4,8,4]} verticalAlignment={V.Bottom} acrylicResource="AcrylicBackgroundFillColorBaseBrush"><TextBlock text={item.text} {...caption}/></Border></Grid>}/>
         <Grid visible={smoke} background={{resource:'SmokeFillColorDefaultBrush'}}>
-          {selected&&<Border width={400} height={320} horizontalAlignment={H.Center} verticalAlignment={V.Center} cornerRadius={8} borderBrush={{resource:'CardStrokeColorDefaultBrush'}} borderThickness={[1,1,1,1]} onReady={node=>{destination.current=node;}}><Grid rows={[star,auto]}>
+          {selected&&<Border maxWidth={400} height={320} margin={[12,12,12,12]} horizontalAlignment={H.Center} verticalAlignment={V.Center} cornerRadius={8} borderBrush={{resource:'CardStrokeColorDefaultBrush'}} borderThickness={[1,1,1,1]} onReady={node=>{destination.current=node;}}><Grid rows={[star,auto]}>
             <Image source={selected.image} stretch={ImageStretch.UniformToFill}/>
             <Button width={36} height={36} margin={[8,8,8,8]} horizontalAlignment={H.Right} verticalAlignment={V.Top} accessibleName="Close" onClick={close}><FontIcon glyph={'\uE711'} fontSize={14}/></Button>
             <StackPanel row={1} padding={[16,12,16,12]} background={{resource:'CardBackgroundFillColorDefaultBrush'}} onReady={()=>{if(destination.current){pending.current?.tryStart(destination.current);pending.current=undefined;}}}><TextBlock text={selected.text} {...subtitle}/><TextBlock text={selected.description} {...body} margin={[0,4,0,0]} foreground={{resource:'TextFillColorSecondaryBrush'}} wrap maxLines={3}/></StackPanel>
@@ -127,7 +127,7 @@ export function ConnectedConfiguration({shared}:{shared:Shared}){
   function ready(node:Panel){element.current=node;pending.current?.tryStart(node,configurations[configuration]);pending.current=undefined;}
   return <Example name="connected-config" id="connected-animation-2" kind="ConnectedAnimation" index={2} source={source} options={<><ButtonOptions shared={shared} navigate={navigate} configuration={configuration} setConfiguration={setConfiguration}/></>}>
     <Preview {...shared} onReady={scene=>remember('connected-2',scene)}>
-      <ScrollViewer height={500} minWidth={500} minHeight={300}>
+      <ScrollViewer height={500} minHeight={300}>
         {page===0?<Grid key="source" columns={[auto,star,star]} rows={[auto,auto,auto,star]}>
           <Grid row={1} column={1} minHeight={150} margin={[6,6,6,6]} background="#a9a9a9"/>
           <Grid row={1} column={2} minHeight={150} margin={[6,6,6,6]} background="#d3d3d3"/>

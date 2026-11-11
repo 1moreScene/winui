@@ -5,6 +5,25 @@ impl TextMeasurer for Measure{fn measure(&mut self,text:&str,font:&Font)->Metric
 fn scene()->Scene{let mut s=Scene::new(Theme::Light,true);s.resize(1000.,600.,1.).unwrap();s}
 fn layout(s:&mut Scene){s.layout(&mut Measure);s.display_list();}
 fn nav(s:&mut Scene,extra:Value)->u32{let mut p=json!({"paneDisplayMode":"Left","isBackButtonVisible":"Collapsed","items":[{"id":"a","text":"First"},{"id":"b","text":"Second"}]});for(k,v)in extra.as_object().unwrap(){p[k]=v.clone();}s.create(s.root,NodeKind::NavigationView,json!({"navigation":p})).unwrap()}
+#[test]fn top_overflow_paints_above_content_and_keeps_template_geometry_and_touch_hits_aligned(){
+ use winui_wasm::scene::Input;
+ let mut s=scene();s.resize(355.,460.,2.).unwrap();
+ let id=nav(&mut s,json!({"paneDisplayMode":"Top","isSettingsVisible":true,"items":[{"id":"a","text":"Menu Item1"},{"id":"b","text":"Menu Item2"},{"id":"c","text":"Menu Item3"},{"id":"d","text":"Menu Item4"}]}));
+ s.create(id,NodeKind::Button,json!({"text":"CONTENT BELOW","horizontalAlignment":"Stretch","verticalAlignment":"Stretch"})).unwrap();layout(&mut s);
+ s.input(serde_json::from_value(json!({"kind":"navigation","id":id,"input":{"kind":"invoke","id":"$overflow"}})).unwrap(),0.).unwrap();layout(&mut s);
+ let flyout=s.nodes[&id].nav.as_ref().unwrap().flyout.unwrap();
+ let popup=s.navigation_template_part(id,"TopNavOverflowFlyout").unwrap().unwrap();
+ assert_eq!(s.nodes[&popup].world.point(0.,0.),s.nodes[&id].world.point(flyout.x,flyout.y),"Template-owned flyouts must not inherit a dormant generic overlay's entrance offset");
+ let draw=serde_json::to_value(s.display_list()).unwrap();let draw=draw.as_array().unwrap();
+ let content=draw.iter().position(|d|d["text"]=="CONTENT BELOW").unwrap();
+ let item=s.nodes[&id].nav.as_ref().unwrap().parts.iter().find(|p|p.clip.is_some()&&!p.id.starts_with('$')).unwrap().clone();
+ let menu=draw.iter().position(|d|d["text"]==item.text).expect("Overflow item must be painted");assert!(menu>content);
+ let row=item.rect;
+ let(x,y)=s.nodes[&id].world.point(row.x+row.width/2.,row.y+row.height/2.);
+ assert_eq!(s.hit(x,y),Some(id));
+ for phase in ["down","up"]{s.input(Input::Touch{pointer:5,x,y,phase:phase.into()},s.time+20.).unwrap();layout(&mut s);}
+ assert_eq!(s.nodes[&id].nav.as_ref().unwrap().selected.as_deref(),Some(item.id.as_str()));assert!(!s.nodes[&id].nav.as_ref().unwrap().overflow_open);
+}
 #[test]fn native_defaults_are_empty_and_back_visibility_preserves_auto(){let p=Properties::default();assert!(p.header.is_none()&&p.content.is_none());assert_eq!(p.is_back_button_visible,NavigationViewBackButtonVisible::Auto);assert!(p.back_button_visible());}
 #[test]fn navigation_template_inherits_scene_theme_and_system_motion_policy(){
  let mut s=Scene::new(Theme::Dark,true);s.resize(800.,540.,1.25).unwrap();let n=nav(&mut s,json!({}));layout(&mut s);let p=&s.get(n).unwrap().nav.as_ref().unwrap().props;assert_eq!(p.theme,Theme::Dark);assert!(p.reduced_motion);

@@ -1710,7 +1710,7 @@ impl Scene {
                         } else {
                             Matrix::default()
                         })
-                        .multiply(if overlays::is_overlay(n.kind) {
+                        .multiply(if overlays::is_overlay(n.kind) && (n.navigation_template.owner.is_none() || n.kind==NodeKind::ToolTip) {
                             n.overlay.visual.matrix(
                                 n.kind,
                                 n.overlay.actual,
@@ -1910,7 +1910,7 @@ impl Scene {
             if !n.props.enabled
                 || !n.props.visible
                 || n.kind == NodeKind::ToolTip
-                || (overlays::is_overlay(n.kind) && !n.overlay.open)
+                || (overlays::is_overlay(n.kind) && (n.navigation_template.owner.is_none() || n.kind==NodeKind::ToolTip) && !n.overlay.open)
             {
                 return false;
             }

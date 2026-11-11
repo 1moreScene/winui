@@ -129,6 +129,7 @@ pub struct ScrollState {
     pub pan: Option<(i32, f64, f64, f64, f64, f64)>,
     pub pinch: Option<(f64, f64)>,
     pub touches: BTreeMap<i32, (f64, f64)>,
+    pub(super) touch_tap: Option<(i32, u32, f64, f64)>,
     pub initialized: bool,
     pub was_active: bool,
 }
@@ -657,15 +658,41 @@ impl Scene {
         }
         if phase == "up" || phase == "cancel" {
             let s = &mut self.nodes.get_mut(&id).unwrap().scroll;
+            let tap = s.touch_tap.take().filter(|tap| tap.0 == pointer);
             s.touches.remove(&pointer);
             s.pinch = None;
             if s.touches.is_empty() {
                 s.pan = None;
             }
             self.emit(id, EventKind::ViewChanged);
+            if phase == "up" {
+                if tap.filter(|(_,target,sx,sy)|
+                    (x-sx).hypot(y-sy)<=10. && self.nodes.contains_key(target)
+                    && self.effective_enabled(*target) && self.hit(x,y)==Some(*target)).is_some() {
+                    self.input(Input::Down {pointer,x,y},self.time)?;
+                    self.input(Input::Up {pointer,x,y},self.time)?;
+                }
+            }
             return Ok(());
         }
+        let tap_target = if phase == "down" && self.nodes[&id].scroll.touches.is_empty() {
+            self.hit(x,y).filter(|target| {
+                let n=&self.nodes[target];
+                if n.kind!=NodeKind::Grid || !n.props.is_tab_stop {return false;}
+                // CollectionView owns item taps. Focusable ItemsRepeater
+                // templates and other panels keep their own Click semantics.
+                let mut at=n.parent;
+                while let Some(parent)=at {
+                    if self.nodes[&parent].kind==NodeKind::CollectionItem {return false;}
+                    if parent==id {break;}
+                    at=self.nodes[&parent].parent;
+                }
+                true
+            })
+        } else {None};
         let s = &mut self.nodes.get_mut(&id).unwrap().scroll;
+        if phase=="down" {s.touch_tap=tap_target.map(|target|(pointer,target,x,y));}
+        else if s.touch_tap.is_some_and(|(pid,_,sx,sy)|pid==pointer&&(x-sx).hypot(y-sy)>10.) {s.touch_tap=None;}
         s.touches.insert(pointer, local);
         s.pan = Some((pointer, local.0, local.1, offsets[0], offsets[1], self.time));
         if s.touches.len() == 2 && zoom_allowed {

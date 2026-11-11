@@ -560,6 +560,17 @@ impl Scene {
                 if clip.is_some(){out.push(Draw::Restore);}
             }}
             let nav=self.nodes[&id].nav.as_ref().unwrap();nav.menu_scrollbar.paint(nav.props.theme,nav.props.reduced_transparency||!nav.backdrop_available(),nav.now,out);
+            // Source Flyouts are logical children of the overflow button, but
+            // paint in a popup layer above the content rather than in that
+            // button's regular child collection (which excludes overlays).
+            for name in ["TopNavOverflowFlyout","ChildrenFlyout"] {
+                let popup=self.nodes[&id].navigation_template.parts[name];
+                if !self.nodes[&popup].visible {continue;}
+                let parent=self.nodes[&popup].parent.unwrap();
+                let (x,y)=nav_relative(self,id,parent);
+                out.push(Draw::Save);out.push(Draw::Transform{matrix:[1.,0.,0.,1.,x,y]});
+                self.paint_node(popup,inherited.clone(),out);out.push(Draw::Restore);
+            }
             out.push(Draw::Restore);
         }
         out.push(Draw::Restore);true

@@ -63,13 +63,14 @@ jobs:
       - name: Install browser for mobile touch regression
         working-directory: gallery
         run: node node_modules/@playwright/test/cli.js install --with-deps chromium
-      - name: Verify mobile navigation and TableView touch input
+      - name: Verify mobile Gallery touch input
         working-directory: gallery
         env:
           PW_CHANNEL: chromium
         run: |
           node node_modules/@playwright/test/cli.js test --config playwright.navigation-touch.config.ts
           node node_modules/@playwright/test/cli.js test --config playwright.table-view-touch.config.ts
+          node node_modules/@playwright/test/cli.js test --config playwright.connected-navigation-touch.config.ts
       - name: Build Gallery for Pages
         run: npm run build:pages
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0

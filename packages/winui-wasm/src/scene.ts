@@ -2117,7 +2117,9 @@ export class Scene implements Disposable {
               },
               { signal: this.abort.signal },
             );
-            group.prepend(b);
+            // Rust orders the dismiss surface before its popup items. Keep
+            // that order so the transparent dismiss button stays underneath.
+            group.append(b);
           }
           b.textContent = part.text;
           b.disabled = !n.enabled || !part.enabled;

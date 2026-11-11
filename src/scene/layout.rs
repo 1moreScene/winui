@@ -1407,7 +1407,7 @@ impl Scene {
             } else {
                 Matrix::default()
             })
-            .multiply(if overlays::is_overlay(n.kind) {
+            .multiply(if overlays::is_overlay(n.kind) && (n.navigation_template.owner.is_none() || n.kind==NodeKind::ToolTip) {
                 n.overlay
                     .visual
                     .matrix(n.kind, n.overlay.actual, n.rect.height, self.time)

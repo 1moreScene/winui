@@ -1401,7 +1401,7 @@ impl Scene {
         let mut ancestor = Some(id);
         while let Some(at) = ancestor {
             let n = &self.nodes[&at];
-            if overlays::is_overlay(n.kind) {
+            if overlays::is_overlay(n.kind) && (n.navigation_template.owner.is_none() || n.kind==NodeKind::ToolTip) {
                 let offset =
                     n.overlay
                         .visual

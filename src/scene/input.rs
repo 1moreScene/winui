@@ -582,6 +582,7 @@ impl Scene {
                 n.scroll.pan = None;
                 n.scroll.pinch = None;
                 n.scroll.touches.clear();
+                n.scroll.touch_tap=None;
                 if n.nav.is_some() {
                     let _ = self.navigation_input(old, NavInput::Blur);
                 }
@@ -899,6 +900,7 @@ impl Scene {
                     n.scroll.repeat = None;
                     n.scroll.pan = None;
                     n.scroll.touches.clear();
+                    n.scroll.touch_tap=None;
                     n.editor.peek = false;
                     if n.nav.is_some() {
                         self.navigation_input(id, NavInput::Cancel)?;
