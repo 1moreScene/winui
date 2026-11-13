@@ -1,0 +1,235 @@
+{
+  "date": "2026-11-10",
+  "packageVersion": "0.1.1",
+  "policy": {
+    "Windows": [
+      "local Segoe Fluent Icons through WinUI Native Fluent Icons",
+      "local Segoe MDL2 Assets through WinUI Native MDL2 Icons",
+      "WinUI Portable Icons per-glyph fallback"
+    ],
+    "otherPlatforms": [
+      "WinUI Portable Icons"
+    ],
+    "nativeNamesOverridden": false,
+    "nativeFontFilesDistributed": false,
+    "missingOrBlockedLocalFonts": "portable fallback",
+    "measurementAndBothRenderers": "shared Rust Font::css stack"
+  },
+  "installedWindowsFontsForComparison": [
+    {
+      "installedFile": "C:\\Windows\\Fonts\\SegoeIcons.ttf",
+      "sha256": "1cd17e53c22a0e11f451d733e414b9977606ae233ce08882ef3fbf757aa10b03",
+      "includedInPackage": false
+    },
+    {
+      "installedFile": "C:\\Windows\\Fonts\\segmdl2.ttf",
+      "sha256": "a2efc8b8e51fbd031a7142a1ade8866fa904c0c349511abc579ee53f8a926f31",
+      "includedInPackage": false
+    }
+  ],
+  "checks": {
+    "rust": {
+      "passed": 10,
+      "failed": 0,
+      "targets": [
+        "icon_font_policy",
+        "icons",
+        "text_raster"
+      ]
+    },
+    "python": {
+      "passed": 14,
+      "failed": 0
+    },
+    "fontBrowserRegressions": {
+      "passed": 15,
+      "failed": 0,
+      "browsers": [
+        "Windows Chrome",
+        "Windows WebKit"
+      ],
+      "platformMatrix": [
+        "actual Windows",
+        "simulated macOS",
+        "simulated Linux"
+      ],
+      "nativeAliasReference": "Raster comparison with installed system font; actual SDK Canvas2D/WebGL2 glyph compared with selected native/portable font",
+      "blockedLocalFonts": "All 457 bundled codepoints render with local font loading disabled and external network blocked"
+    },
+    "gallery": {
+      "typecheck": "passed",
+      "productionBuild": "passed",
+      "publicPackageImports": 100
+    },
+    "applications": [
+      {
+        "kind": "desktop",
+        "mode": "development",
+        "url": "http://127.0.0.1:5174/",
+        "fonts": [
+          "WinUI Portable Icons",
+          "WinUI Native Fluent Icons",
+          "WinUI Native MDL2 Icons"
+        ],
+        "pageErrors": [],
+        "interactions": "passed"
+      },
+      {
+        "kind": "desktop",
+        "mode": "production",
+        "url": "http://127.0.0.1:5451/",
+        "fonts": [
+          "WinUI Portable Icons",
+          "WinUI Native Fluent Icons",
+          "WinUI Native MDL2 Icons"
+        ],
+        "pageErrors": [],
+        "interactions": "passed"
+      },
+      {
+        "kind": "gallery",
+        "mode": "development",
+        "url": "http://127.0.0.1:5464/#expander",
+        "fonts": [
+          "WinUI Portable Icons",
+          "WinUI Native Fluent Icons",
+          "WinUI Native MDL2 Icons"
+        ],
+        "pageErrors": [],
+        "interactions": "passed"
+      },
+      {
+        "kind": "gallery",
+        "mode": "production",
+        "url": "http://127.0.0.1:5465/#expander",
+        "fonts": [
+          "WinUI Portable Icons",
+          "WinUI Native Fluent Icons",
+          "WinUI Native MDL2 Icons"
+        ],
+        "pageErrors": [],
+        "interactions": "passed"
+      }
+    ],
+    "independentConsumers": [
+      {
+        "kind": "vanilla",
+        "mode": "development",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3219,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5431/nested/node_modules/winui-wasm/dist/assets/winui-icons.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5431/nested/node_modules/winui-wasm/dist/wasm/winui_bg.wasm?v=284a9337a20a9c5983f5584a00463bd4e928cd0b1a32ed29f485bdbe574da954",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      },
+      {
+        "kind": "vanilla",
+        "mode": "production",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3219,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5433/nested/assets/winui-icons-QfSUefym.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5433/nested/assets/winui_bg-DZDYlz4u.wasm?v=284a9337a20a9c5983f5584a00463bd4e928cd0b1a32ed29f485bdbe574da954",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      },
+      {
+        "kind": "react",
+        "mode": "development",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3490,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5432/nested/node_modules/winui-wasm/dist/assets/winui-icons.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5432/nested/node_modules/winui-wasm/dist/wasm/winui_bg.wasm?v=284a9337a20a9c5983f5584a00463bd4e928cd0b1a32ed29f485bdbe574da954",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      },
+      {
+        "kind": "react",
+        "mode": "production",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3490,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5434/nested/assets/winui-icons-QfSUefym.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5434/nested/assets/winui_bg-DZDYlz4u.wasm?v=284a9337a20a9c5983f5584a00463bd4e928cd0b1a32ed29f485bdbe574da954",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      }
+    ],
+    "desktop": {
+      "path": "C:/Users/weixiaoxiao/Desktop/react-template",
+      "installedVersion": "0.1.1",
+      "build": "passed",
+      "lint": "passed",
+      "viteCache": "restarted owned dev server on port 5174 with --force; stale 0.1.0 prebundle had retained old faces and lacked Button.Flyout",
+      "sourceFixes": "Kept the added menu demo, added its missing imports and logging callback, moved its Button beside the counter Button."
+    }
+  },
+  "wasmBuild": {
+    "sha256": "284a9337a20a9c5983f5584a00463bd4e928cd0b1a32ed29f485bdbe574da954",
+    "completedAt": 1794295480353,
+    "resourceSource": "MIT",
+    "resourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "resourceFingerprint": "e6ff0dfbb7308d575ff01232237fbb9d9ad31044a4fdc1dc029cf632410df3e1"
+  },
+  "tarball": "D:\\vscode\\winui\\out\\npm-consumers-v3YzIU\\winui-wasm-0.1.1.tgz",
+  "tarballSha256": "e4b1951f9245170a1dc4d5ec8f6c4d299e12cc076b63483d2b0e627018c93b95",
+  "published": false,
+  "limitations": [
+    "macOS/Linux selection was simulated on Windows, not tested on physical macOS/Linux devices.",
+    "Font-source and tested glyph matching do not establish whole-window pixel equality with native WinUI/DirectWrite."
+  ]
+}

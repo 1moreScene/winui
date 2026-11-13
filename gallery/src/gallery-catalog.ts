@@ -2,7 +2,7 @@ import official from './official-home.json';
 
 /** Existing Gallery sample pages; an entry means a demo exists, not full parity. */
 const implemented: Record<string, string> = {
-  TableView: '#table-view',
+  TableView: '#table-view', Segmented:'#segmented',
   ConnectedAnimation:'#connected-animation',ThemeTransition:'#theme-transitions',XamlCompInterop:'#xaml-comp-interop',
   CustomUserControls:'#custom-user-controls',PageTransition:'#page-transitions',
   ItemsView:'#items-view',AnnotatedScrollBar:'#annotated-scroll-bar',PagerControl:'#pager-control',LayoutPanel:'#layout-panel',RichTextBlock:'#rich-text-block',
@@ -36,9 +36,12 @@ const excluded: Record<string, string> = {
 export const galleryGroups = [
   ...official.groups.filter(g => g.special),
   ...official.groups.filter(g => !g.special).sort((a, b) => a.title.localeCompare(b.title, 'en')),
+  {id:'CommunityControls',title:'Community controls',special:false,icon:'\uE734',items:[
+    {id:'Segmented',title:'Segmented',subtitle:'A selectable group of equal or content-sized segments.',description:'CommunityToolkit Segmented supports single or multiple selection, horizontal and vertical layouts, and Default, Pivot and Button styles.',image:'/community-segmented/Segmented.png',sourcePath:'CommunityToolkit/Windows/components/Segmented',samplePage:'Gallery/SegmentedPage.tsx',tags:['segmented','community toolkit','selection','toggle','tabs'],namespace:'CommunityToolkit.WinUI.Controls',baseClasses:['Object','DependencyObject','UIElement','FrameworkElement','Control','ItemsControl','ListViewBase'],experimental:false,isNew:true,isUpdated:false,docs:[{Title:'CommunityToolkit Segmented',Uri:'https://github.com/CommunityToolkit/Windows/tree/a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e/components/Segmented'}]}
+  ]}
 ];
 export const galleryItems = galleryGroups.flatMap(group => group.items.map(item => ({
-  ...item, ...(item.id==='TableView'?{description:'An editable data grid with sorting, filtering, templates and virtualized rows. Community WinUI.TableView (MIT).',subtitle:'Community WinUI.TableView data grid.',namespace:'WinUI.TableView',baseClasses:['Object','DependencyObject','UIElement','FrameworkElement','Control','ItemsControl','ListViewBase','ListView'],experimental:false,tags:['table','data grid','editing','sorting','filtering','virtualization','community'],docs:[{Title:'Community TableView documentation',Uri:'https://github.com/w-ahmad/WinUI.TableView/blob/665fea52b8ad47a64187d0f202d5281b074f616f/README.md'}]}:{}),communitySource:item.id==='TableView'?{repository:'https://github.com/w-ahmad/WinUI.TableView',commit:'665fea52b8ad47a64187d0f202d5281b074f616f',sample:'samples/WinUI.TableView.SampleApp/Pages/OverviewPage.xaml'}:undefined, groupId: group.id, groupTitle: group.title,
+  ...item, ...(item.id==='TableView'?{description:'An editable data grid with sorting, filtering, templates and virtualized rows. Community WinUI.TableView (MIT).',subtitle:'Community WinUI.TableView data grid.',namespace:'WinUI.TableView',baseClasses:['Object','DependencyObject','UIElement','FrameworkElement','Control','ItemsControl','ListViewBase','ListView'],experimental:false,tags:['table','data grid','editing','sorting','filtering','virtualization','community'],docs:[{Title:'Community TableView documentation',Uri:'https://github.com/w-ahmad/WinUI.TableView/blob/665fea52b8ad47a64187d0f202d5281b074f616f/README.md'}]}:{}),communitySource:item.id==='TableView'?{repository:'https://github.com/w-ahmad/WinUI.TableView',commit:'665fea52b8ad47a64187d0f202d5281b074f616f',sample:'samples/WinUI.TableView.SampleApp/Pages/OverviewPage.xaml',license:'LICENSE.md',label:'WinUI.TableView'}:item.id==='Segmented'?{repository:'https://github.com/CommunityToolkit/Windows',commit:'a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e',sample:'components/Segmented/samples/SegmentedBasicSample.xaml',license:'License.md',label:'Windows Community Toolkit'}:undefined, groupId: group.id, groupTitle: group.title,
   implemented: !!implemented[item.id], href: implemented[item.id] ?? `#sample/${item.id}`,
   excludedReason: excluded[item.id] ?? '',
 }))).sort((a, b) => a.title.localeCompare(b.title, 'en'));

@@ -52,7 +52,9 @@ test('IconElement React samples expose flat props, bitmap options, SVG and real 
   await expect(page.getByLabel('Monochrome',{exact:true})).not.toBeChecked();
   await page.getByLabel('Monochrome',{exact:true}).check();
   await expect.poll(() => page.evaluate(() => window.iconScenes['bitmap-icon'].snapshot.nodes.find(n => n.kind === 'BitmapIcon')?.props.showAsMonochrome)).toBe(true);
-  await page.getByLabel('Monochrome',{exact:true}).uncheck();
+  const monochrome = page.getByRole('checkbox', {name:'Monochrome',exact:true});
+  await monochrome.press('Space');
+  await expect(monochrome).not.toBeChecked();
   await expect.poll(() => page.evaluate(() => window.iconScenes['bitmap-icon'].snapshot.nodes.find(n => n.kind === 'BitmapIcon')?.props.showAsMonochrome)).toBe(false);
   await page.getByRole('button', { name: 'Accept', exact: true }).click();
   await expect(page.getByLabel('Icon output')).toHaveText('Accepted');

@@ -105,10 +105,10 @@ export interface TableViewEvent<T extends object=Record<string,unknown>> extends
 /** Cell/header/detail slot lifetime and geometry are owned by Rust. */
 export interface TableViewSlot<T extends object=Record<string,unknown>> {row:string;column:string;index:number;role:'cell'|'rowHeader'|'details';editing:boolean;item:T;container:Panel;}
 /** Read-only diagnostic snapshot. */
-export interface TableViewSnapshot {groups:TableViewGroupDescription[];isGrouped:boolean;groupCount:number;realizedGroups:(TableViewGroupInfo&{container:number|null})[];headerSlots:{id:number;column:string}[];columns:{key:string;field:string;header:string;kind:TableViewColumnKind}[];columnWidths:number[];realized:{id:number;row:string;column:string;index:number;role:string;editing:boolean}[];viewKeys:string[];totalCount:number;filteredCount:number;selectedKeys:string[];selectedCells:TableViewCell[];currentCell:TableViewCell|null;editingCell:TableViewCell|null;expandedRows:string[];motion:{bodyOpacity:number;bodyOffsetY:number}|null;sorts:TableViewSort[];filters:TableViewFilter[];pageIndex:number;pageCount:number;scroll:ScrollSnapshot|null;}
+export interface TableViewSnapshot {groups:TableViewGroupDescription[];isGrouped:boolean;groupCount:number;realizedGroups:(TableViewGroupInfo&{container:number|null})[];headerSlots:{id:number;column:string}[];columns:{key:string;field:string;header:string;kind:TableViewColumnKind;hasTemplate?:boolean}[];columnWidths:number[];realized:{id:number;row:string;column:string;index:number;viewIndex:number;role:string;editing:boolean}[];viewKeys:string[];totalCount:number;filteredCount:number;selectedKeys:string[];selectedCells:TableViewCell[];currentCell:TableViewCell|null;editingCell:TableViewCell|null;expandedRows:string[];motion:{bodyOpacity:number;bodyOffsetY:number}|null;sorts:TableViewSort[];filters:TableViewFilter[];pageIndex:number;pageCount:number;scroll:ScrollSnapshot|null;}
 const keys=['groups','canGroupColumns','defaultGroupState','areStickyGroupHeadersEnabled','showGroupExpandCollapseButton','groupHeaderHeight','hasGroupHeaderTemplate','cellsHorizontalOffset','useRightClickForColumnFilter','forceRowOrCellSelectionOnContextRequested','expandedRows','showDragRectangle','cellContextMenu','rowContextMenu','autoGenerateColumns','sorts','filters','search','selectionUnit','selectionMode','selectedKeys','selectedCells','currentCell','isReadOnly','canCopy','canPaste','canSortColumns','canFilterColumns','canResizeColumns','canReorderColumns','canReorderRows','frozenColumnCount','rowHeight','headerRowHeight','rowHeaderWidth','headersVisibility','gridLinesVisibility','headerGridLinesVisibility','alternateRowBackground','alternateRowForeground','horizontalGridLinesStroke','verticalGridLinesStroke','horizontalGridLinesStrokeThickness','verticalGridLinesStrokeThickness','columnAutoWidthMode','cornerButtonMode','showExportOptions','showFilterItemsCount','rowDetailsVisibilityMode','rowDetailsHeight','areRowDetailsFrozen','pageSize','pageIndex','hasRowDetailsTemplate','hasRowHeaderTemplate'];
 /** @internal Business callbacks are evaluated only on source changes, never per frame. */
-export function normalizeTable(kind:NodeKind,options:object){
+export function normalizeTable(kind:NodeKind,options:object,compactCreate=false){
  if(kind!==NodeKind.TableView)return options;
  const patch={...options} as Record<string,unknown>,q:Record<string,unknown>={};
  for(const key of keys)if(Object.hasOwn(patch,key)){q[key]=patch[key];delete patch[key];}
@@ -116,7 +116,51 @@ export function normalizeTable(kind:NodeKind,options:object){
  const groupValue=(g:TableViewGroupDescription<object>,item:object)=>{const c=(patch.columns as TableViewColumn<object>[]|undefined)?.find(c=>(c.key??c.path??c.field)===g.column);if(g.value)return g.value(item);if(c?.operationValue)return c.operationValue(item);const field=c?.sortMemberPath??c?.path??c?.field??g.column;return field.split('.').reduce<unknown>((v,k)=>v&&typeof v==='object'?(v as Record<string,unknown>)[k]:undefined,item);};
  if(Array.isArray(q.groups))q.groups=groups.map(g=>{if(typeof g==='string')return{column:g};const {value,compare,...rest}=g;if(!compare)return rest;const unique=new Map<string,unknown>();for(const item of (patch.items??[]) as object[]){const key=groupValue(g,item)??null;unique.set(JSON.stringify(key),key);}const keys=[...unique.values()].sort(compare),comparisonRanks:Record<string,number>={};let rank=0;keys.forEach((key,index)=>{if(index&&compare(keys[index-1],key)!==0)rank++;comparisonRanks[JSON.stringify(key)]=rank;});return{...rest,comparisonRanks};});
  const columns=patch.columns as readonly TableViewColumn<object>[]|undefined;
+ const projectedColumns=(columns??[]).filter(c=>c.format||c.operationValue||c.clipboardValue||c.cellStyle);
+ const projectedGroups=groups.filter((g):g is TableViewGroupDescription<object>=>typeof g!=='string'&&!!g.value);
  if(columns){const seen=new Set<string>();q.columns=columns.map(c=>{const {format,operationValue,clipboardValue,cellStyle,path,...rest}=c;const field=path??c.field??'';const key=c.key??field;if(!key||seen.has(key))throw new TypeError('TableView columns require unique keys');seen.add(key);return{...rest,field,key,header:c.header??field,width:typeof c.width==='number'?{unit:GridUnit.Pixel,value:c.width}:c.width??{unit:GridUnit.Auto,value:1}};});delete patch.columns;}
- if(Object.hasOwn(patch,'items')){const items=(patch.items??[]) as readonly object[];const keyOf=(patch.getRowKey as ((item:object)=>string)|undefined)??tableRowKey;const seen=new Set<string>();q.items=items.map(item=>{const id=keyOf(item);if(!id||seen.has(id))throw new TypeError('TableView rows require unique stable identities (avoid duplicate id or repeated object references)');seen.add(id);const display:Record<string,string>={},operations:Record<string,unknown>={},clipboard:Record<string,string>={},groupValues:Record<string,unknown>={},styles:Record<string,TableViewCellStyle>={};for(const c of columns??[]){const field=c.path??c.field??'',key=c.key??field;const value=field.split('.').reduce<unknown>((v,k)=>v&&typeof v==='object'?(v as Record<string,unknown>)[k]:undefined,item);if(c.format)display[key]=c.format(value,item);if(c.operationValue)operations[key]=c.operationValue(item);if(c.clipboardValue)clipboard[key]=c.clipboardValue(item);if(c.cellStyle)styles[key]=c.cellStyle(item);}for(const g of groups)if(typeof g!=='string'&&g.value)groupValues[g.column]=groupValue(g,item)??null;return{id,fields:Object.keys(item),values:item,display,operations,groupValues,clipboard,styles};});delete patch.items;}
+ if(Object.hasOwn(patch,'items')){
+  const items=(patch.items??[]) as readonly object[];
+  const keyOf=(patch.getRowKey as ((item:object)=>string)|undefined)??tableRowKey;
+  const seen=new Set<string>();
+  const compact=compactCreate&&!projectedColumns.length&&!projectedGroups.length;
+  const fieldOrders:string[][]=[];
+  const fieldOrderIndexes=new Map<string,number>();
+  const normalized=items.map(item=>{
+   const id=keyOf(item);
+   if(!id||seen.has(id))throw new TypeError('TableView rows require unique stable identities (avoid duplicate id or repeated object references)');
+   seen.add(id);
+   const fields=Object.keys(item);
+   if(compact){
+    const signature=JSON.stringify(fields);
+    let fieldOrder=fieldOrderIndexes.get(signature);
+    if(fieldOrder===undefined){
+     fieldOrder=fieldOrders.length;
+     fieldOrderIndexes.set(signature,fieldOrder);
+     fieldOrders.push(fields);
+    }
+    return [id,fieldOrder,item];
+   }
+   const row:Record<string,unknown>={id,fields,values:item};
+   if(projectedColumns.length){
+    const display:Record<string,string>={},operations:Record<string,unknown>={},clipboard:Record<string,string>={},styles:Record<string,TableViewCellStyle>={};
+    for(const c of projectedColumns){
+     const field=c.path??c.field??'',key=c.key??field;
+     if(c.format){
+      const value=field.split('.').reduce<unknown>((v,k)=>v&&typeof v==='object'?(v as Record<string,unknown>)[k]:undefined,item);
+      display[key]=c.format(value,item);
+     }
+     if(c.operationValue)operations[key]=c.operationValue(item);
+     if(c.clipboardValue)clipboard[key]=c.clipboardValue(item);
+     if(c.cellStyle)styles[key]=c.cellStyle(item);
+    }
+    Object.assign(row,{display,operations,clipboard,styles});
+   }
+   if(projectedGroups.length)row.groupValues=Object.fromEntries(projectedGroups.map(g=>[g.column,groupValue(g,item)??null]));
+   return row;
+  });
+  q.items=compact?{rows:normalized,fieldOrders}:normalized;
+  delete patch.items;
+ }
  delete patch.getRowKey;if(Object.keys(q).length)patch.table=q;return patch;
 }

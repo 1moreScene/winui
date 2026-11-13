@@ -1,0 +1,508 @@
+{
+  "date": "2026-11-10",
+  "sourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "license": "MIT",
+  "fixedXamlInputs": 122,
+  "generatedThemeDictionaries": 16,
+  "generatedTemplateExcerpts": 9,
+  "restrictedPackageTemplatesRead": false,
+  "resourceGate": "passed --release",
+  "rust": {
+    "suites": 60,
+    "passed": 572,
+    "failed": 0,
+    "log": "out/mit-rust-tests-final.log"
+  },
+  "python": {
+    "passed": 14,
+    "failed": 0
+  },
+  "gallery": {
+    "typecheck": "passed",
+    "origins": "117 Rust kinds and React exports reviewed",
+    "publicPackageImports": 100,
+    "productionBuild": "passed: release SDK build, tsc --noEmit, Vite production build",
+    "browserBehavior": {
+      "startTime": "2026-11-10T06:17:47.634Z",
+      "duration": 171954.28,
+      "expected": 30,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "fontPortability": {
+      "passed": 11,
+      "browsers": [
+        "Windows Chrome",
+        "Windows WebKit"
+      ],
+      "actualMacOSDeviceTested": false
+    }
+  },
+  "npmConsumers": {
+    "tarball": "D:\\vscode\\winui\\out\\npm-consumers-CpOHcN\\winui-wasm-0.1.0.tgz",
+    "localOnly": false,
+    "resourceSource": "pinned MIT",
+    "published": false,
+    "cases": [
+      {
+        "kind": "vanilla",
+        "mode": "development",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3474,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5431/nested/node_modules/winui-wasm/dist/assets/winui-icons.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5431/nested/node_modules/winui-wasm/dist/wasm/winui_bg.wasm?v=3cf932643bc36655e15e8194b21dd9cc170b8229189c635671023dc267e49667",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      },
+      {
+        "kind": "vanilla",
+        "mode": "production",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3474,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5433/nested/assets/winui-icons-QfSUefym.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5433/nested/assets/winui_bg-MNh3urUq.wasm?v=3cf932643bc36655e15e8194b21dd9cc170b8229189c635671023dc267e49667",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      },
+      {
+        "kind": "react",
+        "mode": "development",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3733,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5432/nested/node_modules/winui-wasm/dist/assets/winui-icons.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5432/nested/node_modules/winui-wasm/dist/wasm/winui_bg.wasm?v=3cf932643bc36655e15e8194b21dd9cc170b8229189c635671023dc267e49667",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      },
+      {
+        "kind": "react",
+        "mode": "production",
+        "base": "/nested/",
+        "backends": [
+          "Canvas2D",
+          "WebGL2"
+        ],
+        "fonts": 3,
+        "ink": 3733,
+        "resources": [
+          {
+            "url": "http://127.0.0.1:5434/nested/assets/winui-icons-QfSUefym.woff",
+            "status": 200
+          },
+          {
+            "url": "http://127.0.0.1:5434/nested/assets/winui_bg-MNh3urUq.wasm?v=3cf932643bc36655e15e8194b21dd9cc170b8229189c635671023dc267e49667",
+            "status": 200
+          }
+        ],
+        "errors": [],
+        "interactions": true,
+        "cleanup": true
+      }
+    ],
+    "tarballSha256": "e52cd10fff9c7df3bd14d47fdd636646df99675c7a52ec31a2b42e17432b158b"
+  },
+  "desktopProject": {
+    "path": "C:/Users/weixiaoxiao/Desktop/react-template",
+    "wizardCommand": "npm create vite@9.3.4 react-template -- --template react-ts --no-interactive",
+    "userAppChangesPreserved": true,
+    "sdkDependencyUpdatedToVerifiedTarball": true,
+    "build": "passed",
+    "lint": "passed",
+    "browserLoad": "passed; no page errors; MIT resource stamp verified",
+    "sourceCleanup": "Removed only the unused CommandBarItemKind import added during concurrent user edits; retained all page logic."
+  },
+  "published": false,
+  "visualComparison": {
+    "pages": 44,
+    "identical": 43,
+    "themes": [
+      "Light",
+      "Dark"
+    ],
+    "method": "Same current Gallery and JavaScript bridge, preserved old WASM fulfilled in the browser versus current MIT WASM; fixed Date, DPR 1, 1440x1000, reduced motion, awaited font/image/React realization and stable paint. ItemsView compared from fresh route contexts after a sequence-dependent image-raster discrepancy; isolated repeat and geometry checks matched.",
+    "results": [
+      {
+        "file": "Dark-annotated-scroll-bar.png",
+        "identical": true,
+        "beforeSha256": "1e383f52ff9b9082d08065108a7dc1a7096818c8f93dbc4738cb017d3fa79970",
+        "afterSha256": "1e383f52ff9b9082d08065108a7dc1a7096818c8f93dbc4738cb017d3fa79970",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-button.png",
+        "identical": true,
+        "beforeSha256": "3043765be64115694d13c97e05e8c6590d0ec6c9902fc522a9b773d3593099d4",
+        "afterSha256": "3043765be64115694d13c97e05e8c6590d0ec6c9902fc522a9b773d3593099d4",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-calendar-view.png",
+        "identical": true,
+        "beforeSha256": "4cdf10591a2b1dc41492146647851cc8f48592c4c1e7e7823b9f020b9225bf5a",
+        "afterSha256": "4cdf10591a2b1dc41492146647851cc8f48592c4c1e7e7823b9f020b9225bf5a",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-color-picker.png",
+        "identical": true,
+        "beforeSha256": "0910808a55f80b07dff73abc34252ad0b715ed9a32a26c7d5ea10defdcd78411",
+        "afterSha256": "0910808a55f80b07dff73abc34252ad0b715ed9a32a26c7d5ea10defdcd78411",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-combo-box.png",
+        "identical": true,
+        "beforeSha256": "ed6a54893008324323272c3d87952a58061e93249426cc63d2e8e675bd9db0c3",
+        "afterSha256": "ed6a54893008324323272c3d87952a58061e93249426cc63d2e8e675bd9db0c3",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-content-dialog.png",
+        "identical": true,
+        "beforeSha256": "87b64ddfe4d8b4bfc83ddf1d6387735c6dd594c27276368a60371c2dbaa21f73",
+        "afterSha256": "87b64ddfe4d8b4bfc83ddf1d6387735c6dd594c27276368a60371c2dbaa21f73",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-date-picker.png",
+        "identical": true,
+        "beforeSha256": "68a1011775759e8f89eaf955b1f12cd5ead13c131de3f4d4bea2f2a6980beedd",
+        "afterSha256": "68a1011775759e8f89eaf955b1f12cd5ead13c131de3f4d4bea2f2a6980beedd",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-expander.png",
+        "identical": true,
+        "beforeSha256": "76f95fe6312c075c6485d88ce3defbeac01b951a7469cf6d2843aa0e0e1e5a95",
+        "afterSha256": "76f95fe6312c075c6485d88ce3defbeac01b951a7469cf6d2843aa0e0e1e5a95",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-grid-view.png",
+        "identical": true,
+        "beforeSha256": "08d992b1be0226c0a774baf559c4e503be9a839b7b2ed5ee96bd6bdb30d135c2",
+        "afterSha256": "08d992b1be0226c0a774baf559c4e503be9a839b7b2ed5ee96bd6bdb30d135c2",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-info-bar.png",
+        "identical": true,
+        "beforeSha256": "37ef0886d0d09fbd760f895c30258b228a77d3104e429492b8130617d8c30a2b",
+        "afterSha256": "37ef0886d0d09fbd760f895c30258b228a77d3104e429492b8130617d8c30a2b",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-items-view.png",
+        "identical": true,
+        "beforeSha256": "8b0fa330c1150011ef02c0511422b9c00595e0c1fc12db8560af9e2a44be5202",
+        "afterSha256": "8b0fa330c1150011ef02c0511422b9c00595e0c1fc12db8560af9e2a44be5202",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-list-view.png",
+        "identical": true,
+        "beforeSha256": "a600fdc7c98d5720f72316a86d9da62ff9689bb6c4279586eed87eac53ecdbea",
+        "afterSha256": "a600fdc7c98d5720f72316a86d9da62ff9689bb6c4279586eed87eac53ecdbea",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-number-box.png",
+        "identical": true,
+        "beforeSha256": "f347e8fd43e63c2e4fff5543b6b034eb8c253cfd5c72bd09aff6b7c891f6de65",
+        "afterSha256": "f347e8fd43e63c2e4fff5543b6b034eb8c253cfd5c72bd09aff6b7c891f6de65",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-pager-control.png",
+        "identical": true,
+        "beforeSha256": "68881a15ccbdffe4630aed8e120146dc60d2a70f6a3c1196f1aef4bf2159feab",
+        "afterSha256": "68881a15ccbdffe4630aed8e120146dc60d2a70f6a3c1196f1aef4bf2159feab",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-person-picture.png",
+        "identical": true,
+        "beforeSha256": "13b57f0af9983e763254b169ec1f6a7c03867d0e20665e04c45f3199f467b191",
+        "afterSha256": "13b57f0af9983e763254b169ec1f6a7c03867d0e20665e04c45f3199f467b191",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-rich-edit-box.png",
+        "identical": true,
+        "beforeSha256": "a210522b8a03baa7caf601d24157584d07d2c29216ce01f0d9b7b8d958264578",
+        "afterSha256": "a210522b8a03baa7caf601d24157584d07d2c29216ce01f0d9b7b8d958264578",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-semantic-zoom.png",
+        "identical": true,
+        "beforeSha256": "47469b49d21b7991600dc737f4b76292b70b4324f1653d8b34579dba1dbb0f8b",
+        "afterSha256": "47469b49d21b7991600dc737f4b76292b70b4324f1653d8b34579dba1dbb0f8b",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-split-button.png",
+        "identical": true,
+        "beforeSha256": "efafb674ee1a0d1d640e1f0d2267a9737bd589e85e8c031eba12ff9a025c29a9",
+        "afterSha256": "efafb674ee1a0d1d640e1f0d2267a9737bd589e85e8c031eba12ff9a025c29a9",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-split-view.png",
+        "identical": true,
+        "beforeSha256": "3ad9f58b8b8e5aa9d74f54ed991b635e6aec7b063e91416dc4844bd49ec1fbe7",
+        "afterSha256": "3ad9f58b8b8e5aa9d74f54ed991b635e6aec7b063e91416dc4844bd49ec1fbe7",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-tab-view.png",
+        "identical": true,
+        "beforeSha256": "637ec9bf2c92f290125c9ef5c33d2fbf5e3467f0b7f0b6b411d01d2cd37c6f29",
+        "afterSha256": "637ec9bf2c92f290125c9ef5c33d2fbf5e3467f0b7f0b6b411d01d2cd37c6f29",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-time-picker.png",
+        "identical": true,
+        "beforeSha256": "cc51337f1a4f1970d49ab7ed45c4e4dd34fc3bd2f356e4a1cf6f1ac84ae2eb7b",
+        "afterSha256": "cc51337f1a4f1970d49ab7ed45c4e4dd34fc3bd2f356e4a1cf6f1ac84ae2eb7b",
+        "differenceBounds": null
+      },
+      {
+        "file": "Dark-tree-view.png",
+        "identical": true,
+        "beforeSha256": "a82ebbe825cecd7e212bf68125455baceef2e1c1c3445984ca620fa0c031520c",
+        "afterSha256": "a82ebbe825cecd7e212bf68125455baceef2e1c1c3445984ca620fa0c031520c",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-annotated-scroll-bar.png",
+        "identical": true,
+        "beforeSha256": "2ccebf4dd65cc845dd06713f712f4338000e03ac6ef063cae71a880bd8a72234",
+        "afterSha256": "2ccebf4dd65cc845dd06713f712f4338000e03ac6ef063cae71a880bd8a72234",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-button.png",
+        "identical": true,
+        "beforeSha256": "2011c0da24b75e65bac703fbf5707068240c2c3799b4f11274469debc54ebcac",
+        "afterSha256": "2011c0da24b75e65bac703fbf5707068240c2c3799b4f11274469debc54ebcac",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-calendar-view.png",
+        "identical": true,
+        "beforeSha256": "0d0dec5dfb826efae9f41994bf08128ddc2c96a6ee646f991e1359da1a574daa",
+        "afterSha256": "0d0dec5dfb826efae9f41994bf08128ddc2c96a6ee646f991e1359da1a574daa",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-color-picker.png",
+        "identical": true,
+        "beforeSha256": "c145ff73b54106554ead90065c5f10aac1cac41480a3d73710c3e11923196233",
+        "afterSha256": "c145ff73b54106554ead90065c5f10aac1cac41480a3d73710c3e11923196233",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-combo-box.png",
+        "identical": true,
+        "beforeSha256": "84c6bdacce7df653381403d0283f8bd76ae16f22756ad7230d88eb465caeefb8",
+        "afterSha256": "84c6bdacce7df653381403d0283f8bd76ae16f22756ad7230d88eb465caeefb8",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-content-dialog.png",
+        "identical": true,
+        "beforeSha256": "558ead09c8b9415b437ccb9e08220aa806b6c3af6c4f3be40ac8d4251bfcc000",
+        "afterSha256": "558ead09c8b9415b437ccb9e08220aa806b6c3af6c4f3be40ac8d4251bfcc000",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-date-picker.png",
+        "identical": true,
+        "beforeSha256": "2e3a757ae62c7799ea22c1178b81df1bda88725a18d0825da946562adc7e7560",
+        "afterSha256": "2e3a757ae62c7799ea22c1178b81df1bda88725a18d0825da946562adc7e7560",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-expander.png",
+        "identical": true,
+        "beforeSha256": "030fd2405ac9c6846bc7d995c03002ecefd128e0a19607184bb2b967afb499c9",
+        "afterSha256": "030fd2405ac9c6846bc7d995c03002ecefd128e0a19607184bb2b967afb499c9",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-grid-view.png",
+        "identical": true,
+        "beforeSha256": "5ceb5720bb1243009110ef54562d4016485345f5945302904e8981be63d8f6f6",
+        "afterSha256": "5ceb5720bb1243009110ef54562d4016485345f5945302904e8981be63d8f6f6",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-info-bar.png",
+        "identical": true,
+        "beforeSha256": "fac2d2be2571c8e0ebff3e0982c82993f4de8ea5f18544ab56b6f974aad5134e",
+        "afterSha256": "fac2d2be2571c8e0ebff3e0982c82993f4de8ea5f18544ab56b6f974aad5134e",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-items-view.png",
+        "identical": false,
+        "beforeSha256": "58d313fc6d291b3dead13add509c6625c38e873da67b949acd88300e52721370",
+        "afterSha256": "e6edb2f1cbae99518d8838b388243feab92f13226b0e28d8905941b5940d556e",
+        "differenceBounds": [
+          374,
+          178,
+          1436,
+          731
+        ]
+      },
+      {
+        "file": "Light-list-view.png",
+        "identical": true,
+        "beforeSha256": "ea8de28faf09571e1462b9ffc92e9366102f8034c9b41b3a4356168e35005b84",
+        "afterSha256": "ea8de28faf09571e1462b9ffc92e9366102f8034c9b41b3a4356168e35005b84",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-number-box.png",
+        "identical": true,
+        "beforeSha256": "fdf8503c77045ce5b5cdc44dd1f44c6000364ad021ce8a694354efa191a978e2",
+        "afterSha256": "fdf8503c77045ce5b5cdc44dd1f44c6000364ad021ce8a694354efa191a978e2",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-pager-control.png",
+        "identical": true,
+        "beforeSha256": "f12bfe609450734740db452c236d8f1c969cb6cf93a1eed56a3061da35fadcc9",
+        "afterSha256": "f12bfe609450734740db452c236d8f1c969cb6cf93a1eed56a3061da35fadcc9",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-person-picture.png",
+        "identical": true,
+        "beforeSha256": "7693f6b2352b1ac65fbee96e6fe63ee5821c4cd5e8d08785fde5079b789c015d",
+        "afterSha256": "7693f6b2352b1ac65fbee96e6fe63ee5821c4cd5e8d08785fde5079b789c015d",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-rich-edit-box.png",
+        "identical": true,
+        "beforeSha256": "a289508feae7e46403886ce40352f3aad6d2209acba3ab13a31d3df0be1f1303",
+        "afterSha256": "a289508feae7e46403886ce40352f3aad6d2209acba3ab13a31d3df0be1f1303",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-semantic-zoom.png",
+        "identical": true,
+        "beforeSha256": "3ff19db7b6e5f47a349f3ddc8501177f2598582393e80ae4a1f8b2666e179370",
+        "afterSha256": "3ff19db7b6e5f47a349f3ddc8501177f2598582393e80ae4a1f8b2666e179370",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-split-button.png",
+        "identical": true,
+        "beforeSha256": "fd805ed4323f6ecf973ba19cbaf47eb7f5c57ffd5a3fc353320cdc2cdf8d9230",
+        "afterSha256": "fd805ed4323f6ecf973ba19cbaf47eb7f5c57ffd5a3fc353320cdc2cdf8d9230",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-split-view.png",
+        "identical": true,
+        "beforeSha256": "1b8d4a100354ebad5aeb1e42ae17949d9451b352dd9173bf3e3eb8ba161c7a04",
+        "afterSha256": "1b8d4a100354ebad5aeb1e42ae17949d9451b352dd9173bf3e3eb8ba161c7a04",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-tab-view.png",
+        "identical": true,
+        "beforeSha256": "3e1077a16a280f19ae6676c9af5e3d5b91ddc07f4c341643e8b046e690a1fbe3",
+        "afterSha256": "3e1077a16a280f19ae6676c9af5e3d5b91ddc07f4c341643e8b046e690a1fbe3",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-time-picker.png",
+        "identical": true,
+        "beforeSha256": "62ad210a9a8197fd9d2ef80b45a96664e7147ac90bc11abc44fd5b710f1cc997",
+        "afterSha256": "62ad210a9a8197fd9d2ef80b45a96664e7147ac90bc11abc44fd5b710f1cc997",
+        "differenceBounds": null
+      },
+      {
+        "file": "Light-tree-view.png",
+        "identical": true,
+        "beforeSha256": "c22715dd2a0d3ed1b3ae51049506b0aaf856ab64e79c9e7be207495918f592d3",
+        "afterSha256": "c22715dd2a0d3ed1b3ae51049506b0aaf856ab64e79c9e7be207495918f592d3",
+        "differenceBounds": null
+      }
+    ],
+    "beforeCapture": "out/mit-migration-before/controlled-gallery/capture.json",
+    "afterCapture": "out/mit-migration-after/controlled-gallery/capture.json",
+    "isolatedItemsViewRecheck": {
+      "lightOldNewPixelIdentical": true,
+      "newRepeatedPixelIdentical": true,
+      "allImageRectsSourcesAndOpacityEqual": true,
+      "artifacts": [
+        "out/items-recheck-old.png",
+        "out/items-recheck-new.png",
+        "out/items-recheck-new-again.png"
+      ],
+      "sequenceCaptureResult": "43/44 identical; Light ItemsView has sequence/load dependent raster/realization differences. Isolated old/new and repeated new capture match exactly.",
+      "scope": "Static captures, not all animation frames or a native Windows Gallery parity claim."
+    }
+  },
+  "embeddedAcrylicNoise": {
+    "path": "references/winui/NoiseAsset_256X256_PNG.png",
+    "pinnedGitBlobSha1": "41de173d9014b38f8290acf270c490b37fc79a60",
+    "verified": true
+  },
+  "wasmBuild": {
+    "sha256": "3cf932643bc36655e15e8194b21dd9cc170b8229189c635671023dc267e49667",
+    "completedAt": 1794291368532,
+    "resourceSource": "MIT",
+    "resourceCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "resourceFingerprint": "e6ff0dfbb7308d575ff01232237fbb9d9ad31044a4fdc1dc029cf632410df3e1"
+  }
+}

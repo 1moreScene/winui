@@ -33,6 +33,7 @@ def main():
         {'id': 'libreicons', 'license': 'MIT', 'source': 'https://github.com/DiemenDesign/LibreICONS/tree/2d2172d15e3c6ca03c018629d60050e4b99e5c55', 'notices': ['gallery/public/official/LibreICONS-LICENSE.txt']},
         {'id': 'project', 'license': 'MIT', 'source': 'Project-authored geometric artwork and synthetic two-color editor fixture', 'notices': ['LICENSE']},
         {'id': 'tableview-captures', 'license': 'MIT', 'source': 'Project-generated raster comparison captures of the pinned community WinUI.TableView, not redistributed font/SDK binaries', 'notices': ['LICENSE', 'third_party/WinUI.TableView/LICENSE.md', 'third_party/WinUI.TableView/v1.5.1/LICENSE.md', 'third_party/WinUI.TableView/NOTICE.md']},
+        {'id': 'communitytoolkit-segmented', 'license': 'MIT', 'source': 'https://github.com/CommunityToolkit/Windows/tree/a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e/components/Segmented', 'notices': ['third_party/CommunityToolkit.Segmented/License.md']},
         {'id': 'calendar-data', 'license': 'MIT AND Apache-2.0 AND Unicode-3.0', 'source': 'Pinned ICU4X/calendrical_calculations and lunar_python 1.4.9 generator; HKO is a comparison link, not an imported dataset', 'notices': ['third_party/calendar/ICU4X-LICENSE', 'third_party/calendar/calendrical-calculations-LICENSE', 'third_party/calendar/lunar-python-LICENSE']},
 
     ]
@@ -56,6 +57,9 @@ def main():
             fixture = json.loads((ROOT / 'gallery/src/rich-edit-fixtures.json').read_text())
             assert data == base64.b64decode(fixture['image'].split(',')[1])
             entry.update(components=['project'], source='gallery/src/rich-edit-fixtures.json: image; 48x32 red/blue test rectangles')
+        elif relative == 'gallery/public/community-segmented/Segmented.png':
+            assert git_blob == 'ba9ad789deff1e197472c2d763f8128cf53a1fc3'
+            entry.update(components=['communitytoolkit-segmented'], source='https://github.com/CommunityToolkit/Windows/blob/a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e/components/Segmented/samples/Assets/Segmented.png', gitBlobSha1=git_blob)
         elif relative.startswith('gallery/public/community-table-view/'):
             entry.update(components=['tableview-captures'], source='tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures')
         elif relative == 'third_party/icon-fonts/Symbols.ttf':
@@ -82,6 +86,10 @@ def main():
     evidence += [entry['local'] for entry in mit_source['files']] + [merged['output']] + [entry['path'] for entry in palettes['outputs']]
     evidence += [file.relative_to(ROOT).as_posix() for file in (ROOT/'references/sdk').glob('*.xaml')]
     evidence += [entry['path'] for entry in EMBEDDED_ASSETS]
+    segmented = json.loads((ROOT / 'references/segmented-source.json').read_text(encoding='utf8'))
+    for entry in segmented['files']:
+        assert sha(ROOT / entry['localPath']) == entry['sha256'], entry['localPath']
+        evidence.append(entry['localPath'])
     result = {'schema': 1, 'reviewedOn': '2026-11-10', 'components': components, 'files': files, 'notices': notices, 'inlineResources': inline,
               'supportingFiles': {file: sha(ROOT / file) for file in evidence},
               'embeddedResources': [{**entry,'source':f'https://github.com/microsoft/microsoft-ui-xaml/blob/{WINUI_COMMIT}/{entry["upstream"]}'} for entry in EMBEDDED_ASSETS],

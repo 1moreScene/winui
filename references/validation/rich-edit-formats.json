@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-09",
+  "control": "RichEditBox",
+  "sources": "references/rich-edit-formats-sources.json",
+  "architecture": "Rust owns RTF/MathML parsing, document state, image validation, math layout, painting, selection and history. TS adapts browser image decode/clipboard/IME. React uses the public SDK.",
+  "rust": {
+    "fullSuite": {
+      "command": "cargo test --locked --quiet -j 4",
+      "passed": 550,
+      "suites": 58,
+      "log": "out/rich-edit-formats/rust-tests.txt",
+      "timing": "Full suite followed by targeted RichEditBox/shared editor checks after final codec refinements."
+    },
+    "finalTargeted": {
+      "command": "cargo test --locked --test rich_edit_formats --test rich_edit --test text_scroll --test input_behavior --quiet",
+      "formatTests": 23,
+      "coreRichEditTests": 14,
+      "sharedEditorTests": 17,
+      "result": "passed",
+      "log": "out/rich-edit-formats/final-targeted-rust.txt"
+    }
+  },
+  "browser": {
+    "command": "PW_CHANNEL=chrome npx playwright test -c playwright.rich-edit-formats.config.ts",
+    "stats": {
+      "startTime": "2026-11-09T15:24:59.438Z",
+      "duration": 35945.76,
+      "expected": 12,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "report": "out/rich-edit-formats-browser-results.json",
+    "coverage": [
+      "Canvas2D and WebGL2 embedded image pixels and math drawing",
+      "RTF roundtrip, rich clipboard, cut/paste/delete and undo/redo",
+      "MathML namespace/styles, invalid XML atomicity and source editing",
+      "Image file paste dimensions and asynchronous document-generation guard",
+      "Public SDK / React, Unicode editing, shared flyout, selection and disposal",
+      "Four Light/Dark native RTF/MathML outer-geometry comparisons"
+    ],
+    "screenshots": "out/rich-edit-formats/"
+  },
+  "checks": {
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "declarations": "passed",
+    "origins": "passed (117 kinds / 117 React exports / 78 frontend files)",
+    "enumMappings": "passed",
+    "logs": [
+      "out/rich-edit-formats/final-build.txt",
+      "out/rich-edit-formats/final-frontend.txt",
+      "out/rich-edit-formats/final-typecheck.txt"
+    ]
+  },
+  "wasm": {
+    "path": "gallery/src/wasm/winui_bg.wasm",
+    "bytes": 9573900,
+    "sha256": "0d449cd0bb9804233b94a5595a0f02e7889c6dc25bb7b0105e6e0365de5fad3d"
+  },
+  "warmExports": {
+    "Canvas2D": {
+      "operation": "20 warm RTF exports",
+      "milliseconds": 0.9000000953674316,
+      "bytes": 20860
+    },
+    "WebGL2": {
+      "operation": "20 warm RTF exports",
+      "milliseconds": 1.399999976158142,
+      "bytes": 20860
+    }
+  },
+  "native": {
+    "cases": 18,
+    "results": {
+      "path": "references/rich-edit-native.json",
+      "bytes": 64149,
+      "sha256": "14b224adfe78c121e14f8f506b6ba79efc9755dcbcff6124d4727d11f70a4c45"
+    },
+    "runtime": "Microsoft.WinUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=de31ebe4ad15742b",
+    "record": "references/validation/rich-edit-native.json",
+    "comparison": [
+      {
+        "name": "Light-rtf",
+        "geometry": {
+          "x": 24,
+          "y": 24,
+          "width": 300,
+          "height": 160
+        },
+        "meanAbsoluteChannelError": 1.631048611111111,
+        "acceptance": "Recorded raster difference; no pixel equivalence claimed."
+      },
+      {
+        "name": "Light-mathml",
+        "geometry": {
+          "x": 24,
+          "y": 24,
+          "width": 300,
+          "height": 180
+        },
+        "meanAbsoluteChannelError": 2.1425,
+        "acceptance": "Recorded raster difference; no pixel equivalence claimed."
+      },
+      {
+        "name": "Dark-rtf",
+        "geometry": {
+          "x": 24,
+          "y": 24,
+          "width": 300,
+          "height": 160
+        },
+        "meanAbsoluteChannelError": 2.056625,
+        "acceptance": "Recorded raster difference; no pixel equivalence claimed."
+      },
+      {
+        "name": "Dark-mathml",
+        "geometry": {
+          "x": 24,
+          "y": 24,
+          "width": 300,
+          "height": 180
+        },
+        "meanAbsoluteChannelError": 2.2588518518518517,
+        "acceptance": "Recorded raster difference; no pixel equivalence claimed."
+      }
+    ],
+    "images": "out/rich-edit-native/",
+    "acceptance": "Pinned independent SDK probe, not Store Gallery acceptance. Matching outer rectangles and average raster differences do not establish glyph, present-time or full native equivalence.",
+    "interop": "Native default NoMath strips RTF math. MathOnly imports the generated formula RTF; SDK mixed text/image/formula documents have a different model."
+  },
+  "limits": [
+    "Documented bounded RTF and Presentation MathML subsets; unsupported visible structures return errors",
+    "Formula interiors are edited through MathML; no native two-dimensional caret editor or automatic UnicodeMath conversion",
+    "No complete OpenType MATH, Word RTF, TOM or native pixel/animation equivalence",
+    "Warm export timings cover a small fixture; large image documents, cold-start latency and full CPU/GPU performance equivalence are not accepted"
+  ],
+  "documentation": "docs/rich-edit-box.md"
+}

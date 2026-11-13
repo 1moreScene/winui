@@ -1,0 +1,2421 @@
+{
+  "recordedAt": "2026-11-09T21:32:28.342239+08:00",
+  "beforeWasmSha256": "ad419975f95be4437a348e2b9a197852bc6639b8112b6e83a31f514e99dee171",
+  "afterWasmSha256": "fd826460fd2a5d3e7d30b56643c0c1a9ed4a56eafe35c56a4cb82790655a1407",
+  "requestedHz": 120,
+  "cpuBudgetMs": 8.333333333333334,
+  "stages": [
+    {
+      "name": "editing-sort",
+      "before": {
+        "name": "editing-sort",
+        "frames": 54,
+        "drawP50": 15.200000047683716,
+        "drawP95": 20.799999952316284,
+        "wasmP95": 17.600000023841858,
+        "budgetMisses": 54,
+        "rafMedian": 20.299999999999727,
+        "rafP95": 112.10000000000036,
+        "trialSummaries": [
+          {
+            "name": "editing-sort",
+            "frames": 27,
+            "drawP50": 15.200000047683716,
+            "drawP95": 20.5,
+            "wasmP95": 17.5,
+            "budgetMisses": 27,
+            "rafMedian": 20.199999999999818,
+            "rafP95": 112.10000000000036,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "editing-sort",
+            "frames": 27,
+            "drawP50": 15.200000047683716,
+            "drawP95": 19.800000071525574,
+            "wasmP95": 16.199999928474426,
+            "budgetMisses": 27,
+            "rafMedian": 20.799999999999727,
+            "rafP95": 109.09999999999991,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "editing-sort",
+        "frames": 86,
+        "drawP50": 6.600000023841858,
+        "drawP95": 13.5,
+        "wasmP95": 8.899999976158142,
+        "budgetMisses": 11,
+        "rafMedian": 11.399999999999636,
+        "rafP95": 94.40000000000009,
+        "trialSummaries": [
+          {
+            "name": "editing-sort",
+            "frames": 42,
+            "drawP50": 6.899999976158142,
+            "drawP95": 12.600000023841858,
+            "wasmP95": 7.100000023841858,
+            "budgetMisses": 7,
+            "rafMedian": 11.899999999999636,
+            "rafP95": 94.40000000000009,
+            "phases": {
+              "layoutMs": 1.1999999284744263,
+              "displayListMs": 0.7999999523162842,
+              "paintMs": 0.9000000953674316,
+              "snapshotMs": 1.1999999284744263,
+              "previousSerializeMs": 0.8999999761581421
+            }
+          },
+          {
+            "name": "editing-sort",
+            "frames": 44,
+            "drawP50": 6.5,
+            "drawP95": 10.700000047683716,
+            "wasmP95": 6.700000047683716,
+            "budgetMisses": 4,
+            "rafMedian": 11.099999999999454,
+            "rafP95": 18.5,
+            "phases": {
+              "layoutMs": 0.8000000715255737,
+              "displayListMs": 0.7999999523162842,
+              "paintMs": 1,
+              "snapshotMs": 1.1999999284744263,
+              "previousSerializeMs": 1
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 2.299999952316284,
+          "displayListMs": 0.8000000715255737,
+          "paintMs": 1.100000023841858,
+          "snapshotMs": 1.1999999284744263,
+          "previousSerializeMs": 1
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": {
+              "actionMs": 1.9000000953674316
+            },
+            "maximumDrawMs": 44.40000009536743,
+            "maximumInputMs": 1.600000023841858
+          },
+          {
+            "action": {
+              "actionMs": 1.899999976158142
+            },
+            "maximumDrawMs": 42.10000002384186,
+            "maximumInputMs": 1.600000023841858
+          }
+        ],
+        "after": [
+          {
+            "action": {
+              "actionMs": 1.899999976158142
+            },
+            "maximumDrawMs": 43.799999952316284,
+            "maximumInputMs": 1.7000000476837158
+          },
+          {
+            "action": {
+              "actionMs": 1.7999999523162842
+            },
+            "maximumDrawMs": 44.60000002384186,
+            "maximumInputMs": 1.600000023841858
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    },
+    {
+      "name": "editing-wheel",
+      "before": {
+        "name": "editing-wheel",
+        "frames": 94,
+        "drawP50": 17.40000009536743,
+        "drawP95": 24.899999976158142,
+        "wasmP95": 19.899999976158142,
+        "budgetMisses": 94,
+        "rafMedian": 20.600000000000364,
+        "rafP95": 40.399999999999636,
+        "trialSummaries": [
+          {
+            "name": "editing-wheel",
+            "frames": 48,
+            "drawP50": 17.299999952316284,
+            "drawP95": 24.899999976158142,
+            "wasmP95": 19.899999976158142,
+            "budgetMisses": 48,
+            "rafMedian": 24.300000000000182,
+            "rafP95": 40.399999999999636,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "editing-wheel",
+            "frames": 46,
+            "drawP50": 17.600000023841858,
+            "drawP95": 23.699999928474426,
+            "wasmP95": 19.40000009536743,
+            "budgetMisses": 46,
+            "rafMedian": 17.199999999999818,
+            "rafP95": 39.19999999999982,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "editing-wheel",
+        "frames": 129,
+        "drawP50": 8.100000023841858,
+        "drawP95": 13.799999952316284,
+        "wasmP95": 9.600000023841858,
+        "budgetMisses": 55,
+        "rafMedian": 17.100000000000364,
+        "rafP95": 27.200000000000728,
+        "trialSummaries": [
+          {
+            "name": "editing-wheel",
+            "frames": 65,
+            "drawP50": 7.799999952316284,
+            "drawP95": 13,
+            "wasmP95": 9,
+            "budgetMisses": 24,
+            "rafMedian": 16.899999999999636,
+            "rafP95": 26.199999999999818,
+            "phases": {
+              "layoutMs": 1.7999999523162842,
+              "displayListMs": 1.7999999523162842,
+              "paintMs": 2.8000000715255737,
+              "snapshotMs": 1.4000000953674316,
+              "previousSerializeMs": 1.2000000476837158
+            }
+          },
+          {
+            "name": "editing-wheel",
+            "frames": 64,
+            "drawP50": 8.299999952316284,
+            "drawP95": 13.700000047683716,
+            "wasmP95": 9.600000023841858,
+            "budgetMisses": 31,
+            "rafMedian": 17.5,
+            "rafP95": 29,
+            "phases": {
+              "layoutMs": 2.399999976158142,
+              "displayListMs": 1.8000000715255737,
+              "paintMs": 2.399999976158142,
+              "snapshotMs": 1.600000023841858,
+              "previousSerializeMs": 1.1999999284744263
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 2.399999976158142,
+          "displayListMs": 1.8000000715255737,
+          "paintMs": 3.5,
+          "snapshotMs": 1.600000023841858,
+          "previousSerializeMs": 1.2000000476837158
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": null,
+            "maximumDrawMs": 30.100000023841858,
+            "maximumInputMs": 2.100000023841858
+          },
+          {
+            "action": null,
+            "maximumDrawMs": 27,
+            "maximumInputMs": 2.5
+          }
+        ],
+        "after": [
+          {
+            "action": null,
+            "maximumDrawMs": 18.100000023841858,
+            "maximumInputMs": 2.0999999046325684
+          },
+          {
+            "action": null,
+            "maximumDrawMs": 19.299999952316284,
+            "maximumInputMs": 4.400000095367432
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    },
+    {
+      "name": "editing-scroll-impulse",
+      "before": {
+        "name": "editing-scroll-impulse",
+        "frames": 33,
+        "drawP50": 18.09999990463257,
+        "drawP95": 25.200000047683716,
+        "wasmP95": 19.700000047683716,
+        "budgetMisses": 33,
+        "rafMedian": 12.900000000000546,
+        "rafP95": 39.5,
+        "trialSummaries": [
+          {
+            "name": "editing-scroll-impulse",
+            "frames": 16,
+            "drawP50": 18.09999990463257,
+            "drawP95": 25.200000047683716,
+            "wasmP95": 19.700000047683716,
+            "budgetMisses": 16,
+            "rafMedian": 13.300000000000182,
+            "rafP95": 39.5,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "editing-scroll-impulse",
+            "frames": 17,
+            "drawP50": 17.300000071525574,
+            "drawP95": 24,
+            "wasmP95": 19.40000009536743,
+            "budgetMisses": 17,
+            "rafMedian": 12.399999999999636,
+            "rafP95": 38.5,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "editing-scroll-impulse",
+        "frames": 46,
+        "drawP50": 8.699999928474426,
+        "drawP95": 15.5,
+        "wasmP95": 11.100000023841858,
+        "budgetMisses": 29,
+        "rafMedian": 14.399999999999636,
+        "rafP95": 29.800000000000182,
+        "trialSummaries": [
+          {
+            "name": "editing-scroll-impulse",
+            "frames": 23,
+            "drawP50": 8.700000047683716,
+            "drawP95": 15.5,
+            "wasmP95": 11.100000023841858,
+            "budgetMisses": 15,
+            "rafMedian": 14.5,
+            "rafP95": 29.5,
+            "phases": {
+              "layoutMs": 2.4000000953674316,
+              "displayListMs": 1.7999999523162842,
+              "paintMs": 1.9000000953674316,
+              "snapshotMs": 1.7000000476837158,
+              "previousSerializeMs": 1.5
+            }
+          },
+          {
+            "name": "editing-scroll-impulse",
+            "frames": 23,
+            "drawP50": 8.699999928474426,
+            "drawP95": 13.800000071525574,
+            "wasmP95": 8.900000095367432,
+            "budgetMisses": 14,
+            "rafMedian": 14.199999999999818,
+            "rafP95": 28.800000000000182,
+            "phases": {
+              "layoutMs": 2.299999952316284,
+              "displayListMs": 2.3000000715255737,
+              "paintMs": 1.899999976158142,
+              "snapshotMs": 1.7000000476837158,
+              "previousSerializeMs": 1.3000000715255737
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 2.5,
+          "displayListMs": 2.399999976158142,
+          "paintMs": 1.9000000953674316,
+          "snapshotMs": 1.899999976158142,
+          "previousSerializeMs": 1.7000000476837158
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": {
+              "time": 6470.5,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 26.799999952316284,
+            "maximumInputMs": 0.2999999523162842
+          },
+          {
+            "action": {
+              "time": 6444.599999904633,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 26.899999976158142,
+            "maximumInputMs": 0.5
+          }
+        ],
+        "after": [
+          {
+            "action": {
+              "time": 6251.599999904633,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 16.899999976158142,
+            "maximumInputMs": 0.6000000238418579
+          },
+          {
+            "action": {
+              "time": 6288,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 20.5,
+            "maximumInputMs": 0.5
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    },
+    {
+      "name": "editing-active-editor-wheel",
+      "before": {
+        "name": "editing-active-editor-wheel",
+        "frames": 89,
+        "drawP50": 18.200000047683716,
+        "drawP95": 22.799999952316284,
+        "wasmP95": 17.299999952316284,
+        "budgetMisses": 89,
+        "rafMedian": 16.800000000000182,
+        "rafP95": 32.69999999999982,
+        "trialSummaries": [
+          {
+            "name": "editing-active-editor-wheel",
+            "frames": 47,
+            "drawP50": 17.600000023841858,
+            "drawP95": 23,
+            "wasmP95": 17.299999952316284,
+            "budgetMisses": 47,
+            "rafMedian": 22.5,
+            "rafP95": 32.5,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "editing-active-editor-wheel",
+            "frames": 42,
+            "drawP50": 18.59999990463257,
+            "drawP95": 22.100000023841858,
+            "wasmP95": 16.899999976158142,
+            "budgetMisses": 42,
+            "rafMedian": 16,
+            "rafP95": 32.69999999999982,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "editing-active-editor-wheel",
+        "frames": 123,
+        "drawP50": 9.600000023841858,
+        "drawP95": 13.399999976158142,
+        "wasmP95": 8.399999976158142,
+        "budgetMisses": 116,
+        "rafMedian": 18.5,
+        "rafP95": 24.300000000000182,
+        "trialSummaries": [
+          {
+            "name": "editing-active-editor-wheel",
+            "frames": 63,
+            "drawP50": 9.399999976158142,
+            "drawP95": 13.399999976158142,
+            "wasmP95": 8.100000023841858,
+            "budgetMisses": 58,
+            "rafMedian": 18.399999999999636,
+            "rafP95": 23.5,
+            "phases": {
+              "layoutMs": 1.4000000953674316,
+              "displayListMs": 1.399999976158142,
+              "paintMs": 1.7000000476837158,
+              "snapshotMs": 1.7999999523162842,
+              "previousSerializeMs": 1.2000000476837158
+            }
+          },
+          {
+            "name": "editing-active-editor-wheel",
+            "frames": 60,
+            "drawP50": 9.700000047683716,
+            "drawP95": 13.200000047683716,
+            "wasmP95": 8.399999976158142,
+            "budgetMisses": 58,
+            "rafMedian": 18.600000000000364,
+            "rafP95": 24.300000000000182,
+            "phases": {
+              "layoutMs": 1.7000000476837158,
+              "displayListMs": 1.5,
+              "paintMs": 2.1999999284744263,
+              "snapshotMs": 1.7000000476837158,
+              "previousSerializeMs": 1.2999999523162842
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 1.7000000476837158,
+          "displayListMs": 1.5,
+          "paintMs": 2.100000023841858,
+          "snapshotMs": 1.7000000476837158,
+          "previousSerializeMs": 1.2999999523162842
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": {
+              "rowIndex": 5,
+              "column": "age",
+              "wheelCount": 12,
+              "deltaY": 15,
+              "editorRetained": true
+            },
+            "maximumDrawMs": 24.700000047683716,
+            "maximumInputMs": 0.7999999523162842
+          },
+          {
+            "action": {
+              "rowIndex": 5,
+              "column": "age",
+              "wheelCount": 12,
+              "deltaY": 15,
+              "editorRetained": true
+            },
+            "maximumDrawMs": 23.800000071525574,
+            "maximumInputMs": 0.8000000715255737
+          }
+        ],
+        "after": [
+          {
+            "action": {
+              "rowIndex": 5,
+              "column": "age",
+              "wheelCount": 12,
+              "deltaY": 15,
+              "editorRetained": true
+            },
+            "maximumDrawMs": 15.899999976158142,
+            "maximumInputMs": 1.2999999523162842
+          },
+          {
+            "action": {
+              "rowIndex": 5,
+              "column": "age",
+              "wheelCount": 12,
+              "deltaY": 15,
+              "editorRetained": true
+            },
+            "maximumDrawMs": 15.399999976158142,
+            "maximumInputMs": 0.5
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    },
+    {
+      "name": "large-sort",
+      "before": {
+        "name": "large-sort",
+        "frames": 73,
+        "drawP50": 10.5,
+        "drawP95": 16.5,
+        "wasmP95": 11.399999976158142,
+        "budgetMisses": 72,
+        "rafMedian": 15.300000000001091,
+        "rafP95": 33.5,
+        "trialSummaries": [
+          {
+            "name": "large-sort",
+            "frames": 36,
+            "drawP50": 10.699999928474426,
+            "drawP95": 15.700000047683716,
+            "wasmP95": 10.100000023841858,
+            "budgetMisses": 36,
+            "rafMedian": 15.399999999999636,
+            "rafP95": 31.399999999999636,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "large-sort",
+            "frames": 37,
+            "drawP50": 10.399999976158142,
+            "drawP95": 16.5,
+            "wasmP95": 11.399999976158142,
+            "budgetMisses": 36,
+            "rafMedian": 15.300000000001091,
+            "rafP95": 33.5,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "large-sort",
+        "frames": 96,
+        "drawP50": 6.200000047683716,
+        "drawP95": 11.100000023841858,
+        "wasmP95": 6.100000023841858,
+        "budgetMisses": 11,
+        "rafMedian": 11.699999999998909,
+        "rafP95": 26.899999999999636,
+        "trialSummaries": [
+          {
+            "name": "large-sort",
+            "frames": 48,
+            "drawP50": 6.200000047683716,
+            "drawP95": 8.700000047683716,
+            "wasmP95": 5.200000047683716,
+            "budgetMisses": 4,
+            "rafMedian": 11.600000000000364,
+            "rafP95": 21.100000000000364,
+            "phases": {
+              "layoutMs": 0.9000000953674316,
+              "displayListMs": 0.6000000238418579,
+              "paintMs": 0.8000000715255737,
+              "snapshotMs": 0.8000000715255737,
+              "previousSerializeMs": 1
+            }
+          },
+          {
+            "name": "large-sort",
+            "frames": 48,
+            "drawP50": 6.100000023841858,
+            "drawP95": 11.100000023841858,
+            "wasmP95": 6.100000023841858,
+            "budgetMisses": 7,
+            "rafMedian": 11.899999999999636,
+            "rafP95": 20.5,
+            "phases": {
+              "layoutMs": 0.7999999523162842,
+              "displayListMs": 0.7999999523162842,
+              "paintMs": 1,
+              "snapshotMs": 0.9000000953674316,
+              "previousSerializeMs": 1.5
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 2.200000047683716,
+          "displayListMs": 0.8999999761581421,
+          "paintMs": 1,
+          "snapshotMs": 0.8999999761581421,
+          "previousSerializeMs": 1.4000000953674316
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": {
+              "actionMs": 0.3999999761581421
+            },
+            "maximumDrawMs": 35.60000002384186,
+            "maximumInputMs": 0.30000007152557373
+          },
+          {
+            "action": {
+              "actionMs": 0.40000009536743164
+            },
+            "maximumDrawMs": 37.5,
+            "maximumInputMs": 0.20000004768371582
+          }
+        ],
+        "after": [
+          {
+            "action": {
+              "actionMs": 0.2999999523162842
+            },
+            "maximumDrawMs": 36.10000002384186,
+            "maximumInputMs": 0.20000004768371582
+          },
+          {
+            "action": {
+              "actionMs": 0.30000007152557373
+            },
+            "maximumDrawMs": 34.59999990463257,
+            "maximumInputMs": 0.20000004768371582
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    },
+    {
+      "name": "large-wheel",
+      "before": {
+        "name": "large-wheel",
+        "frames": 110,
+        "drawP50": 10.699999928474426,
+        "drawP95": 15.399999976158142,
+        "wasmP95": 10.899999976158142,
+        "budgetMisses": 105,
+        "rafMedian": 19.899999999999636,
+        "rafP95": 59.29999999999927,
+        "trialSummaries": [
+          {
+            "name": "large-wheel",
+            "frames": 55,
+            "drawP50": 10.799999952316284,
+            "drawP95": 15.399999976158142,
+            "wasmP95": 10.899999976158142,
+            "budgetMisses": 50,
+            "rafMedian": 19.100000000000364,
+            "rafP95": 33.5,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "large-wheel",
+            "frames": 55,
+            "drawP50": 10.600000023841858,
+            "drawP95": 15.200000047683716,
+            "wasmP95": 10.899999976158142,
+            "budgetMisses": 55,
+            "rafMedian": 20,
+            "rafP95": 33.5,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "large-wheel",
+        "frames": 123,
+        "drawP50": 7.400000095367432,
+        "drawP95": 11.700000047683716,
+        "wasmP95": 7.199999928474426,
+        "budgetMisses": 25,
+        "rafMedian": 16.600000000000364,
+        "rafP95": 54.79999999999927,
+        "trialSummaries": [
+          {
+            "name": "large-wheel",
+            "frames": 62,
+            "drawP50": 7.599999904632568,
+            "drawP95": 11.699999928474426,
+            "wasmP95": 6.799999952316284,
+            "budgetMisses": 13,
+            "rafMedian": 16.600000000000364,
+            "rafP95": 42.399999999999636,
+            "phases": {
+              "layoutMs": 1.2999999523162842,
+              "displayListMs": 1.3000000715255737,
+              "paintMs": 1.7999999523162842,
+              "snapshotMs": 0.8999999761581421,
+              "previousSerializeMs": 1.2000000476837158
+            }
+          },
+          {
+            "name": "large-wheel",
+            "frames": 61,
+            "drawP50": 7.399999976158142,
+            "drawP95": 11.700000047683716,
+            "wasmP95": 7.199999928474426,
+            "budgetMisses": 12,
+            "rafMedian": 16.600000000000364,
+            "rafP95": 32.100000000000364,
+            "phases": {
+              "layoutMs": 1.7999999523162842,
+              "displayListMs": 1.5,
+              "paintMs": 2.200000047683716,
+              "snapshotMs": 0.9000000953674316,
+              "previousSerializeMs": 1.2000000476837158
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 1.6999999284744263,
+          "displayListMs": 1.4000000953674316,
+          "paintMs": 2.200000047683716,
+          "snapshotMs": 0.9000000953674316,
+          "previousSerializeMs": 1.2000000476837158
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": null,
+            "maximumDrawMs": 16,
+            "maximumInputMs": 0.7000000476837158
+          },
+          {
+            "action": null,
+            "maximumDrawMs": 15.600000023841858,
+            "maximumInputMs": 0.3999999761581421
+          }
+        ],
+        "after": [
+          {
+            "action": null,
+            "maximumDrawMs": 17,
+            "maximumInputMs": 0.7000000476837158
+          },
+          {
+            "action": null,
+            "maximumDrawMs": 14.399999976158142,
+            "maximumInputMs": 0.9000000953674316
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    },
+    {
+      "name": "large-scroll-impulse",
+      "before": {
+        "name": "large-scroll-impulse",
+        "frames": 24,
+        "drawP50": 11.899999976158142,
+        "drawP95": 19.200000047683716,
+        "wasmP95": 13.100000023841858,
+        "budgetMisses": 23,
+        "rafMedian": 12.5,
+        "rafP95": 67.89999999999964,
+        "trialSummaries": [
+          {
+            "name": "large-scroll-impulse",
+            "frames": 12,
+            "drawP50": 11.5,
+            "drawP95": 19.200000047683716,
+            "wasmP95": 13.100000023841858,
+            "budgetMisses": 12,
+            "rafMedian": 12.799999999999272,
+            "rafP95": 68.89999999999964,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          },
+          {
+            "name": "large-scroll-impulse",
+            "frames": 12,
+            "drawP50": 13,
+            "drawP95": 16.100000023841858,
+            "wasmP95": 11.5,
+            "budgetMisses": 11,
+            "rafMedian": 12.399999999999636,
+            "rafP95": 66.39999999999964,
+            "phases": {
+              "layoutMs": 0,
+              "displayListMs": 0,
+              "paintMs": 0,
+              "snapshotMs": 0,
+              "previousSerializeMs": 0
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 0,
+          "displayListMs": 0,
+          "paintMs": 0,
+          "snapshotMs": 0,
+          "previousSerializeMs": 0
+        }
+      },
+      "after": {
+        "name": "large-scroll-impulse",
+        "frames": 26,
+        "drawP50": 9.299999952316284,
+        "drawP95": 15.399999976158142,
+        "wasmP95": 9.699999928474426,
+        "budgetMisses": 14,
+        "rafMedian": 11.799999999999272,
+        "rafP95": 66.89999999999964,
+        "trialSummaries": [
+          {
+            "name": "large-scroll-impulse",
+            "frames": 12,
+            "drawP50": 10.100000023841858,
+            "drawP95": 15.5,
+            "wasmP95": 9.699999928474426,
+            "budgetMisses": 8,
+            "rafMedian": 11.600000000000364,
+            "rafP95": 69.60000000000036,
+            "phases": {
+              "layoutMs": 2.0999999046325684,
+              "displayListMs": 2.100000023841858,
+              "paintMs": 2.5,
+              "snapshotMs": 1.2999999523162842,
+              "previousSerializeMs": 1.8000000715255737
+            }
+          },
+          {
+            "name": "large-scroll-impulse",
+            "frames": 14,
+            "drawP50": 7.700000047683716,
+            "drawP95": 13.600000023841858,
+            "wasmP95": 7.799999952316284,
+            "budgetMisses": 6,
+            "rafMedian": 12.299999999999272,
+            "rafP95": 65.89999999999964,
+            "phases": {
+              "layoutMs": 2.200000047683716,
+              "displayListMs": 1.3000000715255737,
+              "paintMs": 1.600000023841858,
+              "snapshotMs": 1.100000023841858,
+              "previousSerializeMs": 1.6999999284744263
+            }
+          }
+        ],
+        "phases": {
+          "layoutMs": 2.200000047683716,
+          "displayListMs": 2.100000023841858,
+          "paintMs": 1.7999999523162842,
+          "snapshotMs": 1.2000000476837158,
+          "previousSerializeMs": 1.8000000715255737
+        }
+      },
+      "actionAndWorstFrame": {
+        "before": [
+          {
+            "action": {
+              "time": 12990.899999976158,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 21.5,
+            "maximumInputMs": 0.19999992847442627
+          },
+          {
+            "action": {
+              "time": 12909.399999976158,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 22.899999976158142,
+            "maximumInputMs": 0.2999999523162842
+          }
+        ],
+        "after": [
+          {
+            "action": {
+              "time": 12739,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 18.40000009536743,
+            "maximumInputMs": 0.30000007152557373
+          },
+          {
+            "action": {
+              "time": 12786.800000071526,
+              "from": 0,
+              "to": 300
+            },
+            "maximumDrawMs": 15.299999952316284,
+            "maximumInputMs": 0.3999999761581421
+          }
+        ]
+      },
+      "p95CpuBudgetMet": false
+    }
+  ],
+  "conditions": {
+    "url": "http://127.0.0.1:5173",
+    "renderer": "Canvas2D",
+    "dpr": 1.25,
+    "viewport": [
+      1440,
+      1100
+    ],
+    "browser": "156.0.8078.4",
+    "args": [
+      "--enable-begin-frame-control",
+      "--run-all-compositor-stages-before-draw",
+      "--enable-gpu"
+    ],
+    "gpu": {
+      "devices": [
+        {
+          "vendorId": 32902,
+          "deviceId": 18088,
+          "subSysId": 2326138940,
+          "revision": 12,
+          "vendorString": "",
+          "deviceString": "Intel(R) Iris(R) Xe Graphics",
+          "driverVendor": "Intel",
+          "driverVersion": "32.0.101.7084"
+        },
+        {
+          "vendorId": 32902,
+          "deviceId": 18088,
+          "subSysId": 2326138940,
+          "revision": 12,
+          "vendorString": "",
+          "deviceString": "Intel(R) Iris(R) Xe Graphics",
+          "driverVendor": "",
+          "driverVersion": "32.0.101.7084"
+        },
+        {
+          "vendorId": 5140,
+          "deviceId": 140,
+          "subSysId": 0,
+          "revision": 0,
+          "vendorString": "",
+          "deviceString": "Microsoft Basic Render Driver",
+          "driverVendor": "",
+          "driverVersion": "10.0.26100.7309"
+        }
+      ],
+      "auxAttributes": {
+        "amdSwitchable": false,
+        "bgra8OverlaySupport": "SCALING",
+        "canSupportThreadedTextureMailbox": false,
+        "directComposition": true,
+        "directMLFeatureLevel": "Not supported",
+        "directRenderingVersion": "",
+        "displayType": "ANGLE_D3D11",
+        "dx12FeatureLevel": "Not supported",
+        "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+        "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+        "glRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x000046A8) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.7084)",
+        "glResetNotificationStrategy": 33362,
+        "glVendor": "Google Inc. (Intel)",
+        "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+        "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+        "glWsVendor": "Google Inc. (Intel)",
+        "glWsVersion": "1.5 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+        "inProcessGpu": false,
+        "initializationTime": 0.100955,
+        "isAsan": false,
+        "isClangCoverage": false,
+        "jpegDecodeAcceleratorSupported": false,
+        "maxMsaaSamples": "8",
+        "nv12OverlaySupport": "SCALING",
+        "optimus": false,
+        "p010OverlaySupport": "SOFTWARE",
+        "passthroughCmdDecoder": true,
+        "pixelShaderVersion": "5.0",
+        "processCrashCount": 0,
+        "rgb10a2OverlaySupport": "SOFTWARE",
+        "sandboxed": false,
+        "skiaBackendType": "GaneshGL",
+        "subpixelFontRendering": true,
+        "supportsD3dSharedImages": true,
+        "supportsDirectML": false,
+        "supportsDx12": false,
+        "supportsOverlays": true,
+        "supportsVulkan": false,
+        "targetCpuBits": 64,
+        "vertexShaderVersion": "5.0",
+        "visibilityCallbackCallCount": 0,
+        "vulkanVersion": "Not supported",
+        "yuy2OverlaySupport": "SCALING"
+      },
+      "featureStatus": {
+        "2d_canvas": "enabled",
+        "direct_rendering_display_compositor": "disabled_off_ok",
+        "gpu_compositing": "enabled",
+        "multiple_raster_threads": "enabled_on",
+        "opengl": "enabled_on",
+        "rasterization": "enabled",
+        "raw_draw": "disabled_off_ok",
+        "skia_graphite": "disabled_off",
+        "trees_in_viz": "disabled_off",
+        "video_decode": "enabled",
+        "video_encode": "enabled",
+        "webgl": "enabled",
+        "webgpu": "enabled",
+        "webnn": "disabled_off"
+      },
+      "driverBugWorkarounds": [
+        "d3d12_encode_packed_format_dpb_sizing",
+        "disable_d3d12_h264_encoder_non_reference_frames",
+        "disable_direct_composition_sw_video_overlays",
+        "disable_vp_auto_hdr",
+        "enable_webgl_timer_query_extensions",
+        "exit_on_context_lost",
+        "force_dcomp_triple_buffer_video_swap_chain",
+        "max_msaa_sample_count_4",
+        "msaa_is_slow",
+        "no_downscaled_overlay_promotion",
+        "supports_two_yuv_hardware_overlays",
+        "disabled_extension_GL_KHR_blend_equation_advanced",
+        "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+      ],
+      "videoDecoding": [],
+      "videoEncoding": []
+    },
+    "gpuSamplesPerTrial": [
+      {
+        "devices": [
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "Intel",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 5140,
+            "deviceId": 140,
+            "subSysId": 0,
+            "revision": 0,
+            "vendorString": "",
+            "deviceString": "Microsoft Basic Render Driver",
+            "driverVendor": "",
+            "driverVersion": "10.0.26100.7309"
+          }
+        ],
+        "auxAttributes": {
+          "amdSwitchable": false,
+          "bgra8OverlaySupport": "SCALING",
+          "canSupportThreadedTextureMailbox": false,
+          "directComposition": true,
+          "directMLFeatureLevel": "Not supported",
+          "directRenderingVersion": "",
+          "displayType": "ANGLE_D3D11",
+          "dx12FeatureLevel": "Not supported",
+          "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+          "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+          "glRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x000046A8) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.7084)",
+          "glResetNotificationStrategy": 33362,
+          "glVendor": "Google Inc. (Intel)",
+          "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+          "glWsVendor": "Google Inc. (Intel)",
+          "glWsVersion": "1.5 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "inProcessGpu": false,
+          "initializationTime": 0.100955,
+          "isAsan": false,
+          "isClangCoverage": false,
+          "jpegDecodeAcceleratorSupported": false,
+          "maxMsaaSamples": "8",
+          "nv12OverlaySupport": "SCALING",
+          "optimus": false,
+          "p010OverlaySupport": "SOFTWARE",
+          "passthroughCmdDecoder": true,
+          "pixelShaderVersion": "5.0",
+          "processCrashCount": 0,
+          "rgb10a2OverlaySupport": "SOFTWARE",
+          "sandboxed": false,
+          "skiaBackendType": "GaneshGL",
+          "subpixelFontRendering": true,
+          "supportsD3dSharedImages": true,
+          "supportsDirectML": false,
+          "supportsDx12": false,
+          "supportsOverlays": true,
+          "supportsVulkan": false,
+          "targetCpuBits": 64,
+          "vertexShaderVersion": "5.0",
+          "visibilityCallbackCallCount": 0,
+          "vulkanVersion": "Not supported",
+          "yuy2OverlaySupport": "SCALING"
+        },
+        "featureStatus": {
+          "2d_canvas": "enabled",
+          "direct_rendering_display_compositor": "disabled_off_ok",
+          "gpu_compositing": "enabled",
+          "multiple_raster_threads": "enabled_on",
+          "opengl": "enabled_on",
+          "rasterization": "enabled",
+          "raw_draw": "disabled_off_ok",
+          "skia_graphite": "disabled_off",
+          "trees_in_viz": "disabled_off",
+          "video_decode": "enabled",
+          "video_encode": "enabled",
+          "webgl": "enabled",
+          "webgpu": "enabled",
+          "webnn": "disabled_off"
+        },
+        "driverBugWorkarounds": [
+          "d3d12_encode_packed_format_dpb_sizing",
+          "disable_d3d12_h264_encoder_non_reference_frames",
+          "disable_direct_composition_sw_video_overlays",
+          "disable_vp_auto_hdr",
+          "enable_webgl_timer_query_extensions",
+          "exit_on_context_lost",
+          "force_dcomp_triple_buffer_video_swap_chain",
+          "max_msaa_sample_count_4",
+          "msaa_is_slow",
+          "no_downscaled_overlay_promotion",
+          "supports_two_yuv_hardware_overlays",
+          "disabled_extension_GL_KHR_blend_equation_advanced",
+          "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+        ],
+        "videoDecoding": [],
+        "videoEncoding": []
+      },
+      {
+        "devices": [
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "Intel",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 5140,
+            "deviceId": 140,
+            "subSysId": 0,
+            "revision": 0,
+            "vendorString": "",
+            "deviceString": "Microsoft Basic Render Driver",
+            "driverVendor": "",
+            "driverVersion": "10.0.26100.7309"
+          }
+        ],
+        "auxAttributes": {
+          "amdSwitchable": false,
+          "bgra8OverlaySupport": "SCALING",
+          "canSupportThreadedTextureMailbox": false,
+          "directComposition": true,
+          "directMLFeatureLevel": "Not supported",
+          "directRenderingVersion": "",
+          "displayType": "ANGLE_D3D11",
+          "dx12FeatureLevel": "Not supported",
+          "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+          "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+          "glRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x000046A8) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.7084)",
+          "glResetNotificationStrategy": 33362,
+          "glVendor": "Google Inc. (Intel)",
+          "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+          "glWsVendor": "Google Inc. (Intel)",
+          "glWsVersion": "1.5 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "inProcessGpu": false,
+          "initializationTime": 0.100955,
+          "isAsan": false,
+          "isClangCoverage": false,
+          "jpegDecodeAcceleratorSupported": false,
+          "maxMsaaSamples": "8",
+          "nv12OverlaySupport": "SCALING",
+          "optimus": false,
+          "p010OverlaySupport": "SOFTWARE",
+          "passthroughCmdDecoder": true,
+          "pixelShaderVersion": "5.0",
+          "processCrashCount": 0,
+          "rgb10a2OverlaySupport": "SOFTWARE",
+          "sandboxed": false,
+          "skiaBackendType": "GaneshGL",
+          "subpixelFontRendering": true,
+          "supportsD3dSharedImages": true,
+          "supportsDirectML": false,
+          "supportsDx12": false,
+          "supportsOverlays": true,
+          "supportsVulkan": false,
+          "targetCpuBits": 64,
+          "vertexShaderVersion": "5.0",
+          "visibilityCallbackCallCount": 0,
+          "vulkanVersion": "Not supported",
+          "yuy2OverlaySupport": "SCALING"
+        },
+        "featureStatus": {
+          "2d_canvas": "enabled",
+          "direct_rendering_display_compositor": "disabled_off_ok",
+          "gpu_compositing": "enabled",
+          "multiple_raster_threads": "enabled_on",
+          "opengl": "enabled_on",
+          "rasterization": "enabled",
+          "raw_draw": "disabled_off_ok",
+          "skia_graphite": "disabled_off",
+          "trees_in_viz": "disabled_off",
+          "video_decode": "enabled",
+          "video_encode": "enabled",
+          "webgl": "enabled",
+          "webgpu": "enabled",
+          "webnn": "disabled_off"
+        },
+        "driverBugWorkarounds": [
+          "d3d12_encode_packed_format_dpb_sizing",
+          "disable_d3d12_h264_encoder_non_reference_frames",
+          "disable_direct_composition_sw_video_overlays",
+          "disable_vp_auto_hdr",
+          "enable_webgl_timer_query_extensions",
+          "exit_on_context_lost",
+          "force_dcomp_triple_buffer_video_swap_chain",
+          "max_msaa_sample_count_4",
+          "msaa_is_slow",
+          "no_downscaled_overlay_promotion",
+          "supports_two_yuv_hardware_overlays",
+          "disabled_extension_GL_KHR_blend_equation_advanced",
+          "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+        ],
+        "videoDecoding": [],
+        "videoEncoding": []
+      },
+      {
+        "devices": [
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "Intel",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 5140,
+            "deviceId": 140,
+            "subSysId": 0,
+            "revision": 0,
+            "vendorString": "",
+            "deviceString": "Microsoft Basic Render Driver",
+            "driverVendor": "",
+            "driverVersion": "10.0.26100.7309"
+          }
+        ],
+        "auxAttributes": {
+          "amdSwitchable": false,
+          "bgra8OverlaySupport": "SCALING",
+          "canSupportThreadedTextureMailbox": false,
+          "directComposition": true,
+          "directMLFeatureLevel": "Not supported",
+          "directRenderingVersion": "",
+          "displayType": "ANGLE_D3D11",
+          "dx12FeatureLevel": "Not supported",
+          "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+          "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+          "glRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x000046A8) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.7084)",
+          "glResetNotificationStrategy": 33362,
+          "glVendor": "Google Inc. (Intel)",
+          "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+          "glWsVendor": "Google Inc. (Intel)",
+          "glWsVersion": "1.5 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "inProcessGpu": false,
+          "initializationTime": 0.100955,
+          "isAsan": false,
+          "isClangCoverage": false,
+          "jpegDecodeAcceleratorSupported": false,
+          "maxMsaaSamples": "8",
+          "nv12OverlaySupport": "SCALING",
+          "optimus": false,
+          "p010OverlaySupport": "SOFTWARE",
+          "passthroughCmdDecoder": true,
+          "pixelShaderVersion": "5.0",
+          "processCrashCount": 0,
+          "rgb10a2OverlaySupport": "SOFTWARE",
+          "sandboxed": false,
+          "skiaBackendType": "GaneshGL",
+          "subpixelFontRendering": true,
+          "supportsD3dSharedImages": true,
+          "supportsDirectML": false,
+          "supportsDx12": false,
+          "supportsOverlays": true,
+          "supportsVulkan": false,
+          "targetCpuBits": 64,
+          "vertexShaderVersion": "5.0",
+          "visibilityCallbackCallCount": 0,
+          "vulkanVersion": "Not supported",
+          "yuy2OverlaySupport": "SCALING"
+        },
+        "featureStatus": {
+          "2d_canvas": "enabled",
+          "direct_rendering_display_compositor": "disabled_off_ok",
+          "gpu_compositing": "enabled",
+          "multiple_raster_threads": "enabled_on",
+          "opengl": "enabled_on",
+          "rasterization": "enabled",
+          "raw_draw": "disabled_off_ok",
+          "skia_graphite": "disabled_off",
+          "trees_in_viz": "disabled_off",
+          "video_decode": "enabled",
+          "video_encode": "enabled",
+          "webgl": "enabled",
+          "webgpu": "enabled",
+          "webnn": "disabled_off"
+        },
+        "driverBugWorkarounds": [
+          "d3d12_encode_packed_format_dpb_sizing",
+          "disable_d3d12_h264_encoder_non_reference_frames",
+          "disable_direct_composition_sw_video_overlays",
+          "disable_vp_auto_hdr",
+          "enable_webgl_timer_query_extensions",
+          "exit_on_context_lost",
+          "force_dcomp_triple_buffer_video_swap_chain",
+          "max_msaa_sample_count_4",
+          "msaa_is_slow",
+          "no_downscaled_overlay_promotion",
+          "supports_two_yuv_hardware_overlays",
+          "disabled_extension_GL_KHR_blend_equation_advanced",
+          "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+        ],
+        "videoDecoding": [],
+        "videoEncoding": []
+      },
+      {
+        "devices": [
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "Intel",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 32902,
+            "deviceId": 18088,
+            "subSysId": 2326138940,
+            "revision": 12,
+            "vendorString": "",
+            "deviceString": "Intel(R) Iris(R) Xe Graphics",
+            "driverVendor": "",
+            "driverVersion": "32.0.101.7084"
+          },
+          {
+            "vendorId": 5140,
+            "deviceId": 140,
+            "subSysId": 0,
+            "revision": 0,
+            "vendorString": "",
+            "deviceString": "Microsoft Basic Render Driver",
+            "driverVendor": "",
+            "driverVersion": "10.0.26100.7309"
+          }
+        ],
+        "auxAttributes": {
+          "amdSwitchable": false,
+          "bgra8OverlaySupport": "SCALING",
+          "canSupportThreadedTextureMailbox": false,
+          "directComposition": true,
+          "directMLFeatureLevel": "Not supported",
+          "directRenderingVersion": "",
+          "displayType": "ANGLE_D3D11",
+          "dx12FeatureLevel": "Not supported",
+          "glExtensions": "GL_AMD_performance_monitor GL_ANGLE_base_vertex_base_instance_shader_builtin GL_ANGLE_blob_cache GL_ANGLE_client_arrays GL_ANGLE_clip_cull_distance GL_ANGLE_copy_texture_3d GL_ANGLE_depth_texture GL_ANGLE_framebuffer_blit GL_ANGLE_framebuffer_multisample GL_ANGLE_get_serialized_context_string GL_ANGLE_get_tex_level_parameter GL_ANGLE_instanced_arrays GL_ANGLE_memory_size GL_ANGLE_multiview_multisample GL_ANGLE_pack_reverse_row_order GL_ANGLE_polygon_mode GL_ANGLE_program_binary_readiness_query GL_ANGLE_program_cache_control GL_ANGLE_provoking_vertex GL_ANGLE_renderability_validation GL_ANGLE_request_extension GL_ANGLE_robust_client_memory GL_ANGLE_shader_pixel_local_storage GL_ANGLE_shader_pixel_local_storage_coherent GL_ANGLE_stencil_texturing GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_ANGLE_texture_multisample GL_ANGLE_texture_usage GL_ANGLE_translated_shader_source GL_APPLE_clip_distance GL_ARM_rgba8 GL_CHROMIUM_bind_generates_resource GL_CHROMIUM_bind_uniform_location GL_CHROMIUM_copy_compressed_texture GL_CHROMIUM_copy_texture GL_CHROMIUM_lose_context GL_EXT_EGL_image_external_wrap_modes GL_EXT_base_instance GL_EXT_blend_func_extended GL_EXT_blend_minmax GL_EXT_clip_control GL_EXT_clip_cull_distance GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_conservative_depth GL_EXT_debug_label GL_EXT_debug_marker GL_EXT_depth_clamp GL_EXT_discard_framebuffer GL_EXT_disjoint_timer_query GL_EXT_draw_buffers GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_float_blend GL_EXT_frag_depth GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_occlusion_query_boolean GL_EXT_polygon_offset_clamp GL_EXT_read_format_bgra GL_EXT_render_snorm GL_EXT_robustness GL_EXT_sRGB GL_EXT_shader_texture_lod GL_EXT_texture_border_clamp GL_EXT_texture_compression_bptc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_compression_s3tc_srgb GL_EXT_texture_filter_anisotropic GL_EXT_texture_format_BGRA8888 GL_EXT_texture_mirror_clamp_to_edge GL_EXT_texture_norm16 GL_EXT_texture_rg GL_EXT_texture_storage GL_EXT_texture_type_2_10_10_10_REV GL_EXT_unpack_subimage GL_KHR_debug GL_KHR_parallel_shader_compile GL_KHR_robustness GL_NV_EGL_stream_consumer_external GL_NV_fence GL_NV_framebuffer_blit GL_NV_pack_subimage GL_NV_pixel_buffer_object GL_NV_shader_noperspective_interpolation GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_depth24 GL_OES_depth32 GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_get_program_binary GL_OES_mapbuffer GL_OES_packed_depth_stencil GL_OES_required_internalformat GL_OES_rgb8_rgba8 GL_OES_sample_variables GL_OES_shader_multisample_interpolation GL_OES_standard_derivatives GL_OES_surfaceless_context GL_OES_texture_border_clamp GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_vertex_array_object GL_OVR_multiview GL_OVR_multiview2 ",
+          "glImplementationParts": "(gl=egl-angle,angle=d3d11)",
+          "glRenderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x000046A8) Direct3D11 vs_5_0 ps_5_0, D3D11-32.0.101.7084)",
+          "glResetNotificationStrategy": 33362,
+          "glVendor": "Google Inc. (Intel)",
+          "glVersion": "OpenGL ES 3.0 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "glWsExtensions": "EGL_EXT_create_context_robustness EGL_ANGLE_d3d_share_handle_client_buffer EGL_ANGLE_d3d_texture_client_buffer EGL_ANGLE_surface_d3d_texture_2d_share_handle EGL_ANGLE_query_surface_pointer EGL_ANGLE_window_fixed_size EGL_ANGLE_keyed_mutex EGL_ANGLE_surface_orientation EGL_ANGLE_direct_composition EGL_NV_post_sub_buffer EGL_KHR_create_context EGL_KHR_image EGL_KHR_image_base EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_gl_renderbuffer_image EGL_KHR_get_all_proc_addresses EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_NV_stream_consumer_gltexture_yuv EGL_ANGLE_stream_producer_d3d_texture EGL_ANGLE_create_context_webgl_compatibility EGL_CHROMIUM_create_context_bind_generates_resource EGL_CHROMIUM_sync_control EGL_EXT_pixel_format_float EGL_KHR_surfaceless_context EGL_ANGLE_display_texture_share_group EGL_ANGLE_display_semaphore_share_group EGL_ANGLE_create_context_client_arrays EGL_ANGLE_program_cache_control EGL_ANGLE_robust_resource_initialization EGL_ANGLE_create_context_extensions_enabled EGL_ANDROID_blob_cache EGL_ANDROID_recordable EGL_ANGLE_image_d3d11_texture EGL_ANGLE_create_context_backwards_compatible EGL_KHR_no_config_context EGL_KHR_create_context_no_error EGL_KHR_reusable_sync EGL_ANGLE_memory_usage_report ",
+          "glWsVendor": "Google Inc. (Intel)",
+          "glWsVersion": "1.5 (ANGLE 2.1.28967 git hash: dfeede58b618)",
+          "inProcessGpu": false,
+          "initializationTime": 0.100955,
+          "isAsan": false,
+          "isClangCoverage": false,
+          "jpegDecodeAcceleratorSupported": false,
+          "maxMsaaSamples": "8",
+          "nv12OverlaySupport": "SCALING",
+          "optimus": false,
+          "p010OverlaySupport": "SOFTWARE",
+          "passthroughCmdDecoder": true,
+          "pixelShaderVersion": "5.0",
+          "processCrashCount": 0,
+          "rgb10a2OverlaySupport": "SOFTWARE",
+          "sandboxed": false,
+          "skiaBackendType": "GaneshGL",
+          "subpixelFontRendering": true,
+          "supportsD3dSharedImages": true,
+          "supportsDirectML": false,
+          "supportsDx12": false,
+          "supportsOverlays": true,
+          "supportsVulkan": false,
+          "targetCpuBits": 64,
+          "vertexShaderVersion": "5.0",
+          "visibilityCallbackCallCount": 0,
+          "vulkanVersion": "Not supported",
+          "yuy2OverlaySupport": "SCALING"
+        },
+        "featureStatus": {
+          "2d_canvas": "enabled",
+          "direct_rendering_display_compositor": "disabled_off_ok",
+          "gpu_compositing": "enabled",
+          "multiple_raster_threads": "enabled_on",
+          "opengl": "enabled_on",
+          "rasterization": "enabled",
+          "raw_draw": "disabled_off_ok",
+          "skia_graphite": "disabled_off",
+          "trees_in_viz": "disabled_off",
+          "video_decode": "enabled",
+          "video_encode": "enabled",
+          "webgl": "enabled",
+          "webgpu": "enabled",
+          "webnn": "disabled_off"
+        },
+        "driverBugWorkarounds": [
+          "d3d12_encode_packed_format_dpb_sizing",
+          "disable_d3d12_h264_encoder_non_reference_frames",
+          "disable_direct_composition_sw_video_overlays",
+          "disable_vp_auto_hdr",
+          "enable_webgl_timer_query_extensions",
+          "exit_on_context_lost",
+          "force_dcomp_triple_buffer_video_swap_chain",
+          "max_msaa_sample_count_4",
+          "msaa_is_slow",
+          "no_downscaled_overlay_promotion",
+          "supports_two_yuv_hardware_overlays",
+          "disabled_extension_GL_KHR_blend_equation_advanced",
+          "disabled_extension_GL_KHR_blend_equation_advanced_coherent"
+        ],
+        "videoDecoding": [],
+        "videoEncoding": []
+      }
+    ],
+    "driver": "Chromium Headless Shell CDP BeginFrame, real wall-clock pacing; not physical-monitor presentation acceptance",
+    "profiler": false,
+    "galleryOrReactProductPatch": false,
+    "trialOrder": [
+      "before-1",
+      "after-1",
+      "after-2",
+      "before-2"
+    ],
+    "aggregation": "Pooled raw frame durations; RAF intervals are computed within each trial, without crossing page clocks"
+  },
+  "changes": [
+    "Retain isolated row surfaces at native DPR; scrolling/entrance remain composition transforms",
+    "Share bounded glyph and pure-vector raster caches across row and opacity layers; LRU instead of clearing every glyph",
+    "Only newly realized rows are measured/arranged during vertical scrolling",
+    "Unchanged static rows share display-list commands; editors and active visual tracks continue sampling every frame",
+    "Avoid opacity-layer backdrop copies when commands do not sample the backdrop",
+    "Compare typed display lists and share stable 10,000-row snapshot keys instead of cloning JSON trees",
+    "Remove standalone On/Off labels from TableView switches, following original null column defaults"
+  ],
+  "editorFidelityFix": "Cell editors use constrained horizontal stretch; NumberBox delegates real focus and value selection to its existing InputBox template part, preserving shared text input, clear-button and focus-underline behavior",
+  "frozenEditingFixes": [
+    "Defer focus reveal until final Canvas world geometry; exclude frozen columns from the non-frozen editor viewport",
+    "Use arranged physical-pixel column widths for keyboard reveal; preserve right-edge scroll and actual input focus",
+    "Focus delayed template editor content once without stealing later button focus",
+    "Pass ComboBox collectionItems and synchronize its initial selected text; paint popup options in the existing floating surface"
+  ],
+  "animationContract": {
+    "bodyEntranceMs": 667,
+    "bodyOffsetDip": 28,
+    "indicatorOpacityMs": 83,
+    "indicatorScaleMs": 167,
+    "sampleStepMs": 8.333333333333334,
+    "no60HzQuantization": true,
+    "durationOrCurveShortened": false
+  },
+  "nativeCadence": [
+    {
+      "name": "editing",
+      "action": "sort",
+      "frames": 63,
+      "medianRenderingIntervalMs": 16.684549999999945,
+      "actionMs": 19.471600000000002,
+      "scope": "CompositionTarget.Rendering timestamps; not measured CPU draw duration",
+      "initialOffset": 652.8000183105469,
+      "finalOffset": 652.7999267578125
+    },
+    {
+      "name": "editing",
+      "action": "scroll",
+      "frames": 64,
+      "medianRenderingIntervalMs": 16.60629999999992,
+      "actionMs": 1.0187,
+      "scope": "CompositionTarget.Rendering timestamps; not measured CPU draw duration",
+      "initialOffset": 0,
+      "finalOffset": 300
+    },
+    {
+      "name": "editing",
+      "action": "active-editor-scroll",
+      "frames": 67,
+      "medianRenderingIntervalMs": 16.584450000000004,
+      "actionMs": 1.4501,
+      "scope": "CompositionTarget.Rendering timestamps; not measured CPU draw duration",
+      "initialOffset": 0,
+      "finalOffset": 180
+    },
+    {
+      "name": "large",
+      "action": "sort",
+      "frames": 58,
+      "medianRenderingIntervalMs": 16.66949999999997,
+      "actionMs": 227.1715,
+      "scope": "CompositionTarget.Rendering timestamps; not measured CPU draw duration",
+      "initialOffset": 407673.6000061035,
+      "finalOffset": 408897.6875
+    },
+    {
+      "name": "large",
+      "action": "scroll",
+      "frames": 65,
+      "medianRenderingIntervalMs": 16.590649999999997,
+      "actionMs": 0.5526000000000001,
+      "scope": "CompositionTarget.Rendering timestamps; not measured CPU draw duration",
+      "initialOffset": 2.1793155670166016,
+      "finalOffset": 300
+    }
+  ],
+  "nativeVisualComparison": {
+    "scope": "Same light theme, accent, data, explicit row/header heights, frozen columns, 125% DPI and root size; raw RTB vs Rust Canvas2D with declared background. Static comparisons do not certify Composition presentation.",
+    "acceptedAsFullNativeParity": false,
+    "results": [
+      {
+        "name": "editing",
+        "state": "default",
+        "nativeImageSize": [
+          1925,
+          450
+        ],
+        "nativeRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "rustImageSize": [
+          972,
+          450
+        ],
+        "rustRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "background": "#F3F3F3",
+        "pixels": 436950,
+        "changedPixels": 38283,
+        "pixelsAbove16": 20130,
+        "maximumError": 255,
+        "meanMaxChannelError": 3.2789769996567113,
+        "nativeFirstRow": {
+          "x": 0.800000011920929,
+          "y": 32.79999923706055,
+          "width": 1538.4000244140625,
+          "height": 40.79999923706055
+        },
+        "rustFirstNameCell": {
+          "kind": "Grid",
+          "rect": {
+            "x": 16.8,
+            "y": 0,
+            "width": 180,
+            "height": 40
+          },
+          "world": [
+            1,
+            0,
+            0,
+            1,
+            17.6,
+            32.8
+          ],
+          "name": "1, Name: Adele Vance"
+        },
+        "nativeVisibleNameText": [
+          "Adele Vance",
+          "Alex Wilber",
+          "Megan Bowen",
+          "Diego Siciliani",
+          "李明",
+          "王芳",
+          "Adele Vance 7",
+          "Alex Wilber 8"
+        ],
+        "rustVisibleNameText": [
+          "Adele Vance",
+          "Alex Wilber",
+          "Megan Bowen",
+          "Diego Siciliani",
+          "李明",
+          "王芳",
+          "Adele Vance 7",
+          "Alex Wilber 8"
+        ],
+        "visibleNameContentMatches": true,
+        "pixelComparisonScope": "Comparable visible business rows; text, control geometry and focus-policy differences remain",
+        "acceptedAsNativeParity": false
+      },
+      {
+        "name": "editing",
+        "state": "scrolled",
+        "nativeImageSize": [
+          1925,
+          450
+        ],
+        "nativeRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "rustImageSize": [
+          972,
+          450
+        ],
+        "rustRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "background": "#F3F3F3",
+        "pixels": 436950,
+        "changedPixels": 41386,
+        "pixelsAbove16": 21992,
+        "maximumError": 255,
+        "meanMaxChannelError": 3.6790227714841515,
+        "nativeFirstRow": {
+          "x": 0.800000011920929,
+          "y": -267.20001220703125,
+          "width": 1538.4000244140625,
+          "height": 40.80000305175781
+        },
+        "rustFirstNameCell": {
+          "kind": "Grid",
+          "rect": {
+            "x": 16.8,
+            "y": 285.6,
+            "width": 180,
+            "height": 40
+          },
+          "world": [
+            1,
+            0,
+            0,
+            1,
+            17.6,
+            18.400000000000034
+          ],
+          "name": "17, Name: 李明 17"
+        },
+        "nativeVisibleNameText": [
+          "Diego Siciliani 16",
+          "Megan Bowen 15",
+          "Alex Wilber 14",
+          "Adele Vance 13",
+          "王芳 12",
+          "李明 11",
+          "Diego Siciliani 10"
+        ],
+        "rustVisibleNameText": [
+          "Diego Siciliani 16",
+          "Megan Bowen 15",
+          "Alex Wilber 14",
+          "Adele Vance 13",
+          "王芳 12",
+          "李明 11",
+          "Diego Siciliani 10"
+        ],
+        "visibleNameContentMatches": true,
+        "pixelComparisonScope": "Comparable visible business rows; text, control geometry and focus-policy differences remain",
+        "acceptedAsNativeParity": false
+      },
+      {
+        "name": "editing",
+        "state": "editor-default",
+        "nativeImageSize": [
+          1925,
+          450
+        ],
+        "nativeRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "rustImageSize": [
+          972,
+          450
+        ],
+        "rustRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "background": "#F3F3F3",
+        "pixels": 436950,
+        "changedPixels": 42946,
+        "pixelsAbove16": 23883,
+        "maximumError": 255,
+        "meanMaxChannelError": 4.306684975397642,
+        "nativeFirstRow": {
+          "x": 0.800000011920929,
+          "y": 32.79999923706055,
+          "width": 1538.4000244140625,
+          "height": 40.79999923706055
+        },
+        "rustFirstNameCell": {
+          "kind": "Grid",
+          "rect": {
+            "x": 16.8,
+            "y": 285.6,
+            "width": 180,
+            "height": 40
+          },
+          "world": [
+            1,
+            0,
+            0,
+            1,
+            17.6,
+            318.40000000000003
+          ],
+          "name": "17, Name: 李明 17"
+        },
+        "nativeVisibleNameText": [
+          "王芳 24",
+          "李明 23",
+          "Diego Siciliani 22",
+          "Megan Bowen 21",
+          "Alex Wilber 20",
+          "Adele Vance 19",
+          "王芳 18",
+          "李明 17"
+        ],
+        "rustVisibleNameText": [
+          "王芳 24",
+          "李明 23",
+          "Diego Siciliani 22",
+          "Megan Bowen 21",
+          "Alex Wilber 20",
+          "Adele Vance 19",
+          "王芳 18",
+          "李明 17"
+        ],
+        "visibleNameContentMatches": true,
+        "pixelComparisonScope": "Comparable visible business rows; text, control geometry and focus-policy differences remain",
+        "acceptedAsNativeParity": false
+      },
+      {
+        "name": "editing",
+        "state": "editor-scrolled",
+        "nativeImageSize": [
+          1925,
+          450
+        ],
+        "nativeRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "rustImageSize": [
+          972,
+          450
+        ],
+        "rustRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "background": "#F3F3F3",
+        "pixels": 436950,
+        "changedPixels": 44775,
+        "pixelsAbove16": 24479,
+        "maximumError": 255,
+        "meanMaxChannelError": 4.378876301636343,
+        "nativeFirstRow": {
+          "x": 0.800000011920929,
+          "y": -147.1999969482422,
+          "width": 1538.4000244140625,
+          "height": 40.80000305175781
+        },
+        "rustFirstNameCell": {
+          "kind": "Grid",
+          "rect": {
+            "x": 16.8,
+            "y": 285.6,
+            "width": 180,
+            "height": 40
+          },
+          "world": [
+            1,
+            0,
+            0,
+            1,
+            17.6,
+            138.40000000000003
+          ],
+          "name": "17, Name: 李明 17"
+        },
+        "nativeVisibleNameText": [
+          "Adele Vance 19",
+          "王芳 18",
+          "李明 17",
+          "Diego Siciliani 16",
+          "Megan Bowen 15",
+          "Alex Wilber 14",
+          "Adele Vance 13"
+        ],
+        "rustVisibleNameText": [
+          "Adele Vance 19",
+          "王芳 18",
+          "李明 17",
+          "Diego Siciliani 16",
+          "Megan Bowen 15",
+          "Alex Wilber 14",
+          "Adele Vance 13"
+        ],
+        "visibleNameContentMatches": true,
+        "pixelComparisonScope": "Comparable visible business rows; text, control geometry and focus-policy differences remain",
+        "acceptedAsNativeParity": false
+      },
+      {
+        "name": "large",
+        "state": "default",
+        "nativeImageSize": [
+          971,
+          450
+        ],
+        "nativeRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "rustImageSize": [
+          972,
+          450
+        ],
+        "rustRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "background": "#F3F3F3",
+        "pixels": 436950,
+        "changedPixels": 29146,
+        "pixelsAbove16": 10880,
+        "maximumError": 255,
+        "meanMaxChannelError": 1.549744822062021,
+        "nativeFirstRow": {
+          "x": 0.800000011920929,
+          "y": 32.79999923706055,
+          "width": 774.4000244140625,
+          "height": 40.79999923706055
+        },
+        "rustFirstNameCell": {
+          "kind": "Grid",
+          "rect": {
+            "x": 16.8,
+            "y": 0,
+            "width": 190.4,
+            "height": 40
+          },
+          "world": [
+            1,
+            0,
+            0,
+            1,
+            17.6,
+            32.8
+          ],
+          "name": "1, Name: Adele Vance"
+        },
+        "nativeVisibleNameText": [
+          "Adele Vance",
+          "Alex Wilber",
+          "Megan Bowen",
+          "Diego Siciliani",
+          "李明",
+          "王芳",
+          "Adele Vance 7",
+          "Alex Wilber 8"
+        ],
+        "rustVisibleNameText": [
+          "Adele Vance",
+          "Alex Wilber",
+          "Megan Bowen",
+          "Diego Siciliani",
+          "李明",
+          "王芳",
+          "Adele Vance 7",
+          "Alex Wilber 8"
+        ],
+        "visibleNameContentMatches": true,
+        "pixelComparisonScope": "Comparable visible business rows; text, control geometry and focus-policy differences remain",
+        "acceptedAsNativeParity": false
+      },
+      {
+        "name": "large",
+        "state": "scrolled",
+        "nativeImageSize": [
+          971,
+          450
+        ],
+        "nativeRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "rustImageSize": [
+          972,
+          450
+        ],
+        "rustRootCrop": [
+          0,
+          0,
+          971,
+          450
+        ],
+        "background": "#F3F3F3",
+        "pixels": 436950,
+        "changedPixels": 35097,
+        "pixelsAbove16": 18097,
+        "maximumError": 255,
+        "meanMaxChannelError": 4.474175534958233,
+        "nativeFirstRow": {
+          "x": 0.800000011920929,
+          "y": -267.20001220703125,
+          "width": 774.4000244140625,
+          "height": 40.80000305175781
+        },
+        "rustFirstNameCell": {
+          "kind": "Grid",
+          "rect": {
+            "x": 16.8,
+            "y": 285.6,
+            "width": 190.4,
+            "height": 40
+          },
+          "world": [
+            1,
+            0,
+            0,
+            1,
+            17.6,
+            18.400000000000034
+          ],
+          "name": "296, Name: Alex Wilber 296"
+        },
+        "nativeVisibleNameText": [
+          "Alex Wilber 518",
+          "Megan Bowen 6771",
+          "Alex Wilber 6734",
+          "王芳 1332",
+          "Diego Siciliani 4810",
+          "李明 6623",
+          "Adele Vance 9139"
+        ],
+        "rustVisibleNameText": [
+          "Megan Bowen 333",
+          "Diego Siciliani 370",
+          "李明 407",
+          "王芳 444",
+          "Adele Vance 481",
+          "Alex Wilber 518",
+          "Megan Bowen 555"
+        ],
+        "visibleNameContentMatches": false,
+        "pixelComparisonScope": "Render differences include different tied-age row content; not a rendering acceptance metric",
+        "acceptedAsNativeParity": false
+      }
+    ],
+    "remainingDifferences": [
+      "Canvas and native text/vector rasterization",
+      "Switch and editor geometry still require the complete WinUI 1.6.4 state matrix",
+      "Default minimum-height sizing versus explicit fixed row height is outside this fixture",
+      "Native reset sorting retains ListView anchoring; Rust reset currently retains scroll offset",
+      "Native and Rust order tied-age rows differently in the large sorted fixture; raw pixel errors include that content difference",
+      "Physical 120Hz presentation and full editor/drag/frozen state matrix remain unaccepted"
+    ]
+  },
+  "rasterRegression": {
+    "baseline": "D:\\vscode\\winui\\out\\table-view-sdk-final",
+    "candidate": "D:\\vscode\\winui\\out\\table-view-120-final",
+    "baselineWasmSha256": "ad419975f95be4437a348e2b9a197852bc6639b8112b6e83a31f514e99dee171",
+    "candidateWasmSha256": "fd826460fd2a5d3e7d30b56643c0c1a9ed4a56eafe35c56a4cb82790655a1407",
+    "scope": "Real Rust Canvas2D backing pixels, identical static states at integer physical scroll offsets; continuous motion assessed separately against native. Removing source-incompatible On/Off labels is an intentional candidate difference.",
+    "results": [
+      {
+        "dpr": 1,
+        "key": "editing",
+        "state": "default",
+        "pixels": 279720,
+        "changed": 852,
+        "maxError": 228,
+        "meanMaxChannelError": 0.3439010439010439
+      },
+      {
+        "dpr": 1,
+        "key": "editing",
+        "state": "scrolled",
+        "pixels": 279720,
+        "changed": 835,
+        "maxError": 228,
+        "meanMaxChannelError": 0.33673673673673676
+      },
+      {
+        "dpr": 1,
+        "key": "large",
+        "state": "default",
+        "pixels": 279720,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1,
+        "key": "large",
+        "state": "scrolled",
+        "pixels": 279720,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1,
+        "key": "columns",
+        "state": "default",
+        "pixels": 233100,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1,
+        "key": "columns",
+        "state": "scrolled",
+        "pixels": 233100,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.25,
+        "key": "editing",
+        "state": "default",
+        "pixels": 437400,
+        "changed": 1280,
+        "maxError": 228,
+        "meanMaxChannelError": 0.34607910379515316
+      },
+      {
+        "dpr": 1.25,
+        "key": "editing",
+        "state": "scrolled",
+        "pixels": 437400,
+        "changed": 1344,
+        "maxError": 228,
+        "meanMaxChannelError": 0.34629401005944216
+      },
+      {
+        "dpr": 1.25,
+        "key": "large",
+        "state": "default",
+        "pixels": 437400,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.25,
+        "key": "large",
+        "state": "scrolled",
+        "pixels": 437400,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.25,
+        "key": "columns",
+        "state": "default",
+        "pixels": 364500,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.25,
+        "key": "columns",
+        "state": "scrolled",
+        "pixels": 364500,
+        "changed": 2144,
+        "maxError": 1,
+        "meanMaxChannelError": 0.005882030178326475
+      },
+      {
+        "dpr": 1.5,
+        "key": "editing",
+        "state": "default",
+        "pixels": 629640,
+        "changed": 1772,
+        "maxError": 228,
+        "meanMaxChannelError": 0.35125468521694936
+      },
+      {
+        "dpr": 1.5,
+        "key": "editing",
+        "state": "scrolled",
+        "pixels": 629640,
+        "changed": 1666,
+        "maxError": 228,
+        "meanMaxChannelError": 0.331789594053745
+      },
+      {
+        "dpr": 1.5,
+        "key": "large",
+        "state": "default",
+        "pixels": 629640,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.5,
+        "key": "large",
+        "state": "scrolled",
+        "pixels": 629640,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.5,
+        "key": "columns",
+        "state": "default",
+        "pixels": 524700,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 1.5,
+        "key": "columns",
+        "state": "scrolled",
+        "pixels": 524700,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 2,
+        "key": "editing",
+        "state": "default",
+        "pixels": 1118880,
+        "changed": 2884,
+        "maxError": 228,
+        "meanMaxChannelError": 0.3575218075218075
+      },
+      {
+        "dpr": 2,
+        "key": "editing",
+        "state": "scrolled",
+        "pixels": 1118880,
+        "changed": 2884,
+        "maxError": 228,
+        "meanMaxChannelError": 0.3575218075218075
+      },
+      {
+        "dpr": 2,
+        "key": "large",
+        "state": "default",
+        "pixels": 1118880,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 2,
+        "key": "large",
+        "state": "scrolled",
+        "pixels": 1118880,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 2,
+        "key": "columns",
+        "state": "default",
+        "pixels": 932400,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      },
+      {
+        "dpr": 2,
+        "key": "columns",
+        "state": "scrolled",
+        "pixels": 932400,
+        "changed": 0,
+        "maxError": 0,
+        "meanMaxChannelError": 0
+      }
+    ]
+  },
+  "artifactHashes": {
+    "out/table-view-120/paired-before-1.json": "a053a5ecbf89a59f6179d21d8aec6aee60faba9158b855fd2b5563305bebd793",
+    "out/table-view-120/paired-before-2.json": "08ea2c15f67596d70380308d9029a1872f61efe686f7100ad05aaf61513217cf",
+    "out/table-view-120/paired-after-1.json": "f24c593c448f0d43c178253179e77286d26c4a97311bc311b24e2f79e6a0b9d6",
+    "out/table-view-120/paired-after-2.json": "2531ab6d82aa4b704074bb5ccc6d2253fbe7b2e037436d0c9794c9490656ae1d",
+    "references/table-view-native-performance-run.json": "8b786ce283460be50614dc3afa12c8672778674d458adf5eb29b96fd62d0e417",
+    "out/table-view-native-performance/performance.json": "b484dcdbb98b971bf5db2ede323ce26aa1de2c6c98592f7b248656d970ca61a8",
+    "out/table-view-native-performance/geometry.json": "79520ed02304e23066207172c026e95396e8bddefa9658219d558559021ddca1",
+    "out/table-view-native-performance/rust-geometry.json": "b16370445067bdbdb6d13676e2edf4dd1b3a69bfd0fc14306bba121c53b6fecc",
+    "out/table-view-native-performance/comparison.json": "18c59901d5d8cd9fff3adf91d19f12178ef87a455bb025c728139213960b5241",
+    "out/table-view-raster-comparison/results.json": "9fa4fcc99667ff1becfd150074a784d86d8c120620c7fbeec532abd7d01e025e"
+  },
+  "rustSourceHashesAtValidation": {
+    "src/render.rs": "844f36b3079ad71c0e90625381640140724cb0bdd1d2d671a47625cf4343ef2b",
+    "src/render/retained.rs": "806ef530c9e358a50e102b6acec09e09452ed36290ac7c502acf6a87a15f8776",
+    "src/wasm.rs": "ecbf599c02b359feeef574c41e67e62b9ec2a02b588f3d51d3e036b4553c5604",
+    "src/gpu.rs": "5c81ff8f1c2671bf544fe23ead333f59020814515d7514ced11830c04e618a87",
+    "src/scene/mod.rs": "887a99bdebe295b8e8db0908c0eee91419c18f53ea8578f16dbdf0b5484c02ec",
+    "src/scene/scroll.rs": "568c7af3e1530147e1e7aaa37ea23a111d364ab26c668738b85ac460c17d8d81",
+    "src/scene/composed.rs": "175ee34586bb8652c6a2986038c3c62eb1ea3fcef5adb98b820504e58913facf",
+    "src/scene/table_view.rs": "8fe4e123b4e6d04e7f3df744b89d44138ec21a7ebce0c073b61b5d67ff033682",
+    "src/scene/table_view/runtime.rs": "00adeb4e81b626d74adeff0b564bdaf9115bedef6b6a5c9bb87d04136da50932",
+    "src/icons.rs": "a05ed4666f9681598ad24252d618676840f811f4bc8e282bf04054afb2f97fee",
+    "src/material.rs": "dc334380487eb277fdb17a303511fb0653bc6f888e5d764bcd70b4594a86e9d7"
+  },
+  "physical120HzAccepted": false,
+  "allFramesUnderBudget": false,
+  "acceptedAsFullNativeParity": false,
+  "boundary": "120Hz is the requested BeginFrame sampling cadence and 8.33ms CPU draw budget. Actual RAF distributions and misses are retained; neither CPU budget success nor CLI frame control certifies physical 120Hz presentation. Native SampleApp runs on the available approximately 60Hz presentation clock. Static pixel differences, native anchoring and editor geometry remain explicit; functional passes do not close those gates."
+}

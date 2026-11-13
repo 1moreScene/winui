@@ -1,0 +1,104 @@
+{
+  "tag": "winui3/release/1.6.4",
+  "commit": "262a901e0975c0d6e328b981a4dcc35e7034e135",
+  "package": "Microsoft.WindowsAppSDK/1.6.250108002",
+  "mapping": "Official release notes name this package 1.6.4; matching WinUI source release tag. Native DLL fingerprints are recorded separately; source-tag association does not prove binary identity.",
+  "files": [
+    {
+      "path": "references\\table-view-winui-1.6\\ListViewItem_themeresources.xaml",
+      "upstream": "src/controls/dev/CommonStyles/ListViewItem_themeresources.xaml",
+      "gitBlob": "b292e8fa9aa1f6024d16b8a5eb452e4427d45bda",
+      "sha256": "0758f65bc447b9af7b12a0d779f644f7541d5e2dd39540a9c206f35222b0478c"
+    },
+    {
+      "path": "references\\table-view-winui-1.6\\ThemeTransitions.cpp",
+      "upstream": "src/dxaml/phone/lib/ThemeTransitions.cpp",
+      "gitBlob": "ec63766832c898ec207a19e94f317bba18f25a3d",
+      "sha256": "d224e5872f14df9614ccab38a7138989ee593a9e466a801916ecf71834a5e919"
+    },
+    {
+      "path": "references\\table-view-winui-1.6\\ThemeAnimationsHelper.cpp",
+      "upstream": "src/dxaml/xcp/components/themeanimationshelper/lib/ThemeAnimationsHelper.cpp",
+      "gitBlob": "a13a6f53cea035ee38f00e76680d63be3f17b552",
+      "sha256": "3bdccdd4e8c53611c207435a3d3f30a255ca568c5f5fec0eb33ac2ec1b1191e0"
+    },
+    {
+      "path": "references\\table-view-winui-1.6\\ListViewBaseItemPresenter_Partial.cpp",
+      "upstream": "src/dxaml/xcp/dxaml/lib/ListViewBaseItemPresenter_Partial.cpp",
+      "gitBlob": "20308c367b9cfd26a5581e4e788ac0acb7331005",
+      "sha256": "1893baa7ab67999949dcc8fb92227b55da667b9aa498738cdefe0abea9c915d1"
+    },
+    {
+      "path": "references\\table-view-winui-1.6\\ThemeAnimations.cpp",
+      "upstream": "src/dxaml/xcp/dxaml/lib/ThemeAnimations.cpp",
+      "gitBlob": "7816c4a051578a2b94ffca5410b6a02a084906ae",
+      "sha256": "47c15e4be1319ff209a6e05d20eb6deedfc4533c250f4b9cc592fc02febae973"
+    },
+    {
+      "path": "references\\table-view-winui-1.6\\LICENSE",
+      "upstream": "LICENSE",
+      "gitBlob": "21071075c24599ee98254f702bcfc504cdc275a6",
+      "sha256": "27ebda9d51f0a56b7e281ccd8230a27236dcb51c05f64b07869ecf6e965d68b0"
+    },
+    {
+      "path": "references/table-view-winui-1.6/LayoutTransition_partial.cpp",
+      "upstream": "src/dxaml/xcp/dxaml/lib/LayoutTransition_partial.cpp",
+      "gitBlob": "edb0760f4127be1875ac53c237d06b49e8f96e79",
+      "sha256": "44f50f95fb72434c39f3e9407abb2d87b468f40cb5112708f5267bdc5823706e"
+    },
+    {
+      "path": "references/table-view-winui-1.6/LayoutTransition.cpp",
+      "upstream": "src/dxaml/xcp/core/core/elements/LayoutTransition.cpp",
+      "gitBlob": "f5fb7045dbb0043e167abe27da63033e9e127bfa",
+      "sha256": "0bebd036492963f00a333494977a7f5f15e27677e1965c7d008169628addade4"
+    },
+    {
+      "path": "references/table-view-winui-1.6/CEntranceThemeTransition.g.h",
+      "upstream": "src/dxaml/xcp/core/controls/generated/CEntranceThemeTransition.g.h",
+      "gitBlob": "2353a416b5fd9af2c8e349a265867f0683047ba6",
+      "sha256": "3852ccc0932b0142c5072eee30b6c4daba32f89255b1a0408fd1729f64043ece"
+    },
+    {
+      "path": "references/table-view-winui-1.6/EntranceThemeTransition_Partial.h",
+      "upstream": "src/dxaml/xcp/dxaml/lib/EntranceThemeTransition_Partial.h",
+      "gitBlob": "4cce575ee178b6aa4adb7fff02d9c5644579cf7f",
+      "sha256": "495489790ad8facdfc3a029fdb4cf44c6a54a831506a0aeafffe1a0f30573092"
+    },
+    {
+      "path": "references/table-view-winui-1.6/EntranceThemeTransition.g.cpp",
+      "upstream": "src/dxaml/xcp/dxaml/lib/winrtgeneratedclasses/EntranceThemeTransition.g.cpp",
+      "gitBlob": "21aece8fdbfb6557c848198aa28d127777dea1ca",
+      "sha256": "81aee4a31a4372fca753c47f5a1d25b5da8434f15f69c87c3ceb09c49d5204b6"
+    },
+    {
+      "path": "references/table-view-winui-1.6/ThemeGenerator.cpp",
+      "upstream": "src/dxaml/xcp/dxaml/lib/ThemeGenerator.cpp",
+      "gitBlob": "39bce0c761d3c2bcd2afa56fc447b59ebc22db81",
+      "sha256": "b321ed953d02f9f1951bf5d4530bf2a1997381d629b3460e26ea8e8ecf9a94a5"
+    },
+    {
+      "path": "references/table-view-winui-1.6/DefaultValues.cpp",
+      "upstream": "src/dxaml/xcp/core/core/elements/DefaultValues.cpp",
+      "gitBlob": "a9bd538c19979ced398f2e6055b73c37982c2275",
+      "sha256": "dcae5e489b3beba16a270740f9386900a1e3bde0eff2fca014e4cc4055994315"
+    },
+    {
+      "path": "references/table-view-winui-1.6/Microsoft.UI.Xaml.Media.Animation.cs",
+      "upstream": "src/dxaml/xcp/tools/XCPTypesAutoGen/XamlOM/Model/Microsoft.UI.Xaml.Media.Animation.cs",
+      "gitBlob": "f97cf51f927694c6b411874f3644d0cc8573a6fe",
+      "sha256": "772a85e2fe8c6fd286a35fbccef79b3697e2ebe8eb28ea3b810d80280d593d22"
+    },
+    {
+      "path": "references/table-view-winui-1.6/Common_themeresources.xaml",
+      "upstream": "src/controls/dev/CommonStyles/Common_themeresources.xaml",
+      "gitBlob": "4442cd93a301ffbb86de5248c4a99dc94d583e32",
+      "sha256": "333600531de59b2004ca652b27b8a41e6b485ee09cb16d0c72ecc556ba7bcfe5"
+    },
+    {
+      "path": "references/table-view-winui-1.6/Common_themeresources_any.xaml",
+      "upstream": "src/controls/dev/CommonStyles/Common_themeresources_any.xaml",
+      "gitBlob": "e716a3981ff4053f490bc892f9c0be5e263cec05",
+      "sha256": "e4951231b3b4bcbd814b75539fa2479f5ce135caee589318c40e9e3777bd21e3"
+    }
+  ]
+}

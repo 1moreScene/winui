@@ -20,6 +20,7 @@ import {NavigationTransition,ViewControlSlot} from './enums';
 import {normalizePicker,pickerKinds} from './picker-controls-types';
 import type {CalendarViewOptions,CalendarDatePickerOptions,DatePickerOptions,TimePickerOptions,ColorPickerOptions,PickerEvent,PickerSnapshot} from './picker-controls-types';
 import type {AppBarSeparatorOptions,AppBarButtonOptions,AppBarToggleButtonOptions,DropDownButtonOptions,CommandBarOptions,CommandBarItem,CommandBarEvent,CommandSnapshot} from './command-controls-types';
+import type {SegmentedOptions,SegmentedItemOptions,SegmentedSelectionChangedEvent} from './segmented-types';
 import type {SelectorBarOptions} from './navigation-controls-types';
 import {ContentDialogResult,ContentDialogButton} from './enums';
 import type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent,ComposedSnapshot} from './composed-types';
@@ -103,6 +104,12 @@ function normalizeViews(kind:NodeKind,options:object,scene:Scene){
 const primitiveKinds=[NodeKind.ScrollBar,NodeKind.Thumb,NodeKind.TickBar,NodeKind.ItemsPresenter,NodeKind.ScrollContentPresenter];
 function normalizePrimitives(kind:NodeKind,options:object,scene:Scene){if(!primitiveKinds.includes(kind))return options;const patch={...options} as Record<string,unknown>,primitive:Record<string,unknown>={};for(const key of ['viewportSize','indicatorMode','scrollTarget','source','footer'])if(Object.hasOwn(patch,key)&&(key!=='source'||kind===NodeKind.TickBar)){let value=patch[key];if(key==='scrollTarget'||key==='source')value=normalizeNodeReference(patch,key==='source'?'primitiveSource':'primitiveScrollTarget',value as SceneNode|string|null,scene);primitive[key]=value;delete patch[key];}if(Object.keys(primitive).length)patch.primitives=primitive;return patch;}
 const contentHostKinds=[NodeKind.ContentControl,NodeKind.ContentPresenter,NodeKind.UserControl,NodeKind.Page,NodeKind.Frame];
+function normalizeSegmented(kind:NodeKind, options:object){
+ if(kind!==NodeKind.Segmented&&kind!==NodeKind.SegmentedItem)return options;
+ const patch={...options} as Record<string,unknown>;
+ for(const [from,to] of kind===NodeKind.Segmented?[['itemsSource','segmentedSource']]:[['content','text'],['icon','glyph']])if(Object.hasOwn(patch,from)){patch[to]=patch[from];delete patch[from];}
+ return patch;
+}
 function normalizeContentHosts(kind:NodeKind,options:object){if(!contentHostKinds.includes(kind))return options;const patch={...options} as Record<string,unknown>,host:Record<string,unknown>={};for(const key of ['content','contentTemplate','pages','cacheSize'])if(Object.hasOwn(patch,key)){host[key]=patch[key];delete patch[key];}if(Object.keys(host).length)patch.contentHost=host;return patch;}
 const readingKinds=[NodeKind.RichTextBlockOverflow,NodeKind.ItemsView,NodeKind.PagerControl,NodeKind.AnnotatedScrollBar,NodeKind.RichTextBlock,NodeKind.LayoutPanel];
 const readingKeys=['displayMode','numberOfPages','selectedPageIndex','firstButtonVisibility','previousButtonVisibility','nextButtonVisibility','lastButtonVisibility','buttonPanelAlwaysShowFirstLastPageIndex','prefixText','suffixText','labels','minimum','maximum','viewportSize','value','smallChange','scrollTarget','paragraphs','layout','textAlignment','isTextSelectionEnabled','textHighlighters','overflowContentTarget','firstButtonCommand','previousButtonCommand','nextButtonCommand','lastButtonCommand','pagerInputCommand','firstButtonStyle','previousButtonStyle','nextButtonStyle','lastButtonStyle','numberButtonStyle','labelStyle','itemAspectRatios','hasLabelTemplate','hasDetailTemplate','labelItemSource'];
@@ -711,6 +718,8 @@ export interface ScrollSnapshot {
   scrollableHeight: number;
   verticalThumb: Rect | null;
   horizontalThumb: Rect | null;
+  verticalBar: Rect | null;
+  horizontalBar: Rect | null;
   isIntermediate: boolean;
 }
 export interface EditorSnapshot {
@@ -918,6 +927,42 @@ function identity(node: SceneNode): number {
 }
 type Patch = { id: number; patch: object; clientItems?:readonly CollectionItem[];clientGroups?:readonly CollectionGroup[];navigationItems?:readonly NavigationData[];commandSource?:Partial<CommandBarOptions> };
 type Disposable = { dispose(): void };
+const scenePropertyDefaults = new WeakMap<WinUiRuntime, NodeSnapshot['props']>();
+function snapshotNodeWithDefaults(node: NodeSnapshot): NodeSnapshot {
+  return { ...node, props: { ...Object.getPrototypeOf(node.props), ...node.props } };
+}
+const sceneFrameQueues = new WeakMap<Window, SceneFrameQueue>();
+class SceneFrameQueue {
+  private pending = new Set<() => void>();
+  private frame = 0;
+  constructor(private window: Window) {}
+  request(draw: () => void) {
+    this.pending.add(draw);
+    this.schedule();
+  }
+  cancel(draw: () => void) {
+    this.pending.delete(draw);
+  }
+  private schedule() {
+    if (!this.frame && this.pending.size) this.frame = this.window.requestAnimationFrame(this.flush);
+  }
+  private flush = () => {
+    this.frame = 0;
+    // Work enqueued by a draw belongs to a later frame. Keep pending scenes
+    // FIFO so a continuously animated scene cannot starve a first paint.
+    const ready = [...this.pending];
+    const start = performance.now();
+    try {
+      for (const draw of ready) {
+        if (!this.pending.delete(draw)) continue;
+        try { draw(); } catch (error) { reportError(error); }
+        if (performance.now() - start >= 8) break;
+      }
+    } finally {
+      this.schedule();
+    }
+  };
+}
 /** One Rust tree and compositor; floating surfaces have a separate platform popup island. */
 export class Scene implements Disposable {
   readonly element = document.createElement("div");
@@ -934,21 +979,26 @@ export class Scene implements Disposable {
   private groups = new Map<number, HTMLDivElement>();
   private snapshotProperties=new Map<number,NodeSnapshot["props"]>();
   private semantics = new Map<string, HTMLElement>();
+  private projectedListeners = new WeakMap<HTMLElement, AbortController>();
   private nodes = new Map<number, SceneNode>();
   private parents = new Map<number, number>();
   private abort = new AbortController();
   private viewport: SurfaceMetrics;
   private pendingSurfaceResize=false;
+  private pendingRaster = false;
   private surfaceVisibility?:IntersectionObserver;
-  private frame = 0;
+  private frameQueue: SceneFrameQueue;
+  private drawScheduled = () => this.draw(this.deferOffscreenRaster());
   private disposed = false;
   private snapshotListeners=new Set<(snapshot:Readonly<SceneSnapshot>)=>void>();
   private nodeSnapshotListeners=new Map<number,Set<(snapshot:NodeSnapshot)=>void>>();
   private hostActive = true;
+  private hostPresented = true;
   private dispatching = false;
   private jobs: (() => void)[] = [];
   private transaction: Patch[] | null = null;
   private state!: SceneSnapshot;
+  private tableViewKeys = new Map<number, string[]>();
   private _theme: ThemeMode;
   private reduced: boolean;
   private transparency: boolean;
@@ -983,6 +1033,13 @@ export class Scene implements Disposable {
     private clock: () => number,
     private released: () => void,
   ) {
+    const owner = host.ownerDocument.defaultView ?? window;
+    let queue = sceneFrameQueues.get(owner);
+    if (!queue) {
+      queue = new SceneFrameQueue(owner);
+      sceneFrameQueues.set(owner, queue);
+    }
+    this.frameQueue = queue;
     this._theme = options.theme ?? ThemeMode.Light;
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
     const transparency = matchMedia("(prefers-reduced-transparency: reduce)");
@@ -1017,6 +1074,7 @@ export class Scene implements Disposable {
     this.canvas.style.cssText =
       "position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;";
     this.canvas.setAttribute("aria-hidden", "true");
+    this.canvas.width = this.canvas.height = 0;
     this.projection.style.cssText =
       "position:absolute;inset:0;pointer-events:none;";
     this.floating.setAttribute('popover','manual');
@@ -1024,6 +1082,7 @@ export class Scene implements Disposable {
     this.floating.style.cssText='position:fixed;inset:auto;margin:0;padding:0;border:0;background:transparent;overflow:visible;pointer-events:none;max-width:none;max-height:none;transform-origin:0 0;';
     this.floatingCanvas.style.cssText='position:absolute;pointer-events:none;';
     this.floatingCanvas.setAttribute('aria-hidden','true');
+    this.floatingCanvas.width = this.floatingCanvas.height = 0;
     this.floating.append(this.floatingCanvas);
     this.element.append(this.canvas, this.projection, this.floating);
     const { autoHeight, autoWidth, ...runtimeOptions } = options;
@@ -1046,7 +1105,7 @@ export class Scene implements Disposable {
     this.element.addEventListener('click',e=>{if(e.detail===3&&!(e.target instanceof HTMLTextAreaElement)&&!(e.target instanceof HTMLInputElement)){e.preventDefault();this.send({kind:'richPointerSelection',id:0,...this.point(e),paragraph:true});}},{signal:this.abort.signal});
 
     const releaseScrollScope = registerScrollInputScope(host.ownerDocument, {
-      root: () => this.disposed || !this.hostActive || !host.isConnected ? 0 : this.raw.scene_scroll_scope(this.handle),
+      root: () => this.disposed || !this.hostActive || !this.element.isConnected ? 0 : this.raw.scene_scroll_scope(this.handle),
       contains: target => {
         if (!(target instanceof Node)) return false;
         const root=this.raw.scene_scroll_scope(this.handle),owner=this.state?.nodes.find(n=>n.id===root)?.composedOwner;
@@ -1069,7 +1128,7 @@ export class Scene implements Disposable {
       if(node){event.preventDefault();this.send(node.kind===NodeKind.TableView?{kind:'table',id:node.id,action:'context',data:{target:original?.id}}:{kind:'contextRequest',id:node.id});}
       else if(this.state.nodes.some(node=>node.props.contextFlyoutTarget)){event.preventDefault();this.send({kind:'contextRequestAt',...this.point(event)});}
     },{signal});
-    document.addEventListener("scroll",()=>{if(this.state?.floatingSurface?.visible)this.schedule();},{signal,capture:true,passive:true});
+    document.addEventListener("scroll",()=>{if(this.hostActive&&this.state?.floatingSurface?.visible)this.schedule();},{signal,capture:true,passive:true});
     let lastPointerTouch=false;
     const pointerDevice=(event:PointerEvent)=>{const touch=event.pointerType==='touch';if(touch!==lastPointerTouch){lastPointerTouch=touch;this.send({kind:'pointerDevice',touch});}};
     this.element.addEventListener(
@@ -1158,8 +1217,8 @@ export class Scene implements Disposable {
         },
         { signal },
       );
-    window.addEventListener('scroll',()=>{if(this.state?.nodes.some(n=>n.overlay?.isOpen))this.schedule();},{signal,capture:true,passive:true});
-    window.addEventListener('resize',()=>{if(this.state?.nodes.some(n=>n.overlay?.isOpen))this.schedule();},{signal,passive:true});
+    window.addEventListener('scroll',()=>{if(this.hostActive&&this.state?.nodes.some(n=>n.overlay?.isOpen))this.schedule();},{signal,capture:true,passive:true});
+    window.addEventListener('resize',()=>{if(this.hostActive&&this.state?.nodes.some(n=>n.overlay?.isOpen))this.schedule();},{signal,passive:true});
     this.element.addEventListener(
       "pointerleave",
       () => this.send({ kind: "leave" }),
@@ -1174,7 +1233,7 @@ export class Scene implements Disposable {
       { signal },
     );
     document.addEventListener('pointerdown',e=>{
-      if(!this.element.contains(e.target as Node)) {
+      if(this.hostActive&&!this.element.contains(e.target as Node)) {
         const surface=this.state.nodes.filter(n=>n.overlay?.isOpen&&n.kind!==NodeKind.ToolTip&&n.props.isLightDismissEnabled).sort((a,b)=>b.overlay!.order-a.overlay!.order)[0];
         if(surface)this.send({kind:'closeOverlay',id:surface.id});
         else if(this.state.nodes.some(n=>n.kind===NodeKind.CommandBar&&n.props.isOpen))this.send({kind:'dismissCommandBars'});
@@ -1221,6 +1280,9 @@ export class Scene implements Disposable {
         // Focus has reached Rust before the next snapshot arrives. A key in
         // that frame must retain modifiers from the actual rich-text target.
         const eventTargetId=e.target instanceof Element?Number(e.target.closest('[data-scene-node]')?.getAttribute('data-scene-node')):NaN;
+        if(this.state?.nodes.some(n=>n.id===eventTargetId&&n.kind===NodeKind.SegmentedItem)){
+          this.send({kind:'modifiers',ctrl:e.ctrlKey||e.metaKey,shift:e.shiftKey});
+        }
         const richFocus=this.state?.nodes.find(n=>(n.id===eventTargetId||n.id===this.state.focused)&&[NodeKind.RichTextBlock,NodeKind.RichTextBlockOverflow].includes(n.kind));
         if(richFocus&&(e.ctrlKey||e.metaKey)&&['a','c'].includes(e.key.toLowerCase()))e.preventDefault();
         const collectionFocus=this.state?.nodes.find(n=>n.id===this.state.focused&&(collectionKind(n.kind)||n.kind===NodeKind.TreeView));
@@ -1313,7 +1375,7 @@ export class Scene implements Disposable {
     );
     this.floatingCanvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.schedule();},{signal});
     this.floatingCanvas.addEventListener('webglcontextrestored',()=>{if(!this.disposed){this.raw.scene_restore(this.handle);this.schedule();}},{signal});
-    this.canvas.addEventListener(
+    if (this.element.dataset.backend === RendererBackend.WebGL2) this.canvas.addEventListener(
       "webglcontextlost",
       (e) => {
         e.preventDefault();
@@ -1321,7 +1383,7 @@ export class Scene implements Disposable {
       },
       { signal },
     );
-    this.canvas.addEventListener(
+    if (this.element.dataset.backend === RendererBackend.WebGL2) this.canvas.addEventListener(
       "webglcontextrestored",
       () => {
         if (!this.disposed) {
@@ -1338,19 +1400,24 @@ export class Scene implements Disposable {
       }
     };
     document.fonts.addEventListener("loadingdone", fontsChanged, { signal });
-    void document.fonts.ready.then(fontsChanged);
+    if (document.fonts.status === "loading") void document.fonts.ready.then(fontsChanged);
     this.viewport = new SurfaceMetrics(
       this.element,
       () => this.surfaceSizeChanged(),
       signal,
     );
     if(!this.autoHeight&&!this.autoWidth){
-      this.surfaceVisibility=new IntersectionObserver(entries=>{if(this.pendingSurfaceResize&&entries.some(entry=>entry.isIntersecting))this.schedule();});
+      this.surfaceVisibility=new IntersectionObserver(entries=>{
+        if((this.pendingSurfaceResize||this.pendingRaster)&&entries.some(entry=>entry.isIntersecting))this.schedule();
+      });
       this.surfaceVisibility.observe(this.element);
-      document.addEventListener('scroll',()=>{if(this.pendingSurfaceResize&&this.surfaceOnScreen())this.schedule();},{signal,capture:true,passive:true});
+      document.addEventListener('scroll',()=>{if(this.hostActive&&(this.pendingSurfaceResize||this.pendingRaster)&&this.surfaceOnScreen())this.schedule();},{signal,capture:true,passive:true});
     }
     try {
-      this.draw();
+      // Initialize synchronous geometry and snapshots. A blank root has no
+      // pixels to present before the caller attaches its first controls.
+      this.draw(options.root === undefined || this.deferOffscreenRaster());
+      if (this.pendingRaster) this.schedule();
     } catch (error) {
       this.dispose();
       throw error;
@@ -1363,6 +1430,9 @@ export class Scene implements Disposable {
     // Fixed-size offscreen surfaces retain pixels through repeated resizes.
     if(this.autoHeight||this.autoWidth||this.state?.floatingSurface?.visible||this.surfaceOnScreen())this.schedule();
     else this.pendingSurfaceResize=true;
+  }
+  private deferOffscreenRaster(): boolean {
+    return this.surfaceVisibility !== undefined && !this.surfaceOnScreen();
   }
   private flushSurfaceResize(){if(this.pendingSurfaceResize&&!this.drawing)this.draw();}
   private updatePopupViewport(r=this.element.getBoundingClientRect()){
@@ -1391,20 +1461,38 @@ export class Scene implements Disposable {
     if (this.disposed) throw new Error("Scene is disposed");
   }
   get isDisposed():boolean{return this.disposed;}
-  /** Suspend presentation for an unloaded/cached page without destroying its Rust controls or input state. */
-  setHostActive(active:boolean):void {
-    this.assertAlive();if(this.hostActive===active)return;this.hostActive=active;
-    if(!active){this.pageBackdrop.stop();cancelAnimationFrame(this.frame);this.frame=0;clearTimeout(this.wakeTimer);if(this.floating.matches(':popover-open'))this.floating.hidePopover();}
-    else this.schedule();
+  /** Pause a cached host while preserving control state. A visible outgoing transition can retain its final frame. */
+  setHostActive(active: boolean, presented = active): void {
+    this.assertAlive();
+    if (this.hostActive !== active) {
+      this.hostActive = active;
+      if (!active) {
+        this.pageBackdrop.stop();
+        this.frameQueue.cancel(this.drawScheduled);
+        clearTimeout(this.wakeTimer);
+        if (this.floating.matches(':popover-open')) this.floating.hidePopover();
+      } else {
+        this.viewport.measure(this.element);
+        this.schedule();
+      }
+    }
+    if (this.hostPresented && !presented) {
+      this.raw.scene_release_rasters(this.handle);
+      if (this.element.dataset.backend === RendererBackend.Canvas2D) {
+        // Chrome can keep a resized Canvas's shared images in its context
+        // pool. Retire the context along with the backing pixels on suspension.
+        const replacement = this.canvas.cloneNode(false) as HTMLCanvasElement;
+        this.raw.scene_replace_canvas(this.handle, replacement);
+        this.canvas.replaceWith(replacement);
+        this.canvas = replacement;
+      }
+    }
+    this.hostPresented = presented;
   }
   /** Present pending Rust state synchronously, for initial host composition. */
   render(){this.assertAlive();this.draw();}
   private schedule() {
-    if (!this.frame && !this.disposed && this.hostActive)
-      this.frame = requestAnimationFrame(() => {
-        this.frame = 0;
-        this.draw();
-      });
+    if (!this.disposed && this.hostActive) this.frameQueue.request(this.drawScheduled);
   }
   private send(input: object) {
     if (this.disposed) return;
@@ -1438,9 +1526,29 @@ export class Scene implements Disposable {
     try{if(transfer.target&&!transfer.target.isDisposed)transfer.target.driveDrag({kind:'collectionDragLeave',id:identity(transfer.target)});}
     finally{try{if(!transfer.source.isDisposed)transfer.source.driveDrag({kind:'collectionDragEnd',id:identity(transfer.source),operation});}finally{collectionCompletionPool=oldPool;}}
   }
+  private projectionSignal(element: HTMLElement): AbortSignal {
+    let controller = this.projectedListeners.get(element);
+    if (!controller) {
+      controller = new AbortController();
+      this.projectedListeners.set(element, controller);
+    }
+    return controller.signal;
+  }
+  private removeProjection(element: HTMLElement) {
+    this.projectedListeners.get(element)?.abort();
+    this.projectedListeners.delete(element);
+    element.remove();
+  }
+  private bindProjectedControl(element: HTMLElement, id: number, invoke = false, lifetime = element) {
+    const signal = this.projectionSignal(lifetime);
+    element.addEventListener('focus', () => this.send({ kind: 'focus', id }), { signal });
+    if (invoke) element.addEventListener('click', event => {
+      if (event.detail === 0) this.send({ kind: 'invoke', id });
+    }, { signal });
+  }
   private attachCollectionDrop(group:HTMLElement,id:number){
     if(group.dataset.collectionDrop!==undefined)return;group.dataset.collectionDrop='';
-    const options={signal:this.abort.signal};
+    const options={signal:this.projectionSignal(group)};
     group.addEventListener('dragover',event=>{
       const transfer=collectionTransfer,node=this.collectionController(this.nodes.get(id));if(!transfer||!node||node.isDisposed||transfer.source.isDisposed)return;
       event.stopPropagation();if(transfer.target&&transfer.target!==node&&!transfer.target.isDisposed)transfer.target.driveDrag({kind:'collectionDragLeave',id:identity(transfer.target)});
@@ -1467,17 +1575,17 @@ export class Scene implements Disposable {
   private attachCollectionDrag(group:HTMLElement,id:number,owner:number,properties:NodeSnapshot['props']|undefined){
     const view=this.collectionController(this.nodes.get(owner));group.draggable=!!view&&!!(properties?.canDragItems||properties?.canReorderItems&&!view.clientGroups.length);
     if(group.dataset.collectionDrag!==undefined)return;group.dataset.collectionDrag='';
-    group.addEventListener('contextmenu',event=>{const current=this.state.nodes.find(n=>n.id===id),view=this.collectionController(this.nodes.get(owner));if(!current||!view)return;event.preventDefault();this.collectionInput(view,{kind:'collectionContext',id:owner,index:current.props.collectionIndex,...this.point(event)});},{signal:this.abort.signal});
+    group.addEventListener('contextmenu',event=>{const current=this.state.nodes.find(n=>n.id===id),view=this.collectionController(this.nodes.get(owner));if(!current||!view)return;event.preventDefault();this.collectionInput(view,{kind:'collectionContext',id:owner,index:current.props.collectionIndex,...this.point(event)});},{signal:this.projectionSignal(group)});
     group.addEventListener('dragstart',event=>{const current=this.state.nodes.find(n=>n.id===id),source=this.collectionController(this.nodes.get(owner));if(!current||!source){event.preventDefault();return;}
       const rect=group.getBoundingClientRect(),canvasRect=this.canvas.getBoundingClientRect(),image=document.createElement('canvas');const scale=this.canvas.width/Math.max(1,canvasRect.width);image.width=Math.max(1,Math.round(rect.width*scale));image.height=Math.max(1,Math.round(rect.height*scale));image.getContext('2d')?.drawImage(this.canvas,(rect.left-canvasRect.left)*scale,(rect.top-canvasRect.top)*scale,image.width,image.height,0,0,image.width,image.height);event.stopPropagation();const drag=this.collectionInput(source,{kind:'collectionDragStart',id:owner,index:current.props.collectionIndex});if(!drag?.active){event.preventDefault();return;}
       collectionTransfer={scene:this,source,keys:drag.keys,pool:new Map(drag.keys.flatMap(key=>{const item=source.itemForKey(key);return item===undefined?[]:[[key,item] as const];})),operation:DataPackageOperation.None,metadata:drag.keys.flatMap(key=>{const item=source.itemForKey(key);return item===undefined?[]:[{id:key,text:typeof item==='string'?item:item.text??item.id,enabled:typeof item==='string'?true:item.enabled??true}];})};
       if(event.dataTransfer){event.dataTransfer.effectAllowed='copyMove';event.dataTransfer.setData('application/x-winui-collection','internal');event.dataTransfer.setData('text/plain',drag.keys.map(k=>source.itemForKey(k)).map(i=>typeof i==='string'?i:i?.text??i?.id).join('\n'));
         event.dataTransfer.setDragImage(image,Math.min(rect.width/2,48),Math.min(rect.height/2,24));
       }
-    },{signal:this.abort.signal});
-    group.addEventListener('dragend',()=>{const transfer=collectionTransfer;if(transfer&&!transfer.dropping)this.finishCollectionTransfer(transfer,transfer.operation);},{signal:this.abort.signal});
+    },{signal:this.projectionSignal(group)});
+    group.addEventListener('dragend',()=>{const transfer=collectionTransfer;if(transfer&&!transfer.dropping)this.finishCollectionTransfer(transfer,transfer.operation);},{signal:this.projectionSignal(group)});
   }
-  private draw() {
+  private draw(deferRaster = false) {
     if (this.disposed || this.drawing || !this.hostActive) return;
     this.pendingSurfaceResize=false;
     this.drawing = true;
@@ -1491,14 +1599,35 @@ export class Scene implements Disposable {
           this.viewport.width,
           this.viewport.height,
           this.viewport.dpr,
+          deferRaster,
         ),
       ) as SceneSnapshot;
-      for(const node of this.state.nodes){if(node.props)this.snapshotProperties.set(node.id,node.props);else{const cached=this.snapshotProperties.get(node.id);if(!cached)throw new Error("Missing initial Rust node properties");node.props=cached;}}
-      const live=new Set(this.state.nodes.map(n=>n.id));
-      for(const id of this.snapshotProperties.keys())if(!live.has(id))this.snapshotProperties.delete(id);
+      this.pendingRaster = deferRaster && !this.state.floatingSurface?.visible;
+      let defaults = scenePropertyDefaults.get(this.raw);
+      if (!defaults) {
+        defaults = JSON.parse(this.raw.scene_property_defaults()) as NodeSnapshot['props'];
+        scenePropertyDefaults.set(this.raw, defaults);
+      }
+      for (const node of this.state.nodes) {
+        if (node.table) {
+          if (node.table.viewKeys) this.tableViewKeys.set(node.id, node.table.viewKeys);
+          else node.table.viewKeys = this.tableViewKeys.get(node.id) ?? [];
+        }
+        if (node.props) {
+          Object.setPrototypeOf(node.props, defaults);
+          this.snapshotProperties.set(node.id, node.props);
+        } else {
+          const cached = this.snapshotProperties.get(node.id);
+          if (!cached) throw new Error("Missing initial Rust node properties");
+          node.props = cached;
+        }
+      }
+      const snapshotById = new Map(this.state.nodes.map(node => [node.id, node]));
+      for (const id of this.tableViewKeys.keys()) if (!snapshotById.has(id)) this.tableViewKeys.delete(id);
+      for(const id of this.snapshotProperties.keys())if(!snapshotById.has(id))this.snapshotProperties.delete(id);
       for(const snapshot of this.state.nodes){const node=this.nodes.get(snapshot.id);if(node instanceof NavigationControl&&snapshot.navigationControl)node.setClientNavigationSelection(snapshot.navigationControl.selectedIndex,snapshot.navigationControl.selectedPageIndex);}
-      for(const [id,node] of this.nodes)if(!live.has(id)){this.settleDisposed(node);node.markDisposed();this.nodes.delete(id);this.parents.delete(id);this.nodeSnapshotListeners.delete(id);}
-      for(const n of this.state.nodes)if(n.table)for(const slot of n.table.realized){if(!this.nodes.has(slot.id))this.nodes.set(slot.id,new Panel(this,slot.id,NodeKind.Grid));const parent=this.state.nodes.find(n=>n.id===slot.id)?.parent;if(parent)this.parents.set(slot.id,parent);}
+      for(const [id,node] of this.nodes)if(!snapshotById.has(id)){this.settleDisposed(node);node.markDisposed();this.nodes.delete(id);this.parents.delete(id);this.nodeSnapshotListeners.delete(id);}
+      for(const n of this.state.nodes)if(n.table)for(const slot of n.table.realized){if(!this.nodes.has(slot.id))this.nodes.set(slot.id,new Panel(this,slot.id,NodeKind.Grid));const parent=snapshotById.get(slot.id)?.parent;if(parent)this.parents.set(slot.id,parent);}
       for(const n of this.state.nodes)if((n.kind===NodeKind.CollectionItem||n.kind===NodeKind.CollectionHeader)&&!this.nodes.has(n.id))this.nodes.set(n.id,new CollectionItemContainer(this,n.id,n.kind));
       for(const n of this.state.nodes){if(n.repeater)for(const slot of n.repeater.realized){if(!this.nodes.has(slot.id))this.nodes.set(slot.id,new RepeaterItemContainer(this,slot.id,NodeKind.Grid));this.parents.set(slot.id,n.id);}if(n.refresh?.visualizer&&!this.nodes.has(n.refresh.visualizer)){this.nodes.set(n.refresh.visualizer,new RefreshVisualizer(this,n.refresh.visualizer,NodeKind.RefreshVisualizer));this.parents.set(n.refresh.visualizer,n.id);}}
       this.viewport.present(this.canvas);
@@ -1522,7 +1651,7 @@ export class Scene implements Disposable {
       const hostClip=clip?`path('${clip.map(r=>`M ${r.x} ${r.y} h ${r.width} v ${r.height} h ${-r.width} Z`).join(' ')||'M 0 0 Z'}')`:'none';
       if(this.projectedHostClip!==hostClip){this.element.style.clipPath=hostClip;this.projectedHostClip=hostClip;}
       this.element.style.pointerEvents=external?'auto':'';
-      this.project();
+      this.project(snapshotById);
       for(const n of this.state.nodes){const node=this.nodes.get(n.id);if(node instanceof TableView)this.jobs.push(()=>{if(!node.isDisposed)node.syncTemplates();});}
       for(const n of this.state.nodes){const controller=this.nodes.get(n.id);if(controller instanceof ItemsRepeater)this.jobs.push(()=>{if(!controller.isDisposed)controller.syncTemplate();});}
       for(const snapshot of this.state.nodes){const node=this.nodes.get(snapshot.id);if(node instanceof NavigationControl&&snapshot.navigationControl)this.jobs.push(()=>{if(!node.isDisposed)node.syncNavigationTemplates(snapshot.navigationControl!);});}
@@ -1603,12 +1732,12 @@ export class Scene implements Disposable {
       const key=`${n.id}/nav/${part.key}`;keys.add(key);let element=this.semantics.get(key);
       const isPage=part.role==='page',currentCrumb=part.role==='breadcrumb'&&part.selected;
       if(!element){element=document.createElement(isPage||currentCrumb?'div':'button');if(element instanceof HTMLButtonElement)element.type='button';element.dataset.navigationPart=part.key;this.semantics.set(key,element);strip.append(element);
-        element.addEventListener('focus',()=>{if(!controller.isDisposed)controller.driveNavigation({action:'focusPart',key:part.key});},{signal:this.abort.signal});
-        element.addEventListener('click',event=>{if(event.detail===0&&!controller.isDisposed){const p=this.state.nodes.find(v=>v.id===n.id)?.navigationControl?.parts.find(v=>v.key===part.key);if(!p)return;const action=p.role==='ellipsis'?{action:'openOverflow'}:p.role==='closeTab'?{action:'close',index:p.index}:p.role==='addTab'?{action:'add'}:{action:'choose',index:p.index};controller.driveNavigation(action);}},{signal:this.abort.signal});
+        element.addEventListener('focus',()=>{if(!controller.isDisposed)controller.driveNavigation({action:'focusPart',key:part.key});},{signal:this.projectionSignal(element)});
+        element.addEventListener('click',event=>{if(event.detail===0&&!controller.isDisposed){const p=this.state.nodes.find(v=>v.id===n.id)?.navigationControl?.parts.find(v=>v.key===part.key);if(!p)return;const action=p.role==='ellipsis'?{action:'openOverflow'}:p.role==='closeTab'?{action:'close',index:p.index}:p.role==='addTab'?{action:'add'}:{action:'choose',index:p.index};controller.driveNavigation(action);}},{signal:this.projectionSignal(element)});
         if(part.role==='tab'){
-          element.addEventListener('auxclick',event=>{if(event.button===1){event.preventDefault();const p=this.state.nodes.find(v=>v.id===n.id)?.navigationControl?.parts.find(v=>v.key===part.key);if(p)controller.driveNavigation({action:'close',index:p.index});}},{signal:this.abort.signal});
-          element.addEventListener('dragstart',event=>{if(!(controller instanceof TabView)){event.preventDefault();return;}const p=this.state.nodes.find(v=>v.id===n.id)?.navigationControl?.parts.find(v=>v.key===part.key);if(!p)return;controller.driveNavigation({action:'dragStart',index:p.index});navigationTransfer={scene:this,source:controller,key:p.key,pool:new Map(controller.navigationEntries()),metadata:controller.metadataForKeys([p.key]),dropping:false,finishing:false};if(event.dataTransfer){event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('application/x-winui-tab',p.key);const rect=element!.getBoundingClientRect(),canvasRect=this.canvas.getBoundingClientRect(),scale=this.canvas.width/Math.max(1,canvasRect.width),image=document.createElement('canvas');image.width=Math.max(1,Math.round(rect.width*scale));image.height=Math.max(1,Math.round(rect.height*scale));image.getContext('2d')?.drawImage(this.canvas,(rect.left-canvasRect.left)*scale,(rect.top-canvasRect.top)*scale,image.width,image.height,0,0,image.width,image.height);event.dataTransfer.setDragImage(image,Math.min(rect.width/2,48),16);}},{signal:this.abort.signal});
-          element.addEventListener('dragend',()=>{const transfer=navigationTransfer;if(transfer&&!transfer.dropping)this.finishNavigationTransfer(transfer,true);},{signal:this.abort.signal});
+          element.addEventListener('auxclick',event=>{if(event.button===1){event.preventDefault();const p=this.state.nodes.find(v=>v.id===n.id)?.navigationControl?.parts.find(v=>v.key===part.key);if(p)controller.driveNavigation({action:'close',index:p.index});}},{signal:this.projectionSignal(element)});
+          element.addEventListener('dragstart',event=>{if(!(controller instanceof TabView)){event.preventDefault();return;}const p=this.state.nodes.find(v=>v.id===n.id)?.navigationControl?.parts.find(v=>v.key===part.key);if(!p)return;controller.driveNavigation({action:'dragStart',index:p.index});navigationTransfer={scene:this,source:controller,key:p.key,pool:new Map(controller.navigationEntries()),metadata:controller.metadataForKeys([p.key]),dropping:false,finishing:false};if(event.dataTransfer){event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('application/x-winui-tab',p.key);const rect=element!.getBoundingClientRect(),canvasRect=this.canvas.getBoundingClientRect(),scale=this.canvas.width/Math.max(1,canvasRect.width),image=document.createElement('canvas');image.width=Math.max(1,Math.round(rect.width*scale));image.height=Math.max(1,Math.round(rect.height*scale));image.getContext('2d')?.drawImage(this.canvas,(rect.left-canvasRect.left)*scale,(rect.top-canvasRect.top)*scale,image.width,image.height,0,0,image.width,image.height);event.dataTransfer.setDragImage(image,Math.min(rect.width/2,48),16);}},{signal:this.projectionSignal(element)});
+          element.addEventListener('dragend',()=>{const transfer=navigationTransfer;if(transfer&&!transfer.dropping)this.finishNavigationTransfer(transfer,true);},{signal:this.projectionSignal(element)});
         }
       }
       element.id=`winui-nav-${this.handle}-${n.id}-${encodeURIComponent(part.key)}`;
@@ -1623,34 +1752,68 @@ export class Scene implements Disposable {
       if(part.key===snapshot.focusedPart||!preferred&&element.tabIndex===0)preferred=element;
     }
     const rootKey=String(n.id);keys.add(rootKey);this.semantics.set(rootKey,preferred??group);
-    if(n.kind===NodeKind.FlipView){group.setAttribute('role','listbox');group.dataset.flipViewer='';group.style.touchAction=n.props.orientation===Orientation.Vertical?'pan-x':'pan-y';group.tabIndex=n.enabled?0:-1;this.semantics.set(rootKey,group);if(!group.dataset.flipFocus){group.dataset.flipFocus='';group.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.abort.signal});}}
+    if(n.kind===NodeKind.FlipView){group.setAttribute('role','listbox');group.dataset.flipViewer='';group.style.touchAction=n.props.orientation===Orientation.Vertical?'pan-x':'pan-y';group.tabIndex=n.enabled?0:-1;this.semantics.set(rootKey,group);if(!group.dataset.flipFocus){group.dataset.flipFocus='';group.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.projectionSignal(group)});}}
     if(n.kind===NodeKind.TabView&&!group.dataset.tabDrop){group.dataset.tabDrop='';
       const target=controller as TabView;
       const insertion=(event:DragEvent)=>{const root=this.state.nodes.find(v=>v.id===n.id)!;const point=this.point(event);const [a,b,c,d,tx,ty]=root.world;const determinant=a*d-b*c;const x=(d*(point.x-tx)-c*(point.y-ty))/determinant;const tabs=root.navigationControl!.parts.filter(p=>p.role==='tab');for(const part of tabs)if(x<part.rect.x+part.rect.width/2.)return part.index;return target.items.length;};
-      group.addEventListener('dragover',event=>{const transfer=navigationTransfer;if(!transfer||target.isDisposed)return;if(transfer.source!==target&&!transfer.scene.navigationSnapshot(transfer.source))return;if(transfer.source!==target&&!transfer.scene.navigationSettings(transfer.source)?.canDragTabs)return;if(transfer.source!==target&&!((this.state.nodes.find(v=>v.id===n.id)?.props as unknown as {navControls?:TabViewOptions})?.navControls?.allowDropTabs))return;event.preventDefault();event.stopPropagation();if(transfer.target&&transfer.target!==target&&!transfer.target.isDisposed)transfer.target.driveNavigation({action:'clearOffer'});transfer.target=target;const width=transfer.scene.navigationSnapshot(transfer.source)?.parts.find(p=>p.key===transfer.key&&p.role==='tab')?.rect.width??100;target.driveNavigation({action:'dragOver',index:insertion(event),key:transfer.key,width,external:transfer.source!==target});if(event.dataTransfer)event.dataTransfer.dropEffect='move';},{signal:this.abort.signal});
-      group.addEventListener('dragleave',event=>{if(event.relatedTarget instanceof Node&&group.contains(event.relatedTarget))return;const transfer=navigationTransfer;if(transfer?.target===target){transfer.target=undefined;if(!target.isDisposed)target.driveNavigation({action:'clearOffer'});}},{signal:this.abort.signal});
-      group.addEventListener('drop',event=>{const transfer=navigationTransfer;if(!transfer||transfer.target!==target)return;event.preventDefault();event.stopPropagation();transfer.dropping=true;let committed=false;try{const reply=target.driveNavigation({action:'drop',source:transfer.scene===this?identity(transfer.source):null,items:transfer.metadata,index:insertion(event)});committed=reply.committed;if(committed&&transfer.scene!==this&&!transfer.source.isDisposed)transfer.source.driveNavigation({action:'removeTransferred',keys:[transfer.key]});}finally{transfer.dropping=false;this.finishNavigationTransfer(transfer,!committed);}},{signal:this.abort.signal});
+      group.addEventListener('dragover',event=>{const transfer=navigationTransfer;if(!transfer||target.isDisposed)return;if(transfer.source!==target&&!transfer.scene.navigationSnapshot(transfer.source))return;if(transfer.source!==target&&!transfer.scene.navigationSettings(transfer.source)?.canDragTabs)return;if(transfer.source!==target&&!((this.state.nodes.find(v=>v.id===n.id)?.props as unknown as {navControls?:TabViewOptions})?.navControls?.allowDropTabs))return;event.preventDefault();event.stopPropagation();if(transfer.target&&transfer.target!==target&&!transfer.target.isDisposed)transfer.target.driveNavigation({action:'clearOffer'});transfer.target=target;const width=transfer.scene.navigationSnapshot(transfer.source)?.parts.find(p=>p.key===transfer.key&&p.role==='tab')?.rect.width??100;target.driveNavigation({action:'dragOver',index:insertion(event),key:transfer.key,width,external:transfer.source!==target});if(event.dataTransfer)event.dataTransfer.dropEffect='move';},{signal:this.projectionSignal(group)});
+      group.addEventListener('dragleave',event=>{if(event.relatedTarget instanceof Node&&group.contains(event.relatedTarget))return;const transfer=navigationTransfer;if(transfer?.target===target){transfer.target=undefined;if(!target.isDisposed)target.driveNavigation({action:'clearOffer'});}},{signal:this.projectionSignal(group)});
+      group.addEventListener('drop',event=>{const transfer=navigationTransfer;if(!transfer||transfer.target!==target)return;event.preventDefault();event.stopPropagation();transfer.dropping=true;let committed=false;try{const reply=target.driveNavigation({action:'drop',source:transfer.scene===this?identity(transfer.source):null,items:transfer.metadata,index:insertion(event)});committed=reply.committed;if(committed&&transfer.scene!==this&&!transfer.source.isDisposed)transfer.source.driveNavigation({action:'removeTransferred',keys:[transfer.key]});}finally{transfer.dropping=false;this.finishNavigationTransfer(transfer,!committed);}},{signal:this.projectionSignal(group)});
     }
   }
   private finishNavigationTransfer(transfer:NonNullable<typeof navigationTransfer>,outside:boolean){
     if(transfer.finishing)return;transfer.finishing=true;
     try{try{if(transfer.target&&transfer.target!==transfer.source&&!transfer.target.isDisposed)transfer.target.driveNavigation({action:'dragEnd'});}finally{if(!transfer.source.isDisposed)transfer.source.driveNavigation({action:'dragEnd',outside:outside&&!!transfer.scene.navigationSettings(transfer.source)?.canDragTabs});}}finally{if(navigationTransfer===transfer)navigationTransfer=undefined;}
   }
-  private project() {
+  private project(snapshotById: Map<number, NodeSnapshot>) {
     if (this.state.events.some((e) => e.kind === EventKind.GotFocus))
       this.restoreKeyboardFocus = true;
-    const snapshotById=new Map(this.state.nodes.map(n=>[n.id,n]));
     // Rust renders template parts. DOM is needed for public controls, content
     // hosts, accessibility and their ancestor clips, not empty template grids.
     const publicNodes=this.state.nodes.filter(n=>!n.navigationOwner||n.overlay||this.contentHosts.has(n.id)||this.editorHosts.has(n.id));
     const ids=new Set(publicNodes.map(n=>n.id));
     for(const node of publicNodes){if(node.overlay)continue;let parent=node.parent;while(parent!==null&&!ids.has(parent)){ids.add(parent);const ancestor=snapshotById.get(parent);if(!ancestor||ancestor.overlay)break;parent=ancestor.parent;}}
+    // A cell's generated text label duplicates its accessible name. Custom
+    // templates and editors can contain interactive content of their own.
+    for (const {table} of publicNodes) {
+      if (!table) continue;
+      const templated = new Set(table.columns.filter(column => column.hasTemplate).map(column => column.key));
+      for (const slot of table.realized) {
+        if (slot.role !== 'cell' || slot.editing || templated.has(slot.column)) continue;
+        const cell = snapshotById.get(slot.id);
+        const label = cell?.children.length === 1 ? snapshotById.get(cell.children[0]) : undefined;
+        if (label?.kind === NodeKind.TextBlock && !label.children.length && !label.props.accessibleName) ids.delete(label.id);
+      }
+    }
     const projectedNodes=this.state.nodes.filter(n=>ids.has(n.id));
     const repeaterSlots=new Map(this.state.nodes.flatMap(owner=>(owner.repeater?.realized??[]).map(slot=>[slot.id,{slot,owner}] as const)));
     const navigationSlots=new Map(this.state.nodes.flatMap(owner=>(owner.navigationControl?.slots??[]).map(slot=>[slot.id,{slot,owner}] as const)));
+    const tableSlots = new Map<number, {
+      slot: TableViewSnapshot['realized'][number];
+      row: number;
+      column: number;
+      selected: boolean;
+    }>();
+    for (const { table } of projectedNodes) {
+      if (!table) continue;
+      const rows = new Map<string, { index: number; selected: boolean }>();
+      for (const slot of table.realized) {
+        let row = rows.get(slot.row);
+        if (!row) {
+          row = { index: slot.viewIndex + 2, selected: table.selectedKeys.includes(slot.row) };
+          rows.set(slot.row, row);
+        }
+        tableSlots.set(slot.id, {
+          slot,
+          row: row.index,
+          column: table.columns.findIndex(column => column.key === slot.column) + 1,
+          selected: row.selected || table.selectedCells.some(cell => cell.row === slot.row && cell.column === slot.column),
+        });
+      }
+    }
     for (const [id, group] of this.groups)
       if (!ids.has(id)) {
-        group.remove();
+        this.removeProjection(group);
         this.groups.delete(id);
         this.projectedChildren.delete(id);
       }
@@ -1669,8 +1832,20 @@ export class Scene implements Disposable {
       group.style.cursor = n.pointer.cursor;
       group.style.userSelect = n.pointer.textSelection;
       if(n.navigationOwner&&!n.overlay){continue;}
-      if(n.table){const metadata=(p as unknown as {table?:TableViewOptions}).table;const current=n.table.currentCell;const active=current?n.table.realized.find(s=>s.role==="cell"&&s.row===current.row&&s.column===current.column):undefined;if(active)group.setAttribute("aria-activedescendant",`winui-table-cell-${this.handle}-${active.id}`);else group.removeAttribute("aria-activedescendant");group.setAttribute("aria-multiselectable",String(metadata?.selectionMode===ListViewSelectionMode.Multiple||metadata?.selectionMode===ListViewSelectionMode.Extended));group.setAttribute("aria-readonly",String(metadata?.isReadOnly??false));group.setAttribute("aria-disabled",String(!n.enabled));group.setAttribute("role","grid");group.setAttribute("aria-label",p.accessibleName??"TableView");group.setAttribute("aria-rowcount",String(n.table.filteredCount+1));group.setAttribute("aria-colcount",String(n.table.columns.length));group.tabIndex=n.enabled?0:-1;keys.add(String(n.id));this.semantics.set(String(n.id),group);if(!group.dataset.tableFocus){group.dataset.tableFocus="";group.addEventListener("focus",()=>this.send({kind:"focus",id:n.id}),{signal:this.abort.signal});}}
-      const tableOwner=this.state.nodes.find(owner=>owner.table?.realized.some(s=>s.id===n.id));const tableSlot=tableOwner?.table?.realized.find(s=>s.id===n.id);if(tableSlot){group.id=`winui-table-cell-${this.handle}-${n.id}`;group.style.pointerEvents="auto";group.style.zIndex=String(p.zIndex??0);group.setAttribute("role",tableSlot.role==="rowHeader"?"rowheader":tableSlot.role==="details"?"group":"gridcell");group.setAttribute("aria-label",p.accessibleName??tableSlot.row);group.setAttribute("aria-rowindex",String((tableOwner!.table!.viewKeys.indexOf(tableSlot.row))+2));if(tableSlot.role==="cell")group.setAttribute("aria-colindex",String(tableOwner!.table!.columns.findIndex(c=>c.key===tableSlot.column)+1));else group.removeAttribute("aria-colindex");group.setAttribute("aria-selected",String(tableOwner!.table!.selectedKeys.includes(tableSlot.row)||tableOwner!.table!.selectedCells.some(c=>c.row===tableSlot.row&&c.column===tableSlot.column)));}
+      if(n.table){const metadata=(p as unknown as {table?:TableViewOptions}).table;const current=n.table.currentCell;const active=current?n.table.realized.find(s=>s.role==="cell"&&s.row===current.row&&s.column===current.column):undefined;if(active)group.setAttribute("aria-activedescendant",`winui-table-cell-${this.handle}-${active.id}`);else group.removeAttribute("aria-activedescendant");group.setAttribute("aria-multiselectable",String(metadata?.selectionMode===ListViewSelectionMode.Multiple||metadata?.selectionMode===ListViewSelectionMode.Extended));group.setAttribute("aria-readonly",String(metadata?.isReadOnly??false));group.setAttribute("aria-disabled",String(!n.enabled));group.setAttribute("role","grid");group.setAttribute("aria-label",p.accessibleName??"TableView");group.setAttribute("aria-rowcount",String(n.table.filteredCount+1));group.setAttribute("aria-colcount",String(n.table.columns.length));group.tabIndex=n.enabled?0:-1;keys.add(String(n.id));this.semantics.set(String(n.id),group);if(!group.dataset.tableFocus){group.dataset.tableFocus="";this.bindProjectedControl(group,n.id);}}
+      const tableCell = tableSlots.get(n.id);
+      if (tableCell) {
+        const { slot, row, column, selected } = tableCell;
+        group.id = `winui-table-cell-${this.handle}-${n.id}`;
+        group.style.pointerEvents = "auto";
+        group.style.zIndex = String(p.zIndex ?? 0);
+        group.setAttribute("role", slot.role === "rowHeader" ? "rowheader" : slot.role === "details" ? "group" : "gridcell");
+        group.setAttribute("aria-label", p.accessibleName ?? slot.row);
+        group.setAttribute("aria-rowindex", String(row));
+        if (slot.role === "cell") group.setAttribute("aria-colindex", String(column));
+        else group.removeAttribute("aria-colindex");
+        group.setAttribute("aria-selected", String(selected));
+      }
       if(n.repeater){group.setAttribute('role','list');group.setAttribute('aria-label',p.accessibleName??'Items');}
       const repeaterSlot=repeaterSlots.get(n.id);if(repeaterSlot){group.setAttribute('role','listitem');group.setAttribute('aria-posinset',String(repeaterSlot.slot.index+1));group.setAttribute('aria-setsize',String(repeaterSlot.owner.repeater!.totalCount));}
       if(n.refresh){group.setAttribute('role','group');group.setAttribute('aria-label',p.accessibleName??'Refresh');group.setAttribute('aria-busy',String(n.refresh.state==='Refreshing'));}
@@ -1698,15 +1873,22 @@ export class Scene implements Disposable {
         const parts=n.compact!;
         for(const secondary of [false,true]){
           const key=`${n.id}/split-${secondary?'secondary':'primary'}`;keys.add(key);let b=this.semantics.get(key) as HTMLButtonElement|undefined;
-          if(!b){b=this.button(n,key);b.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.abort.signal});b.addEventListener('click',e=>{if(e.detail===0)this.send({kind:'splitInvoke',id:n.id,secondary});},{signal:this.abort.signal});group.prepend(b);}
+          if(!b){b=this.button(n,key);b.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.projectionSignal(b)});b.addEventListener('click',e=>{if(e.detail===0)this.send({kind:'splitInvoke',id:n.id,secondary});},{signal:this.projectionSignal(b)});group.prepend(b);}
           const rect=secondary?parts.secondary:parts.primary;b.style.cssText=`position:absolute;left:${rect.x}px;top:0;width:${rect.width}px;height:${rect.height}px;opacity:0;pointer-events:auto;outline:none`;
           b.setAttribute('aria-label',secondary?`${p.accessibleName??p.text??'SplitButton'} options`:p.accessibleName??p.text??'SplitButton');b.disabled=!n.enabled;b.tabIndex=secondary?-1:n.tabStop?0:-1;
           if(secondary){const target=snapshotById.get(p.flyoutTarget??0);if(target)b.setAttribute('aria-haspopup',target.kind===NodeKind.MenuFlyout?'menu':'dialog');else b.removeAttribute('aria-haspopup');b.setAttribute('aria-expanded',String(parts.flyoutOpen));}
           else if(n.kind===NodeKind.ToggleSplitButton)b.setAttribute('aria-pressed',String(p.isChecked===true));
         }
+      }else if(n.kind===NodeKind.Segmented){
+        group.setAttribute('role','listbox');group.setAttribute('aria-label',p.accessibleName??'Segmented');group.setAttribute('aria-orientation',p.orientation===Orientation.Vertical?'vertical':'horizontal');
+        group.setAttribute('aria-multiselectable',String(p.selectionMode===ListViewSelectionMode.Multiple||p.selectionMode===ListViewSelectionMode.Extended));
+      }else if(n.kind===NodeKind.SegmentedItem){
+        const key=String(n.id);keys.add(key);let b=this.semantics.get(key) as HTMLButtonElement|undefined;
+        if(!b){b=this.button(n,key);b.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.projectionSignal(b)});b.addEventListener('click',e=>{if(e.detail===0)this.send({kind:'invoke',id:n.id});},{signal:this.projectionSignal(b)});group.prepend(b);}
+        b.setAttribute('role','option');b.setAttribute('aria-label',p.accessibleName??(p.text||this.contentName(n.id)));b.setAttribute('aria-selected',String((p as SegmentedItemOptions).isSelected??false));b.disabled=!n.enabled;b.tabIndex=n.tabStop?0:-1;
       }else if(n.kind===NodeKind.RatingControl){
         const key=String(n.id);keys.add(key);let b=this.semantics.get(key) as HTMLButtonElement|undefined;
-        if(!b){b=this.button(n,key);b.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.abort.signal});group.prepend(b);}
+        if(!b){b=this.button(n,key);b.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.projectionSignal(b)});group.prepend(b);}
         b.setAttribute('role','slider');b.setAttribute('aria-label',p.accessibleName??'RatingControl');b.setAttribute('aria-valuemin','0');b.setAttribute('aria-valuemax',String(p.maxRating));b.setAttribute('aria-valuenow',String(Math.max(0,p.value??-1)));b.setAttribute('aria-valuetext',(p.value??-1)<0?'Not rated':`${p.value} of ${p.maxRating}`);b.setAttribute('aria-readonly',String(!!p.isReadOnly));b.disabled=!n.enabled;b.tabIndex=n.tabStop?0:-1;
       }else if (
         [
@@ -1725,18 +1907,7 @@ export class Scene implements Disposable {
         let b = this.semantics.get(key) as HTMLButtonElement | undefined;
         if (!b) {
           b = this.button(n, key);
-          b.addEventListener(
-            "focus",
-            () => this.send({ kind: "focus", id: n.id }),
-            { signal: this.abort.signal },
-          );
-          b.addEventListener(
-            "click",
-            (e) => {
-              if (e.detail === 0) this.send({ kind: "invoke", id: n.id });
-            },
-            { signal: this.abort.signal },
-          );
+          this.bindProjectedControl(b, n.id, true);
           group.prepend(b);
         }
         if (
@@ -1917,13 +2088,13 @@ export class Scene implements Disposable {
       } else if(n.kind===NodeKind.PagerControl){group.setAttribute('role','navigation');group.setAttribute('aria-label',p.accessibleName??'Page selector');
       } else if([NodeKind.RichTextBlock,NodeKind.RichTextBlockOverflow].includes(n.kind)&&n.reading){
         keys.add(String(n.id));this.semantics.set(String(n.id),group);
-        group.style.pointerEvents='auto';group.setAttribute('role','document');group.tabIndex=(p.reading?.isTextSelectionEnabled??true)?0:-1;if(!group.dataset.richFocus){group.dataset.richFocus='';group.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.abort.signal});}
+        group.style.pointerEvents='auto';group.setAttribute('role','document');group.tabIndex=(p.reading?.isTextSelectionEnabled??true)?0:-1;if(!group.dataset.richFocus){group.dataset.richFocus='';group.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.projectionSignal(group)});}
         const key='rich:'+n.id;keys.add(key);let text=this.semantics.get(key);
         if(!text){text=document.createElement('span');this.semantics.set(key,text);group.append(text);}text.style.cssText='position:absolute;inset:0;opacity:0;pointer-events:none';text.textContent=n.reading.text||p.text||'';
         const links=n.reading.links??[];const seen=new Set<string>();
         for(let i=0;i<links.length;i++){
           const link=links[i];if(seen.has(link.link))continue;seen.add(link.link);const key=`rich:${n.id}:link:${link.link}`;keys.add(key);let element=this.semantics.get(key)as HTMLButtonElement|undefined;
-          if(!element){element=document.createElement('button');element.setAttribute('role','link');this.semantics.set(key,element);group.append(element);element.addEventListener('click',e=>{if(e.detail===0)this.send({kind:'reading',id:n.id,action:'link',index:Number(element!.dataset.linkIndex)});},{signal:this.abort.signal});element.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();if(!e.repeat)this.send({kind:'reading',id:n.id,action:'link',index:Number(element!.dataset.linkIndex)});}},{signal:this.abort.signal});}
+          if(!element){element=document.createElement('button');element.setAttribute('role','link');this.semantics.set(key,element);group.append(element);element.addEventListener('click',e=>{if(e.detail===0)this.send({kind:'reading',id:n.id,action:'link',index:Number(element!.dataset.linkIndex)});},{signal:this.projectionSignal(element)});element.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();if(!e.repeat)this.send({kind:'reading',id:n.id,action:'link',index:Number(element!.dataset.linkIndex)});}},{signal:this.projectionSignal(element)});}
           element.dataset.linkIndex=String(i);element.textContent=links.filter(l=>l.link===link.link).map(l=>l.text).join('');element.disabled=!n.enabled;element.style.cssText=`position:absolute;left:${link.rect.x}px;top:${link.rect.y}px;width:${link.rect.width}px;height:${link.rect.height}px;opacity:0;pointer-events:none`;
         }
       } else if(n.kind===NodeKind.AnnotatedScrollBar){
@@ -1954,11 +2125,7 @@ export class Scene implements Disposable {
           content.id = `winui-scroll-${this.handle}-${n.id}`;
           this.contentGroups.set(n.id, content);
           group.prepend(content);
-          group.addEventListener(
-            "focus",
-            () => this.send({ kind: "focus", id: n.id }),
-            { signal: this.abort.signal },
-          );
+          this.bindProjectedControl(group, n.id);
         }
         const content = this.contentGroups.get(n.id)!;
         const view = n.scroll;
@@ -1986,11 +2153,7 @@ export class Scene implements Disposable {
             bar.setAttribute("aria-label", `${axis} scroll`);
             bar.tabIndex = -1;
             group.append(bar);
-            bar.addEventListener(
-              "focus",
-              () => this.send({ kind: "focus", id: n.id }),
-              { signal: this.abort.signal },
-            );
+            this.bindProjectedControl(bar, n.id, false, group);
           }
           const thumb = vertical ? view.verticalThumb : view.horizontalThumb;
           bar.style.cssText = `position:absolute;${vertical ? "right:1px;top:1px;width:12px;height:calc(100% - 2px)" : "left:1px;bottom:1px;height:12px;width:calc(100% - 2px)"};pointer-events:${view.hosted ? "auto" : "none"};touch-action:none;display:${thumb ? "block" : "none"}`;
@@ -2014,8 +2177,8 @@ export class Scene implements Disposable {
       } else if(n.kind===NodeKind.CollectionItem){
         const owner=snapshotById.get(p.collectionOwner!);const item=owner?.collection?.realized.find(i=>i.id===n.id);group.id=`winui-option-${this.handle}-${n.id}`;group.setAttribute('role','option');group.setAttribute('aria-label',p.accessibleName??p.text??'');group.setAttribute('aria-selected',String(item?.selected??false));group.setAttribute('aria-disabled',String(!n.enabled));group.setAttribute('aria-posinset',String((p.collectionIndex??0)+1));group.setAttribute('aria-setsize',String(owner?.collection?.totalCount??0));group.style.pointerEvents='auto';
         this.attachCollectionDrag(group,n.id,p.collectionOwner!,snapshotById.get(p.collectionOwner!)?.props);
-        if(owner?.kind===NodeKind.TreeView){const row=owner.navigationControl?.treeRows.find(r=>r.key===p.collectionKey);group.setAttribute('role','treeitem');if(row){group.setAttribute('aria-level',String(row.depth+1));group.setAttribute('aria-posinset',String(row.positionInSet));group.setAttribute('aria-setsize',String(row.setSize));if(row.hasChildren)group.setAttribute('aria-expanded',String(row.expanded));else group.removeAttribute('aria-expanded');if(p.selectionMode===ListViewSelectionMode.Multiple||owner.props.selectionMode===ListViewSelectionMode.Multiple)group.setAttribute('aria-checked',row.partial?'mixed':String(row.selected));else group.removeAttribute('aria-checked');}if(!group.dataset.treeExpansion){group.dataset.treeExpansion='';group.addEventListener('dblclick',()=>{const root=this.nodes.get(p.collectionOwner!);const row=this.state.nodes.find(n=>n.id===p.collectionOwner)?.navigationControl?.treeRows.find(r=>r.key===p.collectionKey);if(root instanceof TreeView&&row?.hasChildren)root.driveNavigation({action:'expand',key:row.key,expanded:!row.expanded});},{signal:this.abort.signal});}}
-        if(!group.dataset.collectionOption){group.dataset.collectionOption='';group.addEventListener('click',e=>{const current=this.state.nodes.find(node=>node.id===n.id);if(e.detail===0&&current)this.send({kind:'collectionInvoke',id:current.props.collectionOwner,index:current.props.collectionIndex,ctrl:e.ctrlKey,shift:e.shiftKey});},{signal:this.abort.signal});}
+        if(owner?.kind===NodeKind.TreeView){const row=owner.navigationControl?.treeRows.find(r=>r.key===p.collectionKey);group.setAttribute('role','treeitem');if(row){group.setAttribute('aria-level',String(row.depth+1));group.setAttribute('aria-posinset',String(row.positionInSet));group.setAttribute('aria-setsize',String(row.setSize));if(row.hasChildren)group.setAttribute('aria-expanded',String(row.expanded));else group.removeAttribute('aria-expanded');if(p.selectionMode===ListViewSelectionMode.Multiple||owner.props.selectionMode===ListViewSelectionMode.Multiple)group.setAttribute('aria-checked',row.partial?'mixed':String(row.selected));else group.removeAttribute('aria-checked');}if(!group.dataset.treeExpansion){group.dataset.treeExpansion='';group.addEventListener('dblclick',()=>{const root=this.nodes.get(p.collectionOwner!);const row=this.state.nodes.find(n=>n.id===p.collectionOwner)?.navigationControl?.treeRows.find(r=>r.key===p.collectionKey);if(root instanceof TreeView&&row?.hasChildren)root.driveNavigation({action:'expand',key:row.key,expanded:!row.expanded});},{signal:this.projectionSignal(group)});}}
+        if(!group.dataset.collectionOption){group.dataset.collectionOption='';group.addEventListener('click',e=>{const current=this.state.nodes.find(node=>node.id===n.id);if(e.detail===0&&current)this.send({kind:'collectionInvoke',id:current.props.collectionOwner,index:current.props.collectionIndex,ctrl:e.ctrlKey,shift:e.shiftKey});},{signal:this.projectionSignal(group)});}
       } else if (n.kind === NodeKind.RadioButtons) {
         group.setAttribute("role", "radiogroup");
         group.setAttribute("aria-label", p.accessibleName ?? p.header ?? "");
@@ -2058,7 +2221,7 @@ export class Scene implements Disposable {
         if(!element) {
           element=document.createElement('div');element.style.cssText='position:absolute;inset:0;pointer-events:auto;outline:none;color:transparent;background:transparent;';
           element.dataset.controlId=String(n.id);this.semantics.set(key,element);group.prepend(element);
-          element.addEventListener('focus',()=>this.send({kind:'focus',id:n.id}),{signal:this.abort.signal});
+          this.bindProjectedControl(element,n.id);
         }
         element.tabIndex=n.enabled&&n.tabStop?0:-1;element.setAttribute('aria-disabled',String(!n.enabled));
         element.setAttribute('aria-label',p.accessibleName||p.header||(n.kind===NodeKind.Slider?'Slider':n.kind===NodeKind.ScrollBar?'ScrollBar':n.kind===NodeKind.Thumb?'Thumb':'Menu'));
@@ -2083,7 +2246,7 @@ export class Scene implements Disposable {
         if(!element) {element=document.createElement('div');element.style.cssText='position:absolute;inset:0;opacity:0;pointer-events:none;';element.id=`winui-tip-${this.handle}-${n.id}`;element.setAttribute('role','tooltip');this.semantics.set(key,element);group.prepend(element);}
         element.textContent=p.text??this.contentName(n.id);
       } else if (n.kind === NodeKind.NavigationView && n.navigation) {
-        projectNavigationScrollbars(group,n.navigation.scrollbars??[],n.navigation.scrollViewports??[],(content,key)=>this.send({kind:'navigation',id:n.id,input:{kind:'scrollKey',content,key}}),this.abort.signal);
+        this.projectNavigationScrollbars(group, n.id, n.navigation);
         for (const part of n.navigation.parts) {
           if (part.kind !== "Item" || part.id.startsWith("$expand:")) continue;
           const key = `${n.id}/${part.id}`;
@@ -2103,7 +2266,7 @@ export class Scene implements Disposable {
                   input: { kind: "focus", id: part.id },
                 });
               },
-              { signal: this.abort.signal },
+              { signal: this.projectionSignal(b) },
             );
             b.addEventListener(
               "click",
@@ -2115,7 +2278,7 @@ export class Scene implements Disposable {
                     input: { kind: "invoke", id: part.id },
                   });
               },
-              { signal: this.abort.signal },
+              { signal: this.projectionSignal(b) },
             );
             // Rust orders the dismiss surface before its popup items. Keep
             // that order so the transparent dismiss button stays underneath.
@@ -2190,7 +2353,7 @@ export class Scene implements Disposable {
       }
     for (const [key, element] of this.semantics)
       if (!keys.has(key)) {
-        element.remove();
+        this.removeProjection(element);
         this.semantics.delete(key);
       } else if (!element.hasAttribute('data-scene-node') && !element.classList.contains('winui-editor')) {
         // Native button/select rules must inherit the owning Rust control's
@@ -2230,6 +2393,11 @@ export class Scene implements Disposable {
       )
         this.semantics.get(String(node.id))?.focus({ preventScroll: true });
     }
+  }
+  private projectNavigationScrollbars(group: HTMLElement, id: number, navigation: NavigationSnapshot) {
+    projectNavigationScrollbars(group, navigation.scrollbars ?? [], navigation.scrollViewports ?? [],
+      (content, key) => this.send({kind:'navigation', id, input:{kind:'scrollKey', content, key}}),
+      this.projectionSignal(group));
   }
   private button(n: NodeSnapshot, key: string) {
     const b = document.createElement("button");
@@ -2441,7 +2609,7 @@ export class Scene implements Disposable {
   /** @internal Select before detaching so control subscriptions do not copy
    * unrelated nodes, templates, properties and Frame page resources. */
   observeNodeSnapshot<T>(node:SceneNode,select:(snapshot:NodeSnapshot)=>T,callback:(snapshot:T)=>void){
-    node.assertOwned(this);const id=identity(node),listener=(snapshot:NodeSnapshot)=>callback(structuredClone(select(snapshot)));
+    node.assertOwned(this);const id=identity(node),listener=(snapshot:NodeSnapshot)=>callback(structuredClone(select(snapshotNodeWithDefaults(snapshot))));
     let listeners=this.nodeSnapshotListeners.get(id);if(!listeners)this.nodeSnapshotListeners.set(id,listeners=new Set());
     this.flushSurfaceResize();
     listeners.add(listener);const current=this.state?.nodes.find(n=>n.id===id);if(current)listener(current);
@@ -2449,12 +2617,12 @@ export class Scene implements Disposable {
   }
   /** @internal */ selectNodeSnapshot<T>(node:SceneNode,select:(snapshot:NodeSnapshot)=>T):T{
     node.assertOwned(this);this.flushSurfaceResize();const current=this.state.nodes.find(n=>n.id===identity(node));
-    if(!current)throw new Error('Node has not been arranged yet');return structuredClone(select(current));
+    if(!current)throw new Error('Node has not been arranged yet');return structuredClone(select(snapshotNodeWithDefaults(current)));
   }
   get snapshot(): Readonly<SceneSnapshot> {
     this.assertAlive();
     this.flushSurfaceResize();
-    return structuredClone(this.state);
+    return structuredClone({ ...this.state, nodes: this.state.nodes.map(snapshotNodeWithDefaults) });
   }
   get diagnostics() {
     this.assertAlive();
@@ -2574,9 +2742,10 @@ export class Scene implements Disposable {
     options=normalizeMenuLayout(kind,options);
     options=normalizeMenuItem(kind,options);
     const tableOptions=options;
-    options=normalizeTable(kind,options);
+    options=normalizeTable(kind,options,true);
     options=normalizeSurfaceTarget(kind,options,this);
     options=normalizePrimitives(kind,options,this);
+    options=normalizeSegmented(kind,options);
     options=normalizeContentHosts(kind,options);
     options=normalizeReading(kind,options,this);
     options=normalizeViews(kind,options,this);
@@ -2584,11 +2753,15 @@ export class Scene implements Disposable {
     options=normalizeComposed(kind,options);
     options=normalizeRepeaterRefresh(kind,options);
     options=normalizePicker(kind,options,true);
+    const table = kind === NodeKind.TableView ? (options as { table?: { items?: unknown } }).table : undefined;
+    const tableItems = table?.items;
+    if (table) delete table.items;
     const id = this.raw.scene_node(
       this.handle,
       identity(parent),
       JSON.stringify(kind),
       JSON.stringify(options),
+      tableItems ? JSON.stringify(tableItems) : undefined,
     );
     let node: SceneNode;
     switch (kind) {
@@ -2597,6 +2770,8 @@ export class Scene implements Disposable {
       case NodeKind.RadioMenuFlyoutItem:node=new RadioMenuFlyoutItem(this,id,kind);break;
       case NodeKind.MenuFlyoutSubItem:node=new MenuFlyoutSubItem(this,id,kind);break;
       case NodeKind.MenuFlyoutSeparator:node=new MenuFlyoutSeparator(this,id,kind);break;
+      case NodeKind.Segmented:node=new Segmented(this,id,kind);break;
+      case NodeKind.SegmentedItem:node=new SegmentedItem(this,id,kind);break;
       case NodeKind.TableView:node=new TableView(this,id,kind,tableOptions as TableViewOptions);break;
       case NodeKind.ScrollBar:node=new ScrollBar(this,id,kind);break;
       case NodeKind.Thumb:node=new Thumb(this,id,kind);break;
@@ -2779,6 +2954,7 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     properties=normalizeTable(node.kind,properties);
     properties=normalizeSurfaceTarget(node.kind,properties,this);
     properties=normalizePrimitives(node.kind,properties,this);
+    properties=normalizeSegmented(node.kind,properties);
     properties=normalizeContentHosts(node.kind,properties);
     properties=normalizeReading(node.kind,properties,this);
     properties=normalizeViews(node.kind,properties,this);
@@ -2834,9 +3010,19 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
   /** @internal */ commandMetadata(node:UICommand):UICommandMetadata{node.assertOwned(this);return JSON.parse(this.raw.scene_ui_command(this.handle,identity(node)));}
   /** @internal */ richExport(node:RichEditBox,mathml:boolean,selection=false):string {node.assertOwned(this);return this.raw.scene_rich_edit_export(this.handle,identity(node),mathml,selection);}
   /** @internal */ richSelection(node:RichEditBox):RichEditDocument {node.assertOwned(this);return JSON.parse(this.raw.scene_rich_edit_selection(this.handle,identity(node))).document;}
+  /** @internal */ segmentedItems(node:SceneNode):SegmentedItem[]{
+    const snapshot=this.state?.nodes.find(n=>n.id===identity(node));
+    return (snapshot?.children??[]).filter(id=>this.state.nodes.some(n=>n.id===id&&n.kind===NodeKind.SegmentedItem)).map(id=>{
+      let item=this.nodes.get(id);if(!item){item=new SegmentedItem(this,id,NodeKind.SegmentedItem);this.nodes.set(id,item);this.parents.set(id,identity(node));}
+      return item as SegmentedItem;
+    });
+  }
   /** @internal */ read(node: SceneNode): object {
     node.assertOwned(this);
     const properties=JSON.parse(this.raw.scene_properties(this.handle, identity(node)));
+    if(node.kind===NodeKind.Segmented){properties.itemsSource=properties.segmentedSource;delete properties.segmentedSource;}
+    if(node.kind===NodeKind.SegmentedItem){properties.content=properties.text;properties.icon=properties.glyph;}
+
     if([NodeKind.MenuBar,NodeKind.CommandBarFlyout].includes(node.kind)){Object.assign(properties,properties.menuControls);delete properties.menuControls;}
     if(node.kind===NodeKind.MenuBarItem){properties.title=properties.text;properties.items=properties.menuItems;}
     if(menuItemKinds.includes(node.kind)){Object.assign(properties,properties.menuItem);delete properties.menuItem;}
@@ -2873,7 +3059,7 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     this.flushSurfaceResize();
     const state = this.state.nodes.find((n) => n.id === identity(node));
     if (!state) throw new Error("Node has not been arranged yet");
-    return structuredClone(state);
+    return structuredClone(snapshotNodeWithDefaults(state));
   }
   /** @internal */ tableState(node:SceneNode):Readonly<TableViewSnapshot>|null{node.assertOwned(this);return this.state.nodes.find(n=>n.id===identity(node))?.table??null;}
   /** @internal */ tableSlots<T extends object>(node:TableView<T>):TableViewSlot<T>[] {return this.state.nodes.find(n=>n.id===identity(node))?.table?.realized.flatMap(slot=>{const item=node.itemForKey(slot.row),container=this.nodes.get(slot.id);return item&&container instanceof Panel?[{...slot,role:slot.role as TableViewSlot<T>["role"],item,container}]:[];})??[];}
@@ -2955,13 +3141,14 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
       // Selectionchange can run before the next projection/animation frame.
       this.editorHosts.get(id)?.dispose();
       this.editorHosts.delete(id);
-      this.groups.get(id)?.remove();
+      const group = this.groups.get(id);
+      if (group) this.removeProjection(group);
       this.groups.delete(id);
       this.contentGroups.delete(id);
       this.scrollHostTargets.delete(id);
-      for (const key of this.semantics.keys())
+      for (const [key, element] of this.semantics)
         if (key === String(id) || key.startsWith(`${id}/`))
-          this.semantics.delete(key);
+          { this.removeProjection(element); this.semantics.delete(key); }
     }
     this.schedule();
   }
@@ -2977,7 +3164,7 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     if (this.disposed) return;
     this.disposed = true;
     this.settleDisposed();
-    cancelAnimationFrame(this.frame);
+    this.frameQueue.cancel(this.drawScheduled);
     this.abort.abort();
     clearTimeout(this.wakeTimer);
     for (const host of this.editorHosts.values()) host.dispose();
@@ -3005,7 +3192,13 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
         .getContext("webgl2")
         ?.getExtension("WEBGL_lose_context")
         ?.loseContext();
+    for (const element of this.groups.values()) this.removeProjection(element);
+    for (const element of this.semantics.values()) this.removeProjection(element);
     this.groups.clear();
+    this.snapshotProperties.clear();
+    this.tableViewKeys.clear();
+    this.scrollHostTargets.clear();
+    this.scrollTouches.clear();
     this.projectedChildren.clear();
     this.semantics.clear();
     this.state = undefined!;
@@ -3128,6 +3321,8 @@ export class SceneNode<
   }
 }
 class Container<T extends LayoutOptions> extends SceneNode<T> {
+  /** CommunityToolkit Segmented; add items with segmentedItem() or itemsSource. */
+  segmented(options:SegmentedOptions={}){return this.scene.create(this,NodeKind.Segmented,options) as Segmented;}
   tableView<T extends object=Record<string,unknown>>(options:TableViewOptions<T>={}){return this.scene.create(this,NodeKind.TableView,options) as TableView<T>;}
   scrollBar(options:ScrollBarOptions={}){return this.scene.create(this,NodeKind.ScrollBar,options) as ScrollBar;}
   thumb(options:ThumbOptions={}){return this.scene.create(this,NodeKind.Thumb,options) as Thumb;}
@@ -3270,6 +3465,37 @@ class Container<T extends LayoutOptions> extends SceneNode<T> {
   }
 }
 export class Viewbox extends Container<ViewboxOptions> {}
+/** CommunityToolkit control. Rust owns selection, item containers, input and layout. */
+export class Segmented extends Container<SegmentedOptions> {
+  segmentedItem(options:SegmentedItemOptions={}){return this.scene.create(this,NodeKind.SegmentedItem,options) as SegmentedItem;}
+  /** Item containers in declaration/source order. Source containers appear after layout. */
+  get items():readonly SegmentedItem[]{return this.scene.segmentedItems(this);}
+  get selectedIndex(){return this.properties.selectedIndex??-1;}
+  set selectedIndex(index:number){this.update({selectedIndex:index});}
+  get selectedItems():readonly SegmentedItem[]{return this.items.filter(item=>item.properties.isSelected);}
+  get selectedItem():SegmentedItem|null{return this.selectedItems[0]??null;}
+  /** Replace or clear the bound source. Retains containers with stable names. */
+  setItemsSource(items:SegmentedOptions['itemsSource']){this.update({itemsSource:items});}
+  onSelectionChanged(callback:(event:SegmentedSelectionChangedEvent)=>void){
+    return this.on(EventKind.SelectionChanged,event=>callback(this.selectionEvent(event)));
+  }
+  /** @internal Project the selection captured at the time of the Rust event. */
+  selectionEvent(event:SceneEvent):SegmentedSelectionChangedEvent{
+    const selectedIndices = (event as Partial<SegmentedSelectionChangedEvent>).selectedIndices ?? [];
+    const items = this.items;
+    return {
+      ...event,
+      selectedIndex:event.selectedIndex??-1,
+      selectedIndices,
+      selectedItems:selectedIndices.flatMap(index=>items[index]?[items[index]]:[]),
+    };
+  }
+}
+/** Content container inside Segmented. */
+export class SegmentedItem extends Container<SegmentedItemOptions> {
+  invoke(){this.scene.input(this,{kind:'invoke',id:identity(this)});}
+}
+
 export class Panel<T extends PanelOptions = PanelOptions> extends Container<T> {
   expander(options: ExpanderOptions = {}) {
     return this.scene.create(this, NodeKind.Expander, options) as Expander;
@@ -4171,7 +4397,9 @@ export class TableView<T extends object=Record<string,unknown>> extends SceneNod
  setCellTemplate(column:string,render:(item:T,slot:Panel,context:TableViewSlot<T>)=>void,editing=false){const key=`${editing?'edit':'cell'}:${column}`;this.templates.set(key,render);const source=[...(this.configuration.columns??[])];if(!source.some(c=>(c.key??c.path??c.field)===column))source.push({field:column as Extract<keyof T,string>,key:column});const columns=source.map(c=>(c.key??c.path??c.field)===column?{...c,...(editing?{hasEditTemplate:true}:{hasTemplate:true})}:c);this.update({columns});this.syncTemplates();return()=>{this.templates.delete(key);this.update({columns:(this.configuration.columns??[]).map(c=>(c.key??c.path??c.field)===column?{...c,...(editing?{hasEditTemplate:false}:{hasTemplate:false})}:c)});};}
  setRowDetailsTemplate(render:(item:T,slot:Panel,context:TableViewSlot<T>)=>void){this.templates.set('details',render);this.update({hasRowDetailsTemplate:true});return()=>{this.templates.delete('details');this.update({hasRowDetailsTemplate:false});};}
  setRowHeaderTemplate(render:(item:T,slot:Panel,context:TableViewSlot<T>)=>void){this.templates.set('rowHeader',render);this.update({hasRowHeaderTemplate:true});return()=>{this.templates.delete('rowHeader');this.update({hasRowHeaderTemplate:false});};}
- /** @internal */ syncTemplates(){for(const slot of this.preparedGroups.keys())if(slot.isDisposed)this.preparedGroups.delete(slot);if(this.groupTemplate)for(const group of this.realizedGroups()){const signature=JSON.stringify([group.id,group.count,group.isExpanded]);if(this.preparedGroups.get(group.container)!==signature){this.scene.clearCollectionContent(group.container);this.groupTemplate(group,group.container);this.preparedGroups.set(group.container,signature);}}for(const slot of this.preparedHeaders.keys())if(slot.isDisposed)this.preparedHeaders.delete(slot);for(const h of this.realizedHeaders()){const render=this.headerTemplates.get(h.column),column=this.configuration.columns?.find(c=>(c.key??c.path??c.field)===h.column);if(render&&column&&this.preparedHeaders.get(h.container)!==render){this.scene.clearCollectionContent(h.container);render(column,h.container);this.preparedHeaders.set(h.container,render);}}const slots=this.realizedCells(),live=new Set(slots.map(s=>s.container));for(const slot of this.prepared.keys())if(!live.has(slot))this.prepared.delete(slot);for(const slot of slots){const render=this.templates.get(slot.role==='cell'?`${slot.editing?'edit':'cell'}:${slot.column}`:slot.role);if(!render)continue;const old=this.prepared.get(slot.container);if(old?.item===slot.item&&old.render===render)continue;this.scene.clearCollectionContent(slot.container);render(slot.item,slot.container,slot);this.prepared.set(slot.container,{item:slot.item,render});}}
+ /** @internal */ syncTemplates(){for(const slot of this.preparedGroups.keys())if(slot.isDisposed)this.preparedGroups.delete(slot);if(this.groupTemplate)for(const group of this.realizedGroups()){const signature=JSON.stringify([group.id,group.count,group.isExpanded]);if(this.preparedGroups.get(group.container)!==signature){this.scene.clearCollectionContent(group.container);this.groupTemplate(group,group.container);this.preparedGroups.set(group.container,signature);}}for(const slot of this.preparedHeaders.keys())if(slot.isDisposed)this.preparedHeaders.delete(slot);if(this.headerTemplates.size)for(const h of this.realizedHeaders()){const render=this.headerTemplates.get(h.column),column=this.configuration.columns?.find(c=>(c.key??c.path??c.field)===h.column);if(render&&column&&this.preparedHeaders.get(h.container)!==render){this.scene.clearCollectionContent(h.container);render(column,h.container);this.preparedHeaders.set(h.container,render);}}
+  if(!this.templates.size&&!this.prepared.size)return;
+  const slots=this.realizedCells(),live=new Set(slots.map(s=>s.container));for(const slot of this.prepared.keys())if(!live.has(slot))this.prepared.delete(slot);for(const slot of slots){const render=this.templates.get(slot.role==='cell'?`${slot.editing?'edit':'cell'}:${slot.column}`:slot.role);if(!render)continue;const old=this.prepared.get(slot.container);if(old?.item===slot.item&&old.render===render)continue;this.scene.clearCollectionContent(slot.container);render(slot.item,slot.container,slot);this.prepared.set(slot.container,{item:slot.item,render});}}
 }
 export class ItemsPresenter extends Panel<ItemsPresenterOptions>{
   /** Stable Rust-owned slots; their subtrees use the same public SDK. */

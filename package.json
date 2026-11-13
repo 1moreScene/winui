@@ -2,6 +2,9 @@
   "name": "winui-wasm-workspace",
   "private": true,
   "scripts": {
+    "dev:designer": "npm --prefix designer run dev",
+    "build:designer": "npm --prefix designer run build",
+    "test:designer": "npm --prefix designer test",
     "pack:sdk": "node tools/pack-sdk.mjs",
     "pack:sdk:full": "node tools/pack-sdk.mjs --build-wasm",
     "build:pages": "node tools/build-gallery-pages.mjs",

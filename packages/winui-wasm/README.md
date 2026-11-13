@@ -80,6 +80,18 @@ and WebGL2 share this font selection. Cross-platform glyph outlines may differ.
 The package targets browsers supporting WebAssembly and Canvas2D; WebGL2 is optional.
 Initialization belongs in client code; use `dispose()` when the owning application unmounts.
 
+The React `Frame` keeps control and input state for cached pages. It releases
+their Canvas2D and WebGL2 raster buffers once they leave the transition and
+repaints the page when it returns. The cache still holds each page's mounted
+components and control tree. For a custom host, call `scene.setHostActive(false)`
+when its scene is hidden, `scene.setHostActive(true)` when it is shown, and
+`scene.dispose()` when it is removed.
+
+Fixed-size scenes lay out their controls and project accessibility while
+offscreen. They paint when they enter the viewport, or immediately when the
+host calls `scene.render()`. Auto-sized scenes and open floating surfaces
+continue to paint as their geometry changes.
+
 This version is private and available only for local development verification.
 Runtime templates and brushes are generated offline from the pinned MIT WinUI
 source, verified by Git blob and SHA-256. The former `SDK-PREVIEW-001` input

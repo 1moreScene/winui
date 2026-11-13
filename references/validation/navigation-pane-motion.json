@@ -1,0 +1,246 @@
+{
+  "date": "2026-11-09",
+  "status": "passed",
+  "causes": [
+    "Two Arrange paths reset the pane animation every frame.",
+    "Logical IsPaneOpen changed the brush and stacking before closing animation finished.",
+    "Direct inherited policy assignment bypassed the Acrylic material timeline."
+  ],
+  "fixes": [
+    "Only the template executor binds policies; adapt runs on viewport changes.",
+    "Closing keeps the overlay recipe/color track and paints above Page until the visual phase ends.",
+    "Fallback is immediate; restored material fades in through the existing 167 ms track.",
+    "Changing SelectsOnInvoked on a selected item is valid; suppressed API selection is reverted like native ChangeSelection."
+  ],
+  "timings": {
+    "openMs": 350,
+    "closeMs": 120,
+    "materialRestoreMs": 167,
+    "curve": [
+      0.1,
+      0.9,
+      0.2,
+      1
+    ]
+  },
+  "validation": {
+    "beforeFix": "out/navigation-pane-before.log: three regressions reproduced",
+    "rustPassed": 47,
+    "newRustCases": 4,
+    "rustLog": "out/navigation-pane-after.log",
+    "browserPassed": 16,
+    "browserReport": "out/navigation-composition-motion.json",
+    "actualPointerTrace": "out/navigation-pane-motion/gallery-pointer.json",
+    "actualPixels": {
+      "Canvas2D-Light": {
+        "before": [
+          223,
+          228,
+          238,
+          255
+        ],
+        "closing": [
+          223,
+          228,
+          238,
+          255
+        ],
+        "middle": {
+          "time": 1530,
+          "width": 88.94421374164969,
+          "open": false,
+          "material": {
+            "recipe": {
+              "tintColor": "#FCFCFC",
+              "tintOpacity": 0,
+              "luminosityOpacity": 0.85,
+              "fallbackColor": "#F9F9F9"
+            },
+            "colors": {
+              "tint": "#fcfcfc00",
+              "luminosity": "#fcfcfcd9",
+              "fallback": "#f9f9f9ff"
+            },
+            "weight": 1,
+            "backdropAvailable": true
+          },
+          "animating": true
+        }
+      },
+      "Canvas2D-Dark": {
+        "before": [
+          29,
+          49,
+          92,
+          255
+        ],
+        "closing": [
+          29,
+          49,
+          92,
+          255
+        ],
+        "middle": {
+          "time": 1530,
+          "width": 88.94421374164969,
+          "open": false,
+          "material": {
+            "recipe": {
+              "tintColor": "#2C2C2C",
+              "tintOpacity": 0.15000000596046448,
+              "luminosityOpacity": 0.96,
+              "fallbackColor": "#2C2C2C"
+            },
+            "colors": {
+              "tint": "#2c2c2c26",
+              "luminosity": "#2c2c2cf5",
+              "fallback": "#2c2c2cff"
+            },
+            "weight": 1,
+            "backdropAvailable": true
+          },
+          "animating": true
+        }
+      },
+      "WebGL2-Light": {
+        "before": [
+          223,
+          228,
+          238,
+          255
+        ],
+        "closing": [
+          223,
+          228,
+          238,
+          255
+        ],
+        "middle": {
+          "time": 1530,
+          "width": 88.94421374164969,
+          "open": false,
+          "material": {
+            "recipe": {
+              "tintColor": "#FCFCFC",
+              "tintOpacity": 0,
+              "luminosityOpacity": 0.85,
+              "fallbackColor": "#F9F9F9"
+            },
+            "colors": {
+              "tint": "#fcfcfc00",
+              "luminosity": "#fcfcfcd9",
+              "fallback": "#f9f9f9ff"
+            },
+            "weight": 1,
+            "backdropAvailable": true
+          },
+          "animating": true
+        }
+      },
+      "WebGL2-Dark": {
+        "before": [
+          29,
+          49,
+          92,
+          255
+        ],
+        "closing": [
+          29,
+          49,
+          92,
+          255
+        ],
+        "middle": {
+          "time": 1530,
+          "width": 88.94421374164969,
+          "open": false,
+          "material": {
+            "recipe": {
+              "tintColor": "#2C2C2C",
+              "tintOpacity": 0.15000000596046448,
+              "luminosityOpacity": 0.96,
+              "fallbackColor": "#2C2C2C"
+            },
+            "colors": {
+              "tint": "#2c2c2c26",
+              "luminosity": "#2c2c2cf5",
+              "fallback": "#2c2c2cff"
+            },
+            "weight": 1,
+            "backdropAvailable": true
+          },
+          "animating": true
+        }
+      }
+    },
+    "geometryCases": 30,
+    "geometryComparisons": 363,
+    "maxPhysicalPixelError": 0.7236351966857946,
+    "publicApiInteractions": 22,
+    "compositionReport": "out/navigation-composition-browser/results.json",
+    "typescriptStrict": true,
+    "sdkDeclarations": true,
+    "origins": true,
+    "enumDrift": true,
+    "productionBuild": true
+  },
+  "build": {
+    "wasmSha256": "9442f24d7a8f54737eb06f003544b3df4438d1f7797e4a6184d809398e0336ad",
+    "release": true,
+    "optLevel": 1,
+    "lto": false,
+    "codegenUnits": 16,
+    "galleryArtifact": "gallery/dist",
+    "preview": "http://127.0.0.1:5413/#navigation-view"
+  },
+  "scope": "Same pinned SDK/Gallery baseline. External DOM still uses resource fallback, not synthetic cross-surface blur.",
+  "workspaceRegression": {
+    "log": "out/navigation-pane-rust-full.log",
+    "passed": 474,
+    "failed": 1,
+    "failure": "table_view::frozen_column_uses_scroll_compensation_and_header_stays_fixed",
+    "note": "Full run before selection-suppression follow-up; NavigationView targeted suite was rerun afterwards."
+  },
+  "sources": [
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "36f5a1bd3dad31bbc1f51206eab808a10b742609a30622090e263401eed62f03"
+    },
+    {
+      "path": "src/scene/navigation_view.rs",
+      "sha256": "9e54da7261a332ce090c7fe750374cd3e8e9337fbf96800b2b924a3233ba7b83"
+    },
+    {
+      "path": "src/navigation.rs",
+      "sha256": "b1d7940653ac12aee5a6360005479f29529361c3b13973bcb8cac534addf75e4"
+    },
+    {
+      "path": "src/model.rs",
+      "sha256": "2ac6077ce833453a51df168c62a3bfdb661af19ab0820bd340aa21bfeec6e9a3"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "c48f4b0913afb18cc23b532d1b0201f397958cf32a4c3c0daff9f90813ff8f93"
+    },
+    {
+      "path": "tests/navigation_pane_scene.rs",
+      "sha256": "292e05983724ab6b72aacccab94f99266f5b47f0961afd2213ca63891fc34153"
+    },
+    {
+      "path": "gallery/tests/navigation-pane-motion.spec.ts",
+      "sha256": "d952ad79cc17a5999e1813a544430e8d9fb858c15a311854adae1084e0536648"
+    }
+  ],
+  "performanceFollowup": {
+    "date": "2026-11-09",
+    "status": "passed",
+    "record": "references/validation/navigation-performance.json",
+    "wasmSha256": "b45273ab5f58ed6f8b3b48cea38f2d6dfda7454287102e811e7cd54a0f07ea17"
+  },
+  "topToggleFollowup": {
+    "date": "2026-11-09",
+    "status": "passed",
+    "record": "references/validation/navigation-top-toggle.json",
+    "wasmSha256": "4604efb0e7c6efb03b6333b66f342d2a94863b9c1c5a093b7e447ecf152899ce"
+  }
+}

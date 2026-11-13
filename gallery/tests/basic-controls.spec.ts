@@ -1,4 +1,4 @@
-import {selectGalleryOption} from './gallery-control-helper';
+import {selectGalleryOption,setGalleryChecked} from './gallery-control-helper';
 import { test, expect } from "@playwright/test";
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { PNG } from "pngjs";
@@ -17,6 +17,7 @@ declare global {
 test("official selection examples: three-state, select all, keyboard and disable", async ({
   page,
 }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/#checkbox");
@@ -70,16 +71,19 @@ test("official selection examples: three-state, select all, keyboard and disable
     .locator("main")
     .screenshot({ path: "../out/foundation/checkbox-gallery.png" });
   await page.goto("/#toggle-button");
-  const toggle = page.getByRole("button", {
+  const toggle = page.getByRole("main").getByRole("button", {
     name: "ToggleButton",
     exact: true,
   });
   await expect(toggle).toHaveAttribute("aria-pressed", "false");
+  await toggle.focus();
+  await expect(toggle).toBeFocused();
   await toggle.press("Enter");
   await expect(toggle).toHaveAttribute("aria-pressed", "true");
-  await page.getByRole("checkbox", { name: "Disable ToggleButton" }).check();
+  const disable = page.getByRole("checkbox", { name: "Disable ToggleButton" });
+  await setGalleryChecked(disable, true);
   await expect(toggle).toBeDisabled();
-  await page.getByRole("checkbox", { name: "Disable ToggleButton" }).uncheck();
+  await setGalleryChecked(disable, false);
   await toggle.focus();
   expect(await toggle.evaluate((e) => getComputedStyle(e).outlineStyle)).toBe(
     "none",

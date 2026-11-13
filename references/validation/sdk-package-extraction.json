@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-10",
+  "sdkSource": "packages/winui-wasm/src",
+  "gallerySDKImplementationCopies": 0,
+  "galleryPublicPackageImports": 100,
+  "entries": [
+    ".",
+    "./react",
+    "./styles.css",
+    "./package.json"
+  ],
+  "galleryDependency": "file:../packages/winui-wasm",
+  "packagePrivate": true,
+  "wasmSha256": "3cf932643bc36655e15e8194b21dd9cc170b8229189c635671023dc267e49667",
+  "checks": {
+    "sdkOwnedToolchain": "passed",
+    "galleryTypecheck": "passed",
+    "galleryLocalProductionBuild": "passed",
+    "sourceAndPackageBoundary": "passed",
+    "generatedEnums": "passed",
+    "pythonFontAndLicenseTests": 14,
+    "galleryChromeWebKitRegressions": 11,
+    "independentConsumerCases": 4,
+    "normalNpmInstall": "passed without skipping install scripts",
+    "vanillaNeedsReact": false,
+    "consumerNeedsRust": false,
+    "publicRelease": "MIT resource provenance gate passed; private package remains unpublished",
+    "galleryBehaviorRegressions": 30,
+    "galleryReleaseProductionBuild": "passed"
+  },
+  "consumerRecord": "references/validation/npm-package-consumers.json",
+  "tarball": "D:\\vscode\\winui\\out\\npm-consumers-CpOHcN\\winui-wasm-0.1.0.tgz",
+  "tarballSha256": "e52cd10fff9c7df3bd14d47fdd636646df99675c7a52ec31a2b42e17432b158b",
+  "resourceMigration": "references/validation/mit-resource-migration.json",
+  "latestIconFontPolicy": "references/validation/icon-font-policy.json"
+}

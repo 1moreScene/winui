@@ -51,6 +51,9 @@ let nextId = 0;
 const marker = "data-winui-scroll-host";
 const wheelX = "data-winui-wheel-contained-x";
 const wheelY = "data-winui-wheel-contained-y";
+const hiddenFramePage = '[data-winui-frame] > [data-frame-instance][hidden]';
+const fontMetrics = '[data-winui-font-metrics]';
+const scrollAxes = new Set(['auto', 'scroll', 'overlay']);
 const hostStyle = `[${marker}]{scrollbar-width:none!important}[${marker}]::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}[${wheelX}]{overscroll-behavior-x:contain!important}[${wheelY}]{overscroll-behavior-y:contain!important}`;
 /** Axis-aligned inset clips, including the Rust Expander's projected clip. */
 function insetClip(value:string,width:number,height:number):[number,number,number,number]|null {
@@ -71,6 +74,14 @@ function parentOf(e: Element): HTMLElement | null {
     ((e.getRootNode() as ShadowRoot).host as HTMLElement | undefined) ??
     null
   );
+}
+
+function insideHiddenFramePage(element: Element | null): boolean {
+  for (let root = element; root;) {
+    if (root.closest(hiddenFramePage)) return true;
+    root = (root.getRootNode() as ShadowRoot).host ?? null;
+  }
+  return false;
 }
 
 export function acquireGlobalScrollbars(
@@ -289,6 +300,7 @@ class Scrollbars {
       (this.layer.contains(element) ||
         element === this.style ||
         element.hasAttribute("data-winui-scrollbar-style") ||
+        !!element.closest(fontMetrics) ||
         (()=>{const surface=element.closest('.winui-surface'),content=element.closest('[data-winui-content-host]');return !!surface&&(!content||!surface.contains(content));})())
     );
   }
@@ -330,11 +342,16 @@ class Scrollbars {
       // CSS animation event. Track those projected ancestor clips/transforms.
       if(records.some(record=>record.type==='attributes'&&record.attributeName==='style'
         &&record.target instanceof Element&&!!record.target.closest('.winui-surface')
+        &&!insideHiddenFramePage(record.target)
         &&!!record.target.querySelector('[data-winui-content-host]')))this.schedule();
       if (
         records.some(
           (r) =>
             !motionRecords.has(r) && !this.own(r.target) &&
+            !insideHiddenFramePage(r.target instanceof ShadowRoot ? r.target.host : r.target.parentElement) &&
+            !(r.type === 'childList' && [...r.addedNodes, ...r.removedNodes].every(node =>
+              node instanceof Element && (node.matches(fontMetrics) ||
+                node.matches('.winui-surface') && !node.querySelector('[data-winui-content-host]')))) &&
             !(
               r.type === "attributes" &&
               (r.attributeName === marker || r.attributeName === wheelX || r.attributeName === wheelY || r.attributeName === "id")
@@ -368,25 +385,28 @@ class Scrollbars {
   }
   private candidates() {
     const elements = new Set<HTMLElement>();
+    const walk = (root: Document | ShadowRoot | HTMLElement) => {
+      for (const node of root.querySelectorAll<HTMLElement>(`:not(${hiddenFramePage} *)`)) {
+        if (this.own(node)) continue;
+        elements.add(node);
+        if (node.shadowRoot && !node.matches(hiddenFramePage)) {
+          this.observeRoot(node.shadowRoot);
+          walk(node.shadowRoot);
+        }
+      }
+    };
     for (const scope of this.scopes.keys()) {
       if (scope.nodeType === 9) {
         if (this.doc.scrollingElement)
           elements.add(this.doc.scrollingElement as HTMLElement);
-      } else elements.add(scope as HTMLElement);
-      const walk = (root: Document | ShadowRoot | HTMLElement) => {
-        for (const node of root.querySelectorAll<HTMLElement>("*")) {
-          if (this.own(node)) continue;
-          elements.add(node);
-          if (node.shadowRoot) {
-            this.observeRoot(node.shadowRoot);
-            walk(node.shadowRoot);
-          }
+      } else {
+        const element = scope as HTMLElement;
+        if (insideHiddenFramePage(element)) continue;
+        elements.add(element);
+        if (element.shadowRoot) {
+          this.observeRoot(element.shadowRoot);
+          walk(element.shadowRoot);
         }
-      };
-      if (scope.nodeType !== 9 && (scope as HTMLElement).shadowRoot) {
-        const shadow = (scope as HTMLElement).shadowRoot!;
-        this.observeRoot(shadow);
-        walk(shadow);
       }
       walk(scope);
     }
@@ -414,9 +434,7 @@ class Scrollbars {
         css.visibility === "hidden"
       )
         continue;
-      const axis = (value: string) =>
-        value === "auto" || value === "scroll" || value === "overlay";
-      if (!isRoot && !axis(css.overflowX) && !axis(css.overflowY)) continue;
+      if (!isRoot && !scrollAxes.has(css.overflowX) && !scrollAxes.has(css.overflowY)) continue;
       observe.add(element);
       for (const child of element.children) observe.add(child);
       // Closed UA internals, cross-origin documents and transformed/nonrectangular
@@ -684,17 +702,23 @@ class Scrollbars {
         width: number;
         height: number;
       }[] = [];
-      if (!isRoot && visible) {
-        for (const vertical of [true, false]) {
-          const cross = vertical ? x + w - 7 : y + h - 7;
-          const from = vertical ? Math.max(y, top) : Math.max(x, left),
-            to = vertical ? Math.min(y + h, bottom) : Math.min(x + w, right);
+      const hidden = e.getAttribute("data-winui-scrollbars") === "hidden";
+      const horizontal = scrollAxes.has(css.overflowX);
+      const vertical = scrollAxes.has(css.overflowY);
+      if (!isRoot && visible && !hidden) {
+        for (const verticalAxis of [true, false]) {
+          if (verticalAxis
+            ? !vertical || e.scrollHeight <= e.clientHeight
+            : !horizontal || e.scrollWidth <= e.clientWidth) continue;
+          const cross = verticalAxis ? x + w - 7 : y + h - 7;
+          const from = verticalAxis ? Math.max(y, top) : Math.max(x, left),
+            to = verticalAxis ? Math.min(y + h, bottom) : Math.min(x + w, right);
           for (const f of [0.01, 0.25, 0.5, 0.75, 0.99]) {
             const along = from + (to - from) * f;
             const hit = this.doc
               .elementsFromPoint(
-                vertical ? cross : along,
-                vertical ? along : cross,
+                verticalAxis ? cross : along,
+                verticalAxis ? along : cross,
               )
               .find((n) => !this.layer.contains(n));
             if (hit && !composedContains(e, hit) && !composedContains(hit, e)) {
@@ -725,9 +749,6 @@ class Scrollbars {
         }
       }
       metrics.occlusions = occlusions;
-      const allowed = (value: string) =>
-        value === "auto" || value === "scroll" || value === "overlay";
-      const hidden = e.getAttribute("data-winui-scrollbars") === "hidden";
       const state = JSON.stringify([
         left,
         top,
@@ -769,11 +790,11 @@ class Scrollbars {
           translationX: x - left,
           translationY: y - top,
           horizontalScrollBarVisibility:
-            isRoot || allowed(css.overflowX)
+            isRoot || horizontal
               ? hidden ? ScrollBarVisibility.Hidden : ScrollBarVisibility.Auto
               : ScrollBarVisibility.Disabled,
           verticalScrollBarVisibility:
-            isRoot || allowed(css.overflowY)
+            isRoot || vertical
               ? hidden ? ScrollBarVisibility.Hidden : ScrollBarVisibility.Auto
               : ScrollBarVisibility.Disabled,
           accessibleName: `${e.getAttribute("aria-label") || e.getAttribute("title") || e.tagName.toLowerCase()} scroll area`,

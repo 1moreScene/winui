@@ -1,0 +1,472 @@
+{
+  "date": "2026-11-09",
+  "status": "NavigationView scope passed; one independent TableView regression remains in the full workspace suite",
+  "baseline": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "probe": "tools/native-navigation-composition",
+    "rawSha256": "a486c3c06562edff4f38472aa4da7628c9c0faacc8378fb8b45bdbb31afdb8f3"
+  },
+  "implementation": {
+    "executor": "src/scene/navigation_view.rs",
+    "structuralParts": 57,
+    "itemTemplates": {
+      "Left": 12,
+      "Top": 11,
+      "Overflow": 11,
+      "Header": 3,
+      "Separator": 2
+    },
+    "nativeMetrics": 66,
+    "composition": "Rust NavigationView template nodes and stable slots; real Rust Frame/Page via public SDK; eight pinned Gallery examples including API in action",
+    "defaults": {
+      "header": null,
+      "content": null,
+      "isBackButtonVisible": "Auto",
+      "openPaneLength": 320,
+      "compactPaneLength": 48
+    }
+  },
+  "build": {
+    "profile": {
+      "release": true,
+      "optLevel": 1,
+      "lto": false,
+      "codegenUnits": 16
+    },
+    "wasmSha256": "80933bcbe0cb81ffababd306339c97ed0415425c34eaf95b3faa1ef08b99ed34",
+    "galleryWasmSha256": "80933bcbe0cb81ffababd306339c97ed0415425c34eaf95b3faa1ef08b99ed34",
+    "wasmBytes": 11445867,
+    "galleryProductionBuild": true,
+    "frozenProductionBuild": true,
+    "typescriptStrict": true,
+    "sdkDeclarations": true,
+    "enumDriftCheck": true,
+    "controlOriginsCheck": true,
+    "originNegativeTests": 3
+  },
+  "native": {
+    "cases": 30,
+    "comparisons": 363,
+    "dpr": 1.25,
+    "maxPhysicalPixelError": 0.7236351966857946,
+    "tolerancePhysicalPixels": 1.05,
+    "source": "references/navigation-composition-native.json",
+    "effectiveVisibility": "Visibility and intersection with actual ancestor bounds; raw Visibility retained in the probe record",
+    "scope": "Independent same-SDK template geometry, native defaults, and Frame event order"
+  },
+  "browser": {
+    "production": true,
+    "url": "http://127.0.0.1:5413",
+    "passedInteractions": 22,
+    "errors": [],
+    "themes": [
+      "Light",
+      "Dark",
+      "HighContrast"
+    ],
+    "backends": [
+      "Canvas2D",
+      "WebGL2"
+    ],
+    "dpr": [
+      1,
+      1.25,
+      2
+    ],
+    "interactions": [
+      {
+        "name": "Frame/Page New/New/Back, cancellation, retained editor",
+        "passed": true,
+        "events": [
+          "Navigating:New",
+          "Navigated:New",
+          "Navigating:New",
+          "Navigated:New",
+          "Navigating:Back",
+          "Navigated:Back"
+        ]
+      },
+      {
+        "name": "AutoSuggestBox real editor and stable Left/Top slot",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1,
+        "backend": "Canvas2D",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1,
+        "backend": "Canvas2D",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1,
+        "backend": "Canvas2D",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1,
+        "backend": "WebGL2",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1,
+        "backend": "WebGL2",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1,
+        "backend": "WebGL2",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1.25,
+        "backend": "Canvas2D",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1.25,
+        "backend": "Canvas2D",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1.25,
+        "backend": "Canvas2D",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1.25,
+        "backend": "WebGL2",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1.25,
+        "backend": "WebGL2",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 1.25,
+        "backend": "WebGL2",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 2,
+        "backend": "Canvas2D",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 2,
+        "backend": "Canvas2D",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 2,
+        "backend": "Canvas2D",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 2,
+        "backend": "WebGL2",
+        "theme": "Light",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 2,
+        "backend": "WebGL2",
+        "theme": "Dark",
+        "passed": true
+      },
+      {
+        "name": "Compact search focus",
+        "dpr": 2,
+        "backend": "WebGL2",
+        "theme": "HighContrast",
+        "passed": true
+      },
+      {
+        "name": "Eight Gallery examples navigate with real public Frame/Page",
+        "passed": true,
+        "initial": [
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": "SamplePage1",
+            "pageNodes": 1
+          },
+          {
+            "page": null,
+            "pageNodes": 0
+          }
+        ]
+      },
+      {
+        "name": "API in action real checkboxes, custom slots, selection suppression",
+        "passed": true
+      }
+    ],
+    "source": "out/navigation-composition-browser/results.json",
+    "motionRegression": {
+      "passed": 5,
+      "source": "out/navigation-composition-motion.json"
+    },
+    "galleryDiagnostics": [
+      {
+        "frameP50Ms": 24.399999976158142,
+        "frameP95Ms": 80.89999997615814,
+        "frames": 14,
+        "averageFrameMs": 27.842857122421265,
+        "maxFrameMs": 80.89999997615814,
+        "basePaints": 14,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 17.100000023841858,
+        "frameP95Ms": 23.299999952316284,
+        "frames": 15,
+        "averageFrameMs": 16.30666666030884,
+        "maxFrameMs": 23.299999952316284,
+        "basePaints": 15,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 14.5,
+        "frameP95Ms": 39.39999997615814,
+        "frames": 15,
+        "averageFrameMs": 17.3399999777476,
+        "maxFrameMs": 39.39999997615814,
+        "basePaints": 15,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 14.199999928474426,
+        "frameP95Ms": 23.100000023841858,
+        "frames": 15,
+        "averageFrameMs": 14.80666663646698,
+        "maxFrameMs": 23.100000023841858,
+        "basePaints": 15,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 20,
+        "frameP95Ms": 43.200000047683716,
+        "frames": 14,
+        "averageFrameMs": 19.84285714796611,
+        "maxFrameMs": 43.200000047683716,
+        "basePaints": 14,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 20.100000023841858,
+        "frameP95Ms": 56.199999928474426,
+        "frames": 14,
+        "averageFrameMs": 22.464285722800664,
+        "maxFrameMs": 56.199999928474426,
+        "basePaints": 14,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 22.199999928474426,
+        "frameP95Ms": 35.10000002384186,
+        "frames": 14,
+        "averageFrameMs": 22.692857146263123,
+        "maxFrameMs": 35.10000002384186,
+        "basePaints": 14,
+        "baseReuses": 0,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      },
+      {
+        "frameP50Ms": 23.100000023841858,
+        "frameP95Ms": 29.800000071525574,
+        "frames": 24,
+        "averageFrameMs": 22.39583334326744,
+        "maxFrameMs": 47.60000002384186,
+        "basePaints": 23,
+        "baseReuses": 1,
+        "generation": 1,
+        "kind": "Canvas2D",
+        "lost": false
+      }
+    ]
+  },
+  "rust": {
+    "navigationCompositionPassed": 15,
+    "fullSuitePassed": 471,
+    "fullSuiteFailed": 1,
+    "failures": [
+      "frozen_column_uses_scroll_compensation_and_header_stays_fixed"
+    ],
+    "source": "out/navigation-composition-all-rust-final.log",
+    "independentFailureReproduced": "out/navigation-composition-table-regression.log"
+  },
+  "limits": [
+    "This does not certify Store release Composition material or animation frame-by-frame pixel equivalence.",
+    "Native Windows accent and localization are platform inputs; the geometry matrix is not an all-pixel comparison.",
+    "The mixed warm-up and interaction diagnostics are recorded, not a 60 fps performance certification."
+  ],
+  "sources": [
+    {
+      "path": "src/model.rs",
+      "sha256": "289327f7c09acbebe265fceb570ed0db461f81673ad21725c77020c8b8d482f4"
+    },
+    {
+      "path": "src/navigation.rs",
+      "sha256": "c07646060b2e73c11426369d6b138249fb6b5bf330c18e8dd6dc740150c09b79"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "c65299c805c48a6cf510f87da630d33db1101a03ab39f6a103e8ae45ead1f726"
+    },
+    {
+      "path": "src/scene/navigation_view.rs",
+      "sha256": "c2795bd3d3abe70394f21f34b1b9633ef1211e57bdd0ebc49ac0f821c4ad2135"
+    },
+    {
+      "path": "src/scene/content_hosts.rs",
+      "sha256": "ff00f95470f8de8a34297231687adef6ade973c400648ed273dcef51c0141d59"
+    },
+    {
+      "path": "src/scene/mod.rs",
+      "sha256": "4fff2f6151adfbd0cbd2e816c8a1be981336aaded45e9dc3bf8a2932502ecf95"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "d09e1b3ef4d50ce7bc5e280dcc1770d05f6a5d772220bf844e860865d070c565"
+    },
+    {
+      "path": "src/scene/input.rs",
+      "sha256": "465071be2fc29f6bf694ba72fb02910bc0e72e54c0503af454766980116fc144"
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "sha256": "c2217ee202d76337d439689bf495cd4db0e6e151f0eda57e22a661bd1bd064fb"
+    },
+    {
+      "path": "src/scene/overlays.rs",
+      "sha256": "47db554c014c38be1cd91d413391e4da39a593ea067112f024603a2e17583592"
+    },
+    {
+      "path": "gallery/src/navigation-view.ts",
+      "sha256": "6b8839b52963d6a8a5dcc909adae64af70fc9536e4ff18369aa3ce9b94010ba2"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "0d7437a56fca3419263e6b2a81cf3e2ddf12e67908324bad8d74ca07f57f8f5f"
+    },
+    {
+      "path": "gallery/src/react.tsx",
+      "sha256": "2ed626cadfb4b32d47f73cbb460ca20aea6ebf447f4b4622fb4fc5b3a9b6a048"
+    },
+    {
+      "path": "gallery/src/NavigationGalleryExample.tsx",
+      "sha256": "f7e841561b6e79727eed17708a79a74689371ece452fb0f9959b2a8b5bdaf188"
+    },
+    {
+      "path": "gallery/src/examples.ts",
+      "sha256": "35d605ecbd86b92b712e510a439a0221a09e7e16161cac7bcfd506da7fbcc470"
+    },
+    {
+      "path": "tools/validate-navigation-composition.mjs",
+      "sha256": "bd1c6f36bddb5e2821ad9d18a45162abb6772bd053a49f6bee6f8c5a88420e1c"
+    },
+    {
+      "path": "tools/native-navigation-composition/Program.cs",
+      "sha256": "36b0299574dba2a60987e252520bd92dca339e65d9d67bdb8f8976439dfff3e1"
+    },
+    {
+      "path": "tools/extract-navigation-composition.py",
+      "sha256": "71dbde87f8854fa8c63d3b90eab7258ab4e38a1b109e47592a11be8e29a6bf51"
+    },
+    {
+      "path": "references/api-enums.json",
+      "sha256": "4dfe1f07c39d5c90f9f14a9e1b00335dce9c6648c54a054a848705c40258f85d"
+    }
+  ],
+  "followup": {
+    "date": "2026-11-09",
+    "status": "Pane motion/material regression fixed",
+    "record": "references/validation/navigation-pane-motion.json",
+    "wasmSha256": "9442f24d7a8f54737eb06f003544b3df4438d1f7797e4a6184d809398e0336ad"
+  },
+  "performanceFollowup": {
+    "date": "2026-11-09",
+    "status": "passed",
+    "record": "references/validation/navigation-performance.json",
+    "wasmSha256": "b45273ab5f58ed6f8b3b48cea38f2d6dfda7454287102e811e7cd54a0f07ea17"
+  }
+}

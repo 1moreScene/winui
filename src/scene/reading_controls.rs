@@ -1291,18 +1291,22 @@ impl Scene {
         }
         if matches!(input, Input::Blur | Input::Leave) {
             for n in self.nodes.values_mut() {
-                n.reading.pressed_link = None;
-                if matches!(input, Input::Blur) {
-                    n.reading.drag = None;
+                if let Some(reading) = n.reading.allocated_mut() {
+                    reading.pressed_link = None;
+                    if matches!(input, Input::Blur) {
+                        reading.drag = None;
+                    }
                 }
             }
         }
         if let Input::Cancel { pointer } = input {
             for n in self.nodes.values_mut() {
-                if pointer.is_none() || n.reading.drag == *pointer {
-                    n.reading.drag = None
+                if let Some(reading) = n.reading.allocated_mut() {
+                    if pointer.is_none() || reading.drag == *pointer {
+                        reading.drag = None;
+                    }
+                    reading.pressed_link = None;
                 }
-                n.reading.pressed_link = None;
             }
         }
         Ok(false)

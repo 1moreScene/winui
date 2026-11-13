@@ -428,7 +428,7 @@ impl Scene {
     fn own_navigation_decoration(&mut self,node:u32,owner:u32,key:&str){let state=&mut self.nodes.get_mut(&node).unwrap().navigation_template;state.owner=Some(owner);state.item_key=Some(key.into());}
     fn arrange_navigation_item_parts(&mut self,owner:u32,row:u32,key:&str,m:&mut impl TextMeasurer){
         let parts=self.nodes[&owner].navigation_template.row_parts[key].clone();
-        let nav=self.nodes[&owner].nav.as_ref().or(self.nodes[&owner].navigation_template.standalone.as_deref()).unwrap();let Some(part)=nav.parts.iter().find(|p|p.id==key).cloned()else{return;};
+        let nav=self.nodes[&owner].nav.as_deref().or(self.nodes[&owner].navigation_template.standalone.as_deref()).unwrap();let Some(part)=nav.parts.iter().find(|p|p.id==key).cloned()else{return;};
         if part.kind!=ItemKind::Item{self.arrange_navigation_aux_parts(owner,row,&part,m);return;}
         let top=nav.is_top()&&part.rect.y<48.;let icon_only=(!nav.pane_open&&!nav.is_top())||(top&&key=="$settings");
         let explicit_tooltip=nav.props.find(key).is_some_and(|i|!i.tooltip.is_empty());

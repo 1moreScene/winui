@@ -168,7 +168,7 @@ fn validate_template(t: &TemplateNode, depth: usize, count: &mut usize) -> Resul
     ) {
         return Err("Unsupported content template node; use an explicit child tree".into());
     }
-    properties::create(&t.properties, t.kind)?;
+    properties::create(&mut t.properties.clone(), t.kind, None)?;
     if t.children.len() > 1
         && matches!(
             t.kind,

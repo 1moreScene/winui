@@ -420,6 +420,32 @@ pub enum RichEditCommand {
     },
 }
 impl Scene {
+    pub(super) fn sync_rich_editor_scroll(&mut self, id: u32) {
+        let n = self.nodes.get_mut(&id).unwrap();
+        let e = &n.editor;
+        n.scroll.viewport = [e.view.width, e.view.height];
+        n.scroll.extent = [e.text_width, e.text_height];
+        n.scroll.x.set(e.scroll_x, self.time, false);
+        n.scroll.y.set(e.scroll_y, self.time, false);
+    }
+
+    pub(super) fn rich_editor_scroll_to(&mut self, id: u32, x: f64, y: f64) {
+        let n = self.nodes.get_mut(&id).unwrap();
+        let max = n.scroll.max(self.time);
+        let e = &mut n.editor;
+        e.scroll_x = if n.props.horizontal_scroll_mode != ScrollMode::Disabled
+            && n.props.horizontal_scroll_bar_visibility != ScrollBarVisibility::Disabled {
+            x.clamp(0., max[0])
+        } else { 0. };
+        e.scroll_y = if n.props.vertical_scroll_mode != ScrollMode::Disabled
+            && n.props.vertical_scroll_bar_visibility != ScrollBarVisibility::Disabled {
+            y.clamp(0., max[1])
+        } else { 0. };
+        e.manual_scroll = true;
+        n.scroll.activity(self.time, self.reduced_motion);
+        self.invalidate(id, true);
+    }
+
     pub(super) fn rich_edit_command(
         &mut self,
         id: u32,
@@ -436,11 +462,8 @@ impl Scene {
             if !x.is_finite() || !y.is_finite() {
                 return Err("invalid editor scroll delta".into());
             }
-            let e = &mut self.nodes.get_mut(&id).unwrap().editor;
-            e.scroll_x = (e.scroll_x + x).clamp(0., (e.text_width - e.view.width + 1.).max(0.));
-            e.scroll_y = (e.scroll_y + y).clamp(0., (e.text_height - e.view.height).max(0.));
-            e.manual_scroll = true;
-            self.invalidate(id, true);
+            let e = &self.nodes[&id].editor;
+            self.rich_editor_scroll_to(id, e.scroll_x + x, e.scroll_y + y);
             return Ok(());
         }
         if let RichEditCommand::Navigate {

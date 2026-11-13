@@ -242,3 +242,7 @@ export {NavigationViewBackButtonVisible,NavigationViewSlot,NavigationViewOverflo
 
 export {NavigationViewItem as NavigationViewItemController} from "./scene";
 export type {NavigationViewItemOptions} from "./scene";
+
+export {SegmentedStyle} from './enums';
+export type {SegmentedOptions,SegmentedItemOptions,SegmentedItemData,SegmentedSelectionChangedEvent} from './segmented-types';
+export type {Segmented as SegmentedController,SegmentedItem as SegmentedItemController} from './scene';

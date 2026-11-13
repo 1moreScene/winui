@@ -7,6 +7,19 @@
     "InputProbe NodeKind and render/input branches",
     "legacy composition/commit prototype protocol"
   ],
+  "communityControls": {
+    "Segmented": {
+      "repository": "https://github.com/CommunityToolkit/Windows",
+      "commit": "a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e",
+      "license": "MIT",
+      "source": "third_party/CommunityToolkit.Segmented",
+      "runtime": "src/scene/segmented.rs"
+    },
+    "SegmentedItem": {
+      "owner": "Segmented",
+      "source": "third_party/CommunityToolkit.Segmented/src/SegmentedItem"
+    }
+  },
   "replacement": "Real TextBox with EditorHost and EditComposition protocol",
   "nodeKinds": [
     {
@@ -14,6 +27,10 @@
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.Grid",
       "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
         {
           "path": "src/scene/composed.rs",
           "line": 243
@@ -24,15 +41,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 445
+          "line": 457
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 672
+          "line": 673
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 367
+          "line": 379
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -44,11 +61,15 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 654
+          "line": 671
         },
         {
           "path": "src/scene/repeater.rs",
           "line": 700
+        },
+        {
+          "path": "src/scene/scroll.rs",
+          "line": 682
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -74,6 +95,10 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.StackPanel",
       "rustImplementation": [
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/composed.rs",
           "line": 303
         },
@@ -83,15 +108,15 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 637
+          "line": 638
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 670
+          "line": 688
         },
         {
           "path": "src/scene/navigation_view.rs",
-          "line": 570
+          "line": 581
         },
         {
           "path": "src/scene/command_controls/input.rs",
@@ -103,7 +128,7 @@
         },
         {
           "path": "src/scene/table_view/runtime.rs",
-          "line": 4117
+          "line": 4157
         }
       ]
     },
@@ -112,6 +137,10 @@
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.TextBlock",
       "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
         {
           "path": "src/scene/composed.rs",
           "line": 250
@@ -122,7 +151,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 531
+          "line": 532
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -130,7 +159,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1067
+          "line": 1069
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -185,7 +214,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 431
+          "line": 443
         },
         {
           "path": "src/scene/layout.rs",
@@ -193,7 +222,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 635
+          "line": 644
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -201,7 +230,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 660
+          "line": 661
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -209,7 +238,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 705
+          "line": 722
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -258,15 +287,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 322
+          "line": 334
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 628
+          "line": 629
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 377
+          "line": 389
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -274,15 +303,15 @@
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 499
+          "line": 500
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1055
+          "line": 1057
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 800
+          "line": 817
         }
       ]
     },
@@ -296,6 +325,10 @@
           "line": 49
         },
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 142
         },
@@ -305,7 +338,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1198
+          "line": 1200
         }
       ]
     },
@@ -320,15 +353,15 @@
         },
         {
           "path": "src/scene/navigation_view.rs",
-          "line": 570
+          "line": 581
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1022
+          "line": 1023
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 1092
+          "line": 1111
         }
       ]
     },
@@ -347,7 +380,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 435
+          "line": 447
         },
         {
           "path": "src/scene/layout.rs",
@@ -355,11 +388,11 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 722
+          "line": 745
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 662
+          "line": 663
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -367,7 +400,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 707
+          "line": 724
         },
         {
           "path": "src/scene/table_view/runtime.rs",
@@ -390,23 +423,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 436
+          "line": 448
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 536
+          "line": 537
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 723
+          "line": 746
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 905
+          "line": 906
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 708
+          "line": 725
         },
         {
           "path": "src/scene/navigation_controls/tree.rs",
@@ -433,23 +466,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 270
+          "line": 272
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 537
+          "line": 538
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 656
+          "line": 674
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 900
+          "line": 901
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 709
+          "line": 726
         },
         {
           "path": "src/scene/selection_input.rs",
@@ -464,19 +497,19 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 562
+          "line": 563
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 588
+          "line": 601
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1054
+          "line": 1056
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 1001
+          "line": 1020
         },
         {
           "path": "src/scene/selection_input.rs",
@@ -499,23 +532,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 261
+          "line": 263
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 538
+          "line": 539
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 769
+          "line": 792
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 900
+          "line": 901
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 710
+          "line": 727
         },
         {
           "path": "src/scene/selection_input.rs",
@@ -546,15 +579,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 347
+          "line": 359
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 497
+          "line": 498
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 524
+          "line": 537
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -562,11 +595,11 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 820
+          "line": 837
         },
         {
           "path": "src/scene/scroll.rs",
-          "line": 588
+          "line": 589
         },
         {
           "path": "src/scene/table_view/runtime.rs",
@@ -589,19 +622,19 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 442
+          "line": 454
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 481
+          "line": 482
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 762
+          "line": 785
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1053
+          "line": 1055
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -609,7 +642,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 807
+          "line": 824
         },
         {
           "path": "src/scene/text_edit.rs",
@@ -636,23 +669,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 444
+          "line": 456
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 481
+          "line": 482
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 767
+          "line": 790
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1053
+          "line": 1055
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 807
+          "line": 824
         },
         {
           "path": "src/scene/text_edit.rs",
@@ -667,11 +700,11 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 475
+          "line": 476
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 851
+          "line": 873
         },
         {
           "path": "src/scene/progress.rs",
@@ -679,7 +712,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 785
+          "line": 802
         }
       ]
     },
@@ -690,7 +723,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 478
+          "line": 479
         },
         {
           "path": "src/scene/progress.rs",
@@ -698,7 +731,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 785
+          "line": 802
         }
       ]
     },
@@ -721,7 +754,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 432
+          "line": 444
         },
         {
           "path": "src/scene/layout.rs",
@@ -729,11 +762,11 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 720
+          "line": 743
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 661
+          "line": 662
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -741,7 +774,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 706
+          "line": 723
         }
       ]
     },
@@ -760,19 +793,19 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 458
+          "line": 459
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 516
+          "line": 529
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1229
+          "line": 1231
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 817
+          "line": 834
         }
       ]
     },
@@ -781,6 +814,10 @@
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.Border",
       "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
         {
           "path": "src/scene/command_controls.rs",
           "line": 371
@@ -799,7 +836,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 329
+          "line": 341
         },
         {
           "path": "src/scene/layout.rs",
@@ -807,7 +844,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 516
+          "line": 529
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -815,11 +852,11 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 448
+          "line": 449
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 750
+          "line": 767
         },
         {
           "path": "src/scene/visual_surface.rs",
@@ -831,7 +868,7 @@
         },
         {
           "path": "src/scene/table_view/runtime.rs",
-          "line": 4127
+          "line": 4167
         }
       ]
     },
@@ -840,6 +877,10 @@
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.Canvas",
       "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
         {
           "path": "src/scene/composed.rs",
           "line": 446
@@ -854,11 +895,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 361
+          "line": 362
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 670
+          "line": 688
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -866,7 +907,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 750
+          "line": 767
         },
         {
           "path": "src/scene/table_view/grouping.rs",
@@ -893,7 +934,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 235
+          "line": 236
         },
         {
           "path": "src/scene/layout.rs",
@@ -901,15 +942,15 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 721
+          "line": 744
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 663
+          "line": 664
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 743
+          "line": 760
         },
         {
           "path": "src/scene/table_view/runtime.rs",
@@ -932,7 +973,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 254
+          "line": 256
         },
         {
           "path": "src/scene/layout.rs",
@@ -940,15 +981,15 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 544
+          "line": 557
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1014
+          "line": 1015
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 777
+          "line": 794
         }
       ]
     },
@@ -971,7 +1012,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 371
+          "line": 372
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -979,11 +1020,11 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1014
+          "line": 1015
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 767
+          "line": 784
         }
       ]
     },
@@ -1010,7 +1051,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 324
+          "line": 325
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -1026,7 +1067,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 755
+          "line": 772
         },
         {
           "path": "src/scene/table_view/grouping.rs",
@@ -1057,11 +1098,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 324
+          "line": 325
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 639
+          "line": 657
         },
         {
           "path": "src/scene/paint.rs",
@@ -1069,7 +1110,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 756
+          "line": 773
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -1096,7 +1137,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 344
+          "line": 345
         },
         {
           "path": "src/scene/paint.rs",
@@ -1104,7 +1145,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 757
+          "line": 774
         }
       ]
     },
@@ -1127,7 +1168,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 348
+          "line": 349
         },
         {
           "path": "src/scene/paint.rs",
@@ -1135,7 +1176,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 758
+          "line": 775
         }
       ]
     },
@@ -1158,7 +1199,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 348
+          "line": 349
         },
         {
           "path": "src/scene/paint.rs",
@@ -1166,7 +1207,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 759
+          "line": 776
         }
       ]
     },
@@ -1197,11 +1238,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 314
+          "line": 315
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 1584
+          "line": 1632
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -1213,7 +1254,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 753
+          "line": 770
         },
         {
           "path": "src/scene/table_view/runtime.rs",
@@ -1252,7 +1293,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 313
+          "line": 314
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -1260,7 +1301,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 754
+          "line": 771
         }
       ]
     },
@@ -1274,12 +1315,16 @@
           "line": 13
         },
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 143
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 300
+          "line": 301
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -1287,7 +1332,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 693
+          "line": 710
         }
       ]
     },
@@ -1301,16 +1346,20 @@
           "line": 14
         },
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 145
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 301
+          "line": 302
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 694
+          "line": 711
         }
       ]
     },
@@ -1324,16 +1373,20 @@
           "line": 15
         },
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 146
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 302
+          "line": 303
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 695
+          "line": 712
         }
       ]
     },
@@ -1347,16 +1400,20 @@
           "line": 16
         },
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 147
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 303
+          "line": 304
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 696
+          "line": 713
         }
       ]
     },
@@ -1370,16 +1427,20 @@
           "line": 17
         },
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 148
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 304
+          "line": 305
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 697
+          "line": 714
         }
       ]
     },
@@ -1390,11 +1451,11 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 669
+          "line": 670
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 709
+          "line": 732
         },
         {
           "path": "src/scene/overlays.rs",
@@ -1406,11 +1467,11 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 380
+          "line": 381
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 658
+          "line": 675
         }
       ]
     },
@@ -1421,15 +1482,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 453
+          "line": 465
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 286
+          "line": 287
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 607
+          "line": 620
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -1449,7 +1510,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 658
+          "line": 675
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -1457,7 +1518,7 @@
         },
         {
           "path": "src/scene/command_controls/input.rs",
-          "line": 250
+          "line": 251
         },
         {
           "path": "src/scene/reading_controls/advanced.rs",
@@ -1479,12 +1540,20 @@
           "line": 298
         },
         {
+          "path": "src/scene/element_names.rs",
+          "line": 99
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 298
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 671
+          "line": 672
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 628
+          "line": 645
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -1504,7 +1573,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 658
+          "line": 675
         },
         {
           "path": "src/scene/command_controls/input.rs",
@@ -1516,7 +1585,7 @@
         },
         {
           "path": "src/scene/table_view/runtime.rs",
-          "line": 4113
+          "line": 4153
         }
       ]
     },
@@ -1534,12 +1603,16 @@
           "line": 443
         },
         {
+          "path": "src/scene/element_names.rs",
+          "line": 99
+        },
+        {
           "path": "src/scene/input.rs",
-          "line": 308
+          "line": 298
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 285
+          "line": 286
         },
         {
           "path": "src/scene/menu_entries.rs",
@@ -1551,7 +1624,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 628
+          "line": 645
         },
         {
           "path": "src/scene/overlays.rs",
@@ -1567,11 +1640,11 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 658
+          "line": 675
         },
         {
           "path": "src/scene/table_view/runtime.rs",
-          "line": 2656
+          "line": 2659
         }
       ]
     },
@@ -1581,16 +1654,20 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.Slider",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 90
+        },
+        {
           "path": "src/scene/input.rs",
-          "line": 430
+          "line": 442
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 273
+          "line": 274
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 505
+          "line": 518
         },
         {
           "path": "src/scene/overlays.rs",
@@ -1598,7 +1675,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 990
+          "line": 991
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -1606,7 +1683,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 686
+          "line": 703
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -1633,19 +1710,19 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 266
+          "line": 267
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 503
+          "line": 516
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 752
+          "line": 753
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 756
+          "line": 757
         }
       ]
     },
@@ -1660,11 +1737,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 267
+          "line": 268
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 559
+          "line": 572
         }
       ]
     },
@@ -1679,15 +1756,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 427
+          "line": 439
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 268
+          "line": 269
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 755
+          "line": 778
         },
         {
           "path": "src/scene/table_view/runtime.rs",
@@ -1710,15 +1787,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 428
+          "line": 440
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 269
+          "line": 270
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 711
+          "line": 734
         }
       ]
     },
@@ -1737,15 +1814,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 429
+          "line": 441
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 270
+          "line": 271
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 712
+          "line": 735
         }
       ]
     },
@@ -1760,11 +1837,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 261
+          "line": 262
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 706
+          "line": 729
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -1783,11 +1860,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 262
+          "line": 263
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 707
+          "line": 730
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -1806,11 +1883,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 263
+          "line": 264
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 708
+          "line": 731
         }
       ]
     },
@@ -1829,15 +1906,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 424
+          "line": 436
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 258
+          "line": 259
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 698
+          "line": 721
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -1845,7 +1922,7 @@
         },
         {
           "path": "src/scene/table_view/runtime.rs",
-          "line": 4232
+          "line": 4272
         }
       ]
     },
@@ -1860,23 +1937,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 425
+          "line": 437
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 258
+          "line": 259
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 704
+          "line": 727
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1170
+          "line": 1172
         },
         {
           "path": "src/scene/collections/interaction.rs",
-          "line": 779
+          "line": 789
         }
       ]
     },
@@ -1895,7 +1972,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 373
+          "line": 385
         },
         {
           "path": "src/scene/layout.rs",
@@ -1903,11 +1980,15 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 486
+          "line": 499
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 299
+          "line": 300
+        },
+        {
+          "path": "src/scene/scroll.rs",
+          "line": 688
         },
         {
           "path": "src/scene/picker_controls/paint.rs",
@@ -1926,7 +2007,7 @@
         },
         {
           "path": "src/scene/collections.rs",
-          "line": 1506
+          "line": 1515
         },
         {
           "path": "src/scene/composed.rs",
@@ -1938,15 +2019,15 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 240
+          "line": 241
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 699
+          "line": 722
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 545
+          "line": 546
         },
         {
           "path": "src/scene/overlay_visual.rs",
@@ -1969,15 +2050,15 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 241
+          "line": 242
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 700
+          "line": 723
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 545
+          "line": 546
         },
         {
           "path": "src/scene/overlay_visual.rs",
@@ -1989,7 +2070,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 957
+          "line": 976
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -2008,7 +2089,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/collections.rs",
-          "line": 1507
+          "line": 1516
         },
         {
           "path": "src/scene/composed.rs",
@@ -2016,19 +2097,19 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 223
+          "line": 224
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 242
+          "line": 243
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 701
+          "line": 724
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 545
+          "line": 546
         },
         {
           "path": "src/scene/overlay_visual.rs",
@@ -2067,15 +2148,15 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 243
+          "line": 244
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 702
+          "line": 725
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 684
+          "line": 685
         },
         {
           "path": "src/scene/overlay_visual.rs",
@@ -2083,7 +2164,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1100
+          "line": 1102
         }
       ]
     },
@@ -2098,11 +2179,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 244
+          "line": 245
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 703
+          "line": 726
         },
         {
           "path": "src/scene/overlays.rs",
@@ -2114,7 +2195,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1100
+          "line": 1102
         }
       ]
     },
@@ -2133,15 +2214,15 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 541
+          "line": 542
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 486
+          "line": 499
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1075
+          "line": 1077
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2160,15 +2241,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 419
+          "line": 431
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 252
+          "line": 253
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -2176,7 +2257,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 345
+          "line": 346
         },
         {
           "path": "src/scene/navigation_controls/input.rs",
@@ -2199,15 +2280,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 420
+          "line": 432
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 253
+          "line": 254
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 693
+          "line": 716
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -2230,15 +2311,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 421
+          "line": 433
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 254
+          "line": 255
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 694
+          "line": 717
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -2265,15 +2346,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 422
+          "line": 434
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 258
+          "line": 259
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 695
+          "line": 718
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -2300,15 +2381,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 423
+          "line": 435
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 255
+          "line": 256
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 696
+          "line": 719
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -2316,7 +2397,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1297
+          "line": 1299
         },
         {
           "path": "src/scene/navigation_controls/input.rs",
@@ -2347,15 +2428,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 431
+          "line": 443
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 238
+          "line": 239
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 711
+          "line": 734
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2386,15 +2467,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 431
+          "line": 443
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 238
+          "line": 239
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 711
+          "line": 734
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2429,7 +2510,7 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 431
+          "line": 443
         },
         {
           "path": "src/scene/layout.rs",
@@ -2437,7 +2518,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 711
+          "line": 734
         },
         {
           "path": "src/scene/command_controls/layout.rs",
@@ -2456,15 +2537,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 255
+          "line": 256
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 711
+          "line": 734
         },
         {
           "path": "src/scene/navigation_controls.rs",
@@ -2499,19 +2580,19 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 318
+          "line": 330
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 238
+          "line": 239
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 711
+          "line": 734
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 606
+          "line": 607
         },
         {
           "path": "src/scene/overlay_visual.rs",
@@ -2519,7 +2600,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 290
+          "line": 291
         },
         {
           "path": "src/scene/command_controls/input.rs",
@@ -2542,7 +2623,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 236
+          "line": 237
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -2573,11 +2654,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 236
+          "line": 237
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 545
+          "line": 546
         },
         {
           "path": "src/scene/paint.rs",
@@ -2589,7 +2670,7 @@
         },
         {
           "path": "src/scene/picker_controls/input.rs",
-          "line": 771
+          "line": 775
         },
         {
           "path": "src/scene/picker_controls/layout.rs",
@@ -2616,11 +2697,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 236
+          "line": 237
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 545
+          "line": 546
         },
         {
           "path": "src/scene/paint.rs",
@@ -2655,11 +2736,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 236
+          "line": 237
         },
         {
           "path": "src/scene/overlays.rs",
-          "line": 545
+          "line": 546
         },
         {
           "path": "src/scene/paint.rs",
@@ -2694,7 +2775,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 236
+          "line": 237
         },
         {
           "path": "src/scene/picker_controls.rs",
@@ -2717,7 +2798,7 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 238
+          "line": 239
         },
         {
           "path": "src/scene/command_controls/input.rs",
@@ -2744,11 +2825,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 234
+          "line": 235
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 684
+          "line": 707
         }
       ]
     },
@@ -2767,11 +2848,11 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 234
+          "line": 235
         },
         {
           "path": "src/scene/menu_entries.rs",
@@ -2783,7 +2864,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 684
+          "line": 707
         }
       ]
     },
@@ -2801,12 +2882,20 @@
           "line": 443
         },
         {
+          "path": "src/scene/element_names.rs",
+          "line": 99
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 298
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 234
+          "line": 235
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 714
+          "line": 645
         },
         {
           "path": "src/scene/overlays.rs",
@@ -2818,7 +2907,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 556
+          "line": 557
         }
       ]
     },
@@ -2827,6 +2916,10 @@
       "classification": "WinUI control",
       "nativeType": "Microsoft.UI.Xaml.Controls.RelativePanel",
       "rustImplementation": [
+        {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
         {
           "path": "src/scene/content_hosts.rs",
           "line": 134
@@ -2845,11 +2938,11 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 670
+          "line": 688
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1014
+          "line": 1015
         }
       ]
     },
@@ -2859,12 +2952,16 @@
       "nativeType": "CommunityToolkit.WinUI.Controls.WrapPanel",
       "rustImplementation": [
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/content_hosts.rs",
           "line": 133
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 235
+          "line": 236
         },
         {
           "path": "src/scene/layout_panels.rs",
@@ -2872,7 +2969,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 670
+          "line": 688
         }
       ]
     },
@@ -2887,23 +2984,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 370
+          "line": 382
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 232
+          "line": 233
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 553
+          "line": 566
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1282
+          "line": 1284
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 656
+          "line": 673
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2918,19 +3015,19 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 232
+          "line": 233
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 553
+          "line": 566
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1302
+          "line": 1304
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 656
+          "line": 673
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2944,16 +3041,20 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.ParallaxView",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 84
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 232
+          "line": 233
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 516
+          "line": 529
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 656
+          "line": 673
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2971,12 +3072,16 @@
           "line": 215
         },
         {
+          "path": "src/scene/element_names.rs",
+          "line": 96
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 233
+          "line": 234
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 657
+          "line": 674
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -2994,12 +3099,16 @@
           "line": 216
         },
         {
+          "path": "src/scene/element_names.rs",
+          "line": 96
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 233
+          "line": 234
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 657
+          "line": 674
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -3013,12 +3122,16 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.ItemsRepeater",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 94
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 230
+          "line": 231
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 678
+          "line": 696
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3045,11 +3158,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 231
+          "line": 232
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 679
+          "line": 697
         },
         {
           "path": "src/scene/refresh.rs",
@@ -3064,15 +3177,15 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 231
+          "line": 232
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 679
+          "line": 697
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1304
+          "line": 1306
         },
         {
           "path": "src/scene/refresh.rs",
@@ -3095,23 +3208,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 347
+          "line": 359
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 497
+          "line": 498
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 524
+          "line": 537
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 820
+          "line": 837
         },
         {
           "path": "src/scene/scroll.rs",
-          "line": 588
+          "line": 589
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -3125,20 +3238,24 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.SwipeControl",
       "rustImplementation": [
         {
+          "path": "src/scene/collections.rs",
+          "line": 1366
+        },
+        {
           "path": "src/scene/five_controls.rs",
           "line": 191
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 232
+          "line": 233
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 730
+          "line": 753
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 656
+          "line": 673
         },
         {
           "path": "src/scene/view_controls.rs",
@@ -3157,19 +3274,19 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 258
+          "line": 259
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 698
+          "line": 721
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 960
+          "line": 961
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -3191,16 +3308,20 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.AnnotatedScrollBar",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 78
+        },
+        {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 229
+          "line": 230
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 718
+          "line": 741
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -3219,11 +3340,11 @@
       "rustImplementation": [
         {
           "path": "src/scene/layout.rs",
-          "line": 229
+          "line": 230
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 718
+          "line": 741
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -3250,11 +3371,11 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 670
+          "line": 688
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1014
+          "line": 1015
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -3268,16 +3389,20 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.RichTextBlock",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 82
+        },
+        {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 229
+          "line": 230
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 718
+          "line": 741
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -3304,11 +3429,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 228
+          "line": 229
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3335,7 +3460,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3343,7 +3468,7 @@
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 448
+          "line": 449
         }
       ]
     },
@@ -3362,7 +3487,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         }
       ]
     },
@@ -3381,7 +3506,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         }
       ]
     },
@@ -3407,11 +3532,11 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 675
+          "line": 693
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 448
+          "line": 449
         }
       ]
     },
@@ -3448,7 +3573,7 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 617
+          "line": 634
         }
       ]
     },
@@ -3480,16 +3605,20 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.RichTextBlockOverflow",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 82
+        },
+        {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 229
+          "line": 230
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 718
+          "line": 741
         },
         {
           "path": "src/scene/reading_controls.rs",
@@ -3515,20 +3644,24 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.Primitives.ScrollBar",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 76
+        },
+        {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 227
+          "line": 228
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 851
+          "line": 873
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 1260
+          "line": 1279
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -3543,11 +3676,11 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 227
+          "line": 228
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -3561,8 +3694,12 @@
       "nativeType": "Microsoft.UI.Xaml.Controls.Primitives.TickBar",
       "rustImplementation": [
         {
+          "path": "src/scene/element_names.rs",
+          "line": 75
+        },
+        {
           "path": "src/scene/layout.rs",
-          "line": 227
+          "line": 228
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -3581,15 +3718,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 347
+          "line": 359
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 497
+          "line": 498
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 524
+          "line": 537
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -3608,11 +3745,11 @@
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 227
+          "line": 228
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 501
+          "line": 514
         },
         {
           "path": "src/scene/scroll_primitives.rs",
@@ -3627,7 +3764,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/input.rs",
-          "line": 417
+          "line": 429
         },
         {
           "path": "src/scene/layout.rs",
@@ -3635,15 +3772,15 @@
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 345
+          "line": 346
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 835
+          "line": 853
         },
         {
           "path": "src/scene/table_view/runtime.rs",
@@ -3666,15 +3803,15 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 286
+          "line": 288
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 631
+          "line": 632
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 464
+          "line": 477
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3682,7 +3819,7 @@
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 804
+          "line": 821
         }
       ]
     },
@@ -3693,7 +3830,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3708,7 +3845,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3723,7 +3860,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/mod.rs",
-          "line": 692
+          "line": 715
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3738,7 +3875,7 @@
       "rustImplementation": [
         {
           "path": "src/scene/mod.rs",
-          "line": 464
+          "line": 477
         },
         {
           "path": "src/scene/navigation_view.rs",
@@ -3757,23 +3894,23 @@
         },
         {
           "path": "src/scene/input.rs",
-          "line": 443
+          "line": 455
         },
         {
           "path": "src/scene/layout.rs",
-          "line": 481
+          "line": 482
         },
         {
           "path": "src/scene/mod.rs",
-          "line": 763
+          "line": 786
         },
         {
           "path": "src/scene/paint.rs",
-          "line": 1053
+          "line": 1055
         },
         {
           "path": "src/scene/properties.rs",
-          "line": 807
+          "line": 824
         },
         {
           "path": "src/scene/rich_edit.rs",
@@ -3782,6 +3919,60 @@
         {
           "path": "src/scene/text_edit.rs",
           "line": 11
+        }
+      ]
+    },
+    {
+      "name": "Segmented",
+      "classification": "WinUI control",
+      "nativeType": "CommunityToolkit.WinUI.Controls.Segmented",
+      "rustImplementation": [
+        {
+          "path": "src/scene/layout.rs",
+          "line": 226
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 702
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 1038
+        },
+        {
+          "path": "src/scene/segmented.rs",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "name": "SegmentedItem",
+      "classification": "WinUI control",
+      "nativeType": "CommunityToolkit.WinUI.Controls.SegmentedItem",
+      "rustImplementation": [
+        {
+          "path": "src/selection.rs",
+          "line": 14
+        },
+        {
+          "path": "src/scene/input.rs",
+          "line": 246
+        },
+        {
+          "path": "src/scene/layout.rs",
+          "line": 226
+        },
+        {
+          "path": "src/scene/mod.rs",
+          "line": 703
+        },
+        {
+          "path": "src/scene/paint.rs",
+          "line": 276
+        },
+        {
+          "path": "src/scene/segmented.rs",
+          "line": 77
         }
       ]
     }
@@ -3910,10 +4101,12 @@
       "ScrollContentPresenter",
       "ItemsPresenter",
       "TableView",
-      "NavigationViewItem"
+      "NavigationViewItem",
+      "Segmented",
+      "SegmentedItem"
     ],
-    "frontendFiles": 81,
-    "reactFreeSdkFiles": 27,
+    "frontendFiles": 83,
+    "reactFreeSdkFiles": 28,
     "wasmBridges": {
       "packages/winui-wasm/src/scene.ts": [
         "scene_create",

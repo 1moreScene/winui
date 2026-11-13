@@ -225,18 +225,21 @@ impl GpuBackend {
             self.gl.delete_texture(Some(&texture.value));
         }
     }
-    pub fn release(&mut self) {
-        self.vector_backend.release();
+    pub fn release_rasters(&mut self) {
+        self.vector_backend.release_rasters();
         self.invalidate_text();
         for layer in self.layers.borrow_mut().drain(..) {
             self.delete_layer(layer);
         }
-        self.gl.delete_texture(Some(&self.noise));
-        self.gl.delete_program(Some(&self.program));
         self.raster.set_width(0);
         self.raster.set_height(0);
         self.canvas.set_width(0);
         self.canvas.set_height(0);
+    }
+    pub fn release(&mut self) {
+        self.release_rasters();
+        self.gl.delete_texture(Some(&self.noise));
+        self.gl.delete_program(Some(&self.program));
         self.images.borrow_mut().clear();
     }
     fn delete_layer(&self, layer: Layer) {

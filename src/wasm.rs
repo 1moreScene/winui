@@ -2,7 +2,11 @@ use crate::{
     model::{Input, Properties},
     render, Runtime,
 };
+use std::cell::RefCell;
 use std::collections::HashMap;
+use std::hash::{DefaultHasher, Hash, Hasher};
+use std::rc::{Rc, Weak};
+use std::sync::{Arc, Weak as WeakArc};
 use wasm_bindgen::{prelude::*, JsCast};
 use web_sys::{CanvasRenderingContext2d, HtmlCanvasElement};
 mod popup_input;
@@ -25,6 +29,16 @@ pub struct WinUiRuntime {
     surfaces: HashMap<u32, render::CanvasBackend>,
     scenes: HashMap<u32, SceneHost>,
     frames: HashMap<u32, crate::frame::Frame>,
+    text_measurers: Vec<(web_sys::Document, Weak<RefCell<crate::typography::BrowserText>>)>,
+    table_sources: HashMap<u64, Vec<WeakArc<Vec<crate::scene::table_view::Row>>>>,
+}
+impl WinUiRuntime {
+    fn prune_table_sources(&mut self) {
+        self.table_sources.retain(|_, rows| {
+            rows.retain(|source| source.strong_count() != 0);
+            !rows.is_empty()
+        });
+    }
 }
 #[wasm_bindgen]
 impl WinUiRuntime {
@@ -210,6 +224,14 @@ enum SceneBackend {
     Canvas(render::CanvasBackend),
     Gpu(crate::gpu::GpuBackend),
 }
+impl SceneBackend {
+    fn release_rasters(&mut self) {
+        match self {
+            Self::Canvas(backend) => backend.release_rasters(),
+            Self::Gpu(backend) => backend.release_rasters(),
+        }
+    }
+}
 struct SceneHost {
     popup_input: popup_input::PopupInput,
     floating_canvas: Option<HtmlCanvasElement>,
@@ -218,10 +240,11 @@ struct SceneHost {
     page_backdrop: Option<(HtmlCanvasElement, crate::model::Rect)>,
     scene: crate::scene::Scene,
     backend: SceneBackend,
-    text: crate::typography::BrowserText,
+    text: Rc<RefCell<crate::typography::BrowserText>>,
     lost: bool,
     retained_base: Option<(crate::model::Rect,f64,Vec<render::Draw>)>,
-    projected_properties: HashMap<u32, crate::scene::NodeProperties>,
+    projected_properties: HashMap<u32, Rc<serde_json::Value>>,
+    projected_table_keys: HashMap<u32, WeakArc<Vec<String>>>,
     base_paints: u64,
     base_reuses: u64,
     last_serialize_ms: f64,
@@ -282,7 +305,16 @@ impl WinUiRuntime {
                 }])
                 .map_err(error)?;
         }
-        let text = crate::typography::BrowserText::new(&document)?;
+        self.text_measurers.retain(|(_, measurer)| measurer.strong_count() != 0);
+        let text = if let Some(text) = self.text_measurers.iter().find_map(|(owner, measurer)| {
+            if owner == &document { measurer.upgrade() } else { None }
+        }) {
+            text
+        } else {
+            let text = Rc::new(RefCell::new(crate::typography::BrowserText::new(&document)?));
+            self.text_measurers.push((document, Rc::downgrade(&text)));
+            text
+        };
         let backend = match init.backend {
             crate::enums::RendererBackend::Canvas2D => {
                 let context = canvas
@@ -310,6 +342,7 @@ impl WinUiRuntime {
                 lost: false,
                 retained_base: None,
                 projected_properties:HashMap::new(),
+                projected_table_keys: HashMap::new(),
                 base_paints: 0,
                 base_reuses: 0,
                 last_serialize_ms: 0.,
@@ -339,6 +372,33 @@ impl WinUiRuntime {
             .scene
             .root)
     }
+    pub fn scene_property_defaults(&self) -> Result<String, JsValue> {
+        serde_json::to_string(&crate::scene::NodeProperties::default()).map_err(error)
+    }
+    pub fn scene_release_rasters(&mut self, id: u32) -> Result<(), JsValue> {
+        let host = self.scenes.get_mut(&id).ok_or_else(|| error("invalid scene"))?;
+        host.backend.release_rasters();
+        if let Some(backend) = &mut host.floating_backend {
+            backend.release_rasters();
+        }
+        if let Some(canvas) = host.floating_backdrop.take() {
+            canvas.set_width(0);
+            canvas.set_height(0);
+        }
+        host.retained_base = None;
+        Ok(())
+    }
+    pub fn scene_replace_canvas(&mut self, id: u32, canvas: HtmlCanvasElement) -> Result<(), JsValue> {
+        let host = self.scenes.get_mut(&id).ok_or_else(|| error("invalid scene"))?;
+        let SceneBackend::Canvas(old) = &host.backend else { return Err(error("expected Canvas2D")); };
+        let context = canvas.get_context("2d")?.ok_or_else(|| error("Canvas 2D unavailable"))?.dyn_into()?;
+        let mut next = render::CanvasBackend::new(canvas, context)?;
+        next.images = old.images.clone();
+        host.backend = SceneBackend::Canvas(next);
+        host.floating_backend = None;
+        host.retained_base = None;
+        Ok(())
+    }
     /// Browser host rasterization only. Acrylic composition remains in Rust.
     pub fn scene_floating_backdrop(&mut self, id: u32, canvas: Option<HtmlCanvasElement>, x: f64, y: f64, width: f64, height: f64) -> Result<(), JsValue> {
         if ![x,y,width,height].iter().all(|v|v.is_finite()) || width < 0. || height < 0. {
@@ -354,14 +414,34 @@ impl WinUiRuntime {
         parent: u32,
         kind: &str,
         json: &str,
+        table_items: Option<String>,
     ) -> Result<u32, JsValue> {
         let kind = serde_json::from_str(kind).map_err(error)?;
         let patch = serde_json::from_str(json).map_err(error)?;
+        let table_items = if let Some(json) = table_items {
+            // Retain one immutable allocation for equal sources. Check equality
+            // after hashing, and let the last owning table release the rows.
+            let rows = crate::scene::table_view::decode_browser_rows(&json).map_err(error)?;
+            self.prune_table_sources();
+            let mut hash = DefaultHasher::new();
+            json.hash(&mut hash);
+            let sources = self.table_sources.entry(hash.finish()).or_default();
+            Some(if let Some(source) = sources.iter().filter_map(WeakArc::upgrade)
+                .find(|source| source.as_ref() == &rows) {
+                source
+            } else {
+                let source = Arc::new(rows);
+                sources.push(Arc::downgrade(&source));
+                source
+            })
+        } else {
+            None
+        };
         self.scenes
             .get_mut(&id)
             .ok_or_else(|| error("invalid scene"))?
             .scene
-            .create(parent, kind, patch)
+            .create_with_table_items(parent, kind, patch, table_items)
             .map_err(error)
     }
     pub fn scene_update(&mut self, id: u32, json: &str, time: f64) -> Result<(), JsValue> {
@@ -396,7 +476,7 @@ impl WinUiRuntime {
         let command=serde_json::from_str(command).map_err(error)?;
         let host=self.scenes.get_mut(&id).ok_or_else(||error("invalid scene"))?;
         host.scene.advance(time);
-        host.scene.layout(&mut host.text);
+        host.scene.layout(&mut *host.text.borrow_mut());
         host.scene.motion_command(node,command).map_err(error)
     }
     pub fn scene_animate(
@@ -612,6 +692,7 @@ impl WinUiRuntime {
         width: f64,
         height: f64,
         dpr: f64,
+        defer_raster: Option<bool>,
     ) -> Result<String, JsValue> {
         let frame_started = frame_clock();
         if width * dpr > 8192. || height * dpr > 8192. || width * height * dpr * dpr > 16_777_216. {
@@ -625,9 +706,10 @@ impl WinUiRuntime {
             .ok_or_else(|| error("invalid scene"))?;
         host.scene.advance(time);
         host.scene.resize(width, height, dpr).map_err(error)?;
+        let mut text = host.text.borrow_mut();
         for node in host.scene.nodes.values_mut() {
             if let Some(nav) = &mut node.nav {
-                measure_navigation(nav, &host.text.ctx)?;
+                measure_navigation(nav, &text.ctx)?;
             }
         }
         let sources = host.scene.image_sources();
@@ -641,35 +723,42 @@ impl WinUiRuntime {
                 .retain(|source, _| sources.contains(source)),
             SceneBackend::Gpu(b) => b.retain_images(&sources),
         }
-        host.scene.layout(&mut host.text);
+        host.scene.layout(&mut *text);
+        drop(text);
         host.scene.validate_panel_layouts().map_err(error)?;
         let layout_finished = frame_clock();
         let floating = host.floating_canvas.is_some();
-        let mut list = if floating {
-            host.scene.base_display_list()
-        } else {
-            host.scene.display_list()
-        };
-        // A floating animation does not dirty the retained content underneath
-        // it. Compare the actual display list, including transforms, material
-        // values and raster revisions, instead of repainting an unchanged base.
-        // GPU presentation still runs each frame to observe context loss.
         let surface=host.scene.surface_bounds();
         let raster_height=surface.height;
-        list.insert(0,render::Draw::Transform{matrix:[1.,0.,0.,1.,-surface.x,-surface.y]});
-        list.insert(0,render::Draw::Save);list.push(render::Draw::Restore);
+        let visible = floating && width > 0. && raster_height > 0. && host.scene.has_floating_surface();
         if raster_height*dpr>8192.||surface.width*raster_height*dpr*dpr>16_777_216.{return Err(error("presentation surface exceeds allocation budget"));}
-        let retain = !host.scene.has_composition_animation() && matches!(&host.backend, SceneBackend::Canvas(_)) && !render::contains_external_image(&list);
-        let reuse = retain && host.retained_base.as_ref().is_some_and(|(old_surface,old_dpr,old_list)|*old_surface==surface && *old_dpr==dpr && *old_list==list);
-        let list_finished = frame_clock();
-        let mut backend = if reuse {
-            host.base_reuses += 1;
-            serde_json::json!({"kind":"Canvas2D","lost":false,"generation":1})
+        let skip_raster = defer_raster.unwrap_or(false) && !visible;
+        let (mut backend, list_finished) = if skip_raster {
+            let backend = match &host.backend {
+                SceneBackend::Canvas(_) => serde_json::json!({"kind":"Canvas2D","lost":false,"generation":1}),
+                SceneBackend::Gpu(b) => serde_json::json!({"kind":"WebGL2","lost":host.lost,"generation":b.generation,"draws":b.draws,"uploads":b.uploads,"effectPasses":b.effect_passes,"cachedSurfaces":b.cached_surfaces()}),
+            };
+            (backend, layout_finished)
         } else {
-            host.base_paints += 1;
-            let info=paint_scene_backend(&mut host.backend, &list, surface.width, raster_height, dpr)?;
-            host.retained_base=retain.then_some((surface,dpr,list));
-            info
+            let mut list = if floating { host.scene.base_display_list() } else { host.scene.display_list() };
+            // Compare the display list, including transforms, material values
+            // and raster revisions. WebGL2 also checks for context loss.
+            list.insert(0,render::Draw::Transform{matrix:[1.,0.,0.,1.,-surface.x,-surface.y]});
+            list.insert(0,render::Draw::Save);
+            list.push(render::Draw::Restore);
+            let retain = !host.scene.has_composition_animation() && matches!(&host.backend, SceneBackend::Canvas(_)) && !render::contains_external_image(&list);
+            let reuse = retain && host.retained_base.as_ref().is_some_and(|(old_surface,old_dpr,old_list)|*old_surface==surface && *old_dpr==dpr && *old_list==list);
+            let list_finished = frame_clock();
+            let backend = if reuse {
+                host.base_reuses += 1;
+                serde_json::json!({"kind":"Canvas2D","lost":false,"generation":1})
+            } else {
+                host.base_paints += 1;
+                let info=paint_scene_backend(&mut host.backend, &list, surface.width, raster_height, dpr)?;
+                host.retained_base=retain.then_some((surface,dpr,list));
+                info
+            };
+            (backend, list_finished)
         };
         backend["basePaints"]=host.base_paints.into();
         backend["baseReuses"]=host.base_reuses.into();
@@ -679,8 +768,6 @@ impl WinUiRuntime {
         }
         host.lost = backend["lost"].as_bool().unwrap_or(false);
         let bounds = host.scene.floating_surface_bounds();
-        let visible = floating && width > 0. && raster_height > 0.
-            && host.scene.has_floating_surface();
         if let Some(canvas) = &host.floating_canvas {
             host.popup_input.sync(canvas, if visible { host.scene.floating_input_regions() } else { Vec::new() });
         }
@@ -772,18 +859,39 @@ impl WinUiRuntime {
         let paint_finished = frame_clock();
         #[derive(serde::Serialize)]
         #[serde(rename_all="camelCase")]
-        struct FrameSnapshot {#[serde(flatten)] scene:crate::scene::Snapshot,backend:serde_json::Value,floating_surface:serde_json::Value}
-        let mut snapshot=host.scene.snapshot();
-        // Properties include the complete public schema, even on small template
-        // nodes. Send them only when their actual values change. Comparing the
-        // actual values also observes internal template/editor mutations,
-        // which need not go through a public property update or layout revision.
+        struct FrameSnapshot {
+            #[serde(flatten)]
+            scene: crate::scene::Snapshot<Option<Rc<serde_json::Value>>>,
+            backend: serde_json::Value,
+            floating_surface: serde_json::Value,
+        }
+        #[derive(serde::Serialize)]
+        struct PropertyProjection<'a>(
+            #[serde(serialize_with = "crate::scene::NodeProperties::serialize_projection")]
+            &'a crate::scene::NodeProperties,
+        );
+        // Compare the sparse projection so template mutations are also detected.
         host.projected_properties.retain(|id,_|host.scene.nodes.contains_key(id));
+        let projected = &mut host.projected_properties;
+        let mut snapshot = host.scene.snapshot_with_properties(|node| {
+            let properties = serde_json::to_value(PropertyProjection(&node.snapshot_properties())).unwrap();
+            if projected.get(&node.id).is_some_and(|old| old.as_ref() == &properties) {
+                return None;
+            }
+            let properties = Rc::new(properties);
+            projected.insert(node.id, properties.clone());
+            Some(properties)
+        });
+        // A scroll frame changes the viewport, while its complete shaped row
+        // order usually stays the same. Send the order once per revision.
+        host.projected_table_keys.retain(|id, _| host.scene.nodes.contains_key(id));
         for node in &mut snapshot.nodes {
-            if host.projected_properties.get(&node.id)==Some(&node.props) {
-                node.props.snapshot_omit=true;
+            let Some(table) = &mut node.table else { continue };
+            let keys = Arc::downgrade(&table.view_keys);
+            if host.projected_table_keys.get(&node.id).is_some_and(|old| old.ptr_eq(&keys)) {
+                table.view_keys = crate::scene::table_view::omitted_view_keys().clone();
             } else {
-                host.projected_properties.insert(node.id,node.props.clone());
+                host.projected_table_keys.insert(node.id, keys);
             }
         }
         let snapshot_finished = frame_clock();
@@ -826,7 +934,7 @@ impl WinUiRuntime {
             .get_mut(&id)
             .ok_or_else(|| error("invalid scene"))?;
         host.retained_base = None;
-        host.text.invalidate();
+        host.text.borrow_mut().invalidate();
         host.scene.invalidate_navigation_fonts();
         if let SceneBackend::Gpu(b) = &mut host.backend {
             b.invalidate_text();
@@ -846,7 +954,7 @@ impl WinUiRuntime {
             backend.generation = old.generation + 1;
             host.backend = SceneBackend::Gpu(backend);
             host.lost = false;
-            host.text.invalidate();
+            host.text.borrow_mut().invalidate();
             host.scene.invalidate(host.scene.root, true);
         }
         Ok(())
@@ -859,11 +967,17 @@ impl WinUiRuntime {
         if let Some(backend)=&mut host.floating_backend {
             match backend {SceneBackend::Canvas(b)=>b.release(),SceneBackend::Gpu(b)=>b.release()};
         }
-        if let Some(canvas)=host.floating_backdrop {canvas.set_width(0);canvas.set_height(0);}
+        if let Some(canvas) = &host.floating_backdrop {
+            canvas.set_width(0);
+            canvas.set_height(0);
+        }
         match &mut host.backend {
             SceneBackend::Canvas(b) => b.release(),
             SceneBackend::Gpu(b) => b.release(),
         };
+        drop(host);
+        self.prune_table_sources();
+        self.text_measurers.retain(|(_, measurer)| measurer.strong_count() != 0);
         Ok(())
     }
 }

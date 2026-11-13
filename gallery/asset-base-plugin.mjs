@@ -9,8 +9,8 @@ export function galleryAssetBase() {
     configResolved(config) { prefix = config.base === '/' ? '' : config.base.replace(/\/$/, ''); },
     transform(code, id) {
       if (!prefix || !id.replaceAll('\\', '/').includes('/gallery/src/') || id.includes('?raw') || /\.(?:css|html)(?:\?|$)/.test(id)) return;
-      const isAsset = value => typeof value === 'string' && /^\/(?:official|project|community-table-view|licenses)\//.test(value);
-      if (!/\/(?:official|project|community-table-view|licenses)\//.test(code)) return;
+      const isAsset = value => typeof value === 'string' && /^\/(?:official|project|community-table-view|community-segmented|licenses)\//.test(value);
+      if (!/\/(?:official|project|community-table-view|community-segmented|licenses)\//.test(code)) return;
       const parsed = parseSync('gallery-module.js', code);
       if (parsed.errors.length) throw new Error(`Cannot rebase Gallery assets in ${id}: ${JSON.stringify(parsed.errors)}`);
       const edits = [];

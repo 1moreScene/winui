@@ -1,0 +1,1166 @@
+{
+  "EntranceThemeTransition-defaults": {
+    "FromHorizontalOffset": 0,
+    "FromVerticalOffset": 28,
+    "IsStaggeringEnabled": false
+  },
+  "Reposition-Primary": [
+    {
+      "durationMs": 367,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "Reposition-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "Reposition-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeIn-Shown": [
+    {
+      "durationMs": 167,
+      "delayMs": 0,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "FadeIn-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Hidden": [
+    {
+      "durationMs": 167,
+      "delayMs": 0,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 0,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "FadeOut-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "FadeOut-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Added": [
+    {
+      "durationMs": 120,
+      "delayMs": 240,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Scale",
+      "values": {
+        "FinalScaleX": 1,
+        "FinalScaleY": 1,
+        "InitialScaleX": 0.85,
+        "InitialScaleY": 0.85,
+        "NormalizedOrigin": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    },
+    {
+      "durationMs": 120,
+      "delayMs": 240,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": 0
+      }
+    }
+  ],
+  "AddToList-Affected": [
+    {
+      "durationMs": 400,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "AddToList-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToList-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Deleted": [
+    {
+      "durationMs": 120,
+      "delayMs": 0,
+      "curve": [
+        0.10999999940395355,
+        0.5,
+        0.23999999463558197,
+        0.9599999785423279
+      ],
+      "type": "Scale",
+      "values": {
+        "FinalScaleX": 0.85,
+        "FinalScaleY": 0.85,
+        "InitialScaleX": null,
+        "InitialScaleY": null,
+        "NormalizedOrigin": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    },
+    {
+      "durationMs": 120,
+      "delayMs": 0,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 0,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "DeleteFromList-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Remaining": [
+    {
+      "durationMs": 400,
+      "delayMs": 60,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "DeleteFromList-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromList-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Added": [
+    {
+      "durationMs": 117,
+      "delayMs": 240,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": 0
+      }
+    }
+  ],
+  "AddToSearchList-Affected": [
+    {
+      "durationMs": 400,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "AddToSearchList-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "AddToSearchList-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Deleted": [
+    {
+      "durationMs": 93,
+      "delayMs": 0,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 0,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "DeleteFromSearchList-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Remaining": [
+    {
+      "durationMs": 400,
+      "delayMs": 60,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "DeleteFromSearchList-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "DeleteFromSearchList-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Affected": [
+    {
+      "durationMs": 240,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Scale",
+      "values": {
+        "FinalScaleX": 0.95,
+        "FinalScaleY": 0.95,
+        "InitialScaleX": null,
+        "InitialScaleY": null,
+        "NormalizedOrigin": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    }
+  ],
+  "DragSourceStart-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-DragSource": [
+    {
+      "durationMs": 240,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Scale",
+      "values": {
+        "FinalScaleX": 1.05,
+        "FinalScaleY": 1.05,
+        "InitialScaleX": null,
+        "InitialScaleY": null,
+        "NormalizedOrigin": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    },
+    {
+      "durationMs": 240,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 0.65,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "DragSourceStart-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceStart-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Affected": [
+    {
+      "durationMs": 500,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Scale",
+      "values": {
+        "FinalScaleX": 1,
+        "FinalScaleY": 1,
+        "InitialScaleX": null,
+        "InitialScaleY": null,
+        "NormalizedOrigin": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    }
+  ],
+  "DragSourceEnd-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-DragSource": [
+    {
+      "durationMs": 500,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Scale",
+      "values": {
+        "FinalScaleX": 1,
+        "FinalScaleY": 1,
+        "InitialScaleX": null,
+        "InitialScaleY": null,
+        "NormalizedOrigin": {
+          "X": 0.5,
+          "Y": 0.5
+        }
+      }
+    },
+    {
+      "durationMs": 500,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": null
+      }
+    },
+    {
+      "durationMs": 500,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "DragSourceEnd-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "DragSourceEnd-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Affected": [
+    {
+      "durationMs": 200,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "DragBetweenEnter-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenEnter-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Affected": [
+    {
+      "durationMs": 200,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    }
+  ],
+  "DragBetweenLeave-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "DragBetweenLeave-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Primary": [
+    {
+      "durationMs": 667,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Translation",
+      "values": {}
+    },
+    {
+      "durationMs": 667,
+      "delayMs": 0,
+      "curve": [
+        0.10000000149011612,
+        0.8999999761581421,
+        0.20000000298023224,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": 0
+      }
+    }
+  ],
+  "EnterPage-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Incoming": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Outgoing": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "EnterPage-Tapped": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Primary": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Added": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Affected": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Background": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Content": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Deleted": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Deselected": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-DragSource": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Hidden": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Incoming": [
+    {
+      "durationMs": 167,
+      "delayMs": 0,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 1,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "CrossFade-Outgoing": [
+    {
+      "durationMs": 167,
+      "delayMs": 0,
+      "curve": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "type": "Opacity",
+      "values": {
+        "FinalOpacity": 0,
+        "InitialOpacity": null
+      }
+    }
+  ],
+  "CrossFade-Outline": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Remaining": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Revealed": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-RowIn": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-RowOut": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Selected": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Selection": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Shown": {
+    "unsupported": "ArgumentException"
+  },
+  "CrossFade-Tapped": {
+    "unsupported": "ArgumentException"
+  }
+}

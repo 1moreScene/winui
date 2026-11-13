@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-11-10T10:35:08.756640+08:00",
+  "issue": "Group rows collapse but chevrons continue to point down",
+  "rootCause": "Direct props.rotation assignment bypassed Presentation.rotation and the shared paint invalidation path.",
+  "fix": "Rust group-header VSM setter now commits rotation with Scene::update only when its value changes: expanded 0 degrees, collapsed -90 degrees.",
+  "productFiles": {
+    "src/scene/table_view/grouping.rs": "aca33a896283cc26324b535ef394f295dcb9d7491d33cb37f0b5a72aa10f2733"
+  },
+  "reactOrGalleryProductPatch": false,
+  "computerUse": false,
+  "nativeSource": "references/table-view-1.5.1/src/Themes/TableViewGroupHeaderRow.xaml: Collapsed/ExpandCollapseIconRotation.Angle=-90",
+  "before": {
+    "rust": "out/table-view-chevron-before.log",
+    "browser": "out/table-view-chevron-browser-before.json",
+    "screenshot": "out/table-view-chevron-before.png",
+    "proof": "Both the real world-transform axis check and actual painted glyph-orientation check fail on the prior release."
+  },
+  "verifiedBuild": {
+    "wasmSha256": "2d5d7da601fad79b21e15b870512205157b4887b8b178f123727dfb18eab7271",
+    "browser": "out/table-view-chevron-verified-2d5-browser.json",
+    "visual": "out/table-view-chevron-verified-2d5-visual.json"
+  },
+  "rust": {
+    "path": "out/table-view-chevron-rust.log",
+    "passed": 62
+  },
+  "boundary": "This acceptance is limited to group-chevron direction and the tested group interactions; earlier full-native/physical-120Hz limitations remain.",
+  "sdkWasmSha256": "541f9779e27b3ca36f1b2c322a44d53540be04b50bfd67d828ac602da7e615ca",
+  "currentGallery": {
+    "browser": "out/table-view-chevron-served-browser.json",
+    "browserSha256": "3eadfc0c300e4b069be6c5cf0b18df3b37221b5e6d7b3a8fdf3a1ac727c0367e",
+    "visual": "out/table-view-chevron-visual.json",
+    "visualSha256": "8784b15e4f7451265230211092c5158b04c7880f0f2a3e3a10126237d938c231",
+    "paintedStates": 16,
+    "renderers": [
+      "Canvas2D",
+      "WebGL2"
+    ],
+    "themes": [
+      "Light",
+      "Dark"
+    ],
+    "servedUrl": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm",
+    "productionWasmSha256": "541f9779e27b3ca36f1b2c322a44d53540be04b50bfd67d828ac602da7e615ca"
+  }
+}

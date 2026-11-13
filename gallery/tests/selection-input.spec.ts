@@ -1,4 +1,4 @@
-import {selectGalleryOption} from './gallery-control-helper';
+import {openSource,selectGalleryOption} from './gallery-control-helper';
 import {test,expect} from '@playwright/test';
 test('RadioButtons group selection, arrow navigation, Tab entry and source use the shared SDK',async({page})=>{
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#radio-button');
@@ -9,18 +9,19 @@ test('RadioButtons group selection, arrow navigation, Tab entry and source use t
  expect(await radios.evaluateAll(nodes=>nodes.map(n=>(n as HTMLButtonElement).tabIndex))).toEqual([-1,-1,0]);
  await radios.nth(2).press('Enter');await expect(radios.nth(2)).toBeChecked();await radios.nth(2).press('Space');await expect(radios.nth(2)).toBeChecked();
  const background=page.getByRole('radiogroup',{name:'Background',exact:true});await background.getByRole('radio',{name:'White',exact:true}).click();await expect(background.getByRole('radio',{name:'White',exact:true})).toBeChecked();
- await page.locator("#radio-group details.source [aria-label=\"Source code\"][aria-expanded]").click();await expect(page.locator('#radio-group pre')).toContainText('<RadioButtons');await expect(page.locator('#radio-group pre')).not.toContainText('options=');
+ await openSource(page.locator('#radio-group .source'));await expect(page.locator('#radio-group pre')).toContainText('<RadioButtons');await expect(page.locator('#radio-group pre')).not.toContainText('options=');
  for(const backend of ['WebGL2','Canvas2D']){await selectGalleryOption(page.getByLabel('Input renderer'),backend);await expect(page.getByRole('radiogroup',{name:'Options:',exact:true}).getByRole('radio')).toHaveCount(3);}
  await page.locator('main').screenshot({path:'../out/selection-input/radio-gallery.png'});expect(errors).toEqual([]);
 });
 test('ToggleSwitch pointer, Space, drag, theme and reduced-motion policies remain Rust-owned',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#toggle-switch');const control=page.getByRole('switch',{name:'simple ToggleSwitch',exact:true});await expect(control).not.toBeChecked();await page.locator('main').screenshot({path:'../out/selection-input/switch-gallery-initial.png'});
  await control.click();await expect(control).toBeChecked();await control.press('Space');await expect(control).not.toBeChecked();await control.press('Enter');await expect(control).not.toBeChecked();
  const box=(await control.boundingBox())!;await page.mouse.move(box.x+5,box.y+20);await page.mouse.down();await page.mouse.move(box.x+30,box.y+20,{steps:5});await page.mouse.up();await expect(control).toBeChecked();
  const custom=page.getByRole('switch',{name:'Toggle work',exact:true});await expect(custom).toBeChecked();await custom.click();await expect(custom).not.toBeChecked();
  for(const theme of ['Dark','HighContrast','Light']){await selectGalleryOption(page.locator('#theme'),theme);await expect(control).toBeVisible();}
  await page.evaluate(()=>window.inputScenes['switch-simple'].configure({reducedMotion:true}));await control.click();await expect.poll(()=>page.evaluate(()=>window.inputScenes['switch-simple'].snapshot.animating)).toBe(false);
- await page.locator('main').screenshot({path:'../out/selection-input/switch-gallery.png'});expect(errors).toEqual([]);
+ await page.getByRole('main').filter({has:control}).screenshot({path:'../out/selection-input/switch-gallery.png'});expect(errors).toEqual([]);
 });
 test('named radio groups span containers and preserve selection',async({page})=>{
  await page.goto('/#radio-button');await expect(page.getByRole('radiogroup',{name:'Options:',exact:true})).toBeVisible();

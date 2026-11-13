@@ -1,0 +1,16 @@
+<!doctype html><html><body style="margin:0;background:#f3f3f3"><div id="host" style="width:800px;height:540px"></div><script type="module">
+import * as SDK from './src/index.ts';
+const {WinUI,PaneDisplayMode,NavigationViewBackButtonVisible,NavigationViewSlot,ThemeMode,Orientation,Symbol,IconSourceKind}=SDK;
+const ui=await WinUI.create({globalScrollbars:false});let scene;
+window.composition={SDK,ui,make({mode='Left',slots=false,open,theme=ThemeMode.Light,header='Header',backend=SDK.RendererBackend.Canvas2D}={}){
+ scene?.dispose();scene=ui.scene(document.getElementById('host'),{theme,backend,reducedMotion:true});
+ const control=scene.root.navigationView({paneDisplayMode:mode,isBackButtonVisible:NavigationViewBackButtonVisible.Visible,header,paneTitle:'Pane Title',selectedId:'a',reducedMotion:true,...(open===undefined?{}:{isPaneOpen:open}),items:[{id:'a',text:'Menu Item1',icon:'\uE768'},{id:'header',kind:SDK.ItemKind.Header,text:'Actions'},{id:'b',text:'Menu Item2',icon:'\uE74E'},{id:'c',text:'Menu Item3',icon:'\uE72C'}]});
+ const view=control.asView(),frame=view.content.sceneFrame();let search;
+ if(slots){search=view.slot(NavigationViewSlot.AutoSuggestBox).autoSuggestBox({queryIcon:true,accessibleName:'Search'});
+ view.slot(NavigationViewSlot.PaneCustomContent).hyperlinkButton({text:'More info',margin:[12,0,12,0]});
+ const footer=view.slot(NavigationViewSlot.PaneFooter).stack({orientation:mode===PaneDisplayMode.Top?Orientation.Horizontal:Orientation.Vertical});
+ footer.navigationViewItem({accessibleName:'download',iconSource:{kind:IconSourceKind.Symbol,symbol:Symbol.Download}});
+ footer.navigationViewItem({accessibleName:'favorite',iconSource:{kind:IconSourceKind.Symbol,symbol:Symbol.Favorite}});}
+ scene.render();Object.assign(window.composition,{view,frame,scene,search});return true;
+}};window.composition.make();
+</script></body></html>

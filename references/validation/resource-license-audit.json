@@ -1,0 +1,26 @@
+{
+  "reviewedOn": "2026-11-10",
+  "recordedUnresolvedFindings": 0,
+  "resolvedIssues": {
+    "SDK-PREVIEW-001": "All runtime template and brush inputs regenerated offline from pinned MIT source; old runtime isolated in ignored local comparison artifacts."
+  },
+  "mediaFiles": 191,
+  "dependencyRecords": 155,
+  "checks": {
+    "releaseGate": "passed",
+    "python": 14,
+    "rust": 572,
+    "browserBehavior": 30,
+    "fontPortability": 11,
+    "independentNpmConsumers": 4,
+    "galleryProductionBuild": "passed",
+    "visualComparison": "43/44 sequence captures pixel-identical; isolated ItemsView old/new and repeated-new screenshots and image geometry identical"
+  },
+  "details": "references/validation/mit-resource-migration.json",
+  "scope": "Reviewed resource inputs, generated outputs, notices, lockfiles and tested browser artifacts; not a blanket legal opinion or publication action. Native Windows installations/probes are separate comparison tools.",
+  "manifests": {
+    "third_party/resource-manifest.json": "c919374bb1fbb373a9e9476d8baede848cc85dd4dc342356bc78e9c09b3f0809",
+    "third_party/dependency-licenses.json": "d4edf0a284ca98f903e12a0e27b5045d81149cce47e28da0466f8ce1a49891f9"
+  },
+  "latestIconFontPolicy": "references/validation/icon-font-policy.json"
+}

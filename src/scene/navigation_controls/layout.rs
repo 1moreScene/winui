@@ -337,7 +337,7 @@ impl Scene {
         let has_previous = q.previous_button_visibility != PipsPagerButtonVisibility::Collapsed;
         let has_next = q.next_button_visibility != PipsPagerButtonVisibility::Collapsed;
         let hovered = n.nav_controls.hovered.is_some() || self.focused == Some(id);
-        let c = &mut self.nodes.get_mut(&id).unwrap().nav_controls;
+        let c: &mut NavigationState = &mut self.nodes.get_mut(&id).unwrap().nav_controls;
         if c.first_visible != first {
             c.pips_scroll.set(
                 first as f64 * 12.,
@@ -590,7 +590,7 @@ impl Scene {
         let q = q.clone();
         let font_base = p.font();
         let hovering = n.nav_controls.hovered.clone();
-        let c = &mut self.nodes.get_mut(&id).unwrap().nav_controls;
+        let c: &mut NavigationState = &mut self.nodes.get_mut(&id).unwrap().nav_controls;
         let mut target = c.pips_scroll.target().clamp(0., max_scroll);
         if c.bring_tab {
             if let Some((x, width)) = selected_bounds {

@@ -1,7 +1,7 @@
 /** Browser surface sizing only; control layout and rasterization remain in Rust. */
 export class SurfaceMetrics {
-  width: number;
-  height: number;
+  width = 0;
+  height = 0;
   dpr = Math.min(devicePixelRatio || 1, 8);
   private observer: ResizeObserver;
   private resolution!: MediaQueryList;
@@ -17,9 +17,7 @@ export class SurfaceMetrics {
     private invalidate: () => void,
     signal: AbortSignal,
   ) {
-    const style = getComputedStyle(element);
-    this.width = Number.parseFloat(style.width) || 0;
-    this.height = Number.parseFloat(style.height) || 0;
+    this.measure(element);
     this.observer = new ResizeObserver(([entry]) => {
       if (this.disposed) return;
       // clientWidth/clientHeight discard CSS fractions before DPR conversion.
@@ -48,6 +46,12 @@ export class SurfaceMetrics {
     this.dpr = Math.min(devicePixelRatio || 1, 8);
     this.resolution = matchMedia(`(resolution: ${devicePixelRatio || 1}dppx)`);
     this.resolution.addEventListener("change", this.resolutionChanged);
+  }
+
+  measure(element: HTMLElement) {
+    const style = getComputedStyle(element);
+    this.width = Number.parseFloat(style.width) || 0;
+    this.height = Number.parseFloat(style.height) || 0;
   }
 
   present(canvas: HTMLCanvasElement) {

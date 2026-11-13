@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-09",
+  "status": "passed",
+  "wasmSha256": "4604efb0e7c6efb03b6333b66f342d2a94863b9c1c5a093b7e447ecf152899ce",
+  "cause": "NavigationView incorrectly reused the Overlay 120 ms close curve for Expanded/CompactInline. It had already closed about 68% by 16 ms, so a few delayed frames looked like a snap.",
+  "fix": "Select the exact left-side RootSplitView source track per adaptive display mode. CompactInline uses 200 ms in both directions with (0,0.35,0.15,1), including OpenInlineLeft -> ClosedCompactLeft. Retarget samples the previous curve before assigning the new one.",
+  "profiles": {
+    "inlineOpen": {
+      "from": "ClosedCompactLeft",
+      "to": "OpenInlineLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 200,
+      "curve": [
+        0,
+        0.35,
+        0.15,
+        1
+      ]
+    },
+    "inlineClose": {
+      "from": "OpenInlineLeft",
+      "to": "ClosedCompactLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 200,
+      "curve": [
+        0,
+        0.35,
+        0.15,
+        1
+      ]
+    },
+    "compactOpen": {
+      "from": "ClosedCompactLeft",
+      "to": "OpenCompactOverlayLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 350,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    },
+    "compactClose": {
+      "from": "OpenCompactOverlayLeft",
+      "to": "ClosedCompactLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 120,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    },
+    "overlayOpen": {
+      "from": "Closed",
+      "to": "OpenOverlayLeft",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 350,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    },
+    "overlayClose": {
+      "from": "OpenOverlayLeft",
+      "to": "Closed",
+      "target": "PaneClipRectangleTransform.TranslateX",
+      "durationMs": 120,
+      "curve": [
+        0.1,
+        0.9,
+        0.2,
+        1
+      ]
+    }
+  },
+  "actualTopButtonSamples": {
+    "home": [
+      {
+        "time": 2164.100000023842,
+        "width": 320,
+        "x": 320,
+        "rust": 320,
+        "animating": true
+      },
+      {
+        "time": 2180.100000023842,
+        "width": 200.2291944675565,
+        "x": 200.22918701171875,
+        "rust": 200.2291944675565,
+        "animating": true
+      },
+      {
+        "time": 2214.100000023842,
+        "width": 124.95017064400247,
+        "x": 124.9501724243164,
+        "rust": 124.95017064400247,
+        "animating": true
+      },
+      {
+        "time": 2264.100000023842,
+        "width": 75.15369555449934,
+        "x": 75.15369415283203,
+        "rust": 75.15369555449934,
+        "animating": true
+      },
+      {
+        "time": 2324.100000023842,
+        "width": 51.600332341484716,
+        "x": 51.60033416748047,
+        "rust": 51.600332341484716,
+        "animating": true
+      },
+      {
+        "time": 2363.100000023842,
+        "width": 48.0020411690395,
+        "x": 48.00204086303711,
+        "rust": 48.0020411690395,
+        "animating": true
+      },
+      {
+        "time": 2364.100000023842,
+        "width": 48,
+        "x": 48,
+        "rust": 48,
+        "animating": false
+      }
+    ],
+    "navigation-view": [
+      {
+        "time": 3811,
+        "width": 320,
+        "x": 320,
+        "rust": 320,
+        "animating": true
+      },
+      {
+        "time": 3827,
+        "width": 200.2291944675565,
+        "x": 200.22918701171875,
+        "rust": 200.2291944675565,
+        "animating": true
+      },
+      {
+        "time": 3861,
+        "width": 124.95017064400247,
+        "x": 124.9501724243164,
+        "rust": 124.95017064400247,
+        "animating": true
+      },
+      {
+        "time": 3911,
+        "width": 75.15369555449934,
+        "x": 75.15369415283203,
+        "rust": 75.15369555449934,
+        "animating": true
+      },
+      {
+        "time": 3971,
+        "width": 51.600332341484716,
+        "x": 51.60033416748047,
+        "rust": 51.600332341484716,
+        "animating": true
+      },
+      {
+        "time": 4010,
+        "width": 48.0020411690395,
+        "x": 48.00204086303711,
+        "rust": 48.0020411690395,
+        "animating": true
+      },
+      {
+        "time": 4011,
+        "width": 48,
+        "x": 48,
+        "rust": 48,
+        "animating": true
+      }
+    ]
+  },
+  "validation": {
+    "fullRustPassed": 496,
+    "targetedRustPassed": 32,
+    "browserPassed": 41,
+    "nativeGeometryCases": 30,
+    "nativeGeometryComparisons": 363,
+    "publicInteractions": 22,
+    "maxPhysicalError": 0.7236351966857946,
+    "topButton": "Actual Gallery pointer clicks on Home and NavigationView pages; rendered Frame x matches Rust at 0/16/50/100/160/199/200 ms, then real pointer reversal. Canvas2D/WebGL2 and real Acrylic pixels remain covered.",
+    "typeScript": true,
+    "sdkDeclarations": true,
+    "controlOrigins": true,
+    "enumDrift": true,
+    "productionBuild": true
+  },
+  "build": {
+    "release": true,
+    "optLevel": 3,
+    "lto": true,
+    "codegenUnits": 1
+  },
+  "evidence": [
+    "out/navigation-top-toggle-all-rust.log",
+    "out/navigation-top-toggle-rust.log",
+    "out/navigation-composition-motion.json",
+    "out/navigation-composition-browser/results.json",
+    "out/navigation-performance/top-toggle-after.json"
+  ],
+  "sources": {
+    "src/navigation.rs": "13089448f1ae811804119418ea1cbe1f0b7d57638c26e4425196f4f4bd6154cc",
+    "src/navigation_motion.rs": "d847e11c24d0162913f61028240b8eea1774cf3622e407454041e84dff885917",
+    "tools/extract-navigation-motion.mjs": "2e7592f5e5ea3072d543fe0547eb25d62ebe16214f5f37130e3af17047248c20",
+    "references/navigation-motion-contract.json": "138126312942191a0ea5709bb75349238f1c754b674b3c076b9a67a1c4b04712",
+    "references/winui/SplitView_themeresources.xaml": "b97b256f454f9b2f6d2f2d7131fbed87227b3858042c003212bc7d44d7862743",
+    "tests/navigation_pane_scene.rs": "e157de93fd54a70ded5dae608135c84da0e1faa872ba6701ba0a712df8259b6c",
+    "gallery/tests/navigation-pane-motion.spec.ts": "3d97548671363eda1318fc02f8b5c41d1cc009549d5a89be840af067a9dca4cd"
+  },
+  "fractionalDpiFollowup": {
+    "date": "2026-11-09",
+    "status": "passed",
+    "record": "references/validation/navigation-fractional-pane.json",
+    "wasmSha256": "c0952d2b24bbff8ecba12d114ed3bdb2d4d1968180c44c1a178741668d3b055e"
+  }
+}

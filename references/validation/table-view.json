@@ -1,0 +1,1164 @@
+{
+  "recordedAt": "2026-11-10T09:56:36.841799+08:00",
+  "acceptedAsFullNativeParity": false,
+  "communityCommit": "665fea52b8ad47a64187d0f202d5281b074f616f",
+  "native": {
+    "run": "references/table-view-native-run.json",
+    "runSha256": "dbad20f54978cf51256f7797fe5095a365528f7d43603938bbaf4cc0d1417e7f",
+    "installedApp": "references/table-view-installed-app.json",
+    "recordCount": 50,
+    "parameters": {
+      "language": "English source resw values, applied through original mutable localized-string properties",
+      "lightAccent": "#0067C0",
+      "darkAccent": "#4CC2FF",
+      "sizeDip": [
+        800,
+        320
+      ],
+      "dpr": 1.25
+    },
+    "referenceImages": {
+      "gallery/public/community-table-view/Light-default.png": "c861bb76374331486106b7794496b36e24e98770415e42d57ab1494afb2451b7",
+      "gallery/public/community-table-view/Light-cell-selected.png": "0145efae796ceec94e2c272c0a0f21dca0f3f263baddd13efbfd59b3496125bb",
+      "gallery/public/community-table-view/Light-row-selected.png": "08f7cbb3406c6ea68e0af76ecf9121542953782404abce643b367784ad8600d6",
+      "gallery/public/community-table-view/Light-editing.png": "61f1a961a7fe2a4029e9984b66366363b95f99455861ce778066dcfb0496a3b3",
+      "gallery/public/community-table-view/Light-sorted.png": "450f76e0546dddea4df04ab83add790d07f2cb502bfbc8d2135a77ac1e81cab6",
+      "gallery/public/community-table-view/Dark-default.png": "af4a9b3c93543ac833e15f507dfc7a7643d12f11edda65169e93ce9316f817c6",
+      "gallery/public/community-table-view/Dark-cell-selected.png": "31569a45a8f6826bee0b8e22982e94601d29193c35053416e9c8a05a1c036f73",
+      "gallery/public/community-table-view/Dark-row-selected.png": "afc9a7671cb715b40bb301c3e4eab035f08184ef508e06cbadff8beff65b9b98",
+      "gallery/public/community-table-view/Dark-editing.png": "eb81f2c10bedf34094db444ff0ffed25c20ceb759cd67ff005dd5edce1b8829a",
+      "gallery/public/community-table-view/Dark-sorted.png": "0d3742d4bc628c6e46d4502a3eaed64ce044c33cd6e6ef7f075fcf7821cd3ab5"
+    }
+  },
+  "functional": {
+    "rustPassedObservedInSession": 140,
+    "rustCommand": "cargo test --locked --test table_view --test overlays --test composed --test input_behavior --test table_view_check_press --test table_view_frozen_edit --test collections; cargo test --locked --test picker_controls",
+    "browser": {
+      "startTime": "2026-11-10T01:49:11.692Z",
+      "duration": 215972.076,
+      "expected": 26,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browserTarget": "http://127.0.0.1:5173",
+    "browserResultSha256": "c29cbd9d5f2bbbd8c1d61d04c7d7ab11400250ac7390276bc29742f7528467d8",
+    "checks": [
+      "source fingerprints and MIT bytes",
+      "TypeScript strict and public enum checks",
+      "Rust/React origin audit",
+      "release WASM",
+      "Vite production build",
+      "SDK declarations"
+    ],
+    "previousBroaderBrowser": {
+      "path": "out/table-view-check-press-broader-browser.json",
+      "sha256": "bdfabc7aefd302ee5dbd1e66d91a79d088dd063cd0135a0e439ee0d63aa80358",
+      "stats": {
+        "startTime": "2026-11-09T13:45:03.302Z",
+        "duration": 223860.121,
+        "expected": 22,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "wasmSha256": "9fa99927a5a38d11ef2f306a87b967a3257dab6c43c4e13a17f6fa1b53ee7dd3",
+      "scope": "Earlier full TableView suite, before the stale-source binding guard; latest targeted browser checks are recorded separately above"
+    }
+  },
+  "reportedRegressions": {
+    "filterCheckbox": "Checked/Unchecked/Indeterminate events update the draft; pointer, Space, Select All, Cancel and Ok verified on default Gallery",
+    "popupOcclusion": "Floating pointer route stops at its own surface; exposed table backing pixels unchanged while hovering checkbox",
+    "cornerMenuIcons": "Source SelectAll, ClearSelection, Copy, Paste symbols and EDE1 export glyph; six leading icon columns checked for actual painted ink",
+    "nativeMenuBoundary": "Original menu visual tree captured; main-client PrintWindow excludes separate MenuFlyout HWND and is not menu pixel acceptance",
+    "cellCheckBoxPress": {
+      "scope": "Actual browser pointer hold, leave/release cancellation, keyboard hold/release, business binding, and checked/unchecked glyph pixels; not native pixel acceptance",
+      "rustFix": "Generated boolean cells delegate to shared SDK control capture/Pressed/release. State events write the binding after release; cancellable editors and caller templates keep their own commit contract. Read-only columns preserve enabled visuals and disable hit testing.",
+      "screenshots": {
+        "out/table-view-checkbox-unchecked-hover.png": "d58be06b9bc7b2335538c15bd4f7312a1ab1b0b2266ae7cb131224251d00b2b8",
+        "out/table-view-checkbox-unchecked-pressed.png": "c28163df33892377bfb0cced8c104cf090af7ae0f73c54ffeed4f9ce411c9437",
+        "out/table-view-checkbox-checked-hover.png": "6f0b50ab99ade08fe41e965a1e0df043482bd763db608ce2232e315a1113e599",
+        "out/table-view-checkbox-checked-pressed.png": "3cdac8514f8666042f9d079c3b0f339b9341b1737b2ff34652383b1bd8a1f999"
+      },
+      "sourceSha256": "03ea817f2f9a60244afb8a946b8b2e4cf6b2be92c5d7fc16bb5395645aa179fb",
+      "galleryOrReactProductPatch": false,
+      "computerUse": false
+    },
+    "filterChromeHover": {
+      "evidence": {
+        "recordedAt": "2026-11-10T01:49:35.330Z",
+        "wasmSha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+        "scope": "Actual default Gallery pointer moves, table body backing pixels excluding scrollbar animations, neighbouring table pixels and platform event ownership; no native parity claim",
+        "samples": [
+          {
+            "name": "top padding",
+            "x": 315.2,
+            "y": 37,
+            "backingPixelsUnchanged": true,
+            "neighbourPixelsUnchanged": true,
+            "ownerReceivesPointer": true
+          },
+          {
+            "name": "left margin",
+            "x": 217.2,
+            "y": 196,
+            "backingPixelsUnchanged": true,
+            "neighbourPixelsUnchanged": true,
+            "ownerReceivesPointer": true
+          },
+          {
+            "name": "table-filter-unsort",
+            "x": 349.2,
+            "y": 192.8,
+            "backingPixelsUnchanged": true,
+            "neighbourPixelsUnchanged": true,
+            "ownerReceivesPointer": true
+          },
+          {
+            "name": "table-filter-clear",
+            "x": 349.2,
+            "y": 228,
+            "backingPixelsUnchanged": true,
+            "neighbourPixelsUnchanged": true,
+            "ownerReceivesPointer": true
+          },
+          {
+            "name": "separator",
+            "x": 349.2,
+            "y": 108,
+            "backingPixelsUnchanged": true,
+            "neighbourPixelsUnchanged": true,
+            "ownerReceivesPointer": true
+          },
+          {
+            "name": "button gap",
+            "x": 349.6,
+            "y": 572,
+            "backingPixelsUnchanged": true,
+            "neighbourPixelsUnchanged": true,
+            "ownerReceivesPointer": true
+          }
+        ],
+        "insideChromeKeepsFilterOpen": true,
+        "insideChromeDoesNotSelectCell": true,
+        "outsideTableHoverRestored": true
+      },
+      "evidenceSha256": "b8d046d9868d1c380f12d042bed9a1f7d0ebdce1c8ab519011d7ac9d4b7d6b88",
+      "screenshotSha256": "8e0c2ee222903899a0f46908e5a1ea36c3f9f499f396697f1a0eabbc75997b76",
+      "rustHitTestSourceSha256": "734344a89745a3c4a0486e79011b932a2fed0eccfc40b714308ac347570ab551",
+      "rustPlatformInputSourceSha256": "5acc0223894345e5b6ccd659a409d182a6f00775e07b1c8fcc6dc41310a0b745",
+      "fix": "Shared Rust popup window hit boundary owns chrome; Rust/WASM input islands inside each popup prevent cross-scene fallthrough without intercepting its controls; outside hover remains live",
+      "galleryOrReactProductPatch": false,
+      "computerUse": false
+    }
+  },
+  "rustInputAndFrameFixes": {
+    "lightDismiss": "Rust closes/consumes outside presses before table templates process them",
+    "filterScrollThumb": "Rust captures scroll-owner thumb drag outside the surface until release",
+    "layoutReuse": "Rust reuses measured rows until layout inputs or realized range change",
+    "textMotion": "Glyph baseline and phase remain stable before continuous scroll transforms",
+    "frozenEditing": "Reveal uses refreshed Canvas geometry, frozen-band insets and arranged pixel widths; delayed template content receives initial focus once",
+    "comboEditor": "Rust passes collectionItems and initial selected text to its existing ComboBox; actual popup ink verified outside the table body",
+    "galleryWorkaround": false
+  },
+  "visualEvidence": {
+    "acceptedAsFullParity": false,
+    "scope": "Native RTB versus browser canvas backing pixels; composited screenshots retained separately. No physical-input or Composition acceptance",
+    "results": [
+      {
+        "theme": "Light",
+        "state": "default",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.0551175,
+            "meanMaximumChannelError": 1.0421575
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.042463414634146344,
+            "meanMaximumChannelError": 1.0995121951219513
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.06634640522875818,
+            "meanMaximumChannelError": 1.214127450980392
+          },
+          {
+            "part": "empty",
+            "changedFraction": 7.692307692307693e-05,
+            "meanMaximumChannelError": 0.004923076923076923
+          }
+        ]
+      },
+      {
+        "theme": "Light",
+        "state": "cell-selected",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.0568075,
+            "meanMaximumChannelError": 1.79261
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.042463414634146344,
+            "meanMaximumChannelError": 1.0995121951219513
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.06855555555555555,
+            "meanMaximumChannelError": 2.1951111111111112
+          },
+          {
+            "part": "empty",
+            "changedFraction": 7.692307692307693e-05,
+            "meanMaximumChannelError": 0.004923076923076923
+          }
+        ]
+      },
+      {
+        "theme": "Light",
+        "state": "row-selected",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.0650275,
+            "meanMaximumChannelError": 1.1695175
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.042463414634146344,
+            "meanMaximumChannelError": 1.0995121951219513
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.07930065359477124,
+            "meanMaximumChannelError": 1.380611111111111
+          },
+          {
+            "part": "empty",
+            "changedFraction": 7.692307692307693e-05,
+            "meanMaximumChannelError": 0.004923076923076923
+          }
+        ]
+      },
+      {
+        "theme": "Light",
+        "state": "editing",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.05856,
+            "meanMaximumChannelError": 1.5353225
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.05948780487804878,
+            "meanMaximumChannelError": 1.1605365853658536
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.06856535947712418,
+            "meanMaximumChannelError": 1.8506111111111112
+          },
+          {
+            "part": "empty",
+            "changedFraction": 7.692307692307693e-05,
+            "meanMaximumChannelError": 0.004923076923076923
+          }
+        ]
+      },
+      {
+        "theme": "Light",
+        "state": "sorted",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.0528775,
+            "meanMaximumChannelError": 1.052945
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.04441463414634146,
+            "meanMaximumChannelError": 1.3004634146341463
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.06315686274509803,
+            "meanMaximumChannelError": 1.2013039215686274
+          },
+          {
+            "part": "empty",
+            "changedFraction": 7.692307692307693e-05,
+            "meanMaximumChannelError": 0.004923076923076923
+          }
+        ]
+      },
+      {
+        "theme": "Dark",
+        "state": "default",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.049385,
+            "meanMaximumChannelError": 1.2229275
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.04502439024390244,
+            "meanMaximumChannelError": 1.4582439024390244
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.05851307189542484,
+            "meanMaximumChannelError": 1.4030261437908498
+          },
+          {
+            "part": "empty",
+            "changedFraction": 5.769230769230769e-05,
+            "meanMaximumChannelError": 0.001096153846153846
+          }
+        ]
+      },
+      {
+        "theme": "Dark",
+        "state": "cell-selected",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.0536275,
+            "meanMaximumChannelError": 1.9871325
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.04502439024390244,
+            "meanMaximumChannelError": 1.4582439024390244
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.06405882352941177,
+            "meanMaximumChannelError": 2.4019869281045754
+          },
+          {
+            "part": "empty",
+            "changedFraction": 5.769230769230769e-05,
+            "meanMaximumChannelError": 0.001096153846153846
+          }
+        ]
+      },
+      {
+        "theme": "Dark",
+        "state": "row-selected",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.0624,
+            "meanMaximumChannelError": 1.4164225
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.04502439024390244,
+            "meanMaximumChannelError": 1.4582439024390244
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.07552614379084967,
+            "meanMaximumChannelError": 1.6559607843137254
+          },
+          {
+            "part": "empty",
+            "changedFraction": 5.769230769230769e-05,
+            "meanMaximumChannelError": 0.001096153846153846
+          }
+        ]
+      },
+      {
+        "theme": "Dark",
+        "state": "editing",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.055375,
+            "meanMaximumChannelError": 1.6527425
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.06295121951219512,
+            "meanMaximumChannelError": 1.6179268292682927
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.06394117647058824,
+            "meanMaximumChannelError": 1.9434803921568626
+          },
+          {
+            "part": "empty",
+            "changedFraction": 5.769230769230769e-05,
+            "meanMaximumChannelError": 0.001096153846153846
+          }
+        ]
+      },
+      {
+        "theme": "Dark",
+        "state": "sorted",
+        "differences": [
+          {
+            "part": "all",
+            "changedFraction": 0.049595,
+            "meanMaximumChannelError": 1.2445425
+          },
+          {
+            "part": "header",
+            "changedFraction": 0.04707317073170732,
+            "meanMaximumChannelError": 1.6691219512195121
+          },
+          {
+            "part": "body",
+            "changedFraction": 0.05851307189542484,
+            "meanMaximumChannelError": 1.4030261437908498
+          },
+          {
+            "part": "empty",
+            "changedFraction": 5.769230769230769e-05,
+            "meanMaximumChannelError": 0.001096153846153846
+          }
+        ]
+      }
+    ]
+  },
+  "motionEvidence": {
+    "selection": "WinUI 1.6.4 ListViewBaseItemPresenter: 83ms opacity, 167ms scale; source curve retained",
+    "resetEntrance": "Native EnterPage description: 667ms, 28 DIP, no staggering",
+    "nativeFrames": "out/table-view-native/*-own-window.png; actual sampling times in native.json",
+    "boundary": "RTB and programmatic own-window frames do not certify physical input or Composition presentation timestamps"
+  },
+  "intentionalException": "User policy suppresses black native focus/current-cell outlines while preserving focus and keyboard navigation",
+  "notFullyPorted": [
+    "ObservableCollection single-row AddDelete transition branches",
+    "complete Content/Reorder transition lifecycle",
+    "natural variable row/detail heights",
+    "CLR/XAML/WinRT runtime object interfaces"
+  ],
+  "notAccepted": [
+    "full popup Acrylic/Composition comparison",
+    "all editor 1.6.4 pixel matrices",
+    "all frozen/drag/detail states",
+    "native system high contrast and complete touch-column input matrix",
+    "all animation interruption, reversal and unloading branches"
+  ],
+  "sdkWasmSha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+  "licenseSha256": "7669376774e3395bd62ad1c07a453fdae22c24db0d55c22953564a4a4f046010",
+  "groupingResearch": {
+    "path": "references/table-view-grouping-research.json",
+    "sha256": "0fa8186744aa8115f4acd218c8c9836a8d44ec52e5f8ca23a4bb20a9181633a3",
+    "scope": "Historical v1.5.0 investigation, superseded by the authorized 1.5.1 release grouping supplement"
+  },
+  "groupingRelease": {
+    "path": "references/table-view-grouping-release.json",
+    "sha256": "10b7e3e00d2dd69255de34934188d193a8edef6f782ff4aa53f45340d6c5be1a",
+    "runtimeSourceSha256": "62681b5ba121ce76d231e0c21c5e80eb0f960a03de07b0c815164ee66539f835",
+    "scope": "Authorized 1.5.1 grouping supplement; actual NuGet release DLL in community SampleApp, separate from original control baseline; static/functional evidence does not imply full native or physical 120Hz acceptance",
+    "computerUse": false
+  },
+  "groupingVisualEvidence": {
+    "path": "out/table-view-grouping-visual.json",
+    "sha256": "f1a05b61fd5640a58b3b350da500359e7d3d68e4fe4ba8dc953b7a9f25a0aa5d",
+    "evidence": {
+      "wasmSha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+      "native": "NuGet 1.5.1 unmodified DLL in community SampleApp",
+      "computerUse": false,
+      "acceptedAsFullParity": false,
+      "scope": "12 static states, actual geometry and backing pixels; Composition and physical 120Hz require separate acceptance",
+      "results": [
+        {
+          "theme": "Light",
+          "state": "collapsed",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 68.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 68.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Operations",
+              "actual": {
+                "x": 0.8,
+                "y": 104.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 104.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Research",
+              "actual": {
+                "x": 0.8,
+                "y": 140.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 140.8000030517578,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.02100978731413514,
+            "meanMaximumChannelError": 1.099025974025974,
+            "max": 218
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Light",
+          "state": "expanded",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 313.6,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 313.5999755859375,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.022092038396386224,
+            "meanMaximumChannelError": 1.0481131187652928,
+            "max": 153
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Light",
+          "state": "sticky",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 223.60000000000002,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 223.59999084472656,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.020727460944852248,
+            "meanMaximumChannelError": 0.7457651044607566,
+            "max": 136
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Light",
+          "state": "multi",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": false,
+              "actual": {
+                "x": 0.8,
+                "y": 68.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 68.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": true,
+              "actual": {
+                "x": 0.8,
+                "y": 186.39999999999998,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 186.40000915527344,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.024491812535290796,
+            "meanMaximumChannelError": 1.7066158479201958,
+            "max": 218
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Light",
+          "state": "multi-collapsed",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 68.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 68.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": false,
+              "actual": {
+                "x": 0.8,
+                "y": 104.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 104.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": true,
+              "actual": {
+                "x": 0.8,
+                "y": 222.40000000000003,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 222.40000915527344,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.02256258234519104,
+            "meanMaximumChannelError": 1.155844155844156,
+            "max": 173
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Light",
+          "state": "count-order",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 313.6,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 313.5999755859375,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.02256258234519104,
+            "meanMaximumChannelError": 1.2963250517598344,
+            "max": 218
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Dark",
+          "state": "collapsed",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 68.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 68.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Operations",
+              "actual": {
+                "x": 0.8,
+                "y": 104.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 104.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Research",
+              "actual": {
+                "x": 0.8,
+                "y": 140.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 140.8000030517578,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.04434876717485413,
+            "meanMaximumChannelError": 1.2616694899303595,
+            "max": 216
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Dark",
+          "state": "expanded",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 313.6,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 313.5999755859375,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.045642763034067384,
+            "meanMaximumChannelError": 1.2991012610577828,
+            "max": 216
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Dark",
+          "state": "sticky",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 223.60000000000002,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 223.59999084472656,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.021456804065499716,
+            "meanMaximumChannelError": 0.8725531714662149,
+            "max": 157
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Dark",
+          "state": "multi",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": false,
+              "actual": {
+                "x": 0.8,
+                "y": 68.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 68.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": true,
+              "actual": {
+                "x": 0.8,
+                "y": 186.39999999999998,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 186.40000915527344,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.045595708639186903,
+            "meanMaximumChannelError": 1.3483907396950876,
+            "max": 216
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Dark",
+          "state": "multi-collapsed",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 68.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 68.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": false,
+              "actual": {
+                "x": 0.8,
+                "y": 104.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 104.80000305175781,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": true,
+              "actual": {
+                "x": 0.8,
+                "y": 222.40000000000003,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 222.40000915527344,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.022821381517033692,
+            "meanMaximumChannelError": 1.2409655561829476,
+            "max": 198
+          },
+          "matchingVisibleItems": true
+        },
+        {
+          "theme": "Dark",
+          "state": "count-order",
+          "groupGeometry": [
+            {
+              "key": "Design",
+              "actual": {
+                "x": 0.8,
+                "y": 32.8,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 32.79999923706055,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            },
+            {
+              "key": "Engineering",
+              "actual": {
+                "x": 0.8,
+                "y": 313.6,
+                "width": 775.2,
+                "height": 36
+              },
+              "native": {
+                "x": 0.800000011920929,
+                "y": 313.5999755859375,
+                "width": 774.4000244140625,
+                "height": 36
+              }
+            }
+          ],
+          "firstHeaderPixels": {
+            "changedFraction": 0.04538396386222473,
+            "meanMaximumChannelError": 1.8227931488801055,
+            "max": 216
+          },
+          "matchingVisibleItems": true
+        }
+      ]
+    },
+    "reactBoundary": "Public API, business callbacks and native content-slot plumbing only; grouping/input/layout/state/drawing stay in Rust"
+  },
+  "historicalPerformanceEvidence": {
+    "path": "references/validation/table-view-performance.json",
+    "sha256": "b3c5964373d052de07289cd5cea63bd75985a736c7aee895cfce3709ddf50ad6",
+    "wasmSha256": "ad419975f95be4437a348e2b9a197852bc6639b8112b6e83a31f514e99dee171",
+    "scope": "Observed profiled headless Chrome samples on this machine; not a constant frame-rate guarantee or full native animation parity acceptance"
+  },
+  "historicalHighRefreshEvidence": {
+    "path": "references/validation/table-view-120.json",
+    "sha256": "89e02f1244c000c5f7e5258774969574f5e36b785b9b2e46175f5ee352b912d5",
+    "wasmSha256": "fd826460fd2a5d3e7d30b56643c0c1a9ed4a56eafe35c56a4cb82790655a1407",
+    "appliesToCurrentSdk": false,
+    "scope": "120Hz is the requested BeginFrame sampling cadence and 8.33ms CPU draw budget. Actual RAF distributions and misses are retained; neither CPU budget success nor CLI frame control certifies physical 120Hz presentation. Native SampleApp runs on the available approximately 60Hz presentation clock. Static pixel differences, native anchoring and editor geometry remain explicit; functional passes do not close those gates."
+  },
+  "servedSdk": {
+    "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm",
+    "sha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+    "bytes": 9793070,
+    "verifiedAt": "2026-11-10T09:56:36.250427+08:00"
+  },
+  "groupingPerformance": {
+    "path": "references/validation/table-view-grouping.json",
+    "wasmSha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+    "requestedHz": 120,
+    "budgetMs": 8.333333333333334,
+    "physicalPresentationAccepted": false
+  },
+  "groupChevronFollowUp": {
+    "path": "references/validation/table-view-chevron.json",
+    "sdkWasmSha256": "541f9779e27b3ca36f1b2c322a44d53540be04b50bfd67d828ac602da7e615ca",
+    "acceptedScope": "Collapsed/right and expanded/down glyph pixels plus world transforms; single/all collapse and re-expansion; Canvas2D/WebGL2, light/dark",
+    "computerUse": false
+  }
+}

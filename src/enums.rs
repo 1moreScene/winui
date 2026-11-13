@@ -1066,6 +1066,12 @@ pub enum NodeKind {
     /// Editable rich text document; Rust owns formatting, selection and history.
     #[serde(rename = "RichEditBox")]
     RichEditBox,
+    /// CommunityToolkit Segmented selection control.
+    #[serde(rename = "Segmented")]
+    Segmented,
+    /// Declarative item container owned by Segmented.
+    #[serde(rename = "SegmentedItem")]
+    SegmentedItem,
 }
 impl NodeKind {
     pub fn as_str(self) -> &'static str {
@@ -1187,6 +1193,8 @@ impl NodeKind {
             Self::NavigationViewItemPresenter => "NavigationViewItemPresenter",
             Self::ItemsRepeaterScrollHost => "ItemsRepeaterScrollHost",
             Self::RichEditBox => "RichEditBox",
+            Self::Segmented => "Segmented",
+            Self::SegmentedItem => "SegmentedItem",
         }
     }
 }
@@ -5083,6 +5091,30 @@ impl TableViewGroupSortMode {
         match self {
             Self::Key => "Key",
             Self::Count => "Count",
+        }
+    }
+}
+
+/// CommunityToolkit Segmented template style.
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, PartialEq, Eq, Default)]
+pub enum SegmentedStyle {
+    /// Equal item sizes with a shared border and selection pill.
+    #[serde(rename = "Default")]
+    #[default]
+    Default,
+    /// Content-sized items with an underline selection pill.
+    #[serde(rename = "Pivot")]
+    Pivot,
+    /// Content-sized buttons with an accent selected background.
+    #[serde(rename = "Button")]
+    Button,
+}
+impl SegmentedStyle {
+    pub fn as_str(self) -> &'static str {
+        match self {
+            Self::Default => "Default",
+            Self::Pivot => "Pivot",
+            Self::Button => "Button",
         }
     }
 }

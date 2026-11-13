@@ -2312,11 +2312,19 @@
         }
       ],
       "nativeNamespace": "Microsoft.UI.Xaml.Controls",
-      "winuiSource": null,
-      "requiredResources": null,
-      "hostDependencies": null,
-      "implementation": "not started; source mapping not audited",
-      "acceptance": "native equivalence not accepted"
+      "winuiSource": "dxaml/xcp/core/native/text/Controls/RichEditBox.cpp",
+      "requiredResources": [
+        "DefaultRichEditBoxStyle",
+        "TextControl theme resources"
+      ],
+      "hostDependencies": [
+        "IME",
+        "plain-text / RTF / SDK rich-document clipboard",
+        "PNG/JPEG image decode and file paste",
+        "accessibility textarea"
+      ],
+      "implementation": "Rust rich document, RTF import/export, PNG/JPEG objects, Presentation MathML layout and OfficeMath RTF, selection, IME and history; typed TS/React and 6 interactive examples; full native math editing/TOM pending; docs/rich-edit-box.md",
+      "acceptance": "Rust/browser validation and 18 pinned SDK native probe cases; full native pixel and math-engine equivalence not accepted"
     },
     {
       "id": "richtextblock",

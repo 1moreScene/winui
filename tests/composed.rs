@@ -28,6 +28,28 @@ fn scene() -> Scene {
     s
 }
 #[test]
+fn dialog_stretched_controls_stay_inside_horizontal_viewport_with_long_editor_text() {
+    for dpr in [1., 1.25, 1.5, 2.] {
+        for width in [360., 690., 1024., 1440.] {
+            let mut s = Scene::new(Theme::Light, true);
+            s.resize(width, 850., dpr).unwrap();
+            let dialog = s.create(s.root, NodeKind::ContentDialog, json!({"title":"Export","primaryButtonText":"Download","closeButtonText":"Close"})).unwrap();
+            let stack = s.create(dialog, NodeKind::StackPanel, json!({"spacing":14})).unwrap();
+            let combo = s.create(stack, NodeKind::ComboBox, json!({"selectedIndex":0,"collectionItems":[{"id":"tsx","text":"React / TSX"}]})).unwrap();
+            let editor = s.create(stack, NodeKind::TextBox, json!({"text":"very_long_source_line ".repeat(200),"acceptsReturn":true,"isReadOnly":true,"height":240})).unwrap();
+            action(&mut s, dialog, ComposedAction::Open);
+            frame(&mut s, 500.);
+            let parts = &s.nodes[&dialog].composed.parts;
+            let border = &s.nodes[&parts["DialogBorder"]];
+            let content = &s.nodes[&parts["Content"]];
+            assert!(content.rect.width < border.rect.width, "content must retain native dialog padding: {width}, {dpr}");
+            for id in [stack, combo, editor] {
+                assert!(s.nodes[&id].rect.width <= content.rect.width + 1. / dpr, "stretched child must fit content: {width}, {dpr}, {:?}", s.nodes[&id].rect);
+            }
+        }
+    }
+}
+#[test]
 fn combo_popup_restores_official_acrylic_and_separates_the_shadow_surface() {
     use winui_wasm::{render::Draw, resources::Resources};
     for theme in [Theme::Light, Theme::Dark, Theme::HighContrast] {

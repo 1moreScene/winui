@@ -1,0 +1,205 @@
+{
+  "recordedAtUtc": "2026-11-09T03:19:44.723482+00:00",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "nativeAppOperatedThisTurn": false,
+  "nativeReference": {
+    "path": "references/validation/motion-native-layout.json",
+    "sha256": "190078b0625d1962a1471a1e9b5ac729bd616a7db95328b87f53adeb3f298c91",
+    "origin": "Previously captured independent matching-SDK native probe, not new Store Gallery window screenshots.",
+    "contentWidths": [
+      640,
+      1143
+    ],
+    "browserDpr": [
+      1,
+      1.25
+    ],
+    "geometryToleranceDip": 2,
+    "pixelOrFrameParityClaimed": false
+  },
+  "rust": {
+    "command": "cargo test --locked",
+    "suites": 50,
+    "passed": 431,
+    "failed": 0,
+    "log": "out/motion-native-rust-tests.log"
+  },
+  "browser": {
+    "command": "npx --prefix gallery playwright test -c gallery/playwright.motion.config.ts",
+    "stats": {
+      "startTime": "2026-11-09T03:11:06.069Z",
+      "duration": 82946.567,
+      "expected": 11,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "checks": [
+      {
+        "name": "Canvas2D: theme-transitions samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "Canvas2D: connected-animation samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "Canvas2D: xaml-comp-interop samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "WebGL2: theme-transitions samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "WebGL2: connected-animation samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "WebGL2: xaml-comp-interop samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "implicit background and local theme examples use the Rust scene",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "public SDK springs, expression binding, cancellation and disposal run without Gallery logic",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "official interop geometry and native controls at DPR 1",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "official interop geometry and native controls at DPR 1.25",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "connected templates preserve native typography, card input and keyboard activation",
+        "ok": true,
+        "status": "passed"
+      }
+    ],
+    "report": "out/motion-browser-results.json",
+    "sourceSnapshot": "out/motion-parity-gallery",
+    "isolatedWasm": "out/motion-native-release-wasm"
+  },
+  "build": {
+    "profile": "Repository default release: opt-level=3, LTO=true, codegen-units=1, panic=abort, strip=true",
+    "wasmSha256": "4331657bb2af706fcac40ddffe329f6fcdd55040eaece757b7b45eed9ed3e160",
+    "bytes": 8306461,
+    "artifact": "gallery/src/wasm/winui_bg.wasm",
+    "glueMatches": true,
+    "productionAssets": [
+      "gallery/dist/assets/winui_bg-s0uo6aLC.wasm"
+    ],
+    "strictTypecheck": true,
+    "controlOriginCheck": true,
+    "enumDriftCheck": true,
+    "declarations": true,
+    "viteProductionBuild": true,
+    "buildLog": "out/motion-native-release-build.log",
+    "productionBuildLog": "out/motion-native-vite-build.log"
+  },
+  "production": {
+    "casesPassed": 6,
+    "themes": [
+      "Light",
+      "Dark",
+      "HighContrast"
+    ],
+    "routes": [
+      "xaml-comp-interop",
+      "connected-animation"
+    ],
+    "pageErrors": 0,
+    "report": "out/motion-production/results.json"
+  },
+  "development": {
+    "baseUrl": "http://127.0.0.1:5173",
+    "casesPassed": 6,
+    "actualWasmResponsesMatched": 6,
+    "pageErrors": 0,
+    "report": "out/motion-development/results.json"
+  },
+  "sources": [
+    {
+      "path": "src/scene/slider.rs",
+      "sha256": "30944ede4e89cec9b4880f4507fe0f381a940a92339b292b7c3249503991356c"
+    },
+    {
+      "path": "src/scene/properties.rs",
+      "sha256": "1cab0ca1d3413615f2d26f52916397ee6d6003ab71b969eff037b6840335fe83"
+    },
+    {
+      "path": "src/scene/input.rs",
+      "sha256": "f3efb48f7c4308c4db5d573099ada83929b34c380a236f8bb295ff5e10f0c60f"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "c664c6c8ff772648c64a64b4549efc7957fe952e85bdf3435564176b543b06de"
+    },
+    {
+      "path": "src/typography.rs",
+      "sha256": "bb36b6db38f953742b81b12510416a61466f74dbc5c8c6a29ddbf9bcf1d12867"
+    },
+    {
+      "path": "src/scene/motion_effects.rs",
+      "sha256": "ee06c017a2a880a4d1a26820b480915946410d9711b3747114010fac22ce2fee"
+    },
+    {
+      "path": "gallery/src/MotionExample.tsx",
+      "sha256": "c9d5966964aaa924c01853e1f9853eef5a4cdac1bba59bea7899c2dfe2a82c34"
+    },
+    {
+      "path": "gallery/src/ConnectedAnimationSamples.tsx",
+      "sha256": "59353b05eac1c75d964c57ffe11bf0f9e1eb10b0e71beffca73a5254135697a5"
+    },
+    {
+      "path": "gallery/src/MotionPages.tsx",
+      "sha256": "e807d5f61db3ea8979aef100ae69f7b2fdaca992e75ae877fbede5cb870ae673"
+    },
+    {
+      "path": "gallery/src/motion-gallery.css",
+      "sha256": "6b583ffd24b39984d0d9c1f7efa2bb4ff06655e50eea7e56db7fdccda8278d23"
+    },
+    {
+      "path": "gallery/src/official-motion.json",
+      "sha256": "7cf51a9d5bbbe5c2f20f95577f600fd6b046cd5f1cac8bb77c0e921e9beb0591"
+    },
+    {
+      "path": "tools/extract-gallery-motion.py",
+      "sha256": "3da4f6d0f737673e7b097cd7bce74e420be9c29698d1feccd98ea6bedaf30659"
+    },
+    {
+      "path": "tools/validate-motion-production.mjs",
+      "sha256": "55e689fc31d4b89a84695ec487309b1b4196794d0951c6decf7ebdc56a364594"
+    },
+    {
+      "path": "tests/motion_gallery_layout.rs",
+      "sha256": "a8941809ed73a4520ac082316de7b36ce9143fb01467bdbc41b7b13dd33c8c85"
+    },
+    {
+      "path": "gallery/tests/motion-effects.spec.ts",
+      "sha256": "b075e1ed144678d126b387ca90f94d38740aa8da4b050032035711574c2a09e2"
+    }
+  ],
+  "remaining": [
+    "No new native Store-window pixel/frame comparison; native app operation was prohibited.",
+    "3D Z / ThemeShadow and exact complex transparent-layer crossfade remain outside the current 2D compositor.",
+    "Samples retain same-Scene business navigation rather than implementing complete native Frame lifecycle.",
+    "ItemsRepeater TabFocusNavigation.Once remains unsupported."
+  ]
+}

@@ -9,7 +9,7 @@ if(sha(readFileSync(new URL('packages/winui-wasm/src/assets/winui-icons.woff',ro
 for(const [name,hash] of Object.entries(manifest.sources))if(sha(readFileSync(new URL(`third_party/icon-fonts/${name}`,root)))!==hash)throw Error(`Icon font source changed: ${name}`);
 const coverage=new Set(manifest.codepoints),missing=[];
 const walk=path=>{path=path instanceof URL?fileURLToPath(path):path;return readdirSync(path,{withFileTypes:true}).flatMap(e=>e.isDirectory()?(e.name==='wasm'?[]:walk(resolve(path,e.name))):[resolve(path,e.name)]);};
-const paths=[...walk(new URL('src',root)),...walk(new URL('gallery/src',root)),...walk(new URL('packages/winui-wasm/src',root)),...readdirSync(new URL('references',root)).filter(p=>p.endsWith('template.json')).map(p=>new URL(`references/${p}`,root))];
+const paths=[...walk(new URL('src',root)),...walk(new URL('gallery/src',root)),...walk(new URL('designer/src',root)),...walk(new URL('packages/winui-wasm/src',root)),...readdirSync(new URL('references',root)).filter(p=>p.endsWith('template.json')).map(p=>new URL(`references/${p}`,root))];
 for(const path of paths){
  if(!['.rs','.ts','.tsx','.css','.json'].includes(extname(path instanceof URL?path.pathname:path)))continue;
  const text=readFileSync(path,'utf8');

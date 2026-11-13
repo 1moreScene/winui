@@ -39,7 +39,8 @@ export interface RichEditDocument {
 /** RichEditBox accepts plain text or a rich document, with UTF-16 selections.
  * Defaults: multiline, wrapping and spell check enabled. RTF and Presentation
  * MathML are parsed by Rust; the full Windows TOM object model is not replicated. */
-export interface RichEditBoxOptions extends TextBoxOptions {
+export interface RichEditBoxOptions extends TextBoxOptions,
+  Pick<import('./scene').ScrollViewerOptions, 'horizontalScrollMode' | 'verticalScrollMode' | 'horizontalScrollBarVisibility' | 'verticalScrollBarVisibility'> {
   /** Initial/controlled rich document. Supply only one of text, document, rtf or mathML per update. */
   document?: RichEditDocument;
   /** Initial/controlled RTF. Set only one content source per update. */ rtf?:string;

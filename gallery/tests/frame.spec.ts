@@ -4,7 +4,7 @@ import {NavigationCacheMode as C,NavigationTransition as T} from 'winui-wasm';
 test('Frame home navigation retains page instance, scroll and browser history',async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto('/#all');
-  await expect.poll(()=>page.evaluate(()=>window.gallery.frame?.snapshot.current?.page)).toBe('#all');
+  await expect.poll(()=>page.evaluate(()=>window.gallery?.frame?.snapshot.current?.page)).toBe('#all');
   const initial=await page.evaluate(()=>window.gallery.frame!.snapshot.currentInstance);
   const active=()=>page.locator('[data-frame-instance]:not([hidden]):not([inert])');
   await active().locator('.gallery-scroll-content').evaluate(e=>e.scrollTop=350);
@@ -94,7 +94,7 @@ test('NavigationView Frame sample reuses enabled state and recreates disabled pa
 
 test('cached progress pages suspend their Canvas frame scheduling',async({page})=>{
   await page.goto('/#progress-ring');
-  await expect.poll(()=>page.evaluate(()=>window.gallery.frame?.snapshot.current?.page)).toBe('#progress-ring');
+  await expect.poll(()=>page.evaluate(()=>window.gallery?.frame?.snapshot.current?.page)).toBe('#progress-ring');
   await expect.poll(()=>page.evaluate(()=>!!window.progressScenes?.['ring-indeterminate'])).toBe(true);
   await page.evaluate(()=>location.hash='#home');
   await expect.poll(()=>page.evaluate(()=>window.gallery.frame!.snapshot.animating)).toBe(false);

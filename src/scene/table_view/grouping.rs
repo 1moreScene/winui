@@ -105,7 +105,7 @@ pub(super) fn build(
         for &row in rows {
             let key = q.items[row]
                 .group_values
-                .get(&desc.column)
+                .as_ref().and_then(|values| values.get(&desc.column))
                 .unwrap_or_else(|| {
                     col.map(|c| operation(&q.items[row], c))
                         .unwrap_or_else(|| super::path(&q.items[row].values, &desc.column))

@@ -1807,7 +1807,9 @@ fn activating_group_templates_keeps_a_caller_subtree_mounted_before_arrange() {
  let(mut s,id)=scene(8);s.update(vec![Update{id,patch:json!({"table":{"groups":[{"column":"group"}],"defaultGroupState":"Expanded"}})}]).unwrap();s.layout(&mut Measure);
  let slot=state(&mut s,id)["realizedGroups"][0]["container"].as_u64().unwrap() as u32;
  let text=s.create(slot,NodeKind::TextBlock,json!({"text":"Caller group template"})).unwrap();
+ s.events.clear();
  s.update(vec![Update{id,patch:json!({"table":{"hasGroupHeaderTemplate":true}})}]).unwrap();s.layout(&mut Measure);
+ assert!(s.events.iter().any(|event|event.target==id&&event.kind==EventKind::RealizationChanged));
  assert!(s.nodes.contains_key(&text),"Switching the native template must not destroy an already-mounted caller subtree");assert_eq!(s.nodes[&slot].children,vec![text]);
  s.update(vec![Update{id,patch:json!({"table":{"hasGroupHeaderTemplate":false}})}]).unwrap();s.layout(&mut Measure);assert!(!s.nodes.contains_key(&text));assert_eq!(s.nodes[&slot].children.len(),2);
 }

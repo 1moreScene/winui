@@ -68,6 +68,9 @@ const test = async (folder, kind, mode, port) => {
     assert(ink > 500, 'controls have visible raster output');
     assert(resources.some(resource => resource.url.includes('.wasm') && resource.status === 200), 'installed WASM requested successfully');
     assert(resources.every(resource => resource.status === 200), JSON.stringify(resources));
+    const navigation = kind === 'react'
+      ? await verifyReactNavigation(page)
+      : await page.evaluate(() => window.exercisePackageScenes());
     if (kind === 'react') {
       await page.evaluate(() => window.unmountPackageDemo());
       assert.equal(await page.locator('.winui-scene').count(), 0);
@@ -78,7 +81,7 @@ const test = async (folder, kind, mode, port) => {
       assert.equal(await page.locator('.winui-scene').count(), 0);
     }
     assert.deepEqual(errors, []);
-    report.cases.push({kind, mode, base: '/nested/', backends: ['Canvas2D', 'WebGL2'], fonts, ink, resources, errors, interactions: true, cleanup: true});
+    report.cases.push({kind, mode, base: '/nested/', backends: ['Canvas2D', 'WebGL2'], fonts, ink, resources, errors, interactions: true, cleanup: true, navigation});
     console.log(`Passed ${kind} ${mode}: installed tarball, both renderers, input, fonts, styles and cleanup.`);
   } catch (error) {
     throw new Error(`${kind} ${mode}: ${error.message}\n${logs}\npage errors: ${errors.join('\n')}\nresources: ${JSON.stringify(resources)}`);
@@ -87,6 +90,43 @@ const test = async (folder, kind, mode, port) => {
     if (server.exitCode === null) await new Promise(resolve => {server.once('exit', resolve); server.kill();});
   }
 };
+async function verifyReactNavigation(page) {
+  const frame = page.locator('.consumer-frame');
+  const active = frame.locator(':scope > [data-frame-instance]:not([inert])');
+  const canvas = active.locator('.consumer-page-surface .winui-surface > canvas');
+  const hiddenPages = frame.locator(':scope > [data-frame-instance][hidden]');
+  const cached = hiddenPages.locator('.winui-surface > canvas');
+  const input = active.getByRole('textbox', {name: 'Page note'});
+  await input.fill('kept across navigation');
+  let maxActivePixels = 0;
+  let maxCached = 0;
+  async function verify(route) {
+    await page.waitForFunction(route => {
+      const active = document.querySelector('.consumer-frame > [data-frame-instance]:not([inert])');
+      const canvas = active?.querySelector('.consumer-page-surface .winui-surface > canvas');
+      return active?.getAttribute('data-frame-page') === route && canvas?.width > 0;
+    }, route);
+    const hiddenPixels = await cached.evaluateAll(canvases => canvases.reduce((sum, canvas) => sum + canvas.width * canvas.height, 0));
+    assert.equal(hiddenPixels, 0, 'hidden pages release their raster buffers');
+    maxCached = Math.max(maxCached, await hiddenPages.count());
+    assert(maxCached <= 9, 'the default Frame cache bounds live pages');
+    const pixels = await canvas.evaluate(canvas => canvas.width * canvas.height);
+    assert(pixels > 0, 'the active page repaints');
+    maxActivePixels = Math.max(maxActivePixels, pixels);
+  }
+  await page.evaluate(() => window.navigatePackageFrame('page-1'));
+  await verify('page-1');
+  await page.evaluate(() => window.backPackageFrame());
+  await verify('page-0');
+  assert.equal(await input.inputValue(), 'kept across navigation');
+  for (let i = 1; i <= 24; i++) {
+    const route = `page-${i}`;
+    await page.evaluate(route => window.navigatePackageFrame(route), route);
+    await verify(route);
+  }
+  assert.equal(maxCached, 9);
+  return {navigations: 26, maxCached, maxActivePixels, hiddenPixels: 0};
+}
 try {
   for (const kind of ['vanilla', 'react']) {
     const folder = resolve(runRoot, kind);
@@ -122,10 +162,47 @@ for(const backend of [RendererBackend.Canvas2D,RendererBackend.WebGL2]){
  let count=0;stack.button({text:'Count 0',accessibleName:backend+' counter'}).onClick(()=>{status.textContent=String(++count);});
  stack.textBox({width:240,text:'initial',accessibleName:backend+' input'});
 }
-Object.assign(window,{disposePackageDemo:()=>ui.dispose()});\n`);
+function exercisePackageScenes() {
+ const baseline = ui.liveCount;
+ let scenes = 0;
+ for (const backend of Object.values(RendererBackend)) {
+  for (let i = 0; i < 12; i++) {
+   const host = document.createElement('div');
+   host.style.cssText = 'width:640px;height:360px';
+   document.body.append(host);
+   const scene = ui.scene(host, {backend, reducedMotion:true});
+   const canvas = scene.element.querySelector('canvas')!;
+   const input = scene.root.textBox({text:'kept'});
+   scene.render();
+   if (!canvas.width || !canvas.height) throw Error('Expected a rendered surface');
+   scene.setHostActive(false);
+   if (canvas.width || canvas.height) throw Error('Suspended scene retained its pixels');
+   scene.setHostActive(true);
+   scene.render();
+   if (!canvas.width || !canvas.height || input.properties.text !== 'kept') throw Error('Scene did not resume');
+   scene.dispose();
+   host.remove();
+   if (canvas.width || canvas.height || ui.liveCount !== baseline) throw Error('Disposed scene retained resources');
+   scenes++;
+  }
+ }
+ return {scenes, liveCount:ui.liveCount};
+}
+Object.assign(window,{disposePackageDemo:()=>ui.dispose(),exercisePackageScenes});\n`);
     else write(folder, 'main.tsx', `import {StrictMode,useState} from 'react';import {createRoot} from 'react-dom/client';
-import {RendererBackend,Symbol} from 'winui-wasm';import {WinUIProvider,SceneView,StackPanel,TextBlock,SymbolIcon,Button,TextBox} from 'winui-wasm/react';
-function Demo(){const [counts,setCounts]=useState({Canvas2D:0,WebGL2:0});return <WinUIProvider>{[RendererBackend.Canvas2D,RendererBackend.WebGL2].map(backend=><div key={backend} data-renderer-slot={backend} style={{display:'inline-block',verticalAlign:'top',width:600}}><span data-count={backend}>{counts[backend]}</span><SceneView backend={backend} onReady={scene=>document.querySelector('[data-renderer-slot="'+backend+'"]')!.setAttribute('data-renderer',scene.diagnostics.kind)} reducedMotion style={{height:440}}><StackPanel spacing={12} padding={[16,16,16,16]}><TextBlock text={'Installed React SDK '+backend} fontSize={20}/><SymbolIcon symbol={Symbol.Home}/><Button text={'Count '+counts[backend]} accessibleName={backend+' counter'} onClick={()=>setCounts(c=>({...c,[backend]:c[backend]+1}))}/><TextBox width={240} text="initial" accessibleName={backend+' input'}/></StackPanel></SceneView></div>)}</WinUIProvider>}
+import {NavigationCacheMode,RendererBackend,Symbol} from 'winui-wasm';import {WinUIProvider,Frame,NavigationView,SceneView,StackPanel,TextBlock,SymbolIcon,Button,TextBox} from 'winui-wasm/react';
+function CachedPages() {
+ return <Frame className="consumer-frame" page="page-0" cacheMode={NavigationCacheMode.Enabled}
+  reducedMotion style={{width:640,height:360}}
+  onReady={frame=>Object.assign(window,{navigatePackageFrame:(route:string)=>frame.navigate(route),backPackageFrame:()=>frame.goBack()})}
+  renderPage={entry=><>
+   <SceneView className="consumer-page-surface" style={{height:360}} root={{background:'#ddeeff'}}>
+    <TextBox accessibleName="Page note" text={entry.page} width={240} />
+   </SceneView>
+   {entry.page==='page-0' && <NavigationView items={[{id:'home',text:'Home'}]} style={{height:160}}/>}
+  </>}/>;
+}
+function Demo(){const [counts,setCounts]=useState({Canvas2D:0,WebGL2:0});return <WinUIProvider>{[RendererBackend.Canvas2D,RendererBackend.WebGL2].map(backend=><div key={backend} data-renderer-slot={backend} style={{display:'inline-block',verticalAlign:'top',width:600}}><span data-count={backend}>{counts[backend]}</span><SceneView backend={backend} onReady={scene=>document.querySelector('[data-renderer-slot="'+backend+'"]')!.setAttribute('data-renderer',scene.diagnostics.kind)} reducedMotion style={{height:440}}><StackPanel spacing={12} padding={[16,16,16,16]}><TextBlock text={'Installed React SDK '+backend} fontSize={20}/><SymbolIcon symbol={Symbol.Home}/><Button text={'Count '+counts[backend]} accessibleName={backend+' counter'} onClick={()=>setCounts(c=>({...c,[backend]:c[backend]+1}))}/><TextBox width={240} text="initial" accessibleName={backend+' input'}/></StackPanel></SceneView></div>)}<CachedPages/></WinUIProvider>}
 let root:ReturnType<typeof createRoot>;function mount(){root=createRoot(document.getElementById('app')!);root.render(<StrictMode><Demo/></StrictMode>);}mount();Object.assign(window,{mountPackageDemo:mount,unmountPackageDemo:()=>root.unmount()});\n`);
     console.log(`Installing tarball in independent ${kind} project...`);
     run([npm, 'install', '--offline', '--no-audit', '--no-fund'], folder);

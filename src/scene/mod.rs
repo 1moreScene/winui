@@ -20,6 +20,7 @@ pub mod layout_panels;
 pub mod composed;
 pub mod picker_controls;
 pub mod navigation_controls;
+mod segmented;
 pub use compact_controls::RatingItemInfo;
 mod five_controls;
 mod input;
@@ -54,6 +55,50 @@ pub use motion::{AnimationCompletion, AnimationOptions, VisualValues};
 pub use properties::*;
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, HashMap};
+use std::ops::{Deref, DerefMut};
+use std::sync::LazyLock;
+
+/// Most nodes only read the default of these control-specific states.
+/// Realized template parts can acquire state independently of their node kind.
+pub struct ControlStateStorage<T: 'static> {
+    value: Option<Box<T>>,
+    default: &'static LazyLock<T>,
+}
+impl<T: Default> ControlStateStorage<T> {
+    fn new(default: &'static LazyLock<T>) -> Self {
+        Self { value: None, default }
+    }
+    fn allocated_mut(&mut self) -> Option<&mut T> {
+        self.value.as_deref_mut()
+    }
+}
+impl<T> Deref for ControlStateStorage<T> {
+    type Target = T;
+    fn deref(&self) -> &T {
+        self.value.as_deref().unwrap_or_else(|| LazyLock::force(self.default))
+    }
+}
+impl<T: Default> DerefMut for ControlStateStorage<T> {
+    fn deref_mut(&mut self) -> &mut T {
+        self.value.get_or_insert_with(Box::default)
+    }
+}
+
+static TABLE_STATE: LazyLock<table_view::TableState> = LazyLock::new(Default::default);
+static PICKER_STATE: LazyLock<picker_controls::PickerState> = LazyLock::new(Default::default);
+static NAVIGATION_STATE: LazyLock<navigation_controls::NavigationState> = LazyLock::new(Default::default);
+static COLLECTION_STATE: LazyLock<collections::CollectionState> = LazyLock::new(Default::default);
+static REPEATER_STATE: LazyLock<repeater::RepeaterState> = LazyLock::new(Default::default);
+static READING_STATE: LazyLock<reading_controls::ReadingState> = LazyLock::new(Default::default);
+static EDITOR_STATE: LazyLock<text_edit::EditorState> = LazyLock::new(Default::default);
+static SCROLL_STATE: LazyLock<scroll::ScrollState> = LazyLock::new(Default::default);
+static CONTENT_HOST_STATE: LazyLock<content_hosts::HostState> = LazyLock::new(Default::default);
+static EFFECT_STATE: LazyLock<motion_effects::EffectState> = LazyLock::new(Default::default);
+static VIEW_STATE: LazyLock<view_controls::ViewState> = LazyLock::new(Default::default);
+static PROGRESS_STATE: LazyLock<progress::ProgressVisual> = LazyLock::new(Default::default);
+static EXPANDER_STATE: LazyLock<five_controls::ExpanderVisual> = LazyLock::new(Default::default);
+static SLIDER_STATE: LazyLock<slider::SliderState> = LazyLock::new(Default::default);
+static SELECTION_STATE: LazyLock<selection_input::SelectionVisual> = LazyLock::new(Default::default);
 #[derive(Clone, Copy, Debug, Serialize, Deserialize, PartialEq)]
 pub struct Matrix(pub [f64; 6]);
 impl Default for Matrix {
@@ -111,22 +156,23 @@ impl Matrix {
     }
 }
 pub struct Node {
+    segmented: segmented::State,
     pub navigation_template: navigation_view::TemplateState,
-    pub table:table_view::TableState,
-    pub(super) effects:motion_effects::EffectState,
+    pub table: ControlStateStorage<table_view::TableState>,
+    pub(super) effects: ControlStateStorage<motion_effects::EffectState>,
     pub primitive:scroll_primitives::PrimitiveState,
     pub menu_item:menu_item_controls::MenuItemState,
-    pub content_host:content_hosts::HostState,
-    pub reading:reading_controls::ReadingState,
-    pub repeater:repeater::RepeaterState,
+    pub content_host: ControlStateStorage<content_hosts::HostState>,
+    pub reading: ControlStateStorage<reading_controls::ReadingState>,
+    pub repeater: ControlStateStorage<repeater::RepeaterState>,
     pub refresh:refresh::RefreshState,
-    view_control: view_controls::ViewState,
+    view_control: ControlStateStorage<view_controls::ViewState>,
     pub menu: command_menus::MenuState,
     pub panel: layout_panels::PanelState,
-    pub picker: picker_controls::PickerState,
-    pub nav_controls: navigation_controls::NavigationState,
+    pub picker: ControlStateStorage<picker_controls::PickerState>,
+    pub nav_controls: ControlStateStorage<navigation_controls::NavigationState>,
     pub composed: composed::ComposedState,
-    collection: collections::CollectionState,
+    collection: ControlStateStorage<collections::CollectionState>,
     compact: compact_controls::CompactState,
     pub id: u32,
     pub parent: Option<u32>,
@@ -143,26 +189,50 @@ pub struct Node {
     pub visible: bool,
     pub text: TextLayout,
     pub button: ButtonState,
-    pub selection_visual: selection_input::SelectionVisual,
-    pub editor: text_edit::EditorState,
-    pub scroll: scroll::ScrollState,
-    progress: progress::ProgressVisual,
+    pub selection_visual: ControlStateStorage<selection_input::SelectionVisual>,
+    pub editor: ControlStateStorage<text_edit::EditorState>,
+    pub scroll: ControlStateStorage<scroll::ScrollState>,
+    progress: ControlStateStorage<progress::ProgressVisual>,
     repeat: basic_next::RepeatState,
     viewbox: basic_next::ViewboxSnapshot,
-    expander: five_controls::ExpanderVisual,
+    expander: ControlStateStorage<five_controls::ExpanderVisual>,
     pub header_text: TextLayout,
     overlay: overlays::OverlayState,
-    slider: slider::SliderState,
+    slider: ControlStateStorage<slider::SliderState>,
     pub animated_icon: crate::animated_icon::Player,
     pub shape_path: Option<crate::icons::PathGeometry>,
     pub icon_path: Option<crate::icons::PathGeometry>,
     pub(crate) accept: crate::accept::AcceptVisual,
-    pub nav: Option<NavigationView>,
+    pub nav: Option<Box<NavigationView>>,
     pub layout_version: u64,
     pub paint_version: u64,
     pub presentation: VisualValues,
     pub material_motion: crate::animation::Motion,
     pub material_colors: crate::material::AcrylicTransition,
+}
+impl Node {
+    pub(crate) fn snapshot_properties(&self) -> std::borrow::Cow<'_, NodeProperties> {
+        let strip_collection = collections::is_view(self.kind)
+            || matches!(self.kind, NodeKind::ItemsRepeater | NodeKind::ComboBox | NodeKind::AutoSuggestBox);
+        if self.props.nav_controls.items.is_empty() && self.props.segmented_source.is_none()
+            && self.props.table.is_none() && !strip_collection
+        {
+            return std::borrow::Cow::Borrowed(&self.props);
+        }
+        let mut properties = self.props.clone();
+        properties.nav_controls.items = Default::default();
+        properties.segmented_source = None;
+        if let Some(table) = properties.table.as_mut() {
+            table.items = Default::default();
+            table.selected_keys.clear();
+            table.selected_cells.clear();
+        }
+        if strip_collection {
+            properties.collection_items = Default::default();
+            properties.selected_keys = Default::default();
+        }
+        std::borrow::Cow::Owned(properties)
+    }
 }
 #[derive(Clone, Serialize)]
 #[serde(rename_all = "camelCase")]
@@ -207,7 +277,7 @@ pub struct SceneEvent {
 }
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct NodeSnapshot {
+pub struct NodeSnapshot<P = Box<NodeProperties>> {
     pub table:Option<table_view::TableSnapshot>,
     pub pointer: PointerPresentation,
     pub primitive:Option<serde_json::Value>,
@@ -243,8 +313,7 @@ pub struct NodeSnapshot {
     pub focused: bool,
     pub composition_depth:f64,
     pub tab_stop: bool,
-    #[serde(serialize_with="properties::serialize_snapshot")]
-    pub props: NodeProperties,
+    pub props: P,
     pub text: TextLayout,
     pub template_part: Option<String>,
     pub navigation_owner: Option<u32>,
@@ -267,7 +336,7 @@ pub struct NodeSnapshot {
 }
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Snapshot {
+pub struct Snapshot<P = Box<NodeProperties>> {
     #[serde(skip_serializing_if="Vec::is_empty")]
     pub unresolved_element_references:Vec<UnresolvedElementReference>,
     /// Rust-owned input root while a windowed choice popup blocks background scrolling.
@@ -277,7 +346,7 @@ pub struct Snapshot {
     pub surface_bounds: Rect,
     pub time: f64,
     pub root: u32,
-    pub nodes: Vec<NodeSnapshot>,
+    pub nodes: Vec<NodeSnapshot<P>>,
     pub events: Vec<SceneEvent>,
     pub focused: Option<u32>,
     pub captured: Option<i32>,
@@ -299,8 +368,9 @@ pub struct Scene {
     motion_runtime:motion_effects::MotionRuntime,
     composed_syncing: bool,
     composed_shift: bool,
+    segmented_modifiers: (bool,bool),
     next_composed_request: u32,
-    pub nodes: BTreeMap<u32, Node>,
+    pub nodes: BTreeMap<u32, Box<Node>>,
     pub root: u32,
     next: u32,
     pub width: f64,
@@ -338,6 +408,7 @@ impl Scene {
             motion_runtime:Default::default(),
             composed_syncing: false,
             composed_shift: false,
+            segmented_modifiers: (false,false),
             next_composed_request: 0,
             realizing_collection: None,
             picker_template_depth:0,
@@ -372,7 +443,7 @@ impl Scene {
         };
         s.nodes.insert(
             1,
-            Self::node(1, None, NodeKind::Grid, NodeProperties::defaults(NodeKind::Grid)).unwrap(),
+            Box::new(Self::node(1, None, NodeKind::Grid, NodeProperties::defaults(NodeKind::Grid)).unwrap()),
         );
         s
     }
@@ -383,7 +454,7 @@ impl Scene {
         props: NodeProperties,
     ) -> Result<Node, String> {
         let nav = if kind == NodeKind::NavigationView {
-            Some(NavigationView::new(props.navigation.clone().unwrap())?)
+            Some(Box::new(NavigationView::new(*props.navigation.clone().unwrap())?))
         } else {
             None
         };
@@ -393,29 +464,31 @@ impl Scene {
         } else {
             None
         };
-        let mut editor=text_edit::EditorState::default();
+        let mut editor = ControlStateStorage::new(&EDITOR_STATE);
         if let Some(doc)=&props.document {editor.typing_format=doc.format_at(props.selection_start.saturating_sub(1));}
         Ok(Node {
+            segmented: Default::default(),
             navigation_template:Default::default(),
-            table:Default::default(),
+            table: ControlStateStorage::new(&TABLE_STATE),
             primitive:Default::default(),
             menu_item:Default::default(),
-            content_host:Default::default(),
-            reading:Default::default(),
-            repeater:Default::default(),refresh:Default::default(),
-            view_control:Default::default(),
+            content_host: ControlStateStorage::new(&CONTENT_HOST_STATE),
+            reading: ControlStateStorage::new(&READING_STATE),
+            repeater: ControlStateStorage::new(&REPEATER_STATE),
+            refresh: Default::default(),
+            view_control: ControlStateStorage::new(&VIEW_STATE),
             command:Default::default(),
             menu:Default::default(),panel:Default::default(),
-            nav_controls: Default::default(),
+            nav_controls: ControlStateStorage::new(&NAVIGATION_STATE),
             composed: Default::default(),
-            picker: Default::default(),
-            collection: Default::default(),
+            picker: ControlStateStorage::new(&PICKER_STATE),
+            collection: ControlStateStorage::new(&COLLECTION_STATE),
             compact: Default::default(),
             id,
             parent,
             children: vec![],
             kind,
-            effects:Default::default(),
+            effects: ControlStateStorage::new(&EFFECT_STATE),
             presentation: VisualValues::from_props(&props),
             material_motion: motion::material_motion(),
             material_colors: Default::default(),
@@ -429,16 +502,16 @@ impl Scene {
             visible: true,
             text: TextLayout::default(),
             button: ButtonState::default(),
-            selection_visual: Default::default(),
+            selection_visual: ControlStateStorage::new(&SELECTION_STATE),
             editor,
-            scroll: Default::default(),
-            progress: Default::default(),
+            scroll: ControlStateStorage::new(&SCROLL_STATE),
+            progress: ControlStateStorage::new(&PROGRESS_STATE),
             repeat: Default::default(),
             viewbox: Default::default(),
-            expander: Default::default(),
+            expander: ControlStateStorage::new(&EXPANDER_STATE),
             header_text: Default::default(),
             overlay: Default::default(),
-            slider: Default::default(),
+            slider: ControlStateStorage::new(&SLIDER_STATE),
             shape_path,
             icon_path,
             animated_icon: Default::default(),
@@ -451,13 +524,14 @@ impl Scene {
     pub fn get(&self, id: u32) -> Result<&Node, String> {
         self.nodes
             .get(&id)
+            .map(Box::as_ref)
             .ok_or_else(|| format!("invalid or destroyed scene node {id}"))
     }
     pub fn properties(&self, id: u32) -> Result<NodeProperties, String> {
         let node = self.get(id)?;
         let mut p = node.props.clone();
         if let Some(nav) = &node.nav {
-            p.navigation = Some(nav.props.clone());
+            p.navigation = Some(Box::new(nav.props.clone()));
         }
         Ok(p)
     }
@@ -466,6 +540,15 @@ impl Scene {
         parent: u32,
         kind: NodeKind,
         patch: serde_json::Value,
+    ) -> Result<u32, String> {
+        self.create_with_table_items(parent, kind, patch, None)
+    }
+    pub(crate) fn create_with_table_items(
+        &mut self,
+        parent: u32,
+        kind: NodeKind,
+        mut patch: serde_json::Value,
+        table_items: Option<std::sync::Arc<Vec<table_view::Row>>>,
     ) -> Result<u32, String> {
         let parent = self.navigation_content_parent(parent)?;
         let parent = self.primitive_content_parent(parent)?;
@@ -548,7 +631,7 @@ impl Scene {
                 "Floating content accepts one child; use a panel to combine content".into(),
             );
         }
-        let mut props = properties::create(&patch, kind)?;
+        let mut props = properties::create(&mut patch, kind, table_items)?;
         if props.is_expander_header && (kind != NodeKind::Grid || self.nodes[&parent].kind != NodeKind::Expander) {
             return Err("Expander header slot must be a Grid directly owned by an Expander".into());
         }
@@ -621,7 +704,7 @@ impl Scene {
         if !node.props.name.is_empty() && self.nodes.values().any(|source|source.props.element_references.get(&ElementReferenceProperty::PlacementTarget).and_then(|n|n.as_ref())==Some(&node.props.name)&&self.descendant_of(parent,source.id)) {
             return Err("placement target must be outside its content subtree".into());
         }
-        self.nodes.insert(id, node);
+        self.nodes.insert(id, Box::new(node));
         self.nodes.get_mut(&parent).unwrap().children.push(id);
         self.next = id;
         if menu_item_controls::is_item(kind) {
@@ -694,6 +777,11 @@ impl Scene {
         if p.kind == NodeKind::Slider && child_kind == NodeKind::ToolTip {
             return Ok(());
         }
+        if p.kind == NodeKind::Segmented && !overlays::is_overlay(child_kind) {
+            if child_kind != NodeKind::SegmentedItem { return Err("Segmented accepts SegmentedItem children".into()); }
+            if !self.can_add_segmented_item(parent) {return Err("Use SegmentedItem children or itemsSource".into());}
+        }
+        if child_kind == NodeKind::SegmentedItem && p.kind != NodeKind::Segmented { return Err("SegmentedItem requires a Segmented parent".into()); }
         if p.kind == NodeKind::MenuBar && child_kind!=NodeKind::MenuBarItem{return Err("MenuBar accepts MenuBarItem children".into());}
         if p.kind == NodeKind::MenuBarItem && child_kind!=NodeKind::MenuFlyout{return Err("MenuBarItem uses items; content is Rust-owned".into());}
         if p.kind == NodeKind::MenuFlyout && child_kind==NodeKind::MenuFlyout{return Ok(());}
@@ -702,7 +790,7 @@ impl Scene {
         }
         if !matches!(
             p.kind,
-            NodeKind::NavigationView|NodeKind::NavigationViewItem|NodeKind::NavigationViewItemHeader|NodeKind::NavigationViewItemSeparator|NodeKind::NavigationViewItemPresenter|NodeKind::ItemsRepeaterScrollHost|NodeKind::TableView|NodeKind::ItemsPresenter|NodeKind::ContentControl|NodeKind::ContentPresenter|NodeKind::UserControl|NodeKind::Page|NodeKind::Frame|NodeKind::FlipView
+            NodeKind::Segmented|NodeKind::SegmentedItem|NodeKind::NavigationView|NodeKind::NavigationViewItem|NodeKind::NavigationViewItemHeader|NodeKind::NavigationViewItemSeparator|NodeKind::NavigationViewItemPresenter|NodeKind::ItemsRepeaterScrollHost|NodeKind::TableView|NodeKind::ItemsPresenter|NodeKind::ContentControl|NodeKind::ContentPresenter|NodeKind::UserControl|NodeKind::Page|NodeKind::Frame|NodeKind::FlipView
                 | NodeKind::PipsPager
                 | NodeKind::BreadcrumbBar
                 | NodeKind::TreeView
@@ -811,10 +899,9 @@ impl Scene {
             } else {
                 self.properties(update.id)?
             };
-            staged.insert(
-                update.id,
-                properties::patch(&base, &update.patch, node.kind)?,
-            );
+            let properties = properties::patch(&base, &update.patch, node.kind)?;
+            if node.kind == NodeKind::Segmented { self.validate_segmented_source_update(update.id, &properties)?; }
+            staged.insert(update.id, properties);
             let object = update.patch.as_object().unwrap();
             layout |= object.keys().any(|k| {
                 !matches!(
@@ -1077,6 +1164,12 @@ impl Scene {
                 self.animate(id,serde_json::json!({key:value}),AnimationOptions{duration,curve:Some([0.8,0.,0.2,1.]),..Default::default()}).expect("validated implicit transition");
             }
         }
+        for update in &updates {
+            if self.nodes[&update.id].kind == NodeKind::Segmented && update.patch.get("selectedIndex").is_some() {
+                let node = self.nodes.get_mut(&update.id).unwrap();
+                node.segmented.requested_index = Some(node.props.selected_index);
+            }
+        }
         for(id,old,new)in picker_changes{self.picker_value_events(id,&old,&new);}
         rebuild.sort_by_key(|id| {
             self.nodes[id].props.items.len() as i64 - self.nodes[id].children.len() as i64
@@ -1307,12 +1400,14 @@ impl Scene {
             detach_menu_commands(&mut node.props.menu_items, &removed);
             if let Some(menu) = &mut node.props.menu_controls { for item in &mut menu.items { detach_menu_commands(&mut item.items, &removed); } }
             if let Some(q)=&mut node.props.primitives{if q.source.is_some_and(|s|removed.contains(&s)){q.source=None;}if q.scroll_target.is_some_and(|s|removed.contains(&s)){q.scroll_target=None;}}
-            node.repeater.realized.retain(|_,id|!removed.contains(id));
+            if let Some(repeater) = node.repeater.allocated_mut() {
+                repeater.realized.retain(|_, id| !removed.contains(id));
+            }
             if let Some(q)=&mut node.props.reading {if q.label_item_source.is_some_and(|t|removed.contains(&t)){q.label_item_source=None;}if q.scroll_target.is_some_and(|t|removed.contains(&t)){q.scroll_target=None;}if q.overflow_content_target.is_some_and(|t|removed.contains(&t)){q.overflow_content_target=None;}for c in [&mut q.first_button_command,&mut q.previous_button_command,&mut q.next_button_command,&mut q.last_button_command,&mut q.pager_input_command]{if c.is_some_and(|id|removed.contains(&id)){*c=None;}}}
             if let Some(v)=&mut node.props.view_controls {if v.command.is_some_and(|c|removed.contains(&c)){v.command=None;}if v.source.is_some_and(|c|removed.contains(&c)){v.source=None;}for side in [&mut v.left_items,&mut v.right_items,&mut v.top_items,&mut v.bottom_items].into_iter().flatten(){for item in &mut side.items{if item.command.is_some_and(|c|removed.contains(&c)){item.command=None;}}}}
-            node.collection
-                .realized
-                .retain(|_, id| !removed.contains(id));
+            if let Some(collection) = node.collection.allocated_mut() {
+                collection.realized.retain(|_, id| !removed.contains(id));
+            }
             if node
                 .props
                 .flyout_target
@@ -1411,6 +1506,7 @@ impl Scene {
         self.sync_commands();
         self.pump_command_menu_events();
         self.pump_command_events();
+        self.sync_segmented();
         self.sync_navigation_controls();
         self.pump_navigation_control_events();
         self.pump_composed_events();
@@ -1418,8 +1514,12 @@ impl Scene {
         self.sync_composed();
         self.pump_composed_events();
         for n in self.nodes.values_mut() {
-            n.collection.layout_unsettled = false;
-            n.repeater.unsettled=false;
+            if let Some(collection) = n.collection.allocated_mut() {
+                collection.layout_unsettled = false;
+            }
+            if let Some(repeater) = n.repeater.allocated_mut() {
+                repeater.unsettled = false;
+            }
         }
         self.sync_collections();
         self.sync_compact();
@@ -1511,6 +1611,9 @@ impl Scene {
         self.pump_navigation_control_events();
     }
     pub fn snapshot(&mut self) -> Snapshot {
+        self.snapshot_with_properties(|node| Box::new(node.snapshot_properties().into_owned()))
+    }
+    pub(crate) fn snapshot_with_properties<P>(&mut self, mut properties: impl FnMut(&Node) -> P) -> Snapshot<P> {
         self.resolve_element_names();
         let (command_managed,command_stops)=self.command_tab_stops();
         let(menu_managed,menu_stops)=self.menu_tab_stops();
@@ -1564,11 +1667,12 @@ impl Scene {
         let mut primitives=self.nodes.keys().filter_map(|id|self.primitive_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
         let mut content_hosts=self.nodes.keys().filter_map(|id|self.content_host_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
         let mut reading=self.nodes.keys().filter_map(|id|self.reading_snapshot(*id).map(|s|(*id,s))).collect::<HashMap<_,_>>();
-        let mut pointers = self.nodes.keys().map(|id| (*id, self.pointer_presentation(*id))).collect::<HashMap<_, _>>();
+        let pointers: Vec<_> = self.nodes.keys().map(|id| self.pointer_presentation(*id)).collect();
         let nodes = self
             .nodes
             .values_mut()
-            .map(|n| {
+            .zip(pointers)
+            .map(|(n, pointer)| {
                 let nav = n.nav.as_mut().map(|v| {
                     let mut s = v.snapshot();
                     for e in s.events.drain(..) {
@@ -1601,6 +1705,7 @@ impl Scene {
                     || n.scroll.indicator.active(self.time)
                     || n.scroll.expansion.active(self.time);
                 animating |= n.scroll.repeat.is_some();
+                animating |= n.segmented.active(self.time);
                 animating |= navigation_controls::is_control(n.kind) && n.nav_controls.animating(self.time);
                 animating |= overlays::is_overlay(n.kind) && n.overlay.visual.active(self.time);
                 animating |= picker_controls::is_control(n.kind) && n.picker.animating(self.time)
@@ -1631,7 +1736,7 @@ impl Scene {
                     && (n.material_motion.active(self.time) || n.material_colors.active(self.time));
                 NodeSnapshot {
                     table:tables.remove(&n.id),
-                    pointer: pointers.remove(&n.id).unwrap(),
+                    pointer,
                     ui_command:ui_commands.remove(&n.id),
                     primitive:primitives.remove(&n.id),
                     content_host:content_hosts.remove(&n.id),
@@ -1682,19 +1787,11 @@ impl Scene {
                     focused: self.focused == Some(n.id),
                     composition_depth:n.presentation.translation_z+n.effects.depth(self.time),
                     tab_stop: n.props.is_tab_stop
+                        && (n.kind != NodeKind::SegmentedItem || n.segmented.tab_stop)
                         &&(!command_managed.contains(&n.id)||command_stops.contains(&n.id))
                         &&(!menu_managed.contains(&n.id)||menu_stops.contains(&n.id))
                         && (n.kind != NodeKind::RadioButton || radio_stops.contains(&n.id)),
-                    props: {
-                        let mut p = n.props.clone();
-                        p.nav_controls.items = Default::default();
-                        if let Some(table)=p.table.as_mut(){table.items=Default::default();table.selected_keys.clear();table.selected_cells.clear();}
-                        if collections::is_view(n.kind) || matches!(n.kind, NodeKind::ItemsRepeater | NodeKind::ComboBox | NodeKind::AutoSuggestBox) {
-                            p.collection_items = Default::default();
-                            p.selected_keys = Default::default();
-                        }
-                        p
-                    },
+                    props: properties(n),
                     text: n.text.clone(),
                     template_part: if !n.navigation_template.name.is_empty(){Some(n.navigation_template.name.clone())}else{crate::selection::is_button(n.kind).then_some("ContentPresenter".into())},
                     navigation_owner:n.navigation_template.owner,
@@ -1748,15 +1845,16 @@ impl Scene {
                     animated_icon: (n.kind == NodeKind::AnimatedIcon)
                         .then(|| n.animated_icon.snapshot(self.time)),
                     progress: progress::snapshot(n, self.time, self.reduced_motion),
-                    scroll: collections::is_scroll_owner(n.kind)
+                    scroll: (collections::is_scroll_owner(n.kind) || n.kind == NodeKind::RichEditBox)
                         .then(|| n.scroll.snapshot(&n.props, self.time)),
                 }
             })
             .collect();
-        let image_requests = self
-            .image_sources()
-            .into_iter()
-            .filter(|s| !self.images.contains_key(s))
+        let image_sources = self.image_sources();
+        let image_requests = image_sources
+            .iter()
+            .filter(|s| !self.images.contains_key(*s))
+            .cloned()
             .collect();
         let next_frame_at = self
             .nodes
@@ -1783,6 +1881,11 @@ impl Scene {
                     None
                 }
             })
+            .chain(self.nodes.values().filter_map(|n| {
+                (n.kind == NodeKind::RichEditBox && !n.scroll.hover && n.scroll.indicator.to > 0.)
+                    .then(|| n.scroll.last_activity + scroll::milliseconds("ScrollBarContractDelay"))
+                    .filter(|t| *t > self.time)
+            }))
             .min_by(f64::total_cmp);
         Snapshot {
             unresolved_element_references:self.unresolved_element_references.clone(),
@@ -1809,7 +1912,7 @@ impl Scene {
             revision: self.revision,
             animation_completions: std::mem::take(&mut self.animation_completions),
             image_requests,
-            image_sources: self.image_sources().into_iter().collect(),
+            image_sources: image_sources.into_iter().collect(),
         }
     }
     pub fn image_sources(&self) -> std::collections::HashSet<String> {
@@ -1945,14 +2048,20 @@ impl Scene {
         for id in disabled {
             if let Some(n) = self.nodes.get_mut(&id) {
                 n.button.cancel();
-                n.selection_visual.cancel_drag();
-                n.editor.peek = false;
-                n.editor.draft = None;
-                n.scroll.drag = None;
-                n.scroll.pan = None;
-                n.scroll.repeat = None;
-                n.scroll.pinch = None;
-                n.scroll.touches.clear();
+                if let Some(selection) = n.selection_visual.allocated_mut() {
+                    selection.cancel_drag();
+                }
+                if let Some(editor) = n.editor.allocated_mut() {
+                    editor.peek = false;
+                    editor.draft = None;
+                }
+                if let Some(scroll) = n.scroll.allocated_mut() {
+                    scroll.drag = None;
+                    scroll.pan = None;
+                    scroll.repeat = None;
+                    scroll.pinch = None;
+                    scroll.touches.clear();
+                }
                 if let Some(nav) = &mut n.nav {
                     let _ = nav.input(crate::model::Input::Cancel, self.time);
                     let _ = nav.input(crate::model::Input::Blur, self.time);

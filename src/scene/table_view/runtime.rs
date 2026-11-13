@@ -781,6 +781,9 @@ impl Scene {
         s.source = Some(q.items.clone());
         s.shape = shape;
         s.widths.clear();
+        if q.selected_keys.is_empty() && q.selected_cells.is_empty() && q.current_cell.is_none() && s.editing.is_none() {
+            return;
+        }
         let live = if q.groups.is_empty() {q.items.iter().map(|r|r.id.as_str()).collect::<HashSet<_>>()}
             else {self.nodes[&id].table.order.iter().map(|&i|q.items[i].id.as_str()).collect::<HashSet<_>>()};
         let t = self
@@ -849,7 +852,7 @@ impl Scene {
                         for r in q.items.iter() {
                             let text = r
                                 .display
-                                .get(&c.key)
+                                .as_ref().and_then(|display| display.get(&c.key))
                                 .cloned()
                                 .unwrap_or_else(|| text(path(&r.values, &c.field)));
                             let content = match c.kind {
@@ -1365,7 +1368,7 @@ impl Scene {
                 self.nodes.get_mut(&slot).unwrap().table.cell = Some(cell.clone());
                 let selected = whole || q.selected_cells.contains(&cell);
 
-                let style = row.styles.get(&c.key).cloned().unwrap_or_default();
+                let style = row.styles.as_ref().and_then(|styles| styles.get(&c.key)).cloned().unwrap_or_default();
                 let bg = style.background;
                 let clip_left = if frozen {
                     0.
@@ -1460,6 +1463,7 @@ impl Scene {
                     row: row.id.clone(),
                     column: c.key.clone(),
                     index,
+                    view_index: ri,
                     role: "cell".into(),
                     editing,
                 });
@@ -1518,6 +1522,7 @@ impl Scene {
                     row: row.id.clone(),
                     column: String::new(),
                     index,
+                    view_index: ri,
                     role: "rowHeader".into(),
                     editing: false,
                 });
@@ -1555,6 +1560,7 @@ impl Scene {
                     row: row.id.clone(),
                     column: String::new(),
                     index,
+                    view_index: ri,
                     role: "details".into(),
                     editing: false,
                 });
@@ -1572,8 +1578,14 @@ impl Scene {
             }
         }
         self.table_realize_groups(id, inner.width, (inner.height-header_height).max(0.), offset.horizontal_offset, offset.vertical_offset);
+        // Group headers reuse the same container when their template changes.
+        // Header slots can also change without affecting body cell realization.
+        let header_slots: Vec<_> = self.nodes[&id].table.header_buttons.iter()
+            .filter(|(_, _, filter)| !*filter)
+            .filter_map(|(button, _, _)| self.nodes[button].children.first().copied())
+            .collect();
         let signature =
-            json!([slots, q.current_cell, q.selected_cells, q.selected_keys, self.nodes[&id].table.group_realized]).to_string();
+            json!([slots, q.current_cell, q.selected_cells, q.selected_keys, self.nodes[&id].table.group_realized, q.has_group_header_template, header_slots]).to_string();
         let changed = self.nodes[&id].table.visual != signature;
         {
             let s = &mut self.nodes.get_mut(&id).unwrap().table;
@@ -1722,7 +1734,7 @@ impl Scene {
         let value = path(&row.values, &c.field);
         let label = row
             .display
-            .get(&c.key)
+            .as_ref().and_then(|display| display.get(&c.key))
             .cloned()
             .unwrap_or_else(|| text(value));
         let kind = if editing {
@@ -3277,13 +3289,15 @@ impl Scene {
         }
         if matches!(input, Input::Cancel { .. }) {
             for n in self.nodes.values_mut() {
-                n.table.drag = None;
-                n.table.drag_ghost = None;
-                n.table.row_drag = None;
-                n.table.select_drag = None;
-                n.table.auto_scroll_next = None;
-                n.table.touch_candidate = None;
-                n.table.editor_touch = None;
+                if let Some(table) = n.table.allocated_mut() {
+                    table.drag = None;
+                    table.drag_ghost = None;
+                    table.row_drag = None;
+                    table.select_drag = None;
+                    table.auto_scroll_next = None;
+                    table.touch_candidate = None;
+                    table.editor_touch = None;
+                }
             }
             return Ok(false);
         }

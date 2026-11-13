@@ -1,0 +1,313 @@
+{
+  "source": "references/segmented-source.json",
+  "palettes": {
+    "Default": {
+      "SegmentedBackground": "ControlAltFillColorSecondaryBrush",
+      "SegmentedBorderBrush": "ControlStrokeColorDefaultBrush",
+      "SegmentedItemBackground": "ControlFillColorTransparentBrush",
+      "SegmentedItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "SegmentedItemBackgroundSelected": "ControlFillColorDefaultBrush",
+      "SegmentedItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "SegmentedItemBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "SegmentedItemBorderBrush": "ControlFillColorTransparentBrush",
+      "SegmentedItemBorderBrushPointerOver": "SubtleFillColorSecondaryBrush",
+      "SegmentedItemBorderBrushSelected": "ControlElevationBorderBrush",
+      "SegmentedItemBorderBrushPressed": "SubtleFillColorTertiaryBrush",
+      "SegmentedItemBorderBrushDisabled": "ControlAltFillColorSecondaryBrush",
+      "SegmentedItemForeground": "TextFillColorPrimaryBrush",
+      "SegmentedItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "SegmentedItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "SegmentedItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "SegmentedItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "SegmentedPillBackground": "AccentFillColorDefaultBrush",
+      "SegmentedPillBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SegmentedPillBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SegmentedPillBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "PivotItemBackground": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundSelected": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundPressed": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "PivotItemForeground": "TextFillColorPrimaryBrush",
+      "PivotItemForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "PivotItemForegroundPressed": "TextFillColorTertiaryBrush",
+      "PivotItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "PivotItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "PivotItemPillBackground": "AccentFillColorDefaultBrush",
+      "PivotItemPillBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "PivotItemPillBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "PivotItemPillBackgroundDisabled": "AccentFillColorDefaultBrush",
+      "ButtonItemBackground": "ControlFillColorTransparentBrush",
+      "ButtonItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "ButtonItemBackgroundPressed": "SubtleFillColorTertiary",
+      "ButtonItemBackgroundSelected": "AccentFillColorDefaultBrush",
+      "ButtonItemBackgroundSelectedPointerOver": "AccentFillColorSecondaryBrush",
+      "ButtonItemBackgroundSelectedPressed": "AccentFillColorTertiaryBrush",
+      "ButtonItemBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "ButtonItemForeground": "TextFillColorPrimaryBrush",
+      "ButtonItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "ButtonItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "ButtonItemForegroundSelected": "TextOnAccentFillColorPrimaryBrush",
+      "ButtonItemForegroundSelectedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "ButtonItemForegroundSelectedPressed": "TextOnAccentFillColorSecondaryBrush",
+      "ButtonItemForegroundDisabled": "TextFillColorDisabledBrush"
+    },
+    "Light": {
+      "SegmentedBackground": "ControlAltFillColorSecondaryBrush",
+      "SegmentedBorderBrush": "ControlStrokeColorDefaultBrush",
+      "SegmentedItemBackground": "ControlFillColorTransparentBrush",
+      "SegmentedItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "SegmentedItemBackgroundSelected": "ControlFillColorDefaultBrush",
+      "SegmentedItemBackgroundPressed": "SubtleFillColorTertiaryBrush",
+      "SegmentedItemBackgroundDisabled": "ControlFillColorDisabledBrush",
+      "SegmentedItemBorderBrush": "ControlFillColorTransparentBrush",
+      "SegmentedItemBorderBrushPointerOver": "SubtleFillColorSecondaryBrush",
+      "SegmentedItemBorderBrushSelected": "ControlElevationBorderBrush",
+      "SegmentedItemBorderBrushPressed": "SubtleFillColorTertiaryBrush",
+      "SegmentedItemBorderBrushDisabled": "ControlAltFillColorSecondaryBrush",
+      "SegmentedItemForeground": "TextFillColorPrimaryBrush",
+      "SegmentedItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "SegmentedItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "SegmentedItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "SegmentedItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "SegmentedPillBackground": "AccentFillColorDefaultBrush",
+      "SegmentedPillBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SegmentedPillBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SegmentedPillBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "PivotItemBackground": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundPointerOver": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundSelected": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundPressed": "ControlFillColorTransparentBrush",
+      "PivotItemBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "PivotItemForeground": "TextFillColorPrimaryBrush",
+      "PivotItemForegroundPointerOver": "TextFillColorSecondaryBrush",
+      "PivotItemForegroundPressed": "TextFillColorTertiaryBrush",
+      "PivotItemForegroundSelected": "TextFillColorPrimaryBrush",
+      "PivotItemForegroundDisabled": "TextFillColorDisabledBrush",
+      "PivotItemPillBackground": "AccentFillColorDefaultBrush",
+      "PivotItemPillBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "PivotItemPillBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "PivotItemPillBackgroundDisabled": "AccentFillColorDefaultBrush",
+      "ButtonItemBackground": "ControlFillColorTransparentBrush",
+      "ButtonItemBackgroundPointerOver": "SubtleFillColorSecondaryBrush",
+      "ButtonItemBackgroundPressed": "SubtleFillColorTertiary",
+      "ButtonItemBackgroundSelected": "AccentFillColorDefaultBrush",
+      "ButtonItemBackgroundSelectedPointerOver": "AccentFillColorSecondaryBrush",
+      "ButtonItemBackgroundSelectedPressed": "AccentFillColorTertiaryBrush",
+      "ButtonItemBackgroundDisabled": "ControlFillColorTransparentBrush",
+      "ButtonItemForeground": "TextFillColorPrimaryBrush",
+      "ButtonItemForegroundPointerOver": "TextFillColorPrimaryBrush",
+      "ButtonItemForegroundPressed": "TextFillColorSecondaryBrush",
+      "ButtonItemForegroundSelected": "TextOnAccentFillColorPrimaryBrush",
+      "ButtonItemForegroundSelectedPointerOver": "TextOnAccentFillColorPrimaryBrush",
+      "ButtonItemForegroundSelectedPressed": "TextOnAccentFillColorSecondaryBrush",
+      "ButtonItemForegroundDisabled": "TextFillColorDisabledBrush"
+    },
+    "HighContrast": {
+      "SegmentedBackground": "SystemColorButtonFaceColor",
+      "SegmentedBorderBrush": "SystemColorHighlightColorBrush",
+      "SegmentedItemBackground": "SystemColorButtonFaceColor",
+      "SegmentedItemBackgroundPointerOver": "SystemColorHighlightColor",
+      "SegmentedItemBackgroundSelected": "SystemColorHighlightColor",
+      "SegmentedItemBackgroundPressed": "SystemColorHighlightColor",
+      "SegmentedItemBackgroundDisabled": "SystemControlTransparentBrush",
+      "SegmentedItemBorderBrush": "ControlAltFillColorSecondaryBrush",
+      "SegmentedItemBorderBrushPointerOver": "ControlAltFillColorSecondaryBrush",
+      "SegmentedItemBorderBrushSelected": "ControlElevationBorderBrush",
+      "SegmentedItemBorderBrushPressed": "ControlAltFillColorSecondaryBrush",
+      "SegmentedItemBorderBrushDisabled": "ControlAltFillColorSecondaryBrush",
+      "SegmentedItemForeground": "SystemColorButtonTextColor",
+      "SegmentedItemForegroundPointerOver": "SystemColorHighlightTextColor",
+      "SegmentedItemForegroundSelected": "SystemColorHighlightTextColor",
+      "SegmentedItemForegroundPressed": "SystemColorHighlightTextColor",
+      "SegmentedItemForegroundDisabled": "SystemColorGrayTextColor",
+      "SegmentedPillBackground": "AccentFillColorDefaultBrush",
+      "SegmentedPillBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "SegmentedPillBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "SegmentedPillBackgroundDisabled": "AccentFillColorDisabledBrush",
+      "PivotItemBackground": "SystemColorButtonFaceColor",
+      "PivotItemBackgroundPointerOver": "SystemColorHighlightColor",
+      "PivotItemBackgroundSelected": "SystemColorHighlightColor",
+      "PivotItemBackgroundPressed": "SystemColorHighlightColor",
+      "PivotItemBackgroundDisabled": "SystemColorButtonTextColor",
+      "PivotItemPillBackground": "AccentFillColorDefaultBrush",
+      "PivotItemPillBackgroundPointerOver": "AccentFillColorSecondaryBrush",
+      "PivotItemPillBackgroundPressed": "AccentFillColorTertiaryBrush",
+      "PivotItemPillBackgroundDisabled": "AccentFillColorDefaultBrush",
+      "PivotItemForeground": "SystemColorButtonTextColor",
+      "PivotItemForegroundPointerOver": "SystemColorHighlightTextColor",
+      "PivotItemForegroundSelected": "SystemColorHighlightTextColor",
+      "PivotItemForegroundPressed": "SystemColorHighlightTextColor",
+      "PivotItemForegroundDisabled": "SystemColorGrayTextColor",
+      "ButtonItemBackground": "ControlFillColorTransparentBrush",
+      "ButtonItemBackgroundPointerOver": "SystemColorHighlightTextColorBrush",
+      "ButtonItemBackgroundPressed": "SystemColorHighlightTextColorBrush",
+      "ButtonItemBackgroundSelected": "SystemControlHighlightAccentBrush",
+      "ButtonItemBackgroundSelectedPointerOver": "SystemColorButtonTextColorBrush",
+      "ButtonItemBackgroundSelectedPressed": "SystemColorHighlightTextColorBrush",
+      "ButtonItemBackgroundDisabled": "SystemControlBackgroundBaseLowBrush",
+      "ButtonItemForeground": "SystemColorButtonTextColorBrush",
+      "ButtonItemForegroundPointerOver": "SystemControlHighlightBaseHighBrush",
+      "ButtonItemForegroundPressed": "SystemControlHighlightBaseHighBrush",
+      "ButtonItemForegroundSelected": "SystemControlHighlightAltChromeWhiteBrush",
+      "ButtonItemForegroundSelectedPointerOver": "SystemColorButtonFaceColorBrush",
+      "ButtonItemForegroundSelectedPressed": "SystemColorHighlightColorBrush",
+      "ButtonItemForegroundDisabled": "SystemControlDisabledBaseMediumLowBrush"
+    }
+  },
+  "systemColors": {
+    "SystemColorButtonTextColor": "#FFFFFFFF",
+    "SystemColorWindowTextColor": "#FFFFFFFF",
+    "SystemColorWindowColor": "#000000FF",
+    "SystemColorButtonFaceColor": "#000000FF",
+    "SystemColorHighlightColor": "#FFFF00FF",
+    "SystemColorHighlightTextColor": "#000000FF",
+    "SystemColorHotlightColor": "#FFFF00FF",
+    "SystemColorGrayTextColor": "#808080FF"
+  },
+  "layouts": {
+    "Default": {
+      "holderMargin": [
+        11.0,
+        0.0,
+        11.0,
+        0.0
+      ],
+      "iconMargin": [
+        0.0,
+        7.0,
+        0.0,
+        7.0
+      ],
+      "contentMargin": [
+        0.0,
+        5.0,
+        0.0,
+        6.0
+      ],
+      "iconWidth": 16.0,
+      "spacing": 8.0,
+      "border": 1.0
+    },
+    "IconTop": {
+      "holderMargin": [
+        7.0,
+        11.0,
+        7.0,
+        5.0
+      ],
+      "iconMargin": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contentMargin": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "iconWidth": 20.0,
+      "spacing": 1.0,
+      "maxWidth": 48.0,
+      "hoverMargin": [
+        1.0,
+        3.0,
+        1.0,
+        3.0
+      ],
+      "border": 1.0
+    },
+    "Pivot": {
+      "holderMargin": [
+        12.0,
+        0.0,
+        12.0,
+        0.0
+      ],
+      "iconMargin": [
+        0.0,
+        11.0,
+        0.0,
+        11.0
+      ],
+      "contentMargin": [
+        0.0,
+        9.0,
+        0.0,
+        10.0
+      ],
+      "iconWidth": 16.0,
+      "spacing": 8.0,
+      "border": 0.0
+    },
+    "Button": {
+      "holderMargin": [
+        11.0,
+        11.0,
+        11.0,
+        11.0
+      ],
+      "iconMargin": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contentMargin": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "iconWidth": 16.0,
+      "spacing": 8.0,
+      "border": 0.0
+    }
+  },
+  "metrics": {
+    "spacing": 1.0,
+    "buttonSpacing": 2.0,
+    "scaleMs": 167,
+    "disabledMs": 83,
+    "disabledOpacity": 0.55,
+    "brushMs": 83,
+    "pressScale": 0.96,
+    "pillWidth": 4.0,
+    "pillHeight": 3.0,
+    "pillRadius": [
+      0.5,
+      1.0
+    ],
+    "border": 1.0,
+    "pillScale": 4,
+    "pressedPillScale": 2,
+    "curve": [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "hoverMargins": [
+      [
+        3.0,
+        3.0,
+        1.0,
+        3.0
+      ],
+      [
+        1.0,
+        3.0,
+        1.0,
+        3.0
+      ],
+      [
+        1.0,
+        3.0,
+        3.0,
+        3.0
+      ]
+    ]
+  }
+}

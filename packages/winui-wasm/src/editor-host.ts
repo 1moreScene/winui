@@ -1,5 +1,6 @@
 import { NodeKind, PasswordRevealMode, FontStyle } from "./enums";
 import type { NodeSnapshot } from "./scene";
+let nextRichEditorId = 0;
 interface Bridge {
   richClipboard(node:NodeSnapshot):{document:import("./rich-edit-types").RichEditDocument;rtf?:string;text:string};
   key(node:NodeSnapshot,event:KeyboardEvent,up:boolean):boolean;
@@ -13,6 +14,7 @@ interface Bridge {
 export class EditorHost {
   readonly input: HTMLInputElement | HTMLTextAreaElement;
   readonly helper = document.createElement("button");
+  private scrollbars: HTMLElement[] = [];
   private abort = new AbortController();
   private composing = false;
   private cancelledComposition = false;
@@ -103,13 +105,18 @@ export class EditorHost {
       },
       { signal },
     );
-    if(node.kind===NodeKind.RichEditBox)target.addEventListener('wheel',event=>{
-      if(event.ctrlKey||(!this.node.editor!.scrollableY&&!this.node.editor!.scrollableX))return;
-      event.preventDefault();event.stopPropagation();
-      const scale=event.deltaMode===1?this.node.editor!.caret.height:event.deltaMode===2?this.node.editor!.view.height:1;
-      this.bridge.send({kind:'richEdit',id:node.id,command:{action:'scroll',x:event.deltaX*scale,y:event.deltaY*scale}});
-    },{signal,passive:false});
     if(node.kind===NodeKind.RichEditBox){
+      area.id = `winui-rich-editor-${++nextRichEditorId}`;
+      for (const axis of ['horizontal', 'vertical']) {
+        const bar = document.createElement('div');
+        bar.setAttribute('role', 'scrollbar');
+        bar.setAttribute('aria-orientation', axis);
+        bar.setAttribute('aria-controls', area.id);
+        bar.setAttribute('aria-label', `${axis} scroll`);
+        bar.setAttribute('aria-valuemin', '0');
+        this.scrollbars.push(bar);
+        parent.append(bar);
+      }
       for(const type of ['copy','cut'] as const)target.addEventListener(type,event=>{
         if(!event.clipboardData)return;
         const data=this.bridge.richClipboard(this.node);if(!data.document.runs.length)return;event.preventDefault();
@@ -386,6 +393,17 @@ export class EditorHost {
       );
     area.scrollLeft = e.scrollX;
     area.scrollTop = e.scrollY;
+    this.scrollbars.forEach((bar, index) => {
+      const vertical = index === 1;
+      const view = node.scroll;
+      const bounds = vertical ? view?.verticalBar : view?.horizontalBar;
+      bar.hidden = !bounds;
+      if (!bounds || !view) return;
+      bar.style.cssText = `position:absolute;left:${r.x + bounds.x}px;top:${r.y + bounds.y}px;width:${bounds.width}px;height:${bounds.height}px;pointer-events:${node.enabled ? 'auto' : 'none'};touch-action:none`;
+      bar.setAttribute('aria-valuemax', String(vertical ? view.scrollableHeight : view.scrollableWidth));
+      bar.setAttribute('aria-valuenow', String(vertical ? view.verticalOffset : view.horizontalOffset));
+      bar.setAttribute('aria-disabled', String(!node.enabled));
+    });
     const button = e.helperButton;
     this.helper.style.cssText = `position:absolute;left:${button?.x ?? 0}px;top:${button?.y ?? 0}px;width:${button?.width ?? 0}px;height:${button?.height ?? 0}px;padding:0;border:0;background:transparent;opacity:0;pointer-events:auto;display:${button ? "block" : "none"}`;
     this.helper.style.cursor = node.pointer.cursor;
@@ -401,5 +419,6 @@ export class EditorHost {
     this.input.value = "";
     this.input.remove();
     this.helper.remove();
+    this.scrollbars.forEach(bar => bar.remove());
   }
 }

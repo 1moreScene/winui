@@ -19,6 +19,9 @@ test('all examples use Rust tables; large source realizes only viewport cells an
  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await expect(page.locator('section.example[id^="table-"]')).toHaveCount(10);
  const initial=await page.evaluate(()=>({nodes:window.tableViewScenes.large.snapshot.nodes.length,slots:window.tableViewControls.large.tableSnapshot!.realized.length}));expect(initial.nodes).toBeLessThan(180);expect(initial.slots).toBeLessThan(60);
  await page.locator('#table-large').scrollIntoViewIfNeeded();await page.evaluate(()=>window.tableViewControls.large.scrollIntoView('person-9999'));await expect.poll(()=>page.evaluate(()=>window.tableViewControls.large.tableSnapshot!.realized.some(s=>s.row==='person-9999'))).toBe(true);
+ const lastRow=page.locator('#table-large').locator('[role=gridcell][aria-rowindex="10001"]').first();
+ await expect(lastRow).toBeVisible();
+ expect(await page.evaluate(()=>window.tableViewControls.large.tableSnapshot!.viewKeys.at(-1))).toBe('person-9999');
  const nativeNodes=await page.evaluate(()=>window.tableViewScenes.large.snapshot.nodes.length);expect(nativeNodes).toBeLessThan(180);expect(errors).toEqual([]);
 });
 test('pointer sorting, searched filter flyout and reset execute in Rust',async({page})=>{
@@ -290,6 +293,27 @@ test('overlapping paste/export promises remain separate; cancellation and type e
 test('items-only API preserves object keys and business callbacks after editing',async({page})=>{
  const result=await page.evaluate(async()=>{const row={name:'Ada',age:32,greet:()=>'hello'};const t=window.tableViewScenes.auto.root.tableView({items:[row],visible:false});try{const key=t.keyForItem(row);t.select({row:key,column:'age'});await t.paste('35');const updated=t.items[0];const csv=await t.exportCsv();return{age:updated.age,keyStable:t.keyForItem(updated)===key,hasId:Object.hasOwn(updated,'id'),greeting:updated.greet(),originalAge:row.age,csv};}finally{t.dispose();}});
  expect(result).toMatchObject({age:35,keyStable:true,hasId:false,greeting:'hello',originalAge:32});expect(result.csv).toContain('Ada,35');
+});
+
+test('editing one table leaves a second table with the same source intact', async ({ page }) => {
+ const result = await page.evaluate(async () => {
+  const scene = window.tableViewScenes.auto;
+  const rows = [{ id: 'person', name: 'Ada', age: 32 }];
+  const first = scene.root.tableView({ items: rows, visible: false });
+  const second = scene.root.tableView({ items: rows, visible: false });
+  try {
+   scene.render();
+   first.select({ row: 'person', column: 'age' });
+   await first.paste('35');
+   return { first: await first.exportCsv(), second: await second.exportCsv(), sourceAge: rows[0].age };
+  } finally {
+   first.dispose();
+   second.dispose();
+  }
+ });
+ expect(result.first).toContain('Ada,35');
+ expect(result.second).toContain('Ada,32');
+ expect(result.sourceAge).toBe(32);
 });
 
 test('filter search Enter applies and unchanged Ok leaves the column unfiltered',async({page})=>{

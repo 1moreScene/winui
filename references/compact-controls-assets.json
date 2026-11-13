@@ -1,10 +1,15 @@
 {
   "assets": [
     {
-      "local": "gallery/public/official/person-profile.png",
-      "url": "https://learn.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png",
-      "sha256": "2c298c50266e66f9153fe453e981e2e0a0c1caf8d21f1ca69b3fe5f356c12b67",
-      "source": "Exact image URL in the pinned Gallery PersonPicture page; Microsoft documentation media, not claimed as part of the SDK MIT license"
+      "local": "gallery/public/project/person-profile.png",
+      "source": "tools/generate-project-avatar.py",
+      "license": "MIT",
+      "note": "Original geometric replacement. The documentation photograph has been removed; not native photo pixel parity."
     }
-  ]
+  ],
+  "removedDocumentationImage": {
+    "sha256": "2c298c50266e66f9153fe453e981e2e0a0c1caf8d21f1ca69b3fe5f356c12b67",
+    "url": "https://learn.microsoft.com/windows/uwp/contacts-and-calendar/images/shoulder-tap-static-payload.png",
+    "reason": "No pinned media-specific permission and attribution evidence was retained."
+  }
 }

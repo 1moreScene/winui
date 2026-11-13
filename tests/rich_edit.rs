@@ -39,6 +39,32 @@ fn doc(s: &Scene, id: u32) -> Value {
     serde_json::to_value(s.properties(id).unwrap().document.as_ref().unwrap()).unwrap()
 }
 #[test]
+fn overflowing_editor_scrollbar_tracks_wheel_and_thumb_drag() {
+    let (mut s, id) = scene(json!({"verticalAlignment":"Stretch","text":"Line\n".repeat(30),"isReadOnly":true}));
+    s.layout(&mut Measure);
+    let view = s.nodes[&id].editor.view;
+    let x = view.x + view.width - 5.;
+    assert!(s.wheel(view.x + 5., view.y + 10., 0., 100., false).unwrap());
+    s.layout(&mut Measure);
+    let n = &s.nodes[&id];
+    assert_eq!(n.editor.scroll_y, 100.);
+    let thumb = n.scroll.thumb(&n.props, true, 1.).unwrap();
+    let y = view.y + thumb.y + thumb.height / 2.;
+    send(&mut s, json!({"kind":"down","pointer":1,"x":x,"y":y}));
+    send(&mut s, json!({"kind":"move","pointer":1,"x":x,"y":y+20.}));
+    send(&mut s, json!({"kind":"up","pointer":1,"x":x,"y":y+20.}));
+    s.layout(&mut Measure);
+    assert!(s.nodes[&id].editor.scroll_y > 100.);
+    assert_eq!(s.properties(id).unwrap().text, "Line\n".repeat(30));
+
+    s.update(vec![Update { id, patch: json!({"text":"Short"}) }]).unwrap();
+    s.layout(&mut Measure);
+    let n = &s.nodes[&id];
+    assert_eq!(n.editor.scroll_y, 0.);
+    assert!(n.scroll.thumb(&n.props, true, 1.).is_none());
+}
+
+#[test]
 fn selection_formatting_preserves_unselected_runs_and_full_history() {
     let (mut s, id) = scene(json!({"text":"Hello world"}));
     select(&mut s, id, 6, 5);

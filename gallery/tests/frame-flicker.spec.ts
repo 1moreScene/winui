@@ -43,6 +43,8 @@ for(const backend of [RendererBackend.Canvas2D,RendererBackend.WebGL2]){
    const png=PNG.sync.read(screenshot),pixel=(Math.floor(png.height/2)*png.width+Math.floor(png.width/2))*4;
    expect([...png.data.subarray(pixel,pixel+4)]).toEqual([...color,255]);
    expect(await page.locator('.fixture-frame > [data-frame-instance]:not([hidden])').count()).toBe(1);
+   const cached=page.locator('.fixture-frame > [data-frame-instance][hidden] .winui-surface > canvas');
+   expect(await cached.evaluateAll(canvases=>canvases.every(canvas=>(canvas as HTMLCanvasElement).width===0&&(canvas as HTMLCanvasElement).height===0))).toBe(true);
   };
   await sample([255,0,0]);
   for(const transition of [NavigationTransition.Entrance,NavigationTransition.SlideFromLeft,NavigationTransition.SlideFromRight]){

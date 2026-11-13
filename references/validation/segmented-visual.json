@@ -1,0 +1,687 @@
+{
+  "commit": "a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e",
+  "native": {
+    "winAppSdk": "2.5.4-experimental",
+    "dpr": 1,
+    "toolkit": "CommunityToolkit.WinUI.Controls.Segmented, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "capture": "tools/run-segmented-native.ps1; source build and forced VSM sampling",
+    "states": [
+      {
+        "theme": "Light",
+        "state": "PressedSelected",
+        "elapsedMs": 7.9788,
+        "ScaleX": 4,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PressedSelected",
+        "elapsedMs": 53.0404,
+        "ScaleX": 2.862637996673584,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PressedSelected",
+        "elapsedMs": 108.8507,
+        "ScaleX": 2.2620930671691895,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PressedSelected",
+        "elapsedMs": 243.3284,
+        "ScaleX": 2,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PointerOverSelected",
+        "elapsedMs": 25.9492,
+        "ScaleX": 2.308340072631836,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PointerOverSelected",
+        "elapsedMs": 72.5954,
+        "ScaleX": 3.5099868774414062,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PointerOverSelected",
+        "elapsedMs": 136.6314,
+        "ScaleX": 3.9350953102111816,
+        "Opacity": 1
+      },
+      {
+        "theme": "Light",
+        "state": "PointerOverSelected",
+        "elapsedMs": 264.2081,
+        "ScaleX": 4,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PressedSelected",
+        "elapsedMs": 20.7768,
+        "ScaleX": 3.612497329711914,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PressedSelected",
+        "elapsedMs": 54.245,
+        "ScaleX": 2.684021234512329,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PressedSelected",
+        "elapsedMs": 116.6637,
+        "ScaleX": 2.16713547706604,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PressedSelected",
+        "elapsedMs": 251.8254,
+        "ScaleX": 2,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PointerOverSelected",
+        "elapsedMs": 17.44,
+        "ScaleX": 2,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PointerOverSelected",
+        "elapsedMs": 64.4082,
+        "ScaleX": 3.2671470642089844,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PointerOverSelected",
+        "elapsedMs": 127.1398,
+        "ScaleX": 3.872567653656006,
+        "Opacity": 1
+      },
+      {
+        "theme": "Dark",
+        "state": "PointerOverSelected",
+        "elapsedMs": 249.2903,
+        "ScaleX": 4,
+        "Opacity": 1
+      }
+    ],
+    "dataSha256": "ab4e7d3fde2ffcac5564b8eaec0f95fe7cf61896cf654e6a8cf9119c563fbb56"
+  },
+  "browser": {
+    "capture": "tools/capture-segmented-browser.mjs; Chrome, Canvas2D, real pointer down/up",
+    "dprs": [
+      1,
+      1.25
+    ],
+    "motion": [
+      {
+        "theme": "Light",
+        "dpr": 1,
+        "pressSettledWidthDip": 8,
+        "releaseSettledWidthDip": 16,
+        "hasIntermediateWidths": true
+      },
+      {
+        "theme": "Dark",
+        "dpr": 1,
+        "pressSettledWidthDip": 8,
+        "releaseSettledWidthDip": 16,
+        "hasIntermediateWidths": true
+      },
+      {
+        "theme": "Light",
+        "dpr": 1.25,
+        "pressSettledWidthDip": 8,
+        "releaseSettledWidthDip": 16,
+        "hasIntermediateWidths": true
+      },
+      {
+        "theme": "Dark",
+        "dpr": 1.25,
+        "pressSettledWidthDip": 8,
+        "releaseSettledWidthDip": 16,
+        "hasIntermediateWidths": true
+      }
+    ],
+    "dataSha256": "0debea05b773f1791ea5ed351b52d399c1df68df5de3a0312d1089ce34082a80"
+  },
+  "geometry": [
+    {
+      "theme": "Light",
+      "dpr": 1,
+      "style": "Default",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        272,
+        32
+      ],
+      "native100SizeDip": [
+        272,
+        32
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1,
+      "style": "Pivot",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        175,
+        84
+      ],
+      "native100SizeDip": [
+        175,
+        84
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1,
+      "style": "Button",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        243,
+        41
+      ],
+      "native100SizeDip": [
+        243,
+        41
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1,
+      "style": "Default",
+      "orientation": "Vertical",
+      "browserSizeDip": [
+        58,
+        176
+      ],
+      "native100SizeDip": [
+        58,
+        176
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1,
+      "style": "Default",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        272,
+        32
+      ],
+      "native100SizeDip": [
+        272,
+        32
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1,
+      "style": "Pivot",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        175,
+        84
+      ],
+      "native100SizeDip": [
+        175,
+        84
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1,
+      "style": "Button",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        243,
+        41
+      ],
+      "native100SizeDip": [
+        243,
+        41
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1,
+      "style": "Default",
+      "orientation": "Vertical",
+      "browserSizeDip": [
+        58,
+        176
+      ],
+      "native100SizeDip": [
+        58,
+        176
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1.25,
+      "style": "Default",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        271.2,
+        32
+      ],
+      "native100SizeDip": [
+        272,
+        32
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1.25,
+      "style": "Pivot",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        174.4,
+        84
+      ],
+      "native100SizeDip": [
+        175,
+        84
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1.25,
+      "style": "Button",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        243.2,
+        41.6
+      ],
+      "native100SizeDip": [
+        243,
+        41
+      ]
+    },
+    {
+      "theme": "Light",
+      "dpr": 1.25,
+      "style": "Default",
+      "orientation": "Vertical",
+      "browserSizeDip": [
+        57.6,
+        175.2
+      ],
+      "native100SizeDip": [
+        58,
+        176
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1.25,
+      "style": "Default",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        271.2,
+        32
+      ],
+      "native100SizeDip": [
+        272,
+        32
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1.25,
+      "style": "Pivot",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        174.4,
+        84
+      ],
+      "native100SizeDip": [
+        175,
+        84
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1.25,
+      "style": "Button",
+      "orientation": "Horizontal",
+      "browserSizeDip": [
+        243.2,
+        41.6
+      ],
+      "native100SizeDip": [
+        243,
+        41
+      ]
+    },
+    {
+      "theme": "Dark",
+      "dpr": 1.25,
+      "style": "Default",
+      "orientation": "Vertical",
+      "browserSizeDip": [
+        57.6,
+        175.2
+      ],
+      "native100SizeDip": [
+        58,
+        176
+      ]
+    }
+  ],
+  "limits": [
+    "Native comparison at DPR 1; browser DPR 1.25 checks fraction rounding and transition endpoints.",
+    "Native capture uses OS accent and Segoe icon outlines; browser uses the project palette and portable icon font.",
+    "Native timing uses forced VSM; browser timing uses actual mouse press and release."
+  ],
+  "staticBorderSamples": {
+    "dpr": 1,
+    "basis": "Selected and unselected flat edge pixels, away from antialiased corners, text and the accent indicator. Native and browser RGB matched at each point.",
+    "samples": [
+      {
+        "theme": "Light",
+        "pointPx": [
+          20,
+          12
+        ],
+        "rgb": [
+          213,
+          213,
+          213
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          20,
+          13
+        ],
+        "rgb": [
+          249,
+          249,
+          249
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          20,
+          42
+        ],
+        "rgb": [
+          249,
+          249,
+          249
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          20,
+          43
+        ],
+        "rgb": [
+          190,
+          190,
+          190
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          12,
+          27
+        ],
+        "rgb": [
+          213,
+          213,
+          213
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          13,
+          27
+        ],
+        "rgb": [
+          249,
+          249,
+          249
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          101,
+          27
+        ],
+        "rgb": [
+          220,
+          220,
+          220
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          102,
+          27
+        ],
+        "rgb": [
+          234,
+          234,
+          234
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          124,
+          12
+        ],
+        "rgb": [
+          226,
+          226,
+          226
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          124,
+          13
+        ],
+        "rgb": [
+          234,
+          234,
+          234
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          124,
+          42
+        ],
+        "rgb": [
+          234,
+          234,
+          234
+        ]
+      },
+      {
+        "theme": "Light",
+        "pointPx": [
+          124,
+          43
+        ],
+        "rgb": [
+          226,
+          226,
+          226
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          20,
+          12
+        ],
+        "rgb": [
+          67,
+          67,
+          67
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          20,
+          13
+        ],
+        "rgb": [
+          42,
+          42,
+          42
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          20,
+          42
+        ],
+        "rgb": [
+          42,
+          42,
+          42
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          20,
+          43
+        ],
+        "rgb": [
+          63,
+          63,
+          63
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          12,
+          27
+        ],
+        "rgb": [
+          63,
+          63,
+          63
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          13,
+          27
+        ],
+        "rgb": [
+          42,
+          42,
+          42
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          101,
+          27
+        ],
+        "rgb": [
+          45,
+          45,
+          45
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          102,
+          27
+        ],
+        "rgb": [
+          29,
+          29,
+          29
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          124,
+          12
+        ],
+        "rgb": [
+          48,
+          48,
+          48
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          124,
+          13
+        ],
+        "rgb": [
+          29,
+          29,
+          29
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          124,
+          42
+        ],
+        "rgb": [
+          29,
+          29,
+          29
+        ]
+      },
+      {
+        "theme": "Dark",
+        "pointPx": [
+          124,
+          43
+        ],
+        "rgb": [
+          48,
+          48,
+          48
+        ]
+      }
+    ]
+  }
+}

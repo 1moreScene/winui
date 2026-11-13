@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-11-09T22:47:17.394085+08:00",
+  "currentSdkBaseline": "665fea52b8ad47a64187d0f202d5281b074f616f",
+  "currentBaselineCollectionGroups": "src/ItemsSource/CollectionView.Properties.cs: CollectionGroups getter returns null; no group descriptions/pipeline in the pinned source",
+  "investigatedUpstream": {
+    "tag": "v1.5.0",
+    "commit": "ef099b5e6b636ab7a0a6092aad0a2f87b27c92ba",
+    "provenance": "out/table-view-grouping-research/provenance.json",
+    "files": {
+      "LICENSE.md": "58f98255dc8859d796d4eb4f82a8afc2b21488e2b9e93e0af59960804300abb8",
+      "docs/docs/grouping.md": "ca5164b74b5f7c8d30926326a13444a76274e65265c00abf21e426523005dbd6",
+      "samples/WinUI.TableView.SampleApp/Pages/GroupingPage.xaml": "bad597012d1da18836dec9856b9f34515641f0fb2a411746fe0e82b20dea9a85",
+      "samples/WinUI.TableView.SampleApp/Pages/GroupingPage.xaml.cs": "6babba585d923fbf7d925c63cda4d847cc40d129153c39826160647378c18fc4",
+      "src/Controls/TableViewFilterItemsControl.xaml": "fa328ca2220725517cf72d5dc2e835759a054727fd931bef7999a3f3b9fc9488",
+      "src/Controls/TableViewFilterItemsControl.xaml.cs": "7d6749657d50405ba0db6f38ff463022e910a191fe31d08ad255d79ab356ea93",
+      "src/EventArgs/TableViewGroupingEventArgs.cs": "c950bedf6aa8a76d08a573efd147222a2ee0389f9c779d9e56d4562df79698cc",
+      "src/ItemsSource/CollectionView.Properties.cs": "e9350fedcce63e7331399f930e25bac9c7797a7e40727c266b5def6320a8f839",
+      "src/ItemsSource/CollectionViewGroup.cs": "018d0c738f9c8adabe72016f55bf54fd73c4969c464adf9032aca6ed004fdb8a",
+      "src/ItemsSource/ColumnGroupDescription.cs": "7b17c776bf1c523a065b6169140f5e8abf4dd779583d33fc629a0d2f27154743",
+      "src/ItemsSource/GroupDescription.cs": "4048037485b631454a4d45fb0771841ce5885c408294d5ea9df6d767560ca0cf",
+      "src/ItemsSource/GroupSortMode.cs": "5a6fe97e28057f66444c85e847f6b0a3cc33a252ef00a3589ce08d937c119433",
+      "src/ItemsSource/TableViewGroupInfo.cs": "1b53d12de80709eecd9a7b58c37e4191839ecb0c746ec1a5a2a630d270df350e",
+      "src/TableView.Properties.cs": "765f49a7417248d84b246fb037715de52ab866866fc24501ec014598cbc6da11",
+      "src/TableViewGroupHeaderRow.cs": "7189fdb77226c2eb6bdaf751b8690efadf118148d7af1cca0b6943a525deaa9a",
+      "src/TableViewGroupState.cs": "0c8e1f7c0d01d137d8e91ac2d8b757c06a3356cdc2ec45aecc0979bc3d0dc009",
+      "src/Themes/TableViewGroupHeaderRow.xaml": "5ca853007fd2b30e733d047b5bbc1850d3f88847f0b6feaf75802a7e7ab6d878",
+      "tests/TableViewGroupingSelectionTests.cs": "fea5b5182ce22875a0541288076b6f4b7b08434febf3f42f42f3d08615266058",
+      "tests/TableViewGroupingSortTests.cs": "b37855d56361afa14e2ca67755f3e2b1a10778a736c3e6c2a9b0e372e55d9cc4",
+      "src/Columns/TableViewColumn.cs": "81f5392f35ec18b9ced12a4f5bbb4f638d8aec50ef510368bfc0659116ef2d84",
+      "src/ItemsSource/CollectionView.cs": "af14c387497aa76d060b751121f726af64593984f3ba0471ef4965537009b8b8",
+      "src/ItemsSource/SortDescription.cs": "8afb1be4f5f0e4d013262bcc99842135cf8ca90555f09aa7e57a2993967972ac",
+      "src/TableView.cs": "e39978428c7daf865b581cfb86acb0de23184beb0e9811457db4bed2dce0325e",
+      "src/TableViewColumnHeader.cs": "beeb947df6334c2cb5b8685b2e8dc6b55a19e488c6d0ab283be605f53b092a37",
+      "src/Themes/TableView.xaml": "b98fdf9e332fd87f2740f584d0c2429bb0e40a9a8534ec81dc4755c79ba03a14",
+      "Directory.Packages.props": "dfe88fe9ea1c168039927b98715dbad6e79edbdf520002f37e8b9fe69f29950b",
+      "global.json": "131c561e26d217588cf2e1088a51cc3bce0cec78186929ae852085db2ac57f90",
+      "src/WinUI.TableView.csproj": "ba584c68c320b1d22cf6292f38c86463c109191127dd971effeacc6663199c4e"
+    },
+    "licenseSha256": "58f98255dc8859d796d4eb4f82a8afc2b21488e2b9e93e0af59960804300abb8",
+    "licenseTextSameAfterNewlineNormalization": true,
+    "declaredWindowsPackages": {
+      "Microsoft.WindowsAppSDK": "2.2.0",
+      "Microsoft.WindowsAppSDK.WinUI": "1.8.260528001"
+    },
+    "dependencyScope": "Declared package versions, not a resolved/native-built grouping fixture"
+  },
+  "sources": [
+    "https://github.com/w-ahmad/WinUI.TableView/releases/tag/v1.5.0",
+    "https://w-ahmad.dev/WinUI.TableView/docs/grouping.html"
+  ],
+  "verifiedFeatures": {
+    "columnMenu": "Group/Ungroup via TableViewColumnHeader.Group; handled Grouping event can suppress default operation",
+    "descriptions": "Ordered GroupDescriptions, multi-level hierarchy, GroupDescription derives from SortDescription",
+    "ordering": "Key or item-count order with ascending/descending; integration with existing independent column sort",
+    "presentation": "Group key/count header template, per-group expansion, default collapsed, per-level 24 DIP indentation",
+    "sticky": "Optional sticky group header, one level at a time",
+    "lifecycle": "Expanded overrides keyed by description and ancestor key path; removed description resets overrides",
+    "source": "Filtering/sorting/grouping operate on internal view without mutating source items",
+    "platform": "Upstream grouping implementation is guarded by WINDOWS; absent on non-Windows Uno targets"
+  },
+  "rustPortGaps": [
+    "TableProperties/Column need typed grouping metadata and cancellable request lifecycle",
+    "Current flat order/row offsets must account for group headers, collapsed descendants and stable source-row identities",
+    "Virtualization, frozen bands, keyboard selection, editing and clipboard must map visible rows to business rows through grouping",
+    "Rust group-header templates, expansion state, pointer capture, 24 DIP indentation and sticky-header clipping need source-based implementation",
+    "Rebuild native reference fixture on the separately pinned v1.5.0 baseline before grouping visual/motion acceptance"
+  ],
+  "implementationStatus": "Research completed; grouping is not implemented in the current Rust TableView and no placeholder API or React grouping workaround was added",
+  "baselineChanged": false
+}

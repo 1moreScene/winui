@@ -1115,6 +1115,14 @@
       "RichEditBox": [
         "RichEditBox",
         "Editable rich text document; Rust owns formatting, selection and history."
+      ],
+      "Segmented": [
+        "Segmented",
+        "CommunityToolkit Segmented selection control."
+      ],
+      "SegmentedItem": [
+        "SegmentedItem",
+        "Declarative item container owned by Segmented."
       ]
     },
     "default": "Grid"
@@ -4457,6 +4465,25 @@
       "Count": [
         "Count",
         "Order by item count, breaking ties by key."
+      ]
+    }
+  },
+  "SegmentedStyle": {
+    "rust": "SegmentedStyle",
+    "description": "CommunityToolkit Segmented template style.",
+    "default": "Default",
+    "members": {
+      "Default": [
+        "Default",
+        "Equal item sizes with a shared border and selection pill."
+      ],
+      "Pivot": [
+        "Pivot",
+        "Content-sized items with an underline selection pill."
+      ],
+      "Button": [
+        "Button",
+        "Content-sized buttons with an accent selected background."
       ]
     }
   }

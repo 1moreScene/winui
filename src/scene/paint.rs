@@ -273,6 +273,7 @@ impl Scene {
         if self.paint_picker_wheel_navigation(id,out){return;}
         if self.picker_custom_part(id){return;}
         if self.paint_picker_wheel_item(id,out){return;}
+        let item_opacity = if self.nodes[&id].kind == NodeKind::SegmentedItem {self.sync_segmented_visual(id)} else {1.};
         let n = &self.nodes[&id];
         if !n.visible || n.rect.width <= 0. || n.rect.height <= 0. {
             return;
@@ -357,7 +358,7 @@ impl Scene {
             }
         }
         let connection_start=n.effects.has_crossfade(self.time).then_some(out.len());
-        let opacity = presentation.opacity * n.effects.opacity(self.time)
+        let opacity = presentation.opacity * item_opacity * n.effects.opacity(self.time)
             * if n.table.role=="tableBodyRows"{n.table.body_opacity.value(self.time)}else{1.}
             * if kind == NodeKind::CollectionItem {
                 n.collection.item_visual(self.time).opacity
@@ -1034,6 +1035,7 @@ impl Scene {
         }
         self.paint_table_selection_background(id,out);
         if self.nodes[&id].table.role=="filterMenuItem" {foreground=Self::color(&BrushValue::Resource{resource:if enabled{"TextFillColorPrimaryBrush"}else{"TextFillColorDisabledBrush"}.into()},theme);}
+        if matches!(kind,NodeKind::Segmented|NodeKind::SegmentedItem) {foreground=self.paint_segmented(id,out);}
         self.paint_primitive(id,out);
         self.paint_reading(id,out);
         if picker_controls::is_control(kind)||self.is_picker_surface(id){

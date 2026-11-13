@@ -27,10 +27,14 @@ test('unchanged properties stay cached and public snapshots remain complete afte
   button.update({text:'After',width:180});scene.render();
   const complete=scene.snapshot.nodes.every((n:any)=>!!n.props);
   const snapshot=button.snapshot;const sent=wire.nodes.find((n:any)=>n.id===snapshot.id).props;
+  const defaultsAreOwn=Object.hasOwn(snapshot.props,'numberDigits')&&Object.hasOwn(snapshot.props,'minimum');
+  (snapshot.props as {numberDigits:string[]}).numberDigits[0]='changed by caller';
+  const defaultsAreDetached=(button.snapshot.props as {numberDigits:string[]}).numberDigits[0]==='0';
   raw.scene_frame=original;
-  return {stable,complete,text:snapshot.props.text,width:snapshot.rect.width,sentText:sent?.text};
+  return {stable,complete,defaultsAreOwn,defaultsAreDetached,text:snapshot.props.text,width:snapshot.rect.width,sentText:sent?.text};
  });
  expect(result.stable.cached/result.stable.total).toBeGreaterThan(.9);expect(result.complete).toBe(true);
+ expect(result.defaultsAreOwn).toBe(true);expect(result.defaultsAreDetached).toBe(true);
  expect(result.text).toBe('After');expect(result.sentText).toBe('After');expect(result.width).toBe(180);
 });
 
@@ -89,6 +93,101 @@ test('offscreen fixed surfaces coalesce resize work and resume with real Rust ge
  });
  expect(result.deferred).toBe(result.before);expect(result.resumed).toBeGreaterThan(result.deferred);expect(result.visibleWidth).toBe(720);
  expect(result.beforeForcedRead).toBe(result.beforeRead);expect(result.afterRead).toBeGreaterThan(result.beforeForcedRead);expect(result.explicitWidth).toBe(680);expect(result.selected).toBe('b');
+});
+
+test('offscreen fixed scenes project accessibility before rasterizing', async ({ page }) => {
+  await page.goto('/composition.html');
+  await page.waitForFunction(() => !!(window as any).composition?.ui);
+  const result = await page.evaluate(async () => {
+    const { ui } = (window as any).composition as { ui: import('winui-wasm').WinUI };
+    const host = document.createElement('div');
+    host.style.cssText = 'position:absolute;top:1800px;width:240px;height:140px';
+    document.body.append(host);
+    const scene = ui.scene(host);
+    const canvas = scene.element.querySelector('canvas')!;
+    const button = scene.root.button({ text: 'Offscreen action', width: 160, height: 40 });
+    try {
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      const before = {
+        width: canvas.width,
+        arranged: button.snapshot.rect.width,
+        projected: scene.element.querySelector('button')?.getAttribute('aria-label'),
+      };
+      host.scrollIntoView();
+      const deadline = performance.now() + 3000;
+      while (!canvas.width && performance.now() < deadline) {
+        await new Promise(resolve => requestAnimationFrame(resolve));
+      }
+      return { before, width: canvas.width };
+    } finally {
+      scene.dispose();
+      host.remove();
+    }
+  });
+  expect(result.before).toEqual({ width: 0, arranged: 160, projected: 'Offscreen action' });
+  expect(result.width).toBeGreaterThan(0);
+});
+
+test('scenes in one SDK share font measurement and release it with the last scene', async ({ page }) => {
+ await page.goto('/composition.html');
+ await page.waitForFunction(() => !!(window as any).composition?.scene);
+ const counts = await page.evaluate(() => {
+  const { scene, ui } = (window as any).composition as {
+    scene: import('winui-wasm').Scene;
+    ui: import('winui-wasm').WinUI;
+  };
+  const count = () => document.querySelectorAll('[data-winui-font-metrics]').length;
+  const host = document.createElement('div');
+  host.style.cssText = 'width:240px;height:140px';
+  document.body.append(host);
+  const second = ui.scene(host);
+  second.root.text({ text: 'Shared font metrics' });
+  second.render();
+  const both = count();
+  scene.dispose();
+  const one = count();
+  second.dispose();
+  host.remove();
+  return [both, one, count()];
+ });
+ expect(counts).toEqual([1, 1, 0]);
+});
+
+test('scrollbar discovery ignores hidden Frame content until it is shown', async ({ page }) => {
+ await page.goto('/#home');
+ await page.waitForFunction(() => window.gallery?.frame && !window.gallery.frame.snapshot.animating);
+ const result = await page.evaluate(async () => {
+  const lease = window.gallery.sdk.installGlobalScrollbars();
+  const frame = document.createElement('div');
+  frame.dataset.winuiFrame = '';
+  const cached = document.createElement('div');
+  cached.dataset.frameInstance = 'cached';
+  cached.hidden = true;
+  const scroller = document.createElement('div');
+  scroller.style.cssText = 'width:120px;height:60px;overflow:auto';
+  const content = document.createElement('div');
+  content.style.height = '200px';
+  scroller.append(content);
+  cached.append(scroller);
+  frame.append(cached);
+  document.body.append(frame);
+  const settle = () => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  try {
+   await settle();
+   const before = lease.diagnostics.scans;
+   content.textContent = 'Updated while cached';
+   await settle();
+   const hidden = { scans: lease.diagnostics.scans, managed: scroller.hasAttribute('data-winui-scroll-host') };
+   cached.hidden = false;
+   await settle();
+   return { before, hidden, shown: scroller.hasAttribute('data-winui-scroll-host') };
+  } finally {
+   frame.remove();
+   lease.dispose();
+  }
+ });
+ expect(result.hidden).toEqual({ scans: result.before, managed: false });
+ expect(result.shown).toBe(true);
 });
 
 test('an existing overflow candidate is discovered when Frame geometry makes it scrollable',async({page})=>{

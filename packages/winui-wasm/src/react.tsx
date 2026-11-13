@@ -20,6 +20,8 @@ import type * as importViewTypes from './view-controls-types';
 import { Frame as FrameController, projectFrameVisual, type FrameSnapshot, type PageStackEntry, type NavigatingEvent, type NavigatedEvent } from './frame';
 import { NavigationCacheMode, NavigationMode, NavigationTransition } from './enums';
 import type {AppBarSeparatorOptions,AppBarButtonOptions,AppBarToggleButtonOptions,DropDownButtonOptions,CommandBarOptions,CommandBarEvent,CommandBarItem} from './command-controls-types';
+import type {SegmentedOptions,SegmentedItemOptions,SegmentedSelectionChangedEvent} from './segmented-types';
+import {Segmented as SegmentedController,SegmentedItem as SegmentedItemController} from './scene';
 import type {SelectorBarOptions} from './navigation-controls-types';
 import {AppBarButton as AppBarButtonController,AppBarToggleButton as AppBarToggleButtonController,DropDownButton as DropDownButtonController,CommandBar as CommandBarController,SelectorBar as SelectorBarController} from './scene';
 import {NumberBox as NumberBoxController,AutoSuggestBox as AutoSuggestBoxController,ComboBox as ComboBoxController,ContentDialog as ContentDialogController,TeachingTip as TeachingTipController} from './scene';
@@ -34,6 +36,7 @@ import {
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   type CSSProperties,
@@ -52,6 +55,20 @@ import {
 const RuntimeContext = createContext<WinUI | null>(null);
 /** Current page lifecycle context, including cached inactive pages. */
 export const PageNavigationContext=createContext<{entry:PageStackEntry;active:boolean;parameter:unknown}|null>(null);
+const PagePresentationContext = createContext(true);
+function HostedPage({ entry, parameter, active, renderPage }: {
+  entry: PageStackEntry;
+  parameter: unknown;
+  active: boolean;
+  renderPage: (entry: PageStackEntry) => ReactNode;
+}) {
+  const { id, page, parameter: parameterId, transition, cacheMode } = entry;
+  const stableEntry = useMemo(() => ({ id, page, parameter: parameterId, transition, cacheMode }),
+    [id, page, parameterId, transition, cacheMode]);
+  const content = useMemo(() => renderPage(stableEntry), [renderPage, stableEntry]);
+  const context = useMemo(() => ({ entry: stableEntry, active, parameter }), [stableEntry, active, parameter]);
+  return <PageNavigationContext.Provider value={context}>{content}</PageNavigationContext.Provider>;
+}
 export interface FrameProps {
   /** Optional controlled page identity. NavigationView remains responsible for selecting menu items. */ page?:string;
   renderPage:(entry:PageStackEntry)=>ReactNode;
@@ -75,6 +92,7 @@ export function Frame(props:FrameProps|SceneFrameProps){
 }
 function HostedFrame(props:FrameProps){
   const parentPage=useContext(PageNavigationContext);
+  const parentPresented = useContext(PagePresentationContext);
   const runtime=useContext(RuntimeContext);if(!runtime)throw new Error('Frame requires a WinUIProvider');
   const latest=useRef(props);latest.current=props;
   const control=useRef<FrameController<PageStackEntry>|null>(null),host=useRef<HTMLDivElement>(null);
@@ -132,14 +150,16 @@ function HostedFrame(props:FrameProps){
       projectFrameVisual(element,state.visuals.find(v=>v.instance===Number(element.dataset.frameInstance)));
   });
   useLayoutEffect(()=>{
-    if(!snapshot||snapshot.animating||snapshot.currentInstance===null||!restoreFocus.current)return;
+    if(!snapshot)return;
+    const retained=new Set(snapshot.pages.map(page=>page.instance));
+    for(const id of focusedPages.current.keys())if(!retained.has(id))focusedPages.current.delete(id);
+    if(snapshot.animating||snapshot.currentInstance===null||!restoreFocus.current)return;
     const element=host.current?.querySelector<HTMLElement>(`:scope > [data-frame-instance="${snapshot.currentInstance}"]`);
     const saved=focusedPages.current.get(snapshot.currentInstance);
     const target=saved&&element?.contains(saved)?saved:element?.querySelector<HTMLElement>('h1,h2,h3')??element;
     if(target){if(!target.hasAttribute('tabindex'))target.tabIndex=-1;target.focus({preventScroll:true});}
     restoreFocus.current=false;
-    const retained=new Set(snapshot.pages.map(page=>page.instance));for(const id of focusedPages.current.keys())if(!retained.has(id))focusedPages.current.delete(id);
-  },[snapshot?.currentInstance,snapshot?.animating]);
+  },[snapshot]);
   return <div ref={host} className={props.className} style={{position:'relative',minHeight:0,overflow:'hidden',...props.style}} data-winui-frame="" data-animating={snapshot?.animating??false}>
     {snapshot?.pages.map(page=>{
       const active=page.instance===snapshot.currentInstance;
@@ -150,7 +170,10 @@ function HostedFrame(props:FrameProps){
         hidden={!visual?.visible} inert={!visual?.interactive} aria-hidden={!active||undefined}
         style={{position:'absolute',inset:0,display:visual?.visible?'flex':'none',flexDirection:'column',minHeight:0,
           transform:visual?`translate(${visual.x}px, ${visual.y}px)`:undefined,opacity:visual?.opacity??0,zIndex:visual?.zIndex??0,pointerEvents:visual?.interactive?undefined:'none'}}>
-        <PageNavigationContext.Provider value={{entry,active:active&&(parentPage?.active??true),parameter:control.current?.parameterFor(entry)}}>{props.renderPage(entry)}</PageNavigationContext.Provider>
+        <PagePresentationContext.Provider value={parentPresented && !!visual?.visible}>
+          <HostedPage entry={entry} active={active && (parentPage?.active ?? true)}
+            parameter={control.current?.parameterFor(entry)} renderPage={props.renderPage} />
+        </PagePresentationContext.Provider>
       </div>;
     })}
   </div>;
@@ -221,12 +244,15 @@ export function NavigationView({
   ...options
 }: NavigationViewProps) {
   const callbacks = { onReady, onSnapshot, onEvent, onSelectionChanged, onPaneClosing };
+  const pageNavigation = useContext(PageNavigationContext);
+  const presented = useContext(PagePresentationContext);
   const runtime = useContext(RuntimeContext);
   if (!runtime) throw new Error("NavigationView requires a WinUIProvider");
   const host = useRef<HTMLDivElement>(null);
   const view = useRef<Controller | null>(null);
-  const latest = useRef({ options, callbacks });
-  latest.current = { options, callbacks };
+  const active = pageNavigation?.active ?? true;
+  const latest = useRef({ options, callbacks, active, presented });
+  latest.current = { options, callbacks, active, presented };
   const previous = useRef<NavigationViewOptions>({});
   useEffect(() => {
     const control = runtime.navigationView(
@@ -234,6 +260,7 @@ export function NavigationView({
       latest.current.options,
     );
     view.current = control;
+    control.scene.setHostActive(latest.current.active, latest.current.presented);
     previous.current = structuredClone(latest.current.options);
     for (const kind of Object.values(EventKind))
       control.on(kind, (event) => {
@@ -249,6 +276,9 @@ export function NavigationView({
       control.dispose();
     };
   }, [runtime]);
+  useLayoutEffect(() => {
+    view.current?.scene.setHostActive(active, presented);
+  }, [active, presented]);
   useEffect(() => {
     // Send only changed properties. A React rerender must not reset Rust selection.
     const patch: Record<string, unknown> = {};
@@ -333,6 +363,8 @@ const ParentContext = createContext<
   | ButtonController
   | ToggleController
   | ViewboxController
+  | SegmentedController
+  | SegmentedItemController
   | null
 >(null);
 const SceneContext = createContext<SceneController | null>(null);
@@ -386,6 +418,7 @@ function SceneRoot({
   ...options
 }: SceneViewProps) {
   const pageNavigation=useContext(PageNavigationContext);
+  const presented = useContext(PagePresentationContext);
   const runtime = useContext(RuntimeContext);
   if (!runtime) throw new Error("SceneView requires WinUIProvider");
   const host = useRef<HTMLDivElement>(null);
@@ -393,7 +426,9 @@ function SceneRoot({
   current.current = { options, onReady };
   const [scene, setScene] = useState<SceneController | null>(null);
   const previous = useRef<SceneOptions>({});
-  useLayoutEffect(()=>{scene?.setHostActive(pageNavigation?.active??true);},[scene,pageNavigation?.active]);
+  useLayoutEffect(() => {
+    scene?.setHostActive(pageNavigation?.active ?? true, presented);
+  }, [scene, pageNavigation?.active, presented]);
   useLayoutEffect(() => {
     const created = runtime.scene(host.current!, current.current.options);
     previous.current = structuredClone(current.current.options);
@@ -459,9 +494,17 @@ interface NodeElementProps {
 // A scene remount disposes old command/source wrappers before onReady supplies
 // their replacements. Reconcile those stale references without moving state out
 // of Rust. Live cross-scene references still fail normal ownership validation.
-function liveReferenceOptions(options:object){
+function liveReferenceOptions(options:object, kind:NodeKind){
  const seen=new WeakMap<object,unknown>();
  function clean(value:unknown):unknown {if(value instanceof SceneNode)return value.isDisposed?null:value;if(!value||typeof value!=='object'||(Object.getPrototypeOf(value)!==Object.prototype&&!Array.isArray(value)))return value;if(seen.has(value))return seen.get(value);const copy:unknown[]|Record<string,unknown>=Array.isArray(value)?[]:{};seen.set(value,copy);for(const[key,child]of Object.entries(value))(copy as Record<string,unknown>)[key]=clean(child);return copy;}
+ // Table rows are business data. The TableView adapter resolves keys and
+ // converter results from the original objects, including object identity.
+ if(kind===NodeKind.TableView){
+  const {items,...references}=options as Record<string,unknown>;
+  const result=clean(references) as Record<string,unknown>;
+  if(Object.hasOwn(options,'items'))result.items=items;
+  return result;
+ }
  return clean(options) as object;
 }
 function NodeElement({
@@ -478,11 +521,15 @@ function NodeElement({
   const current = useRef({ options, callbacks });
   current.current = { options, callbacks };
   const [node, setNode] = useState<SceneNode | null>(null);
-  const previous = useRef<object>({});
+  const previous = useRef<Record<string, string | undefined>>({});
+  const previousTableItems = useRef<unknown>(undefined);
+  const appliedOptions = useRef<object | null>(null);
   useLayoutEffect(() => {
     let created: SceneNode;
-    const options = liveReferenceOptions(current.current.options);
+    const input = current.current.options;
+    const options = liveReferenceOptions(input,kind);
     switch (kind) {
+      case NodeKind.Segmented:case NodeKind.SegmentedItem:created=scene.create(parent,kind,options);break;
       case NodeKind.TableView:created=scene.create(parent,NodeKind.TableView,options);break;
       case NodeKind.ScrollBar:case NodeKind.Thumb:case NodeKind.TickBar:case NodeKind.ItemsPresenter:case NodeKind.ScrollContentPresenter:created=scene.create(parent,kind,options);break;
       case NodeKind.MenuFlyoutItem:case NodeKind.ToggleMenuFlyoutItem:case NodeKind.RadioMenuFlyoutItem:case NodeKind.MenuFlyoutSubItem:case NodeKind.MenuFlyoutSeparator:created=scene.create(parent,kind,options);break;
@@ -640,7 +687,11 @@ function NodeElement({
       }
       default: throw new Error(`Unsupported scene component: ${kind}`);
     }
-    previous.current = Object.fromEntries(Object.entries(options).map(([key,value])=>[key,controlPropertyJSON(value)]));
+    previous.current = Object.fromEntries(Object.entries(options)
+      .filter(([key])=>kind!==NodeKind.TableView||key!=='items')
+      .map(([key,value])=>[key,controlPropertyJSON(value)]));
+    if(kind===NodeKind.TableView)previousTableItems.current=(options as Record<string,unknown>).items;
+    appliedOptions.current=input;
     setNode(created);
     current.current.callbacks.onReady?.(created);
     const offs = Object.values(EventKind).filter(k=>k!==EventKind.PointerEntered&&k!==EventKind.PointerExited).map((kind) =>
@@ -675,23 +726,28 @@ function NodeElement({
     };
   }, [scene, parent, kind]);
   useLayoutEffect(() => {
-    if (!node || node.isDisposed) return;
+    if (!node || node.isDisposed || appliedOptions.current===options) return;
     const patch: Record<string, unknown> = {};
-    const liveOptions=liveReferenceOptions(options);
-    for (const [key, value] of Object.entries(liveOptions))
-      if (
-        controlPropertyJSON(value) !==
-        (previous.current as Record<string, unknown>)[key]
-      )
-        patch[key] = value;
+    const liveOptions=liveReferenceOptions(options,kind);
+    const next: Record<string, string | undefined> = {};
+    for (const [key, value] of Object.entries(liveOptions)) {
+      if(kind===NodeKind.TableView&&key==='items'){
+        if(value!==previousTableItems.current)patch.items=value;
+        continue;
+      }
+      next[key] = controlPropertyJSON(value);
+      if (next[key] !== previous.current[key]) patch[key] = value;
+    }
     if(kind===NodeKind.NavigationView&&patch.navigation){
       const current=patch.navigation as Record<string,unknown>;
-      const old=JSON.parse((previous.current as Record<string,string>).navigation??'{}') as Record<string,unknown>;
+      const old=JSON.parse(previous.current.navigation??'{}') as Record<string,unknown>;
       patch.navigation=Object.fromEntries(Object.entries(current).filter(([key,value])=>controlPropertyJSON(value)!==JSON.stringify(old[key])));
       if(!Object.keys(patch.navigation as object).length)delete patch.navigation;
     }
     if (Object.keys(patch).length) node.update(patch);
-    previous.current = Object.fromEntries(Object.entries(liveOptions).map(([key,value])=>[key,controlPropertyJSON(value)]));
+    if(kind===NodeKind.TableView)previousTableItems.current=(liveOptions as Record<string,unknown>).items;
+    appliedOptions.current=options;
+    previous.current = next;
   }, [node, options]);
   useLayoutEffect(()=>{
     if(!node)return;
@@ -714,7 +770,9 @@ function NodeElement({
     node instanceof ViewboxController ||
     node instanceof PanelController ||
     node instanceof ButtonController ||
-    node instanceof ToggleController
+    node instanceof ToggleController ||
+    node instanceof SegmentedController ||
+    node instanceof SegmentedItemController
   )
     return (
       <><ParentContext.Provider value={node}>{contextual.content}</ParentContext.Provider>{tipDeclaration}{contextMenu}</>
@@ -1538,7 +1596,23 @@ export interface TableViewProps<T extends object=Record<string,unknown>> extends
 /** Community TableView, backed by the same Rust SDK as the framework-independent API. */
 export function TableView<T extends object=Record<string,unknown>>({columns,renderGroupHeader,onGrouping,renderRowDetails,renderRowHeader,onReady,onItemsChanged,onCellSelectionChanged,onCellDoubleTapped,onRowDoubleTapped,onClearSorting,onSelectionChanged,onCurrentCellChanged,onSorting,onBeginningEdit,onPreparingCellForEdit,onCellEditEnding,onCellEditEnded,onColumnReordering,onColumnReordered,onCopy,onPaste,onExport,onContextRequested,onEvent,...options}:TableViewProps<T>){
  const control=useRef<TableViewController<T>|null>(null),[slots,setSlots]=useState<TableViewSlot<T>[]>([]),[headers,setHeaders]=useState<{column:string;container:PanelController}[]>([]),[groups,setGroups]=useState<TableViewGroupSlot[]>([]);
- const refresh=()=>{const node=control.current;if(!node||node.isDisposed)return;const next=node.realizedCells();const hs=node.realizedHeaders();const gs=node.realizedGroups();setGroups(old=>old.length===gs.length&&old.every((g,i)=>g.container===gs[i].container&&g.id===gs[i].id&&g.count===gs[i].count&&g.isExpanded===gs[i].isExpanded)?old:gs);setHeaders(old=>old.length===hs.length&&old.every((h,i)=>h.container===hs[i].container)?old:hs);setSlots(old=>old.length===next.length&&old.every((s,i)=>s.container===next[i].container&&s.item===next[i].item&&s.editing===next[i].editing)?old:next);};
+ const hasCellTemplates=!!(renderRowDetails||renderRowHeader||columns?.some(column=>column.renderCell||column.renderEditor));
+ const hasHeaderTemplates=!!columns?.some(column=>column.renderHeader);
+ const refresh=()=>{
+  const node=control.current;if(!node||node.isDisposed)return;
+  if(renderGroupHeader){
+   const next=node.realizedGroups();
+   setGroups(old=>old.length===next.length&&old.every((group,i)=>group.container===next[i].container&&group.id===next[i].id&&group.count===next[i].count&&group.isExpanded===next[i].isExpanded)?old:next);
+  }
+  if(hasHeaderTemplates){
+   const next=node.realizedHeaders();
+   setHeaders(old=>old.length===next.length&&old.every((header,i)=>header.container===next[i].container)?old:next);
+  }
+  if(hasCellTemplates){
+   const next=node.realizedCells();
+   setSlots(old=>old.length===next.length&&old.every((slot,i)=>slot.container===next[i].container&&slot.item===next[i].item&&slot.editing===next[i].editing)?old:next);
+  }
+ };
  const nativeColumns=columns?.map(({renderCell,renderEditor,renderHeader,...column})=>({...column,hasTemplate:!!renderCell,hasEditTemplate:!!renderEditor,hasHeaderTemplate:!!renderHeader}));
  const callbacks:Partial<Record<EventKind,((e:TableViewEvent<T>)=>void)|undefined>>={[EventKind.Grouping]:onGrouping,[EventKind.CellSelectionChanged]:onCellSelectionChanged,[EventKind.CellDoubleTapped]:onCellDoubleTapped,[EventKind.RowDoubleTapped]:onRowDoubleTapped,[EventKind.ClearSorting]:onClearSorting,[EventKind.SelectionChanged]:onSelectionChanged,[EventKind.CurrentCellChanged]:onCurrentCellChanged,[EventKind.Sorting]:onSorting,[EventKind.BeginningEdit]:onBeginningEdit,[EventKind.PreparingCellForEdit]:onPreparingCellForEdit,[EventKind.CellEditEnding]:onCellEditEnding,[EventKind.CellEditEnded]:onCellEditEnded,[EventKind.ColumnReordering]:onColumnReordering,[EventKind.ColumnReordered]:onColumnReordered,[EventKind.CopyRequested]:onCopy,[EventKind.PasteFromClipboard]:onPaste,[EventKind.TableViewExport]:onExport,[EventKind.ContextRequested]:onContextRequested};
  return <><NodeElement kind={NodeKind.TableView} options={{...options,columns:nativeColumns,hasRowDetailsTemplate:!!renderRowDetails,hasRowHeaderTemplate:!!renderRowHeader,hasGroupHeaderTemplate:!!renderGroupHeader}} onReady={n=>{control.current=n as TableViewController<T>;onReady?.(control.current);refresh();}} onEvent={e=>{const event=e as TableViewEvent<T>;if(e.kind===EventKind.TableViewChanged&&e.table?.items)onItemsChanged?.(event.items);callbacks[e.kind]?.(event);onEvent?.(event);if(e.kind===EventKind.RealizationChanged||e.kind===EventKind.TableViewChanged)refresh();}}/>
@@ -1624,3 +1698,30 @@ TextBlock.ContextFlyout=ContextFlyoutProperty;
 Grid.ContextFlyout=ContextFlyoutProperty;
 StackPanel.ContextFlyout=ContextFlyoutProperty;
 Border.ContextFlyout=ContextFlyoutProperty;
+
+/** Declarative CommunityToolkit Segmented, backed by the shared Rust scene. */
+export interface SegmentedProps extends SegmentedOptions, ControlAttachments {
+ children?:ReactNode;
+ onReady?:(node:SegmentedController)=>void;
+ onSelectionChanged?:(event:SegmentedSelectionChangedEvent)=>void;
+}
+export function Segmented({children,onReady,onSelectionChanged,...options}:SegmentedProps){
+  if(children!=null&&options.itemsSource!=null)throw new Error('Use either SegmentedItem children or itemsSource');
+  return <NodeElement key={options.itemsSource==null?'children':'source'} kind={NodeKind.Segmented}
+    options={options} onReady={node=>onReady?.(node as SegmentedController)}
+    onSelectionChanged={event=>onSelectionChanged?.((event.target as SegmentedController).selectionEvent(event))}>
+    {children}
+  </NodeElement>;
+}
+export interface SegmentedItemProps extends SegmentedItemOptions, ControlAttachments {
+ children?:ReactNode;
+ onReady?:(node:SegmentedItemController)=>void;
+}
+export function SegmentedItem({children,onReady,...options}:SegmentedItemProps){
+  const text=typeof children==='string'||typeof children==='number'?String(children):undefined;
+  if(text!==undefined&&options.content!==undefined)throw new Error('SegmentedItem Content was assigned twice');
+  return <NodeElement kind={NodeKind.SegmentedItem} options={{...options,content:text??options.content??''}}
+    onReady={node=>onReady?.(node as SegmentedItemController)}>
+    {text===undefined?children:undefined}
+  </NodeElement>;
+}

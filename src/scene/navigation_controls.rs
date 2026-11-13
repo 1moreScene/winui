@@ -431,7 +431,9 @@ impl NavigationState {
 impl Scene {
     pub fn invalidate_navigation_fonts(&mut self) {
         for n in self.nodes.values_mut() {
-            n.nav_controls.glyphs.clear();
+            if let Some(navigation) = n.nav_controls.allocated_mut() {
+                navigation.glyphs.clear();
+            }
         }
         self.invalidate(self.root, true);
     }

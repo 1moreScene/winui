@@ -1,0 +1,580 @@
+{
+  "date": "2026-11-09",
+  "status": "passed",
+  "baseline": "Microsoft.WindowsAppSDK.WinUI/2.3.10-experimental",
+  "implementation": "Navigation light-dismiss paint, timeline, geometry, clipping, hit testing and close negotiation are owned by Rust. React only mounts and calls the SDK.",
+  "wasm": {
+    "path": "gallery/src/wasm/winui_bg.wasm",
+    "sha256": "034f087997f09eacdc06f8c893168c10dc6e91327a468e1db275f08ac07236fc",
+    "frozen": "out/navigation-external-content-sdk/wasm/winui_bg.wasm",
+    "production": "out/navigation-external-content-preview",
+    "buildLog": "out/navigation-external-content-build-verified.log"
+  },
+  "validation": {
+    "rust": {
+      "passed": 427,
+      "failed": 0,
+      "suites": 50,
+      "log": "out/navigation-external-content-rust-verified.log"
+    },
+    "architecture": {
+      "nodeKinds": 110,
+      "reactExports": 113,
+      "frontendFiles": 69,
+      "negativeGuardTests": 3,
+      "command": "node --test tools/control-implementation-audit.test.mjs"
+    },
+    "browser": {
+      "passed": 65,
+      "failed": 0,
+      "devMatrix": 51,
+      "finalProduction": 14,
+      "implementedGalleryPages": 85,
+      "reports": [
+        {
+          "environment": "dev",
+          "path": "out/navigation-external-content-matrix.json",
+          "sha256": "c5abf25d9c4585086958cd7d2de92df94a0cb91be4b6d4a09678e2812ea3b760",
+          "stats": {
+            "startTime": "2026-11-09T02:10:05.963Z",
+            "duration": 224647.023,
+            "expected": 47,
+            "skipped": 0,
+            "unexpected": 4,
+            "flaky": 0
+          }
+        },
+        {
+          "environment": "dev",
+          "path": "out/navigation-external-content-fractional.json",
+          "sha256": "c9cf50245c1f9cf1072c8b7bc7c0570ca3a22b7ca9d1d1ee045687d7b60c357b",
+          "stats": {
+            "startTime": "2026-11-09T02:14:48.536Z",
+            "duration": 9359.684000000001,
+            "expected": 4,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          }
+        },
+        {
+          "environment": "production",
+          "path": "out/navigation-external-content-production-final.json",
+          "sha256": "5ece18459075f9d5f5308c7fb68f6d295b37e3a2d591d786a28aafa995698b25",
+          "stats": {
+            "startTime": "2026-11-09T02:34:04.696Z",
+            "duration": 49742.075,
+            "expected": 9,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          }
+        },
+        {
+          "environment": "production",
+          "path": "out/navigation-external-content-gallery-final.json",
+          "sha256": "10b883d171ad4c190c7d4c88fbaf2675d5f716c51ba9c0c3887e6a6091b972d8",
+          "stats": {
+            "startTime": "2026-11-09T02:36:56.648Z",
+            "duration": 46817.602000000006,
+            "expected": 4,
+            "skipped": 0,
+            "unexpected": 1,
+            "flaky": 0
+          }
+        },
+        {
+          "environment": "production",
+          "path": "out/navigation-external-content-gallery-pages-final.json",
+          "sha256": "7707e881622efe3606df7415d4eef15fed7eb00869b7bcc7aea9d4a363e64762",
+          "stats": {
+            "startTime": "2026-11-09T02:48:12.489Z",
+            "duration": 158946.769,
+            "expected": 1,
+            "skipped": 0,
+            "unexpected": 0,
+            "flaky": 0
+          }
+        }
+      ],
+      "cases": [
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "Gallery dismiss is a Rust part with native paint, cancellable close and page pass-through",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "Gallery dismiss is a Rust part with native paint, cancellable close and page pass-through",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "Gallery dismiss is a Rust part with native paint, cancellable close and page pass-through",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "both narrow Gallery and Navigation + Frame example use SDK Escape and dismiss input",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "both narrow Gallery and Navigation + Frame example use SDK Escape and dismiss input",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "both narrow Gallery and Navigation + Frame example use SDK Escape and dismiss input",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "external SDK surface updates and disposes without leaving masks or host styles",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "external SDK surface updates and disposes without leaving masks or host styles",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "external SDK surface updates and disposes without leaving masks or host styles",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "example page animation never releases global WinUI scrollbar ownership",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "example page animation never releases global WinUI scrollbar ownership",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "example page animation never releases global WinUI scrollbar ownership",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "new and inert DOM scroll surfaces are claimed before the next paint",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "new and inert DOM scroll surfaces are claimed before the next paint",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "new and inert DOM scroll surfaces are claimed before the next paint",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "independent nested React Frame plays every Rust transition and keeps scrollbars claimed",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "independent nested React Frame plays every Rust transition and keeps scrollbars claimed",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "independent nested React Frame plays every Rust transition and keeps scrollbars claimed",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "home menu has a Rust scrollbar that drags and accepts keyboard input",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "home menu has a Rust scrollbar that drags and accepts keyboard input",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "home menu has a Rust scrollbar that drags and accepts keyboard input",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "public Canvas2D NavigationView has the same Rust scrollbar outside Gallery",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "public Canvas2D NavigationView has the same Rust scrollbar outside Gallery",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "public Canvas2D NavigationView has the same Rust scrollbar outside Gallery",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "public WebGL2 NavigationView has the same Rust scrollbar outside Gallery",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "public WebGL2 NavigationView has the same Rust scrollbar outside Gallery",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "public WebGL2 NavigationView has the same Rust scrollbar outside Gallery",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "Canvas2D React mounts the complete tree before its first frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "Canvas2D React mounts the complete tree before its first frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "Canvas2D React mounts the complete tree before its first frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "Canvas2D React mounts the complete tree before its first frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "Canvas2D React mounts the complete tree before its first frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "Canvas2D React mounts the complete tree before its first frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "WebGL2 React mounts the complete tree before its first frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "WebGL2 React mounts the complete tree before its first frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "WebGL2 React mounts the complete tree before its first frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "WebGL2 React mounts the complete tree before its first frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "WebGL2 React mounts the complete tree before its first frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "WebGL2 React mounts the complete tree before its first frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "Canvas2D floating target references are bound before the opening frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "Canvas2D floating target references are bound before the opening frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "Canvas2D floating target references are bound before the opening frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "Canvas2D floating target references are bound before the opening frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "Canvas2D floating target references are bound before the opening frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "Canvas2D floating target references are bound before the opening frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "WebGL2 floating target references are bound before the opening frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "WebGL2 floating target references are bound before the opening frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "WebGL2 floating target references are bound before the opening frame; StrictMode=false",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1",
+          "title": "WebGL2 floating target references are bound before the opening frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-1.25",
+          "title": "WebGL2 floating target references are bound before the opening frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "dev",
+          "project": "dpr-2",
+          "title": "WebGL2 floating target references are bound before the opening frame; StrictMode=true",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "Gallery dismiss is a Rust part with native paint, cancellable close and page pass-through",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1.25",
+          "title": "Gallery dismiss is a Rust part with native paint, cancellable close and page pass-through",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-2",
+          "title": "Gallery dismiss is a Rust part with native paint, cancellable close and page pass-through",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "both narrow Gallery and Navigation + Frame example use SDK Escape and dismiss input",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1.25",
+          "title": "both narrow Gallery and Navigation + Frame example use SDK Escape and dismiss input",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-2",
+          "title": "both narrow Gallery and Navigation + Frame example use SDK Escape and dismiss input",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "external SDK surface updates and disposes without leaving masks or host styles",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1.25",
+          "title": "external SDK surface updates and disposes without leaving masks or host styles",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-2",
+          "title": "external SDK surface updates and disposes without leaving masks or host styles",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "Gallery options use real CheckBox and ComboBox with pointer and keyboard",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "Source content is inside one Rust Expander and follows its layout and clip",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "Code horizontal and vertical scrollbars use the shared Rust ScrollViewer in all themes",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "Every implemented Gallery page mounts existing SDK controls and no HTML substitutes",
+          "status": "passed"
+        },
+        {
+          "environment": "production",
+          "project": "dpr-1",
+          "title": "Home SelectorBar, search AutoSuggestBox, lifecycle and narrow source layout remain usable",
+          "status": "passed"
+        }
+      ]
+    },
+    "typecheck": "passed",
+    "declarations": "passed",
+    "productionBuild": "passed",
+    "galleryBuildLog": "out/navigation-external-content-gallery-build-final.log"
+  },
+  "sources": [
+    {
+      "path": "src/model.rs",
+      "sha256": "d8fee705a355a0ae0bb796596c23bd9a5db06ff13889eb63e6ce60cde3ca1936"
+    },
+    {
+      "path": "src/navigation.rs",
+      "sha256": "0bf57a6dde36973214111473cff48d3e8a4abb89c7f23ded42a85e1ff0974746"
+    },
+    {
+      "path": "src/render.rs",
+      "sha256": "2e72ffc9fbcf210757619c61ffe9b789eceb9e5b54b12a90486464c36366737d"
+    },
+    {
+      "path": "src/resources.rs",
+      "sha256": "b38008e873b437ac13370a3a92bd28687783df3dd020f2042cc4edd86ec45275"
+    },
+    {
+      "path": "src/scene/view_controls.rs",
+      "sha256": "ec678a854e180e5f5a6288d42e282728b763340c48991d553f2e81f717b0d6e4"
+    },
+    {
+      "path": "gallery/src/sdk.ts",
+      "sha256": "d369fa946af17f161debc3aac0710036f557464cb62dccf5ce1a12fc59273873"
+    },
+    {
+      "path": "gallery/src/scene.ts",
+      "sha256": "e3a35e2e59c9daffd32d827d77132f0082f728805dc04ce8bc62333d2debe7ca"
+    },
+    {
+      "path": "gallery/src/GalleryNavigation.tsx",
+      "sha256": "61d6ba5936f940bd027dbdafeaa352e0160c4a9269245e3b88eb2b0be8cb5900"
+    },
+    {
+      "path": "gallery/src/HomePage.tsx",
+      "sha256": "24bbc21f63818610d57353d03c24eb1cb90151b31e98d6229b8f9c86a066e200"
+    },
+    {
+      "path": "gallery/src/NavigationFrameExample.tsx",
+      "sha256": "c3386a0753d2183ad5c8257eff638ac2c0416d6933970b41243d51c8448a3fe3"
+    },
+    {
+      "path": "tools/check-control-origins.mjs",
+      "sha256": "0890454de8afd9d723ee3f2092b88a0605e2f6e1cdc778fa922a18d62e246da8"
+    },
+    {
+      "path": "tools/control-implementation-audit.mjs",
+      "sha256": "fbe5266e675d0585692483a86c488244cbbccb53fcf7ce603f96ae342a25d4af"
+    },
+    {
+      "path": "tools/gallery-control-source.mjs",
+      "sha256": "d765dad7b7ba7a2a14dfd94b26f2d38b86e9febde8b471b16fff1677528c74c1"
+    },
+    {
+      "path": "tests/navigation_external_content.rs",
+      "sha256": "14aeba0ced76a6502ac1383be4cc2684e2bd14f9f2cfbc5e7d543158cb2da677"
+    },
+    {
+      "path": "tests/shared_resources.rs",
+      "sha256": "3f583ad5239edcd4d3b5cc03a9380393b69f28bfd38075dc7212d316ff4fbf5d"
+    },
+    {
+      "path": "gallery/tests/navigation-external-content.spec.ts",
+      "sha256": "a8fee831b25b19cd24dffe9744e4fac115c6a0997dc53a3aa062f28b7a23e160"
+    },
+    {
+      "path": "gallery/tests/gallery-controls.spec.ts",
+      "sha256": "d618e2a9cfbd903fbf9ee20707535144087420e8ca36d30cd166037692ffd2c4"
+    },
+    {
+      "path": "gallery/tests/react-mount.spec.ts",
+      "sha256": "b612db9c13a40950ed282787684637b3a623b79dc874278cffac786258774e48"
+    }
+  ],
+  "notes": [
+    "Latest results are reconciled by environment, project and test title; targeted reruns replace superseded failures.",
+    "The initial fractional mount assertion compared DIP edges without physical-pixel snapping; its four cases passed after correcting the assertion.",
+    "The Gallery inventory now loads each route independently, checks a real SDK canvas and selects actual Expander hosts. Source scrolling waits for the async presenter after each theme change.",
+    "Final production tests use the WASM hash above. The earlier 51-case mounting/navigation matrix preceded the transparent-layer optimization and missing motion-resource registration; final production tests and the full Rust suite verify those changes.",
+    "The missing SystemAccentColor is registered from the existing pinned motion contract without replacing existing resource keys.",
+    "This verifies implementation ownership and browser behavior, not complete WinUI feature or native pixel parity."
+  ]
+}

@@ -1,5 +1,6 @@
 import type {NavigationScrollbarVisual} from './sdk';
 let nextHost=0;
+const keyHandlers = new WeakMap<HTMLElement,(event:KeyboardEvent)=>void>();
 
 /** Accessibility and input projection only. Rust owns geometry, paint and keys. */
 export function projectNavigationScrollbars(host:HTMLElement,visuals:readonly NavigationScrollbarVisual[],viewports:readonly {content:boolean;rect:import('./sdk').Rect}[],onKey:(content:boolean,key:string)=>void,signal:AbortSignal):void{
@@ -13,12 +14,17 @@ export function projectNavigationScrollbars(host:HTMLElement,visuals:readonly Na
   }
   let bar=host.querySelector<HTMLElement>(`:scope > [data-navigation-scrollbar="${id}"]`);
   const visual=visuals.find(v=>v.content===content);
-  if(!visual){bar?.remove();continue;}
+  if(!visual){
+   if(bar){const handler=keyHandlers.get(bar);if(handler)bar.removeEventListener('keydown',handler);keyHandlers.delete(bar);bar.remove();}
+   continue;
+  }
   if(!bar){
    bar=document.createElement('div');bar.dataset.navigationScrollbar=id;
    bar.setAttribute('role','scrollbar');bar.setAttribute('aria-orientation','vertical');
    bar.setAttribute('aria-label',content?'Navigation content scroll':'Navigation menu scroll');bar.tabIndex=0;
-   bar.addEventListener('keydown',event=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)){event.preventDefault();event.stopPropagation();onKey(content,event.key);}},{signal});
+   const handler=(event:KeyboardEvent)=>{if(['ArrowUp','ArrowDown','PageUp','PageDown','Home','End',' '].includes(event.key)){event.preventDefault();event.stopPropagation();onKey(content,event.key);}};
+   keyHandlers.set(bar,handler);
+   bar.addEventListener('keydown',handler,{signal});
    host.append(bar);
   }
   const r=visual.rect;

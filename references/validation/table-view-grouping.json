@@ -1,0 +1,890 @@
+{
+  "recordedAt": "2026-11-10T09:56:36.543071+08:00",
+  "sdkWasmSha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+  "computerUse": false,
+  "community": {
+    "tag": "v1.5.1",
+    "commit": "6de5f1cf388747e7ed046d5180815ca28c59f525",
+    "packageSha256": "e7dcb0e1bc9f8797b87afce301a909e202e89821d8a7c677d8abf16c9c37d871",
+    "releaseDllSha256": "cc441bab567e5323151afe09a3f40eb092ccb572e29186f47ce00938e855d211",
+    "nativeDependency": "Microsoft.WindowsAppSDK.WinUI/1.8.260528001",
+    "nativeRun": "out\\table-view-grouping-native",
+    "nativeResultSha256": "31d2b475e1455de17773ec7f67fb167702f2a718e5e938bda3d22fce00e0e3aa"
+  },
+  "implementation": {
+    "src/scene/table_view.rs": "ce9902139c161bb92b449d6423672ff281d5742a52d7fb2ec64d9f57f540abdb",
+    "src/scene/table_view/runtime.rs": "03ea817f2f9a60244afb8a946b8b2e4cf6b2be92c5d7fc16bb5395645aa179fb",
+    "src/scene/table_view/grouping.rs": "62681b5ba121ce76d231e0c21c5e80eb0f960a03de07b0c815164ee66539f835",
+    "src/scene/paint.rs": "80338e001e78d87c2de31756a0034bf515dfbd3783627b847d5d03e1ee676f45",
+    "references/table-view-grouping-runtime.json": "8132ce8a2e64096c4d6ee9b5c867b5ddab3b4f8be76463a8372177ad75fc42e5"
+  },
+  "boundary": "Rust owns grouping/counting/order/expansion/selection/layout/virtualization/clipping/input/drawing. TS owns business functions, typed API and native template-slot mounting; React does not implement the control behavior.",
+  "functional": {
+    "rustPasses": 140,
+    "browser": {
+      "startTime": "2026-11-10T01:49:11.692Z",
+      "duration": 215972.076,
+      "expected": 26,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "browserResultSha256": "c29cbd9d5f2bbbd8c1d61d04c7d7ab11400250ac7390276bc29742f7528467d8"
+  },
+  "nativeStaticEvidence": {
+    "path": "out/table-view-grouping-visual.json",
+    "sha256": "f1a05b61fd5640a58b3b350da500359e7d3d68e4fe4ba8dc953b7a9f25a0aa5d",
+    "states": [
+      {
+        "theme": "Light",
+        "state": "collapsed",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 68.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 68.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Operations",
+            "actual": {
+              "x": 0.8,
+              "y": 104.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 104.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Research",
+            "actual": {
+              "x": 0.8,
+              "y": 140.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 140.8000030517578,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.02100978731413514,
+          "meanMaximumChannelError": 1.099025974025974,
+          "max": 218
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Light",
+        "state": "expanded",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 313.6,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 313.5999755859375,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.022092038396386224,
+          "meanMaximumChannelError": 1.0481131187652928,
+          "max": 153
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Light",
+        "state": "sticky",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 223.60000000000002,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 223.59999084472656,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.020727460944852248,
+          "meanMaximumChannelError": 0.7457651044607566,
+          "max": 136
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Light",
+        "state": "multi",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": false,
+            "actual": {
+              "x": 0.8,
+              "y": 68.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 68.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": true,
+            "actual": {
+              "x": 0.8,
+              "y": 186.39999999999998,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 186.40000915527344,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.024491812535290796,
+          "meanMaximumChannelError": 1.7066158479201958,
+          "max": 218
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Light",
+        "state": "multi-collapsed",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 68.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 68.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": false,
+            "actual": {
+              "x": 0.8,
+              "y": 104.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 104.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": true,
+            "actual": {
+              "x": 0.8,
+              "y": 222.40000000000003,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 222.40000915527344,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.02256258234519104,
+          "meanMaximumChannelError": 1.155844155844156,
+          "max": 173
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Light",
+        "state": "count-order",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 313.6,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 313.5999755859375,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.02256258234519104,
+          "meanMaximumChannelError": 1.2963250517598344,
+          "max": 218
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Dark",
+        "state": "collapsed",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 68.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 68.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Operations",
+            "actual": {
+              "x": 0.8,
+              "y": 104.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 104.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Research",
+            "actual": {
+              "x": 0.8,
+              "y": 140.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 140.8000030517578,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.04434876717485413,
+          "meanMaximumChannelError": 1.2616694899303595,
+          "max": 216
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Dark",
+        "state": "expanded",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 313.6,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 313.5999755859375,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.045642763034067384,
+          "meanMaximumChannelError": 1.2991012610577828,
+          "max": 216
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Dark",
+        "state": "sticky",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 223.60000000000002,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 223.59999084472656,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.021456804065499716,
+          "meanMaximumChannelError": 0.8725531714662149,
+          "max": 157
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Dark",
+        "state": "multi",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": false,
+            "actual": {
+              "x": 0.8,
+              "y": 68.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 68.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": true,
+            "actual": {
+              "x": 0.8,
+              "y": 186.39999999999998,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 186.40000915527344,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.045595708639186903,
+          "meanMaximumChannelError": 1.3483907396950876,
+          "max": 216
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Dark",
+        "state": "multi-collapsed",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 68.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 68.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": false,
+            "actual": {
+              "x": 0.8,
+              "y": 104.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 104.80000305175781,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": true,
+            "actual": {
+              "x": 0.8,
+              "y": 222.40000000000003,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 222.40000915527344,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.022821381517033692,
+          "meanMaximumChannelError": 1.2409655561829476,
+          "max": 198
+        },
+        "matchingVisibleItems": true
+      },
+      {
+        "theme": "Dark",
+        "state": "count-order",
+        "groupGeometry": [
+          {
+            "key": "Design",
+            "actual": {
+              "x": 0.8,
+              "y": 32.8,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 32.79999923706055,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          },
+          {
+            "key": "Engineering",
+            "actual": {
+              "x": 0.8,
+              "y": 313.6,
+              "width": 775.2,
+              "height": 36
+            },
+            "native": {
+              "x": 0.800000011920929,
+              "y": 313.5999755859375,
+              "width": 774.4000244140625,
+              "height": 36
+            }
+          }
+        ],
+        "firstHeaderPixels": {
+          "changedFraction": 0.04538396386222473,
+          "meanMaximumChannelError": 1.8227931488801055,
+          "max": 216
+        },
+        "matchingVisibleItems": true
+      }
+    ],
+    "acceptedAsFullParity": false
+  },
+  "performance": {
+    "path": "out/table-view-120/grouping-served.json",
+    "sha256": "ae82fa4438082f620003aa019205e9dfbbea521024171f64b3f09ad2b08fde46",
+    "driver": "Chromium Headless Shell CDP BeginFrame, real wall-clock pacing; not physical-monitor presentation acceptance",
+    "requestedHz": 120,
+    "budgetMs": 8.333333333333334,
+    "summary": [
+      {
+        "name": "editing-sort",
+        "frames": 56,
+        "drawP50": 4.100000023841858,
+        "drawP95": 7.399999976158142,
+        "wasmP95": 4.200000047683716,
+        "budgetMisses": 3,
+        "rafMedian": 9.199999999999818,
+        "rafP95": 25.199999999999818,
+        "phases": {
+          "layoutMs": 0.7000000476837158,
+          "displayListMs": 0.7000000476837158,
+          "paintMs": 0.7000000476837158,
+          "snapshotMs": 1,
+          "previousSerializeMs": 0.6000000238418579
+        }
+      },
+      {
+        "name": "editing-wheel",
+        "frames": 76,
+        "drawP50": 5.199999928474426,
+        "drawP95": 8.799999952316284,
+        "wasmP95": 6.299999952316284,
+        "budgetMisses": 5,
+        "rafMedian": 13,
+        "rafP95": 19.700000000000728,
+        "phases": {
+          "layoutMs": 1.399999976158142,
+          "displayListMs": 1.2000000476837158,
+          "paintMs": 2.100000023841858,
+          "snapshotMs": 1,
+          "previousSerializeMs": 0.7999999523162842
+        }
+      },
+      {
+        "name": "editing-scroll-impulse",
+        "frames": 33,
+        "drawP50": 5.299999952316284,
+        "drawP95": 8.300000071525574,
+        "wasmP95": 5.700000047683716,
+        "budgetMisses": 2,
+        "rafMedian": 13.099999999999454,
+        "rafP95": 20,
+        "phases": {
+          "layoutMs": 1.600000023841858,
+          "displayListMs": 1.0999999046325684,
+          "paintMs": 1.2999999523162842,
+          "snapshotMs": 1.100000023841858,
+          "previousSerializeMs": 0.8999999761581421
+        }
+      },
+      {
+        "name": "editing-active-editor-wheel",
+        "frames": 71,
+        "drawP50": 6.299999952316284,
+        "drawP95": 8,
+        "wasmP95": 5,
+        "budgetMisses": 3,
+        "rafMedian": 14,
+        "rafP95": 17.5,
+        "phases": {
+          "layoutMs": 1,
+          "displayListMs": 0.8999999761581421,
+          "paintMs": 1.5,
+          "snapshotMs": 1.2999999523162842,
+          "previousSerializeMs": 0.7999999523162842
+        }
+      },
+      {
+        "name": "large-sort",
+        "frames": 67,
+        "drawP50": 3.8000000715255737,
+        "drawP95": 6.700000047683716,
+        "wasmP95": 4.099999904632568,
+        "budgetMisses": 3,
+        "rafMedian": 8.5,
+        "rafP95": 20.69999999999891,
+        "phases": {
+          "layoutMs": 0.5,
+          "displayListMs": 0.40000009536743164,
+          "paintMs": 0.6999999284744263,
+          "snapshotMs": 0.7000000476837158,
+          "previousSerializeMs": 0.8000000715255737
+        }
+      },
+      {
+        "name": "large-wheel",
+        "frames": 81,
+        "drawP50": 4.5,
+        "drawP95": 7.100000023841858,
+        "wasmP95": 4.5,
+        "budgetMisses": 1,
+        "rafMedian": 12.300000000001091,
+        "rafP95": 18.799999999999272,
+        "phases": {
+          "layoutMs": 1,
+          "displayListMs": 0.8999999761581421,
+          "paintMs": 1.100000023841858,
+          "snapshotMs": 0.8000000715255737,
+          "previousSerializeMs": 0.7999999523162842
+        }
+      },
+      {
+        "name": "large-scroll-impulse",
+        "frames": 25,
+        "drawP50": 4.899999976158142,
+        "drawP95": 7.200000047683716,
+        "wasmP95": 4.700000047683716,
+        "budgetMisses": 1,
+        "rafMedian": 12.700000000000728,
+        "rafP95": 38.29999999999927,
+        "phases": {
+          "layoutMs": 1.399999976158142,
+          "displayListMs": 0.8999999761581421,
+          "paintMs": 1.2000000476837158,
+          "snapshotMs": 0.8000000715255737,
+          "previousSerializeMs": 0.7999999523162842
+        }
+      },
+      {
+        "name": "grouping-sort",
+        "frames": 65,
+        "drawP50": 4.5,
+        "drawP95": 5.899999976158142,
+        "wasmP95": 3.899999976158142,
+        "budgetMisses": 1,
+        "rafMedian": 9.299999999999272,
+        "rafP95": 17.399999999999636,
+        "phases": {
+          "layoutMs": 0.5,
+          "displayListMs": 0.6000000238418579,
+          "paintMs": 0.5,
+          "snapshotMs": 0.7000000476837158,
+          "previousSerializeMs": 1.2000000476837158
+        }
+      },
+      {
+        "name": "grouping-wheel",
+        "frames": 70,
+        "drawP50": 5.899999976158142,
+        "drawP95": 8.5,
+        "wasmP95": 5.100000023841858,
+        "budgetMisses": 5,
+        "rafMedian": 14.100000000000364,
+        "rafP95": 21.399999999999636,
+        "phases": {
+          "layoutMs": 0.8999999761581421,
+          "displayListMs": 0.9000000953674316,
+          "paintMs": 1.2999999523162842,
+          "snapshotMs": 0.8999999761581421,
+          "previousSerializeMs": 1.100000023841858
+        }
+      },
+      {
+        "name": "grouping-scroll-impulse",
+        "frames": 24,
+        "drawP50": 6.700000047683716,
+        "drawP95": 9.399999976158142,
+        "wasmP95": 5.399999976158142,
+        "budgetMisses": 4,
+        "rafMedian": 14.200000000000728,
+        "rafP95": 37.30000000000109,
+        "phases": {
+          "layoutMs": 1.2000000476837158,
+          "displayListMs": 0.9000000953674316,
+          "paintMs": 1.4000000953674316,
+          "snapshotMs": 0.8999999761581421,
+          "previousSerializeMs": 1.100000023841858
+        }
+      }
+    ],
+    "allScrollingP95Within120Budget": false,
+    "physicalPresentationAccepted": false
+  },
+  "notAccepted": [
+    "Full native/Composition parity",
+    "Physical-monitor 120Hz presentation and stable 120fps across all paths",
+    "System high contrast native pixel comparison",
+    "Natural per-group variable header height; the SDK exposes a uniform groupHeaderHeight",
+    "The 125% fixture retains a 0.8 DIP group-header right-edge width difference and text rasterization differences"
+  ],
+  "licenseSha256": "58f98255dc8859d796d4eb4f82a8afc2b21488e2b9e93e0af59960804300abb8",
+  "groupChevronFollowUp": {
+    "path": "references/validation/table-view-chevron.json",
+    "sdkWasmSha256": "541f9779e27b3ca36f1b2c322a44d53540be04b50bfd67d828ac602da7e615ca",
+    "acceptedScope": "Collapsed/right and expanded/down glyph pixels plus world transforms; single/all collapse and re-expansion; Canvas2D/WebGL2, light/dark",
+    "computerUse": false
+  }
+}

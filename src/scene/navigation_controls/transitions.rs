@@ -156,7 +156,7 @@ impl Scene {
         // cross-drop sources: these remove AddDelete/Content to avoid reparent races.
         let add_delete =
             !(n.props.nav_controls.can_reorder_tabs && n.props.nav_controls.allow_drop_tabs);
-        let c = &mut self.nodes.get_mut(&id).unwrap().nav_controls;
+        let c: &mut NavigationState = &mut self.nodes.get_mut(&id).unwrap().nav_controls;
         c.tab_ghosts
             .retain(|g| g.entry.active(self.time) && !next.contains(&g.key));
         if reduce {

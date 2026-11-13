@@ -1,0 +1,220 @@
+{
+  "completedAtUtc": "2026-11-09T05:20:51.134899+00:00",
+  "scope": [
+    "Animation interop",
+    "Connected Animation"
+  ],
+  "galleryAppOperated": false,
+  "official": {
+    "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+    "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+    "sdk": "2.3.10-experimental",
+    "windowsAppSdk": "2.5.4-experimental"
+  },
+  "wasm": {
+    "path": "gallery/src/wasm/winui_bg.wasm",
+    "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+    "bytes": 8706336,
+    "profile": "Repository default release: opt-level=3, LTO=true, codegen-units=1",
+    "glueSha256": "9bc04f42507d7ebc95e412efa60bce9e6c87cbf40a4f9c847477c1b97edffa5b",
+    "productionAsset": "gallery/dist/assets/winui_bg-AvgMdau1.wasm"
+  },
+  "changes": [
+    "Native WGC waveform corrected spring omega from TAU/Period to 1/Period (old motion 6.28 times faster); official hover interruption uses zero initial velocity.",
+    "Rust surfaceBounds separates transformed raster overflow/shadow from logical DesiredSize while retaining explicit and ancestor clips.",
+    "Gravity Z=32 and ThemeShadow follow source curve; native flat projection retains sibling order and introduces no perspective scaling.",
+    "Premultiplied source/target crossfade uses independent cropped surfaces and a streaming WebGL texture.",
+    "Direct frame serialization, unchanged-property wire deltas, alpha=1 inline scopes and framebuffer reuse reduce animation CPU/allocation cost."
+  ],
+  "native": {
+    "fixture": "references/validation/motion-spring-native.json",
+    "raw": "references/validation/motion-spring-native-raw.json",
+    "probe": "tools/native-spring-contract/run.ps1",
+    "normalizer": "tools/normalize-native-spring.py",
+    "target": "Independent, nonactivated offscreen probe HWND only; WGC, no screen/other-window capture.",
+    "cases": [
+      {
+        "period": 50,
+        "dampingRatio": 0.6,
+        "pipelineAlignmentMs": 54,
+        "rmsError": 0.0026319929336812383,
+        "maxError": 0.004790533818066045,
+        "batchCompletedMs": 664.5514
+      },
+      {
+        "period": 200,
+        "dampingRatio": 0.2,
+        "pipelineAlignmentMs": 49,
+        "rmsError": 0.0022137177958357107,
+        "maxError": 0.003912379379510167,
+        "batchCompletedMs": 6650.638
+      },
+      {
+        "period": 200,
+        "dampingRatio": 0.8,
+        "pipelineAlignmentMs": 59,
+        "rmsError": 0.0020403462222888893,
+        "maxError": 0.004282285012043863,
+        "batchCompletedMs": 2031.684
+      }
+    ],
+    "maximumScaleError": 0.004790533818066045,
+    "quantizationStep": 0.0078125,
+    "depth": {
+      "samples": {
+        "composition": 255,
+        "xaml": 255
+      },
+      "meaning": "Blue later sibling stays in front of red Z=32 sibling in both Composition and XAML; default projection preserves collection order."
+    },
+    "reversal": "Captured reversal confirms default zero-velocity restart."
+  },
+  "validation": {
+    "rust": {
+      "passed": 468,
+      "failed": 0,
+      "suites": 52,
+      "log": "out/motion-compositor-final-rust-tests.log"
+    },
+    "animationTests": {
+      "motionEffects": 18,
+      "animation": 3,
+      "keyframes": 2
+    },
+    "browser": {
+      "passed": 14,
+      "failed": 0,
+      "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+      "report": "out/motion-browser-results.json",
+      "log": "out/motion-compositor-final-browser.log"
+    },
+    "strictTypes": "passed",
+    "origins": "passed: 116 runtime kinds, 116 React exports, 73 frontend files",
+    "enumGeneration": "passed",
+    "declarations": "passed",
+    "productionBuild": "passed",
+    "development": {
+      "cases": 6,
+      "assets": [
+        {
+          "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm?t=1794201567754&v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm?t=1794201567754&v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm?t=1794201567754&v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm?t=1794201567754&v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm?t=1794201567754&v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5173/src/wasm/winui_bg.wasm?t=1794201567754&v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        }
+      ],
+      "pageErrors": [],
+      "report": "out/motion-development-final/results.json"
+    },
+    "production": {
+      "cases": 6,
+      "assets": [
+        {
+          "url": "http://127.0.0.1:5211/assets/winui_bg-AvgMdau1.wasm?v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5211/assets/winui_bg-AvgMdau1.wasm?v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5211/assets/winui_bg-AvgMdau1.wasm?v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5211/assets/winui_bg-AvgMdau1.wasm?v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5211/assets/winui_bg-AvgMdau1.wasm?v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        },
+        {
+          "url": "http://127.0.0.1:5211/assets/winui_bg-AvgMdau1.wasm?v=2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+          "sha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5"
+        }
+      ],
+      "pageErrors": [],
+      "report": "out/motion-production/results.json"
+    },
+    "notes": [
+      "Initial development cold load exceeded 5 seconds; confirmed no page error and reran with the browser-suite 15-second assertion budget.",
+      "Initial concurrent NavigationView footer regression passed after shared-source update; the final rebuild includes the update and the complete Rust run passes.",
+      "Another workspace build replaced formal artifacts during verification; restored the verified WASM/glue/declarations, rebuilt production, and repeated both entry checks."
+    ]
+  },
+  "performance": {
+    "method": "Same-machine Chrome Canvas2D, 1536x1000, Period=200, damping=.2, 2.2-second hover. rAF remained ~16.7 ms; reduced CPU work does not imply universal FPS gains.",
+    "baselineSha256": "4331657bb2af706fcac40ddffe329f6fcdd55040eaece757b7b45eed9ed3e160",
+    "finalSha256": "2baeef90794695c1ba538688a09d6bd6983091b05fa55168124bc9b0b1c060b5",
+    "measurements": [
+      {
+        "dpr": 1,
+        "wasmMedianMs": {
+          "before": 6.5,
+          "after": 0.6000000238418579
+        },
+        "wasmP95Ms": {
+          "before": 10.700000047683716,
+          "after": 1
+        },
+        "hostP95Ms": {
+          "before": 11.5,
+          "after": 1.5
+        },
+        "rafMedianMs": {
+          "before": 16.600000000000364,
+          "after": 16.699999999999818
+        },
+        "steadySnapshotBytes": 7038
+      },
+      {
+        "dpr": 1.25,
+        "wasmMedianMs": {
+          "before": 6.600000023841858,
+          "after": 0.7000000476837158
+        },
+        "wasmP95Ms": {
+          "before": 9.799999952316284,
+          "after": 1.100000023841858
+        },
+        "hostP95Ms": {
+          "before": 10.100000023841858,
+          "after": 1.600000023841858
+        },
+        "rafMedianMs": {
+          "before": 16.699999999999818,
+          "after": 16.699999999999818
+        },
+        "steadySnapshotBytes": 7051
+      }
+    ],
+    "script": "tools/benchmark-motion.mjs",
+    "before": "out/motion-performance-before.json",
+    "after": "out/motion-performance-after.json"
+  },
+  "remaining": [
+    "Exact native spring rest/completion criterion; current conservative decay tail may finish later.",
+    "Arbitrary 4x4 perspective/rotationX/rotationY; default flat Z projection is covered.",
+    "Exact frozen native textures for complex backdrop-dependent source materials and clip morph; source retains immutable draw commands.",
+    "Cross-Scene/window connection, full Frame lifecycle and ItemsRepeater TabFocusNavigation.Once."
+  ]
+}

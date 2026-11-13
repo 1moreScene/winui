@@ -851,8 +851,10 @@ impl Scene {
         }
         if matches!(input, Input::Cancel { .. } | Input::Blur) {
             for n in self.nodes.values_mut() {
-                n.reading.rich_drag = None;
-                n.reading.pressed_link = None;
+                if let Some(reading) = n.reading.allocated_mut() {
+                    reading.rich_drag = None;
+                    reading.pressed_link = None;
+                }
             }
         }
         Ok(false)

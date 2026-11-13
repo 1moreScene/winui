@@ -120,7 +120,7 @@ async function fixture(page: Page) {
 async function tick(page: Page, time: number) {
   await page.evaluate((time) => {
     window.effectsTime = time;
-    for (const s of window.effectsFixture.scenes) s.configure({});
+    for (const s of window.effectsFixture.scenes) s.render();
   }, time);
   try {
     await expect.poll(() => page.evaluate(() => window.effectsFixture.scenes[1].snapshot.time)).toBe(time);
@@ -416,7 +416,7 @@ test("nested translucent clips sample lower layers, policies and cache survive c
   expect(await page.evaluate(() => window.effectsFixture.results)).toEqual([
     "Completed",
   ]);
-  const glCanvas = page.locator("#effect-1 canvas");
+  const glCanvas = page.locator("#effect-1 > .winui-surface > canvas");
   await glCanvas.evaluate((c) => {
     window.effectsLoss = (c as HTMLCanvasElement)
       .getContext("webgl2")!

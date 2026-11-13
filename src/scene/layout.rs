@@ -223,6 +223,7 @@ impl Scene {
             (kind, p)
         };
         match measure_kind {
+            NodeKind::Segmented|NodeKind::SegmentedItem => {size=self.measure_segmented(id,inner,measure);}
             NodeKind::TableView=>{size=self.measure_table(id,inner);}
             NodeKind::ScrollBar|NodeKind::Thumb|NodeKind::TickBar|NodeKind::ItemsPresenter=>{size=self.measure_primitive(id,inner,measure);}
             NodeKind::ContentControl|NodeKind::ContentPresenter|NodeKind::UserControl|NodeKind::Page|NodeKind::Frame=>{size=self.measure_content_host(id,inner,measure);}
@@ -481,7 +482,9 @@ impl Scene {
             NodeKind::TextBox | NodeKind::PasswordBox | NodeKind::RichEditBox => {
                 let hh = self.input_header_height(id);
                 let focused = self.focused == Some(id);
-                size = self.nodes.get_mut(&id).unwrap().editor.layout(
+                let editor = &mut self.nodes.get_mut(&id).unwrap().editor;
+                let scroll = (editor.scroll_x, editor.scroll_y);
+                size = editor.layout(
                     kind,
                     &p,
                     (aw, p.height),
@@ -490,6 +493,11 @@ impl Scene {
                     self.dpr,
                     measure,
                 );
+                // Measure can use an unconstrained height. Only Arrange can
+                // clamp the scroll offset to the actual editor viewport.
+                if kind == NodeKind::RichEditBox {
+                    (editor.scroll_x, editor.scroll_y) = scroll;
+                }
                 // Editor padding is already incorporated by its template layout.
                 size[0] = (size[0] - pad[0] - pad[2]).max(0.);
                 size[1] = (size[1] - pad[1] - pad[3]).max(0.);
@@ -1091,6 +1099,9 @@ impl Scene {
                 self.dpr,
                 measure,
             );
+            if kind == NodeKind::RichEditBox {
+                self.sync_rich_editor_scroll(id);
+            }
         }
         if kind == NodeKind::MenuFlyout {
             let extent=self.nodes[&id].overlay.row_heights.iter().sum::<f64>();
@@ -1223,6 +1234,8 @@ impl Scene {
                     measure,
                 );
             }
+        } else if matches!(kind,NodeKind::Segmented|NodeKind::SegmentedItem) {
+            self.arrange_segmented(id,inner,measure);
         } else if super::navigation_controls::is_control(kind) && kind != NodeKind::TreeView {
             self.arrange_navigation_control(id, inner, measure);
         } else if super::collections::is_view(kind) {
@@ -1257,6 +1270,23 @@ impl Scene {
                 }
             }
             let extent = self.nodes[&id].scroll.extent;
+            // A disabled axis arranges the content into the viewport. Its natural
+            // desired extent must not widen a stretched content subtree (for
+            // example ContentDialog's horizontally disabled ScrollViewer).
+            let content_width = if p.horizontal_scroll_mode == ScrollMode::Disabled
+                || p.horizontal_scroll_bar_visibility == ScrollBarVisibility::Disabled
+            {
+                inner.width / p.zoom_factor
+            } else {
+                extent[0].max(inner.width / p.zoom_factor)
+            };
+            let content_height = if p.vertical_scroll_mode == ScrollMode::Disabled
+                || p.vertical_scroll_bar_visibility == ScrollBarVisibility::Disabled
+            {
+                inner.height / p.zoom_factor
+            } else {
+                extent[1].max(inner.height / p.zoom_factor)
+            };
             let content_world = world.multiply(self.nodes[&id].scroll.matrix(self.time));
             for child in children {
                 self.arrange_node(
@@ -1264,8 +1294,8 @@ impl Scene {
                     Rect::new(
                         inner.x,
                         inner.y,
-                        extent[0].max(inner.width / p.zoom_factor),
-                        extent[1].max(inner.height / p.zoom_factor),
+                        content_width,
+                        content_height,
                     ),
                     content_world,
                     (theme, enabled, visible),

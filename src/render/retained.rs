@@ -104,7 +104,7 @@ pub(super) fn paint(
         || height <= 0.
         || width > 8192.
         || height > 8192.
-        || width * height > 4_194_304.
+        || width * height > 1_048_576.
     {
         return paint_commands(backend, commands);
     }
@@ -129,25 +129,28 @@ pub(super) fn paint(
             .set(backend.retained_raster_hits.get() + 1);
         canvas
     } else {
-        let canvas = backend
-            .canvas
-            .owner_document()
-            .unwrap()
-            .create_element("canvas")?
-            .dyn_into::<web_sys::HtmlCanvasElement>()?;
-        let context = canvas
-            .get_context("2d")?
-            .unwrap()
-            .dyn_into::<web_sys::CanvasRenderingContext2d>()?;
-        let mut layer = CanvasBackend::new(canvas, context)?;
-        layer.canvas.set_width(width as u32);
-        layer.canvas.set_height(height as u32);
-        layer.images = backend.images.clone();
-        layer.glyphs = backend.glyphs.clone();
-        layer.glyph_serial = backend.glyph_serial.clone();
-        layer.vector_rasters = backend.vector_rasters.clone();
-        layer.vector_raster_hits = backend.vector_raster_hits.clone();
-        layer.dpr.set(dpr);
+        // Rows entering the viewport repeatedly churn the pixel cache. Reuse
+        // the oldest context and backing store once the pixel budget is full.
+        let recycled = {
+            let mut cache = backend.retained_rasters.borrow_mut();
+            let used: u64 = cache.iter().map(|(_, c)| c.width() as u64 * c.height() as u64).sum();
+            (cache.len() >= 32 || used + width as u64 * height as u64 > 1_048_576)
+                .then(|| cache.pop_front()).flatten().map(|(_, canvas)| canvas)
+        };
+        let canvas = if let Some(canvas) = recycled {
+            canvas
+        } else {
+            backend.canvas.owner_document().unwrap().create_element("canvas")?
+                .dyn_into::<web_sys::HtmlCanvasElement>()?
+        };
+        let context = super::canvas_context(&canvas)?;
+        if canvas.width() != width as u32 { canvas.set_width(width as u32); }
+        if canvas.height() != height as u32 { canvas.set_height(height as u32); }
+        context.set_transform(1., 0., 0., 1., 0., 0.)?;
+        context.clear_rect(0., 0., width, height);
+        // A retained row uses only ordinary drawing commands. Share the host's
+        // auxiliary surfaces instead of creating six extra canvases per row.
+        let layer = backend.retained_layer(canvas, context);
         layer
             .context
             .set_transform(sx, 0., 0., sy, tx - left, ty - top)?;
@@ -155,12 +158,12 @@ pub(super) fn paint(
         let canvas = layer.canvas.clone();
         let mut cache = backend.retained_rasters.borrow_mut();
         cache.push_back((key, canvas.clone()));
-        while cache.len() > 128
+        while cache.len() > 32
             || cache
                 .iter()
                 .map(|(_, c)| c.width() as u64 * c.height() as u64)
                 .sum::<u64>()
-                > 4_194_304
+                > 1_048_576
         {
             let (_, old) = cache.pop_front().unwrap();
             old.set_width(0);

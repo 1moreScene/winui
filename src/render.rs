@@ -552,7 +552,6 @@ pub struct CanvasBackend {
     pub canvas: web_sys::HtmlCanvasElement,
     pub context: web_sys::CanvasRenderingContext2d,
     scratch: web_sys::HtmlCanvasElement,
-    scratch_context: web_sys::CanvasRenderingContext2d,
     backdrop: web_sys::HtmlCanvasElement,
     local_backdrop: web_sys::HtmlCanvasElement,
     windowed: std::cell::Cell<bool>,
@@ -562,6 +561,7 @@ pub struct CanvasBackend {
     material_tiles: std::cell::RefCell<std::collections::VecDeque<MaterialTile>>,
     capture: web_sys::HtmlCanvasElement,
     effect: web_sys::HtmlCanvasElement,
+    material_sample: web_sys::HtmlCanvasElement,
     pub dpr: std::cell::Cell<f64>,
     pub images: std::rc::Rc<
         std::cell::RefCell<std::collections::HashMap<String, web_sys::HtmlImageElement>>,
@@ -591,7 +591,45 @@ struct GlyphSurface {
     size: [f64; 2],
 }
 #[cfg(target_arch = "wasm32")]
+fn canvas_context(
+    canvas: &web_sys::HtmlCanvasElement,
+) -> Result<web_sys::CanvasRenderingContext2d, wasm_bindgen::JsValue> {
+    use wasm_bindgen::JsCast;
+    canvas.get_context("2d")?
+        .ok_or_else(|| wasm_bindgen::JsValue::from_str("Canvas 2D unavailable"))?
+        .dyn_into()
+        .map_err(Into::into)
+}
+#[cfg(target_arch = "wasm32")]
+fn readback_context(
+    canvas: &web_sys::HtmlCanvasElement,
+) -> Result<web_sys::CanvasRenderingContext2d, wasm_bindgen::JsValue> {
+    use wasm_bindgen::prelude::*;
+    use wasm_bindgen::JsCast;
+    #[wasm_bindgen(inline_js = "export function winuiReadbackContext(canvas) { return canvas.getContext('2d', {willReadFrequently: true}); }")]
+    extern "C" {
+        #[wasm_bindgen(catch, js_name = winuiReadbackContext)]
+        fn readback(canvas: &web_sys::HtmlCanvasElement) -> Result<JsValue, JsValue>;
+    }
+    readback(canvas)?.dyn_into()
+}
+#[cfg(target_arch = "wasm32")]
 impl CanvasBackend {
+    fn retained_layer(&self, canvas: web_sys::HtmlCanvasElement, context: web_sys::CanvasRenderingContext2d) -> Self {
+        Self {
+            canvas, context,
+            scratch: self.scratch.clone(), backdrop: self.backdrop.clone(),
+            local_backdrop: self.local_backdrop.clone(), capture: self.capture.clone(),
+            effect: self.effect.clone(), material_sample: self.material_sample.clone(),
+            windowed: Default::default(), isolated_window: Default::default(),
+            window_material: Default::default(), raster_images: Default::default(), material_tiles: Default::default(),
+            dpr: std::cell::Cell::new(self.dpr.get()), images: self.images.clone(),
+            layers: Default::default(), gradients: Default::default(), vector_layers: Default::default(),
+            vector_rasters: self.vector_rasters.clone(), vector_raster_hits: self.vector_raster_hits.clone(),
+            retained_rasters: Default::default(), retained_raster_hits: Default::default(),
+            glyphs: self.glyphs.clone(), glyph_serial: self.glyph_serial.clone(),
+        }
+    }
     pub fn set_external_backdrop(
         &self,
         source: &web_sys::HtmlCanvasElement,
@@ -616,29 +654,26 @@ impl CanvasBackend {
         let document = canvas
             .owner_document()
             .ok_or_else(|| wasm_bindgen::JsValue::from_str("canvas document missing"))?;
-        let surface=||->Result<(web_sys::HtmlCanvasElement,web_sys::CanvasRenderingContext2d),wasm_bindgen::JsValue>{
-            let c=document.create_element("canvas")?.dyn_into::<web_sys::HtmlCanvasElement>()?;
-            let ctx=c.get_context("2d")?.ok_or_else(||wasm_bindgen::JsValue::from_str("Canvas 2D unavailable"))?.dyn_into::<web_sys::CanvasRenderingContext2d>()?;Ok((c,ctx))
+        let surface = || -> Result<web_sys::HtmlCanvasElement, wasm_bindgen::JsValue> {
+            let canvas = document.create_element("canvas")?.dyn_into::<web_sys::HtmlCanvasElement>()?;
+            canvas.set_width(0);
+            canvas.set_height(0);
+            Ok(canvas)
         };
-        let (scratch, scratch_context) = surface()?;
-        let (backdrop, _) = surface()?;
-        let (local_backdrop, _) = surface()?;
-        let (capture, _) = surface()?;
-        let (effect, _) = surface()?;
         Ok(Self {
             canvas,
             context,
-            scratch,
-            scratch_context,
-            backdrop,
-            local_backdrop,
+            scratch: surface()?,
+            backdrop: surface()?,
+            local_backdrop: surface()?,
             windowed: std::cell::Cell::new(false),
             isolated_window: std::cell::Cell::new(false),
             window_material: Default::default(),
             material_tiles: Default::default(),
             raster_images: Default::default(),
-            capture,
-            effect,
+            capture: surface()?,
+            effect: surface()?,
+            material_sample: surface()?,
             dpr: std::cell::Cell::new(1.),
             images: Default::default(),
             layers: Default::default(),
@@ -652,7 +687,7 @@ impl CanvasBackend {
             glyph_serial: Default::default(),
         })
     }
-    pub fn release(&self) {
+    pub fn release_rasters(&self) {
         for (_, (_, canvas)) in self.raster_images.borrow_mut().drain() { canvas.set_width(0); canvas.set_height(0); }
         if let Some((_,canvas,_)) = self.window_material.borrow_mut().take() { canvas.set_width(0); canvas.set_height(0); }
         for tile in self.material_tiles.borrow_mut().drain(..){tile.canvas.set_width(0);tile.canvas.set_height(0);}
@@ -665,20 +700,27 @@ impl CanvasBackend {
             &self.local_backdrop,
             &self.capture,
             &self.effect,
+            &self.material_sample,
         ] {
             canvas.set_width(0);
             canvas.set_height(0);
         }
-        self.images.borrow_mut().clear();
-        for layer in self.layers.borrow_mut().drain(..){layer.release();}
-        for layer in self.vector_layers.borrow_mut().drain(..){layer.release();}
+        for layer in self.layers.borrow_mut().drain(..){layer.release_rasters();}
+        for layer in self.vector_layers.borrow_mut().drain(..){layer.release_rasters();}
         for (_,canvas) in self.vector_rasters.borrow_mut().drain(..){canvas.set_width(0);canvas.set_height(0);}
         for (_,canvas) in self.retained_rasters.borrow_mut().drain(..){canvas.set_width(0);canvas.set_height(0);}
-        self.glyphs.borrow_mut().clear();
+        for (_, (glyph, _)) in self.glyphs.borrow_mut().drain() {
+            glyph.canvas.set_width(0);
+            glyph.canvas.set_height(0);
+        }
         for canvas in self.gradients.borrow_mut().drain().map(|(_, c)| c) {
             canvas.set_width(0);
             canvas.set_height(0);
         }
+    }
+    pub fn release(&self) {
+        self.release_rasters();
+        self.images.borrow_mut().clear();
     }
     fn glyph(
         &self,
@@ -701,10 +743,7 @@ impl CanvasBackend {
             .unwrap()
             .create_element("canvas")?
             .dyn_into::<web_sys::HtmlCanvasElement>()?;
-        let context = canvas
-            .get_context("2d")?
-            .unwrap()
-            .dyn_into::<web_sys::CanvasRenderingContext2d>()?;
+        let context = canvas_context(&canvas)?;
         context.set_font(&font.css());
         let metrics = context.measure_text(text)?;
         let left = metrics.actual_bounding_box_left();
@@ -851,38 +890,24 @@ impl CanvasBackend {
                 canvas.set_height(height);
             }
         };
-        resize(&self.capture, w as u32, h as u32);
-        resize(&self.effect, w as u32, h as u32);
-        let context=|c:&web_sys::HtmlCanvasElement|->Result<web_sys::CanvasRenderingContext2d,wasm_bindgen::JsValue>{Ok(c.get_context("2d")?.unwrap().dyn_into()?)};
-        let capture = context(&self.capture)?;
-        capture.set_transform(1., 0., 0., 1., 0., 0.)?;
+        let matrix = crate::scene::Matrix([
+            transform.a(), transform.b(), transform.c(), transform.d(), transform.e(), transform.f(),
+        ]);
+        let bounds = matrix.bounds(rect);
+        let left = bounds.x.floor().clamp(0., w);
+        let top = bounds.y.floor().clamp(0., h);
+        let width = (bounds.x + bounds.width).ceil().clamp(left, w) - left;
+        let height = (bounds.y + bounds.height).ceil().clamp(top, h) - top;
+        if width == 0. || height == 0. {
+            return Ok(());
+        }
         let mut fallback = crate::material::rgba(&colors.fallback);
         fallback[3] = 1.;
-        capture.set_fill_style_str(&crate::material::css(fallback));
-        capture.fill_rect(0., 0., w, h);
         let source = if !desktop && self.windowed.get() {
             &self.local_backdrop
         } else {
             &self.backdrop
         };
-        if source.width() == w as u32 && source.height() == h as u32 {
-            capture.draw_image_with_html_canvas_element(source, 0., 0.)?;
-        }
-        // HostBackdrop belongs to the popup window: its own shadow/content
-        // cannot feed back into the desktop sampler. In-app Acrylic can sample
-        // lower visuals in its current surface.
-        if !desktop {
-            capture.draw_image_with_html_canvas_element(&self.canvas, 0., 0.)?;
-        }
-        let matrix = crate::scene::Matrix([
-            transform.a(),
-            transform.b(),
-            transform.c(),
-            transform.d(),
-            transform.e(),
-            transform.f(),
-        ]);
-        let bounds = matrix.bounds(rect);
         let mut cache_input=None;
         let blur_tile = if crate::material::rgba(&colors.tint)[3] < 1. {
             // BackdropBrush first crops to the painted visual. D2D HARD border
@@ -894,10 +919,42 @@ impl CanvasBackend {
             } else {
                 bounds
             };
+            // Copy just the source rectangle before downsampling. Coordinates
+            // outside the real backdrop continue to use the fallback color.
+            let x = source_rect.x.floor();
+            let y = source_rect.y.floor();
+            let capture_width = (source_rect.x + source_rect.width).ceil() - x;
+            let capture_height = (source_rect.y + source_rect.height).ceil() - y;
+            if capture_width > 8192. || capture_height > 8192. || capture_width * capture_height > 16_777_216. {
+                return self.uniform_acrylic(rect,weight,colors,[fallback[0],fallback[1],fallback[2]],desktop);
+            }
+            resize(&self.capture, capture_width as u32, capture_height as u32);
+            let capture = canvas_context(&self.capture)?;
+            capture.set_transform(1., 0., 0., 1., 0., 0.)?;
+            capture.set_fill_style_str(&crate::material::css(fallback));
+            capture.fill_rect(0., 0., capture_width, capture_height);
+            let copy = |canvas: &web_sys::HtmlCanvasElement| {
+                let left = x.max(0.);
+                let top = y.max(0.);
+                let width = (x + capture_width).min(w) - left;
+                let height = (y + capture_height).min(h) - top;
+                if width > 0. && height > 0. {
+                    capture.draw_image_with_html_canvas_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(
+                        canvas, left, top, width, height, left - x, top - y, width, height,
+                    )?;
+                }
+                Ok::<_, wasm_bindgen::JsValue>(())
+            };
+            if source.width() == w as u32 && source.height() == h as u32 {
+                copy(source)?;
+            }
+            if !desktop {
+                copy(&self.canvas)?;
+            }
             let bw = (source_rect.width / dpr / 4.).ceil().max(1.) as u32;
             let bh = (source_rect.height / dpr / 4.).ceil().max(1.) as u32;
-            resize(&self.effect, bw, bh);
-            let small = context(&self.effect)?;
+            resize(&self.material_sample, bw, bh);
+            let small = readback_context(&self.material_sample)?;
             small.set_image_smoothing_enabled(true);
             small
                 .unchecked_ref::<SamplingContext>()
@@ -908,8 +965,8 @@ impl CanvasBackend {
             // adjacent page survives the clamp on a narrow Acrylic visual.
             small.draw_image_with_html_canvas_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(
                 &self.capture,
-                source_rect.x,
-                source_rect.y,
+                source_rect.x - x,
+                source_rect.y - y,
                 source_rect.width,
                 source_rect.height,
                 0.,
@@ -959,22 +1016,22 @@ impl CanvasBackend {
                 clamp,
             );
             cache_input=Some((key,pixels));
-            resize(&self.effect, w as u32, h as u32);
             Some((tile, source_rect))
         } else {
             None
         };
-        let e = context(&self.effect)?;
+        resize(&self.effect, width as u32, height as u32);
+        let e = readback_context(&self.effect)?;
         e.set_transform(1., 0., 0., 1., 0., 0.)?;
-        e.clear_rect(0., 0., w, h);
+        e.clear_rect(0., 0., width, height);
         e.save();
         e.set_transform(
             transform.a(),
             transform.b(),
             transform.c(),
             transform.d(),
-            transform.e(),
-            transform.f(),
+            transform.e() - left,
+            transform.f() - top,
         )?;
         e.begin_path();
         e.rect(rect.x, rect.y, rect.width, rect.height);
@@ -986,12 +1043,8 @@ impl CanvasBackend {
         // Evaluate color, noise and premultiplied crossfade in one floating-point
         // pass. Canvas blend modes quantize every intermediate paint separately.
         let inverse = matrix.inverse().unwrap_or_default();
-        let left = bounds.x.floor().clamp(0., w);
-        let top = bounds.y.floor().clamp(0., h);
-        let width = (bounds.x + bounds.width).ceil().clamp(left, w) - left;
-        let height = (bounds.y + bounds.height).ceil().clamp(top, h) - top;
-        if width > 0. && height > 0. {
-            let image = e.get_image_data(left, top, width, height)?;
+        {
+            let image = e.get_image_data(0., 0., width, height)?;
             let mut bytes = image.data().0;
             let tint = crate::material::rgba(&tint);
             let luminosity = crate::material::rgba(&luminosity);
@@ -1071,11 +1124,11 @@ impl CanvasBackend {
                 image.width(),
                 image.height(),
             )?;
-            e.put_image_data(&image, left, top)?;
+            e.put_image_data(&image, 0., 0.)?;
             if let Some((key,source))=cache_input {
                 let canvas=self.canvas.owner_document().unwrap().create_element("canvas")?.dyn_into::<web_sys::HtmlCanvasElement>()?;
                 canvas.set_width(image.width());canvas.set_height(image.height());
-                context(&canvas)?.put_image_data(&image,0.,0.)?;
+                canvas_context(&canvas)?.put_image_data(&image,0.,0.)?;
                 let mut cache=self.material_tiles.borrow_mut();
                 cache.push_back(MaterialTile{key,source,canvas,origin:[left,top]});
                 // Bound retained CPU/GPU surfaces per layer, including animated
@@ -1088,7 +1141,7 @@ impl CanvasBackend {
         e.restore();
         ctx.save();
         ctx.set_transform(1., 0., 0., 1., 0., 0.)?;
-        ctx.draw_image_with_html_canvas_element(&self.effect, 0., 0.)?;
+        ctx.draw_image_with_html_canvas_element(&self.effect, left, top)?;
         ctx.restore();
         Ok(())
     }
@@ -1385,7 +1438,11 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     let scratch = &backend.scratch;
                     scratch.set_width(image.natural_width());
                     scratch.set_height(image.natural_height());
-                    let s = &backend.scratch_context;
+                    use wasm_bindgen::JsCast;
+                    let s: web_sys::CanvasRenderingContext2d = scratch
+                        .get_context("2d")?
+                        .ok_or_else(|| wasm_bindgen::JsValue::from_str("Canvas 2D unavailable"))?
+                        .dyn_into()?;
                     s.draw_image_with_html_image_element(image, 0., 0.)?;
                     s.set_global_composite_operation("source-in")?;
                     s.set_fill_style_str(color);
@@ -1677,9 +1734,13 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 layer.windowed.set(new_window || backend.windowed.get());
                 layer.isolated_window.set(new_window);
                 if inherit_backdrop {
-                    local.draw_image_with_html_canvas_element(&backend.backdrop, 0., 0.)?;
+                    if backend.backdrop.width() > 0 && backend.backdrop.height() > 0 {
+                        local.draw_image_with_html_canvas_element(&backend.backdrop, 0., 0.)?;
+                    }
                 } else if !new_window && backend.windowed.get() {
-                    local.draw_image_with_html_canvas_element(&backend.local_backdrop, 0., 0.)?;
+                    if backend.local_backdrop.width() > 0 && backend.local_backdrop.height() > 0 {
+                        local.draw_image_with_html_canvas_element(&backend.local_backdrop, 0., 0.)?;
+                    }
                     local.draw_image_with_html_canvas_element(&backend.canvas, 0., 0.)?;
                 }
                 }

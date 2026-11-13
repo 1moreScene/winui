@@ -5,6 +5,7 @@ import { GalleryPageLoading } from "./GalleryPageLoading";
 import { GalleryShell } from './HomePage';
 import { itemForRoute, readGalleryList, writeGalleryList, recentKey } from './gallery-catalog';
 
+const SegmentedPage=lazy(()=>import('./SegmentedPage').then(m=>({default:m.SegmentedPage})));
 const TableViewPage=lazy(()=>import('./TableViewPage').then(m=>({default:m.TableViewPage})));
 const MotionPages=lazy(()=>import('./MotionPages').then(m=>({default:m.MotionPages})));
 const MenuItemControlsPage=lazy(()=>import('./MenuItemControlsPage').then(m=>({default:m.MenuItemControlsPage})));
@@ -97,6 +98,7 @@ function samplePage(route: string, sdk: WinUI) {
   if(route in composedRoutes)return <ComposedControlsPage key={route} kind={composedRoutes[route as keyof typeof composedRoutes]}/>;
   const motionRoutes={'#connected-animation':'ConnectedAnimation','#theme-transitions':'ThemeTransition','#xaml-comp-interop':'XamlCompInterop'} as const;
   if(route in motionRoutes)return <MotionPages key={route} kind={motionRoutes[route as keyof typeof motionRoutes]}/>;
+  if(route==='#segmented')return <SegmentedPage/>;
   if(route==='#table-view')return <TableViewPage/>;
   const primitiveRoutes={'#scroll-bar':'ScrollBar','#thumb':'Thumb','#tick-bar':'TickBar','#items-presenter':'ItemsPresenter','#scroll-content-presenter':'ScrollContentPresenter'} as const;
   if(route in primitiveRoutes)return <ScrollPrimitivesPage key={route} kind={primitiveRoutes[route as keyof typeof primitiveRoutes]}/>;

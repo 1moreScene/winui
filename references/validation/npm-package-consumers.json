@@ -1,0 +1,127 @@
+{
+  "tarball": "D:\\vscode\\winui\\out\\npm-consumers-8qpAid\\winui-wasm-0.1.1.tgz",
+  "packageVersion": "0.1.1",
+  "iconFontPolicy": "Windows local native aliases with open-source per-glyph fallback; other platforms portable font; native family names preserved",
+  "localOnly": false,
+  "resourceSource": "pinned MIT",
+  "published": false,
+  "cases": [
+    {
+      "kind": "vanilla",
+      "mode": "development",
+      "base": "/nested/",
+      "backends": [
+        "Canvas2D",
+        "WebGL2"
+      ],
+      "fonts": 3,
+      "ink": 3219,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:5431/nested/node_modules/winui-wasm/dist/assets/winui-icons.woff",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:5431/nested/node_modules/winui-wasm/dist/wasm/winui_bg.wasm?v=408e3b525c28edc89526ffe7402b5e034e34f5e6402e130bd5808f578d66acac",
+          "status": 200
+        }
+      ],
+      "errors": [],
+      "interactions": true,
+      "cleanup": true,
+      "navigation": {
+        "scenes": 24,
+        "liveCount": 12
+      }
+    },
+    {
+      "kind": "vanilla",
+      "mode": "production",
+      "base": "/nested/",
+      "backends": [
+        "Canvas2D",
+        "WebGL2"
+      ],
+      "fonts": 3,
+      "ink": 3219,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:5433/nested/assets/winui-icons-QfSUefym.woff",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:5433/nested/assets/winui_bg-9gu_-S_b.wasm?v=408e3b525c28edc89526ffe7402b5e034e34f5e6402e130bd5808f578d66acac",
+          "status": 200
+        }
+      ],
+      "errors": [],
+      "interactions": true,
+      "cleanup": true,
+      "navigation": {
+        "scenes": 24,
+        "liveCount": 12
+      }
+    },
+    {
+      "kind": "react",
+      "mode": "development",
+      "base": "/nested/",
+      "backends": [
+        "Canvas2D",
+        "WebGL2"
+      ],
+      "fonts": 3,
+      "ink": 3636,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:5432/nested/node_modules/winui-wasm/dist/assets/winui-icons.woff",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:5432/nested/node_modules/winui-wasm/dist/wasm/winui_bg.wasm?v=408e3b525c28edc89526ffe7402b5e034e34f5e6402e130bd5808f578d66acac",
+          "status": 200
+        }
+      ],
+      "errors": [],
+      "interactions": true,
+      "cleanup": true,
+      "navigation": {
+        "navigations": 26,
+        "maxCached": 9,
+        "maxActivePixels": 360000,
+        "hiddenPixels": 0
+      }
+    },
+    {
+      "kind": "react",
+      "mode": "production",
+      "base": "/nested/",
+      "backends": [
+        "Canvas2D",
+        "WebGL2"
+      ],
+      "fonts": 3,
+      "ink": 3636,
+      "resources": [
+        {
+          "url": "http://127.0.0.1:5434/nested/assets/winui-icons-QfSUefym.woff",
+          "status": 200
+        },
+        {
+          "url": "http://127.0.0.1:5434/nested/assets/winui_bg-9gu_-S_b.wasm?v=408e3b525c28edc89526ffe7402b5e034e34f5e6402e130bd5808f578d66acac",
+          "status": 200
+        }
+      ],
+      "errors": [],
+      "interactions": true,
+      "cleanup": true,
+      "navigation": {
+        "navigations": 26,
+        "maxCached": 9,
+        "maxActivePixels": 360000,
+        "hiddenPixels": 0
+      }
+    }
+  ],
+  "tarballSha256": "185b58cf9478ba61eae5261171f8bb1bcd45b82e74b558e69c4626a807c60d23"
+}

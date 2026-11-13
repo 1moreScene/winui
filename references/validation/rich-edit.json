@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-09",
+  "rust": {
+    "richEdit": {
+      "command": "cargo test --locked --test rich_edit --quiet",
+      "passed": 14
+    },
+    "sharedTextAndInput": {
+      "command": "cargo test --locked --test rich_edit --test text_scroll --test input_behavior --quiet",
+      "sharedPassed": 17
+    },
+    "fullSuite": "Passed earlier in this session; final RichEdit-only changes verified by targeted tests."
+  },
+  "browser": {
+    "command": "PW_CHANNEL=chrome npx playwright test -c playwright.rich-edit.config.ts",
+    "stats": {
+      "startTime": "2026-11-09T11:48:30.080Z",
+      "duration": 22165.304,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "renderers": [
+      "Canvas2D",
+      "WebGL2"
+    ],
+    "themes": [
+      "Light",
+      "Dark",
+      "HighContrast"
+    ],
+    "highContrastPixelChecks": "Selection contains yellow background and zero white text pixels; system HighlightText foreground.",
+    "sharedRegressions": [
+      {
+        "tests": "TextBox keyboard history, Chinese IME, fractional DPR/both renderers/themes/reentrant disposal",
+        "passed": 3
+      },
+      {
+        "tests": "ToggleSplitButton, compact SDK lifetime, label/editor/link pointer presentation",
+        "passed": 3
+      }
+    ],
+    "artifacts": "out/rich-edit-browser/"
+  },
+  "checks": [
+    "npm run typecheck",
+    "npm run build",
+    "final host bridge: tsc --noEmit, vite build, declarations",
+    "node tools/generate-enums.mjs --check",
+    "node tools/check-control-origins.mjs --check"
+  ],
+  "wasm": {
+    "bytes": 9092467,
+    "sha256": "0db88660ad992936bc146b9f0f66280cef69d7cc550e9feee7da941ada8a597f"
+  },
+  "native": "Blocked by COMException 0x800F1000; references/validation/rich-edit-native.json",
+  "integrationFix": "Corrected current TableView RowDrawKey.captured pointer ID to i32 to match Scene.captured after a concurrent row-cache edit caused a compile error. Other TableView changes retained.",
+  "notAccepted": [
+    "Full RTF/HTML and rich clipboard",
+    "Embedded images and hyperlinks",
+    "MathML/math engine",
+    "Automatic selection flyouts and complete internal scrollbar template",
+    "Native pixel/animation equivalence"
+  ],
+  "followup": {
+    "record": "references/validation/rich-edit-formats.json",
+    "scope": "This earlier basic-run record is historical. The follow-up adds RTF, PNG/JPEG, Presentation MathML, rich clipboard and completes 18 pinned native cases. Remaining format and math-editor limits are in docs/rich-edit-box.md."
+  }
+}

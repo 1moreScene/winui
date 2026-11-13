@@ -1,0 +1,74 @@
+@import url('winui-wasm/styles.css');
+
+/* Host layout only. WinUI templates/resources own control colors, fonts,
+   borders, padding, corners, icons and visual states. */
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, a, input, textarea, [tabindex] { outline: none !important; }
+.designer-app { height: 100dvh; min-height: 540px; display: flex; flex-direction: column; overflow: hidden; }
+.ui-control, .ui-button { display: block; min-width: 0; flex-shrink: 0; }
+.ui-text { flex-shrink: 1; }
+.app-header { min-height: 64px; flex-shrink: 0; display: flex; align-items: center; gap: 16px; padding: 12px 16px; z-index: 3; }
+.brand, .project-title, .header-actions, .history-actions { display: flex; align-items: center; gap: 8px; }
+.project-title { min-width: 0; width: 240px; }
+.project-title > .ui-control:first-child { flex: 1; min-width: 0; }
+.header-actions { margin-left: auto; flex-shrink: 0; }
+.editor-body { display: grid; grid-template-columns: 256px minmax(260px, 1fr) 304px; flex: 1; min-height: 0; }
+.toolbox { display: flex; flex-direction: column; min-height: 0; z-index: 2; }
+.panel-tabs { min-height: 56px; display: flex; align-items: center; padding: 8px 16px; flex-shrink: 0; }
+.component-search { margin: 8px 16px; }
+.component-library { flex: 1; min-height: 0; margin: 0 8px; }
+.toolbox-help { margin: 8px 16px 16px; flex-shrink: 0; }
+.toolbox-bottom { min-height: 48px; display: flex; align-items: center; padding: 8px 16px; flex-shrink: 0; }
+.layers-page { padding: 16px 8px 8px; }
+.layers-list { flex: 1; overflow: auto; padding: 0 8px; }
+.layer-row { display: flex; align-items: center; gap: 4px; margin: 4px 0; }
+.layer-row > .ui-button:first-child { flex: 1; min-width: 0; }
+.layers-hint { padding: 16px; }
+.canvas-column { display: flex; flex-direction: column; min-width: 0; min-height: 0; position: relative; }
+.canvas-toolbar { min-height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; flex-shrink: 0; }
+.breadcrumb { min-width: 0; flex: 1; max-width: 350px; }
+.canvas-tools { display: flex; align-items: center; gap: 16px; margin-left: 16px; }
+.workspace { flex: 1; min-height: 0; overflow: auto; position: relative; isolation: isolate; }
+.canvas-stage { position: relative; width: max-content; min-width: 100%; min-height: 100%; display: flex; justify-content: center; align-items: flex-start; padding: 88px 56px 128px; }
+.artboard-wrap { position: relative; flex-shrink: 0; }
+.artboard-caption { position: absolute; top: -32px; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+.artboard { position: relative; transform-origin: top left; }
+.sdk-surface { width: 100%; height: 100%; overflow: hidden; }
+.design-overlay { position: absolute; inset: 0; touch-action: none; }
+.canvas-floating-tools { position: fixed; bottom: 64px; left: calc(50% - 24px); transform: translateX(-50%); display: flex; align-items: center; gap: 8px; z-index: 4; }
+.canvas-status { min-height: 32px; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 4px 16px; flex-shrink: 0; }
+.inspector { overflow: auto; min-height: 0; z-index: 2; }
+.panel-heading { min-height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 8px 16px; }
+.selected-summary { padding: 16px; }
+.selected-summary > div { min-width: 0; width: 100%; }
+.inspector-section { padding: 16px; }
+.section-heading { margin-bottom: 8px; }
+.field { margin-bottom: 12px; min-width: 0; }
+.field:last-child { margin-bottom: 0; }
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+.field-grid > .field:last-child { margin-bottom: 12px; }
+.color-field-row { display: flex; align-items: center; gap: 4px; }
+.color-text { flex: 1; min-width: 0; }
+.color-text .field { margin: 0; }
+.color-text .field > .ui-control:first-child { display: none; }
+.property-actions { display: flex; align-items: center; gap: 4px; margin-top: 8px; }
+.property-actions > .ui-button:first-child { flex: 1; }
+.inspector-tip { margin: 16px; }
+.preview-notice { padding: 64px 16px; }
+.preview-notice > .ui-control { margin-bottom: 16px; }
+.notice-host { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); width: min(640px, 85vw); z-index: 110; }
+.export-modal { position: fixed; inset: 0; z-index: 100; }
+.startup-error { padding: 48px; }
+.startup-error pre { white-space: pre-wrap; }
+@media (min-height: 950px) { .canvas-stage { padding-top: 112px; } }
+@media (max-width: 1200px) {
+  .editor-body { grid-template-columns: 224px minmax(260px, 1fr) 272px; }
+  .project-title { display: none; }
+  .canvas-mode, .keyboard-hint { display: none !important; }
+}
+@media (max-width: 950px) {
+  .editor-body { grid-template-columns: 200px minmax(200px, 1fr) 256px; }
+  .brand > .ui-control:last-child, .toolbox-help { display: none; }
+  .app-header, .header-actions { gap: 4px; }
+}

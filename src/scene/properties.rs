@@ -87,16 +87,69 @@ impl RadioOption {
         }
     }
 }
-#[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
-#[serde(default, rename_all = "camelCase", deny_unknown_fields)]
-pub struct NodeProperties {
+// Keep the public property schema and the sparse browser projection in sync.
+macro_rules! node_properties {
+    ($($(#[$($attr:tt)*])* pub $field:ident : $ty:ty,)+) => {
+        #[derive(Clone, Debug, Deserialize, Serialize, PartialEq)]
+        #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
+        pub struct NodeProperties {
+            $($(#[$($attr)*])* pub $field: $ty,)+
+        }
+
+        #[cfg(target_arch = "wasm32")]
+        impl NodeProperties {
+            pub(crate) fn serialize_projection<S: serde::Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+                use serde::ser::SerializeMap;
+                static DEFAULTS: std::sync::LazyLock<NodeProperties> = std::sync::LazyLock::new(NodeProperties::default);
+                let mut map = serializer.serialize_map(None)?;
+                $(node_properties!(@field map self DEFAULTS $field $(#[$($attr)*])*);)+
+                map.end()
+            }
+        }
+    };
+    (@field $map:ident $value:ident $defaults:ident $field:ident #[serde(skip)]) => {};
+    (@field $map:ident $value:ident $defaults:ident $field:ident #[serde(rename=$name:literal,skip_serializing_if=$skip:literal)]) => {
+        if $value.$field != $defaults.$field { $map.serialize_entry($name, &$value.$field)?; }
+    };
+    (@field $map:ident $value:ident $defaults:ident command_controls #[serde(skip_serializing_if=$skip:literal)]) => {
+        if !$value.command_controls.is_default() {
+            $map.serialize_entry("commandControls", &$value.command_controls)?;
+        }
+    };
+    (@field $map:ident $value:ident $defaults:ident nav_controls #[serde(skip_serializing_if=$skip:literal)]) => {
+        if !$value.nav_controls.is_default() {
+            $map.serialize_entry("navControls", &$value.nav_controls)?;
+        }
+    };
+    (@field $map:ident $value:ident $defaults:ident $field:ident $(#[$($attr:tt)*])*) => {
+        if $value.$field != $defaults.$field {
+            static KEY: std::sync::LazyLock<String> = std::sync::LazyLock::new(|| projection_key(stringify!($field)));
+            $map.serialize_entry(KEY.as_str(), &$value.$field)?;
+        }
+    };
+}
+
+#[cfg(target_arch = "wasm32")]
+fn projection_key(field: &str) -> String {
+    let mut parts = field.split('_');
+    let mut key = parts.next().unwrap().to_owned();
+    for part in parts {
+        let mut chars = part.chars();
+        key.extend(chars.next().unwrap().to_uppercase());
+        key.push_str(chars.as_str());
+    }
+    key
+}
+
+node_properties! {
+    pub segmented_style: SegmentedStyle,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub segmented_source: Option<std::sync::Arc<Vec<super::segmented::SourceItem>>>,
+    pub single_selection_follows_focus: bool,
     #[serde(skip_serializing_if="String::is_empty")]
     pub name:String,
     #[serde(skip_serializing_if="std::collections::BTreeMap::is_empty")]
     pub element_references:std::collections::BTreeMap<super::ElementReferenceProperty,Option<String>>,
-    #[serde(skip)]
-    #[doc(hidden)]
-    pub snapshot_omit:bool,
     #[serde(skip_serializing_if="Option::is_none")]
     pub table:Option<Box<super::table_view::TableProperties>>,
     #[serde(skip_serializing_if="Option::is_none")]
@@ -385,7 +438,7 @@ pub struct NodeProperties {
     pub stretch_direction: StretchDirection,
     pub delay: u32,
     pub interval: u32,
-    pub navigation: Option<Properties>,
+    pub navigation: Option<Box<Properties>>,
 }
 impl Default for NodeProperties {
     fn default() -> Self {
@@ -408,7 +461,11 @@ impl Default for NodeProperties {
             number_decimal_separator: String::new(),
             number_group_separator: String::new(),
             number_minus_sign: String::new(),
-            number_digits: std::sync::Arc::new(std::array::from_fn(|i| i.to_string())),
+            number_digits: {
+                static DIGITS: std::sync::LazyLock<std::sync::Arc<[String; 10]>> =
+                    std::sync::LazyLock::new(|| std::sync::Arc::new(std::array::from_fn(|i| i.to_string())));
+                DIGITS.clone()
+            },
             number_group_sizes: [3, 3],
             number_use_grouping: false,
             number_min_fraction_digits: 0,
@@ -525,7 +582,6 @@ impl Default for NodeProperties {
             row_spacing: None,
             column_spacing: None,
             visible: true,
-            snapshot_omit:false,
             is_hit_test_visible: true,
             enabled: true,
             opacity: 1.,
@@ -600,6 +656,9 @@ impl Default for NodeProperties {
             group_name: String::new(),
             header: String::new(),
             items: vec![],
+            segmented_style: SegmentedStyle::Default,
+            segmented_source: None,
+            single_selection_follows_focus: false,
             selected_index: -1,
             max_columns: 1,
             value: 0.,
@@ -808,7 +867,7 @@ impl NodeProperties {
                 }
             }
             NodeKind::NavigationView => {
-                p.navigation = Some(Properties::default());
+                p.navigation = Some(Box::default());
                 p.clip = true;
             }
             NodeKind::NavigationViewItem => {
@@ -816,7 +875,13 @@ impl NodeProperties {
             }
             NodeKind::TextBox | NodeKind::PasswordBox | NodeKind::RichEditBox => {
                 let m = if kind==NodeKind::RichEditBox {super::rich_edit::native_defaults()}else{super::text_edit::native_defaults()};
-                if kind == NodeKind::RichEditBox {p.accepts_return=true;p.wrap=super::rich_edit::contract()["defaults"]["TextWrapping"]=="Wrap";p.is_spell_check_enabled=true;}
+                if kind == NodeKind::RichEditBox {
+                    p.accepts_return = true;
+                    p.wrap = super::rich_edit::contract()["defaults"]["TextWrapping"] == "Wrap";
+                    p.is_spell_check_enabled = true;
+                    p.horizontal_scroll_bar_visibility = ScrollBarVisibility::Auto;
+                    p.vertical_scroll_bar_visibility = ScrollBarVisibility::Auto;
+                }
                 p.padding = m.padding;
                 p.min_width = m.min_width;
                 p.min_height = m.min_height;
@@ -839,6 +904,7 @@ impl NodeProperties {
         super::collections::defaults(kind, &mut p);
         super::composed::defaults(kind, &mut p);
         super::navigation_controls::defaults(kind, &mut p);
+        super::segmented::defaults(kind, &mut p);
         super::command_controls::defaults(kind,&mut p);
         super::command_menus::defaults(kind,&mut p);
         super::layout_panels::defaults(kind,&mut p);
@@ -875,6 +941,7 @@ impl NodeProperties {
         super::view_controls::validate(self)?;
         if kind==NodeKind::TableView&&self.table.is_none(){return Err("TableView requires its table properties".into());}
         super::table_view::validate(self)?;
+        super::segmented::validate_source(kind,self)?;
         super::scroll_primitives::validate(self)?;
         super::content_hosts::validate(self)?;
         super::reading_controls::validate(self)?;
@@ -1148,7 +1215,11 @@ impl NodeProperties {
 /// Creation starts from the same kind defaults as an update, but only needs
 /// their differences from serde's schema defaults. Avoid round-tripping every
 /// default field for each source-template Grid, presenter and icon.
-pub(super) fn create(value:&serde_json::Value,kind:NodeKind)->Result<NodeProperties,String>{
+pub(super) fn create(
+    value: &mut serde_json::Value,
+    kind: NodeKind,
+    table_items: Option<std::sync::Arc<Vec<super::table_view::Row>>>,
+) -> Result<NodeProperties, String> {
     use std::sync::{Arc,Mutex,OnceLock};
     struct Initial{base:NodeProperties,compact:serde_json::Value}
     static INITIAL:OnceLock<Mutex<std::collections::BTreeMap<&'static str,Arc<Initial>>>>=OnceLock::new();
@@ -1163,7 +1234,16 @@ pub(super) fn create(value:&serde_json::Value,kind:NodeKind)->Result<NodePropert
             Arc::new(Initial{base,compact})
         }).clone()
     };
-    apply_patch(&initial.base,value,kind,initial.compact.clone())
+    // Decode row data into its final representation before merging properties.
+    // The browser passes typed rows directly, avoiding an intermediate JSON tree.
+    let table_items = match table_items {
+        Some(rows) => Some(rows),
+        None => value.get_mut("table")
+            .and_then(serde_json::Value::as_object_mut)
+            .and_then(|table| table.remove("items"))
+            .map(serde_json::from_value).transpose().map_err(|error| error.to_string())?,
+    };
+    apply_patch(&initial.base,value,kind,initial.compact.clone(),table_items)
 }
 pub fn patch(
     base: &NodeProperties,
@@ -1178,10 +1258,11 @@ pub fn patch(
     serializable.command_controls.primary_commands = Default::default();
     serializable.command_controls.secondary_commands = Default::default();
     let full = serde_json::to_value(serializable).map_err(|e| e.to_string())?;
-    apply_patch(base,value,kind,full)
+    apply_patch(base,value,kind,full,None)
 }
-fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut full:serde_json::Value)->Result<NodeProperties,String>{
+fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut full:serde_json::Value,table_items:Option<std::sync::Arc<Vec<super::table_view::Row>>>)->Result<NodeProperties,String>{
     let patch = value.as_object().ok_or("node patch must be an object")?;
+    let has_table_items = table_items.is_some() || patch.get("table").and_then(|p|p.get("items")).is_some();
     for (key, value) in patch {
         if matches!(key.as_str(),"table"|"primitives"|"menuItem"|"contentHost"|"menuControls"|"panelControls")&&value.is_object(){
             let dest=full.as_object_mut().unwrap().entry(key).or_insert_with(||serde_json::json!({}));
@@ -1222,6 +1303,9 @@ fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut f
         }
     }
     let mut result: NodeProperties = serde_json::from_value(full).map_err(|e| e.to_string())?;
+    if let Some(items) = table_items {
+        result.table.get_or_insert_with(Box::default).items = items;
+    }
     if kind == NodeKind::RichEditBox {
         let sources=["document","text","rtf","mathML"].iter().filter(|k|patch.contains_key(**k)).count();
         if sources>1{return Err("set one RichEditBox content source: text, document, rtf or mathML".into());}
@@ -1234,7 +1318,7 @@ fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut f
     } else if result.document.is_some()||result.rtf.is_some()||result.math_ml.is_some() {return Err("rich content requires RichEditBox".into());}
     // inside_bar is derived by the CommandBar, never supplied by the caller.
     result.command_controls.inside_bar = base.command_controls.inside_bar;
-    if patch.get("table").and_then(|p|p.get("items")).is_none(){if let (Some(base),Some(result))=(&base.table,&mut result.table){result.items=base.items.clone();}}
+    if !has_table_items {if let (Some(base),Some(result))=(&base.table,&mut result.table){result.items=base.items.clone();}}
     let command_patch = patch.get("commandControls");
     if command_patch.and_then(|p| p.get("primaryCommands")).is_none() {
         result.command_controls.primary_commands = base.command_controls.primary_commands.clone();
@@ -1384,8 +1468,6 @@ fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut f
     Ok(result)
 }
 
-pub(super) fn serialize_snapshot<S:serde::Serializer>(p:&NodeProperties,serializer:S)->Result<S::Ok,S::Error>{if p.snapshot_omit{serializer.serialize_none()}else{p.serialize(serializer)}}
-
 #[cfg(test)]mod creation_tests{
     use super::*;
     #[test]fn compact_creation_preserves_every_control_default_and_validation(){
@@ -1394,7 +1476,7 @@ pub(super) fn serialize_snapshot<S:serde::Serializer>(p:&NodeProperties,serializ
             let kind:NodeKind=serde_json::from_value(entry["name"].clone()).unwrap();
             for value in [serde_json::json!({}),serde_json::json!({"text":"Sample","width":180,"height":48}),serde_json::json!({"unknownProperty":true})]{
                 let expected=patch(&NodeProperties::defaults(kind),&value,kind);
-                let actual=create(&value,kind);
+                let actual=create(&mut value.clone(),kind,None);
                 match(expected,actual){
                     (Ok(expected),Ok(actual))=>assert_eq!(serde_json::to_value(actual).unwrap(),serde_json::to_value(expected).unwrap(),"{}: {value}",kind.as_str()),
                     (Err(expected),Err(actual))=>assert_eq!(actual,expected,"{}: {value}",kind.as_str()),

@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-09",
+  "sdk": "Microsoft.WindowsAppSDK 2.5.4-experimental / Microsoft.WindowsAppSDK.WinUI 2.3.10-experimental",
+  "probe": "tools/native-rich-edit/RichEditProbe.csproj",
+  "command": "./tools/run-rich-edit-probe.ps1",
+  "build": "passed",
+  "dllFingerprints": [
+    {
+      "path": "out/rich-edit-native-bin/Microsoft.UI.Xaml.dll",
+      "sha256": "1a1171b21f8367e14f302965d7cd3346d8bcffe191c67288c6cad1d084b7af3c",
+      "meaning": "self-contained probe output, not a Store identity or verified loaded-module trace"
+    },
+    {
+      "path": "out/rich-edit-native-bin/Microsoft.WindowsAppRuntime.dll",
+      "sha256": "d764d3a18ef84a78acadd202f0aab97c023e0dc54aa15dcc87b8bf45681f8921",
+      "meaning": "self-contained probe output, not a Store identity or verified loaded-module trace"
+    }
+  ],
+  "history": [
+    {
+      "phase": "initial basic RichEditBox probe",
+      "failure": {
+        "capture": "blocked",
+        "hresult": "0x800F1000",
+        "error": "System.Runtime.InteropServices.COMException (0x800F1000): 没有检测到已安装的组件。\n\n   at System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(Int32 errorCode)\n   at WinRT.DelegateExtensions.DynamicInvokeAbi(Delegate del, Object[] invoke_params)\n   at ABI.System.Collections.Generic.IListMethods`2.AppendDynamic(IObjectReference obj, T value)\n   at ABI.System.Collections.Generic.IVectorMethods`1.Append(IObjectReference obj, T value)\n   at ABI.System.Collections.Generic.IListMethods`1.Add(IObjectReference obj, T item)\n   at Microsoft.UI.Xaml.Controls.UIElementCollection.Add(UIElement item)\n   at RichEditProbe.ProbeApplication.Capture(String name, RichEditBox e, Boolean focus) in D:\\vscode\\winui\\tools\\native-rich-edit\\Program.cs:line 27\n   at RichEditProbe.ProbeApplication.Run() in D:\\vscode\\winui\\tools\\native-rich-edit\\Program.cs:line 39",
+        "acceptance": "No native geometry, screenshots or parity accepted. No system settings changed."
+      },
+      "resolution": "Detach the existing Panel parent before reusing the same RichEditBox. The exception was caused by repeated visual-tree attachment, not proof of a missing SDK component."
+    }
+  ],
+  "capture": "passed",
+  "cases": 18,
+  "currentResults": "references/rich-edit-native.json",
+  "screenshots": "out/rich-edit-native/",
+  "interopFixtures": [
+    "references/rich-edit/native-image.rtf",
+    "references/rich-edit/native-math.rtf"
+  ],
+  "acceptance": "Independent pinned self-contained SDK probe. Geometry and static RTF/image/MathML captures recorded; no Store, present-time animation or complete math-engine equivalence claimed."
+}

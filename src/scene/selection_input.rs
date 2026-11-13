@@ -630,6 +630,9 @@ impl ColorTrack {
         std::array::from_fn(|i| self.from[i] + (self.to[i] - self.from[i]) * t)
     }
     fn update(&mut self, color: &str, now: f64, reduced: bool) {
+        self.update_duration(color, now, reduced, duration("ControlFasterAnimationDuration"));
+    }
+    pub(super) fn update_duration(&mut self, color: &str, now: f64, reduced: bool, duration: f64) {
         let next = crate::material::rgba(color);
         if reduced || !self.initialized {
             self.from = next;
@@ -639,14 +642,14 @@ impl ColorTrack {
             self.from = self.sample(now);
             self.to = next;
             self.start = now;
-            self.duration = duration("ControlFasterAnimationDuration");
+            self.duration = duration;
         }
         self.initialized = true;
     }
-    fn value(&self, now: f64) -> String {
+    pub(super) fn value(&self, now: f64) -> String {
         crate::material::css(self.sample(now))
     }
-    fn active(&self, now: f64) -> bool {
+    pub(super) fn active(&self, now: f64) -> bool {
         self.duration > 0. && now < self.start + self.duration && self.from != self.to
     }
 }

@@ -1,0 +1,241 @@
+{
+  "recordedAt": "2026-11-09T09:49:56.953Z",
+  "url": "http://127.0.0.1:5173",
+  "conditions": {
+    "renderer": "Canvas2D",
+    "deviceScaleFactor": 1.25,
+    "viewport": [
+      1440,
+      1100
+    ],
+    "build": "release",
+    "profiled": true,
+    "automation": "CLI Playwright regression/CPU sampling; no computer use"
+  },
+  "beforeWasmSha256": "c9a705e5bdb39d5dd247041812c6d27d2c40334f09beec1fed8ed66185054f22",
+  "afterWasmSha256": "ad419975f95be4437a348e2b9a197852bc6639b8112b6e83a31f514e99dee171",
+  "stages": [
+    {
+      "label": "editing-hover",
+      "before": {
+        "frames": 25,
+        "wasmP50Ms": 15.199999928474426,
+        "wasmP95Ms": 17.100000023841858,
+        "drawP50Ms": 18.299999952316284,
+        "drawP95Ms": 20.5,
+        "frameIntervalP95Ms": 33.30000000000018,
+        "slowIntervals": 10,
+        "intervals": 80
+      },
+      "after": {
+        "frames": 25,
+        "wasmP50Ms": 4.200000047683716,
+        "wasmP95Ms": 5.700000047683716,
+        "drawP50Ms": 6.100000023841858,
+        "drawP95Ms": 8.5,
+        "frameIntervalP95Ms": 16.899999999999636,
+        "slowIntervals": 0,
+        "intervals": 77
+      }
+    },
+    {
+      "label": "editing-sort-animation",
+      "before": {
+        "frames": 3,
+        "wasmP50Ms": 11.600000023841858,
+        "wasmP95Ms": 11.600000023841858,
+        "drawP50Ms": 15.200000047683716,
+        "drawP95Ms": 15.200000047683716,
+        "frameIntervalP95Ms": 17,
+        "slowIntervals": 3,
+        "intervals": 43
+      },
+      "after": {
+        "frames": 3,
+        "wasmP50Ms": 4.899999976158142,
+        "wasmP95Ms": 4.899999976158142,
+        "drawP50Ms": 7.5,
+        "drawP95Ms": 7.5,
+        "frameIntervalP95Ms": 33.100000000000364,
+        "slowIntervals": 4,
+        "intervals": 46
+      }
+    },
+    {
+      "label": "editing-wheel-animation",
+      "before": {
+        "frames": 46,
+        "wasmP50Ms": 16.700000047683716,
+        "wasmP95Ms": 18.800000071525574,
+        "drawP50Ms": 20,
+        "drawP95Ms": 25.200000047683716,
+        "frameIntervalP95Ms": 33.400000000000546,
+        "slowIntervals": 32,
+        "intervals": 74
+      },
+      "after": {
+        "frames": 58,
+        "wasmP50Ms": 9.600000023841858,
+        "wasmP95Ms": 12.899999976158142,
+        "drawP50Ms": 11.699999928474426,
+        "drawP95Ms": 15.599999904632568,
+        "frameIntervalP95Ms": 33.30000000000018,
+        "slowIntervals": 10,
+        "intervals": 86
+      }
+    },
+    {
+      "label": "shaping-hover",
+      "before": {
+        "frames": 30,
+        "wasmP50Ms": 9.200000047683716,
+        "wasmP95Ms": 14.299999952316284,
+        "drawP50Ms": 11.600000023841858,
+        "drawP95Ms": 17.399999976158142,
+        "frameIntervalP95Ms": 16.80000000000109,
+        "slowIntervals": 2,
+        "intervals": 78
+      },
+      "after": {
+        "frames": 30,
+        "wasmP50Ms": 3.5,
+        "wasmP95Ms": 6.5,
+        "drawP50Ms": 4.799999952316284,
+        "drawP95Ms": 8.400000095367432,
+        "frameIntervalP95Ms": 16.899999999999636,
+        "slowIntervals": 1,
+        "intervals": 77
+      }
+    },
+    {
+      "label": "shaping-sort-animation",
+      "before": {
+        "frames": 3,
+        "wasmP50Ms": 7.200000047683716,
+        "wasmP95Ms": 7.200000047683716,
+        "drawP50Ms": 8.600000023841858,
+        "drawP95Ms": 8.600000023841858,
+        "frameIntervalP95Ms": 16.80000000000109,
+        "slowIntervals": 0,
+        "intervals": 54
+      },
+      "after": {
+        "frames": 3,
+        "wasmP50Ms": 3.799999952316284,
+        "wasmP95Ms": 3.799999952316284,
+        "drawP50Ms": 5.199999928474426,
+        "drawP95Ms": 5.199999928474426,
+        "frameIntervalP95Ms": 16.899999999999636,
+        "slowIntervals": 0,
+        "intervals": 54
+      }
+    },
+    {
+      "label": "shaping-wheel-animation",
+      "before": {
+        "frames": 63,
+        "wasmP50Ms": 7.799999952316284,
+        "wasmP95Ms": 10,
+        "drawP50Ms": 9.699999928474426,
+        "drawP95Ms": 13.200000047683716,
+        "frameIntervalP95Ms": 16.900000000001455,
+        "slowIntervals": 5,
+        "intervals": 92
+      },
+      "after": {
+        "frames": 64,
+        "wasmP50Ms": 3.899999976158142,
+        "wasmP95Ms": 6,
+        "drawP50Ms": 5.200000047683716,
+        "drawP95Ms": 8.199999928474426,
+        "frameIntervalP95Ms": 16.80000000000109,
+        "slowIntervals": 0,
+        "intervals": 93
+      }
+    },
+    {
+      "label": "large-hover",
+      "before": {
+        "frames": 31,
+        "wasmP50Ms": 9.200000047683716,
+        "wasmP95Ms": 11.700000047683716,
+        "drawP50Ms": 11.299999952316284,
+        "drawP95Ms": 14.800000071525574,
+        "frameIntervalP95Ms": 16.900000000001455,
+        "slowIntervals": 1,
+        "intervals": 78
+      },
+      "after": {
+        "frames": 31,
+        "wasmP50Ms": 4.5,
+        "wasmP95Ms": 7.700000047683716,
+        "drawP50Ms": 5.899999976158142,
+        "drawP95Ms": 10.399999976158142,
+        "frameIntervalP95Ms": 16.80000000000109,
+        "slowIntervals": 1,
+        "intervals": 77
+      }
+    },
+    {
+      "label": "large-sort-animation",
+      "before": {
+        "frames": 38,
+        "wasmP50Ms": 11.599999904632568,
+        "wasmP95Ms": 13.899999976158142,
+        "drawP50Ms": 14.100000023841858,
+        "drawP95Ms": 16.699999928474426,
+        "frameIntervalP95Ms": 33.20000000000073,
+        "slowIntervals": 4,
+        "intervals": 47
+      },
+      "after": {
+        "frames": 42,
+        "wasmP50Ms": 5.300000071525574,
+        "wasmP95Ms": 7.700000047683716,
+        "drawP50Ms": 6.899999976158142,
+        "drawP95Ms": 9.5,
+        "frameIntervalP95Ms": 16.899999999999636,
+        "slowIntervals": 2,
+        "intervals": 51
+      }
+    },
+    {
+      "label": "large-wheel-animation",
+      "before": {
+        "frames": 45,
+        "wasmP50Ms": 11.899999976158142,
+        "wasmP95Ms": 13.799999952316284,
+        "drawP50Ms": 14.899999976158142,
+        "drawP95Ms": 18.299999952316284,
+        "frameIntervalP95Ms": 66.5,
+        "slowIntervals": 21,
+        "intervals": 74
+      },
+      "after": {
+        "frames": 61,
+        "wasmP50Ms": 5.5,
+        "wasmP95Ms": 7.300000071525574,
+        "drawP50Ms": 7.399999976158142,
+        "drawP95Ms": 9.899999976158142,
+        "frameIntervalP95Ms": 33.20000000000073,
+        "slowIntervals": 7,
+        "intervals": 90
+      }
+    }
+  ],
+  "longTasks": {
+    "before": 5,
+    "after": 3
+  },
+  "vectorRasterHits": 395,
+  "errors": [],
+  "changes": [
+    "Rust light-dismiss routing precedes control template input",
+    "Rust scroll-owner pointer capture includes virtualized lists",
+    "Rust TableView reuses layout until properties, geometry or realized rows change",
+    "Rust row offsets are retained and pointer hit testing is shared by the paint",
+    "Rust table text snaps before scrolling, preserving glyph phase and continuous motion",
+    "Rust Canvas2D shares bounded pure-vector raster textures without changing animation samples"
+  ],
+  "boundary": "Observed profiled headless Chrome samples on this machine; not a constant frame-rate guarantee or full native animation parity acceptance"
+}

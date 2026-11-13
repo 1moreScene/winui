@@ -3,6 +3,8 @@ import { clickGalleryNavigation } from './gallery-navigation-helper';
 import { expect, test } from '@playwright/test';
 import official from '../src/official-home.json' with { type: 'json' };
 const active='[data-winui-frame] > [data-frame-instance]:not([hidden]):not([inert]) ';
+const officialSamples = official.groups.flatMap(group => group.items);
+const sampleCount = officialSamples.length + 1; // CommunityToolkit Segmented
 
 test('new home replaces original landing routes and page title', async ({ page }) => {
   for (const route of ['/', '/#home', '/#overview', '/#unknown-page']) {
@@ -13,7 +15,7 @@ test('new home replaces original landing routes and page title', async ({ page }
   }
   await page.goto('/#samples');
   await expect(page.getByRole('heading', { name: 'All samples', exact: true })).toBeVisible();
-  await expect(page.locator(active+'.home-sample')).toHaveCount(126);
+  await expect(page.locator(active+'.home-sample')).toHaveCount(sampleCount);
 });
 
 test('official home structure, assets, resource scrolling and full catalog', async ({ page }) => {
@@ -24,7 +26,7 @@ test('official home structure, assets, resource scrolling and full catalog', asy
   await expect(page.locator(active+'.home-resource')).toHaveCount(6);
   await expect(page.locator('.gallery-navigation .winui-surface > canvas')).toHaveCount(1);
   await expect(page.locator('.home-sidebar details')).toHaveCount(0);
-  await expect(page.locator(active+'.home-samples .home-sample')).toHaveCount(official.groups.flatMap(g => g.items).filter(i => i.isNew || i.isUpdated).length);
+  await expect(page.locator(active+'.home-samples .home-sample')).toHaveCount(officialSamples.filter(i => i.isNew || i.isUpdated).length + 1);
   const first = page.locator(active+'.home-resource').first();
   const sample = page.locator(active+'.home-sample').first();
   expect(await first.evaluate(e => [e.clientWidth + 2, e.clientHeight + 2])).toEqual([232, 172]);
@@ -36,11 +38,13 @@ test('official home structure, assets, resource scrolling and full catalog', asy
   await expect.poll(() => page.locator(active+'.home-horizontal-content').first().evaluate(e => e.scrollLeft)).toBe(0);
   await page.screenshot({ path: '../out/home-light.png', fullPage: true });
   await clickGalleryNavigation(page, 'gallery-all');
-  await expect(page.locator(active+'.home-sample')).toHaveCount(126);
+  await expect(page.locator(active+'.home-sample')).toHaveCount(sampleCount);
+  await expect(page.locator(active+'[data-sample-id="Segmented"]')).toHaveCount(1);
   await page.locator(active+'.home-sample').last().scrollIntoViewIfNeeded();
   const images = await page.locator(active+'.home-sample img').evaluateAll(images => [...new Set(images.map(image => (image as HTMLImageElement).src))]);
   for (const url of images) expect((await page.request.get(url)).ok(), url).toBe(true);
-  expect(new Set(await page.locator(active+'.home-sample').evaluateAll(cards => cards.map(card => card.getAttribute('data-sample-id')))).size).toBe(126);
+  const ids = await page.locator(active+'.home-sample').evaluateAll(cards => cards.map(card => card.getAttribute('data-sample-id')));
+  expect(new Set(ids)).toEqual(new Set([...officialSamples.map(item => item.id), 'Segmented']));
   expect(errors).toEqual([]);
 });
 

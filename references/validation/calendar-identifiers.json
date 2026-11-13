@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-10",
+  "scope": "CalendarView, CalendarDatePicker, DatePicker: 10 existing calendar identifiers plus ChineseCalendar",
+  "calendarEngine": {"name": "ICU4X icu_calendar", "version": "2.4.0", "license": "Unicode-3.0"},
+  "chinese": {
+    "civilRange": ["1901-01-01", "2100-12-31"],
+    "timeZone": "UTC+08:00",
+    "solarTerms": "references/chinese-solar-terms.json",
+    "generator": "lunar_python 1.4.9 / ShouXing",
+    "independentReference": "https://www.hko.gov.hk/en/gts/time/calendar/text/files/T2026e.txt",
+    "referenceCoverage": "All 24 civil solar-term dates of 2026; not an official certification of all 200 years",
+    "excluded": ["rescheduled working days", "annual leave periods"],
+    "valuesAndEvents": "Gregorian YYYY-MM-DD in every calendar"
+  },
+  "rust": {
+    "command": "cargo test --locked --test calendar --test picker_controls",
+    "passed": 21,
+    "coverage": ["11-calendar round trips", "Chinese New Year", "29-day New Year eve", "2025 leap sixth month", "2033 leap eleventh month", "coincident festivals", "24 solar terms per year", "calendar views and wheels", "partial range boundaries", "PageDown followed by Enter before layout", "localized year digits"]
+  },
+  "typescript": {"command": "npm run typecheck", "passed": true, "includes": ["control origins", "translations", "closed enum positive/negative type cases"]},
+  "browser": {
+    "engine": "Chrome 156.0.8078.81",
+    "channel": "chrome",
+    "backends": ["Canvas2D", "WebGL2"],
+    "newCases": "gallery/tests/calendar-identifiers.spec.ts: 4 cases, en-US / America/New_York",
+    "existingCases": "gallery/tests/picker-gallery.spec.ts: 10 cases, en-US / UTC",
+    "all14CasesVerified": true,
+    "developmentWasmSha256": "95f31c18489e7a64af3c74091f2b4767efb7df3f1a153959b5250ddbf29f25ec",
+    "runs": [
+      {"output": "out/calendar-browser-final", "passed": 10, "failed": 1, "notRun": 3, "note": "WebGL2 CalendarDatePicker's cold page mount exceeded the existing 5-second expectation; rerun below passed without changing assertions."},
+      {"output": "out/calendar-browser-remaining", "passed": 4, "failed": 0, "filter": "WebGL2 (CalendarDatePicker|DatePicker|TimePicker|ColorPicker)"}
+    ],
+    "visualQA": "Inspected rendered dual-line dates, lunar month names, festivals, solar terms and date wheels. Screenshot files are under the run output directories."
+  },
+  "production": {
+    "cargo": "cargo build --locked --release --target wasm32-unknown-unknown",
+    "passed": true,
+    "wasmSha256": "95f85b0bba4a92775d634242618899fcf13545458ee0666d3a19210d5c31bdef",
+    "frontend": ["tsc --noEmit", "vite build", "npm run declarations"],
+    "frontendPassed": true,
+    "releaseBrowserCommand": "PW_CHANNEL=chrome npx playwright test tests/calendar-identifiers.spec.ts --workers=1",
+    "releaseBrowserPassed": 4,
+    "releaseBrowserOutput": "out/calendar-release-browser",
+    "releaseIdentityConfirmedAfterTests": true,
+    "licenses": ["ICU4X-LICENSE", "calendrical-calculations-LICENSE", "lunar-python-LICENSE"]
+  },
+  "limitations": ["ChineseCalendar is an SDK extension, not a WinRT CalendarIdentifiers value", "Non-Gregorian month and era names use built-in names; arbitrary WinRT formatting is not implemented", "Hijri uses Type II Friday tabular calculation and can differ from observed dates", "No claim of full native screenshot or animation parity"]
+}

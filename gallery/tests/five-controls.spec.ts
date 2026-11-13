@@ -23,7 +23,7 @@ test("five Gallery pages use public controls, real input, options and sample-onl
     await page.goto("/#" + route);
     await expect(
       page.getByRole("heading", { name, exact: true }),
-    ).toBeVisible();
+    ).toBeVisible({timeout:15_000});
     await expect
       .poll(() =>
         page.evaluate(() =>

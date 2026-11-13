@@ -16,7 +16,9 @@ test("official Acrylic and Easing pages expose the actual examples", async ({
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/#acrylic");
-  await expect(page.locator("#acrylic-2 .winui-surface > canvas")).toBeVisible();
+  const acrylicCanvas = page.locator("#acrylic-2 .official-acrylic-display .winui-surface > canvas");
+  await acrylicCanvas.scrollIntoViewIfNeeded();
+  await expect(acrylicCanvas).toBeVisible();
   await expect(page.locator("main h2")).toHaveText([
     "Default in-app acrylic brush.",
     "Custom acrylic in-app brush.",
@@ -37,11 +39,13 @@ test("official Acrylic and Easing pages expose the actual examples", async ({
     animations: "disabled",
   });
   await page.goto("/#easing");
-  await expect(page.locator("main .example")).toHaveCount(6);
-  await expect(page.getByLabel("Easing type")).toHaveValue("Back");
-  expect(await page.getByLabel("Easing type").locator("option").count()).toBe(
-    11,
-  );
+  await expect(page.locator('[data-frame-page="#easing"] main .example')).toHaveCount(4);
+  const easing = page.getByRole("combobox", { name: "Easing type", exact: true });
+  await expect(easing).toHaveValue("BackEase");
+  await easing.click();
+  const options = page.locator(`[id="${await easing.getAttribute("aria-controls")}"]`);
+  await expect(options.getByRole("option")).toHaveCount(11);
+  await easing.press("Escape");
   await page
     .getByRole("button", { name: "Animate easing 0", exact: true })
     .click();
@@ -50,7 +54,7 @@ test("official Acrylic and Easing pages expose the actual examples", async ({
     .getByRole("button", { name: "Animate easing 3", exact: true })
     .click();
   await page
-    .locator("main")
+    .locator('[data-frame-page="#easing"] main')
     .screenshot({ path: "../out/materials/easing-gallery.png" });
   expect(errors).toEqual([]);
 });
@@ -353,29 +357,28 @@ test("property transitions, gradient options and focus policies remain interacti
     .locator("main")
     .screenshot({ path: "../out/materials/transitions-gallery.png" });
   await page.goto("/#gradients");
-  await expect(page.locator("#radial-gradient .winui-surface > canvas")).toBeVisible();
+  await expect(page.locator("#radial-gradient .official-acrylic-row > div > .winui-surface > canvas")).toBeVisible();
   await selectGalleryOption(page
     .getByLabel("MappingMode", { exact: true }),"Absolute");
-  await expect(page.getByLabel("RadiusX", { exact: true })).toHaveValue("100");
-  await page.getByLabel("RadiusX", { exact: true }).fill("0");
+  const radius = page.getByRole("slider", { name: "RadiusX", exact: true });
+  await expect(radius).toHaveAttribute("aria-valuenow", "100");
+  await radius.press("Home");
   await selectGalleryOption(page
     .getByLabel("SpreadMethod", { exact: true }),"Reflect");
   await selectGalleryOption(page.getByLabel("Gradient renderer"),"Canvas2D");
   await selectGalleryOption(page.getByLabel("Gradient renderer"),"WebGL2");
   await selectGalleryOption(page
     .getByLabel("MappingMode", { exact: true }),"RelativeToBoundingBox");
-  await expect(page.getByLabel("RadiusX", { exact: true })).toHaveValue("0.5");
-  await page.getByLabel("RadiusX", { exact: true }).focus();
+  await expect(radius).toHaveAttribute("aria-valuenow", "0.5");
+  await radius.focus();
   expect(
-    await page
-      .getByLabel("RadiusX", { exact: true })
-      .evaluate((e) => getComputedStyle(e).outlineStyle),
+    await radius.evaluate((e) => getComputedStyle(e).outlineStyle),
   ).toBe("none");
   await page
-    .locator("main")
+    .locator('[data-frame-page="#gradients"] main')
     .screenshot({ path: "../out/materials/gradients-gallery.png" });
   await page.goto("/#acrylic");
-  await selectGalleryOption(page.locator("#theme"),"HighContrast");
+  await selectGalleryOption(page.locator('[data-frame-page="#acrylic"] #theme'),"HighContrast");
   await expect
     .poll(() =>
       page.evaluate(() =>
@@ -384,8 +387,10 @@ test("property transitions, gradient options and focus policies remain interacti
     )
     .toBe(true);
   await page.goto("/#system-backdrops");
-  await expect(page.locator("main")).toContainText("MicaController");
-  await expect(page.locator("main canvas")).toHaveCount(0);
+  const backdrops = page.locator('[data-frame-page="#system-backdrops"] main');
+  await backdrops.getByRole("button", { name: /Backdrop types/ }).click();
+  await expect(backdrops.locator("pre")).toContainText("MicaController");
+  await expect(backdrops.locator(".example .winui-surface > canvas")).toHaveCount(0);
   expect(errors).toEqual([]);
 });
 

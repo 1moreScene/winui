@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "reviewedOn": "2026-11-10",
+  "reviewedOn": "2026-11-11",
   "components": [
     {
       "id": "gallery",
@@ -72,9 +72,27 @@
         "third_party/calendar/calendrical-calculations-LICENSE",
         "third_party/calendar/lunar-python-LICENSE"
       ]
+    },
+    {
+      "id": "communitytoolkit-segmented",
+      "license": "MIT",
+      "source": "https://github.com/CommunityToolkit/Windows/tree/a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e/components/Segmented",
+      "notices": [
+        "third_party/CommunityToolkit.Segmented/License.md"
+      ]
     }
   ],
   "files": [
+    {
+      "path": "gallery/public/community-segmented/Segmented.png",
+      "sha256": "6330374d268a6f88c9112fbc2eae1e57918fb389b2b6f8f3753f799471d220c6",
+      "bytes": 2366,
+      "components": [
+        "communitytoolkit-segmented"
+      ],
+      "source": "https://github.com/CommunityToolkit/Windows/blob/a2fa47ad72cb95ed81f3ff0885da627a5fd6c14e/components/Segmented/samples/Assets/Segmented.png",
+      "gitBlobSha1": "ba9ad789deff1e197472c2d763f8128cf53a1fc3"
+    },
     {
       "path": "gallery/public/community-table-view/Dark-cell-selected.png",
       "sha256": "31569a45a8f6826bee0b8e22982e94601d29193c35053416e9c8a05a1c036f73",
@@ -115,6 +133,51 @@
       "path": "gallery/public/community-table-view/Dark-sorted.png",
       "sha256": "0d3742d4bc628c6e46d4502a3eaed64ce044c33cd6e6ef7f075fcf7821cd3ab5",
       "bytes": 34966,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-cell-selected.png",
+      "sha256": "0145efae796ceec94e2c272c0a0f21dca0f3f263baddd13efbfd59b3496125bb",
+      "bytes": 35668,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-default.png",
+      "sha256": "c861bb76374331486106b7794496b36e24e98770415e42d57ab1494afb2451b7",
+      "bytes": 34803,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-editing.png",
+      "sha256": "61f1a961a7fe2a4029e9984b66366363b95f99455861ce778066dcfb0496a3b3",
+      "bytes": 35785,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-row-selected.png",
+      "sha256": "08f7cbb3406c6ea68e0af76ecf9121542953782404abce643b367784ad8600d6",
+      "bytes": 35348,
+      "components": [
+        "tableview-captures"
+      ],
+      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+    },
+    {
+      "path": "gallery/public/community-table-view/Light-sorted.png",
+      "sha256": "450f76e0546dddea4df04ab83add790d07f2cb502bfbc8d2135a77ac1e81cab6",
+      "bytes": 34896,
       "components": [
         "tableview-captures"
       ],
@@ -229,49 +292,104 @@
       "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
     },
     {
-      "path": "gallery/public/community-table-view/Light-cell-selected.png",
-      "sha256": "0145efae796ceec94e2c272c0a0f21dca0f3f263baddd13efbfd59b3496125bb",
-      "bytes": 35668,
+      "path": "gallery/public/official/LandscapeImage1.jpg",
+      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188",
+      "bytes": 84659,
       "components": [
-        "tableview-captures"
+        "gallery"
       ],
-      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage1.jpg",
+      "gitBlobSha1": "8dafb3e38bb77ed993912b0a2bd91b83be7ee264"
     },
     {
-      "path": "gallery/public/community-table-view/Light-default.png",
-      "sha256": "c861bb76374331486106b7794496b36e24e98770415e42d57ab1494afb2451b7",
-      "bytes": 34803,
+      "path": "gallery/public/official/LandscapeImage2.jpg",
+      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e",
+      "bytes": 67449,
       "components": [
-        "tableview-captures"
+        "gallery"
       ],
-      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage2.jpg",
+      "gitBlobSha1": "a52230e06e71d0d47a121cbbaebe23ccd568b765"
     },
     {
-      "path": "gallery/public/community-table-view/Light-editing.png",
-      "sha256": "61f1a961a7fe2a4029e9984b66366363b95f99455861ce778066dcfb0496a3b3",
-      "bytes": 35785,
+      "path": "gallery/public/official/LandscapeImage3.jpg",
+      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540",
+      "bytes": 83628,
       "components": [
-        "tableview-captures"
+        "gallery"
       ],
-      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage3.jpg",
+      "gitBlobSha1": "7a09346ee7b75e1ce51fcadcc61d5e6f0feef4eb"
     },
     {
-      "path": "gallery/public/community-table-view/Light-row-selected.png",
-      "sha256": "08f7cbb3406c6ea68e0af76ecf9121542953782404abce643b367784ad8600d6",
-      "bytes": 35348,
+      "path": "gallery/public/official/LandscapeImage4.jpg",
+      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3",
+      "bytes": 176812,
       "components": [
-        "tableview-captures"
+        "gallery"
       ],
-      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage4.jpg",
+      "gitBlobSha1": "b4551eac266fe3ac3f42f29bd85d91987ec19dd5"
     },
     {
-      "path": "gallery/public/community-table-view/Light-sorted.png",
-      "sha256": "450f76e0546dddea4df04ab83add790d07f2cb502bfbc8d2135a77ac1e81cab6",
-      "bytes": 34896,
+      "path": "gallery/public/official/LandscapeImage5.jpg",
+      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5",
+      "bytes": 127560,
       "components": [
-        "tableview-captures"
+        "gallery"
       ],
-      "source": "tools/native-table-view and tools/native-table-view-grouping; pinned community raster captures"
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage5.jpg",
+      "gitBlobSha1": "732735668119564d01d6c20773780db5044afa36"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage6.jpg",
+      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431",
+      "bytes": 117162,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage6.jpg",
+      "gitBlobSha1": "4ac428ecf1c7e687e24dd1fe0b5874b44efe1e86"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage7.jpg",
+      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77",
+      "bytes": 137565,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage7.jpg",
+      "gitBlobSha1": "192e058b7405107c7c5785b9d1543f87b11dcaff"
+    },
+    {
+      "path": "gallery/public/official/LandscapeImage8.jpg",
+      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36",
+      "bytes": 157194,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage8.jpg",
+      "gitBlobSha1": "979f50d6288864fbb744e14cbc28f77c0c02edf0"
+    },
+    {
+      "path": "gallery/public/official/MirrorPCConsent.svg",
+      "sha256": "7aabf9a35b9770f018ad9703a553147600982d3e333f345c760bac34252c09b0",
+      "bytes": 28578,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/MirrorPCConsent.svg",
+      "gitBlobSha1": "c235b668814b3eae4018100f1baaee1ef8ba034f"
+    },
+    {
+      "path": "gallery/public/official/Slices.png",
+      "sha256": "dac97fd49097b9dc7518b6c3e68a5497c33074951bc8375d8cb98c3e537896fc",
+      "bytes": 2653,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/Slices.png",
+      "gitBlobSha1": "8c793521c6fbb816483ecbbcc9f87a0acb9e5e7a"
     },
     {
       "path": "gallery/public/official/cliff.jpg",
@@ -934,16 +1052,6 @@
       "gitBlobSha1": "674791cb5afeb5019ca2475d9bc002944f999eaa"
     },
     {
-      "path": "gallery/public/official/home/Assets/ControlImages/PagerControl.png",
-      "sha256": "f0f2bb07ad7feffc2ceab06929e27962959316f46f06166923ce78ce9f3170f7",
-      "bytes": 4775,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PagerControl.png",
-      "gitBlobSha1": "b8f7d26784f29b0829e90d86589f87c5cd371589"
-    },
-    {
       "path": "gallery/public/official/home/Assets/ControlImages/PageTransition.png",
       "sha256": "8911cec3180e1a9335a5a2e02ff84c4bdc3aec7893e29430301412685ba0d46a",
       "bytes": 4561,
@@ -952,6 +1060,16 @@
       ],
       "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PageTransition.png",
       "gitBlobSha1": "25b18ab10af7412f3db878a17755b54b00972c4b"
+    },
+    {
+      "path": "gallery/public/official/home/Assets/ControlImages/PagerControl.png",
+      "sha256": "f0f2bb07ad7feffc2ceab06929e27962959316f46f06166923ce78ce9f3170f7",
+      "bytes": 4775,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/ControlImages/PagerControl.png",
+      "gitBlobSha1": "b8f7d26784f29b0829e90d86589f87c5cd371589"
     },
     {
       "path": "gallery/public/official/home/Assets/ControlImages/ParallaxView.png",
@@ -1444,16 +1562,6 @@
       "gitBlobSha1": "3e4e0a8974c1cf9f232d2475243684e678db099a"
     },
     {
-      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-WindowsDesign.png",
-      "sha256": "ef286fc0aea37c98ffead7a8cb0db3229b6c834383f2d0a594d9dd3add48aea7",
-      "bytes": 199353,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-WindowsDesign.png",
-      "gitBlobSha1": "5c822819242335c434089456ead537f6ff6c2c17"
-    },
-    {
       "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-WinUI.png",
       "sha256": "a73b76f15213041232d50058fec473aa6d820acc919f2276a3bc477ae1fb52fa",
       "bytes": 564580,
@@ -1464,6 +1572,16 @@
       "gitBlobSha1": "10c18b5df9944c2452be4c0e438f87744cf9215b"
     },
     {
+      "path": "gallery/public/official/home/Assets/HomeHeaderTiles/Header-WindowsDesign.png",
+      "sha256": "ef286fc0aea37c98ffead7a8cb0db3229b6c834383f2d0a594d9dd3add48aea7",
+      "bytes": 199353,
+      "components": [
+        "gallery"
+      ],
+      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/HomeHeaderTiles/Header-WindowsDesign.png",
+      "gitBlobSha1": "5c822819242335c434089456ead537f6ff6c2c17"
+    },
+    {
       "path": "gallery/public/official/home/Assets/Tiles/AppList.targetsize-32.png",
       "sha256": "8467a3e831a8287e69e3c9d859144e51aba4ed800b92bd797c657fb02414844a",
       "bytes": 1412,
@@ -1472,86 +1590,6 @@
       ],
       "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/Tiles/AppList.targetsize-32.png",
       "gitBlobSha1": "7f97d03767855020bf3ac98bc5d07a2997062a1b"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage1.jpg",
-      "sha256": "e95f378499f06d2ec43b6633b8f81971961d15700f26566096d9b446863fc188",
-      "bytes": 84659,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage1.jpg",
-      "gitBlobSha1": "8dafb3e38bb77ed993912b0a2bd91b83be7ee264"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage2.jpg",
-      "sha256": "b254e87421c16d866af1e011e4c33d757797ac033c21f1d7a7ba8f2fcf59dc7e",
-      "bytes": 67449,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage2.jpg",
-      "gitBlobSha1": "a52230e06e71d0d47a121cbbaebe23ccd568b765"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage3.jpg",
-      "sha256": "8bd801d195e98f7a98794aef74e36d84f6e8d49446925eb4c62e034a9c6bb540",
-      "bytes": 83628,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage3.jpg",
-      "gitBlobSha1": "7a09346ee7b75e1ce51fcadcc61d5e6f0feef4eb"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage4.jpg",
-      "sha256": "974b7459835f9936c1d82a999891ec223ef331e8c0a380935f2a6d49eabc2fc3",
-      "bytes": 176812,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage4.jpg",
-      "gitBlobSha1": "b4551eac266fe3ac3f42f29bd85d91987ec19dd5"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage5.jpg",
-      "sha256": "6e5095b4dfaadbaee1f11de08499c401d9298adc7f688f127aa788959bf7a2c5",
-      "bytes": 127560,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage5.jpg",
-      "gitBlobSha1": "732735668119564d01d6c20773780db5044afa36"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage6.jpg",
-      "sha256": "5b865660a933383b3fe3689db03c846b2f84886d8f7197a70547336d4fdf6431",
-      "bytes": 117162,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage6.jpg",
-      "gitBlobSha1": "4ac428ecf1c7e687e24dd1fe0b5874b44efe1e86"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage7.jpg",
-      "sha256": "d2afe0d8cfce8ba794987c69cf1085f5c02a2a4bdb4337b860c53649fbfe6e77",
-      "bytes": 137565,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage7.jpg",
-      "gitBlobSha1": "192e058b7405107c7c5785b9d1543f87b11dcaff"
-    },
-    {
-      "path": "gallery/public/official/LandscapeImage8.jpg",
-      "sha256": "c581c21ab8523e0a48fa463f1df6b9bbc5007d6b2b4321cbf6e9f5bab5c30b36",
-      "bytes": 157194,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/LandscapeImage8.jpg",
-      "gitBlobSha1": "979f50d6288864fbb744e14cbc28f77c0c02edf0"
     },
     {
       "path": "gallery/public/official/libre-camera-panorama.svg",
@@ -1571,16 +1609,6 @@
       ],
       "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/linux.png",
       "gitBlobSha1": "eb9b64c3f5d7a773e437f38b8b44763f5d80b59c"
-    },
-    {
-      "path": "gallery/public/official/MirrorPCConsent.svg",
-      "sha256": "7aabf9a35b9770f018ad9703a553147600982d3e333f345c760bac34252c09b0",
-      "bytes": 28578,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/MirrorPCConsent.svg",
-      "gitBlobSha1": "c235b668814b3eae4018100f1baaee1ef8ba034f"
     },
     {
       "path": "gallery/public/official/nav-Accessibility.png",
@@ -1862,16 +1890,6 @@
       "source": "gallery/src/rich-edit-fixtures.json: image; 48x32 red/blue test rectangles"
     },
     {
-      "path": "gallery/public/official/Slices.png",
-      "sha256": "dac97fd49097b9dc7518b6c3e68a5497c33074951bc8375d8cb98c3e537896fc",
-      "bytes": 2653,
-      "components": [
-        "gallery"
-      ],
-      "source": "https://github.com/microsoft/WinUI-Gallery/blob/7360ac322414e118eadfb0c7c2f4ecc31a218f59/WinUIGallery/Assets/SampleMedia/Slices.png",
-      "gitBlobSha1": "8c793521c6fbb816483ecbbcc9f87a0acb9e5e7a"
-    },
-    {
       "path": "gallery/public/official/sunset.jpg",
       "sha256": "dde8ca43fdedd3d1746cf29c9d1a3d2b428066ea75c5a87f3d6eeddbd1f930aa",
       "bytes": 96309,
@@ -1973,7 +1991,8 @@
     "third_party/WinUI.TableView/NOTICE.md": "d7a2df08a7d4c4f66383e220ebf56342bc86a1bf308edf5398ee486dcba1ee85",
     "third_party/calendar/ICU4X-LICENSE": "f367c1b8e1aa262435251e442901da4607b4650e0e63a026f5044473ecfb90f2",
     "third_party/calendar/calendrical-calculations-LICENSE": "192ea857d1bff2b87c174de36cbae5c173234726c6b8eceab9790a535d7dbc95",
-    "third_party/calendar/lunar-python-LICENSE": "a9d04f47f0615c0ce48bdbe2ff58d5c174279d9f20f044ef29249632302a4ab3"
+    "third_party/calendar/lunar-python-LICENSE": "a9d04f47f0615c0ce48bdbe2ff58d5c174279d9f20f044ef29249632302a4ab3",
+    "third_party/CommunityToolkit.Segmented/License.md": "134aa3b1d2c509dcf57196ccaa7b69db0eb9ae34fa9189c3d683c02d9923175d"
   },
   "inlineResources": [
     {
@@ -2156,7 +2175,41 @@
     "references/sdk/reading-controls.xaml": "b12cf5eea5301ce877e356cc98c34995ff4eea59edcf235aa547b5cebbe15810",
     "references/sdk/rich-edit.xaml": "00b2c75cda9b2c8cc328613d3d0cb43fcb94153dbd7d7eab8117b4a95dd90a57",
     "references/sdk/view-command.xaml": "948631fe7713e352547ad1b17aa568384d13c63f9fd7bb51a2ebf068fd046efc",
-    "references/winui/NoiseAsset_256X256_PNG.png": "4f2aa94a2e345a32dae689176b86c644bef87081ff9daef8c77417731862031b"
+    "references/winui/NoiseAsset_256X256_PNG.png": "4f2aa94a2e345a32dae689176b86c644bef87081ff9daef8c77417731862031b",
+    "references/segmented-source.json": "2eb59ff50664089a8d113fea8eb7fbb120eab6e58b96c95ff9bf46ca444e55cd",
+    "references/segmented-template.json": "5fe207a9d7c51d21cb3cbfac8c5e3b13d3654bb24217590e14ec5f11e93250b8",
+    "tools/extract-segmented.py": "62b807a247b9aa0128dc991fad2b9840bd1381cc25148931aeaeaaae55532de4",
+    "third_party/CommunityToolkit.Segmented/License.md": "134aa3b1d2c509dcf57196ccaa7b69db0eb9ae34fa9189c3d683c02d9923175d",
+    "third_party/CommunityToolkit.Segmented/OpenSolution.bat": "2a91038ef6fa4dc83f48e166418bc82bade0f6582e5b0acc1edd61c9d00c9aa7",
+    "third_party/CommunityToolkit.Segmented/samples/Dependencies.props": "d4af45534efeb4fd1a5fa279248d5df2e528077eb63c47eb01533024e3de0c83",
+    "third_party/CommunityToolkit.Segmented/samples/Segmented.Samples.csproj": "1104334de2fd0d9a9df92bf1cb3ff7d3b5cfe97ea0288f2de50152e905704365",
+    "third_party/CommunityToolkit.Segmented/samples/Segmented.md": "03168cc2b098352eb9f792e75a8dc9f29dd607dfe0e8022d1732a7dce3355ba8",
+    "third_party/CommunityToolkit.Segmented/samples/SegmentedBasicSample.xaml": "66db2b0bc21acaebb2c3e4e1e62e7ac1f3c005214f39518bc1ad69c655b73d61",
+    "third_party/CommunityToolkit.Segmented/samples/SegmentedBasicSample.xaml.cs": "600bb03ef8385dc7c1ad805530b64f04cf85aa0109f810ab0775c3add94fce2e",
+    "third_party/CommunityToolkit.Segmented/samples/SegmentedStylesSample.xaml": "847c4fddead85cd099663322ac06ed5e43629a6266a1cfd27ac41c08558e3bc7",
+    "third_party/CommunityToolkit.Segmented/samples/SegmentedStylesSample.xaml.cs": "5154692c417e5ed27833fcb4ba9bf6b12cb46a87e498d4ff6b59591ec9c4899e",
+    "third_party/CommunityToolkit.Segmented/samples/SegmentedSwitchPresenterSample.xaml": "5062662334adb43e90bb248ebf8e2e033d38a1f0afbe4748c27cd3fc748d9e53",
+    "third_party/CommunityToolkit.Segmented/samples/SegmentedSwitchPresenterSample.xaml.cs": "d96849fb0c8d96397801de173023b6114cacf8a4b88ba755ac4ade3cd28548e1",
+    "third_party/CommunityToolkit.Segmented/src/CommunityToolkit.WinUI.Controls.Segmented.csproj": "f45523b4ab4ce56927e1b09d89b78d3c44130eca5232b88013e692b0575061de",
+    "third_party/CommunityToolkit.Segmented/src/Dependencies.props": "d4af45534efeb4fd1a5fa279248d5df2e528077eb63c47eb01533024e3de0c83",
+    "third_party/CommunityToolkit.Segmented/src/EqualPanel.cs": "fb25bb6f56a1823208fa24a3925f3e57066d5b3efa3fd8a3801cbef2a7da1199",
+    "third_party/CommunityToolkit.Segmented/src/Helpers/ControlHelpers.cs": "b456525b008c038275e71832f58f5a86e02ab5ac40ca6ffece89cbaac7164c15",
+    "third_party/CommunityToolkit.Segmented/src/Helpers/SegmentedMarginConverter.cs": "fb5c43dd622214b442f77ca65f51dff1b27afda344b9ef02b839166f6fabd662",
+    "third_party/CommunityToolkit.Segmented/src/MultiTarget.props": "ce5f740ba195e8251d6fb6786e2cdc6b3ada3ba8bd53c4c18ee46d0e8c51f100",
+    "third_party/CommunityToolkit.Segmented/src/ReadMe.md": "2088f0137a33c807686a6eec242e3f87623195e7cc329e9e415d94e365f17bd2",
+    "third_party/CommunityToolkit.Segmented/src/Segmented/Segmented.Properties.cs": "40eba29ce45310e58221dd4201d58061896f5060293b2bfece617ee6484ce095",
+    "third_party/CommunityToolkit.Segmented/src/Segmented/Segmented.cs": "e5325743b66d96582d22b874106f282bd2d13eb9d26f2a8a5305e8c889956e9f",
+    "third_party/CommunityToolkit.Segmented/src/Segmented/Segmented.xaml": "20bf0ccbccd20d13348af797199e1caf08c56db71cbea503eea6420cb930f67f",
+    "third_party/CommunityToolkit.Segmented/src/SegmentedItem/SegmentedItem.Properties.cs": "596a381c4fa76d075bf246b09be479761dacfc6f48477dcf1275673fa7e8608c",
+    "third_party/CommunityToolkit.Segmented/src/SegmentedItem/SegmentedItem.cs": "f657212dccaf3ca804ae606c2844922593ead777be7f75ae63acbcb5b483ea4a",
+    "third_party/CommunityToolkit.Segmented/src/SegmentedItem/SegmentedItem.xaml": "839f777681b4b67a06c4465537b4f4a49d664e45091abcacd4b3b47dcf70308e",
+    "third_party/CommunityToolkit.Segmented/src/Themes/Generic.xaml": "f83becf53b44cf6676b42bc21b3f8bc5245e03246936bfb909155ea595f10a8d",
+    "third_party/CommunityToolkit.Segmented/tests/ExampleSegmentedTestClass.cs": "dad76af6c942f3fd2cb1ae9bf7f61ab0edde839e218891474bf487b57dd17160",
+    "third_party/CommunityToolkit.Segmented/tests/ExampleSegmentedTestPage.xaml": "678d6af4b9ca62fe4f29cf016e22bf5800235553c870687a8e05e7475f896260",
+    "third_party/CommunityToolkit.Segmented/tests/ExampleSegmentedTestPage.xaml.cs": "6f0b3cd4c0e01a42e1034b7cb49431cf2b066a151f38e9a17d75f63ae9b51efd",
+    "third_party/CommunityToolkit.Segmented/tests/Segmented.Tests.projitems": "b9425e337e4e83cf60b6ccddad36f304f6e55968513b6b5e3d2e4cf23a7e37cb",
+    "third_party/CommunityToolkit.Segmented/tests/Segmented.Tests.shproj": "7a6093d80ecf468b4d9dcdb672a911aa381d7ad1909c686046ca1757d60e7419",
+    "gallery/public/community-segmented/Segmented.png": "6330374d268a6f88c9112fbc2eae1e57918fb389b2b6f8f3753f799471d220c6"
   },
   "embeddedResources": [
     {

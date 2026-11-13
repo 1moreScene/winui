@@ -55,15 +55,37 @@ pub struct Cell {
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
 #[derive(PartialEq)]
 pub struct Row {
-    pub fields: Vec<String>,
+    pub fields: Arc<Vec<String>>,
     pub id: String,
     pub values: Value,
-    pub display: BTreeMap<String, String>,
-    pub operations: BTreeMap<String, Value>,
-    pub group_values: BTreeMap<String, Value>,
-    pub clipboard: BTreeMap<String, String>,
-    pub styles: BTreeMap<String, CellStyle>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub display: Option<Box<BTreeMap<String, String>>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub operations: Option<Box<BTreeMap<String, Value>>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub group_values: Option<Box<BTreeMap<String, Value>>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub clipboard: Option<Box<BTreeMap<String, String>>>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub styles: Option<Box<BTreeMap<String, CellStyle>>>,
     pub header: String,
+}
+#[cfg(target_arch = "wasm32")]
+pub(crate) fn decode_browser_rows(json: &str) -> Result<Vec<Row>, String> {
+    if !json.trim_start().starts_with('{') {
+        return serde_json::from_str(json).map_err(|error| error.to_string());
+    }
+    #[derive(Deserialize)]
+    #[serde(rename_all = "camelCase", deny_unknown_fields)]
+    struct CompactRows {
+        field_orders: Vec<Arc<Vec<String>>>,
+        rows: Vec<(String, usize, Value)>,
+    }
+    let source: CompactRows = serde_json::from_str(json).map_err(|error| error.to_string())?;
+    source.rows.into_iter().map(|(id, order, values)| {
+        let fields = source.field_orders.get(order).ok_or("invalid table row field order")?;
+        Ok(Row { id, values, fields: fields.clone(), ..Row::default() })
+    }).collect()
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase", deny_unknown_fields)]
@@ -450,9 +472,9 @@ fn write_cell(row: &mut Row, column: &Column, value: Value) -> Result<(), String
         at = &mut at[*part];
     }
     at[parts.last().copied().unwrap()] = value;
-    row.display.remove(&column.key);
-    row.operations.remove(&column.key);
-    row.clipboard.remove(&column.key);
+    if let Some(display) = &mut row.display { display.remove(&column.key); }
+    if let Some(operations) = &mut row.operations { operations.remove(&column.key); }
+    if let Some(clipboard) = &mut row.clipboard { clipboard.remove(&column.key); }
     Ok(())
 }
 pub fn validate(p: &NodeProperties) -> Result<(), String> {
@@ -478,7 +500,7 @@ pub fn validate(p: &NodeProperties) -> Result<(), String> {
         if r.id.is_empty() || !keys.insert(&r.id) || !r.values.is_object() {
             return Err("TableView items require unique nonempty keys and object values".into());
         }
-        for s in r.styles.values() {
+        for s in r.styles.iter().flat_map(|styles| styles.values()) {
             for b in [&s.foreground, &s.background].into_iter().flatten() {
                 b.validate()?;
             }
@@ -499,6 +521,10 @@ pub fn validate(p: &NodeProperties) -> Result<(), String> {
         }
     }
     for c in columns(t) {
+        if !matches!(c.kind, TableViewColumnKind::Number | TableViewColumnKind::CheckBox
+            | TableViewColumnKind::ToggleSwitch | TableViewColumnKind::Date | TableViewColumnKind::Time) {
+            continue;
+        }
         for row in t.items.iter() {
             let v = path(&row.values, &c.field);
             if v.is_null() {
@@ -545,7 +571,7 @@ fn all_columns(t: &TableProperties) -> Vec<Column> {
             let order = if t.items[0].fields.is_empty() {
                 fields.keys().cloned().collect::<Vec<_>>()
             } else {
-                t.items[0].fields.clone()
+                t.items[0].fields.as_ref().clone()
             };
             for key in &order {
                 let Some(value) = fields.get(key) else {
@@ -574,7 +600,7 @@ pub fn columns(t: &TableProperties) -> Vec<Column> {
     all_columns(t).into_iter().filter(|c| c.visible).collect()
 }
 fn operation<'a>(row: &'a Row, col: &Column) -> &'a Value {
-    row.operations.get(&col.key).unwrap_or_else(|| {
+    row.operations.as_ref().and_then(|operations| operations.get(&col.key)).unwrap_or_else(|| {
         path(
             &row.values,
             col.sort_member_path.as_deref().unwrap_or(&col.field),
@@ -582,6 +608,9 @@ fn operation<'a>(row: &'a Row, col: &Column) -> &'a Value {
     })
 }
 pub fn view(t: &TableProperties, cols: &[Column]) -> Vec<usize> {
+    if t.search.is_empty() && t.filters.is_empty() && t.sorts.is_empty() {
+        return (0..t.items.len()).collect();
+    }
     let search = t.search.to_lowercase();
     let filters = t
         .filters
@@ -695,7 +724,7 @@ pub fn csv(
                     {
                         return String::new();
                     }
-                    escape(row.clipboard.get(&c.key).cloned().unwrap_or_else(|| {
+                    escape(row.clipboard.as_ref().and_then(|clipboard| clipboard.get(&c.key)).cloned().unwrap_or_else(|| {
                         text(path(
                             &row.values,
                             c.clipboard_member_path.as_deref().unwrap_or(&c.field),
@@ -715,6 +744,7 @@ pub struct Slot {
     pub row: String,
     pub column: String,
     pub index: usize,
+    pub view_index: usize,
     pub role: String,
     pub editing: bool,
 }
@@ -730,8 +760,8 @@ pub struct BodyMotion {
     pub body_opacity: f64,
     pub body_offset_y: f64,
 }
-/// The wire schema is unchanged; stable view identities are shared between
-/// frames instead of allocating a JSON Value tree for every animation sample.
+/// Stable view identities are shared between frames. The browser wire omits
+/// unchanged keys while the public SDK continues to expose the full view.
 #[derive(Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct TableSnapshot {
@@ -743,6 +773,7 @@ pub struct TableSnapshot {
     pub columns: Vec<Column>,
     pub column_widths: Vec<f64>,
     pub realized: Vec<Slot>,
+    #[serde(skip_serializing_if = "unchanged_view_keys")]
     pub view_keys: Arc<Vec<String>>,
     pub total_count: usize,
     pub filtered_count: usize,
@@ -757,6 +788,19 @@ pub struct TableSnapshot {
     pub page_index: usize,
     pub page_count: usize,
     pub scroll: Option<super::scroll::ScrollSnapshot>,
+}
+
+#[cfg(target_arch = "wasm32")]
+pub(crate) fn omitted_view_keys() -> &'static Arc<Vec<String>> {
+    static OMITTED: std::sync::OnceLock<Arc<Vec<String>>> = std::sync::OnceLock::new();
+    OMITTED.get_or_init(Arc::default)
+}
+
+fn unchanged_view_keys(keys: &Arc<Vec<String>>) -> bool {
+    #[cfg(target_arch = "wasm32")]
+    return Arc::ptr_eq(keys, omitted_view_keys());
+    #[cfg(not(target_arch = "wasm32"))]
+    { let _ = keys; false }
 }
 #[derive(Clone)]
 struct Pending {

@@ -1,0 +1,142 @@
+{
+  "recordedAt": "2026-11-09T10:26:33.123007+08:00",
+  "galleryCommit": "7360ac322414e118eadfb0c7c2f4ecc31a218f59",
+  "winuiCommit": "7b12709347527238494ca28cb9fed326d513e779",
+  "rust": {
+    "command": "cargo test --locked",
+    "passed": 426,
+    "failed": 0,
+    "log": "out/motion-parity-rust-tests.log"
+  },
+  "browser": {
+    "command": "WINUI_MOTION_WASM=out/motion-release-wasm WINUI_MOTION_ROOT=out/motion-parity-gallery npx playwright test -c playwright.motion.config.ts",
+    "stats": {
+      "startTime": "2026-11-09T02:22:53.595Z",
+      "duration": 114893.40599999999,
+      "expected": 8,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "checks": [
+      {
+        "name": "Canvas2D: theme-transitions samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "Canvas2D: connected-animation samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "Canvas2D: xaml-comp-interop samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "WebGL2: theme-transitions samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "WebGL2: connected-animation samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "WebGL2: xaml-comp-interop samples, public source and real interaction",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "implicit background and local theme examples use the Rust scene",
+        "ok": true,
+        "status": "passed"
+      },
+      {
+        "name": "public SDK springs, expression binding, cancellation and disposal run without Gallery logic",
+        "ok": true,
+        "status": "passed"
+      }
+    ],
+    "sourceSnapshot": "out/motion-parity-gallery",
+    "report": "out/motion-browser-results.json"
+  },
+  "build": {
+    "wasmSha256": "330eb6ef84612dc30358e029c5fd9074554af51188264abf30a6071f13b5c707",
+    "bytes": 8564421,
+    "profile": "release, opt-level=3, LTO=false, codegen-units=16 (isolated verification build; repository defaults unchanged)",
+    "artifact": "out/motion-release-wasm",
+    "currentGalleryMatches": true,
+    "productionAssets": [
+      "out/motion-parity-preview/assets/winui_bg-BBoAMqMQ.wasm"
+    ],
+    "typecheck": true,
+    "declarations": true,
+    "enumDriftCheck": true,
+    "viteProductionBuild": true
+  },
+  "sources": [
+    {
+      "path": "src/scene/motion_effects.rs",
+      "sha256": "ee06c017a2a880a4d1a26820b480915946410d9711b3747114010fac22ce2fee"
+    },
+    {
+      "path": "src/scene/layout.rs",
+      "sha256": "bd72a32c3b8cff3f94d4904647b8ebcefe6be0c472a9210e05dabe18a923965b"
+    },
+    {
+      "path": "src/scene/composed.rs",
+      "sha256": "2c46153327492f81c97ae311437df96e49636ae9924cbfc64c2fa7a8f343eaac"
+    },
+    {
+      "path": "src/scene/input.rs",
+      "sha256": "0af486672e39e708d3c69746421e65dcb42253dbc1182ee38a5b5bc062ad2036"
+    },
+    {
+      "path": "src/scene/paint.rs",
+      "sha256": "891965ca93f5e65600aeff4177f37a0abace28baa98ba5309b35a9424dc3cf55"
+    },
+    {
+      "path": "src/scene/repeater.rs",
+      "sha256": "4d9398f18457c29b697d2afd2522cc96e2d56dcbac7a609a388296864f9c27eb"
+    },
+    {
+      "path": "gallery/src/MotionPages.tsx",
+      "sha256": "0695ee4d7eb333e2c4ae5ae7652cd6d2cdc285ad7d166d17cab4a00891b932b1"
+    },
+    {
+      "path": "gallery/src/ConnectedAnimationSamples.tsx",
+      "sha256": "ad16c99febb96ca1511e86f8a7a32de2b68e219ab17a4d9def850ca4e5c1a3a5"
+    },
+    {
+      "path": "gallery/src/MotionExample.tsx",
+      "sha256": "1cdf372158c2dcf1bb970f3679dda4f9823822142b63fb282d612ed2637d27db"
+    },
+    {
+      "path": "references/motion-system-colors.json",
+      "sha256": "85bed77f0269d85820fb3dda9c5d02f427b83c4fb27a59d4f72e1d4b26114dfe"
+    },
+    {
+      "path": "references/motion-layout-sources.json",
+      "sha256": "c79a369c10dfc5e9b6c7680dd2cfc2f3a73dafe47f211c05a69a4f7759fcc960"
+    }
+  ],
+  "visualEvidence": [
+    "out/motion/connected-animation-Canvas2D-0.png",
+    "out/motion/connected-animation-Canvas2D-1.png",
+    "out/motion/connected-animation-Canvas2D-2.png",
+    "out/motion/connected-animation-Canvas2D-3.png",
+    "out/motion/connected-detail-production.png",
+    "out/motion/connected-card-production.png",
+    "out/motion/xaml-comp-interop-Canvas2D-4.png"
+  ],
+  "nativeBoundary": "User stopped desktop control using Escape. No subsequent native window input; source and system-accent capture plus browser screenshots do not establish complete native pixel/frame parity.",
+  "remaining": [
+    "3D Z/ThemeShadow",
+    "exact complex transparent-layer crossfade",
+    "ItemsRepeater TabFocusNavigation.Once",
+    "full Frame page-lifecycle wiring in these samples"
+  ]
+}

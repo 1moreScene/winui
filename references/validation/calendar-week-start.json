@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-10",
+  "behavior": {
+    "automaticFirstDay": "Monday for Chinese calendar languages; Sunday retained for other languages",
+    "chineseLanguageCases": ["zh", "zh-CN", "zh-Hans", "zh-Hant-TW", "ZH-cn"],
+    "calendarSystemsTested": ["GregorianCalendar", "ChineseCalendar"],
+    "controls": ["CalendarView", "CalendarDatePicker popup"],
+    "explicitOverride": "Preserved across language changes; null restores the language default",
+    "formatLanguage": "Changing only formatLanguage preserves the calendar language and first weekday",
+    "keyboardFocus": "Retains the same Gregorian date when weekday columns are reordered"
+  },
+  "rust": {
+    "command": "cargo test --locked --target-dir target/calendar-browser-dev --test calendar --test picker_controls",
+    "passed": 22,
+    "regression": "chinese_week_start_follows_language_and_preserves_explicit_overrides"
+  },
+  "typescript": {
+    "command": "npm run typecheck",
+    "passed": true,
+    "includes": ["control origins", "translations", "enum and null type cases"]
+  },
+  "browser": {
+    "channel": "chrome",
+    "locale": "en-US",
+    "timeZone": "Asia/Shanghai for week-start cases; America/New_York for calendar identifier cases",
+    "backends": ["Canvas2D", "WebGL2"],
+    "command": "PW_CHANNEL=chrome npx playwright test tests/calendar-week-start.spec.ts tests/calendar-identifiers.spec.ts --workers=1",
+    "passed": 6,
+    "output": "out/calendar-week-start-verified",
+    "developmentWasmSha256": "7388ea5ab19c48a55260e66f7148bfdf6daf58f88a5428a1a6768af09e800a0a",
+    "visualQA": "Verified Monday through Sunday headings and 2026-11-10 in the Tuesday column."
+  },
+  "production": {
+    "command": "cargo build --locked --release --target wasm32-unknown-unknown --target-dir target/calendar-week-start-release",
+    "passed": true,
+    "wasmSha256": "03f40e14f3e5c04d4e80aebceb1bbc9dcf2d1860e6351f29a495b11577d06acf",
+    "frontend": ["tsc --noEmit", "vite build", "npm run declarations"],
+    "frontendPassed": true,
+    "browserCommand": "PW_CHANNEL=chrome npx playwright test tests/calendar-week-start.spec.ts --workers=1",
+    "browserPassed": 2,
+    "browserOutput": "out/calendar-week-start-release",
+    "binaryIdentityConfirmedAfterTests": true
+  }
+}

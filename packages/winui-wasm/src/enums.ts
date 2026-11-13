@@ -566,6 +566,10 @@ export enum NodeKind {
   ItemsRepeaterScrollHost = "ItemsRepeaterScrollHost",
   /** Editable rich text document; Rust owns formatting, selection and history. */
   RichEditBox = "RichEditBox",
+  /** CommunityToolkit Segmented selection control. */
+  Segmented = "Segmented",
+  /** Declarative item container owned by Segmented. */
+  SegmentedItem = "SegmentedItem",
 }
 
 /** Scene drawing backend. Default: Canvas2D. */
@@ -2296,4 +2300,14 @@ export enum TableViewGroupSortMode {
   Key = "Key",
   /** Order by item count, breaking ties by key. */
   Count = "Count",
+}
+
+/** CommunityToolkit Segmented template style. */
+export enum SegmentedStyle {
+  /** Equal item sizes with a shared border and selection pill. */
+  Default = "Default",
+  /** Content-sized items with an underline selection pill. */
+  Pivot = "Pivot",
+  /** Content-sized buttons with an accent selected background. */
+  Button = "Button",
 }

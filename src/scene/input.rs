@@ -243,6 +243,7 @@ impl Scene {
         result
     }
     pub(in crate::scene) fn activate(&mut self, id: u32) -> Result<(), String> {
+        if self.nodes[&id].kind==NodeKind::SegmentedItem {return self.activate_segmented(id);}
         if let (Some(owner),Some(action))=(self.nodes[&id].navigation_template.owner,self.nodes[&id].navigation_template.action.clone()){
             self.navigation_input(owner,NavInput::Invoke{id:action})?;return Ok(());
         }
@@ -439,7 +440,7 @@ impl Scene {
                 | NodeKind::SplitButton
                 | NodeKind::ToggleSplitButton
                 | NodeKind::Slider
-                | NodeKind::Button | NodeKind::NavigationViewItem | NodeKind::AppBarButton | NodeKind::AppBarToggleButton | NodeKind::DropDownButton
+                | NodeKind::SegmentedItem | NodeKind::Button | NodeKind::NavigationViewItem | NodeKind::AppBarButton | NodeKind::AppBarToggleButton | NodeKind::DropDownButton
                 | NodeKind::RepeatButton
                 | NodeKind::HyperlinkButton
                 | NodeKind::Expander
@@ -575,7 +576,9 @@ impl Scene {
         if let Some(old) = self.focused.take() {
             if let Some(n) = self.nodes.get_mut(&old) {
                 n.button.cancel();
-                n.selection_visual.cancel_drag();
+                if let Some(selection) = n.selection_visual.allocated_mut() {
+                    selection.cancel_drag();
+                }
                 n.editor.peek = false;
                 n.scroll.drag = None;
                 n.scroll.repeat = None;
@@ -612,6 +615,7 @@ impl Scene {
             }
             self.emit(id, EventKind::GotFocus);
             self.repeater_focus_changed(id);
+            self.segmented_focus_changed(id);
         }
     }
     pub fn input(&mut self, input: Input, time: f64) -> Result<(), String> {
@@ -669,6 +673,7 @@ impl Scene {
         if self.table_input(&input)?{return Ok(());}
         if self.navigation_touch_input(&input)?{return Ok(());}
         if self.primitive_input(&input)?{return Ok(());}
+        if self.segmented_input(&input)? {return Ok(());}
         if self.content_host_input(&input)?{self.invalidate(self.root,true);return Ok(());}
         if self.reading_input(&input)?{self.invalidate(self.root,true);return Ok(());}
         if self.repeater_input(&input)?{self.invalidate(self.root,true);return Ok(());}
@@ -746,7 +751,7 @@ impl Scene {
                     self.pointer(x, y);
                     self.update_switch_drag(x, y);
                     if let Some((_, id)) = self.captured {
-                        if super::collections::is_scroll_owner(self.nodes[&id].kind) {
+                        if super::collections::is_scroll_owner(self.nodes[&id].kind) || self.nodes[&id].kind == NodeKind::RichEditBox {
                             self.scroll_pointer_move(id, x, y)?;
                         }
                     }
@@ -793,7 +798,7 @@ impl Scene {
                     self.captured = Some((pointer, id));
                     let n = self.nodes.get_mut(&id).unwrap();
                     match n.kind {
-                        NodeKind::Button | NodeKind::NavigationViewItem | NodeKind::AppBarButton | NodeKind::AppBarToggleButton | NodeKind::DropDownButton
+                        NodeKind::SegmentedItem | NodeKind::Button | NodeKind::NavigationViewItem | NodeKind::AppBarButton | NodeKind::AppBarToggleButton | NodeKind::DropDownButton
                         | NodeKind::SplitButton
                         | NodeKind::ToggleSplitButton
                         | NodeKind::RepeatButton
@@ -822,7 +827,7 @@ impl Scene {
                             n.button.captured = Some(pointer);
                             n.button.pressed = true;
                         }
-                        kind if super::collections::is_scroll_owner(kind) => {
+                        kind if super::collections::is_scroll_owner(kind) || kind == NodeKind::RichEditBox => {
                             self.scroll_pointer_down(id, x, y)?;
                         }
                         NodeKind::NavigationView => {
@@ -872,6 +877,9 @@ impl Scene {
                             n.scroll.drag = None;
                             n.scroll.repeat = None;
                             self.emit(id, EventKind::ViewChanged);
+                        } else if n.kind == NodeKind::RichEditBox {
+                            n.scroll.drag = None;
+                            n.scroll.repeat = None;
                         } else if n.nav.is_some() {
                             let (x, y) = n
                                 .world
@@ -895,7 +903,9 @@ impl Scene {
                     if n.kind == NodeKind::Slider {
                         n.slider.tooltip_dismissed = true;
                     }
-                    n.selection_visual.cancel_drag();
+                    if let Some(selection) = n.selection_visual.allocated_mut() {
+                        selection.cancel_drag();
+                    }
                     n.scroll.drag = None;
                     n.scroll.repeat = None;
                     n.scroll.pan = None;
@@ -943,7 +953,7 @@ impl Scene {
                             | NodeKind::SplitButton
                             | NodeKind::ToggleSplitButton
                             | NodeKind::MenuFlyout
-                            | NodeKind::MenuBarItem | NodeKind::Button | NodeKind::NavigationViewItem | NodeKind::AppBarButton | NodeKind::AppBarToggleButton | NodeKind::DropDownButton
+                            | NodeKind::MenuBarItem | NodeKind::SegmentedItem | NodeKind::Button | NodeKind::NavigationViewItem | NodeKind::AppBarButton | NodeKind::AppBarToggleButton | NodeKind::DropDownButton
                             | NodeKind::RepeatButton
                             | NodeKind::HyperlinkButton
                             | NodeKind::Expander

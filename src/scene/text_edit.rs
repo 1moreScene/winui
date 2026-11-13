@@ -558,9 +558,10 @@ impl Scene {
                 if n.editor.undo.len() >= 100 {
                     n.editor.undo.remove(0);
                 }
-                n.editor.undo.push(Revision {
+                let editor = &mut *n.editor;
+                editor.undo.push(Revision {
                     document: n.props.document.clone(),
-                    typing: n.editor.typing_format.clone(),
+                    typing: editor.typing_format.clone(),
                     text: old.clone(),
                     start: n.props.selection_start,
                     length: n.props.selection_length,
@@ -917,6 +918,12 @@ impl Scene {
             });
         }
         out.push(Draw::Restore);
+        if n.kind == NodeKind::RichEditBox {
+            out.push(Draw::Save);
+            out.push(Draw::Transform { matrix: [1., 0., 0., 1., e.view.x, e.view.y] });
+            n.scroll.paint(&n.props, n.scroll.viewport, n.theme, self.reduced_transparency, n.enabled, self.time, out);
+            out.push(Draw::Restore);
+        }
         if e.helper(n.kind, p, focused) {
             let suffix = if e.helper_pressed {
                 "Pressed"

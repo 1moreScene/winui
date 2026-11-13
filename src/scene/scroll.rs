@@ -158,6 +158,8 @@ pub struct ScrollSnapshot {
     pub scrollable_height: f64,
     pub vertical_thumb: Option<Rect>,
     pub horizontal_thumb: Option<Rect>,
+    pub vertical_bar: Option<Rect>,
+    pub horizontal_bar: Option<Rect>,
     pub is_intermediate: bool,
 }
 fn scalar(key: &str) -> f64 {
@@ -184,9 +186,9 @@ impl ScrollState {
         for vertical in [true, false] {
             if let Some(r) = self.thumb(p, vertical, time) {
                 let over = if vertical {
-                    x >= bounds[0] - 14. && x <= bounds[0]
+                    x >= bounds[0] - 14. && x <= bounds[0] && y >= 0. && y <= bounds[1]
                 } else {
-                    y >= bounds[1] - 14. && y <= bounds[1]
+                    y >= bounds[1] - 14. && y <= bounds[1] && x >= 0. && x <= bounds[0]
                 };
                 if !over {
                     continue;
@@ -334,7 +336,8 @@ impl ScrollState {
         } else {
             p.horizontal_scroll_bar_visibility
         };
-        if visibility == ScrollBarVisibility::Hidden
+        if (if vertical { p.vertical_scroll_mode } else { p.horizontal_scroll_mode }) == ScrollMode::Disabled
+            || visibility == ScrollBarVisibility::Hidden
             || visibility == ScrollBarVisibility::Disabled
             || self.viewport[axis] <= 0.
         {
@@ -363,6 +366,15 @@ impl ScrollState {
             Rect::new(self.viewport[0] - 4. - width, pos, width, length)
         } else {
             Rect::new(pos, self.viewport[1] - 4. - width, length, width)
+        })
+    }
+    pub(super) fn bar_hit_rect(&self, p: &NodeProperties, vertical: bool, time: f64) -> Option<Rect> {
+        self.thumb(p, vertical, time)?;
+        let width = scalar("ScrollBarSize") + 2.;
+        Some(if vertical {
+            Rect::new((self.viewport[0] - width).max(0.), 0., width.min(self.viewport[0]), self.viewport[1])
+        } else {
+            Rect::new(0., (self.viewport[1] - width).max(0.), self.viewport[0], width.min(self.viewport[1]))
         })
     }
     pub fn bar_length(&self, p: &NodeProperties, vertical: bool, time: f64) -> f64 {
@@ -427,6 +439,8 @@ impl ScrollState {
             scrollable_height: m[1],
             vertical_thumb: self.thumb(p, true, time),
             horizontal_thumb: self.thumb(p, false, time),
+            vertical_bar: self.bar_hit_rect(p, true, time),
+            horizontal_bar: self.bar_hit_rect(p, false, time),
             is_intermediate: self.active(time) || self.drag.is_some() || !self.touches.is_empty(),
         }
     }
@@ -829,6 +843,19 @@ impl Scene {
         if scope.is_none() && self.composed_wheel(x, y, dy, ctrl) {
             return Ok(true);
         }
+        if !ctrl {
+            if let Some(id) = self.hit(x, y).filter(|id| {
+                self.nodes[id].kind == NodeKind::RichEditBox
+                    && scope.is_none_or(|root| self.descendant_of(*id, root))
+            }) {
+                let n = &self.nodes[&id];
+                let [horizontal, vertical] = n.scroll.wheel_axes(&n.props, self.time);
+                if (dx != 0. && horizontal) || (dy != 0. && vertical) {
+                    self.rich_editor_scroll_to(id, n.editor.scroll_x + dx, n.editor.scroll_y + dy);
+                    return Ok(true);
+                }
+            }
+        }
         let mut at = self.scroll_at(scope.unwrap_or(self.root), x, y);
         while let Some(id) = at {
             if scope.is_some_and(|root| !self.descendant_of(id, root)) {
@@ -881,15 +908,23 @@ impl Scene {
         for n in self
             .nodes
             .values_mut()
-            .filter(|n| super::collections::is_scroll_owner(n.kind))
+            .filter(|n| super::collections::is_scroll_owner(n.kind) || n.kind == NodeKind::RichEditBox)
         {
             let local = n.world.inverse().map(|m| m.point(x, y));
             let inside = route.contains(&n.id) && local.is_some_and(|(x, y)| {
                 Rect::new(0., 0., n.rect.width, n.rect.height).contains(x, y)
             });
             n.scroll.hover = inside;
-            n.scroll.bar_hover = inside
-                && local.is_some_and(|(x, y)| x >= n.rect.width - 14. || y >= n.rect.height - 14.);
+            n.scroll.bar_hover = inside && local.is_some_and(|(x, y)| {
+                if n.kind == NodeKind::RichEditBox {
+                    [true, false].into_iter().any(|vertical| {
+                        n.scroll.bar_hit_rect(&n.props, vertical, self.time)
+                            .is_some_and(|r| r.contains(x - n.editor.view.x, y - n.editor.view.y))
+                    })
+                } else {
+                    x >= n.rect.width - 14. || y >= n.rect.height - 14.
+                }
+            });
             if inside {
                 n.scroll.activity(self.time, self.reduced_motion);
             }
@@ -899,6 +934,21 @@ impl Scene {
     pub(super) fn scroll_pointer_down(&mut self, id: u32, x: f64, y: f64) -> Result<bool, String> {
         let n = self.nodes.get_mut(&id).unwrap();
         let (x, y) = n.world.inverse().map(|m| m.point(x, y)).unwrap_or_default();
+        if n.kind == NodeKind::RichEditBox {
+            let x = x - n.editor.view.x;
+            let y = y - n.editor.view.y;
+            if ![true, false].into_iter().any(|vertical| {
+                n.scroll.bar_hit_rect(&n.props, vertical, self.time).is_some_and(|r| r.contains(x, y))
+            }) {
+                return Ok(false);
+            }
+            let viewport = n.scroll.viewport;
+            let (hit, action) = n.scroll.pointer_down(&n.props, x, y, self.time, viewport);
+            if let Some(action) = action {
+                self.apply_scroll_action(id, action)?;
+            }
+            return Ok(hit);
+        }
         let (hit, action) =
             n.scroll
                 .pointer_down(&n.props, x, y, self.time, [n.rect.width, n.rect.height]);
@@ -916,16 +966,24 @@ impl Scene {
     pub(super) fn scroll_pointer_move(&mut self, id: u32, x: f64, y: f64) -> Result<(), String> {
         let n = &self.nodes[&id];
         let (x, y) = n.world.inverse().map(|m| m.point(x, y)).unwrap_or_default();
+        let (x, y) = if n.kind == NodeKind::RichEditBox {
+            (x - n.editor.view.x, y - n.editor.view.y)
+        } else { (x, y) };
         if let Some(a) = n.scroll.pointer_move(&n.props, x, y, self.time) {
-            self.scroll_change(
-                id,
-                (!a.vertical).then_some(a.offset),
-                a.vertical.then_some(a.offset),
-                None,
-                a.animated,
-            )?;
+            self.apply_scroll_action(id, a)?;
         }
         Ok(())
+    }
+    fn apply_scroll_action(&mut self, id: u32, action: ScrollAction) -> Result<(), String> {
+        let x = (!action.vertical).then_some(action.offset);
+        let y = action.vertical.then_some(action.offset);
+        let n = &self.nodes[&id];
+        if n.kind == NodeKind::RichEditBox {
+            self.rich_editor_scroll_to(id, x.unwrap_or(n.editor.scroll_x), y.unwrap_or(n.editor.scroll_y));
+            Ok(())
+        } else {
+            self.scroll_change(id, x, y, None, action.animated)
+        }
     }
     pub(super) fn bring_into_view(&mut self, id: u32) {
         if super::overlays::is_overlay(self.nodes[&id].kind) {
@@ -1009,13 +1067,7 @@ impl Scene {
             .filter_map(|n| n.scroll.repeat_action(self.time).map(|a| (n.id, a)))
             .collect();
         for (id, a) in repeats {
-            let _ = self.scroll_change(
-                id,
-                (!a.vertical).then_some(a.offset),
-                a.vertical.then_some(a.offset),
-                None,
-                a.animated,
-            );
+            let _ = self.apply_scroll_action(id, a);
         }
         let mut changed = Vec::new();
         for n in self
@@ -1032,6 +1084,9 @@ impl Scene {
         }
         for id in changed {
             self.emit(id, EventKind::ViewChanged);
+        }
+        for n in self.nodes.values_mut().filter(|n| n.kind == NodeKind::RichEditBox) {
+            n.scroll.tick(self.time, self.reduced_motion);
         }
     }
 }
