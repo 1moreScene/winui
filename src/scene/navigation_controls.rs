@@ -217,7 +217,8 @@ pub fn validate(
     p: &mut NodeProperties,
     patch: &serde_json::Map<String, Value>,
 ) -> Result<(), String> {
-    if !is_control(kind) {
+    let tree = kind == NodeKind::TreeView || kind == NodeKind::ComboBox && p.is_tree_combo;
+    if !is_control(kind) && !tree {
         return Ok(());
     }
     let nav = &mut p.nav_controls;
@@ -259,7 +260,7 @@ pub fn validate(
                 return Err("Navigation items require unique bounded IDs/text".into());
             }
         }
-        if kind == NodeKind::TreeView {
+        if tree {
             for item in nav.items.iter() {
                 let mut parent = item.parent.as_deref();
                 let mut depth = 0;

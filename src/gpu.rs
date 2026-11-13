@@ -75,6 +75,7 @@ struct Texture {
     height: f64,
     left: f64,
     ascent: f64,
+    bytes: u64,
 }
 struct Layer {
     texture: WebGlTexture,
@@ -83,6 +84,7 @@ struct Layer {
     width: i32,
     height: i32,
 }
+const GPU_TEXTURE_BUDGET: u64 = 24 * crate::render::MIB;
 #[derive(Clone, Default)]
 struct State {
     matrix: Matrix,
@@ -107,6 +109,43 @@ pub struct GpuBackend {
     pub generation: u64,
 }
 impl GpuBackend {
+    fn recycle_layer(&self, layer: Layer) {
+        let bytes = |layer: &Layer| crate::render::rgba_bytes(layer.width as u32, layer.height as u32) * 2;
+        let mut pool = self.layers.borrow_mut();
+        if pool.len() < 4 && pool.iter().map(bytes).sum::<u64>() + bytes(&layer) <= 48 * crate::render::MIB {
+            pool.push(layer);
+        } else {
+            self.delete_layer(layer);
+        }
+    }
+    fn reserve_texture(&self, replacing: &str, required: u64) {
+        let mut textures = self.textures.borrow_mut();
+        let replaced = textures.get(replacing);
+        let mut bytes = textures.values().map(|texture| texture.bytes).sum::<u64>()
+            - replaced.map_or(0, |texture| texture.bytes);
+        let max_entries = 511 + usize::from(replaced.is_some());
+        if bytes + required <= GPU_TEXTURE_BUDGET && textures.len() <= max_entries { return; }
+        // Keep image uploads ahead of cheap regenerable glyphs and vectors.
+        let mut candidates = textures.keys().filter(|key| key.as_str() != replacing).cloned().collect::<Vec<_>>();
+        candidates.sort_by(|a, b| {
+            a.starts_with("image:").cmp(&b.starts_with("image:"))
+                .then_with(|| textures[b].bytes.cmp(&textures[a].bytes))
+                .then_with(|| a.cmp(b))
+        });
+        for key in candidates {
+            let old = textures.remove(&key).unwrap();
+            self.gl.delete_texture(Some(&old.value));
+            bytes -= old.bytes;
+            if bytes + required <= GPU_TEXTURE_BUDGET && textures.len() <= max_entries { break; }
+        }
+    }
+    fn clear_large_texture(&self, key: &str) {
+        let mut textures = self.textures.borrow_mut();
+        if textures.get(key).is_some_and(|texture| texture.bytes > GPU_TEXTURE_BUDGET) {
+            let texture = textures.remove(key).unwrap();
+            self.gl.delete_texture(Some(&texture.value));
+        }
+    }
     pub fn new(canvas: HtmlCanvasElement) -> Result<Self, JsValue> {
         let attrs = web_sys::WebGlContextAttributes::new();
         attrs.set_alpha(true);
@@ -491,6 +530,7 @@ impl GpuBackend {
         if w > 8192 || h > 8192 {
             return Err(err("glyph run texture exceeds GPU limits; split the text"));
         }
+        self.reserve_texture(key, crate::render::rgba_bytes(w, h));
         self.raster.set_width(w);
         self.raster.set_height(h);
         self.ctx.set_transform(dpr, 0., 0., dpr, 0., 0.)?;
@@ -516,6 +556,7 @@ impl GpuBackend {
                 height: h as f64 / dpr,
                 left: origin[0],
                 ascent: origin[1],
+                bytes: crate::render::rgba_bytes(w, h),
             },
         );
         self.uploads += 1;
@@ -710,7 +751,8 @@ impl GpuBackend {
             (0., 5),
         );
         self.effect_passes += 3;
-        self.layers.borrow_mut().extend([a, b]);
+        self.recycle_layer(a);
+        self.recycle_layer(b);
         Ok(())
     }
     pub fn paint(
@@ -761,9 +803,6 @@ impl GpuBackend {
                 .as_ref(),
             0,
         );
-        if self.textures.borrow().len() > 512 {
-            self.invalidate_text();
-        }
         let external_texture = if let Some(canvas) = &self.external_backdrop {
             let texture = self.texture()?;
             self.gl.bind_texture(Gl::TEXTURE_2D, Some(&texture));
@@ -827,6 +866,7 @@ impl GpuBackend {
                         return Err(err("Border exceeds raster allocation budget"));
                     }
                     if dynamic || !self.textures.borrow().contains_key(&key) {
+                        self.reserve_texture(&key, crate::render::rgba_bytes(w as u32, h as u32));
                         self.raster.set_width(w as u32);
                         self.raster.set_height(h as u32);
                         self.ctx.set_transform(
@@ -885,6 +925,7 @@ impl GpuBackend {
                                 height: h / density,
                                 left: 0.,
                                 ascent: 0.,
+                                bytes: crate::render::rgba_bytes(w as u32, h as u32),
                             },
                         );
                         self.uploads += 1;
@@ -910,6 +951,7 @@ impl GpuBackend {
                         [1.; 4],
                         (0., 2),
                     );
+                    self.clear_large_texture(&key);
                 }
                 Draw::Save => stack.push(state.clone()),
                 Draw::Transform { matrix } => state.matrix = state.matrix.multiply(Matrix(*matrix)),
@@ -995,7 +1037,7 @@ impl GpuBackend {
                         [1., 1., 1., alpha],
                         (0., 2),
                     );
-                    self.layers.borrow_mut().push(layer);
+                    self.recycle_layer(layer);
                 }
                 Draw::Fill {
                     rect,
@@ -1291,30 +1333,34 @@ impl GpuBackend {
                         0,
                     );
                     self.quad(r, state.matrix, size, [0.; 4], [1.; 4], (0., 2));
+                    self.clear_large_texture(&key);
                     self.clip(&state, size);
                 }
                 Draw::Raster {rect,slot,revision,width,height,rgba} => {
                     let key=format!("raster:{slot}");
                     if self.raster_revisions.borrow().get(slot)!=Some(revision) || !self.textures.borrow().contains_key(&key) {
                         if let Some(old)=self.textures.borrow_mut().remove(&key){self.gl.delete_texture(Some(&old.value));}
+                        self.reserve_texture(&key, crate::render::rgba_bytes(*width, *height));
                         self.raster.set_width(*width);self.raster.set_height(*height);
                         let data=web_sys::ImageData::new_with_u8_clamped_array_and_sh(wasm_bindgen::Clamped(rgba.as_slice()),*width,*height)?;
                         self.ctx.put_image_data(&data,0.,0.)?;
                         let texture=self.texture()?;
                         self.gl.pixel_storei(Gl::UNPACK_PREMULTIPLY_ALPHA_WEBGL,1);
                         self.gl.tex_image_2d_with_u32_and_u32_and_html_canvas_element(Gl::TEXTURE_2D,0,Gl::RGBA as i32,Gl::RGBA,Gl::UNSIGNED_BYTE,&self.raster)?;
-                        self.textures.borrow_mut().insert(key.clone(),Texture{value:texture,width:0.,height:0.,left:0.,ascent:0.});
+                        self.textures.borrow_mut().insert(key.clone(),Texture{value:texture,width:0.,height:0.,left:0.,ascent:0.,bytes:crate::render::rgba_bytes(*width,*height)});
                         self.raster_revisions.borrow_mut().insert(*slot,*revision);self.uploads+=1;
                     }
                     self.gl.bind_texture(Gl::TEXTURE_2D,Some(&self.textures.borrow()[&key].value));
                     self.gl.uniform1i(self.gl.get_uniform_location(&self.program,"u_flip").as_ref(),0);
                     self.quad(*rect,state.matrix,size,[0.;4],[1.;4],(0.,2));
+                    self.clear_large_texture(&key);
                 }
                 Draw::Image { rect, source } | Draw::TintedImage { rect, source, .. } => {
                     let key = format!("image:{source}");
                     if !self.textures.borrow().contains_key(&key) {
                         let image = self.images.borrow().get(source).cloned();
                         if let Some(image) = image {
+                            self.reserve_texture(&key, crate::render::rgba_bytes(image.natural_width(), image.natural_height()));
                             // A decoded SVG can have a natural size while lacking
                             // explicit intrinsic dimensions. Browsers may reject
                             // that HTMLImageElement as a WebGL upload source.
@@ -1344,6 +1390,7 @@ impl GpuBackend {
                                     height: 0.,
                                     left: 0.,
                                     ascent: 0.,
+                                    bytes: crate::render::rgba_bytes(self.raster.width(), self.raster.height()),
                                 },
                             );
                             self.uploads += 1;
@@ -1365,6 +1412,7 @@ impl GpuBackend {
                         ([1.; 4], 2)
                     };
                     self.quad(*rect, state.matrix, size, [0.; 4], color, (0., kind));
+                    self.clear_large_texture(&key);
                 }
                 Draw::ContentBackground {
                     rect,
@@ -1500,7 +1548,7 @@ impl GpuBackend {
             [1.; 4],
             (0., 2),
         );
-        self.layers.borrow_mut().push(root_layer);
+        self.recycle_layer(root_layer);
         if let Some(texture) = external_texture {
             self.gl.delete_texture(Some(&texture));
         }

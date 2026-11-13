@@ -2,6 +2,7 @@
 use super::*;
 use crate::resources::Resources;
 use serde_json::{json, Value};
+use std::{collections::HashSet, sync::Arc};
 
 pub fn is_control(k: NodeKind) -> bool {
     matches!(
@@ -92,13 +93,33 @@ pub fn validate_properties(
         }
     }
     if matches!(k, NodeKind::AutoSuggestBox | NodeKind::ComboBox) {
-        let mut keys = std::collections::HashSet::new();
-        if p.collection_items.len() > 100000 {
-            return Err("item count exceeds scene collection budget".into());
+        if k == NodeKind::ComboBox && p.is_tree_combo
+            && patch.get("navControls").and_then(|nav| nav.get("items")).is_some()
+        {
+            p.collection_items = Arc::new(p.nav_controls.items.iter().map(|item| {
+                collections::CollectionData {
+                    id: item.id.clone(),
+                    text: item.text.clone(),
+                    enabled: item.enabled,
+                    group: None,
+                }
+            }).collect());
         }
-        for i in p.collection_items.iter() {
-            if i.id.is_empty() || !keys.insert(&i.id) {
-                return Err("items need unique nonempty IDs".into());
+        let source_changed = patch.contains_key("collectionItems")
+            || patch.get("navControls").and_then(|nav| nav.get("items")).is_some();
+        if source_changed {
+            let mut keys = HashSet::new();
+            let mut bytes = 0usize;
+            if p.collection_items.len() > 100000 {
+                return Err("item count exceeds scene collection budget".into());
+            }
+            for item in p.collection_items.iter() {
+                bytes = bytes.saturating_add(item.id.len()).saturating_add(item.text.len());
+                if item.id.is_empty() || item.id.len() > 4096 || item.text.len() > 1_000_000
+                    || !keys.insert(&item.id) || bytes > 32 * 1024 * 1024
+                {
+                    return Err("items need unique nonempty IDs and bounded text".into());
+                }
             }
         }
         if p.selected_index < -1 {
@@ -107,11 +128,72 @@ pub fn validate_properties(
         if p.selected_index >= p.collection_items.len() as i32 {
             p.selected_index = -1;
         }
-        if k==NodeKind::ComboBox && !p.is_editable {
-            p.text=p.collection_items.get(p.selected_index as usize).map(|item|item.text.clone()).unwrap_or_default();
+        if k == NodeKind::ComboBox {
+            if !matches!(p.selection_mode, ListViewSelectionMode::Single | ListViewSelectionMode::Multiple) {
+                return Err("ComboBox selectionMode must be Single or Multiple".into());
+            }
+            if p.is_editable && (p.is_tree_combo || p.selection_mode == ListViewSelectionMode::Multiple) {
+                return Err("Editable ComboBox requires a single-selection list".into());
+            }
+            if patch.contains_key("selectedKeys") || (!patch.contains_key("selectedIndex")
+                && (patch.contains_key("selectionMode") || (source_changed && extended_combo(p))))
+            {
+                set_combo_selection(p, &p.selected_keys.clone());
+            } else if patch.contains_key("selectedIndex") || source_changed {
+                p.selected_keys = Arc::new(p.collection_items.get(p.selected_index as usize)
+                    .map(|item| vec![item.id.clone()]).unwrap_or_default());
+            }
+            if !p.is_editable {
+                p.text = combo_selection_text(p);
+            }
         }
     }
     Ok(())
+}
+
+fn set_combo_selection(p: &mut NodeProperties, keys: &[String]) {
+    if keys.is_empty() {
+        p.selected_index = -1;
+        p.selected_keys = Arc::default();
+        return;
+    }
+    let keys: HashSet<_> = keys.iter().map(String::as_str).collect();
+    let mut selection = p.collection_items.iter().enumerate()
+        .filter(|(_, item)| keys.contains(item.id.as_str()));
+    p.selected_index = -1;
+    let mut selected = Vec::new();
+    if let Some((index, item)) = selection.next() {
+        p.selected_index = index as i32;
+        selected.push(item.id.clone());
+        if p.selection_mode == ListViewSelectionMode::Multiple {
+            selected.extend(selection.map(|(_, item)| item.id.clone()));
+        }
+    }
+    if *p.selected_keys != selected {
+        p.selected_keys = Arc::new(selected);
+    }
+}
+
+fn combo_selection_text(p: &NodeProperties) -> String {
+    if p.selected_index < 0 {
+        return String::new();
+    }
+    let first = &p.collection_items[p.selected_index as usize].text;
+    let mut text = match p.selected_keys.len() {
+        0 => String::new(),
+        1 => first.clone(),
+        count => format!("{first} (+{})", count - 1),
+    };
+    text.truncate(text.floor_char_boundary(1_000_000));
+    text
+}
+
+fn extended_combo(p: &NodeProperties) -> bool {
+    p.is_tree_combo || p.selection_mode == ListViewSelectionMode::Multiple
+}
+
+fn combo_acrylic(p: &NodeProperties) -> bool {
+    !extended_combo(p) && p.collection_items.len() as f64 * 32. <= p.max_drop_down_height
 }
 #[derive(Clone, Copy, Debug, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -122,6 +204,7 @@ pub enum ComposedAction {
     Toggle,
     Submit,
     Select,
+    Clear,
     Increment,
     Decrement,
     Resolve,
@@ -147,6 +230,7 @@ pub struct ComposedState {
     last_text: String,
     last_value: Option<f64>,
     last_selected: i32,
+    last_selected_keys: Arc<Vec<String>>,
     had_focus: bool,
     compact_dismissed: bool,
     modal_active: bool,
@@ -175,6 +259,7 @@ pub struct ComposedSnapshot {
     pub parts: BTreeMap<&'static str, u32>,
     pub value: Option<f64>,
     pub selected_index: i32,
+    pub selected_keys: Arc<Vec<String>>,
     pub pending_request: Option<u32>,
     pub result: ContentDialogResult,
     pub modal_active: bool,
@@ -185,6 +270,7 @@ impl ComposedState {
             parts: self.parts.clone(),
             value: p.number_value,
             selected_index: p.selected_index,
+            selected_keys: p.selected_keys.clone(),
             pending_request: self.pending.as_ref().map(|p| p.id),
             result: self.result,
             modal_active: self.modal_active,
@@ -193,6 +279,57 @@ impl ComposedState {
 }
 
 impl Scene {
+    pub(super) fn is_multi_combo_presenter(&self, id: u32) -> bool {
+        let n = &self.nodes[&id];
+        n.kind == NodeKind::ListView && n.props.selection_mode == ListViewSelectionMode::Multiple
+            && n.composed.owner.is_some_and(|owner| self.nodes[&owner].kind == NodeKind::ComboBox)
+    }
+
+    pub(super) fn ensure_combo_checkbox(&mut self, list: u32, row: u32) {
+        let n = &self.nodes[&row];
+        let checkbox = n.children.iter().copied().find(|child| self.nodes[child].composed.role == "ComboItemCheckBox");
+        if !self.is_multi_combo_presenter(list) {
+            if let Some(checkbox) = checkbox {
+                let _ = self.destroy(checkbox);
+            }
+            return;
+        }
+        let key = n.props.collection_key.clone();
+        let label = n.props.accessible_name.clone();
+        let checked = self.nodes[&list].collection.selected.contains(&key);
+        let rtl = self.effective_flow_direction(list) == FlowDirection::RightToLeft;
+        let alignment = if rtl { HorizontalAlignment::Right } else { HorizontalAlignment::Left };
+        // ListView reserves 44 DIP for the checkbox. Its native glyph starts at 14 DIP.
+        let margin = [-30., 0., 0., 0.];
+        let checkbox = match checkbox {
+            Some(checkbox) => checkbox,
+            None => {
+                let Ok(checkbox) = self.create(row, NodeKind::CheckBox, json!({
+                    "width":20,"height":20,"minWidth":0,"minHeight":0,"padding":[0,0,0,0],
+                    "verticalAlignment":"Center","isTabStop":false,"isChecked":checked,
+                    "accessibleName":label,"horizontalAlignment":alignment,"margin":margin
+                })) else { return; };
+                let n = self.nodes.get_mut(&checkbox).unwrap();
+                n.composed.owner = Some(list);
+                n.composed.role = "ComboItemCheckBox";
+                checkbox
+            }
+        };
+        let n = self.nodes.get_mut(&checkbox).unwrap();
+        n.props.is_checked = Some(checked);
+        n.props.accessible_name = label;
+        n.props.horizontal_alignment = alignment;
+    }
+
+    #[cfg(target_arch = "wasm32")]
+    pub(crate) fn floating_needs_backdrop(&self) -> bool {
+        self.overlay_ids().into_iter().any(|id| {
+            let n = &self.nodes[&id];
+            n.composed.owner.is_none_or(|owner| self.nodes[&owner].kind != NodeKind::ComboBox)
+                || n.props.acrylic_resource.is_some()
+        })
+    }
+
     pub(super) fn composed_content_parent(
         &self,
         parent: u32,
@@ -280,7 +417,11 @@ impl Scene {
                 };
                 n.props.text = text.clone();
             } else if p.selected_index >= 0 {
-                text = p.collection_items[p.selected_index as usize].text.clone();
+                text = if kind == NodeKind::ComboBox && !p.is_editable {
+                    combo_selection_text(&p)
+                } else {
+                    p.collection_items[p.selected_index as usize].text.clone()
+                };
                 self.nodes.get_mut(&id).unwrap().props.text = text.clone();
             }
             self.part(id,body,"InputBox",NodeKind::TextBox,json!({"columnSpan":3,"text":text,"minWidth":0,"placeholderText":p.placeholder_text,"accessibleName":p.accessible_name.clone().unwrap_or_else(||p.header.clone())}))?;
@@ -309,9 +450,18 @@ impl Scene {
                 let drop_button=self.part(id,body,"DropDownButton",NodeKind::Button,json!({"column":2,"width":38,"minWidth":0,"minHeight":0,"height":32,"padding":[0,0,0,0],"variant":"Subtle","text":if kind==NodeKind::ComboBox{""}else{"\u{e721}"},"fontFamily":"Segoe Fluent Icons","fontSize":12,"accessibleName":if kind==NodeKind::ComboBox{"Open drop-down"}else{"Submit query"},"isTabStop":false}))?;
                 if kind == NodeKind::ComboBox {
                     self.part(id,drop_button,"DropDownGlyph",NodeKind::AnimatedIcon,json!({"width":12,"height":12,"source":"ChevronDownSmall","useParentState":true,"horizontalAlignment":"Center","verticalAlignment":"Center"}))?;
+
                 }
                 let popup=self.part(id,id,"Popup",NodeKind::Flyout,json!({"minWidth":0,"maxWidth":null,"padding":[0,4,0,4],"autoFocus":false,"placement":"Bottom","placementTarget":body,"isOpen":false,"maxHeight":p.max_drop_down_height,"borderBrush":{"resource":if kind==NodeKind::ComboBox{"ComboBoxDropDownBorderBrush"}else{"AutoSuggestBoxSuggestionsListBorderBrush"}},"acrylicResource":if kind==NodeKind::ComboBox{"ComboBoxDropDownBackground"}else{"AutoSuggestBoxSuggestionsListBackground"}}))?;
-                self.part(id,popup,"ItemsPresenter",NodeKind::ListView,json!({"minHeight":0,"margin":if kind==NodeKind::AutoSuggestBox{json!([-1,0,-1,0])}else{json!([0,0,0,0])},"selectionMode":"Single","isItemClickEnabled":true,"verticalScrollBarVisibility":"Auto","horizontalScrollBarVisibility":"Disabled","itemContainerStyle":{"minHeight":if kind==NodeKind::AutoSuggestBox{40}else{32},"borderThickness":if kind==NodeKind::ComboBox{json!([1,1,1,1])}else{json!([0,0,0,0])},"padding":if kind==NodeKind::AutoSuggestBox{json!([16,0,12,0])}else{json!([11,5,11,7])},"margin":if kind==NodeKind::AutoSuggestBox{json!([0,0,0,0])}else{json!([5,2,5,2])}}}))?;
+                if kind == NodeKind::ComboBox && p.is_tree_combo {
+                    self.part(id,popup,"ItemsPresenter",NodeKind::TreeView,json!({
+                        "minHeight":0,"horizontalAlignment":"Stretch",
+                        "canDragItems":false,"canReorderItems":false,"allowDrop":false,
+                        "verticalScrollBarVisibility":"Auto","horizontalScrollBarVisibility":"Disabled"
+                    }))?;
+                } else {
+                    self.part(id,popup,"ItemsPresenter",NodeKind::ListView,json!({"minHeight":0,"margin":if kind==NodeKind::AutoSuggestBox{json!([-1,0,-1,0])}else{json!([0,0,0,0])},"selectionMode":"Single","isItemClickEnabled":true,"verticalScrollBarVisibility":"Auto","horizontalScrollBarVisibility":"Disabled","itemContainerStyle":{"minHeight":if kind==NodeKind::AutoSuggestBox{40}else{32},"borderThickness":if kind==NodeKind::ComboBox{json!([1,1,1,1])}else{json!([0,0,0,0])},"padding":if kind==NodeKind::AutoSuggestBox{json!([16,0,12,0])}else{json!([11,5,11,7])},"margin":if kind==NodeKind::AutoSuggestBox{json!([0,0,0,0])}else{json!([5,2,5,2])}}}))?;
+                }
             }
         } else if kind == NodeKind::ContentDialog {
             let popup=self.part(id,id,"Popup",NodeKind::Flyout,json!({"minWidth":0,"maxWidth":null,"maxHeight":null,"padding":[0,0,0,0],"borderThickness":[0,0,0,0],"cornerRadius":0,"background":"#00000000","shadowDepth":0,"autoFocus":false,"isLightDismissEnabled":false,"isOpen":false}))?;
@@ -493,6 +643,7 @@ impl Scene {
         n.composed.last_text = n.props.text.clone();
         n.composed.last_value = n.props.number_value;
         n.composed.last_selected = n.props.selected_index;
+        n.composed.last_selected_keys = n.props.selected_keys.clone();
         n.composed.last_number_format = number_format_signature(&n.props);
         self.sync_composed();
         Ok(())
@@ -506,6 +657,13 @@ impl Scene {
                 .unwrap()
                 .iter()
                 .filter(|(k, v)| {
+                    if key == "ItemsPresenter" && *k == "selectedKeys" {
+                        return !v.as_array().is_some_and(|keys| {
+                            keys.len() == self.nodes[&child].props.selected_keys.len()
+                                && keys.iter().zip(self.nodes[&child].props.selected_keys.iter())
+                                    .all(|(key, current)| key.as_str() == Some(current))
+                        });
+                    }
                     if key == "InputBox" && *k == "text" {
                         return v.as_str() != Some(self.nodes[&child].props.text.as_str());
                     }
@@ -587,14 +745,25 @@ impl Scene {
                     }
                 }
                 EventKind::Click => match role {
+                    "ComboItemCheckBox" => {
+                        if let Some(row) = self.nodes[&event.target].parent {
+                            let index = self.nodes[&row].props.collection_index;
+                            self.focus(Some(owner));
+                            let _ = self.collection_activate(owner, index, false, false, true);
+                        }
+                    }
                     "UpSpinButton" | "PopupUpSpinButton" => self.step_number(owner, false, false),
                     "DownSpinButton" | "PopupDownSpinButton" => {
                         self.step_number(owner, true, false)
                     }
                     "DropDownButton" => {
                         if kind == NodeKind::ComboBox {
+                            let open = !self.nodes[&owner].props.is_drop_down_open;
+                            if open && extended_combo(&self.nodes[&owner].props) {
+                                self.focus(Some(self.nodes[&owner].composed.parts["InputBox"]));
+                            }
                             let n = self.nodes.get_mut(&owner).unwrap();
-                            n.props.is_drop_down_open = !n.props.is_drop_down_open;
+                            n.props.is_drop_down_open = open;
                         } else {
                             self.submit_query(owner);
                         }
@@ -634,6 +803,23 @@ impl Scene {
                     }
                     _ => {}
                 },
+                EventKind::ItemInvoked if role == "ItemsPresenter"
+                    && kind == NodeKind::ComboBox && self.nodes[&owner].props.is_tree_combo =>
+                {
+                    if self.nodes[&owner].props.selection_mode == ListViewSelectionMode::Single {
+                        self.nodes.get_mut(&owner).unwrap().props.is_drop_down_open = false;
+                    }
+                }
+                EventKind::SelectionChanged if role == "ItemsPresenter"
+                    && kind == NodeKind::ComboBox && extended_combo(&self.nodes[&owner].props) =>
+                {
+                    if let Some(keys) = event.selected_keys.filter(|keys| *keys == *self.nodes[&event.target].props.selected_keys) {
+                        let p = &mut self.nodes.get_mut(&owner).unwrap().props;
+                        set_combo_selection(p, &keys);
+                        p.text = combo_selection_text(p);
+                        self.emit_combo_selection(owner);
+                    }
+                }
                 EventKind::ItemClick if role == "ItemsPresenter" => {
                     if let Some(key) = event.item_id.as_ref() {
                         if let Some(index) = self.nodes[&owner]
@@ -734,6 +920,13 @@ impl Scene {
                             json!({"dialogResult":result,"reason":reason}),
                         );
                     } else {
+                        if kind == NodeKind::ComboBox
+                            && self.focused.is_none()
+                            && self.effective_enabled(owner)
+                            && self.nodes[&owner].composed.had_focus
+                        {
+                            self.focus(Some(self.nodes[&owner].composed.parts["InputBox"]));
+                        }
                         self.emit_composed(owner, EventKind::Closed, json!({}));
                     }
                 }
@@ -859,23 +1052,19 @@ impl Scene {
                     }
                     self.patch_part(id,"Popup",json!({"isOpen":focused&&p.spin_button_placement_mode==NumberBoxSpinButtonPlacementMode::Compact&&!self.nodes[&id].composed.compact_dismissed}));
                 } else {
-                    if p.selected_index != self.nodes[&id].composed.last_selected {
+                    let selection_changed = p.selected_index != self.nodes[&id].composed.last_selected
+                        || p.selected_keys != self.nodes[&id].composed.last_selected_keys;
+                    if kind == NodeKind::ComboBox {
+                        if selection_changed && p.is_editable && p.selected_index >= 0 {
+                            self.nodes.get_mut(&id).unwrap().props.text =
+                                p.collection_items[p.selected_index as usize].text.clone();
+                        }
+                        self.emit_combo_selection(id);
+                    } else if p.selected_index != self.nodes[&id].composed.last_selected {
                         if p.selected_index >= 0 {
                             self.choose_composed(id, p.selected_index as usize, false);
                         } else {
-                            let n = self.nodes.get_mut(&id).unwrap();
-                            n.composed.last_selected = -1;
-                            if kind == NodeKind::ComboBox {
-                                if !p.is_editable {
-                                    n.props.text.clear();
-                                    n.composed.last_text.clear();
-                                }
-                                self.emit_composed(
-                                    id,
-                                    EventKind::SelectionChanged,
-                                    json!({"selectedIndex":-1,"itemId":null}),
-                                );
-                            }
+                            self.nodes.get_mut(&id).unwrap().composed.last_selected = -1;
                         }
                     }
                     if kind == NodeKind::AutoSuggestBox
@@ -884,15 +1073,30 @@ impl Scene {
                         self.nodes.get_mut(&id).unwrap().composed.last_text = p.text.clone();
                         self.emit_composed(id,EventKind::TextChanged,json!({"text":p.text,"reason":AutoSuggestionBoxTextChangeReason::ProgrammaticChange}));
                     }
-                    self.patch_part(id,"InputBox",json!({"text":self.nodes[&id].props.text,"placeholderText":p.placeholder_text,"isReadOnly":p.is_read_only||(kind==NodeKind::ComboBox&&!p.is_editable),"height":if kind==NodeKind::ComboBox&&p.font_size==14.&&(!p.is_editable||!focused&&!p.is_drop_down_open){Some(32.)}else{None},"minHeight":32,"fontFamily":p.font_family,"fontSize":p.font_size,"fontWeight":p.font_weight,"fontStyle":p.font_style,"editorHelperRightInset":if kind==NodeKind::ComboBox || p.query_icon{38}else{0},"padding":[if kind==NodeKind::ComboBox{11}else{10},5,if kind==NodeKind::ComboBox{if p.is_editable{38}else{25}}else if p.query_icon{40}else{6},if kind==NodeKind::ComboBox&&!p.is_editable{7}else{6}]}));
+                    let combo = kind == NodeKind::ComboBox;
+                    self.patch_part(id,"InputBox",json!({
+                        "text":self.nodes[&id].props.text,"placeholderText":p.placeholder_text,
+                        "isReadOnly":p.is_read_only||(combo&&!p.is_editable),
+                        "height":if combo&&p.font_size==14.&&(!p.is_editable||!focused&&!p.is_drop_down_open){Some(32.)}else{None},
+                        "minHeight":32,"fontFamily":p.font_family,"fontSize":p.font_size,"fontWeight":p.font_weight,"fontStyle":p.font_style,
+                        "editorClearSelection":combo&&p.clearable&&!p.is_read_only&&self.effective_enabled(id),
+                        "selectedIndex":if combo&&p.clearable{p.selected_index}else{-1},
+                        "editorHelperRightInset":if combo||p.query_icon{38}else{0},
+                        "padding":[if combo{11}else{10},5,if combo{if p.is_editable||p.clearable{38}else{25}}else if p.query_icon{40}else{6},if combo&&!p.is_editable{7}else{6}]
+                    }));
                     self.patch_part(
                         id,
                         "DropDownButton",
                         json!({"visible":kind==NodeKind::ComboBox||p.query_icon,"height":if kind==NodeKind::ComboBox{None}else{Some(32.)},"verticalAlignment":"Stretch"}),
                     );
                     if kind == NodeKind::ComboBox {
-                        let state = self.combo_common_state(id).as_str();
-                        self.patch_part(id,"DropDownButton",json!({"animatedIconState":state}));
+                        let button = &self.nodes[&self.nodes[&id].composed.parts["DropDownButton"]];
+                        let state = if button.button.state(button.enabled) == ControlState::Pressed {
+                            ControlState::Pressed
+                        } else {
+                            self.combo_common_state(id)
+                        };
+                        self.patch_part(id,"DropDownButton",json!({"animatedIconState":state.as_str()}));
                     }
                     let width = self.nodes[&id]
                         .composed
@@ -911,15 +1115,34 @@ impl Scene {
                         self.nodes.get_mut(&id).unwrap().composed.popup_anchor_index =
                             Some(p.selected_index);
                     }
-                    if open
+                    if open && !extended_combo(&p)
                         && !self.nodes[&id].composed.last_popup_open
                         && self.nodes[&id].props.selected_index >= 0
                     {
                         self.nodes.get_mut(&id).unwrap().composed.reveal_selection =
                             Some(self.nodes[&id].props.selected_index as usize);
                     }
+                    let was_open = self.nodes[&id].composed.last_popup_open;
                     self.nodes.get_mut(&id).unwrap().composed.last_popup_open = open;
-                    self.patch_part(id,"Popup",json!({"isOpen":open,"width":width,"maxHeight":p.max_drop_down_height,"padding":if kind==NodeKind::AutoSuggestBox{json!([0,2,0,2])}else{json!([0,4,0,4])}}));
+                    let presenter = self.nodes[&id].composed.parts["ItemsPresenter"];
+                    if combo && !open && was_open && self.focused.is_some_and(|focus| self.descendant_of(focus, presenter)) {
+                        self.focus(Some(self.nodes[&id].composed.parts["InputBox"]));
+                    }
+                    let mut popup = json!({"isOpen":open,"width":width,"maxHeight":p.max_drop_down_height,"padding":if combo{[0,4,0,4]}else{[0,2,0,2]}});
+                    if combo {
+                        if combo_acrylic(&p) {
+                            popup["acrylicResource"] = json!("ComboBoxDropDownBackground");
+                            popup["background"] = Value::Null;
+                        } else {
+                            popup["acrylicResource"] = Value::Null;
+                            popup["background"] = json!({"resource":"SolidBackgroundFillColorBaseBrush"});
+                        }
+                    }
+                    self.patch_part(id, "Popup", popup);
+                    if combo && extended_combo(&p) {
+                        self.sync_combo_presenter(id, &p, width, open, was_open);
+                        continue;
+                    }
                     let selected = p
                         .collection_items
                         .get(self.nodes[&id].props.selected_index.max(0) as usize)
@@ -940,10 +1163,11 @@ impl Scene {
                         self.nodes.get_mut(&id).unwrap().composed.last_items =
                             Some(p.collection_items.clone());
                     }
-                    self.patch_part(id,"ItemsPresenter",json!({"selectedKeys":selected,"fontFamily":p.font_family,"fontSize":p.font_size,"maxHeight":(p.max_drop_down_height-10.).max(0.),"minWidth":(width-2.).max(0.)}));
+                    self.patch_part(id,"ItemsPresenter",json!({"selectionMode":"Single","isItemClickEnabled":true,"selectedKeys":selected,"fontFamily":p.font_family,"fontSize":p.font_size,"maxHeight":(p.max_drop_down_height-10.).max(0.),"minWidth":(width-2.).max(0.),"itemContainerStyle":{"minHeight":if combo{32}else{40},"borderThickness":if combo{[1;4]}else{[0;4]},"padding":if combo{[11,5,11,7]}else{[16,0,12,0]},"margin":if combo{[5,2,5,2]}else{[0;4]}}}));
                 }
             } else if kind == NodeKind::ContentDialog {
-                self.patch_part(id,"Popup",json!({"width":self.width.max(1.),"height":self.height.max(1.),"horizontalOffset":0,"verticalOffset":0,"isOpen":p.is_open}));
+                let bounds = self.composed_dialog_bounds();
+                self.patch_part(id,"Popup",json!({"width":bounds.width.max(1.),"height":bounds.height.max(1.),"horizontalOffset":0,"verticalOffset":0,"isOpen":p.is_open}));
                 self.patch_part(
                     id,
                     "Title",
@@ -952,7 +1176,7 @@ impl Scene {
                 self.patch_part(
                     id,
                     "ContentScrollViewer",
-                    json!({"maxHeight":(self.height-130.).max(40.)}),
+                    json!({"maxHeight":(bounds.height-130.).max(40.)}),
                 );
                 self.patch_part(
                     id,
@@ -1230,10 +1454,32 @@ impl Scene {
             return;
         }
         let kind = self.nodes[&id].kind;
-        let old = self.nodes[&id].composed.last_selected;
+        if kind == NodeKind::ComboBox && self.nodes[&id].props.is_tree_combo {
+            let list = self.nodes[&id].composed.parts["ItemsPresenter"];
+            let _ = self.tree_select(list, &item.id, submit);
+            self.pump_composed_events();
+            return;
+        }
+        if kind == NodeKind::ComboBox && self.nodes[&id].props.selection_mode == ListViewSelectionMode::Multiple {
+            let p = &mut self.nodes.get_mut(&id).unwrap().props;
+            let mut keys = (*p.selected_keys).clone();
+            if let Some(index) = keys.iter().position(|key| key == &item.id) {
+                keys.remove(index);
+            } else {
+                keys.push(item.id);
+            }
+            set_combo_selection(p, &keys);
+            p.text = combo_selection_text(p);
+            self.emit_combo_selection(id);
+            return;
+        }
         let n = self.nodes.get_mut(&id).unwrap();
         n.props.selected_index = index as i32;
-        n.composed.last_selected = index as i32;
+        if kind == NodeKind::ComboBox {
+            n.props.selected_keys = Arc::new(vec![item.id.clone()]);
+        } else {
+            n.composed.last_selected = index as i32;
+        }
         n.composed.reveal_selection = Some(index);
         if kind == NodeKind::ComboBox || n.props.update_text_on_select {
             n.props.text = item.text.clone();
@@ -1252,15 +1498,100 @@ impl Scene {
                 self.submit_query(id);
             }
         } else {
-            if old != index as i32 {
-                self.emit_composed(
-                    id,
-                    EventKind::SelectionChanged,
-                    json!({"selectedIndex":index,"itemId":item.id}),
-                );
-            }
+            self.emit_combo_selection(id);
             if submit {
                 self.nodes.get_mut(&id).unwrap().props.is_drop_down_open = false;
+            }
+        }
+    }
+    fn emit_combo_selection(&mut self, id: u32) {
+        let n = self.nodes.get_mut(&id).unwrap();
+        let p = &n.props;
+        if p.selected_index == n.composed.last_selected
+            && p.selected_keys == n.composed.last_selected_keys
+        {
+            return;
+        }
+        n.composed.last_selected = p.selected_index;
+        n.composed.last_selected_keys = p.selected_keys.clone();
+        let payload = json!({
+            "selectedIndex":p.selected_index,
+            "itemId":p.selected_keys.first(),
+            "selectedKeys":p.selected_keys,
+        });
+        self.emit_composed(id, EventKind::SelectionChanged, payload);
+    }
+    pub(super) fn clear_combo(&mut self, id: u32) {
+        let n = &self.nodes[&id];
+        if n.props.is_read_only || !self.effective_enabled(id) {
+            return;
+        }
+        let input = n.composed.parts["InputBox"];
+        let n = self.nodes.get_mut(&id).unwrap();
+        n.props.selected_index = -1;
+        n.props.selected_keys = Arc::default();
+        n.props.text.clear();
+        n.composed.last_text.clear();
+        n.composed.reveal_selection = None;
+        n.composed.pending = None;
+        self.emit_combo_selection(id);
+        self.focus(Some(input));
+    }
+    fn sync_combo_presenter(&mut self, id: u32, p: &NodeProperties, width: f64, open: bool, was_open: bool) {
+        let list = self.nodes[&id].composed.parts["ItemsPresenter"];
+        let multiple = p.selection_mode == ListViewSelectionMode::Multiple;
+        let source_changed = !self.nodes[&id].composed.last_items.as_ref()
+            .is_some_and(|items| Arc::ptr_eq(items, &p.collection_items));
+        let mut patch = json!({
+            "selectedKeys":p.selected_keys,"fontFamily":p.font_family,"fontSize":p.font_size,
+            "maxHeight":(p.max_drop_down_height-10.).max(0.),"minWidth":(width-2.).max(0.),
+            "cacheLength":1
+        });
+        if p.is_tree_combo {
+            patch["navControls"] = json!({
+                "treeSelectionMode":if multiple{"Multiple"}else{"Single"}
+            });
+            if source_changed {
+                patch["navControls"]["items"] = json!(p.nav_controls.items);
+            }
+        } else {
+            patch["selectionMode"] = json!("Multiple");
+            patch["isItemClickEnabled"] = json!(false);
+            patch["itemContainerStyle"] = json!({"minHeight":32});
+            if source_changed {
+                patch["collectionItems"] = json!(p.collection_items);
+            }
+        }
+        if source_changed {
+            self.nodes.get_mut(&id).unwrap().composed.last_items = Some(p.collection_items.clone());
+        }
+        // The cached source patch contains items only once. Keep the TreeView's
+        // current source and expansion state when updating selection or mode.
+        let tree_mode_changed = p.is_tree_combo
+            && (self.nodes[&list].props.nav_controls.tree_selection_mode == TreeViewSelectionMode::Multiple) != multiple;
+        if p.is_tree_combo && !source_changed && !tree_mode_changed {
+            patch.as_object_mut().unwrap().remove("navControls");
+        }
+        self.patch_part(id, "ItemsPresenter", patch);
+        if p.is_tree_combo && source_changed {
+            self.sync_navigation_controls();
+        } else if p.is_tree_combo {
+            self.sync_navigation_tree(list);
+        }
+        if open && !was_open {
+            let n = &self.nodes[&list];
+            let keys: HashSet<_> = p.selected_keys.iter().map(String::as_str).collect();
+            let selected = n.props.collection_items.iter().position(|item| {
+                item.enabled && keys.contains(item.id.as_str())
+            });
+            self.nodes.get_mut(&id).unwrap().composed.reveal_selection = selected;
+            let focus = selected
+                .and_then(|index| self.nodes[&list].props.collection_items.get(index))
+                .or_else(|| self.nodes[&list].props.collection_items.iter().find(|item| item.enabled))
+                .map(|item| item.id.clone());
+            self.nodes.get_mut(&list).unwrap().collection.focus = focus;
+            if self.focused == Some(self.nodes[&id].composed.parts["InputBox"]) {
+                self.focus(Some(list));
             }
         }
     }
@@ -1359,23 +1690,25 @@ impl Scene {
     pub(super) fn composed_input(&mut self, input: &Input) -> Result<bool, String> {
         match input {
             Input::Down { x, y, pointer } => {
-                let ids: Vec<_> = self
-                    .nodes
-                    .values()
-                    .filter(|n| {
-                        n.kind == NodeKind::ComboBox
-                            && (self.inside(n.composed.parts["InputRoot"], *x, *y)
-                                || self.inside(n.composed.parts["Popup"], *x, *y))
-                    })
-                    .map(|n| n.id)
-                    .collect();
-                for id in ids {
+                let owner = self.hit(*x, *y).and_then(|mut target| loop {
+                    let n = &self.nodes[&target];
+                    if n.kind == NodeKind::ComboBox {
+                        return Some(n.id);
+                    }
+                    target = n.parent?;
+                });
+                if let Some(id) = owner {
                     let n=&self.nodes[&id];
+                    let in_popup = self.nodes[&n.composed.parts["Popup"]].overlay.open
+                        && self.inside(n.composed.parts["Popup"], *x, *y);
+                    let in_input = self.inside(n.composed.parts["InputRoot"], *x, *y);
                     let press=n.visible&&n.enabled&&!n.props.is_editable&&!n.props.is_drop_down_open
-                        &&self.inside(n.composed.parts["InputRoot"],*x,*y)
+                        &&in_input
                         &&!self.inside(n.composed.parts["DropDownButton"],*x,*y);
                     if press {self.nodes.get_mut(&id).unwrap().composed.input_press=Some(*pointer);}
-                    self.nodes.get_mut(&id).unwrap().composed.pointer_focused = true;
+                    if in_popup || in_input {
+                        self.nodes.get_mut(&id).unwrap().composed.pointer_focused = true;
+                    }
                 }
             }
             Input::Up {x,y,pointer} => {
@@ -1448,7 +1781,7 @@ impl Scene {
                 ),
                 NodeKind::ComboBox => matches!(
                     action,
-                    A::Focus | A::Submit | A::Open | A::Close | A::Toggle | A::Select | A::Resolve
+                    A::Focus | A::Submit | A::Open | A::Close | A::Toggle | A::Select | A::Resolve | A::Clear
                 ),
                 NodeKind::ContentDialog => matches!(
                     action,
@@ -1471,6 +1804,7 @@ impl Scene {
                 ComposedAction::Select => {
                     self.choose_composed(*id, index.ok_or("missing item index")?, true)
                 }
+                ComposedAction::Clear => self.clear_combo(*id),
                 ComposedAction::Focus => {
                     self.nodes.get_mut(id).unwrap().composed.pointer_focused = false;
                     let target = self.nodes[id].composed.parts.get("InputBox").copied();
@@ -1586,6 +1920,19 @@ impl Scene {
                     .is_some_and(|f| self.nodes[&f].editor.draft.is_some());
                 if composing {
                     return Ok(false);
+                }
+                if kind == NodeKind::ComboBox {
+                    let p = &self.nodes[&id].props;
+                    if p.clearable && !p.is_editable && matches!(key.as_str(), "Delete" | "Backspace")
+                        && self.focused == Some(self.nodes[&id].composed.parts["InputBox"])
+                    {
+                        self.clear_combo(id);
+                        self.sync_composed();
+                        return Ok(true);
+                    }
+                    if extended_combo(p) {
+                        return Ok(self.combo_presenter_key(id, key));
+                    }
                 }
                 if kind == NodeKind::NumberBox
                     && matches!(
@@ -1804,6 +2151,42 @@ impl Scene {
         }
         Ok(false)
     }
+    fn combo_presenter_key(&mut self, id: u32, key: &str) -> bool {
+        let n = &self.nodes[&id];
+        let open = n.props.is_drop_down_open;
+        let list = n.composed.parts["ItemsPresenter"];
+        let on_input = self.focused == Some(n.composed.parts["InputBox"]);
+        let toggle = matches!(key, "F4" | "Alt+ArrowDown");
+        let dismiss = matches!(key, "Escape" | "Alt+ArrowUp");
+        if toggle || (open && dismiss) {
+            self.nodes.get_mut(&id).unwrap().props.is_drop_down_open = toggle && !open;
+            self.sync_composed();
+            return true;
+        }
+        if on_input && matches!(key, "ArrowDown" | "ArrowUp" | "Home" | "End" | " " | "Enter") {
+            self.nodes.get_mut(&id).unwrap().props.is_drop_down_open = true;
+            self.sync_composed();
+            self.focus(Some(list));
+            let n = &self.nodes[&list];
+            let candidate = match key {
+                "End" | "ArrowUp" => n.props.collection_items.iter().rposition(|item| item.enabled),
+                "Home" => n.props.collection_items.iter().position(|item| item.enabled),
+                _ => n.collection.focus.as_ref()
+                    .and_then(|key| n.props.collection_items.iter().position(|item| item.enabled && &item.id == key))
+                    .or_else(|| n.props.collection_items.iter().position(|item| item.enabled)),
+            };
+            if let Some(index) = candidate {
+                self.focus_combo_item(id, list, index);
+            }
+            return true;
+        }
+        false
+    }
+    fn focus_combo_item(&mut self, id: u32, list: u32, index: usize) {
+        let key = self.nodes[&list].props.collection_items[index].id.clone();
+        self.nodes.get_mut(&list).unwrap().collection.focus = Some(key);
+        self.nodes.get_mut(&id).unwrap().composed.reveal_selection = Some(index);
+    }
     fn submit_combo(&mut self, id: u32) {
         let text = self.nodes[&id].props.text.clone();
         if self.nodes[&id].props.is_editable {
@@ -1816,7 +2199,11 @@ impl Scene {
             self.events.last_mut().unwrap().payload = Some(json!({"text":text}));
             return;
         }
-        self.finish_combo_commit(id);
+        if extended_combo(&self.nodes[&id].props) {
+            self.nodes.get_mut(&id).unwrap().props.is_drop_down_open = false;
+        } else {
+            self.finish_combo_commit(id);
+        }
     }
     fn finish_combo_commit(&mut self, id: u32) {
         let text = self.nodes[&id].props.text.clone();
@@ -1830,12 +2217,8 @@ impl Scene {
         } else if self.nodes[&id].props.selected_index >= 0 {
             let n = self.nodes.get_mut(&id).unwrap();
             n.props.selected_index = -1;
-            n.composed.last_selected = -1;
-            self.emit_composed(
-                id,
-                EventKind::SelectionChanged,
-                json!({"selectedIndex":-1,"itemId":null}),
-            );
+            n.props.selected_keys = Arc::default();
+            self.emit_combo_selection(id);
         }
         self.nodes.get_mut(&id).unwrap().props.is_drop_down_open = false;
     }
@@ -1938,10 +2321,7 @@ impl Scene {
         let [w, h] = size;
         let snap = |v: f64| (v * self.dpr + 0.5 + 1e-9).floor() / self.dpr;
         if n.kind == NodeKind::ContentDialog {
-            return Some((
-                Rect::new(0., 0., self.width, self.height),
-                OverlayPlacement::Bottom,
-            ));
+            return Some((self.composed_dialog_bounds(), OverlayPlacement::Bottom));
         }
         if matches!(
             n.kind,
@@ -1976,7 +2356,15 @@ impl Scene {
                     } else {
                         (n.props.collection_items.len() / 2) as f64
                     };
-                    let y = if n.props.is_editable {
+                    let viewport=self.popup_viewport.unwrap_or(Rect::new(0.,0.,self.width,self.height));
+                    let y = if extended_combo(&n.props) {
+                        let below = a.y + a.height;
+                        if below + h > viewport.y + viewport.height && a.y - viewport.y >= h {
+                            a.y - h
+                        } else {
+                            below
+                        }
+                    } else if n.props.is_editable {
                         a.y + a.height - 1. / self.dpr
                     } else {
                         let style = &list.props.item_container_style;
@@ -1999,7 +2387,6 @@ impl Scene {
                                 (index * cell).min(h / 2.)
                             }
                     };
-                    let viewport=self.popup_viewport.unwrap_or(Rect::new(0.,0.,self.width,self.height));
                     let height=h.min(viewport.height);
                     Rect::new(a.x.clamp(viewport.x,(viewport.x+viewport.width-w).max(viewport.x)),
                         snap(y).clamp(viewport.y,(viewport.y+viewport.height-height).max(viewport.y)),w,height)
@@ -2120,6 +2507,14 @@ impl Scene {
         }
         Some((rect, side))
     }
+    pub(super) fn composed_dialog_bounds(&self) -> Rect {
+        if self.auto_height {
+            if let Some(viewport) = self.popup_viewport {
+                return viewport;
+            }
+        }
+        Rect::new(0., 0., self.width, self.height)
+    }
     pub(super) fn paint_combo_item(
         &self,
         id: u32,
@@ -2128,7 +2523,7 @@ impl Scene {
         let n = &self.nodes[&id];
         let list = self.nodes.get(&n.props.collection_owner?)?;
         let owner = self.nodes.get(&list.composed.owner?)?;
-        if owner.kind != NodeKind::ComboBox {
+        if owner.kind != NodeKind::ComboBox || extended_combo(&owner.props) {
             return None;
         }
         let selected = list.collection.selected.contains(&n.props.collection_key);
@@ -2203,7 +2598,10 @@ impl Scene {
             .props
             .collection_owner
             .and_then(|list| self.nodes[&list].composed.owner)
-            .is_some_and(|owner| self.nodes[&owner].kind == NodeKind::ComboBox)
+            .is_some_and(|owner| {
+                let n = &self.nodes[&owner];
+                n.kind == NodeKind::ComboBox && !extended_combo(&n.props)
+            })
     }
     pub(super) fn composed_corner_radii(&self, id: u32) -> Option<[f64; 4]> {
         let n = &self.nodes[&id];
@@ -2427,11 +2825,14 @@ impl Scene {
     pub(super) fn combo_common_state(&self, id: u32) -> ControlState {
         let n = &self.nodes[&id];
         if !n.enabled { return ControlState::Disabled; }
+        let input_root = n.composed.parts["InputRoot"];
         let drop = n.composed.parts["DropDownButton"];
-        if self.captured.is_some_and(|(_, target)| self.descendant_of(target, id) && !(n.props.is_editable && target == drop)) {
+        if self.captured.is_some_and(|(_, target)| {
+            self.descendant_of(target, input_root) && !(n.props.is_editable && target == drop)
+        }) {
             return ControlState::Pressed;
         }
-        if self.pointer.is_some_and(|(x,y)| self.inside(n.composed.parts["InputRoot"],x,y) || n.props.is_drop_down_open && self.inside(n.composed.parts["Popup"],x,y)) {
+        if self.pointer.is_some_and(|(x,y)| self.inside(input_root,x,y) || n.props.is_drop_down_open && self.inside(n.composed.parts["Popup"],x,y)) {
             ControlState::PointerOver
         } else { ControlState::Normal }
     }

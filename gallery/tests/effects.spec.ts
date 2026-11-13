@@ -173,7 +173,7 @@ test("Gallery exposes working GPU Acrylic, reversal and Canvas fallback", async 
     exact: true,
   });
   await expect(play).toBeVisible();
-  const canvas = page.locator("#effects-example canvas");
+  const canvas = page.locator("#effects-example .winui-scene[data-backend='WebGL2'] > canvas");
   const initial = await canvas.screenshot();
   await canvas.hover({ position: { x: 80, y: 200 }, force: true });
   await page.mouse.wheel(0, 240);

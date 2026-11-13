@@ -544,8 +544,13 @@ impl Scene {
             // owner-specific placement contract.
             let window_popup = self.nodes[&id].composed.owner.is_none_or(|owner|
                 matches!(self.nodes[&owner].kind, NodeKind::NumberBox | NodeKind::AutoSuggestBox | NodeKind::ComboBox | NodeKind::TeachingTip | NodeKind::CalendarDatePicker | NodeKind::DatePicker | NodeKind::TimePicker));
-            let bounds = if window_popup { self.popup_viewport } else { None }
-                .unwrap_or(Rect::new(0.,0.,self.width,self.height));
+            let bounds = if window_popup {
+                self.popup_viewport.unwrap_or(Rect::new(0.,0.,self.width,self.height))
+            } else if self.nodes[&id].composed.owner.is_some_and(|owner| self.nodes[&owner].kind == NodeKind::ContentDialog) {
+                self.composed_dialog_bounds()
+            } else {
+                Rect::new(0.,0.,self.width,self.height)
+            };
             let desired = self.measure_node(id, [bounds.width,bounds.height], measure);
             let n = &self.nodes[&id];
             let p = n.props.clone();
@@ -793,6 +798,15 @@ impl Scene {
                 continue;
             }
             if self.inside(id, x, y) {
+                return Ok(false);
+            }
+            if n.composed.owner.is_some_and(|owner| {
+                let parts = &self.nodes[&owner].composed.parts;
+                parts.get("DropDownButton").is_some_and(|button| {
+                    self.nodes[button].visible && self.nodes[button].enabled && self.inside(*button, x, y)
+                })
+            })
+            {
                 return Ok(false);
             }
             if n.props.is_light_dismiss_enabled {

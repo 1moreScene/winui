@@ -23,7 +23,7 @@ import type {AppBarSeparatorOptions,AppBarButtonOptions,AppBarToggleButtonOption
 import type {SegmentedOptions,SegmentedItemOptions,SegmentedSelectionChangedEvent} from './segmented-types';
 import type {SelectorBarOptions} from './navigation-controls-types';
 import {ContentDialogResult,ContentDialogButton} from './enums';
-import type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent,ComposedSnapshot} from './composed-types';
+import type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,TreeComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent,ComposedSnapshot} from './composed-types';
 import {normalizeNavigationDataItems,type NavigationData,type NavigationMetadata,type NavigationDataItem as NavigationItem,type TreeItem,type TabItem,type FlipViewOptions,type PipsPagerOptions,type BreadcrumbBarOptions,type TreeViewOptions,type TabViewOptions,type NavigationControlSnapshot,type NavigationControlEvent,type NavigationEventData,type NavigationItemsChangedEvent,type NavigationTemplateSlot} from './navigation-controls-types';
 import {PipsPagerButtonVisibility,PipsPagerWrapMode,TreeViewSelectionMode,TabViewWidthMode,TabViewCloseButtonOverlayMode} from './enums';
 import { EditorHost } from "./editor-host";
@@ -835,7 +835,7 @@ export interface NodeSnapshot {
   visible: boolean;
   focused: boolean;
   tabStop: boolean;
-  props: {isExpanderHeader?:boolean;primitives?:Record<string,unknown>;reading?:Record<string,unknown>;pickerControls?:Record<string,unknown>;viewControls?:Record<string,unknown>} & Omit<NumberBoxOptions,"value"> & AutoSuggestBoxOptions & ComboBoxOptions & ContentDialogOptions & TeachingTipOptions & TextOptions &
+  props: {isExpanderHeader?:boolean;primitives?:Record<string,unknown>;reading?:Record<string,unknown>;pickerControls?:Record<string,unknown>;viewControls?:Record<string,unknown>} & Omit<NumberBoxOptions,"value"> & AutoSuggestBoxOptions & Omit<ComboBoxOptions,'selectionMode'> & ContentDialogOptions & TeachingTipOptions & TextOptions &
     PanelOptions & ItemsPanelOptions & Omit<CollectionViewOptions,'items'> & {collectionOwner?:number|null;collectionKey?:string;collectionIndex?:number} &
     ToggleOptions &
     ButtonOptions &
@@ -932,8 +932,11 @@ function snapshotNodeWithDefaults(node: NodeSnapshot): NodeSnapshot {
   return { ...node, props: { ...Object.getPrototypeOf(node.props), ...node.props } };
 }
 const sceneFrameQueues = new WeakMap<Window, SceneFrameQueue>();
+const offscreenCanvasBudget = 8 * 1024 * 1024;
 class SceneFrameQueue {
   private pending = new Set<() => void>();
+  private offscreen = new Map<() => void, number>();
+  private offscreenBytes = 0;
   private frame = 0;
   constructor(private window: Window) {}
   request(draw: () => void) {
@@ -942,6 +945,21 @@ class SceneFrameQueue {
   }
   cancel(draw: () => void) {
     this.pending.delete(draw);
+  }
+  forgetRaster(release: () => void) {
+    this.offscreenBytes -= this.offscreen.get(release) ?? 0;
+    this.offscreen.delete(release);
+  }
+  retainOffscreen(release: () => void, bytes: number) {
+    this.forgetRaster(release);
+    if (!bytes) return;
+    this.offscreen.set(release, bytes);
+    this.offscreenBytes += bytes;
+    while (this.offscreenBytes > offscreenCanvasBudget) {
+      const oldest = this.offscreen.keys().next().value!;
+      this.forgetRaster(oldest);
+      oldest();
+    }
   }
   private schedule() {
     if (!this.frame && this.pending.size) this.frame = this.window.requestAnimationFrame(this.flush);
@@ -986,7 +1004,7 @@ export class Scene implements Disposable {
   private viewport: SurfaceMetrics;
   private pendingSurfaceResize=false;
   private pendingRaster = false;
-  private surfaceVisibility?:IntersectionObserver;
+  private surfaceVisibility: IntersectionObserver;
   private frameQueue: SceneFrameQueue;
   private drawScheduled = () => this.draw(this.deferOffscreenRaster());
   private disposed = false;
@@ -997,7 +1015,14 @@ export class Scene implements Disposable {
   private dispatching = false;
   private jobs: (() => void)[] = [];
   private transaction: Patch[] | null = null;
-  private state!: SceneSnapshot;
+  private frameState?: SceneSnapshot;
+  private get state(): SceneSnapshot {
+    if (!this.frameState) {
+      this.draw(true);
+      if (this.pendingRaster) this.schedule();
+    }
+    return this.frameState!;
+  }
   private tableViewKeys = new Map<number, string[]>();
   private _theme: ThemeMode;
   private reduced: boolean;
@@ -1406,33 +1431,71 @@ export class Scene implements Disposable {
       () => this.surfaceSizeChanged(),
       signal,
     );
-    if(!this.autoHeight&&!this.autoWidth){
-      this.surfaceVisibility=new IntersectionObserver(entries=>{
-        if((this.pendingSurfaceResize||this.pendingRaster)&&entries.some(entry=>entry.isIntersecting))this.schedule();
-      });
-      this.surfaceVisibility.observe(this.element);
-      document.addEventListener('scroll',()=>{if(this.hostActive&&(this.pendingSurfaceResize||this.pendingRaster)&&this.surfaceOnScreen())this.schedule();},{signal,capture:true,passive:true});
-    }
+    // Watch the painted surface too: an intrinsic or overflowing scene can
+    // leave the viewport while its projected control tree remains mounted.
+    this.surfaceVisibility = new IntersectionObserver(() => {
+      if (!this.hostActive || !this.hostPresented) return;
+      this.trackOffscreenRaster();
+      if ((this.pendingRaster || this.pendingSurfaceResize) && this.surfaceOnScreen()) this.schedule();
+    });
+    this.surfaceVisibility.observe(this.element);
+    document.addEventListener('scroll',()=>{if(this.hostActive&&(this.pendingSurfaceResize||this.pendingRaster)&&this.surfaceOnScreen())this.schedule();},{signal,capture:true,passive:true});
     try {
-      // Initialize synchronous geometry and snapshots. A blank root has no
-      // pixels to present before the caller attaches its first controls.
-      this.draw(options.root === undefined || this.deferOffscreenRaster());
-      if (this.pendingRaster) this.schedule();
+      // Intrinsic-size and explicitly configured roots can affect host layout
+      // immediately. For a fixed blank root, let same-turn children join the
+      // first frame. A synchronous snapshot read still initializes geometry.
+      if (this.autoHeight || this.autoWidth || options.root !== undefined) {
+        this.draw(options.root === undefined || this.deferOffscreenRaster());
+      }
+      if (!this.frameState || this.pendingRaster) this.schedule();
     } catch (error) {
       this.dispose();
       throw error;
     }
   }
-  private get projectedHeight(){return this.autoHeight?(this.state?.presentationHeight??this.viewport.height):this.viewport.height;}
-  private surfaceOnScreen(){const r=this.element.getBoundingClientRect();return r.width>0&&r.height>0&&r.bottom>0&&r.right>0&&r.top<innerHeight&&r.left<innerWidth;}
+  private get projectedHeight(){return this.autoHeight?(this.frameState?.presentationHeight??this.viewport.height):this.viewport.height;}
+  private surfaceOnScreen(){
+    const rect = this.element.getBoundingClientRect();
+    const bounds = this.frameState?.surfaceBounds;
+    const scaleX = rect.width / (this.viewport.width || 1);
+    const scaleY = rect.height / (this.projectedHeight || 1);
+    const x = rect.left + Math.min(0, bounds?.x ?? 0) * scaleX;
+    const y = rect.top + Math.min(0, bounds?.y ?? 0) * scaleY;
+    const right = Math.max(rect.right, rect.left + ((bounds?.x ?? 0) + (bounds?.width ?? 0)) * scaleX);
+    const bottom = Math.max(rect.bottom, rect.top + ((bounds?.y ?? 0) + (bounds?.height ?? 0)) * scaleY);
+    return rect.width>0&&rect.height>0&&bottom>0&&right>0&&y<innerHeight&&x<innerWidth;
+  }
+  private trackOffscreenRaster() {
+    if (this.surfaceOnScreen() || this.frameState?.floatingSurface?.visible) {
+      this.frameQueue.forgetRaster(this.releaseOffscreenRaster);
+    } else {
+      this.frameQueue.retainOffscreen(this.releaseOffscreenRaster, this.canvas.width * this.canvas.height * 4);
+    }
+  }
+  private releaseOffscreenRaster = () => {
+    if (this.disposed || !this.hostActive || !this.hostPresented || this.surfaceOnScreen()
+      || this.frameState?.floatingSurface?.visible) return;
+    this.releaseRasterSurfaces();
+    this.pendingRaster = true;
+  };
+  private releaseRasterSurfaces() {
+    this.raw.scene_release_rasters(this.handle);
+    if (this.canvas.width === 0 && this.canvas.height === 0 && this.element.dataset.backend === RendererBackend.Canvas2D) {
+      // Retire Canvas2D's browser context pool along with its backing store.
+      const replacement = this.canvas.cloneNode(false) as HTMLCanvasElement;
+      this.raw.scene_replace_canvas(this.handle, replacement);
+      this.canvas.replaceWith(replacement);
+      this.canvas = replacement;
+    }
+  }
   private surfaceSizeChanged(){
     // Intrinsic-size hosts still measure immediately for their parent's layout.
     // Fixed-size offscreen surfaces retain pixels through repeated resizes.
-    if(this.autoHeight||this.autoWidth||this.state?.floatingSurface?.visible||this.surfaceOnScreen())this.schedule();
+    if(this.autoHeight||this.autoWidth||this.frameState?.floatingSurface?.visible||this.surfaceOnScreen())this.schedule();
     else this.pendingSurfaceResize=true;
   }
   private deferOffscreenRaster(): boolean {
-    return this.surfaceVisibility !== undefined && !this.surfaceOnScreen();
+    return !this.surfaceOnScreen();
   }
   private flushSurfaceResize(){if(this.pendingSurfaceResize&&!this.drawing)this.draw();}
   private updatePopupViewport(r=this.element.getBoundingClientRect()){
@@ -1465,6 +1528,7 @@ export class Scene implements Disposable {
   setHostActive(active: boolean, presented = active): void {
     this.assertAlive();
     if (this.hostActive !== active) {
+      if (!active && !this.frameState) this.draw(true);
       this.hostActive = active;
       if (!active) {
         this.pageBackdrop.stop();
@@ -1477,15 +1541,8 @@ export class Scene implements Disposable {
       }
     }
     if (this.hostPresented && !presented) {
-      this.raw.scene_release_rasters(this.handle);
-      if (this.element.dataset.backend === RendererBackend.Canvas2D) {
-        // Chrome can keep a resized Canvas's shared images in its context
-        // pool. Retire the context along with the backing pixels on suspension.
-        const replacement = this.canvas.cloneNode(false) as HTMLCanvasElement;
-        this.raw.scene_replace_canvas(this.handle, replacement);
-        this.canvas.replaceWith(replacement);
-        this.canvas = replacement;
-      }
+      this.frameQueue.forgetRaster(this.releaseOffscreenRaster);
+      if (this.canvas.width || this.canvas.height) this.releaseRasterSurfaces();
     }
     this.hostPresented = presented;
   }
@@ -1587,12 +1644,13 @@ export class Scene implements Disposable {
   }
   private draw(deferRaster = false) {
     if (this.disposed || this.drawing || !this.hostActive) return;
+    this.frameQueue.cancel(this.drawScheduled);
     this.pendingSurfaceResize=false;
     this.drawing = true;
     try {
       const start = performance.now();
-      if(!this.state||this.state.nodes.some(n=>n.overlay?.isOpen))this.updatePopupViewport();
-      this.state = JSON.parse(
+      if(!this.frameState||this.frameState.nodes.some(n=>n.overlay?.isOpen))this.updatePopupViewport();
+      this.frameState = JSON.parse(
         this.raw.scene_frame(
           this.handle,
           this.clock(),
@@ -1646,6 +1704,7 @@ export class Scene implements Disposable {
         const host = this.element.parentElement;
         if (host && width > 0 && host.style.width !== `${width}px`) host.style.width = `${width}px`;
       }
+      this.trackOffscreenRaster();
       const external=this.state.nodes.find(n=>n.navigation?.hostClip!==null&&n.props.navigation?.hasExternalContent);
       const clip=external?.navigation?.hostClip;
       const hostClip=clip?`path('${clip.map(r=>`M ${r.x} ${r.y} h ${r.width} v ${r.height} h ${-r.width} Z`).join(' ')||'M 0 0 Z'}')`:'none';
@@ -1711,7 +1770,8 @@ export class Scene implements Disposable {
     Object.assign(this.floatingCanvas.style,{left:`${b.x}px`,top:`${b.y}px`});
     this.viewport.present(this.floatingCanvas);
     const samplePage = !this.transparency && this._theme !== ThemeMode.HighContrast &&
-      this.state.nodes.some(n => n.kind === NodeKind.ComboBox && n.props.isDropDownOpen);
+      this.state.nodes.some(n => n.kind === NodeKind.Flyout && n.overlay?.isOpen
+        && (n.props as {acrylicResource?:string}).acrylicResource==='ComboBoxDropDownBackground');
     const sx = r.width / Math.max(1, this.viewport.width), sy = r.height / Math.max(1, this.projectedHeight);
     this.pageBackdrop.sync(samplePage ? { x:r.left+b.x*sx, y:r.top+b.y*sy, width:b.width*sx, height:b.height*sy } : null,
       b, this.viewport.dpr / sx, this.state.backend.kind === RendererBackend.Canvas2D
@@ -1998,7 +2058,7 @@ export class Scene implements Disposable {
               const owner=this.state.nodes.find(n=>n.id===node.composedOwner),kind=owner?.kind;
               const modal=this.state.nodes.some(n=>n.kind===NodeKind.ContentDialog&&n.composed?.modalActive);
               const number=kind===NodeKind.NumberBox&&['ArrowUp','ArrowDown','PageUp','PageDown','Enter','Escape'].includes(event.key);
-              const choice=(kind===NodeKind.AutoSuggestBox||kind===NodeKind.ComboBox)&&(['ArrowDown','ArrowUp','Enter','Escape','F4'].includes(event.key)||(['Home','End'].includes(event.key)&&(owner?.props as ComboBoxOptions).isDropDownOpen)||(kind===NodeKind.ComboBox&&!(owner?.props as ComboBoxOptions).isEditable&&(event.key.length===1||['Home','End'].includes(event.key))));
+              const choice=(kind===NodeKind.AutoSuggestBox||kind===NodeKind.ComboBox)&&(['ArrowDown','ArrowUp','Enter','Escape','F4'].includes(event.key)||(['Home','End'].includes(event.key)&&(owner?.props as ComboBoxOptions).isDropDownOpen)||(kind===NodeKind.ComboBox&&!owner?.props.isEditable&&(event.key.length===1||['Home','End'].includes(event.key)||owner?.props.clearable&&['Delete','Backspace'].includes(event.key))));
               let tableOwner=this.state.nodes.find(n=>n.id===node.id);while(tableOwner&&tableOwner.kind!==NodeKind.TableView)tableOwner=this.state.nodes.find(n=>n.id===tableOwner!.parent);const tableKey=!!tableOwner&&['Enter','Escape','Tab'].includes(event.key);
               const handled=tableKey||number||choice||modal&&(['Tab','Escape'].includes(event.key)||event.key==='Enter'&&!node.props.acceptsReturn);
               if(handled){this.send({kind:'modifiers',ctrl:event.ctrlKey||event.metaKey,shift:event.shiftKey});this.send(up?{kind:'keyUp',key:event.key}:{kind:'keyDown',key:event.altKey&&['ArrowDown','ArrowUp'].includes(event.key)?`Alt+${event.key}`:event.key,repeat:event.repeat});}
@@ -2028,7 +2088,7 @@ export class Scene implements Disposable {
         host.update(n);
         const owner=snapshotById.get(n.composedOwner??-1);
         if(owner?.kind===NodeKind.NumberBox){host.input.setAttribute('role','spinbutton');const value=owner.composed?.value;if(value!==null&&value!==undefined)host.input.setAttribute('aria-valuenow',String(value));else host.input.removeAttribute('aria-valuenow');host.input.setAttribute('aria-valuemin',String(owner.props.minimum));host.input.setAttribute('aria-valuemax',String(owner.props.maximum));}
-        else if(owner?.kind===NodeKind.ComboBox||owner?.kind===NodeKind.AutoSuggestBox){host.input.setAttribute('role','combobox');host.input.setAttribute('aria-autocomplete',owner.kind===NodeKind.AutoSuggestBox?'list':'none');host.input.setAttribute('aria-expanded',String(snapshotById.get(owner.composed?.parts.Popup??-1)?.overlay?.isOpen??false));host.input.setAttribute('aria-controls',`winui-options-${this.handle}-${owner.id}`);}
+        else if(owner?.kind===NodeKind.ComboBox||owner?.kind===NodeKind.AutoSuggestBox){host.input.setAttribute('role','combobox');host.input.setAttribute('aria-autocomplete',owner.kind===NodeKind.AutoSuggestBox?'list':'none');host.input.setAttribute('aria-expanded',String(snapshotById.get(owner.composed?.parts.Popup??-1)?.overlay?.isOpen??false));host.input.setAttribute('aria-controls',`winui-options-${this.handle}-${owner.id}`);host.input.setAttribute('aria-haspopup',snapshotById.get(owner.composed?.parts.ItemsPresenter??-1)?.kind===NodeKind.TreeView?'tree':'listbox');}
 
       } else if (n.kind === NodeKind.Viewbox && n.viewbox) {
         let content = this.contentGroups.get(n.id);
@@ -2506,7 +2566,13 @@ export class Scene implements Disposable {
         const pool=new Map<string,CollectionItem>(collectionCompletionPool??collectionTransfer?.pool);const sourcePool=raw.collection?.source!==null?sourcePools.get(raw.collection?.source??-1):undefined;if(sourcePool)for(const[key,item]of sourcePool)pool.set(key,item);
         if(raw.kind===EventKind.ItemsChanged&&node instanceof CollectionView&&raw.collection)node.applyRustItems(pool);
         if(raw.collection)Object.assign(event,{items:raw.collection.keys.flatMap(key=>{const item=pool.get(key);return item===undefined?[]:[item];}),insertIndex:raw.collection.index});
-        if(node instanceof AutoSuggestBox||node instanceof ComboBox){const e=event as ComposedEvent;if(e.selectedIndex!==undefined&&e.selectedIndex>=0)e.selectedItem=node.items[e.selectedIndex];if(e.chosenSuggestion!==undefined){const index=normalizeCollection(node.items).findIndex(i=>i.id===e.chosenSuggestion);e.chosenItem=index>=0?node.items[index]:null;}}
+        if(node instanceof ComboBox){
+          const e=event as ComposedEvent;
+          if(e.selectedKeys){
+            e.selectedItems=node.itemsForKeys(e.selectedKeys);
+            e.selectedItem=e.selectedItems[0];
+          } else if(e.itemId) e.selectedItem=node.itemsForKeys([e.itemId])[0];
+        } else if(node instanceof AutoSuggestBox){const e=event as ComposedEvent;if(e.selectedIndex!==undefined&&e.selectedIndex>=0)e.selectedItem=node.items[e.selectedIndex];if(e.chosenSuggestion!==undefined){const index=normalizeCollection(node.items).findIndex(i=>i.id===e.chosenSuggestion);e.chosenItem=index>=0?node.items[index]:null;}}
         const refreshRequest=raw.kind===EventKind.RefreshRequested&&raw.requestId!==undefined;
         if(refreshRequest){complete=()=>{if(--deferrals===0&&!this.disposed&&!node.isDisposed)this.send({kind:'refresh',id:raw.target,action:'complete',request:raw.requestId});};(event as RefreshRequestedEvent).getDeferral=()=>{deferrals++;let done=false;return{complete:()=>{if(!done){done=true;complete();}}};};}
         if(node instanceof TableView)node.enrichEvent(event);
@@ -2605,7 +2671,7 @@ export class Scene implements Disposable {
   }
   /** Diagnostic snapshots are detached; properties are read from Rust on demand. */
   /** Subscribe to the Rust scene frame, including template-owned nodes. */
-  onSnapshot(listener:(snapshot:Readonly<SceneSnapshot>)=>void){this.assertAlive();this.flushSurfaceResize();this.snapshotListeners.add(listener);if(this.state)listener(this.snapshot);return()=>this.snapshotListeners.delete(listener);}
+  onSnapshot(listener:(snapshot:Readonly<SceneSnapshot>)=>void){const snapshot=this.snapshot;this.snapshotListeners.add(listener);listener(snapshot);return()=>this.snapshotListeners.delete(listener);}
   /** @internal Select before detaching so control subscriptions do not copy
    * unrelated nodes, templates, properties and Frame page resources. */
   observeNodeSnapshot<T>(node:SceneNode,select:(snapshot:NodeSnapshot)=>T,callback:(snapshot:T)=>void){
@@ -2733,6 +2799,7 @@ export class Scene implements Disposable {
     if (this.transaction)
       throw new Error("Creation is not allowed inside Scene.batch");
     parent.assertOwned(this);
+    const treeCombo = kind===NodeKind.ComboBox && (options as {isTreeCombo?:boolean}).isTreeCombo===true;
     const commandSource=kind===NodeKind.CommandBar?options as CommandBarOptions:undefined;
     const navigation=navigationControlKind(kind)?navigationSource(kind,options):undefined;
     if(navigation)options=navigation.patch;
@@ -2750,7 +2817,7 @@ export class Scene implements Disposable {
     options=normalizeReading(kind,options,this);
     options=normalizeViews(kind,options,this);
     options=normalizeCommands(kind,options,this);
-    options=normalizeComposed(kind,options);
+    options=normalizeComposed(kind,options,treeCombo);
     options=normalizeRepeaterRefresh(kind,options);
     options=normalizePicker(kind,options,true);
     const table = kind === NodeKind.TableView ? (options as { table?: { items?: unknown } }).table : undefined;
@@ -2820,7 +2887,7 @@ case NodeKind.TimePicker:node=new TimePicker(this,id,kind);break;
 case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
       case NodeKind.NumberBox:node=new NumberBox(this,id,kind);break;
       case NodeKind.AutoSuggestBox:node=new AutoSuggestBox(this,id,kind);(node as AutoSuggestBox).setClientItems(clientItems??[]);break;
-      case NodeKind.ComboBox:node=new ComboBox(this,id,kind);(node as ComboBox).setClientItems(clientItems??[]);break;
+      case NodeKind.ComboBox:node=treeCombo?new TreeComboBox(this,id,kind):new ComboBox(this,id,kind);(node as ComboBox).setClientItems(clientItems??[]);break;
       case NodeKind.ContentDialog:node=new ContentDialog(this,id,kind);break;
       case NodeKind.TeachingTip:node=new TeachingTip(this,id,kind);break;
       case NodeKind.ListView:case NodeKind.GridView:node=new CollectionView(this,id,kind);(node as CollectionView).setClientItems(clientItems??[]);(node as CollectionView).setClientGroups(collection?.groups??[]);(node as CollectionView).setClientSelection((options as CollectionViewOptions).selectedKeys??[]);break;
@@ -2959,7 +3026,7 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     properties=normalizeReading(node.kind,properties,this);
     properties=normalizeViews(node.kind,properties,this);
     properties=normalizeCommands(node.kind,properties,this);
-    properties=normalizeComposed(node.kind,properties);
+    properties=normalizeComposed(node.kind,properties,node instanceof TreeComboBox);
     properties=normalizeRepeaterRefresh(node.kind,properties);
     properties=normalizePicker(node.kind,properties);
     const update:Patch={id:identity(node),patch:properties,clientItems,clientGroups,navigationItems:navigation?.items,commandSource};
@@ -2985,6 +3052,16 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     if(view.clientItems!==items)view.setClientItems(items);return view;
   }
   /** @internal */ composedItemsChanged(node:SceneNode,items:readonly CollectionItem[]){const id=this.raw.scene_content_slot(this.handle,identity(node),'itemsPresenter');const view=this.nodes.get(id);if(view instanceof CollectionView)view.setClientItems(items);}
+  /** @internal */ composedTree<T extends TreeItem>(node:TreeComboBox<T>):TreeView<T>{
+    node.assertOwned(this);
+    const id=this.raw.scene_content_slot(this.handle,identity(node),'itemsPresenter');
+    const existing=this.nodes.get(id) as TreeView<T>|undefined;
+    if(existing)return existing;
+    const view=new TreeView<T>(this,id,NodeKind.TreeView);
+    this.nodes.set(id,view);
+    this.parents.set(id,identity(node));
+    return view;
+  }
   /** @internal */ composedContent(node:SceneNode,slot:'content'|'heroContent'):Panel{
     node.assertOwned(this);const id=this.raw.scene_content_slot(this.handle,identity(node),slot);const old=this.nodes.get(id);if(old)return old as Panel;
     const part=new TemplateContentSlot(this,id,NodeKind.StackPanel);this.nodes.set(id,part);this.parents.set(id,identity(node));return part;
@@ -3061,8 +3138,8 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     if (!state) throw new Error("Node has not been arranged yet");
     return structuredClone(snapshotNodeWithDefaults(state));
   }
-  /** @internal */ tableState(node:SceneNode):Readonly<TableViewSnapshot>|null{node.assertOwned(this);return this.state.nodes.find(n=>n.id===identity(node))?.table??null;}
-  /** @internal */ tableSlots<T extends object>(node:TableView<T>):TableViewSlot<T>[] {return this.state.nodes.find(n=>n.id===identity(node))?.table?.realized.flatMap(slot=>{const item=node.itemForKey(slot.row),container=this.nodes.get(slot.id);return item&&container instanceof Panel?[{...slot,role:slot.role as TableViewSlot<T>["role"],item,container}]:[];})??[];}
+  /** @internal */ tableState(node:SceneNode):Readonly<TableViewSnapshot>|null{node.assertOwned(this);return this.frameState?.nodes.find(n=>n.id===identity(node))?.table??null;}
+  /** @internal */ tableSlots<T extends object>(node:TableView<T>):TableViewSlot<T>[] {return this.frameState?.nodes.find(n=>n.id===identity(node))?.table?.realized.flatMap(slot=>{const item=node.itemForKey(slot.row),container=this.nodes.get(slot.id);return item&&container instanceof Panel?[{...slot,role:slot.role as TableViewSlot<T>["role"],item,container}]:[];})??[];}
   /** @internal */ readingSlot(owner:SceneNode,id:number):Panel{owner.assertOwned(this);let slot=this.nodes.get(id);if(!slot){slot=new Panel(this,id,NodeKind.Grid);this.nodes.set(id,slot);this.parents.set(id,identity(owner));}return slot as Panel;}
   /** @internal */ navigationViewSlot(owner:SceneNavigationView,slot:import('./enums').NavigationViewSlot):Panel {
     owner.assertOwned(this);const id=this.raw.scene_content_slot(this.handle,identity(owner),slot);let child=this.nodes.get(id);
@@ -3165,6 +3242,7 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     this.disposed = true;
     this.settleDisposed();
     this.frameQueue.cancel(this.drawScheduled);
+    this.frameQueue.forgetRaster(this.releaseOffscreenRaster);
     this.abort.abort();
     clearTimeout(this.wakeTimer);
     for (const host of this.editorHosts.values()) host.dispose();
@@ -3201,7 +3279,7 @@ case NodeKind.ColorPicker:node=new ColorPicker(this,id,kind);break;
     this.scrollTouches.clear();
     this.projectedChildren.clear();
     this.semantics.clear();
-    this.state = undefined!;
+    this.frameState = undefined;
     this.element.replaceChildren();
     this.element.remove();
     this.released();
@@ -3372,6 +3450,7 @@ class Container<T extends LayoutOptions> extends SceneNode<T> {
   tabView<T extends TabItem=TabItem>(options:TabViewOptions<T>={}){return this.scene.create(this,NodeKind.TabView,options) as TabView<T>;}
   autoSuggestBox<T extends CollectionItem=CollectionItem>(options:AutoSuggestBoxOptions<T>={}){return this.scene.create(this,NodeKind.AutoSuggestBox,options) as AutoSuggestBox<T>;}
   comboBox<T extends CollectionItem=CollectionItem>(options:ComboBoxOptions<T>={}){return this.scene.create(this,NodeKind.ComboBox,options) as ComboBox<T>;}
+  treeComboBox<T extends TreeItem=TreeItem>(options:TreeComboBoxOptions<T>={}){return this.scene.create(this,NodeKind.ComboBox,{...options,isTreeCombo:true}) as TreeComboBox<T>;}
   contentDialog(options:ContentDialogOptions={}){return this.scene.create(this,NodeKind.ContentDialog,options) as ContentDialog;}
   teachingTip(options:TeachingTipOptions={}){return this.scene.create(this,NodeKind.TeachingTip,options) as TeachingTip;}
   itemsStackPanel(options:ItemsPanelOptions={}){return this.scene.create(this,NodeKind.ItemsStackPanel,options) as Panel<ItemsPanelOptions>;}
@@ -3654,7 +3733,15 @@ export class CollectionView<T extends CollectionItem=CollectionItem> extends Sce
   }
   onContextRequested(callback:(event:SceneEvent&{item:T;container:CollectionItemContainer})=>void){return this.on(EventKind.ContextRequested,e=>{const slot=this.realizedItems().find(s=>s.key===e.collection?.keys[0]);if(slot)callback(Object.assign(e,{item:slot.item,container:slot.container}));});}
   /** @internal */ override markDisposed(){if(collectionTransfer?.source===this||collectionTransfer?.target===this){const transfer=collectionTransfer;collectionTransfer=undefined;if(transfer.target&&transfer.target!==this&&!transfer.target.isDisposed)transfer.target.driveDrag({kind:'collectionDragLeave',id:identity(transfer.target)});}super.markDisposed();for(const release of this.loadReleases)release();this.loadReleases.clear();this.releaseTemplate?.();this.releaseTemplate=undefined;this.clientItems=[];this.clientSelection=[];this.itemMap.clear();}
-  scrollIntoView(key:string){const index=normalizeCollection(this.clientItems).findIndex(i=>i.id===key);if(index<0)throw new Error('Unknown collection item');this.scene.input(this,{kind:'collectionScroll',id:identity(this),index});}
+  scrollIntoView(key:string){
+    if(this.kind===NodeKind.TreeView){
+      this.scene.input(this,{kind:'navigation',id:identity(this),input:{action:'focusNode',key}});
+      return;
+    }
+    const index=normalizeCollection(this.clientItems).findIndex(i=>i.id===key);
+    if(index<0)throw new Error('Unknown collection item');
+    this.scene.input(this,{kind:'collectionScroll',id:identity(this),index});
+  }
 }
 type NavigationRole='content'|'header'|'stripHeader'|'stripFooter';
 type NavigationTemplateRecord<T>={render?:((item:T,slot:NavigationTemplateSlot)=>void);prepared:Map<string,{item:T;slot:NavigationTemplateSlot}>};
@@ -4022,7 +4109,7 @@ export class AnimatedIcon extends SceneNode<AnimatedIconOptions> {
   setState(state:string) { this.update({state}); }
 }
 
-function normalizeComposed(kind:NodeKind,options:object):object{
+function normalizeComposed(kind:NodeKind,options:object,treeCombo:boolean):object{
  const p={...options} as Record<string,unknown>;
  if(kind===NodeKind.NumberBox&&Object.hasOwn(p,'numberFormat')){
    const f=p.numberFormat as import('./composed-types').NumberFormatOptions;
@@ -4033,7 +4120,11 @@ function normalizeComposed(kind:NodeKind,options:object):object{
    const digits=new Intl.NumberFormat(f.locale,{useGrouping:false,maximumFractionDigits:0});p.numberDigits=Array.from({length:10},(_,i)=>digits.formatToParts(i).filter(p=>p.type==='integer').map(p=>p.value).join(''));delete p.numberFormat;
  }
  if(kind===NodeKind.NumberBox&&Object.hasOwn(p,'value')){p.numberValue=p.value;delete p.value;}
- if((kind===NodeKind.AutoSuggestBox||kind===NodeKind.ComboBox)&&Object.hasOwn(p,'items')){p.collectionItems=normalizeCollection(p.items as readonly CollectionItem[]);delete p.items;}
+ if((kind===NodeKind.AutoSuggestBox||kind===NodeKind.ComboBox)&&Object.hasOwn(p,'items')){
+   if(treeCombo) p.navControls={items:normalizeNavigationDataItems(p.items as readonly TreeItem[],true).metadata};
+   else p.collectionItems=normalizeCollection(p.items as readonly CollectionItem[]);
+   delete p.items;
+ }
  return p;
 }
 /** Number editor backed by the native source parser and Rust coercion rules. */
@@ -4058,17 +4149,41 @@ export class AutoSuggestBox<T extends CollectionItem=CollectionItem> extends Sce
 }
 export class ComboBox<T extends CollectionItem=CollectionItem> extends SceneNode<ComboBoxOptions<T>>{
  private clientItems:readonly T[]=[];
+ protected itemsByKey=new Map<string,T>();
  /** Business source, retaining object identity. */ get items():readonly T[]{return this.clientItems;}
- /** @internal */ setClientItems(items:readonly CollectionItem[]){this.clientItems=items as readonly T[];this.scene.composedItemsChanged(this,items);}
+ /** @internal */ setClientItems(items:readonly CollectionItem[]){
+   this.clientItems=items as readonly T[];
+   this.syncItemSource();
+ }
+ protected syncItemSource(){
+   this.itemsByKey=new Map(normalizeCollection(this.items).map((item,index)=>[item.id,this.items[index]]));
+   this.scene.composedItemsChanged(this,this.items);
+ }
+ /** @internal */ itemsForKeys(keys:readonly string[]):T[]{
+   return keys.flatMap(key=>{const item=this.itemsByKey.get(key);return item===undefined?[]:[item];});
+ }
+ get selectedKeys():readonly string[]{return this.properties.selectedKeys??[];}
+ get selectedItems():readonly T[]{return this.itemsForKeys(this.selectedKeys);}
  /** Virtualized template view; its lifetime belongs to the control. */ get itemsView():SuggestionItemsView<T>{return this.scene.composedItems(this,this.clientItems);}
 
  override focus(){this.scene.input(this,{kind:'composed',id:identity(this),action:'focus'});}
  open(){this.scene.input(this,{kind:'composed',id:identity(this),action:'open'});}
  close(){this.scene.input(this,{kind:'composed',id:identity(this),action:'close'});}
+ clearSelection(){this.scene.input(this,{kind:'composed',id:identity(this),action:'clear'});}
  choose(index:number){this.scene.input(this,{kind:'composed',id:identity(this),action:'select',index});}
  submit(){this.scene.input(this,{kind:'composed',id:identity(this),action:'submit'});}
  onSelectionChanged(callback:(event:ComposedEvent<T>)=>void){return this.on(EventKind.SelectionChanged,callback);}
  onTextSubmitted(callback:(event:ComposedEvent<T>)=>void){return this.on(EventKind.TextSubmitted,callback);}
+}
+export class TreeComboBox<T extends TreeItem=TreeItem> extends ComboBox<T>{
+ /** Configure expansion and custom rendering through the TreeView in the popup. */
+ get presenter():TreeView<T>{return this.scene.composedTree(this);}
+ override get itemsView():SuggestionItemsView<T>{return this.presenter.itemsView;}
+ protected override syncItemSource(){
+   const {metadata,flat}=normalizeNavigationDataItems(this.items,true);
+   this.itemsByKey=new Map(metadata.map((item,index)=>[item.id,flat[index] as T]));
+   this.presenter.setClientNavigationItems(this.items);
+ }
 }
 /** One active dialog per Scene root. Closing and button clicks support cancellation/deferrals. */
 export class ContentDialog extends Panel<ContentDialogOptions>{

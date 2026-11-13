@@ -410,7 +410,8 @@ export class EditorHost {
     this.helper.style.userSelect = node.pointer.textSelection;
     this.helper.setAttribute(
       "aria-label",
-      node.kind === NodeKind.PasswordBox ? "Reveal password" : "Clear text",
+      node.kind === NodeKind.PasswordBox ? "Reveal password"
+        : (node.props as {editorClearSelection?:boolean}).editorClearSelection ? "Clear selection" : "Clear text",
     );
   }
   dispose() {

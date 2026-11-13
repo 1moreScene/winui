@@ -160,8 +160,8 @@ export {OpticalMarginAlignment} from './enums';
 export {DataPackageOperation,CollectionChangeReason} from "./enums";
 
 export {NumberBoxSpinButtonPlacementMode,NumberBoxValidationMode,AutoSuggestionBoxTextChangeReason,ContentDialogResult,ContentDialogButton,TeachingTipCloseReason,TeachingTipPlacementMode,TeachingTipTailVisibility,TeachingTipHeroContentPlacementMode} from './enums';
-export type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent,Deferral,ComposedSnapshot} from './composed-types';
-export type {NumberBox as NumberBoxController,AutoSuggestBox as AutoSuggestBoxController,ComboBox as ComboBoxController,ContentDialog as ContentDialogController,TeachingTip as TeachingTipController} from './scene';
+export type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,TreeComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent,Deferral,ComposedSnapshot} from './composed-types';
+export type {NumberBox as NumberBoxController,AutoSuggestBox as AutoSuggestBoxController,ComboBox as ComboBoxController,TreeComboBox as TreeComboBoxController,ContentDialog as ContentDialogController,TeachingTip as TeachingTipController} from './scene';
 
 export type {NumberFormatOptions} from './composed-types';
 

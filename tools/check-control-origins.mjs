@@ -24,6 +24,7 @@ const adapters = {
   SceneView: 'Canvas rendering host, not a visual control.',
   SceneNavigationView: 'React adapter to the existing NavigationView inside a shared scene.',
   SceneFrame: 'React adapter to the Rust Frame node in a shared scene.',
+  TreeComboBox: 'Rust ComboBox composition with a virtualized WinUI TreeView as the dropdown presenter.',
   RichInline: 'Named Rust Grid content slot inside a RichTextBlock, not another text renderer.',
 };
 const files=(directory,suffixes)=>readdirSync(new URL(`../${directory}/`,import.meta.url),{recursive:true}).filter(path=>suffixes.some(s=>path.endsWith(s))).map(path=>`${directory}/${path.replaceAll('\\','/')}`);

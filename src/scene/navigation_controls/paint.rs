@@ -716,16 +716,7 @@ impl Scene {
             color(n.theme, &format!("TreeViewItemBackground{suffix}")),
             4.,
         );
-        let foreground = color(
-            n.theme,
-            if !enabled {
-                "TreeViewItemForegroundDisabled"
-            } else if selected {
-                "TreeViewItemForegroundSelected"
-            } else {
-                "TreeViewItemForeground"
-            },
-        );
+        let foreground = color(n.theme, &format!("TreeViewItemForeground{suffix}"));
         let depth = row.depth as f64 * 16.;
         let multiple =
             root.props.nav_controls.tree_selection_mode == TreeViewSelectionMode::Multiple;
@@ -797,6 +788,14 @@ impl Scene {
         }
         if rtl {
             out.push(Draw::Restore);
+        }
+        if self.focused == Some(owner) && root.collection.focus.as_deref() == Some(&row.key)
+            && root.composed.owner.is_some_and(|combo| !self.nodes[&combo].composed.pointer_focused)
+        {
+            out.push(Draw::Border {
+                rect: r, thickness: [1.; 4], radius: [4.; 4],
+                color: color(n.theme, "FocusStrokeColorOuterBrush"), background: None,
+            });
         }
         Some(foreground)
     }

@@ -1158,7 +1158,15 @@ impl Scene {
                         text_edit::units(text_edit::EditorState::logical(n.kind, &n.props)),
                     )?;
                 }
-                "clear" => self.editor_commit(id, String::new(), 0, 0, "deleteContent".into())?,
+                "clear" => {
+                    let n = self.get(id)?;
+                    if let Some(owner) = n.composed.owner.filter(|_| n.props.editor_clear_selection) {
+                        self.clear_combo(owner);
+                        self.sync_composed();
+                    } else {
+                        self.editor_commit(id, String::new(), 0, 0, "deleteContent".into())?;
+                    }
+                }
                 "revealStart" | "revealEnd" => {
                     let n = self.get(id)?;
                     if n.kind != NodeKind::PasswordBox {

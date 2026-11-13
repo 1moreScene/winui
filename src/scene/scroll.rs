@@ -880,7 +880,10 @@ impl Scene {
                     let x = if axes[0] { (old[0] + horizontal_delta).clamp(0., max[0]) } else { old[0] };
                     let y = if axes[1] { (old[1] + dy).clamp(0., max[1]) } else { old[1] };
                     if [x, y] != old {
-                        self.scroll_change(id, Some(x), Some(y), None, true)?;
+                        let immediate = n.composed.role == "ItemsPresenter" && n.composed.owner
+                            .is_some_and(|owner| self.nodes[&owner].kind == NodeKind::ComboBox)
+                            && n.props.collection_items.len() > 100;
+                        self.scroll_change(id, Some(x), Some(y), None, !immediate)?;
                     } else {
                         self.nodes.get_mut(&id).unwrap().scroll.activity(self.time, self.reduced_motion);
                         self.invalidate(id, false);

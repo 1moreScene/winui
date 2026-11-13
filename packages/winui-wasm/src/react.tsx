@@ -24,10 +24,10 @@ import type {SegmentedOptions,SegmentedItemOptions,SegmentedSelectionChangedEven
 import {Segmented as SegmentedController,SegmentedItem as SegmentedItemController} from './scene';
 import type {SelectorBarOptions} from './navigation-controls-types';
 import {AppBarButton as AppBarButtonController,AppBarToggleButton as AppBarToggleButtonController,DropDownButton as DropDownButtonController,CommandBar as CommandBarController,SelectorBar as SelectorBarController} from './scene';
-import {NumberBox as NumberBoxController,AutoSuggestBox as AutoSuggestBoxController,ComboBox as ComboBoxController,ContentDialog as ContentDialogController,TeachingTip as TeachingTipController} from './scene';
+import {NumberBox as NumberBoxController,AutoSuggestBox as AutoSuggestBoxController,ComboBox as ComboBoxController,TreeComboBox as TreeComboBoxController,ContentDialog as ContentDialogController,TeachingTip as TeachingTipController} from './scene';
 import {NavigationControl as DataNavigationController,FlipView as FlipViewController,PipsPager as PipsPagerController,BreadcrumbBar as BreadcrumbBarController,TreeView as TreeViewController,TabView as TabViewController} from './scene';
 import type {NavigationData,TreeItem,TabItem,FlipViewOptions,PipsPagerOptions,BreadcrumbBarOptions,TreeViewOptions,TabViewOptions,NavigationControlEvent,NavigationItemsChangedEvent,NavigationTemplateSlot,TreeRowSnapshot} from './navigation-controls-types';
-import type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent} from './composed-types';
+import type {NumberBoxOptions,AutoSuggestBoxOptions,ComboBoxOptions,TreeComboBoxOptions,ContentDialogOptions,TeachingTipOptions,ComposedEvent} from './composed-types';
 import {
   createContext,
   Children,
@@ -546,7 +546,7 @@ function NodeElement({
       case NodeKind.CalendarView:case NodeKind.CalendarDatePicker:case NodeKind.DatePicker:case NodeKind.TimePicker:case NodeKind.ColorPicker:created=scene.create(parent,kind,options);break;
       case NodeKind.NumberBox:created=parent.numberBox(options);break;
       case NodeKind.AutoSuggestBox:created=parent.autoSuggestBox(options);break;
-      case NodeKind.ComboBox:created=parent.comboBox(options);break;
+      case NodeKind.ComboBox:created=scene.create(parent,kind,options);break;
       case NodeKind.ContentDialog:created=parent.contentDialog(options);break;
       case NodeKind.TeachingTip:created=parent.teachingTip(options);break;
       case NodeKind.ListView:created=parent.listView(options);break;
@@ -1416,6 +1416,20 @@ export interface AutoSuggestBoxProps<T extends CollectionItem=CollectionItem> ex
 export function AutoSuggestBox<T extends CollectionItem=CollectionItem>({onReady,onTextChanged,onSuggestionChosen,onQuerySubmitted,renderItem,...options}:AutoSuggestBoxProps<T>){const[node,setNode]=useState<AutoSuggestBoxController<T>|null>(null);return <><NodeElement kind={NodeKind.AutoSuggestBox} options={options} onReady={n=>{setNode(n as AutoSuggestBoxController<T>);onReady?.(n as AutoSuggestBoxController<T>);}} onEvent={e=>{if(e.kind===EventKind.TextChanged)onTextChanged?.(e);if(e.kind===EventKind.SuggestionChosen)onSuggestionChosen?.(e);if(e.kind===EventKind.QuerySubmitted)onQuerySubmitted?.(e);}}/>{node&&renderItem&&<ComposedItemTemplate view={node.itemsView} render={renderItem}/>}</>;}
 export interface ComboBoxProps<T extends CollectionItem=CollectionItem> extends ComboBoxOptions<T>, ControlAttachments {onReady?:(node:ComboBoxController<T>)=>void;onSelectionChanged?:(event:ComposedEvent<T>)=>void;onTextSubmitted?:(event:ComposedEvent<T>)=>void;renderItem?:(item:T,context:{selected:boolean;index:number})=>ReactNode;}
 export function ComboBox<T extends CollectionItem=CollectionItem>({onReady,onSelectionChanged,onTextSubmitted,renderItem,...options}:ComboBoxProps<T>){const[node,setNode]=useState<ComboBoxController<T>|null>(null);return <><NodeElement kind={NodeKind.ComboBox} options={options} onReady={n=>{setNode(n as ComboBoxController<T>);onReady?.(n as ComboBoxController<T>);}} onSelectionChanged={onSelectionChanged} onEvent={e=>{if(e.kind===EventKind.TextSubmitted)onTextSubmitted?.(e);}}/>{node&&renderItem&&<ComposedItemTemplate view={node.itemsView} render={renderItem}/>}</>;}
+export interface TreeComboBoxProps<T extends TreeItem=TreeItem> extends TreeComboBoxOptions<T>, ControlAttachments {
+  onReady?:(node:TreeComboBoxController<T>)=>void;
+  onSelectionChanged?:(event:ComposedEvent<T>)=>void;
+  renderItem?:(item:T,context:{selected:boolean;index:number})=>ReactNode;
+}
+export function TreeComboBox<T extends TreeItem=TreeItem>({onReady,onSelectionChanged,renderItem,...options}:TreeComboBoxProps<T>){
+  const [node,setNode]=useState<TreeComboBoxController<T>|null>(null);
+  return <>
+    <NodeElement kind={NodeKind.ComboBox} options={{...options,isTreeCombo:true}}
+      onReady={value=>{const control=value as TreeComboBoxController<T>;setNode(control);onReady?.(control);}}
+      onSelectionChanged={onSelectionChanged}/>
+    {node&&renderItem&&<ComposedItemTemplate view={node.itemsView} render={renderItem}/>}
+  </>;
+}
 function ComposedItemTemplate<T extends CollectionItem>({view,render}:{view:import('./scene').SuggestionItemsView<T>;render:(item:T,context:{selected:boolean;index:number})=>ReactNode}){
  const[slots,setSlots]=useState<readonly CollectionRealization<T>[]>([]);
  useLayoutEffect(()=>{const off=view.onRealizedChanged(items=>setSlots([...items]));const offSelection=view.onSelectionChanged(()=>setSlots([...view.realizedItems()]));const release=view.setItemTemplate(()=>{});setSlots([...view.realizedItems()]);return()=>{off();offSelection();release();};},[view]);

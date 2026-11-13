@@ -44,6 +44,12 @@ const result = await dialog.showAsync();
 
 React 同样使用直接属性，例如 `<NumberBox value={42} />`、`<ComboBox items={items} isEditable />`。`renderItem` 复用真实集合容器；普通 SDK 使用 `control.itemsView.setItemTemplate(...)`。TeachingTip 的 `heroContent` 是由控件持有生命周期的内容槽，不能单独销毁或重挂。
 
+`ComboBox` 的 `clearable` 属性复用 Editable ComboBox 的清除按钮模板。可用 `clearSelection()` 在代码中清除选择。设置 `selectionMode={ListViewSelectionMode.Multiple}` 可使用 WinUI CheckBox 连续选择，选择变更事件提供 `selectedKeys` 和 `selectedItems`，数据项使用稳定的 `id`。
+
+`TreeComboBox` 接收带 `children` 的树节点，默认单选。多选沿用 TreeView 的级联选中和半选状态。`parent.treeComboBox(...)` 返回的控制器通过 `presenter` 暴露 TreeView 的展开和模板 API。列表和树形下拉都默认按可见区域虚拟化，`maxDropDownHeight` 控制下拉高度。
+
+树形、多选和长列表下拉使用 WinUI 实色背景资源，并按视口限制缓存的行数。长列表的滚轮输入直接更新视口偏移，避免连续输入反复启动滚动动画。简短的单选下拉沿用 Acrylic。
+
 异步按钮处理调用事件的 `getDeferral()`，异步工作结束后调用 `complete()`；重复完成无效。按钮和 Closing 分别是一轮事务，任一轮取消都会保留对话框。
 
 `numberFormat` 使用浏览器 Intl 提供数字、符号和分组描述，Rust 负责解析、表达式和舍入。当前公开的是十进制描述，不冒充任意 Windows.Globalization/WinRT formatter。默认解析器拒绝科学计数输入，允许区域分组字符；保留原生 RoundHalfUp 的负数中点行为。

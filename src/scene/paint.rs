@@ -150,22 +150,26 @@ impl Scene {
         for id in self.overlay_ids() {
             let n = &self.nodes[&id];
             let opacity = n.overlay.visual.opacity.value(self.time);
+            let solid_combo = n.composed.owner.is_some_and(|owner|
+                self.nodes[&owner].kind == NodeKind::ComboBox) && n.props.acrylic_resource.is_none();
             let windowed = matches!(n.kind, NodeKind::ToolTip | NodeKind::MenuFlyout)
                 || n.composed.owner.is_some_and(|owner| {
                     matches!(
                         self.nodes[&owner].kind,
                         NodeKind::NumberBox | NodeKind::AutoSuggestBox | NodeKind::ComboBox | NodeKind::CalendarDatePicker | NodeKind::DatePicker | NodeKind::TimePicker
                     )
-                });
-            let combo_acrylic = n.composed.owner.is_some_and(|owner|
+                }) && !solid_combo;
+            let combo_acrylic = n.props.acrylic_resource.is_some() && n.composed.owner.is_some_and(|owner|
                 self.nodes[&owner].kind == NodeKind::ComboBox);
             // Keep the shadow in its own surface so restored in-app Acrylic
             // can inherit the page backdrop without sampling that shadow.
-            out.push(if combo_acrylic {
-                Draw::WindowLayer { opacity, inherit_backdrop: false }
+            if solid_combo {
+                out.push(Draw::Save);
+            } else if combo_acrylic {
+                out.push(Draw::WindowLayer { opacity, inherit_backdrop: false });
             } else {
-                Draw::Layer { opacity }
-            });
+                out.push(Draw::Layer { opacity });
+            }
             out.push(Draw::Clip {
                 rect: self.popup_window_bounds(id),
             });
@@ -221,7 +225,7 @@ impl Scene {
                 out.push(Draw::EndLayer);
             }
             out.push(Draw::Restore);
-            out.push(Draw::EndLayer);
+            out.push(if solid_combo { Draw::Restore } else { Draw::EndLayer });
         }
         out.push(Draw::Restore);
         out
@@ -1075,7 +1079,7 @@ impl Scene {
             | NodeKind::RadioButton
             | NodeKind::CollectionItem
             | NodeKind::CollectionHeader
-                if children.is_empty() =>
+                if children.is_empty() || self.uses_default_collection_label(id, &children) =>
             {
                 let b = if matches!(
                     kind,

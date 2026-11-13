@@ -84,6 +84,13 @@ pub(crate) fn decode_browser_rows(json: &str) -> Result<Vec<Row>, String> {
     let source: CompactRows = serde_json::from_str(json).map_err(|error| error.to_string())?;
     source.rows.into_iter().map(|(id, order, values)| {
         let fields = source.field_orders.get(order).ok_or("invalid table row field order")?;
+        let values = match values {
+            Value::Array(values) if values.len() == fields.len() => Value::Object(
+                fields.iter().cloned().zip(values).collect(),
+            ),
+            Value::Object(_) => values,
+            _ => return Err("invalid table row values".into()),
+        };
         Ok(Row { id, values, fields: fields.clone(), ..Row::default() })
     }).collect()
 }

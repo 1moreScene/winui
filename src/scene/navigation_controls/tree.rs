@@ -1,5 +1,24 @@
 use super::*;
 impl Scene {
+    pub(super) fn enabled_combo_tree(&self, id: u32) -> bool {
+        let n = &self.nodes[&id];
+        n.kind == NodeKind::TreeView && n.props.enabled && n.props.visible
+            && n.composed.owner.is_some_and(|owner| {
+                self.nodes[&owner].kind == NodeKind::ComboBox && self.effective_enabled(owner)
+            })
+    }
+    pub(super) fn move_tree_focus(&mut self, id: u32, key: &str) -> Result<(), String> {
+        let n = self.nodes.get_mut(&id).unwrap();
+        n.collection.focus = Some(key.into());
+        let index = n.collection.indices.get(key).copied();
+        if n.props.nav_controls.tree_selection_mode == TreeViewSelectionMode::Single {
+            self.tree_select(id, key, false)?;
+        }
+        if let Some(index) = index {
+            self.collection_bring(id, index)?;
+        }
+        Ok(())
+    }
     pub(in crate::scene) fn ensure_navigation_tree_parts(
         &mut self,
         owner: u32,
@@ -42,11 +61,7 @@ impl Scene {
         let (check, _, content) = tree_columns(self.dpr, true);
         let y = (2. * self.dpr).ceil() / self.dpr + 4. - 5.;
         let rtl = self.effective_flow_direction(owner) == FlowDirection::RightToLeft;
-        let margin = if rtl {
-            [0., y, check - content, -y]
-        } else {
-            [check - content, y, 0., -y]
-        };
+        let margin = [check - content, y, 0., -y];
         let align = if rtl {
             HorizontalAlignment::Right
         } else {
@@ -102,7 +117,13 @@ impl Scene {
     }
     pub(in crate::scene) fn sync_navigation_tree(&mut self, id: u32) {
         let n = &self.nodes[&id];
+        let selection_mode = match n.props.nav_controls.tree_selection_mode {
+            TreeViewSelectionMode::None => ListViewSelectionMode::None,
+            TreeViewSelectionMode::Single => ListViewSelectionMode::Single,
+            TreeViewSelectionMode::Multiple => ListViewSelectionMode::Multiple,
+        };
         if !n.nav_controls.tree_dirty
+            && n.props.selection_mode == selection_mode
             && Arc::ptr_eq(
                 &n.nav_controls.tree_expanded_source,
                 &n.props.nav_controls.expanded_keys,
@@ -209,11 +230,7 @@ impl Scene {
         let n = self.nodes.get_mut(&id).unwrap();
         let c = &mut n.nav_controls;
         n.props.collection_items = Arc::new(metadata);
-        n.props.selection_mode = match n.props.nav_controls.tree_selection_mode {
-            TreeViewSelectionMode::None => ListViewSelectionMode::None,
-            TreeViewSelectionMode::Single => ListViewSelectionMode::Single,
-            TreeViewSelectionMode::Multiple => ListViewSelectionMode::Multiple,
-        };
+        n.props.selection_mode = selection_mode;
         c.tree_rows = rows;
         c.tree_visible = visible;
         c.tree_expanded_source = n.props.nav_controls.expanded_keys.clone();
@@ -231,7 +248,9 @@ impl Scene {
         let Some(index) = n.nav_controls.tree_indices.get(key).copied() else {
             return Err("Unknown TreeView node".into());
         };
-        if !self.effective_enabled(id) || !n.props.nav_controls.items[index].enabled {
+        if (!self.effective_enabled(id) && !self.enabled_combo_tree(id))
+            || !n.props.nav_controls.items[index].enabled
+        {
             return Ok(());
         }
         let mut keys = n
@@ -323,7 +342,7 @@ impl Scene {
             return Err("Unknown TreeView node".into());
         };
         let item = &n.props.nav_controls.items[index];
-        if !n.enabled || !item.enabled {
+        if (!n.enabled && !self.enabled_combo_tree(id)) || !item.enabled {
             return Ok(());
         }
         let mode = n.props.nav_controls.tree_selection_mode;

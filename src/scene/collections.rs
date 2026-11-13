@@ -228,14 +228,30 @@ pub(super) fn validate(kind: NodeKind, p: &NodeProperties) -> Result<(), String>
                 return Err("collection items need unique nonempty IDs and bounded text".into());
             }
         }
-        if p.selected_keys.len() > p.collection_items.len()
-            || p.selected_keys.iter().any(|k| !keys.contains(k))
+        let tree_keys;
+        let selection_keys = if kind == NodeKind::TreeView {
+            tree_keys = p.nav_controls.items.iter().map(|item| &item.id).collect::<HashSet<_>>();
+            &tree_keys
+        } else {
+            &keys
+        };
+        if p.selected_keys.len() > selection_keys.len()
+            || p.selected_keys.iter().any(|k| !selection_keys.contains(k))
             || p.selected_keys.iter().collect::<HashSet<_>>().len() != p.selected_keys.len()
         {
             return Err("selectedKeys references an unknown item".into());
         }
-        if p.selection_mode == ListViewSelectionMode::None && !p.selected_keys.is_empty()
-            || p.selection_mode == ListViewSelectionMode::Single && p.selected_keys.len() > 1
+        let selection_mode = if kind == NodeKind::TreeView {
+            match p.nav_controls.tree_selection_mode {
+                TreeViewSelectionMode::None => ListViewSelectionMode::None,
+                TreeViewSelectionMode::Single => ListViewSelectionMode::Single,
+                TreeViewSelectionMode::Multiple => ListViewSelectionMode::Multiple,
+            }
+        } else {
+            p.selection_mode
+        };
+        if selection_mode == ListViewSelectionMode::None && !p.selected_keys.is_empty()
+            || selection_mode == ListViewSelectionMode::Single && p.selected_keys.len() > 1
         {
             return Err("selectedKeys does not match selectionMode".into());
         }
@@ -253,6 +269,20 @@ pub(super) fn coerce(
     patch: &serde_json::Map<String, serde_json::Value>,
 ) {
     if !is_view(kind) || patch.contains_key("selectedKeys") {
+        return;
+    }
+    if kind == NodeKind::TreeView {
+        if let Some(nav) = patch.get("navControls") {
+            if nav.get("items").is_some() {
+                let keys = p.nav_controls.items.iter().map(|item| &item.id).collect::<HashSet<_>>();
+                Arc::make_mut(&mut p.selected_keys).retain(|key| keys.contains(key));
+            }
+            match p.nav_controls.tree_selection_mode {
+                TreeViewSelectionMode::None => p.selected_keys = Default::default(),
+                TreeViewSelectionMode::Single => Arc::make_mut(&mut p.selected_keys).truncate(1),
+                TreeViewSelectionMode::Multiple => {}
+            }
+        }
         return;
     }
     if patch.contains_key("collectionItems") {
@@ -607,6 +637,7 @@ impl Scene {
             let id = *id;
             self.configure_collection_item(owner, id, index);
             self.ensure_navigation_tree_parts(owner, id, index);
+            self.ensure_combo_checkbox(owner, id);
             return Some(id);
         }
         let text = if n.props.has_item_template {
@@ -634,6 +665,7 @@ impl Scene {
         c.realization_dirty = true;
         self.configure_collection_item(owner, item, index);
         self.ensure_navigation_tree_parts(owner, item, index);
+        self.ensure_combo_checkbox(owner, item);
         Some(item)
     }
     fn configure_collection_item(&mut self, owner: u32, id: u32, index: usize) {
@@ -690,9 +722,7 @@ impl Scene {
             .unwrap_or(VerticalAlignment::Center);
         n.props.enabled = data.enabled;
         n.props.accessible_name = Some(data.text.clone());
-        if !templated {
-            n.props.text = data.text;
-        }
+        n.props.text = if templated { String::new() } else { data.text };
         n.props.collection_index = index;
         if let Some(depth) = tree_depth {
             n.props.margin = [0.; 4];
@@ -704,8 +734,18 @@ impl Scene {
                 4.,
                 5.,
             ];
+            if rtl {
+                n.props.padding.swap(0, 2);
+            }
         }
         if items_view{let n=self.nodes.get_mut(&id).unwrap();n.props.width=style.width;n.props.height=style.height;n.props.horizontal_alignment=style.horizontal_alignment.unwrap_or(HorizontalAlignment::Stretch);n.props.vertical_alignment=style.vertical_alignment.unwrap_or(VerticalAlignment::Stretch);n.props.padding=style.padding.unwrap_or([0.;4]);n.props.margin=style.margin.unwrap_or([0.;4]);n.props.min_width=style.min_width.unwrap_or(0.);n.props.min_height=style.min_height.unwrap_or(0.);}
+    }
+    pub(super) fn uses_default_collection_label(&self, id: u32, children: &[u32]) -> bool {
+        let node = &self.nodes[&id];
+        node.kind == NodeKind::CollectionItem
+            && !children.is_empty()
+            && children.iter().all(|child| self.nodes[child].composed.role == "ComboItemCheckBox")
+            && !self.nodes[&node.props.collection_owner.unwrap()].props.has_item_template
     }
     pub(super) fn sync_collection_visuals(&mut self) {
         let ids = self
@@ -1429,6 +1469,14 @@ impl Scene {
                             self.nodes.get_mut(&owner).unwrap().collection.touch_tap = None;
                         } else if phase == "up" {
                             self.nodes.get_mut(&owner).unwrap().collection.touch_tap = None;
+                            if let Some((id, row, expanded)) = self.tree_expander_at(*x, *y) {
+                                if id == owner && row == key {
+                                    self.focus(Some(id));
+                                    self.nodes.get_mut(&id).unwrap().collection.focus = Some(row.clone());
+                                    self.tree_expand(id, &row, expanded)?;
+                                    continue;
+                                }
+                            }
                             if let Some(index) =
                                 self.nodes[&owner].collection.indices.get(&key).copied()
                             {
@@ -1964,7 +2012,9 @@ impl Scene {
                 out.push(outer_border);
             }
         }
-        if root.props.selection_mode == ListViewSelectionMode::Multiple {
+        if root.props.selection_mode == ListViewSelectionMode::Multiple
+            && !self.is_multi_combo_presenter(root.id)
+        {
             let grid = root.kind == NodeKind::GridView;
             let selected = root.collection.selected.contains(&n.props.collection_key);
             let prefix = prefix(grid);

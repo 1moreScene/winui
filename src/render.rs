@@ -3,6 +3,22 @@ use serde::Serialize;
 mod retained;
 pub use retained::{expand_retained, contains_external_image};
 
+#[cfg(target_arch = "wasm32")]
+pub(crate) const MIB: u64 = 1024 * 1024;
+#[cfg(target_arch = "wasm32")]
+pub(crate) fn rgba_bytes(width: u32, height: u32) -> u64 {
+    u64::from(width) * u64::from(height) * 4
+}
+#[cfg(target_arch = "wasm32")]
+fn canvas_bytes(canvas: &web_sys::HtmlCanvasElement) -> u64 {
+    rgba_bytes(canvas.width(), canvas.height())
+}
+#[cfg(target_arch = "wasm32")]
+fn clear_canvas(canvas: &web_sys::HtmlCanvasElement) {
+    if canvas.width() != 0 { canvas.set_width(0); }
+    if canvas.height() != 0 { canvas.set_height(0); }
+}
+
 pub fn command_count(commands:&[Draw],limit:usize)->usize {
     let mut stack=vec![(commands,0)];let mut count=0;
     while let Some((commands,depth))=stack.pop(){if depth>8{return limit+1;}for command in commands{count+=1;if count>limit{return count;}match command{Draw::CrossFade{source,target,..}=>{stack.push((source,depth+1));stack.push((target,depth+1));},Draw::RetainedGroup{commands,..}=>stack.push((commands,depth+1)),_=>{}}}}count
@@ -575,6 +591,7 @@ pub struct CanvasBackend {
     pub retained_raster_hits: std::rc::Rc<std::cell::Cell<u64>>,
     glyphs: std::rc::Rc<std::cell::RefCell<std::collections::HashMap<String, (GlyphSurface,u64)>>>,
     glyph_serial: std::rc::Rc<std::cell::Cell<u64>>,
+    glyph_bytes: std::rc::Rc<std::cell::Cell<u64>>,
 }
 #[cfg(target_arch = "wasm32")]
 struct MaterialTile {
@@ -589,6 +606,7 @@ struct GlyphSurface {
     canvas: web_sys::HtmlCanvasElement,
     origin: [f64; 2],
     size: [f64; 2],
+    bytes: u64,
 }
 #[cfg(target_arch = "wasm32")]
 fn canvas_context(
@@ -615,6 +633,28 @@ fn readback_context(
 }
 #[cfg(target_arch = "wasm32")]
 impl CanvasBackend {
+    fn layer_bytes(&self) -> u64 {
+        [&self.canvas, &self.scratch, &self.backdrop, &self.local_backdrop,
+            &self.capture, &self.effect, &self.material_sample]
+            .into_iter().map(canvas_bytes).sum::<u64>()
+            + self.layers.borrow().iter().chain(self.vector_layers.borrow().iter())
+                .map(Self::layer_bytes).sum::<u64>()
+            + self.raster_images.borrow().values().map(|(_, canvas)| canvas_bytes(canvas)).sum::<u64>()
+            + self.gradients.borrow().values().map(canvas_bytes).sum::<u64>()
+            + self.material_tiles.borrow().iter().map(|tile| canvas_bytes(&tile.canvas)).sum::<u64>()
+            + self.window_material.borrow().as_ref().map_or(0, |(_, canvas, _)| canvas_bytes(canvas))
+    }
+    fn recycle_layer(&self, layer: Self, vector: bool) {
+        // Pool only idle backing pixels. Larger active passes can complete
+        // at full resolution and release their storage after compositing.
+        let mut pool = if vector { self.vector_layers.borrow_mut() } else { self.layers.borrow_mut() };
+        let budget = if vector { 4 * MIB } else { 8 * MIB };
+        if pool.len() < 2 && pool.iter().map(Self::layer_bytes).sum::<u64>() + layer.layer_bytes() <= budget {
+            pool.push(layer);
+        } else {
+            layer.release_local_rasters();
+        }
+    }
     fn retained_layer(&self, canvas: web_sys::HtmlCanvasElement, context: web_sys::CanvasRenderingContext2d) -> Self {
         Self {
             canvas, context,
@@ -628,6 +668,7 @@ impl CanvasBackend {
             vector_rasters: self.vector_rasters.clone(), vector_raster_hits: self.vector_raster_hits.clone(),
             retained_rasters: Default::default(), retained_raster_hits: Default::default(),
             glyphs: self.glyphs.clone(), glyph_serial: self.glyph_serial.clone(),
+            glyph_bytes: self.glyph_bytes.clone(),
         }
     }
     pub fn set_external_backdrop(
@@ -685,9 +726,10 @@ impl CanvasBackend {
             retained_raster_hits: Default::default(),
             glyphs: Default::default(),
             glyph_serial: Default::default(),
+            glyph_bytes: Default::default(),
         })
     }
-    pub fn release_rasters(&self) {
+    fn release_local_rasters(&self) {
         for (_, (_, canvas)) in self.raster_images.borrow_mut().drain() { canvas.set_width(0); canvas.set_height(0); }
         if let Some((_,canvas,_)) = self.window_material.borrow_mut().take() { canvas.set_width(0); canvas.set_height(0); }
         for tile in self.material_tiles.borrow_mut().drain(..){tile.canvas.set_width(0);tile.canvas.set_height(0);}
@@ -705,18 +747,21 @@ impl CanvasBackend {
             canvas.set_width(0);
             canvas.set_height(0);
         }
-        for layer in self.layers.borrow_mut().drain(..){layer.release_rasters();}
-        for layer in self.vector_layers.borrow_mut().drain(..){layer.release_rasters();}
+        for layer in self.layers.borrow_mut().drain(..){layer.release_local_rasters();}
+        for layer in self.vector_layers.borrow_mut().drain(..){layer.release_local_rasters();}
+        for canvas in self.gradients.borrow_mut().drain().map(|(_, c)| c) {
+            clear_canvas(&canvas);
+        }
+    }
+    pub fn release_rasters(&self) {
+        self.release_local_rasters();
         for (_,canvas) in self.vector_rasters.borrow_mut().drain(..){canvas.set_width(0);canvas.set_height(0);}
         for (_,canvas) in self.retained_rasters.borrow_mut().drain(..){canvas.set_width(0);canvas.set_height(0);}
         for (_, (glyph, _)) in self.glyphs.borrow_mut().drain() {
             glyph.canvas.set_width(0);
             glyph.canvas.set_height(0);
         }
-        for canvas in self.gradients.borrow_mut().drain().map(|(_, c)| c) {
-            canvas.set_width(0);
-            canvas.set_height(0);
-        }
+        self.glyph_bytes.set(0);
     }
     pub fn release(&self) {
         self.release_rasters();
@@ -770,14 +815,21 @@ impl CanvasBackend {
             canvas,
             origin,
             size: [width as f64 / dpr, height as f64 / dpr],
+            bytes: rgba_bytes(width, height),
         };
         let mut cache = self.glyphs.borrow_mut();
-        if cache.len() >= 1024 {
-            if let Some(old)=cache.iter().min_by_key(|(_,(_,used))|*used).map(|(key,_)|key.clone()) {
-                if let Some((old,_))=cache.remove(&old){old.canvas.set_width(0);old.canvas.set_height(0);}
+        let bytes = glyph.bytes;
+        if bytes <= 4 * MIB {
+            let mut used = self.glyph_bytes.get();
+            while cache.len() >= 1024 || used + bytes > 4 * MIB {
+                let oldest = cache.iter().min_by_key(|(_, (_, used))| *used).unwrap().0.clone();
+                let (old, _) = cache.remove(&oldest).unwrap();
+                used -= old.bytes;
+                clear_canvas(&old.canvas);
             }
+            cache.insert(key, (glyph.clone(),serial));
+            self.glyph_bytes.set(used + bytes);
         }
-        cache.insert(key, (glyph.clone(),serial));
         Ok(glyph)
     }
     fn composite_surface(&self,w:u32,h:u32,left:f64,top:f64,m:crate::scene::Matrix,commands:&[Draw])->Result<Self,wasm_bindgen::JsValue>{
@@ -1493,7 +1545,8 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 a.context.draw_image_with_html_canvas_element(&b.canvas,0.,0.)?;
                 a.context.set_global_composite_operation("source-over")?;a.context.set_global_alpha(1.);
                 ctx.save();ctx.set_transform(1.,0.,0.,1.,0.,0.)?;ctx.draw_image_with_html_canvas_element(&a.canvas,left,top)?;ctx.restore();
-                backend.layers.borrow_mut().extend([a,b]);
+                backend.recycle_layer(a, false);
+                backend.recycle_layer(b, false);
             }
             Draw::VectorLayer { bounds } => {
                 let start = index;
@@ -1640,7 +1693,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     h,
                 )?;
                 ctx.restore();
-                backend.vector_layers.borrow_mut().push(layer);
+                backend.recycle_layer(layer, true);
             }
             Draw::Layer { opacity } | Draw::WindowLayer { opacity, .. } => {
                 let new_window = matches!(commands[index - 1], Draw::WindowLayer { .. });
@@ -1682,6 +1735,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 };
                 layer.images = backend.images.clone();
                 layer.glyphs=backend.glyphs.clone();layer.glyph_serial=backend.glyph_serial.clone();
+                layer.glyph_bytes=backend.glyph_bytes.clone();
                 layer.vector_rasters=backend.vector_rasters.clone();layer.vector_raster_hits=backend.vector_raster_hits.clone();
                 layer.retained_rasters=backend.retained_rasters.clone();layer.retained_raster_hits=backend.retained_raster_hits.clone();
                 let needs_backdrop=retained::requires_backdrop(&commands[start..index-1]);
@@ -1756,7 +1810,7 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                 ctx.set_global_alpha(*opacity);
                 ctx.draw_image_with_html_canvas_element(&layer.canvas, 0., 0.)?;
                 ctx.restore();
-                backend.layers.borrow_mut().push(layer);
+                backend.recycle_layer(layer, false);
             }
             Draw::EndLayer => return Err(wasm_bindgen::JsValue::from_str("unexpected layer end")),
             Draw::Gradient {
@@ -1808,10 +1862,10 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                         serde_json::to_string(brush).unwrap()
                     );
                     if !backend.gradients.borrow().contains_key(&key) {
-                        if backend.gradients.borrow().len() >= 8 {
+                        let bytes = backend.gradients.borrow().values().map(canvas_bytes).sum::<u64>();
+                        if bytes + rgba_bytes(w, h) > 8 * MIB {
                             for canvas in backend.gradients.borrow_mut().drain().map(|(_, c)| c) {
-                                canvas.set_width(0);
-                                canvas.set_height(0);
+                                clear_canvas(&canvas);
                             }
                         }
                         let canvas = backend
@@ -1880,6 +1934,16 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
             Draw::Raster {rect,slot,revision,width,height,rgba} => {
                 use wasm_bindgen::JsCast;
                 let mut images=backend.raster_images.borrow_mut();
+                let bytes = rgba_bytes(*width, *height);
+                if images.get(slot).is_none_or(|(_, canvas)| canvas_bytes(canvas) != bytes)
+                    && images.iter().filter(|(key, _)| *key != slot).map(|(_, (_, canvas))| canvas_bytes(canvas)).sum::<u64>() + bytes > 8 * MIB
+                {
+                    images.retain(|key, (_, canvas)| {
+                        if key == slot { return true; }
+                        clear_canvas(canvas);
+                        false
+                    });
+                }
                 if !images.contains_key(slot) {
                     let canvas=backend.canvas.owner_document().unwrap().create_element("canvas")?.dyn_into::<web_sys::HtmlCanvasElement>()?;
                     images.insert(*slot,(0,canvas));
@@ -1893,6 +1957,10 @@ fn paint_commands(backend: &CanvasBackend, commands: &[Draw]) -> Result<(), wasm
                     target.put_image_data(&data,0.,0.)?;*current = *revision;
                 }
                 ctx.draw_image_with_html_canvas_element_and_dw_and_dh(canvas,rect.x,rect.y,rect.width,rect.height)?;
+                if bytes > 8 * MIB {
+                    clear_canvas(canvas);
+                    images.remove(slot);
+                }
             }
             Draw::Image { rect, source } => {
                 use wasm_bindgen::JsCast;

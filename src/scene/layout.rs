@@ -547,8 +547,12 @@ impl Scene {
 
             | NodeKind::CollectionItem
             | NodeKind::CollectionHeader
-                if children.is_empty() =>
+                if children.is_empty() || self.uses_default_collection_label(id, &children) =>
             {
+                // The checkbox occupies the row's leading inset, outside the label slot.
+                for child in &children {
+                    self.measure_node(*child, inner, measure);
+                }
                 let mut text = typography::layout(
                     p.display_text(kind),
                     &p.font(),
@@ -826,6 +830,7 @@ impl Scene {
     ) {
         let (theme, enabled, visible) = inherited;
         let n = &self.nodes[&id];
+        let default_label = self.uses_default_collection_label(id, &n.children);
         let (mut p, kind, children, desired) = (
             self.layout_properties(id),
             n.kind,
@@ -1068,7 +1073,7 @@ impl Scene {
 
                 | NodeKind::CollectionItem
                 | NodeKind::CollectionHeader
-        ) && children.is_empty()
+        ) && (children.is_empty() || default_label)
         {
             n.text = typography::layout(
                 p.display_text(kind),

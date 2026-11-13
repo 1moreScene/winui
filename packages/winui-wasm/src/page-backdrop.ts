@@ -11,6 +11,7 @@ export class PageBackdrop {
   private generation = 0;
   private key = '';
   private lastCapture = 0;
+  private canvas?: HTMLCanvasElement;
   constructor(private host: HTMLElement, private commit: (canvas: HTMLCanvasElement | null, bounds: Rect) => void) {}
 
   sync(client: Rect | null, local: Rect, scale: number, revision: number) {
@@ -53,15 +54,21 @@ export class PageBackdrop {
         ignoreElements: el => el.matches('[data-winui-floating],.html2canvas-container,iframe'),
       });
       // Reading also verifies that the source is safe for Rust's pixel sampler.
-      canvas.getContext('2d')!.getImageData(0, 0, 1, 1);
+      try { canvas.getContext('2d')!.getImageData(0, 0, 1, 1); }
+      catch (error) { canvas.width = canvas.height = 0; throw error; }
       if (generation === this.generation && this.region) {
         this.commit(canvas, local);
+        this.releaseCanvas();
+        this.canvas = canvas;
         this.host.dataset.winuiPageBackdrop = 'ready';
+      } else {
+        canvas.width = canvas.height = 0;
       }
     } catch (error) {
       if (generation === this.generation) {
         this.host.dataset.winuiPageBackdrop = 'unavailable';
         this.commit(null, local);
+        this.releaseCanvas();
         console.warn('WinUI page backdrop capture unavailable', error);
       }
     } finally {
@@ -79,5 +86,10 @@ export class PageBackdrop {
     clearTimeout(this.timer); this.timer = undefined;
     delete this.host.dataset.winuiPageBackdrop;
     this.commit(null, { x: 0, y: 0, width: 0, height: 0 });
+    this.releaseCanvas();
+  }
+  private releaseCanvas() {
+    if (this.canvas) this.canvas.width = this.canvas.height = 0;
+    this.canvas = undefined;
   }
 }

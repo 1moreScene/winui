@@ -126,20 +126,34 @@ export function normalizeTable(kind:NodeKind,options:object,compactCreate=false)
   const compact=compactCreate&&!projectedColumns.length&&!projectedGroups.length;
   const fieldOrders:string[][]=[];
   const fieldOrderIndexes=new Map<string,number>();
+  let previousFields: string[] = [];
+  let previousOrder = -1;
   const normalized=items.map(item=>{
    const id=keyOf(item);
    if(!id||seen.has(id))throw new TypeError('TableView rows require unique stable identities (avoid duplicate id or repeated object references)');
    seen.add(id);
    const fields=Object.keys(item);
    if(compact){
-    const signature=JSON.stringify(fields);
-    let fieldOrder=fieldOrderIndexes.get(signature);
-    if(fieldOrder===undefined){
-     fieldOrder=fieldOrders.length;
-     fieldOrderIndexes.set(signature,fieldOrder);
-     fieldOrders.push(fields);
+    if(previousOrder<0||fields.length!==previousFields.length||fields.some((field,index)=>field!==previousFields[index])){
+     const signature=JSON.stringify(fields);
+     let fieldOrder=fieldOrderIndexes.get(signature);
+     if(fieldOrder===undefined){
+      fieldOrder=fieldOrders.length;
+      fieldOrderIndexes.set(signature,fieldOrder);
+      fieldOrders.push(fields);
+     }
+     previousFields=fields;
+     previousOrder=fieldOrder;
     }
-    return [id,fieldOrder,item];
+    // Encode flat business rows without repeating property names across the bridge.
+    // Keep ordinary JSON object serialization for nested values and custom toJSON.
+    if(Object.getPrototypeOf(item)===Object.prototype&&!('toJSON' in item)){
+     const values=Object.values(item);
+     if(values.length===fields.length&&values.every(value=>value===null||typeof value==='string'||typeof value==='boolean'||typeof value==='number')){
+      return [id,previousOrder,values];
+     }
+    }
+    return [id,previousOrder,item];
    }
    const row:Record<string,unknown>={id,fields,values:item};
    if(projectedColumns.length){

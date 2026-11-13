@@ -200,6 +200,9 @@ node_properties! {
     pub is_wrap_enabled: bool,
     pub accepts_expression: bool,
     pub is_editable: bool,
+    pub clearable: bool,
+    pub is_tree_combo: bool,
+    pub editor_clear_selection: bool,
     pub is_text_search_enabled: bool,
     pub is_drop_down_open: bool,
     pub is_suggestion_list_open: bool,
@@ -479,6 +482,9 @@ impl Default for NodeProperties {
             is_wrap_enabled: false,
             accepts_expression: false,
             is_editable: false,
+            clearable: false,
+            is_tree_combo: false,
+            editor_clear_selection: false,
             is_text_search_enabled: true,
             is_drop_down_open: false,
             is_suggestion_list_open: false,
@@ -1457,8 +1463,8 @@ fn apply_patch(base:&NodeProperties,value:&serde_json::Value,kind:NodeKind,mut f
     super::compact_controls::coerce(kind, &mut result, patch)?;
     super::collections::coerce(kind, &mut result, patch);
     result.flow_direction_local = base.flow_direction_local || patch.contains_key("flowDirection");
-    super::composed::validate_properties(kind, &mut result, patch)?;
     super::navigation_controls::validate(kind, &mut result, patch)?;
+    super::composed::validate_properties(kind, &mut result, patch)?;
     super::command_controls::validate(kind,&mut result)?;
     super::command_menus::validate(kind,&result)?;
     super::layout_panels::validate(&result)?;

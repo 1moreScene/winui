@@ -146,6 +146,7 @@ async function mount() {
   window.tableProbe.createMs=createMs;
   await nextFrame();await nextFrame();
   window.tableProbe.mountMs=performance.now()-start;
+  window.tableProbe.mountStart=start;
   window.tableProbe.readyMs=performance.now();
   window.tableProbe.firstPhases=phases.splice(0);
 }
@@ -245,7 +246,9 @@ try {
       await page.locator('#mount').click();
       await page.waitForFunction(() => !!window.tableProbe.readyMs);
       const first = await page.evaluate(() => ({
-        mountMs: window.tableProbe.mountMs, createMs: window.tableProbe.createMs, phases:window.tableProbe.firstPhases, ...window.tableProbe.table.read(),
+        mountMs: window.tableProbe.mountMs, createMs: window.tableProbe.createMs, phases:window.tableProbe.firstPhases,
+        longTasks: window.metrics.tasks.filter(task => task.at >= window.tableProbe.mountStart - 5 && task.at <= window.tableProbe.readyMs).map(task => task.ms),
+        ...window.tableProbe.table.read(),
       }));
       const mounted = await memory();
       const bounds = await page.locator('#host').boundingBox();

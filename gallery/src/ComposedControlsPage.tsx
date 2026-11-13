@@ -4,7 +4,7 @@ import { GalleryButton, GalleryCheckBox, GalleryComboBox, GalleryExpander, Galle
 import { useGalleryTheme } from './gallery-theme';
 import {useEffect,useState,type ReactNode} from 'react';
 import {Header} from './ButtonPage';
-import {SceneView,StackPanel,Button,TextBlock,CheckBox,AutoSuggestBox,NumberBox,ComboBox,ContentDialog,TeachingTip,Image} from 'winui-wasm/react';
+import {SceneView,StackPanel,Button,TextBlock,CheckBox,AutoSuggestBox,NumberBox,ContentDialog,TeachingTip,Image} from 'winui-wasm/react';
 import {ThemeMode,RendererBackend,HorizontalAlignment,VerticalAlignment,NumberBoxSpinButtonPlacementMode,NumberBoxValidationMode,AutoSuggestionBoxTextChangeReason,ContentDialogButton,ContentDialogResult,TeachingTipPlacementMode,ImageStretch,type Scene,type ContentDialogController as DialogController} from 'winui-wasm';
 import official from './official-composed-controls.json';
 import pageSource from './ComposedControlsPage.tsx?raw';
@@ -17,7 +17,7 @@ function Example({name,kind,sample=0,children,options,output}:{name:string;kind:
 export function ComposedControlsPage({kind}:{kind:Kind}){
  const[theme,setTheme]=useGalleryTheme(),[backend,setBackend]=useState(RendererBackend.Canvas2D),[enabled,setEnabled]=useState(true);
  const[output,setOutput]=useState('Ready'),[items,setItems]=useState<readonly string[]>(colors),[numberValue,setNumberValue]=useState<number|null>(42),[spin,setSpin]=useState(NumberBoxSpinButtonPlacementMode.Inline),[expression,setExpression]=useState(true),[wrap,setWrap]=useState(false),[validation,setValidation]=useState(NumberBoxValidationMode.InvalidInputOverwritten);
- const[editable,setEditable]=useState(false),[dialog,setDialog]=useState<DialogController|null>(null),[cancel,setCancel]=useState(false),[defer,setDefer]=useState(false),[defaultButton,setDefaultButton]=useState(ContentDialogButton.Primary);
+ const[dialog,setDialog]=useState<DialogController|null>(null),[cancel,setCancel]=useState(false),[defer,setDefer]=useState(false),[defaultButton,setDefaultButton]=useState(ContentDialogButton.Primary);
  const[dialogWithoutDefault,setDialogWithoutDefault]=useState<DialogController|null>(null),[tipUntargeted,setTipUntargeted]=useState(false),[heroOpen,setHeroOpen]=useState(false);
  const[tip,setTip]=useState(false),[placement,setPlacement]=useState(TeachingTipPlacementMode.Top),[lightDismiss,setLightDismiss]=useState(false);
  useEffect(()=>{document.documentElement.dataset.theme=theme;},[theme]);const shared={theme,backend};
@@ -36,11 +36,6 @@ export function ComposedControlsPage({kind}:{kind:Kind}){
  <StackPanel padding={[24,24,24,24]}><AutoSuggestBox width={300} queryIcon placeholderText="Type a control name" items={['Button','ComboBox','ContentDialog','NumberBox','TeachingTip']} enabled={enabled} onQuerySubmitted={e=>setOutput(`Search: ${e.queryText}`)}/></StackPanel>
  {/* @sample:composed-search:end */}
  </SceneView></Example></>}
- {kind==='ComboBox'&&<Example name="composed-combo" kind={kind} output={output} options={<GalleryCheckBox  checked={editable} onValueChanged={e=>setEditable(e)}  label={<>Editable</>}/>}><SceneView {...shared} style={{height:320}} onReady={s=>remember('ComboBox',s)}>
- {/* @sample:composed-combo:start */}
- <StackPanel padding={[24,24,24,24]} spacing={24}><ComboBox width={200} header="Colors" placeholderText="Pick a color" items={colors} isEditable={editable} enabled={enabled} onSelectionChanged={e=>setOutput(`Selected index: ${e.selectedIndex}`)} onTextSubmitted={e=>setOutput(`Submitted: ${e.text}`)}/></StackPanel>
- {/* @sample:composed-combo:end */}
- </SceneView></Example>}
  {kind==='ContentDialog'&&<Example name="composed-dialog" kind={kind} output={output} options={<><label>Default button<GalleryComboBox aria-label="Default button" value={defaultButton} onValueChanged={e=>setDefaultButton(e as ContentDialogButton)}>{Object.values(ContentDialogButton).map(v=><GalleryOption key={v}>{v}</GalleryOption>)}</GalleryComboBox></label><GalleryCheckBox  aria-label="Cancel closing" checked={cancel} onValueChanged={e=>setCancel(e)}  label={<>Cancel closing</>}/><GalleryCheckBox  checked={defer} onValueChanged={e=>setDefer(e)}  label={<>Delay primary action</>}/></>}><SceneView {...shared} style={{height:420}} onReady={s=>remember('ContentDialog',s)}>
  {/* @sample:composed-dialog:start */}
  <Button text="Show dialog" horizontalAlignment={HorizontalAlignment.Left} verticalAlignment={VerticalAlignment.Top} margin={[24,24,0,0]} enabled={enabled} onClick={()=>{void dialog?.showAsync().then(result=>setOutput(`Result: ${result}`));}}/><ContentDialog title="Save your work?" primaryButtonText="Save" secondaryButtonText="Don't save" closeButtonText="Cancel" defaultButton={defaultButton} onReady={setDialog} onClosing={e=>{e.cancel=cancel;}} onPrimaryButtonClick={e=>{if(defer){const deferral=e.getDeferral!();setTimeout(()=>deferral.complete(),350);}}}><TextBlock text="Your changes will be saved to the cloud." wrap/><CheckBox text="Upload your content to the cloud."/></ContentDialog>
@@ -61,17 +56,6 @@ export function ComposedControlsPage({kind}:{kind:Kind}){
  {/* @sample:composed-number-format:start */}
  <StackPanel padding={[24,24,24,24]}><NumberBox width={240} header="Enter a dollar amount:" placeholderText="0.00" numberFormat={{minimumFractionDigits:2,roundingIncrement:0.25}} enabled={enabled} onValueChanged={e=>setOutput(`Value: ${e.newValue??'empty'}`)}/></StackPanel>
  {/* @sample:composed-number-format:end */}
- </SceneView></Example></>}
- {kind==='ComboBox'&&<>
- <Example name="composed-combo-source" kind={kind} sample={1} output={output}><SceneView {...shared} style={{height:280}} onReady={s=>remember('ComboBoxFonts',s)}>
- {/* @sample:composed-combo-source:start */}
- <StackPanel padding={[24,24,24,24]}><ComboBox width={200} header="Font" items={['Arial','Comic Sans MS','Segoe UI','Times New Roman'].map(font=>({id:font,text:font,fontFamily:font}))} selectedIndex={2} enabled={enabled} renderItem={font=><TextBlock text={font.text} fontFamily={font.fontFamily}/>} onSelectionChanged={e=>setOutput(`Font index: ${e.selectedIndex}`)}/></StackPanel>
- {/* @sample:composed-combo-source:end */}
- </SceneView></Example>
- <Example name="composed-combo-edit" kind={kind} sample={2} output={output}><SceneView {...shared} style={{height:280}} onReady={s=>remember('ComboBoxEditable',s)}>
- {/* @sample:composed-combo-edit:start */}
- <StackPanel padding={[24,24,24,24]}><ComboBox width={200} header="Font size" items={['8','9','10','11','12','14','16','18','20','24','36','48','72']} selectedIndex={5} isEditable enabled={enabled} onTextSubmitted={e=>{e.handled=!Number.isFinite(Number(e.text));setOutput(`Font size: ${e.text}`);}}/></StackPanel>
- {/* @sample:composed-combo-edit:end */}
  </SceneView></Example></>}
  {kind==='ContentDialog'&&<Example name="composed-dialog-no-default" kind={kind} sample={1} output={output}><SceneView {...shared} style={{height:420}} onReady={s=>remember('ContentDialogNoDefault',s)}>
  {/* @sample:composed-dialog-no-default:start */}

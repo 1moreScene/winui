@@ -316,6 +316,28 @@ test('editing one table leaves a second table with the same source intact', asyn
  expect(result.sourceAge).toBe(32);
 });
 
+test('compact initial rows preserve field order, nested values and JSON serialization', async ({ page }) => {
+ const result = await page.evaluate(async () => {
+  const scene = window.tableViewScenes.auto;
+  const rows = [
+   { id: 'a', name: '中文', score: 0, team: 'R&D' },
+   { id: 'b', score: 7, name: 'Second', team: 'Design' },
+   { id: 'c', name: 'Nested', score: 3, team: { label: 'Research' } },
+   { id: 'd', name: 'Before', score: 2, toJSON: () => ({ name: 'Serialized', score: 9, team: 'Operations' }) },
+  ];
+  const table = scene.root.tableView({ items: rows, visible: false });
+  try {
+   const csv = await table.exportCsv();
+   return { csv, source: table.items === rows };
+  } finally { table.dispose(); }
+ });
+ expect(result.source).toBe(true);
+ expect(result.csv.split(/\r?\n/).slice(0, 5)).toEqual([
+  'name,score,team', '中文,0,R&D', 'Second,7,Design',
+  'Nested,3,"{""label"":""Research""}"', 'Serialized,9,Operations',
+ ]);
+});
+
 test('filter search Enter applies and unchanged Ok leaves the column unfiltered',async({page})=>{
  const host=page.locator('#table-native');await host.scrollIntoViewIfNeeded();
  await host.getByRole('button',{name:'Filter First Name',exact:true}).click();

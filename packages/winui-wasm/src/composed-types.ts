@@ -1,5 +1,6 @@
 import type {LayoutOptions,TextBoxOptions,CollectionItem,IconSource,SceneEvent} from './scene';
-import type {FlowDirection,NumberBoxSpinButtonPlacementMode,NumberBoxValidationMode,AutoSuggestionBoxTextChangeReason,ContentDialogButton,ContentDialogResult,TeachingTipPlacementMode,TeachingTipTailVisibility,TeachingTipHeroContentPlacementMode,TeachingTipCloseReason} from './enums';
+import type {FlowDirection,ListViewSelectionMode,NumberBoxSpinButtonPlacementMode,NumberBoxValidationMode,AutoSuggestionBoxTextChangeReason,ContentDialogButton,ContentDialogResult,TeachingTipPlacementMode,TeachingTipTailVisibility,TeachingTipHeroContentPlacementMode,TeachingTipCloseReason} from './enums';
+import type {TreeItem} from './navigation-controls-types';
 /** Browser Intl descriptor for the native number-parser/formatter boundary. Arithmetic stays in Rust. */
 export interface NumberFormatOptions {/** BCP 47 locale; default host locale. */ locale?:string;/** Default false. */ useGrouping?:boolean;/** Default 0; maximum 100. */ minimumFractionDigits?:number;/** Optional display increment, using RoundHalfUp, e.g. 0.25. */ roundingIncrement?:number;}
 /** Empty NumberBox values are represented by null; default empty. */
@@ -29,7 +30,11 @@ export interface ComboBoxOptions<T extends CollectionItem=CollectionItem> extend
  /** Default false. */ isEditable?:boolean;
  /** Native default true. */ isTextSearchEnabled?:boolean;
  /** Native default false. */ isDropDownOpen?:boolean;
+ /** Show the WinUI clear button when a selection or editable text is present. Default false. */ clearable?:boolean;
+ /** Default Single. Multiple keeps the popup open and uses WinUI checkboxes. */ selectionMode?:ListViewSelectionMode.Single|ListViewSelectionMode.Multiple;
+ /** Stable IDs of the selected items. Takes precedence over selectedIndex when both are supplied. */ selectedKeys?:readonly string[];
 }
+export type TreeComboBoxOptions<T extends TreeItem=TreeItem> = Omit<ComboBoxOptions<T>,'isEditable'|'isTextSearchEnabled'>;
 export interface ContentDialogOptions extends LayoutOptions {
  /** Default empty. Rich content is composed as children. */ title?:string;
  primaryButtonText?:string;secondaryButtonText?:string;closeButtonText?:string;
@@ -55,11 +60,14 @@ export interface ComposedEvent<T extends CollectionItem=CollectionItem> extends 
  queryText?:string;chosenSuggestion?:string|null;
  dialogResult?:ContentDialogResult;
  /** Original JS business object for selection/suggestion notifications. */ selectedItem?:T;
+ /** Stable IDs and original objects in source order for ComboBox selection notifications. */
+ selectedKeys?:readonly string[];
+ selectedItems?:readonly T[];
  /** Original business object for a submitted chosen suggestion. */ chosenItem?:T|null;
  /** Setting handled suppresses ComboBox's default TextSubmitted commit. */ handled?:boolean;
  /** Available on dialog button/closing and TeachingTip closing events. */ getDeferral?:()=>Deferral;
 }
-export interface ComposedSnapshot {parts:Record<string,number>;value:number|null;selectedIndex:number;pendingRequest:number|null;result:ContentDialogResult;modalActive:boolean;}
+export interface ComposedSnapshot {parts:Record<string,number>;value:number|null;selectedIndex:number;selectedKeys:readonly string[];pendingRequest:number|null;result:ContentDialogResult;modalActive:boolean;}
 
 /** Cancellable notifications that support explicit asynchronous deferrals. */
 export interface ComposedDeferrableEvent extends ComposedEvent {getDeferral:()=>Deferral;}

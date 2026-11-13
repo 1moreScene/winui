@@ -2,7 +2,11 @@ import {expect,test} from '@playwright/test';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {PNG} from 'pngjs';
 import {RendererBackend,NavigationTransition} from 'winui-wasm';
+import type {Scene,WinUI} from 'winui-wasm';
 declare global{interface Window{flickerTrace:{rows:{time:number;animating:boolean;current:string|null;pages:unknown[];leaks:unknown[]}[];stop:()=>void};}}
+declare global {
+ interface Window { budgetFixture: { scenes: { host: HTMLDivElement; scene: Scene }[]; sdk: WinUI }; }
+}
 test('cached pages never become visible outside the Rust compositor frame',async({page})=>{
  await page.goto('/#home');await expect.poll(()=>page.evaluate(()=>!!window.gallery?.frame)).toBe(true);
  await expect.poll(()=>page.evaluate(()=>window.gallery.frame!.snapshot.animating)).toBe(false);
@@ -62,3 +66,46 @@ for(const backend of [RendererBackend.Canvas2D,RendererBackend.WebGL2]){
   expect(errors).toEqual([]);
  });
 }
+
+test('offscreen Canvas budget releases pixels and keeps the scene state', async ({ page }) => {
+ await page.goto('/tests/fixtures/frame-flicker.html?backend=Canvas2D');
+ await expect.poll(() => page.evaluate(() => !!window.frameFixture?.frame)).toBe(true);
+ await page.evaluate(async () => {
+  const { WinUI } = await import('/@id/winui-wasm' as string) as typeof import('winui-wasm');
+  const sdk = await WinUI.create({ globalScrollbars: false });
+  const scenes = [0, 1, 2].map(index => {
+   const host = document.createElement('div');
+   host.style.cssText = 'position:fixed;left:0;top:0;width:1300px;height:800px';
+   document.body.append(host);
+   const scene = sdk.scene(host, { reducedMotion: true });
+   scene.root.button({ text: `Persistent ${index}` });
+   scene.render();
+   return { host, scene };
+  });
+  Object.assign(window, { budgetFixture: { scenes, sdk } });
+  for (const { host } of scenes) host.style.top = '1500px';
+ });
+ await expect.poll(() => page.evaluate(() => {
+  const { scenes } = window.budgetFixture;
+  return scenes.reduce((bytes, { scene }) => {
+   const canvas = scene.element.querySelector('canvas')!;
+   return bytes + canvas.width * canvas.height * 4;
+  }, 0);
+ })).toBeLessThanOrEqual(8 * 1024 * 1024);
+ await page.evaluate(() => {
+  const { scenes } = window.budgetFixture;
+  for (const { scene, host } of scenes) {
+   if (scene.element.querySelector('canvas')!.width === 0) host.style.top = '0';
+  }
+ });
+ await expect.poll(() => page.evaluate(() => {
+  const { scenes } = window.budgetFixture;
+  return scenes.map(({ scene }, index) => !!scene.element.querySelector('canvas')!.width &&
+   scene.snapshot.nodes.some(node => node.props.text === `Persistent ${index}`));
+ })).toEqual([true, true, true]);
+ await page.evaluate(() => {
+  const { scenes, sdk } = window.budgetFixture;
+  sdk.dispose();
+  for (const { host } of scenes) host.remove();
+ });
+});

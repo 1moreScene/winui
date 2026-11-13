@@ -168,6 +168,9 @@ impl EditorState {
             || (p.password_reveal_mode == PasswordRevealMode::Peek && self.peek)
     }
     pub fn helper(&self, kind: NodeKind, p: &NodeProperties, focused: bool) -> bool {
+        if kind == NodeKind::TextBox && p.editor_clear_selection {
+            return p.selected_index >= 0 || !Self::logical(kind, p).is_empty();
+        }
         kind != NodeKind::RichEditBox
             && focused
             && !Self::logical(kind, p).is_empty()

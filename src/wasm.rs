@@ -797,53 +797,63 @@ impl WinUiRuntime {
                     }
                 });
             }
-            let source = match &host.backend {
-                SceneBackend::Canvas(b) => &b.canvas,
-                SceneBackend::Gpu(b) => &b.canvas,
-            };
-            let seed = if let Some(seed) = &host.floating_backdrop {
-                seed.clone()
-            } else {
-                source
-                    .owner_document()
+            if host.scene.floating_needs_backdrop() {
+                let source = match &host.backend {
+                    SceneBackend::Canvas(b) => &b.canvas,
+                    SceneBackend::Gpu(b) => &b.canvas,
+                };
+                let seed = if let Some(seed) = &host.floating_backdrop {
+                    seed.clone()
+                } else {
+                    source
+                        .owner_document()
+                        .unwrap()
+                        .create_element("canvas")?
+                        .dyn_into::<HtmlCanvasElement>()?
+                };
+                let sw = (bounds.width * dpr).ceil() as u32;
+                let sh = (bounds.height * dpr).ceil() as u32;
+                if seed.width() != sw { seed.set_width(sw); }
+                if seed.height() != sh { seed.set_height(sh); }
+                let context = seed
+                    .get_context("2d")?
                     .unwrap()
-                    .create_element("canvas")?
-                    .dyn_into::<HtmlCanvasElement>()?
-            };
-            let sw = (bounds.width * dpr).ceil() as u32;
-            let sh = (bounds.height * dpr).ceil() as u32;
-            if seed.width() != sw { seed.set_width(sw); }
-            if seed.height() != sh { seed.set_height(sh); }
-            let context = seed
-                .get_context("2d")?
-                .unwrap()
-                .dyn_into::<CanvasRenderingContext2d>()?;
-            context.set_fill_style_str(match host.scene.theme {
-                crate::enums::Theme::Light => "#f3f3f3",
-                crate::enums::Theme::Dark => "#202020",
-                crate::enums::Theme::HighContrast => "#000000",
-            });
-            context.fill_rect(0., 0., seed.width() as f64, seed.height() as f64);
-            if let Some((page, rect)) = &host.page_backdrop {
-                context.draw_image_with_html_canvas_element_and_dw_and_dh(
-                    page, (rect.x-bounds.x)*dpr, (rect.y-bounds.y)*dpr,
-                    rect.width*dpr, rect.height*dpr,
+                    .dyn_into::<CanvasRenderingContext2d>()?;
+                context.set_fill_style_str(match host.scene.theme {
+                    crate::enums::Theme::Light => "#f3f3f3",
+                    crate::enums::Theme::Dark => "#202020",
+                    crate::enums::Theme::HighContrast => "#000000",
+                });
+                context.fill_rect(0., 0., seed.width() as f64, seed.height() as f64);
+                if let Some((page, rect)) = &host.page_backdrop {
+                    context.draw_image_with_html_canvas_element_and_dw_and_dh(
+                        page, (rect.x-bounds.x)*dpr, (rect.y-bounds.y)*dpr,
+                        rect.width*dpr, rect.height*dpr,
+                    )?;
+                }
+                context.draw_image_with_html_canvas_element(
+                    source,
+                    (surface.x-bounds.x) * dpr,
+                    (surface.y-bounds.y) * dpr,
                 )?;
-            }
-            context.draw_image_with_html_canvas_element(
-                source,
-                (surface.x-bounds.x) * dpr,
-                (surface.y-bounds.y) * dpr,
-            )?;
-            let target = host.floating_backend.as_mut().unwrap();
-            match target {
-                SceneBackend::Canvas(b) => b.set_external_backdrop(&seed)?,
-                SceneBackend::Gpu(b) => {
-                    b.external_backdrop = Some(seed.clone());
-                    b.retain_images(&sources);
+                match host.floating_backend.as_mut().unwrap() {
+                    SceneBackend::Canvas(b) => b.set_external_backdrop(&seed)?,
+                    SceneBackend::Gpu(b) => {
+                        b.external_backdrop = Some(seed.clone());
+                    }
+                }
+                host.floating_backdrop = Some(seed);
+            } else if let Some(seed) = host.floating_backdrop.take() {
+                seed.set_width(0);
+                seed.set_height(0);
+                if let Some(SceneBackend::Gpu(backend)) = &mut host.floating_backend {
+                    backend.external_backdrop = None;
                 }
             }
-            host.floating_backdrop = Some(seed);
+            let target = host.floating_backend.as_mut().unwrap();
+            if let SceneBackend::Gpu(backend) = target {
+                backend.retain_images(&sources);
+            }
             let mut commands = vec![
                 render::Draw::Save,
                 render::Draw::Transform {
@@ -854,6 +864,19 @@ impl WinUiRuntime {
             commands.push(render::Draw::Restore);
             floating_info =
                 paint_scene_backend(target, &commands, bounds.width, bounds.height, dpr)?;
+        } else if host.floating_backend.is_some() && (host.floating_backdrop.is_some()
+            || host.floating_canvas.as_ref().is_some_and(|canvas| canvas.width() > 0)) {
+            if let Some(seed) = host.floating_backdrop.take() {
+                seed.set_width(0);
+                seed.set_height(0);
+            }
+            if let Some(backend) = &mut host.floating_backend {
+                backend.release_rasters();
+            }
+            if let Some(canvas) = &host.floating_canvas {
+                canvas.set_width(0);
+                canvas.set_height(0);
+            }
         }
         if floating_info["lost"].as_bool()==Some(true){backend["lost"]=true.into();}
         let paint_finished = frame_clock();

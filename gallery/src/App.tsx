@@ -20,6 +20,7 @@ const AppBarSeparatorPage=lazy(()=>import('./AppBarSeparatorPage').then(m=>({def
 const CommandControlsPage=lazy(()=>import('./CommandControlsPage').then(m=>({default:m.CommandControlsPage})));
 const NavigationControlsPage=lazy(()=>import('./NavigationControlsPage').then(m=>({default:m.NavigationControlsPage})));
 const ComposedControlsPage=lazy(()=>import('./ComposedControlsPage').then(m=>({default:m.ComposedControlsPage})));
+const ComboBoxPage=lazy(()=>import('./ComboBoxPage').then(m=>({default:m.ComboBoxPage})));
 const CompactControlsPage=lazy(()=>import('./CompactControlsPage').then(m=>({default:m.CompactControlsPage})));
 const CollectionsPage=lazy(()=>import('./CollectionsPage').then(m=>({default:m.CollectionsPage})));
 const OverlaysPage=lazy(()=>import("./OverlaysPage").then(m=>({default:m.OverlaysPage})));
@@ -94,7 +95,8 @@ function samplePage(route: string, sdk: WinUI) {
   if(route in viewCommandRoutes)return <ViewCommandPage key={route} kind={viewCommandRoutes[route as keyof typeof viewCommandRoutes]}/>;
   const pickerRoutes={'#calendar-view':'CalendarView','#calendar-date-picker':'CalendarDatePicker','#date-picker':'DatePicker','#time-picker':'TimePicker','#color-picker':'ColorPicker'} as const;
   if(route in pickerRoutes)return <PickerControlsPage key={route} kind={pickerRoutes[route as keyof typeof pickerRoutes]}/>;
-  const composedRoutes={'#auto-suggest-box':'AutoSuggestBox','#number-box':'NumberBox','#combo-box':'ComboBox','#content-dialog':'ContentDialog','#teaching-tip':'TeachingTip'} as const;
+  if(route==='#combo-box')return <ComboBoxPage/>;
+  const composedRoutes={'#auto-suggest-box':'AutoSuggestBox','#number-box':'NumberBox','#content-dialog':'ContentDialog','#teaching-tip':'TeachingTip'} as const;
   if(route in composedRoutes)return <ComposedControlsPage key={route} kind={composedRoutes[route as keyof typeof composedRoutes]}/>;
   const motionRoutes={'#connected-animation':'ConnectedAnimation','#theme-transitions':'ThemeTransition','#xaml-comp-interop':'XamlCompInterop'} as const;
   if(route in motionRoutes)return <MotionPages key={route} kind={motionRoutes[route as keyof typeof motionRoutes]}/>;

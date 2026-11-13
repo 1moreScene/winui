@@ -929,6 +929,9 @@ impl Scene {
         }
         for (&id,props) in &staged {
             if props.is_expander_header != self.nodes[&id].props.is_expander_header {return Err("Expander slot identity cannot be changed".into());}
+            if self.nodes[&id].kind == NodeKind::ComboBox && props.is_tree_combo != self.nodes[&id].props.is_tree_combo {
+                return Err("ComboBox presenter type cannot change after creation".into());
+            }
             if self.nodes[&id].kind==NodeKind::NavigationView {self.validate_navigation_slots(id,props)?;}
             self.validate_view_references(id,props,Some(&staged))?;self.validate_menu_item_patch(id,props)?;
         }
@@ -1558,7 +1561,7 @@ impl Scene {
         let views = self
             .nodes
             .values()
-            .filter(|n| collections::is_view(n.kind) && n.visible)
+            .filter(|n| collections::is_view(n.kind) && n.visible && n.composed.role != "ItemsPresenter")
             .map(|n| n.id)
             .collect::<Vec<_>>();
         for id in views {

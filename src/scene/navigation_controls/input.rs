@@ -64,6 +64,35 @@ fn default_tab_drag_width() -> f64 {
     100.
 }
 impl Scene {
+    pub(in crate::scene) fn tree_expander_at(&self, x: f64, y: f64) -> Option<(u32, String, bool)> {
+        let id = self.navigation_control_at(x, y)?;
+        let tree = &self.nodes[&id];
+        if tree.kind != NodeKind::TreeView || !self.inside(id, x, y) {
+            return None;
+        }
+        let multiple = tree.props.nav_controls.tree_selection_mode == TreeViewSelectionMode::Multiple;
+        let (_, left, right) = tree_columns(self.dpr, multiple);
+        for child in tree.collection.realized.values() {
+            let node = &self.nodes[child];
+            if !node.enabled || !self.inside(*child, x, y) {
+                continue;
+            }
+            let row = tree.nav_controls.tree_rows.get(&node.props.collection_key)?;
+            if !row.has_children {
+                return None;
+            }
+            let (local, _) = node.world.inverse()?.point(x, y);
+            let local = if self.effective_flow_direction(id) == FlowDirection::RightToLeft {
+                node.rect.width - local
+            } else {
+                local
+            };
+            let indent = row.depth as f64 * 16.;
+            return (left + indent..right + indent).contains(&local)
+                .then(|| (id, row.key.clone(), !row.expanded));
+        }
+        None
+    }
     fn navigation_control_at(&self, x: f64, y: f64) -> Option<u32> {
         let hit = self.hit(x, y)?;
         let mut at = Some(hit);
@@ -200,7 +229,8 @@ impl Scene {
             return Err("Not a navigation control".into());
         }
         let command: Command = serde_json::from_value(value).map_err(|e| e.to_string())?;
-        if !self.effective_enabled(id) {
+        let tree_state_change = matches!(command, Command::Expand { .. } | Command::SelectNode { .. });
+        if !self.effective_enabled(id) && !(tree_state_change && self.enabled_combo_tree(id)) {
             return Ok(());
         }
         self.nodes.get_mut(&id).unwrap().nav_controls.drop_committed = false;
@@ -372,6 +402,7 @@ impl Scene {
         self.advance(time);
         self.sync_navigation_controls();
         self.navigation_control_command(id, value)?;
+        self.pump_composed_events();
         Ok(
             json!({"events":std::mem::take(&mut self.events),"selectedIndex":self.nodes[&id].props.selected_index,"selectedPageIndex":self.nodes[&id].props.nav_controls.selected_page_index,"dragging":self.nodes[&id].nav_controls.drag.is_some(),"committed":self.nodes[&id].nav_controls.drop_committed}),
         )
@@ -628,42 +659,11 @@ impl Scene {
                     return Ok(false);
                 };
                 if self.nodes[&id].kind == NodeKind::TreeView {
-                    let n = &self.nodes[&id];
-                    let (x, y) = n.world.inverse().unwrap_or_default().point(*x, *y);
-                    let offset = n.scroll.offsets(self.time)[1];
-                    let index = n
-                        .collection
-                        .realized
-                        .values()
-                        .find_map(|child| {
-                            let n = &self.nodes[child];
-                            (y + offset >= n.rect.y && y + offset < n.rect.y + n.rect.height)
-                                .then_some(n.props.collection_index)
-                        })
-                        .unwrap_or(usize::MAX);
-                    if let Some(item) = n.props.collection_items.get(index) {
-                        if let Some(row) = n.nav_controls.tree_rows.get(&item.id) {
-                            let local = if n.props.flow_direction == FlowDirection::RightToLeft {
-                                n.rect.width - x
-                            } else {
-                                x
-                            };
-                            if row.has_children && {
-                                let (_, left, right) = tree_columns(
-                                    self.dpr,
-                                    n.props.nav_controls.tree_selection_mode
-                                        == TreeViewSelectionMode::Multiple,
-                                );
-                                (left + row.depth as f64 * 16. ..right + row.depth as f64 * 16.)
-                                    .contains(&local)
-                            } {
-                                let key = row.key.clone();
-                                let expanded = !row.expanded;
-                                self.focus(Some(id));
-                                self.tree_expand(id, &key, expanded)?;
-                                return Ok(true);
-                            }
-                        }
+                    if let Some((id, key, expanded)) = self.tree_expander_at(*x, *y) {
+                        self.focus(Some(id));
+                        self.nodes.get_mut(&id).unwrap().collection.focus = Some(key.clone());
+                        self.tree_expand(id, &key, expanded)?;
+                        return Ok(true);
                     }
                     return Ok(false);
                 }
@@ -820,7 +820,7 @@ impl Scene {
                 let n = &self.nodes[&id];
                 let kind = n.kind;
                 let (ctrl, shift) = n.nav_controls.modifiers;
-                let rtl = n.props.flow_direction == FlowDirection::RightToLeft;
+                let rtl = self.effective_flow_direction(id) == FlowDirection::RightToLeft;
                 if kind == NodeKind::TreeView {
                     let focused = n
                         .collection
@@ -841,18 +841,11 @@ impl Scene {
                                 .nav_controls
                                 .tree_children
                                 .get(&Some(focused))
-                                .and_then(|c| c.first())
+                                .and_then(|children| children.iter().find(|index| n.props.nav_controls.items[**index].enabled))
                                 .copied()
                             {
-                                let key =
-                                    self.nodes[&id].props.nav_controls.items[child].id.clone();
-                                self.nodes.get_mut(&id).unwrap().collection.focus =
-                                    Some(key.clone());
-                                if self.nodes[&id].props.nav_controls.tree_selection_mode
-                                    == TreeViewSelectionMode::Single
-                                {
-                                    self.tree_select(id, &key, false)?;
-                                }
+                                let key = self.nodes[&id].props.nav_controls.items[child].id.clone();
+                                self.move_tree_focus(id, &key)?;
                             }
                             return Ok(true);
                         }
@@ -860,13 +853,7 @@ impl Scene {
                             if row.expanded {
                                 self.tree_expand(id, &focused, false)?;
                             } else if let Some(parent) = row.parent {
-                                self.nodes.get_mut(&id).unwrap().collection.focus =
-                                    Some(parent.clone());
-                                if self.nodes[&id].props.nav_controls.tree_selection_mode
-                                    == TreeViewSelectionMode::Single
-                                {
-                                    self.tree_select(id, &parent, false)?;
-                                }
+                                self.move_tree_focus(id, &parent)?;
                             }
                             return Ok(true);
                         }

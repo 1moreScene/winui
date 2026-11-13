@@ -87,10 +87,11 @@ components and control tree. For a custom host, call `scene.setHostActive(false)
 when its scene is hidden, `scene.setHostActive(true)` when it is shown, and
 `scene.dispose()` when it is removed.
 
-Fixed-size scenes lay out their controls and project accessibility while
-offscreen. They paint when they enter the viewport, or immediately when the
-host calls `scene.render()`. Auto-sized scenes and open floating surfaces
-continue to paint as their geometry changes.
+Offscreen scenes continue to lay out controls and project accessibility.
+Their backing canvases share an 8 MiB retention budget per window and repaint
+when they reenter the viewport. Hosts can call `scene.render()` to present
+synchronously. Floating surfaces paint while open and release their backing
+pixels after closing. The retention budgets measure SDK-managed pixel storage.
 
 This version is private and available only for local development verification.
 Runtime templates and brushes are generated offline from the pinned MIT WinUI

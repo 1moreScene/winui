@@ -8,8 +8,42 @@ for(const backend of ['Canvas2D','WebGL2']){
  test(`${backend} AutoSuggestBox filters and submits a keyboard suggestion`,async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#auto-suggest-box');await selectGalleryOption(page.getByRole('combobox',{name:'Renderer',exact:true}),backend);await expect.poll(()=>page.evaluate(()=>Object.values((window as any).composedScenes??{}).filter(Boolean).map((s:any)=>s.snapshot.backend.kind))).toContain(backend);await page.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r()))));const input=page.getByRole('combobox',{name:'Colors',exact:true});await input.fill('re');await expect.poll(()=>page.evaluate(()=>window.composedScenes.AutoSuggestBox.snapshot.nodes.find(n=>n.kind==='AutoSuggestBox')?.props.text)).toBe('re');await expect.poll(()=>page.locator('#composed-suggest [role=option]').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('aria-label')))).toEqual(['Green','Red']);await input.press('ArrowDown');await expect(input).toHaveValue('Green');await input.press('Enter');await expect(page.getByLabel('composed-suggest output')).toContainText('Query: Green');expect(errors).toEqual([]);
  });
- test(`${backend} ComboBox selects, searches, opens and edits`,async({page})=>{
-  const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#combo-box');await selectGalleryOption(page.getByRole('combobox',{name:'Renderer',exact:true}),backend);await expect.poll(()=>page.evaluate(()=>Object.values((window as any).composedScenes??{}).filter(Boolean).map((s:any)=>s.snapshot.backend.kind))).toContain(backend);await page.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r()))));const input=page.getByRole('combobox',{name:'Colors',exact:true});await input.focus();await input.press('ArrowDown');await expect(input).toHaveValue('Blue');await input.press('r');await expect(input).toHaveValue('Red');await input.press('F4');await expect.poll(()=>page.evaluate(()=>window.composedScenes.ComboBox.snapshot.nodes.find(n=>n.kind==='ComboBox')?.props.isDropDownOpen)).toBe(true);await input.press('Escape');await expect.poll(()=>page.evaluate(()=>window.composedScenes.ComboBox.snapshot.nodes.find(n=>n.kind==='ComboBox')?.props.isDropDownOpen)).toBe(false);await setGalleryChecked(page.getByRole('checkbox',{name:'Editable',exact:true}),true);await input.fill('Yellow');await input.press('Enter');await expect(page.getByLabel('composed-combo output')).toContainText('3');expect(errors).toEqual([]);
+ test(`${backend} official ComboBox samples select colors and fonts and validate font sizes`,async({page})=>{
+  const errors:string[]=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('/#combo-box');
+  await selectGalleryOption(page.getByRole('combobox',{name:'Renderer',exact:true}),backend);
+  await expect.poll(()=>page.evaluate(()=>window.composedScenes?.ComboBox?.snapshot.backend.kind)).toBe(backend);
+  const input=page.getByRole('combobox',{name:'Colors',exact:true});
+  await input.focus();
+  await input.press('ArrowDown');
+  await expect(input).toHaveValue('Blue');
+  await input.press('r');
+  await expect(input).toHaveValue('Red');
+  await expect.poll(()=>page.evaluate(()=>window.composedScenes.ComboBox.snapshot.nodes.find(n=>n.kind==='Rectangle')?.props.fill)).toBe('#ff0000');
+  await input.press('F4');
+  await expect(input).toHaveAttribute('aria-expanded','true');
+  await input.press('Escape');
+  await expect(input).toHaveAttribute('aria-expanded','false');
+  const font=page.getByRole('combobox',{name:'Font',exact:true});
+  await expect(font).toHaveValue('Courier New');
+  await font.press('Home');
+  await expect.poll(()=>page.evaluate(()=>window.composedScenes.ComboBoxFonts.snapshot.nodes.find(n=>n.props.text==='You can set the font used for this text.')?.props.fontFamily)).toBe('Arial');
+  const size=page.getByRole('combobox',{name:'Font Size',exact:true});
+  await expect(size).toHaveValue('10');
+  await size.fill('27.5');
+  await size.press('Enter');
+  await expect.poll(()=>page.evaluate(()=>window.composedScenes.ComboBoxEditable.snapshot.nodes.find(n=>n.props.text==='You can set the font size used for this text.')?.props.fontSize)).toBe(27.5);
+  await size.press('F4');
+  await expect(size).toHaveAttribute('aria-expanded','true');
+  await expect(page.getByRole('option',{name:'27.5',exact:true})).toHaveCount(0);
+  await size.press('Escape');
+  await size.fill('100');
+  await size.press('Enter');
+  await expect(page.getByRole('dialog')).toContainText('The font size must be a number between 8 and 100.');
+  await page.getByRole('button',{name:'Close',exact:true}).click();
+  await expect(size).toHaveValue('27.5');
+  expect(errors).toEqual([]);
  });
  test(`${backend} ContentDialog result, cancellation and deferral`,async({page})=>{
   const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#content-dialog');await selectGalleryOption(page.getByRole('combobox',{name:'Renderer',exact:true}),backend);await expect.poll(()=>page.evaluate(()=>Object.values((window as any).composedScenes??{}).filter(Boolean).map((s:any)=>s.snapshot.backend.kind))).toContain(backend);await page.evaluate(()=>new Promise<void>(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>r()))));const open=page.getByRole('button',{name:'Show dialog',exact:true}),save=page.getByRole('button',{name:'Save',exact:true});await open.click();await expect(save).toBeVisible();await setGalleryChecked(page.getByRole('checkbox',{name:'Cancel closing',exact:true}),true);await save.click();await expect(save).toBeVisible();await setGalleryChecked(page.getByRole('checkbox',{name:'Cancel closing',exact:true}),false);await setGalleryChecked(page.getByRole('checkbox',{name:'Delay primary action',exact:true}),true);await save.click();await expect(save).toBeDisabled();await expect(save).toBeHidden();await expect(page.getByLabel('composed-dialog output')).toContainText('Primary');await expect(open).toBeFocused();expect(errors).toEqual([]);
@@ -39,7 +73,7 @@ test('ComboBox large sources remain virtualized and support rich item templates'
 });
 
 test('all official composed samples mount, format quarters and show hero content',async({page})=>{
- const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#number-box');await expect(page.locator('section.example:visible')).toHaveCount(3);const quarter=page.getByRole('spinbutton',{name:'Enter a dollar amount:',exact:true});await quarter.fill('2.36');await quarter.press('Enter');await expect(quarter).toHaveValue('2.25');await page.goto('/#combo-box');await expect(page.locator('section.example:visible')).toHaveCount(3);
+ const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/#number-box');await expect(page.locator('section.example:visible')).toHaveCount(3);const quarter=page.getByRole('spinbutton',{name:'Enter a dollar amount:',exact:true});await quarter.fill('2.36');await quarter.press('Enter');await expect(quarter).toHaveValue('2.25');await page.goto('/#combo-box');await expect(page.locator('section[id^="composed-combo"]:visible')).toHaveCount(3);
  const font=page.getByRole('combobox',{name:'Font',exact:true});
  // Keyboard press does not wait for Frame transition actionability like click does.
  await expect.poll(()=>font.evaluate(element=>!!element.closest('[inert]'))).toBe(false);

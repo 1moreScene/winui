@@ -15,5 +15,5 @@ export default defineConfig({ plugins: [react(),galleryAssetBase(),{
     server.httpServer?.once('close',()=>watcher.close());
   },
 }], resolve: {dedupe: ['react', 'react-dom', 'html2canvas']}, server: { host: '0.0.0.0', port: 5173, strictPort: true,
-  fs: {allow: [fileURLToPath(new URL('.', import.meta.url)), fileURLToPath(new URL('../packages/winui-wasm/dist/', import.meta.url))]},
+  fs: {allow: [fileURLToPath(new URL('.', import.meta.url)), fileURLToPath(new URL('../packages/winui-wasm/dist/', import.meta.url)), fileURLToPath(new URL('../references/gallery-input/ComboBox/', import.meta.url))]},
 }, preview: { host: '0.0.0.0', port: 4173, strictPort: true } });

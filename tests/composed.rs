@@ -113,6 +113,162 @@ fn action(s: &mut Scene, id: u32, a: ComposedAction) {
     .unwrap();
     frame(s, 0.);
 }
+
+#[test]
+fn combo_popup_press_does_not_press_the_dropdown_glyph() {
+    for (editable, multiple, tree) in [
+        (false, false, false),
+        (true, false, false),
+        (false, true, false),
+        (false, false, true),
+        (false, true, true),
+    ] {
+        let mut s = scene();
+        let canvas = s.create(s.root, NodeKind::Canvas, json!({})).unwrap();
+        let id = s.create(canvas, NodeKind::ComboBox, json!({
+            "width":200,"canvasLeft":40,"canvasTop":100,
+            "isEditable":editable,"isTreeCombo":tree,
+            "selectionMode":if multiple {"Multiple"} else {"Single"},
+            "collectionItems":[{"id":"a","text":"Alpha"},{"id":"b","text":"Beta"}],
+            "navControls":{"items":[{"id":"a","text":"Alpha"},{"id":"b","text":"Beta"}]}
+        })).unwrap();
+        action(&mut s, id, ComposedAction::Open);
+        let parts = s.nodes[&id].composed.parts.clone();
+        let list = parts["ItemsPresenter"];
+        let glyph = parts["DropDownGlyph"];
+        let snapshot = s.snapshot();
+        let rows = &snapshot.nodes.iter().find(|node| node.id == list).unwrap()
+            .collection.as_ref().unwrap().realized;
+        let row = rows.iter().find(|item| item.key == "a").unwrap().id;
+        let target = if multiple {
+            s.nodes[&row].children.iter().copied().find(|child| s.nodes[child].kind == NodeKind::CheckBox).unwrap()
+        } else {
+            row
+        };
+        let item = &s.nodes[&target];
+        let (x, y) = item.world.point(item.rect.width / 2., item.rect.height / 2.);
+        assert_eq!(s.hit(x,y), Some(target));
+        s.input(Input::Down {x,y,pointer:1}, 1.).unwrap();
+        frame(&mut s, 2.);
+        assert_ne!(s.nodes[&glyph].animated_icon.snapshot(2.).state, "Pressed",
+            "editable={editable}, multiple={multiple}, tree={tree}");
+        s.input(Input::Up {x,y,pointer:1}, 3.).unwrap();
+        frame(&mut s, 4.);
+        assert_eq!(s.nodes[&id].props.selected_index, 0);
+
+        action(&mut s, id, ComposedAction::Close);
+        let button = &s.nodes[&parts["DropDownButton"]];
+        let (x,y) = button.world.point(button.rect.width / 2., button.rect.height / 2.);
+        s.input(Input::Down {x,y,pointer:1}, 5.).unwrap();
+        frame(&mut s, 6.);
+        assert_eq!(s.nodes[&glyph].animated_icon.snapshot(6.).state, "Pressed");
+    }
+}
+
+#[test]
+fn multi_select_combo_draws_labels_alongside_native_checkboxes() {
+    use winui_wasm::render::Draw;
+    let mut s = scene();
+    let combo = s.create(s.root, NodeKind::ComboBox, json!({
+        "width":200,"selectionMode":"Multiple","selectedKeys":["b"],
+        "collectionItems":[{"id":"a","text":"Alpha"},{"id":"b","text":"Beta"}]
+    })).unwrap();
+    action(&mut s, combo, ComposedAction::Open);
+    let list = s.nodes[&combo].composed.parts["ItemsPresenter"];
+    let snapshot = s.snapshot();
+    let rows = &snapshot.nodes.iter().find(|node| node.id == list).unwrap()
+        .collection.as_ref().unwrap().realized;
+    let row = rows.iter().find(|row| row.key == "b").unwrap().id;
+    assert!(s.nodes[&row].children.iter().any(|child| {
+        let checkbox = &s.nodes[child];
+        checkbox.kind == NodeKind::CheckBox && checkbox.props.is_checked == Some(true)
+    }));
+    let shows_text = |s: &mut Scene, label: &str| s.floating_display_list().iter()
+        .any(|draw| matches!(draw, Draw::Text {text,..} if text == label));
+    assert!(shows_text(&mut s, "Alpha"));
+    assert!(shows_text(&mut s, "Beta"));
+    patch(&mut s, list, json!({"hasItemTemplate":true}));
+    s.create(row, NodeKind::TextBlock, json!({"text":"Custom label"})).unwrap();
+    frame(&mut s, 1.);
+    assert!(shows_text(&mut s, "Custom label"));
+    assert!(!shows_text(&mut s, "Beta"));
+}
+
+#[test]
+fn clearable_combo_reuses_the_editable_clear_button_geometry() {
+    let mut s = scene();
+    let source = json!([{"id":"a","text":"Alpha"}]);
+    let id = s.create(s.root, NodeKind::ComboBox, json!({
+        "width":200,"clearable":true,"selectedIndex":0,"collectionItems":source,
+    })).unwrap();
+    let editable = s.create(s.root, NodeKind::ComboBox, json!({
+        "width":200,"isEditable":true,"selectedIndex":0,"collectionItems":source,
+    })).unwrap();
+    action(&mut s, editable, ComposedAction::Focus);
+    let input = s.nodes[&id].composed.parts["InputBox"];
+    let editable_input = s.nodes[&editable].composed.parts["InputBox"];
+    let snapshot = s.snapshot();
+    let helper = |id| snapshot.nodes.iter().find(|node| node.id == id).unwrap().editor.as_ref().unwrap();
+    assert!(helper(input).clear_visible);
+    let button = helper(input).helper_button.unwrap();
+    let editable_button = helper(editable_input).helper_button.unwrap();
+    assert_eq!(button.width, button.height);
+    assert_eq!(button.x + button.width, editable_button.x + editable_button.width);
+    let mask = helper(input).helper_mask.unwrap();
+    let editable_mask = helper(editable_input).helper_mask.unwrap();
+    assert_eq!((mask.x - button.x, mask.y - button.y), (editable_mask.x - editable_button.x, editable_mask.y - editable_button.y));
+    assert!((button.width - editable_button.width).abs() <= 1. / 1.25 + 1e-6);
+    s.input(Input::EditCommand {id:input,command:"clear".into()}, 1.).unwrap();
+    frame(&mut s, 2.);
+    assert_eq!(s.nodes[&id].props.selected_index, -1);
+    assert!(!s.nodes[&id].props.is_drop_down_open);
+    assert!(s.nodes[&input].props.text.is_empty());
+}
+
+#[test]
+fn tree_combo_virtualizes_expanded_rows_and_retains_hidden_selection() {
+    let mut s = scene();
+    let mut items = vec![json!({"id":"root","text":"Root","isExpanded":true})];
+    items.extend((0..10_000).map(|i| {
+        json!({"id":i.to_string(),"text":format!("Item {i}"),"parent":"root"})
+    }));
+    let id = s.create(s.root, NodeKind::ComboBox, json!({
+        "width":240,"maxDropDownHeight":160,"isTreeCombo":true,"selectionMode":"Multiple",
+        "navControls":{"items":items},"selectedKeys":["9999"]
+    })).unwrap();
+    action(&mut s, id, ComposedAction::Open);
+    frame(&mut s, 1.);
+    let presenter = s.nodes[&id].composed.parts["ItemsPresenter"];
+    assert_eq!(s.nodes[&presenter].kind, NodeKind::TreeView);
+    let snapshot = s.snapshot();
+    let tree = snapshot.nodes.iter().find(|n| n.id == presenter).unwrap().collection.as_ref().unwrap();
+    assert_eq!(tree.total_count, 10_001);
+    assert!(tree.realized.len() < 100);
+    assert!(tree.realized.iter().any(|item| item.key == "9999" && item.selected));
+
+    s.input(Input::Navigation {
+        id: presenter,
+        input: json!({"action":"expand","key":"root","expanded":false}),
+    }, 2.).unwrap();
+    frame(&mut s, 2.);
+    assert_eq!(s.nodes[&id].props.selected_keys.as_slice(), ["9999"]);
+    assert_eq!(s.nodes[&presenter].props.collection_items.len(), 1);
+
+    action(&mut s, id, ComposedAction::Close);
+    let reply = s.navigation_control_host_input(
+        presenter,
+        json!({"action":"selectNode","key":"9998"}),
+        3.,
+    ).unwrap();
+    assert_eq!(s.nodes[&id].props.selected_keys.as_slice(), ["9998", "9999"]);
+    assert!(reply["events"].as_array().unwrap().iter().any(|event| {
+        event["target"] == id && event["kind"] == json!(EventKind::SelectionChanged)
+    }));
+
+    action(&mut s, id, ComposedAction::Clear);
+    assert!(s.nodes[&id].props.selected_keys.is_empty());
+    assert!(s.nodes[&presenter].props.selected_keys.is_empty());
+}
 #[test]
 fn number_template_commit_step_empty_and_range() {
     let mut s = scene();
