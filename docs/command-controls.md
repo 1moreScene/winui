@@ -42,6 +42,8 @@ DropDownButton 按模板 `BackgroundSizing=InnerBorderEdge` 内缩半透明底�
 
 ### 主命令展开与呈现区域修复
 
+AppBarSeparator 使用真实的 Rust 分隔符节点，主命令区为垂直线，溢出区为水平线，两个区域复用同一节点。独立分隔符不接收焦点或点击。Gallery 示例与 XAML 来自固定版本，来源见 `references/command-menus-sources.json` 和 `gallery/src/official-command-menus.json`。
+
 AppBarSeparator 官方示例只有主命令，仍应在点击 More 后展开标签。原实现只切换紧凑模板，缺少主内容的裁剪动画；自动高度宿主只保留 48 DIP，标签超过此高度后被 Canvas 和后面的源码栏遮挡。
 
 现在 Rust 为主命令维护独立可中断轨道，打开 250 ms、关闭 167 ms，使用实际模板提取的曲线。More 的三个点沿用静态 FontIcon；动画发生在命令内容的裁剪区域。关闭中保留完整模板直至结束，快速反向切换从当前呈现进度继续。无动画偏好直接到达最终状态，等色画刷不再启动无效动画。

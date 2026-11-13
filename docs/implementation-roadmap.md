@@ -176,7 +176,7 @@ NavigationView 和 Button 继续作为集成回归样本。后续阶段沿用共
 
 2026-11-08 命令与选择批：SelectorBar、DropDownButton、AppBarButton、AppBarToggleButton、CommandBar 已接入 Rust、平铺 TS/React API 和 16 个 Gallery 示例。Pivot 按用户要求移出计划；范围、同版原生窗口对照与验收边界见 [命令控件记录](command-controls.md)。
 
-2026-11-08 共享浮层性能及命令菜单后续批：先修复 Rust 材质采样、缓存和重复底层绘制，再补齐主命令展开裁剪及自动高度呈现区域；范围和性能测量限制见 [浮层性能](floating-performance.md)。下一批选定 AppBarSeparator、MenuBar、CommandBarFlyout、XamlUICommand、StandardUICommand，目前 AppBarSeparator 已接入，其余四项仅完成固定来源准备，见 [进度](command-menus.md)。
+2026-11-08 共享浮层修正覆盖 Rust 材质采样、缓存、重复底层绘制、主命令展开裁剪和自动高度呈现区域。范围和性能测量限制见 [浮层性能](floating-performance.md)。AppBarSeparator 已接入 Rust、TS/React 和 Gallery，见 [命令控件记录](command-controls.md#主命令展开与呈现区域修复)。
 
 2026-11-08 日期/时间/颜色批已接入：CalendarView、CalendarDatePicker、DatePicker、TimePicker、ColorPicker，包含 Rust 控件树、TS/React、Gallery、66 个同 SDK 状态与选择后布局修复。实测范围和未接受的一致性项目见 [批次进度](picker-controls.md)。
 

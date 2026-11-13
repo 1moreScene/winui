@@ -16,6 +16,8 @@
 
 Button、Collections 和 Effects 原有嵌套折叠层已展开为同一内容区内的说明段落。每个示例源码只有一个 Expander。正文首次展开时挂载，折叠后保留；控件卸载时释放尺寸观察、DOM 绑定和 SDK 子节点。
 
+`gallery/src/SourceCode.tsx` 统一显示示例源码。Prettier 按需格式化 React、TypeScript 和 XAML，C# 保留原始排版。解析失败时直接显示原文，Prism 输出的 token 由 React 渲染为文本和 span。格式化只影响展示，示例仍从运行代码提取。`npx playwright test -c playwright.source-code.config.ts` 覆盖按需加载、格式化回退、主题和文本选择。
+
 ## 源码滚动条
 
 pre/code 保留浏览器文本选择和原生内容滚动，滚动条由现有 Rust ScrollViewer 托管。全局发现逻辑现在允许显式 `data-winui-content-host` 内的应用 DOM，同时继续跳过嵌套 SDK 控件自己的投影。矩形 inset 裁剪与 Rust 展开动画的投影变化会同步更新滚动条位置和可见区域。只有接入成功的区域才隐藏浏览器滚动条。
